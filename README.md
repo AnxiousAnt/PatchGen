@@ -11,7 +11,10 @@ Purr-Data (Pd), a visual programming language for multimedia applications, offer
 
 - the python notebook `\llama3_8b_patchgen.ipynb` contains the code for fine-tuning llama3 8b for patch generation
 
+- submodule `\PurrRepo.github.io` contains code for a pd repository website hosted on github pages. 
+
 
 ## links
 - ### fine-tuned models and datasets: [hugging_face_link](https://huggingface.co/ParZiVal04) (work-in-progress)
 
+- ### [purrrepo](https://purrrepo.github.io/)
