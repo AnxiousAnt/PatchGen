@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>patch~ | PURE DATA forum~</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="PURE DATA forum~" />
+	<meta name="keywords" content="puredata, pd, pure data, forum" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=http:&#x2F;&#x2F;forum.pdpatchrepo.info&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" content="&#x2F;uploads&#x2F;site-logo.gif" />
+	<meta name="title" content="patch~" />
+	<meta property="og:title" content="patch~" />
+	<meta name="description" content="Discover and share your patches (both audio &amp;amp; video)" />
+	<meta property="og:type" content="website" />
+	<link rel="stylesheet" type="text/css" href="/stylesheet.css?b43aec11" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon" />
+	<link rel="alternate" type="application/rss+xml" href="http://forum.pdpatchrepo.info/category/2.rss" />
+	<link rel="up" href="http://forum.pdpatchrepo.info" />
+	<link rel="next" href="?page=2" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.3","siteTitle":"PURE DATA forum~","showSiteTitle":false,"postDelay":"0","minimumTitleLength":"1","maximumTitleLength":"300","minimumPostLength":"1","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"100","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":true,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":false,"disableChat":false,"maxReconnectionAttempts":"5","reconnectionDelay":"200","minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":"3","maximumTagLength":"15","topicsPerPage":"20","postsPerPage":"20","maximumFileSize":"8192","theme:id":"nodebb-theme-lavender","theme:src":"","defaultLang":"en_GB","userLang":"en_GB","loggedIn":false,"cache-buster":"v0.7.3-3-gf7648c2","script-buster":"153e09e4","css-buster":"b43aec11","requireEmailConfirmation":true,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"T64wdHHo-LLAhHeahYvnEC-mW-tUNox9ODgs","searchEnabled":true,"disableMasonry":false}');
+		var app = {
+			template: "category",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="/nodebb.min.js?153e09e4"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.3-3-gf7648c2",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+
+	
+		<style type="text/css">body{background-image:url('uploads/bgPD.png')}.header .forum-logo{padding-top:5px}.topic .topic-text{color:#404040}</style>
+
+</head>
+
+<body>
+	<div class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="loading-bar"></div>
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div>
+					<a href="/">
+						<img alt="" class=" forum-logo" src="/uploads/site-logo.gif" />
+					</a>
+					
+
+					<div component="navbar/title" class="visible-xs">
+						<span></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="navbar-collapse collapse navbar-ex1-collapse" id="nav-dropdown">
+								<ul id="main-nav" class="nav navbar-nav pull-left">
+										<li class="">
+						<a href="/categories" title="Categories" id="">
+														<i class="fa fa-fw fa-list"></i>
+
+														<span class="visible-xs-inline">Categories</span>
+						</a>
+					</li>
+					
+										<li class="">
+						<a href="/recent" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+										<li class="">
+						<a href="/tags" title="Tags" id="">
+														<i class="fa fa-fw fa-tags"></i>
+
+														<span class="visible-xs-inline">Tags</span>
+						</a>
+					</li>
+										<li class="">
+						<a href="/popular" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+										<li class="">
+						<a href="/users" title="Users" id="">
+														<i class="fa fa-fw fa-user"></i>
+
+														<span class="visible-xs-inline">Users</span>
+						</a>
+					</li>
+					
+										<li class="">
+						<a href="/dataflow" title="Chat" id="">
+														<i class="fa fa-fw fa-wechat"></i>
+
+							
+						</a>
+					</li>
+										<li class="">
+						<a href="/mailinglist" title="Pd-list" id="">
+														<i class="fa fa-fw fa-archive"></i>
+
+							
+						</a>
+					</li>
+										<li class="">
+						<a href="/search" title="Search" id="">
+														<i class="fa fa-fw fa-search"></i>
+
+														<span class="visible-xs-inline">Search</span>
+						</a>
+					</li>
+				</ul>
+
+								<ul id="logged-out-menu" class="nav navbar-nav navbar-right pull-right">
+										<li>
+						<a href="/register">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="/login">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pull-right">
+					<li>
+						<a href="#" id="reconnect" class="hide" title="Connection to PURE DATA forum~ has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<div class="header-topic-title hidden-xs">
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container" id="content" component="content">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+<input type="hidden" template-variable="category_id" value="2" />
+<input type="hidden" template-variable="category_name" value="patch~" />
+<input type="hidden" template-variable="category_slug" value="2/patch" />
+<input type="hidden" template-variable="topic_count" value="1128" />
+<input type="hidden" template-variable="currentPage" value="1" />
+<input type="hidden" template-variable="pageCount" value="57" />
+
+<div class="category row">
+	<div class="col-md-9" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="/" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				patch~
+												<a target="_blank" href="/category/2.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+		<div class="subcategories row">
+
+		</div>
+
+		<div class="header category-tools clearfix">
+											<a href="/login" class="btn btn-primary">Log in to post</a>
+
+			<span class="pull-right">
+				
+
+
+
+
+
+				<div class="dropdown share-dropdown inline-block">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						<span class="visible-sm-inline visible-md-inline visible-lg-inline">Share</span>
+						<span class="visible-xs-inline"><i class="fa fa-fw fa-share-alt"></i></span>
+						<span class="caret"></span>
+					</button>
+
+
+<ul class="dropdown-menu pull-right" role="menu">
+
+	<li role="presentation" class="dropdown-header">Share this category</li>
+		<li role="presentation">
+		<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
+	</li>
+	<li role="presentation">
+		<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
+	</li>
+	<li role="presentation">
+		<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
+	</li>
+	<li class="text-center">
+		<input id="category-link" readonly="true" type="text" value="" class="form-control post-link inline-block"></input>
+	</li>
+</ul>
+
+				</div>
+			</span>
+		</div>
+
+		
+
+		<ul component="category" id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="20">
+			<meta itemprop="itemListOrder" content="descending">
+			<li component="category/topic" class="category-item unread" data-tid="14021" data-index="0" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/atux">
+																		<img src="https://s.gravatar.com/avatar/9918ce749ab08358ade1af05f48d343a?size=128&default=identicon&rating=pg" alt="atux" class="profile-image user-img" title="atux">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14021/euclidean-rhythms" itemprop="url" class="topic-title">Euclidean rhythms?</a><br />
+									<small>
+									posted <span class="timeago" title="2022-08-04T15:26:28.113Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/14021/euclidean-rhythms/16">replied <span class="timeago" title="2024-06-01T22:13:27.144Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="16">16</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="5281">5281</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/porres"><img class="profile-image small user-img" src="https://s.gravatar.com/avatar/154ecef7e6eb53e950811b636a1d575f?size=128&default=identicon&rating=pg" title="porres" /></a>
+							<a href="/topic/14021/euclidean-rhythms/16">
+								replied <span class="timeago" title="2024-06-01T22:13:27.144Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14730" data-index="1" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/jamcultur">
+																		<img src="/uploads/profile/16452-profileimg.jpg" alt="jamcultur" class="profile-image user-img" title="jamcultur">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14730/patch-for-playing-3-note-chords-in-just-intonation" itemprop="url" class="topic-title">Patch for playing 3-note chords in Just Intonation</a><br />
+									<small>
+									posted <span class="timeago" title="2024-05-20T15:01:37.582Z"></span>
+									
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="1">1</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="180">180</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<p class="no-replies">No one has replied</p>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="4866" data-index="2" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/keithirwin">
+																		<img src="https://s.gravatar.com/avatar/65eb0ed1c9f222d28f8e089720cbd94e?size=128&default=identicon&rating=pg" alt="KeithIrwin" class="profile-image user-img" title="KeithIrwin">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/4866/dj-vj-scratching-system" itemprop="url" class="topic-title">DJ&#x2F;VJ scratching system</a><br />
+									<small>
+									posted <span class="timeago" title="2011-03-14T08:09:19.000Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/4866/dj-vj-scratching-system/2">replied <span class="timeago" title="2024-05-08T17:56:12.220Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="2">2</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="5849">5849</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/mcbublick"><img class="profile-image small user-img" src="https://s.gravatar.com/avatar/efcd6fb701625b0c9ac088138f5fa427?size=128&default=identicon&rating=pg" title="mcbublick" /></a>
+							<a href="/topic/4866/dj-vj-scratching-system/2">
+								replied <span class="timeago" title="2024-05-08T17:56:12.220Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14503" data-index="3" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/fab123">
+																		<img src="https://s.gravatar.com/avatar/42ec55e21850955235a54747932f84f3?size=128&default=identicon&rating=pg" alt="fab123" class="profile-image user-img" title="fab123">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14503/basic-beats-synth-patch-easy-start-doing-music" itemprop="url" class="topic-title">Basic Beats &amp; Synth patch. Easy start doing music.</a><br />
+									<small>
+									posted <span class="timeago" title="2023-10-31T08:18:53.355Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/14503/basic-beats-synth-patch-easy-start-doing-music/18">replied <span class="timeago" title="2024-04-25T07:52:54.164Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="18">18</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="2633">2633</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/jakabasej9"><img class="profile-image small user-img" src="https://s.gravatar.com/avatar/8943239d471cfa2ad664e0146aa1eba1?size=128&default=identicon&rating=pg" title="jakabasej9" /></a>
+							<a href="/topic/14503/basic-beats-synth-patch-easy-start-doing-music/18">
+								replied <span class="timeago" title="2024-04-25T07:52:54.164Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14679" data-index="4" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/aliam-sigsaly">
+																		<img src="/uploads/profile/16683-profileimg.jpg" alt="Aliam.Sigsaly" class="profile-image user-img" title="Aliam.Sigsaly">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14679/plugdata-3-values-interpolation-patch-added-scale-version-imo-ultra-dumb" itemprop="url" class="topic-title">Plugdata: 3 values Interpolation patch (added Scale version - imo ultra dumb))</a><br />
+									<small>
+									posted <span class="timeago" title="2024-04-04T17:16:50.969Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/14679/plugdata-3-values-interpolation-patch-added-scale-version-imo-ultra-dumb/5">replied <span class="timeago" title="2024-04-19T15:39:44.869Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="5">5</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="986">986</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/aliam-sigsaly"><img class="profile-image small user-img" src="/uploads/profile/16683-profileimg.jpg" title="Aliam.Sigsaly" /></a>
+							<a href="/topic/14679/plugdata-3-values-interpolation-patch-added-scale-version-imo-ultra-dumb/5">
+								replied <span class="timeago" title="2024-04-19T15:39:44.869Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="12638" data-index="5" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/boran-robert">
+																		<img src="/uploads/profile/14262-profileimg.png" alt="Boran Robert" class="profile-image user-img" title="Boran Robert">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/12638/bytechip-automaton-combining-automatonism-v3-0-bytechip-equations" itemprop="url" class="topic-title">Bytechip Automaton - Combining Automatonism v3.0 + Bytechip equations.</a><br />
+									<small>
+									posted <span class="timeago" title="2020-03-09T01:40:20.342Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/12638/bytechip-automaton-combining-automatonism-v3-0-bytechip-equations/4">replied <span class="timeago" title="2024-04-17T01:31:26.501Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="4">4</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="1823">1823</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/noderay"><img class="profile-image small user-img" src="https://s.gravatar.com/avatar/1805a20814c9f7781d2be07ff37e8b6b?size=128&default=identicon&rating=pg" title="noderay" /></a>
+							<a href="/topic/12638/bytechip-automaton-combining-automatonism-v3-0-bytechip-equations/4">
+								replied <span class="timeago" title="2024-04-17T01:31:26.501Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14682" data-index="6" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/eeight">
+																		<img src="/uploads/4163-profileimg.jpg" alt="EEight" class="profile-image user-img" title="EEight">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14682/multi-room-mixer-patch" itemprop="url" class="topic-title">multi-room mixer patch</a><br />
+									<small>
+									posted <span class="timeago" title="2024-04-05T13:44:29.457Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/14682/multi-room-mixer-patch/6">replied <span class="timeago" title="2024-04-06T21:51:03.270Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="6">6</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="739">739</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/whale-av"><img class="profile-image small user-img" src="/uploads/3906-profileimg.jpg" title="whale-av" /></a>
+							<a href="/topic/14682/multi-room-mixer-patch/6">
+								replied <span class="timeago" title="2024-04-06T21:51:03.270Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="13081" data-index="7" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/jancsika">
+																		<img src="/uploads/profile/842-profileimg.jpg" alt="jancsika" class="profile-image user-img" title="jancsika">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/13081/purr-data-sprite-game" itemprop="url" class="topic-title">Purr Data sprite game</a><br />
+									<small>
+									posted <span class="timeago" title="2020-10-19T16:33:30.665Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/13081/purr-data-sprite-game/2">replied <span class="timeago" title="2020-10-20T18:21:09.204Z"></span></a>
+									</span>
+									<br/>
+		<a href="/tags/sprite"><span class="tag-item" data-tag="sprite" style="">sprite</span><span class="tag-topic-count">1</span></a>
+		<a href="/tags/purr data"><span class="tag-item" data-tag="purr data" style="">purr data</span><span class="tag-topic-count">13</span></a>
+		<a href="/tags/game"><span class="tag-item" data-tag="game" style="">game</span><span class="tag-topic-count">8</span></a>
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="2">2</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="2318">2318</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/johnny-mauser"><img class="profile-image small user-img" src="/uploads/profile/2277-profileimg.jpg" title="Johnny Mauser" /></a>
+							<a href="/topic/13081/purr-data-sprite-game/2">
+								replied <span class="timeago" title="2020-10-20T18:21:09.204Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="10372" data-index="8" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/mario">
+																		<img src="https://s.gravatar.com/avatar/c0549525ec73f6af550b4aca8f46242e?size=128&default=identicon&rating=pg" alt="mario" class="profile-image user-img" title="mario">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/10372/hackai-lpuredata-8-pd-editor-for-akai-lpd8" itemprop="url" class="topic-title">hAcKAI LPureData 8 - Pd editor for AKAI LPD8</a><br />
+									<small>
+									posted <span class="timeago" title="2016-10-19T06:37:17.983Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/10372/hackai-lpuredata-8-pd-editor-for-akai-lpd8/3">replied <span class="timeago" title="2024-03-25T14:33:32.212Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="3">3</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="3853">3853</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/esaruoho"><img class="profile-image small user-img" src="https://s.gravatar.com/avatar/6274fdbf7ae92916404cab6e1695bb5d?size=128&default=identicon&rating=pg" title="esaruoho" /></a>
+							<a href="/topic/10372/hackai-lpuredata-8-pd-editor-for-akai-lpd8/3">
+								replied <span class="timeago" title="2024-03-25T14:33:32.212Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14626" data-index="9" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/mkdewolf">
+																		<img src="https://s.gravatar.com/avatar/1e9a68e9869989a6c381da5f83a5e3c0?size=128&default=identicon&rating=pg" alt="mkdewolf" class="profile-image user-img" title="mkdewolf">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14626/12-row-patch-total-serialism-question" itemprop="url" class="topic-title">12 row patch - Total serialism question</a><br />
+									<small>
+									posted <span class="timeago" title="2024-02-20T17:09:06.561Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/14626/12-row-patch-total-serialism-question/4">replied <span class="timeago" title="2024-02-22T17:00:51.889Z"></span></a>
+									</span>
+									<br/>
+		<a href="/tags/12 row"><span class="tag-item" data-tag="12 row" style="">12 row</span><span class="tag-topic-count">1</span></a>
+		<a href="/tags/serialism"><span class="tag-item" data-tag="serialism" style="">serialism</span><span class="tag-topic-count">1</span></a>
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="4">4</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="654">654</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/jameslo"><img class="profile-image small user-img" src="https://s.gravatar.com/avatar/ec0544bb796a022dc28bb3e36b1acc59?size=128&default=identicon&rating=pg" title="jameslo" /></a>
+							<a href="/topic/14626/12-row-patch-total-serialism-question/4">
+								replied <span class="timeago" title="2024-02-22T17:00:51.889Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14579" data-index="10" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/morast">
+																		<img src="/uploads/profile/3744-profileimg.jpg" alt="morast" class="profile-image user-img" title="morast">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14579/mtsb-a-variable-step-size-sequencer-inspired-by-mark-fell-s-work" itemprop="url" class="topic-title">mtsb - a variable step size sequencer - inspired by Mark Fell&#x27;s work</a><br />
+									<small>
+									posted <span class="timeago" title="2024-01-25T19:10:04.688Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/14579/mtsb-a-variable-step-size-sequencer-inspired-by-mark-fell-s-work/2">replied <span class="timeago" title="2024-01-25T21:11:43.759Z"></span></a>
+									</span>
+									<br/>
+		<a href="/tags/patch"><span class="tag-item" data-tag="patch" style="">patch</span><span class="tag-topic-count">13</span></a>
+		<a href="/tags/sequencer"><span class="tag-item" data-tag="sequencer" style="">sequencer</span><span class="tag-topic-count">11</span></a>
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="2">2</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="740">740</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/jyg"><img class="profile-image small user-img" src="/uploads/profile/1667-profileimg.jpg" title="jyg" /></a>
+							<a href="/topic/14579/mtsb-a-variable-step-size-sequencer-inspired-by-mark-fell-s-work/2">
+								replied <span class="timeago" title="2024-01-25T21:11:43.759Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14577" data-index="11" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/zepadovani">
+																		<img src="https://s.gravatar.com/avatar/4bba307b27aa0f6309ff80a4a4c7ee1d?size=128&default=identicon&rating=pg" alt="zepadovani" class="profile-image user-img" title="zepadovani">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14577/record-playback-continuous-control-values-vanilla-without-list" itemprop="url" class="topic-title">record&#x2F;playback continuous control values (vanilla, without [list])</a><br />
+									<small>
+									posted <span class="timeago" title="2024-01-25T11:36:10.177Z"></span>
+									
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="1">1</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="414">414</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<p class="no-replies">No one has replied</p>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="13779" data-index="12" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/manuels">
+																		<img src="https://s.gravatar.com/avatar/c12d43f96167d62e766daf4271c0bce4?size=128&default=identicon&rating=pg" alt="manuels" class="profile-image user-img" title="manuels">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/13779/interactive-pole-zero-diagram-for-basic-filter-design" itemprop="url" class="topic-title">Interactive pole-zero-diagram for basic filter design</a><br />
+									<small>
+									posted <span class="timeago" title="2022-01-12T12:31:55.549Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/13779/interactive-pole-zero-diagram-for-basic-filter-design/3">replied <span class="timeago" title="2024-01-18T12:04:36.839Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="3">3</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="2198">2198</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/manuels"><img class="profile-image small user-img" src="https://s.gravatar.com/avatar/c12d43f96167d62e766daf4271c0bce4?size=128&default=identicon&rating=pg" title="manuels" /></a>
+							<a href="/topic/13779/interactive-pole-zero-diagram-for-basic-filter-design/3">
+								replied <span class="timeago" title="2024-01-18T12:04:36.839Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14568" data-index="13" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/zooquest">
+																		<img src="/uploads/profile/16619-profileimg.png" alt="Zooquest" class="profile-image user-img" title="Zooquest">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14568/avoid-clicks-controlling-time-delay-with-midi-knob" itemprop="url" class="topic-title">Avoid clicks controlling Time Delay with MIDI Knob</a><br />
+									<small>
+									posted <span class="timeago" title="2024-01-05T18:25:01.525Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/14568/avoid-clicks-controlling-time-delay-with-midi-knob/8">replied <span class="timeago" title="2024-01-07T10:50:55.831Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="8">8</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="1162">1162</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/whale-av"><img class="profile-image small user-img" src="/uploads/3906-profileimg.jpg" title="whale-av" /></a>
+							<a href="/topic/14568/avoid-clicks-controlling-time-delay-with-midi-knob/8">
+								replied <span class="timeago" title="2024-01-07T10:50:55.831Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14558" data-index="14" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/linpassion">
+																		<img src="https://s.gravatar.com/avatar/c7b4146a68a574d2bc3953035b2d51f7?size=128&default=identicon&rating=pg" alt="Linpassion" class="profile-image user-img" title="Linpassion">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14558/plants-play" itemprop="url" class="topic-title">Plants play</a><br />
+									<small>
+									posted <span class="timeago" title="2023-12-21T08:24:55.163Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/14558/plants-play/2">replied <span class="timeago" title="2023-12-21T12:52:57.004Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="2">2</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="760">760</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/whale-av"><img class="profile-image small user-img" src="/uploads/3906-profileimg.jpg" title="whale-av" /></a>
+							<a href="/topic/14558/plants-play/2">
+								replied <span class="timeago" title="2023-12-21T12:52:57.004Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="6007" data-index="15" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/danarf">
+																		<img src="https://s.gravatar.com/avatar/495f76fe344ebd8afbc9945c871a7c28?size=128&default=identicon&rating=pg" alt="danarf" class="profile-image user-img" title="danarf">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/6007/map-object" itemprop="url" class="topic-title">Map Object</a><br />
+									<small>
+									posted <span class="timeago" title="2012-02-24T18:09:46.000Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/6007/map-object/6">replied <span class="timeago" title="2023-11-26T12:59:50.068Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="6">6</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="12732">12732</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/pmoney"><img class="profile-image small user-img" src="https://s.gravatar.com/avatar/222e363d70081104fbd954bf615fc5b0?size=128&default=identicon&rating=pg" title="pmoney" /></a>
+							<a href="/topic/6007/map-object/6">
+								replied <span class="timeago" title="2023-11-26T12:59:50.068Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14522" data-index="16" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/carlos">
+																		<img src="/uploads/profile/16556-profileimg.png" alt="Carlos" class="profile-image user-img" title="Carlos">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14522/is-it-possible-to-group-different-soundfiles-in-only-one-message" itemprop="url" class="topic-title">Is it possible to group different soundfiles in only one message?</a><br />
+									<small>
+									posted <span class="timeago" title="2023-11-17T10:41:24.984Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/14522/is-it-possible-to-group-different-soundfiles-in-only-one-message/2">replied <span class="timeago" title="2023-11-17T11:09:57.915Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="2">2</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="730">730</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/oid"><img class="profile-image small user-img" src="/uploads/profile/15415-profileimg.jpg" title="oid" /></a>
+							<a href="/topic/14522/is-it-possible-to-group-different-soundfiles-in-only-one-message/2">
+								replied <span class="timeago" title="2023-11-17T11:09:57.915Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14504" data-index="17" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/fab123">
+																		<img src="https://s.gravatar.com/avatar/42ec55e21850955235a54747932f84f3?size=128&default=identicon&rating=pg" alt="fab123" class="profile-image user-img" title="fab123">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14504/automatic-animation-of-standard-gem-grafic-objects" itemprop="url" class="topic-title">Automatic animation of standard gem grafic objects.</a><br />
+									<small>
+									posted <span class="timeago" title="2023-10-31T08:22:45.048Z"></span>
+									
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="1">1</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="529">529</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<p class="no-replies">No one has replied</p>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14455" data-index="18" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/gazzyjuruj">
+																		<img src="https://s.gravatar.com/avatar/a60ad69030a9b6fdf52085473e0d9f71?size=128&default=identicon&rating=pg" alt="gazzyjuruj" class="profile-image user-img" title="gazzyjuruj">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14455/seeking-creative-solutions-for-midi-data-manipulation-in-pure-data-extended" itemprop="url" class="topic-title">Seeking Creative Solutions for MIDI Data Manipulation in Pure Data Extended</a><br />
+									<small>
+									posted <span class="timeago" title="2023-08-23T18:29:13.106Z"></span>
+																		<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="/topic/14455/seeking-creative-solutions-for-midi-data-manipulation-in-pure-data-extended/4">replied <span class="timeago" title="2023-08-24T11:19:42.546Z"></span></a>
+									</span>
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="4">4</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="1280">1280</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<a href="/user/oid"><img class="profile-image small user-img" src="/uploads/profile/15415-profileimg.jpg" title="oid" /></a>
+							<a href="/topic/14455/seeking-creative-solutions-for-midi-data-manipulation-in-pure-data-extended/4">
+								replied <span class="timeago" title="2023-08-24T11:19:42.546Z"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+			<li component="category/topic" class="category-item unread" data-tid="14451" data-index="19" data-cid="2" itemprop="itemListElement">
+
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							
+
+							<div class="category-profile-pic">
+								<a href="/user/patchworks">
+																		<img src="https://s.gravatar.com/avatar/279866cd89bfc3ca54a6a301bdccc192?size=128&default=identicon&rating=pg" alt="patchworks" class="profile-image user-img" title="patchworks">
+								</a>
+							</div>
+							<div class="category-text">
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack hide"></i> <i component="topic/locked" class="fa fa-lock hide"></i></strong>
+									<a component="topic/header" href="/topic/14451/bpm-stretchable-audio-looper" itemprop="url" class="topic-title">BPM stretchable audio looper</a><br />
+									<small>
+									posted <span class="timeago" title="2023-08-18T22:49:53.673Z"></span>
+									
+									<br/>
+
+									</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="1">1</strong><br />
+							<small>Posts</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="731">731</strong><br />
+							<small>Views</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+														<p class="no-replies">No one has replied</p>
+						</div>
+					</div>
+				</div>
+
+			</li>
+		</ul>
+		
+	</div>
+
+	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar"></div>
+</div>
+
+<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Move Topic</h3>
+			</div>
+			<div class="modal-body">
+				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> Loading Categories</p>
+				<p>
+					Disabled Categories are greyed out
+				</p>
+				<div id="move-confirm" style="display: none;">
+					<hr />
+					<div class="alert alert-info">This topic will be moved to the category <strong><span id="confirm-category-name"></span></strong></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<noscript>
+
+<div class="text-center pagination-container">
+	<ul class="pagination">
+		<li class="previous pull-left disabled">
+			<a href="?page=1" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+						<li class="page active" >
+				<a href="?page=1" data-page="1">1</a>
+			</li>
+						<li class="page" >
+				<a href="?page=2" data-page="2">2</a>
+			</li>
+						<li class="page" >
+				<a href="?page=3" data-page="3">3</a>
+			</li>
+						<li class="page select-page">
+				<a href="#"><i class="fa fa-ellipsis-h"></i></a>
+			</li>
+						<li class="page" >
+				<a href="?page=56" data-page="56">56</a>
+			</li>
+						<li class="page" >
+				<a href="?page=57" data-page="57">57</a>
+			</li>
+
+		<li class="next pull-right">
+			<a href="?page=2" data-page="2"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+</div>
+
+</noscript>
+<input type="hidden" ajaxify-data="%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22description%22%3A%22Discover%20and%20share%20your%20patches%20(both%20audio%20%26amp%3B%20video)%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22topic_count%22%3A%221128%22%2C%22post_count%22%3A%225610%22%2C%22disabled%22%3Afalse%2C%22order%22%3A%222%22%2C%22link%22%3A%22%22%2C%22numRecentReplies%22%3A%220%22%2C%22class%22%3A%22col-md-3%20col-xs-6%22%2C%22imageClass%22%3A%22auto%22%2C%22totalPostCount%22%3A5610%2C%22totalTopicCount%22%3A1128%2C%22descriptionParsed%22%3A%22%3Cp%3EDiscover%20and%20share%20your%20patches%20(both%20audio%20%26amp%3B%20video)%3C%2Fp%3E%5Cn%22%2C%22unread-class%22%3A%22unread%22%2C%22children%22%3A%5B%5D%2C%22topics%22%3A%5B%7B%22tid%22%3A%2214021%22%2C%22uid%22%3A%2216014%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2267790%22%2C%22title%22%3A%22Euclidean%20rhythms%3F%22%2C%22slug%22%3A%2214021%2Feuclidean-rhythms%22%2C%22timestamp%22%3A%221659626788113%22%2C%22lastposttime%22%3A%221717280007144%22%2C%22postcount%22%3A%2216%22%2C%22viewcount%22%3A%225281%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2272400%22%2C%22relativeTime%22%3A%222022-08-04T15%3A26%3A28.113Z%22%2C%22lastposttimeISO%22%3A%222024-06-01T22%3A13%3A27.144Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2216014%22%2C%22username%22%3A%22atux%22%2C%22userslug%22%3A%22atux%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F9918ce749ab08358ade1af05f48d343a%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2272400%22%2C%22uid%22%3A%221112%22%2C%22timestamp%22%3A%222024-06-01T22%3A13%3A27.144Z%22%2C%22tid%22%3A%2214021%22%2C%22content%22%3A%22%3Cp%3EELSE%20has%20the%20%5Belse%2Feuclid%5D%20abstraction%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221112%22%2C%22username%22%3A%22porres%22%2C%22userslug%22%3A%22porres%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F154ecef7e6eb53e950811b636a1d575f%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A16%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A0%7D%2C%7B%22tid%22%3A%2214730%22%2C%22uid%22%3A%2216452%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2272317%22%2C%22title%22%3A%22Patch%20for%20playing%203-note%20chords%20in%20Just%20Intonation%22%2C%22slug%22%3A%2214730%2Fpatch-for-playing-3-note-chords-in-just-intonation%22%2C%22timestamp%22%3A%221716217297582%22%2C%22lastposttime%22%3A%221716217297590%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%22180%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222024-05-20T15%3A01%3A37.582Z%22%2C%22lastposttimeISO%22%3A%222024-05-20T15%3A01%3A37.590Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2216452%22%2C%22username%22%3A%22jamcultur%22%2C%22userslug%22%3A%22jamcultur%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F16452-profileimg.jpg%22%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A1%7D%2C%7B%22tid%22%3A%224866%22%2C%22uid%22%3A%222332%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%224862%22%2C%22title%22%3A%22DJ%26%23x2F%3BVJ%20scratching%20system%22%2C%22slug%22%3A%224866%2Fdj-vj-scratching-system%22%2C%22timestamp%22%3A%221300090159000%22%2C%22lastposttime%22%3A%221715190972220%22%2C%22postcount%22%3A%222%22%2C%22viewcount%22%3A%225849%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaser_timestamp%22%3A%222011-03-14T08%3A09%3A19.000Z%22%2C%22relativeTime%22%3A%222011-03-14T08%3A09%3A19.000Z%22%2C%22teaserPid%22%3A%2272233%22%2C%22lastposttimeISO%22%3A%222024-05-08T17%3A56%3A12.220Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%222332%22%2C%22username%22%3A%22KeithIrwin%22%2C%22userslug%22%3A%22keithirwin%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F65eb0ed1c9f222d28f8e089720cbd94e%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2272233%22%2C%22uid%22%3A%2216565%22%2C%22timestamp%22%3A%222024-05-08T17%3A56%3A12.220Z%22%2C%22tid%22%3A%224866%22%2C%22content%22%3A%22%3Cp%3EThank%20you%20for%20posting%20it%20!%3Cbr%20%2F%3E%5CnI've%20found%20this%20useful%2013%20years%20after%20your%20post%20%3Cimg%20class%3D%5C%22emoji%20emoji-extended%5C%22%20src%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fplugins%2Fnodebb-plugin-emoji-extended%2Fimages%2Fdancer.png%5C%22%20title%3D%5C%22dancer%5C%22%20alt%3D%5C%22%3Adancer%3A%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%3Cp%3EIts%20not%20quite%20the%20behaviour%20i%20was%20expecting%20but%20i%20think%20it%20might%20be%20possible%20to%20adjust%20it.%3Cbr%20%2F%3E%5CnThe%20issue%20im%20having%20is%20that%20when%20i%20move%20the%20%26quot%3Bturntable%26quot%3B%20it%20does%20not%20feel%201-1%20motion%20on%20the%20file.%20It%20can%20be%20seen%20easily%20by%3C%2Fp%3E%5Cn%5Cnloading%20a%20sound%5Cnhave%20it%20not%20playing%5Cndoing%20a%20fast%20motion%2C%20and%20the%20sound%20keeps%20playing%20after%20the%20motion%20is%20done.%5Cn%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2216565%22%2C%22username%22%3A%22mcbublick%22%2C%22userslug%22%3A%22mcbublick%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fefcd6fb701625b0c9ac088138f5fa427%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A2%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A2%7D%2C%7B%22tid%22%3A%2214503%22%2C%22uid%22%3A%2213475%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2270999%22%2C%22title%22%3A%22Basic%20Beats%20%26amp%3B%20Synth%20patch.%20Easy%20start%20doing%20music.%22%2C%22slug%22%3A%2214503%2Fbasic-beats-synth-patch-easy-start-doing-music%22%2C%22timestamp%22%3A%221698740333355%22%2C%22lastposttime%22%3A%221714031574164%22%2C%22postcount%22%3A%2218%22%2C%22viewcount%22%3A%222633%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2272124%22%2C%22relativeTime%22%3A%222023-10-31T08%3A18%3A53.355Z%22%2C%22lastposttimeISO%22%3A%222024-04-25T07%3A52%3A54.164Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2213475%22%2C%22username%22%3A%22fab123%22%2C%22userslug%22%3A%22fab123%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F42ec55e21850955235a54747932f84f3%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2272124%22%2C%22uid%22%3A%2216719%22%2C%22timestamp%22%3A%222024-04-25T07%3A52%3A54.164Z%22%2C%22tid%22%3A%2214503%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fatux%5C%22%3E%40atux%3C%2Fa%3E%20said%3A%3C%2Fp%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fwhale-av%5C%22%3E%40whale-av%3C%2Fa%3E%20said%3A%3C%2Fp%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fatux%5C%22%3E%40atux%3C%2Fa%3E%20%5Benv%5D%20could%20be%20this%20(mapping%20library%20abstractions%20from%20Pd%20extended).......%20%3Ca%20href%3D%5C%22%2Fuploads%2Ffiles%2F1700549588998-env.zip%5C%22%3Eenv.zip%3C%2Fa%3E%3Cbr%20%2F%3E%5CnDavid.%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3EThanks%2C%20I%20installed%20env.%3Cbr%20%2F%3E%5CnNow%20the%20screen%20is%20this%3A%3Cbr%20%2F%3E%5Cn%5BURL%3Dhttps%3A%2F%2Fsharpedgeshop.com%2F%5D%3Ca%20href%3D%5C%22https%3A%2F%2Fsharpedgeshop.com%2F%255B%2FURL%255D%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fsharpedgeshop.com%2F%5B%2FURL%5D%3C%2Fa%3E%3Cbr%20%2F%3E%5Cn%3Cimg%20src%3D%5C%22%2Fuploads%2Ffiles%2F1700568618907-pd03.png%5C%22%20alt%3D%5C%22pd03.png%5C%22%20class%3D%5C%22img-responsive%20img-markdown%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3EGreat!%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2216719%22%2C%22username%22%3A%22jakabasej9%22%2C%22userslug%22%3A%22jakabasej9%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F8943239d471cfa2ad664e0146aa1eba1%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A18%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A3%7D%2C%7B%22teaserPid%22%3A%2272083%22%2C%22timestamp%22%3A%221712251010969%22%2C%22viewcount%22%3A%22986%22%2C%22uid%22%3A%2216683%22%2C%22cid%22%3A%222%22%2C%22postcount%22%3A%225%22%2C%22mainPid%22%3A%2271985%22%2C%22lastposttime%22%3A%221713541184869%22%2C%22slug%22%3A%2214679%2Fplugdata-3-values-interpolation-patch-added-scale-version-imo-ultra-dumb%22%2C%22title%22%3A%22Plugdata%3A%203%20values%20Interpolation%20patch%20(added%20Scale%20version%20-%20imo%20ultra%20dumb))%22%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22tid%22%3A%2214679%22%2C%22locked%22%3Afalse%2C%22relativeTime%22%3A%222024-04-04T17%3A16%3A50.969Z%22%2C%22lastposttimeISO%22%3A%222024-04-19T15%3A39%3A44.869Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2216683%22%2C%22username%22%3A%22Aliam.Sigsaly%22%2C%22userslug%22%3A%22aliam-sigsaly%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F16683-profileimg.jpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2272083%22%2C%22uid%22%3A%2216683%22%2C%22timestamp%22%3A%222024-04-19T15%3A39%3A44.869Z%22%2C%22tid%22%3A%2214679%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Foid%5C%22%3E%40oid%3C%2Fa%3E%20Have%20even%20dumber%20version%20%3Cimg%20class%3D%5C%22emoji%20emoji-extended%5C%22%20src%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fplugins%2Fnodebb-plugin-emoji-extended%2Fimages%2Fsunglasses.png%5C%22%20title%3D%5C%228)%5C%22%20alt%3D%5C%228)%5C%22%20%2F%3E%20-%206%20instead%20of%209%20object%20-%201%2F3%20enhancement%20in%20brutalist%2F%20minimalist%20matrix.%5D%5D%20%3Cimg%20src%3D%5C%22%2Fuploads%2Ffiles%2F1713541058321-interpol.jpg%5C%22%20alt%3D%5C%22Interpol.jpg%5C%22%20class%3D%5C%22img-responsive%20img-markdown%5C%22%20%2F%3E%3Cbr%20%2F%3E%5Cn%3Ca%20href%3D%5C%22%2Fuploads%2Ffiles%2F1713541176309-interpolation-scale.pd%5C%22%3EInterpolation-scale.pd%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2216683%22%2C%22username%22%3A%22Aliam.Sigsaly%22%2C%22userslug%22%3A%22aliam-sigsaly%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F16683-profileimg.jpg%22%7D%2C%22index%22%3A5%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A4%7D%2C%7B%22teaserPid%22%3A%2272055%22%2C%22timestamp%22%3A%221583718020342%22%2C%22viewcount%22%3A%221823%22%2C%22uid%22%3A%2214262%22%2C%22cid%22%3A%222%22%2C%22postcount%22%3A%224%22%2C%22mainPid%22%3A%2259349%22%2C%22lastposttime%22%3A%221713317486501%22%2C%22slug%22%3A%2212638%2Fbytechip-automaton-combining-automatonism-v3-0-bytechip-equations%22%2C%22title%22%3A%22Bytechip%20Automaton%20-%20Combining%20Automatonism%20v3.0%20%2B%20Bytechip%20equations.%22%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22tid%22%3A%2212638%22%2C%22locked%22%3Afalse%2C%22relativeTime%22%3A%222020-03-09T01%3A40%3A20.342Z%22%2C%22lastposttimeISO%22%3A%222024-04-17T01%3A31%3A26.501Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2214262%22%2C%22username%22%3A%22Boran%20Robert%22%2C%22userslug%22%3A%22boran-robert%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F14262-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2272055%22%2C%22uid%22%3A%2216709%22%2C%22timestamp%22%3A%222024-04-17T01%3A31%3A26.501Z%22%2C%22tid%22%3A%2212638%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fboran-robert%5C%22%3E%40Boran-Robert%3C%2Fa%3E%20said%3A%3C%2Fp%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3EHere%20is%20a%20patch%20that%20makes%20a%20small%20improvement%20over%20the%20Bytechip%20music%20idea.%3C%2Fp%3E%5Cn%3Cp%3Epatch%20download%20%3A%3Cbr%20%2F%3E%5Cn%3Ca%20href%3D%5C%22%2Fuploads%2Ffiles%2F1713322848450-bytechip-automaton.zip%5C%22%3EBytechip%20Automaton.zip%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3Esnapshot%20%3A%3Cbr%20%2F%3E%5Cn%3Cimg%20src%3D%5C%22%2Fuploads%2Ffiles%2F1583717932877-slik1.bmp%5C%22%20alt%3D%5C%22SLIK1.bmp%5C%22%20class%3D%5C%22img-responsive%20img-markdown%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fboran-robert%5C%22%3E%40Boran-Robert%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3ESorry%20to%20bump%20this%20thread%204%20years%20later%2C%20but%20I've%20made%20some%20modifications%20that%20I%20couldn't%20help%20but%20sharing%20due%20to%20how%20much%20enjoyment%20I've%20gotten%20out%20of%20this.%20I%20took%20the%20liberty%20to%20add%20some%20automatic%20modulations%20(and%20then%20a%20button%20to%20toggle%20even%20further%20modulations).%20This%20necessitated%20editing%20the%20VC-counter%20module%20to%20output%20a%20bang.%20Auto%20start%20(makes%20a%20neat%20noise%20if%20you%20do)%2C%20and%20some%20other%20touches%20with%20comments.%20I%20hope%20you%20don't%20mind%20if%20I%20use%20this%20this%20for%20some%20a%20PD%20recording%20I'd%20like%20to%20release%20as%20a%20track%20to%20Bandcamp%20(attribution%20share%20alike)%3C%2Fp%3E%5Cn%3Cp%3E%3Ca%20href%3D%5C%22%2Fuploads%2Ffiles%2F1713322838320-main.pd%5C%22%3Emain.pd%3C%2Fa%3E%20%3Ca%20href%3D%5C%22%2Fuploads%2Ffiles%2F1713322848450-bytechip-automaton.zip%5C%22%3EBytechip%20Automaton.zip%3C%2Fa%3E%20%3Cimg%20src%3D%5C%22%2Fuploads%2Ffiles%2F1713322860639-screenshot-2024-04-16-at-10.00.15-pm.png%5C%22%20alt%3D%5C%22Screenshot%202024-04-16%20at%2010.00.15%E2%80%AFPM.png%5C%22%20class%3D%5C%22img-responsive%20img-markdown%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%3Cp%3EEdit%3A%20I%20noticed%20a%20clicking%20noise%20-%20for%20some%20reason%20the%20LFO%20was%20defaulting%20to%20a%20heckin%20saw%20wave%20even%20after%20clicking%20the%20checkbox%20and%20saving%20it%20in%20the%20gui.%20I%20went%20in%20to%20the%20save%20state.txt%20and%20now%20the%20LFO%20is%20modulating%20the%20crossfader%20WITHOUT%20clicking.%20Sorry%20if%20you%20loaded%20the%20clicky%20version%2C%20it%20sounds%20better%20now.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2216709%22%2C%22username%22%3A%22noderay%22%2C%22userslug%22%3A%22noderay%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F1805a20814c9f7781d2be07ff37e8b6b%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A4%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A5%7D%2C%7B%22tid%22%3A%2214682%22%2C%22uid%22%3A%224163%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2271998%22%2C%22title%22%3A%22multi-room%20mixer%20patch%22%2C%22slug%22%3A%2214682%2Fmulti-room-mixer-patch%22%2C%22timestamp%22%3A%221712324669457%22%2C%22lastposttime%22%3A%221712440263270%22%2C%22postcount%22%3A%226%22%2C%22viewcount%22%3A%22739%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2272008%22%2C%22relativeTime%22%3A%222024-04-05T13%3A44%3A29.457Z%22%2C%22lastposttimeISO%22%3A%222024-04-06T21%3A51%3A03.270Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%224163%22%2C%22username%22%3A%22EEight%22%2C%22userslug%22%3A%22eeight%22%2C%22picture%22%3A%22%2Fuploads%2F4163-profileimg.jpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2272008%22%2C%22uid%22%3A%223906%22%2C%22timestamp%22%3A%222024-04-06T21%3A51%3A03.270Z%22%2C%22tid%22%3A%2214682%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Feeight%5C%22%3E%40EEight%3C%2Fa%3E%20The%20REW%20wizard%20is%20great%20software.....%20I%20would%20recommend%20that%20especially%20as%20it%20is%20free%20and%20powerful%20with%20great%20forum%20support%3Cbr%20%2F%3E%5CnPhase%20inversion%20of%20treble%20frequencies%20can%20make%20you%20feel%20dizzy%20as%20you%20move%20your%20head......%20we%20are%20much%20more%20sensitive%20to%20phase%20than%20other%20audio%20information.%3Cbr%20%2F%3E%5CnJust%20one%20treble%20speaker%20in%20a%20stack%20is%20instantly%20horrible......%20not%20so%20noticeable%20if%20the%20speakers%20are%20further%20apart%20though.%3Cbr%20%2F%3E%5CnIf%20you%20had%20more%20than%20one%20sub%20you%20would%20need%20much%20more%20tuning......%20moving%20subs%20around%20until%20it%20sounds%20good%20everywhere%20is%20an%20everyday%20challenge%20on%20tour.......%20a%20few%20inches.....%20or%20less...%20can%20make%20a%20big%20difference.%3Cbr%20%2F%3E%5CnDavid.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%223906%22%2C%22username%22%3A%22whale-av%22%2C%22userslug%22%3A%22whale-av%22%2C%22picture%22%3A%22%2Fuploads%2F3906-profileimg.jpg%22%7D%2C%22index%22%3A6%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A6%7D%2C%7B%22tid%22%3A%2213081%22%2C%22uid%22%3A%22842%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2261824%22%2C%22title%22%3A%22Purr%20Data%20sprite%20game%22%2C%22slug%22%3A%2213081%2Fpurr-data-sprite-game%22%2C%22timestamp%22%3A%221603125210665%22%2C%22lastposttime%22%3A%221711419590384%22%2C%22postcount%22%3A%222%22%2C%22viewcount%22%3A%222318%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2261849%22%2C%22relativeTime%22%3A%222020-10-19T16%3A33%3A30.665Z%22%2C%22lastposttimeISO%22%3A%222024-03-26T02%3A19%3A50.384Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22842%22%2C%22username%22%3A%22jancsika%22%2C%22userslug%22%3A%22jancsika%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F842-profileimg.jpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2261849%22%2C%22uid%22%3A%222277%22%2C%22timestamp%22%3A%222020-10-20T18%3A21%3A09.204Z%22%2C%22tid%22%3A%2213081%22%2C%22content%22%3A%22%3Cp%3E(What%20the)%20Hell%20YEAH!!%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%222277%22%2C%22username%22%3A%22Johnny%20Mauser%22%2C%22userslug%22%3A%22johnny-mauser%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2277-profileimg.jpg%22%7D%2C%22index%22%3A2%7D%2C%22tags%22%3A%5B%7B%22value%22%3A%22sprite%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%221%22%7D%2C%7B%22value%22%3A%22purr%20data%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2213%22%7D%2C%7B%22value%22%3A%22game%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%228%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A7%7D%2C%7B%22tid%22%3A%2210372%22%2C%22uid%22%3A%224079%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2246979%22%2C%22title%22%3A%22hAcKAI%20LPureData%208%20-%20Pd%20editor%20for%20AKAI%20LPD8%22%2C%22slug%22%3A%2210372%2Fhackai-lpuredata-8-pd-editor-for-akai-lpd8%22%2C%22timestamp%22%3A%221476859037983%22%2C%22lastposttime%22%3A%221711377212212%22%2C%22postcount%22%3A%223%22%2C%22viewcount%22%3A%223853%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2271936%22%2C%22relativeTime%22%3A%222016-10-19T06%3A37%3A17.983Z%22%2C%22lastposttimeISO%22%3A%222024-03-25T14%3A33%3A32.212Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%224079%22%2C%22username%22%3A%22mario%22%2C%22userslug%22%3A%22mario%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc0549525ec73f6af550b4aca8f46242e%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2271936%22%2C%22uid%22%3A%223886%22%2C%22timestamp%22%3A%222024-03-25T14%3A33%3A32.212Z%22%2C%22tid%22%3A%2210372%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fmario%5C%22%3E%40mario%3C%2Fa%3E%20said%3A%3C%2Fp%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3EThis%20is%20the%20hAcKAI%20LPureData%208%20v0.2%2C%20it's%20now%20possible%20to%20get%20presets%20from%20the%20controller%3C%2Fp%3E%5Cn%3Cp%3E%3Ca%20href%3D%5C%22http%3A%2F%2Fmbuoninfante.tumblr.com%2Fpost%2F152204960890%2Fhackailpuredata8-v02%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttp%3A%2F%2Fmbuoninfante.tumblr.com%2Fpost%2F152204960890%2Fhackailpuredata8-v02%3C%2Fa%3E%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3Ehi%20are%20you%20able%20to%20modify%20this%20so%20that%20it%20could%20load%20up%20a%20LPD8%20preset%20(.lpd8)%3F%3Cbr%20%2F%3E%5Cn%3Ca%20href%3D%5C%22%2Fuploads%2Ffiles%2F1711377209105-lpd8_preset_2017_05_15_for_multimagic.lpd8.zip%5C%22%3Elpd8_preset_2017_05_15_for_multimagic.lpd8.zip%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%223886%22%2C%22username%22%3A%22esaruoho%22%2C%22userslug%22%3A%22esaruoho%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F6274fdbf7ae92916404cab6e1695bb5d%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A3%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A8%7D%2C%7B%22tid%22%3A%2214626%22%2C%22uid%22%3A%2216669%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2271686%22%2C%22title%22%3A%2212%20row%20patch%20-%20Total%20serialism%20question%22%2C%22slug%22%3A%2214626%2F12-row-patch-total-serialism-question%22%2C%22timestamp%22%3A%221708448946561%22%2C%22lastposttime%22%3A%221708621251889%22%2C%22postcount%22%3A%224%22%2C%22viewcount%22%3A%22654%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2271728%22%2C%22relativeTime%22%3A%222024-02-20T17%3A09%3A06.561Z%22%2C%22lastposttimeISO%22%3A%222024-02-22T17%3A00%3A51.889Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2216669%22%2C%22username%22%3A%22mkdewolf%22%2C%22userslug%22%3A%22mkdewolf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F1e9a68e9869989a6c381da5f83a5e3c0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2271728%22%2C%22uid%22%3A%2212053%22%2C%22timestamp%22%3A%222024-02-22T17%3A00%3A51.889Z%22%2C%22tid%22%3A%2214626%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fmkdewolf%5C%22%3E%40mkdewolf%3C%2Fa%3E%20I'm%20wondering%20if%20you're%20aware%20of%20Pd's%20help%20system%3F%20For%20instance%2C%20you%20could%20create%20a%20%5Btext%5D%20object%2C%20right%20click%20it%2C%20and%20choose%20help%20to%20get%20all%20the%20info%20you%20need%20about%20%5Btext%5D.%20There%20are%20also%20tutorials%20on%20how%20to%20do%20things%20in%20Pd.%20Click%20Help-%26gt%3BBrowser...-%26gt%3BPureData-%26gt%3B3.audio.examples%2F%20for%20ones%20related%20to%20audio.%20In%20particular%2C%20A02.amplitude.pd%20describes%20how%20to%20control%20volume.%20If%20you%20fill%20us%20in%20more%20on%20how%20you%20are%20generating%20notes%20we%20might%20be%20able%20to%20suggest%20tutorials%20on%20how%20to%20control%20their%20duration.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2212053%22%2C%22username%22%3A%22jameslo%22%2C%22userslug%22%3A%22jameslo%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fec0544bb796a022dc28bb3e36b1acc59%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A4%7D%2C%22tags%22%3A%5B%7B%22value%22%3A%2212%20row%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%221%22%7D%2C%7B%22value%22%3A%22serialism%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%221%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A9%7D%2C%7B%22teaserPid%22%3A%2271449%22%2C%22timestamp%22%3A%221706209804688%22%2C%22viewcount%22%3A%22740%22%2C%22uid%22%3A%223744%22%2C%22cid%22%3A%222%22%2C%22postcount%22%3A%222%22%2C%22mainPid%22%3A%2271448%22%2C%22lastposttime%22%3A%221706217103759%22%2C%22slug%22%3A%2214579%2Fmtsb-a-variable-step-size-sequencer-inspired-by-mark-fell-s-work%22%2C%22title%22%3A%22mtsb%20-%20a%20variable%20step%20size%20sequencer%20-%20inspired%20by%20Mark%20Fell%26%23x27%3Bs%20work%22%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22tid%22%3A%2214579%22%2C%22locked%22%3Afalse%2C%22relativeTime%22%3A%222024-01-25T19%3A10%3A04.688Z%22%2C%22lastposttimeISO%22%3A%222024-01-25T21%3A11%3A43.759Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%223744%22%2C%22username%22%3A%22morast%22%2C%22userslug%22%3A%22morast%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F3744-profileimg.jpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2271449%22%2C%22uid%22%3A%221667%22%2C%22timestamp%22%3A%222024-01-25T21%3A11%3A43.759Z%22%2C%22tid%22%3A%2214579%22%2C%22content%22%3A%22%3Cp%3EThanks%20!%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221667%22%2C%22username%22%3A%22jyg%22%2C%22userslug%22%3A%22jyg%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1667-profileimg.jpg%22%7D%2C%22index%22%3A2%7D%2C%22tags%22%3A%5B%7B%22value%22%3A%22patch%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2213%22%7D%2C%7B%22value%22%3A%22sequencer%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2211%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A10%7D%2C%7B%22timestamp%22%3A%221706182570177%22%2C%22viewcount%22%3A%22414%22%2C%22uid%22%3A%224441%22%2C%22cid%22%3A%222%22%2C%22postcount%22%3A%221%22%2C%22mainPid%22%3A%2271443%22%2C%22lastposttime%22%3A%221706182570202%22%2C%22slug%22%3A%2214577%2Frecord-playback-continuous-control-values-vanilla-without-list%22%2C%22title%22%3A%22record%26%23x2F%3Bplayback%20continuous%20control%20values%20(vanilla%2C%20without%20%5Blist%5D)%22%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22tid%22%3A%2214577%22%2C%22locked%22%3Afalse%2C%22relativeTime%22%3A%222024-01-25T11%3A36%3A10.177Z%22%2C%22lastposttimeISO%22%3A%222024-01-25T11%3A36%3A10.202Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%224441%22%2C%22username%22%3A%22zepadovani%22%2C%22userslug%22%3A%22zepadovani%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4bba307b27aa0f6309ff80a4a4c7ee1d%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A11%7D%2C%7B%22tid%22%3A%2213779%22%2C%22uid%22%3A%2216017%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2266235%22%2C%22title%22%3A%22Interactive%20pole-zero-diagram%20for%20basic%20filter%20design%22%2C%22slug%22%3A%2213779%2Finteractive-pole-zero-diagram-for-basic-filter-design%22%2C%22timestamp%22%3A%221641990715549%22%2C%22lastposttime%22%3A%221705579476839%22%2C%22postcount%22%3A%223%22%2C%22viewcount%22%3A%222198%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2271421%22%2C%22relativeTime%22%3A%222022-01-12T12%3A31%3A55.549Z%22%2C%22lastposttimeISO%22%3A%222024-01-18T12%3A04%3A36.839Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2216017%22%2C%22username%22%3A%22manuels%22%2C%22userslug%22%3A%22manuels%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc12d43f96167d62e766daf4271c0bce4%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2271421%22%2C%22uid%22%3A%2216017%22%2C%22timestamp%22%3A%222024-01-18T12%3A04%3A36.839Z%22%2C%22tid%22%3A%2213779%22%2C%22content%22%3A%22%3Cp%3EHere's%20an%20updated%20version%20of%20the%20pole-zero%20diagram%20I%20posted%20two%20years%20ago%3A%3C%2Fp%3E%5Cn%3Cp%3E%3Ca%20href%3D%5C%22%2Fuploads%2Ffiles%2F1705578177380-pole-zero-diagram-2.0.pd%5C%22%3Epole-zero-diagram-2.0.pd%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3EUnfortunately%2C%20I%20didn't%20know%20about%20ELSE%20back%20then.%20As%20you%20probably%20know%2C%20it%20has%20frequency%20response%20and%20pole-zero%20plots%20as%20well%2C%20and%20there's%20also%20a%20section%20about%20the%20Z-plane%20in%20the%20wonderful%20live-electronics%20tutorial.%20In%20fact%2C%20these%20are%20the%20main%20reasons%2C%20why%20I%20decided%20to%20update%20my%20patch.%3C%2Fp%3E%5Cn%3Cp%3ESo%20the%20new%20version%20of%20my%20pole-zero%20diagram%20has%20two%20additional%20features%3A%20First%2C%20you%20can%20now%20switch%20between%20linear%20and%20logarithmic%20scaling%20of%20both%20amplitude%20and%20frequency%2C%20and%20second%2C%20I%20added%20some%20examples%20of%20standard%20filter%20types%2C%20so%20that%20you%20can%20also%20see%20the%20effect%20of%20changing%20a%20filter's%20parameters%20on%20the%20positions%20of%20its%20poles%20and%20zeros.%3C%2Fp%3E%5Cn%3Cp%3EI%20hope%20this%20may%20be%20helpful%20for%20some%20of%20you.%20If%20something's%20wrong%20with%20the%20patch%20or%20the%20filter%20examples%2C%20please%20tell%20me!%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2216017%22%2C%22username%22%3A%22manuels%22%2C%22userslug%22%3A%22manuels%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc12d43f96167d62e766daf4271c0bce4%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A3%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A12%7D%2C%7B%22tid%22%3A%2214568%22%2C%22uid%22%3A%2216619%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2271383%22%2C%22title%22%3A%22Avoid%20clicks%20controlling%20Time%20Delay%20with%20MIDI%20Knob%22%2C%22slug%22%3A%2214568%2Favoid-clicks-controlling-time-delay-with-midi-knob%22%2C%22timestamp%22%3A%221704479101525%22%2C%22lastposttime%22%3A%221704624655831%22%2C%22postcount%22%3A%228%22%2C%22viewcount%22%3A%221162%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2271395%22%2C%22relativeTime%22%3A%222024-01-05T18%3A25%3A01.525Z%22%2C%22lastposttimeISO%22%3A%222024-01-07T10%3A50%3A55.831Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2216619%22%2C%22username%22%3A%22Zooquest%22%2C%22userslug%22%3A%22zooquest%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F16619-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2271395%22%2C%22uid%22%3A%223906%22%2C%22timestamp%22%3A%222024-01-07T10%3A50%3A55.831Z%22%2C%22tid%22%3A%2214568%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fzooquest%5C%22%3E%40Zooquest%3C%2Fa%3E%20said%3A%3C%2Fp%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3EI'd%20really%20like%20to%20re-create%20the%20stompbox%20delay%2Fecho%20effect%3A%20send%20a%20short%20sound%20and%20change%20the%20delay%20time%20fast%2C%20with%20feedback%20%3Cimg%20class%3D%5C%22emoji%20emoji-extended%5C%22%20src%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fplugins%2Fnodebb-plugin-emoji-extended%2Fimages%2Fsunglasses.png%5C%22%20title%3D%5C%22sunglasses%5C%22%20alt%3D%5C%22%3Asunglasses%3A%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3EDoes%20that%20change%20the%20pitch%20on%20a%20stomp%20box%3F%3Cbr%20%2F%3E%5CnIf%20it%20does%20then%20this%20might%20be%20better....%20%3Ca%20href%3D%5C%22https%3A%2F%2Fforum.pdpatchrepo.info%2Ftopic%2F13234%2Ftape-loop-effect%2F8%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fforum.pdpatchrepo.info%2Ftopic%2F13234%2Ftape-loop-effect%2F8%3C%2Fa%3E%20...%20although%20it%20needs%20to%20be%20run%20in%20Pd%200.47%20(32-bit%20for%20%5Bipoke~%5D%20and%20with%20%5Btext%5D%20built-in)%20unless%20you%20can%20build%20a%2064-bit%20%5Bipoke~%5D%20for%20your%20system.%3Cbr%20%2F%3E%5CnThe%20other%20option%20is%20to%20use%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fjameslo%5C%22%3E%40jameslo%3C%2Fa%3E's%2064%20bit%20virtual%20ipoke~%20which%20I%20have%20added%20to%20the%20bottom%20of%20that%20thread%2C%20on%20an%20up-to-date%20version%20of%20Pd.%3Cbr%20%2F%3E%5CnBut%20that%20might%20bring%20the%20clicks%20back.%3Cbr%20%2F%3E%5CnDavid.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%223906%22%2C%22username%22%3A%22whale-av%22%2C%22userslug%22%3A%22whale-av%22%2C%22picture%22%3A%22%2Fuploads%2F3906-profileimg.jpg%22%7D%2C%22index%22%3A8%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A13%7D%2C%7B%22tid%22%3A%2214558%22%2C%22uid%22%3A%2216598%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2271340%22%2C%22title%22%3A%22Plants%20play%22%2C%22slug%22%3A%2214558%2Fplants-play%22%2C%22timestamp%22%3A%221703147095163%22%2C%22lastposttime%22%3A%221703163177004%22%2C%22postcount%22%3A%222%22%2C%22viewcount%22%3A%22760%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2271346%22%2C%22relativeTime%22%3A%222023-12-21T08%3A24%3A55.163Z%22%2C%22lastposttimeISO%22%3A%222023-12-21T12%3A52%3A57.004Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2216598%22%2C%22username%22%3A%22Linpassion%22%2C%22userslug%22%3A%22linpassion%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc7b4146a68a574d2bc3953035b2d51f7%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2271346%22%2C%22uid%22%3A%223906%22%2C%22timestamp%22%3A%222023-12-21T12%3A52%3A57.004Z%22%2C%22tid%22%3A%2214558%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Flinpassion%5C%22%3E%40Linpassion%3C%2Fa%3E%20Welcome%20to%20the%20forum.%3Cbr%20%2F%3E%5CnIt%20seems%20you%20have%20your%20plant%20talking%20to%20Pd%2C%20but%20the%20sounds%20you%20are%20producing%20are%20not%20pleasant.%3Cbr%20%2F%3E%5CnI%20don't%20know%20Max%2C%20but%20in%20the%20video%2C%20there%20seems%20to%20be%20a%20background%20music%20and%20synth%20sounds%20generated%20by%20the%20numbers%20arriving%20from%20the%20Arduino.%3Cbr%20%2F%3E%5CnThose%20synth%20sounds%20will%20be%20equally%20possible%20in%20Pd%20as%20in%20Max.%3Cbr%20%2F%3E%5CnA%20lot%20of%20synth%20Pd%20patches%20have%20been%20posted%20on%20this%20forum%20over%20the%20years%2C%20and%20there%20is%20a%20small%20collection%20here.....%20%3Ca%20href%3D%5C%22http%3A%2F%2Fpdpatchrepo.info%2Fpatches%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttp%3A%2F%2Fpdpatchrepo.info%2Fpatches%3C%2Fa%3E%3Cbr%20%2F%3E%5CnYou%20will%20need%20to%20decide%20whether%20you%20want%20the%20incoming%20numbers%20to%20control%20pitch%2C%20or%20volume%2C%20or%20both%2C%20or%20trigger%20music%20sample%20playback%2C%20drum%20sounds%20etc....%20you%20can%20do%20anything%20you%20want.%3Cbr%20%2F%3E%5CnDavid.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%223906%22%2C%22username%22%3A%22whale-av%22%2C%22userslug%22%3A%22whale-av%22%2C%22picture%22%3A%22%2Fuploads%2F3906-profileimg.jpg%22%7D%2C%22index%22%3A2%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A14%7D%2C%7B%22tid%22%3A%226007%22%2C%22uid%22%3A%222857%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%226002%22%2C%22title%22%3A%22Map%20Object%22%2C%22slug%22%3A%226007%2Fmap-object%22%2C%22timestamp%22%3A%221330106986000%22%2C%22lastposttime%22%3A%221701003590068%22%2C%22postcount%22%3A%226%22%2C%22viewcount%22%3A%2212732%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaser_timestamp%22%3A%222012-02-24T18%3A09%3A46.000Z%22%2C%22relativeTime%22%3A%222012-02-24T18%3A09%3A46.000Z%22%2C%22teaserPid%22%3A%2271164%22%2C%22lastposttimeISO%22%3A%222023-11-26T12%3A59%3A50.068Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%222857%22%2C%22username%22%3A%22danarf%22%2C%22userslug%22%3A%22danarf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F495f76fe344ebd8afbc9945c871a7c28%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2271164%22%2C%22uid%22%3A%2216568%22%2C%22timestamp%22%3A%222023-11-26T12%3A59%3A50.068Z%22%2C%22tid%22%3A%226007%22%2C%22content%22%3A%22%3Cp%3EI've%20been%20using%20this%20method.%20You%20use%20expr%20in%20this%20format.%3C%2Fp%3E%5Cn%3Cp%3E%5Bexpr%20(((OldValue%20-%20OldMin)%20*%20(NewMax%20-%20NewMin))%20%2F%20(OldMax%20-%20OldMin))%20%2B%20NewMin%5D%3C%2Fp%3E%5Cn%3Cp%3EWhen%20mapping%20ctl%20values%20in%2C%20I%20often%20start%20by%20mapping%20to%20the%20range%20-1%20to%201%20which%20would%20look%20like%20this.%3C%2Fp%3E%5Cn%3Cp%3E%5Bexpr%20(((%24f1%20-%200)%20*%20(1%20-%20-1))%20%2F%20(127%20-%200))%20%2B%20-1%5D%3C%2Fp%3E%5Cn%3Cp%3EThat'll%20take%20whatever%20the%20ctl%20value%20(1-127)%20coming%20in%20and%20convert%20it%20to%20the%20rage%20of%20-1%20to%201.%20The%20old%20min%20and%20old%20max%20are%20the%20min%20and%20max%20of%20the%20data%20coming%20in%20and%20the%20new%20min%20and%20max%20represent%20the%20range%20of%20the%20values%20you%20want.%3C%2Fp%3E%5Cn%3Cp%3EHope%20that%20helps.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2216568%22%2C%22username%22%3A%22pmoney%22%2C%22userslug%22%3A%22pmoney%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F222e363d70081104fbd954bf615fc5b0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A6%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A15%7D%2C%7B%22teaserPid%22%3A%2271102%22%2C%22timestamp%22%3A%221700217684984%22%2C%22viewcount%22%3A%22730%22%2C%22uid%22%3A%2216556%22%2C%22cid%22%3A%222%22%2C%22postcount%22%3A%222%22%2C%22mainPid%22%3A%2271101%22%2C%22lastposttime%22%3A%221700219397915%22%2C%22slug%22%3A%2214522%2Fis-it-possible-to-group-different-soundfiles-in-only-one-message%22%2C%22title%22%3A%22Is%20it%20possible%20to%20group%20different%20soundfiles%20in%20only%20one%20message%3F%22%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22tid%22%3A%2214522%22%2C%22locked%22%3Afalse%2C%22relativeTime%22%3A%222023-11-17T10%3A41%3A24.984Z%22%2C%22lastposttimeISO%22%3A%222023-11-17T11%3A09%3A57.915Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2216556%22%2C%22username%22%3A%22Carlos%22%2C%22userslug%22%3A%22carlos%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F16556-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2271102%22%2C%22uid%22%3A%2215415%22%2C%22timestamp%22%3A%222023-11-17T11%3A09%3A57.915Z%22%2C%22tid%22%3A%2214522%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fcarlos%5C%22%3E%40Carlos%3C%2Fa%3E%20You%20need%20to%20put%20the%20file%20names%20in%20%5Blist%20store%5D%20and%20use%20its%20%5Bget(%20method.%20You%20can%20also%20use%20%5Blist%20store%5D's%20%5Bdelete(%20method%20if%20you%20only%20want%20it%20to%20play%20each%20file%20once%20but%20then%20you%20also%20need%20to%20add%20a%20counter%20to%20decrease%20the%20the%20value%20to%20the%20right%20inlet%20of%20%5Brandom%5D.%3Cbr%20%2F%3E%5Cn%3Ca%20href%3D%5C%22%2Fuploads%2Ffiles%2F1700219363506-random-play.pd%5C%22%3Erandom-play.pd%3C%2Fa%3E%3Cbr%20%2F%3E%5Cn%3Cimg%20src%3D%5C%22%2Fuploads%2Ffiles%2F1700219396233-untitled.png%5C%22%20alt%3D%5C%22Untitled.png%5C%22%20class%3D%5C%22img-responsive%20img-markdown%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2215415%22%2C%22username%22%3A%22oid%22%2C%22userslug%22%3A%22oid%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F15415-profileimg.jpg%22%7D%2C%22index%22%3A2%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A16%7D%2C%7B%22tid%22%3A%2214504%22%2C%22uid%22%3A%2213475%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2271000%22%2C%22title%22%3A%22Automatic%20animation%20of%20standard%20gem%20grafic%20objects.%22%2C%22slug%22%3A%2214504%2Fautomatic-animation-of-standard-gem-grafic-objects%22%2C%22timestamp%22%3A%221698740565048%22%2C%22lastposttime%22%3A%221698740565055%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%22529%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22relativeTime%22%3A%222023-10-31T08%3A22%3A45.048Z%22%2C%22lastposttimeISO%22%3A%222023-10-31T08%3A22%3A45.055Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2213475%22%2C%22username%22%3A%22fab123%22%2C%22userslug%22%3A%22fab123%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F42ec55e21850955235a54747932f84f3%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A17%7D%2C%7B%22teaserPid%22%3A%2270710%22%2C%22timestamp%22%3A%221692815353106%22%2C%22viewcount%22%3A%221280%22%2C%22uid%22%3A%2216494%22%2C%22cid%22%3A%222%22%2C%22postcount%22%3A%224%22%2C%22mainPid%22%3A%2270700%22%2C%22lastposttime%22%3A%221692875982546%22%2C%22slug%22%3A%2214455%2Fseeking-creative-solutions-for-midi-data-manipulation-in-pure-data-extended%22%2C%22title%22%3A%22Seeking%20Creative%20Solutions%20for%20MIDI%20Data%20Manipulation%20in%20Pure%20Data%20Extended%22%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22tid%22%3A%2214455%22%2C%22locked%22%3Afalse%2C%22relativeTime%22%3A%222023-08-23T18%3A29%3A13.106Z%22%2C%22lastposttimeISO%22%3A%222023-08-24T11%3A19%3A42.546Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2216494%22%2C%22username%22%3A%22gazzyjuruj%22%2C%22userslug%22%3A%22gazzyjuruj%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fa60ad69030a9b6fdf52085473e0d9f71%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2270710%22%2C%22uid%22%3A%2215415%22%2C%22timestamp%22%3A%222023-08-24T11%3A19%3A42.546Z%22%2C%22tid%22%3A%2214455%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fgazzyjuruj%5C%22%3E%40gazzyjuruj%3C%2Fa%3E%20You%20need%20to%20install%20the%20externals%20required%20and%20then%20declare%20the%20symbols%20in%20the%20patch.%20To%20install%20externals%20go%20to%20menu%20help-%26gt%3Bfind%20externals%20and%20search%20for%20the%20missing%20objects%20which%20will%20bring%20up%20a%20list%20of%20libraries%20which%20contain%20objects%20with%20that%20name%2C%20install%20them.%20Then%20add%20%5Bdeclare%5D%20for%20that%20object%2C%20the%20%5Bdeclare%5D%20helpfile%20will%20explain%20its%20use.%20This%20is%20a%20much%20better%20setup%20than%20the%20extended%20way%20of%20just%20trying%20to%20include%20all%20externals%2C%20more%20portable%20and%20the%20%5Bdeclare%5Ds%20means%20anyone%20who%20downloads%20the%20patch%20will%20know%20exactly%20what%20libraries%20you%20used%20so%20they%20do%20not%20need%20to%20hunt%20for%20them.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2215415%22%2C%22username%22%3A%22oid%22%2C%22userslug%22%3A%22oid%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F15415-profileimg.jpg%22%7D%2C%22index%22%3A4%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A18%7D%2C%7B%22tid%22%3A%2214451%22%2C%22uid%22%3A%2215747%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%2270676%22%2C%22title%22%3A%22BPM%20stretchable%20audio%20looper%22%2C%22slug%22%3A%2214451%2Fbpm-stretchable-audio-looper%22%2C%22timestamp%22%3A%221692398993673%22%2C%22lastposttime%22%3A%221692398993683%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%22731%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22relativeTime%22%3A%222023-08-18T22%3A49%3A53.673Z%22%2C%22lastposttimeISO%22%3A%222023-08-18T22%3A49%3A53.683Z%22%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2215747%22%2C%22username%22%3A%22patchworks%22%2C%22userslug%22%3A%22patchworks%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F279866cd89bfc3ca54a6a301bdccc192%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A19%7D%5D%2C%22nextStart%22%3A20%2C%22pageCount%22%3A57%2C%22isIgnored%22%3Afalse%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22patch~%22%2C%22url%22%3A%22%2Fcategory%2F2%2Fpatch%22%7D%5D%2C%22privileges%22%3A%7B%22cid%22%3A%222%22%2C%22uid%22%3A0%2C%22topics%3Acreate%22%3Afalse%2C%22editable%22%3Afalse%2C%22view_deleted%22%3Afalse%2C%22read%22%3Atrue%7D%2C%22showSelect%22%3Afalse%2C%22currentPage%22%3A1%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Fcategory%2F2.rss%22%2C%22pagination%22%3A%7B%22rel%22%3A%5B%7B%22rel%22%3A%22next%22%2C%22href%22%3A%22%3Fpage%3D2%22%7D%5D%2C%22pages%22%3A%5B%7B%22page%22%3A1%2C%22active%22%3Atrue%2C%22qs%22%3A%22page%3D1%22%7D%2C%7B%22page%22%3A2%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D2%22%7D%2C%7B%22page%22%3A3%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D3%22%7D%2C%7B%22separator%22%3Atrue%7D%2C%7B%22page%22%3A56%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D56%22%7D%2C%7B%22page%22%3A57%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D57%22%7D%5D%2C%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D1%22%7D%2C%22next%22%3A%7B%22page%22%3A2%2C%22active%22%3Atrue%2C%22qs%22%3A%22page%3D2%22%7D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22category%22%2C%22category%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.3%22%2C%22siteTitle%22%3A%22PURE%20DATA%20forum~%22%2C%22showSiteTitle%22%3Afalse%2C%22postDelay%22%3A%220%22%2C%22minimumTitleLength%22%3A%221%22%2C%22maximumTitleLength%22%3A%22300%22%2C%22minimumPostLength%22%3A%221%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%22100%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Atrue%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Afalse%2C%22disableChat%22%3Afalse%2C%22maxReconnectionAttempts%22%3A%225%22%2C%22reconnectionDelay%22%3A%22200%22%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A%223%22%2C%22maximumTagLength%22%3A%2215%22%2C%22topicsPerPage%22%3A%2220%22%2C%22postsPerPage%22%3A%2220%22%2C%22maximumFileSize%22%3A%228192%22%2C%22theme%3Aid%22%3A%22nodebb-theme-lavender%22%2C%22theme%3Asrc%22%3A%22%22%2C%22defaultLang%22%3A%22en_GB%22%2C%22userLang%22%3A%22en_GB%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.3-3-gf7648c2%22%2C%22script-buster%22%3A%22153e09e4%22%2C%22css-buster%22%3A%22b43aec11%22%2C%22requireEmailConfirmation%22%3Atrue%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22T64wdHHo-LLAhHeahYvnEC-mW-tUNox9ODgs%22%2C%22searchEnabled%22%3Atrue%2C%22disableMasonry%22%3Afalse%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cr%5Cn%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cr%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cr%5Cn%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cr%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cr%5Cn%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cr%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cr%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cr%5Cn%5Cr%5Cn%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cr%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Cr%5Cn%5Ct%3Cscript%3E%5Cr%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cr%5Cn%5Ct%3C%2Fscript%3E%5Cr%5Cn%3C%2Fbody%3E%5Cr%5Cn%3C%2Fhtml%3E%5Cr%5Cn%22%2C%22metaTags%22%3A%5B%7B%22name%22%3A%22title%22%2C%22content%22%3A%22patch~%22%7D%2C%7B%22property%22%3A%22og%3Atitle%22%2C%22content%22%3A%22patch~%22%7D%2C%7B%22name%22%3A%22description%22%2C%22content%22%3A%22Discover%20and%20share%20your%20patches%20(both%20audio%20%26amp%3B%20video)%22%7D%2C%7B%22property%22%3A%22og%3Atype%22%2C%22content%22%3A%22website%22%7D%5D%2C%22linkTags%22%3A%5B%7B%22rel%22%3A%22alternate%22%2C%22type%22%3A%22application%2Frss%2Bxml%22%2C%22href%22%3A%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fcategory%2F2.rss%22%7D%2C%7B%22rel%22%3A%22up%22%2C%22href%22%3A%22http%3A%2F%2Fforum.pdpatchrepo.info%22%7D%2C%7B%22rel%22%3A%22next%22%2C%22href%22%3A%22%3Fpage%3D2%22%7D%5D%2C%22template%22%3A%22category%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

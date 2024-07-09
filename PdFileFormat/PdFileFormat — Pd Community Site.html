@@ -1,0 +1,1015 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0049)https://puredata.info/docs/developer/PdFileFormat -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <title>
+        PdFileFormat
+        —
+        Pd Community Site
+    </title>
+
+    
+      
+        <!--<base href="https://puredata.info/docs/developer/PdFileFormat">--><base href=".">
+      
+    
+
+    <meta name="generator" content="Plone - http://plone.org">
+
+    <meta content="Unofficial PD v0.37 fileformat specification      by Simon Asselbergs and Tjeerd Sietsma    Hogeschool voor de Kunsten Utrecht    Faculty of Art Media and Technology     October 23rd 2004
+      ..." name="description">
+
+    <!-- Plone ECMAScripts -->
+    
+      
+        
+            
+                <script type="text/javascript" src="./PdFileFormat — Pd Community Site_files/ploneScripts2304.js.download">
+                </script>
+                
+            
+            
+                <script type="text/javascript" src="./PdFileFormat — Pd Community Site_files/ploneScripts2882.js.download">
+                </script>
+                
+            
+        
+    
+    
+
+    
+	
+          
+        
+            
+                
+                    
+                    
+                        <style type="text/css"><!-- @import url(https://puredata.info/portal_css/Plone%20Default/ploneStyles6559.css); --></style>
+                    
+                    
+                
+            
+            
+                
+                    <link rel="alternate stylesheet" type="text/css" media="screen" href="./PdFileFormat — Pd Community Site_files/ploneStyles2410.css" title="Small Text">
+                    
+                    
+                
+            
+            
+                
+                    <link rel="alternate stylesheet" type="text/css" media="screen" href="./PdFileFormat — Pd Community Site_files/ploneStyles2700.css" title="Large Text">
+                    
+                    
+                
+            
+            
+                
+                    
+                    
+                        <style type="text/css" media="all"><!-- @import url(https://puredata.info/portal_css/Plone%20Default/ploneStyles6568.css); --></style>
+                    
+                    
+                
+            
+        
+    
+        
+        
+    
+
+    <!-- Internet Explorer CSS Fixes -->
+    <!--[if lt IE 7]>
+        <style type="text/css" media="all">@import url(https://puredata.info/IEFixes.css);</style>
+    <![endif]-->
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://puredata.info/favicon.ico">
+
+    <link rel="home" href="https://puredata.info/" title="Front page">
+    <link rel="search" href="https://puredata.info/search_form" title="Search this site">
+    <link rel="author" href="https://puredata.info/author/" title="Author information">
+    <link rel="contents" href="https://puredata.info/sitemap" title="Site Map">
+
+    
+
+    
+
+    <link rel="up" href="https://puredata.info/docs/developer" title="Up one level">
+
+    
+
+    <!-- Disable IE6 image toolbar -->
+    <meta http-equiv="imagetoolbar" content="no">
+
+    
+      
+      
+      
+      <style type="text/css">
+        <!-- .documentActions {margin-top:0} /* fix layout in plone 2.0 */-->
+      </style>
+    
+    
+
+    
+
+      
+    
+    
+    
+    
+    
+
+
+      
+      
+    
+    <meta name="keywords" content="Pd File Format">
+    <meta name="description" content="Unofficial PD v0.37 fileformat specification      by Simon Asselbergs and Tjeerd Sietsma    Hogeschool voor de Kunsten Utrecht    Faculty of Art Media and Technology     October 23rd 2004
+      ...">
+  
+    
+      
+    
+
+    
+      
+      
+    
+
+  </head>
+
+  <body class="section-docs" dir="ltr">
+    <div id="visual-portal-wrapper">
+
+      <div id="portal-top">
+
+        <div id="portal-header">
+          <a class="hiddenStructure" accesskey="2" href="https://puredata.info/docs/developer/PdFileFormat#documentContent">Skip to content.</a>
+
+          <a class="hiddenStructure" accesskey="6" href="https://puredata.info/docs/developer/PdFileFormat#portlet-navigation-tree">Skip to navigation</a>
+
+             <ul id="portal-siteactions">
+
+    <li id="siteaction-sitemap"><a href="https://puredata.info/sitemap" accesskey="3" title="Site Map">Site Map</a></li>
+    <li id="siteaction-accessibility"><a href="https://puredata.info/accessibility-info" accesskey="0" title="Accessibility">Accessibility</a></li>
+    <li id="siteaction-contact"><a href="https://puredata.info/contact-info" accesskey="9" title="Contact">Contact</a></li>
+
+</ul>
+
+             <div id="portal-searchbox">
+    <form name="searchform" action="https://puredata.info/search" style="white-space:nowrap" onsubmit="return liveSearchSubmit()">
+
+        <label for="searchGadget" class="hiddenStructure">Search Site</label>
+
+        <div class="LSBox">
+        <input id="searchGadget" tabindex="30000" name="SearchableText" type="text" size="15" title="Search Site" accesskey="4" class="visibility:visible" autocomplete="off">
+
+        <input class="searchButton" type="submit" value="Search">
+
+        <div class="LSResult" id="LSResult" style="display: none;"><div class="LSShadow" id="LSShadow"></div></div>
+        </div>
+    </form>
+
+    <div id="portal-advanced-search" class="hiddenStructure">
+        <a href="https://puredata.info/search_form" accesskey="5">
+            Advanced Search…
+        </a>
+    </div>
+
+</div>
+
+             <h1 id="portal-logo">
+    <a href="https://puredata.info/" accesskey="1">Pd Community Site</a>
+</h1>
+
+             <div id="portal-skinswitcher">
+  
+</div>
+
+             
+    <h5 class="hiddenStructure">Sections</h5>
+
+    <ul id="portal-globalnav">
+        <li id="portaltab-downloads" class="plain">
+            <a href="https://puredata.info/downloads" title="All sorts of software built on/with/for Pd.  For a quick start, download the &quot;vanilla&quot; Pure Data.">downloads</a></li>
+        <li id="portaltab-docs" class="selected">
+            <a href="https://puredata.info/docs" title="This section of the website is a central resource for finding all sorts of information about Pd, whether that information is on this website or elsewhere.  Its all a wiki, so we encourage you to contribute what you can.">documentation</a></li>
+        <li id="portaltab-dev" class="plain">
+            <a href="https://puredata.info/dev" title="content related to the development of Pd">development</a></li>
+        <li id="portaltab-community" class="plain">
+            <a href="https://puredata.info/community" title="">community</a></li>
+        <li id="portaltab-Members" class="plain">
+            <a href="https://puredata.info/Members" title="Container for portal members&#39; home directories">members</a></li>
+        <li id="portaltab-exhibition" class="plain">
+            <a href="https://puredata.info/exhibition" title="an exhibition of works made with Pd curated by the Pd community">exhibition</a></li>
+        <li id="portaltab-privacy" class="plain">
+            <a href="https://puredata.info/privacy" title="">Privacy Policy</a></li>
+    </ul>
+
+          </div>
+
+          <div id="portal-personaltools-wrapper">
+
+<h5 class="hiddenStructure">Personal tools</h5>
+
+<ul id="portal-personaltools">
+   
+
+    
+        <li>
+            <a href="https://puredata.info/login_form">
+               Log in
+            </a>
+        </li>
+    
+    
+        <li>
+            <a href="https://puredata.info/join_form">
+               Join
+            </a>
+        </li>
+    
+
+</ul>
+</div>
+
+           <div id="portal-breadcrumbs">
+
+    <span id="breadcrumbs-you-are-here">You 
+are here:</span>
+    <a href="https://puredata.info/">Home</a>
+    <span class="breadcrumbSeparator">
+        → 
+         
+    </span>
+    <span dir="ltr">
+        
+            <a href="https://puredata.info/docs">documentation</a>
+            <span class="breadcrumbSeparator"> 
+                → 
+                 
+            </span>
+            
+         
+    </span>
+    <span dir="ltr">
+        
+            <a href="https://puredata.info/docs/developer">developer</a>
+            <span class="breadcrumbSeparator"> 
+                → 
+                 
+            </span>
+            
+         
+    </span>
+    <span dir="ltr">
+        
+            
+            
+            <span>PdFileFormat</span>
+         
+    </span>
+
+</div>
+      </div>
+
+      <div class="visualClear"><!-- --></div>
+
+      
+
+      <table id="portal-columns">
+        <tbody>
+          <tr>
+            
+            <td id="portal-column-one">
+              <div class="visualPadding">
+                
+                  
+
+    
+        
+
+        
+            
+       
+<dl class="portlet" id="portlet-navigation-tree">
+   <!-- Commented out Navigation header. ON SUNDAY 11 MARCH 2012 M.D. <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        
+        <a href="#" 
+           class="tile"
+           tal:content="name"
+           tal:condition="name"
+           tal:attributes="href string:$portal_url/sitemap" 
+           >Navigation</a>
+        <a href="#" 
+           class="tile"
+           tal:condition="not:name"
+           tal:attributes="href string:$portal_url/sitemap" 
+           i18n:translate="">Navigation</a>
+
+           
+        <span class="portletTopRight"></span>
+    </dt> -->
+    
+    <dd class="portletItem lastItem">
+        <ul class="portletNavigationTree navTreeLevel0">
+            
+              <li class="navTreeItem">
+                   <div class="contenttype-plone-site">
+                       <a class="visualIconPadding" href="https://puredata.info/" title="Community Portal for Pure Data">
+                       Home
+                       </a>
+                   </div>
+               </li>
+               
+            
+            
+                
+                
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-plonesoftwarecenter">
+        
+        
+        <a href="https://puredata.info/downloads" class="state-published visualIconPadding" title="All sorts of software built on/with/for Pd.  For a quick start, download the &quot;vanilla&quot; Pure Data.">downloads</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/docs" class="state-published visualIconPadding" title="This section of the website is a central resource for finding all sorts of information about Pd, whether that information is on this website or elsewhere.  Its all a wiki, so we encourage you to contribute what you can.">documentation</a>
+        
+    </div>
+
+    <ul class="navTree navTreeLevel1">
+        
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-helpcenterfaqfolder">
+        
+        
+        <a href="https://puredata.info/docs/faq" class="state-published visualIconPadding" title="Frequently Asked Questions regarding  Pd (now with answers)
+
+If you have something to contribute to this page, log into puredata.info and you will have edit access.">FAQ for Pd</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-zwikifolder">
+        
+        
+        <a href="https://puredata.info/docs/developer" class="state-published visualIconPadding" title="This section covers topics related to the development of Pd itself, like getting source code, building, packaging, etc.">developer</a>
+        
+    </div>
+
+    <ul class="navTree navTreeLevel2">
+        
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-wiki-page">
+        <a href="https://puredata.info/docs/developer/PdFileFormat" class="state-missing-value navTreeCurrentItem visualIconPadding" title="Unofficial PD v0.37 fileformat specification      by Simon Asselbergs and Tjeerd Sietsma    Hogeschool voor de Kunsten Utrecht    Faculty of Art Media and Technology     October 23rd 2004
+      ...">PdFileFormat</a>
+        
+        
+        
+    </div>
+
+    
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/docs/manuals" class="state-published visualIconPadding" title="Manuals for many Pd-related things.">manuals</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-zwikifolder">
+        
+        
+        <a href="https://puredata.info/docs/guiplugins" class="state-published visualIconPadding" title="As of Pd 0.43, you can customize the behavior of the GUI using plugins.  This is space for the documentation of these GUI plugins.">GUI Plugins</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/docs/workshops" class="state-published visualIconPadding" title="A listing of workshops given around that world that are related to Pd.  Most include the class materials for downloading and freely using.">workshops</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/docs/style-guide" class="state-published visualIconPadding" title="A collection of patch construction guidance in the vein of Python&#39;s PEP8 (http://www.python.org/dev/peps/pep-0008/).  To add to the menagerie of styles, add a page describing your habits, tips, and reasonings.  Typical entries would include: Layout (i.e. presentation and organization), Comments, Arguments, Triggers, Send/Receive/Value naming conventions, Abstraction/Subpatch naming conventions, Interfacing (APIs and inter-patch communication), and general &quot;Programming Recommendations&quot; (e.g. counters, initialization, negating values and other everyday stuffs)">Style Guide</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-zwikifolder">
+        
+        
+        <a href="https://puredata.info/docs/sitedocs" class="state-published visualIconPadding" title="Documentation about how to do things on this website, puredata.info">Site Docs</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/docs/tutorials" class="state-published visualIconPadding" title="Pure Data Tutorials covering all sorts of topics">tutorials/howtos</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/docs/articles" class="state-published visualIconPadding" title="">articles</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/docs/old" class="state-published visualIconPadding" title="a resting place for old stuff">old</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-zwikifolder">
+        
+        
+        <a href="https://puredata.info/docs/raspberry-pi" class="state-published visualIconPadding" title="section to document Pd on Raspberry Pi">Raspberry Pi</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/docs/recycle_bin" class="state-published visualIconPadding" title="">deleted wiki pages</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/dev" class="state-published visualIconPadding" title="content related to the development of Pd">development</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/community" class="state-published visualIconPadding" title="">community</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-large-plone-folder">
+        
+        
+        <a href="https://puredata.info/Members" class="state-published visualIconPadding" title="Container for portal members&#39; home directories">members</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/exhibition" class="state-published visualIconPadding" title="an exhibition of works made with Pd curated by the Pd community">exhibition</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker">
+
+    
+
+    <div class="contenttype-folder">
+        
+        
+        <a href="https://puredata.info/privacy" class="state-published visualIconPadding" title="">Privacy Policy</a>
+        
+    </div>
+
+    
+    
+</li>
+
+
+                
+            
+        </ul>
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+</dl>
+
+
+        
+
+        
+
+        
+    
+    
+        
+
+        
+            
+        
+
+        
+
+        
+    
+    
+        
+
+        
+            
+        
+
+        
+
+        
+    
+
+                
+                &nbsp;
+              </div>
+            </td>
+            
+
+            
+            <td id="portal-column-content">
+
+              
+                <div id="content" class="documentEditable">
+
+                  
+                    
+
+        <h5 class="hiddenStructure">Views</h5>
+
+        <ul class="contentViews">
+
+            
+              <li id="contentview-view" class="selected">
+                <a href="https://puredata.info/docs/developer/PdFileFormat">View</a>
+              </li>
+            
+
+        </ul>
+
+    
+
+                    <div class="contentActions">
+
+        <h5 class="hiddenStructure">Actions</h5>
+
+        <ul class="actionItems">
+            <li id="contentaction-recentchanges">
+              
+                <a class="" href="https://puredata.info/docs/developer/FrontPage/recentchanges">
+                
+                    
+                    
+                    Wiki changes
+                </a>
+                
+            </li>
+            <li id="contentaction-contents">
+              
+                <a class="" href="https://puredata.info/docs/developer/FrontPage/contents#PdFileFormat">
+                
+                    
+                    
+                    Wiki contents
+                </a>
+                
+            </li>
+            <li id="contentaction-backlinks">
+              
+                <a class="" href="https://puredata.info/docs/developer/PdFileFormat/backlinks">
+                
+                    
+                    
+                    Related pages
+                </a>
+                
+            </li>
+            <li id="contentaction-history">
+              
+                <a class="" href="https://puredata.info/docs/developer/PdFileFormat/diff">
+                
+                    
+                    
+                    History
+                </a>
+                
+            </li>
+        </ul>
+
+        
+
+<ul>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+</ul>
+
+
+
+    </div>
+                  
+
+                  <div class="documentContent" id="region-content">
+
+                    <a name="documentContent"></a>
+
+                    
+
+                    
+
+                    
+      
+      <!-- always-available zwiki access keys -->
+      <a accesskey="f" href="https://puredata.info/docs/developer/FrontPage"></a>
+      <a accesskey="c" href="https://puredata.info/docs/developer/FrontPage/contents#PdFileFormat"></a>
+      <a accesskey="r" href="https://puredata.info/docs/developer/FrontPage/recentchanges"></a>
+      
+      
+      
+      
+      <a accesskey="o" href="https://puredata.info/docs/developer/FrontPage/useroptions"></a>
+      <a accesskey="h" href="https://puredata.info/docs/developer/FrontPage/helppage"></a>
+      <a accesskey="-" href="https://puredata.info/docs/developer/PdFileFormat/setskin?skin=zwiki&amp;came_from=https%3A//puredata.info/docs/developer/PdFileFormat"></a>
+      <a accesskey="+" href="https://puredata.info/docs/developer/PdFileFormat/setskin?skin=plone&amp;came_from=https%3A//puredata.info/docs/developer/PdFileFormat"></a>
+      <a accesskey="v" href="https://puredata.info/docs/developer/PdFileFormat"></a>
+      <a accesskey="m" href="https://puredata.info/docs/developer/PdFileFormat/subscribeform"></a>
+      <a accesskey="b" href="https://puredata.info/docs/developer/PdFileFormat/backlinks"></a>
+      <a accesskey="d" href="https://puredata.info/docs/developer/PdFileFormat/diff"></a>
+      <a accesskey="y" href="https://puredata.info/docs/developer/PdFileFormat/manage_change_history_page"></a>
+      <a accesskey="e" href="https://puredata.info/docs/developer/PdFileFormat/editform"></a>
+      <a accesskey="x" href="https://puredata.info/docs/developer/externalEdit_/PdFileFormat?borrow_lock=1"></a>
+      <a accesskey="n" href="https://puredata.info/docs/developer/DirectoryLayout"></a>
+      <a accesskey="p" href="https://puredata.info/docs/developer/SVNCommitAccess"></a>
+      <a accesskey="u" href="https://puredata.info/docs/developer/FrontPage"></a>
+      <a accesskey="0" href="https://puredata.info/docs/developer/PdFileFormat/showAccessKeys"></a>
+    
+      <div class="pageheader">
+      <!-- page header -->
+      <form method="GET" action="https://puredata.info/docs/developer/FrontPage/searchwiki">
+        <table width="100%" border="0" cellspacing="0">
+          <tbody><tr>
+            <!-- logo -->
+            
+            <!-- page name and context (parent topics) -->
+            <td align="left" width="79%">
+              
+                <ul class="outline expandable">
+ <li><a href="https://puredata.info/docs/developer/FrontPage" name="FrontPage">FrontPage</a>
+<ul class="outline expandable">
+ <li><h1 style="display:inline;"><a href="https://puredata.info/docs/developer/PdFileFormat/backlinks" title="which pages link to this one ?" name="PdFileFormat">PdFileFormat</a></h1></li>
+</ul>
+ </li>
+</ul>
+
+              
+              
+            </td>
+            <!-- search form & page info -->
+            <td class="searchbox" width="20%" align="right">
+              
+              
+                <span class="lasteditor">last edited  <a href="https://puredata.info/docs/developer/PdFileFormat/diff" title="show last edit ()">12 years</a> ago by <b>pduboue</b></span>
+                <div class="documentActions">
+    
+
+    <h5 class="hiddenStructure">Document Actions</h5>
+
+    <ul>
+    
+        <li>
+            <a href="https://puredata.info/docs/developer/PdFileFormat/sendto_form">
+
+                <img src="./PdFileFormat — Pd Community Site_files/mail_icon.gif" alt="Send this page to somebody" title="Send this page to somebody" id="icon-sendto">
+            </a>
+        </li>
+    
+    
+        <li>
+            <a href="javascript:this.print();">
+
+                <img src="./PdFileFormat — Pd Community Site_files/print_icon.gif" alt="Print this page" title="Print this page" id="icon-print">
+            </a>
+        </li>
+    
+
+    </ul>
+    
+
+    
+
+</div>
+              
+            </td>
+          </tr>
+        </tbody></table>
+      </form>
+    </div>
+      <div align="right">  
+      <!-- page rating form -->
+      <div>
+        <a name="ratingform"></a>
+        <style type="text/css">
+          input.rating {border:none;}
+        </style>
+        <form method="POST" id="ratingform" action="https://puredata.info/docs/developer/PdFileFormat/vote">
+           <input type="image" name="vote0" value="0" alt="0" class="rating" width="14" height="13" src="./PdFileFormat — Pd Community Site_files/sp" style="" title="click to vote 0 (poor) for this page (1 votes)"><input type="image" name="vote1" value="1" alt="1" class="rating" src="./PdFileFormat — Pd Community Site_files/star_icon" style="" title="click to vote 1 (average) for this page (1 votes)"><input type="image" name="vote2" value="2" alt="2" class="rating" src="./PdFileFormat — Pd Community Site_files/star_icon" style="" title="click to vote 2 (above average) for this page (1 votes)"><input type="image" name="vote3" value="3" alt="3" class="rating" src="./PdFileFormat — Pd Community Site_files/star_icon" style="" title="click to vote 3 (good) for this page (1 votes)"><input type="image" name="vote4" value="4" alt="4" class="rating" src="./PdFileFormat — Pd Community Site_files/star_icon" style="" title="click to vote 4 (great) for this page (1 votes)"><input type="image" name="vote5" value="5" alt="5" class="rating" src="./PdFileFormat — Pd Community Site_files/star_icon" style="" title="click to vote 5 (superb) for this page (1 votes)">
+        </form>
+      </div>
+    </div>
+      <br>
+      <div class="content">
+      <!-- page content (main text, subtopics links, comments) -->
+      <!--
+      <div metal:use-macro="here/macros/maintext" />
+      <div metal:use-macro="here/macros/subtopics" />
+      <div metal:use-macro="here/macros/comments" />
+      -->
+      <p></p><div align="center">  <p align="center"><span class="Title"><a name="0"></a>Unofficial PD v0.37 fileformat specification</span><br>      <span class="subTitle">by <span class="link-mailto"><a href="mailto:simon3@student-kmt.hku.nl">Simon Asselbergs</a></span> and <span class="link-mailto"><a href="mailto:tjeerd@student-kmt.hku.nl">Tjeerd Sietsma</a></span><br>    Hogeschool voor de Kunsten Utrecht<br>    Faculty of Art Media and Technology <br>    October 23rd 2004<br><br>
+      Copyright (c) 2005 Free Software Foundation.
+      Permission is granted to copy, distribute and/or modify this document
+      under the terms of the GNU Free Documentation License, Version 1.2
+      or any later version published by the Free Software Foundation;
+      with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+         Texts.  A copy of the license is online at
+      <span class="link-external"><a href="http://www.gnu.org/licenses/fdl.html">http://www.gnu.org/licenses/fdl.html</a></span>.
+      Initial authors: Simon Asselbergs and Tjeerd Sietsma.
+</span></p></div><hr width="100%" size="2" noshade=""><div align="center"><a href="https://puredata.info/docs/developer/PdFileFormat#1">introduction</a> | <a href="https://puredata.info/docs/developer/PdFileFormat#2">records</a> | <a href="https://puredata.info/docs/developer/PdFileFormat#3">wiring</a> | <a href="https://puredata.info/docs/developer/PdFileFormat#4">elements and objects</a> | <a href="https://puredata.info/docs/developer/PdFileFormat#5">common parameters</a> | <strong><a href="https://puredata.info/docs/developer/PdFileFormat#6">reference</a></strong> | <a href="https://puredata.info/docs/developer/pd_fileformat.ebnf">EBNF version</a></div><hr width="100%" size="2" noshade=""><p class="Head"><a name="1"></a>Introduction</p><blockquote>  <p>This file describes the fileformat of patchfiles (*.pd) of Miller Puckette's PureData.</p>  <p> It is released because:</p></blockquote><ul>  <li>PureData's patchfile format is officially undocumented.</li>  <li>It may serve as a partial tutorial to help readers understand PureData better.</li></ul><blockquote>  <p>This documents is currently unofficial, beware that there is no warranty whatsoever.<br>  If you find this document incorrect or incomplete please send us an e-mail using the links at the top of this document.<br>  There are a few things still unknown, we don't exclude the possibility those things are used for compatibility with Max.</p>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#0">back to top</a> </p></blockquote><p class="Head"><br>  <a name="2"></a>Records</p><blockquote>  <p>The PD fileformat is a genuine custom textfile format, not to be confused with XML.<br>    It consists of one ore more records.<br>    Each record may cover multiply lines but they all have thesame syntax:</p>  <p> <span class="code"><strong>#</strong>[data]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=data" title="create this page">?</a><strong>;</strong>\r\n</span></p>  <p>where[data]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=data" title="create this page">?</a> holds the record data, \r represents an ASCII code 13 carriage return character, and \n represents an ASCII code 10 line-feed character.<br>    Let us take a closer look on the records contents.</p>  <p>Each record consists of a chunk type, element type and optional parameters like this:</p>  <p class="code"><strong>#</strong>[chunk_type]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=chunk_type" title="create this page">?</a> [element_type]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=element_type" title="create this page">?</a> [p1]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p1" title="create this page">?</a> [p2]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p2" title="create this page">?</a> [p3]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p3" title="create this page">?</a> [...]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=..." title="create this page">?</a><strong>;\r\n</strong></p>  <p>[chunk_type]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=chunk_type" title="create this page">?</a> is a sinlge character with only three possible values: "X" for an object, "N" for a new window, and finally "A" for array data.</p>  <p>[element_type]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=element_type" title="create this page">?</a> is a predefined PD element. This declaration is also used for wires. <em>Object </em>elements are numbered in order of appearance in the file, all other elements are excluded from numbering. These numbers are pure virtual and can not be seen directly in the file.</p>  <p>[p1]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p1" title="create this page">?</a> [p2]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p2" title="create this page">?</a> [p3]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p3" title="create this page">?</a> [...]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=..." title="create this page">?</a> are the required parameters for each element, this differences per element.</p>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#0">back to top</a> </p></blockquote><p class="style13"><br>  <span class="Head"><a name="3"></a>Wiring</span></p><blockquote>  <p>Almost all objects can be interconnected with wires in PureData. Each wire is stored in the file using the following syntax: </p>  <p class="code"><strong>#X connect</strong> [source]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=source" title="create this page">?</a> [outlet_number]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=outlet_number" title="create this page">?</a> [sink]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=sink" title="create this page">?</a> [inlet_number]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=inlet_number" title="create this page">?</a><strong>;\r\n</strong></p>  <p>[source]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=source" title="create this page">?</a> Is the number of the object the data is coming from. [outlet-number]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=outlet-number" title="create this page">?</a> Represents the number of the outlet of the source object where the wire starts. Sequentially, [sink]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=sink" title="create this page">?</a> is the number of the target object, and finally [inlet_number]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=inlet_number" title="create this page">?</a> specifies inlet of the target object to which the wired is connected.<br>    Logically, the objects (again, <strong>connect</strong>s excluded) are numbered from 0 to the total number of objects in the file using the integer format. The inlets and outlets are numbered likewise.<br>    Please keep this in mind, to prevent making often made off-by-one errors.</p>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#0">back to top</a> </p></blockquote><p class="style13"><br>  <span class="Head"><a name="4"></a>Elements and objects </span></p><blockquote>  <p>There's a difference between elements and objects. Elements are the parts that together make up the entire layout of a patch, including windowsizes and position. Objects are the building blocks of PureData that contain functionality, gui-related or not. </p>  <p>All other <strong>elements</strong> are used to build actual PureData objects:</p></blockquote><ul>  <li>array - visual two dimensional array</li>  <li>canvas - specifications for the windowsizes and position </li>  <li>coords - used for graphs </li>  <li>floatatom - number</li>  <li>msg - message</li>  <li>obj - object, empty, subpatch or gui:      <ul>        <li>bang</li>        <li>toggle</li>        <li>nbx</li>        <li>vslider</li>        <li>hslider</li>        <li>vu</li>        <li>canvas - gui element</li>        <li>pd [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a></li>        <li>[name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a></li>      </ul>  </li>  <li>restore - for exiting subwindows and graphs </li>  <li>symbolatom - symbol</li>  <li>text - comment</li></ul><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#0">back to top</a></p></blockquote><p><br>    <span class="Head"><a name="5"></a>Common parameters</span></p><ul>  <li><em>Positions and size</em>: As PureData uses a graphical interface every gui-related element (object, message, number, symbol, comment, bang, toggle, number2, vslider, hslider, vradio, hradio, vu, canvas, graph, array) have a horizontal and vertical position in the window that holds the (sub)patch.<br>    Records of gui elements that have adjustable sizes also contain the horizontal and/or vertical size.<br>    Positions and sizes are stored in pixels.<br>    Note that in graphs (element: coords) the pixel sizes of its canvas are relative of the coordinates of the graph, when the option "graph on parent" is selected.</li>  <li><em>Color</em>: Some graphical elements have color attributes. Per color only one signed integer value is stored that contains the three 8-bit color components (RGB).<br>  Formula to calculate color attribute values:<br>  <br>  <strong>color = ( </strong>[red]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=red" title="create this page">?</a><strong> * -65536) + ( </strong>[green]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=green" title="create this page">?</a><strong> * -256) + ( </strong>[blue]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=blue" title="create this page">?</a><strong> * -1)<br>  <br>  </strong>Where [red]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=red" title="create this page">?</a>, [green]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=green" title="create this page">?</a>, [blue]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=blue" title="create this page">?</a> obviously represent the three color components, their values range from 0 to 255.<br>  They apply to the attributes [background color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=background%20color" title="create this page">?</a>, [front color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=front%20color" title="create this page">?</a>, [label color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label%20color" title="create this page">?</a> of various elements.</li>  <li><em>Fonts</em>: elements that have a unsigned integer [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> attribute (e.g. the element <strong>text</strong>) have a choice out of three different fonts:<br>  0 = Courier, 1 = Helvetica, 2 = Times. Courier is the only available fixed width font.<br>  The [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> attribute contains the font size in pixels.</li>  <li><em>Labels</em>: the many GUI-elements that have a [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> attribute can be named. In its label string no spaces ASCII code 32 is allowed. It will generally be recognized as a seperator character for the next parameter/attribute.</li>  <li><em>Other parameters</em>: Because of the difference between element parameters there is no default syntax for all elements. They may or may not look much like other elements, depending on their visual and functional similarities.</li></ul><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#0">back to top</a></p>  </blockquote><br><hr width="100%" size="2" noshade=""><p> <span class="Head"><a name="6"></a>Reference</span></p><ul>  <li><a href="https://puredata.info/docs/developer/PdFileFormat#r1">A</a></li>  <li><a href="https://puredata.info/docs/developer/PdFileFormat#r2">N</a><ul>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r21">canvas</a></li>    </ul>  </li>  <li><a href="https://puredata.info/docs/developer/PdFileFormat#r3">X</a><ul>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r31">array</a></li>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r32">connect</a></li>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r33">coords</a></li>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r34">floatatom</a></li>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r35">msg</a></li>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r36">obj</a>        <ul>          <li><a href="https://puredata.info/docs/developer/PdFileFormat#r361">bng</a></li>          <li><a href="https://puredata.info/docs/developer/PdFileFormat#r362">tgl</a></li>          <li><a href="https://puredata.info/docs/developer/PdFileFormat#r363">nbx</a></li>          <li><a href="https://puredata.info/docs/developer/PdFileFormat#r364">vsl</a></li>          <li><a href="https://puredata.info/docs/developer/PdFileFormat#r365">hsl</a></li>          <li><a href="https://puredata.info/docs/developer/PdFileFormat#r366">vradio</a></li>          <li><a href="https://puredata.info/docs/developer/PdFileFormat#r367">hradio</a></li>          <li><a href="https://puredata.info/docs/developer/PdFileFormat#r368">vu</a></li>          <li><a href="https://puredata.info/docs/developer/PdFileFormat#r369">cnv</a></li>        </ul>      </li>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r37">[name]</a></li>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r38">pd [name]</a></li>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r39">restore</a></li>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r3A">symbolatom</a></li>      <li><a href="https://puredata.info/docs/developer/PdFileFormat#r3B">text</a></li>    </ul>  </li></ul><blockquote><p><a href="https://puredata.info/docs/developer/PdFileFormat#0">back to top</a></p></blockquote><br><hr width="100%" size="2" noshade=""><br><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r1"></a>A</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Announces array data </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td><span class="code"><strong>#A </strong>[p1]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p1" title="create this page">?</a> [p2]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p2" title="create this page">?</a> [p3]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p3" title="create this page">?</a> [...]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=..." title="create this page">?</a><strong>;\r\n</strong></span></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[p1]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p1" title="create this page">?</a> [p2]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p2" title="create this page">?</a> [p3]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p3" title="create this page">?</a> [...]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=..." title="create this page">?</a> floating point variables representing array elements</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td>See Array</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td>Used only in combination of an array definition </td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r2"></a>N</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Announces a  frameset</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td><span class="code"><strong>#N </strong>[new_frame]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=new_frame" title="create this page">?</a><strong>;\r\n</strong></span></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[new_frame]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=new_frame" title="create this page">?</a> new  frameset, currently only a new patchwindow can be defined</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td>see canvas</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td>Currently used only for new canvas definitions</td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r21" id="r21"></a>canvas</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines window properties</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td><span class="code"><strong>#N canvas </strong>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> [x_size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_size" title="create this page">?</a> [y_size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_size" title="create this page">?</a> [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a> [open_on_load]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=open_on_load" title="create this page">?</a><strong>;\r\n</strong></span></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position offset of  frameset (window)<br>    [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position offset of  frameset (window)<br>    [x_size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_size" title="create this page">?</a> - horizontal size of  frameset (window)<br>    [y_size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_size" title="create this page">?</a> - vertical size of  frameset (window)<br>    [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a> - name / handle of  frameset <br>    [open_on_load]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=open_on_load" title="create this page">?</a> - when flag is set the canvas is opened when the patch is loaded</td>  </tr>  <tr>    <td valign="top"><div align="right">Example:</div></td>    <td class="code">#N canvas 0 0 452 302 12;</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">      #N canvas 0 0 452 302 thiscanvas 0;<br>    #X restore 41 136 pd thiscanvas;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td>In this example patch there are two canvas definitions.<br>    The first example has a special syntax, the attributes [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a> and [open_on_load]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=open_on_load" title="create this page">?</a> have been replaced by a [font_size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font_size" title="create this page">?</a> attribute. This is only the case when the canvas definition is the first record in the patchfile, to define the position and size of the main patcher window, and set the default font size. When a first canvas definition is absent the default values of PureData are used. Note that in this case you can alter the default font size with a command line parameter.<br>    The second example shows a regular internal subpatch definition. Normally a canvas defintion is always postceeded with a restore element to define the position within the canvas, and the name of the subpatch.<br>    Presumably, the canvas name in the canvas defintion and restore definition should be thesame.</td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r3"></a>X</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Announces regular elements </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X </strong>[element]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=element" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[element]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=element" title="create this page">?</a> - element definition</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj 50 36;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td>Used with <em>every</em> element definition except canvas definitions</td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r31"></a>array</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Array</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X array </strong>[array_name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=array_name" title="create this page">?</a> [array_size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=array_size" title="create this page">?</a> <strong>float </strong>[save_flag]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=save_flag" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[array_name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=array_name" title="create this page">?</a> - name / handle of the array <br>      [array_size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=array_size" title="create this page">?</a> - total number of elements of an array<br>      [save_flag]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=save_flag" title="create this page">?</a> - with this flag set the array data is stored in the patch</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#N canvas 0 0 450 300 graph4 0;<br>      #X array array3 10 float 1;<br>      #A 0 0 0 0 0 0 0 0 0 0;<br>      #X coords 0 1 99 -1 200 140 1;<br>    #X restore 270 193 graph;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td>An array is a gui-form of a table, always visualised using a graph. Optionally the array data can be saved in the patch - which can be <strong>very</strong> space-consuming and CPU intensive when you want to store a large number of floating point values typed out in a textfile.</td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r32"></a>connect</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Wires GUI-elements</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X connect </strong> [source]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=source" title="create this page">?</a> [outlet]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=outlet" title="create this page">?</a> [target]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=target" title="create this page">?</a> [inlet]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=inlet" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[source]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=source" title="create this page">?</a><br>    [outlet]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=outlet" title="create this page">?</a><br>    [target]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=target" title="create this page">?</a><br>    [inlet]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=inlet" title="create this page">?</a></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj 30 27 midiin;<br>      #X obj 26 59 midiout;<br>      #X connect 0 0 1 0;<br>    #X connect 0 1 1 1;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p><strong>Obj</strong>ects are virtually numbered in order of appearance in the file, starting from zero. Inlets and outlets of the objects are numbered likewise. <strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r33"></a>coords</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Visual ranges of a frameset (window) </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X coords</strong> [x_from]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_from" title="create this page">?</a> [y_to]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_to" title="create this page">?</a> [x_to]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_to" title="create this page">?</a> [y_from]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_from" title="create this page">?</a> [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> [heigth]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=heigth" title="create this page">?</a> [graph_on_parent]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=graph_on_parent" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_from]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_from" title="create this page">?</a> - first index to display <br>    [y_to]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_to" title="create this page">?</a> - dynamic range of graph upper border<br>    [x_to]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_to" title="create this page">?</a> - last index to display<br>    [y_from]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_from" title="create this page">?</a> - dynamic range of graph lower border <br>    [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> - relative horizontal size of graph <br>    [heigth]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=heigth" title="create this page">?</a> - relative vertical size of graph <br>    [graph_on_parent]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=graph_on_parent" title="create this page">?</a> - when set displayes child path, when unset graph is displayed like an object</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#N canvas 0 0 452 302 graph1 0;<br>      #X coords 0 1 100 -1 200 140 1;<br>    #X restore 58 26 graph;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>A coords statement must always be preceded with a canvas statement which also holds the graph name. <br>      A coords statement must always be terminated with a restore statement that has the reserved handle <strong>graph<br>      </strong>Off limit values will be displayed outside the graph in the PureData GUI.<strong><br>            </strong></p>      </td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r34"></a>floatatom</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a number box </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X floatatom </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> [lower_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=lower_limit" title="create this page">?</a> [upper_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=upper_limit" title="create this page">?</a> [label_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_pos" title="create this page">?</a> [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within window <br>    [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within window<br>    [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> - number of digits <br>    [lower_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=lower_limit" title="create this page">?</a> - minimal value<br>    [upper_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=upper_limit" title="create this page">?</a> - maximum value <br>    [label_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_pos" title="create this page">?</a> - label position relative to floatatom position. 0 = left, 1 = right, 2 = top, 3 = bottom <br>    [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> - floatatom label/name<br>    [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> - receive symbol name <br>    [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> - send symbol name</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X floatatom 32 26 5 0 0 0 - - -;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>When the value of [upper_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=upper_limit" title="create this page">?</a> minus the value of [lower_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=lower_limit" title="create this page">?</a> is less than one, or the [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> attribute is set to one, PureData resets these values both to zero.<br>      Floatatom and symbolatom are the only elements that uses "-" characters to indicate that no value has been assigned to its attributes [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a>, [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> and [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a>.<strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r35"></a>msg</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a message </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X msg </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> [p1]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p1" title="create this page">?</a> [p2]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p2" title="create this page">?</a> [p3]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p3" title="create this page">?</a> [...]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=..." title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window <br>    [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window<br>    [p1]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p1" title="create this page">?</a> [p2]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p2" title="create this page">?</a> [p3]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p3" title="create this page">?</a> [...]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=..." title="create this page">?</a> the content of the message</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X msg 61 48 read audio.wav;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>-<strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r36"></a>obj</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines an object </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X obj </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> [object_name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=object_name" title="create this page">?</a> [p1]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p1" title="create this page">?</a> [p2]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p2" title="create this page">?</a> [p3]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p3" title="create this page">?</a> [...]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=..." title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window <br>      [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window<br>      [object_name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=object_name" title="create this page">?</a> - name of the object (optional) <br>      [p1]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p1" title="create this page">?</a> [p2]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p2" title="create this page">?</a> [p3]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p3" title="create this page">?</a> [...]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=..." title="create this page">?</a> the parameters of the object (optional)</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj 55 50;<br>    #X obj 132 72 trigger bang float;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>The first line is an example of an empty object. The second line describes a trigger object with its parameters<strong>.<br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r361"></a>bng</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a bang </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X obj </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> <strong>bng</strong> [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> [hold]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=hold" title="create this page">?</a> [interrupt]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=interrupt" title="create this page">?</a> [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> <strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>    [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window <br>    [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> - square size of the gui element<br>    [hold]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=hold" title="create this page">?</a> - hold time in milliseconds, ranges from 50 to 1000000000<br>    [interrupt]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=interrupt" title="create this page">?</a> - interrupt time in milliseconds, ranges from 10 to 250<br>    [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> - bang on load <br>    [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> - send symbol name <br>    [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> - receive symbol name <br>    [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> - label<br>    [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> - horizontal position of the label text relative to the upperleft corner of the object <br>    [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> - vertical position of the label text relative to the upperleft corner of the object <br>    [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> - font type <br>    [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> - font size<br>    [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> - background color <br>    [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> - foreground color <br>    [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> - label color</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj 27 32 bng 15 10000 100 1 empty empty empty 0 -6 0 8 -262144 -1 -1;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>Hold time is for how long you see a flash when you click on the bang, interrupt time is for how long you don't see it flash when you click on this object while it's flashing.<strong><br>      </strong>[send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a>, [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> and [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> cannot be named "empty", this is a reserved name for when no value is assigned. <strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r362"></a>tgl</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a toggle </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X obj </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> <strong>tgl</strong> [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> [init_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init_value" title="create this page">?</a> [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a> <strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>      [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window <br>      [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> - square size of the gui element<br>      [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> - set on load <br>      [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> - send symbol name <br>      [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> - receive symbol name <br>      [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> - label<br>      [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> - horizontal position of the label text relative to the upperleft corner of the object <br>      [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> - vertical position of the label text relative to the upperleft corner of the object <br>      [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> - font type <br>      [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> - font size<br>      [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> - background color <br>      [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> - foreground color <br>      [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> - label color<br>      [init_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init_value" title="create this page">?</a> - value sent when the [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> attribute is set<br>      [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a> - default value when the [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> attribute is not set</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj 29 44 tgl 15 1 empty empty empty 0 -6 192 8 -262144 -1 -1 234 234;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>[send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a>, [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> and [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> cannot be named "empty", this is a reserved name for when no value is assigned.<br>      The [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a> attribute can be changed in a patch and saved, this is why there are different values for [init_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init_value" title="create this page">?</a> and [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a><strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r363"></a>nbx</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a Number2 number box </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X obj </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> <strong>nbx</strong> [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> [height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=height" title="create this page">?</a> [min]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=min" title="create this page">?</a> [max]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=max" title="create this page">?</a> [log]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=log" title="create this page">?</a> [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> [log_height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=log_height" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>      [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window <br>      [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> - number of digits the element displays <br>      [height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=height" title="create this page">?</a> - vertical size of element in pixels<br>      [min]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=min" title="create this page">?</a> - minimum value, typically -1e+037<br>      [max]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=max" title="create this page">?</a> - maximum value, typically 1e+037<br>      [log]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=log" title="create this page">?</a> - linear when unset, logarithmic when set<br>      [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> - when set outputs <br>      [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> - send symbol name <br>      [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> - receive symbol name<br>      [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> - label <br>      [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> -  horizontal position of the label text relative to the upperleft corner of the object<br>      [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> - vertical position of the label text relative to the upperleft corner of the object<br>      [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> - font type <br>      [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> - font size in pixels<br>      [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> - background color<br>      [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> - foreground color<br>      [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> - label color <br>      [log_height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=log_height" title="create this page">?</a> - logarithmic steps, accepts values from 10 to 2000, default is 256</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj 39 48 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0 256;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>This element resembles the floatatom element, but is extended with gui and logarithmic parameters and (probably) more accurate.<br>      The attributes [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a>, [font_size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font_size" title="create this page">?</a> and [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> also apply to the digits.<strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r364"></a>vsl</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a vertical slider </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X obj </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> <strong>vsl</strong> [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> [height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=height" title="create this page">?</a> [bottom]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bottom" title="create this page">?</a> [top]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=top" title="create this page">?</a> [log]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=log" title="create this page">?</a> [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a> [steady_on_click]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=steady_on_click" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>      [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window <br>      [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> - horizontal size of gui element <br>      [height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=height" title="create this page">?</a> - vertical size of gui element <br>      [bottom]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bottom" title="create this page">?</a> - minimum value <br>      [top]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=top" title="create this page">?</a> - maximum value<br>      [log]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=log" title="create this page">?</a> - when set the slider range is outputted logarithmically, otherwise it's output is linair<br>      [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> - sends default value on patch load <br>      [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> - send symbol name <br>      [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> - receive symbol name <br>      [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> - label <br>      [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> -  horizontal position of the label text relative to the upperleft corner of the object<br>[y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> - vertical position of the label text relative to the upperleft corner of the object<br>      [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> - font type <br>      [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> - font size <br>      [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> - background color <br>      [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> - foreground color<br>      [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> - label color <br>      [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a> - default value times hundred<br>      [steady_on_click]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=steady_on_click" title="create this page">?</a> - when set, fader is steady on click, otherwise it jumps on click</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj 50 38 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144 -1 -1 0 1;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>The vertical slider object and the horizontal slider are the only objects which have a default value multiplied by hundred. This purpose is unknown.<strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r365"></a>hsl</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a horizontal slider </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X obj </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> <strong>hsl</strong> [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> [height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=height" title="create this page">?</a> [bottom]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bottom" title="create this page">?</a> [top]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=top" title="create this page">?</a> [log]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=log" title="create this page">?</a> [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a> [steady_on_click]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=steady_on_click" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>      [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window <br>      [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> - horizontal size of gui element <br>      [height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=height" title="create this page">?</a> - vertical size of gui element <br>      [bottom]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bottom" title="create this page">?</a> - minimum value <br>      [top]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=top" title="create this page">?</a> - maximum value<br>      [log]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=log" title="create this page">?</a> - when set the slider range is outputted logarithmically, otherwise it's output is linair<br>      [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> - sends default value on patch load <br>      [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> - send symbol name <br>      [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> - receive symbol name <br>      [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> - label <br>      [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> - horizontal position of the label text relative to the upperleft corner of the object<br>      [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> - vertical position of the label text relative to the upperleft corner of the object<br>      [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> - font type <br>      [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> - font size <br>      [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> - background color <br>      [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> - foreground color<br>      [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> - label color <br>      [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a> - default value times hundred<br>      [steady_on_click]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=steady_on_click" title="create this page">?</a> - when set, fader is steady on click, otherwise it jumps on click</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj 53 44 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144 -1 -1 0 1;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>The horizontal slider object and the vertical slider are the only objects which have a default value multiplied by hundred. This purpose is unknown.<br>    </p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r366"></a>vradio</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a vertical radio button selector</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X obj </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> <strong>vradio</strong> [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> [new_old]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=new_old" title="create this page">?</a> [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> [number]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=number" title="create this page">?</a> [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>      [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window <br>      [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> - horizontal size and vertical size, depending on the number of radio buttons <br>      [new_old]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=new_old" title="create this page">?</a> - send new and old value, or only the new value<br>      [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> - send default value on init <br>      [number]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=number" title="create this page">?</a> - amount of radio buttons <br>      [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> - send symbol name <br>      [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> - receive symbol name <br>      [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> - label <br>      [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> - horizontal position of the label text relative to the upperleft corner of the object<br>[y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> - vertical position of the label text relative to the upperleft corner of the object<br>[font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> - font type <br>[fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> - font size <br>[bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> - background color <br>[fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> - foreground color<br>[label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> - label color<br>      [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a> - default value to be sent on patch load when the [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> attribute has been set.</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj 48 42 vradio 15 1 0 8 empty empty empty 0 -6 0 8 -262144 -1 -1 0;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>The purpose of the [new_old]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=new_old" title="create this page">?</a> switch is unknown.<strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r367"></a>hradio</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a horizontal radio button selector</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X obj </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> <strong>hradio</strong> [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> [new_old]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=new_old" title="create this page">?</a> [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> [number]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=number" title="create this page">?</a> [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>      [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window <br>      [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> - vertical size and horizontal size, depending on the number of radio buttons <br>      [new_old]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=new_old" title="create this page">?</a> - send new and old value, or only the new value<br>      [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> - send default value on init <br>      [number]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=number" title="create this page">?</a> - amount of radio buttons <br>      [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> - send symbol name <br>      [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> - receive symbol name <br>      [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> - label <br>      [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> - horizontal position of the label text relative to the upperleft corner of the object<br>      [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> - vertical position of the label text relative to the upperleft corner of the object<br>      [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> - font type <br>      [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> - font size <br>      [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> - background color <br>      [fg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fg_color" title="create this page">?</a> - foreground color<br>      [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> - label color<br>      [default_value]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=default_value" title="create this page">?</a> - default value to be sent on patch load when the [init]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=init" title="create this page">?</a> attribute has been set.</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj -50 54 hradio 15 1 0 8 empty empty empty 0 -6 0 8 -262144 -1 -1 0;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>The purpose of the [new_old]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=new_old" title="create this page">?</a> switch is unknown.<strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r368"></a>vu</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a VU-meter </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X obj </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> <strong>vu</strong> [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> [height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=height" title="create this page">?</a> [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> [fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> [scale]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=scale" title="create this page">?</a> [?]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=%3F" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>      [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window <br>      [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> - horizontal size of element <br>      [height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=height" title="create this page">?</a> - vertical size of element <br>      [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> - receive symbol name <br>      [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> - label<br>      [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> - horizontal position of the label text relative to the upperleft corner of the object<br>[y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> - vertical position of the label text relative to the upperleft corner of the object<br>[font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> - font type <br>[fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> - font size <br>[bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> - background color <br>      [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> - label color <br>      [scale]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=scale" title="create this page">?</a> - when set the logarithmic scale is displayed <br>      [?]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=%3F" title="create this page">?</a> - unknown value, default is zero</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td>#X obj 40 44 vu 15 120 empty empty -1 -8 0 8 -66577 -1 1 0;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>We looked inside the source code but still couldn't see the purpose of the final value.<strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r369"></a>cnv</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a canvas, a gui component </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X obj </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> <strong>cnv</strong> [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> [height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=height" title="create this page">?</a> [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> [x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> [y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> [font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> [font_size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font_size" title="create this page">?</a> [bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> [label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> [?]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=%3F" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>[y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window<br>    [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> - size of selectable square<br>[width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> - horizontal size of the GUI-element<br>[height]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=height" title="create this page">?</a> - vertical size of the GUI-element<br>[send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> - send symbol name <br>[receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> - receive symbol name <br>[label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> - label <br>[x_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_off" title="create this page">?</a> - horizontal position of the label text relative to the upperleft corner of the object<br>[y_off]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_off" title="create this page">?</a> - vertical position of the label text relative to the upperleft corner of the object<br>[font]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=font" title="create this page">?</a> - font type <br>[fontsize]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=fontsize" title="create this page">?</a> - font size <br>[bg_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=bg_color" title="create this page">?</a> - background color<br>[label_color]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_color" title="create this page">?</a> - foreground color <br>[?]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=%3F" title="create this page">?</a> - unknown value, default is zero</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj 27 40 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577 0;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>We couldn't find the purpose of the final value.<strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r37"></a>[name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a></td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines an external subpatch or library patch </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X obj </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a> [p1]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p1" title="create this page">?</a> [p2]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p2" title="create this page">?</a> [p3]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p3" title="create this page">?</a> [...]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=..." title="create this page">?</a> <strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>[y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window<br>      [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a> - name of the subpatch / library patch<br>      [p1]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p1" title="create this page">?</a> [p2]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p2" title="create this page">?</a> [p3]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=p3" title="create this page">?</a> [...]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=..." title="create this page">?</a> - optional parameters</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#X obj 121 102 subpatch; </td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>If the external object isn't in the loaded libraries PureData searches in the folder of the main frame (window) to locate the object. <strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r38"></a>pd</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines an internal subpatch </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X restore </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> <strong>pd</strong> [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>[y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window<br>    [size]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=size" title="create this page">?</a> - size of selectable square<br>      [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> - horizontal size of the GUI-element<br>      [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a> - name of the subpatch</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#N canvas 0 0 454 304 inc 0;<br>      #X obj 34 40 inlet;<br>      #X obj 34 95 outlet;<br>      #X obj 34 67 + 1;<br>      #X connect 0 0 2 0;<br>      #X connect 2 0 1 0;<br>      #X restore 90 124 pd inc;<br>      #X floatatom 90 99 5 0 0 0 - - -;<br>      #X floatatom 90 151 5 0 0 0 - - -;<br>      #X connect 0 0 2 0;<br>      #X connect 1 0 0 0;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>Naturally the restore element which invokes a subpatch is preceded with a canvas element and the subpatch elements. <br>        Objects within a subpatch are counted seperately from a parent frame (window).<strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r39"></a>restore</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Ends a canvas definition</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X restore </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a>  [type]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=type" title="create this page">?</a> [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>      [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window<br>      [type]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=type" title="create this page">?</a> - type of canvas, values are either "graph" or "pd"<br>      [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a> - name of the subpatch, only used when the [type]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=type" title="create this page">?</a> attribute is set to "pd"</td>  </tr>  <tr>    <td valign="top"><div align="right">Example:</div></td>    <td class="code">#N canvas 0 0 450 300 graph2 0;<br>    #X coords 0 1 100 -1 200 140 1;<br>    #X restore 27 30 graph;</td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Example:</div></td>    <td class="code">#N canvas 0 0 452 302 subpatch 0;<br>    #X restore 64 69 pd subpatch;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>The restore element is used only in combination with canvas elements. There are two uses:<br>      In the first example it defines a graph, in this case a coords element is required.<br>      In the second example it defines a subpatch. In this case only the canvas attribute [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a> and the restore attribute [name]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=name" title="create this page">?</a> should correlate.<strong><br>    </strong></p>    </td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r3A"></a>symbolatom</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines an symbol box </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X symbolatom </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> [lower_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=lower_limit" title="create this page">?</a> [upper_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=upper_limit" title="create this page">?</a> [label_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_pos" title="create this page">?</a> [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td><p>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>        [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window<br>        [width]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=width" title="create this page">?</a> - amount of digits/characters<br>[lower_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=lower_limit" title="create this page">?</a> - minimum value <br>        [upper_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=upper_limit" title="create this page">?</a> - maximum value <br>        [label_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label_pos" title="create this page">?</a> - label position relative to floatatom position. 0 = left, 1 = right, 2 = top, 3 = bottom        <br>        [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a> - label <br>        [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> - receive symbol value <br>      [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a> - send symbol value</p>      </td>  </tr>  <tr>    <td valign="top"><div align="right">Example:</div></td>    <td class="code">#X symbolatom 36 37 10 0 0 0 - - -;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>When the value of [upper_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=upper_limit" title="create this page">?</a> minus the value of [lower_limit]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=lower_limit" title="create this page">?</a> is less than one, PureData resets these values both to zero.<br>      Symbolatom and floatatom are the only elements that uses "-" characters to indicate that no value has been assigned to its attributes [label]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=label" title="create this page">?</a>, [receive]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=receive" title="create this page">?</a> and [send]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=send" title="create this page">?</a>.<strong></strong><strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p>  <p>&nbsp;</p></blockquote><table width="100%" border="0">  <tbody><tr bgcolor="#CCCCCC">    <td colspan="2"><a name="r3B"></a>text</td>  </tr>  <tr>    <td valign="top"><div align="right">Description:</div></td>    <td>Defines a comment </td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Syntax:</div></td>    <td class="code"><strong>#X text </strong> [x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> [comment]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=comment" title="create this page">?</a><strong>;\r\n</strong></td>  </tr>  <tr>    <td width="85" valign="top"><div align="right">Parameters:</div></td>    <td><p>[x_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=x_pos" title="create this page">?</a> - horizontal position within the window<br>        [y_pos]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=y_pos" title="create this page">?</a> - vertical position within the window<br>        [comment]<a class="new visualNoPrint" href="https://puredata.info/docs/developer/PdFileFormat/createform?page=comment" title="create this page">?</a> - custom string, spaces allowed<br>        </p></td>  </tr>  <tr>    <td valign="top"><div align="right">Example:</div></td>    <td class="code">#X text 28 25 comment;</td>  </tr>  <tr>    <td valign="top"><div align="right">Remarks:</div></td>    <td><p>ASCII return codes 13 and 10 are not stored, a semicolon character is preceded with the escape character backslash. <strong><br>    </strong></p></td>  </tr></tbody></table><blockquote>  <p><a href="https://puredata.info/docs/developer/PdFileFormat#6">back to reference index</a></p></blockquote><p> <br>  </p><hr width="100%" size="2" noshade="">    <p>
+      <a href="http://validator.w3.org/check?uri=referer"><img border="0" src="./PdFileFormat — Pd Community Site_files/valid-html401" alt="Valid HTML 4.01!" height="31" width="88"></a>
+    </p><p></p>
+<p>
+</p>
+<p><a name="comments"><br><b><span class="commentsheader">comments:</span></b></a></p>
+<p><a class="visualNoPrint" name="msg20111008131358+0200@puredata.info"></a>
+<img src="./PdFileFormat — Pd Community Site_files/discussionitem_icon.gif" style="border:none; margin:0"><b>Editing?</b> --pduboue,  <span class="link-external"><a href="http://puredata.info/docs/developer/PdFileFormat#msg20111008131358+0200@puredata.info">Sat, 08 Oct 2011 13:13:58 +0200</a></span> <span class="link-external"><a class="visualNoPrint" href="http://puredata.info/docs/developer/PdFileFormat?subject=Editing%3F&amp;in_reply_to=%3C20111008131358%2B0200%40puredata.info%3E#bottom">reply</a></span><br>
+I tried to fix some typos but the editor identified the markup as MoinMoin (but the source was pure HTML) so the preview looked horrible and gave up. If anybody knows whether that's OK or how to fix it, let me know.</p>
+
+      <a name="bottom"></a>
+      <br>
+      
+    </div>
+      
+    
+
+                    
+                      
+                 
+    
+
+                    
+
+                  </div>
+
+                </div>
+
+              
+            </td>
+            
+
+            
+            
+            
+          </tr>
+        </tbody>
+      </table>
+      
+
+      <div class="visualClear"><!-- --></div>
+
+
+      <hr class="netscape4">
+
+      
+
+        <div id="portal-footer">
+
+<p>
+    <a href="http://puredata.info/">puredata.info</a> is hosted and serviced by <a href="http://iem.at/">IEM</a> as a contribution to the Pd-community using 
+    <span>
+        <a href="http://plone.org/">Plone</a>
+    </span>, see <a href="https://puredata.info/docs/developer/docs/sitedocs/impressum">Impressum</a>.
+</p>
+</div>
+
+        <div id="portal-colophon">
+
+      <a href="http://iem.at/">
+	<img src="./PdFileFormat — Pd Community Site_files/iem_powered.gif" height="15" width="80" alt="Powered by IEM" title="This site is hosted by the Institute of Electronic Music and Acoustics (IEM). Click for more information">
+      </a>
+
+      <a href="http://plone.org/">
+	<img src="./PdFileFormat — Pd Community Site_files/plone_powered.gif" height="15" width="80" alt="Powered by Plone" title="This Plone site was built using the Plone Content Management System. Click for more information.">
+      </a>
+      
+
+	  <a href="http://www.section508.gov/">
+	    <img src="./PdFileFormat — Pd Community Site_files/colophon_sec508.gif" height="15" width="80" alt="Section 508" title="This Plone site conforms to the US Government Section 508 Accessibility Guidelines.">
+	  </a>
+	  <a href="http://www.w3.org/WAI/WCAG1AA-Conformance" title="Explanation of WCAG Conformance">
+	    <img src="./PdFileFormat — Pd Community Site_files/colophon_wai-aa.gif" height="15" width="80" alt="WCAG" title="This Plone site conforms to the W3C-WAI Web Content Accessibility Guidelines.">
+	  </a>
+	  <a href="http://validator.w3.org/check/referer">
+	    <img src="./PdFileFormat — Pd Community Site_files/colophon_xhtml.png" height="15" width="80" alt="Valid XHTML" title="This Plone site is valid XHTML.">
+	  </a>
+	  <a href="http://jigsaw.w3.org/css-validator/check/referer">
+	    <img src="./PdFileFormat — Pd Community Site_files/colophon_css.png" height="15" width="80" alt="Valid CSS" title="This Plone site was built with valid CSS.">
+	  </a>
+	  <a href="http://plone.org/browsersupport">
+	    <img src="./PdFileFormat — Pd Community Site_files/colophon_anybrowser.png" height="15" width="80" alt="Usable in any browser" title="This Plone site is usable in any web browser.">
+	  </a>
+    </div>
+      
+
+    </div>
+
+
+
+
+</body></html>

@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map Object | PURE DATA forum~</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="PURE DATA forum~" />
+	<meta name="keywords" content="puredata, pd, pure data, forum" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=http:&#x2F;&#x2F;forum.pdpatchrepo.info&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" content="&#x2F;uploads&#x2F;site-logo.gif" />
+	<meta name="title" content="Map Object" />
+	<meta name="description" content="Hi Everyone! I&amp;#x27;m new to PD and it seems to me that there is no map-object like in processing, cinder, max&amp;#x2F;msp and... everywhere for mapping some value from one range to another. Am I just too stupid to find it or is PD really missing such an object? Anywa..." />
+	<meta property="og:title" content="Map Object" />
+	<meta property="og:description" content="Hi Everyone! I&amp;#x27;m new to PD and it seems to me that there is no map-object like in processing, cinder, max&amp;#x2F;msp and... everywhere for mapping some value from one range to another. Am I just too stupid to find it or is PD really missing such an object? Anywa..." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="http:&#x2F;&#x2F;forum.pdpatchrepo.info&#x2F;topic&#x2F;6007&#x2F;map-object" />
+	<meta property="og:image" content="https:&#x2F;&#x2F;s.gravatar.com&#x2F;avatar&#x2F;495f76fe344ebd8afbc9945c871a7c28?size=128&amp;default=identicon&amp;rating=pg" />
+	<meta property="og:image:url" content="https:&#x2F;&#x2F;s.gravatar.com&#x2F;avatar&#x2F;495f76fe344ebd8afbc9945c871a7c28?size=128&amp;default=identicon&amp;rating=pg" />
+	<meta property="article:published_time" content="2012-02-24T18:09:46.000Z" />
+	<meta property="article:modified_time" content="2023-11-26T12:59:50.068Z" />
+	<meta property="article:section" content="patch~" />
+	<link rel="stylesheet" type="text/css" href="/stylesheet.css?b43aec11" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon" />
+	<link rel="alternate" type="application/rss+xml" href="http://forum.pdpatchrepo.info/topic/6007.rss" />
+	<link rel="canonical" href="http://forum.pdpatchrepo.info/topic/6007/map-object" />
+	<link rel="up" href="http://forum.pdpatchrepo.info/category/2/patch" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.3","siteTitle":"PURE DATA forum~","showSiteTitle":false,"postDelay":"0","minimumTitleLength":"1","maximumTitleLength":"300","minimumPostLength":"1","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"100","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":true,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":false,"disableChat":false,"maxReconnectionAttempts":"5","reconnectionDelay":"200","minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":"3","maximumTagLength":"15","topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"8192","theme:id":"nodebb-theme-lavender","theme:src":"","defaultLang":"en_GB","userLang":"en_GB","loggedIn":true,"cache-buster":"v0.7.3-3-gf7648c2","script-buster":"153e09e4","css-buster":"b43aec11","requireEmailConfirmation":true,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"R9TghtAI-H89bjMy7qCYrRpBLtprOHuLJ7ts","searchEnabled":true,"notificationSounds":false,"openOutgoingLinksInNewTab":false,"topicSearchEnabled":false,"disableMasonry":false}');
+		var app = {
+			template: "topic",
+			user: JSON.parse('{"username":"parzi","userslug":"parzi","email":"tobsungam@gmail.com","picture":"https://s.gravatar.com/avatar/539e708c87c795b1f4d59cc4c8aa309f?size=128&default=identicon&rating=pg","status":"online","email:confirmed":true,"banned":"0","uid":16778,"isAdmin":false}')
+		};
+	</script>
+	<script src="/nodebb.min.js?153e09e4"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.3-3-gf7648c2",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+
+	
+		<style type="text/css">body{background-image:url('uploads/bgPD.png')}.header .forum-logo{padding-top:5px}.topic .topic-text{color:#404040}</style>
+
+</head>
+
+<body>
+	<div class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="loading-bar"></div>
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div>
+					<a href="/">
+						<img alt="" class=" forum-logo" src="/uploads/site-logo.gif" />
+					</a>
+					
+
+					<div component="navbar/title" class="visible-xs">
+						<span></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="navbar-collapse collapse navbar-ex1-collapse" id="nav-dropdown">
+								<ul id="main-nav" class="nav navbar-nav pull-left">
+										<li class="">
+						<a href="/categories" title="Categories" id="">
+														<i class="fa fa-fw fa-list"></i>
+
+														<span class="visible-xs-inline">Categories</span>
+						</a>
+					</li>
+										<li class="">
+						<a href="/unread" title="Unread" id="unread-count">
+														<i class="fa fa-fw fa-inbox"></i>
+
+														<span class="visible-xs-inline">Unread</span>
+						</a>
+					</li>
+										<li class="">
+						<a href="/recent" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+										<li class="">
+						<a href="/tags" title="Tags" id="">
+														<i class="fa fa-fw fa-tags"></i>
+
+														<span class="visible-xs-inline">Tags</span>
+						</a>
+					</li>
+										<li class="">
+						<a href="/popular" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+										<li class="">
+						<a href="/users" title="Users" id="">
+														<i class="fa fa-fw fa-user"></i>
+
+														<span class="visible-xs-inline">Users</span>
+						</a>
+					</li>
+					
+										<li class="">
+						<a href="/dataflow" title="Chat" id="">
+														<i class="fa fa-fw fa-wechat"></i>
+
+							
+						</a>
+					</li>
+										<li class="">
+						<a href="/mailinglist" title="Pd-list" id="">
+														<i class="fa fa-fw fa-archive"></i>
+
+							
+						</a>
+					</li>
+										<li class="">
+						<a href="/search" title="Search" id="">
+														<i class="fa fa-fw fa-search"></i>
+
+														<span class="visible-xs-inline">Search</span>
+						</a>
+					</li>
+				</ul>
+
+								<ul id="logged-in-menu" class="nav navbar-nav navbar-right pull-right">
+					<li class="notifications dropdown text-center hidden-xs">
+						<a href="#" title="Notifications" class="dropdown-toggle" data-toggle="dropdown" id="notif_dropdown">
+							<i class="notification-icon fa fa-fw fa-bell-o" data-content="0"></i>
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="notif_dropdown">
+							<li>
+								<ul id="notif-list">
+									<li>
+										<a href="#"><i class="fa fa-refresh fa-spin"></i> Loading Notifications</a>
+									</li>
+								</ul>
+							</li>
+							<li class="notif-dropdown-link"><a href="#" class="mark-all-read">Mark all notifications read</a></li>
+							<li class="notif-dropdown-link"><a href="/notifications">See all Notifications</a></li>
+						</ul>
+					</li>
+
+										<li class="visible-xs">
+						<a href="/search">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+
+					<li class="visible-xs">
+						<a href="/notifications" title="Notifications">
+							<i class="notification-icon fa fa-bell-o fa-fw" data-content="0"></i> Notifications
+						</a>
+					</li>
+
+
+										<li class="chats dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Chats" id="chat_dropdown">
+							<i component="chat/icon" class="fa fa-comment-o fa-fw"></i> <span class="visible-xs-inline">Chats</span>
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="chat_dropdown">
+							<li>
+								<ul id="chat-list">
+									<li>
+										<a href="#"><i class="fa fa-refresh fa-spin"></i> Loading Chats</a>
+									</li>
+								</ul>
+							</li>
+							<li class="notif-dropdown-link"><a href="/chats">See all Chats</a></li>
+						</ul>
+					</li>
+
+					<li id="user_label" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user_dropdown" title="Profile">
+							<img id="user-header-picture" src="https://s.gravatar.com/avatar/539e708c87c795b1f4d59cc4c8aa309f?size=128&default=identicon&rating=pg"/>
+						</a>
+						<ul id="user-control-list" class="dropdown-menu" aria-labelledby="user_dropdown">
+							<li>
+								<a id="user-profile-link" href="/user/parzi">
+									<i class="fa fa-fw fa-circle status online"></i> <span id="user-header-name">parzi</span>
+								</a>
+							</li>
+							<li role="presentation" class="divider"></li>
+							<li>
+								<a href="#" class="user-status" data-status="online">
+									<i class="fa fa-fw fa-circle status online"></i><span> Online</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="user-status" data-status="away">
+									<i class="fa fa-fw fa-circle status away"></i><span> Away</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="user-status" data-status="dnd">
+									<i class="fa fa-fw fa-circle status dnd"></i><span> Do not Disturb</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="user-status" data-status="offline">
+									<i class="fa fa-fw fa-circle status offline"></i><span> Invisible</span>
+								</a>
+							</li>
+							<li role="presentation" class="divider"></li>
+							<li id="logout-link">
+								<a href="#"><i class="fa fa-fw fa-sign-out"></i><span> Logout</span></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pull-right">
+					<li>
+						<a href="#" id="reconnect" class="hide" title="Connection to PURE DATA forum~ has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<div class="header-topic-title hidden-xs">
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container" id="content" component="content">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+<div class="topic">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="/" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="/category/2/patch" itemprop="url">
+			<span itemprop="title">
+				patch~
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				Map Object
+												<a target="_blank" href="/topic/6007.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+
+	<div component="topic/deleted/message" class="alert alert-warning hidden">This topic has been deleted. Only users with topic management privileges can see it.</div>
+
+	<ul component="topic" id="post-container" class="posts" data-tid="6007">
+			<li component="post" class="post-row "data-pid="6002" data-uid="2857" data-username="danarf" data-userslug="danarf" data-index="0" data-timestamp="1330106986000" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="0"></a>
+
+				<meta itemprop="datePublished" content="2012-02-24T18:09:46.000Z">
+				<meta itemprop="dateModified" content="">
+
+				<div class="topic-item">
+					<div class="topic-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="topic-profile-pic hidden-xs text-center">
+									<a href="/user/danarf">
+										<img src="https://s.gravatar.com/avatar/495f76fe344ebd8afbc9945c871a7c28?size=128&default=identicon&rating=pg" alt="danarf" class="profile-image user-img" title="danarf">
+									</a>
+									<small class="username" title="danarf"><a href="/user/danarf">danarf</a></small>
+
+									
+
+
+								</div>
+								<div class="topic-text">
+																		<h3 class="topic-title">
+										<p component="post/header" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack hidden"></i> <i class="fa fa-lock hidden"></i> <span component="topic/title">Map Object</span></p>
+										<hr>
+									</h3>
+									<div component="post/content" class="post-content" itemprop="text"><p>Hi Everyone!</p>
+<p>I'm new to PD and it seems to me that there is no map-object like in processing, cinder, max/msp and... everywhere for mapping some value from one range to another. Am I just too stupid to find it or is PD really missing such an object?</p>
+<p>Anyways, searching would probably have taken longer than making one, so here it is. I thought maybe somebody might need it, i use this thing in almost every patch i made! Shouldn't something like this be in the extended-package?</p>
+<p>Tell me if you like it, and if there would have been an easier way <img class="emoji emoji-extended" src="http://forum.pdpatchrepo.info/plugins/nodebb-plugin-emoji-extended/images/grinning.png" title=":)" alt=":)" /></p>
+<p>Cheers<br />
+Adrian</p>
+<p><a href="http://www.pdpatchrepo.info/hurleur/map.pd" rel="nofollow">http://www.pdpatchrepo.info/hurleur/map.pd</a></p>
+</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="topic-footer">
+						<div class="row">
+							<div class="">
+								<small class="pull-right">
+									<span>
+																				<i component="user/status" class="fa fa-circle status offline" title='Offline'></i>
+										<span data-username="danarf" data-uid="2857">
+																						<strong><a href="/user/danarf" itemprop="author">danarf</a></strong> posted <span class="timeago" title="2012-02-24T18:09:46.000Z"></span>
+										</span>
+									</span>
+
+
+									<span component="post/editor" class=" hidden">, last edited by <strong><a href="/user"></a></strong> <span class="timeago" title=""></span></span>
+
+								</small>
+
+								<div class="dropdown moderator-tools" component="post/tools">
+									<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
+									<ul class="dropdown-menu" role="menu">
+
+
+<li role="presentation">
+	<a component="post/favourite" role="menuitem" tabindex="-1" href="#" data-favourited="false">
+
+		<span class="favourite-text">Favourite</span>
+		<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+		<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+		<i component="post/favourite/off" class="fa fa-heart-o "></i>
+	</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+<li role="presentation" class="dropdown-header">Share this Post</li>
+<li role="presentation">
+	<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+
+<li role="presentation">
+	<a component="post/flag" role="menuitem" tabindex="-1" href="#">
+		Flag this post for moderation
+	</a>
+</li>
+									</ul>
+								</div>
+
+																&bull;
+								<a component="post/upvote" href="#" class="upvote">
+									<i class="fa fa-chevron-up"></i>
+								</a>
+								<span component="post/vote-count" class="votes" data-votes="0">0</span>
+																<a component="post/downvote" href="#" class="downvote">
+									<i class="fa fa-chevron-down"></i>
+								</a>
+
+								
+								<span class="post-tools">
+																																													<button component="post/chat" class="btn btn-sm btn-link chat" type="button" title="Chat"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> Chat</span></button>
+
+									<button component="post/quote" class="btn btn-sm btn-link " type="button" title="Quote"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> Quote</span></button>
+									<button component="post/reply" class="btn btn-sm btn-link " type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> Reply</span></button>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+						<div class="post-bar" data-index="0">
+<div class="inline-block">
+
+	<span class="tags">
+
+	</span>
+
+	
+
+	<small class="topic-stats">
+		<span>Posts</span>
+		<strong><span component="topic/post-count" class="human-readable-number" title="6">6</span></strong> |
+		<span>Views</span>
+		<strong><span class="human-readable-number" title="12731">12731</span></strong>
+	</small>
+	<span class="browsing-users hidden">
+		&bull;
+		<small><span>browsing</span></small>
+		<div component="topic/browsing/list" class="thread_active_users active-users inline-block"></div>
+		<small class="hidden">
+			<i class="fa fa-users"></i> <span component="topic/browsing/count" class="user-count"></span>
+		</small>
+	</span>
+</div>
+
+<div class="topic-main-buttons pull-right inline-block">
+	<div class="loading-indicator" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</div>
+
+
+
+<a component="topic/reply" class="btn btn-primary ">Reply</a>
+
+<a component="topic/reply/locked" class="btn btn-primary hidden" disabled><i class="fa fa-lock"></i> Locked</a>
+
+
+
+
+<div class="btn-group dropup" component="thread/sort">
+	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Sort by <span class="caret"></span></button>
+	<ul class="dropdown-menu pull-right">
+		<li><a href="#" class="oldest_to_newest" data-sort="oldest_to_newest"><i class="fa fa-fw"></i> Oldest to Newest</a></li>
+		<li><a href="#" class="newest_to_oldest" data-sort="newest_to_oldest"><i class="fa fa-fw"></i> Newest to Oldest</a></li>
+		<li><a href="#" class="most_votes" data-sort="most_votes"><i class="fa fa-fw"></i> Most votes</a></li>
+	</ul>
+</div>
+
+
+</div>
+<div style="clear:both;"></div>
+			</div>
+			<li component="post" class="post-row "data-pid="29857" data-uid="2283" data-username="mjpalumbo" data-userslug="mjpalumbo" data-index="1" data-timestamp="1330125126000" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="1"></a>
+
+				<meta itemprop="datePublished" content="2012-02-24T23:12:06.000Z">
+				<meta itemprop="dateModified" content="">
+
+				<div class="topic-item">
+					<div class="topic-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="topic-profile-pic hidden-xs text-center">
+									<a href="/user/mjpalumbo">
+										<img src="https://s.gravatar.com/avatar/387586271fd9139ffa64b2ad56399740?size=128&default=identicon&rating=pg" alt="mjpalumbo" class="profile-image user-img" title="mjpalumbo">
+									</a>
+									<small class="username" title="mjpalumbo"><a href="/user/mjpalumbo">mjpalumbo</a></small>
+
+									
+
+
+								</div>
+								<div class="topic-text">
+									
+									<div component="post/content" class="post-content" itemprop="text"><p>Thanks danarf! While I'm sure this a valuable patch, I don't quite know how to use it. Could you explain this a little further?</p>
+<p>Thanks,</p>
+<p>Michael</p>
+</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="topic-footer">
+						<div class="row">
+							<div class="">
+								<small class="pull-right">
+									<span>
+																				<i component="user/status" class="fa fa-circle status offline" title='Offline'></i>
+										<span data-username="mjpalumbo" data-uid="2283">
+																						<strong><a href="/user/mjpalumbo" itemprop="author">mjpalumbo</a></strong> posted <span class="timeago" title="2012-02-24T23:12:06.000Z"></span>
+										</span>
+									</span>
+
+
+									<span component="post/editor" class=" hidden">, last edited by <strong><a href="/user"></a></strong> <span class="timeago" title=""></span></span>
+
+								</small>
+
+								<div class="dropdown moderator-tools" component="post/tools">
+									<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
+									<ul class="dropdown-menu" role="menu">
+
+
+<li role="presentation">
+	<a component="post/favourite" role="menuitem" tabindex="-1" href="#" data-favourited="false">
+
+		<span class="favourite-text">Favourite</span>
+		<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+		<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+		<i component="post/favourite/off" class="fa fa-heart-o "></i>
+	</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+<li role="presentation" class="dropdown-header">Share this Post</li>
+<li role="presentation">
+	<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+
+<li role="presentation">
+	<a component="post/flag" role="menuitem" tabindex="-1" href="#">
+		Flag this post for moderation
+	</a>
+</li>
+									</ul>
+								</div>
+
+																&bull;
+								<a component="post/upvote" href="#" class="upvote">
+									<i class="fa fa-chevron-up"></i>
+								</a>
+								<span component="post/vote-count" class="votes" data-votes="0">0</span>
+																<a component="post/downvote" href="#" class="downvote">
+									<i class="fa fa-chevron-down"></i>
+								</a>
+
+								
+								<span class="post-tools">
+																																													<button component="post/chat" class="btn btn-sm btn-link chat" type="button" title="Chat"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> Chat</span></button>
+
+									<button component="post/quote" class="btn btn-sm btn-link " type="button" title="Quote"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> Quote</span></button>
+									<button component="post/reply" class="btn btn-sm btn-link " type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> Reply</span></button>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			
+			<li component="post" class="post-row "data-pid="29870" data-uid="1096" data-username="Berenger" data-userslug="berenger" data-index="2" data-timestamp="1330181265000" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="2"></a>
+
+				<meta itemprop="datePublished" content="2012-02-25T14:47:45.000Z">
+				<meta itemprop="dateModified" content="">
+
+				<div class="topic-item">
+					<div class="topic-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="topic-profile-pic hidden-xs text-center">
+									<a href="/user/berenger">
+										<img src="https://s.gravatar.com/avatar/44cf78ec6051c19222157525530c96e8?size=128&default=identicon&rating=pg" alt="Berenger" class="profile-image user-img" title="Berenger">
+									</a>
+									<small class="username" title="Berenger"><a href="/user/berenger">Berenger</a></small>
+
+									
+
+
+								</div>
+								<div class="topic-text">
+									
+									<div component="post/content" class="post-content" itemprop="text"><p>Actually there are the [m_autoscale] and [m_scale] from the rjdj lib</p>
+<p><a href="https://github.com/rjdj/rjlib" rel="nofollow">https://github.com/rjdj/rjlib</a></p>
+<p>the method used is not the same, (don't know if it is simpler) but it's vanilla <img class="emoji emoji-extended" src="http://forum.pdpatchrepo.info/plugins/nodebb-plugin-emoji-extended/images/grinning.png" title=":)" alt=":)" /></p>
+<p>You're definitely right it is a really usefull object</p>
+</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="topic-footer">
+						<div class="row">
+							<div class="">
+								<small class="pull-right">
+									<span>
+																				<i component="user/status" class="fa fa-circle status offline" title='Offline'></i>
+										<span data-username="Berenger" data-uid="1096">
+																						<strong><a href="/user/berenger" itemprop="author">Berenger</a></strong> posted <span class="timeago" title="2012-02-25T14:47:45.000Z"></span>
+										</span>
+									</span>
+
+
+									<span component="post/editor" class=" hidden">, last edited by <strong><a href="/user"></a></strong> <span class="timeago" title=""></span></span>
+
+								</small>
+
+								<div class="dropdown moderator-tools" component="post/tools">
+									<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
+									<ul class="dropdown-menu" role="menu">
+
+
+<li role="presentation">
+	<a component="post/favourite" role="menuitem" tabindex="-1" href="#" data-favourited="false">
+
+		<span class="favourite-text">Favourite</span>
+		<span component="post/favourite-count" class="favouriteCount" data-favourites="1">1</span>&nbsp;
+
+		<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+		<i component="post/favourite/off" class="fa fa-heart-o "></i>
+	</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+<li role="presentation" class="dropdown-header">Share this Post</li>
+<li role="presentation">
+	<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+
+<li role="presentation">
+	<a component="post/flag" role="menuitem" tabindex="-1" href="#">
+		Flag this post for moderation
+	</a>
+</li>
+									</ul>
+								</div>
+
+																&bull;
+								<a component="post/upvote" href="#" class="upvote">
+									<i class="fa fa-chevron-up"></i>
+								</a>
+								<span component="post/vote-count" class="votes" data-votes="0">0</span>
+																<a component="post/downvote" href="#" class="downvote">
+									<i class="fa fa-chevron-down"></i>
+								</a>
+
+								
+								<span class="post-tools">
+																																													<button component="post/chat" class="btn btn-sm btn-link chat" type="button" title="Chat"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> Chat</span></button>
+
+									<button component="post/quote" class="btn btn-sm btn-link " type="button" title="Quote"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> Quote</span></button>
+									<button component="post/reply" class="btn btn-sm btn-link " type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> Reply</span></button>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			
+			<li component="post" class="post-row "data-pid="29878" data-uid="1959" data-username="sumidero" data-userslug="sumidero" data-index="3" data-timestamp="1330192457000" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="3"></a>
+
+				<meta itemprop="datePublished" content="2012-02-25T17:54:17.000Z">
+				<meta itemprop="dateModified" content="">
+
+				<div class="topic-item">
+					<div class="topic-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="topic-profile-pic hidden-xs text-center">
+									<a href="/user/sumidero">
+										<img src="/uploads/1959-profileimg.jpg" alt="sumidero" class="profile-image user-img" title="sumidero">
+									</a>
+									<small class="username" title="sumidero"><a href="/user/sumidero">sumidero</a></small>
+
+									
+
+
+								</div>
+								<div class="topic-text">
+									
+									<div component="post/content" class="post-content" itemprop="text"><p>Hello.</p>
+<p>I have this abstraction that may be useful. It's for translating a midi CC range to any desired linear range. If you rip its guts apart you may use it for what you intend to.<br />
+Best regards.</p>
+<p>Sumidero</p>
+<p><a href="http://www.pdpatchrepo.info/hurleur/CCtoRange.pd" rel="nofollow">http://www.pdpatchrepo.info/hurleur/CCtoRange.pd</a></p>
+</div>
+																		<div class="post-signature"><p>Debian Stretch on Lenovo T450i, Lexicon Omega.<br />
+Pd-vanilla 0.49.0-3~bpo9+1 (installed from repo)</p>
+</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="topic-footer">
+						<div class="row">
+							<div class="">
+								<small class="pull-right">
+									<span>
+																				<i component="user/status" class="fa fa-circle status offline" title='Offline'></i>
+										<span data-username="sumidero" data-uid="1959">
+																						<strong><a href="/user/sumidero" itemprop="author">sumidero</a></strong> posted <span class="timeago" title="2012-02-25T17:54:17.000Z"></span>
+										</span>
+									</span>
+
+
+									<span component="post/editor" class=" hidden">, last edited by <strong><a href="/user"></a></strong> <span class="timeago" title=""></span></span>
+
+								</small>
+
+								<div class="dropdown moderator-tools" component="post/tools">
+									<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
+									<ul class="dropdown-menu" role="menu">
+
+
+<li role="presentation">
+	<a component="post/favourite" role="menuitem" tabindex="-1" href="#" data-favourited="false">
+
+		<span class="favourite-text">Favourite</span>
+		<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+		<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+		<i component="post/favourite/off" class="fa fa-heart-o "></i>
+	</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+<li role="presentation" class="dropdown-header">Share this Post</li>
+<li role="presentation">
+	<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+
+<li role="presentation">
+	<a component="post/flag" role="menuitem" tabindex="-1" href="#">
+		Flag this post for moderation
+	</a>
+</li>
+									</ul>
+								</div>
+
+																&bull;
+								<a component="post/upvote" href="#" class="upvote">
+									<i class="fa fa-chevron-up"></i>
+								</a>
+								<span component="post/vote-count" class="votes" data-votes="0">0</span>
+																<a component="post/downvote" href="#" class="downvote">
+									<i class="fa fa-chevron-down"></i>
+								</a>
+
+								
+								<span class="post-tools">
+																																													<button component="post/chat" class="btn btn-sm btn-link chat" type="button" title="Chat"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> Chat</span></button>
+
+									<button component="post/quote" class="btn btn-sm btn-link " type="button" title="Quote"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> Quote</span></button>
+									<button component="post/reply" class="btn btn-sm btn-link " type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> Reply</span></button>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			
+			<li component="post" class="post-row "data-pid="29916" data-uid="2857" data-username="danarf" data-userslug="danarf" data-index="4" data-timestamp="1330344700000" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="4"></a>
+
+				<meta itemprop="datePublished" content="2012-02-27T12:11:40.000Z">
+				<meta itemprop="dateModified" content="">
+
+				<div class="topic-item">
+					<div class="topic-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="topic-profile-pic hidden-xs text-center">
+									<a href="/user/danarf">
+										<img src="https://s.gravatar.com/avatar/495f76fe344ebd8afbc9945c871a7c28?size=128&default=identicon&rating=pg" alt="danarf" class="profile-image user-img" title="danarf">
+									</a>
+									<small class="username" title="danarf"><a href="/user/danarf">danarf</a></small>
+
+									
+
+
+								</div>
+								<div class="topic-text">
+									
+									<div component="post/content" class="post-content" itemprop="text"><p><a class="plugin-mentions-a" href="http://forum.pdpatchrepo.info/user/michael">@Michael</a>: You specify an input range, lets say 0-3. So you put 0 on the 2nd inlet and 3 on the 3rd. Now you specify an output range, lets say 15-300. You put the 15 on the 4th inlet and the 300 on the 5th. (you can also just create the object as [map 0 3 15 300], without using any inlets ) Now every value between 0 and 3 that comes in at the 1st inlet will be mapped to the range 15-300. if a value is higher than 3, or lower than 0 it will be cutoff, and output 0 or 3.<br />
+Since I am not very capable with PD, i use it much with other programs (so far), which give you values from 0-1. PD often needs Values from 0-127, so you just create [map 0 1 0 127] and there you go. If you wan't to reverse it you write [map 1 0 0 127]<br />
+clear now? <img class="emoji emoji-extended" src="http://forum.pdpatchrepo.info/plugins/nodebb-plugin-emoji-extended/images/grinning.png" title=":)" alt=":)" /></p>
+<p>I took a look at the rjdj objects... and they are quite cool! That whole library has some nice stuff in it! Thanks BerengerRecoules! I like that their mapping object has an exponent in it. that is very useful! Mine is bit more minimalist, and limits the values. If i had found this before, i wouldn't have written it...</p>
+</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="topic-footer">
+						<div class="row">
+							<div class="">
+								<small class="pull-right">
+									<span>
+																				<i component="user/status" class="fa fa-circle status offline" title='Offline'></i>
+										<span data-username="danarf" data-uid="2857">
+																						<strong><a href="/user/danarf" itemprop="author">danarf</a></strong> posted <span class="timeago" title="2012-02-27T12:11:40.000Z"></span>
+										</span>
+									</span>
+
+
+									<span component="post/editor" class=" hidden">, last edited by <strong><a href="/user"></a></strong> <span class="timeago" title=""></span></span>
+
+								</small>
+
+								<div class="dropdown moderator-tools" component="post/tools">
+									<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
+									<ul class="dropdown-menu" role="menu">
+
+
+<li role="presentation">
+	<a component="post/favourite" role="menuitem" tabindex="-1" href="#" data-favourited="false">
+
+		<span class="favourite-text">Favourite</span>
+		<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+		<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+		<i component="post/favourite/off" class="fa fa-heart-o "></i>
+	</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+<li role="presentation" class="dropdown-header">Share this Post</li>
+<li role="presentation">
+	<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+
+<li role="presentation">
+	<a component="post/flag" role="menuitem" tabindex="-1" href="#">
+		Flag this post for moderation
+	</a>
+</li>
+									</ul>
+								</div>
+
+																&bull;
+								<a component="post/upvote" href="#" class="upvote">
+									<i class="fa fa-chevron-up"></i>
+								</a>
+								<span component="post/vote-count" class="votes" data-votes="0">0</span>
+																<a component="post/downvote" href="#" class="downvote">
+									<i class="fa fa-chevron-down"></i>
+								</a>
+
+								
+								<span class="post-tools">
+																																													<button component="post/chat" class="btn btn-sm btn-link chat" type="button" title="Chat"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> Chat</span></button>
+
+									<button component="post/quote" class="btn btn-sm btn-link " type="button" title="Quote"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> Quote</span></button>
+									<button component="post/reply" class="btn btn-sm btn-link " type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> Reply</span></button>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			
+			<li component="post" class="post-row "data-pid="71164" data-uid="16568" data-username="pmoney" data-userslug="pmoney" data-index="5" data-timestamp="1701003590068" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="5"></a>
+
+				<meta itemprop="datePublished" content="2023-11-26T12:59:50.068Z">
+				<meta itemprop="dateModified" content="">
+
+				<div class="topic-item">
+					<div class="topic-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="topic-profile-pic hidden-xs text-center">
+									<a href="/user/pmoney">
+										<img src="https://s.gravatar.com/avatar/222e363d70081104fbd954bf615fc5b0?size=128&default=identicon&rating=pg" alt="pmoney" class="profile-image user-img" title="pmoney">
+									</a>
+									<small class="username" title="pmoney"><a href="/user/pmoney">pmoney</a></small>
+
+									
+
+
+								</div>
+								<div class="topic-text">
+									
+									<div component="post/content" class="post-content" itemprop="text"><p>I've been using this method. You use expr in this format.</p>
+<p>[expr (((OldValue - OldMin) * (NewMax - NewMin)) / (OldMax - OldMin)) + NewMin]</p>
+<p>When mapping ctl values in, I often start by mapping to the range -1 to 1 which would look like this.</p>
+<p>[expr ((($f1 - 0) * (1 - -1)) / (127 - 0)) + -1]</p>
+<p>That'll take whatever the ctl value (1-127) coming in and convert it to the rage of -1 to 1. The old min and old max are the min and max of the data coming in and the new min and max represent the range of the values you want.</p>
+<p>Hope that helps.</p>
+</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="topic-footer">
+						<div class="row">
+							<div class="">
+								<small class="pull-right">
+									<span>
+																				<i component="user/status" class="fa fa-circle status offline" title='Offline'></i>
+										<span data-username="pmoney" data-uid="16568">
+																						<strong><a href="/user/pmoney" itemprop="author">pmoney</a></strong> posted <span class="timeago" title="2023-11-26T12:59:50.068Z"></span>
+										</span>
+									</span>
+
+
+									<span component="post/editor" class=" hidden">, last edited by <strong><a href="/user"></a></strong> <span class="timeago" title=""></span></span>
+
+								</small>
+
+								<div class="dropdown moderator-tools" component="post/tools">
+									<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
+									<ul class="dropdown-menu" role="menu">
+
+
+<li role="presentation">
+	<a component="post/favourite" role="menuitem" tabindex="-1" href="#" data-favourited="false">
+
+		<span class="favourite-text">Favourite</span>
+		<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+		<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+		<i component="post/favourite/off" class="fa fa-heart-o "></i>
+	</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+<li role="presentation" class="dropdown-header">Share this Post</li>
+<li role="presentation">
+	<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
+</li>
+<li role="presentation">
+	<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
+</li>
+
+<li role="presentation" class="divider"></li>
+
+<li role="presentation">
+	<a component="post/flag" role="menuitem" tabindex="-1" href="#">
+		Flag this post for moderation
+	</a>
+</li>
+									</ul>
+								</div>
+
+																&bull;
+								<a component="post/upvote" href="#" class="upvote">
+									<i class="fa fa-chevron-up"></i>
+								</a>
+								<span component="post/vote-count" class="votes" data-votes="0">0</span>
+																<a component="post/downvote" href="#" class="downvote">
+									<i class="fa fa-chevron-down"></i>
+								</a>
+
+								
+								<span class="post-tools">
+																																													<button component="post/chat" class="btn btn-sm btn-link chat" type="button" title="Chat"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> Chat</span></button>
+
+									<button component="post/quote" class="btn btn-sm btn-link " type="button" title="Quote"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> Quote</span></button>
+									<button component="post/reply" class="btn btn-sm btn-link " type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> Reply</span></button>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+	</ul>
+
+	<div class="post-bar col-xs-12  bottom-post-bar">
+<div class="inline-block">
+
+	<span class="tags">
+	</span>
+
+	
+
+	<small class="topic-stats">
+		<span>Posts</span>
+		<strong><span component="topic/post-count" class="human-readable-number" title="6">6</span></strong> |
+		<span>Views</span>
+		<strong><span class="human-readable-number" title="12731">12731</span></strong>
+	</small>
+	<span class="browsing-users hidden">
+		&bull;
+		<small><span>browsing</span></small>
+		<div component="topic/browsing/list" class="thread_active_users active-users inline-block"></div>
+		<small class="hidden">
+			<i class="fa fa-users"></i> <span component="topic/browsing/count" class="user-count"></span>
+		</small>
+	</span>
+</div>
+
+<div class="topic-main-buttons pull-right inline-block">
+	<div class="loading-indicator" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</div>
+
+
+
+<a component="topic/reply" class="btn btn-primary ">Reply</a>
+
+<a component="topic/reply/locked" class="btn btn-primary hidden" disabled><i class="fa fa-lock"></i> Locked</a>
+
+
+
+
+<div class="btn-group dropup" component="thread/sort">
+	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Sort by <span class="caret"></span></button>
+	<ul class="dropdown-menu pull-right">
+		<li><a href="#" class="oldest_to_newest" data-sort="oldest_to_newest"><i class="fa fa-fw"></i> Oldest to Newest</a></li>
+		<li><a href="#" class="newest_to_oldest" data-sort="newest_to_oldest"><i class="fa fa-fw"></i> Newest to Oldest</a></li>
+		<li><a href="#" class="most_votes" data-sort="most_votes"><i class="fa fa-fw"></i> Most votes</a></li>
+	</ul>
+</div>
+
+
+</div>
+<div style="clear:both;"></div>
+	</div>
+
+	
+
+<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Move Topic</h3>
+			</div>
+			<div class="modal-body">
+				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> Loading Categories</p>
+				<p>
+					Disabled Categories are greyed out
+				</p>
+				<div id="move-confirm" style="display: none;">
+					<hr />
+					<div class="alert alert-info">This topic will be moved to the category <strong><span id="confirm-category-name"></span></strong></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="fork-thread-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Fork Topic</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input id="fork-title" type="text" class="form-control" placeholder="Enter new thread title"><br/>
+					<label>Click the posts you want to fork</label> <br/>
+					<span id="fork-pids"></span>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="fork_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="fork_thread_commit" disabled>Fork</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="move-post-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Move Post</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="topicId">Topic ID</label>
+					<input id="topicId" type="text" class="form-control" placeholder="Enter topic ID"><br/>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_post_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_post_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<noscript>
+
+<div class="text-center pagination-container hidden">
+	<ul class="pagination">
+		<li class="previous pull-left disabled">
+			<a href="?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+
+
+		<li class="next pull-right disabled">
+			<a href="?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+</div>
+
+</noscript>
+
+<input type="hidden" template-variable="topic_id" value="6007" />
+<input type="hidden" template-variable="topic_slug" value="6007/map-object" />
+<input type="hidden" template-variable="category_id" value="2" />
+<input type="hidden" template-variable="currentPage" value="1" />
+<input type="hidden" template-variable="pageCount" value="1" />
+<input type="hidden" template-variable="locked" template-type="boolean" value="false" />
+<input type="hidden" template-variable="deleted" template-type="boolean" value="false" />
+<input type="hidden" template-variable="pinned" template-type="boolean" value="false" />
+<input type="hidden" template-variable="topic_name" value="Map Object" />
+<input type="hidden" template-variable="postcount" value="6" />
+<input type="hidden" template-variable="viewcount" value="12731" /><input type="hidden" ajaxify-data="%7B%22tid%22%3A%226007%22%2C%22uid%22%3A%222857%22%2C%22cid%22%3A%222%22%2C%22mainPid%22%3A%226002%22%2C%22title%22%3A%22Map%20Object%22%2C%22slug%22%3A%226007%2Fmap-object%22%2C%22timestamp%22%3A%221330106986000%22%2C%22lastposttime%22%3A%221701003590068%22%2C%22postcount%22%3A%226%22%2C%22viewcount%22%3A%2212731%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaser_timestamp%22%3A%222012-02-24T18%3A09%3A46.000Z%22%2C%22relativeTime%22%3A%222012-02-24T18%3A09%3A46.000Z%22%2C%22teaserPid%22%3A%2271164%22%2C%22lastposttimeISO%22%3A%222023-11-26T12%3A59%3A50.068Z%22%2C%22posts%22%3A%5B%7B%22edited%22%3A%220%22%2C%22timestamp%22%3A%221330106986000%22%2C%22reputation%22%3A%220%22%2C%22relativeTime%22%3A%222012-02-24T18%3A09%3A46.000Z%22%2C%22votes%22%3A%220%22%2C%22uid%22%3A%222857%22%2C%22pid%22%3A%226002%22%2C%22content%22%3A%22%3Cp%3EHi%20Everyone!%3C%2Fp%3E%5Cn%3Cp%3EI'm%20new%20to%20PD%20and%20it%20seems%20to%20me%20that%20there%20is%20no%20map-object%20like%20in%20processing%2C%20cinder%2C%20max%2Fmsp%20and...%20everywhere%20for%20mapping%20some%20value%20from%20one%20range%20to%20another.%20Am%20I%20just%20too%20stupid%20to%20find%20it%20or%20is%20PD%20really%20missing%20such%20an%20object%3F%3C%2Fp%3E%5Cn%3Cp%3EAnyways%2C%20searching%20would%20probably%20have%20taken%20longer%20than%20making%20one%2C%20so%20here%20it%20is.%20I%20thought%20maybe%20somebody%20might%20need%20it%2C%20i%20use%20this%20thing%20in%20almost%20every%20patch%20i%20made!%20Shouldn't%20something%20like%20this%20be%20in%20the%20extended-package%3F%3C%2Fp%3E%5Cn%3Cp%3ETell%20me%20if%20you%20like%20it%2C%20and%20if%20there%20would%20have%20been%20an%20easier%20way%20%3Cimg%20class%3D%5C%22emoji%20emoji-extended%5C%22%20src%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fplugins%2Fnodebb-plugin-emoji-extended%2Fimages%2Fgrinning.png%5C%22%20title%3D%5C%22%3A)%5C%22%20alt%3D%5C%22%3A)%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%3Cp%3ECheers%3Cbr%20%2F%3E%5CnAdrian%3C%2Fp%3E%5Cn%3Cp%3E%3Ca%20href%3D%5C%22http%3A%2F%2Fwww.pdpatchrepo.info%2Fhurleur%2Fmap.pd%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttp%3A%2F%2Fwww.pdpatchrepo.info%2Fhurleur%2Fmap.pd%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22tid%22%3A%226007%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A0%2C%22user%22%3A%7B%22uid%22%3A%222857%22%2C%22username%22%3A%22danarf%22%2C%22userslug%22%3A%22danarf%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%228%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F495f76fe344ebd8afbc9945c871a7c28%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22edited%22%3A%220%22%2C%22timestamp%22%3A%221330125126000%22%2C%22reputation%22%3A%220%22%2C%22relativeTime%22%3A%222012-02-24T23%3A12%3A06.000Z%22%2C%22votes%22%3A%220%22%2C%22uid%22%3A%222283%22%2C%22pid%22%3A%2229857%22%2C%22content%22%3A%22%3Cp%3EThanks%20danarf!%20While%20I'm%20sure%20this%20a%20valuable%20patch%2C%20I%20don't%20quite%20know%20how%20to%20use%20it.%20Could%20you%20explain%20this%20a%20little%20further%3F%3C%2Fp%3E%5Cn%3Cp%3EThanks%2C%3C%2Fp%3E%5Cn%3Cp%3EMichael%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22tid%22%3A%226007%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%222283%22%2C%22username%22%3A%22mjpalumbo%22%2C%22userslug%22%3A%22mjpalumbo%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%2240%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F387586271fd9139ffa64b2ad56399740%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22edited%22%3A%220%22%2C%22timestamp%22%3A%221330181265000%22%2C%22reputation%22%3A%221%22%2C%22relativeTime%22%3A%222012-02-25T14%3A47%3A45.000Z%22%2C%22votes%22%3A%220%22%2C%22uid%22%3A%221096%22%2C%22pid%22%3A%2229870%22%2C%22content%22%3A%22%3Cp%3EActually%20there%20are%20the%20%5Bm_autoscale%5D%20and%20%5Bm_scale%5D%20from%20the%20rjdj%20lib%3C%2Fp%3E%5Cn%3Cp%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Frjdj%2Frjlib%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fgithub.com%2Frjdj%2Frjlib%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3Ethe%20method%20used%20is%20not%20the%20same%2C%20(don't%20know%20if%20it%20is%20simpler)%20but%20it's%20vanilla%20%3Cimg%20class%3D%5C%22emoji%20emoji-extended%5C%22%20src%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fplugins%2Fnodebb-plugin-emoji-extended%2Fimages%2Fgrinning.png%5C%22%20title%3D%5C%22%3A)%5C%22%20alt%3D%5C%22%3A)%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%3Cp%3EYou're%20definitely%20right%20it%20is%20a%20really%20usefull%20object%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22tid%22%3A%226007%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%221096%22%2C%22username%22%3A%22Berenger%22%2C%22userslug%22%3A%22berenger%22%2C%22reputation%22%3A%227%22%2C%22postcount%22%3A%22199%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F44cf78ec6051c19222157525530c96e8%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22edited%22%3A%220%22%2C%22timestamp%22%3A%221330192457000%22%2C%22reputation%22%3A%220%22%2C%22relativeTime%22%3A%222012-02-25T17%3A54%3A17.000Z%22%2C%22votes%22%3A%220%22%2C%22uid%22%3A%221959%22%2C%22pid%22%3A%2229878%22%2C%22content%22%3A%22%3Cp%3EHello.%3C%2Fp%3E%5Cn%3Cp%3EI%20have%20this%20abstraction%20that%20may%20be%20useful.%20It's%20for%20translating%20a%20midi%20CC%20range%20to%20any%20desired%20linear%20range.%20If%20you%20rip%20its%20guts%20apart%20you%20may%20use%20it%20for%20what%20you%20intend%20to.%3Cbr%20%2F%3E%5CnBest%20regards.%3C%2Fp%3E%5Cn%3Cp%3ESumidero%3C%2Fp%3E%5Cn%3Cp%3E%3Ca%20href%3D%5C%22http%3A%2F%2Fwww.pdpatchrepo.info%2Fhurleur%2FCCtoRange.pd%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttp%3A%2F%2Fwww.pdpatchrepo.info%2Fhurleur%2FCCtoRange.pd%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22tid%22%3A%226007%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%221959%22%2C%22username%22%3A%22sumidero%22%2C%22userslug%22%3A%22sumidero%22%2C%22reputation%22%3A%222%22%2C%22postcount%22%3A%22153%22%2C%22picture%22%3A%22%2Fuploads%2F1959-profileimg.jpg%22%2C%22signature%22%3A%22%3Cp%3EDebian%20Stretch%20on%20Lenovo%20T450i%2C%20Lexicon%20Omega.%3Cbr%20%2F%3E%5CnPd-vanilla%200.49.0-3~bpo9%2B1%20(installed%20from%20repo)%3C%2Fp%3E%5Cn%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22edited%22%3A%220%22%2C%22timestamp%22%3A%221330344700000%22%2C%22reputation%22%3A%220%22%2C%22relativeTime%22%3A%222012-02-27T12%3A11%3A40.000Z%22%2C%22votes%22%3A%220%22%2C%22uid%22%3A%222857%22%2C%22pid%22%3A%2229916%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fuser%2Fmichael%5C%22%3E%40Michael%3C%2Fa%3E%3A%20You%20specify%20an%20input%20range%2C%20lets%20say%200-3.%20So%20you%20put%200%20on%20the%202nd%20inlet%20and%203%20on%20the%203rd.%20Now%20you%20specify%20an%20output%20range%2C%20lets%20say%2015-300.%20You%20put%20the%2015%20on%20the%204th%20inlet%20and%20the%20300%20on%20the%205th.%20(you%20can%20also%20just%20create%20the%20object%20as%20%5Bmap%200%203%2015%20300%5D%2C%20without%20using%20any%20inlets%20)%20Now%20every%20value%20between%200%20and%203%20that%20comes%20in%20at%20the%201st%20inlet%20will%20be%20mapped%20to%20the%20range%2015-300.%20if%20a%20value%20is%20higher%20than%203%2C%20or%20lower%20than%200%20it%20will%20be%20cutoff%2C%20and%20output%200%20or%203.%3Cbr%20%2F%3E%5CnSince%20I%20am%20not%20very%20capable%20with%20PD%2C%20i%20use%20it%20much%20with%20other%20programs%20(so%20far)%2C%20which%20give%20you%20values%20from%200-1.%20PD%20often%20needs%20Values%20from%200-127%2C%20so%20you%20just%20create%20%5Bmap%200%201%200%20127%5D%20and%20there%20you%20go.%20If%20you%20wan't%20to%20reverse%20it%20you%20write%20%5Bmap%201%200%200%20127%5D%3Cbr%20%2F%3E%5Cnclear%20now%3F%20%3Cimg%20class%3D%5C%22emoji%20emoji-extended%5C%22%20src%3D%5C%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fplugins%2Fnodebb-plugin-emoji-extended%2Fimages%2Fgrinning.png%5C%22%20title%3D%5C%22%3A)%5C%22%20alt%3D%5C%22%3A)%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%3Cp%3EI%20took%20a%20look%20at%20the%20rjdj%20objects...%20and%20they%20are%20quite%20cool!%20That%20whole%20library%20has%20some%20nice%20stuff%20in%20it!%20Thanks%20BerengerRecoules!%20I%20like%20that%20their%20mapping%20object%20has%20an%20exponent%20in%20it.%20that%20is%20very%20useful!%20Mine%20is%20bit%20more%20minimalist%2C%20and%20limits%20the%20values.%20If%20i%20had%20found%20this%20before%2C%20i%20wouldn't%20have%20written%20it...%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22tid%22%3A%226007%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A4%2C%22user%22%3A%7B%22uid%22%3A%222857%22%2C%22username%22%3A%22danarf%22%2C%22userslug%22%3A%22danarf%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%228%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F495f76fe344ebd8afbc9945c871a7c28%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221701003590068%22%2C%22edited%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%2216568%22%2C%22content%22%3A%22%3Cp%3EI've%20been%20using%20this%20method.%20You%20use%20expr%20in%20this%20format.%3C%2Fp%3E%5Cn%3Cp%3E%5Bexpr%20(((OldValue%20-%20OldMin)%20*%20(NewMax%20-%20NewMin))%20%2F%20(OldMax%20-%20OldMin))%20%2B%20NewMin%5D%3C%2Fp%3E%5Cn%3Cp%3EWhen%20mapping%20ctl%20values%20in%2C%20I%20often%20start%20by%20mapping%20to%20the%20range%20-1%20to%201%20which%20would%20look%20like%20this.%3C%2Fp%3E%5Cn%3Cp%3E%5Bexpr%20(((%24f1%20-%200)%20*%20(1%20-%20-1))%20%2F%20(127%20-%200))%20%2B%20-1%5D%3C%2Fp%3E%5Cn%3Cp%3EThat'll%20take%20whatever%20the%20ctl%20value%20(1-127)%20coming%20in%20and%20convert%20it%20to%20the%20rage%20of%20-1%20to%201.%20The%20old%20min%20and%20old%20max%20are%20the%20min%20and%20max%20of%20the%20data%20coming%20in%20and%20the%20new%20min%20and%20max%20represent%20the%20range%20of%20the%20values%20you%20want.%3C%2Fp%3E%5Cn%3Cp%3EHope%20that%20helps.%3C%2Fp%3E%5Cn%22%2C%22pid%22%3A%2271164%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22tid%22%3A%226007%22%2C%22relativeTime%22%3A%222023-11-26T12%3A59%3A50.068Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%2216568%22%2C%22username%22%3A%22pmoney%22%2C%22userslug%22%3A%22pmoney%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%221%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F222e363d70081104fbd954bf615fc5b0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%5D%2C%22category%22%3A%7B%22cid%22%3A%222%22%2C%22name%22%3A%22patch~%22%2C%22description%22%3A%22Discover%20and%20share%20your%20patches%20(both%20audio%20%26amp%3B%20video)%22%2C%22icon%22%3A%22fa-cloud-download%22%2C%22bgColor%22%3A%22%230059b2%22%2C%22color%22%3A%22%23FFFFFF%22%2C%22slug%22%3A%222%2Fpatch%22%2C%22topic_count%22%3A%221128%22%2C%22post_count%22%3A%225610%22%2C%22disabled%22%3Afalse%2C%22order%22%3A%222%22%2C%22link%22%3A%22%22%2C%22numRecentReplies%22%3A%220%22%2C%22class%22%3A%22col-md-3%20col-xs-6%22%2C%22imageClass%22%3A%22auto%22%2C%22totalPostCount%22%3A%225610%22%2C%22totalTopicCount%22%3A%221128%22%2C%22descriptionParsed%22%3A%22%3Cp%3EDiscover%20and%20share%20your%20patches%20(both%20audio%20%26amp%3B%20video)%3C%2Fp%3E%5Cn%22%7D%2C%22thread_tools%22%3A%5B%5D%2C%22tags%22%3A%5B%5D%2C%22isFollowing%22%3Afalse%2C%22bookmark%22%3A%225%22%2C%22unreplied%22%3Afalse%2C%22pageCount%22%3A1%2C%22currentPage%22%3A1%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22patch~%22%2C%22url%22%3A%22%2Fcategory%2F2%2Fpatch%22%7D%2C%7B%22text%22%3A%22Map%20Object%22%2C%22url%22%3A%22%2Ftopic%2F6007%2Fmap-object%22%7D%5D%2C%22privileges%22%3A%7B%22topics%3Areply%22%3Atrue%2C%22read%22%3Atrue%2C%22view_thread_tools%22%3Afalse%2C%22editable%22%3Afalse%2C%22deletable%22%3Afalse%2C%22view_deleted%22%3Afalse%2C%22disabled%22%3Afalse%2C%22tid%22%3A%226007%22%2C%22uid%22%3A16778%7D%2C%22reputation%3Adisabled%22%3Afalse%2C%22downvote%3Adisabled%22%3Afalse%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Ftopic%2F6007.rss%22%2C%22pagination%22%3A%7B%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22next%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22rel%22%3A%5B%5D%2C%22pages%22%3A%5B%5D%7D%2C%22loggedIn%22%3Atrue%2C%22template%22%3A%7B%22name%22%3A%22topic%22%2C%22topic%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.3%22%2C%22siteTitle%22%3A%22PURE%20DATA%20forum~%22%2C%22showSiteTitle%22%3Afalse%2C%22postDelay%22%3A%220%22%2C%22minimumTitleLength%22%3A%221%22%2C%22maximumTitleLength%22%3A%22300%22%2C%22minimumPostLength%22%3A%221%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%22100%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Atrue%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Afalse%2C%22disableChat%22%3Afalse%2C%22maxReconnectionAttempts%22%3A%225%22%2C%22reconnectionDelay%22%3A%22200%22%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A%223%22%2C%22maximumTagLength%22%3A%2215%22%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%228192%22%2C%22theme%3Aid%22%3A%22nodebb-theme-lavender%22%2C%22theme%3Asrc%22%3A%22%22%2C%22defaultLang%22%3A%22en_GB%22%2C%22userLang%22%3A%22en_GB%22%2C%22loggedIn%22%3Atrue%2C%22cache-buster%22%3A%22v0.7.3-3-gf7648c2%22%2C%22script-buster%22%3A%22153e09e4%22%2C%22css-buster%22%3A%22b43aec11%22%2C%22requireEmailConfirmation%22%3Atrue%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22R9TghtAI-H89bjMy7qCYrRpBLtprOHuLJ7ts%22%2C%22searchEnabled%22%3Atrue%2C%22notificationSounds%22%3Afalse%2C%22openOutgoingLinksInNewTab%22%3Afalse%2C%22topicSearchEnabled%22%3Afalse%2C%22disableMasonry%22%3Afalse%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cr%5Cn%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cr%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cr%5Cn%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cr%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cr%5Cn%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cr%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cr%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cr%5Cn%5Cr%5Cn%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cr%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cr%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cr%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cr%5Cn%5Cr%5Cn%5Ct%3Cscript%3E%5Cr%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cr%5Cn%5Ct%3C%2Fscript%3E%5Cr%5Cn%3C%2Fbody%3E%5Cr%5Cn%3C%2Fhtml%3E%5Cr%5Cn%22%2C%22metaTags%22%3A%5B%7B%22name%22%3A%22title%22%2C%22content%22%3A%22Map%20Object%22%7D%2C%7B%22name%22%3A%22description%22%2C%22content%22%3A%22Hi%20Everyone!%20I%26%23x27%3Bm%20new%20to%20PD%20and%20it%20seems%20to%20me%20that%20there%20is%20no%20map-object%20like%20in%20processing%2C%20cinder%2C%20max%26%23x2F%3Bmsp%20and...%20everywhere%20for%20mapping%20some%20value%20from%20one%20range%20to%20another.%20Am%20I%20just%20too%20stupid%20to%20find%20it%20or%20is%20PD%20really%20missing%20such%20an%20object%3F%20Anywa...%22%7D%2C%7B%22property%22%3A%22og%3Atitle%22%2C%22content%22%3A%22Map%20Object%22%7D%2C%7B%22property%22%3A%22og%3Adescription%22%2C%22content%22%3A%22Hi%20Everyone!%20I%26%23x27%3Bm%20new%20to%20PD%20and%20it%20seems%20to%20me%20that%20there%20is%20no%20map-object%20like%20in%20processing%2C%20cinder%2C%20max%26%23x2F%3Bmsp%20and...%20everywhere%20for%20mapping%20some%20value%20from%20one%20range%20to%20another.%20Am%20I%20just%20too%20stupid%20to%20find%20it%20or%20is%20PD%20really%20missing%20such%20an%20object%3F%20Anywa...%22%7D%2C%7B%22property%22%3A%22og%3Atype%22%2C%22content%22%3A%22article%22%7D%2C%7B%22property%22%3A%22og%3Aurl%22%2C%22content%22%3A%22http%3A%2F%2Fforum.pdpatchrepo.info%2Ftopic%2F6007%2Fmap-object%22%7D%2C%7B%22property%22%3A%22og%3Aimage%22%2C%22content%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F495f76fe344ebd8afbc9945c871a7c28%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%7B%22property%22%3A%22og%3Aimage%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F495f76fe344ebd8afbc9945c871a7c28%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%7B%22property%22%3A%22article%3Apublished_time%22%2C%22content%22%3A%222012-02-24T18%3A09%3A46.000Z%22%7D%2C%7B%22property%22%3A%22article%3Amodified_time%22%2C%22content%22%3A%222023-11-26T12%3A59%3A50.068Z%22%7D%2C%7B%22property%22%3A%22article%3Asection%22%2C%22content%22%3A%22patch~%22%7D%5D%2C%22linkTags%22%3A%5B%7B%22rel%22%3A%22alternate%22%2C%22type%22%3A%22application%2Frss%2Bxml%22%2C%22href%22%3A%22http%3A%2F%2Fforum.pdpatchrepo.info%2Ftopic%2F6007.rss%22%7D%2C%7B%22rel%22%3A%22canonical%22%2C%22href%22%3A%22http%3A%2F%2Fforum.pdpatchrepo.info%2Ftopic%2F6007%2Fmap-object%22%7D%2C%7B%22rel%22%3A%22up%22%2C%22href%22%3A%22http%3A%2F%2Fforum.pdpatchrepo.info%2Fcategory%2F2%2Fpatch%22%7D%5D%2C%22template%22%3A%22topic%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

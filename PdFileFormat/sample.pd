@@ -1,0 +1,7 @@
+#N canvas 0 0 450  sample_patch 1;
+#X obj 50 50 osc~ 440;
+hey!
+#X obj 50 100 dac~;
+#N canvas dfa;
+#X connect 0 0 1 0;
+#MDMF loll fadlkf:
