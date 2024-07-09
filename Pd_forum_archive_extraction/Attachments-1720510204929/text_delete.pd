@@ -1,0 +1,8 @@
+#N canvas 620 156 450 300 10;
+#X obj 116 87 text define -k mytext;
+#A set one \, two \, three.;
+#X msg 116 133 0;
+#X text 261 86 1) open;
+#X obj 116 157 text delete mytext;
+#X text 150 132 2) click meesage;
+#X connect 1 0 3 0;

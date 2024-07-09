@@ -1,0 +1,27 @@
+#N canvas 402 433 587 364 12;
+#X obj 4 34 tgl 25 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1;
+#X msg 4 62 capture \$1;
+#X msg 282 71 1;
+#X obj 174 189 netserver 10473;
+#X obj 222 270 nbx 2 20 -1e+37 1e+37 0 0 empty empty connections 40
+12 1 14 -262144 -1 -1 1 256;
+#X obj 270 245 nbx 5 20 -1e+37 1e+37 0 0 empty empty socket_number
+70 12 1 14 -262144 -1 -1 0 256;
+#X symbolatom 319 216 15 0 0 1 ip_addr - -;
+#X obj 174 134 list2symbol;
+#X msg 174 167 broadcast \$1;
+#N canvas 750 400 304 304 atorat-master-patch 0;
+#X restore 248 31 pd atorat-master-patch;
+#X obj 4 88 tot atorat-master-patch;
+#X msg 91 148 print;
+#X connect 0 0 1 0;
+#X connect 1 0 10 0;
+#X connect 2 0 0 0;
+#X connect 3 1 4 0;
+#X connect 3 2 5 0;
+#X connect 3 3 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 3 0;
+#X connect 10 2 7 0;
+#X connect 10 3 2 0;
+#X connect 11 0 3 0;

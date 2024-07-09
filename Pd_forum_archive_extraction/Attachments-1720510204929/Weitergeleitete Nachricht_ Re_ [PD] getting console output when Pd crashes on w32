@@ -1,0 +1,121 @@
+Return-path: <pd-list-bounces@iem.at>
+Envelope-to: brandt@subnet.at
+Delivery-date: Thu, 01 Sep 2011 09:38:44 +0200
+Received: from inf182.kug.ac.at ([193.170.191.182] helo=mail.puredata.info)
+	by mx-04.sil.at with esmtps (TLS-1.0:RSA_AES_256_CBC_SHA1:32)
+	(Exim 4.63)
+	(envelope-from <pd-list-bounces@iem.at>)
+	id 1Qz1rI-00034s-NV
+	for brandt@subnet.at; Thu, 01 Sep 2011 09:38:44 +0200
+Received: from localhost ([127.0.0.1] helo=mail.puredata.info)
+	by mail.puredata.info with esmtp (Exim 4.69)
+	(envelope-from <pd-list-bounces@iem.at>)
+	id 1Qz1mo-0003hC-MX; Thu, 01 Sep 2011 09:34:08 +0200
+Received: from iem.kug.ac.at ([193.170.191.180] helo=mail.iem.at)
+	by mail.puredata.info with esmtp (Exim 4.69)
+	(envelope-from <brandt@subnet.at>) id 1Qz1mC-0003h6-N4
+	for pd-list@puredata.info; Thu, 01 Sep 2011 09:33:46 +0200
+Received: from smtp-03.sil.at ([78.142.186.22]:55662)
+	by mail.iem.at with esmtp (Exim 4.69)
+	(envelope-from <brandt@subnet.at>)
+	id 1Qz1m7-0004mB-Aj; Thu, 01 Sep 2011 09:33:28 +0200
+Received: from webmail.sil.at ([78.142.186.61])
+	by smtp-03.sil.at with esmtp (Exim 4.63)
+	(envelope-from <brandt@subnet.at>)
+	id 1Qz1m6-0005Cm-Lg; Thu, 01 Sep 2011 09:33:22 +0200
+Received: from dsl-23-101.utaonline.at (dsl-23-101.utaonline.at
+	[81.189.23.101]) by webmail.sil.at (Horde Framework) with HTTP;
+	Thu, 01 Sep 2011 09:33:12 +0200
+Message-ID: <20110901093312.150276hjcsyuj7y8@webmail.sil.at>
+Date: Thu, 01 Sep 2011 09:33:12 +0200
+From: brandt@subnet.at
+To: "IOhannes m zmoelnig" <zmoelnig@iem.at>
+References: <4E5A5E47.7050705@iem.at>
+	<20110829170055.57404mzc3653smtc@webmail.sil.at>
+	<4E5BAFFA.8000209@iem.at>
+	<20110829184621.35493dgsnziio9xc@webmail.sil.at>
+	<4E5C8BF9.80301@iem.at>
+	<20110830115147.403265bmz8wem268@webmail.sil.at>
+	<4E5CB84E.2010300@iem.at>
+	<20110830124557.25081x9aafw7q15s@webmail.sil.at>
+	<4E5CC1A0.6020902@iem.at>
+	<20110830131600.78551ua1ec66tw8w@webmail.sil.at>
+	<4E5CD0D2.2010708@iem.at>
+	<20110830185600.12772tms8sekjjls@webmail.sil.at>
+	<20110831131501.64766g3sk2ailxmo@webmail.sil.at>
+	<4E5E19D4.9030606@iem.at>
+In-Reply-To: <4E5E19D4.9030606@iem.at>
+MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Internet Messaging Program (IMP) H3 (4.2)
+X-Originating-IP: 81.189.23.101
+X-Scan-Signature: 2d8460fb2b1c7551d7292176eb2b7221
+X-Spam-Score: 0.3
+X-Spam-Level: /
+X-Spam-Tests: AWL=0.277
+X-Spam-Score: 0.0
+X-Spam-Level: /
+Cc: pd-list@iem.at
+Subject: Re: [PD] getting console output when Pd crashes on w32
+X-BeenThere: pd-list@iem.at
+X-Mailman-Version: 2.1.11
+Precedence: list
+List-Id: the PureData - mailinglist <pd-list.iem.at>
+List-Unsubscribe: <http://lists.puredata.info/options/pd-list>,
+	<mailto:pd-list-request@iem.at?subject=unsubscribe>
+List-Archive: <http://lists.puredata.info/pipermail/pd-list>
+List-Post: <mailto:pd-list@iem.at>
+List-Help: <mailto:pd-list-request@iem.at?subject=help>
+List-Subscribe: <http://lists.puredata.info/listinfo/pd-list>,
+	<mailto:pd-list-request@iem.at?subject=subscribe>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"; DelSp="Yes"
+Sender: pd-list-bounces@iem.at
+Errors-To: pd-list-bounces@iem.at
+X-Spam-Score: 0.0
+X-Spam-Level: /
+X-Scan-Signature: 3eb4023d85beba22221bf02b5aa627a5
+
+it seems that it has something to do with text3d....first the text was  
+written directly into the box.....i changed that to message symbol  
+text.....did not change the crash....
+
+
+
+Zitat von "IOhannes m zmoelnig" <zmoelnig@iem.at>:
+
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA1
+>
+> On 2011-08-31 13:15, brandt@subnet.at wrote:
+>> maybe an idea where to start?
+>
+> well, start form your patch and remove everything that is not Gem.
+> then copy everything left into a flat patch.
+> then remove entire gemchains until only the one that causes the crash is
+> left.
+> then remove objects from this gemchain until only the objects needed to
+> crash are left.
+>
+> fgmasdr
+> IOhannes
+>
+>
+>
+> -----BEGIN PGP SIGNATURE-----
+> Version: GnuPG v1.4.11 (GNU/Linux)
+> Comment: Using GnuPG with Mozilla - http://enigmail.mozdev.org/
+>
+> iEYEARECAAYFAk5eGdIACgkQkX2Xpv6ydvSbVwCeIlFj/1thLLqV8n/1FSVi4JYx
+> UkkAoKr5sKbBBIhJUNKmPToC+eSm9EeD
+> =1crf
+> -----END PGP SIGNATURE-----
+>
+>
+
+
+
+
+_______________________________________________
+Pd-list@iem.at mailing list
+UNSUBSCRIBE and account-management -> http://lists.puredata.info/listinfo/pd-list

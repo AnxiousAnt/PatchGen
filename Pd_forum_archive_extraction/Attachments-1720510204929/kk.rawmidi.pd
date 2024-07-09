@@ -1,0 +1,64 @@
+#N canvas 230 75 502 497 12;
+#X obj 301 -61 cnv 15 130 210 empty empty empty 20 12 0 14 -200701
+-66577 0;
+#X obj 132 147 textfile;
+#X obj 90 218 del;
+#X msg 319 -38 rewind;
+#X msg 319 -61 bang;
+#X text 356 -62 start;
+#X obj 187 181 print;
+#X msg 319 -16 clear;
+#X obj 167 232 unpack f f f;
+#X obj 132 182 t b f;
+#X text 22 238 delay onset time;
+#X obj 212 281 noteout;
+#X text 192 257 pitch;
+#X text 245 257 velocity;
+#X text 171 166 debug info;
+#X text 339 5 read a file;
+#X text 338 82 write one;
+#X obj 320 30 openpanel;
+#X msg 320 55 read \$1;
+#X obj 320 8 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 320 127 write \$1;
+#X obj 320 102 savepanel;
+#X obj 320 83 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 43 -56 notein;
+#X obj 43 56 pack f f f;
+#X obj 43 15 timer;
+#X obj 43 -23 t b b f;
+#X msg 43 86 add \$1 \$2 \$3;
+#X text 78 -39 find IOI and package data;
+#X text 15 -77 Raw MIDI record and playback;
+#X text 19 377 (c) 2006 Kyle Klipowicz GNU and all that jazz;
+#X text 22 310 You could extend this by multiplying the delay time
+to double \, halve \, etc. the sequence. If you want to edit your data
+without resorting to a text editor \, try to study data structures
+in Pd.;
+#X connect 1 0 6 0;
+#X connect 1 0 9 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 7 0 1 0;
+#X connect 8 0 2 1;
+#X connect 8 1 11 0;
+#X connect 8 2 11 1;
+#X connect 9 0 2 0;
+#X connect 9 1 8 0;
+#X connect 17 0 18 0;
+#X connect 18 0 1 0;
+#X connect 19 0 17 0;
+#X connect 20 0 1 0;
+#X connect 21 0 20 0;
+#X connect 22 0 21 0;
+#X connect 23 0 26 0;
+#X connect 23 1 24 2;
+#X connect 24 0 27 0;
+#X connect 25 0 24 0;
+#X connect 26 0 25 0;
+#X connect 26 1 25 1;
+#X connect 26 2 24 1;
+#X connect 27 0 1 0;

@@ -1,0 +1,23 @@
+Some little scripts for info extraction from Pd patches.
+
+
+Make a list of internal objects:
+
+ ./internals.sh ~/src/pd-0.41-4 >pd-0.41-4.txt
+
+Get a list of objects used by a patch:
+
+./objs.sh <mypatch.pd >mypatch.txt
+
+Get a list of externals used by a patch:
+
+./objs.sh <mypatch.pd | ./externals.sh pd-0.41-4.txt
+
+Ignore abstractions found in a directory:
+
+./objs.sh <patch/my.pd | ./abstractions.sh patch/
+
+
+Ride the pipeline:
+
+cat *.pd | ./objs.sh | ./externals.sh pd-0.41-4.txt | ./externals.sh Gem.txt | ./abstractions.sh ./

@@ -1,0 +1,94 @@
+#N canvas 0 0 891 650 10;
+#X obj 134 235 perc_inst1;
+#X msg 231 135 1 3 5 6.12372 7.07107;
+#N canvas 0 0 450 300 graph1 0;
+#X array array2 64 float 1;
+#A 0 3.03036e-07 3.09043e-07 3.12434e-07 3.12981e-07 3.10534e-07 3.05027e-07
+2.9648e-07 2.84992e-07 2.70744e-07 2.53988e-07 2.35037e-07 2.14262e-07
+1.92074e-07 1.68912e-07 1.45234e-07 1.215e-07 9.81601e-08 7.56436e-08
+5.43454e-08 3.46175e-08 1.67604e-08 1.01648e-09 -1.24347e-08 -2.34789e-08
+-3.20677e-08 -3.82178e-08 -4.20072e-08 -4.35716e-08 -4.30977e-08 -4.0817e-08
+-3.69973e-08 -3.19352e-08 -2.59473e-08 -1.93622e-08 -1.25125e-08 -5.72714e-09
+6.74952e-10 6.39081e-09 1.11383e-08 1.46602e-08 1.67267e-08 1.71382e-08
+1.5726e-08 1.23531e-08 6.91452e-09 -6.63718e-10 -1.04247e-08 -2.23815e-08
+-3.6518e-08 -5.27899e-08 -7.11249e-08 -9.14231e-08 -1.13558e-07 -1.37375e-07
+-1.62693e-07 -1.89305e-07 -2.16978e-07 -2.4545e-07 -2.74438e-07 -3.03633e-07
+-3.32709e-07 -3.61318e-07 -3.89104e-07 -4.15697e-07;
+#X coords 0 1 63 -1 200 140 1;
+#X restore 134 358 graph;
+#N canvas 0 0 450 300 graph2 0;
+#X array array3 64 float 3;
+#A 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 63 -1 200 140 1;
+#X restore 458 348 graph;
+#X obj 126 67 tabplay~ array3;
+#X obj 82 25 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 484 294 \; array3 const 0 \;;
+#X obj 591 321 tabwrite array3;
+#X floatatom 594 265 5 0 0 0 - - -;
+#X floatatom 151 137 5 0 0 0 - - -;
+#X obj 134 314 tabwrite~ array2;
+#X obj 168 270 bang~;
+#X obj 298 323 dac~;
+#X msg 398 132 1 0.5 0.3 0.2 0.1;
+#X obj 228 49 spigot;
+#N canvas 0 0 450 300 bangss 0;
+#X obj 161 53 block~ 4096;
+#X obj 103 116 bang~;
+#X obj 105 185 outlet;
+#X obj 170 154 s bangsss;
+#X connect 1 0 3 0;
+#X restore 188 17 pd bangss;
+#X obj 113 24 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 372 54 0;
+#X msg 336 29 1;
+#X obj 273 15 r bangsss;
+#X obj 371 27 delay 1000;
+#X floatatom 681 263 5 0 0 0 - - -;
+#X msg 602 131 750 750 800 650 750;
+#X obj 434 60 loadbang;
+#X obj 399 89 t b b;
+#X msg 275 93 120;
+#X obj 133 270 *~ 1;
+#X obj 306 261 *~ 0.25;
+#X text 148 157 fund. freq;
+#X text 244 158 overtone series;
+#X text 404 151 amplitude series;
+#X text 608 157 exp. decay rates in ms;
+#X text 473 250 Impulse table (draw an impulse here);
+#X obj 384 229 vsl 15 128 0.001 1 1 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X text 364 359 volume;
+#X text 589 174 (decays by 20 dB in the time given);
+#X text 109 44 click the bangs;
+#X connect 0 0 26 0;
+#X connect 0 0 27 0;
+#X connect 1 0 0 2;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 8 0 7 0;
+#X connect 9 0 0 1;
+#X connect 11 0 10 0;
+#X connect 13 0 0 3;
+#X connect 14 0 4 0;
+#X connect 16 0 18 0;
+#X connect 16 0 20 0;
+#X connect 17 0 14 1;
+#X connect 18 0 14 1;
+#X connect 19 0 14 0;
+#X connect 20 0 17 0;
+#X connect 21 0 7 1;
+#X connect 22 0 0 4;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 24 1 1 0;
+#X connect 24 1 13 0;
+#X connect 24 1 22 0;
+#X connect 25 0 9 0;
+#X connect 26 0 10 0;
+#X connect 27 0 12 0;
+#X connect 27 0 12 1;
+#X connect 33 0 27 1;

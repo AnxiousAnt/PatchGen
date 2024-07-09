@@ -1,0 +1,28 @@
+#N canvas 0 0 709 300 10;
+#X msg 163 92 7.31;
+#X floatatom 181 213 5 0 0;
+#X obj 169 122 expr fmod($f1 \, 1.0);
+#X msg 205 94 -0.3;
+#X obj 194 167 < 0;
+#X obj 181 191 +;
+#X obj 143 37 expr floor($f1);
+#X floatatom 144 61 5 0 0;
+#X msg 144 9 3.4;
+#X obj 41 38 expr ceil($f1);
+#X floatatom 42 60 5 0 0;
+#X floatatom 142 213 5 0 0;
+#X obj 169 143 t 0 0;
+#X text 290 122 alert: to get float values at the outlet \, the second
+argument to fmod has to be written as a float;
+#X connect 0 0 2 0;
+#X connect 2 0 12 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 1;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 8 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 12 0 5 0;
+#X connect 12 0 11 0;
+#X connect 12 1 4 0;

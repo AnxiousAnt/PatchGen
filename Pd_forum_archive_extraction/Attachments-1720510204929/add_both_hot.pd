@@ -1,0 +1,14 @@
+#N canvas 691 436 552 321 10;
+#X obj 177 160 +;
+#X floatatom 120 74 5 0 0 0 - - -;
+#X floatatom 187 62 5 0 0 0 - - -;
+#X obj 186 112 t b f;
+#X text 236 111 trigger sequences from right to left;
+#X floatatom 163 228 5 0 0 0 - - -;
+#X obj 188 90 / 10;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;
+#X connect 6 0 3 0;

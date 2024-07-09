@@ -1,0 +1,22 @@
+#N canvas 134 256 267 198 10;
+#X obj 48 102 + 1;
+#X obj 48 77 int;
+#X obj 48 55 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 48 149 5 0 0 0 - - -;
+#X msg 81 102 5;
+#X obj 48 126 %;
+#X obj 118 20 loadbang;
+#X text 113 105 range;
+#X text 44 28 counter;
+#X msg 69 53 -1;
+#X text 113 54 reset;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 5 1;
+#X connect 5 0 1 1;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X connect 6 0 9 0;
+#X connect 9 0 1 1;

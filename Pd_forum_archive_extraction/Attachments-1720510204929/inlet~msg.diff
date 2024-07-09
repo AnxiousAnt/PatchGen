@@ -1,0 +1,98 @@
+Index: g_io.c
+===================================================================
+--- g_io.c	(Revision 9980)
++++ g_io.c	(Arbeitskopie)
+@@ -36,8 +36,9 @@
+   /* if not reblocking, the next slot communicates the parent's inlet
+      signal from the prolog to the DSP routine: */
+     t_signal *x_directsignal;
++  t_resample x_updown;
+ 
+-  t_resample x_updown;
++  t_outlet*x_sigoutlet, *x_msgoutlet;
+ } t_vinlet;
+ 
+ static void *vinlet_new(t_symbol *s)
+@@ -47,43 +48,46 @@
+     x->x_inlet = canvas_addinlet(x->x_canvas, &x->x_obj.ob_pd, 0);
+     x->x_bufsize = 0;
+     x->x_buf = 0;
+-    outlet_new(&x->x_obj, 0);
++    x->x_msgoutlet=outlet_new(&x->x_obj, 0);
++    x->x_sigoutlet=0;
+     return (x);
+ }
+ 
+ static void vinlet_bang(t_vinlet *x)
+ {
+-    outlet_bang(x->x_obj.ob_outlet);
++    outlet_bang(x->x_msgoutlet);
+ }
+ 
+ static void vinlet_pointer(t_vinlet *x, t_gpointer *gp)
+ {
+-    outlet_pointer(x->x_obj.ob_outlet, gp);
++    outlet_pointer(x->x_msgoutlet, gp);
+ }
+ 
+ static void vinlet_float(t_vinlet *x, t_float f)
+ {
+-    outlet_float(x->x_obj.ob_outlet, f);
++    outlet_float(x->x_msgoutlet, f);
+ }
+ 
+ static void vinlet_symbol(t_vinlet *x, t_symbol *s)
+ {
+-    outlet_symbol(x->x_obj.ob_outlet, s);
++    outlet_symbol(x->x_msgoutlet, s);
+ }
+ 
+ static void vinlet_list(t_vinlet *x, t_symbol *s, int argc, t_atom *argv)
+ {
+-    outlet_list(x->x_obj.ob_outlet, s, argc, argv);
++    outlet_list(x->x_msgoutlet, s, argc, argv);
+ }
+ 
+ static void vinlet_anything(t_vinlet *x, t_symbol *s, int argc, t_atom *argv)
+ {
+-    outlet_anything(x->x_obj.ob_outlet, s, argc, argv);
++    outlet_anything(x->x_msgoutlet, s, argc, argv);
+ }
+ 
+ static void vinlet_free(t_vinlet *x)
+ {
+     canvas_rminlet(x->x_canvas, x->x_inlet);
++    if(x->x_sigoutlet)outlet_free(x->x_sigoutlet);
++    if(x->x_msgoutlet)outlet_free(x->x_msgoutlet);
+     resample_free(&x->x_updown);
+ }
+ 
+@@ -247,17 +251,24 @@
+ 
+ static void *vinlet_newsig(t_symbol *s)
+ {
++  int onlysignal=0;
+     t_vinlet *x = (t_vinlet *)pd_new(vinlet_class);
+     x->x_canvas = canvas_getcurrent();
+-    x->x_inlet = canvas_addinlet(x->x_canvas, &x->x_obj.ob_pd, &s_signal);
++    x->x_sigoutlet=outlet_new(&x->x_obj, &s_signal);
++    if(onlysignal) {
++      x->x_inlet = canvas_addinlet(x->x_canvas, &x->x_obj.ob_pd, &s_signal);
++      x->x_msgoutlet=0;
++    } else {
++      x->x_inlet = canvas_addinlet(x->x_canvas, &x->x_obj.ob_pd, 0);
++      x->x_msgoutlet=outlet_new(&x->x_obj, 0);
++    }
+     x->x_endbuf = x->x_buf = (t_float *)getbytes(0);
+     x->x_bufsize = 0;
+     x->x_directsignal = 0;
+-    outlet_new(&x->x_obj, &s_signal);
+-
++  
+     resample_init(&x->x_updown);
+ 
+-    /* this should be though over: 
++    /* this should be thought over: 
+      * it might prove hard to provide consistency between labeled up- & downsampling methods
+      * maybe indeces would be better...
+      *

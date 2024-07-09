@@ -1,0 +1,30 @@
+--- pd-0.38-4.org/src/x_connective.c	2004-10-21 01:36:04.000000000 +0200
++++ pd-0.38-4/src/x_connective.c	2005-06-03 12:44:02.405649952 +0200
+@@ -590,6 +594,27 @@
+     }
+     x->x_type = argv[0].a_type;
+     x->x_nelement = argc;
++
++    /* type checking: arguments must bei either floats xor symbols */
++    if (x->x_type == A_FLOAT) 
++      {
++	for(n=0; n<argc; n++)
++	  if (argv[n].a_type!=A_FLOAT)
++	    {
++	      pd_error(x, "route: cannot route floats and symbols at the same time");
++	      return 0;
++	    }
++      }
++    else
++      {
++	for(n=0; n<argc; n++)
++	  if(argv[n].a_type==A_FLOAT)
++	    {
++	      pd_error(x, "route: cannot route symbols and floats at the same time");
++	      return 0;
++	    }
++      }
++
+     x->x_vec = (t_routeelement *)getbytes(argc * sizeof(*x->x_vec));
+     for (n = 0, e = x->x_vec; n < argc; n++, e++)
+     {

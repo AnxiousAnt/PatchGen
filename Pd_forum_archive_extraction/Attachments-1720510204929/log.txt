@@ -1,0 +1,815 @@
+binaries_src/control/mean.c: In function 'mean_list':
+binaries_src/control/mean.c:41:44: warning: unused parameter 's' [-Wunused-parameter]
+ static void mean_list(t_mean *x, t_symbol *s, int ac, t_atom *av)
+                                            ^
+binaries_src/control/spell.c: In function 'spell_list':
+binaries_src/control/spell.c:61:46: warning: unused parameter 's' [-Wunused-parameter]
+ static void spell_list(t_spell *x, t_symbol *s, int ac, t_atom *av)
+                                              ^
+binaries_src/signal/bitor.c: In function 'bitor_intmask':
+binaries_src/signal/bitor.c:33:11: warning: passing argument 1 of 'pd_float' from incompatible pointer type [-Wincompatible-pointer-types]
+  pd_float(x->x_rightinlet, (t_float)x->x_mask);
+           ^
+In file included from binaries_src/signal/bitor.c:6:0:
+C:/Users/Lucarda/Downloads/pd/src/m_pd.h:402:13: note: expected 'struct _class **' but argument is of type 'struct _inlet *'
+ EXTERN void pd_float(t_pd *x, t_float f);
+             ^
+binaries_src/signal/bitor.c: In function 'bitor_bits':
+binaries_src/signal/bitor.c:127:14: warning: passing argument 1 of 'pd_float' from incompatible pointer type [-Wincompatible-pointer-types]
+     pd_float(x->x_rightinlet, NAN);
+              ^
+In file included from binaries_src/signal/bitor.c:6:0:
+C:/Users/Lucarda/Downloads/pd/src/m_pd.h:402:13: note: expected 'struct _class **' but argument is of type 'struct _inlet *'
+ EXTERN void pd_float(t_pd *x, t_float f);
+             ^
+binaries_src/signal/bitor.c:124:46: warning: unused parameter 's' [-Wunused-parameter]
+ static void bitor_bits(t_bitor *x, t_symbol *s, int ac, t_atom *av)
+                                              ^
+binaries_src/signal/bitor.c: In function 'bitor_new':
+binaries_src/signal/bitor.c:143:46: warning: passing argument 1 of 'obj_findsignalscalar' from incompatible pointer type [-Wincompatible-pointer-types]
+     x->x_signalscalar = obj_findsignalscalar(x, 1);
+                                              ^
+binaries_src/signal/bitor.c:9:17: note: expected 't_object * {aka struct _text *}' but argument is of type 't_bitor * {aka struct _bitor *}'
+ EXTERN t_float *obj_findsignalscalar(t_object *x, int m);
+                 ^
+shared/unstable/forky.c: In function 'forky_getbitmask':
+shared/unstable/forky.c:89:19: warning: unused variable 'bitmask' [-Wunused-variable]
+  shared_t_bitmask bitmask = 1 << (nbits - 1);
+                   ^
+binaries_src/signal/trunc.c: In function 'trunc_perform':
+binaries_src/signal/trunc.c:31:14: warning: unused variable 'x' [-Wunused-variable]
+     t_trunc *x = (t_trunc *)(w[1]); // Seu objeto
+              ^
+binaries_src/signal/rdiv.c: In function 'rdiv_dsp':
+binaries_src/signal/rdiv.c:28:30: warning: unused parameter 'x' [-Wunused-parameter]
+ static void rdiv_dsp(t_rdiv *x, t_signal **sp)
+                              ^
+binaries_src/control/atodb.c: In function 'atodb_list':
+binaries_src/control/atodb.c:47:39: warning: unused parameter 's' [-Wunused-parameter]
+ void atodb_list(t_atodb *x, t_symbol *s, int argc, t_atom *argv)
+                                       ^
+binaries_src/signal/framedelta.c: In function 'framedelta_new':
+binaries_src/signal/framedelta.c:55:39: warning: unused parameter 's' [-Wunused-parameter]
+ static void *framedelta_new(t_symbol *s, int ac, t_atom *av)
+                                       ^
+binaries_src/signal/framedelta.c:55:46: warning: unused parameter 'ac' [-Wunused-parameter]
+ static void *framedelta_new(t_symbol *s, int ac, t_atom *av)
+                                              ^
+binaries_src/signal/framedelta.c:55:58: warning: unused parameter 'av' [-Wunused-parameter]
+ static void *framedelta_new(t_symbol *s, int ac, t_atom *av)
+                                                          ^
+shared/common/grow.c: In function 'grow_withdata':
+shared/common/grow.c:56:6: warning: unused variable 'oldsize' [-Wunused-variable]
+  int oldsize = *sizep;
+      ^
+binaries_src/control/pv.c: In function 'pv_list':
+binaries_src/control/pv.c:335:40: warning: unused parameter 's' [-Wunused-parameter]
+ static void pv_list(t_pv *x, t_symbol *s, int ac, t_atom *av)
+                                        ^
+binaries_src/signal/hilbert.c: In function 'hilbert_perform':
+binaries_src/signal/hilbert.c:64:63: warning: unused variable 'f' [-Wunused-variable]
+         float r1xn, r1yn, r2xn, r2yn, i1xn, i1yn, i2xn, i2yn, f = *in2++;
+                                                               ^
+binaries_src/signal/greaterthan.c: In function 'greaterthan_dsp':
+binaries_src/signal/greaterthan.c:40:44: warning: unused parameter 'x' [-Wunused-parameter]
+ static void greaterthan_dsp(t_greaterthan *x, t_signal **sp)
+                                            ^
+binaries_src/control/capture.c: In function 'capture_list':
+binaries_src/control/capture.c:37:50: warning: unused parameter 's' [-Wunused-parameter]
+ static void capture_list(t_capture *x, t_symbol *s, int ac, t_atom *av)
+                                                  ^
+binaries_src/control/capture.c: In function 'capture_dowrite':
+binaries_src/control/capture.c:140:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (fp = sys_fopen(buf, "w"))  /* LATER ask if overwriting, CHECKED */
+     ^
+binaries_src/control/capture.c: In function 'capture_writehook':
+binaries_src/control/capture.c:172:58: warning: unused parameter 'ac' [-Wunused-parameter]
+ static void capture_writehook(t_pd *z, t_symbol *fn, int ac, t_atom *av)
+                                                          ^
+binaries_src/control/capture.c:172:70: warning: unused parameter 'av' [-Wunused-parameter]
+ static void capture_writehook(t_pd *z, t_symbol *fn, int ac, t_atom *av)
+                                                                      ^
+binaries_src/control/capture.c: In function 'capture_click':
+binaries_src/control/capture.c:225:52: warning: unused parameter 'xpos' [-Wunused-parameter]
+ static void capture_click(t_capture *x, t_floatarg xpos, t_floatarg ypos,
+                                                    ^
+binaries_src/control/capture.c:225:69: warning: unused parameter 'ypos' [-Wunused-parameter]
+ static void capture_click(t_capture *x, t_floatarg xpos, t_floatarg ypos,
+                                                                     ^
+binaries_src/control/capture.c:226:17: warning: unused parameter 'shift' [-Wunused-parameter]
+      t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                 ^
+binaries_src/control/capture.c:226:35: warning: unused parameter 'ctrl' [-Wunused-parameter]
+      t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                                   ^
+binaries_src/control/capture.c:226:52: warning: unused parameter 'alt' [-Wunused-parameter]
+      t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                                                    ^
+binaries_src/control/capture.c: In function 'capture_new':
+binaries_src/control/capture.c:245:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (buffer = getbytes(bufsize * sizeof(*buffer)))
+     ^
+shared/hammer/file.c: In function 'hammereditor_addline':
+shared/hammer/file.c:228:16: warning: unused parameter 's' [-Wunused-parameter]
+      t_symbol *s, int ac, t_atom *av)
+                ^
+shared/hammer/file.c: In function 'hammerpanel_setopendir':
+shared/hammer/file.c:349:6: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+      if (length = ospath_length(dir->s_name, f->f_currentdir->s_name))
+      ^
+shared/hammer/file.c: In function 'hammerpanel_save':
+shared/hammer/file.c:371:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (f = f->f_savepanel)
+     ^
+shared/hammer/file.c: In function 'hammerpanel_setsavedir':
+shared/hammer/file.c:385:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (f = f->f_savepanel)
+     ^
+shared/hammer/file.c: In function 'hammerembed_gc':
+shared/hammer/file.c:408:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     while (garbage = pd_findbyclass(s, *x)) pd_unbind(garbage, s), count++;
+     ^
+shared/hammer/file.c: In function 'hammerfile_new':
+shared/hammer/file.c:504:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (result->f_embedfn = embedfn)
+     ^
+shared/hammer/file.c:538:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (result->f_editorfn = updatefn)
+     ^
+shared/common/os.c: In function 'osdir_open':
+shared/common/os.c:250:27: warning: unused parameter 'dirname' [-Wunused-parameter]
+ t_osdir *osdir_open(char *dirname)
+                           ^
+shared/common/os.c: In function 'osdir_next':
+shared/common/os.c:298:27: warning: unused parameter 'dp' [-Wunused-parameter]
+ char *osdir_next(t_osdir *dp)
+                           ^
+shared/common/os.c: In function 'osdir_isfile':
+shared/common/os.c:317:27: warning: unused parameter 'dp' [-Wunused-parameter]
+ int osdir_isfile(t_osdir *dp)
+                           ^
+shared/common/os.c: In function 'osdir_isdir':
+shared/common/os.c:326:26: warning: unused parameter 'dp' [-Wunused-parameter]
+ int osdir_isdir(t_osdir *dp)
+                          ^
+shared/common/fitter.c: In function 'fitterstate_bang':
+shared/common/fitter.c:48:36: warning: unused parameter 'x' [-Wunused-parameter]
+ static void fitterstate_bang(t_pd *x)
+                                    ^
+shared/common/fitter.c: In function 'fitterstate_symbol':
+shared/common/fitter.c:70:38: warning: unused parameter 'x' [-Wunused-parameter]
+ static void fitterstate_symbol(t_pd *x, t_symbol *s)
+                                      ^
+shared/common/fitter.c: In function 'fitterstate_reply':
+shared/common/fitter.c:94:37: warning: unused parameter 'x' [-Wunused-parameter]
+ static void fitterstate_reply(t_pd *x, t_symbol *s1, t_symbol *s2)
+                                     ^
+shared/common/fitter.c: In function 'fitterstate_set':
+shared/common/fitter.c:108:35: warning: unused parameter 'x' [-Wunused-parameter]
+ static void fitterstate_set(t_pd *x, t_symbol *s1, t_symbol *s2)
+                                   ^
+shared/common/fitter.c: In function 'fitter_getfloat':
+shared/common/fitter.c:191:36: warning: unused parameter 's' [-Wunused-parameter]
+ t_float *fitter_getfloat(t_symbol *s)
+                                    ^
+binaries_src/signal/cascade.c: In function 'cascade_coeffs':
+binaries_src/signal/cascade.c:53:52: warning: unused parameter 's' [-Wunused-parameter]
+ static void cascade_coeffs(t_cascade *x, t_symbol *s, int argc, t_atom *argv)
+                                                    ^
+binaries_src/signal/cascade.c: At top level:
+binaries_src/signal/cascade.c:128:14: warning: 'cascade_free' defined but not used [-Wunused-function]
+ static void *cascade_free(t_cascade *x){
+              ^
+binaries_src/signal/peek.c: In function 'peek_float':
+binaries_src/signal/peek.c:55:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (vp = sic->s_vectors[x->x_effchannel])
+     ^
+binaries_src/signal/peek.c:63:11: warning: declaration of 'f' shadows a parameter [-Wshadow]
+   t_float f = x->x_value;
+           ^
+binaries_src/signal/peek.c:50:43: note: shadowed declaration is here
+ static void peek_float(t_peek *x, t_float f)
+                                           ^
+shared/sickle/sic.c: In function 'sic_makecostable':
+shared/sickle/sic.c:70:29: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  return (sic_costables[ndx] = cos_table);
+                             ^
+shared/sickle/arsic.c: In function 'arsic_new':
+shared/sickle/arsic.c:194:18: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     x->s_vectors = vectors;
+                  ^
+shared/common/vefl.c: In function 'vefl_placement_new':
+shared/common/vefl.c:102:54: warning: passing argument 3 of 'garray_getfloatwords' from incompatible pointer type [-Wincompatible-pointer-types]
+  && !garray_getfloatwords(vp->v_garray, &vp->v_size, &vp->v_data))
+                                                      ^
+In file included from shared/common/vefl.c:15:0:
+C:/Users/Lucarda/Downloads/pd/src/m_pd.h:672:12: note: expected 't_word ** {aka union word **}' but argument is of type 't_float ** {aka float **}'
+ EXTERN int garray_getfloatwords(t_garray *x, int *size, t_word **vec);
+            ^
+shared/common/vefl.c: In function 'vefl_renew':
+shared/common/vefl.c:141:60: warning: passing argument 3 of 'garray_getfloatwords' from incompatible pointer type [-Wincompatible-pointer-types]
+  else if (!garray_getfloatwords(vp->v_garray, &vp->v_size, &vp->v_data))
+                                                            ^
+In file included from shared/common/vefl.c:15:0:
+C:/Users/Lucarda/Downloads/pd/src/m_pd.h:672:12: note: expected 't_word ** {aka union word **}' but argument is of type 't_float ** {aka float **}'
+ EXTERN int garray_getfloatwords(t_garray *x, int *size, t_word **vec);
+            ^
+shared/unstable/fragile.c: In function 'fragile_class_mutate':
+shared/unstable/fragile.c:81:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (fn = fragile_class_getalien(cname, thiscall, &argtypes))
+     ^
+shared/unstable/fragile.c:85:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  if (z = fragile_class_createobject(cname, fn, argtypes, ac, av))
+  ^
+shared/unstable/fragile.c: In function 'fragile_class_createobject':
+shared/unstable/fragile.c:148:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     while (wanttype = *argtypes++)
+     ^
+shared/unstable/fragile.c:150:2: warning: enumeration value 'A_NULL' not handled in switch [-Wswitch]
+  switch (wanttype)
+  ^
+shared/unstable/fragile.c:150:2: warning: enumeration value 'A_SEMI' not handled in switch [-Wswitch]
+shared/unstable/fragile.c:150:2: warning: enumeration value 'A_COMMA' not handled in switch [-Wswitch]
+shared/unstable/fragile.c:150:2: warning: enumeration value 'A_DOLLAR' not handled in switch [-Wswitch]
+shared/unstable/fragile.c:150:2: warning: enumeration value 'A_DOLLSYM' not handled in switch [-Wswitch]
+shared/unstable/fragile.c:150:2: warning: enumeration value 'A_GIMME' not handled in switch [-Wswitch]
+shared/unstable/fragile.c:150:2: warning: enumeration value 'A_CANT' not handled in switch [-Wswitch]
+binaries_src/signal/count.c: In function 'count_list':
+binaries_src/signal/count.c:61:46: warning: unused parameter 's' [-Wunused-parameter]
+ static void count_list(t_count *x, t_symbol *s, int ac, t_atom *av)
+                                              ^
+binaries_src/signal/count.c: In function 'count_set':
+binaries_src/signal/count.c:83:45: warning: unused parameter 's' [-Wunused-parameter]
+ static void count_set(t_count *x, t_symbol *s, int ac, t_atom *av)
+                                             ^
+binaries_src/signal/count.c: In function 'count_new':
+binaries_src/signal/count.c:165:34: warning: unused parameter 's' [-Wunused-parameter]
+ static void *count_new(t_symbol *s, int argc, t_atom *argv)
+                                  ^
+binaries_src/control/peak.c: In function 'Peak_new':
+binaries_src/control/peak.c:41:33: warning: unused parameter 's' [-Wunused-parameter]
+ static void *Peak_new(t_symbol *s, int ac, t_atom *av)
+                                 ^
+binaries_src/control/cycle.c: In function 'cycle_bang':
+binaries_src/control/cycle.c:50:33: warning: unused parameter 'x' [-Wunused-parameter]
+ static void cycle_bang(t_cycle *x)
+                                 ^
+binaries_src/control/cycle.c: In function 'cycle_list':
+binaries_src/control/cycle.c:71:46: warning: unused parameter 's' [-Wunused-parameter]
+ static void cycle_list(t_cycle *x, t_symbol *s, int ac, t_atom *av)
+                                              ^
+binaries_src/control/cycle.c: In function 'cycle_thresh':
+binaries_src/control/cycle.c:100:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (x->x_eventmode = (f != 0))
+     ^
+binaries_src/control/midiformat.c: In function 'midiformat_note':
+binaries_src/control/midiformat.c:37:56: warning: unused parameter 's' [-Wunused-parameter]
+ static void midiformat_note(t_midiformat *x, t_symbol *s, int ac, t_atom *av)
+                                                        ^
+binaries_src/control/midiformat.c: In function 'midiformat_polytouch':
+binaries_src/control/midiformat.c:50:16: warning: unused parameter 's' [-Wunused-parameter]
+      t_symbol *s, int ac, t_atom *av)
+                ^
+binaries_src/control/midiformat.c: In function 'midiformat_controller':
+binaries_src/control/midiformat.c:63:17: warning: unused parameter 's' [-Wunused-parameter]
+       t_symbol *s, int ac, t_atom *av)
+                 ^
+binaries_src/control/midiformat.c: In function 'midiformat_new':
+binaries_src/control/midiformat.c:130:40: warning: unused parameter 's' [-Wunused-parameter]
+ static void *midiformat_new(t_symbol * s, int argc, t_atom * argv)
+                                        ^
+binaries_src/signal/pink.c: In function 'pink_perform':
+binaries_src/signal/pink.c:36:14: warning: unused variable 'in' [-Wunused-variable]
+     t_float *in = (t_float *)(w[3]);
+              ^
+binaries_src/signal/teeth.c: In function 'teeth_sz':
+binaries_src/signal/teeth.c:66:14: warning: comparison of unsigned expression < 0 is always false [-Wtype-limits]
+     if(newsz < 0){
+              ^
+binaries_src/signal/teeth.c: In function 'teeth_getlin':
+binaries_src/signal/teeth.c:107:27: warning: comparison of unsigned expression < 0 is always false [-Wtype-limits]
+         else if(tabphase1 < 0){
+                           ^
+binaries_src/signal/teeth.c: In function 'teeth_list':
+binaries_src/signal/teeth.c:207:46: warning: unused parameter 's' [-Wunused-parameter]
+ static void teeth_list(t_teeth *x, t_symbol *s, int argc, t_atom * argv){
+                                              ^
+binaries_src/signal/teeth.c: In function 'teeth_new':
+binaries_src/signal/teeth.c:266:34: warning: unused parameter 's' [-Wunused-parameter]
+ static void *teeth_new(t_symbol *s, int argc, t_atom * argv){
+                                  ^
+binaries_src/control/bondo.c: In function 'bondo_proxy_list':
+binaries_src/control/bondo.c:189:19: warning: unused parameter 's' [-Wunused-parameter]
+         t_symbol *s, int ac, t_atom *av)
+                   ^
+binaries_src/control/bondo.c: In function 'bondo_proxy_set':
+binaries_src/control/bondo.c:223:18: warning: unused parameter 's' [-Wunused-parameter]
+        t_symbol *s, int ac, t_atom *av)
+                  ^
+binaries_src/control/bondo.c: In function 'bondo_list':
+binaries_src/control/bondo.c:266:46: warning: unused parameter 's' [-Wunused-parameter]
+ static void bondo_list(t_bondo *x, t_symbol *s, int ac, t_atom *av)
+                                              ^
+binaries_src/control/bondo.c: In function 'bondo_new':
+binaries_src/control/bondo.c:300:34: warning: unused parameter 's' [-Wunused-parameter]
+ static void *bondo_new(t_symbol *s, int ac, t_atom *av)
+                                  ^
+binaries_src/signal/selector.c: In function 'selector_new':
+binaries_src/signal/selector.c:66:37: warning: unused parameter 's' [-Wunused-parameter]
+ static void *selector_new(t_symbol *s, int argc, t_atom *argv)
+                                     ^
+binaries_src/control/pong.c: In function 'pong_new':
+binaries_src/control/pong.c:69:33: warning: unused parameter 's' [-Wunused-parameter]
+ static void *pong_new(t_symbol *s, int argc, t_atom *argv){
+                                 ^
+binaries_src/control/pong.c: In function 'pong_float':
+binaries_src/control/pong.c:15:12: warning: implicit declaration of function 'alloca' [-Wimplicit-function-declaration]
+            alloca((n) * sizeof(t_atom)) : getbytes((n) * sizeof(t_atom))))
+            ^
+binaries_src/control/pong.c:222:2: note: in expansion of macro 'ATOMS_ALLOCA'
+  ATOMS_ALLOCA(outatom, 1); //allocate memory for outatom of len 1
+  ^
+binaries_src/control/pong.c:15:12: warning: incompatible implicit declaration of built-in function 'alloca'
+            alloca((n) * sizeof(t_atom)) : getbytes((n) * sizeof(t_atom))))
+            ^
+binaries_src/control/pong.c:222:2: note: in expansion of macro 'ATOMS_ALLOCA'
+  ATOMS_ALLOCA(outatom, 1); //allocate memory for outatom of len 1
+  ^
+binaries_src/control/pong.c:16:27: warning: statement with no effect [-Wunused-value]
+ #define ATOMS_FREEA(x, n) ( \
+                           ^
+binaries_src/control/pong.c:234:2: note: in expansion of macro 'ATOMS_FREEA'
+  ATOMS_FREEA(outatom, 1); //free allocated memory for outatom
+  ^
+binaries_src/control/pong.c: In function 'pong_list':
+binaries_src/control/pong.c:15:12: warning: incompatible implicit declaration of built-in function 'alloca'
+            alloca((n) * sizeof(t_atom)) : getbytes((n) * sizeof(t_atom))))
+            ^
+binaries_src/control/pong.c:248:2: note: in expansion of macro 'ATOMS_ALLOCA'
+  ATOMS_ALLOCA(outatom, argc); //allocate memory for outatom 
+  ^
+binaries_src/control/pong.c:239:44: warning: unused parameter 's' [-Wunused-parameter]
+ static void pong_list(t_pong *x, t_symbol *s, int argc, t_atom *argv){
+                                            ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_list':
+binaries_src/signal/filtercoeff.c:28:38: warning: unused parameter 'x' [-Wunused-parameter]
+ void filtercoeff_list(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                      ^
+binaries_src/signal/filtercoeff.c:28:51: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_list(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                   ^
+binaries_src/signal/filtercoeff.c:28:58: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_list(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                          ^
+binaries_src/signal/filtercoeff.c:28:70: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_list(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                      ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_lowpass':
+binaries_src/signal/filtercoeff.c:33:54: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_lowpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                      ^
+binaries_src/signal/filtercoeff.c:33:61: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_lowpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                             ^
+binaries_src/signal/filtercoeff.c:33:73: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_lowpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                         ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_highpass':
+binaries_src/signal/filtercoeff.c:38:55: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_highpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                       ^
+binaries_src/signal/filtercoeff.c:38:62: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_highpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                              ^
+binaries_src/signal/filtercoeff.c:38:74: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_highpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                          ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_bandpass':
+binaries_src/signal/filtercoeff.c:43:55: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_bandpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                       ^
+binaries_src/signal/filtercoeff.c:43:62: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_bandpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                              ^
+binaries_src/signal/filtercoeff.c:43:74: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_bandpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                          ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_bandstop':
+binaries_src/signal/filtercoeff.c:48:55: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_bandstop(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                       ^
+binaries_src/signal/filtercoeff.c:48:62: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_bandstop(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                              ^
+binaries_src/signal/filtercoeff.c:48:74: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_bandstop(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                          ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_resonant':
+binaries_src/signal/filtercoeff.c:53:55: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_resonant(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                       ^
+binaries_src/signal/filtercoeff.c:53:62: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_resonant(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                              ^
+binaries_src/signal/filtercoeff.c:53:74: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_resonant(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                          ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_peaknotch':
+binaries_src/signal/filtercoeff.c:58:56: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_peaknotch(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                        ^
+binaries_src/signal/filtercoeff.c:58:63: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_peaknotch(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                               ^
+binaries_src/signal/filtercoeff.c:58:75: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_peaknotch(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                           ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_lowshelf':
+binaries_src/signal/filtercoeff.c:63:55: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_lowshelf(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                       ^
+binaries_src/signal/filtercoeff.c:63:62: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_lowshelf(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                              ^
+binaries_src/signal/filtercoeff.c:63:74: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_lowshelf(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                          ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_highshelf':
+binaries_src/signal/filtercoeff.c:68:56: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_highshelf(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                        ^
+binaries_src/signal/filtercoeff.c:68:63: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_highshelf(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                               ^
+binaries_src/signal/filtercoeff.c:68:75: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_highshelf(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                           ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_allpass':
+binaries_src/signal/filtercoeff.c:73:54: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_allpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                      ^
+binaries_src/signal/filtercoeff.c:73:61: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_allpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                             ^
+binaries_src/signal/filtercoeff.c:73:73: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_allpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                         ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_gainlpass':
+binaries_src/signal/filtercoeff.c:78:56: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_gainlpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                        ^
+binaries_src/signal/filtercoeff.c:78:63: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_gainlpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                               ^
+binaries_src/signal/filtercoeff.c:78:75: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_gainlpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                           ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_gainhpass':
+binaries_src/signal/filtercoeff.c:83:56: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_gainhpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                        ^
+binaries_src/signal/filtercoeff.c:83:63: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_gainhpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                               ^
+binaries_src/signal/filtercoeff.c:83:75: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_gainhpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                           ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_gainbpass':
+binaries_src/signal/filtercoeff.c:88:56: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_gainbpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                        ^
+binaries_src/signal/filtercoeff.c:88:63: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_gainbpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                               ^
+binaries_src/signal/filtercoeff.c:88:75: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_gainbpass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                           ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_gainbstop':
+binaries_src/signal/filtercoeff.c:93:56: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_gainbstop(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                        ^
+binaries_src/signal/filtercoeff.c:93:63: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_gainbstop(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                               ^
+binaries_src/signal/filtercoeff.c:93:75: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_gainbstop(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                           ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_gainresonant':
+binaries_src/signal/filtercoeff.c:98:59: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_gainresonant(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                           ^
+binaries_src/signal/filtercoeff.c:98:66: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_gainresonant(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                  ^
+binaries_src/signal/filtercoeff.c:98:78: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_gainresonant(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                              ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_gainapass':
+binaries_src/signal/filtercoeff.c:103:56: warning: unused parameter 's' [-Wunused-parameter]
+ void filtercoeff_gainapass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                        ^
+binaries_src/signal/filtercoeff.c:103:63: warning: unused parameter 'ac' [-Wunused-parameter]
+ void filtercoeff_gainapass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                               ^
+binaries_src/signal/filtercoeff.c:103:75: warning: unused parameter 'av' [-Wunused-parameter]
+ void filtercoeff_gainapass(t_filtercoeff *x, t_symbol *s, int ac, t_atom *av)
+                                                                           ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_new':
+binaries_src/signal/filtercoeff.c:370:40: warning: unused parameter 's' [-Wunused-parameter]
+ static void *filtercoeff_new(t_symbol *s, int argc, t_atom *argv)
+                                        ^
+binaries_src/signal/filtercoeff.c: In function 'filtercoeff_perform':
+binaries_src/signal/filtercoeff.c:357:17: warning: 'b2' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         *out5++ = b2;
+                 ^
+binaries_src/signal/filtercoeff.c:356:17: warning: 'b1' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         *out4++ = b1;
+                 ^
+binaries_src/signal/filtercoeff.c:355:17: warning: 'a2' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         *out3++ = a2;
+                 ^
+binaries_src/signal/filtercoeff.c:354:17: warning: 'a1' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         *out2++ = a1;
+                 ^
+binaries_src/signal/filtercoeff.c:353:17: warning: 'a0' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         *out1++ = a0;
+                 ^
+binaries_src/control/universal.c: In function 'universal_send':
+binaries_src/control/universal.c:143:54: warning: unused parameter 's' [-Wunused-parameter]
+ static void universal_send(t_universal *x, t_symbol *s, int ac, t_atom *av)
+                                                      ^
+binaries_src/signal/pong.c: In function 'pong_tilde_setmode':
+binaries_src/signal/pong.c:144:59: warning: unused parameter 's' [-Wunused-parameter]
+ static void pong_tilde_setmode(t_pong_tilde *x, t_symbol *s, int argc, t_atom *argv){
+                                                           ^
+binaries_src/signal/pong.c: In function 'pong_tilde_new':
+binaries_src/signal/pong.c:208:39: warning: unused parameter 's' [-Wunused-parameter]
+ static void *pong_tilde_new(t_symbol *s, int argc, t_atom *argv){
+                                       ^
+binaries_src/signal/pong.c: At top level:
+binaries_src/signal/pong.c:194:14: warning: 'pong_tilde_free' defined but not used [-Wunused-function]
+ static void *pong_tilde_free(t_pong_tilde *x){
+              ^
+binaries_src/control/uzi.c: In function 'uzi_new':
+binaries_src/control/uzi.c:94:32: warning: unused parameter 's' [-Wunused-parameter]
+ static void *uzi_new(t_symbol *s, int ac, t_atom *av)
+                                ^
+binaries_src/signal/slide.c: In function 'slide_new':
+binaries_src/signal/slide.c:90:34: warning: unused parameter 's' [-Wunused-parameter]
+ static void *slide_new(t_symbol *s, int ac, t_atom *av)
+                                  ^
+binaries_src/signal/sinh.c: In function 'sinh_dsp':
+binaries_src/signal/sinh.c:33:30: warning: unused parameter 'x' [-Wunused-parameter]
+ static void sinh_dsp(t_sinh *x, t_signal **sp)
+                              ^
+binaries_src/signal/triangle.c: In function 'triangle_new':
+binaries_src/signal/triangle.c:81:37: warning: unused parameter 's' [-Wunused-parameter]
+ static void *triangle_new(t_symbol *s, int argc, t_atom *argv)
+                                     ^
+binaries_src/control/seq.c: In function 'seq_startrecording':
+binaries_src/control/seq.c:268:46: warning: unused parameter 'modechanged' [-Wunused-parameter]
+ static void seq_startrecording(t_seq *x, int modechanged)
+                                              ^
+binaries_src/control/seq.c: In function 'seq_startslavery':
+binaries_src/control/seq.c:308:44: warning: unused parameter 'modechanged' [-Wunused-parameter]
+ static void seq_startslavery(t_seq *x, int modechanged)
+                                            ^
+binaries_src/control/seq.c: In function 'seq_symbol':
+binaries_src/control/seq.c:499:44: warning: unused parameter 's' [-Wunused-parameter]
+ static void seq_symbol(t_seq *x, t_symbol *s)
+                                            ^
+binaries_src/control/seq.c: In function 'seq_list':
+binaries_src/control/seq.c:504:42: warning: unused parameter 's' [-Wunused-parameter]
+ static void seq_list(t_seq *x, t_symbol *s, int ac, t_atom *av)
+                                          ^
+binaries_src/control/seq.c: In function 'seq_hook':
+binaries_src/control/seq.c:555:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (nevents = x->x_nevents)
+     ^
+binaries_src/control/seq.c: In function 'seq_readhook':
+binaries_src/control/seq.c:1009:53: warning: unused parameter 'ac' [-Wunused-parameter]
+ static void seq_readhook(t_pd *z, t_symbol *fn, int ac, t_atom *av)
+                                                     ^
+binaries_src/control/seq.c:1009:65: warning: unused parameter 'av' [-Wunused-parameter]
+ static void seq_readhook(t_pd *z, t_symbol *fn, int ac, t_atom *av)
+                                                                 ^
+binaries_src/control/seq.c: In function 'seq_writehook':
+binaries_src/control/seq.c:1014:54: warning: unused parameter 'ac' [-Wunused-parameter]
+ static void seq_writehook(t_pd *z, t_symbol *fn, int ac, t_atom *av)
+                                                      ^
+binaries_src/control/seq.c:1014:66: warning: unused parameter 'av' [-Wunused-parameter]
+ static void seq_writehook(t_pd *z, t_symbol *fn, int ac, t_atom *av)
+                                                                  ^
+binaries_src/control/seq.c: In function 'seq_eventstring':
+binaries_src/control/seq.c:1038:36: warning: unused parameter 'x' [-Wunused-parameter]
+ static void seq_eventstring(t_seq *x, char *buf, t_seqevent *ep, int editable)
+                                    ^
+binaries_src/control/seq.c: In function 'seq_editorhook':
+binaries_src/control/seq.c:1082:47: warning: unused parameter 's' [-Wunused-parameter]
+ static void seq_editorhook(t_pd *z, t_symbol *s, int ac, t_atom *av)
+                                               ^
+binaries_src/control/seq.c: In function 'seq_click':
+binaries_src/control/seq.c:1087:44: warning: unused parameter 'xpos' [-Wunused-parameter]
+ static void seq_click(t_seq *x, t_floatarg xpos, t_floatarg ypos,
+                                            ^
+binaries_src/control/seq.c:1087:61: warning: unused parameter 'ypos' [-Wunused-parameter]
+ static void seq_click(t_seq *x, t_floatarg xpos, t_floatarg ypos,
+                                                             ^
+binaries_src/control/seq.c:1088:20: warning: unused parameter 'shift' [-Wunused-parameter]
+         t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                    ^
+binaries_src/control/seq.c:1088:38: warning: unused parameter 'ctrl' [-Wunused-parameter]
+         t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                                      ^
+binaries_src/control/seq.c:1088:55: warning: unused parameter 'alt' [-Wunused-parameter]
+         t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                                                       ^
+shared/common/mifi.c: In function 'mifievent_initialize':
+shared/common/mifi.c:258:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (ep->e_data = getbytes(nalloc))
+     ^
+shared/common/mifi.c: In function 'mifievent_setlength':
+shared/common/mifi.c:278:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  if (ep->e_data = resizebytes(ep->e_data, ep->e_datasize, newsize))
+  ^
+shared/common/mifi.c:285:6: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+      if (ep->e_data = getbytes(newsize))
+      ^
+shared/common/mifi.c: In function 'mifievent_settext':
+shared/common/mifi.c:310:9: warning: pointer targets in passing argument 1 of 'strcpy' differ in signedness [-Wpointer-sign]
+  strcpy(ep->e_data, text);
+         ^
+In file included from shared/common/mifi.c:13:0:
+c:\mingw\include\string.h:69:40: note: expected 'char *' but argument is of type 'uchar * {aka unsigned char *}'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strcpy (char *, const char *);
+                                        ^
+shared/common/mifi.c: In function 'mifievent_printmeta':
+shared/common/mifi.c:345:18: warning: unused variable 'printformat' [-Wunused-variable]
+     static char *printformat[MIFIMETA_MAXPRINTABLE+1] =
+                  ^
+shared/common/mifi.c:337:16: warning: unused variable 'isprintable' [-Wunused-variable]
+     static int isprintable[MIFIMETA_MAXPRINTABLE+1] =
+                ^
+shared/common/mifi.c: In function 'mifiread_nextevent':
+shared/common/mifi.c:617:19: warning: unused variable 'channel' [-Wunused-variable]
+     uchar status, channel;
+                   ^
+shared/common/mifi.c: In function 'mifiread_doopen':
+shared/common/mifi.c:809:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (skip = mr->mr_header.h_length - MIFIHARD_HEADERDATASIZE)
+     ^
+shared/common/mifi.c: In function 'mifiread_analyse':
+shared/common/mifi.c:915:14: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   char *p1 = ep->e_data;
+              ^
+shared/common/mifi.c:922:15: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+    char *p2 = ep->e_data + ep->e_length - 1;
+               ^
+shared/common/mifi.c: In function 'mifiwrite_adjusttrack':
+shared/common/mifi.c:1374:18: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+     if (skip > 4 &&
+                  ^
+binaries_src/control/tosymbol.c: In function 'tosymbol_pointer':
+binaries_src/control/tosymbol.c:64:42: warning: unused parameter 'x' [-Wunused-parameter]
+ static void tosymbol_pointer(t_tosymbol *x, t_gpointer *gp)
+                                          ^
+binaries_src/control/tosymbol.c:64:57: warning: unused parameter 'gp' [-Wunused-parameter]
+ static void tosymbol_pointer(t_tosymbol *x, t_gpointer *gp)
+                                                         ^
+binaries_src/control/tosymbol.c: In function 'tosymbol_separator':
+binaries_src/control/tosymbol.c:147:57: warning: unused parameter 's' [-Wunused-parameter]
+ static void tosymbol_separator(t_tosymbol *x, t_symbol *s, int argc, t_atom * argv)
+                                                         ^
+binaries_src/control/tosymbol.c: In function 'tosymbol_list':
+binaries_src/control/tosymbol.c:175:52: warning: unused parameter 's' [-Wunused-parameter]
+ static void tosymbol_list(t_tosymbol *x, t_symbol *s, int ac, t_atom *av)
+                                                    ^
+binaries_src/control/tosymbol.c: In function 'tosymbol_new':
+binaries_src/control/tosymbol.c:187:37: warning: unused parameter 's' [-Wunused-parameter]
+ static void *tosymbol_new(t_symbol *s, int argc, t_atom *argv)
+                                     ^
+binaries_src/signal/equals.c: In function 'equals_dsp':
+binaries_src/signal/equals.c:28:34: warning: unused parameter 'x' [-Wunused-parameter]
+ static void equals_dsp(t_equals *x, t_signal **sp)
+                                  ^
+binaries_src/signal/play.c: In function 'play_start':
+binaries_src/signal/play.c:24:32: warning: unused parameter 'x' [-Wunused-parameter]
+ static void play_start(t_play *x, t_floatarg f1, t_floatarg f2, t_floatarg f3)
+                                ^
+binaries_src/signal/play.c:24:46: warning: unused parameter 'f1' [-Wunused-parameter]
+ static void play_start(t_play *x, t_floatarg f1, t_floatarg f2, t_floatarg f3)
+                                              ^
+binaries_src/signal/play.c:24:61: warning: unused parameter 'f2' [-Wunused-parameter]
+ static void play_start(t_play *x, t_floatarg f1, t_floatarg f2, t_floatarg f3)
+                                                             ^
+binaries_src/signal/play.c:24:76: warning: unused parameter 'f3' [-Wunused-parameter]
+ static void play_start(t_play *x, t_floatarg f1, t_floatarg f2, t_floatarg f3)
+                                                                            ^
+binaries_src/signal/play.c: In function 'play_float':
+binaries_src/signal/play.c:33:32: warning: unused parameter 'x' [-Wunused-parameter]
+ static void play_float(t_play *x, t_floatarg f)
+                                ^
+binaries_src/signal/play.c:33:46: warning: unused parameter 'f' [-Wunused-parameter]
+ static void play_float(t_play *x, t_floatarg f)
+                                              ^
+binaries_src/signal/play.c: In function 'play_stop':
+binaries_src/signal/play.c:43:31: warning: unused parameter 'x' [-Wunused-parameter]
+ static void play_stop(t_play *x)
+                               ^
+binaries_src/signal/play.c: In function 'play_pause':
+binaries_src/signal/play.c:52:32: warning: unused parameter 'x' [-Wunused-parameter]
+ static void play_pause(t_play *x)
+                                ^
+binaries_src/signal/play.c: In function 'play_resume':
+binaries_src/signal/play.c:61:33: warning: unused parameter 'x' [-Wunused-parameter]
+ static void play_resume(t_play *x)
+                                 ^
+binaries_src/signal/play.c: In function 'play_loop':
+binaries_src/signal/play.c:70:31: warning: unused parameter 'x' [-Wunused-parameter]
+ static void play_loop(t_play *x, t_floatarg f)
+                               ^
+binaries_src/signal/play.c:70:45: warning: unused parameter 'f' [-Wunused-parameter]
+ static void play_loop(t_play *x, t_floatarg f)
+                                             ^
+binaries_src/signal/play.c: In function 'play_perform':
+binaries_src/signal/play.c:85:10: warning: unused variable 'x' [-Wunused-variable]
+  t_play *x = (t_play *)sic;
+          ^
+binaries_src/signal/click.c: In function 'click_set':
+binaries_src/signal/click.c:28:45: warning: unused parameter 's' [-Wunused-parameter]
+ static void click_set(t_click *x, t_symbol *s, int ac, t_atom *av)
+                                             ^
+binaries_src/signal/click.c: In function 'click_new':
+binaries_src/signal/click.c:91:34: warning: unused parameter 's' [-Wunused-parameter]
+ static void *click_new(t_symbol *s, int ac, t_atom *av)
+                                  ^
+binaries_src/control/loadmess.c: In function 'loadmess_set':
+binaries_src/control/loadmess.c:75:51: warning: unused parameter 's' [-Wunused-parameter]
+ static void loadmess_set(t_loadmess *x, t_symbol *s, int ac, t_atom *av)
+                                                   ^
+binaries_src/control/loadmess.c: In function 'loadmess_click':
+binaries_src/control/loadmess.c:139:54: warning: unused parameter 'xpos' [-Wunused-parameter]
+ static void loadmess_click(t_loadmess *x, t_floatarg xpos, t_floatarg ypos,
+                                                      ^
+binaries_src/control/loadmess.c:139:71: warning: unused parameter 'ypos' [-Wunused-parameter]
+ static void loadmess_click(t_loadmess *x, t_floatarg xpos, t_floatarg ypos,
+                                                                       ^
+binaries_src/control/loadmess.c:140:18: warning: unused parameter 'shift' [-Wunused-parameter]
+       t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                  ^
+binaries_src/control/loadmess.c:140:36: warning: unused parameter 'ctrl' [-Wunused-parameter]
+       t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                                    ^
+binaries_src/control/loadmess.c:140:53: warning: unused parameter 'alt' [-Wunused-parameter]
+       t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                                                     ^
+binaries_src/control/loadmess.c: In function 'loadmess_new':
+binaries_src/control/loadmess.c:153:37: warning: unused parameter 's' [-Wunused-parameter]
+ static void *loadmess_new(t_symbol *s, int ac, t_atom *av)
+                                     ^
+binaries_src/signal/frameaccum.c: In function 'frameaccum_new':
+binaries_src/signal/frameaccum.c:71:39: warning: unused parameter 's' [-Wunused-parameter]
+ static void *frameaccum_new(t_symbol *s, int ac, t_atom *av)
+                                       ^
+binaries_src/signal/cosh.c: In function 'cosh_dsp':
+binaries_src/signal/cosh.c:33:30: warning: unused parameter 'x' [-Wunused-parameter]
+ static void cosh_dsp(t_cosh *x, t_signal **sp)
+                              ^
+binaries_src/control/xnotein.c: In function 'xnotein_new':
+binaries_src/control/xnotein.c:84:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (x->x_omni = (channel == 0))  /* CHECKME */
+     ^
+binaries_src/signal/train.c: In function 'train_new':
+binaries_src/signal/train.c:93:34: warning: unused parameter 's' [-Wunused-parameter]
+ static void *train_new(t_symbol *s, int argc, t_atom *argv)
+                                  ^
+binaries_src/signal/maximum.c: In function 'maximum_dsp':
+binaries_src/signal/maximum.c:34:36: warning: unused parameter 'x' [-Wunused-parameter]
+ static void maximum_dsp(t_maximum *x, t_signal **sp)
+                                    ^
+binaries_src/control/prob.c: In function 'prob_list':
+binaries_src/control/prob.c:222:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  if (trans = getbytes(sizeof(*trans)))
+  ^
+binaries_src/control/prob.c:172:44: warning: unused parameter 's' [-Wunused-parameter]
+ static void prob_list(t_prob *x, t_symbol *s, int ac, t_atom *av)
+                                            ^
+binaries_src/control/prob.c: In function 'prob_click':
+binaries_src/control/prob.c:248:46: warning: unused parameter 'xpos' [-Wunused-parameter]
+ static void prob_click(t_prob *x, t_floatarg xpos, t_floatarg ypos,
+                                              ^
+binaries_src/control/prob.c:248:63: warning: unused parameter 'ypos' [-Wunused-parameter]
+ static void prob_click(t_prob *x, t_floatarg xpos, t_floatarg ypos,
+                                                               ^
+binaries_src/control/prob.c:249:21: warning: unused parameter 'shift' [-Wunused-parameter]
+          t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                     ^
+binaries_src/control/prob.c:249:39: warning: unused parameter 'ctrl' [-Wunused-parameter]
+          t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                                       ^
+binaries_src/control/prob.c:249:56: warning: unused parameter 'alt' [-Wunused-parameter]
+          t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+                                                        ^
+binaries_src/signal/sah.o:sah.c:(.text+0x39): undefined reference to `forky_hasfeeders'
+collect2.exe: error: ld returned 1 exit status
+make: *** [sah~.dll] Error 1

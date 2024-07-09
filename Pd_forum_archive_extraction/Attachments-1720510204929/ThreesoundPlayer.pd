@@ -1,0 +1,26 @@
+#N canvas 134 22 596 440 10;
+#X obj 153 109 random 3;
+#X msg 214 25 stop;
+#X obj 177 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 147 176 select 0 1 2;
+#X obj 51 28 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 129 242 player;
+#X obj 150 303 *~;
+#X obj 241 223 vsl 15 128 0 1 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 12700 1;
+#X obj 171 379 dac~;
+#X obj 180 60 metro 10000;
+#X connect 0 0 3 0;
+#X connect 1 0 9 0;
+#X connect 2 0 9 0;
+#X connect 3 0 5 0;
+#X connect 3 1 5 1;
+#X connect 3 2 5 2;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 6 0 8 1;
+#X connect 7 0 6 1;
+#X connect 9 0 0 0;

@@ -1,0 +1,65 @@
+#N canvas 580 154 759 333 10;
+#X obj 43 18 pgmin;
+#X floatatom 4 41 5 0 0 0 - - -;
+#X obj 43 41 sel 1 2 3 4;
+#X obj 132 164 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 114 164 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 150 164 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 168 164 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 21 293 outlet;
+#X obj 68 293 outlet;
+#X obj 115 293 outlet;
+#X obj 162 293 outlet;
+#X obj 25 18 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 201 17 ctlin 19;
+#X floatatom 201 40 5 0 0 0 - - -;
+#X obj 201 61 sel 1 127;
+#X obj 220 291 outlet;
+#X text -1 2 |----Pedal 1-4 bang out----|;
+#X obj 341 18 ctlin 1;
+#X obj 399 18 ctlin 4;
+#X obj 454 18 ctlin 7;
+#X floatatom 271 164 5 0 0 0 - - -;
+#X obj 277 290 outlet;
+#X text 337 0 exp. ped out values 1-127;
+#X obj 208 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 186 1 S2+Pedal 1 bang out;
+#X text 118 144 Pedals 1-4;
+#X text 187 144 S2+Pedal 1;
+#X text 256 144 Exp. Pedal;
+#X text 386 129 HELP:;
+#X text 389 261 + This patch was written by Mitchell Turner Associate
+Professor of Music at LaGrange College http://home.lagrange.edu/mturner
+;
+#X text 388 219 + Set S1/S2 function to "Normal" so that four pedals
+send out Patch changes which trigger a bang;
+#X text 386 158 + MIDI recieved on all channels as is. Add a MIDI channel
+argument to [pgmin] and the [ctlin] objects to make it more selective.
+;
+#X connect 0 0 11 0;
+#X connect 0 0 2 0;
+#X connect 0 0 1 0;
+#X connect 2 0 4 0;
+#X connect 2 1 3 0;
+#X connect 2 2 5 0;
+#X connect 2 3 6 0;
+#X connect 3 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 9 0;
+#X connect 6 0 10 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 23 0;
+#X connect 14 1 23 0;
+#X connect 17 0 20 0;
+#X connect 18 0 20 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 23 0 15 0;
+#X coords 0 -1 1 1 210 55 1 110 130;

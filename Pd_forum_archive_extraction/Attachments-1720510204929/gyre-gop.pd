@@ -1,0 +1,20 @@
+#N canvas 66 26 222 128 10;
+#X obj 1 20 cnv 15 220 100 empty empty empty 20 12 1 14 -233017 -66577
+0;
+#X obj 64 47 bng 22 250 50 0 loop0-load empty load 0 -6 129 7 -225271
+-1 -1;
+#X obj 10 48 vsl 15 50 0 100 0 0 loop0-volume empty vol 0 -8 129 7
+-262131 -1 -1 0 1;
+#X obj 36 48 vsl 15 50 0 4000 0 0 loop0-chunks empty cnk 0 -8 129 7
+-249661 -1 -1 0 1;
+#X obj 64 86 nbx 2 15 -1e+37 1e+37 0 0 loop0-beats empty beats 0 -6
+129 7 -262131 -1 -1 0 256;
+#X obj 0 18 cnv 15 220 1 empty loop0-filename_rcv -no_file- 4 8 65
+8 -195568 -128992 0;
+#X obj 205 45 cnv 1 10 50 empty empty empty 20 12 1 14 -260818 -66577
+0;
+#X obj 205 45 cnv 1 10 50 empty loop0-vu_gui_rcv empty 20 12 64 14
+-233017 -66577 0;
+#X obj 104 49 GENS/looper~ \$1;
+#X obj 103 70 GENS/loadsound \$1;
+#X coords 0 0 1 1 222 120 1;

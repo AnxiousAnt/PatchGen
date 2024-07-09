@@ -1,0 +1,258 @@
+$ gdb --args pd -nrt -stderr -lib /usr/local/lib/pd/extra/Gem/Gem /home/is/Desktop/IS/trackerping.pd
+GNU gdb (Ubuntu 8.1-0ubuntu3) 8.1.0.20180409-git
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from pd...done.
+(gdb) thread apply all bt
+(gdb) run
+Starting program: /usr/local/bin/pd -nrt -stderr -lib /usr/local/lib/pd/extra/Gem/Gem /home/is/Desktop/IS/trackerping.pd
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+GEM: Graphics Environment for Multimedia
+verbose(2): GEM: ver: 0.93.git 3550ede3
+verbose(2): GEM: compiled  on Aug 29 2018
+verbose(2): GEM: maintained by IOhannes m zmoelnig
+verbose(2): GEM: Authors :	Mark Danks (original version)
+verbose(2): GEM:		Chris Clepper
+verbose(2): GEM:		Cyrille Henry
+verbose(2): GEM:		IOhannes m zmoelnig
+verbose(2): GEM: with help by Guenter Geiger, Daniel Heckenberg, James Tittle, Hans-Christoph Steiner, et al.
+verbose(2): GEM: found a bug? miss a feature? please report it:
+verbose(2): GEM: 	homepage https://gem.iem.at/
+verbose(2): GEM: 	bug-tracker https://bugs.gem.iem.at/
+verbose(2): GEM: 	mailing-list https://lists.puredata.info/listinfo/gem-dev/
+open: /etc/pd/gem.conf: No such file or directory
+open: /home/is/.config/pure-data/gem.conf: No such file or directory
+open: ./gem.conf: No such file or directory
+verbose(2): GEM: compiled for MMX/SSE2 architecture
+verbose(2): GEM: using SSE2 optimization
+verbose(2): GEM: detected 8 CPUs
+load plugins 'film' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_film*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'model' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_model*.so
+load plugins 'record' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_record*.so
+load plugins 'video' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_video*.so
+dylib loading file '/usr/local/lib/pd/extra/Gem/Gem/gem_videoPYLON.so'!
+GEM: Graphics Environment for Multimedia
+verbose(2): GEM: ver: 0.93.git 3550ede3
+verbose(2): GEM: compiled  on Aug 29 2018
+verbose(2): GEM: maintained by IOhannes m zmoelnig
+verbose(2): GEM: Authors :	Mark Danks (original version)
+verbose(2): GEM:		Chris Clepper
+verbose(2): GEM:		Cyrille Henry
+verbose(2): GEM:		IOhannes m zmoelnig
+verbose(2): GEM: with help by Guenter Geiger, Daniel Heckenberg, James Tittle, Hans-Christoph Steiner, et al.
+verbose(2): GEM: found a bug? miss a feature? please report it:
+verbose(2): GEM: 	homepage https://gem.iem.at/
+verbose(2): GEM: 	bug-tracker https://bugs.gem.iem.at/
+verbose(2): GEM: 	mailing-list https://lists.puredata.info/listinfo/gem-dev/
+load plugins 'film' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_film*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'model' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_model*.so
+load plugins 'record' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_record*.so
+not reloading 'video' plugins (already 1 loaded)
+not reloading 'video' plugins (already 1 loaded)
+[pix_video]: backend #0='pylon'	: pylon USB usb GigE gige 
+not reloading 'video' plugins (already 1 loaded)
+[pix_video]: backend #0='pylon'	: pylon USB usb GigE gige 
+[New Thread 0x7fffedb75700 (LWP 5021)]
+[New Thread 0x7fffed374700 (LWP 5022)]
+verbose(3): [GEM:videoPYLON] found device '2676:ba02:4:3:22'
+[New Thread 0x7fffecb73700 (LWP 5032)]
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] found device '2676:ba02:6:3:21'
+[New Thread 0x7fffe7fff700 (LWP 5042)]
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+GLEW version 1.10.0
+[gemglxwindow]: Direct Rendering enabled!
+[New Thread 0x7fffd9e75700 (LWP 5043)]
+[New Thread 0x7fffd8c10700 (LWP 5044)]
+[New Thread 0x7fffd3fff700 (LWP 5045)]
+[New Thread 0x7fffd37fe700 (LWP 5046)]
+[New Thread 0x7fffd1e2e700 (LWP 5047)]
+[New Thread 0x7fffd162d700 (LWP 5048)]
+
+Thread 1 "pd" received signal SIGSEGV, Segmentation fault.
+pd_bang (x=0x21) at m_pd.c:268
+268	    (*(*x)->c_bangmethod)(x);
+(gdb) bt
+#0  pd_bang (x=0x21) at m_pd.c:268
+#1  0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#2  0x000055555563ee19 in trigger_list (s=0x0, argc=0, argv=0x0, 
+    x=0x555555a7c4a0) at x_connective.c:1023
+#3  trigger_bang (x=0x555555a7c4a0) at x_connective.c:1053
+#4  0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#5  0x00005555555a6da2 in bng_bout2 (x=0x555555a7d330) at g_bang.c:306
+#6  bng_bang2 (x=0x555555a7d330) at g_bang.c:379
+#7  bng_float (x=0x555555a7d330, f=<optimized out>) at g_bang.c:360
+#8  0x000055555561720f in outlet_float (x=<optimized out>, f=1) at m_obj.c:389
+#9  0x000055555561720f in outlet_float (x=<optimized out>, f=1) at m_obj.c:389
+#10 0x00005555555f41a8 in gatom_bang (x=0x555555a7ce10) at g_text.c:592
+#11 gatom_float (x=0x555555a7ce10, f=<optimized out>) at g_text.c:622
+#12 0x00005555556163a9 in inlet_float (x=<optimized out>, f=<optimized out>)
+    at m_obj.c:112
+#13 0x000055555561720f in outlet_float (x=<optimized out>, f=1) at m_obj.c:389
+#14 0x000055555561720f in outlet_float (x=<optimized out>, f=0.500369668)
+    at m_obj.c:389
+#15 0x00005555555f41a8 in gatom_bang (x=0x5555561c0e00) at g_text.c:592
+#16 gatom_float (x=0x5555561c0e00, f=<optimized out>) at g_text.c:622
+#17 0x00005555556163a9 in inlet_float (x=<optimized out>, f=<optimized out>)
+    at m_obj.c:112
+#18 0x000055555561720f in outlet_float (x=<optimized out>, f=0.500369668)
+---Type <return> to continue, or q <return> to quit---q
+ at m_oQuit
+(gdb) quit

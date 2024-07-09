@@ -1,0 +1,19 @@
+#N canvas 0 0 992 300 10;
+#X obj 256 124 pdp_noise;
+#X obj 257 95 metro 70;
+#X obj 257 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 191 69 loadbang;
+#X obj 256 171 pdp_glx;
+#X obj 365 144 pdp_rec~;
+#X floatatom 374 186 5 0 0 0 - - -;
+#X msg 394 112 start;
+#X msg 394 85 open /tmp/output.mov;
+#X connect 0 0 4 0;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 5 0 6 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;

@@ -1,0 +1,37 @@
+#N canvas 0 25 1257 698 10;
+#X obj 132 267 tabwrite \$1;
+#X obj 103 108 line;
+#X obj 160 39 t b b;
+#X obj 334 85 line;
+#X obj 391 16 t b b;
+#X msg 335 53 0;
+#X msg 391 63 104 3000;
+#X msg 81 66 0;
+#X msg 160 86 104 3000;
+#X obj 167 146 select 104;
+#X text 385 103 Draw (reverse) superpower curve to 103 point table.
+Table name is given by first argument;
+#X obj 339 166 expr (sqrt(2)/2) * (cos(($f1/100) * (4 * atan(1)) -
+(4 * atan(1)/2)) + sin(($f1/100) * (4 * atan(1)) - (4 * atan(1)/2)))
+;
+#X obj 34 356 expr (sqrt(2)/2) * (cos(($f1/100) * (4 * atan(1)) - (4
+* atan(1)/2)) - sin(($f1/100) * (4 * atan(1)) - (4 * atan(1)/2)));
+#X obj 160 13 inlet draw__rev_super(bang);
+#X obj 60 -11 inlet draw_super(bang);
+#X connect 1 0 0 1;
+#X connect 1 0 9 0;
+#X connect 1 0 12 0;
+#X connect 2 0 8 0;
+#X connect 2 1 7 0;
+#X connect 3 0 0 1;
+#X connect 3 0 11 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 1 0;
+#X connect 8 0 1 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 2 0;
+#X connect 14 0 4 0;

@@ -1,0 +1,38 @@
+#N canvas 381 40 805 299 10;
+#X obj 82 54 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X floatatom 79 83 0 0 0 0 - - -;
+#X obj 82 234 hsl 128 15 5 15 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X floatatom 79 202 0 0 0 0 - - -;
+#X text 30 201 5 - 15;
+#X text 31 82 0 - 1;
+#X obj 188 91 nbx 5 14 1e+35 1e+37 1 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1e+35 256;
+#X obj 198 117 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 208 142 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 249 90 exponential factor;
+#X text 257 114 start;
+#X text 271 139 end;
+#X text 629 230 porres 2014;
+#X obj 79 170 log_slide 100 5 15;
+#X text 407 136 An exponential factor of 1 gives a linear function
+;
+#X text 407 156 Input values are always from 0 to 1;
+#X text 408 177 You can set minimum and maximum output values respectively
+as "start" and "end";
+#X text 407 91 The exponential factor is the same as the ratio between
+maximum and minimum values given in the slider's settings. The exponential
+factor needs \, therefore \, to be larger than 0;
+#X text 29 219 "log";
+#X text 29 102 "lin";
+#X text 407 64 Emulates the "log" function from Pd sliders;
+#X connect 0 0 1 0;
+#X connect 1 0 13 0;
+#X connect 3 0 2 0;
+#X connect 6 0 13 1;
+#X connect 7 0 13 2;
+#X connect 8 0 13 3;
+#X connect 13 0 3 0;

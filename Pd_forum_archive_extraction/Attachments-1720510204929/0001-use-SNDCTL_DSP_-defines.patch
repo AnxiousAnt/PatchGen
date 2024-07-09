@@ -1,0 +1,78 @@
+>From 44b2393ca4703ea65ff75dea641e08d86365a7e2 Mon Sep 17 00:00:00 2001
+From: IOhannes m zmoelnig <zmoelnig@umlautO.umlaeute.mur.at>
+Date: Fri, 2 Nov 2012 00:06:59 +0100
+Subject: [PATCH] use SNDCTL_DSP_* defines
+
+rather than the deprecated SOUND_PCM_* defines (which have
+been removed from OSS4)
+
+(but fall back to old ones if the new are not there...)
+---
+ src/s_audio_oss.c |   17 ++++++++++++-----
+ 1 file changed, 12 insertions(+), 5 deletions(-)
+
+diff --git a/src/s_audio_oss.c b/src/s_audio_oss.c
+index 10329fe..c417e73 100644
+--- a/src/s_audio_oss.c
++++ b/src/s_audio_oss.c
+@@ -11,6 +11,13 @@
+ # include <linux/soundcard.h>
+ #endif
+ 
++#ifndef SNDCTL_DSP_GETISPACE
++#define SNDCTL_DSP_GETISPACE SOUND_PCM_GETISPACE
++#endif
++#ifndef SNDCTL_DSP_GETOSPACE
++#define SNDCTL_DSP_GETOSPACE SOUND_PCM_GETOSPACE
++#endif
++
+ #include "m_pd.h"
+ #include "s_stuff.h"
+ #include <errno.h>
+@@ -202,7 +209,7 @@ void oss_configure(t_oss_dev *dev, int srate, int dac, int skipblocksize,
+         out.  */
+ 
+         int defect;
+-        if (ioctl(fd, SOUND_PCM_GETOSPACE,&ainfo) < 0)
++        if (ioctl(fd, SNDCTL_DSP_GETOSPACE,&ainfo) < 0)
+            fprintf(stderr,"OSS: ioctl on output device failed");
+         dev->d_bufsize = ainfo.bytes;
+ 
+@@ -514,14 +521,14 @@ static void oss_calcspace(void)
+     audio_buf_info ainfo;
+     for (dev=0; dev < linux_noutdevs; dev++)
+     {
+-        if (ioctl(linux_dacs[dev].d_fd, SOUND_PCM_GETOSPACE, &ainfo) < 0)
++        if (ioctl(linux_dacs[dev].d_fd, SNDCTL_DSP_GETOSPACE, &ainfo) < 0)
+            fprintf(stderr,"OSS: ioctl on output device %d failed",dev);
+         linux_dacs[dev].d_space = ainfo.bytes;
+     }
+ 
+     for (dev = 0; dev < linux_nindevs; dev++)
+     {
+-        if (ioctl(linux_adcs[dev].d_fd, SOUND_PCM_GETISPACE,&ainfo) < 0)
++        if (ioctl(linux_adcs[dev].d_fd, SNDCTL_DSP_GETISPACE,&ainfo) < 0)
+             fprintf(stderr, "OSS: ioctl on input device %d, fd %d failed",
+                 dev, linux_adcs[dev].d_fd);
+         linux_adcs[dev].d_space = ainfo.bytes;
+@@ -569,7 +576,7 @@ static void oss_doresync( void)
+             linux_adcs_read(linux_adcs[dev].d_fd, buf, 
+                 OSS_XFERSIZE(linux_adcs[dev].d_nchannels,
+                     linux_adcs[dev].d_bytespersamp));
+-            if (ioctl(linux_adcs[dev].d_fd, SOUND_PCM_GETISPACE, &ainfo) < 0)
++            if (ioctl(linux_adcs[dev].d_fd, SNDCTL_DSP_GETISPACE, &ainfo) < 0)
+             {
+                 fprintf(stderr, "OSS: ioctl on input device %d, fd %d failed",
+                     dev, linux_adcs[dev].d_fd);
+@@ -598,7 +605,7 @@ static void oss_doresync( void)
+             linux_dacs_write(linux_dacs[dev].d_fd, buf,
+                 OSS_XFERSIZE(linux_dacs[dev].d_nchannels,
+                     linux_dacs[dev].d_bytespersamp));
+-            if (ioctl(linux_dacs[dev].d_fd, SOUND_PCM_GETOSPACE, &ainfo) < 0)
++            if (ioctl(linux_dacs[dev].d_fd, SNDCTL_DSP_GETOSPACE, &ainfo) < 0)
+             {
+                 fprintf(stderr, "OSS: ioctl on output device %d, fd %d failed",
+                     dev, linux_dacs[dev].d_fd);
+-- 
+1.7.10.4
+

@@ -1,0 +1,13 @@
+#N canvas 0 0 581 314 10;
+#X obj 178 163 rectangle 1 1;
+#X obj 177 234 rectangle 1 1;
+#X obj 185 204 translateXYZ 2 1 0;
+#X obj 183 129 gemhead;
+#X obj 49 170 gemwin;
+#X msg 51 99 create \, 1;
+#X msg 84 129 0 \, destroy;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;

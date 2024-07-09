@@ -1,0 +1,21 @@
+#N canvas 1531 394 361 195 10;
+#X msg 127 122 connect localhost 4444;
+#X obj 127 20 loadbang;
+#X obj 47 61 metro 1000;
+#X msg 47 37 1;
+#X obj 47 90 f;
+#X obj 75 90 == 0;
+#X obj 47 115 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 47 137 send \$1;
+#X obj 127 154 netsend -u;
+#X connect 0 0 8 0;
+#X connect 1 0 0 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;

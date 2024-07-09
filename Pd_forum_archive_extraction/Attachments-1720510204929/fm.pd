@@ -1,0 +1,31 @@
+#N canvas 357 174 446 286 10;
+#X obj 87 165 t f f;
+#X obj 69 133 route float bang;
+#X obj 172 133 route float bang;
+#X obj 170 228 outlet;
+#X obj 145 247 outlet;
+#X obj 152 164 t f f;
+#X obj 172 114 inlet;
+#X obj 69 114 inlet;
+#X obj 19 5 cnv 15 400 100 empty empty fm 20 12 0 14 -233017 -66577
+0;
+#X obj 139 209 f \$1;
+#X obj 170 209 f \$1;
+#X text 63 10 fm works just like a normal float object \, but it has
+one more outlet at the right which outputs the state of the fm object
+when a bang is received in the right inlet. fm is an acronym for Float
+with Memory. A float argument can be specified as a creational parameter
+\, thus initializing the fm state \, just like the float object.;
+#X text 335 255 2009 p.l.a.;
+#X connect 0 0 9 0;
+#X connect 0 1 10 1;
+#X connect 1 0 0 0;
+#X connect 1 1 9 0;
+#X connect 2 0 5 0;
+#X connect 2 1 10 0;
+#X connect 5 0 9 1;
+#X connect 5 1 10 1;
+#X connect 6 0 2 0;
+#X connect 7 0 1 0;
+#X connect 9 0 4 0;
+#X connect 10 0 3 0;

@@ -1,0 +1,21 @@
+#N canvas 1 51 450 300 10;
+#X obj 31 32 table \$0-osc 1027;
+#X obj 31 54 loadbang;
+#X obj 31 111 s \$0-osc;
+#X obj 31 197 tabosc4~ \$0-osc;
+#X obj 31 219 *~ 0.25;
+#X obj 31 241 dac~;
+#X msg 214 30 \; pd dsp 1;
+#X obj 31 176 +~ 2000;
+#X obj 31 133 osc~ 0.01;
+#X msg 31 76 cosinesum 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 1 1 1 -1 0
+0 0 1 1 1 1 1 1 1 \, normalize 1;
+#X obj 31 155 *~ 20;
+#X connect 1 0 9 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 0 5 1;
+#X connect 7 0 3 0;
+#X connect 8 0 10 0;
+#X connect 9 0 2 0;
+#X connect 10 0 7 0;

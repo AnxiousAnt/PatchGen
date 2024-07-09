@@ -1,0 +1,43 @@
+#N canvas 483 87 514 527 10;
+#X obj 72 197 ph_env~;
+#X msg 175 127 1024;
+#X obj 72 144 noise~;
+#X obj 72 304 t b b;
+#X obj 72 351 timer;
+#X obj 72 390 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 10.6667 256;
+#X msg 223 127 2048;
+#X msg 266 127 4096;
+#X obj 244 323 samplerate~;
+#X obj 217 297 t f b;
+#X obj 217 275 / 2;
+#X obj 217 342 /;
+#X obj 217 366 * 1000;
+#X obj 217 390 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 10 -8
+0 10 -262144 -1 -1 10.6667 256;
+#X obj 175 180 t f;
+#X obj 101 244 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 95.4811 256;
+#X text 173 99 dynamically change window;
+#X text -22 420 OUTPUT rate;
+#X text 70 419 measured;
+#X text 220 419 theoric;
+#X text -28 46 an abstraction (a trick using dynamic patching) to change
+the size of the analysis window of an [env~] objet;
+#X connect 0 0 3 0;
+#X connect 0 0 15 0;
+#X connect 1 0 14 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;
+#X connect 4 0 5 0;
+#X connect 6 0 14 0;
+#X connect 7 0 14 0;
+#X connect 8 0 11 1;
+#X connect 9 0 11 0;
+#X connect 9 1 8 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 0 1;
+#X connect 14 0 10 0;

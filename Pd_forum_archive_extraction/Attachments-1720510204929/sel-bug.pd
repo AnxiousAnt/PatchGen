@@ -1,0 +1,90 @@
+#N canvas 130 128 394 272 10;
+#N canvas 555 79 618 467 patch 1;
+#X obj 17 167 f;
+#X obj 42 137 inlet;
+#X obj 129 15 inlet;
+#X obj 17 15 inlet;
+#X obj 17 97 t b f;
+#X obj 17 267 outlet;
+#X obj 47 217 f;
+#X obj 17 77 spigot;
+#X obj 50 57 tgl 15 0 empty \$0-tgl empty 0 -6 0 8 -262144 -1 -1 91
+91;
+#X obj 141 307 0;
+#X obj 17 237 t f f f;
+#X obj 17 187 expr ($f2-$f1)/$f3*$f4;
+#X obj 119 75 t f f f;
+#X obj 129 35 unpack;
+#X obj 17 217 + 0;
+#X obj 196 275 print select;
+#X obj 103 346 print correct!;
+#X obj 138 270 cnv 15 40 28 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X obj 101 307 f;
+#X obj 188 307 print rejected;
+#X text 234 15 There is something strange happening with the red [sel]
+below. It receives a number in the right inlet \, but when it receives
+the same number in the left inlet \, it doesn't react.;
+#X obj 141 277 sel 0;
+#X text 234 75 Clicking in the green bang in the patch above simulates
+the oatch behaviour:;
+#X text 234 105 - [sel] receives "91" in the right inlet;
+#X text 234 125 - the left inlet receives values that go up progressively.
+These are rejected \, as to expect.;
+#X text 234 175 If any value matches \, it will be with by the "correct!"
+label.;
+#X text 234 155 - the 10th value is 91 \, but it is also rejected by
+[sel]??;
+#X connect 0 0 11 0;
+#X connect 1 0 0 1;
+#X connect 1 0 14 1;
+#X connect 2 0 13 0;
+#X connect 3 0 7 0;
+#X connect 4 0 0 0;
+#X connect 4 1 11 3;
+#X connect 6 0 14 1;
+#X connect 7 0 4 0;
+#X connect 8 0 7 1;
+#X connect 9 0 8 0;
+#X connect 10 0 5 0;
+#X connect 10 1 21 0;
+#X connect 10 2 18 1;
+#X connect 11 0 14 0;
+#X connect 12 0 8 0;
+#X connect 12 1 11 1;
+#X connect 12 2 15 0;
+#X connect 12 2 21 1;
+#X connect 13 0 12 0;
+#X connect 13 1 11 2;
+#X connect 14 0 6 0;
+#X connect 14 0 10 0;
+#X connect 18 0 0 1;
+#X connect 18 0 16 0;
+#X connect 21 0 9 0;
+#X connect 21 0 18 0;
+#X connect 21 1 19 0;
+#X restore 32 197 pd patch;
+#X msg 149 140 54;
+#X obj 25 70 t b b b b b b b;
+#X msg 83 114 1 \, 1 \, 1 \, 1;
+#X msg 55 92 1 \, 1 \, 1 \, 1 \, 1 \, 1 \, 1 \, 1 \, 1 \, 1 \, 1 \,
+1 \, 1 \, 1;
+#X obj 25 39 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
+;
+#X msg 187 140 0;
+#X obj 187 162 s \$0-tgl;
+#X msg 71 144 91 10;
+#X text 21 10 please look inside the subpatch "patch" for more details
+;
+#X text 125 70 (this simulates the patche's input);
+#X connect 1 0 0 1;
+#X connect 2 3 4 0;
+#X connect 2 4 8 0;
+#X connect 2 5 3 0;
+#X connect 2 6 1 0;
+#X connect 2 6 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X connect 6 0 7 0;
+#X connect 8 0 0 2;

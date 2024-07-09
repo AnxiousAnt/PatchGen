@@ -1,0 +1,17 @@
+#N canvas 0 0 450 300 10;
+#X obj 119 102 symbol;
+#X msg 88 60 symbol test;
+#X msg 88 34 test;
+#X text 56 15 these are working;
+#X msg 294 85 test;
+#X obj 86 107 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 119 125 print;
+#X msg 156 35 symbol test;
+#X text 287 68 this not;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 4 0 0 1;
+#X connect 5 0 0 0;
+#X connect 7 0 0 1;

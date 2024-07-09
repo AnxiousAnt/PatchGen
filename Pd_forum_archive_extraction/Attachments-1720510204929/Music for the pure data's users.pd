@@ -1,0 +1,222 @@
+#N canvas 733 22 701 696 10;
+#X obj 171 99 cnv 15 340 480 empty empty ~~John~~Cage~~ 15 28 0 37
+-228856 -79454 0;
+#X obj 171 160 bng 340 250 100 0 Silence Tad 0:00 102 157 0 57 -79454
+-258113 -228856;
+#X obj 311 480 cnv 10 1 10 empty empty タド 15 5 2 15 -79454 -191407
+0;
+#X obj 172 519 cnv 15 339 60 empty Bruit READY ? 63 20 0 50 -228856
+-79454 0;
+#N canvas 45 127 1050 646 Silentio 0;
+#X obj 89 253 dac~;
+#X obj 668 307 print;
+#X obj 633 307 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 428 255 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 428 237 SILENCE;
+#X obj 373 256 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 312 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 40 290 4'33" First movement;
+#X msg 373 237 SILENCE;
+#X msg 321 236 SILENCE;
+#X msg 770 235 \; Tad label \$1;
+#X obj 59 182 adc~;
+#X obj 448 41 metro 1000;
+#X obj 381 26 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 448 59 counter 0 273;
+#X floatatom 448 81 5 0 0 0 - - -;
+#X obj 531 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 714 27 loadbang;
+#X obj 315 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 459 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 486 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 505 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 722 93 mod 60;
+#X obj 671 218 makesymbol %s:%s;
+#X obj 707 131 < 10;
+#X obj 750 167 0;
+#X obj 727 167 0;
+#X obj 641 184 makefilename 0%d;
+#X obj 691 149 sel 1 0;
+#X obj 614 201 pack 0 s;
+#X obj 748 184 makesymbol %s;
+#X obj 676 106 div 60;
+#X obj 676 76 t f f;
+#X obj 722 113 t f f f;
+#X msg 714 59 0;
+#X obj 71 218 *~;
+#X obj 100 158 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 98 197 line~;
+#X msg 668 342 John Cage 4'33" Tad's original transcription for Pure
+data October 2011;
+#X obj 71 236 *~ 0.334;
+#X obj 668 322 del 4033;
+#X msg 470 460 \; Bruit label \$1;
+#X symbolatom 400 465 0 0 0 0 - - -;
+#X obj 400 443 list2symbol;
+#X msg 400 418 SILENCE;
+#X obj 120 307 list2symbol;
+#X symbolatom 11 324 0 0 0 0 - - -;
+#X msg 400 573 ADJUST;
+#X msg 400 522 WELCOME;
+#X obj 54 466 loadbang;
+#X obj 53 507 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 25 19 bng 25 250 50 0 empty Silenceaddict reset 0 -5 2 13 -262144
+-1 -1;
+#X obj 83 590 del 8000;
+#X obj 83 522 del 2000;
+#X obj 25 507 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 135 522 ...;
+#X obj 650 375 del 4000;
+#X msg 668 290 end of SILENCE;
+#X msg 177 290 4'33" Second movement (click up 1 time);
+#X obj 412 109 select 0 1 33 193 273;
+#X obj 526 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 616 554 Copyright 2011 by Tad (tadbisaha@gmail.com) with the
+discreet complicity of the Pure data community;
+#X obj 381 141 t b b b;
+#X obj 204 124 r Silence;
+#X msg 400 607 READY ?;
+#X msg 650 394 ........reset..............here...>>>;
+#X msg 428 290 4'33" Third movement (click up 1 time);
+#X msg 99 174 \$1 50;
+#X msg 809 44 \; pd dsp 1;
+#X msg 205 324 \; Words label \$1;
+#X obj 83 556 del 5000;
+#X msg 120 539 .........TO EAR THIS OPUS. First...;
+#X msg 120 572 Set the sound level ~30 %;
+#X obj 54 487 del 500;
+#X obj 25 590 del 1000;
+#X msg 120 607 CLICK on the "kronos BANG" and ENJOY!;
+#X connect 2 0 40 0;
+#X connect 2 0 56 0;
+#X connect 3 0 66 0;
+#X connect 4 0 0 1;
+#X connect 4 0 3 0;
+#X connect 5 0 58 0;
+#X connect 6 0 7 0;
+#X connect 6 0 9 0;
+#X connect 7 0 1 0;
+#X connect 7 0 45 0;
+#X connect 8 0 0 1;
+#X connect 8 0 5 0;
+#X connect 9 0 0 1;
+#X connect 9 0 6 0;
+#X connect 11 0 35 0;
+#X connect 11 1 35 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 14 0 32 0;
+#X connect 15 0 59 0;
+#X connect 16 0 14 0;
+#X connect 16 0 14 3;
+#X connect 16 0 14 2;
+#X connect 17 0 16 0;
+#X connect 17 0 34 0;
+#X connect 17 0 68 0;
+#X connect 18 0 55 0;
+#X connect 19 0 9 0;
+#X connect 20 0 8 0;
+#X connect 20 0 62 0;
+#X connect 21 0 4 0;
+#X connect 21 0 62 0;
+#X connect 22 0 33 0;
+#X connect 23 0 10 0;
+#X connect 24 0 28 0;
+#X connect 25 0 30 0;
+#X connect 26 0 27 0;
+#X connect 27 0 29 1;
+#X connect 28 0 26 0;
+#X connect 28 1 25 0;
+#X connect 29 0 23 0;
+#X connect 30 0 29 1;
+#X connect 31 0 29 0;
+#X connect 32 0 31 0;
+#X connect 32 1 22 0;
+#X connect 33 0 24 0;
+#X connect 33 1 26 1;
+#X connect 33 2 25 1;
+#X connect 34 0 32 0;
+#X connect 35 0 39 0;
+#X connect 36 0 67 0;
+#X connect 37 0 35 1;
+#X connect 38 0 1 0;
+#X connect 39 0 0 0;
+#X connect 39 0 0 1;
+#X connect 40 0 38 0;
+#X connect 43 0 42 0;
+#X connect 43 0 41 0;
+#X connect 44 0 43 0;
+#X connect 45 0 69 0;
+#X connect 45 0 46 0;
+#X connect 47 0 43 0;
+#X connect 48 0 43 0;
+#X connect 49 0 73 0;
+#X connect 50 0 48 0;
+#X connect 50 0 53 0;
+#X connect 50 0 55 0;
+#X connect 51 0 16 0;
+#X connect 51 0 54 0;
+#X connect 52 0 75 0;
+#X connect 52 0 64 0;
+#X connect 53 0 71 0;
+#X connect 53 0 70 0;
+#X connect 54 0 48 0;
+#X connect 54 0 55 0;
+#X connect 54 0 74 0;
+#X connect 55 0 45 0;
+#X connect 56 0 65 0;
+#X connect 57 0 2 0;
+#X connect 57 0 1 0;
+#X connect 57 0 45 0;
+#X connect 58 0 1 0;
+#X connect 58 0 45 0;
+#X connect 59 0 18 0;
+#X connect 59 1 19 0;
+#X connect 59 2 20 0;
+#X connect 59 3 21 0;
+#X connect 59 4 60 0;
+#X connect 60 0 57 0;
+#X connect 60 0 62 0;
+#X connect 62 0 13 0;
+#X connect 62 1 44 0;
+#X connect 62 2 36 0;
+#X connect 63 0 62 0;
+#X connect 64 0 43 0;
+#X connect 65 0 45 0;
+#X connect 66 0 1 0;
+#X connect 66 0 45 0;
+#X connect 67 0 37 0;
+#X connect 70 0 47 0;
+#X connect 70 0 72 0;
+#X connect 70 0 52 0;
+#X connect 71 0 45 0;
+#X connect 72 0 45 0;
+#X connect 73 0 50 0;
+#X connect 74 0 64 0;
+#X connect 74 0 75 0;
+#X connect 75 0 45 0;
+#X restore 1 674 pd Silentio in Silentia;
+#X text 277 676 tadbisaha@gmail.com;
+#N canvas 169 236 450 300 (subpatch) 0;
+#X obj 1 1 cnv 15 340 20 empty Words CLICK on the "kronos BANG" and ENJOY!
+5 10 0 12 -79454 -228856 0;
+#X coords 0 1 100 -1 340 20 1 0 0;
+#X restore 171 580 graph;
+#X obj 491 560 bng 18 250 50 0 Silenceaddict empty RESET -12 25 2 10
+-91872 -258113 -228856;
+#X coords 0 -1 1 1 692 692 1 0 0;

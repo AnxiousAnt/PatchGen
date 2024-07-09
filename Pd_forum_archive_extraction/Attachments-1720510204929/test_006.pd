@@ -1,0 +1,6 @@
+#N canvas 858 400 450 300 10;
+#X msg 35 130 \; pd-WORKSPACE clear \; pd-WORKSPACE obj 20 20 loadbang-test
+;
+#N canvas 0 50 450 300 WORKSPACE 0;
+#X obj 20 20 loadbang-test;
+#X restore 8 9 pd WORKSPACE;

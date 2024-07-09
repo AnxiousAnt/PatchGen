@@ -1,0 +1,22 @@
+#N canvas 667 376 465 288 10;
+#X obj 46 105 RII;
+#X obj 46 65 dirac~;
+#X floatatom 108 65 5 0 0 0 - - -;
+#X floatatom 151 65 5 0 0 0 - - -;
+#X obj 45 161 tabwrite~ RII;
+#N canvas 0 0 450 300 graph1 0;
+#X array RII 10 float 1;
+#A 0 0 0 1 0 0 0 0 0 0 0;
+#X coords 0 1 9 -1 200 140 1;
+#X restore 230 66 graph;
+#X obj 16 17 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 16 40 t b b;
+#X msg 38 198 \; RII resize 10;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 2;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 7 1 1 0;

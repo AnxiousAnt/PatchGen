@@ -1,0 +1,7 @@
+#N canvas 426 275 450 300 10;
+#X obj 57 43 soundfiler;
+#X obj 57 96 table array123;
+#X msg 57 17 read -resize ./test.wav array123;
+#X floatatom 57 67 10 0 0 0 - - -;
+#X connect 0 0 3 0;
+#X connect 2 0 0 0;

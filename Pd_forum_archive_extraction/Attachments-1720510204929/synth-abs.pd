@@ -1,0 +1,72 @@
+#N canvas 0 22 1072 692 16;
+#X obj 247 333 mtof~;
+#X obj 247 245 sig~;
+#X obj 247 284 +~;
+#X obj 317 277 osc~ 6;
+#X obj 317 306 *~ 0.5;
+#X obj 247 492 *~;
+#X obj 311 513 adsr 1 5 200 30 150;
+#X msg 37 278 1;
+#X msg 314 156 0;
+#X obj 164 167 t b f;
+#X obj 164 127 stripnote;
+#X obj 314 126 select 0;
+#X obj 164 78 unpack f f;
+#X obj 247 581 throw~ sum-bus;
+#X obj 164 18 r \$1-note-command;
+#N canvas 0 22 828 524 wavetable 1;
+#X obj 31 19 inlet~;
+#X obj 31 95 phasor~;
+#X obj 31 273 +~ 1;
+#X obj 31 342 tabread4~ wave;
+#X obj 31 391 outlet~;
+#X obj 158 55 r \$0-adsr-trig;
+#X obj 58 205 +~ 512;
+#X obj 31 244 *~;
+#X text 183 186 Normally with a wavetable of this size \, we'd scan
+through 512 points by multiplying the phasor~ by 512... This ADSR followed
+by a [+~ 512] causes the multiplier to start at 512 \, then increase
+up to 1024 \, then sustain back at 512... Overshooting the scan range
+like that causes the timbre to get brighter \, which can sound cool
+on attacks.;
+#X obj 158 136 adsr 512 200 50 0 100;
+#X connect 0 0 1 0;
+#X connect 1 0 7 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 1;
+#X connect 7 0 2 0;
+#X connect 9 0 6 0;
+#X restore 247 382 pd wavetable;
+#X obj 37 307 s \$0-adsr-trig;
+#X obj 314 185 s \$0-adsr-trig;
+#X obj 311 462 r \$0-adsr-trig;
+#X text 544 508 << amplitude ADSR;
+#X text 36 343 When MIDI velocity is NOT zero (that is \, it's a note
+on message) \, send a 1 to the ADSR trigger send., f 15;
+#X text 389 380 << more inside;
+#X text 433 51 When MIDI velocity is zero \, send a 0 to the ADSR trigger
+send \, which is received by both ADSRs used in this abstraction. Note
+the use of \$0...it's guaranteed to be a unique send name for this
+instance only \, so there's no crosstalk between voices in the polyphonic
+synth bank.;
+#X connect 0 0 15 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 1;
+#X connect 5 0 13 0;
+#X connect 6 0 5 1;
+#X connect 7 0 16 0;
+#X connect 8 0 17 0;
+#X connect 9 0 7 0;
+#X connect 9 1 1 0;
+#X connect 10 0 9 0;
+#X connect 11 0 8 0;
+#X connect 12 0 10 0;
+#X connect 12 1 10 1;
+#X connect 12 1 11 0;
+#X connect 14 0 12 0;
+#X connect 15 0 5 0;
+#X connect 18 0 6 0;

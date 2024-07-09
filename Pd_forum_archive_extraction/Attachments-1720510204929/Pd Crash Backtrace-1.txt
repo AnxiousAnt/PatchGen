@@ -1,0 +1,159 @@
+==========================================================
+joe@mint21:/var/lib/systemd/coredump$ coredumpctl info -1
+           PID: 86193 (pd)
+           UID: 1000 (joe)
+           GID: 1000 (joe)
+        Signal: 11 (SEGV)
+     Timestamp: Fri 2023-01-27 16:31:03 CET (29s ago)
+  Command Line: /usr/lib/puredata/tcl/../bin/pd -guiport 45035
+    Executable: /usr/lib/puredata/bin/pd
+ Control Group: /user.slice/user-1000.slice/session-c2.scope
+          Unit: session-c2.scope
+         Slice: user-1000.slice
+       Session: c2
+     Owner UID: 1000 (joe)
+       Boot ID: 2ff1594ba63d461ba8bb70f67537120b
+    Machine ID: b76cc7b1bbdc489e93909d2043031de8
+      Hostname: mint21
+       Storage: /var/lib/systemd/coredump/core.pd.1000.2ff1594ba63d461ba8bb70f67537120b.86193.1674833463000000.zst (present)
+     Disk Size: 857.2K
+       Message: Process 86193 (pd) of user 1000 dumped core.
+                
+                Found module /home/joe/Pure-Data/externals/pdogg/oggwrite~.pd_linux with build-id: caeb52b1930b2e28afa51178c44f35dafb07852a
+                Found module /home/joe/Pure-Data/externals/else/rint.l_amd64 with build-id: 58eb889fda1ae7529b25ac457f37c786e86ea263
+                Found module /home/joe/Pure-Data/externals/else/format.l_amd64 with build-id: 0c3e65378d2e12abb2f5fbdc93b3f223e46b5698
+                Found module /home/joe/Pure-Data/externals/else/selector.l_amd64 with build-id: 2642956e46363e611537884d1ffef0d9356ff5cc
+                Found module /home/joe/Pure-Data/externals/else/floor.l_amd64 with build-id: e5c69d19a3bc05ac9233e7a044e5e3fee3f0f5f6
+                Found module /home/joe/Pure-Data/externals/else/args.l_amd64 with build-id: 396bbe18de56667a1747ecd402bc529f0aff6679
+                Found module /home/joe/Pure-Data/externals/else/router.l_amd64 with build-id: 209ae1568afd6bf9ef00a28cf9ddcece48ffd348
+                Found module /home/joe/Pure-Data/externals/else/keyboard.l_amd64 with build-id: c960fe2e6e59b73c01b80a5ade2e5f301cf4fd88
+                Found module /home/joe/Pure-Data/externals/cyclone/midiformat.l_amd64 with build-id: a720778b13606797b8344bd57e5c4ae455f980c1
+                Found module /home/joe/Pure-Data/externals/cyclone/midiparse.l_amd64 with build-id: 3b16e41f2a5a907fe745217a585e47c17a27697f
+                Found module /home/joe/Pure-Data/externals/cyclone/midiflush.l_amd64 with build-id: c099df80eb1850ca26654f0a3a4db0a5b42a07c2
+                Found module /home/joe/Pure-Data/externals/else/midi.l_amd64 with build-id: 66c567f00c751af9330d2983aa7bd3ed49e60699
+                Found module /home/joe/Pure-Data/externals/else/initmess.l_amd64 with build-id: 4b4a3ec7e71626396e86df4dd3f4cb676185f56c
+                Found module /home/joe/Pure-Data/externals/else/op~.l_amd64 with build-id: 6467699aba0a2550625eac81a3de634cb2c277fa
+                Found module /home/joe/Pure-Data/externals/else/lb.l_amd64 with build-id: 617d5f24bc27832c4f12e30a57d61ede81300a3f
+                Found module /home/joe/Pure-Data/externals/else/lb.l_amd64 with build-id: 617d5f24bc27832c4f12e30a57d61ede81300a3f
+           PID: 86193 (pd)
+           UID: 1000 (joe)
+           GID: 1000 (joe)
+        Signal: 11 (SEGV)
+     Timestamp: Fri 2023-01-27 16:31:03 CET (29s ago)
+  Command Line: /usr/lib/puredata/tcl/../bin/pd -guiport 45035
+    Executable: /usr/lib/puredata/bin/pd
+ Control Group: /user.slice/user-1000.slice/session-c2.scope
+          Unit: session-c2.scope
+         Slice: user-1000.slice
+       Session: c2
+     Owner UID: 1000 (joe)
+       Boot ID: 2ff1594ba63d461ba8bb70f67537120b
+    Machine ID: b76cc7b1bbdc489e93909d2043031de8
+      Hostname: mint21
+       Storage: /var/lib/systemd/coredump/core.pd.1000.2ff1594ba63d461ba8bb70f67537120b.86193.1674833463000000.zst (present)
+     Disk Size: 857.2K
+       Message: Process 86193 (pd) of user 1000 dumped core.
+                
+                Found module /home/joe/Pure-Data/externals/pdogg/oggwrite~.pd_linux with build-id: caeb52b1930b2e28afa51178c44f35dafb07852a
+                Found module /home/joe/Pure-Data/externals/else/rint.l_amd64 with build-id: 58eb889fda1ae7529b25ac457f37c786e86ea263
+                Found module /home/joe/Pure-Data/externals/else/format.l_amd64 with build-id: 0c3e65378d2e12abb2f5fbdc93b3f223e46b5698
+                Found module /home/joe/Pure-Data/externals/else/selector.l_amd64 with build-id: 2642956e46363e611537884d1ffef0d9356ff5cc
+                Found module /home/joe/Pure-Data/externals/else/floor.l_amd64 with build-id: e5c69d19a3bc05ac9233e7a044e5e3fee3f0f5f6
+                Found module /home/joe/Pure-Data/externals/else/args.l_amd64 with build-id: 396bbe18de56667a1747ecd402bc529f0aff6679
+                Found module /home/joe/Pure-Data/externals/else/router.l_amd64 with build-id: 209ae1568afd6bf9ef00a28cf9ddcece48ffd348
+                Found module /home/joe/Pure-Data/externals/else/keyboard.l_amd64 with build-id: c960fe2e6e59b73c01b80a5ade2e5f301cf4fd88
+                Found module /home/joe/Pure-Data/externals/cyclone/midiformat.l_amd64 with build-id: a720778b13606797b8344bd57e5c4ae455f980c1
+                Found module /home/joe/Pure-Data/externals/cyclone/midiparse.l_amd64 with build-id: 3b16e41f2a5a907fe745217a585e47c17a27697f
+                Found module /home/joe/Pure-Data/externals/cyclone/midiflush.l_amd64 with build-id: c099df80eb1850ca26654f0a3a4db0a5b42a07c2
+                Found module /home/joe/Pure-Data/externals/else/midi.l_amd64 with build-id: 66c567f00c751af9330d2983aa7bd3ed49e60699
+                Found module /home/joe/Pure-Data/externals/else/initmess.l_amd64 with build-id: 4b4a3ec7e71626396e86df4dd3f4cb676185f56c
+                Found module /home/joe/Pure-Data/externals/else/op~.l_amd64 with build-id: 6467699aba0a2550625eac81a3de634cb2c277fa
+                Found module /home/joe/Pure-Data/externals/else/lb.l_amd64 with build-id: 617d5f24bc27832c4f12e30a57d61ede81300a3f
+                Found module /home/joe/Pure-Data/externals/iemlib/iemlib.pd_linux without build-id.
+                Found module /home/joe/Pure-Data/externals/else/amd64/libglib-2.0.so.0 without build-id.
+                Found module /home/joe/Pure-Data/externals/else/else.l_amd64 with build-id: f68ed3bc065f87caeff24e75afe3c3bc88b4daf6
+                Found module /home/joe/Pure-Data/externals/else/amd64/libfluidsynth.so.3 without build-id.
+                Found module /home/joe/Pure-Data/externals/cyclone/cyclone.l_amd64 with build-id: eb2cce025770b3353488f012fd83a39b94fba946
+                Found module /home/joe/Pure-Data/externals/zexy/zexy.pd_linux with build-id: 91765c22062f2eef4884c2cb9c96acc70af31a70
+                Found module /home/joe/Pure-Data/externals/else/amd64/libgthread-2.0.so.0 without build-id.
+                Found module /home/joe/Pure-Data/externals/else/sfont~.l_amd64 without build-id.
+                Found module linux-vdso.so.1 with build-id: dba798e3849739247caa8c4b4acc15cf5f1b3c88
+                Found module libpcre.so.3 with build-id: 3982f316c887e3ad9598015fa5bae8557320476a
+                Found module libgomp.so.1 with build-id: f365cc44774a8bfdb39c4a6e131d685fbe521866
+                Found module libmvec.so.1 with build-id: 927d5af77e08de5617a9c4438670065fe27fbbf8
+                Found module libmd.so.0 with build-id: cd2d2f71b3967ebde30e2aa43b8eb63339020c06
+                Found module libgpg-error.so.0 with build-id: 3fbec71c67bee60d8aef00697ee187079b0fb307
+                Found module libbsd.so.0 with build-id: 9a6c72469251e2feb63e175ef5cb944ce6e00df3
+                Found module libgcrypt.so.20 with build-id: 60a5e524de0ed8323edf33e9eb9127a9eee02359
+                Found module libcap.so.2 with build-id: 9e11e3bca4b0a25d047cb36e933e1d727663cf8e
+                Found module liblz4.so.1 with build-id: a85971851cd059f1af80d553c8e7170d42ec59a1
+                Found module libzstd.so.1 with build-id: 5d9d0d946a3154a748e87e17af9d14764519237b
+                Found module liblzma.so.5 with build-id: b85da6c48eb60a646615392559483b93617ef265
+                Found module libXdmcp.so.6 with build-id: 6b60f99504aa1d3999ea02a14366d1a39d6c5dcf
+                Found module libXau.so.6 with build-id: 7089b383cacbfc1760634a3be19a923e51fe3315
+                Found module libogg.so.0 with build-id: 842412496daf280ca5491dfb6581df5a378b72f0
+                Found module libopus.so.0 with build-id: 53a29374ac557d631d863d9908ff5bec82f55ba5
+                Found module libvorbisenc.so.2 with build-id: 5d30e2a713669895dcf3b298ffed2e4ce56121e8
+                Found module libvorbis.so.0 with build-id: fc9c832676aac541183d1b4774746bec48b66051
+                Found module libFLAC.so.8 with build-id: 6806864feabd1476fb33a8ed53d682d2a796ae05
+                Found module libapparmor.so.1 with build-id: 9a5086b338656ae4f09bf5185be82702ae724761
+                Found module libasyncns.so.0 with build-id: f192c4e5be41e201707cb7a5a962d43de3c675d2
+                Found module libsystemd.so.0 with build-id: 61fb1ea64197576f79977fb27e1be39a088e7f3e
+                Found module libxcb.so.1 with build-id: 1bef862a339557aa16c34c7a4b27f8f3aea90517
+                Found module libX11.so.6 with build-id: b8d9314a7185312e4813abcac67d8b68ae2fd690
+                Found module libX11-xcb.so.1 with build-id: 916a9b062e61b0310210ae16428615ebbe01c87d
+                Found module libsndfile.so.1 with build-id: 7b46d2dc278b6ab9f4f253351b41da721bdf0502
+                Found module libdbus-1.so.3 with build-id: 63e8b99215502138cb63afd6d65851a5e837ed49
+                Found module libpulsecommon-15.99.so with build-id: 6b9dfe81acde696cd7ff73847465b46e7cf6a21b
+                Found module libpulse.so.0 with build-id: de691d841cf5f2164859364225ce799e158d68d7
+                Found module libpthread.so.0 with build-id: e62798b68557abb4bc5548aba2640cd5ab948f36
+                Found module libgcc_s.so.1 with build-id: 09c4935b79388431a1248f6a98e00d7dc81b8513
+                Found module libstdc++.so.6 with build-id: f57e02bfadacc0c923c82457d5e18e1830b5faea
+                Found module libdb-5.3.so with build-id: 6dc2ccece58bc114d1ce20f521a527cc5862e054
+                Found module ld-linux-x86-64.so.2 with build-id: 61ef896a699bb1c2e4e231642b2e1688b2f1a61e
+                Found module libc.so.6 with build-id: 69389d485a9793dbe873f0ea2c93e02efaa9aa3d
+                Found module libportaudio.so.2 with build-id: 266c4b124976902c8bce71323fb68736b02b6b69
+                Found module libjack.so.0 with build-id: bc3482324e611aa302900089efa3d70d4b67a799
+                Found module libasound.so.2 with build-id: d1986cd985564afaa9aa64c753423b01dd5b228e
+                Found module libm.so.6 with build-id: 27e82301dba6c3f644404d504e1bb1c97894b433
+                Found module pd with build-id: 6dcdcbfcf61d31b202b37da4fdb24dfe882240e2
+                Stack trace of thread 86193:
+                #0  0x000055e20df5baf1 n/a (pd + 0xadaf1)
+                #1  0x000055e20df6130f outlet_float (pd + 0xb330f)
+                #2  0x000055e20df6130f outlet_float (pd + 0xb330f)
+                #3  0x000055e20df686bc sched_tick (pd + 0xba6bc)
+                #4  0x000055e20df68e75 m_mainloop (pd + 0xbae75)
+                #5  0x00007fee5836fd90 __libc_start_call_main (libc.so.6 + 0x29d90)
+                #6  0x00007fee5836fe40 __libc_start_main_impl (libc.so.6 + 0x29e40)
+                #7  0x000055e20dec8365 _start (pd + 0x1a365)
+lines 35-91/91 (END)
+==========================================================
+
+Joe@mint21:/var/lib/systemd/coredump$ coredumpctl gdb -1
+
+Same output than above plus:
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/lib/puredata/bin/pd...
+(No debugging symbols found in /usr/lib/puredata/bin/pd)
+[New LWP 86193]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Core was generated by `/usr/lib/puredata/tcl/../bin/pd -guiport 45035'.
+Program terminated with signal SIGSEGV, Segmentation fault.
+#0  0x000055e20df5baf1 in ?? ()
+(gdb) 
+==========================================================

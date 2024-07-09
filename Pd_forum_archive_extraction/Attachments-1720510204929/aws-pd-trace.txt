@@ -1,0 +1,56 @@
+pd_startgui : updater thread 25185792 launched
+cannot connect to jack server
+cannot connect to default JACK server
+cannot connect to jack server
+cannot connect to default JACK server
+global soundfiler thread launched, priority: 15
+OSCroute object version 1.05 by Matt Wright. pd: jdl Win32 raf.
+OSCroute Copyright © 1999 Regents of the University of California. All Rights Reserved.
+O  : Open Sound Control 4 PD, http://www.cnmat.berkeley.edu/OSC
+ S : original code by matt wright, pd hakcs cxc, Win32-port raf@interaccess.com
+  C: ver: 0.2, compiled: Oct 16 2004
+/usr/local/lib/pd/./extra/Gem.pd_darwin: dlcompat: dyld: /usr/local/bin/pd Undefined symbols:
+_glAccum
+_glAlphaFunc
+_glAreTexturesResident
+_glArrayElement
+_glBegin
+_glBindTexture
+_glBitmap
+_glBlendFunc
+_glCallList
+_glClear
+_glClearAccum
+_glClearColor
+_glClearDepth
+_glClearIndex
+_glClearSten
+Gem: can't load library
+Pd: signal 2
+closing audio...
+closing MIDI...
+... done.
+andy@miles:/usr/local/lib/pd/extra$ otool -L Gem.pd_darwin 
+Gem.pd_darwin:
+        /System/Library/Frameworks/AGL.framework/Versions/A/AGL (compatibility version 1.0.0, current version 1.0.0)
+        /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon (compatibility version 2.0.0, current version 122.0.0)
+        /System/Library/Frameworks/GLUT.framework/Versions/A/GLUT (compatibility version 1.0.0, current version 1.0.0)
+        /System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL (compatibility version 1.0.0, current version 1.0.0)
+        /System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime (compatibility version 1.0.0, current version 228.0.0)
+        /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 63.0.0)
+andy@miles:/usr/local/lib/pd/extra$ otool -L /System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL 
+/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL:
+        /System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL (compatibility version 1.0.0, current version 1.0.0)
+        /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices (compatibility version 1.0.0, current version 19.0.0)
+        /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit (compatibility version 1.0.0, current version 177.0.0)
+        /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 299.31.0)
+        /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib (compatibility version 1.0.0, current version 1.0.0)
+        /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib (compatibility version 1.0.0, current version 1.0.0)
+        /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 71.1.1)
+andy@miles:/usr/local/lib/pd/extra$ otool -L /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib 
+/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:
+        /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib (compatibility version 1.0.0, current version 1.0.0)
+        /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 71.1.1)
+andy@miles:/usr/local/lib/pd/extra$ nm /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib | grep _glAccum
+90c309c8 T _glAccum
+andy@miles:/usr/local/lib/pd/extra$ 

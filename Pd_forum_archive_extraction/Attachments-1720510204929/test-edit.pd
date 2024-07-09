@@ -1,0 +1,13 @@
+#N canvas 0 0 853 392 12;
+#X msg 23 193 obj 10 10 bng;
+#X obj 21 266 s pd-test-edit.pd;
+#X msg 39 224 editmode 1 \, mouse 15 15 0 0 \, cut \, editmode 0;
+#X text 19 156 local - works fine;
+#X msg 413 193 obj 10 10 bng;
+#X msg 429 224 editmode 1 \, mouse 15 15 0 0 \, cut \, editmode 0;
+#X obj 411 41 abs-edit;
+#X obj 411 266 s pd-abs-edit.pd;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 4 0 7 0;
+#X connect 5 0 7 0;

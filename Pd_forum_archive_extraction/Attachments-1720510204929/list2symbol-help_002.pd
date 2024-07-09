@@ -1,0 +1,22 @@
+#N canvas 915 386 761 388 10;
+#X obj 105 301 print;
+#X symbolatom 105 271 30 0 0 0 - - -, f 30;
+#X symbolatom 193 216 10 0 0 0 - - -, f 10;
+#X text 103 338 Vanilla version of zexy [list2symbol].;
+#X text 208 239 argument: default delimiter;
+#X msg 116 112 A 1.32 B 2 C 3 D 4 E 5 F;
+#X msg 105 87 list A 1.32 B 2 C 3 D 4 E 5 F;
+#X text 103 31 [list2symbol] convert a list into a symbol.;
+#X msg 214 183 symbol;
+#X msg 193 149 symbol --;
+#X text 272 143 by default \, list-elements are separated by spaces.
+You can set the separator to any symbol;
+#X text 271 184 even to a zero-length symbol!;
+#X obj 105 239 list2symbol /;
+#X connect 1 0 0 0;
+#X connect 2 0 12 1;
+#X connect 5 0 12 0;
+#X connect 6 0 12 0;
+#X connect 8 0 2 0;
+#X connect 9 0 2 0;
+#X connect 12 0 1 0;

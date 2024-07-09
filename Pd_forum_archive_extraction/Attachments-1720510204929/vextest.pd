@@ -1,0 +1,26 @@
+#N canvas 537 5 450 564 10;
+#X obj 19 484 vex_form buf3;
+#N canvas 0 0 450 300 graph1 0;
+#X array buf1 10 float 1;
+#A 0 0 0.542855 0.171428 0.0857141 0.0857141 -0.799997 -0.65714 -0.399998
+-0.499998 -0.614283;
+#X coords 0 1 9 -1 200 140 1;
+#X restore 229 7 graph;
+#N canvas 0 0 450 300 graph2 0;
+#X array buf2 10 float 1;
+#A 0 0 -0.685718 -0.671432 -0.571431 0.242858 0.471431 0.600003 0.614289
+0.54286 0;
+#X coords 0 1 9 -1 200 140 1;
+#X restore 229 151 graph;
+#N canvas 0 0 450 300 graph3 0;
+#X array buf3 10 float 1;
+#A 0 0 -0 -0 -0 0 -0 -0 0 0 -0;
+#X coords 0 1 9 -1 200 140 1;
+#X restore 229 295 graph;
+#X msg 19 461 gen concat buf1 \, multiply \$1 \, add buf2 \, multiply
+\$2;
+#X msg 46 429 0 1;
+#X msg 19 407 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;

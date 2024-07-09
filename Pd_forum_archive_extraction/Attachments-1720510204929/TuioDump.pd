@@ -1,0 +1,11 @@
+#N canvas 307 130 879 410 10;
+#X obj 86 53 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 21 13 TuioClient;
+#X text 127 46 see the help patch for the TuioClient for more info
+;
+#X obj 21 51 print;
+#X text 126 13 simple example patch which prints received TUIO events
+;
+#X connect 1 0 3 0;
+#X connect 1 1 0 0;

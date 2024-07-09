@@ -1,0 +1,17 @@
+#N canvas 352 23 542 316 10;
+#X obj 311 210 pointer;
+#X obj 101 33 struct \$1-rect float x float y float z float q;
+#X obj 106 88 filledpolygon 244 q 5 0 0 20 z 40 0;
+#X obj 162 235 append \$1-rect x y z q;
+#X msg 311 185 traverse pd-data3000 \, bang;
+#X msg 162 213 \$1 \$1 \$1 \$1;
+#X obj 162 191 random 300;
+#X obj 108 142 loadbang;
+#X obj 108 164 t b b b b b;
+#X connect 0 0 3 4;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 3 6 0;
+#X connect 8 4 4 0;

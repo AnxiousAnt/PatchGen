@@ -1,0 +1,8 @@
+#N canvas 0 0 450 300 10;
+#X symbolatom 103 160 0 0 0 2 syntonic_comma - -;
+#X symbolatom 104 128 0 0 0 2 note - -;
+#X obj 51 42 r \$1-note;
+#X obj 123 42 r \$1-comma;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X coords 0 -1 1 1 110 80 1 100 100;

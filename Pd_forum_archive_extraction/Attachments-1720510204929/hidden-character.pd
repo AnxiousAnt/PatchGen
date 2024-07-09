@@ -1,0 +1,25 @@
+#N canvas 351 162 1014 300 10;
+#X obj 441 75 list fromsymbol;
+#X obj 483 100 print ACII;
+#X obj 441 229 list tosymbol;
+#X symbolatom 441 251 10 0 0 0 - - -, f 10;
+#X msg 441 53 symbol a a;
+#X msg 342 125 98 194 160 98;
+#X msg 342 152 99 160 99;
+#X msg 342 208 100 194 100;
+#X text 575 136 ASCII codes;
+#X text 590 164 97 = a 98 = b 99 = c 100 = d, f 7;
+#X text 590 216 160 = non-breaking space;
+#X text 590 230 194 = Â;
+#X text 541 52 <-- the non-breaking space between the two a's generates
+a ghost character \, 194 \, in [list fromsymbol];
+#X text 29 140 [list tosymbol] can take the ghost character or not
+;
+#X text 177 209 This one works as expected;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;

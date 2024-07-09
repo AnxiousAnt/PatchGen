@@ -1,0 +1,24 @@
+#N canvas 593 27 546 593 12;
+#X obj 45 145 *~;
+#X floatatom 96 79 5 0 100 0 - - - 0;
+#X obj 96 117 dbtorms;
+#X obj 5 42 cnv 1 535 1 empty empty empty 8 12 0 13 #000000 #000000
+0;
+#X obj 5 552 cnv 1 535 1 empty empty empty 8 12 0 13 #000000 #000000
+0;
+#X obj 45 169 env~ 2048 1024;
+#X obj 45 114 adc~;
+#X obj 136 54 loadbang;
+#X msg 103 55 100;
+#X floatatom 46 243 5 0 0 0 - - - 0;
+#X obj 155 274 s toGUI;
+#X msg 133 240 /input \$1;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 1;
+#X connect 5 0 9 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 1 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;

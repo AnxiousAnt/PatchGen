@@ -1,0 +1,47 @@
+#N canvas 0 0 450 300 10;
+#N canvas 0 0 450 300 \$0-subpatch 0;
+#X obj 28 17 inlet;
+#X obj 26 270 outlet~;
+#X obj 208 269 switch~;
+#X obj 208 19 inlet;
+#X obj 29 48 t b b;
+#X obj 59 74 random 100;
+#X obj 24 94 random 100;
+#X obj 23 121 pack f f;
+#X obj 24 164 vline~;
+#X connect 0 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 7 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 1 0;
+#X restore 68 117 pd \$0-subpatch;
+#X obj 161 67 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 68 68 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 197 67 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 197 90 \; pd dsp \$1;
+#X obj 302 88 metro 1000;
+#X obj 302 111 t b b;
+#X obj 302 133 cputime;
+#X obj 302 64 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 302 165 5 0 0 0 - - -;
+#X floatatom 119 67 5 0 0 0 - - -;
+#X obj 68 91 metro 10;
+#X text 14 205 cputime climbs when many messages are sent to a vline~
+in a switched off subpatch...;
+#X connect 1 0 0 1;
+#X connect 2 0 11 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 7 1;
+#X connect 7 0 9 0;
+#X connect 8 0 5 0;
+#X connect 10 0 11 1;
+#X connect 11 0 0 0;

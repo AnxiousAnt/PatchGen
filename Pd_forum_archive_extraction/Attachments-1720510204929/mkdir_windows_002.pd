@@ -1,0 +1,36 @@
+#N canvas 1260 409 345 335 10;
+#X obj 240 289 popen;
+#X obj 95 93 makefilename %c;
+#X obj 67 223 l2s;
+#X obj 67 161 pack s s s;
+#X msg 136 206 symbol;
+#X obj 67 252 prepend mkdir;
+#X obj 67 289 print;
+#X msg 95 72 92;
+#X msg 124 140 symbol testdd;
+#X msg 67 113 symbol testd;
+#X obj 67 52 t b b b;
+#X msg 240 64 mkdir testd;
+#X obj 67 32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 89 5 1 make directory 'testd' in current;
+#X obj 67 6 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 86 28 2 make subdirectory 'testdd' in 'testd';
+#X obj 136 186 loadbang;
+#X connect 1 0 3 1;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 1;
+#X connect 5 0 6 0;
+#X connect 5 0 0 0;
+#X connect 7 0 1 0;
+#X connect 8 0 3 2;
+#X connect 9 0 3 0;
+#X connect 10 0 9 0;
+#X connect 10 1 7 0;
+#X connect 10 2 8 0;
+#X connect 11 0 0 0;
+#X connect 12 0 10 0;
+#X connect 14 0 11 0;
+#X connect 16 0 4 0;

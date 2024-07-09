@@ -1,0 +1,36 @@
+--- g_rtext.c	Mon Oct  2 00:38:38 2000
++++ ../patched/g_rtext.c	Sun Apr  8 18:00:13 2001
+@@ -390,8 +390,10 @@
+ 	ndel = x->x_selend - x->x_selstart;
+ 	for (i = x->x_selend; i < x->x_bufsize; i++)
+     	    x->x_buf[i- ndel] = x->x_buf[i];
+-	newsize = x->x_bufsize - ndel;
++	newsize = x->x_bufsize - ndel; // because of the bug below newsize may be -1
++	// int newsize passed to size_t formal argument...
+ 	x->x_buf = resizebytes(x->x_buf, x->x_bufsize, newsize);
++	// ... and after passing negative newsize we get x->x_buf nulled
+ 	x->x_bufsize = newsize;
+ 
+ 	if (n == '\n' || isprint(n))
+@@ -407,16 +409,16 @@
+ 	x->x_selend = x->x_selstart;
+ 	x->x_glist->gl_editor->e_textdirty = 1;
+     }
+-    else if (!strcmp(keysym->s_name, "Right"))
++    else if (!strcmp(keysym->s_name, "Right")) // ->
+     {
+-    	if (x->x_selend == x->x_selstart)
++    	if (x->x_selend == x->x_selstart && x->x_selend < x->x_bufsize)
+ 	    x->x_selend = x->x_selstart = x->x_selstart + 1;
+ 	else
+ 	    x->x_selstart = x->x_selend;
+     }
+-    else if (!strcmp(keysym->s_name, "Left"))
++    else if (!strcmp(keysym->s_name, "Left")) // <-
+     {
+-    	if (x->x_selend == x->x_selstart && x->x_selend < x->x_bufsize - 1)
++    	if (x->x_selend == x->x_selstart && x->x_selend > 0)
+ 	    x->x_selend = x->x_selstart = x->x_selstart - 1;
+ 	else
+ 	    x->x_selend = x->x_selstart;
+

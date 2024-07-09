@@ -1,0 +1,16 @@
+#N canvas 299 286 326 320 10;
+#X obj 64 22 cnv 15 160 150 empty empty The_FX_is_here 2 6 0 8 -260818
+-1 0;
+#X obj 107 60 r \$1-gain;
+#X obj 85 95 *~ 1;
+#X obj 172 101 *~ 1;
+#X obj 86 -8 inlet~;
+#X obj 171 -9 inlet~;
+#X obj 85 183 outlet~;
+#X obj 169 183 outlet~;
+#X connect 1 0 2 1;
+#X connect 1 0 3 1;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 0;

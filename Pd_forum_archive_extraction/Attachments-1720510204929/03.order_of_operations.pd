@@ -1,0 +1,40 @@
+#N canvas 249 81 755 492 10;
+#X floatatom 44 142 5 0 0 0 - - -;
+#X floatatom 86 142 5 0 0 0 - - -;
+#X floatatom 44 203 5 0 0 0 - - -;
+#X obj 44 174 +;
+#X text 41 117 "hot";
+#X text 81 117 "cold";
+#X floatatom 144 142 5 0 0 0 - - -;
+#X floatatom 186 142 5 0 0 0 - - -;
+#X floatatom 144 243 5 0 0 0 - - -;
+#X obj 144 214 +;
+#X text 141 117 "hot";
+#X text 181 117 "cold";
+#X obj 186 169 trigger bang float;
+#X obj 45 343 trigger bang float;
+#X text 44 374 can be abbreviated with;
+#X obj 46 405 t b f;
+#X text 332 301 [trigger] can send an arbitrary number of things out:
+;
+#X obj 335 343 trigger bang float anything bang bang float bang float
+;
+#X obj 336 405 t b f a b b f b f;
+#X text 335 374 or:;
+#X text 174 452 derek@umatic.nl;
+#X text 330 167 [trigger] outputs according to its creation arguments
+in right to left order. In this case \, when it receives input \, it
+will first send out a "float" (i.e. a floating point number) from its
+right outlet \, then it will send a "bang" out its left outlet.;
+#X text 26 20 The object [trigger] can be used to change the order
+of operations in a patch by sending a message "bang" to the "hot" inlet
+of an object. "Bang" means "do it now!" \, and will cause the object
+to output.;
+#X connect 0 0 3 0;
+#X connect 1 0 3 1;
+#X connect 3 0 2 0;
+#X connect 6 0 9 0;
+#X connect 7 0 12 0;
+#X connect 9 0 8 0;
+#X connect 12 0 9 0;
+#X connect 12 1 9 1;

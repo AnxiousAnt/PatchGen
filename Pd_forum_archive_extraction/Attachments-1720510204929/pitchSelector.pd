@@ -1,0 +1,28 @@
+#N canvas 514 147 452 535 10;
+#X floatatom 53 193 5 0 0 0 - - -;
+#X floatatom 53 118 5 0 0 0 - - -;
+#X obj 53 139 * 2;
+#X obj 53 163 / 3;
+#X msg 8 73 408;
+#X msg 52 73 415;
+#X msg 93 72 440;
+#X obj 8 32 bng 15 250 50 0 empty empty 408 0 -6 0 8 -262144 -1 -1
+;
+#X obj 53 220 s pitch;
+#X obj 135 39 loadbang;
+#X obj 34 32 bng 15 250 50 0 empty empty 415 0 -6 0 8 -262144 -1 -1
+;
+#X obj 62 33 bng 15 250 50 0 empty empty 440 0 -6 0 8 -262144 -1 -1
+;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 4 0;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X connect 11 0 6 0;
+#X coords 0 -1 1 1 85 50 1 0 0;

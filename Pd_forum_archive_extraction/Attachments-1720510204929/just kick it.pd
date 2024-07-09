@@ -1,0 +1,46 @@
+#N canvas 435 171 709 521 10;
+#X obj 240 137 osc~;
+#X obj 240 74 *;
+#X obj 240 38 line;
+#X obj 183 -11 pack 1 f;
+#X obj 240 -11 pack 0 f;
+#X obj 107 -57 bng 15 250 50 0 empty empty KICK_IT! 17 7 0 10 -262144
+-1 -1;
+#X obj 240 -42 delay;
+#X obj 228 -85 nbx 5 14 -1e+037 1e+037 0 1 empty empty Attack 0 -8
+0 10 -262144 -1 -1 10 256;
+#X obj 285 -85 nbx 5 14 -1e+037 1e+037 0 1 empty empty Decay 0 -8 0
+10 -262144 -1 -1 500 256;
+#X obj 241 189 *~;
+#X obj 235 236 dac~;
+#X obj 322 96 nbx 5 14 -1e+037 1e+037 0 1 empty empty Low_pitch 0 -8
+0 10 -262144 -1 -1 30 256;
+#X obj 172 129 line~;
+#X obj 172 101 pack f 10;
+#X obj 240 110 +;
+#X obj 322 60 nbx 5 14 -1e+037 1e+037 0 1 empty empty High_pitch 0
+-8 0 10 -262144 -1 -1 70 256;
+#X text 85 -141 The envelope controls both \, the volume and the pitch.
+I think this is the most common technique for synth kick drums.;
+#X msg -22 -45 \; pd dsp 1;
+#X obj -22 -156 loadbang;
+#X connect 0 0 9 0;
+#X connect 1 0 14 0;
+#X connect 2 0 1 0;
+#X connect 2 0 13 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 3 1;
+#X connect 7 0 6 1;
+#X connect 8 0 4 1;
+#X connect 9 0 10 1;
+#X connect 9 0 10 0;
+#X connect 11 0 14 1;
+#X connect 12 0 9 1;
+#X connect 13 0 12 0;
+#X connect 14 0 0 0;
+#X connect 15 0 1 1;
+#X connect 18 0 17 0;

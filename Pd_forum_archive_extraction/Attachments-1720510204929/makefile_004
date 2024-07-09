@@ -1,0 +1,12 @@
+# just the build-commands
+
+I =  -I/usr/include/pdextended/
+Z =  -I/home/pedro/Apps/gem-0.92-3/src/
+
+
+all: linux
+
+linux:
+	cc -Wall -L/usr/lib/gcc/i486-linux-gnu/4.4 -lgomp -fopenmp -DPD -O2 -DUNIX $(I) $(Z) -o pix_colortrack.o -c pix_colortrack.cpp
+	ld -shared --export-dynamic -o pix_colortrack.pd_linux pix_colortrack.o
+

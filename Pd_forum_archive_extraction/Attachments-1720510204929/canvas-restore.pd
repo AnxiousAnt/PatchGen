@@ -1,0 +1,14 @@
+#N canvas 0 0 579 327 10;
+#N canvas 0 0 450 300 subpatch 0;
+#X msg 110 84 message 0;
+#X msg 110 110 message 1;
+#X connect 0 0 1 0;
+#X restore 157 113 pd subpatch;
+#X msg 154 161 message 0 outside of subpatch created after it.;
+#X msg 154 187 message 1 outside of subpatch created after it.;
+#N canvas 0 0 450 300 subpatch2 0;
+#X msg 110 84 message 0;
+#X msg 110 110 message 1;
+#X connect 0 0 1 0;
+#X restore 154 219 pd subpatch2;
+#X connect 1 0 2 0;

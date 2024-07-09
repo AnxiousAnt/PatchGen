@@ -1,0 +1,13 @@
+#N canvas 209 183 492 408 12;
+#X obj 99 58 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1 -1
+;
+#X obj 99 83 t b b;
+#X text 131 52 open second_patch;
+#X obj 101 229 r closefirstpatch;
+#X msg 101 273 \; pd-first_patch.pd menuclose;
+#X text 96 252 (disabled connection \, not working anyway);
+#X msg 134 112 \; pd open second_patch.pd . \;;
+#X msg 99 161 \; pd-first_patch.pd menuclose \;;
+#X connect 0 0 1 0;
+#X connect 1 0 7 0;
+#X connect 1 1 6 0;

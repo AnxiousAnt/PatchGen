@@ -1,0 +1,73 @@
+#N canvas 190 158 664 596 12;
+#N canvas 0 0 681 550 resonator 0;
+#X obj 24 182 delwrite~ \$0-delay;
+#X obj 53 224 loadbang;
+#X obj 53 247 samplerate~;
+#X obj 123 304 /;
+#X obj 265 357 vd~ \$0-delay;
+#X obj 23 155 +~;
+#X obj 95 128 *~;
+#X floatatom 53 269 8 0 0 0 - - -;
+#X msg 291 238 bang;
+#X obj 123 329 / 1000;
+#X obj 123 352 sig~;
+#X obj 259 412 fiddle~;
+#X floatatom 333 451 5 0 0 0 - - -;
+#X obj 298 138 hsl 128 15 1 1000 0 0 empty empty freq -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 299 81 hsl 128 15 0.9 0.999 0 0 empty empty feedback -2 -6 0
+8 -262144 -1 -1 12100 1;
+#X floatatom 462 451 5 0 0 0 - - -;
+#X text 381 449 <-- ? -->;
+#X floatatom 296 99 5 0 0 0 - - -;
+#X floatatom 295 154 5 0 0 0 - - -;
+#X obj 13 67 noise~;
+#X obj 15 93 *~;
+#X obj 69 8 vsl 15 128 0.001 1 1 0 empty empty volume 0 -8 0 8 -262144
+-1 -1 4500 1;
+#X obj 470 215 block~ 1;
+#X obj 198 464 outlet~;
+#X obj 115 30 inlet;
+#X obj 286 39 inlet;
+#X obj 441 41 inlet;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 3 0 9 0;
+#X connect 4 0 6 0;
+#X connect 4 0 11 0;
+#X connect 4 0 23 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 1;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 4 0;
+#X connect 11 0 12 0;
+#X connect 13 0 8 0;
+#X connect 13 0 3 1;
+#X connect 13 0 15 0;
+#X connect 13 0 18 0;
+#X connect 14 0 6 1;
+#X connect 14 0 17 0;
+#X connect 19 0 20 0;
+#X connect 20 0 5 0;
+#X connect 21 0 20 1;
+#X connect 24 0 21 0;
+#X connect 25 0 14 0;
+#X connect 26 0 13 0;
+#X restore 165 280 pd resonator;
+#X msg 372 189 \; pd dsp 1;
+#X msg 371 253 \; pd dsp 0;
+#X obj 153 329 dac~;
+#X obj 298 138 hsl 128 15 1 1000 0 0 empty empty freq -2 -6 0 8 -262144
+-1 -1 600 1;
+#X obj 160 137 hsl 128 15 0.9 0.999 0 0 empty empty feedback -2 -6
+0 8 -262144 -1 -1 12100 1;
+#X obj 105 109 vsl 15 128 0.001 1 1 0 empty empty volume 0 -8 0 8 -262144
+-1 -1 4500 1;
+#X obj 377 350 block~ 64;
+#X connect 0 0 3 0;
+#X connect 0 0 3 1;
+#X connect 4 0 0 2;
+#X connect 5 0 0 1;
+#X connect 6 0 0 0;

@@ -1,0 +1,17 @@
+#N canvas 613 456 458 372 10;
+#X floatatom 194 80 5 0 11 0 - - -;
+#X floatatom 101 84 5 0 0 0 - - -;
+#X floatatom 150 233 5 0 0 0 - - -;
+#X obj 151 159 mtof-ji 0;
+#X text 147 254 out frequency;
+#X obj 21 159 mtof;
+#X floatatom 20 235 5 0 0 0 - - -;
+#X text 232 78 root in semitones above C 0 for C \, 7 for G \, 9 for
+A \, etc;
+#X text 211 160 (root as creation arg);
+#X text 71 65 the midi note;
+#X connect 0 0 3 1;
+#X connect 1 0 3 0;
+#X connect 1 0 5 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;

@@ -1,0 +1,64 @@
+##
+## Makefile for liborb and associated programs.
+## Copyright 1997 John E. Stone (j.stone@acm.org)
+##
+## $Id: Makefile,v 1.1 1998/08/29 20:41:31 mdanks Exp $
+##
+
+
+##
+## Edit the CC, CFLAGS, AR, and RANLIB compilation variables for your own
+## system and preferences.
+##
+CC = cc
+CFLAGS = -O 
+AR = ar
+RANLIB = touch
+
+
+##
+## You shouldn't need to modify anything below this point under normal
+## circumstances.
+##
+
+ORBOBJS = orb.o orbserial.o
+OBJS = $(ORBOBJS) main.o
+
+all : liborb.a testorb
+
+testorb : liborb.a main.o
+	$(CC) $(CFLAGS) main.o -o testorb -L. -lorb
+
+main.o : main.c orb.h
+	$(CC) $(CFLAGS) main.c -c
+
+liborb.a : $(ORBOBJS)
+	$(AR) $(ARFLAGS) liborb.a $(ORBOBJS)
+	$(RANLIB) liborb.a
+
+orb.o : orb.c orb.h orbserial.h
+	$(CC) $(CFLAGS) -c orb.c
+
+orbserial.o : orbserial.c orbserial.h
+	$(CC) $(CFLAGS) -c orbserial.c
+
+distrib: 
+	@echo "Building LibOrb Distribution..."
+	@echo "making /tmp/LibOrb`date '+%m%d%y'`.tar.gz"
+	rm -f /tmp/LibOrb`date '+%m%d%y'`.tar
+	rm -f /tmp/LibOrb`date '+%m%d%y'`.tar.gz
+	(cd ../; \
+	tar -cf /tmp/LibOrb`date '+%m%d%y'`.tar \
+	liborb/orb.c liborb/orb.h liborb/orbserial.c liborb/orbserial.h \
+	liborb/serial.h liborb/tty.c liborb/tty.h liborb/liborb.def \
+	liborb/main.c liborb/Makefile \
+	liborb/README liborb/CREDITS liborb/CHANGES liborb/License \
+	liborb/orbfly/orbfly.c liborb/orbfly/orbquat.c liborb/orbfly/orbquat.h \
+	liborb/orbfly/Makefile liborb/orbfly/README; \
+	)
+	gzip /tmp/LibOrb`date '+%m%d%y'`.tar
+	@echo "Distribution created."
+
+clean :
+	rm -f $(OBJS) liborb.a testorb
+

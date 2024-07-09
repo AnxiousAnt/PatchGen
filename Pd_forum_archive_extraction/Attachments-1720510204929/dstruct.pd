@@ -1,0 +1,45 @@
+#N struct arr float x float y array pts node;
+#N struct node float x float y float w;
+#N canvas 594 370 619 510 10;
+#N canvas 100 489 450 300 paint 1;
+#X scalar arr 0 0 \; -63 94 49 \; -23 94 16 \; 22 94 30 \; 85 104 35
+\; 85 104 0 \; 85 104 0 \; 85 104 0 \; 85 104 0 \; 85 104 0 \; 85 104
+0 \; \;;
+#X restore 16 64 pd paint;
+#N canvas 662 84 450 300 node 0;
+#X obj 58 76 struct node float x float y;
+#X obj 66 159 filledpolygon 900 1 0 0 20 0;
+#X restore 16 43 pd node;
+#X obj 137 35 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 337 99 \; pd-paint clear;
+#X msg 317 134 traverse pd-paint \, bang;
+#X obj 317 157 pointer;
+#N canvas 511 554 450 300 arr 0;
+#X obj 101 87 struct arr float x float y array pts node;
+#X obj 101 127 plot pts 700 3 100 0;
+#X obj 102 184 filledpolygon 0 5 0 0 90 0 0 0 300 0;
+#X restore 16 22 pd arr;
+#X obj 282 196 append arr x y;
+#X obj 260 135 0;
+#X obj 153 291 setsize arr pts;
+#X obj 260 157 t b f f;
+#X msg 229 235 traverse pd-paint \, next;
+#X obj 229 258 pointer;
+#X obj 137 55 t b b b b b b b b b b b b;
+#X obj 167 258 10;
+#X text 158 30 < clear \, create array \, resize array;
+#X connect 2 0 13 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 2;
+#X connect 8 0 10 0;
+#X connect 10 1 7 0;
+#X connect 10 2 7 1;
+#X connect 11 0 12 0;
+#X connect 12 0 9 1;
+#X connect 13 2 14 0;
+#X connect 13 6 11 0;
+#X connect 13 8 8 0;
+#X connect 13 10 4 0;
+#X connect 13 11 3 0;
+#X connect 14 0 9 0;

@@ -1,0 +1,40 @@
+#N struct square float x float y float x0 float y0;
+#N canvas 489 111 552 426 10;
+#N canvas 29 109 450 300 data 1;
+#X scalar square 20 20 63 25 \;;
+#X scalar square 30 30 63 25 \;;
+#X scalar square 40 40 63 25 \;;
+#X scalar square 50 50 63 25 \;;
+#X scalar square 60 60 63 25 \;;
+#X scalar square 70 70 63 25 \;;
+#X scalar square 80 80 63 25 \;;
+#X scalar square 90 90 63 25 \;;
+#X scalar square 100 100 63 25 \;;
+#X scalar square 110 110 63 25 \;;
+#X scalar square 120 120 63 25 \;;
+#X scalar square 130 130 64 26.97 \;;
+#X scalar square 140 140 64 25 \;;
+#X scalar square 150 150 63 25 \;;
+#X restore 38 62 pd data;
+#X msg 106 262 clear \, obj 10 10 struct square float x float y float
+x0 float y0 \, obj 10 50 filledpolygon 900 0 1 x0(0:100)(0:100)(\$1)
+y0(0:100)(0:100)(\$2) x0(0:100)(10:110)(\$1) y0(0:100)(0:100)(\$2)
+x0(0:100)(10:110)(\$1) y0(0:100)(10:110)(\$2) x0(0:100)(0:100)(\$1)
+y0(0:100)(10:110)(\$2);
+#X obj 106 354 s pd-square-template;
+#N canvas 29 471 450 300 square-template 1;
+#X obj 10 10 struct square float x float y float x0 float y0;
+#X obj 10 50 filledpolygon 900 0 1 x0(0:100)(0:100)(1) y0(0:100)(0:100)(1)
+x0(0:100)(10:110)(1) y0(0:100)(0:100)(1) x0(0:100)(10:110)(1) y0(0:100)(10:110)(1)
+x0(0:100)(0:100)(1) y0(0:100)(10:110)(1);
+#X restore 106 62 pd square-template;
+#X floatatom 106 190 5 0 0 0 x-step - -;
+#X floatatom 187 190 5 0 0 0 y-step - -;
+#X obj 106 235 pack;
+#X obj 187 207 t b a;
+#X connect 1 0 2 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 1 0;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;

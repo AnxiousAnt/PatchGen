@@ -1,0 +1,18 @@
+#N canvas 555 280 340 338 10;
+#X obj 67 41 inlet;
+#X obj 67 108 outlet;
+#X obj 131 161 gemhead;
+#X obj 131 192 translateXYZ;
+#X obj 127 108 unpack s f f f;
+#X obj 131 220 rotateXYZ 90 0 0;
+#X obj 67 71 mass3D btch_massFIX 100 \$1 \$2 \$3;
+#X obj 131 246 sphere 0.2 20;
+#X connect 0 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 1 3 1;
+#X connect 4 2 3 2;
+#X connect 4 3 3 3;
+#X connect 5 0 7 0;
+#X connect 6 0 1 0;
+#X connect 6 0 4 0;

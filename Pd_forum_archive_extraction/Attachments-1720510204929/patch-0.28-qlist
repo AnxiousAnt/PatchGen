@@ -1,0 +1,97 @@
+--- pd-0.28.orig/src/x_qlist.c
++++ pd-0.28/src/x_qlist.c
+@@ -9,9 +9,6 @@
+ 
+ #include "m_pd.h"
+ #include <string.h>
+-#ifdef UNIX
+-#include <unistd.h>
+-#endif
+ 
+ typedef struct _qlist
+ {
+@@ -50,7 +47,7 @@
+ static void qlist_rewind(t_qlist *x)
+ {
+     x->x_onset = 0;
+-    clock_unset(x->x_clock);
++    if (x->x_clock) clock_unset(x->x_clock);
+     x->x_whenclockset = 0;
+ }
+ 
+@@ -165,29 +162,22 @@
+ 
+ static void qlist_set(t_qlist *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    qlist_rewind(x);
++    qlist_clear(x);
+     qlist_add(x, s, ac, av);
+ }
+ 
+ static void qlist_read(t_qlist *x, t_symbol *filename, t_symbol *format)
+ {
+-    int cr = 0, filedesc;
+-    char buf[MAXPDSTRING], *bufptr;
+-    if ((filedesc = open_via_path(
+-    	canvas_getdir(x->x_canvas)->s_name,
+-    	    filename->s_name, "", buf, &bufptr, MAXPDSTRING, 0)) < 0)
+-    {
+-    	error("%s: can't open", filename->s_name);
+-    	return;
+-    }
+-    else
+-    	close (filedesc);
++    int cr = 0;
++    char buf[MAXPDSTRING];
++    canvas_makefilename(x->x_canvas, filename->s_name,
++    	buf, MAXPDSTRING);
+     if (!strcmp(format->s_name, "cr"))
+     	cr = 1;
+     else if (*format->s_name)
+     	error("qlist_read: unknown flag: %s", format->s_name);
+-    if (binbuf_read(x->x_binbuf, bufptr,
+-    	buf, cr))
++    if (binbuf_read(x->x_binbuf, buf,
++    	"", cr))
+     	    error("%s: read failed", filename->s_name);
+     x->x_onset = 0x7fffffff;
+ }
+@@ -202,8 +192,7 @@
+     	cr = 1;
+     else if (*format->s_name)
+     	error("qlist_read: unknown flag: %s", format->s_name);
+-    if (binbuf_write(x->x_binbuf, buf,
+-    	"", cr))
++    if (binbuf_write(x->x_binbuf, buf,"", cr))
+     	    error("%s: write failed", filename->s_name);
+ }
+ 
+@@ -227,7 +216,7 @@
+ static void qlist_free(t_qlist *x)
+ {
+     binbuf_free(x->x_binbuf);
+-    clock_free(x->x_clock);
++    if (x->x_clock) clock_free(x->x_clock);
+ }
+ 
+ /* -------------------- textfile ------------------------------- */
+@@ -246,6 +235,7 @@
+     x->x_tempo = 1;
+     x->x_whenclockset = 0;
+     x->x_clockdelay = 0;
++    x->x_clock = NULL;
+     x->x_canvas = canvas_getcurrent();
+     return (x);
+ }
+@@ -322,9 +312,9 @@
+     class_addmethod(textfile_class, (t_method)qlist_set, gensym("set"),
+     	A_GIMME, 0);
+     class_addmethod(textfile_class, (t_method)qlist_clear, gensym("clear"), 0);
+-    class_addmethod(qlist_class, (t_method)qlist_add, gensym("add"),
++    class_addmethod(textfile_class, (t_method)qlist_add, gensym("add"),
+     	A_GIMME, 0);
+-    class_addmethod(qlist_class, (t_method)qlist_add2, gensym("add2"),
++    class_addmethod(textfile_class, (t_method)qlist_add2, gensym("add2"),
+     	A_GIMME, 0);
+     class_addmethod(textfile_class, (t_method)qlist_add, gensym("append"),
+     	A_GIMME, 0);

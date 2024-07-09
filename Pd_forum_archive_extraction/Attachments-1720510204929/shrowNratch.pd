@@ -1,0 +1,64 @@
+#N canvas 446 113 561 359 10;
+#X obj 190 258 envrms~;
+#X floatatom 190 278 7 0 0 0 - - -;
+#X obj 390 258 envrms~;
+#X floatatom 390 278 7 0 0 0 - - -;
+#X obj 190 238 r~ 1-t;
+#X obj 390 238 r~ 2-t;
+#X msg 453 208 set \$1-t;
+#X msg 253 208 set \$1-t;
+#X obj 253 188 hradio 15 1 0 3 empty empty empty 0 -6 0 8 -262144 -1
+-1 1;
+#X obj 453 188 hradio 15 1 0 3 empty empty empty 0 -6 0 8 -262144 -1
+-1 2;
+#X obj 20 258 envrms~;
+#X floatatom 20 278 7 0 0 0 - - -;
+#X msg 83 208 set \$1-t;
+#X obj 83 188 hradio 15 1 0 3 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 20 238 r~ 0-t;
+#X obj 191 98 throw~ 1-t;
+#X msg 251 58 set \$1-t;
+#X obj 391 98 throw~ 2-t;
+#X msg 451 58 set \$1-t;
+#X obj 251 38 hradio 15 1 0 3 empty empty empty 0 -6 0 8 -262144 -1
+-1 1;
+#X obj 451 38 hradio 15 1 0 3 empty empty empty 0 -6 0 8 -262144 -1
+-1 2;
+#X obj 21 78 sig~ 1;
+#X msg 81 58 set \$1-t;
+#X obj 81 38 hradio 15 1 0 3 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 21 98 throw~ 0-t;
+#X obj 191 78 sig~ 2;
+#X obj 391 78 sig~ 3;
+#X obj 191 138 catch~ 1-t;
+#X obj 191 158 s~ 1-t;
+#X obj 391 138 catch~ 2-t;
+#X obj 391 158 s~ 2-t;
+#X obj 21 138 catch~ 0-t;
+#X obj 21 158 s~ 0-t;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X connect 9 0 6 0;
+#X connect 10 0 11 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 14 0 10 0;
+#X connect 16 0 15 0;
+#X connect 18 0 17 0;
+#X connect 19 0 16 0;
+#X connect 20 0 18 0;
+#X connect 21 0 24 0;
+#X connect 22 0 24 0;
+#X connect 23 0 22 0;
+#X connect 25 0 15 0;
+#X connect 26 0 17 0;
+#X connect 27 0 28 0;
+#X connect 29 0 30 0;
+#X connect 31 0 32 0;

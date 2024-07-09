@@ -1,0 +1,5 @@
+#N canvas 356 347 450 300 10;
+#X obj 254 153 myabstraction 1;
+#X obj 254 181 myabstraction 2;
+#X msg 36 60 \; 2-myabstraction vis 1;
+#X msg 35 21 \; 1-myabstraction vis 1;

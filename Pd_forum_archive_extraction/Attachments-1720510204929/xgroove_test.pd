@@ -1,0 +1,58 @@
+#N canvas 0 0 742 654 10;
+#X msg 114 284 stop;
+#N canvas 862 510 314 308 init_xgroove~ 0;
+#X msg 77 100 1;
+#X obj 44 220 outlet;
+#X obj 69 16 loadbang;
+#X msg 140 171 xfade 2;
+#X msg 45 49 xzone 100;
+#X connect 0 0 1 0;
+#X connect 2 0 4 0;
+#X connect 2 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X restore 175 352 pd init_xgroove~;
+#X msg 63 284 bang;
+#X msg 181 240 pos \$1;
+#X obj 175 376 xgroove~ 1-sample;
+#X obj 322 442 snapshot~;
+#X obj 322 358 r pd;
+#X obj 322 378 route dsp;
+#X floatatom 350 402 5 0 0 0 - - -;
+#X obj 322 421 metro 150;
+#X obj 60 245 sel 1 0;
+#X floatatom 232 480 10 0 0 0 - - -;
+#X obj 59 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 158 203 hsl 150 15 0 4.2e+06 0 0 empty empty position -2 -6
+0 8 -262144 -1 -1 1500 0;
+#X obj 393 251 hsl 128 15 0.1 3 1 1 empty empty speed 0 -8 0 10 -225271
+-1 -1 8598 0;
+#X obj 390 269 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-225271 -1 -1 0 256;
+#X msg 433 231 1;
+#X obj 121 553 dac~;
+#X text 316 478 <- is always the same \, only jumping if I change the
+position manually;
+#X obj 114 92 table 1-sample 4.2e+06;
+#X text 286 97 <- load a sample first !;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 17 0;
+#X connect 4 0 17 1;
+#X connect 4 1 5 0;
+#X connect 5 0 11 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 0 9 0;
+#X connect 9 0 5 0;
+#X connect 10 0 2 0;
+#X connect 10 1 0 0;
+#X connect 12 0 10 0;
+#X connect 13 0 3 0;
+#X connect 14 0 15 0;
+#X connect 15 0 4 0;
+#X connect 16 0 14 0;

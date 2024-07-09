@@ -1,0 +1,47 @@
+#N canvas 311 74 791 688 10;
+#X obj 123 177 midiout;
+#X obj 162 143 nbx 2 14 0 16 0 0 empty empty device 0 -6 0 10 -262144
+-1 -1 0 256;
+#X floatatom 123 35 0 0 127 0 - - -;
+#N canvas 401 346 945 646 (subpatch) 0;
+#X obj 0 56 outlet;
+#X obj 0 -24 inlet;
+#X obj 1 1 mknob 16 0 0 127 0 0 empty empty Rev 1 21 1 8 -261682 -1
+-1 3126 1;
+#X obj 0 32 int;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X coords 0 1 100 -1 18 26 1 0 0;
+#X restore 123 6 graph;
+#X obj 123 55 pack 0 0;
+#X msg 123 99 240 \, 67 \, 16 \, 73 \, 8 \, \$2 \, 19 \, \$1 \, 247
+;
+#X floatatom 168 35 0 0 127 0 - - -;
+#N canvas 405 346 945 646 (subpatch) 0;
+#X obj 0 56 outlet;
+#X obj 0 -24 inlet;
+#X obj 1 1 mknob 16 0 0 16 0 0 empty empty Chn 1 21 1 8 -228856 -1
+-1 0 1;
+#X obj 0 32 int;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X coords 0 1 100 -1 18 26 1 0 0;
+#X restore 168 6 graph;
+#X obj 124 220 sysexin;
+#X obj 314 217 notein;
+#X obj 314 280 print NOTE;
+#X obj 124 281 print SYSE;
+#X text 329 249 Play your favourite sequencer along;
+#X text 94 197 SW or HW LOOPBACK;
+#X text 348 98 Yamaha MU100 Reverb Send sysex - never mind \; o);
+#X connect 1 0 0 1;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 4 1;
+#X connect 7 0 6 0;
+#X connect 8 0 11 0;
+#X connect 9 0 10 0;

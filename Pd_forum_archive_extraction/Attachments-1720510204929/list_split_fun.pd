@@ -1,0 +1,18 @@
+#N canvas 0 0 450 300 10;
+#X msg 69 15 list 1 2 3 4 5;
+#X obj 69 50 list split 1;
+#X obj 186 140 spigot;
+#X obj 217 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 69 139 print split;
+#X obj 186 161 print rest;
+#X obj 103 94 t a a;
+#X text 24 155 this looks interesting;
+#X text 253 162 more interesting?;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 6 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 1;
+#X connect 6 0 2 0;
+#X connect 6 1 1 0;

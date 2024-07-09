@@ -1,0 +1,67 @@
+#N canvas 418 155 1164 800 10;
+#X msg 124 128 line 0;
+#X obj 234 284 print;
+#X obj 25 328 r A;
+#X obj 25 350 print A;
+#X obj 93 328 r B;
+#X obj 93 350 print B;
+#X obj 124 61 loadbang;
+#X text 440 183 auto loop;
+#X obj 234 143 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 439 201 line 0 \, bang;
+#X text 233 121 output everything until next wait;
+#X obj 219 402 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 4;
+#X obj 219 382 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 4;
+#X obj 234 228 text sequence seq -g -w step;
+#X obj 234 70 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 234 90 metro 200;
+#X obj 676 53 text define -k AtoB;
+#A set A 0 \; step \; A 1 \; step \; A 2 \; step \; A 3 \; step \;
+A 4 \; step \; A 5 \; step \; A 6 \; step \; A 7 \; step \; B 0 \;
+step \; B 1 \; step \; B 2 \; step \; B 3 \; step \; B 4 \; step \;
+B 5 \; step \; B 6 \; step \; B 7 \; step \;;
+#X msg 571 53 symbol AtoB;
+#X obj 676 73 text define -k AzB;
+#A set A 0 \; step \; B 0 \; step \; A 1 \; step \; B 1 \; step \;
+A 2 \; step \; B 2 \; step \; A 3 \; step \; B 3 \; step \; A 4 \;
+step \; B 4 \; step \; A 5 \; step \; B 5 \; step \; A 6 \; step \;
+B 6 \; step \; A 7 \; step \; B 7 \; step \;;
+#X msg 571 73 symbol AzB;
+#X obj 676 93 text define -k A&B;
+#A set A 0 \; B 0 \; step \; A 1 \; B 1 \; step \; A 2 \; B 2 \; step
+\; A 3 \; B 3 \; step \; A 4 \; B 4 \; step \; A 5 \; B 5 \; step \;
+A 6 \; B 6 \; step \; A 7 \; B 7 \; step \;;
+#X msg 571 93 symbol A&B;
+#X msg 571 113 symbol A&Bpp;
+#X obj 676 113 text define -k A&Bpp;
+#A set A 0 \; B 0 \; step \; A 1 \; B 1 \; step \; A 2 \; B 2 \; step
+\; A 3 \; B 3 \; step \; A 4 \; B 4 \; step \; A 5 \; B 5 \; step \;
+A 6 \; B 6 \; step \; A 7 \; B 7 \; step \; A 7 \; B 7 \; step \; A
+6 \; B 6 \; step \; A 5 \; B 5 \; step \; A 4 \; B 4 \; step \; A 3
+\; B 3 \; step \; A 2 \; B 2 \; step \; A 1 \; B 1 \; step \; A 0 \;
+B 0 \; step \;;
+#X obj 571 21 loadbang;
+#X msg 157 85 1;
+#X connect 0 0 13 0;
+#X connect 2 0 3 0;
+#X connect 2 0 12 0;
+#X connect 4 0 5 0;
+#X connect 4 0 11 0;
+#X connect 6 0 0 0;
+#X connect 6 0 25 0;
+#X connect 8 0 13 0;
+#X connect 9 0 13 0;
+#X connect 13 0 1 0;
+#X connect 13 1 9 0;
+#X connect 14 0 15 0;
+#X connect 15 0 8 0;
+#X connect 17 0 13 1;
+#X connect 19 0 13 1;
+#X connect 21 0 13 1;
+#X connect 22 0 13 1;
+#X connect 24 0 17 0;
+#X connect 25 0 14 0;

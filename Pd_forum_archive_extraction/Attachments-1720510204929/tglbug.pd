@@ -1,0 +1,17 @@
+#N canvas 382 298 523 307 10;
+#N canvas 0 0 450 300 t 1;
+#X restore 198 109 pd t;
+#X obj 81 223 s pd-t;
+#X obj 199 266 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 271 243 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X msg 93 203 clear;
+#X obj 199 243 r snd;
+#X obj 271 264 s rec;
+#X msg 81 167 clear \, obj 100 200 tgl 15 0 snd rec empty 0 -6 0 8
+-262144 -1 -1 0 1;
+#X connect 3 0 6 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 7 0 1 0;

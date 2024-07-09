@@ -1,0 +1,53 @@
+--- ../../../pd-extended/pd-svn/externals/moonlib/mknob.c	2012-11-22 13:50:00.430123507 -0500
++++ mknob.c	2013-03-03 22:56:07.031865870 -0500
+@@ -113,19 +113,19 @@
+     int yc=ypos+x->x_gui.x_w/2;
+     t_canvas *canvas=glist_getcanvas(glist);
+ 
+-    sys_vgui(".x%lx.c create oval %d %d %d %d -fill #%6.6x -tags %xBASE\n",
++    sys_vgui(".x%lx.c create oval %d %d %d %d -fill #%6.6x -tags {%xBASE %xMKNOB}\n",
+              canvas,xpos,ypos,xpos + x->x_gui.x_w, ypos + x->x_gui.x_w,
+-             x->x_gui.x_bcol,x);
+-    sys_vgui(".x%lx.c create polygon %d %d %d %d %d %d -fill #%6.6x -tags %xKNOB\n",
++             x->x_gui.x_bcol, x, x);
++    sys_vgui(".x%lx.c create polygon %d %d %d %d %d %d -fill #%6.6x -tags {%xKNOB %xMKNOB}\n",
+              glist_getcanvas(glist),
+-             xc,ypos,xc-4,yc,xc+4,yc,x->x_gui.x_fcol,x);
++             xc,ypos,xc-4,yc,xc+4,yc,x->x_gui.x_fcol,x,x);
+     mknob_update_knob(x,glist);
+     sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor w \
+-	     -font {{%s} %d bold} -fill #%6.6x -tags %xLABEL\n",
++	     -font {{%s} %d bold} -fill #%6.6x -tags {%xLABEL %xMKNOB}\n",
+              canvas, xpos+x->x_gui.x_ldx,
+              ypos+x->x_gui.x_ldy,
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"",
+-             x->x_gui.x_font, x->x_gui.x_fontsize, x->x_gui.x_lcol, x);
++             x->x_gui.x_font, x->x_gui.x_fontsize, x->x_gui.x_lcol, x, x);
+     /*if(!x->x_gui.x_fsf.x_snd_able)
+         sys_vgui(".x%lx.c create rectangle %d %d %d %d -tags %xOUT%d\n",
+          canvas, xpos+ x->x_gui.x_w/2-3, ypos + x->x_gui.x_w-1,
+@@ -216,12 +216,14 @@
+         //pd_bind(&x->x_gui.x_obj.ob_pd, iemgui_key_sym);
+         sys_vgui(".x%lx.c itemconfigure %xBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+         sys_vgui(".x%lx.c itemconfigure %xLABEL -fill #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++		sys_vgui(".x%lx.c addtag selected withtag %lxMKNOB\n", canvas, x);
+     }
+     else
+     {
+         //pd_unbind(&x->x_gui.x_obj.ob_pd, iemgui_key_sym);
+         sys_vgui(".x%lx.c itemconfigure %xBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_NORMAL);
+         sys_vgui(".x%lx.c itemconfigure %xLABEL -fill #%6.6x\n", canvas, x, x->x_gui.x_lcol);
++		sys_vgui(".x%lx.c dtag %lxMKNOB selected\n", canvas, x);
+     }
+ }
+ 
+@@ -872,6 +874,9 @@
+     iemgui_key_sym = gensym("#keyname");*/
+     mknob_widgetbehavior.w_getrectfn =    mknob_getrect;
+     mknob_widgetbehavior.w_displacefn =   iemgui_displace;
++#ifdef PDL2ORK
++    mknob_widgetbehavior.w_displacefnwtag =   iemgui_displace_withtag;
++#endif
+     mknob_widgetbehavior.w_selectfn =     iemgui_select;
+     mknob_widgetbehavior.w_activatefn =   NULL;
+     mknob_widgetbehavior.w_deletefn =     iemgui_delete;

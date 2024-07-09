@@ -1,0 +1,27 @@
+#N canvas 484 200 643 353 10;
+#X obj -36 76 count~;
+#X obj -36 47 bang~;
+#X obj -172 251 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -186 272 print~ BIQUAD;
+#X obj -32 186 print~ Fexpr;
+#X obj -222 193 biquad~ 0 0 1 0 1;
+#X obj -222 219 biquad~ 0 0 1 1 0;
+#X obj -5 130 fexpr~ ($x1 + $x1[-1] + $x1[-2] + $x1[-3] + $x1[-4] +
+$x1[-5] + $x1[-6] + $x[-7]) / 8;
+#X obj -32 137 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -222 243 /~ 8;
+#X obj -222 140 biquad~ 0 0 1 -1.41421 1;
+#X obj -222 168 biquad~ 0 0 1 1.41421 1;
+#X connect 0 0 7 0;
+#X connect 0 0 10 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 9 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 3 0;
+#X connect 10 0 11 0;
+#X connect 11 0 5 0;

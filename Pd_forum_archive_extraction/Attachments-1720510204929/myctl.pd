@@ -1,0 +1,14 @@
+#N canvas 0 0 654 489 10;
+#X obj 99 229 outlet;
+#X obj 99 124 pack 0 0 0;
+#X obj 99 85 ctlin;
+#X obj 99 193 route \$1;
+#X msg 99 152 \$3 \$2 \$1;
+#X text 171 151 make list of: chan cc value;
+#X text 172 194 let channel \$1 pass \, drop others;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
+#X connect 2 2 1 2;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;

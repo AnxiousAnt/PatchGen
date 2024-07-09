@@ -1,0 +1,22 @@
+--- x_connective.c~	Mon Sep 24 23:54:40 2001
++++ x_connective.c	Tue Oct 16 13:55:00 2001
+@@ -1387,6 +1387,11 @@
+     value_release(x->x_sym);
+ }
+ 
++static void vcommon_float(t_vcommon *x, t_float f)
++{
++    x->c_f = f;
++}
++
+ static void value_setup(void)
+ {
+     value_class = class_new(gensym("value"), (t_newmethod)value_new,
+@@ -1397,6 +1402,7 @@
+     class_addfloat(value_class, value_float);
+     vcommon_class = class_new(gensym("value"), 0, 0,
+     	sizeof(t_vcommon), CLASS_PD, 0);
++    class_addfloat(vcommon_class, vcommon_float);
+ }
+ 
+ /* -------------- overall setup routine for this file ----------------- */

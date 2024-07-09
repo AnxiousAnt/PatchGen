@@ -1,0 +1,18 @@
+#N canvas 405 334 478 416 10;
+#X obj 62 10 inlet;
+#X obj 62 351 outlet;
+#X obj 363 51 loadbang;
+#X obj 353 12 inlet;
+#X obj 62 134 moses 0.5;
+#X obj 120 226 expr 1 - pow(2*(1-$f1) \, 1-$f2) / 2;
+#X obj 62 182 expr pow(2 * $f1 \, 1 - $f2) / 2;
+#X obj 353 79 f \$1;
+#X connect 0 0 4 0;
+#X connect 2 0 7 0;
+#X connect 3 0 7 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 5 1;
+#X connect 7 0 6 1;

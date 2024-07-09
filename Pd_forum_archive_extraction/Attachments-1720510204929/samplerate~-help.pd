@@ -1,0 +1,77 @@
+#N canvas 843 167 447 292 10;
+#X obj 28 35 samplerate~;
+#X obj 27 97 samplerate~;
+#X obj 27 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 27 119 5 0 0 0 - - -, f 5;
+#X msg 26 248 \; pd dsp 1;
+#N canvas 659 314 450 300 resample 0;
+#X obj 35 85 samplerate~;
+#X obj 35 62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 35 111 8 0 0 0 - - -, f 8;
+#X obj 153 112 block~ 64 1 4;
+#X msg 153 85 set 64 1 \$1;
+#X floatatom 153 62 5 0 0 0 - - -, f 5;
+#X text 197 60 set resampling factor;
+#X obj 63 59 loadbang;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 7 0 0 0;
+#X restore 25 186 pd resample;
+#N canvas 624 194 811 437 overlap 0;
+#X obj 37 87 samplerate~;
+#X obj 37 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 37 113 8 0 0 0 - - -, f 8;
+#X floatatom 135 61 5 0 0 0 - - -, f 5;
+#X text 179 59 set overlap;
+#X obj 36 153 bang~;
+#X obj 36 204 timer;
+#X msg 135 87 set 1024 \$1 1;
+#X floatatom 36 320 8 0 0 1 ms - -, f 8;
+#X msg 83 203 1024;
+#X obj 83 228 /;
+#X obj 124 203 samplerate~;
+#X obj 36 175 t b b b b;
+#X floatatom 83 276 8 0 0 1 ms - -, f 8;
+#X floatatom 124 228 5 0 0 0 - - -, f 5;
+#X obj 83 250 * 1000;
+#X text 162 276 This the theoretical duration of a block of 1024 samples
+for the global samplerate;
+#X text 214 204 global sample rate \, no deliberate up/downsampling
+;
+#X obj 60 63 loadbang;
+#X obj 135 118 block~ 1024 4 1;
+#X text 118 320 This is the actual duration. Pd has to speed up the
+computation to create all the additional blocks needed for overlapping.
+This means that Pd is actually upsampling by a factor of N (= overlap
+factor)., f 69;
+#X text 118 365 [samplerate~] \, however \, does NOT reflect this kind
+of implicit upsampling!;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 7 0;
+#X connect 5 0 12 0;
+#X connect 6 0 8 0;
+#X connect 7 0 19 0;
+#X connect 9 0 10 0;
+#X connect 10 0 15 0;
+#X connect 11 0 14 0;
+#X connect 11 0 10 1;
+#X connect 12 0 6 0;
+#X connect 12 1 6 1;
+#X connect 12 2 9 0;
+#X connect 12 3 11 0;
+#X connect 15 0 13 0;
+#X connect 18 0 0 0;
+#X restore 26 217 pd overlap;
+#X text 23 155 [samplerate~] + [block~]:;
+#X text 118 216 but it doesn't reflect overlapping, f 37;
+#X text 115 186 [samplerate~] reflects up/downsampling;
+#X text 52 70 bang to retrieve current samplerate;
+#X text 115 35 get the samplerate in a subpatch;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;

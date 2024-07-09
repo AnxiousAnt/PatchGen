@@ -1,0 +1,5 @@
+#N canvas 21 23 550 416 12;
+#N canvas 0 22 450 300 subpatch 0;
+#X restore 113 65 pd subpatch;
+#X msg 227 144 \; pd-subpatch motion 3 2 0;
+#X msg 229 202 \; pd-subpatch vis 1;

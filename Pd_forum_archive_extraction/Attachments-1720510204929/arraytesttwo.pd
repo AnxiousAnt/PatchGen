@@ -1,0 +1,7 @@
+#N canvas 0 0 458 308 12;
+#X obj 266 74 arraytest;
+#X obj 56 133 tabwrite test;
+#X floatatom 56 73 4 -2 2;
+#X floatatom 155 75 4 0 4;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;

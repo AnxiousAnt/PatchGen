@@ -1,0 +1,19 @@
+#N canvas 439 225 549 308 10;
+#X obj 74 116 phashold~ 2;
+#X floatatom 74 48 5 1 1000 0 - - -, f 5;
+#X obj 75 222 snapshot~;
+#X obj 78 246 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11222 1;
+#X obj 161 168 loadbang;
+#X obj 161 190 metro 20;
+#X text 180 20 similar to [phasor~] \, but only changes to new frequences
+only at wrapping time.;
+#X text 178 82 NOTE: the range of allowed frequencies is limited between
+1e-23 and 1000 Hz. To allow higher frequencies \, the [metro] needs
+to be replaced by [delay] based construct.;
+#X text 407 277 2013 \, Roman Haefeli;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;

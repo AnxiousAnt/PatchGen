@@ -1,0 +1,31 @@
+#N canvas 417 28 607 444 10;
+#X obj 123 34 bng 151 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 353 34 bng 151 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 123 275 nbx 3 66 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 52
+-262144 -1 -1 6 256;
+#X obj 123 190 t b a;
+#X obj 353 190 t b a;
+#X obj 123 378 +;
+#X msg 350 235 -1;
+#X msg 380 235 1;
+#X msg 28 305 set \$1;
+#X obj 350 322 t a;
+#X text 144 101 S U B T R A C T;
+#X text 145 102 S U B T R A C T;
+#X text 407 101 A D D;
+#X text 408 102 A D D;
+#X text 347 406 Copyright 2011 Jonathan Wilkes;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 3 1 6 0;
+#X connect 4 0 2 0;
+#X connect 4 1 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 7 0 9 0;
+#X connect 8 0 2 0;
+#X connect 9 0 5 1;

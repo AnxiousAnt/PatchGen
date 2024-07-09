@@ -1,0 +1,11 @@
+#N canvas 208 95 450 300 10;
+#X obj 153 123 expr 440 * pow(2 \, ($f1-69)/12);
+#X obj 77 120 mtof;
+#X floatatom 105 72 5 0 0 0 - - -;
+#X floatatom 77 156 8 0 0 0 - - -;
+#X floatatom 153 157 8 0 0 0 - - -;
+#X text 155 71 try Shift-Click as well.;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 0 0 0;

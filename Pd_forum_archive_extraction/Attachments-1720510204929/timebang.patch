@@ -1,0 +1,49 @@
+--- main_old.c	2010-05-13 10:34:41.769033234 +0200
++++ main.c	2010-05-13 10:34:09.281531060 +0200
+@@ -30,7 +30,7 @@
+ #define MAX_TIMES 256			/* maximum number of times to process */
+ 
+ static char *version = "timebang v0.2, written by Olaf Matthes <olaf.matthes@gmx.de>";
+- 
++
+ typedef struct timebang
+ {
+   t_object x_ob;
+@@ -59,7 +59,7 @@
+ 	{
+ 		if(!x->x_over[i])
+ 		{
+-			if(newtime->tm_hour == x->x_hour[i] && 
++			if(newtime->tm_hour == x->x_hour[i] &&
+ 			   newtime->tm_min == x->x_min[i] &&
+ 			   newtime->tm_sec >= x->x_sec[i])
+ 			{
+@@ -76,17 +76,17 @@
+ 
+ static void timebang_set(t_timebang *x, t_symbol *s, int ac, t_atom *av)
+ {
+-	int i;
++	int i,j;
+ 
+ 	if(ac == x->x_notimes * 3)
+ 	{
+-		for(i = 0; i < ac; i += 3)
++		for(i = 0, j = 0; i < ac; i += 3, j++)
+ 		{
+-			if (av[i].a_type == A_FLOAT) x->x_hour[x->x_notimes] = av[i].a_w.w_float;
++			if (av[i].a_type == A_FLOAT) x->x_hour[j] = av[i].a_w.w_float;
+ 			else { post ("timebang: first argument must be (int) hours"); return; }
+-			if (av[i+1].a_type == A_FLOAT) x->x_min[x->x_notimes] = av[i+1].a_w.w_float;
++			if (av[i+1].a_type == A_FLOAT) x->x_min[j] = av[i+1].a_w.w_float;
+ 			else { post ("timebang: second argument must be (int) minutes"); return; }
+-			if (av[i+2].a_type == A_FLOAT) x->x_sec[x->x_notimes] = av[i+2].a_w.w_float;
++			if (av[i+2].a_type == A_FLOAT) x->x_sec[j] = av[i+2].a_w.w_float;
+ 			else { post ("timebang: third argument must be (int) seconds"); return; }
+ 			x->x_over[i] = 0;
+ 		}
+@@ -171,5 +171,3 @@
+     class_sethelpsymbol(timebang_class, gensym("maxlib/help-timebang.pd"));
+ #endif
+ }
+-
+-

@@ -1,0 +1,51 @@
+#N canvas 728 38 358 259 10;
+#X msg 256 222 create;
+#X msg 170 120 destroy;
+#X msg 256 201 dimen 640 480;
+#X msg 39 182 1;
+#X msg 170 179 0;
+#X msg 256 178 dimen 720 576;
+#X obj 14 48 bng 15 250 50 0 empty empty fullscreen 19 7 0 10 -262144
+-1 -1;
+#X obj 14 31 bng 15 250 50 0 empty empty preview 19 7 0 10 -262144
+-1 -1;
+#X obj 14 65 bng 15 250 50 0 empty empty close 19 7 0 10 -262144 -1
+-1;
+#X obj 14 82 tgl 15 0 empty empty render 19 7 0 10 -262144 -1 -1 0
+1;
+#X obj 39 163 del 10;
+#X obj 244 157 p-set;
+#X obj 39 144 bang;
+#X obj 170 141 bang;
+#X obj 170 160 del 10;
+#X obj 14 246 gemwin 50;
+#X msg 39 124 create;
+#X obj 40 103 del 10;
+#X msg 171 46 fullscreen 0 \, destroy;
+#X msg 170 66 fullscreen 1 \, destroy;
+#X obj 40 83 bang;
+#X connect 0 0 15 0;
+#X connect 1 0 13 0;
+#X connect 1 0 15 0;
+#X connect 2 0 15 0;
+#X connect 3 0 9 0;
+#X connect 4 0 9 0;
+#X connect 5 0 15 0;
+#X connect 6 0 19 0;
+#X connect 7 0 18 0;
+#X connect 8 0 1 0;
+#X connect 9 0 15 0;
+#X connect 10 0 3 0;
+#X connect 11 0 2 0;
+#X connect 12 0 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 4 0;
+#X connect 16 0 12 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 18 0 15 0;
+#X connect 18 0 20 0;
+#X connect 19 0 15 0;
+#X connect 19 0 20 0;
+#X connect 20 0 17 0;
+#X coords 0 -1 1 1 85 90 1 10 10;

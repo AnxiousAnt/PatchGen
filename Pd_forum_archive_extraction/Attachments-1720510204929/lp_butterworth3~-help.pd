@@ -1,0 +1,28 @@
+#N canvas 196 97 345 385 10;
+#X obj 165 225 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 57 202 phasor~ 59;
+#X obj 56 177 mtof~;
+#X floatatom 56 104 5 -22 127 0 - - -;
+#X msg 56 126 \$1 100;
+#X obj 56 149 line~;
+#X obj 144 175 mtof~;
+#X floatatom 144 101 5 0 127 0 - - -;
+#X msg 144 124 \$1 100;
+#X obj 144 147 line~;
+#X obj 58 282 dac~;
+#X obj 58 227 hip~ 1;
+#X obj 58 250 lp_butterworth3~;
+#X connect 0 0 12 2;
+#X connect 1 0 11 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 6 0 12 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 6 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 12 0 10 1;

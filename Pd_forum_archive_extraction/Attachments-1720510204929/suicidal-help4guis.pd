@@ -1,0 +1,14 @@
+#N canvas 58 239 213 149 10;
+#N canvas 35 336 415 116 heidi 1;
+#X msg 37 32 \; pd-heidi clear;
+#X text 142 40 <- warning! crash;
+#X restore 28 40 pd heidi;
+#N canvas 471 314 284 121 peter 1;
+#X obj 42 34 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 42 54 clear;
+#X text 113 47 <- warning! crash;
+#X obj 43 75 s pd-peter;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X restore 28 71 pd peter;

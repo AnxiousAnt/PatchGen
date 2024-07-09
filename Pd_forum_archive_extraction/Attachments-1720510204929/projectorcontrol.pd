@@ -1,0 +1,16 @@
+#N canvas 1 96 559 320 12;
+#X msg 202 177 disconnect;
+#X obj 177 255 tgl 15 0 empty empty connected 20 7 0 8 -24198 -241291
+-1 1 1;
+#X obj 177 232 tcpsend;
+#X text 334 62 <--first;
+#X msg 130 61 connect 192.168.10.95 7142;
+#X msg 167 99 send 2 0 0 0 0 2;
+#X msg 191 137 send 2 1 0 0 0 3;
+#X text 297 100 ON;
+#X text 320 138 OFF;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;

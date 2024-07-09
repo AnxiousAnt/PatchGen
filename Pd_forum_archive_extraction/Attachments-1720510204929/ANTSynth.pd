@@ -1,0 +1,148 @@
+#N canvas 133 68 828 535 10;
+#X obj 69 247 t f f;
+#X obj 69 303 + 1;
+#X obj 186 146 sel 1;
+#X obj 69 116 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 69 334 tabwrite ants;
+#X obj 69 278 tabread ants;
+#X obj 11 303 sel 1000;
+#X msg 21 329 0;
+#X obj 11 365 f;
+#X floatatom 11 386 5 0 0 0 - - -;
+#X obj 121 163 timer;
+#X obj 121 137 loadbang;
+#X msg 121 183 seed \$1;
+#X obj 222 514 dac~;
+#X floatatom 222 386 5 0 0 0 - - -;
+#X msg 104 620 \; winner label;
+#X msg 416 468 \; ants const 0;
+#X obj 558 55 cnv 15 130 30 empty empty empty 20 12 0 14 -260097 -4034
+0;
+#X obj 563 60 cnv 15 120 20 empty winner empty 18 9 0 16 -33289 -4034
+0;
+#X obj 312 483 line~;
+#X obj 331 423 t b;
+#X obj 222 491 *~;
+#X obj 474 371 cnv 15 299 28 empty empty empty 20 12 0 14 -33289 -4034
+0;
+#X obj 476 371 cnv 15 295 26 empty empty empty 20 12 0 14 -258113 -4034
+0;
+#X obj 479 371 cnv 15 289 20 empty empty ant_home 100 12 0 14 -228856
+-1 0;
+#X obj 455 170 cnv 15 340 200 empty empty empty 20 12 0 14 -177922
+-66577 0;
+#X obj 474 190 cnv 15 300 180 empty empty empty 20 12 0 14 -261234
+-66577 0;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array ants 67 float 2;
+#X coords 0 1000 67 0 300 200 1;
+#X restore 474 170 graph;
+#X obj 473 146 cnv 15 68 20 empty empty empty 13 12 0 12 -262144 -1
+0;
+#X msg 248 146 \; pd dsp \$1;
+#X obj 248 116 tgl 20 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
+1;
+#X msg 261 665 \; winner label WINNER:\$1;
+#X obj 416 444 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 390 427 reset ants;
+#X obj 222 409 tabosc4~ ants;
+#X obj 222 432 /~ 1000;
+#X msg 312 398 1 20;
+#X obj 362 484 t b;
+#X msg 331 463 0 100;
+#X obj 269 116 cnv 15 15 20 empty empty empty 18 9 0 16 -257985 -33289
+0;
+#X text 273 117 <- start audio first;
+#X obj 363 507 del 105;
+#X obj 331 443 del 2000;
+#X obj 69 220 random 67;
+#X obj 258 6 cnv 15 250 30 empty banner ANT_Synth 20 12 0 18 -1 -257985
+0;
+#X obj 70 137 metro 1;
+#X obj 333 44 tgl 30 0 empty empty empty 17 7 0 10 -4034 -1 -1 0 1
+;
+#X msg 77 592 \; banner label HAPPY_APRIL'S_FOOL!!;
+#X obj 104 654 t b;
+#X msg 263 628 \; banner label ANT_Synth;
+#X obj 333 77 t f f;
+#X obj 477 694 s over_canv;
+#X msg 580 669 vis_size 380 350;
+#X obj 474 644 line;
+#X msg 476 668 vis_size 380 \$1;
+#X floatatom 512 648 5 0 0 0 - - -;
+#X obj 604 618 loadbang;
+#X msg 474 614 350 \, 1 1500;
+#X obj 222 360 * 42;
+#X text 366 49 << START;
+#X text 273 49 START >>;
+#X text 4 2 ensure DSP is working!;
+#X obj 486 114 cnv 15 110 55 empty empty empty 25 12 0 14 -163905 -33289
+0;
+#X obj 492 119 cnv 15 100 50 empty empty biscuits 25 12 0 14 -256961
+-33289 0;
+#X obj 643 121 cnv 15 68 48 empty empty empty 13 12 0 12 -204800 -1
+0;
+#X obj 647 121 cnv 15 60 45 empty empty sugar 13 12 0 12 -237178 -1
+0;
+#X obj 556 143 cnv 15 100 26 empty empty empty 20 12 0 14 -86853 -4034
+0;
+#X obj 556 148 cnv 15 100 20 empty empty bread 25 12 0 14 -257985 -33289
+0;
+#X obj 432 49 cnv 15 380 350 empty over_canv ANT_Synth 20 12 0 14 -228856
+-66577 0;
+#X text 86 114 (re)start;
+#X connect 0 0 5 0;
+#X connect 0 1 4 1;
+#X connect 0 1 8 1;
+#X connect 0 1 58 0;
+#X connect 1 0 4 0;
+#X connect 1 0 6 0;
+#X connect 2 0 10 1;
+#X connect 2 0 15 0;
+#X connect 2 0 36 0;
+#X connect 2 0 57 0;
+#X connect 2 1 20 0;
+#X connect 3 0 2 0;
+#X connect 3 0 45 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 9 0;
+#X connect 9 0 31 0;
+#X connect 9 0 47 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 43 0;
+#X connect 14 0 34 0;
+#X connect 15 0 48 0;
+#X connect 19 0 21 1;
+#X connect 20 0 42 0;
+#X connect 21 0 13 0;
+#X connect 21 0 13 1;
+#X connect 30 0 29 0;
+#X connect 32 0 16 0;
+#X connect 34 0 35 0;
+#X connect 35 0 21 0;
+#X connect 36 0 19 0;
+#X connect 37 0 41 0;
+#X connect 38 0 19 0;
+#X connect 38 0 37 0;
+#X connect 41 0 32 0;
+#X connect 42 0 38 0;
+#X connect 43 0 0 0;
+#X connect 45 0 43 0;
+#X connect 46 0 50 0;
+#X connect 48 0 49 0;
+#X connect 50 0 3 0;
+#X connect 50 1 30 0;
+#X connect 52 0 51 0;
+#X connect 53 0 54 0;
+#X connect 53 0 55 0;
+#X connect 54 0 51 0;
+#X connect 56 0 52 0;
+#X connect 56 0 49 0;
+#X connect 57 0 53 0;
+#X connect 58 0 14 0;

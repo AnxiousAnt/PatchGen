@@ -1,0 +1,67 @@
+#N canvas 120 22 798 432 10;
+#X obj 101 103 cnv 15 218 15 empty empty empty 5 45 1 8 -233017 -1
+0;
+#X text 504 201 crossfade;
+#X msg 473 201 50;
+#X obj 473 116 loadbang;
+#X obj 342 32 inlet~;
+#X obj 375 52 inlet~;
+#X obj 407 72 inlet~;
+#X obj 440 92 inlet~;
+#X obj 310 347 outlet~;
+#X obj 364 327 outlet~;
+#X obj 418 307 outlet~;
+#X obj 473 287 outlet~;
+#X msg 393 403 matrix 4 4 0 -1 1 -1 0 -1 -1 1 0 1 1 1 0 1 -1 -1;
+#X text 576 6 a2bformat;
+#X text 586 16 nmariette@gmail.com;
+#X text 596 26 15/3/2007;
+#X text 232 103 bformat2quad;
+#X text 342 9 W____X____Y____Z;
+#X obj 310 244 mtx_*~ 4 3 -------------;
+#N canvas 0 22 633 268 calc-matrix 0;
+#X obj 28 171 round_zero 1e-06;
+#X msg 131 115 ambi_weight 1 1 1;
+#X msg 27 61 pinv;
+#X obj 40 35 t b b;
+#X text 80 200 resulting matrix;
+#X obj 28 149 iem_ambi/ambi_decode 1 2 4 0;
+#X msg 264 93 ls 1 0 \, ls 2 72 \, ls 3 144 \, ls 4 216 \, ls 5 288
+;
+#X msg 76 61 ls 1 45 \, ls 2 135 \, ls 3 225 \, ls 4 315;
+#X obj 40 13 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 28 198 print;
+#X connect 0 0 9 0;
+#X connect 1 0 5 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 3 1 7 0;
+#X connect 5 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 3 0;
+#X restore 48 315 pd calc-matrix;
+#X msg 310 142 matrix 4 3 0.25 0.353553 0.353553 0.25 -0.353553 0.353553
+0.25 -0.353553 -0.353553 0.25 0.353553 -0.353553;
+#N canvas 0 22 458 308 two-options 0;
+#X msg 15 80 matrix 4 3 0.25 0.353553 0.353553 0.25 -0.353553 0.353553
+0.25 -0.353553 -0.353553 0.25 0.353553 -0.353553;
+#X msg 16 208 matrix 4 3 0.25 0.25 -0.25 0 0 1 0.5 -0.5 -0.5 0.25 0.25
+-0.25;
+#X text 76 186 speakers starting at 0 degrees;
+#X text 82 57 speakers starting at 45 degrees;
+#X restore 47 338 pd two-options;
+#X text 105 103 lf \, rf \, lb \, rb;
+#X text 309 374 LF_____RF_____LB_____RB;
+#X connect 2 0 18 4;
+#X connect 3 0 2 0;
+#X connect 3 0 20 0;
+#X connect 4 0 18 1;
+#X connect 5 0 18 2;
+#X connect 6 0 18 3;
+#X connect 18 0 9 0;
+#X connect 18 1 8 0;
+#X connect 18 2 10 0;
+#X connect 18 3 11 0;
+#X connect 20 0 18 0;
+#X coords 0 -1 1 1 220 20 1 100 100;

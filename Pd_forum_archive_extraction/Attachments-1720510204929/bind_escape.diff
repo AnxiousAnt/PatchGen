@@ -1,0 +1,82 @@
+--- pd-0.35-test17/src/u_main.tk	Mon Apr  1 20:13:54 2002
++++ pd-0.35-test17.me/src/u_main.tk	Fri Apr 19 18:33:20 2002
+@@ -212,6 +212,9 @@
+     	pd [concat $send_textvariable \;]
+     	after 50 {destroy .sendpanel}
+     }
++    bind .sendpanel.entry <KeyPress-Escape> {
++        destroy .sendpanel
++    }
+     focus .sendpanel.entry
+ }
+ 
+@@ -552,6 +555,7 @@
+     $name.entry select from 0
+     $name.entry select adjust end
+     bind $name.entry <KeyPress-Return> [ concat find_apply $name]
++    bind $name.entry <KeyPress-Escape> [ concat find_cancel $name]
+     focus $name.entry
+ }
+ 
+@@ -1142,6 +1146,8 @@
+     pack $name.stretchf.radio2 -side top -anchor w
+     pack $name.stretchf.radio3 -side top -anchor w
+ 
++    bind $name <KeyPress-Escape> [ concat dofont_cancel $name ]
++
+ }
+ 
+ ############ pdtk_gatom_dialog -- run a gatom dialog #########
+@@ -1209,6 +1215,7 @@
+     bind $name.paramhi.entry <KeyPress-Return> [concat dogatom_ok $name]
+     bind $name.paramlo.entry <KeyPress-Return> [concat dogatom_ok $name]
+     bind $name.params.entry <KeyPress-Return> [concat dogatom_ok $name]
++    bind $name <KeyPress-Escape> [concat dogatom_cancel $name]
+     $name.params.entry select from 0
+     $name.params.entry select adjust end
+     focus $name.params.entry
+@@ -1363,6 +1370,7 @@
+     bind $id.yrangef.y1 <KeyPress-Return> [concat graph_ok $id]
+     bind $id.yrangef.y2 <KeyPress-Return> [concat graph_ok $id]
+     bind $id.yrangef.ypix <KeyPress-Return> [concat graph_ok $id]
++    bind $id <KeyPress-Escape> [concat graph_cancel $id]
+     $id.xrangef.x2 select from 0
+     $id.xrangef.x2 select adjust end
+     focus $id.xrangef.x2
+@@ -2065,6 +2073,8 @@
+     bind $id.gnxy.y_ent <KeyPress-Return> [concat iemgui_ok $id]
+     bind $id.gnfs.fs_ent <KeyPress-Return> [concat iemgui_ok $id]
+     bind $id.cao.ok <KeyPress-Return> [concat iemgui_ok $id]
++
++    bind $id <KeyPress-Escape> [concat iemgui_cancel $id]
+     
+     $id.dim.w_ent select from 0
+     $id.dim.w_ent select adjust end
+@@ -2170,6 +2180,8 @@
+     
+     bind $id.name.entry <KeyPress-Return> [concat array_ok $id]
+     bind $id.n.entry <KeyPress-Return> [concat array_ok $id]
++
++    bind $id <KeyPress-Escape> [concat array_cancel $id]
+     $id.name.entry select from 0
+     $id.name.entry select adjust end
+     focus $id.name.entry
+@@ -2261,6 +2273,9 @@
+ 
+     bind $id.xscale.entry <KeyPress-Return> [concat canvas_ok $id]
+     bind $id.yscale.entry <KeyPress-Return> [concat canvas_ok $id]
++
++    bind $id <KeyPress-Escape> [concat canvas_cancel $id]
++
+     $id.xscale.entry select from 0
+     $id.xscale.entry select adjust end
+     focus $id.xscale.entry
+@@ -2317,6 +2332,8 @@
+     focus $name.text
+     bind $name.text <Control-t> [concat dodata_ok $name]
+     bind $name.text <Control-s> [concat dodata_send $name]
++
++    bind $name <KeyPress-Escape> [concat dodata_cancel $name]
+ }
+ 
+ ############ check or uncheck the "edit" menu item ##############

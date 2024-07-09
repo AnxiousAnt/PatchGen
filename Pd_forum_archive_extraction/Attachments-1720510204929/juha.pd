@@ -1,0 +1,36 @@
+#N canvas 456 37 702 402 10;
+#X obj 387 129 tgl 15 0 empty empty +6_dB 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 387 226 +;
+#X obj 387 153 t f f;
+#X floatatom 387 262 5 0 0 0 - - -;
+#X obj 52 146 tgl 15 0 empty empty +6_dB 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X floatatom 52 205 5 0 0 0 - - -;
+#X obj 126 148 tgl 15 0 empty empty +6_dB 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 126 185 +;
+#X floatatom 127 205 5 0 0 0 - - -;
+#X text 34 97 Guess first \, then click:;
+#X obj 52 183 +;
+#X text 286 63 tigger (short "t") outputs from right to left. Almost
+all (builtin) objects evaluate from right to left \, too.;
+#X obj 633 331 t b b;
+#X msg 633 310 bang;
+#X obj 633 351 timer;
+#X floatatom 633 373 5 0 0 0 - - -;
+#X text 474 340 [timer] doesn't:;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
+#X connect 4 0 10 0;
+#X connect 4 0 10 1;
+#X connect 6 0 7 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 10 0 5 0;
+#X connect 12 0 14 0;
+#X connect 12 1 14 1;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;

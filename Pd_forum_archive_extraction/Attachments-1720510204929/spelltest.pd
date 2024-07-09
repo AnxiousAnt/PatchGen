@@ -1,0 +1,15 @@
+#N canvas 289 41 519 481 10;
+#X text 56 20 test spell;
+#X obj 256 145 spell;
+#X msg 260 102 symbol hello bullshite;
+#X obj 141 118 makesymbol;
+#X msg 140 87 list q w e r t;
+#X obj 261 203 print;
+#X obj 152 305 select h e l o;
+#X obj 138 384 print H;
+#X connect 1 0 5 0;
+#X connect 1 0 6 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 6 0 7 0;

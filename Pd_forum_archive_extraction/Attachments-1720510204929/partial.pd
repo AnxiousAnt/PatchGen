@@ -1,0 +1,34 @@
+#N canvas 0 0 661 395 10;
+#X obj 66 58 inlet;
+#X obj 211 35 inlet;
+#X obj 66 230 outlet;
+#X obj 66 162 b;
+#X obj 135 156 osc~;
+#X obj 211 105 f \$1;
+#X obj 211 133 + 1;
+#X obj 211 68 b;
+#X obj 136 197 /~ 1;
+#X obj 136 260 throw~ \$3-dsp;
+#X obj 135 47 r \$3-freq;
+#X obj 135 131 *;
+#X obj 135 229 /~ \$2;
+#X text 251 106 use instance index as harmony selector and amplitude
+scaler;
+#X text 194 231 scale total amplitude by total number of instances
+;
+#X text 250 264 throw to outside dsp.;
+#X msg 174 104 0;
+#X connect 0 0 3 0;
+#X connect 1 0 7 0;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 1;
+#X connect 6 0 11 1;
+#X connect 7 0 5 0;
+#X connect 7 0 16 0;
+#X connect 8 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 4 0;
+#X connect 12 0 9 0;
+#X connect 16 0 4 1;

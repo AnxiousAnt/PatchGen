@@ -1,0 +1,8 @@
+#N canvas 535 33 455 225 12;
+#X obj 16 153 fs.main;
+#X msg 18 120 6001;
+#X obj 16 92 loadbang;
+#X text 57 120 set your port here (or change fs.main);
+#X obj 165 41 framestein-demo;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;

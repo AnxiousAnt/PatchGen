@@ -1,0 +1,101 @@
+#N canvas 586 39 429 626 10;
+#N canvas 0 22 450 300 gemwin 0;
+#X obj 132 136 gemwin;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X obj 67 41 route create;
+#X msg 67 70 set destroy;
+#X msg 142 68 set create;
+#X msg 132 112 create \, 1;
+#X msg 198 112 destroy;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 3 1 5 0;
+#X connect 3 1 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X restore 11 30 pd gemwin;
+#X msg 11 11 create;
+#X obj 134 447 GEMglEnd;
+#X floatatom 172 135 5 0 0 0 - - -;
+#X obj 128 178 GEMglRotatef 0 1 1 1;
+#X obj 208 209 loadbang;
+#X obj 201 230 GLdefine GL_POLYGON;
+#X obj 128 252 GEMglBegin;
+#X obj 287 430 loadbang;
+#X obj 134 470 GEMglShadeModel;
+#X obj 265 429 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 285 451 GLdefine GL_FLAT;
+#X obj 219 516 GLdefine GL_MAP2_VERTEX;
+#X obj 271 486 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 208 137 5 0 0 0 - - -;
+#X floatatom 245 138 5 0 0 0 - - -;
+#X floatatom 282 138 5 0 0 0 - - -;
+#X obj 128 305 GEMglVertex4f -3 -3 -3 -3;
+#X obj 212 255 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 200 255 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 1200 1;
+#X obj 225 255 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 239 255 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 128 388 GEMglVertex4f 1 0 0 1;
+#X obj 126 428 GEMglVertex4fv 0 1 0 2;
+#X obj 197 334 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 185 334 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 210 334 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 224 334 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 130 54 gemhead 50;
+#X msg 127 28 set \$1;
+#X floatatom 126 6 5 0 0 0 - - -;
+#X obj 128 114 pix_texture;
+#X obj 128 92 pix_image;
+#X obj 211 39 openpanel;
+#X msg 212 62 open \$1;
+#X obj 210 7 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X connect 0 0 1 0;
+#X connect 1 0 0 0;
+#X connect 2 0 9 0;
+#X connect 3 0 4 1;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 1;
+#X connect 7 0 17 0;
+#X connect 8 0 11 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 12 0;
+#X connect 14 0 4 2;
+#X connect 15 0 4 3;
+#X connect 16 0 4 4;
+#X connect 17 0 22 0;
+#X connect 18 0 17 2;
+#X connect 19 0 17 1;
+#X connect 20 0 17 3;
+#X connect 21 0 17 4;
+#X connect 22 0 23 0;
+#X connect 23 0 2 0;
+#X connect 24 0 22 2;
+#X connect 25 0 22 1;
+#X connect 26 0 22 3;
+#X connect 27 0 22 4;
+#X connect 28 0 32 0;
+#X connect 29 0 28 0;
+#X connect 30 0 29 0;
+#X connect 31 0 4 0;
+#X connect 32 0 31 0;
+#X connect 33 0 34 0;
+#X connect 34 0 32 0;
+#X connect 35 0 33 0;

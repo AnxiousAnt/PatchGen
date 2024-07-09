@@ -1,0 +1,148 @@
+#N canvas 49 103 545 486 10;
+#X obj 24 16 cnv 15 380 460 empty empty Scaling_2 20 12 0 14 -236864
+-66577 0;
+#X floatatom 61 164 5 0 0 0 - - -;
+#X obj 64 145 hsl 128 15 38 130 0 0 empty empty range_1 16 6 0 10 -261682
+-1 -1 0 1;
+#X obj 148 276 /;
+#X obj 138 206 t b b;
+#X obj 138 187 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X obj 61 295 *;
+#X floatatom 61 315 5 0 0 0 - - -;
+#X floatatom 61 354 5 0 0 0 - - -;
+#X text 95 312 new range;
+#X text 43 34 Other number streams can produce different ranges of
+numbers \, and the range of these number streams can also be changed.
+;
+#X text 46 74 In this example we want to change a number stream that
+changes between 38 and 130 into one that varies between 5 and 50;
+#X obj 61 182 - 38;
+#X msg 117 236 50;
+#X obj 117 257 - 5;
+#X msg 178 236 130;
+#X obj 178 257 - 38;
+#X text 142 107 range 1: bottom=38 \, top=130;
+#X text 142 119 range 2: bottom=5 \, top=50;
+#X obj 61 333 + 5;
+#X text 87 333 add offset (bottom=50);
+#X text 107 220 range 2 / range 1;
+#X text 95 162 input(38-130) - bottom (30);
+#X text 157 186 <-- click here to start;
+#X text 361 443 Ed Kelly 2008;
+#X text 361 431 Camberwell PD workshops;
+#X obj 61 374 clip 30 40;
+#X floatatom 61 395 5 0 0 0 - - -;
+#X obj 212 374 moses 30;
+#X obj 257 394 moses 40;
+#X floatatom 257 355 5 0 0 0 - - -;
+#X floatatom 290 355 5 0 0 0 - - -;
+#X msg 257 315 30 40;
+#X obj 257 335 unpack;
+#X floatatom 212 394 5 0 0 0 - - -;
+#X floatatom 257 414 5 0 0 0 - - -;
+#X floatatom 302 414 5 0 0 0 - - -;
+#X text 52 439 clip restricts the;
+#X text 51 450 number stream;
+#X obj 61 414 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 194 394 bng 15 100 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 238 415 bng 15 100 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 302 433 bng 15 100 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 200 444 moses parts the;
+#X text 198 455 number stream;
+#X obj 335 279 cnv 15 200 110 empty empty empty 20 12 0 14 -261234
+-66577 0;
+#X obj 357 358 moses;
+#X text 333 275 You may have a stream of numbers;
+#X text 333 288 that you wish to restrict - such;
+#X text 334 301 as a range of distances from an;
+#X text 333 314 ultrasound sensor - so that only;
+#X text 333 327 values from a certain part of the;
+#X text 333 339 range are used.;
+#X text 333 361 The;
+#X text 459 361 objects;
+#X text 334 374 can be used to achieve this.;
+#X text 393 361 and;
+#X obj 423 358 clip;
+#X obj 257 294 loadbang;
+#X obj 335 138 cnv 15 200 140 empty empty empty 20 12 0 14 -203904
+-66577 0;
+#X text 342 138 Also check out:;
+#X obj 342 177 exp;
+#X obj 379 177 log;
+#X obj 414 177 mtof;
+#X obj 450 177 ftom;
+#X floatatom 342 157 5 0 0 0 - - -;
+#X floatatom 379 157 5 0 0 0 - - -;
+#X floatatom 414 157 5 0 0 0 - - -;
+#X floatatom 450 157 5 0 0 0 - - -;
+#X floatatom 342 198 5 0 0 0 - - -;
+#X floatatom 379 198 5 0 0 0 - - -;
+#X floatatom 414 198 5 0 0 0 - - -;
+#X floatatom 450 198 5 0 0 0 - - -;
+#X floatatom 342 217 5 0 0 0 - - -;
+#X floatatom 342 258 5 0 0 0 - - -;
+#X obj 342 237 pow 2;
+#X floatatom 382 217 5 0 0 0 - - -;
+#X floatatom 382 258 5 0 0 0 - - -;
+#X obj 382 237 > 5;
+#X obj 490 156 sieve;
+#X obj 484 178 polymap;
+#X obj 490 201 valve;
+#X floatatom 422 217 5 0 0 0 - - -;
+#X floatatom 422 258 5 0 0 0 - - -;
+#X obj 462 259 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 422 237 speedlim 600;
+#X connect 1 0 12 0;
+#X connect 2 0 1 0;
+#X connect 3 0 6 1;
+#X connect 4 0 13 0;
+#X connect 4 1 15 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 19 0;
+#X connect 8 0 26 0;
+#X connect 8 0 28 0;
+#X connect 12 0 6 0;
+#X connect 13 0 14 0;
+#X connect 14 0 3 0;
+#X connect 15 0 16 0;
+#X connect 16 0 3 1;
+#X connect 19 0 8 0;
+#X connect 26 0 27 0;
+#X connect 27 0 39 0;
+#X connect 28 0 34 0;
+#X connect 28 0 40 0;
+#X connect 28 1 29 0;
+#X connect 29 0 35 0;
+#X connect 29 0 41 0;
+#X connect 29 1 36 0;
+#X connect 30 0 28 1;
+#X connect 30 0 26 1;
+#X connect 31 0 29 1;
+#X connect 31 0 26 2;
+#X connect 32 0 33 0;
+#X connect 33 0 30 0;
+#X connect 33 1 31 0;
+#X connect 36 0 42 0;
+#X connect 58 0 32 0;
+#X connect 61 0 69 0;
+#X connect 62 0 70 0;
+#X connect 63 0 71 0;
+#X connect 64 0 72 0;
+#X connect 65 0 61 0;
+#X connect 66 0 62 0;
+#X connect 67 0 63 0;
+#X connect 68 0 64 0;
+#X connect 73 0 75 0;
+#X connect 75 0 74 0;
+#X connect 76 0 78 0;
+#X connect 78 0 77 0;
+#X connect 82 0 85 0;
+#X connect 85 0 83 0;
+#X connect 85 0 84 0;

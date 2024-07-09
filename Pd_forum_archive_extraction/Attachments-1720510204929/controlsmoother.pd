@@ -1,0 +1,12 @@
+#N canvas 0 0 450 300 10;
+#X obj 41 104 snapshot~;
+#X obj 94 76 metro 10;
+#X obj 92 51 loadbang;
+#X obj 22 18 inlet;
+#X obj 43 163 outlet;
+#X obj 22 60 lop~ 0.2;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 5 0 0 0;

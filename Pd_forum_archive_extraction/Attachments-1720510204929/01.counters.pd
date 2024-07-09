@@ -1,0 +1,63 @@
+#N canvas 58 34 602 604 10;
+#X msg 29 19 bang;
+#X obj 29 50 float;
+#X obj 84 50 + 1;
+#X floatatom 29 81 5 0 0 0 - - -;
+#X obj 84 166 + 1;
+#X floatatom 29 197 5 0 0 0 - - -;
+#X obj 29 116 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 84 283 + 1;
+#X floatatom 29 343 5 0 0 0 - - -;
+#X obj 29 234 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 84 312 select 10;
+#X msg 84 342 0;
+#X text 129 255 This counter resets itself to 0 when it reaches 10
+;
+#X text 124 48 [float] stores a number it receives on the right \,
+"cold" side until it receives input on the left \, "hot" side.;
+#X obj 84 433 + 1;
+#X floatatom 29 464 5 0 0 0 - - -;
+#X obj 29 384 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 29 493 mod 16;
+#X obj 29 137 metro 100;
+#X obj 29 255 metro 100;
+#X obj 29 405 metro 100;
+#X text 128 133 An automated version \, driven by a "metro" which sends
+the message "bang" every 100 ms.;
+#X floatatom 29 521 5 0 0 0 - - -;
+#X text 128 405 This counter uses a "modulo" to wrap the numbers around
+from 0 to 15;
+#X text 310 500 derek@umatic.nl;
+#X obj 29 166 f;
+#X obj 29 283 f;
+#X obj 29 433 f;
+#X text 128 164 Notice that [float] can be abbreviated with [f].;
+#X floatatom 142 344 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 4 0 25 1;
+#X connect 6 0 18 0;
+#X connect 7 0 26 1;
+#X connect 9 0 19 0;
+#X connect 10 0 11 0;
+#X connect 10 1 29 0;
+#X connect 11 0 26 0;
+#X connect 14 0 27 1;
+#X connect 15 0 17 0;
+#X connect 16 0 20 0;
+#X connect 17 0 22 0;
+#X connect 18 0 25 0;
+#X connect 19 0 26 0;
+#X connect 20 0 27 0;
+#X connect 25 0 4 0;
+#X connect 25 0 5 0;
+#X connect 26 0 7 0;
+#X connect 26 0 8 0;
+#X connect 26 0 10 0;
+#X connect 27 0 14 0;
+#X connect 27 0 15 0;

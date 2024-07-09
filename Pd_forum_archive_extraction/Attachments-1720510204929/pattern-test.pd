@@ -1,0 +1,20 @@
+#N canvas 142 152 450 300 10;
+#X text 28 190 these contain only one array each but could be extended
+to contain more...;
+#X obj 36 55 bng 15 250 50 0 empty empty empty 0 -6 32 8 -262144 -1
+-1;
+#X obj 150 53 bng 15 250 50 0 empty empty empty 0 -6 32 8 -262144 -1
+-1;
+#X obj 260 53 bng 15 250 50 0 empty empty empty 0 -6 32 8 -262144 -1
+-1;
+#X text 63 6 banging will create:;
+#X text 33 30 p1-pitch.txt;
+#X text 145 30 p2-pitch.txt;
+#X text 259 30 p3-pitch.txt;
+#X obj 36 111 pattern p1;
+#X obj 150 111 pattern p2;
+#X obj 260 111 pattern p3;
+#X text 39 138 ... in the current directory.;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;

@@ -1,0 +1,51 @@
+#N canvas 109 76 880 283 10;
+#X obj 575 158 l;
+#X obj 607 158 list-rot 1;
+#X obj 575 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 575 218 list split 1;
+#X floatatom 575 248 5 0 0 0 - - -;
+#X obj 591 94 loadbang;
+#X msg 591 124 1 2 3 4;
+#X obj 575 188 t a a;
+#X obj 322 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 322 245 5 0 0 0 - - -;
+#X obj 338 94 loadbang;
+#X msg 338 124 1;
+#X obj 322 158 f;
+#X obj 354 158 + 1;
+#X obj 44 158 l;
+#X obj 76 158 list-rot 1;
+#X obj 44 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 44 215 list split 1;
+#X floatatom 44 245 5 0 0 0 - - -;
+#X obj 60 94 loadbang;
+#X msg 60 124 1 2 3 4;
+#X text 184 22 ... because this outputs 1 when first banged...;
+#X text 436 39 ... I have to do this to fix it \, and I'm not sure
+I should have to;
+#X text 1 3 I expect this to output 1 instead of 2 when first banged...
+;
+#X connect 0 0 7 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 1;
+#X connect 7 0 1 0;
+#X connect 7 1 3 0;
+#X connect 8 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 1;
+#X connect 12 0 13 0;
+#X connect 12 0 9 0;
+#X connect 13 0 12 1;
+#X connect 14 0 15 0;
+#X connect 14 0 17 0;
+#X connect 15 0 14 1;
+#X connect 16 0 14 0;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 20 0 14 1;

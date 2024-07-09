@@ -1,0 +1,10 @@
+#N canvas 96 395 694 300 10;
+#X obj 357 209 test-obj;
+#X msg 35 40 \; to-canvas obj 0 0 test-abstraction;
+#X text 260 98 2: right click on [test-obj] and turn GOP on.;
+#X text 260 46 1: click here to create an object [test-abstraction]
+inside [test-obj]. No error message means it created successfully.
+;
+#X text 259 136 3: click the message object again to create another
+[test-abstraction]. Do you get an error message?;
+#X text 45 207 [namecanvas to-canvas] inside this abstraction -->;

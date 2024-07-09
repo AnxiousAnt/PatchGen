@@ -1,0 +1,43 @@
+#N canvas 16 47 662 391 10;
+#X obj 52 65 loadbang;
+#X obj 54 152 delay 10000;
+#X obj 95 224 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 302 236 hip~ 1000;
+#X msg 70 88 \; pd dsp 1;
+#X obj 137 78 tabplay~ \$0-fizz;
+#X obj 139 56 bang~;
+#X obj 228 199 table \$0-fizz 64;
+#X obj 165 194 s \$0-fizz;
+#X msg 164 126 0 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1
+-1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1
+1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1
+-1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1 -1 1;
+#X obj 302 257 print~ hip1000;
+#X obj 397 236 hip~ 100;
+#X obj 399 257 print~ hip100;
+#X obj 495 239 hip~ 10;
+#X obj 497 260 print~ hip10;
+#X obj 149 237 hip~ 10000;
+#X obj 149 258 print~ hip10000;
+#X connect 0 0 4 0;
+#X connect 0 0 1 0;
+#X connect 0 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 0 12 0;
+#X connect 1 0 14 0;
+#X connect 1 0 16 0;
+#X connect 2 0 10 0;
+#X connect 2 0 12 0;
+#X connect 2 0 14 0;
+#X connect 2 0 16 0;
+#X connect 3 0 10 0;
+#X connect 5 0 3 0;
+#X connect 5 0 11 0;
+#X connect 5 0 13 0;
+#X connect 5 0 15 0;
+#X connect 6 0 5 0;
+#X connect 9 0 8 0;
+#X connect 11 0 12 0;
+#X connect 13 0 14 0;
+#X connect 15 0 16 0;

@@ -1,0 +1,629 @@
+#N canvas 4 269 668 365 10;
+#X obj 109 108 bng 13 50 10 0 \$0-0-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 109 108 cnv 1 13 13 \$0-dummy \$0-0-square empty 20 12 0 14
+-260818 -262144 0;
+#X obj 124 108 bng 13 50 10 0 \$0-1-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 124 108 cnv 1 13 13 \$0-dummy \$0-1-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 139 108 bng 13 50 10 0 \$0-2-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 139 108 cnv 1 13 13 \$0-dummy \$0-2-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 154 108 bng 13 50 10 0 \$0-3-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 154 108 cnv 1 13 13 \$0-dummy \$0-3-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 169 108 bng 13 50 10 0 \$0-4-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 169 108 cnv 1 13 13 \$0-dummy \$0-4-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 184 108 bng 13 50 10 0 \$0-5-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 184 108 cnv 1 13 13 \$0-dummy \$0-5-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 199 108 bng 13 50 10 0 \$0-6-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 199 108 cnv 1 13 13 \$0-dummy \$0-6-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 214 108 bng 13 50 10 0 \$0-7-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 214 108 cnv 1 13 13 \$0-dummy \$0-7-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 109 123 bng 13 50 10 0 \$0-8-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 109 123 cnv 1 13 13 \$0-dummy \$0-8-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 124 123 bng 13 50 10 0 \$0-9-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 124 123 cnv 1 13 13 \$0-dummy \$0-9-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 139 123 bng 13 50 10 0 \$0-10-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 139 123 cnv 1 13 13 \$0-dummy \$0-10-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 154 123 bng 13 50 10 0 \$0-11-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 154 123 cnv 1 13 13 \$0-dummy \$0-11-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 169 123 bng 13 50 10 0 \$0-12-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 169 123 cnv 1 13 13 \$0-dummy \$0-12-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 184 123 bng 13 50 10 0 \$0-13-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 184 123 cnv 1 13 13 \$0-dummy \$0-13-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 199 123 bng 13 50 10 0 \$0-14-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 199 123 cnv 1 13 13 \$0-dummy \$0-14-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 214 123 bng 13 50 10 0 \$0-15-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 214 123 cnv 1 13 13 \$0-dummy \$0-15-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 109 138 bng 13 50 10 0 \$0-16-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 109 138 cnv 1 13 13 \$0-dummy \$0-16-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 124 138 bng 13 50 10 0 \$0-17-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 124 138 cnv 1 13 13 \$0-dummy \$0-17-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 139 138 bng 13 50 10 0 \$0-18-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 139 138 cnv 1 13 13 \$0-dummy \$0-18-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 154 138 bng 13 50 10 0 \$0-19-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 154 138 cnv 1 13 13 \$0-dummy \$0-19-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 169 138 bng 13 50 10 0 \$0-20-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 169 138 cnv 1 13 13 \$0-dummy \$0-20-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 184 138 bng 13 50 10 0 \$0-21-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 184 138 cnv 1 13 13 \$0-dummy \$0-21-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 199 138 bng 13 50 10 0 \$0-22-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 199 138 cnv 1 13 13 \$0-dummy \$0-22-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 214 138 bng 13 50 10 0 \$0-23-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 214 138 cnv 1 13 13 \$0-dummy \$0-23-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 109 153 bng 13 50 10 0 \$0-24-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 109 153 cnv 1 13 13 \$0-dummy \$0-24-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 124 153 bng 13 50 10 0 \$0-25-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 124 153 cnv 1 13 13 \$0-dummy \$0-25-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 139 153 bng 13 50 10 0 \$0-26-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 139 153 cnv 1 13 13 \$0-dummy \$0-26-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 154 153 bng 13 50 10 0 \$0-27-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 154 153 cnv 1 13 13 \$0-dummy \$0-27-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 169 153 bng 13 50 10 0 \$0-28-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 169 153 cnv 1 13 13 \$0-dummy \$0-28-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 184 153 bng 13 50 10 0 \$0-29-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 184 153 cnv 1 13 13 \$0-dummy \$0-29-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 199 153 bng 13 50 10 0 \$0-30-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 199 153 cnv 1 13 13 \$0-dummy \$0-30-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 214 153 bng 13 50 10 0 \$0-31-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 214 153 cnv 1 13 13 \$0-dummy \$0-31-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 109 168 bng 13 50 10 0 \$0-32-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 109 168 cnv 1 13 13 \$0-dummy \$0-32-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 124 168 bng 13 50 10 0 \$0-33-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 124 168 cnv 1 13 13 \$0-dummy \$0-33-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 139 168 bng 13 50 10 0 \$0-34-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 139 168 cnv 1 13 13 \$0-dummy \$0-34-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 154 168 bng 13 50 10 0 \$0-35-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 154 168 cnv 1 13 13 \$0-dummy \$0-35-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 169 168 bng 13 50 10 0 \$0-36-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 169 168 cnv 1 13 13 \$0-dummy \$0-36-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 184 168 bng 13 50 10 0 \$0-37-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 184 168 cnv 1 13 13 \$0-dummy \$0-37-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 199 168 bng 13 50 10 0 \$0-38-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 199 168 cnv 1 13 13 \$0-dummy \$0-38-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 214 168 bng 13 50 10 0 \$0-39-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 214 168 cnv 1 13 13 \$0-dummy \$0-39-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 109 183 bng 13 50 10 0 \$0-40-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 109 183 cnv 1 13 13 \$0-dummy \$0-40-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 124 183 bng 13 50 10 0 \$0-41-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 124 183 cnv 1 13 13 \$0-dummy \$0-41-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 139 183 bng 13 50 10 0 \$0-42-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 139 183 cnv 1 13 13 \$0-dummy \$0-42-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 154 183 bng 13 50 10 0 \$0-43-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 154 183 cnv 1 13 13 \$0-dummy \$0-43-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 169 183 bng 13 50 10 0 \$0-44-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 169 183 cnv 1 13 13 \$0-dummy \$0-44-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 184 183 bng 13 50 10 0 \$0-45-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 184 183 cnv 1 13 13 \$0-dummy \$0-45-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 199 183 bng 13 50 10 0 \$0-46-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 199 183 cnv 1 13 13 \$0-dummy \$0-46-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 214 183 bng 13 50 10 0 \$0-47-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 214 183 cnv 1 13 13 \$0-dummy \$0-47-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 109 198 bng 13 50 10 0 \$0-48-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 109 198 cnv 1 13 13 \$0-dummy \$0-48-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 124 198 bng 13 50 10 0 \$0-49-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 124 198 cnv 1 13 13 \$0-dummy \$0-49-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 139 198 bng 13 50 10 0 \$0-50-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 139 198 cnv 1 13 13 \$0-dummy \$0-50-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 154 198 bng 13 50 10 0 \$0-51-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 154 198 cnv 1 13 13 \$0-dummy \$0-51-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 169 198 bng 13 50 10 0 \$0-52-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 169 198 cnv 1 13 13 \$0-dummy \$0-52-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 184 198 bng 13 50 10 0 \$0-53-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 184 198 cnv 1 13 13 \$0-dummy \$0-53-square empty 20 12 0 14
+-261681 -262144 0;
+#X obj 199 198 bng 13 50 10 0 \$0-54-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 199 198 cnv 1 13 13 \$0-dummy \$0-54-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 214 198 bng 13 50 10 0 \$0-55-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 214 198 cnv 1 13 13 \$0-dummy \$0-55-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 109 213 bng 13 50 10 0 \$0-56-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 109 213 cnv 1 13 13 \$0-dummy \$0-56-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 124 213 bng 13 50 10 0 \$0-57-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 124 213 cnv 1 13 13 \$0-dummy \$0-57-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 139 213 bng 13 50 10 0 \$0-58-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 139 213 cnv 1 13 13 \$0-dummy \$0-58-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 154 213 bng 13 50 10 0 \$0-59-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 154 213 cnv 1 13 13 \$0-dummy \$0-59-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 169 213 bng 13 50 10 0 \$0-60-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 169 213 cnv 1 13 13 \$0-dummy \$0-60-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 184 213 bng 13 50 10 0 \$0-61-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 184 213 cnv 1 13 13 \$0-dummy \$0-61-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 199 213 bng 13 50 10 0 \$0-62-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 199 213 cnv 1 13 13 \$0-dummy \$0-62-square empty 20 12 0 14
+-261682 -66577 0;
+#X obj 214 213 bng 13 50 10 0 \$0-63-bang \$0-dummy empty 17 7 0 10
+-262144 -1 -1;
+#X obj 214 213 cnv 1 13 13 \$0-dummy \$0-63-square empty 20 12 0 14
+-261681 -262144 0;
+#N canvas 0 0 195 87 receive-bang 0;
+#X obj -1 0 outlet;
+#X obj 0 0 r \$0-0-bang;
+#X obj 0 0 0;
+#X obj 0 0 r \$0-1-bang;
+#X obj 0 0 1;
+#X obj 0 0 r \$0-2-bang;
+#X obj 0 0 2;
+#X obj 0 0 r \$0-3-bang;
+#X obj 0 0 3;
+#X obj 0 0 r \$0-4-bang;
+#X obj 0 0 4;
+#X obj 0 0 r \$0-5-bang;
+#X obj 0 0 5;
+#X obj 0 0 r \$0-6-bang;
+#X obj 0 0 6;
+#X obj 0 0 r \$0-7-bang;
+#X obj 0 0 7;
+#X obj 0 0 r \$0-8-bang;
+#X obj 0 0 8;
+#X obj 0 0 r \$0-9-bang;
+#X obj 0 0 9;
+#X obj 0 0 r \$0-10-bang;
+#X obj 0 0 10;
+#X obj 0 0 r \$0-11-bang;
+#X obj 0 0 11;
+#X obj 0 0 r \$0-12-bang;
+#X obj 0 0 12;
+#X obj 0 0 r \$0-13-bang;
+#X obj 0 0 13;
+#X obj 0 0 r \$0-14-bang;
+#X obj 0 0 14;
+#X obj 0 0 r \$0-15-bang;
+#X obj 0 0 15;
+#X obj 0 0 r \$0-16-bang;
+#X obj 0 0 16;
+#X obj 0 0 r \$0-17-bang;
+#X obj 0 0 17;
+#X obj 0 0 r \$0-18-bang;
+#X obj 0 0 18;
+#X obj 0 0 r \$0-19-bang;
+#X obj 0 0 19;
+#X obj 0 0 r \$0-20-bang;
+#X obj 0 0 20;
+#X obj 0 0 r \$0-21-bang;
+#X obj 0 0 21;
+#X obj 0 0 r \$0-22-bang;
+#X obj 0 0 22;
+#X obj 0 0 r \$0-23-bang;
+#X obj 0 0 23;
+#X obj 0 0 r \$0-24-bang;
+#X obj 0 0 24;
+#X obj 0 0 r \$0-25-bang;
+#X obj 0 0 25;
+#X obj 0 0 r \$0-26-bang;
+#X obj 0 0 26;
+#X obj 0 0 r \$0-27-bang;
+#X obj 0 0 27;
+#X obj 0 0 r \$0-28-bang;
+#X obj 0 0 28;
+#X obj 0 0 r \$0-29-bang;
+#X obj 0 0 29;
+#X obj 0 0 r \$0-30-bang;
+#X obj 0 0 30;
+#X obj 0 0 r \$0-31-bang;
+#X obj 0 0 31;
+#X obj 0 0 r \$0-32-bang;
+#X obj 0 0 32;
+#X obj 0 0 r \$0-33-bang;
+#X obj 0 0 33;
+#X obj 0 0 r \$0-34-bang;
+#X obj 0 0 34;
+#X obj 0 0 r \$0-35-bang;
+#X obj 0 0 35;
+#X obj 0 0 r \$0-36-bang;
+#X obj 0 0 36;
+#X obj 0 0 r \$0-37-bang;
+#X obj 0 0 37;
+#X obj 0 0 r \$0-38-bang;
+#X obj 0 0 38;
+#X obj 0 0 r \$0-39-bang;
+#X obj 0 0 39;
+#X obj 0 0 r \$0-40-bang;
+#X obj 0 0 40;
+#X obj 0 0 r \$0-41-bang;
+#X obj 0 0 41;
+#X obj 0 0 r \$0-42-bang;
+#X obj 0 0 42;
+#X obj 0 0 r \$0-43-bang;
+#X obj 0 0 43;
+#X obj 0 0 r \$0-44-bang;
+#X obj 0 0 44;
+#X obj 0 0 r \$0-45-bang;
+#X obj 0 0 45;
+#X obj 0 0 r \$0-46-bang;
+#X obj 0 0 46;
+#X obj 0 0 r \$0-47-bang;
+#X obj 0 0 47;
+#X obj 0 0 r \$0-48-bang;
+#X obj 0 0 48;
+#X obj 0 0 r \$0-49-bang;
+#X obj 0 0 49;
+#X obj 0 0 r \$0-50-bang;
+#X obj 0 0 50;
+#X obj 0 0 r \$0-51-bang;
+#X obj 0 0 51;
+#X obj 0 0 r \$0-52-bang;
+#X obj 0 0 52;
+#X obj 0 0 r \$0-53-bang;
+#X obj 0 0 53;
+#X obj 0 0 r \$0-54-bang;
+#X obj 0 0 54;
+#X obj 0 0 r \$0-55-bang;
+#X obj 0 0 55;
+#X obj 0 0 r \$0-56-bang;
+#X obj 0 0 56;
+#X obj 0 0 r \$0-57-bang;
+#X obj 0 0 57;
+#X obj 0 0 r \$0-58-bang;
+#X obj 0 0 58;
+#X obj 0 0 r \$0-59-bang;
+#X obj 0 0 59;
+#X obj 0 0 r \$0-60-bang;
+#X obj 0 0 60;
+#X obj 0 0 r \$0-61-bang;
+#X obj 0 0 61;
+#X obj 0 0 r \$0-62-bang;
+#X obj 0 0 62;
+#X obj 0 0 r \$0-63-bang;
+#X obj 0 0 63;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 0 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 0 0;
+#X connect 15 0 16 0;
+#X connect 16 0 0 0;
+#X connect 17 0 18 0;
+#X connect 18 0 0 0;
+#X connect 19 0 20 0;
+#X connect 20 0 0 0;
+#X connect 21 0 22 0;
+#X connect 22 0 0 0;
+#X connect 23 0 24 0;
+#X connect 24 0 0 0;
+#X connect 25 0 26 0;
+#X connect 26 0 0 0;
+#X connect 27 0 28 0;
+#X connect 28 0 0 0;
+#X connect 29 0 30 0;
+#X connect 30 0 0 0;
+#X connect 31 0 32 0;
+#X connect 32 0 0 0;
+#X connect 33 0 34 0;
+#X connect 34 0 0 0;
+#X connect 35 0 36 0;
+#X connect 36 0 0 0;
+#X connect 37 0 38 0;
+#X connect 38 0 0 0;
+#X connect 39 0 40 0;
+#X connect 40 0 0 0;
+#X connect 41 0 42 0;
+#X connect 42 0 0 0;
+#X connect 43 0 44 0;
+#X connect 44 0 0 0;
+#X connect 45 0 46 0;
+#X connect 46 0 0 0;
+#X connect 47 0 48 0;
+#X connect 48 0 0 0;
+#X connect 49 0 50 0;
+#X connect 50 0 0 0;
+#X connect 51 0 52 0;
+#X connect 52 0 0 0;
+#X connect 53 0 54 0;
+#X connect 54 0 0 0;
+#X connect 55 0 56 0;
+#X connect 56 0 0 0;
+#X connect 57 0 58 0;
+#X connect 58 0 0 0;
+#X connect 59 0 60 0;
+#X connect 60 0 0 0;
+#X connect 61 0 62 0;
+#X connect 62 0 0 0;
+#X connect 63 0 64 0;
+#X connect 64 0 0 0;
+#X connect 65 0 66 0;
+#X connect 66 0 0 0;
+#X connect 67 0 68 0;
+#X connect 68 0 0 0;
+#X connect 69 0 70 0;
+#X connect 70 0 0 0;
+#X connect 71 0 72 0;
+#X connect 72 0 0 0;
+#X connect 73 0 74 0;
+#X connect 74 0 0 0;
+#X connect 75 0 76 0;
+#X connect 76 0 0 0;
+#X connect 77 0 78 0;
+#X connect 78 0 0 0;
+#X connect 79 0 80 0;
+#X connect 80 0 0 0;
+#X connect 81 0 82 0;
+#X connect 82 0 0 0;
+#X connect 83 0 84 0;
+#X connect 84 0 0 0;
+#X connect 85 0 86 0;
+#X connect 86 0 0 0;
+#X connect 87 0 88 0;
+#X connect 88 0 0 0;
+#X connect 89 0 90 0;
+#X connect 90 0 0 0;
+#X connect 91 0 92 0;
+#X connect 92 0 0 0;
+#X connect 93 0 94 0;
+#X connect 94 0 0 0;
+#X connect 95 0 96 0;
+#X connect 96 0 0 0;
+#X connect 97 0 98 0;
+#X connect 98 0 0 0;
+#X connect 99 0 100 0;
+#X connect 100 0 0 0;
+#X connect 101 0 102 0;
+#X connect 102 0 0 0;
+#X connect 103 0 104 0;
+#X connect 104 0 0 0;
+#X connect 105 0 106 0;
+#X connect 106 0 0 0;
+#X connect 107 0 108 0;
+#X connect 108 0 0 0;
+#X connect 109 0 110 0;
+#X connect 110 0 0 0;
+#X connect 111 0 112 0;
+#X connect 112 0 0 0;
+#X connect 113 0 114 0;
+#X connect 114 0 0 0;
+#X connect 115 0 116 0;
+#X connect 116 0 0 0;
+#X connect 117 0 118 0;
+#X connect 118 0 0 0;
+#X connect 119 0 120 0;
+#X connect 120 0 0 0;
+#X connect 121 0 122 0;
+#X connect 122 0 0 0;
+#X connect 123 0 124 0;
+#X connect 124 0 0 0;
+#X connect 125 0 126 0;
+#X connect 126 0 0 0;
+#X connect 127 0 128 0;
+#X connect 128 0 0 0;
+#X restore 296 111 pd receive-bang;
+#X obj 353 139 outlet;
+#X obj 296 138 t f f b;
+#X obj 338 167 f;
+#X obj 339 194 pack f \$0;
+#X obj 269 194 pack f \$0;
+#X msg 295 273 \; \$2-\$1-square color 14 0;
+#X msg 339 224 \; \$2-\$1-square color 4 0;
+#X obj 427 86 loadbang;
+#X obj 427 109 0;
+#N canvas 357 184 918 499 make 0;
+#X obj 70 347 s pd-bang-matrix.pd;
+#X obj 70 245 pack f f f;
+#X obj 66 131 t f f f;
+#X obj 80 198 * 15;
+#X obj 40 198 * 15;
+#X obj 66 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 80 174 div 8;
+#X obj 40 174 mod 8;
+#X obj 453 299 s pd-receive-bang;
+#X obj 466 141 t f f f;
+#X obj 455 230 pack f f f;
+#X obj 512 183 * 2;
+#X obj 480 185 * 2;
+#X obj 513 205 + 2;
+#X obj 480 206 + 1;
+#N canvas 665 154 481 461 fire 0;
+#X obj 148 22 inlet;
+#X obj 148 186 until;
+#X obj 148 228 f;
+#X obj 180 228 + 1;
+#X obj 171 160 0;
+#X obj 148 346 outlet;
+#X obj 148 109 64;
+#X obj 148 136 t f b;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 1;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
+#X connect 7 1 4 0;
+#X restore 66 108 pd fire 64;
+#X obj 466 94 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 665 154 481 461 fire 0;
+#X obj 148 22 inlet;
+#X obj 148 186 until;
+#X obj 148 228 f;
+#X obj 180 228 + 1;
+#X obj 171 160 0;
+#X obj 148 346 outlet;
+#X obj 148 109 64;
+#X obj 148 136 t f b;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 1;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
+#X connect 7 1 4 0;
+#X restore 466 118 pd fire 64;
+#X msg 70 282 obj \$1 \$2 bng 13 50 10 0 dollar0-\$3-bang dollar0-dummy
+empty 17 7 0 10 -262144 -1 -1 \, obj \$1 \$2 cnv 1 13 13 \$0-dummy
+\$0-\$3-square empty 20 12 0 14 -261682 -66577 0;
+#X msg 453 258 obj 0 0 r dollar0-\$1-bang \, obj 0 0 \$1 \, connect
+\$2 0 \$3 0 \, connect \$3 0 0 0;
+#X text 107 80 <-1. Create matrix;
+#X text 502 88 <- 2 Create receives and indexnr \, connect to outlet
+;
+#X text 62 455 slp@2008;
+#X text 65 20 0 First erase the matrix and the inside of [pd receive-bang]
+except for the outlet.;
+#X text 64 401 3 Open patch in a texteditor \, do a search of "dollar0"
+\, replace with "backslash\$0".;
+#X connect 1 0 18 0;
+#X connect 2 0 7 0;
+#X connect 2 1 6 0;
+#X connect 2 2 1 2;
+#X connect 3 0 1 1;
+#X connect 4 0 1 0;
+#X connect 5 0 15 0;
+#X connect 6 0 3 0;
+#X connect 7 0 4 0;
+#X connect 9 0 10 0;
+#X connect 9 1 12 0;
+#X connect 9 2 11 0;
+#X connect 10 0 19 0;
+#X connect 11 0 13 0;
+#X connect 12 0 14 0;
+#X connect 13 0 10 2;
+#X connect 14 0 10 1;
+#X connect 15 0 2 0;
+#X connect 16 0 17 0;
+#X connect 17 0 9 0;
+#X connect 18 0 0 0;
+#X connect 19 0 8 0;
+#X restore 9 15 pd make matrix;
+#X connect 128 0 130 0;
+#X connect 128 0 129 0;
+#X connect 130 0 133 0;
+#X connect 130 1 131 1;
+#X connect 130 2 131 0;
+#X connect 131 0 132 0;
+#X connect 132 0 135 0;
+#X connect 133 0 134 0;
+#X connect 136 0 137 0;
+#X connect 137 0 129 0;
+#X coords 0 -1 1 1 135 135 2 100 100;

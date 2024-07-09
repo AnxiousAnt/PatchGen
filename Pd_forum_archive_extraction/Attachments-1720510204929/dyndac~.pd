@@ -1,0 +1,20 @@
+#N canvas 1 51 450 300 10;
+#N canvas 458 51 450 300 \$0-dac 1;
+#X restore 224 48 pd \$0-dac;
+#X obj 11 48 s~ \$0-dac-r;
+#X obj 12 6 inlet~;
+#X obj 14 239 s pd-\$0-dac;
+#X obj 14 184 pack \$0 1;
+#X msg 14 205 clear \, obj 10 10 r~ \$1-dac-r \, obj 10 50 dac~ \$2
+\, connect 0 0 1 0;
+#X obj 14 122 loadbang;
+#X obj 14 143 t b b;
+#X obj 46 162 \$1;
+#X connect 2 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 7 1 8 0;
+#X connect 8 0 4 1;
+

@@ -1,0 +1,38 @@
+#N canvas 523 52 703 383 12;
+#X obj 35 32 array define dog;
+#X obj 32 74 array define cat;
+#X msg 314 181 \; pd-graph2 vis 1;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1 0 0;
+#X restore 31 127 graph;
+#X msg 304 26 \; pd-graph1 rename thedog;
+#X msg 305 73 \; pd-thedog vis 1;
+#X msg 442 72 \; pd-thedog vis 0;
+#X msg 308 119 \; pd-thedog vis 0 \, setbounds 0 22 400 400 \, vis
+1;
+#X text 448 193 <-- the cat;
+#X msg 560 185 \; pd-graph2 vis 0;
+#X msg 421 286 arrayviewclose;
+#X msg 385 259 arrayviewlistnew;
+#X obj 447 345 s;
+#X msg 545 322 symbol array1;
+#X msg 556 294 symbol dog;
+#X msg 560 268 symbol cat;
+#X text 327 238 Another thing you can do:;
+#X text 275 39 1;
+#X text 277 85 2;
+#X text 284 129 3;
+#X text 286 190 4;
+#X text 297 242 5;
+#X text 64 272 ^^ No way to open this unless right-click > open, f
+21;
+#X connect 10 0 12 0;
+#X connect 11 0 12 0;
+#X connect 13 0 12 1;
+#X connect 14 0 12 1;
+#X connect 15 0 12 1;

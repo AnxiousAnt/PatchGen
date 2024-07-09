@@ -1,0 +1,18 @@
+#N canvas 255 209 694 254 10;
+#X obj 25 72 vradio 15 1 0 8 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 162 20 loadbang;
+#X obj 162 71 vradio 15 1 0 8 empty empty empty 0 -6 0 8 -262144 -1
+-1 2;
+#X msg 162 46 set 2;
+#X text 189 131 <- click;
+#X msg 25 46 set 2 \, 3;
+#X text 87 44 <- click;
+#X msg 270 104 set 0 \, 8 \, set 1 \, 8 \, set 2 \, 8 \, set 3 \, 8
+\, set 4 \, 8 \, set 5 \, 8 \, set 6 \, 8 \, set 7 \, 8;
+#X obj 270 145 hradio 15 1 0 8 empty empty empty 0 -6 0 8 -262144 -1
+-1 7;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 5 0 0 0;
+#X connect 7 0 8 0;

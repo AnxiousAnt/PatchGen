@@ -1,0 +1,14 @@
+#N canvas 0 0 598 395 10;
+#X obj 103 115 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 12000 1;
+#X obj 100 74 route \$1-r;
+#X obj 100 46 r GLOBAL-R;
+#X obj 100 211 s GLOBAL-S;
+#X obj 100 143 list prepend \$1-s;
+#X obj 100 173 list trim;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 133 30 1 100 100;

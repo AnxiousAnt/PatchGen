@@ -1,0 +1,37 @@
+#N canvas 0 0 619 383 10;
+#X obj 183 257 ltxt;
+#X msg 192 158 print;
+#X msg 240 20 bang;
+#X obj 320 78 random 100;
+#X msg 183 135 reset;
+#X obj 397 79 random 100;
+#X obj 240 117 pack 0 0 0;
+#X msg 240 144 add \$1 \$2 \$3;
+#X obj 240 44 t b b b;
+#X msg 303 204 symbol x;
+#X msg 303 183 add x a b c;
+#X obj 183 328 print outlet;
+#X obj 206 290 bng 15 250 50 0 empty empty not-found 17 7 1 10 -262144
+-1 -1;
+#X text 380 205 search for data at "x";
+#X text 395 185 add "a b c" at "x";
+#X obj 240 78 random 8;
+#X obj 41 81 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 5;
+#X text 38 62 lookup data at 0-8;
+#X connect 0 0 11 0;
+#X connect 0 1 12 0;
+#X connect 1 0 0 0;
+#X connect 2 0 8 0;
+#X connect 3 0 6 1;
+#X connect 4 0 0 0;
+#X connect 5 0 6 2;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 15 0;
+#X connect 8 1 3 0;
+#X connect 8 2 5 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 15 0 6 0;
+#X connect 16 0 0 0;

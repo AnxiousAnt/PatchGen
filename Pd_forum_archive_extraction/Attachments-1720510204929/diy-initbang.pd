@@ -1,0 +1,12 @@
+#N canvas 408 268 450 300 10;
+#X obj 118 165 outlet;
+#X obj 117 46 r _initbang;
+#X obj 117 90 spigot 1;
+#X obj 118 113 t b b;
+#X msg 190 102 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 1 4 0;
+#X connect 4 0 2 1;
+_initbang bang;

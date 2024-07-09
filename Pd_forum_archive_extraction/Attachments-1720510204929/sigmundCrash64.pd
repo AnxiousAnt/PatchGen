@@ -1,0 +1,9 @@
+#N canvas 417 312 647 323 10;
+#X obj 434 200 table sample 44100;
+#X obj 95 133 sigmund~ -t -npeak 3 peaks;
+#X obj 95 154 print;
+#X msg 95 82 list sample 512 0 0 0;
+#X text 94 56 analysis message with samplerate of 0 triggers crash
+;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;

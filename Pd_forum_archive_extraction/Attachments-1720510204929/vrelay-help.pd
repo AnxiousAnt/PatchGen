@@ -1,0 +1,26 @@
+#N canvas 633 289 763 435 10;
+#X floatatom 161 157 5 0 0 0 - - -, f 5;
+#X obj 39 182 vrelay 1 dog apple;
+#X msg 212 157 set moon sun 5;
+#X text 326 156 change vrelay's arguments;
+#X obj 30 233 print z0;
+#X obj 94 235 print z1;
+#X obj 161 235 print z2;
+#X msg 39 106 1 dog apple;
+#X msg 49 135 moon sun 5;
+#X text 37 25 route incoming messages (floats \, symbols \, lists \,
+anythings) according to an element at a specified index.;
+#X text 38 63 by default \, the index is 0 - which means the message
+is routed by its first element.;
+#X text 30 272 Unlike [route] \, [vrelay] passes your message unchanged.
+Note that you can't route by type \, e.g. 'float' \, 'symbol' \, 'list'.
+Use [route] instead.;
+#X text 156 119 the index of the element to be compared with vrelay's
+arguments;
+#X connect 0 0 1 1;
+#X connect 1 0 4 0;
+#X connect 1 1 5 0;
+#X connect 1 2 6 0;
+#X connect 2 0 1 0;
+#X connect 7 0 1 0;
+#X connect 8 0 1 0;

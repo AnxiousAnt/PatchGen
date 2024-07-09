@@ -1,0 +1,26 @@
+#N canvas 247 321 506 280 10;
+#X text 18 15 p-table1 create a graph-on-parent array with specified
+name and specified top label;
+#X text 20 50 p-table1 <table-name> <table-label>;
+#X floatatom 295 138 5 0 0 0 - - -;
+#X floatatom 340 138 5 0 0 0 - - -;
+#X text 295 120 value;
+#X text 337 119 table;
+#X obj 295 164 t f b;
+#X obj 340 188 f;
+#X text 270 96 write into your p-table!;
+#X obj 295 214 tabwrite mitabla;
+#X obj 340 164 t f b;
+#X obj 295 188 f;
+#X obj 395 19 loadbang;
+#X obj 395 49 s p1-bang;
+#X obj 21 86 p-table1 mitabla mi-table1 p1;
+#X connect 2 0 6 0;
+#X connect 3 0 10 0;
+#X connect 6 0 11 0;
+#X connect 6 1 7 0;
+#X connect 7 0 9 1;
+#X connect 10 0 7 0;
+#X connect 10 1 11 0;
+#X connect 11 0 9 0;
+#X connect 12 0 13 0;

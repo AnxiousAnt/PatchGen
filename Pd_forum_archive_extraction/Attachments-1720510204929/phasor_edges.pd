@@ -1,0 +1,25 @@
+#N canvas 736 523 450 300 10;
+#X obj 74 166 tabwrite~ array;
+#X obj 60 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 95 210 table array 40;
+#X msg 184 74 44100;
+#X floatatom 62 37 5 0 0 0 - - -;
+#X obj 184 98 / 8;
+#X obj 65 7 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7100 1;
+#X obj 88 125 phasor~;
+#X obj 184 45 loadbang;
+#X msg 143 77 7237;
+#X text 232 71 <- choose frequency;
+#X text 212 10 <- set phase;
+#X text 211 211 <- watch signal;
+#X connect 1 0 0 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 4 0 7 1;
+#X connect 5 0 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 0 0;
+#X connect 8 0 3 0;
+#X connect 9 0 7 0;

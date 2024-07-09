@@ -1,0 +1,30 @@
+--- m_obj.c~	Sat Dec 15 08:20:57 2001
++++ m_obj.c	Mon Apr 22 12:00:06 2002
+@@ -411,16 +411,21 @@
+     if (!i) return (0);
+     to = &i->i_pd;
+ doit:
++    	/* append it to the end of the list and inhibit duplicates */
++    if ((oc2 = o->o_connections))
++    {
++	if (oc2->oc_to == to) return (0);
++    	while (oc2->oc_next)
++	{
++	    oc2 = oc2->oc_next;
++	    if (oc2->oc_to == to) return (0);
++	}
++    }
+     oc = (t_outconnect *)t_getbytes(sizeof(*oc));
+     oc->oc_next = 0;
+     oc->oc_to = to;
+-    	/* append it to the end of the list */
+-    	/* LATER we might cache the last "oc" to make this faster. */
+-    if ((oc2 = o->o_connections))
+-    {
+-    	while (oc2->oc_next) oc2 = oc2->oc_next;
++    if (oc2)
+     	oc2->oc_next = oc;
+-    }
+     else o->o_connections = oc;
+     if (o->o_sym == &s_signal) canvas_update_dsp();
+ 

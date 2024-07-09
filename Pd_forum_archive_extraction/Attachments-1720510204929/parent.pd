@@ -1,0 +1,8 @@
+#N canvas 0 0 450 300 10;
+#X obj 93 25 abs;
+#X obj 103 35 abs;
+#X obj 113 45 abs;
+#X obj 123 55 abs;
+#X obj 133 65 abs;
+#X obj 143 75 abs;
+#X text 103 146 removing an 'abs' crashes pd? (w/ xsample lib loaded);

@@ -1,0 +1,452 @@
+cc  -Wl,-export_dynamic  -shared -o "/home/bastien/pure-data/packages/linux_make/../../externals/build/src/pitch.pd_linux" "/home/bastien/pure                                                           
+-data/packages/linux_make/../../externals/build/src/pitch.o"  -lm -lc \
+                `test -f /home/bastien/pure-data/packages/linux_make/../../externals/build/src/pitch.libs && cat /home/bastien/pure-data/packa                                                           
+ges/linux_make/../../externals/build/src/pitch.libs`    \
+                `test -f /home/bastien/pure-data/packages/linux_make/../../externals/build/src/../linux/pitch.libs && \
+                        cat /home/bastien/pure-data/packages/linux_make/../../externals/build/src/../linux/pitch.libs`
+chmod a-x "/home/bastien/pure-data/packages/linux_make/../../externals/build/src/pitch.pd_linux"
+strip --strip-unneeded -R .note -R .comment /home/bastien/pure-data/packages/linux_make/../../externals/build/src/pitch.pd_linux
+rm -f -- /home/bastien/pure-data/packages/linux_make/../../externals/build/src/pitch.o
+cc -DPD -O3 -funroll-loops -fomit-frame-pointer -I/home/bastien/pure-data/packages/linux_make/../../pd/src -Wall -W -DUNIX -Dunix -fPIC -o "/h                                                           
+ome/bastien/pure-data/packages/linux_make/../../externals/build/src/plugin~.o" -c "/home/bastien/pure-data/packages/linux_make/../../externals                                                           
+/build/src/plugin~.c"
+In file included from /home/bastien/pure-data/packages/linux_make/../../externals/build/src/plugin~.c:2:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:17:20: error: ladspa.h: No such file or directory
+In file included from /home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:18,
+                 from /home/bastien/pure-data/packages/linux_make/../../externals/build/src/plugin~.c:2:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jutils.h:35: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jutils.h:38: warning: type defaults to ‘int’ in declar                                                           
+ation of ‘findLADSPAPluginDescriptor’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jutils.h:38: warning: data definition has no type or stora                                                           
+ge class
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jutils.h:51: error: syntax error before ‘LADSPA_Descript                                                           
+or_Function’
+In file included from /home/bastien/pure-data/packages/linux_make/../../externals/build/src/plugin~.c:2:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:146: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:149: warning: return type defaults to ‘int’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c: In function ‘findLADSPAPluginDescriptor’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:151: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:152: error: ‘LADSPA_Descriptor_Function’ undec                                                           
+lared (first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:152: error: (Each undeclared identifier is reporte                                                           
+d only once
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:152: error: for each function it appears in.)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:157: error: ‘pfDescriptorFunction’ undeclared                                                            
+(first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:157: error: syntax error before ‘dlsym’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:176: error: ‘psDescriptor’ undeclared (first u                                                           
+se in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:176: warning: implicit declaration of function ‘                                                           
+pfDescriptorFunction’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jload.c:147: warning: unused parameter ‘pvLADSPAPluginLi                                                           
+brary’
+In file included from /home/bastien/pure-data/packages/linux_make/../../externals/build/src/plugin~.c:3:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jsearch.c: In function ‘LADSPADirectoryPluginSearch’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jsearch.c:33: error: ‘LADSPA_Descriptor_Function’ unde                                                           
+clared (first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jsearch.c:33: error: syntax error before ‘fDescriptorFun                                                           
+ction’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jsearch.c:73: error: ‘fDescriptorFunction’ undeclared                                                            
+(first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/jsearch.c:73: error: syntax error before ‘dlsym’
+In file included from /home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:25,
+                 from /home/bastien/pure-data/packages/linux_make/../../externals/build/src/plugin~.c:4:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:6: warning: type defaults to ‘int’ in declar                                                           
+ation of ‘LADSPA_Descriptor’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:6: warning: no semicolon at end of struct or uni                                                           
+on
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:6: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:7: warning: type defaults to ‘int’ in declar                                                           
+ation of ‘instance’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:7: warning: data definition has no type or stora                                                           
+ge class
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:26: error: syntax error before ‘}’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:26: warning: type defaults to ‘int’ in decla                                                           
+ration of ‘Plugin_Tilde_Ladspa’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:26: warning: data definition has no type or stor                                                           
+age class
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:38: error: syntax error before ‘Plugin_Tilde_L                                                           
+adspa’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:38: warning: no semicolon at end of struct or un                                                           
+ion
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:38: warning: no semicolon at end of struct or un                                                           
+ion
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:40: warning: type defaults to ‘int’ in decla                                                           
+ration of ‘plugin’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:40: warning: data definition has no type or stor                                                           
+age class
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:58: error: syntax error before ‘}’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:58: warning: type defaults to ‘int’ in decla                                                           
+ration of ‘Pd_Plugin_Tilde’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:58: warning: data definition has no type or stor                                                           
+age class
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:63: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:66: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:70: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:76: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:81: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:82: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:83: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:84: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:86: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:88: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:92: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:94: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:98: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:99: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:101: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:105: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:108: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:113: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:115: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:119: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:120: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:122: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:124: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:128: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:131: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:141: error: syntax error before ‘LADSPA_Descri                                                           
+ptor_Function’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:145: error: syntax error before ‘LADSPA_Descri                                                           
+ptor_Function’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:147: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:148: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:150: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:151: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:152: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.h:153: error: syntax error before ‘*’ token
+In file included from /home/bastien/pure-data/packages/linux_make/../../externals/build/src/plugin~.c:4:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_setup’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:48: error: ‘LADSPA_Data’ undeclared (first u                                                           
+se in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_new’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:62: error: ‘x’ undeclared (first use in this                                                           
+ function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:66: error: syntax error before ‘)’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:130: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_free’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:135: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:175: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_dsp’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:180: error: ‘sp’ undeclared (first use in th                                                           
+is function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:183: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_perform’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:204: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:213: error: syntax error before ‘)’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:203: warning: unused variable ‘i’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:224: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_emit_control_output                                                           
+’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:232: error: ‘name’ undeclared (first use in                                                            
+this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:234: error: ‘new_value’ undeclared (first us                                                           
+e in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:236: error: ‘output_port_index’ undeclared (                                                           
+first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:237: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:240: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_control’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:248: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:251: error: ‘ctrl_name’ undeclared (first us                                                           
+e in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:257: error: ‘ctrl_value’ undeclared (first u                                                           
+se in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:264: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_info’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:267: error: ‘LADSPA_PortDescriptor’ undeclar                                                           
+ed (first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:267: error: syntax error before ‘port_type’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:268: error: ‘LADSPA_PortRangeHintDescriptor’                                                           
+ undeclared (first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:276: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:277: error: ‘port_type’ undeclared (first us                                                           
+e in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:278: error: ‘iHintDescriptor’ undeclared (fi                                                           
+rst use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:280: warning: implicit declaration of function �                                                           
+��LADSPA_IS_PORT_INPUT’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:282: warning: implicit declaration of function �                                                           
+��LADSPA_IS_PORT_OUTPUT’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:284: warning: implicit declaration of function �                                                           
+��LADSPA_IS_PORT_CONTROL’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:286: warning: implicit declaration of function �                                                           
+��LADSPA_IS_PORT_AUDIO’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:289: warning: implicit declaration of function �                                                           
+��LADSPA_IS_HINT_BOUNDED_BELOW’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:293: warning: implicit declaration of function �                                                           
+��LADSPA_IS_HINT_BOUNDED_ABOVE’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:302: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_list’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:304: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:310: error: syntax error before ‘LADSPA_Descri                                                           
+ptor_Function’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_describe’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:312: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:312: error: ‘user_data’ undeclared (first us                                                           
+e in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:314: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:319: error: ‘pcFullFilename’ undeclared (fir                                                           
+st use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:323: error: ‘psDescriptor’ undeclared (first                                                           
+ use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:323: warning: implicit declaration of function �                                                           
+��fDescriptorFunction’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:337: error: ‘pvPluginHandle’ undeclared (fir                                                           
+st use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:340: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_active’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:342: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:342: error: ‘active’ undeclared (first use i                                                           
+n this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:346: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_plug’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:347: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:349: error: ‘plug_name’ undeclared (first us                                                           
+e in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:356: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_reset’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:359: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:366: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_get_parm_number’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:374: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:375: error: ‘str’ undeclared (first use in t                                                           
+his function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:396: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_search_plugin’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:400: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:400: error: ‘name’ undeclared (first use in                                                            
+this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:405: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_open_plugin’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:414: error: ‘name’ undeclared (first use in                                                            
+this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:414: error: ‘lib_name’ undeclared (first use                                                           
+ in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:418: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:430: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_close_plugin’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:437: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:446: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_apply_plugin’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:449: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:454: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_connect_audio’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:460: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:460: error: ‘audio_inputs’ undeclared (first                                                           
+ use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:460: error: ‘audio_outputs’ undeclared (firs                                                           
+t use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:466: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_set_control_input_b                                                           
+y_name’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:471: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:471: error: ‘name’ undeclared (first use in                                                            
+this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:471: error: ‘value’ undeclared (first use in                                                           
+ this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:476: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_set_control_input_b                                                           
+y_index’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:482: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:482: error: ‘index_’ undeclared (first use i                                                           
+n this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:482: error: ‘value’ undeclared (first use in                                                           
+ this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:488: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_search_plugi                                                           
+n’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:495: error: ‘name’ undeclared (first use in                                                            
+this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:507: error: syntax error before ‘LADSPA_Descri                                                           
+ptor_Function’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_search_plugi                                                           
+n_callback’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:510: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:513: error: ‘user_data’ undeclared (first us                                                           
+e in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:522: error: ‘descriptor’ undeclared (first u                                                           
+se in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:522: warning: implicit declaration of function �                                                           
+��descriptor_function’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:530: error: ‘full_filename’ undeclared (firs                                                           
+t use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:542: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_open_plugin�                                                           
+��:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:550: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:551: error: ‘lib_name’ undeclared (first use                                                           
+ in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:552: error: ‘name’ undeclared (first use in                                                            
+this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:547: warning: unused variable ‘port_index’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:624: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_close_plugin                                                           
+’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:627: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:656: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_apply_plugin                                                           
+’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:661: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:700: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_reset’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:703: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:724: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_connect_audi                                                           
+o’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:734: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:740: error: ‘audio_outputs’ undeclared (firs                                                           
+t use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:748: error: ‘LADSPA_PortDescriptor’ undeclar                                                           
+ed (first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:748: error: syntax error before ‘port_type’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:749: error: ‘port_type’ undeclared (first us                                                           
+e in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:756: error: ‘LADSPA_Data’ undeclared (first                                                            
+use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:756: error: syntax error before ‘)’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:763: error: syntax error before ‘)’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:772: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_set_control_                                                           
+input_by_name’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:781: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:783: error: ‘name’ undeclared (first use in                                                            
+this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:794: error: ‘LADSPA_PortDescriptor’ undeclar                                                           
+ed (first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:794: error: syntax error before ‘port_type’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:795: error: ‘port_type’ undeclared (first us                                                           
+e in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:823: error: ‘value’ undeclared (first use in                                                           
+ this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:826: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_set_control_                                                           
+input_by_index’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:840: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:843: error: ‘ctrl_input_index’ undeclared (f                                                           
+irst use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:855: error: ‘LADSPA_PortDescriptor’ undeclar                                                           
+ed (first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:855: error: syntax error before ‘port_type’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:856: error: ‘port_type’ undeclared (first us                                                           
+e in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:905: error: ‘value’ undeclared (first use in                                                           
+ this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:837: warning: unused variable ‘upper_bound’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:836: warning: unused variable ‘lower_bound’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:835: warning: unused variable ‘bounded’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:834: warning: unused variable ‘bounded_from_ab                                                           
+ove’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:833: warning: unused variable ‘bounded_from_be                                                           
+low’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:910: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_count_ports�                                                           
+��:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:914: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:921: error: ‘LADSPA_PortDescriptor’ undeclar                                                           
+ed (first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:921: error: syntax error before ‘port_type’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:922: error: ‘port_type’ undeclared (first us                                                           
+e in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:953: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_connect_cont                                                           
+rol_ports’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:961: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:963: error: ‘LADSPA_PortDescriptor’ undeclar                                                           
+ed (first use in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:963: error: syntax error before ‘port_type’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:964: error: ‘port_type’ undeclared (first us                                                           
+e in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:989: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_alloc_outofp                                                           
+lace_memory’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:991: error: ‘x’ undeclared (first use in thi                                                           
+s function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:995: warning: implicit declaration of function �                                                           
+��LADSPA_IS_INPLACE_BROKEN’
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:1008: error: ‘buflen’ undeclared (first use                                                            
+in this function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:1018: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_free_outofpl                                                           
+ace_memory’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:1020: error: ‘x’ undeclared (first use in th                                                           
+is function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:1034: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_alloc_contro                                                           
+l_memory’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:1036: error: ‘x’ undeclared (first use in th                                                           
+is function)
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: At top level:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:1071: error: syntax error before ‘*’ token
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c: In function ‘plugin_tilde_ladspa_free_control                                                           
+_memory’:
+/home/bastien/pure-data/packages/linux_make/../../externals/build/src/../../plugin~/plugin~.c:1073: error: ‘x’ undeclared (first use in th                                                           
+is function)
+make[2]: *** [/home/bastien/pure-data/packages/linux_make/../../externals/build/src/plugin~.o] Error 1
+make[2]: Leaving directory `/home/bastien/pure-data/externals'
+make[1]: *** [externals_install] Error 2
+make[1]: Leaving directory `/home/bastien/pure-data/packages'
+make: *** [install] Error 2
+bastien@powerbook:~/pure-data/packages/linux_make$ 
+

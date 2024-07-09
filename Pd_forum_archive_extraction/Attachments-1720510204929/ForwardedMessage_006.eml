@@ -1,0 +1,461 @@
+Received: from [203.134.222.80] by web54610.mail.yahoo.com via HTTP;
+	Fri, 21 Apr 2006 04:17:13 PDT
+Date: Fri, 21 Apr 2006 04:17:13 -0700 (PDT)
+From: ritesh pathak <pathakritesh@yahoo.com>
+Subject: PD enquiry
+To: msp@ucsd.edu
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="0-1247029608-1145618233=:25441"
+Content-Transfer-Encoding: 8bit
+Content-Length: 3935
+
+--0-1247029608-1145618233=:25441
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+Content-Id: 
+Content-Disposition: inline
+
+Dear sir
+
+I have installed Pd version 0.38.4-extended-RC8 on my
+windows xp system. I used pd-settings.reg to load all
+external libraries. 
+
+I am willing to run the musical keyboard using web cam
+application using PD. This is a Keyboard with only 4
+keys. when you move your fingers in front of the web
+cam above a key then the corresponding note is played.
+Two PD files are attached with the mail.
+
+I am not been able to get the desired output. 
+My web cam is working fine with Pd. I tested it by
+opening pix_video.pd.
+
+error which i get now are 
+
+error: pix_videoDS: Could not add the filters to the
+graph, hr 0×80004003
+opened device 500
+
+* OSC-route: float arguments are not OK.
+OSCroute $1
+… couldn’t create
+
+I have downloaded the attached files from the web site
+http://publicaccess.azylum.net/archives/144
+
+Kindly tell me how to run the attached application.
+
+With regards
+
+
+
+Ritesh Pathak
+  Scientific Officer
+  Pushpa Gujral Science City
+  SCO 60-61, Sector 34A
+  Chandigarh
+
+
+__________________________________________________
+Do You Yahoo!?
+Tired of spam?  Yahoo! Mail has the best spam protection around 
+http://mail.yahoo.com 
+--0-1247029608-1145618233=:25441
+Content-Type: text/plain; name="window_control.pd"
+Content-Description: 838122674-window_control.pd
+Content-Disposition: inline; filename="window_control.pd"
+
+#N canvas 915 24 350 383 10;
+#X obj 7 348 gemwin;
+#X msg 228 137 fullscreen \$1;
+#X obj 198 136 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 192 264 hsl 64 15 0 780 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X msg 189 244 offset 780 400;
+#X obj 77 310 gemmouse;
+#X obj 80 331 del 100;
+#X msg 79 353 destroy;
+#X msg 235 157 border \$1;
+#X obj 198 156 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#N canvas 0 22 462 312 gemwin 0;
+#X obj 132 136 gemwin;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X msg 67 70 set destroy;
+#X msg 132 112 create \, 1;
+#X msg 198 112 destroy;
+#X msg 156 71 set create;
+#X obj 67 41 route create;
+#X connect 2 0 7 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 1 0;
+#X connect 7 0 3 0;
+#X connect 7 0 4 0;
+#X connect 7 1 6 0;
+#X connect 7 1 5 0;
+#X restore 4 122 pd gemwin;
+#X msg 4 103 create;
+#N canvas 0 22 263 204 cpu 0;
+#X obj 30 45 metro 1000;
+#X obj 32 22 loadbang;
+#X obj 33 96 cputime;
+#X obj 30 69 t b b;
+#X obj 34 125 / 10;
+#X obj 37 150 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 3 1 2 1;
+#X connect 4 0 5 0;
+#X restore 295 334 pd cpu;
+#X floatatom 295 357 5 0 0 0 - - -;
+#X obj 193 354 hsl 64 15 0 500 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X msg 7 278 title keyboard;
+#X obj 190 205 pack 0 0;
+#X obj 170 210 vsl 15 64 400 0 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X msg 190 224 offset \$1 \$2;
+#X obj 7 35 bng 15 250 50 0 empty empty default 0 -6 0 8 -262144 -1
+-1;
+#X msg 188 184 0 0;
+#X obj 172 299 vsl 15 64 0 500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X msg 195 293 500 500;
+#X obj 198 312 pack 0 0;
+#X msg 198 334 dimen \$1 \$2;
+#X text 3 82 When you are ready you can create the window :;
+#X text 58 104 <-- here;
+#X text 37 36 <-- Here;
+#X text 4 5 FIRST click here for default window settings :;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 16 0;
+#X connect 4 0 0 0;
+#X connect 5 2 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 14 0 23 1;
+#X connect 15 0 0 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 1;
+#X connect 18 0 0 0;
+#X connect 19 0 20 0;
+#X connect 19 0 15 0;
+#X connect 19 0 9 0;
+#X connect 19 0 22 0;
+#X connect 20 0 17 0;
+#X connect 20 0 3 0;
+#X connect 21 0 23 0;
+#X connect 22 0 21 0;
+#X connect 22 0 14 0;
+#X connect 23 0 24 0;
+#X connect 24 0 0 0;
+
+--0-1247029608-1145618233=:25441
+Content-Type: text/plain; name="AbstractKeyboard.pd"
+Content-Description: 3355848203-AbstractKeyboard.pd
+Content-Disposition: inline; filename="AbstractKeyboard.pd"
+
+#N canvas 543 114 635 674 10;
+#X floatatom 408 351 5 0 0 0 - - -;
+#X floatatom 461 353 5 0 0 0 - - -;
+#X floatatom 520 352 5 0 0 0 - - -;
+#X obj 6 4 gemhead;
+#X obj 11 307 pix_texture;
+#X obj 382 446 gemhead;
+#X obj 382 500 translateXYZ;
+#X obj 408 397 * 8;
+#X obj 408 419 - 4;
+#X obj 461 397 * 8;
+#X obj 461 419 - 4;
+#X obj 520 418 * 2;
+#X obj 11 339 square 5;
+#X obj 461 441 * -1;
+#X obj 382 527 circle 0.1;
+#X obj 310 644 dac~;
+#X obj 271 588 osc~;
+#X text 415 333 X;
+#X obj 356 588 osc~;
+#X obj 356 607 *~ 1;
+#X text 464 334 Y;
+#X obj 19 266 pix_blob;
+#X obj 6 85 pix_flip;
+#X obj 413 588 osc~;
+#X obj 413 607 *~ 1;
+#X obj 414 569 * 100;
+#X obj 6 26 pix_video 500 500;
+#X obj 490 86 cnv 5 128 150 empty empty \$1-Colour 5 8 1 10 -233017
+-128992 0;
+#X obj 510 118 hsl 112 15 0 1 0 0 \$0-r \$0-s empty -2 -6 0 8 -258699
+-1 -1 11100 1;
+#X obj 510 138 hsl 112 15 0 1 0 0 \$0-g \$0-s empty -2 -6 0 8 -24198
+-1 -1 11100 1;
+#X obj 510 158 hsl 112 15 0 1 0 0 \$0-b \$0-s empty -2 -6 0 8 -62784
+-1 -1 11100 1;
+#X obj 502 109 cnv 1 120 1 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 502 201 cnv 1 120 1 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 510 178 hsl 112 15 0 1 0 0 \$0-a \$0-s empty -2 -6 0 8 -225280
+-1 -1 11100 1;
+#X obj 507 210 tgl 15 0 \$0-alpha \$0- Alpha_Blend 25 8 1 8 -262144
+-1 -33289 0 1;
+#X obj 281 160 colorRGB;
+#X obj 270 201 alpha;
+#X obj 263 181 r \$0-alpha;
+#N canvas 298 172 464 314 interp 0;
+#X obj 18 136 outlet;
+#X obj 130 135 outlet;
+#X obj 241 134 outlet;
+#X obj 18 72 r \$0-r;
+#X obj 130 71 r \$0-g;
+#X obj 241 69 r \$0-b;
+#X obj 353 135 outlet;
+#X obj 353 70 r \$0-a;
+#X msg 17 206 1;
+#X obj 17 229 s \$0-s;
+#X obj 17 184 loadbang;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 10 0 8 0;
+#X restore 279 135 pd interp;
+#N canvas 76 177 712 361 OSC 0;
+#X obj 19 321 outlet;
+#X obj 81 321 outlet;
+#X obj 143 321 outlet;
+#X obj 206 321 outlet;
+#X obj 37 237 r OSC-in;
+#X obj 16 18 inlet;
+#X obj 159 17 inlet;
+#X obj 302 16 inlet;
+#X obj 444 15 inlet;
+#X obj 230 195 s OSC-out;
+#X obj 37 263 OSCroute \$1;
+#X obj 16 90 pack f s;
+#X obj 75 41 symbol \$1;
+#X obj 75 18 loadbang;
+#X obj 159 89 pack f s;
+#X obj 218 40 symbol \$1;
+#X obj 218 17 loadbang;
+#X obj 302 88 pack f s;
+#X obj 361 39 symbol \$1;
+#X obj 361 16 loadbang;
+#X obj 444 87 pack f s;
+#X obj 503 38 symbol \$1;
+#X obj 503 15 loadbang;
+#X msg 16 113 send \$2 \$1;
+#X msg 158 112 send \$2 \$1;
+#X msg 302 111 send \$2 \$1;
+#X msg 444 110 send \$2 \$1;
+#X obj 37 289 OSCroute /r /g /b /a /alpha;
+#X obj 263 319 outlet;
+#X obj 75 64 makesymbol /v%s/r;
+#X obj 218 63 makesymbol /v%s/g;
+#X obj 361 62 makesymbol /v%s/b;
+#X obj 503 61 makesymbol /v%s/a;
+#X obj 594 19 inlet;
+#X obj 594 91 pack f s;
+#X obj 653 42 symbol \$1;
+#X obj 653 19 loadbang;
+#X msg 594 114 send \$2 \$1;
+#X obj 653 65 makesymbol /v%s/alpha;
+#X connect 4 0 10 0;
+#X connect 5 0 11 0;
+#X connect 6 0 14 0;
+#X connect 7 0 17 0;
+#X connect 8 0 20 0;
+#X connect 10 0 27 0;
+#X connect 11 0 23 0;
+#X connect 12 0 29 0;
+#X connect 13 0 12 0;
+#X connect 14 0 24 0;
+#X connect 15 0 30 0;
+#X connect 16 0 15 0;
+#X connect 17 0 25 0;
+#X connect 18 0 31 0;
+#X connect 19 0 18 0;
+#X connect 20 0 26 0;
+#X connect 21 0 32 0;
+#X connect 22 0 21 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X connect 27 0 0 0;
+#X connect 27 1 1 0;
+#X connect 27 2 2 0;
+#X connect 27 3 3 0;
+#X connect 27 4 28 0;
+#X connect 29 0 11 1;
+#X connect 30 0 14 1;
+#X connect 31 0 17 1;
+#X connect 32 0 20 1;
+#X connect 33 0 34 0;
+#X connect 34 0 37 0;
+#X connect 35 0 38 0;
+#X connect 36 0 35 0;
+#X connect 37 0 9 0;
+#X connect 38 0 34 1;
+#X restore 521 58 pd OSC ----;
+#X text 59 47 Mirror;
+#X obj 357 569 * 1000;
+#X obj 271 610 *~ 1;
+#X obj 229 562 vsl 15 30 0 1 0 0 empty empty empty 0 -8 0 8 -260097
+-1 -1 0 1;
+#X obj 324 561 vsl 15 30 0 1 0 0 empty empty empty 0 -8 0 8 -260097
+-1 -1 0 1;
+#X obj 463 563 vsl 15 30 0 1 0 0 empty empty empty 0 -8 0 8 -260097
+-1 -1 0 1;
+#X msg 290 273 bang;
+#X msg 289 313 0;
+#X msg 188 89 draw line;
+#X obj 174 64 gemhead;
+#X obj 175 114 rubber 5 2;
+#X msg 261 91 3.9;
+#X msg 48 61 horizontal;
+#X obj 151 481 mtof;
+#X floatatom 150 500 5 0 0 0 - - -;
+#X obj 147 385 moses 0.25;
+#X obj 228 384 moses 0.75;
+#X msg 146 418 bang;
+#X msg 185 418 bang;
+#X msg 230 419 bang;
+#X msg 268 419 bang;
+#X obj 202 355 moses 0.5;
+#X obj 192 484 mtof;
+#X floatatom 191 503 5 0 0 0 - - -;
+#X obj 236 485 mtof;
+#X floatatom 235 504 5 0 0 0 - - -;
+#X obj 277 484 mtof;
+#X floatatom 276 503 5 0 0 0 - - -;
+#X obj 165 10 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 144 451 61;
+#X msg 184 450 63;
+#X msg 232 450 65;
+#X msg 275 448 66;
+#X obj 289 293 delay 200;
+#X obj 9 221 pix_movement 0.45;
+#X obj 448 85 vsl 15 30 0 1 0 0 empty empty empty 0 -8 0 8 -260097
+-1 -1 0 1;
+#X floatatom 448 124 5 0 0 0 - - -;
+#X msg 109 549 0.75;
+#X msg 118 590 0;
+#X msg 131 627 0;
+#X text 187 5 <- FIRST click here to initialize the settings to something
+normal;
+#X text 235 38 then you can adjust here the light and sensibility :
+;
+#X connect 0 0 7 0;
+#X connect 0 0 61 0;
+#X connect 1 0 9 0;
+#X connect 1 0 41 0;
+#X connect 2 0 11 0;
+#X connect 2 0 25 0;
+#X connect 3 0 26 0;
+#X connect 4 0 12 0;
+#X connect 5 0 6 0;
+#X connect 6 0 14 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 1;
+#X connect 9 0 10 0;
+#X connect 10 0 13 0;
+#X connect 11 0 6 3;
+#X connect 13 0 6 2;
+#X connect 16 0 42 0;
+#X connect 18 0 19 0;
+#X connect 19 0 15 0;
+#X connect 19 0 15 1;
+#X connect 21 0 4 0;
+#X connect 21 1 0 0;
+#X connect 21 1 46 0;
+#X connect 21 2 1 0;
+#X connect 21 3 2 0;
+#X connect 22 0 35 0;
+#X connect 23 0 24 0;
+#X connect 24 0 15 0;
+#X connect 24 0 15 1;
+#X connect 25 0 23 0;
+#X connect 26 0 22 0;
+#X connect 28 0 39 0;
+#X connect 29 0 39 1;
+#X connect 30 0 39 2;
+#X connect 33 0 39 3;
+#X connect 34 0 39 4;
+#X connect 35 0 36 0;
+#X connect 36 0 74 0;
+#X connect 37 0 36 0;
+#X connect 38 0 35 1;
+#X connect 38 1 35 2;
+#X connect 38 2 35 3;
+#X connect 38 3 35 4;
+#X connect 39 0 28 0;
+#X connect 39 1 29 0;
+#X connect 39 2 30 0;
+#X connect 39 3 33 0;
+#X connect 39 4 34 0;
+#X connect 41 0 18 0;
+#X connect 42 0 15 0;
+#X connect 42 0 15 1;
+#X connect 43 0 42 1;
+#X connect 44 0 19 1;
+#X connect 45 0 24 1;
+#X connect 46 0 73 0;
+#X connect 47 0 0 0;
+#X connect 47 0 16 0;
+#X connect 48 0 50 0;
+#X connect 49 0 50 0;
+#X connect 51 0 50 1;
+#X connect 52 0 22 0;
+#X connect 53 0 54 0;
+#X connect 54 0 16 0;
+#X connect 55 0 57 0;
+#X connect 55 1 58 0;
+#X connect 56 0 59 0;
+#X connect 56 1 60 0;
+#X connect 57 0 69 0;
+#X connect 58 0 70 0;
+#X connect 59 0 71 0;
+#X connect 60 0 72 0;
+#X connect 61 0 55 0;
+#X connect 61 1 56 0;
+#X connect 62 0 63 0;
+#X connect 63 0 16 0;
+#X connect 64 0 65 0;
+#X connect 65 0 16 0;
+#X connect 66 0 67 0;
+#X connect 67 0 16 0;
+#X connect 68 0 52 0;
+#X connect 68 0 48 0;
+#X connect 68 0 51 0;
+#X connect 68 0 77 0;
+#X connect 68 0 78 0;
+#X connect 68 0 79 0;
+#X connect 69 0 53 0;
+#X connect 70 0 62 0;
+#X connect 71 0 64 0;
+#X connect 72 0 66 0;
+#X connect 73 0 47 0;
+#X connect 74 0 21 0;
+#X connect 75 0 76 0;
+#X connect 76 0 74 1;
+#X connect 77 0 43 0;
+#X connect 78 0 44 0;
+#X connect 79 0 45 0;
+
+--0-1247029608-1145618233=:25441--

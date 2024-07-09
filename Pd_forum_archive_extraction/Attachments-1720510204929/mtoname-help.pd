@@ -1,0 +1,16 @@
+#N canvas 41 159 606 286 12;
+#X floatatom 30 148 5 0 0 0 - - -;
+#X obj 30 242 print;
+#X msg 30 120 60;
+#X text 87 118 <-- middle c;
+#X obj 21 21 mtoname;
+#X obj 30 183 mtoname 3;
+#X text 180 178 Argument: "3" for 60=C3 and "4" for 60=C4;
+#X text 181 202 Default: 60=3;
+#X symbolatom 30 218 10 0 0 0 - - -;
+#X text 101 16 This object takes a midi number as input and outputs
+a symbol consisting of the note name and the octave register.;
+#X connect 0 0 5 0;
+#X connect 2 0 0 0;
+#X connect 5 0 8 0;
+#X connect 8 0 1 0;

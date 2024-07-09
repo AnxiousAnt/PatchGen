@@ -1,0 +1,34 @@
+Index: pd.tk
+===================================================================
+--- pd.tk	(revision 11850)
++++ pd.tk	(working copy)
+@@ -1046,14 +1046,16 @@
+ }
+ 
+ proc makeapp_copycurrentpatch {appdir patch patchname isdir} {
++	set extradir "$appdir/Contents/Resources/extra"
+ 	if {$isdir} {
+-		pdtk_post [format "Copying:%s\n  -->\t$appdir/Contents/Resources/extra/\n" \
++		pdtk_post [format "Copying:%s\n  -->\t$extradir/\n" \
+ 					   [file dirname $patch]]
+-		file copy -- [file dirname $patch] "$appdir/Contents/Resources/extra/"
++		set patchdir [file dirname $patch]
++		file copy -- $patchdir "$extradir/app-auto-load"
+ 	} else {
+-		set embedded_patch "$appdir/Contents/Resources/extra/$patchname/$patchname.pd"
++		set embedded_patch "$extradir/app-auto-load/$patchname.pd"
+ 		pdtk_post "Copying:$patch\n  -->\t$embedded_patch\n"
+-		file mkdir "$appdir/Contents/Resources/extra/$patchname"
++		file mkdir "$extradir/app-auto-load"
+ 		file copy -- $patch $embedded_patch
+ 	}
+ }
+@@ -1120,7 +1122,7 @@
+ 			.makeapp.label configure -text "Copying current patch..."
+ 			makeapp_copycurrentpatch $appdir $patch $patchname $isdir
+ 			.makeapp.label configure -text "Setting embedded preferences..."
+-			makeapp_embedprefs $appdir "$patchname/$patchname.pd"
++			makeapp_embedprefs $appdir "app-auto-load/$patchname.pd"
+ 			pdtk_post "$appdir is complete!\n"
+ 			destroy .makeapp
+ 		}

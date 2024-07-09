@@ -1,0 +1,27 @@
+#N canvas 449 123 590 584 10;
+#X obj 25 49 canvas_name;
+#X obj 25 211 sys_gui;
+#X obj 25 14 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 412 79 canvas_name;
+#X obj 412 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 412 134 sys_gui;
+#X msg 412 112 destroy \$1.frame;
+#X obj 536 132 print;
+#X obj 25 71 pack s \$0;
+#X obj 536 95 r \$0-sys_gui-r;
+#X text 91 70 create a frame in patch and load widget scriptlet;
+#X text 435 42 destroy created frame;
+#X text 538 70 retrieve messages from widget;
+#X msg 25 105 set w [\$1 create window 200 300 -window [frame \$1.frame
+-height 60 ] ] \, set f [open kbd.tcl] \, set wid [read $f] \, eval
+$wid \, kbd \$1.frame 5 black white \$2;
+#X connect 0 0 8 0;
+#X connect 2 0 0 0;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 6 0 5 0;
+#X connect 8 0 13 0;
+#X connect 9 0 7 0;
+#X connect 13 0 1 0;

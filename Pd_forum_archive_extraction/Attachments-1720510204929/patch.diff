@@ -1,0 +1,13 @@
+diff -Naur _wiimote-0.3.2//wiimote.c wiimote-0.3.2//wiimote.c
+--- _wiimote-0.3.2//wiimote.c 2012-02-10 17:04:46.780104070 +0000
++++ wiimote-0.3.2//wiimote.c  2012-02-10 16:57:29.670104117 +0000
+@@ -824,7 +824,7 @@
+ }
+ 
+ 
+-static void wiimote_report(t_wiimote*x, t_symbol*s, int onoff)
++static void wiimote_report(t_wiimote*x, t_symbol*s, float onoff)
+ {
+   int flag=-1;
+   if(gensym("status")==s) flag=CWIID_RPT_STATUS;
+

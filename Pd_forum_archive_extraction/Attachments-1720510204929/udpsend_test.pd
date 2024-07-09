@@ -1,0 +1,67 @@
+#N canvas 720 26 484 671 12;
+#X obj 171 184 udpsend;
+#X msg 177 158 disconnect;
+#X msg 171 96 connect 127.0.0.1 9997;
+#X obj 71 96 packOSC;
+#X obj 71 128 prepend send;
+#X obj 54 470 udpreceive 9997;
+#X obj 169 494 unpack 0 0 0 0;
+#X floatatom 169 517 3 0 0 0 - - -;
+#X floatatom 204 517 3 0 0 0 - - -;
+#X floatatom 240 517 3 0 0 0 - - -;
+#X floatatom 276 517 3 0 0 0 - - -;
+#X text 133 516 from;
+#X text 6 431 right output is sender's ip address as list of floats
+;
+#X obj 171 207 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X text 25 259 (i.e. bytes).;
+#X text 4 312 The output is 1 when connected \, else 0;
+#X text 4 226 udpsend takes three messages: 1> send followed by one
+or more floats on [0..255];
+#X text 4 274 2> connect followed by an ip address and a port number
+;
+#X text 4 293 3> disconnect;
+#X text 6 395 udpreceive takes a port number as argument;
+#X text 6 413 left output is received udp packet as list of floats
+;
+#X obj 54 502 unpackOSC;
+#X msg 14 18 send /test/one/two/three zz 88 T;
+#X msg 71 65 send /test 1 2 3;
+#X obj 52 546 print;
+#X obj 66 594 routeOSC /test /west;
+#X obj 66 629 print a;
+#X obj 143 629 print b;
+#X obj 221 629 print c;
+#X msg 90 43 send /west 35;
+#X msg 199 559 set /left;
+#X msg 201 41 send /*/left 22;
+#X msg 296 24 send /?est/ 1;
+#X msg 246 66 send /left one two;
+#X msg 290 559 set /left /right;
+#X msg 339 43 send /right 88;
+#X connect 0 0 13 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 21 0;
+#X connect 5 1 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 6 2 9 0;
+#X connect 6 3 10 0;
+#X connect 21 0 24 0;
+#X connect 21 0 25 0;
+#X connect 22 0 3 0;
+#X connect 23 0 3 0;
+#X connect 25 0 26 0;
+#X connect 25 1 27 0;
+#X connect 25 2 28 0;
+#X connect 29 0 3 0;
+#X connect 30 0 25 0;
+#X connect 31 0 3 0;
+#X connect 32 0 3 0;
+#X connect 33 0 3 0;
+#X connect 34 0 25 0;
+#X connect 35 0 3 0;

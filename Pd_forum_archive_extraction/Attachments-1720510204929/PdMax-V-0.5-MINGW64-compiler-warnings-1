@@ -1,0 +1,117 @@
+$ make
+cc -DMSP -DMAX -DWIN_VERSION -DEXT_WIN_VERSION -I./c74support/max-includes -I./c74support/msp-includes -DMSW -DNT -DPD_LONGINTTYPE=__int64 pd~.c -shared -L./c74support/max-includes/x64 -L./c74support/msp-includes/x64 -l:MaxAPI.lib -l:MaxAudio.lib  -o pd~.mxe64
+pd~.c:21: warning: "EADDRINUSE" redefined
+   21 | #define EADDRINUSE WSAEADDRINUSE
+      |
+In file included from G:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/mm_malloc.h:28,
+                 from G:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/xmmintrin.h:34,
+                 from G:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/immintrin.h:29,
+                 from G:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/x86intrin.h:32,
+                 from G:/msys64/mingw64/x86_64-w64-mingw32/include/winnt.h:1554,
+                 from G:/msys64/mingw64/x86_64-w64-mingw32/include/minwindef.h:163,
+                 from G:/msys64/mingw64/x86_64-w64-mingw32/include/windef.h:8,
+                 from G:/msys64/mingw64/x86_64-w64-mingw32/include/windows.h:69,
+                 from pd~.c:19:
+G:/msys64/mingw64/x86_64-w64-mingw32/include/errno.h:86: note: this is the location of the previous definition
+   86 | #define EADDRINUSE 100
+      |
+pd~.c: In function 'pd_tilde_close':
+pd~.c:444:16: warning: initialization of 'int' from 'FILE *' {aka 'struct _iobuf *'} makes integer from pointer without a cast [-Wint-conversion]
+  444 |     int infd = x->x_infd, outfd = x->x_outfd;
+      |                ^
+pd~.c:444:35: warning: initialization of 'int' from 'FILE *' {aka 'struct _iobuf *'} makes integer from pointer without a cast [-Wint-conversion]
+  444 |     int infd = x->x_infd, outfd = x->x_outfd;
+      |                                   ^
+pd~.c:447:16: warning: passing argument 1 of 'fclose' makes pointer from integer without a cast [-Wint-conversion]
+  447 |         fclose(outfd);
+      |                ^~~~~
+      |                |
+      |                int
+In file included from ./c74support/max-includes/ext_prefix.h:222,
+                 from ./c74support/max-includes/ext.h:14,
+                 from pd~.c:43:
+G:/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h:627:28: note: expected 'FILE *' {aka 'struct _iobuf *'} but argument is of type 'int'
+  627 |   int __cdecl fclose(FILE *_File);
+      |                      ~~~~~~^~~~~
+pd~.c:449:16: warning: passing argument 1 of 'fclose' makes pointer from integer without a cast [-Wint-conversion]
+  449 |         fclose(infd);
+      |                ^~~~
+      |                |
+      |                int
+In file included from ./c74support/max-includes/ext_prefix.h:222,
+                 from ./c74support/max-includes/ext.h:14,
+                 from pd~.c:43:
+G:/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h:627:28: note: expected 'FILE *' {aka 'struct _iobuf *'} but argument is of type 'int'
+  627 |   int __cdecl fclose(FILE *_File);
+      |                      ~~~~~~^~~~~
+pd~.c: In function 'pd_tilde_dostart':
+pd~.c:724:11: warning: assignment to 'int' from 'FILE *' {aka 'struct _iobuf *'} makes integer from pointer without a cast [-Wint-conversion]
+  724 |     outfd = fdopen(pipe1[1], "w");
+      |           ^
+pd~.c:725:10: warning: assignment to 'int' from 'FILE *' {aka 'struct _iobuf *'} makes integer from pointer without a cast [-Wint-conversion]
+  725 |     infd = fdopen(pipe2[0], "r");
+      |          ^
+pd~.c:730:26: warning: passing argument 1 of 'pd_tilde_putsemi' makes pointer from integer without a cast [-Wint-conversion]
+  730 |         pd_tilde_putsemi(outfd);
+      |                          ^~~~~
+      |                          |
+      |                          int
+In file included from pd~.c:133:
+binarymsg.c:26:36: note: expected 'FILE *' {aka 'struct _iobuf *'} but argument is of type 'int'
+   26 | static void pd_tilde_putsemi(FILE *fd)
+      |                              ~~~~~~^~
+pd~.c:731:30: warning: passing argument 2 of 'pd_tilde_putfloat' makes pointer from integer without a cast [-Wint-conversion]
+  731 |         pd_tilde_putfloat(0, outfd);
+      |                              ^~~~~
+      |                              |
+      |                              int
+In file included from pd~.c:133:
+binarymsg.c:11:46: note: expected 'FILE *' {aka 'struct _iobuf *'} but argument is of type 'int'
+   11 | static void pd_tilde_putfloat(float f, FILE *fd)
+      |                                        ~~~~~~^~
+pd~.c:732:26: warning: passing argument 1 of 'pd_tilde_putsemi' makes pointer from integer without a cast [-Wint-conversion]
+  732 |         pd_tilde_putsemi(outfd);
+      |                          ^~~~~
+      |                          |
+      |                          int
+In file included from pd~.c:133:
+binarymsg.c:26:36: note: expected 'FILE *' {aka 'struct _iobuf *'} but argument is of type 'int'
+   26 | static void pd_tilde_putsemi(FILE *fd)
+      |                              ~~~~~~^~
+pd~.c:734:18: warning: passing argument 1 of 'fprintf' makes pointer from integer without a cast [-Wint-conversion]
+  734 |     else fprintf(outfd, "%s", ";\n0;\n");
+      |                  ^~~~~
+      |                  |
+      |                  int
+In file included from ./c74support/max-includes/ext_prefix.h:222,
+                 from ./c74support/max-includes/ext.h:14,
+                 from pd~.c:43:
+G:/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h:555:43: note: expected 'FILE * restrict' {aka 'struct _iobuf * restrict'} but argument is of type 'int'
+  555 |   int __cdecl fprintf(FILE * __restrict__ _File,const char * __restrict__ _Format,...);
+      |                       ~~~~~~~~~~~~~~~~~~~~^~~~~
+pd~.c:736:12: warning: passing argument 1 of 'fflush' makes pointer from integer without a cast [-Wint-conversion]
+  736 |     fflush(outfd);
+      |            ^~~~~
+      |            |
+      |            int
+In file included from ./c74support/max-includes/ext_prefix.h:222,
+                 from ./c74support/max-includes/ext.h:14,
+                 from pd~.c:43:
+G:/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h:636:28: note: expected 'FILE *' {aka 'struct _iobuf *'} but argument is of type 'int'
+  636 |   int __cdecl fflush(FILE *_File);
+      |                      ~~~~~~^~~~~
+pd~.c:738:30: warning: passing argument 2 of 'pd_tilde_readmessages' makes pointer from integer without a cast [-Wint-conversion]
+  738 |     pd_tilde_readmessages(x, infd);
+      |                              ^~~~
+      |                              |
+      |                              int
+pd~.c:461:55: note: expected 'FILE *' {aka 'struct _iobuf *'} but argument is of type 'int'
+  461 | static int pd_tilde_readmessages(t_pd_tilde *x, FILE *infd)
+      |                                                 ~~~~~~^~~~
+pd~.c:739:16: warning: assignment to 'FILE *' {aka 'struct _iobuf *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  739 |     x->x_outfd = outfd;
+      |                ^
+pd~.c:740:15: warning: assignment to 'FILE *' {aka 'struct _iobuf *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  740 |     x->x_infd = infd;
+      |               ^
+strip pd~.mxe64

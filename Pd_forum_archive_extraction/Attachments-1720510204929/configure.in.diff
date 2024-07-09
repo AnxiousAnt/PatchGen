@@ -1,0 +1,23 @@
+--- configure.in~	Sun Sep  2 20:49:19 2001
++++ configure.in	Fri Sep 21 19:42:08 2001
+@@ -7,6 +7,7 @@
+ AC_SUBST(DEFINES)
+ AC_SUBST(EXT)
+ AC_SUBST(OPT_CFLAGS)
++AC_SUBST(DBG_CFLAGS)
+ 
+ dnl other defaults
+ 
+@@ -19,7 +20,11 @@
+ AC_ARG_ENABLE(rme,     [  --enable-rme            compile RME support],
+     rme="yes")
+ AC_ARG_ENABLE(debug,   [  --enable-debug          debugging support],
+-    OPT_CFLAGS="-g", OPT_CFLAGS="-O6 -funroll-loops -fomit-frame-pointer")
++    DBG_CFLAGS="-g", OPT_CFLAGS="-O6 -funroll-loops -fomit-frame-pointer")
++AC_ARG_ENABLE(gprof,   [  --enable-gprof[=<opt>]  profiling support],
++    OPT_CFLAGS=""
++    if test $enableval = yes; then DBG_CFLAGS="$DBG_CFLAGS -pg -D_exit=exit"
++    else DBG_CFLAGS="$DBG_CFLAGS -pg $enableval -D_exit=exit"; fi)
+ 
+ dnl Checks for programs.
+ AC_PROG_CC

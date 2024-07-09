@@ -1,0 +1,82 @@
+#N canvas 153 86 756 566 10;
+#X obj 106 33 random 1e+06;
+#X obj 106 53 / 100000;
+#X obj 136 103 int;
+#X obj 106 123 -;
+#X obj 136 123 t f f;
+#X obj 106 7 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 106 163 t f f;
+#X obj 136 183 int;
+#X obj 106 203 -;
+#X obj 136 203 t f f;
+#X obj 106 243 t f f;
+#X obj 136 263 int;
+#X obj 106 283 -;
+#X obj 136 283 t f f;
+#X obj 106 143 * 10;
+#X obj 210 79 nbx 10 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 326 140 nbx 5 14 -1e+37 1e+37 0 0 empty empty a 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 250 220 nbx 5 14 -1e+37 1e+37 0 0 empty empty b 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 196 300 nbx 5 14 -1e+37 1e+37 0 0 empty empty c 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 106 223 * 100;
+#X obj 106 303 * 100;
+#X obj 146 371 nbx 5 14 -1e+37 1e+37 0 0 empty empty d 0 -8 0 10 -262144
+-1 -1 0 256;
+#X text 273 26 from a number with decimals a.bccdd i want to get separate
+integers a [0-9] \, b [0-9] \, c [0-99] and d [0-99];
+#X obj 106 83 t f f f;
+#X obj 310 283 +;
+#X obj 294 353 +;
+#X obj 278 423 +;
+#X obj 250 240 / 10;
+#X obj 196 320 / 1000;
+#X obj 146 391 / 100000;
+#X obj 278 443 nbx 10 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
+#X obj 278 464 !=;
+#X obj 278 484 select 1;
+#X obj 278 504 print not_the_same;
+#X connect 0 0 1 0;
+#X connect 1 0 23 0;
+#X connect 1 0 15 0;
+#X connect 2 0 4 0;
+#X connect 3 0 14 0;
+#X connect 4 0 3 1;
+#X connect 4 1 16 0;
+#X connect 5 0 0 0;
+#X connect 6 0 8 0;
+#X connect 6 1 7 0;
+#X connect 7 0 9 0;
+#X connect 8 0 19 0;
+#X connect 9 0 8 1;
+#X connect 9 1 17 0;
+#X connect 10 0 12 0;
+#X connect 10 1 11 0;
+#X connect 11 0 13 0;
+#X connect 12 0 20 0;
+#X connect 13 0 12 1;
+#X connect 13 1 18 0;
+#X connect 14 0 6 0;
+#X connect 16 0 24 1;
+#X connect 17 0 27 0;
+#X connect 18 0 28 0;
+#X connect 19 0 10 0;
+#X connect 20 0 21 0;
+#X connect 21 0 29 0;
+#X connect 23 0 3 0;
+#X connect 23 1 2 0;
+#X connect 23 2 31 1;
+#X connect 24 0 25 1;
+#X connect 25 0 26 1;
+#X connect 26 0 30 0;
+#X connect 27 0 24 0;
+#X connect 28 0 25 0;
+#X connect 29 0 26 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;

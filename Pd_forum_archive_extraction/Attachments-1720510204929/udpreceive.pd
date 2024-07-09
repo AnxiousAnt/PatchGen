@@ -1,0 +1,50 @@
+#N canvas 432 316 765 296 10;
+#N canvas 611 170 349 481 creator 0;
+#X msg 165 69 bang;
+#X obj 101 122 t b b;
+#X obj 101 320 pack s 0;
+#X obj 153 165 select 0;
+#X obj 153 231 f 8086;
+#X obj 101 274 f \$0;
+#X obj 153 143 f \$2;
+#X obj 153 209 select 0;
+#X obj 153 187 f \$1;
+#X msg 101 339 \; \$1 obj 100 100 netreceive \$2 1 \; \$1 connect 2
+0 0 0;
+#X obj 101 297 makefilename %d_core;
+#X obj 101 69 loadbang;
+#X obj 101 101 once;
+#X connect 0 0 12 0;
+#X connect 1 0 5 0;
+#X connect 1 1 6 0;
+#X connect 2 0 9 0;
+#X connect 3 0 8 0;
+#X connect 3 1 4 0;
+#X connect 4 0 2 1;
+#X connect 5 0 10 0;
+#X connect 6 0 3 0;
+#X connect 7 0 4 0;
+#X connect 7 1 4 0;
+#X connect 8 0 7 0;
+#X connect 10 0 2 0;
+#X connect 11 0 12 0;
+#X connect 12 0 1 0;
+#X restore 127 91 pd creator;
+#X obj 47 113 outlet;
+#N canvas 408 447 410 192 core 0;
+#X obj 100 126 outlet;
+#X obj 259 32 namecanvas \$0_core;
+#X restore 47 91 pd core;
+#X text 48 6 this is a [netreceive] object \, that uses only UDP.;
+#X text 11 26 creation: "udpreceive [<defaultport> [<port>]]";
+#X text 315 68 by default we listen to port 8086;
+#X text 315 86 if you supply a <defaultport> this will be used instead
+of 8086;
+#X text 314 115 if a <port> is existent too \, this will be used instead
+of the <defaultport>;
+#X text 298 196 [udpreceive] == [netreceive 8086 1];
+#X text 200 214 [udpreceive <defaultport>] == [netreceive <defaultport>
+1];
+#X text 150 233 [udpreceive <defaultport> <port>] == [netreceive <port>
+1];
+#X connect 2 0 1 0;

@@ -1,0 +1,185 @@
+
+namespace eval ::xt { 
+
+
+    proc proll_clic {w k t div scx scy} {
+	    
+        zoom $w $k $t $scx $scy
+	    bind $w <Motion> "::xt::draw $w $t %x %y $div motion 0 item"
+		bind $w <1> "::xt::draw $w $t %x %y $div draw 0 item"		
+	}
+	proc draw {w t x y div type i item} {
+    if {$i == 0} {
+        set x [$w canvasx $x]
+        set y [$w canvasy $y]
+		}
+		for {set z 0} {$z <= [expr $div - 1]} {incr z}  {
+	    set j [expr $z + 1]
+		if {$z < 1} {
+		set rectx1 0
+		set rectx2 [lindex [$w coords gridver1] 0] 
+		set q $z
+		}
+		if {$z > 0} {
+		set x1 [lindex [$w coords gridver$z] 0]
+		set x2 [lindex [$w coords gridver$j] 0]
+	        if {$x1 <= $x && $x <=$x2} {
+		    set rectx1 $x1
+			set rectx2 $x2
+			set q $z
+		    }
+		}
+		}
+	    for {set i 0} {$i <= 127} {incr i} {
+	    set j [expr $i + 1]
+		if {$i < 1} {
+		set recty1 0
+		set recty2 [lindex [$w coords gridhor1] 1]
+        set o 0
+		}
+		if {$i > 0} {
+		set y1 [lindex [$w coords gridhor$i] 1]
+		set y2 [lindex [$w coords gridhor$j] 1]
+	        if {$y1 <= $y && $y <=$y2} {
+
+		    set recty1 $y1
+			set recty2 $y2
+			set o [expr abs(-1*($i-127))]			
+			}
+		}
+		}
+	switch -- $type {    
+	    draw {
+		if {[$w find withtag note$rectx1$rectx2] == ""} {
+		pd "$t.rp _cb  add $q  $o  127  500;"
+		proll_draw $w $t draw $rectx1 $rectx2 $recty1 $recty2 $div}}
+	    redraw {
+		$w delete $item
+        proll_draw $w $t draw $rectx1 $rectx2 $recty1 $recty2 $div		
+		}
+		delete {
+		pd "$t.rp _cb  delete $q  $o;"
+		$w delete $item
+		}
+		motion {proll_draw $w $t $type $rectx1 0 $recty1 0 $div}
+    }
+	}
+
+    proc proll_draw {w t type x1 x2 y1 y2 d} {
+    
+	    set x1 [expr $x1+1];set x2 [expr $x2-1];set y1 [expr $y1+1];set y2 [expr $y2-1]	
+        switch -- $type {
+	    draw {
+	    $w create rectangle $x1 $y1 $x2 $y2 -fill red -tags note$x1$y1 -activefill yellow -disabledfill black
+#        dump $w $t $d
+#		pd "$t.rp _cb end;"
+        }
+	    motion {
+	    set item note$x1$y1
+        $w bind $item <3> "::xt::draw $w $t %x %y $d delete 1 $item"
+	    $w bind $item <Enter> "$w configure -cursor hand2"
+	    $w bind $item <Leave> "$w configure -cursor arrow"
+        $w bind $item <B1-Motion> "::xt::move_note $w $t $item %x %y $d"
+
+  		
+	        }
+	    }	
+    }
+
+    proc move_note {w t item x y d} {
+        foreach {x0 y0 x1 y1} [$w coords $item] break
+		set xc [expr $x1 - $x0]; set yc [expr $y1 - $y0];
+		if {$x > ($x1-($xc/4))} {
+		$w coord $item $x0 $y0 $x $y1
+		} else {
+        $w coord $item [expr $x - ($xc/2)] [expr $y - ($yc/2)] [expr $x + ($xc/2)] [expr $y + ($yc/2)]
+#	    $w bind $item <ButtonRelease-1> "::xt::draw $w $t %x %y $d redraw 0 $item"
+        }		
+	}
+    proc proll_new {t tg w h bg fg ln div size scx scy n} {
+	if {[winfo exists $t.proll] != 1} {	    
+        panedwindow $t.panh -orient vertical
+		panedwindow $t.panv -orient horizontal
+        scrollbar $t.hscroll -orient horiz -command [list $t.proll xview] 
+        scrollbar $t.vscroll -command [list xt::yview $t ] 		
+        canvas $t.proll -width $w -height $h -bg $bg -xscrollcommand [list $t.hscroll set] 
+	    canvas $t.keys -width 15 -height $h -yscrollcommand [list $t.vscroll set]
+		canvas $t.control -width $w -height 5 -bg white  
+		$t.panv add $t.keys -minsize 20 -sticky e 
+        $t.panv add $t.proll -minsize 50
+        $t.panh add $t.panv -minsize 70
+        $t.panh add $t.control -minsize 10		
+        grid $t.panh	-in $t -row 1 -column 1
+        grid $t.vscroll -in $t -row 1 -column 2 -sticky ns
+        grid $t.hscroll -in $t -row 2  -column 1 -sticky we
+	    proll $t.proll $t.keys $t $div $w $h $ln	
+        proll_clic $t.proll $t.keys $tg $div $scx $scy		
+
+    }
+	}
+
+    proc yview {w args} {
+        eval [linsert $args 0 $w.proll yview]
+        eval [linsert $args 0 $w.keys yview]
+	}
+	proc zoom {w keys t x y} {	
+	$keys scale all 0 0 1 $y
+	$w scale all 0 0 $x $y
+	$w configure -scrollregion [$w bbox all]
+	$keys configure -scrollregion [$keys bbox all]
+    }
+
+    proc proll {w keys t lines ww hw color} {
+	for {set x 1} {$x <= $lines} {incr x} {
+	    set col $color
+	    set ow [expr $ww.0 * $x.0 / $lines.0]
+        set mod [expr $x % 4] 
+		if {$mod == 0} {set col red}
+        $w create line $ow 0 $ow $hw -fill $col -tag gridver$x 		
+	}
+	set notes 128
+	for {set x 1} {$x <= $notes} {incr x} {
+	    set oh [expr $hw.0 * $x.0 / $notes.0]
+	    $w create line 0 $oh $ww $oh -fill $color -tags gridhor$x
+	}
+	keyboard $w $keys
+    }
+
+	proc keyboard {w keys} {
+	for {set x 1} {$x <= 128} {incr x} {
+    set y [expr $x - 1]
+	if {$x == 1} { 
+	set recty 0 } 
+	if {$x > 1} {
+	set recty [lindex [$w coord gridhor$y] 1]
+	}
+	set mod [expr $x % 12]
+    if {$mod==1 | $mod==4 | $mod==6 | $mod==9 | $mod==11} {
+    set color black
+	} else {
+	set color white
+	}
+	$keys create rectangle 0 $recty 20 [lindex [$w coord gridhor$x] 1] \
+	-fill $color -tag key$x 
+	}
+	}
+	
+    proc dump {w t div} {
+        foreach item [$w find all] {
+            if {[$w type $item] == "rectangle" } {
+	            foreach {a b c d} [$w coords $item] break
+                draw $w $t $a $b $div out 0 .
+	        }
+        }		
+	}
+
+}	
+#> proll frame
+#. -bd 3
+#. #w 128 #h 128 #x 0.5 #y 0.5
+#. #fg red #bg blue #ln yellow
+#. #size 12 #div 16 #scalex 3 #scaley 5 
+
+
+
+::xt::proll_new .- .| .#w .#h .#bg .#fg .#ln .#div .#size .#scalex .#scaley .#note

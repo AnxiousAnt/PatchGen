@@ -1,0 +1,25 @@
+#N struct 1005-clickpoint float x float y float vis;
+#N struct 1005-slider float x float y float x0 float vis float col
+;
+#N struct 1005-mute float x float y float c float vis;
+#N struct 1005-dsp-status float x float y float status float bg;
+#N struct 1006-clickpoint float x float y float vis;
+#N struct 1006-slider float x float y float x0 float vis float col
+;
+#N struct 1006-mute float x float y float c float vis;
+#N struct 1006-dsp-status float x float y float status float bg;
+#N canvas 384 82 487 179 10;
+#X obj 219 13 noise~;
+#X floatatom 310 44 5 0 0 0 - - -;
+#X obj 24 17 osc~ 440;
+#X obj 25 86 ezdac~;
+#X msg 362 50 MUTE;
+#X msg 363 74 (anything_really);
+#X obj 219 86 ezdac~;
+#X connect 0 0 6 0;
+#X connect 0 0 6 1;
+#X connect 1 0 6 2;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 4 0 6 2;
+#X connect 5 0 6 2;

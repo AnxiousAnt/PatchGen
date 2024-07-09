@@ -1,0 +1,43 @@
+#N struct beatgrid float x float y float spacing array grid beat array
+staffs staff;
+#N struct beat float what;
+#N struct staff float x float y float l;
+#N canvas 541 337 704 401 10;
+#N canvas 139 335 450 300 grid 1;
+#X scalar beatgrid 20 20 50 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; \; 0 0 0 \; \;;
+#X scalar beatgrid 34 176 30 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; \; 0 0 0 \; \;;
+#X scalar beatgrid 33 103 20 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; \; 0 0 0 \; \;;
+#X restore 107 95 pd grid;
+#N canvas 0 0 450 300 beat 0;
+#X obj 110 99 drawpolygon 0 1 0 0 0 50;
+#X obj 109 49 struct beat;
+#X restore 248 74 pd beat;
+#N canvas 614 549 450 300 beatgrid 0;
+#X obj 75 126 plot grid 0 0 0 0 spacing;
+#X text 79 154 invisible grid spaced "spacing" px apart;
+#X obj 75 62 struct beatgrid float x float y float spacing array grid
+beat array staffs staff;
+#X restore 247 103 pd beatgrid;
+#X obj 589 236 pointer;
+#X msg 528 205 traverse pd-grid \, bang;
+#X msg 423 71 bang;
+#X obj 287 299 setsize beatgrid grid;
+#X floatatom 288 269 5 0 0 0 - - -;
+#X msg 529 123 \; pd-grid clear;
+#X obj 426 93 t b b b b;
+#X msg 342 213 8;
+#X obj 431 264 append beatgrid x y spacing;
+#X msg 430 238 20 20 50;
+#X connect 3 0 11 3;
+#X connect 4 0 3 0;
+#X connect 5 0 9 0;
+#X connect 7 0 6 0;
+#X connect 9 0 10 0;
+#X connect 9 1 12 0;
+#X connect 9 2 4 0;
+#X connect 10 0 7 0;
+#X connect 11 0 6 1;
+#X connect 12 0 11 0;

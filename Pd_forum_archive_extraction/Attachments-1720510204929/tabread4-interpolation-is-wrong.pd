@@ -1,0 +1,100 @@
+#N canvas 0 0 699 665 10;
+#X obj 163 97 cos~;
+#X obj 197 123 expr~ cos($v1*3.14159265359*2.0);
+#X obj 163 147 -~;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-brokenness 4096 float 2;
+#X coords 0 1 4096 -1 600 128 1;
+#X restore 44 333 graph;
+#X obj 77 195 tabwrite~ \$0-brokenness;
+#X obj 77 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 46 145 metro 1000;
+#X obj 46 74 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 162 171 *~ 25000;
+#X text 405 122 <--- pure sine wave;
+#X text 209 97 <--- cos~ uses [tabread4~ costab] internally \, impure
+;
+#X text 298 61 <--- same phase source for comparison;
+#X obj 196 60 phasor~ 100.01;
+#X text 259 187 [tabread4~] uses a broken 4-point interpolation algorithm
+\, different to the standard 2-point/2-slope cubic algorithm known
+to be correct for centuries \; it is nonsensical to have a piece-wise
+cubic that goes through all 4 points \, when that piece is only used
+between the innermost 2 points \; continuity of slope at the switching
+points between the pieces of cubics is broken in [tabread4~] \, leading
+to lack of smoothness \; if [tabread4~] was good enough \, the array
+would flatline;
+#X text 209 150 <--- spot the difference \, horrible distortion (-48dB)
+;
+#X text 39 18 [tabread4~] interpolation is wrong;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-spectrum 2048 float 2;
+#X coords 0 1 2048 0 600 128 1;
+#X restore 44 486 graph;
+#N canvas 270 88 565 387 \$0-fft 0;
+#X obj 15 25 block~ 4096 4 1;
+#X obj 130 60 inlet~;
+#X obj 131 150 rfft~;
+#X obj 124 184 *~;
+#X obj 150 185 *~;
+#X obj 128 212 +~;
+#X obj 126 293 tabwrite~ \$0-spectrum;
+#X obj 43 62 inlet;
+#X obj 130 106 *~;
+#X obj 156 25 table \$0-window 4096;
+#X obj 146 83 tabreceive~ \$0-window;
+#X obj 317 28 loadbang;
+#X obj 317 55 f 4096;
+#X obj 317 81 until;
+#X obj 317 116 f 0;
+#X obj 352 106 + 1;
+#X obj 352 129 mod 4096;
+#X obj 295 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 236 214 tabwrite \$0-window;
+#X obj 236 162 expr 0.5*(1.0-cos($f1*3.14159265359*2.0/4096.0)) \;
+$f1;
+#X obj 128 238 expr~ sqrt($v1);
+#X obj 127 267 /~ 256;
+#X connect 1 0 8 0;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 2 1 4 0;
+#X connect 2 1 4 1;
+#X connect 3 0 5 0;
+#X connect 4 0 5 1;
+#X connect 5 0 20 0;
+#X connect 7 0 6 0;
+#X connect 8 0 2 0;
+#X connect 10 0 8 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 14 0 19 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 1;
+#X connect 17 0 12 0;
+#X connect 19 0 18 0;
+#X connect 19 1 18 1;
+#X connect 20 0 21 0;
+#X connect 21 0 6 0;
+#X restore 46 229 pd \$0-fft;
+#X obj 149 232 dac~;
+#X msg 586 52 \; pd dsp 1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 8 0;
+#X connect 5 0 4 0;
+#X connect 5 0 17 0;
+#X connect 6 0 4 0;
+#X connect 6 0 17 0;
+#X connect 7 0 6 0;
+#X connect 8 0 4 0;
+#X connect 8 0 17 1;
+#X connect 8 0 18 0;
+#X connect 8 0 18 1;
+#X connect 12 0 1 0;
+#X connect 12 0 0 0;

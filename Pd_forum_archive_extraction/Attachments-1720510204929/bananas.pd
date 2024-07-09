@@ -1,0 +1,107 @@
+#N canvas 3 24 689 453 10;
+#X obj 46 56 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 30 135 moses 20;
+#X obj 93 135 moses 36;
+#X obj 153 135 moses 44;
+#X obj 213 135 moses 52;
+#X obj 273 135 moses 60;
+#X obj 333 135 moses 68;
+#X obj 393 135 moses 74;
+#X obj 453 135 moses 78;
+#X obj 513 135 moses 80;
+#X obj 573 135 moses 82;
+#X floatatom 36 174 5 0 0 0 - - -;
+#X floatatom 93 177 5 0 0 0 - - -;
+#X floatatom 174 176 5 0 0 0 - - -;
+#X floatatom 335 180 5 0 0 0 - - -;
+#X floatatom 387 179 5 0 0 0 - - -;
+#X floatatom 426 177 5 0 0 0 - - -;
+#X floatatom 482 177 5 0 0 0 - - -;
+#X floatatom 562 177 5 0 0 0 - - -;
+#X floatatom 642 177 5 0 0 0 - - -;
+#X floatatom 295 185 5 0 0 0 - - -;
+#X floatatom 697 177 5 0 0 0 - - -;
+#X obj 41 6 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 144 210 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 38 215 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 192 212 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 303 224 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 358 218 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 402 218 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 430 219 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 490 222 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 557 219 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 653 216 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 697 216 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 41 26 metro 500;
+#X obj 178 14 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 177 34 tabdump bananas;
+#X obj 176 57 unpack f f f f f f f f f f;
+#N canvas 0 0 450 300 graph4 0;
+#X array bananas 11 float 1;
+#A 0 1.00704 1.00704 1.50704 3.00704 9.00704 20.007 44.007 56.007 63.007
+66.007 67.007;
+#X coords 0 70 10 0 200 140 1;
+#X restore 104 268 graph;
+#X obj 33 103 random 70;
+#X connect 0 0 39 0;
+#X connect 1 0 11 0;
+#X connect 1 1 2 0;
+#X connect 2 0 12 0;
+#X connect 2 1 3 0;
+#X connect 3 0 13 0;
+#X connect 3 1 4 0;
+#X connect 4 0 20 0;
+#X connect 4 1 5 0;
+#X connect 5 0 14 0;
+#X connect 5 1 6 0;
+#X connect 6 0 15 0;
+#X connect 6 1 7 0;
+#X connect 7 0 16 0;
+#X connect 7 1 8 0;
+#X connect 8 0 17 0;
+#X connect 8 1 9 0;
+#X connect 9 0 18 0;
+#X connect 9 1 10 0;
+#X connect 10 0 19 0;
+#X connect 10 1 21 0;
+#X connect 11 0 24 0;
+#X connect 12 0 23 0;
+#X connect 13 0 25 0;
+#X connect 14 0 27 0;
+#X connect 15 0 28 0;
+#X connect 16 0 29 0;
+#X connect 17 0 30 0;
+#X connect 18 0 31 0;
+#X connect 19 0 32 0;
+#X connect 20 0 26 0;
+#X connect 21 0 33 0;
+#X connect 22 0 34 0;
+#X connect 34 0 0 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 37 0;
+#X connect 37 0 1 1;
+#X connect 37 1 2 1;
+#X connect 37 2 3 1;
+#X connect 37 3 4 1;
+#X connect 37 4 5 1;
+#X connect 37 5 6 1;
+#X connect 37 6 7 1;
+#X connect 37 7 8 1;
+#X connect 37 8 9 1;
+#X connect 37 9 10 1;
+#X connect 39 0 1 0;

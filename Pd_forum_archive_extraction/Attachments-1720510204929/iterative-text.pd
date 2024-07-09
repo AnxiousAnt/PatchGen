@@ -1,0 +1,70 @@
+#N canvas 463 -1 552 302 12;
+#X obj 397 37 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
+0;
+#N canvas 0 0 454 304 gemwin 0;
+#X obj 132 136 gemwin;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X obj 67 41 route create;
+#X msg 67 70 set destroy;
+#X msg 142 68 set create;
+#X msg 198 112 destroy;
+#X msg 132 112 create \, 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 7 0;
+#X connect 3 1 5 0;
+#X connect 3 1 6 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X restore 402 76 pd gemwin;
+#X msg 402 57 create;
+#X text 398 36 Create window:;
+#X obj 26 55 cnv 15 160 120 empty empty empty 20 12 0 14 -241291 -66577
+0;
+#X obj 187 13 cnv 15 170 270 empty empty empty 20 12 0 14 -228992 -66577
+0;
+#X obj 190 60 cnv 15 150 220 empty empty empty 20 12 0 14 -24198 -66577
+0;
+#X obj 201 16 gemhead;
+#X floatatom 238 235 5 0 100 1 size - -;
+#X msg 211 100 font \$1;
+#X obj 211 81 openpanel;
+#X obj 211 64 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 219 126 text hello world!;
+#X msg 223 145 1 2 3 4;
+#X msg 218 192 justify left base;
+#X floatatom 305 20 5 0 0 0 - - -;
+#X floatatom 264 15 4 0 0 0 - - -;
+#X obj 201 37 rotateXYZ;
+#X obj 201 256 text3d;
+#X obj 31 63 key;
+#X obj 31 86 list prepend;
+#X obj 134 84 t l;
+#X obj 32 108 list prepend string;
+#X obj 32 130 list trim;
+#X obj 123 66 bng 15 250 50 0 empty empty clear 0 -6 0 8 -262144 -1
+-1;
+#X connect 1 0 2 0;
+#X connect 2 0 1 0;
+#X connect 7 0 17 0;
+#X connect 8 0 18 1;
+#X connect 9 0 18 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 18 0;
+#X connect 13 0 18 0;
+#X connect 14 0 18 0;
+#X connect 15 0 17 3;
+#X connect 16 0 17 1;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 20 0 22 0;
+#X connect 21 0 20 1;
+#X connect 22 0 23 0;
+#X connect 23 0 18 0;
+#X connect 24 0 20 1;

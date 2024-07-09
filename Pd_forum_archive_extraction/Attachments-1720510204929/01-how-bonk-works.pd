@@ -1,0 +1,128 @@
+#N canvas 279 22 1035 754 10;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array current 11 float 0;
+#X coords 0 40 10 0 200 140 1;
+#X restore 716 52 graph;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array previous 11 float 0;
+#X coords 0 40 10 0 200 140 1;
+#X restore 446 52 graph;
+#X obj 163 118 tgl 15 0 empty empty empty 17 7 0 10 -258113 -1 -1 1
+1;
+#X msg 163 138 spew \$1;
+#X obj 112 48 adc~ 1;
+#X text 185 117 <-- turn on spew mode;
+#X obj 207 367 list prepend 0;
+#X obj 207 388 s current;
+#X msg 234 298 copy current;
+#X obj 234 319 tabletool previous;
+#X obj 121 467 tabletool current;
+#X msg 121 446 subtract previous;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array difference 11 float 0;
+#X coords 0 10 10 -10 200 140 1;
+#X restore 586 242 graph;
+#X obj 237 495 list prepend 0;
+#X obj 237 516 s difference;
+#N canvas 958 50 450 300 init 0;
+#X obj 37 27 loadbang;
+#X msg 37 48 \; pd dsp 1 \; previous ylabel -0.75 0 10 20 30 40 \;
+current ylabel -0.75 0 10 20 30 40 \; difference ylabel -0.75 -10 -5
+0 5 10 \; growth ylabel -10 0 2 4 6 8 10 \;;
+#X connect 0 0 1 0;
+#X restore 29 697 pd init;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array growth 500 float 0;
+#X coords 0 10 499 0 600 280 1;
+#X restore 388 442 graph;
+#N canvas 643 127 704 447 growth-sum-plot 0;
+#X obj 52 40 inlet;
+#X msg 52 115 greater 0;
+#X obj 52 136 tabletool difference;
+#X obj 52 61 t b b;
+#X obj 189 169 tabread difference;
+#X obj 189 260 +;
+#X obj 219 260 f;
+#X msg 219 240 0;
+#X obj 189 281 t f b;
+#X obj 189 382 tabwrite growth;
+#X obj 291 333 f;
+#X obj 321 333 + 1;
+#X text 151 92 Check the difference table for energy growth in any
+of the bands (i.e. \, where current-previous > 0);
+#X text 252 263 Accumulate the logarithmic growth for this frame and
+write it to the growth table.;
+#X obj 291 354 % 500;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 1 4 0;
+#X connect 3 0 1 0;
+#X connect 3 1 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 1;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 10 0 11 0;
+#X connect 10 0 14 0;
+#X connect 11 0 10 1;
+#X connect 14 0 9 1;
+#X restore 29 527 pd growth-sum-plot;
+#X obj 112 260 t b b l b;
+#X obj 112 219 bonk~;
+#X obj 75 607 cnv 15 150 60 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#N canvas 51 32 466 648 comments 0;
+#X text 33 465 You'll also see that most attacks cause multiple spikes
+\, so bonk~ often gives a burst of several attacks when the first one
+would have been enough. To filter those out \, the best bet is to use
+Pd-extended's [debounce] abstraction \, or just make your own using
+a spigot and delay.;
+#N canvas 226 573 429 139 how-the-plots-work 0;
+#X text 22 16 The array copying \, subtracting \, and growth accumlation
+is made much simpler than usual via the special [tabletool] external.
+It has dozens of functions for manipulating \, searching \, and getting
+information about tables/arrays. The "subtract" and "greater" methods
+are especially useful here.;
+#X restore 144 584 pd how-the-plots-work;
+#X text 33 135 This patch plots something similar to the growth sum
+that bonk~ is using. It is intended to be an aid in understanding how
+bonk~ decides when there is an attack \, and is also useful for finding
+appropriate threshold settings (which will vary depending on the input
+signal). After turning on "spew" mode \, you should see spikes in the
+growth plot when you snap your fingers or knock on a table. These spikes
+are assumed to be related to attacks \, and bonk~'s two threshold values
+determine exactly when an attack is reported following a spike in growth.
+When growth surpasses the high threshold \, bonk~ starts watching for
+the moment that growth drops below the low threshold. When it does
+so \, an attack is reported.;
+#X text 33 25 bonk~ works by taking repeated measurements of the input
+signal's spectrum. For every frame of analysis \, it measures the energy
+in each of 11 frequency bands. Then \, in each band \, it sees if there
+has been an increase in energy relative to the previous frame. After
+every frame \, it adds up the amount of energy growth in the bands
+\, and looks for changes in that sum over time.;
+#X text 33 325 Imagining a guitar string pluck \, the very onset of
+the pluck causes a sudden increase in growth \, which would trip the
+high threshold. Then \, as the string freely vibrates at a steady rate
+\, the change in energy in all of the bands is negative (no new energy
+\, only the decaying resonance of existing energy) \, so the growth
+plot will show a drop. When it crosses the low threshold \, bonk~ assumes
+the attack portion of the sound is finished and we're entering a steady
+state \, so it's safe to report an attack.;
+#X restore 113 628 pd comments;
+#X connect 2 0 3 0;
+#X connect 3 0 19 0;
+#X connect 4 0 19 0;
+#X connect 6 0 7 0;
+#X connect 8 0 9 0;
+#X connect 10 1 13 0;
+#X connect 11 0 10 0;
+#X connect 13 0 14 0;
+#X connect 18 0 17 0;
+#X connect 18 1 11 0;
+#X connect 18 2 6 0;
+#X connect 18 3 8 0;
+#X connect 19 0 18 0;

@@ -1,0 +1,21 @@
+#N canvas 17 20 295 282 10;
+#X msg 161 129 0;
+#X msg 137 49 0;
+#X obj 15 206 tabwrite~ \$0-threshold-test;
+#X obj 15 226 table \$0-threshold-test 64;
+#X obj 15 17 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 55 79 phasor~ 689;
+#X obj 162 109 threshold~ 0.75;
+#X obj 80 149 phasor~ 689;
+#X obj 55 179 -~ 1;
+#X connect 0 0 7 1;
+#X connect 1 0 5 1;
+#X connect 1 0 7 1;
+#X connect 4 0 2 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 5 0 8 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 0;

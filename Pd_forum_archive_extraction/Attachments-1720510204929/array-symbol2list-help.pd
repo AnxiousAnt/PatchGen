@@ -1,0 +1,23 @@
+#N canvas 600 366 683 375 10;
+#X obj 108 260 print;
+#X text 242 91 argument 1 : the character delimiter;
+#X text 106 18 [array-symbol2list] : convert a symbol into a list with
+a specific character delimiter;
+#X obj 108 90 array-symbol2list :;
+#X obj 108 112 t l l;
+#X obj 135 135 unpack s s f f f;
+#X symbolatom 135 237 10 0 0 0 - - -, f 10;
+#X symbolatom 158 217 10 0 0 0 - - -, f 10;
+#X floatatom 181 198 5 0 0 0 - - -, f 5;
+#X floatatom 204 180 5 0 0 0 - - -, f 5;
+#X floatatom 228 159 5 0 0 0 - - -, f 5;
+#X msg 108 61 symbol hello:world:1:2.2:3.33;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 4 1 5 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 5 2 8 0;
+#X connect 5 3 9 0;
+#X connect 5 4 10 0;
+#X connect 11 0 3 0;

@@ -1,0 +1,51 @@
+#N canvas 42 105 698 584 12;
+#X text 28 13 Simple linear equation converter;
+#X floatatom 31 61 5 0 127 0 - - -;
+#X floatatom 31 110 5 0 0 0 - - -;
+#X floatatom 471 61 5 -1 1 0 - - -;
+#X floatatom 471 110 5 0 0 0 - - -;
+#X floatatom 31 192 5 500 1000 0 - - -;
+#X floatatom 31 241 5 0 0 0 - - -;
+#X msg 105 188 500 1000 1 0;
+#X obj 31 84 lin-eq-conv 0 127 0 1;
+#X obj 471 84 lin-eq-conv -1 1 500 100;
+#X text 597 545 Mario Mey;
+#X obj 31 216 lin-eq-conv;
+#X obj 244 61 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 244 111 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 31 354 lin-eq-conv 0 1 0 2;
+#X floatatom 31 330 5 0 0 0 - - -;
+#X floatatom 31 380 5 0 0 0 - - -;
+#X text 28 167 (*1);
+#X text 27 303 (*2);
+#X obj 241 84 lin-eq-conv 0 1 0.75 0.25;
+#X text 239 172 Using a simple linear equation \, this abstract converts
+an input number (X) to an output one (Y) \, using two ranges: x0-x1
+and y0-y1.;
+#X text 239 302 (*1): If any range is incorrect (x0 = x1 or y0 = y1)
+or not arguments is given \, an error message appears on console. But
+\, it can accept the ranges after creation without problem.;
+#X text 239 372 (*2): Also \, it works with extrapolated input.;
+#X text 239 232 It accept a list in right inlet with both ranges in
+a 4-elements list and it converts the last given X number immediately.
+It doesn't convert the last number if the arguments are modified.;
+#X floatatom 31 470 5 0 0 0 - - -;
+#X floatatom 31 520 5 0 0 0 - - -;
+#X text 27 443 (*3);
+#X obj 31 494 lin-eq-conv-clip 0 1 0 2;
+#X text 239 402 (*3): Clipped version \, with no extrapolation.;
+#X connect 1 0 8 0;
+#X connect 3 0 9 0;
+#X connect 5 0 11 0;
+#X connect 7 0 11 1;
+#X connect 8 0 2 0;
+#X connect 9 0 4 0;
+#X connect 11 0 6 0;
+#X connect 12 0 19 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 19 0 13 0;
+#X connect 24 0 27 0;
+#X connect 27 0 25 0;

@@ -1,0 +1,16 @@
+#N canvas 262 163 892 556 10;
+#X obj 92 57 testt;
+#X obj 82 337 tabwrite~ gopgop;
+#X obj 90 214 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 28 205 adc~;
+#X obj 29 166 osc~ 110;
+#X text 329 156 watch here;
+#X text 108 215 click here;
+#X obj 93 397 loadbang;
+#X msg 93 422 \; pd dsp 1;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 3 1 1 0;
+#X connect 4 0 1 0;
+#X connect 7 0 8 0;

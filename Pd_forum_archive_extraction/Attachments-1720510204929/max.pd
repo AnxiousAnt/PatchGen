@@ -1,0 +1,13 @@
+#N canvas 5 49 450 300 10;
+#X floatatom 168 43 5 0 0 0 - - -;
+#X obj 208 117 t f;
+#X msg 195 83 0;
+#X text 224 82 <- init to 0;
+#X text 210 42 <- flow of numbers;
+#X floatatom 168 149 5 0 0 0 - - -;
+#X obj 168 117 max 0;
+#X connect 0 0 6 0;
+#X connect 1 0 6 1;
+#X connect 2 0 6 1;
+#X connect 6 0 1 0;
+#X connect 6 0 5 0;

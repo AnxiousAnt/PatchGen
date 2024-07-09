@@ -1,0 +1,118 @@
+#N canvas 558 174 426 278 12;
+#N canvas 176 23 967 584 signal-smoothening 0;
+#X floatatom 248 314 10 0 0 0 - - -;
+#X obj 248 279 expr 1/$f1;
+#X floatatom 248 247 8 1 64 0 - - -;
+#X text 174 246 period in samples, f 9;
+#X text 325 313 slew limit;
+#X floatatom 666 281 0 0 0 0 - - -;
+#X obj 666 253 expr 1000./$f1;
+#X text 607 221 period in ms, f 6;
+#X text 596 280 frequency;
+#X floatatom 666 228 5 100 1000 0 - - -;
+#X obj 122 355 slop~ 1e+09, f 23;
+#X obj 536 332 slop~ 1e+09, f 19;
+#X obj 122 320 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 122 391 print~;
+#X obj 89 354 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 536 293 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 536 417 snapshot~;
+#X obj 539 448 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 550 391 metro 10;
+#X obj 550 363 loadbang;
+#X obj 669 206 hsl 128 15 100 1000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 251 221 hsl 128 15 1 64 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 40 139 For linear smoothening \, we use the 3rd inlet (for
+the downwards ramp) and 5th inlets (for upwards). We specify a period
+in samples and invert this value to get a maximum amplitude increment
+\, or "slew limit"., f 44;
+#X text 445 122 For non-linear smoothening \, we use the signal the
+4th (downwards) and 6th (upwards) inlets. For a time period input in
+ms \, we can convert it to the frequency input as below:, f 47;
+#X connect 0 0 10 4;
+#X connect 0 0 10 2;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 5 0 11 5;
+#X connect 5 0 11 3;
+#X connect 6 0 5 0;
+#X connect 9 0 6 0;
+#X connect 10 0 13 0;
+#X connect 11 0 16 0;
+#X connect 12 0 10 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;
+#X connect 15 0 11 0;
+#X connect 16 0 17 0;
+#X connect 18 0 16 0;
+#X connect 19 0 18 0;
+#X connect 20 0 9 0;
+#X connect 21 0 2 0;
+#X restore 143 139 pd signal-smoothening;
+#X obj 170 87 slop~, f 10;
+#N canvas 538 23 679 639 non-linear-envelopes 0;
+#X obj 291 497 *~;
+#X obj 280 357 vline~;
+#X obj 132 216 t f f;
+#X obj 132 271 pack;
+#X obj 164 242 * 0.5;
+#X obj 132 90 == 0;
+#X obj 152 376 osc~ 440;
+#X obj 132 32 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X msg 382 297 100;
+#X text 340 296 decay;
+#X text 445 296 release;
+#X obj 132 63 trigger float float, f 28;
+#X obj 132 188 float;
+#X obj 132 118 select 0 1;
+#X obj 382 346 expr 1000./$f1;
+#X text 467 404 attack;
+#X obj 309 459 slop~ 1e+09, f 18;
+#X obj 432 381 loadbang;
+#X obj 291 578 dac~;
+#X obj 291 539 *~ 0.2;
+#X text 159 32 <= gate;
+#X msg 418 297 500;
+#X msg 132 297 \$1 150 \, \$2 100 150;
+#X msg 280 297 0 500;
+#X text 320 129 Here's how to implement an ADSR exponential envelope
+with [slop~]. We need to set different downward periods for the decay
+and release part. Here \, the attack is 150ms \, followed by a decay
+of 100 ms and a release of 500 ms., f 34;
+#X msg 432 404 150;
+#X obj 432 429 expr 1000./$f1;
+#X connect 0 0 19 0;
+#X connect 1 0 16 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 22 0;
+#X connect 4 0 3 1;
+#X connect 5 0 13 0;
+#X connect 6 0 0 0;
+#X connect 7 0 11 0;
+#X connect 8 0 14 0;
+#X connect 11 0 5 0;
+#X connect 11 1 12 1;
+#X connect 12 0 2 0;
+#X connect 13 0 12 0;
+#X connect 13 0 8 0;
+#X connect 13 1 23 0;
+#X connect 13 1 21 0;
+#X connect 14 0 16 3;
+#X connect 16 0 0 1;
+#X connect 17 0 25 0;
+#X connect 19 0 18 0;
+#X connect 19 0 18 1;
+#X connect 21 0 14 0;
+#X connect 22 0 1 0;
+#X connect 23 0 1 0;
+#X connect 25 0 26 0;
+#X connect 26 0 16 5;
+#X restore 142 173 pd non-linear-envelopes;

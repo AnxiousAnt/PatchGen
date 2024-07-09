@@ -1,0 +1,11 @@
+Get this error when 'two finger scroll' is enabled. Fx when scrolling. By being extreme soft, it is possible to use the 'two finger right-click' feature, but mostly i get the error, which i suspect to be due to slight scrolling-like movements, that may happen when holding the two fingers on the pad and moving the thump down to click. Allso since it doesn't happen when 'two finger scroll' is disabled.
+
+-----
+divide by zero
+divide by zero
+    while executing
+"expr -abs(0)/0"
+    invoked from within
+"pdtk_canvas_scroll .x1187ad0.c y [expr -abs(0)/0]"
+    (command bound to event)
+-----

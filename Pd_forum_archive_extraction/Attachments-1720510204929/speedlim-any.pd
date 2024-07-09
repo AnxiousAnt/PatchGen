@@ -1,0 +1,26 @@
+#N canvas 676 466 550 260 10;
+#X obj 67 131 list;
+#X obj 67 48 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 67 71 metro 500;
+#X floatatom 125 48 5 0 0 0 - - -;
+#X obj 90 106 r your_anything;
+#X obj 67 163 print;
+#X obj 267 162 s your_anything;
+#X floatatom 267 49 5 0 0 0 - - -;
+#X symbolatom 312 91 10 0 0 0 - - -;
+#X floatatom 458 50 5 0 0 0 - - -;
+#X obj 458 68 pack 0 1 2;
+#X obj 312 70 makefilename %d-foo;
+#X floatatom 312 49 5 0 0 0 - - -;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 1;
+#X connect 4 0 0 1;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 11 0 8 0;
+#X connect 12 0 11 0;

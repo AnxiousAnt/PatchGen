@@ -1,0 +1,11 @@
+#N canvas 1393 656 450 300 10;
+#N canvas 710 340 450 300 foo 0;
+#X obj 168 149 hsl 76 10 0 127 0 0 empty empty ThisIsMyLabel 1 6 0
+9 -262144 -1 -1 0 1;
+#X coords 0 -1 1 1 150 60 1 100 100;
+#X restore 87 115 pd foo;
+#N canvas 710 340 450 300 bar 0;
+#X obj 173 101 cnv 10 76 10 empty empty MyLabel 1 6 0 9 -233017 -66577
+0;
+#X coords 0 -1 1 1 150 12 2 100 100;
+#X restore 89 210 pd bar;

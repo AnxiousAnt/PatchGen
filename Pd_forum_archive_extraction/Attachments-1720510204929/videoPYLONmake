@@ -1,0 +1,276 @@
+checking for PYLON... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+is@is:~/Downloads/Gem-0.93.3/plugins/videoPYLON$ make
+make  all-am
+make[1]: Entering directory '/home/is/Downloads/Gem-0.93.3/plugins/videoPYLON'
+/bin/bash ./libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I.  -I./../../src  -DPD -I/opt/pylon5/include -g -O2 -MT gem_videoPYLON_la-videoPYLON.lo -MD -MP -MF .deps/gem_videoPYLON_la-videoPYLON.Tpo -c -o gem_videoPYLON_la-videoPYLON.lo `test -f 'videoPYLON.cpp' || echo './'`videoPYLON.cpp
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I./../../src -DPD -I/opt/pylon5/include -g -O2 -MT gem_videoPYLON_la-videoPYLON.lo -MD -MP -MF .deps/gem_videoPYLON_la-videoPYLON.Tpo -c videoPYLON.cpp  -fPIC -DPIC -o .libs/gem_videoPYLON_la-videoPYLON.o
+In file included from videoPYLON.cpp:24:0:
+videoPYLON.h:102:10: error: ‘CBaslerGigEStreamGrabber’ in namespace ‘Pylon’ does not name a type
+   Pylon::CBaslerGigEStreamGrabber*m_grabber;
+          ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from videoPYLON.cpp:46:0:
+StreamGrabberProperties.h:16:37: error: variable or field ‘get’ declared void
+                     void get(Pylon::CBaslerGigEStreamGrabber*device,
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~
+StreamGrabberProperties.h:16:37: error: ‘CBaslerGigEStreamGrabber’ is not a member of ‘Pylon’
+StreamGrabberProperties.h:16:37: note: suggested alternative: ‘CPylonGigEStreamGrabber’
+                     void get(Pylon::CBaslerGigEStreamGrabber*device,
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~
+                                     CPylonGigEStreamGrabber
+StreamGrabberProperties.h:16:62: error: ‘device’ was not declared in this scope
+                     void get(Pylon::CBaslerGigEStreamGrabber*device,
+                                                              ^~~~~~
+StreamGrabberProperties.h:16:62: note: suggested alternative: ‘dev_t’
+                     void get(Pylon::CBaslerGigEStreamGrabber*device,
+                                                              ^~~~~~
+                                                              dev_t
+StreamGrabberProperties.h:17:42: error: expected primary-expression before ‘key’
+                              std::string key,
+                                          ^~~
+StreamGrabberProperties.h:18:38: error: expected primary-expression before ‘&’ token
+                              gem::any&result);
+                                      ^
+StreamGrabberProperties.h:18:39: error: ‘result’ was not declared in this scope
+                              gem::any&result);
+                                       ^~~~~~
+StreamGrabberProperties.h:20:37: error: ‘CBaslerGigEStreamGrabber’ is not a member of ‘Pylon’
+                     bool set(Pylon::CBaslerGigEStreamGrabber*device,
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~
+StreamGrabberProperties.h:20:37: note: suggested alternative: ‘CPylonGigEStreamGrabber’
+                     bool set(Pylon::CBaslerGigEStreamGrabber*device,
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~
+                                     CPylonGigEStreamGrabber
+StreamGrabberProperties.h:20:62: error: ‘device’ was not declared in this scope
+                     bool set(Pylon::CBaslerGigEStreamGrabber*device,
+                                                              ^~~~~~
+StreamGrabberProperties.h:20:62: note: suggested alternative: ‘dev_t’
+                     bool set(Pylon::CBaslerGigEStreamGrabber*device,
+                                                              ^~~~~~
+                                                              dev_t
+StreamGrabberProperties.h:21:42: error: expected primary-expression before ‘key’
+                              std::string key,
+                                          ^~~
+StreamGrabberProperties.h:22:45: error: expected primary-expression before ‘&’ token
+                              gem::Properties&props);
+                                             ^
+StreamGrabberProperties.h:22:46: error: ‘props’ was not declared in this scope
+                              gem::Properties&props);
+                                              ^~~~~
+StreamGrabberProperties.h:22:51: error: expression list treated as compound expression in initializer [-fpermissive]
+                              gem::Properties&props);
+                                                   ^
+videoPYLON.cpp: In member function ‘void gem::plugins::videoPYLON::Converter::makeConverter(const Pylon::SImageFormat&)’:
+videoPYLON.cpp:137:29: warning: ‘CPixelFormatConverterGamma’ is deprecated [-Wdeprecated-declarations]
+       converter= new Pylon::CPixelFormatConverterGamma ();
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/pylon5/include/pylon/PylonUtilityIncludes.h:34:0,
+                 from /opt/pylon5/include/pylon/PylonIncludes.h:132,
+                 from videoPYLON.h:33,
+                 from videoPYLON.cpp:24:
+/opt/pylon5/include/pylon/PixelFormatConverterGamma.h:25:9: note: declared here
+         CPixelFormatConverterGamma : public CPixelFormatConverterMonoXX
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+videoPYLON.cpp:144:29: warning: ‘CPixelFormatConverterGammaPacked’ is deprecated [-Wdeprecated-declarations]
+       converter= new Pylon::CPixelFormatConverterGammaPacked ();
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/pylon5/include/pylon/PylonUtilityIncludes.h:36:0,
+                 from /opt/pylon5/include/pylon/PylonIncludes.h:132,
+                 from videoPYLON.h:33,
+                 from videoPYLON.cpp:24:
+/opt/pylon5/include/pylon/PixelFormatConverterGammaPacked.h:25:9: note: declared here
+         CPixelFormatConverterGammaPacked : public CPixelFormatConverterMonoPacked
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+videoPYLON.cpp:169:29: warning: ‘CPixelFormatConverterBayer’ is deprecated [-Wdeprecated-declarations]
+       converter= new Pylon::CPixelFormatConverterBayer ();
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/pylon5/include/pylon/PylonUtilityIncludes.h:31:0,
+                 from /opt/pylon5/include/pylon/PylonIncludes.h:132,
+                 from videoPYLON.h:33,
+                 from videoPYLON.cpp:24:
+/opt/pylon5/include/pylon/PixelFormatConverterBayer.h:25:9: note: declared here
+         CPixelFormatConverterBayer : public CPixelFormatConverter
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+videoPYLON.cpp:187:29: warning: ‘CPixelFormatConverterRGB’ is deprecated [-Wdeprecated-declarations]
+       converter= new Pylon::CPixelFormatConverterRGB ();
+                             ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/pylon5/include/pylon/PylonUtilityIncludes.h:37:0,
+                 from /opt/pylon5/include/pylon/PylonIncludes.h:132,
+                 from videoPYLON.h:33,
+                 from videoPYLON.cpp:24:
+/opt/pylon5/include/pylon/PixelFormatConverterRGB.h:25:9: note: declared here
+         CPixelFormatConverterRGB : public CPixelFormatConverter
+         ^~~~~~~~~~~~~~~~~~~~~~~~
+videoPYLON.cpp:192:29: warning: ‘CPixelFormatConverterYUV422YUYV’ is deprecated [-Wdeprecated-declarations]
+       converter= new Pylon::CPixelFormatConverterYUV422YUYV();
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/pylon5/include/pylon/PylonUtilityIncludes.h:40:0,
+                 from /opt/pylon5/include/pylon/PylonIncludes.h:132,
+                 from videoPYLON.h:33,
+                 from videoPYLON.cpp:24:
+/opt/pylon5/include/pylon/PixelFormatConverterYUV422.h:35:9: note: declared here
+         CPixelFormatConverterYUV422YUYV : public CPixelFormatConverter
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+videoPYLON.cpp:197:29: warning: ‘CPixelFormatConverterYUV422’ is deprecated [-Wdeprecated-declarations]
+       converter= new Pylon::CPixelFormatConverterYUV422();
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/pylon5/include/pylon/PylonUtilityIncludes.h:40:0,
+                 from /opt/pylon5/include/pylon/PylonIncludes.h:132,
+                 from videoPYLON.h:33,
+                 from videoPYLON.cpp:24:
+/opt/pylon5/include/pylon/PixelFormatConverterYUV422.h:25:9: note: declared here
+         CPixelFormatConverterYUV422 : public CPixelFormatConverter
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+videoPYLON.cpp: In static member function ‘static Pylon::SImageFormat gem::plugins::videoPYLON::Converter::getInFormat(const Pylon::GrabResult&)’:
+videoPYLON.cpp:225:16: error: using typedef-name ‘Pylon::PixelType’ after ‘enum’
+     const enum PixelType pixelType=Result.GetPixelType();
+                ^~~~~~~~~
+In file included from /opt/pylon5/include/pylon/PylonIncludes.h:108:0,
+                 from videoPYLON.h:33,
+                 from videoPYLON.cpp:24:
+/opt/pylon5/include/pylon/PixelType.h:140:24: note: ‘Pylon::PixelType’ has a previous declaration here
+     typedef EPixelType PixelType;
+                        ^~~~~~~~~
+videoPYLON.cpp:228:29: error: invalid conversion from ‘int’ to ‘Pylon::EPixelType’ [-fpermissive]
+     imageFormat.PixelFormat=pixelType;
+                             ^~~~~~~~~
+videoPYLON.cpp:229:45: error: invalid conversion from ‘int’ to ‘Pylon::EPixelType’ [-fpermissive]
+     imageFormat.LinePitch=IsPacked(pixelType)?
+                                             ^
+In file included from /opt/pylon5/include/pylon/PylonIncludes.h:108:0,
+                 from videoPYLON.h:33,
+                 from videoPYLON.cpp:24:
+/opt/pylon5/include/pylon/PixelType.h:193:17: note:   initializing argument 1 of ‘bool Pylon::IsPacked(Pylon::EPixelType)’
+     inline bool IsPacked(EPixelType pixelType)
+                 ^~~~~~~~
+videoPYLON.cpp:231:49: error: invalid conversion from ‘int’ to ‘Pylon::EPixelType’ [-fpermissive]
+       (7+Result.GetSizeX()*BitPerPixel(pixelType)) >>3;
+                                                 ^
+In file included from /opt/pylon5/include/pylon/PylonIncludes.h:108:0,
+                 from videoPYLON.h:33,
+                 from videoPYLON.cpp:24:
+/opt/pylon5/include/pylon/PixelType.h:326:28: note:   initializing argument 1 of ‘uint32_t Pylon::BitPerPixel(Pylon::EPixelType)’
+     PYLONBASE_API uint32_t BitPerPixel(EPixelType pixelType);
+                            ^~~~~~~~~~~
+videoPYLON.cpp: In constructor ‘gem::plugins::videoPYLON::videoPYLON()’:
+videoPYLON.cpp:314:30: error: class ‘gem::plugins::videoPYLON’ does not have any field named ‘m_grabber’
+                            , m_grabber(NULL)
+                              ^~~~~~~~~
+videoPYLON.cpp: In member function ‘virtual bool gem::plugins::videoPYLON::grabFrame()’:
+videoPYLON.cpp:354:30: error: ‘m_grabber’ was not declared in this scope
+   if(NULL==m_camera || NULL==m_grabber)
+                              ^~~~~~~~~
+videoPYLON.cpp:354:30: note: suggested alternative: ‘XUngrabKey’
+   if(NULL==m_camera || NULL==m_grabber)
+                              ^~~~~~~~~
+                              XUngrabKey
+videoPYLON.cpp:360:6: error: ‘m_grabber’ was not declared in this scope
+   if(m_grabber->GetWaitObject().Wait(3000)) {
+      ^~~~~~~~~
+videoPYLON.cpp:360:6: note: suggested alternative: ‘XUngrabKey’
+   if(m_grabber->GetWaitObject().Wait(3000)) {
+      ^~~~~~~~~
+      XUngrabKey
+videoPYLON.cpp: In member function ‘virtual bool gem::plugins::videoPYLON::openDevice(gem::Properties&)’:
+videoPYLON.cpp:443:5: error: ‘m_grabber’ was not declared in this scope
+     m_grabber=new Pylon::CBaslerGigEStreamGrabber(m_camera->GetStreamGrabber(channel));
+     ^~~~~~~~~
+videoPYLON.cpp:443:5: note: suggested alternative: ‘XUngrabKey’
+     m_grabber=new Pylon::CBaslerGigEStreamGrabber(m_camera->GetStreamGrabber(channel));
+     ^~~~~~~~~
+     XUngrabKey
+videoPYLON.cpp:443:19: error: expected type-specifier
+     m_grabber=new Pylon::CBaslerGigEStreamGrabber(m_camera->GetStreamGrabber(channel));
+                   ^~~~~
+videoPYLON.cpp: In member function ‘virtual void gem::plugins::videoPYLON::closeDevice()’:
+videoPYLON.cpp:462:6: error: ‘m_grabber’ was not declared in this scope
+   if(m_grabber)delete m_grabber;
+      ^~~~~~~~~
+videoPYLON.cpp:462:6: note: suggested alternative: ‘XUngrabKey’
+   if(m_grabber)delete m_grabber;
+      ^~~~~~~~~
+      XUngrabKey
+videoPYLON.cpp:462:23: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+   if(m_grabber)delete m_grabber;
+                       ^~~~~~~~~
+videoPYLON.cpp:463:3: error: ‘m_grabber’ was not declared in this scope
+   m_grabber=NULL;
+   ^~~~~~~~~
+videoPYLON.cpp:463:3: note: suggested alternative: ‘XUngrabKey’
+   m_grabber=NULL;
+   ^~~~~~~~~
+   XUngrabKey
+videoPYLON.cpp: In member function ‘virtual bool gem::plugins::videoPYLON::startTransfer()’:
+videoPYLON.cpp:476:12: error: ‘m_grabber’ was not declared in this scope
+   if(NULL==m_grabber)
+            ^~~~~~~~~
+videoPYLON.cpp:476:12: note: suggested alternative: ‘XUngrabKey’
+   if(NULL==m_grabber)
+            ^~~~~~~~~
+            XUngrabKey
+videoPYLON.cpp:480:5: error: ‘m_grabber’ was not declared in this scope
+     m_grabber->Open();
+     ^~~~~~~~~
+videoPYLON.cpp:480:5: note: suggested alternative: ‘XUngrabKey’
+     m_grabber->Open();
+     ^~~~~~~~~
+     XUngrabKey
+videoPYLON.cpp: In member function ‘virtual bool gem::plugins::videoPYLON::stopTransfer()’:
+videoPYLON.cpp:543:6: error: ‘m_grabber’ was not declared in this scope
+   if(m_grabber) {
+      ^~~~~~~~~
+videoPYLON.cpp:543:6: note: suggested alternative: ‘XUngrabKey’
+   if(m_grabber) {
+      ^~~~~~~~~
+      XUngrabKey
+videoPYLON.cpp: In member function ‘virtual bool gem::plugins::videoPYLON::enumProperties(gem::Properties&, gem::Properties&)’:
+videoPYLON.cpp:638:6: error: ‘m_grabber’ was not declared in this scope
+   if(m_grabber) {
+      ^~~~~~~~~
+videoPYLON.cpp:638:6: note: suggested alternative: ‘XUngrabKey’
+   if(m_grabber) {
+      ^~~~~~~~~
+      XUngrabKey
+videoPYLON.cpp:661:6: error: ‘m_grabber’ was not declared in this scope
+   if(m_grabber) {
+      ^~~~~~~~~
+videoPYLON.cpp:661:6: note: suggested alternative: ‘XUngrabKey’
+   if(m_grabber) {
+      ^~~~~~~~~
+      XUngrabKey
+videoPYLON.cpp: In member function ‘virtual void gem::plugins::videoPYLON::setProperties(gem::Properties&)’:
+videoPYLON.cpp:757:8: error: ‘m_grabber’ was not declared in this scope
+     if(m_grabber) {
+        ^~~~~~~~~
+videoPYLON.cpp:757:8: note: suggested alternative: ‘XUngrabKey’
+     if(m_grabber) {
+        ^~~~~~~~~
+        XUngrabKey
+videoPYLON.cpp:759:77: error: ‘gem::pylon::streamgrabberproperties::set’ cannot be used as a function
+         didit=gem::pylon::streamgrabberproperties::set(m_grabber, key, props);
+                                                                             ^
+videoPYLON.cpp: In member function ‘virtual void gem::plugins::videoPYLON::getProperties(gem::Properties&)’:
+videoPYLON.cpp:786:8: error: ‘m_grabber’ was not declared in this scope
+     if(m_grabber) {
+        ^~~~~~~~~
+videoPYLON.cpp:786:8: note: suggested alternative: ‘XUngrabKey’
+     if(m_grabber) {
+        ^~~~~~~~~
+        XUngrabKey
+videoPYLON.cpp:788:46: error: ‘get’ is not a member of ‘gem::pylon::streamgrabberproperties’
+         gem::pylon::streamgrabberproperties::get(m_grabber, key, result);
+                                              ^~~
+videoPYLON.cpp:788:46: note: suggested alternative: ‘set’
+         gem::pylon::streamgrabberproperties::get(m_grabber, key, result);
+                                              ^~~
+                                              set
+Makefile:539: recipe for target 'gem_videoPYLON_la-videoPYLON.lo' failed
+make[1]: *** [gem_videoPYLON_la-videoPYLON.lo] Error 1
+make[1]: Leaving directory '/home/is/Downloads/Gem-0.93.3/plugins/videoPYLON'
+Makefile:415: recipe for target 'all' failed
+make: *** [all] Error 2

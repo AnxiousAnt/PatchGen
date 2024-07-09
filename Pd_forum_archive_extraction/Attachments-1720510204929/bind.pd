@@ -1,0 +1,28 @@
+#N canvas 581 198 462 312 10;
+#X obj 148 88 active;
+#X obj 155 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 104 120 spigot;
+#X obj 104 22 keyname;
+#X obj 104 58 pack float symbol;
+#X obj 104 143 route 1;
+#X obj 104 186 select Escape;
+#X obj 113 225 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 104 166 symbol;
+#X obj 126 92 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 48 79 5 0 0 0 - - -;
+#X msg 160 230 \; pd-bind.pd menuclose 1;
+#X connect 0 0 1 0;
+#X connect 0 0 2 1;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 3 0 10 0;
+#X connect 3 1 4 1;
+#X connect 4 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 6 0 11 0;
+#X connect 8 0 6 0;
+#X connect 9 0 2 1;

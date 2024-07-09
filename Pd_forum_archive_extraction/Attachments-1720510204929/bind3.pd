@@ -1,0 +1,21 @@
+#N canvas 581 198 565 344 10;
+#X obj 30 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 32 150 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 33 212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 246 53 Pd-0.40-2;
+#X text 354 54 Pd-extended0.39.2;
+#X text 248 114 close;
+#X text 247 180 close;
+#X text 245 242 crash;
+#X text 356 113 crash;
+#X text 353 180 crash;
+#X text 353 245 crash;
+#X msg 30 110 \; pd-bind3.pd menuclose;
+#X msg 32 173 \; pd-bind3.pd menuclose 0;
+#X msg 33 234 \; pd-bind3.pd menuclose 1;
+#X connect 0 0 11 0;
+#X connect 1 0 12 0;
+#X connect 2 0 13 0;

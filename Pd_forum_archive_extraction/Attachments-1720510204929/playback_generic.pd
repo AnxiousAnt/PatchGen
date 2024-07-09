@@ -1,0 +1,36 @@
+#N canvas 0 0 444 389 10;
+#X obj 173 230 readsf~ 2;
+#X msg 25 216 1;
+#X obj 172 293 outlet~;
+#X obj 198 274 outlet~;
+#X msg 222 255 s \$0-open;
+#X msg 173 204 open \$1;
+#X obj 173 143 loadbang;
+#X obj 173 164 symbol \$1;
+#X obj 184 183 r \$0-open;
+#X msg 93 153 0;
+#X obj 25 182 inlet;
+#X obj 93 125 inlet;
+#X obj 93 171 t b f;
+#X obj 93 251 s \$0-open;
+#X text 21 16 The basic idea is to set the file as always open: once
+on loadbang \, and afterward the open is associated with stopping rather
+than starting playback. When the file is done playing \, it's opened
+again. There'll be some small overhead \, as the buffer will be full
+from the very beginning \; obviously this could be done so that the
+loadbang is replaced with something that listens for a global clock
+(say \, from a qlist) \, a couple of seconds before the file needed
+to be played.;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 0 2 4 0;
+#X connect 1 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 12 0;
+#X connect 10 0 1 0;
+#X connect 11 0 9 0;
+#X connect 12 0 13 0;
+#X connect 12 1 0 0;

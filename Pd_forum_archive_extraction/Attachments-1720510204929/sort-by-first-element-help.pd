@@ -1,0 +1,65 @@
+#N struct 1016-record float x array data 1016-f;
+#N struct 1016-f float x;
+#N canvas 0 0 812 462 10;
+#N canvas 0 0 450 300 collect 0;
+#X obj 255 37 inlet;
+#X obj 49 20 inlet;
+#X obj 49 157 outlet;
+#X msg 255 74 set;
+#X obj 81 99 list trim;
+#X obj 81 74 list prepend add2;
+#X obj 49 44 t b a;
+#X msg 49 119 addcomma;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X restore 312 39 pd LICENSE-GPL;
+#X connect 0 0 3 0;
+#X connect 1 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 6 1 5 0;
+#X connect 7 0 2 0;
+#X restore 164 244 pd collect;
+#X msg 164 269 4 5 6 7 8 9 \, 10 20 30 40 \, 30 0.4 50 60 \, 50 60
+0 80 90 \,;
+#X obj 164 44 t b b b;
+#X msg 164 24 bang;
+#X msg 48 143 bang;
+#X msg 250 246 bang;
+#X obj 164 190 sort-by-first-element;
+#X msg 210 157 init;
+#X text 326 175 lists to sort by first (or other) element;
+#X msg 61 95 sortfield \$1;
+#X floatatom 61 75 5 1 20 0 - - -;
+#X obj 175 216 print sorted;
+#X msg 308 129 30 0.4 50 60 \, 10 20 30 40 \, 50 60 0 80 90 \, 4 5
+6 7 8 9;
+#X connect 0 0 1 0;
+#X connect 2 0 6 0;
+#X connect 2 1 12 0;
+#X connect 2 2 7 0;
+#X connect 3 0 2 0;
+#X connect 4 0 6 0;
+#X connect 5 0 0 1;
+#X connect 6 0 0 0;
+#X connect 6 0 11 0;
+#X connect 7 0 6 0;
+#X connect 7 0 0 1;
+#X connect 9 0 6 0;
+#X connect 10 0 9 0;
+#X connect 12 0 6 1;

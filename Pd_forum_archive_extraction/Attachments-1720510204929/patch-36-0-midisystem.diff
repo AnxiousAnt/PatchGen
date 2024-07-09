@@ -1,0 +1,532 @@
+diff -ruN pd/src/makefile pd-drh/src/makefile
+--- pd/src/makefile	2002-12-04 11:21:12.000000000 +1100
++++ pd-drh/src/makefile	2003-04-06 16:27:42.000000000 +1000
+@@ -2,20 +2,20 @@
+ 
+ all: pd gui ..\bin\pd.tk ..\bin\pdsend.exe ..\bin\pdreceive.exe
+ 
+-VC = "C:\Program Files\Microsoft Visual Studio\VC98"
++VC = "C:\Program Files\Microsoft Visual Studio .NET\VC7"
+ #VC="\Program Files\DevStudio\Vc"
+-INCLUDE = -I.\ -I..\Tcl\include -I$(VC)\include
++INCLUDE = -I.\ -I..\Tcl\include -I$(VC)\include -I$(VC)\PlatformSDK\include
+ 
+-LDIR = $(VC)\lib
++LDIRS = /LIBPATH:$(VC)\lib /LIBPATH:$(VC)\PlatformSDK\lib
+ 
+ LIB = /NODEFAULTLIB:libc /NODEFAULTLIB:oldnames  /NODEFAULTLIB:kernel \
+     /NODEFAULTLIB:uuid \
+-    $(LDIR)\libc.lib $(LDIR)\oldnames.lib $(LDIR)\kernel32.lib \
+-    $(LDIR)\wsock32.lib $(LDIR)\winmm.lib ..\bin\pthreadVC.lib
++    libc.lib oldnames.lib kernel32.lib \
++    wsock32.lib winmm.lib ..\bin\pthreadVC.lib
+ 
+ GLIB =  $(LIB) ..\lib\tcl83.lib ..\lib\tk83.lib
+ CFLAGS = /nologo /W3 /DNT /DPD /DPD_INTERNAL /DWIN32 /DWINDOWS /Ox
+-LFLAGS = /nologo
++LFLAGS = /nologo $(LDIRS)
+ 
+ SYSSRC = s_nt.c s_portaudio.c
+ 
+@@ -40,9 +40,9 @@
+ 	$(PADIR)/pablio/pablio_pd.c $(PADIR)/pablio/ringbuffer_pd.c
+ SRCASIO = $(PADIR)/pa_asio/pa_asio.cpp 
+ 
+-ASIOLIB = $(LDIR)\user32.lib $(LDIR)\gdi32.lib $(LDIR)\winspool.lib $(LDIR)\comdlg32.lib \
+-$(LDIR)\advapi32.lib $(LDIR)\shell32.lib $(LDIR)\ole32.lib $(LDIR)\oleaut32.lib $(LDIR)\uuid.lib \
+-$(LDIR)\odbc32.lib $(LDIR)\odbccp32.lib ..\lib\asio\asiolib.lib
++ASIOLIB = user32.lib gdi32.lib winspool.lib comdlg32.lib \
++advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib \
++odbc32.lib odbccp32.lib ..\lib\asio\asiolib.lib
+ 
+ 
+ PAOBJ = pa_lib.obj pa_trace.obj pablio_pd.obj ringbuffer_pd.obj pa_asio.obj
+diff -ruN pd/src/s_nt.c pd-drh/src/s_nt.c
+--- pd/src/s_nt.c	2002-12-04 11:21:12.000000000 +1100
++++ pd-drh/src/s_nt.c	2003-04-06 16:27:42.000000000 +1000
+@@ -1313,9 +1313,19 @@
+ 		sys_midibytein(portno, commandbyte);
+ 		sys_midibytein(portno, byte1);
+ 		break;
+-	    case 7:
+-		sys_midibytein(portno, commandbyte);
+-		break; 
++			case 7:
++			sys_midibytein(portno, commandbyte);
++			switch(commandbyte)
++			{
++			case 0xf1:
++			case 0xf3:
++				sys_midibytein(portno, byte1);
++			break; 
++			case 0xf2:
++				sys_midibytein(portno, byte1);
++				sys_midibytein(portno, byte2);
++			break;
++			}
+ 	    }
+     	    nt_isnextevent = 0;
+     	}
+diff -ruN pd/src/s_unix.c pd-drh/src/s_unix.c
+--- pd/src/s_unix.c	2002-12-04 11:21:12.000000000 +1100
++++ pd-drh/src/s_unix.c	2003-04-06 16:27:42.000000000 +1000
+@@ -285,6 +285,14 @@
+ #define MIDIPROGRAMCHANGE 0xc0
+ #define MIDICHANNELTOUCH  0xd0
+ #define MIDIPITCHBEND     0xe0
++// DRH defines start
++#define MIDISYSTEM		  0xf0
++#define MIDISYSTEMMTC	  0xf1
++#define MIDISYSTEMSPP	  0xf2
++#define MIDISYSTEMSS	  0xf3
++#define MIDISYSTEMMTR	  0xf6
++// DRH defines end
++
+     /* functions in x_midi.c */
+ void inmidi_realtimein(int portno, int cmd);
+ void inmidi_byte(int portno, int byte);
+@@ -295,6 +303,11 @@
+ void inmidi_pitchbend(int portno, int channel, int value);
+ void inmidi_aftertouch(int portno, int channel, int value);
+ void inmidi_polyaftertouch(int portno, int channel, int pitch, int value);
++void inmidi_clk(double timing);	// DRH
++void inmidi_syscomin(int portno, int byte);	// DRH
++void inmidi_timecodein(int portno, int byte); // DRH
++void inmidi_songposin(int portno, int byte); // DRH
++void inmidi_songselin(int portno, int byte); // DRH
+ 
+ static void sys_dispatchnextmidiin( void)
+ {
+@@ -307,66 +320,85 @@
+     	bug("sys_dispatchnextmidiin 2");
+     parserp = parser + portno;
+     outlet_setstacklim();
+-    
+-    if (byte >= 0xf8)
++
++	inmidi_byte(portno, byte);
++	if (byte >= 0xf8)
++	{	// system realtime messages DH
++		if (byte == 0xf8)
++		{
++			inmidi_clk(midi_inqueue[midi_intail].q_time);
++		} 
+     	inmidi_realtimein(portno, byte);
+-    else
+-    {
+-    	inmidi_byte(portno, byte);
+-	if (byte < 0xf0)
++	} else
+ 	{
+ 	    if (byte & 0x80)
+ 	    {
+ 	    	parserp->mp_status = byte;
+-		parserp->mp_gotbyte1 = 0;
+-	    }
+-	    else
+-	    {
++			parserp->mp_gotbyte1 = 0;
++		} else
++	    {	// multibyte messages
+ 	    	int cmd = (parserp->mp_status & 0xf0);
+-		int chan = (parserp->mp_status & 0xf);
+-		int byte1 = parserp->mp_byte1, gotbyte1 = parserp->mp_gotbyte1;
+-		switch (cmd)
+-		{
+-		case MIDINOTEOFF:
+-		    if (gotbyte1)
+-		    	inmidi_noteon(portno, chan, byte1, 0),
+-			    parserp->mp_gotbyte1 = 0;
+-		    else parserp->mp_byte1 = byte, parserp->mp_gotbyte1 = 1;
+-		    break;
+-		case MIDINOTEON:
+-		    if (gotbyte1)
+-		    	inmidi_noteon(portno, chan, byte1, byte),
+-			    parserp->mp_gotbyte1 = 0;
+-		    else parserp->mp_byte1 = byte, parserp->mp_gotbyte1 = 1;
+-		    break;
+-		case MIDIPOLYTOUCH:
+-		    if (gotbyte1)
+-		    	inmidi_polyaftertouch(portno, chan, byte1, byte),
+-			    parserp->mp_gotbyte1 = 0;
+-		    else parserp->mp_byte1 = byte, parserp->mp_gotbyte1 = 1;
+-		    break;
+-		case MIDICONTROLCHANGE:
+-		    if (gotbyte1)
+-		    	inmidi_controlchange(portno, chan, byte1, byte),
+-			    parserp->mp_gotbyte1 = 0;
+-		    else parserp->mp_byte1 = byte, parserp->mp_gotbyte1 = 1;
+-		    break;
+-		case MIDIPROGRAMCHANGE:
+-		    inmidi_programchange(portno, chan, byte);
+-		    break;
+-		case MIDICHANNELTOUCH:
+-		    inmidi_aftertouch(portno, chan, byte);
+-		    break;
+-		case MIDIPITCHBEND:
+-		    if (gotbyte1)
+-		    	inmidi_pitchbend(portno, chan, ((byte << 7) + byte1)),
+-			    parserp->mp_gotbyte1 = 0;
+-		    else parserp->mp_byte1 = byte, parserp->mp_gotbyte1 = 1;
+-		    break;
+-		}
++			int chan = (parserp->mp_status & 0xf);
++			int byte1 = parserp->mp_byte1, gotbyte1 = parserp->mp_gotbyte1;
++			switch (cmd)
++			{
++			case MIDINOTEOFF:
++				if (gotbyte1)
++		    		inmidi_noteon(portno, chan, byte1, 0),
++					parserp->mp_gotbyte1 = 0;
++				else parserp->mp_byte1 = byte, parserp->mp_gotbyte1 = 1;
++				break;
++			case MIDINOTEON:
++				if (gotbyte1)
++		    		inmidi_noteon(portno, chan, byte1, byte),
++					parserp->mp_gotbyte1 = 0;
++				else parserp->mp_byte1 = byte, parserp->mp_gotbyte1 = 1;
++				break;
++			case MIDIPOLYTOUCH:
++				if (gotbyte1)
++		    		inmidi_polyaftertouch(portno, chan, byte1, byte),
++					parserp->mp_gotbyte1 = 0;
++				else parserp->mp_byte1 = byte, parserp->mp_gotbyte1 = 1;
++				break;
++			case MIDICONTROLCHANGE:
++				if (gotbyte1)
++		    		inmidi_controlchange(portno, chan, byte1, byte),
++					parserp->mp_gotbyte1 = 0;
++				else parserp->mp_byte1 = byte, parserp->mp_gotbyte1 = 1;
++				break;
++			case MIDIPROGRAMCHANGE:
++				inmidi_programchange(portno, chan, byte);
++				break;
++			case MIDICHANNELTOUCH:
++				inmidi_aftertouch(portno, chan, byte);
++				break;
++			case MIDIPITCHBEND:
++				if (gotbyte1)
++		    		inmidi_pitchbend(portno, chan, ((byte << 7) + byte1)),
++					parserp->mp_gotbyte1 = 0;
++				else parserp->mp_byte1 = byte, parserp->mp_gotbyte1 = 1;
++				break;
++			case MIDISYSTEM:
++				switch(parserp->mp_status)
++				{
++				case MIDISYSTEMMTC:	// MTC
++					inmidi_timecodein(portno, byte);
++				break;
++				case MIDISYSTEMSPP:	// SPP
++					if (gotbyte1)
++					{
++						inmidi_songposin(portno, ((byte << 7) + byte1));
++						parserp->mp_gotbyte1 = 0;
++					} else 
++						parserp->mp_byte1 = byte, parserp->mp_gotbyte1 = 1;
++				break;
++				case MIDISYSTEMSS: // Song select
++					inmidi_songselin(portno, byte);
++				break;
++				}
++			}
+ 	    }
+-	 }
+-    }  
++	}
+     midi_intail  = (midi_intail + 1 == MIDIQSIZE ? 0 : midi_intail + 1);
+ }
+ 
+diff -ruN pd/src/x_midi.c pd-drh/src/x_midi.c
+--- pd/src/x_midi.c	2002-12-04 11:21:12.000000000 +1100
++++ pd-drh/src/x_midi.c	2003-04-06 16:27:42.000000000 +1000
+@@ -649,7 +649,278 @@
+     	t_atom at[2];
+     	SETFLOAT(at, portno);
+     	SETFLOAT(at+1, SysMsg);
+-    	pd_list(midirealtimein_sym->s_thing, &s_list, 1, at);
++    	pd_list(midirealtimein_sym->s_thing, &s_list, 2, at);
++    }
++}
++
++/*----------midisyscomin (midi F1-F6 messages )-----------------*/
++// DRH
++static t_symbol *midisyscomin_sym;
++
++static t_class *midisyscomin_class;
++
++typedef struct _midisyscomin
++{
++    t_object x_obj;
++    t_outlet *x_outlet1;
++    t_outlet *x_outlet2;
++	t_outlet *x_outlet3;
++} t_midisyscomin;
++
++static void *midisyscomin_new( void)
++{
++    t_midisyscomin *x = (t_midisyscomin *)pd_new(midisyscomin_class);
++    x->x_outlet1 = outlet_new(&x->x_obj, &s_float);
++    x->x_outlet2 = outlet_new(&x->x_obj, &s_float);
++    pd_bind(&x->x_obj.ob_pd, midisyscomin_sym);
++#ifndef NT
++    pd_error(x, "midirealtimein: works under NT only");
++#endif
++    return (x);
++}
++
++static void midisyscomin_list(t_midisyscomin *x, t_symbol *s,
++    int argc, t_atom *argv)
++{
++    float portno = atom_getfloatarg(0, argc, argv);
++    float byte = atom_getfloatarg(1, argc, argv);
++
++    outlet_float(x->x_outlet2, portno);
++    outlet_float(x->x_outlet1, byte);
++}
++
++static void midisyscomin_free(t_midisyscomin *x)
++{
++    pd_unbind(&x->x_obj.ob_pd, midisyscomin_sym);
++}
++
++static void midisyscomin_setup(void)
++{
++    midisyscomin_class = class_new(gensym("midisyscomin"), 
++    	(t_newmethod)midisyscomin_new, (t_method)midisyscomin_free, 
++    	    sizeof(t_midisyscomin), CLASS_NOINLET, A_DEFFLOAT, 0);
++    class_addlist(midisyscomin_class, midisyscomin_list);
++	class_sethelpsymbol(midisyscomin_class, gensym("midi"));
++    midisyscomin_sym = gensym("#midisyscomin");
++}
++
++void inmidi_syscomin(int portno, int SysMsg)
++{
++    if (midisyscomin_sym->s_thing)
++    {
++    	t_atom at[2];
++    	SETFLOAT(at, portno);
++    	SETFLOAT(at+1, SysMsg);
++    	pd_list(midisyscomin_sym->s_thing, &s_list, 2, at);
++    }
++}
++
++/*----------miditimecodein (midi F1 messages )-----------------*/
++// DRH
++static t_symbol *miditimecodein_sym;
++
++static t_class *miditimecodein_class;
++
++typedef struct _miditimecodein
++{
++    t_object x_obj;
++    t_float	 x_portno;
++    t_outlet *x_outlet1;
++    t_outlet *x_outlet2;
++} t_miditimecodein;
++
++static void *miditimecodein_new(t_floatarg f)
++{
++    t_miditimecodein *x = (t_miditimecodein *)pd_new(miditimecodein_class);
++    x->x_portno = f;
++	x->x_outlet1 = outlet_new(&x->x_obj, &s_float);
++   if (f == 0) x->x_outlet2 = outlet_new(&x->x_obj, &s_float);
++	pd_bind(&x->x_obj.ob_pd, miditimecodein_sym);
++#ifndef NT
++    pd_error(x, "midirealtimein: works under NT only");
++#endif
++    return (x);
++}
++
++static void miditimecodein_list(t_miditimecodein *x, t_symbol *s,
++    int argc, t_atom *argv)
++{
++    float portno = atom_getfloatarg(0, argc, argv);
++    float byte = atom_getfloatarg(1, argc, argv);
++	if (x->x_portno != 0)
++	{
++		if (portno != x->x_portno) return;
++		outlet_float(x->x_outlet1, byte);
++	} else
++	{
++		outlet_float(x->x_outlet2, portno);
++		outlet_float(x->x_outlet1, byte);
++	}
++}
++
++static void miditimecodein_free(t_miditimecodein *x)
++{
++    pd_unbind(&x->x_obj.ob_pd, miditimecodein_sym);
++}
++
++static void miditimecodein_setup(void)
++{
++    miditimecodein_class = class_new(gensym("miditimecodein"), 
++    	(t_newmethod)miditimecodein_new, (t_method)miditimecodein_free, 
++    	    sizeof(t_miditimecodein), CLASS_NOINLET, A_DEFFLOAT, 0);
++    class_addlist(miditimecodein_class, miditimecodein_list);
++	class_sethelpsymbol(miditimecodein_class, gensym("midi"));
++    miditimecodein_sym = gensym("#miditimecodein");
++}
++
++void inmidi_timecodein(int portno, int SysMsg)
++{
++    if (miditimecodein_sym->s_thing)
++    {
++    	t_atom at[2];
++    	SETFLOAT(at, portno);
++    	SETFLOAT(at+1, SysMsg);
++    	pd_list(miditimecodein_sym->s_thing, &s_list, 2, at);
++    }
++}
++
++/*----------midisongposin (midi F2 messages )-----------------*/
++// DRH
++static t_symbol *midisongposin_sym;
++
++static t_class *midisongposin_class;
++
++typedef struct _midisongposin
++{
++    t_object x_obj;
++    t_float	 x_portno;
++    t_outlet *x_outlet1;
++    t_outlet *x_outlet2;
++} t_midisongposin;
++
++static void *midisongposin_new(t_floatarg f)
++{
++    t_midisongposin *x = (t_midisongposin *)pd_new(midisongposin_class);
++    x->x_portno = f;
++    x->x_outlet1 = outlet_new(&x->x_obj, &s_float);
++    if (f == 0) x->x_outlet2 = outlet_new(&x->x_obj, &s_float);
++    pd_bind(&x->x_obj.ob_pd, midisongposin_sym);
++#ifndef NT
++    pd_error(x, "midirealtimein: works under NT only");
++#endif
++    return (x);
++}
++
++static void midisongposin_list(t_midisongposin *x, t_symbol *s,
++    int argc, t_atom *argv)
++{
++    float portno = atom_getfloatarg(0, argc, argv);
++    float byte = atom_getfloatarg(1, argc, argv);
++
++	if (x->x_portno != 0)
++	{
++		if (portno != x->x_portno) return;
++		outlet_float(x->x_outlet1, byte);
++	} else
++	{
++		outlet_float(x->x_outlet2, portno);
++		outlet_float(x->x_outlet1, byte);
++	}
++}
++
++static void midisongposin_free(t_midisongposin *x)
++{
++    pd_unbind(&x->x_obj.ob_pd, midisongposin_sym);
++}
++
++static void midisongposin_setup(void)
++{
++    midisongposin_class = class_new(gensym("midisongposin"), 
++    	(t_newmethod)midisongposin_new, (t_method)midisongposin_free, 
++    	    sizeof(t_midisongposin), CLASS_NOINLET, A_DEFFLOAT, 0);
++    class_addlist(midisongposin_class, midisongposin_list);
++	class_sethelpsymbol(midisongposin_class, gensym("midi"));
++    midisongposin_sym = gensym("#midisongposin");
++}
++
++void inmidi_songposin(int portno, int SysMsg)
++{
++    if (midisongposin_sym->s_thing)
++    {
++    	t_atom at[2];
++    	SETFLOAT(at, portno);
++    	SETFLOAT(at+1, SysMsg);
++    	pd_list(midisongposin_sym->s_thing, &s_list, 2, at);
++    }
++}
++
++/*----------midisongselin (midi F3 messages )-----------------*/
++// DRH
++static t_symbol *midisongselin_sym;
++
++static t_class *midisongselin_class;
++
++typedef struct _midisongselin
++{
++    t_object x_obj;
++    t_float	 x_portno;
++    t_outlet *x_outlet1;
++    t_outlet *x_outlet2;
++} t_midisongselin;
++
++static void *midisongselin_new(t_floatarg f)
++{
++    t_midisongselin *x = (t_midisongselin *)pd_new(midisongselin_class);
++    x->x_portno = f;
++    x->x_outlet1 = outlet_new(&x->x_obj, &s_float);
++    if (f == 0) x->x_outlet2 = outlet_new(&x->x_obj, &s_float);
++    pd_bind(&x->x_obj.ob_pd, midisongselin_sym);
++#ifndef NT
++    pd_error(x, "midirealtimein: works under NT only");
++#endif
++    return (x);
++}
++
++static void midisongselin_list(t_midisongselin *x, t_symbol *s,
++    int argc, t_atom *argv)
++{
++    float portno = atom_getfloatarg(0, argc, argv);
++    float byte = atom_getfloatarg(1, argc, argv);
++
++	if (x->x_portno != 0)
++	{
++		if (portno != x->x_portno) return;
++		outlet_float(x->x_outlet1, byte);
++	} else
++	{
++		outlet_float(x->x_outlet2, portno);
++		outlet_float(x->x_outlet1, byte);
++	}
++}
++
++static void midisongselin_free(t_midisongselin *x)
++{
++    pd_unbind(&x->x_obj.ob_pd, midisongselin_sym);
++}
++
++static void midisongselin_setup(void)
++{
++    midisongselin_class = class_new(gensym("midisongselin"), 
++    	(t_newmethod)midisongselin_new, (t_method)midisongselin_free, 
++    	    sizeof(t_midisongselin), CLASS_NOINLET, A_DEFFLOAT, 0);
++    class_addlist(midisongselin_class, midisongselin_list);
++	class_sethelpsymbol(midisongselin_class, gensym("midi"));
++    midisongselin_sym = gensym("#midisongselin");
++}
++
++void inmidi_songselin(int portno, int SysMsg)
++{
++    if (midisongselin_sym->s_thing)
++    {
++    	t_atom at[2];
++    	SETFLOAT(at, portno);
++    	SETFLOAT(at+1, SysMsg);
++    	pd_list(midisongselin_sym->s_thing, &s_list, 2, at);
+     }
+ }
+ 
+@@ -1293,6 +1564,10 @@
+ {
+     midiin_setup();
+     midirealtimein_setup();
++	midisyscomin_setup();	// DRH
++	miditimecodein_setup();	// DRH
++	midisongposin_setup();	// DRH
++	midisongselin_setup();	// DRH
+     notein_setup();
+     ctlin_setup();
+     pgmin_setup();

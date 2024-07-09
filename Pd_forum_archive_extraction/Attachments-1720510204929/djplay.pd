@@ -1,0 +1,200 @@
+#N canvas 407 436 301 206 10;
+#X obj 1 1 cnv 15 300 200 empty empty _djPlay_ 20 12 0 14 -260179 -66577
+0;
+#N canvas 241 103 906 522 the-guts 0;
+#X obj 280 248 readanysf~;
+#X obj 263 306 outlet~;
+#X obj 323 306 outlet~;
+#X obj 378 282 route float length bang;
+#X msg 143 134 open \$1;
+#X obj 143 112 symbol;
+#X obj 143 88 openpanel;
+#X msg 639 64 speed \$1;
+#X obj 143 64 inlet;
+#X msg 380 56 play;
+#X msg 548 60 pause;
+#X msg 461 59 stop;
+#X msg 430 312 range 0 \$1;
+#X msg 302 147 time_seek \$1;
+#X msg 294 58 loop \$1;
+#X obj 294 35 r \$0-loop;
+#X obj 380 34 r \$0-play;
+#X obj 461 35 r \$0-stop;
+#X obj 294 82 s \$0-ready;
+#X obj 280 206 r \$0-ready;
+#X obj 380 80 s \$0-ready;
+#X obj 548 36 r \$0-pause;
+#X obj 461 82 s \$0-ready;
+#X obj 548 83 s \$0-ready;
+#X obj 639 87 s \$0-ready;
+#X obj 144 161 s \$0-ready;
+#X obj 302 120 r \$0-settime;
+#X obj 302 174 s \$0-ready;
+#X obj 639 35 r \$0-speed;
+#X obj 217 68 inlet;
+#X obj 72 95 r \$0-open;
+#X msg 554 226 1;
+#X obj 553 246 s \$0-speed;
+#X obj 554 196 r \$0-speedreset;
+#X obj 505 343 s \$0-settime-in;
+#X obj 411 362 s \$0-curtime-in;
+#X floatatom 255 147 5 0 0 0 - - -;
+#X obj 202 484 s \$0-min;
+#X obj 371 470 s \$0-sec;
+#X obj 367 381 mod 60;
+#X obj 194 371 / 60;
+#X obj 193 394 int;
+#X msg 202 460 label \$1:;
+#X obj 625 346 s \$0-length;
+#X msg 632 324 label \$1.;
+#X msg 367 448 label \$1.;
+#X msg 75 213 label \$1;
+#X obj 70 243 s \$0-playing;
+#X obj 367 426 makefilename 0%d;
+#X obj 367 404 moses 10;
+#X obj 200 440 makefilename 0%d;
+#X obj 193 416 moses 10;
+#X obj 809 210 r \$0-speed;
+#X obj 745 90 r \$0-ff-nudge;
+#X obj 625 145 r \$0-bb-nudge;
+#X obj 751 351 s \$0-ready;
+#X obj 741 231 +;
+#X msg 750 323 speed \$1;
+#X obj 745 145 t b b;
+#X obj 793 235 f 1;
+#X obj 738 193 f -0.02;
+#X obj 763 114 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 851 180 5 0 0 0 - - -;
+#X obj 722 381 print nudge;
+#X msg 812 262 \$1 50;
+#X obj 812 295 line 2;
+#X text 743 71 Forward nudge;
+#X obj 793 190 del 100;
+#X obj 791 157 * -0.01;
+#X obj 787 113 r \$0-nudgespeed;
+#X obj 650 157 t b b;
+#X text 619 124 back nudge;
+#X floatatom 686 221 5 0 0 0 - - -;
+#X obj 675 242 f 0.02;
+#X obj 688 190 * 0.01;
+#X obj 567 309 int;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 2 3 0;
+#X connect 3 0 35 0;
+#X connect 3 0 40 0;
+#X connect 3 0 39 0;
+#X connect 3 1 12 0;
+#X connect 3 1 75 0;
+#X connect 4 0 25 0;
+#X connect 5 0 4 0;
+#X connect 5 0 46 0;
+#X connect 6 0 5 0;
+#X connect 7 0 24 0;
+#X connect 8 0 6 0;
+#X connect 9 0 20 0;
+#X connect 10 0 23 0;
+#X connect 11 0 22 0;
+#X connect 12 0 34 0;
+#X connect 12 0 35 0;
+#X connect 13 0 27 0;
+#X connect 14 0 18 0;
+#X connect 15 0 14 0;
+#X connect 16 0 9 0;
+#X connect 17 0 11 0;
+#X connect 19 0 0 0;
+#X connect 21 0 10 0;
+#X connect 26 0 13 0;
+#X connect 26 0 36 0;
+#X connect 28 0 7 0;
+#X connect 29 0 0 0;
+#X connect 30 0 6 0;
+#X connect 31 0 32 0;
+#X connect 33 0 31 0;
+#X connect 39 0 49 0;
+#X connect 40 0 41 0;
+#X connect 41 0 51 0;
+#X connect 42 0 37 0;
+#X connect 44 0 43 0;
+#X connect 45 0 38 0;
+#X connect 46 0 47 0;
+#X connect 48 0 45 0;
+#X connect 49 0 48 0;
+#X connect 49 1 45 0;
+#X connect 50 0 42 0;
+#X connect 51 0 50 0;
+#X connect 51 1 42 0;
+#X connect 52 0 56 1;
+#X connect 52 0 59 1;
+#X connect 53 0 58 0;
+#X connect 54 0 70 0;
+#X connect 56 0 64 0;
+#X connect 56 0 57 0;
+#X connect 57 0 55 0;
+#X connect 57 0 63 0;
+#X connect 58 0 67 0;
+#X connect 58 1 60 0;
+#X connect 59 0 64 0;
+#X connect 59 0 57 0;
+#X connect 60 0 56 0;
+#X connect 61 0 58 0;
+#X connect 64 0 65 0;
+#X connect 67 0 59 0;
+#X connect 68 0 60 1;
+#X connect 68 0 62 0;
+#X connect 69 0 68 0;
+#X connect 69 0 74 0;
+#X connect 70 0 67 0;
+#X connect 70 1 73 0;
+#X connect 73 0 56 0;
+#X connect 74 0 72 0;
+#X connect 74 0 73 1;
+#X connect 75 0 44 0;
+#X restore 203 140 pd the-guts;
+#X obj 29 45 tgl 15 0 \$0-loop \$0-loop loop 0 -6 1729 8 -1109 -241291
+-241291 0 1;
+#X obj 62 43 bng 20 250 50 0 \$0-play \$0-play play 0 -6 1728 8 -24198
+-1 -1;
+#X obj 93 45 bng 15 250 50 0 \$0-stop \$0-stop stop 0 -6 1728 8 -258699
+-1 -1;
+#X obj 130 42 bng 18 250 50 0 \$0-pause \$0-pause pause 0 -6 1728 8
+-241291 -1 -1;
+#X obj 13 92 nbx 5 14 -1e+37 1e+37 0 0 \$0-curtime \$0-curtime Current_Time
+0 -6 1728 10 -143491 -262144 -241291 159.626 256;
+#X obj 15 125 hsl 240 15 0 527.964 0 0 \$0-curtime \$0-curtime-in timebar
+-2 -6 1728 8 -44926 -1 -241291 7226 1;
+#X obj 15 155 hsl 240 15 0 527.964 0 0 \$0-settime \$0-settime-in timeseek
+-2 -6 1728 8 -44926 -1 -241291 6900 1;
+#X obj 200 46 hsl 80 15 0.1 3 0 0 \$0-speed \$0-speed speed -2 -6 1728
+8 -62784 -1 -241291 2452 1;
+#X obj 248 75 nbx 4 10 0.1 3 0 0 \$0-speed \$0-speed empty 0 -6 1728
+10 -62784 -262131 -241291 1 256;
+#X obj 207 74 bng 10 250 50 0 \$0-speedreset \$0-speedreset speedreset
+0 -6 1728 8 -60032 -1 -1;
+#X obj 165 45 tgl 15 0 \$0-speed empty speed 0 -6 1152 8 -262144 -1
+-1 0 1;
+#X obj 173 13 bng 20 250 50 0 \$0-open \$0-open Open 0 -6 1728 8 -262131
+-1 -1;
+#X obj 182 182 outlet~;
+#X obj 241 181 outlet~;
+#X msg 55 171 \; pd-the-guts vis \$1;
+#X obj 286 9 tgl 8 0 empty empty empty 0 -6 0 8 -261681 -1 -1 1 1;
+#X obj 214 12 cnv 15 20 20 empty \$0-min 02: 0 10 577 14 -233017 -66577
+0;
+#X obj 244 12 cnv 15 20 20 empty \$0-sec 39. 0 10 577 14 -233017 -66577
+0;
+#X obj 84 94 cnv 15 35 20 empty \$0-length 527. 0 10 577 14 -261681
+-66577 0;
+#X obj 14 177 cnv 15 75 20 empty \$0-playing /dos/ibm/hdc18/f/audio/pd/webpage/snd/variation.ogg
+0 10 577 7 -260243 -66577 0;
+#X obj 220 101 bng 15 250 50 0 \$0-ff-nudge empty ff 0 -6 1152 8 -262144
+-1 -1;
+#X obj 257 103 nbx 3 14 0 100 0 1 \$0-nudgespeed empty nudge 0 -6 1152
+8 -262131 -1 -1 1 256;
+#X obj 199 101 bng 15 250 50 0 \$0-bb-nudge empty bb 0 -6 1152 8 -262144
+-1 -1;
+#X connect 1 0 14 0;
+#X connect 1 1 15 0;
+#X connect 17 0 16 0;
+#X coords 0 0 1 1 300 200 1;

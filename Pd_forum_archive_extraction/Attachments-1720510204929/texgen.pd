@@ -1,0 +1,155 @@
+#N canvas 338 239 853 721 10;
+#X floatatom 549 97 5 0 0 0 - - volume;
+#X text 30 10 TEXGEN - Texture Generator;
+#N canvas 0 22 520 539 intructions 0;
+#X text 17 66 The minimum and maximun intervals are given in ms and
+the ambitus in cents. If \, for exemple \, an ambitus of 500 cents
+is setted \, the sample will be tranposed at most 250 cents up or 250
+cents down. The density is just how many times the same sample is loaded
+so it can be played back more or less times simultaneoussly. All paramethers
+can be real-time manipulated.;
+#X obj 21 391 s density\$1;
+#X obj 21 411 s dmin\$1;
+#X obj 21 430 s dmax\$1;
+#X obj 21 451 s ambitus\$1;
+#X obj 270 445 s agvolume\$1;
+#X obj 270 342 s start\$1;
+#X obj 270 405 s stop\$1;
+#X obj 270 362 s pause\$1;
+#X obj 270 384 s resume\$1;
+#X obj 21 345 s load\$1;
+#X text 18 327 Load sample (symbol);
+#X text 124 422 time intervals;
+#X text 85 411 minimum;
+#X text 85 431 maximun;
+#X text 268 326 Playback;
+#X text 18 372 Parameters (number);
+#X text 100 390 (integer);
+#X text 270 429 Volume (number);
+#X text 18 265 The paramethers can be also manipulated via qlist or
+other wireless ways \, so the user can program automatic texture changes.
+That can be done using the following messages \, where \$1 stands for
+the attackcreator number:;
+#X text 17 161 After load a sample and set the initial paramethers
+\, press the Start button so the samples will be loaded and played.
+You can Pause and Resume playing \, but if you hit Stop you must hit
+the Start button (not the resume button!) to play again. While the
+Pause button creates a more sutil break in playback \, waiting for
+the last sample to be played before mute the sound \, the Stop button
+just destroys the loaded samples.;
+#X text 16 2 Texgen generate random attacks and transpositions of loaded
+samples. The user can control the minimum and maximum time intervals
+beetween attacks \, the ambitus of the transpositions and the density
+of the texture.;
+#X text 17 477 To begin \, click on the "New Attack Creator" button
+at the right side of the screen.;
+#X restore 57 49 pd intructions;
+#X text 594 97 MASTER VOLUME (dB);
+#X obj 549 50 loadbang;
+#X msg 549 72 100;
+#N canvas 377 370 530 412 playback 0;
+#X obj 152 179 dac~ 1;
+#X obj 274 182 dac~ 2;
+#X obj 146 344 dac~ 3;
+#X obj 277 346 dac~ 4;
+#X obj 42 216 expr -$f1 + 1;
+#X obj 25 286 *~;
+#X obj 25 311 dac~;
+#X obj 25 168 *~;
+#X obj 42 147 dbtorms;
+#X obj 42 127 r volume;
+#X obj 31 33 inlet;
+#X obj 25 103 catch~ static;
+#X obj 152 52 catch~ speaker1;
+#X obj 152 116 *~;
+#X obj 169 95 dbtorms;
+#X obj 169 75 r volume;
+#X obj 274 118 *~;
+#X obj 291 97 dbtorms;
+#X obj 291 77 r volume;
+#X obj 274 54 catch~ speaker2;
+#X obj 146 279 *~;
+#X obj 163 258 dbtorms;
+#X obj 163 238 r volume;
+#X obj 146 215 catch~ speaker3;
+#X obj 277 280 *~;
+#X obj 294 259 dbtorms;
+#X obj 294 239 r volume;
+#X obj 277 217 catch~ speaker4;
+#X obj 152 157 *~;
+#X obj 169 136 r space;
+#X obj 31 56 s space;
+#X obj 41 192 r space;
+#X obj 274 159 *~;
+#X obj 291 138 r space;
+#X obj 146 320 *~;
+#X obj 163 299 r space;
+#X obj 277 319 *~;
+#X obj 294 298 r space;
+#X obj 53 238 loadbang;
+#X msg 53 261 1;
+#X connect 4 0 5 1;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 7 0 5 0;
+#X connect 8 0 7 1;
+#X connect 9 0 8 0;
+#X connect 10 0 30 0;
+#X connect 11 0 7 0;
+#X connect 12 0 13 0;
+#X connect 13 0 28 0;
+#X connect 14 0 13 1;
+#X connect 15 0 14 0;
+#X connect 16 0 32 0;
+#X connect 17 0 16 1;
+#X connect 18 0 17 0;
+#X connect 19 0 16 0;
+#X connect 20 0 34 0;
+#X connect 21 0 20 1;
+#X connect 22 0 21 0;
+#X connect 23 0 20 0;
+#X connect 24 0 36 0;
+#X connect 25 0 24 1;
+#X connect 26 0 25 0;
+#X connect 27 0 24 0;
+#X connect 28 0 0 0;
+#X connect 29 0 28 1;
+#X connect 31 0 4 0;
+#X connect 32 0 1 0;
+#X connect 33 0 32 1;
+#X connect 34 0 2 0;
+#X connect 35 0 34 1;
+#X connect 36 0 3 0;
+#X connect 37 0 36 1;
+#X connect 38 0 39 0;
+#X connect 39 0 5 1;
+#X restore 504 237 pd playback;
+#X obj 504 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 501 194 On/Off;
+#X text 499 180 Random spacialization in 4 channels;
+#N canvas 0 22 466 316 newcreator 0;
+#X obj 192 90 + 1;
+#X obj 156 59 inlet;
+#X obj 154 183 pack f f;
+#X obj 204 163 * 150;
+#X msg 155 213 \; pd-texgen.pd obj 50 \$2 attackcreator \$1;
+#X obj 154 115 t f f;
+#X obj 155 89 f 2;
+#X connect 0 0 6 1;
+#X connect 1 0 6 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 1;
+#X connect 5 0 2 0;
+#X connect 5 1 3 0;
+#X connect 6 0 0 0;
+#X connect 6 0 5 0;
+#X restore 337 84 pd newcreator;
+#X obj 337 60 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 358 56 New attackcreator object;
+#X obj 50 150 attackcreator 1;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 7 0 6 0;
+#X connect 11 0 10 0;

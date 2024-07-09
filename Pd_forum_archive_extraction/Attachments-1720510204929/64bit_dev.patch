@@ -1,0 +1,396 @@
+? .sconf_temp
+? .sconsign.dblite
+? options.cache
+? bin/pd
+? bin/pd-gui
+? extra/bonk~/bonk~.os
+? extra/choice/choice.os
+? extra/expr~/vexp.os
+? extra/expr~/vexp_fun.os
+? extra/expr~/vexp_if.os
+? extra/fiddle~/fiddle~.os
+? extra/loop~/loop~.os
+? extra/lrshift~/lrshift~.os
+? extra/pique/pique.os
+? obj/0
+? obj/1
+? obj/2
+? obj/3
+? obj/4
+? obj/5
+? obj/6
+? obj/7
+? obj/8
+? obj/9
+? obj/A
+? obj/B
+? obj/C
+? obj/D
+? obj/E
+? obj/F
+? src/options.cache
+Index: src/d_array.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/d_array.c,v
+retrieving revision 1.3.4.3.2.4
+diff -u -r1.3.4.3.2.4 d_array.c
+--- src/d_array.c	20 Apr 2006 22:20:39 -0000	1.3.4.3.2.4
++++ src/d_array.c	11 Aug 2006 04:57:51 -0000
+@@ -52,11 +52,11 @@
+     if (endphase > phase)
+     {
+         int nxfer = endphase - phase;
+-        float *fp = x->x_vec + phase;
++        float *fp = x->x_vec + phase*ASTRIDE;
+         if (nxfer > n) nxfer = n;
+-        phase += nxfer;
++        phase += nxfer*ASTRIDE;
+ 
+-		testcopyvec(fp, in, nxfer);
++	testcopyvec(fp, in, nxfer);
+         if (phase >= endphase)
+         {
+             tabwrite_tilde_redraw(x);
+@@ -69,6 +69,7 @@
+     return (w+4);
+ }
+ 
++#define ASTRIDE (sizeof(union word)/sizeof(t_sample))
+ 
+ static t_int *tabwrite_tilde_perf_simd(t_int *w)
+ {
+@@ -206,13 +207,15 @@
+         goto zero;
+     
+     nxfer = endphase - phase;
+-    fp = x->x_vec + phase;
++    fp = x->x_vec + phase*ASTRIDE;
+     if (nxfer > n)
+         nxfer = n;
+     n3 = n - nxfer;
+     phase += nxfer;
+-    while (nxfer--)
+-        *out++ = *fp++;
++    while (nxfer--) {
++        *out++ = *fp;
++        fp += ASTRIDE;
++    }
+     if (phase >= endphase)
+     {
+         clock_delay(x->x_clock, 0);
+@@ -338,7 +341,7 @@
+             index = 0;
+         else if (index > maxindex)
+             index = maxindex;
+-        *out++ = buf[index];
++        *out++ = buf[index* ASTRIDE];
+     }
+     return (w+5);
+  zero:
+@@ -455,11 +458,11 @@
+         else if (index > maxindex)
+             index = maxindex, frac = 1;
+         else frac = findex - index;
+-        fp = buf + index;
+-        a = fp[-1];
++        fp = buf + index* ASTRIDE;
++        a = fp[-1* ASTRIDE];
+         b = fp[0];
+-        c = fp[1];
+-        d = fp[2];
++        c = fp[1* ASTRIDE];
++        d = fp[2* ASTRIDE];
+         /* if (!i && !(count++ & 1023))
+             post("fp = %lx,  shit = %lx,  b = %f",  fp, buf->b_shit,  b); */
+         cminusb = c-b;
+@@ -643,13 +646,13 @@
+         float frac,  a,  b,  c,  d, cminusb;
+         tf.tf_d = dphase;
+         dphase += *in++ * conv;
+-        addr = tab + (tf.tf_i[HIOFFSET] & mask);
++        addr = tab + (tf.tf_i[HIOFFSET] & mask)* ASTRIDE;
+         tf.tf_i[HIOFFSET] = normhipart;
+         frac = tf.tf_d - UNITBIT32;
+         a = addr[0];
+-        b = addr[1];
+-        c = addr[2];
+-        d = addr[3];
++        b = addr[1* ASTRIDE];
++        c = addr[2* ASTRIDE];
++        d = addr[3* ASTRIDE];
+         cminusb = c-b;
+         *out++ = b + frac * (
+             cminusb - 0.1666667f * (1.-frac) * (
+@@ -764,9 +767,15 @@
+     t_float *dest = x->x_vec;
+     int i = x->x_graphcount;
+     if (!x->x_vec) goto bad;
+-
+-	testcopyvec(dest,in,n);
+-
++    
++    while (n--)
++      {
++        float f = *in++;
++        if (PD_BIGORSMALL(f))
++	  f = 0;
++	*dest = f;
++	dest +=  ASTRIDE;
++      }    
+     if (!i--)
+     {
+         t_garray *a = (t_garray *)pd_findbyclass(x->x_arrayname, garray_class);
+@@ -863,8 +872,10 @@
+     if (from)
+     {
+         int vecsize = x->x_vecsize;
+-        while (vecsize--)
+-            *out++ = *from++;
++        while (vecsize--){
++            *out++ = *from;
++            from +=  ASTRIDE;
++        }
+         vecsize = n - x->x_vecsize;
+         while (vecsize--)
+             *out++ = 0;
+@@ -962,7 +973,7 @@
+         int n = f;
+         if (n < 0) n = 0;
+         else if (n >= npoints) n = npoints - 1;
+-        outlet_float(x->x_obj.ob_outlet, (npoints ? vec[n] : 0));
++        outlet_float(x->x_obj.ob_outlet, (npoints ? vec[n*ASTRIDE] : 0));
+     }
+ }
+ 
+@@ -1011,21 +1022,21 @@
+     else if (npoints < 4)
+         outlet_float(x->x_obj.ob_outlet, 0);
+     else if (f <= 1)
+-        outlet_float(x->x_obj.ob_outlet, vec[1]);
++        outlet_float(x->x_obj.ob_outlet, vec[ 1*ASTRIDE]);
+     else if (f >= npoints - 2)
+-        outlet_float(x->x_obj.ob_outlet, vec[npoints - 2]);
++        outlet_float(x->x_obj.ob_outlet, vec[(npoints - 2)* ASTRIDE]);
+     else
+     {
+         int n = f;
+         float a, b, c, d, cminusb, frac, *fp;
+         if (n >= npoints - 2)
+             n = npoints - 3;
+-        fp = vec + n;
++        fp = vec + n* ASTRIDE;
+         frac = f - n;
+-        a = fp[-1];
+-        b = fp[0];
+-        c = fp[1];
+-        d = fp[2];
++        a = fp[-1*ASTRIDE];
++        b = fp[0*ASTRIDE];
++        c = fp[1*ASTRIDE];
++        d = fp[2*ASTRIDE];
+         cminusb = c-b;
+         outlet_float(x->x_obj.ob_outlet, b + frac * (
+             cminusb - 0.1666667f * (1.-frac) * (
+@@ -1083,7 +1094,7 @@
+             n = 0;
+         else if (n >= vecsize)
+             n = vecsize-1;
+-        vec[n] = f;
++        vec[n*ASTRIDE] = f;
+         garray_redraw(a);
+     }
+ }
+Index: src/d_soundfile.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/d_soundfile.c,v
+retrieving revision 1.4.4.11.2.9
+diff -u -r1.4.4.11.2.9 d_soundfile.c
+--- src/d_soundfile.c	30 Nov 2005 13:36:57 -0000	1.4.4.11.2.9
++++ src/d_soundfile.c	11 Aug 2006 04:57:54 -0000
+@@ -29,6 +29,7 @@
+ #include "g_canvas.h"
+ 
+ #define MAXSFCHANS 64
++#define ASTRIDE (sizeof(union word)/sizeof(t_sample))
+ 
+ #ifdef _LARGEFILE64_SOURCE
+ # define open open64
+@@ -407,14 +408,14 @@
+         {
+             if (bigendian)
+             {
+-                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                         *fp = SCALE * ((sp2[0] << 24) | (sp2[1] << 16));
+             }
+             else
+             {
+-                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                         *fp = SCALE * ((sp2[1] << 24) | (sp2[0] << 16));
+             }
+         }
+@@ -422,15 +423,15 @@
+         {
+             if (bigendian)
+             {
+-                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                         *fp = SCALE * ((sp2[0] << 24) | (sp2[1] << 16)
+                             | (sp2[2] << 8));
+             }
+             else
+             {
+-                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                         *fp = SCALE * ((sp2[2] << 24) | (sp2[1] << 16)
+                             | (sp2[0] << 8));
+             }
+@@ -439,15 +440,15 @@
+         {
+             if (bigendian)
+             {
+-                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                         *(long *)fp = ((sp2[0] << 24) | (sp2[1] << 16)
+                             | (sp2[2] << 8) | sp2[3]);
+             }
+             else
+             {
+-                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp=vecs[i] + itemsread*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                         *(long *)fp = ((sp2[3] << 24) | (sp2[2] << 16)
+                             | (sp2[1] << 8) | sp2[0]);
+             }
+@@ -455,8 +456,8 @@
+     }
+         /* zero out other outputs */
+     for (i = sfchannels; i < nvecs; i++)
+-        for (j = nitems, fp = vecs[i]; j--; )
+-            *fp++ = 0;
++        for (j = nitems, fp = vecs[i*ASTRIDE]; j--; )
++            *fp = 0,fp += ASTRIDE;
+ 
+ }
+ 
+@@ -810,8 +811,8 @@
+             float ff = normalfactor * 32768.;
+             if (bigendian)
+             {
+-                for (j = 0, sp2 = sp, fp = vecs[i] + onset;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp = vecs[i] + onset*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                 {
+                     int xx = 32768. + (*fp * ff);
+                     xx -= 32768;
+@@ -825,8 +826,8 @@
+             }
+             else
+             {
+-                for (j = 0, sp2 = sp, fp=vecs[i] + onset;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp=vecs[i] + onset*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                 {
+                     int xx = 32768. + (*fp * ff);
+                     xx -= 32768;
+@@ -844,8 +845,8 @@
+             float ff = normalfactor * 8388608.;
+             if (bigendian)
+             {
+-                for (j = 0, sp2 = sp, fp=vecs[i] + onset;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp=vecs[i] + onset*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                 {
+                     int xx = 8388608. + (*fp * ff);
+                     xx -= 8388608;
+@@ -860,8 +861,8 @@
+             }
+             else
+             {
+-                for (j = 0, sp2 = sp, fp=vecs[i] + onset;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp=vecs[i] + onset*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                 {
+                     int xx = 8388608. + (*fp * ff);
+                     xx -= 8388608;
+@@ -879,8 +880,8 @@
+         {
+             if (bigendian)
+             {
+-                for (j = 0, sp2 = sp, fp=vecs[i] + onset;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp=vecs[i] + onset*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                 {
+                     float f2 = *fp * normalfactor;
+                     xx = *(long *)&f2;
+@@ -890,8 +891,8 @@
+             }
+             else
+             {
+-                for (j = 0, sp2 = sp, fp=vecs[i] + onset;
+-                    j < nitems; j++, sp2 += bytesperframe, fp++)
++                for (j = 0, sp2 = sp, fp=vecs[i] + onset*ASTRIDE;
++                    j < nitems; j++, sp2 += bytesperframe, fp+=ASTRIDE)
+                 {
+                     float f2 = *fp * normalfactor;
+                     xx = *(long *)&f2;
+Index: src/g_graph.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/g_graph.c,v
+retrieving revision 1.3.4.2.2.4
+diff -u -r1.3.4.2.2.4 g_graph.c
+--- src/g_graph.c	17 Sep 2005 22:35:07 -0000	1.3.4.2.2.4
++++ src/g_graph.c	11 Aug 2006 04:57:55 -0000
+@@ -1018,16 +1018,16 @@
+     if (oldx < newx - 1)
+     {
+         for (i = oldx + 1; i <= newx; i++)
+-            vec[i] = newy + (oldy - newy) *
++            vec[i*sizeof(union word)/sizeof(t_sample)] = newy + (oldy - newy) *
+                 ((float)(newx - i))/(float)(newx - oldx);
+     }
+     else if (oldx > newx + 1)
+     {
+         for (i = oldx - 1; i >= newx; i--)
+-            vec[i] = newy + (oldy - newy) *
++            vec[i*sizeof(union word)/sizeof(t_sample)] = newy + (oldy - newy) *
+                 ((float)(newx - i))/(float)(newx - oldx);
+     }
+-    else vec[newx] = newy;
++    else vec[newx*sizeof(union word)/sizeof(t_sample)] = newy;
+     garray_redraw(a);
+ }
+ 
+Index: src/m_pd.h
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/m_pd.h,v
+retrieving revision 1.4.4.11.2.25
+diff -u -r1.4.4.11.2.25 m_pd.h
+--- src/m_pd.h	1 Jul 2006 04:20:02 -0000	1.4.4.11.2.25
++++ src/m_pd.h	11 Aug 2006 04:57:56 -0000
+@@ -850,6 +850,8 @@
+ #define PD_BIGORSMALL(f) 0
+ #endif
+ 
++#define ASTRIDE (sizeof(union word)/sizeof(t_sample))
++
+ 
+ /* tb: wrapper for PD_BIGORSMALL macro */
+ EXTERN void testcopyvec(t_float *dst,const t_float *src,int n);

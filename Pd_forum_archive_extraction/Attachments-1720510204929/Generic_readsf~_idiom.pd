@@ -1,0 +1,56 @@
+#N canvas 262 587 757 454 10;
+#X obj 143 186 readsf~ 2;
+#X obj 23 313 catch~ \$0-ch1;
+#X obj 52 337 catch~ \$0-ch2;
+#X obj 23 367 output~;
+#X obj 143 249 throw~ \$0-ch1;
+#X obj 168 222 throw~ \$0-ch2;
+#X msg 235 186 open path/to/file;
+#X obj 19 12 loadbang;
+#X obj 19 41 s \$0-open-all;
+#X obj 235 158 r \$0-open-all;
+#X obj 143 81 bng 30 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X msg 143 138 1;
+#X obj 181 81 bng 30 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X msg 164 160 0;
+#X obj 181 120 t b b;
+#X obj 373 186 readsf~ 2;
+#X obj 373 249 throw~ \$0-ch1;
+#X obj 398 222 throw~ \$0-ch2;
+#X msg 465 186 open path/to/file;
+#X obj 465 158 r \$0-open-all;
+#X obj 373 81 bng 30 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X msg 373 138 1;
+#X obj 411 81 bng 30 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X msg 394 160 0;
+#X obj 411 120 t b b;
+#X text 622 187 et cetera;
+#X connect 0 0 4 0;
+#X connect 0 1 5 0;
+#X connect 0 2 6 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 1;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 9 0 6 0;
+#X connect 10 0 11 0;
+#X connect 11 0 0 0;
+#X connect 12 0 14 0;
+#X connect 13 0 0 0;
+#X connect 14 0 6 0;
+#X connect 14 1 13 0;
+#X connect 15 0 16 0;
+#X connect 15 1 17 0;
+#X connect 15 2 18 0;
+#X connect 18 0 15 0;
+#X connect 19 0 18 0;
+#X connect 20 0 21 0;
+#X connect 21 0 15 0;
+#X connect 22 0 24 0;
+#X connect 23 0 15 0;
+#X connect 24 0 18 0;
+#X connect 24 1 23 0;

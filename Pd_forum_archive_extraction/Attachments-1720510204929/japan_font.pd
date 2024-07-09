@@ -1,0 +1,11 @@
+#N canvas 1350 290 513 545 10;
+#X msg 39 61 create \, 1;
+#X obj 39 83 gemwin;
+#X obj 192 60 gemhead;
+#X obj 276 60 loadbang;
+#X obj 192 121 text3d;
+#X msg 276 82 font epgyosho.ttf \, string 12360;
+#X connect 0 0 1 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;

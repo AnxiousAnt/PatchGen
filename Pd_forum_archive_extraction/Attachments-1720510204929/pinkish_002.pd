@@ -1,0 +1,155 @@
+#N canvas 329 197 570 480 10;
+#X obj 117 247 env~;
+#X obj 117 271 - 100;
+#X obj 118 298 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 186 247 *~ 0.5;
+#X obj 183 275 dac~;
+#X obj 246 246 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 1 10 -262144
+-1 -1 4700 1;
+#X obj 212 130 pink~;
+#X text 190 43 rbj;
+#N canvas 0 0 802 487 demux 0;
+#X obj 109 67 inlet~;
+#X obj 177 66 inlet~;
+#X obj 244 64 inlet~;
+#X obj 452 64 inlet;
+#X obj 107 373 outlet~;
+#X obj 108 309 *~ 1;
+#X obj 178 314 *~ 0;
+#X obj 243 315 *~ 0;
+#X obj 307 66 inlet~;
+#X obj 306 317 *~ 0;
+#X msg 452 120 1 0 0 0 0;
+#X msg 475 146 0 1 0 0 0;
+#X msg 499 169 0 0 1 0 0;
+#X msg 523 203 0 0 0 1 0;
+#X obj 452 88 select 0 1 2 3;
+#X obj 452 273 unpack 0 0 0 0;
+#X connect 0 0 5 0;
+#X connect 1 0 6 0;
+#X connect 2 0 7 0;
+#X connect 3 0 14 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 10 0;
+#X connect 14 1 11 0;
+#X connect 14 2 12 0;
+#X connect 14 3 13 0;
+#X connect 15 0 5 1;
+#X connect 15 1 6 1;
+#X connect 15 2 7 1;
+#X connect 15 3 9 1;
+#X restore 187 202 pd demux;
+#X obj 260 202 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 227 160 noise~;
+#X text 280 159 white;
+#X text 265 127 cyclone;
+#N canvas 547 313 450 300 pink-iem 0;
+#X text 27 150 signal-out;
+#X obj 29 129 outlet~;
+#X obj 29 49 noise~;
+#X text 14 7 pink~;
+#X text 65 8 pink-noise-generator with -3 dB per oktave;
+#X text 13 178 (c) musil@iem.kug.ac.at;
+#X text 55 191 IEM KUG;
+#X text 30 203 graz \, austria 2001;
+#X obj 29 88 biquad~ 1.83221 -0.836851 0.271264 -0.456311 0.18969;
+#X obj 29 108 biquad~ 0.273097 0.087865 0.505803 0.171365 -0.03813
+;
+#X obj 29 68 biquad~ 1.98893 -0.988954 1.00554 -1.9889 0.983444;
+#X connect 2 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
+#X connect 10 0 8 0;
+#X restore 199 97 pd pink-iem;
+#N canvas 125 123 1083 480 pink-rbj 0;
+#X obj 94 198 rpole~ 0.995728;
+#X obj 96 252 rpole~ 0.947906;
+#X obj 94 305 rpole~ 0.535675;
+#X obj 111 169 rzero~ 0.984436;
+#X obj 111 227 rzero~ 0.833923;
+#X obj 110 277 rzero~ 0.0756836;
+#X obj 93 363 outlet~;
+#X text 604 35 (This is rbj = (Red) Robert Bristow-Johnson's three
+pole and three zero filter.) Music-DSP list on 30 June 1998:;
+#X obj 111 142 noise~;
+#X obj 214 305 * 0.01;
+#X obj 234 277 * 0.01;
+#X obj 213 253 * 0.01;
+#X obj 226 228 * 0.01;
+#X obj 210 199 * 0.01;
+#X obj 227 168 * 0.01;
+#X obj 401 129 unpack 0 0 0;
+#X obj 305 130 unpack 0 0 0;
+#X msg 305 73 99.5728 94.7906 53.5675;
+#X msg 401 96 98.4436 83.3923 7.56836;
+#X obj 401 30 loadbang;
+#X text 161 336 normalization factor was found empirically;
+#X text 605 401 Source: http://www.firstpr.com.au/dsp/pink-noise/#Filtering
+;
+#X text 605 79 "another method that Orfanidis mentions came from a
+comp.dsp post of mine. it's just a simple "pinking" filter to be applied
+to white noise. since the rolloff is -3 dB/octave \, -6 dB/octave (1st
+order pole) is too steep and 0 dB/octave is too shallow.;
+#X text 608 181 an equiripple approximation to the ideal pinking filter
+can be realized by alternating real poles with real zeros. a simple
+3rd order solution that i obtained is:";
+#X text 609 309 "the response follows the ideal -3 dB/octave curve
+to within + or - 0.3 dB over a 10 octave range from 0.0009*nyquist
+to 0.9*nyquist. probably if i were to do it over again \, i'd make
+it 5 poles and 4 zeros.";
+#X text 566 248 See left for the coefficients. They were scaled by
+10 to avoid truncating them by saving to a .pd file with its limited
+resolution --fbar.;
+#X text 245 69 Poles:;
+#X text 335 98 Zeroes:;
+#X floatatom 167 373 5 0 0 0 - - -;
+#X obj 93 337 *~ 0.17;
+#X connect 0 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 29 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 8 0 3 0;
+#X connect 9 0 2 1;
+#X connect 10 0 5 1;
+#X connect 11 0 1 1;
+#X connect 12 0 4 1;
+#X connect 13 0 0 1;
+#X connect 14 0 3 1;
+#X connect 15 0 14 1;
+#X connect 15 1 12 1;
+#X connect 15 2 10 1;
+#X connect 16 0 13 1;
+#X connect 16 1 11 1;
+#X connect 16 2 9 1;
+#X connect 17 0 16 0;
+#X connect 18 0 15 0;
+#X connect 19 0 17 0;
+#X connect 19 0 18 0;
+#X connect 28 0 29 1;
+#X connect 29 0 6 0;
+#X restore 186 64 pd pink-rbj;
+#X text 286 97 from iemabs;
+#X msg 257 354 \; pd dsp 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 5 0 3 1;
+#X connect 6 0 8 2;
+#X connect 8 0 3 0;
+#X connect 8 0 0 0;
+#X connect 9 0 8 4;
+#X connect 10 0 8 3;
+#X connect 13 0 8 1;
+#X connect 14 0 8 0;

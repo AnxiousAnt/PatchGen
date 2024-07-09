@@ -1,0 +1,63 @@
+#N canvas 482 127 682 582 10;
+#X floatatom 395 243 0 0 0 0 - - -;
+#X obj 395 155 cputime;
+#X obj 395 42 loadbang;
+#X obj 395 99 metro 1000;
+#X msg 395 70 1;
+#X obj 395 127 t b b;
+#X obj 395 215 * 0.1;
+#X obj 395 184 int;
+#X obj 155 126 tgl 15 0 empty empty empty 17 7 0 10 -261234 -1 -1 0
+1;
+#X obj 155 155 metro 10;
+#X obj 206 497 s pd-test.pd;
+#X msg 35 383 editmode 1 \, mouse -1 -1 1 0 \, motion 100 1 0 \, mouseup
+100 1 1 \, cut;
+#X obj 155 42 key;
+#X obj 155 70 sel 10;
+#X msg 155 97 0;
+#X msg 412 383 obj 0 0 bang;
+#X obj 22 254 osc~ 440;
+#X obj 22 289 *~ 0.1;
+#X obj 22 325 dac~;
+#X msg 464 70 \; pd dsp 1;
+#X text 425 243 <-- Check the CPU load increasing.;
+#X text 183 43 Press 'Enter key' to stop.;
+#X text 54 323 <-- At somepoint \, you will hear audio starting to
+glitch.;
+#X text 409 363 1 Create [bang] object on this patch.;
+#X text 51 363 2 Change to editmode \, select the object and then delete.
+;
+#X obj 155 185 t b b b;
+#X obj 455 305 f;
+#X obj 485 305 + 1;
+#X obj 455 334 print;
+#X text 515 306 <-- Count and print.;
+#X text 174 125 <-- press this toggle to start.;
+#X text 288 496 <-- Make sure the patch name is the same as this file!
+;
+#X connect 1 0 7 0;
+#X connect 2 0 4 0;
+#X connect 2 0 19 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 1 0;
+#X connect 5 1 1 1;
+#X connect 6 0 0 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 25 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 8 0;
+#X connect 15 0 10 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 17 0 18 1;
+#X connect 25 0 11 0;
+#X connect 25 1 15 0;
+#X connect 25 2 26 0;
+#X connect 26 0 27 0;
+#X connect 26 0 28 0;
+#X connect 27 0 26 1;

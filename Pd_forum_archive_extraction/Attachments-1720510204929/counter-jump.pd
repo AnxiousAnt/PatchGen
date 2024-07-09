@@ -1,0 +1,36 @@
+#N canvas 879 58 372 302 10;
+#X floatatom 256 49 5 0 0 0 - - -;
+#X obj 218 126 f -5;
+#X obj 69 197 f;
+#X obj 114 197 + 1;
+#X msg 157 126 1;
+#X floatatom 114 252 5 0 0 0 - - -;
+#X obj 239 18 inlet jump-value;
+#X obj 157 18 inlet jump;
+#X obj 129 18 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
+-1;
+#X obj 157 81 t b b b;
+#X obj 69 82 metro 300;
+#X obj 42 19 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0 1
+;
+#X obj 25 81 sel 1;
+#X msg 25 106 -1;
+#X obj 42 47 t f f;
+#X connect 0 0 1 1;
+#X connect 1 0 3 1;
+#X connect 2 0 3 0;
+#X connect 3 0 2 1;
+#X connect 3 0 5 0;
+#X connect 4 0 3 1;
+#X connect 6 0 1 1;
+#X connect 7 0 9 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 0;
+#X connect 9 1 2 0;
+#X connect 9 2 1 0;
+#X connect 10 0 2 0;
+#X connect 11 0 14 0;
+#X connect 12 0 13 0;
+#X connect 13 0 2 0;
+#X connect 14 0 12 0;
+#X connect 14 1 10 0;

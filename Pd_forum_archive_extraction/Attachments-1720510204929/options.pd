@@ -1,0 +1,21 @@
+#N canvas 257 188 769 368 12;
+#X text 42 33 Option 1;
+#X obj 35 77 osc~ 1200;
+#X obj 116 77 osc~ 800;
+#X obj 35 191 dac~ 1;
+#X obj 149 233 loadbang;
+#X msg 149 257 \; pd dsp 0;
+#X text 299 33 Option 2;
+#X obj 276 74 osc~ 1200;
+#X obj 357 74 osc~ 800;
+#X obj 276 188 dac~ 1;
+#X obj 276 124 +~;
+#X text 528 33 Option 3?;
+#X text 296 298 As well \, consider the need to add more than 2 signals
+together.;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 7 0 10 0;
+#X connect 8 0 10 1;
+#X connect 10 0 9 0;

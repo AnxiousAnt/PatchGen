@@ -1,0 +1,50 @@
+#N canvas 0 0 797 394 12;
+#X obj 468 241 wavestretch;
+#X obj 660 182 dbtorms;
+#X obj 660 207 pack 0 20;
+#X obj 660 232 line~;
+#X obj 467 316 *~;
+#X obj 660 43 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 9700 1;
+#X obj 468 354 dac~;
+#X obj 28 218 soundfiler;
+#X obj 28 58 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 28 78 openpanel;
+#X obj 510 49 nbx 5 14 10 500 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 100 256;
+#X obj 22 347 table sound-array;
+#X text 641 14 volume;
+#X obj 28 243 v wavesize;
+#X text 20 27 open a sample;
+#X obj 225 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 225 77 v wavesize;
+#X obj 225 102 list append 120;
+#X msg 225 132 sound-array \$1 \$2;
+#X text 208 31 play sample;
+#X floatatom 552 208 5 0 0 0 - - -;
+#X text 537 184 transpose;
+#X obj 342 59 nbx 5 14 10 500 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 100 256;
+#X text 337 31 tempo;
+#X msg 28 190 read -resize \$1 sound-array;
+#X text 446 22 original sample tempo;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 1;
+#X connect 4 0 6 0;
+#X connect 4 0 6 1;
+#X connect 5 0 1 0;
+#X connect 7 0 13 0;
+#X connect 8 0 9 0;
+#X connect 9 0 24 0;
+#X connect 10 0 0 1;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 0 0;
+#X connect 20 0 0 2;
+#X connect 22 0 17 1;
+#X connect 24 0 7 0;

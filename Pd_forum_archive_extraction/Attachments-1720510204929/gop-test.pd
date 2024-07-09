@@ -1,0 +1,14 @@
+#N canvas 183 22 450 250 10;
+#X text 27 28 GOP donecanvasidalog test;
+#X text 27 57 1 - send a donecanvasdialog to the GOP will cause the
+parent patch to enter edit mode.;
+#N canvas 0 50 450 300 test 0;
+#X coords 0 0 1 1 95 50 1 0 0;
+#X restore 287 130 pd test;
+#X obj 29 105 s pd-test;
+#X msg 29 85 donecanvasdialog 1 1 1 0 0 1 1 85 60 0 0;
+#X obj 29 185 s pd-test;
+#X text 27 147 2 - it doesn't happen with coords;
+#X msg 29 165 coords 0 0 1 1 95 50 1 0 0;
+#X connect 4 0 3 0;
+#X connect 7 0 5 0;

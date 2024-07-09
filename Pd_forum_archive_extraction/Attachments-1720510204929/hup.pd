@@ -1,0 +1,13 @@
+#N canvas 183 395 450 300 10;
+#X msg 44 56 list h u p;
+#X obj 44 105 list2symbol;
+#X msg 163 55 symbol;
+#X obj 163 26 loadbang;
+#X obj 44 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 44 159 print;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 1;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;

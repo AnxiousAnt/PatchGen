@@ -1,0 +1,7 @@
+#N canvas 142 119 454 304 10;
+#X obj 187 69 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 183 111 \; pd-$0-name vis 1;
+#N canvas 0 22 454 304 1016-name 0;
+#X restore 230 209 pd \$0-name;
+#X connect 0 0 1 0;

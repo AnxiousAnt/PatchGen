@@ -1,0 +1,20 @@
+#N canvas 643 293 450 300 10;
+#X obj 86 95 noise~;
+#X obj 85 163 print~;
+#X obj 254 66 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 254 88 metro 1000;
+#X msg 254 180 \; pd dsp \$1;
+#X text 97 131 this wire doubled;
+#X obj 254 110 f;
+#X obj 284 112 + 1;
+#X obj 284 134 % 2;
+#X text 86 27 consistency check failed: signal_free 4;
+#X connect 0 0 1 0;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 1;

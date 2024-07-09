@@ -1,0 +1,4 @@
+#N canvas 232 31 700 598 10;
+#X msg 222 429 \; pd-yourmom obj 200 60 osc~ 440 \, obj 200 100 *~
+\, floatatom 216 80 \, obj 200 120 dac~ \, connect 1 0 2 0 \, connect
+3 0 2 1 \, connect 2 0 4 0 \, connect 2 0 4 1;

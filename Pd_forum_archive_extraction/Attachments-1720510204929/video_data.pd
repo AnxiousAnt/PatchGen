@@ -1,0 +1,240 @@
+#N canvas 774 129 379 321 10;
+#X msg 23 -12 destroy;
+#X msg 117 -12 off;
+#N canvas 245 203 483 407 camera 0;
+#X obj 96 145 pix_video;
+#X obj 24 -17 gemhead;
+#X obj 96 -16 inlet;
+#X obj 191 86 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 96 13 route on;
+#X msg 96 57 open 0;
+#X msg 142 57 close;
+#X obj 25 101 outlet;
+#X msg 191 57 set 1;
+#X msg 238 56 set 0;
+#X msg 25 77 set on;
+#X msg 25 56 set off;
+#X obj 96 180 pix_resize;
+#X msg 282 143 dimen \$1 \$2;
+#X floatatom 312 53 5 0 0 2 x_size - x_size;
+#X floatatom 354 53 5 0 0 2 y_size - y_size;
+#X obj 282 119 pack;
+#X obj 312 -18 loadbang;
+#X obj 282 96 r x_size;
+#X obj 342 96 r y_size;
+#X obj 342 119 t b f;
+#X obj 96 223 pix_dump;
+#X obj 139 253 outlet;
+#X obj 96 295 pix_texture;
+#X obj 96 326 rectangle 4 3;
+#X obj 283 185 bang~;
+#X text 324 185 update data;
+#X text 27 146 capture DV;
+#X text 17 180 resize video;
+#X text 6 223 videodata list;
+#X msg 312 5 8;
+#X connect 0 0 12 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 4 0 11 0;
+#X connect 4 0 8 0;
+#X connect 4 1 6 0;
+#X connect 4 1 10 0;
+#X connect 4 1 9 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 7 0;
+#X connect 11 0 7 0;
+#X connect 12 0 21 0;
+#X connect 13 0 12 0;
+#X connect 16 0 13 0;
+#X connect 17 0 30 0;
+#X connect 17 0 10 0;
+#X connect 18 0 16 0;
+#X connect 19 0 20 0;
+#X connect 20 0 16 0;
+#X connect 20 1 16 1;
+#X connect 21 0 23 0;
+#X connect 21 1 22 0;
+#X connect 23 0 24 0;
+#X connect 25 0 21 0;
+#X connect 30 0 14 0;
+#X connect 30 0 15 0;
+#X coords 0 -1 1 1 85 54 1 305 18;
+#X restore 117 14 pd camera;
+#N canvas 0 0 309 230 gemwin 0;
+#X obj 99 160 gemwin;
+#X obj 34 119 outlet;
+#X obj 34 34 inlet;
+#X obj 34 65 route create;
+#X msg 34 94 set destroy;
+#X msg 110 94 set create;
+#X msg 99 136 create \, 1;
+#X msg 165 136 destroy \, reset;
+#X obj 110 33 loadbang;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 3 1 5 0;
+#X connect 3 1 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 5 0;
+#X restore 23 18 pd gemwin;
+#N canvas 160 120 484 510 data 0;
+#X obj 68 -134 until;
+#X obj 68 -164 t b l;
+#X obj 68 -108 list;
+#X obj 156 -83 bang;
+#X obj 68 -83 list split 1;
+#X obj 68 -44 t b l;
+#X obj 100 16 + 1;
+#X obj 68 40 % 4;
+#X msg 99 -10 1;
+#X text 191 -83 <-- separate each single value;
+#X text 101 42 <-- counter from 0 to 3;
+#X obj 68 76 pack;
+#X obj 68 16 f 0;
+#X obj 68 98 route 0 1 2;
+#X text 146 98 <-- route R \, G & B values;
+#X obj 68 -195 inlet;
+#X obj -9 183 + 1;
+#X obj -37 183 f 0;
+#X obj -37 204 %;
+#X obj 16 183 r size;
+#X obj 16 204 - 1;
+#X obj -62 160 t f b;
+#X obj -62 226 tabwrite R;
+#X obj 141 183 + 1;
+#X obj 113 183 f 0;
+#X obj 113 204 %;
+#X obj 166 183 r size;
+#X obj 166 204 - 1;
+#X obj 88 160 t f b;
+#X obj 281 183 + 1;
+#X obj 253 183 f 0;
+#X obj 253 204 %;
+#X obj 306 183 r size;
+#X obj 306 204 - 1;
+#X obj 228 160 t f b;
+#X obj 88 226 tabwrite G;
+#X obj 228 226 tabwrite B;
+#X text -18 254 store R \, G or B values in its related table;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 1 2 1;
+#X connect 2 0 4 0;
+#X connect 3 0 0 1;
+#X connect 4 0 5 0;
+#X connect 4 1 2 1;
+#X connect 4 2 3 0;
+#X connect 5 0 12 0;
+#X connect 5 1 11 1;
+#X connect 6 0 12 1;
+#X connect 7 0 11 0;
+#X connect 8 0 12 1;
+#X connect 11 0 13 0;
+#X connect 12 0 6 0;
+#X connect 12 0 7 0;
+#X connect 13 0 21 0;
+#X connect 13 1 28 0;
+#X connect 13 2 34 0;
+#X connect 15 0 1 0;
+#X connect 16 0 17 1;
+#X connect 17 0 16 0;
+#X connect 17 0 18 0;
+#X connect 18 0 22 1;
+#X connect 19 0 20 0;
+#X connect 20 0 18 1;
+#X connect 21 0 22 0;
+#X connect 21 1 17 0;
+#X connect 23 0 24 1;
+#X connect 24 0 23 0;
+#X connect 24 0 25 0;
+#X connect 25 0 35 1;
+#X connect 26 0 27 0;
+#X connect 27 0 25 1;
+#X connect 28 0 35 0;
+#X connect 28 1 24 0;
+#X connect 29 0 30 1;
+#X connect 30 0 29 0;
+#X connect 30 0 31 0;
+#X connect 31 0 36 1;
+#X connect 32 0 33 0;
+#X connect 33 0 31 1;
+#X connect 34 0 36 0;
+#X connect 34 1 30 0;
+#X restore 195 83 pd data;
+#X obj 238 -10 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 238 12 dsp~;
+#X text 261 -10 on/off data;
+#N canvas 314 364 303 237 stuffs 0;
+#X obj 73 -99 r x_size;
+#X obj 131 -99 r y_size;
+#X obj 131 -48 *;
+#X obj 131 -73 t b f;
+#X msg 91 9 \; R resize \$1 \; G resize \$1 \; B resize \$1 \;;
+#X obj 131 -23 s size;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 3 1 2 1;
+#X restore 23 51 pd stuffs;
+#N canvas 0 0 450 300 graph3 0;
+#X array R 64 float 3;
+#A 0 0.356863 0.470588 0.584314 0.439216 0.313726 0.133333 0.129412
+0.419608 0.415686 0.529412 0.690196 0.505882 0.313726 0.176471 0.172549
+0.368627 0.419608 0.501961 0.623529 0.517647 0.341176 0.160784 0.156863
+0.368627 0.431373 0.376471 0.666667 0.505882 0.384314 0.290196 0.117647
+0.321569 0.396078 0.482353 0.690196 0.537255 0.384314 0.341176 0.203922
+0.247059 0.337255 0.32549 0.239216 0.168627 0.14902 0.254902 0.239216
+0.262745 0.372549 0.396078 0.294118 0.176471 0.141176 0.196078 0.294118
+0.298039 0.411765 0.47451 0.384314 0.360784 0.247059 0.133333 0.360784
+0;
+#X coords 0 1 64 0 100 70 1;
+#X restore 16 148 graph;
+#N canvas 0 0 450 300 graph3 0;
+#X array G 64 float 3;
+#A 0 0.403922 0.54902 0.666667 0.482353 0.333333 0.12549 0.12549 0.498039
+0.47451 0.607843 0.776471 0.560784 0.333333 0.168627 0.164706 0.415686
+0.482353 0.533333 0.615686 0.537255 0.372549 0.14902 0.152941 0.423529
+0.494118 0.352941 0.694118 0.560784 0.411765 0.282353 0.109804 0.396078
+0.458824 0.501961 0.756863 0.596078 0.407843 0.337255 0.192157 0.278431
+0.392157 0.372549 0.243137 0.152941 0.141176 0.282353 0.266667 0.290196
+0.427451 0.45098 0.313726 0.156863 0.129412 0.203922 0.34902 0.337255
+0.470588 0.533333 0.427451 0.396078 0.258824 0.129412 0.435294 0;
+#X coords 0 1 64 0 100 70 1;
+#X restore 129 148 graph;
+#N canvas 0 0 450 300 graph3 0;
+#X array B 64 float 3;
+#A 0 0.482353 0.65098 0.788235 0.54902 0.392157 0.160784 0.160784 0.6
+0.560784 0.729412 0.937255 0.623529 0.380392 0.196078 0.203922 0.494118
+0.545098 0.65098 0.721569 0.568627 0.4 0.180392 0.184314 0.490196 0.556863
+0.454902 0.745098 0.619608 0.462745 0.301961 0.141176 0.458824 0.521569
+0.576471 0.807843 0.67451 0.458824 0.352941 0.207843 0.301961 0.415686
+0.396078 0.282353 0.184314 0.172549 0.321569 0.313726 0.321569 0.454902
+0.486275 0.360784 0.188235 0.156863 0.235294 0.415686 0.388235 0.52549
+0.580392 0.482353 0.454902 0.301961 0.160784 0.533333 0;
+#X coords 0 1 64 0 100 70 1;
+#X restore 243 148 graph;
+#X text 15 119 ------------------ video data tables ------------------
+;
+#X text 14 -38 ------------------- video processing ------------------
+;
+#X text 253 234 raul diaz [2007];
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 1 4 0;
+#X connect 3 0 0 0;
+#X connect 5 0 6 0;

@@ -1,0 +1,4 @@
+336c336
+<         for (ip = dsp_chain; ip; ) ip = (*(t_perfroutine)(*ip))(ip);
+---
+>         for (ip = dsp_chain; ip&&*ip; ) ip = (*(t_perfroutine)(*ip))(ip);

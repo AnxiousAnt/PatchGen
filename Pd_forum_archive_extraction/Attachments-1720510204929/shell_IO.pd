@@ -1,0 +1,32 @@
+#N canvas 756 157 567 445 10;
+#X obj 60 146 ggee/shell;
+#X obj 63 307 netsend;
+#X msg 63 214 connect localhost 5678;
+#X obj 62 387 netreceive 6789;
+#X obj 62 407 print fromnet;
+#X msg 89 268 send hello world;
+#X text 24 34 1: run your command (here "cat"):;
+#X text 26 189 2: connect the netsend:;
+#X text 27 252 3: send a message to your command:;
+#X obj 63 330 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 27 368 4: receive the answer here:;
+#X msg 335 253 disconnect;
+#X obj 308 50 cnv 15 250 40 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X msg 308 94 pkill -f "pdreceive 5678";
+#X obj 308 116 t a b;
+#X text 313 56 5:you MUST kill before quiting Pd! (else Pd will hang)
+, f 35;
+#X text 462 423 A.Rousseau 2017;
+#X text 86 7 UNIX SHELL I/O EXAMPLE;
+#X msg 60 53 pdreceive 5678 | cat | pdsend 6789 &;
+#X connect 1 0 9 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 5 0 1 0;
+#X connect 11 0 1 0;
+#X connect 13 0 14 0;
+#X connect 14 0 0 0;
+#X connect 14 1 11 0;
+#X connect 18 0 0 0;

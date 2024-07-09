@@ -1,0 +1,67 @@
+#N canvas 441 218 575 714 10;
+#N canvas 0 0 450 300 good-suicide 0;
+#X obj 111 120 bng 15 250 50 0 empty empty kill_me! 17 7 1 10 -262144
+-1 -1;
+#X obj 111 201 outlet;
+#X connect 0 0 1 0;
+#X coords 0 -1 1 1 85 60 1 100 100;
+#X restore 73 71 pd good-suicide;
+#N canvas 0 0 450 300 bad-suicide 0;
+#X obj 111 120 bng 15 250 50 0 empty empty kill_Pd! 17 7 1 10 -262144
+-1 -1;
+#X obj 111 201 outlet;
+#X connect 0 0 1 0;
+#X coords 0 -1 1 1 85 60 1 100 100;
+#X restore 271 72 pd bad-suicide;
+#X msg 73 161 \; pd-good-suicide clear;
+#X obj 73 139 delay;
+#X msg 271 160 \; pd-bad-suicide clear;
+#X obj 133 316 + 1;
+#X msg 102 295 bang;
+#X obj 98 436 f;
+#X obj 140 438 + 1;
+#X msg 98 415 bang;
+#X text 60 273 Wrong counter \, clicking will do a stack-overflow:
+;
+#X text 59 374 Another wrong counter \, now with [pipe 0]. No stack
+overflow \, but still wrong:;
+#X text 48 252 More examples:;
+#X obj 140 460 pipe 0;
+#X floatatom 133 342 5 0 0 0 - - -;
+#X obj 98 581 f;
+#X obj 140 583 + 1;
+#X msg 98 555 bang;
+#X obj 140 615 pipe 0;
+#X msg 170 582 clear;
+#X floatatom 140 670 5 0 0 0 - - -;
+#X obj 140 644 moses 1000;
+#X text 139 563 Does not freeze.;
+#X msg 140 543 0;
+#X floatatom 205 671 5 0 0 0 - - -;
+#X text 177 342 stack overflow every 499 steps (normally);
+#X obj 102 316 f;
+#X text 139 416 Never stops \, thus freezes Pd!!!!;
+#X text 62 506 Another wrong counter \, now with [pipe 0] and [moses
+1000] no stack overflow \, but of course still wrong:;
+#X text 259 670 does not overflow at 499 steps.;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 14 0;
+#X connect 5 0 26 0;
+#X connect 6 0 26 0;
+#X connect 7 0 8 0;
+#X connect 8 0 13 0;
+#X connect 9 0 7 0;
+#X connect 13 0 7 0;
+#X connect 15 0 16 0;
+#X connect 16 0 18 0;
+#X connect 17 0 15 0;
+#X connect 18 0 21 0;
+#X connect 19 0 18 0;
+#X connect 21 0 15 0;
+#X connect 21 0 20 0;
+#X connect 21 1 19 0;
+#X connect 21 1 24 0;
+#X connect 23 0 15 1;
+#X connect 26 0 5 0;

@@ -1,0 +1,58 @@
+#N canvas 694 49 438 422 10;
+#X obj 302 -27 table lala 65536;
+#X obj 210 -27 tabwrite~ lala;
+#X obj 210 -115 phasor~;
+#X msg 267 -150 0;
+#X obj 210 -140 / 65536;
+#X obj 210 -49 expr~ tanh($v1);
+#X obj 210 -185 samplerate~;
+#X floatatom 210 -162 7 0 0 0 - - -;
+#X obj 52 -224 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -257985
+-1;
+#X text 72 -224 create the transfer function table by banging;
+#X obj 52 -202 t b b;
+#X obj 299 -88 / 2;
+#X obj 210 -93 *~ 12;
+#X obj 210 -71 -~ 6;
+#X obj 312 -124 nbx 9 14 0 500 0 1 empty empty Compression 0 -8 0 10
+-4032 -13381 -13381 210 256;
+#X obj 260 -110 t b f f;
+#X obj 25 -42 adc~ 1;
+#X obj 25 75 tabread~ lala;
+#X obj 26 32 +~ 1;
+#X obj 26 52 *~ 32768;
+#X obj 25 -21 *~ 1;
+#X obj 91 -35 nbx 9 14 0 5 0 1 empty empty input_gain 0 -8 0 10 -4032
+-13381 -13381 1 256;
+#X obj 25 96 hip~ 10;
+#X obj 25 9 lop~ 1200;
+#X obj 93 -5 nbx 9 14 0 44100 0 1 empty empty lowpass_freq_Hz 0 -8
+0 10 -4032 -13381 -13381 1200 256;
+#X obj 26 135 dac~;
+#X connect 2 0 12 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 10 0;
+#X connect 10 0 3 0;
+#X connect 10 0 1 0;
+#X connect 10 1 6 0;
+#X connect 11 0 13 1;
+#X connect 12 0 13 0;
+#X connect 13 0 5 0;
+#X connect 14 0 15 0;
+#X connect 15 0 10 0;
+#X connect 15 1 12 1;
+#X connect 15 2 11 0;
+#X connect 16 0 20 0;
+#X connect 17 0 22 0;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;
+#X connect 20 0 23 0;
+#X connect 21 0 20 1;
+#X connect 22 0 25 0;
+#X connect 22 0 25 1;
+#X connect 23 0 18 0;
+#X connect 24 0 23 1;

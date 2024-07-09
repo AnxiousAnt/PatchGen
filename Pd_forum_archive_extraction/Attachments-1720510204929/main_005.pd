@@ -1,0 +1,15 @@
+#N canvas 76 287 550 279 10;
+#X obj 97 168 pd~ -ninsig 0 -noutsig 0;
+#X obj 97 210 print OUTPUT;
+#X msg 107 126 pd~ stop;
+#X msg 97 95 pd~ start -nogui second.pd;
+#X msg 77 65 pd~ start second.pd;
+#X text 225 65 OK;
+#X text 293 96 NO RESPONSE;
+#X obj 420 62 loadbang;
+#X msg 420 84 \; pd dsp 1;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 7 0 8 0;

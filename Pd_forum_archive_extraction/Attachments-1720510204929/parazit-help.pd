@@ -1,0 +1,11 @@
+#N canvas 57 39 805 637 12;
+#X obj 97 103 s pd-name_of_your_patch.pd;
+#X obj 151 75 s pd-parazit-help.pd;
+#X text 311 104 Example: for this patch.;
+#X obj 107 45 parazit;
+#X text 95 -10 Can be turned on from inside for maximum stealth;
+#X obj 104 22 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X connect 3 0 0 0;
+#X connect 3 0 1 0;
+#X connect 5 0 3 0;

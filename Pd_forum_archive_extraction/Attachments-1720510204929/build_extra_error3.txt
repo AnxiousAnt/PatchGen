@@ -1,0 +1,38 @@
+make[3]: Verzeichnis „/c/pd_externals/pure-data/extra/bob~“ wird betreten
+depbase=`echo bob~.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.47.1\" -DPACKAGE_STRING=\"pd\ 0.47.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.47.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DSTDC_HEADERS=1 -DHAVE_FCNTL_H=1 -DHAVE_LIMITS_H=1 -DHAVE_MALLOC_H=1 -DHAVE_STDDEF_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_PARAM_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYS_TIMEB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_ALLOCA=1 -Dvfork=fork -DHAVE_STDLIB_H=1 -DHAVE_MALLOC=1 -DHAVE_STDLIB_H=1 -DHAVE_REALLOC=1 -DRETSIGTYPE=void -DHAVE_DUP2=1 -DHAVE_FLOOR=1 -DHAVE_GETCWD=1 -DHAVE_GETTIMEOFDAY=1 -DHAVE_MEMMOVE=1 -DHAVE_MEMSET=1 -DHAVE_POW=1 -DHAVE_SQRT=1 -DHAVE_STRCHR=1 -DHAVE_STRERROR=1 -DHAVE_STRRCHR=1 -DHAVE_STRSTR=1 -DHAVE_STRTOL=1 -I.  -I../../src -DPD  -mms-bitfields -O3 -ffast-math -funroll-loops -fomit-frame-pointer  -MT bob~.lo -MD -MP -MF $depbase.Tpo -c -o bob~.lo bob~.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+Xbob~.lo
+libtool: warning: libobj name 'bob~.lo' may not contain shell special characters.
+libtool: compile:  gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.47.1\" "-DPACKAGE_STRING=\"pd 0.47.1\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.47.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DSTDC_HEADERS=1 -DHAVE_FCNTL_H=1 -DHAVE_LIMITS_H=1 -DHAVE_MALLOC_H=1 -DHAVE_STDDEF_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_PARAM_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYS_TIMEB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_ALLOCA=1 -Dvfork=fork -DHAVE_STDLIB_H=1 -DHAVE_MALLOC=1 -DHAVE_STDLIB_H=1 -DHAVE_REALLOC=1 -DRETSIGTYPE=void -DHAVE_DUP2=1 -DHAVE_FLOOR=1 -DHAVE_GETCWD=1 -DHAVE_GETTIMEOFDAY=1 -DHAVE_MEMMOVE=1 -DHAVE_MEMSET=1 -DHAVE_POW=1 -DHAVE_SQRT=1 -DHAVE_STRCHR=1 -DHAVE_STRERROR=1 -DHAVE_STRRCHR=1 -DHAVE_STRSTR=1 -DHAVE_STRTOL=1 -I. -I../../src -DPD -mms-bitfields -O3 -ffast-math -funroll-loops -fomit-frame-pointer -MT "bob~.lo" -MD -MP -MF ".deps/bob~.Tpo" -c "bob~.c"  -DDLL_EXPORT -DPIC -o .libs/bob~.o
+libtool: compile:  gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.47.1\" "-DPACKAGE_STRING=\"pd 0.47.1\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.47.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DSTDC_HEADERS=1 -DHAVE_FCNTL_H=1 -DHAVE_LIMITS_H=1 -DHAVE_MALLOC_H=1 -DHAVE_STDDEF_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_PARAM_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYS_TIMEB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_ALLOCA=1 -Dvfork=fork -DHAVE_STDLIB_H=1 -DHAVE_MALLOC=1 -DHAVE_STDLIB_H=1 -DHAVE_REALLOC=1 -DRETSIGTYPE=void -DHAVE_DUP2=1 -DHAVE_FLOOR=1 -DHAVE_GETCWD=1 -DHAVE_GETTIMEOFDAY=1 -DHAVE_MEMMOVE=1 -DHAVE_MEMSET=1 -DHAVE_POW=1 -DHAVE_SQRT=1 -DHAVE_STRCHR=1 -DHAVE_STRERROR=1 -DHAVE_STRRCHR=1 -DHAVE_STRSTR=1 -DHAVE_STRTOL=1 -I. -I../../src -DPD -mms-bitfields -O3 -ffast-math -funroll-loops -fomit-frame-pointer -MT "bob~.lo" -MD -MP -MF ".deps/bob~.Tpo" -c "bob~.c" -o bob~.o >/dev/null 2>&1
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -mms-bitfields -O3 -ffast-math -funroll-loops -fomit-frame-pointer  -module -avoid-version -shared -s -shared -Wl,--enable-auto-import -no-undefined -lpd -shrext .dll -L../../src  -o bob~.la -rpath /usr/local/lib/pd/extra/bob~ bob~.lo  -lpthread
+
+*** Warning: linker path does not have real file for library -lpd.
+*** I have the capability to make that library automatically link in when
+*** you link to this library.  But I can only do this if you have a
+*** shared version of the library, which you do not appear to have
+*** because I did check the linker path looking for a file starting
+*** with libpd but no candidates were found. (...for file magic test)
+
+*** Warning: libtool could not satisfy all declared inter-library
+*** dependencies of module bob~.  Therefore, libtool will create
+*** a static module, that should work as long as the dlopening
+*** application is linked with the -dlopen flag.
+libtool: link: ar cru .libs/bob~.a .libs/bob~.o
+libtool: link: ranlib .libs/bob~.a
+libtool: link: ( cd ".libs" && rm -f "bob~.la" && cp -pR "../bob~.la" "bob~.la" )
+rm -f *.dll
+cp -pR .libs/*.dll ./
+cp: der Aufruf von stat für „.libs/*.dll“ ist nicht möglich: No such file or directory
+GNUmakefile:720: die Regel für Ziel „all-local“ scheiterte
+make[3]: *** [all-local] Fehler 1
+make[3]: Verzeichnis „/c/pd_externals/pure-data/extra/bob~“ wird verlassen
+Makefile:442: die Regel für Ziel „all-recursive“ scheiterte
+make[2]: *** [all-recursive] Fehler 1
+make[2]: Verzeichnis „/c/pd_externals/pure-data/extra“ wird verlassen
+Makefile:494: die Regel für Ziel „all-recursive“ scheiterte
+make[1]: *** [all-recursive] Fehler 1
+make[1]: Verzeichnis „/c/pd_externals/pure-data“ wird verlassen
+Makefile:418: die Regel für Ziel „all“ scheiterte
+make: *** [all] Fehler 2

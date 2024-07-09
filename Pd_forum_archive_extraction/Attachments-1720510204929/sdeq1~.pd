@@ -1,0 +1,32 @@
+#N canvas 147 0 729 452 10;
+#X obj 56 48 noise~;
+#X obj 373 47 noise~;
+#X obj 57 85 expr~ sqrt(-2*ln(($v1+1)/2))*cos(6.283185*$v2);
+#X obj 489 88 \$1;
+#X obj 525 88 \$2;
+#X obj 126 26 inlet;
+#X msg 126 49 clear;
+#X obj 392 87 samplerate~;
+#X obj 446 43 loadbang;
+#X obj 56 203 outlet~;
+#X text 58 250 produces simulated output \, X of a 1st order stochastic
+differential equation as follows;
+#X text 56 294 X*dt + \$1*dX = \$2*dB;
+#X text 71 324 where B is standard Brownian motion;
+#X text 30 352 Usage: give two arguments \, where \$1>0 and the system
+is damped-- a self-centering random walk;
+#X text 86 383 \$2 is a parameter which describes the speed of the
+random walk \, higher values mean greater speed;
+#X obj 55 156 fexpr~ ($f4*$x1-$y[-1]/$f2)/$f3+$y[-1];
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 15 0;
+#X connect 3 0 15 2;
+#X connect 4 0 15 3;
+#X connect 5 0 6 0;
+#X connect 6 0 15 0;
+#X connect 7 0 15 1;
+#X connect 8 0 7 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 15 0 9 0;

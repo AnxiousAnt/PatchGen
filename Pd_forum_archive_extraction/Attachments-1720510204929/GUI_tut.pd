@@ -1,0 +1,27 @@
+#N canvas 715 397 250 184 12;
+#X obj 13 17 vsl 20 128 1.27 127 1 0 justaslider justaslider_rcv empty
+20 8 192 8 -258699 -1 -1 0 1;
+#X obj 36 128 bng 20 250 50 0 justabang justabang_rcv cheers 30 10
+193 8 -24198 -1 -1;
+#X obj 13 151 cnv 15 100 20 justacanvas justacanvas_rcv cheers 5 10
+193 14 -62784 -228992 0;
+#X text 78 37 right-click 2;
+#X text 77 54 see properties;
+#X obj 140 115 cnv 15 100 60 empty empty empty 20 12 0 14 -241291 -66577
+0;
+#N canvas 443 128 602 402 |||system 0;
+#X obj 247 30 r justabang;
+#X floatatom 43 149 5 0 0;
+#X obj 43 37 r justaslider;
+#X obj 43 259 makefilename No:_%d;
+#X msg 43 321 \; justacanvas_rcv label \$1;
+#X msg 247 81 cheers;
+#X text 248 337 send msg ($1) to canvas-label;
+#X obj 247 259 symbol;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 5 0 7 0;
+#X connect 7 0 4 0;
+#X restore 120 149 pd |||system;

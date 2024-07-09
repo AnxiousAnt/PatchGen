@@ -1,0 +1,38 @@
+#N canvas 735 288 524 428 12;
+#X declare -path tof -path iemguts;
+#X obj 50 106 pdcontrol;
+#X msg 50 78 dir 0;
+#X obj 139 131 print b;
+#X obj 50 133 print a;
+#X obj 139 106 tof/path current;
+#X msg 139 79 bang;
+#X obj 152 23 declare -path tof -path iemguts;
+#X msg 277 81 bang;
+#X obj 277 106 iemguts/canvasname;
+#X obj 400 132 print c;
+#X obj 52 281 pdcontrol;
+#X obj 128 246 iemguts/canvasname, f 19;
+#X obj 52 227 t b b;
+#X obj 52 205 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 52 255 dir 0;
+#X obj 142 222 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 52 307 list, f 11;
+#X msg 52 334 symbol \$1/\$2;
+#X obj 52 362 print full_path_plus_name;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 1 9 0;
+#X connect 10 0 16 0;
+#X connect 11 1 16 1;
+#X connect 12 0 14 0;
+#X connect 12 1 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 10 0;
+#X connect 15 0 11 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;

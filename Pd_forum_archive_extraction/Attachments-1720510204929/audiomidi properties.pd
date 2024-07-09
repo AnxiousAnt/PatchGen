@@ -1,0 +1,33 @@
+#N canvas 528 18 473 562 10;
+#X obj -164 400 s pd;
+#X msg -164 9 audio-properties;
+#X msg -135 241 midi-properties;
+#X text 32 135 A = input device;
+#X text 32 154 B = channels in;
+#X text 32 173 C = output device;
+#X text 33 191 D = channels out;
+#X text 33 210 E = sample rate;
+#X text 33 229 F = delay (msec);
+#X msg -132 306 midi-properties \; pd midi-dialog 0 0 0 0 0 0 0 0 1
+2;
+#X msg -133 268 midi-properties \; pd midi-dialog 0 0 0 0 1 0 0 0 1
+2;
+#X text -11 364 A = input device;
+#X text -42 339 A 0 0 0 B 0 0 0 C D;
+#X text -10 420 D = ???;
+#X text -11 402 C = ??;
+#X text -11 383 B = output device;
+#X msg -151 37 audio-properties \; pd audio-dialog 1 0 0 0 1 0 0 0
+1 0 0 0 2 0 0 0 44100 70;
+#X msg -141 79 audio-properties \; pd audio-dialog 2 0 0 0 2 0 0 0
+2 0 0 0 8 0 0 0 48000 20;
+#X text -44 110 A 0 0 0 B 0 0 0 C 0 0 0 D 0 0 0 E F;
+#X obj 163 263 r pd;
+#X obj 163 296 print;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 16 0 0 0;
+#X connect 17 0 0 0;
+#X connect 19 0 20 0;

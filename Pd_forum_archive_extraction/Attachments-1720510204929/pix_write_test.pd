@@ -1,0 +1,69 @@
+#N canvas 372 117 437 613 10;
+#X obj 52 45 cnv 15 170 250 empty empty empty 20 12 0 14 -228992 -66577
+0;
+#X text 56 28 Example:;
+#X obj 117 222 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
+0;
+#N canvas 0 0 450 300 gemwin 0;
+#X obj 132 136 gemwin;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X obj 67 41 route create;
+#X msg 67 70 set destroy;
+#X msg 142 68 set create;
+#X msg 132 112 create \, 1;
+#X msg 198 112 destroy;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 3 1 5 0;
+#X connect 3 1 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X restore 122 261 pd gemwin;
+#X msg 122 242 create;
+#X text 118 221 Create window:;
+#X obj 53 126 cnv 15 160 60 empty empty empty 20 12 0 14 -24198 -66577
+0;
+#X obj 54 52 gemhead;
+#X obj 54 164 pix_image;
+#X obj 70 84 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 0 450 300 openpanel 0;
+#X obj 114 62 inlet;
+#X obj 121 254 outlet;
+#X obj 114 125 openpanel;
+#X msg 114 162 set open \$1;
+#X obj 114 199 t b a;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 1 0;
+#X restore 70 105 pd openpanel;
+#X msg 70 133 open C:/Documents and Settings/All Users/Documents/My
+Pictures/Detroit_Front.jpg;
+#X obj 38 470 pix_texture;
+#X obj 54 531 rectangle 4 4;
+#X msg 148 362 auto 0;
+#X obj 291 348 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 145 337 file test 100;
+#X obj 145 310 loadbang;
+#X obj 59 422 pix_write 0 0 400 400;
+#X connect 3 0 4 0;
+#X connect 4 0 3 0;
+#X connect 7 0 8 0;
+#X connect 8 0 18 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 8 0;
+#X connect 12 0 13 0;
+#X connect 14 0 18 0;
+#X connect 15 0 18 0;
+#X connect 16 0 14 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 18 0 12 0;

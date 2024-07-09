@@ -1,0 +1,29 @@
+#N canvas 113 152 402 461 12;
+#X obj 140 385 mp3write~;
+#X msg 140 214 start;
+#X msg 75 295 stop;
+#X obj 40 267 t b b;
+#X obj 140 185 t b b;
+#X obj 249 344 osc~ 500;
+#X obj 40 46 metro 1000;
+#X obj 40 77 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 40 22 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 40 104 sel 0 1;
+#X msg 175 242 open c:/theone.mp3;
+#X msg 40 327 open c:/dummy.mp3;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 11 0;
+#X connect 3 1 2 0;
+#X connect 4 0 1 0;
+#X connect 4 1 10 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 0;
+#X connect 8 0 6 0;
+#X connect 9 0 3 0;
+#X connect 9 1 4 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;

@@ -1,0 +1,25 @@
+#N canvas 449 298 557 522 10;
+#X floatatom 135 131 5 0 0 0 - - -;
+#X obj 181 130 commun /a \$0;
+#X floatatom 136 150 5 0 0 0 - - -;
+#X obj 181 151 commun /b \$0;
+#X floatatom 135 172 5 0 0 0 - - -;
+#X obj 183 171 commun /c \$0;
+#X obj 133 270 hradio 15 1 0 8 empty empty load 0 -8 1 10 -262144 -1
+-1 0;
+#X obj 60 354 originator \$1 \$0;
+#X msg 133 235 svxdir /tmp/\$1-test.xml;
+#X msg 133 294 ldxdir /tmp/\$1-test.xml;
+#X obj 133 215 hradio 15 1 0 8 empty empty save 0 -8 1 10 -262144 -1
+-1 0;
+#X connect 0 0 1 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 4 0;
+#X connect 6 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;
+#X connect 10 0 8 0;
+#X coords 0 -1 1 1 200 200 1 100 100;

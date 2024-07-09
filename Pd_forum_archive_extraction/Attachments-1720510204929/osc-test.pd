@@ -1,0 +1,94 @@
+#N canvas 504 95 644 591 10;
+#X declare -lib mrpeach;
+#X obj 212 339 declare -lib mrpeach;
+#X obj 251 480 unpackOSC;
+#X obj 21 449 oscparse;
+#X obj 251 540 print mrp;
+#X obj 21 539 print van;
+#X obj 23 321 list prepend send;
+#X obj 23 341 list trim;
+#X obj 23 231 oscformat;
+#X msg 23 51 set /outputs_1 \, bang;
+#X obj 163 231 packOSC;
+#X msg 163 51 /outputs_1;
+#X msg 70 148 set /list/a \, 1;
+#X obj 23 361 netsend -u -b;
+#X msg 155 359 connect localhost 9999;
+#X obj 261 520 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 31 520 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 155 339 loadbang;
+#X text 24 21 Vanilla vs. Mrpeach OSC test;
+#X msg 179 148 /list/a 1;
+#X msg 163 271 47 111 117 116 112 117 116 115 95 49 0 0 44 0 0 0;
+#N canvas 0 50 450 300 set 0;
+#X obj 62 80 list prepend set;
+#X obj 62 101 list trim;
+#X obj 62 122 outlet;
+#X obj 66 47 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X restore 163 251 pd set;
+#X msg 163 301 47 111 117 116 112 117 116 115 95 49 0 0 44 0 0 0;
+#N canvas 0 50 450 300 set 0;
+#X obj 62 80 list prepend set;
+#X obj 62 101 list trim;
+#X obj 62 122 outlet;
+#X obj 66 47 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X restore 33 251 pd set;
+#X msg 159 168 /list/a 1.5;
+#X msg 30 168 set /list/a \, 1.5;
+#X obj 21 419 netreceive -u -b 9999;
+#X obj 261 500 route /outputs_1;
+#X obj 31 480 route symbol;
+#X text 250 147 test 2 - lists with argument \; - sends and receives
+look ok \, but in an external program \, only the output from mrpeach
+is being accepted. When looking at the osc code \, both results are
+different \; - in max/msp \, the print from oscformat shows that ints
+are converted to floats ("1.") \, while the input from packOSC is kept
+as it is. There is no difference when sending floats. This is problematic
+in programs which differentiate between float and int input.;
+#X obj 134 480 list trim;
+#X obj 31 500 route outputs_1;
+#X obj 134 520 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 134 500 route outputs_1;
+#X text 250 37 test 1 - single symbol \; - both sends are ok \; - when
+receiving below \, the route from mrpeach works \, the route from oscparse
+doesn't (although printout is similar) \, the "symbol" indicator doesn't
+get parsed. \; - it does work if there is a list trim after oscparse
+\, but it's confusing because there is no list indicator in oscparse's
+output;
+#X connect 1 0 3 0;
+#X connect 1 0 26 0;
+#X connect 2 0 4 0;
+#X connect 2 0 29 0;
+#X connect 2 0 27 0;
+#X connect 5 0 6 0;
+#X connect 6 0 12 0;
+#X connect 7 0 5 0;
+#X connect 7 0 22 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 9 0 20 0;
+#X connect 10 0 9 0;
+#X connect 11 0 7 0;
+#X connect 13 0 12 0;
+#X connect 16 0 13 0;
+#X connect 18 0 9 0;
+#X connect 20 0 19 0;
+#X connect 22 0 21 0;
+#X connect 23 0 9 0;
+#X connect 24 0 7 0;
+#X connect 25 0 2 0;
+#X connect 25 0 1 0;
+#X connect 26 0 14 0;
+#X connect 27 0 30 0;
+#X connect 29 0 32 0;
+#X connect 30 0 15 0;
+#X connect 32 0 31 0;

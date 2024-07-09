@@ -1,0 +1,28 @@
+#N canvas 623 67 450 300 10;
+#X obj 99 107 soundfile_info;
+#X obj 57 46 openpanel;
+#X obj 57 27 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 57 66 t a a;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array testarray 100 float 2;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 228 26 graph;
+#X obj 57 246 soundfiler;
+#X obj 99 129 list split 2;
+#X obj 134 149 list split 1;
+#X msg 134 171 \; testarray resize \$1 \;;
+#X msg 98 83 read \$1;
+#X msg 57 225 read \$1 testarray;
+#X text 114 67 first resize;
+#X text 68 208 writes the file;
+#X text 75 25 browse and open file;
+#X connect 0 0 6 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 10 0;
+#X connect 3 1 9 0;
+#X connect 6 1 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 0 0;
+#X connect 10 0 5 0;

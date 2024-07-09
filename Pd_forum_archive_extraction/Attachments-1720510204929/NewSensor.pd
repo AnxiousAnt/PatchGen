@@ -1,0 +1,169 @@
+#N canvas 0 0 1028 724 10;
+#X obj 20 135 sampleplayer 1;
+#X floatatom 389 120 5 0 0 0 - - -;
+#X obj 389 216 bng 20 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 0 1028 734 com 0;
+#X obj 301 224 import zexy;
+#X obj 21 78 nbx 4 16 -1e+037 1e+037 0 0 empty empty empty 0 -6 0 14
+-241291 -1 -1 0 256;
+#X obj 99 78 nbx 6 16 -1e+037 1e+037 0 0 empty empty empty 0 -6 0 14
+-241291 -1 -1 0 256;
+#X obj 192 78 nbx 3 16 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+14 -241291 -1 -1 0 256;
+#X obj 270 78 nbx 3 16 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+14 -241291 -1 -1 0 256;
+#X obj 352 79 nbx 3 16 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+14 -241291 -1 -1 0 256;
+#X obj 438 79 nbx 3 16 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+14 -241291 -1 -1 0 256;
+#X obj 21 132 nbx 6 16 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+14 -3754 -1 -1 1666 256;
+#X obj 122 132 nbx 6 16 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+14 -3754 -1 -1 1534 256;
+#X obj 223 132 nbx 6 16 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+14 -3754 -1 -1 1422 256;
+#X msg 128 201 close;
+#X obj 59 265 select 10;
+#X text 16 5 This patch works with the example Arduino firmware of
+the same name.;
+#X obj 259 504 +;
+#X obj 229 525 float;
+#X obj 203 369 trigger float bang;
+#X obj 275 465 float;
+#X obj 275 484 * 10;
+#X obj 341 489 float;
+#X msg 305 446 0;
+#X obj 80 526 makefilename %c;
+#X obj 80 550 pack symbol float;
+#X msg 81 579 \; \$1 \$2;
+#X obj 117 287 moses 64;
+#X obj 21 112 receive A;
+#X obj 122 112 receive B;
+#X obj 223 112 receive C;
+#X obj 99 58 receive E;
+#X obj 21 58 receive D;
+#X obj 192 58 receive F;
+#X obj 270 58 receive G;
+#X obj 352 59 receive H;
+#X obj 438 59 receive I;
+#X obj 203 319 makefilename %c;
+#X obj 203 339 symbol2list;
+#X obj 34 412 trigger float bang bang;
+#X obj 46 475 float;
+#X text 12 95 potentiometers:;
+#X text 10 39 pushbuttons;
+#X obj 64 169 r open 4;
+#X obj 137 170 r close;
+#X msg 64 201 open 3;
+#X obj 59 241 comport 1 115200;
+#X connect 10 0 42 0;
+#X connect 11 1 23 0;
+#X connect 13 0 14 1;
+#X connect 13 0 18 0;
+#X connect 14 0 21 1;
+#X connect 15 0 13 0;
+#X connect 15 1 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 13 1;
+#X connect 18 0 16 1;
+#X connect 19 0 16 1;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 23 0 33 0;
+#X connect 23 1 35 0;
+#X connect 24 0 7 0;
+#X connect 25 0 8 0;
+#X connect 26 0 9 0;
+#X connect 27 0 2 0;
+#X connect 28 0 1 0;
+#X connect 29 0 3 0;
+#X connect 30 0 4 0;
+#X connect 31 0 5 0;
+#X connect 32 0 6 0;
+#X connect 33 0 34 0;
+#X connect 34 0 15 0;
+#X connect 35 0 36 1;
+#X connect 35 1 36 0;
+#X connect 35 2 19 0;
+#X connect 35 2 14 0;
+#X connect 36 0 20 0;
+#X connect 39 0 41 0;
+#X connect 40 0 10 0;
+#X connect 41 0 42 0;
+#X connect 42 0 11 0;
+#X restore 466 70 pd com input;
+#X obj 360 307 s 1attack;
+#X obj 529 305 s 1release;
+#X obj 517 227 bng 20 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 487 338 s 2attack;
+#X obj 421 254 s 2release;
+#X obj 19 165 env_vol 1;
+#X floatatom 237 269 5 0 0 0 - - -;
+#X obj 237 371 s vol;
+#X obj 237 290 moses 400;
+#X obj 548 70 s open 4;
+#X obj 548 39 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 621 40 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 621 71 s close;
+#X obj 237 241 r B;
+#X obj 389 94 r A;
+#X obj 237 339 moses 1;
+#X obj 237 317 / 400;
+#X obj 111 165 env_vol 2;
+#X obj 203 165 env_vol 3;
+#X obj 654 246 bng 20 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 626 327 s 3attack;
+#X obj 721 286 s 1release;
+#X obj 703 325 s 2release;
+#X obj 551 275 s 3release;
+#X obj 405 279 s 3release;
+#X obj 389 185 timegate;
+#X obj 517 199 timegate;
+#X obj 654 220 timegate;
+#X obj 389 155 moses 60;
+#X obj 517 172 moses 140;
+#X obj 654 189 moses 220;
+#X obj 112 135 sampleplayer 2;
+#X obj 204 135 sampleplayer 3;
+#X msg 20 79 \; pd dsp \$1;
+#X obj 20 55 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0 1
+;
+#X obj 20 10 key;
+#X obj 20 34 select 113;
+#X connect 0 0 9 0;
+#X connect 1 0 32 0;
+#X connect 2 0 4 0;
+#X connect 2 0 8 0;
+#X connect 2 0 28 0;
+#X connect 6 0 7 0;
+#X connect 6 0 5 0;
+#X connect 6 0 27 0;
+#X connect 10 0 12 0;
+#X connect 12 0 20 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 17 0 10 0;
+#X connect 18 0 1 0;
+#X connect 19 0 11 0;
+#X connect 20 0 19 0;
+#X connect 23 0 24 0;
+#X connect 23 0 25 0;
+#X connect 23 0 26 0;
+#X connect 29 0 2 0;
+#X connect 30 0 6 0;
+#X connect 31 0 23 0;
+#X connect 32 0 29 0;
+#X connect 32 1 33 0;
+#X connect 33 0 30 0;
+#X connect 33 1 34 0;
+#X connect 34 0 31 0;
+#X connect 35 0 21 0;
+#X connect 36 0 22 0;
+#X connect 38 0 37 0;
+#X connect 39 0 40 0;
+#X connect 40 0 38 0;

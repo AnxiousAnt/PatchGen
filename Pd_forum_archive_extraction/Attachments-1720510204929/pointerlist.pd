@@ -1,0 +1,109 @@
+#N struct blarg float x float y float z float q array bazoo blarg-element
+;
+#N struct blarg-element float y;
+#N canvas 0 22 466 429 10;
+#X obj 74 85 pointer;
+#X obj 140 294 list;
+#X obj 99 314 list append;
+#N canvas 547 22 474 324 blargplot 0;
+#X scalar blarg 50 150 30 9 \; 0 \; 2 \; 1 \; 0 \; 0 \; 3 \; 0 \; 0
+\; 0 \; 7 \; \;;
+#X restore 279 211 pd blargplot;
+#N canvas 293 363 658 272 blarg-template 0;
+#X obj 8 91 filledpolygon 244 q 3 0 0 20 z 40 0;
+#X text 6 44 this declares an array named "bazoo" whose elements are
+described by "template5-element." Array declarations take three arguments
+while "float" declarations take only two.;
+#X text 6 136 Here we ask to plot the array \, color 700 \, line width
+3 \, starting location (30 \, 10) relative to the scalar \, points
+spaced 4 apart.;
+#X text 7 186 You can also do (x \, y) plots and/or make the line thickness
+variable---see the help window for "plot".;
+#X obj 8 113 plot bazoo 700 3 30 40 4;
+#X obj 6 8 struct blarg float x float y float z float q array bazoo
+blarg-element;
+#X restore 278 233 pd blarg-template;
+#N canvas 65 248 576 136 bazoo-element 0;
+#X text 12 36 This says that array elements will have a single floating-point
+number named "y". The variable name "y" is automatically assumed to
+control screen height \; if you don't have at least that variable you
+can't plot the array..;
+#X obj 35 11 struct blarg-element float y;
+#X restore 278 256 pd bazoo-element;
+#N canvas 386 232 605 445 stuff 0;
+#X obj 351 170 pointer;
+#X obj 136 102 t b b b;
+#X msg 136 61 bang;
+#X text 170 61 click here to re-initialize;
+#X obj 137 23 loadbang;
+#X msg 136 134 50 150 30 9;
+#X obj 134 191 t b b p;
+#X floatatom 68 327 0 0 0 0 - - -;
+#X floatatom 14 332 0 0 0 0 - - -;
+#X obj 20 303 unpack;
+#X msg 354 139 traverse pd-blargplot \, bang;
+#X obj 68 350 element blarg bazoo;
+#X obj 14 376 set blarg-element y;
+#X obj 284 307 setsize blarg bazoo;
+#X msg 12 258 3 5 \, 7 9 \, 1 2 \, 2 1;
+#X msg 283 280 10;
+#X msg 354 100 \; pd-blargplot clear;
+#X obj 134 163 append blarg x y z q;
+#X connect 0 0 17 4;
+#X connect 1 0 5 0;
+#X connect 1 1 10 0;
+#X connect 1 2 16 0;
+#X connect 2 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 17 0;
+#X connect 6 0 14 0;
+#X connect 6 1 15 0;
+#X connect 6 2 11 1;
+#X connect 6 2 13 1;
+#X connect 7 0 11 0;
+#X connect 8 0 12 0;
+#X connect 9 0 8 0;
+#X connect 9 1 7 0;
+#X connect 10 0 0 0;
+#X connect 11 0 12 1;
+#X connect 14 0 9 0;
+#X connect 15 0 13 0;
+#X connect 17 0 6 0;
+#X restore 281 190 pd stuff;
+#X floatatom 150 150 5 0 0 0 - - -;
+#X obj 74 130 getsize blarg bazoo;
+#X obj 97 195 until;
+#X msg 141 191 0;
+#X obj 129 216 + 1;
+#X obj 100 215 f;
+#X obj 75 106 t p p;
+#X msg 75 53 traverse pd-blargplot \, next;
+#X obj 95 240 element blarg bazoo;
+#X obj 74 153 t b f b;
+#X msg 177 268 bang;
+#X obj 94 266 t p b;
+#X obj 28 367 print pointerlist;
+#X obj 46 336 list;
+#X connect 0 0 13 0;
+#X connect 1 0 2 1;
+#X connect 2 0 1 1;
+#X connect 2 0 20 1;
+#X connect 8 0 7 0;
+#X connect 8 0 16 0;
+#X connect 9 0 12 0;
+#X connect 10 0 12 1;
+#X connect 11 0 12 1;
+#X connect 12 0 11 0;
+#X connect 12 0 15 0;
+#X connect 13 0 8 0;
+#X connect 13 1 15 1;
+#X connect 14 0 0 0;
+#X connect 15 0 18 0;
+#X connect 16 0 20 0;
+#X connect 16 1 9 0;
+#X connect 16 2 10 0;
+#X connect 16 2 17 0;
+#X connect 17 0 2 1;
+#X connect 18 0 2 0;
+#X connect 18 1 1 0;
+#X connect 20 0 19 0;

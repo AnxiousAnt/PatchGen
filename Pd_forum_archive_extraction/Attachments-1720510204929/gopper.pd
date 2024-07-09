@@ -1,0 +1,18 @@
+#N canvas 0 0 538 387 10;
+#N canvas 143 114 209 108 gop 0;
+#X obj 114 201 hradio 15 1 0 8 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X coords 0 0 1 1 200 90 1;
+#X restore 86 174 pd gop;
+#X text 79 22 Bug;
+#X text 84 57 open subpatch;
+#X text 84 78 move hradio up and right;
+#X text 83 100 close subpatch;
+#X text 83 124 save;
+#X text 83 145 Reopen patch!!;
+#N canvas 143 114 209 108 gop2 0;
+#X obj 44 41 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X coords 0 0 1 1 200 90 1;
+#X restore 293 174 pd gop2;
+#X text 300 138 It's not happening with hslider;

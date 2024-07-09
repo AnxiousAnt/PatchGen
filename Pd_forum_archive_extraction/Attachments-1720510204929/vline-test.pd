@@ -1,0 +1,103 @@
+#N canvas 45 140 1115 808 10;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array vline-test 2205 float 0;
+#X coords 0 1 2204 -1 1000 200 1 0 0;
+#X restore 42 467 graph;
+#X obj 113 340 tabwrite~ vline-test;
+#X obj 215 161 t b;
+#X obj 222 76 del 500;
+#X msg 222 109 stop;
+#X obj 113 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 241 249 vline~;
+#X obj 151 249 line~;
+#X obj 241 299 *~;
+#X obj 364 146 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 283 186 == 0;
+#X obj 516 145 loadbang;
+#X obj 151 299 *~ 1;
+#X obj 150 144 del 4;
+#X msg 151 209 -1 \, 1 4;
+#X msg 516 190 \; pd dsp 1 \; vline-test xticks 0 64 1 \;;
+#X obj 118 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 118 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 198 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 198 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 279 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 279 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 358 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 358 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 438 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 438 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 519 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 519 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 598 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 598 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 679 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 679 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 759 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 759 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 838 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 838 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 919 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 919 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 999 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 999 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 495 289 \; vline-test const 0;
+#X text 60 733 Ticks every 64 samples \, bang lines ca. every 4ms (176.4
+samples);
+#X connect 2 0 13 0;
+#X connect 3 0 4 0;
+#X connect 4 0 13 0;
+#X connect 5 0 3 0;
+#X connect 5 0 1 0;
+#X connect 5 0 13 0;
+#X connect 6 0 8 0;
+#X connect 7 0 12 0;
+#X connect 8 0 1 0;
+#X connect 9 0 10 0;
+#X connect 9 0 8 1;
+#X connect 10 0 12 1;
+#X connect 11 0 15 0;
+#X connect 12 0 1 0;
+#X connect 13 0 2 0;
+#X connect 13 0 14 0;
+#X connect 14 0 6 0;
+#X connect 14 0 7 0;
+#X connect 16 0 17 0;
+#X connect 18 0 19 0;
+#X connect 20 0 21 0;
+#X connect 22 0 23 0;
+#X connect 24 0 25 0;
+#X connect 26 0 27 0;
+#X connect 28 0 29 0;
+#X connect 30 0 31 0;
+#X connect 32 0 33 0;
+#X connect 34 0 35 0;
+#X connect 36 0 37 0;
+#X connect 38 0 39 0;

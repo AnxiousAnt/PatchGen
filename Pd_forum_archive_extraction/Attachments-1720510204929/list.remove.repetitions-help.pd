@@ -1,0 +1,8 @@
+#N canvas 314 574 450 300 10;
+#X obj 115 173 list.remove.repetitions;
+#X msg 77 95 1 2 2 3 4 3 5 5 5;
+#X msg 216 125 unique triple double double triple triple;
+#X obj 116 229 print;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;

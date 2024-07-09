@@ -1,0 +1,138 @@
+#N canvas 571 140 520 531 10;
+#X floatatom 141 313 10 0 0 0 - - -;
+#X obj 274 6 nbx 5 14 -10 1000 0 1 ag1-ptrhopsize empty ptrhopsize(s)
+60 5 0 10 -225271 -1 -1 -5 256;
+#X obj 274 23 nbx 5 14 0 100 0 1 ag1-ptrdeviation empty ptrdeviation()
+60 5 0 10 -225271 -1 -1 5 256;
+#X obj 274 40 nbx 5 14 0 100 0 1 ag1-ptrdeviationsmear empty ptrdeviationsmear(ms)
+60 5 0 10 -225271 -1 -1 7 256;
+#X obj 274 57 nbx 5 14 0 1000 0 1 ag1-ptrdrunkinc empty ptrdrunkinc(ms)
+60 5 0 10 -225271 -1 -1 0 256;
+#X obj 274 80 nbx 5 14 0 4000 0 1 ag1-grainreadrate empty grainreadrate(Hz)
+60 5 0 10 -225271 -1 -1 157 256;
+#X obj 274 97 nbx 5 14 0 1000 0 1 ag1-grainsize empty grainsize(ms)
+60 5 0 10 -225271 -1 -1 11 256;
+#X obj 274 114 nbx 5 14 0 100 0 1 ag1-grainsizedeviation empty grainsizedeviation()
+60 5 0 10 -225271 -1 -1 0 256;
+#X obj 274 131 nbx 5 14 0 1000 0 1 ag1-grdevsmear empty graindeviationsmear(ms)
+60 5 0 10 -225271 -1 -1 0 256;
+#X obj 274 148 nbx 5 14 0 1000 0 1 ag1-grdrunkinc empty graindrunkinc(ms)
+60 5 0 10 -225271 -1 -1 0 256;
+#X obj 274 165 nbx 5 14 0 100 0 1 ag1-grainamp empty grainamp(0-100)
+60 5 0 10 -225271 -1 -1 52 256;
+#X obj 274 194 nbx 5 14 0 100 0 1 ag1-tabstrtoff empty tabstartoffset(+%)
+60 5 0 10 -225271 -1 -1 4 256;
+#X obj 274 211 nbx 5 14 -100 0 0 1 ag1-tabendoff empty tabendoffset(-%)
+60 5 0 10 -225271 -1 -1 0 256;
+#X obj 58 260 tgl 15 0 empty empty ON/OFF 0 -6 0 8 -225271 -1 -1 0
+1;
+#N canvas 37 82 520 561 tables 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array env 100 float 1;
+#A 0 0 0.000986636 0.00394267 0.00885636 0.0157084 0.0244717 0.0351118
+0.0475865 0.0618467 0.0778361 0.0954915 0.114743 0.135516 0.157727
+0.181288 0.206107 0.232087 0.259123 0.287111 0.315938 0.345492 0.375655
+0.406309 0.437333 0.468605 0.5 0.531395 0.562667 0.593691 0.624345
+0.654509 0.684062 0.71289 0.740877 0.767913 0.793893 0.818712 0.842274
+0.864484 0.885257 0.904509 0.922164 0.938153 0.952414 0.964888 0.975528
+0.984292 0.991144 0.996057 0.999013 1 0.999013 0.996057 0.991144 0.984292
+0.975528 0.964888 0.952414 0.938153 0.922164 0.904508 0.885257 0.864484
+0.842274 0.818712 0.793893 0.767913 0.740877 0.71289 0.684062 0.654508
+0.624345 0.593691 0.562667 0.531395 0.5 0.468605 0.437333 0.406309
+0.375655 0.345491 0.315938 0.28711 0.259123 0.232087 0.206107 0.181288
+0.157726 0.135516 0.114743 0.0954915 0.077836 0.0618466 0.0475864 0.0351117
+0.0244717 0.0157084 0.00885636 0.00394264 0.000986636;
+#X coords 0 1 99 0 150 100 1;
+#X restore 79 63 graph;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array samp 97088 float 0;
+#X coords 0 1 97087 -1 150 100 1;
+#X restore 79 189 graph;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array samp2 105536 float 0;
+#X coords 0 1 105535 -1 150 100 1;
+#X restore 79 322 graph;
+#X obj 238 138 soundfiler;
+#X obj 238 53 select 0 1;
+#X obj 238 30 inlet;
+#X msg 269 106 read -resize 2.wav samp2;
+#X obj 238 167 s \$0-tabsize;
+#X msg 238 79 read -resize 1.wav samp;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 4 1 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 0;
+#X connect 8 0 3 0;
+#X restore 73 82 pd tables;
+#N canvas 0 22 450 428 README 0;
+#X text 5 11 The two arguments to the a_grain~ abstraction give the
+enveloping function table name and the sample data table name respectively.
+The first outlet is th audio output \, the second outputs the current
+read position. The abstraction works by reading audio 'grains' of grainsize
+from a selection delimited by 0 + tabstartoffset and tabsize + tabendoffset
+(where tabendoffset should be negative). A table lookup for each grain
+is performed by a phasor that runs at grainreadrate. After each successive
+grain has been read \, the starting point for the table lookup is incremented
+by ptrhopsize. A windowing function is applied to each grain \, and
+some control over the steepness of this function is given by grainamp.
+Random offsets can be introduced for the point from which the grain
+is read (ptrdeviation) \, and the grainsize (grainsizedeviation). These
+are expressed as a percentage of the original value. Both offsets have
+a smear time \, which introduces a linear ramp towards the new value
+and 'smooths' the sound. The random offsets can be random values between
+-deviation and +deviation \, or change using a 'random walk' with a
+step size of ptrdrunkinc or graindrunkinc. This will be the behaviour
+if rand-drunk is set to 1 This abstraction requires various output~
+by Miller Puckette \, and a_rand \, a_drunk and a_tgl as included with
+the patch.;
+#X restore 389 286 pd README;
+#X msg 100 14 0;
+#X msg 100 42 1;
+#X msg 57 14 samp;
+#X msg 55 42 samp2;
+#X obj 31 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 31 43 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 218 501 EXPERIMENTAL VERSION;
+#X obj 22 260 vsl 15 120 0.0001 20 1 1 empty empty gain -2 -6 0 8 -225271
+-1 -1 8800 1;
+#X obj 127 195 s ag1-grantabsize;
+#X obj 274 244 tgl 15 1 ag1-rd empty rand-drunk 17 7 0 10 -225271 -1
+-1 0 1;
+#X obj 37 119 s ag1-samptab;
+#X obj 126 162 r \$0-tabsize;
+#X floatatom 66 197 7 0 0 0 - - -;
+#X obj 59 285 a_grain~ env samp ag1;
+#X obj 267 347 loadbang;
+#X msg 268 374 \; pd dsp 1;
+#X msg 268 417 \; pd dsp 0;
+#X obj 61 457 dac~;
+#X obj 61 434 *~;
+#X obj 77 410 line~;
+#X obj 76 334 moses 0.0002;
+#X msg 76 359 0;
+#X obj 77 385 pack 0 50;
+#X connect 13 0 29 0;
+#X connect 16 0 14 0;
+#X connect 17 0 14 0;
+#X connect 18 0 26 0;
+#X connect 19 0 26 0;
+#X connect 20 0 18 0;
+#X connect 20 0 16 0;
+#X connect 21 0 19 0;
+#X connect 21 0 17 0;
+#X connect 23 0 36 0;
+#X connect 27 0 24 0;
+#X connect 27 0 28 0;
+#X connect 29 0 34 0;
+#X connect 29 1 0 0;
+#X connect 30 0 31 0;
+#X connect 34 0 33 0;
+#X connect 34 0 33 1;
+#X connect 35 0 34 1;
+#X connect 36 0 37 0;
+#X connect 36 1 38 0;
+#X connect 37 0 38 0;
+#X connect 38 0 35 0;

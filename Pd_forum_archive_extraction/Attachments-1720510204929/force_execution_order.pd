@@ -1,0 +1,18 @@
+#N canvas 0 22 450 300 10;
+#N canvas 0 22 450 300 send_foo 0;
+#X obj 48 34 inlet~;
+#X obj 48 64 send~ foo;
+#X obj 51 164 outlet~;
+#X connect 0 0 1 0;
+#X restore 91 69 pd send_foo;
+#N canvas 0 22 450 300 receive_foo 0;
+#X obj 39 29 inlet~;
+#X obj 43 97 receive~ foo;
+#X obj 43 121 outlet~;
+#X connect 1 0 2 0;
+#X restore 91 95 pd receive_foo;
+#X obj 91 46 adc~ 1;
+#X obj 91 120 dac~ 1;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;

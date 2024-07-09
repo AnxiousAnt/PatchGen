@@ -1,0 +1,15 @@
+#N canvas 985 389 450 300 10;
+#X text 179 67 your lists;
+#X msg 93 45 /foo 1 2 3;
+#X msg 105 69 /bar 1 2 3;
+#X msg 17 47 record;
+#X msg 35 94 stop;
+#X msg 27 71 play;
+#X obj 20 124 text-record;
+#X obj 20 145 print;
+#X connect 1 0 6 1;
+#X connect 2 0 6 1;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;

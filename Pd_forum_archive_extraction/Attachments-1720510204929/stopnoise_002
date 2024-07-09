@@ -1,0 +1,16 @@
+#! /bin/bash
+# stopnoise v0.1
+# stops programs, that have been invoked by mknoise
+# including jackd and qjackstl
+
+# run with $ ./stopnoise
+
+cat .musicapplist|while read; do
+	X="$REPLY"
+	killall $X
+done
+
+rm .musicapplist
+
+killall qjackctl
+killall jackd

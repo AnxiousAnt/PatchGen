@@ -1,0 +1,223 @@
+ where
+#0  0xb77035dc in __cxa_allocate_exception () from /usr/lib/libstdc++.so.6
+#1  0xb73c9d74 in DrawPolygon::grin_0<int> (this=0x8dcc2e0, in=0x8e431d0, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:1930
+#2  0xb73ca18c in DrawPolygon::grinw_0<int> (in=0x8e431d0, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:1927
+#3  0xb736401c in GridInlet::begin (this=0x8e431d0, sender=0x8e43198) at base/../gridflow.h.fcs:689
+#4  0xb7390fb7 in DrawPolygon::_0_grid (this=0x8dcc2e0, argc=1, argv=0xbfd30688, foo=0x8e43198) at base/flow_objects.c.fcs:2015
+#5  0xb7391190 in DrawPolygon::_0_grid_wrap (self=0x8dcc2e0, argc=1, argv=0xbfd30688) at base/flow_objects.c.fcs:2015
+#6  0xb735ea56 in BFObject_anything (bself=0x8dcc178, winlet=0, selector=0x8d64f18, ac=1, at=0xbfd30ab8) at gridflow.c.fcs:545
+#7  0x080ae41b in pd_typedmess (x=0x8dcc178, s=0x8d64f18, argc=1, argv=0xbfd30ab8) at m_class.c:765
+#8  0x080b0ebf in outlet_anything (x=0x8daa350, s=0x8d64f18, argc=1, argv=0xbfd30ab8) at m_obj.c:390
+#9  0x080ae41b in pd_typedmess (x=0x8daab20, s=0x8d64f18, argc=1, argv=0xbfd30ab8) at m_class.c:765
+#10 0x080ae41b in pd_typedmess (x=0x8daab90, s=0x8d64f18, argc=1, argv=0xbfd30ab8) at m_class.c:765
+#11 0x080b0ebf in outlet_anything (x=0x8daade0, s=0x8d64f18, argc=1, argv=0xbfd30ab8) at m_obj.c:390
+#12 0xb7371ed8 in Shunt::anything (this=0x8daae58, argc=2, argv=0xbfd30ab0) at base/flow_objects.c.fcs:2954
+#13 0xb7371fbb in Shunt::anything_wrap (self=0x8daae58, argc=2, argv=0xbfd30ab0) at base/flow_objects.c.fcs:2952
+#14 0xb735ec14 in BFObject_anything (bself=0x8daad80, winlet=0, selector=0x8d64f18, ac=1, at=0xbfd30e80) at gridflow.c.fcs:547
+#15 0x080ae41b in pd_typedmess (x=0x8daad80, s=0x8d64f18, argc=1, argv=0xbfd30e80) at m_class.c:765
+#16 0x080b0ebf in outlet_anything (x=0x8dab4f0, s=0x8d64f18, argc=1, argv=0xbfd30e80) at m_obj.c:390
+#17 0x080ae41b in pd_typedmess (x=0x8dac368, s=0x8d64f18, argc=1, argv=0xbfd30e80) at m_class.c:765
+#18 0x080ae41b in pd_typedmess (x=0x8dac3d8, s=0x8d64f18, argc=1, argv=0xbfd30e80) at m_class.c:765
+#19 0x080b0ebf in outlet_anything (x=0x8dab548, s=0x8d64f18, argc=1, argv=0xbfd30e80) at m_obj.c:390
+#20 0xb73648f9 in GridOutlet (this=0x8e43198, parent_=0x8dab560, woutlet=0, dim_={p = 0xbfd30fd4}, nt_=int32_e) at base/grid.c.fcs:198
+#21 0xb73dc228 in GridStore::grin_0<int> (this=0x8dab560, in=0x8e42500, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:442
+#22 0xb73dd69c in GridStore::grinw_0<int> (in=0x8e42500, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:426
+#23 0xb736401c in GridInlet::begin (this=0x8e42500, sender=0xbfd310a4) at base/../gridflow.h.fcs:689
+#24 0xb736d284 in GridInlet::from_grid2<int> (this=0x8e42500, g=0xbfd31140, foo=0) at base/grid.c.fcs:179
+#25 0xb7365792 in GridInlet::from_grid (this=0x8e42500, g=0xbfd31140) at base/grid.c.fcs:187
+#26 0xb738ea1c in GridStore::_0_list (this=0x8dab560, argc=2, argv=0xbfd311b8) at base/../gridflow.h.fcs:712
+#27 0xb738ebdb in GridStore::_0_list_wrap (self=0x8dab560, argc=2, argv=0xbfd311b8) at base/flow_objects.c.fcs:563
+#28 0xb735ea56 in BFObject_anything (bself=0x8dab490, winlet=0, selector=0x81249d0, ac=2, at=0xbfd313a4) at gridflow.c.fcs:545
+#29 0xb7374643 in GridStore::_0_bang (this=0x8dab560, argc=0, argv=0xbfd31408) at base/flow_objects.c.fcs:552
+#30 0xb73746d0 in GridStore::_0_bang_wrap (self=0x8dab560, argc=0, argv=0xbfd31408) at base/flow_objects.c.fcs:548
+#31 0xb735ea56 in BFObject_anything (bself=0x8dab490, winlet=0, selector=0x81249c4, ac=0, at=0x0) at gridflow.c.fcs:545
+#32 0x080adc66 in pd_defaultbang (x=0x14) at m_class.c:42
+#33 0x080b1643 in outlet_bang (x=0x8dac460) at m_obj.c:331
+#34 0x080adc40 in pd_defaultbang (x=0x14) at m_class.c:41
+#35 0x080b1643 in outlet_bang (x=0x8dab478) at m_obj.c:331
+#36 0x080b1643 in outlet_bang (x=0x8dabe00) at m_obj.c:331
+#37 0x080f2bb4 in trigger_anything (x=0x8dabdc0, s=0x8d64f18, argc=1, argv=0xbfd31870) at x_connective.c:1002
+---Type <return> to continue, or q <return> to quit---
+#38 0x080ae41b in pd_typedmess (x=0x8dabdc0, s=0x8d64f18, argc=1, argv=0xbfd31870) at m_class.c:765
+#39 0x080b0ebf in outlet_anything (x=0x8daa220, s=0x8d64f18, argc=1, argv=0xbfd31870) at m_obj.c:390
+#40 0x080ae41b in pd_typedmess (x=0x8daa198, s=0x8d64f18, argc=1, argv=0xbfd31870) at m_class.c:765
+#41 0x080ae41b in pd_typedmess (x=0x8daa200, s=0x8d64f18, argc=1, argv=0xbfd31870) at m_class.c:765
+#42 0x080b0ebf in outlet_anything (x=0x8dc9fe0, s=0x8d64f18, argc=1, argv=0xbfd31870) at m_obj.c:390
+#43 0xb73648f9 in GridOutlet (this=0x8dca028, parent_=0x8dc9ff8, woutlet=0, dim_={p = 0xbfd31904}, nt_=int32_e) at base/grid.c.fcs:198
+#44 0xb740d38d in GridOp::grin_0<int> (this=0x8dc9ff8, in=0x8e42ab0, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:582
+#45 0xb740d5cc in GridOp::grinw_0<int> (in=0x8e42ab0, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:579
+#46 0xb736401c in GridInlet::begin (this=0x8e42ab0, sender=0x8e213f8) at base/../gridflow.h.fcs:689
+#47 0xb7394667 in GridOp::_0_grid (this=0x8dc9ff8, argc=1, argv=0xbfd31a38, foo=0x8e213f8) at base/flow_objects.c.fcs:611
+#48 0xb7394840 in GridOp::_0_grid_wrap (self=0x8dc9ff8, argc=1, argv=0xbfd31a38) at base/flow_objects.c.fcs:611
+#49 0xb735ea56 in BFObject_anything (bself=0x8dc9f08, winlet=0, selector=0x8d64f18, ac=1, at=0xbfd31e00) at gridflow.c.fcs:545
+#50 0x080ae41b in pd_typedmess (x=0x8dc9f08, s=0x8d64f18, argc=1, argv=0xbfd31e00) at m_class.c:765
+#51 0x080b0ebf in outlet_anything (x=0x8db0118, s=0x8d64f18, argc=1, argv=0xbfd31e00) at m_obj.c:390
+#52 0x080ae41b in pd_typedmess (x=0x8db00a8, s=0x8d64f18, argc=1, argv=0xbfd31e00) at m_class.c:765
+#53 0x080ae41b in pd_typedmess (x=0x8db0130, s=0x8d64f18, argc=1, argv=0xbfd31e00) at m_class.c:765
+#54 0x080b0ebf in outlet_anything (x=0x8db1568, s=0x8d64f18, argc=1, argv=0xbfd31e00) at m_obj.c:390
+#55 0xb73648f9 in GridOutlet (this=0x8e213f8, parent_=0x8db1738, woutlet=0, dim_={p = 0xbfd31e94}, nt_=int32_e) at base/grid.c.fcs:198
+#56 0xb740d38d in GridOp::grin_0<int> (this=0x8db1738, in=0x8e215c8, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:582
+#57 0xb740d5cc in GridOp::grinw_0<int> (in=0x8e215c8, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:579
+#58 0xb736401c in GridInlet::begin (this=0x8e215c8, sender=0x8e428c8) at base/../gridflow.h.fcs:689
+#59 0xb7394667 in GridOp::_0_grid (this=0x8db1738, argc=1, argv=0xbfd31fc8, foo=0x8e428c8) at base/flow_objects.c.fcs:611
+#60 0xb7394840 in GridOp::_0_grid_wrap (self=0x8db1738, argc=1, argv=0xbfd31fc8) at base/flow_objects.c.fcs:611
+#61 0xb735ea56 in BFObject_anything (bself=0x8db1678, winlet=0, selector=0x8d64f18, ac=1, at=0xbfd32260) at gridflow.c.fcs:545
+#62 0x080ae41b in pd_typedmess (x=0x8db1678, s=0x8d64f18, argc=1, argv=0xbfd32260) at m_class.c:765
+#63 0x080b0ebf in outlet_anything (x=0x8db1490, s=0x8d64f18, argc=1, argv=0xbfd32260) at m_obj.c:390
+#64 0xb73648f9 in GridOutlet (this=0x8e428c8, parent_=0x8db14a8, woutlet=0, dim_={p = 0xbfd32464}, nt_=int32_e) at base/grid.c.fcs:198
+#65 0xb73ec501 in GridInner::grin_0<int> (this=0x8db14a8, in=0x8e41f20, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:751
+#66 0xb73ececc in GridInner::grinw_0<int> (in=0x8e41f20, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:739
+#67 0xb736401c in GridInlet::begin (this=0x8e41f20, sender=0x8dcb560) at base/../gridflow.h.fcs:689
+#68 0xb7393fd7 in GridInner::_0_grid (this=0x8db14a8, argc=1, argv=0xbfd325a8, foo=0x8dcb560) at base/flow_objects.c.fcs:826
+#69 0xb73941b0 in GridInner::_0_grid_wrap (self=0x8db14a8, argc=1, argv=0xbfd325a8) at base/flow_objects.c.fcs:826
+#70 0xb735ea56 in BFObject_anything (bself=0x8db13d8, winlet=0, selector=0x8d64f18, ac=1, at=0xbfd32978) at gridflow.c.fcs:545
+#71 0x080ae41b in pd_typedmess (x=0x8db13d8, s=0x8d64f18, argc=1, argv=0xbfd32978) at m_class.c:765
+#72 0x080b0ebf in outlet_anything (x=0x8db12f0, s=0x8d64f18, argc=1, argv=0xbfd32978) at m_obj.c:390
+#73 0x080f2cf7 in trigger_anything (x=0x8db12c8, s=0x8d64f18, argc=1, argv=0xbfd32978) at x_connective.c:1004
+#74 0x080ae41b in pd_typedmess (x=0x8db12c8, s=0x8d64f18, argc=1, argv=0xbfd32978) at m_class.c:765
+#75 0x080b0ebf in outlet_anything (x=0x8db1278, s=0x8d64f18, argc=1, argv=0xbfd32978) at m_obj.c:390
+---Type <return> to continue, or q <return> to quit---
+#76 0xb73720a7 in Route2::anything (this=0x8db1290, argc=2, argv=0xbfd32970) at base/flow_objects.c.fcs:2922
+#77 0xb73720eb in Route2::anything_wrap (self=0x8db1290, argc=2, argv=0xbfd32970) at base/flow_objects.c.fcs:2918
+#78 0xb735ec14 in BFObject_anything (bself=0x8db11f0, winlet=0, selector=0x8d64f18, ac=1, at=0xbfd32e70) at gridflow.c.fcs:547
+#79 0x080ae41b in pd_typedmess (x=0x8db11f0, s=0x8d64f18, argc=1, argv=0xbfd32e70) at m_class.c:765
+#80 0x080b0ebf in outlet_anything (x=0x8db0070, s=0x8d64f18, argc=1, argv=0xbfd32e70) at m_obj.c:390
+#81 0x080ae41b in pd_typedmess (x=0x8daffe8, s=0x8d64f18, argc=1, argv=0xbfd32e70) at m_class.c:765
+#82 0x080ae41b in pd_typedmess (x=0x8db0050, s=0x8d64f18, argc=1, argv=0xbfd32e70) at m_class.c:765
+#83 0x080b0ebf in outlet_anything (x=0x8dcb170, s=0x8d64f18, argc=1, argv=0xbfd32e70) at m_obj.c:390
+#84 0x080ae41b in pd_typedmess (x=0x8dca630, s=0x8d64f18, argc=1, argv=0xbfd32e70) at m_class.c:765
+#85 0x080ae41b in pd_typedmess (x=0x8dcb188, s=0x8d64f18, argc=1, argv=0xbfd32e70) at m_class.c:765
+#86 0x080b0ebf in outlet_anything (x=0x8dcb518, s=0x8d64f18, argc=1, argv=0xbfd32e70) at m_obj.c:390
+#87 0xb73648f9 in GridOutlet (this=0x8dcb560, parent_=0x8dcb530, woutlet=0, dim_={p = 0xbfd32f04}, nt_=int32_e) at base/grid.c.fcs:198
+#88 0xb740d38d in GridOp::grin_0<int> (this=0x8dcb530, in=0x8e42a78, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:582
+#89 0xb740d5cc in GridOp::grinw_0<int> (in=0x8e42a78, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:579
+#90 0xb736401c in GridInlet::begin (this=0x8e42a78, sender=0x8e213c0) at base/../gridflow.h.fcs:689
+#91 0xb7394667 in GridOp::_0_grid (this=0x8dcb530, argc=1, argv=0xbfd33038, foo=0x8e213c0) at base/flow_objects.c.fcs:611
+#92 0xb7394840 in GridOp::_0_grid_wrap (self=0x8dcb530, argc=1, argv=0xbfd33038) at base/flow_objects.c.fcs:611
+#93 0xb735ea56 in BFObject_anything (bself=0x8dcb458, winlet=0, selector=0x8d64f18, ac=1, at=0xbfd332d0) at gridflow.c.fcs:545
+#94 0x080ae41b in pd_typedmess (x=0x8dcb458, s=0x8d64f18, argc=1, argv=0xbfd332d0) at m_class.c:765
+#95 0x080b0ebf in outlet_anything (x=0x8dcb358, s=0x8d64f18, argc=1, argv=0xbfd332d0) at m_obj.c:390
+#96 0xb73648f9 in GridOutlet (this=0x8e213c0, parent_=0x8dcb370, woutlet=0, dim_={p = 0xbfd3337c}, nt_=int32_e) at base/grid.c.fcs:198
+#97 0xb740fa9a in GridOuter::grin_0<int> (this=0x8dcb370, in=0x8e42490, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:849
+#98 0xb740fffc in GridOuter::grinw_0<int> (in=0x8e42490, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:841
+#99 0xb736401c in GridInlet::begin (this=0x8e42490, sender=0x8dafa90) at base/../gridflow.h.fcs:689
+#100 0xb7393da7 in GridOuter::_0_grid (this=0x8dcb370, argc=1, argv=0xbfd334b8, foo=0x8dafa90) at base/flow_objects.c.fcs:885
+#101 0xb7393f80 in GridOuter::_0_grid_wrap (self=0x8dcb370, argc=1, argv=0xbfd334b8) at base/flow_objects.c.fcs:885
+#102 0xb735ea56 in BFObject_anything (bself=0x8dcb250, winlet=0, selector=0x8d64f18, ac=1, at=0xbfd33750) at gridflow.c.fcs:545
+#103 0x080ae41b in pd_typedmess (x=0x8dcb250, s=0x8d64f18, argc=1, argv=0xbfd33750) at m_class.c:765
+#104 0x080b0ebf in outlet_anything (x=0x8dcb8a8, s=0x8d64f18, argc=1, argv=0xbfd33750) at m_obj.c:390
+#105 0xb73648f9 in GridOutlet (this=0x8dafa90, parent_=0x8dcba40, woutlet=0, dim_={p = 0xbfd337e4}, nt_=int32_e) at base/grid.c.fcs:198
+#106 0xb740d38d in GridOp::grin_0<int> (this=0x8dcba40, in=0x8e41910, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:582
+#107 0xb740d5cc in GridOp::grinw_0<int> (in=0x8e41910, dex=0, n=-1, data=0x0) at base/flow_objects.c.fcs:579
+#108 0xb736401c in GridInlet::begin (this=0x8e41910, sender=0x8e418a0) at base/../gridflow.h.fcs:689
+#109 0xb7394667 in GridOp::_0_grid (this=0x8dcba40, argc=1, argv=0xbfd33918, foo=0x8e418a0) at base/flow_objects.c.fcs:611
+#110 0xb7394840 in GridOp::_0_grid_wrap (self=0x8dcba40, argc=1, argv=0xbfd33918) at base/flow_objects.c.fcs:611
+#111 0xb735ea56 in BFObject_anything (bself=0x8dcb9a0, winlet=0, selector=0x8d64f18, ac=1, at=0xbfd33bb0) at gridflow.c.fcs:545
+#112 0x080ae41b in pd_typedmess (x=0x8dcb9a0, s=0x8d64f18, argc=1, argv=0xbfd33bb0) at m_class.c:765
+#113 0x080b0ebf in outlet_anything (x=0x8dcb710, s=0x8d64f18, argc=1, argv=0xbfd33bb0) at m_obj.c:390
+---Type <return> to continue, or q <return> to quit---
+#114 0xb73648f9 in GridOutlet (this=0x8e418a0, parent_=0x8dcb728, woutlet=0, dim_={p = 0xbfd33da0}, nt_=int32_e) at base/grid.c.fcs:198
+#115 0xb73f63ce in GridFor::trigger<int> (this=0x8dcb728, bogus=0) at base/flow_objects.c.fcs:931
+#116 0xb7379655 in GridFor::_0_bang (this=0x8dcb728, argc=0, argv=0xbfd33e58) at base/flow_objects.c.fcs:958
+#117 0xb7379760 in GridFor::_0_bang_wrap (self=0x8dcb728, argc=0, argv=0xbfd33e58) at base/flow_objects.c.fcs:951
+#118 0xb735ea56 in BFObject_anything (bself=0x8dcb610, winlet=0, selector=0x81249c4, ac=0, at=0x0) at gridflow.c.fcs:545
+#119 0x080adc66 in pd_defaultbang (x=0x14) at m_class.c:42
+#120 0x080b1643 in outlet_bang (x=0x8dcb1e8) at m_obj.c:331
+#121 0x080b100f in outlet_list (x=0x8dca398, s=0x81249d0, argc=2, argv=0xbfd341b8) at m_obj.c:379
+#122 0x080ae660 in pd_typedmess (x=0x8dca548, s=0x81249d0, argc=2, argv=0xbfd341b8) at m_class.c:662
+#123 0x080b0ebf in outlet_anything (x=0x8dcc048, s=0x81249d0, argc=2, argv=0xbfd341b8) at m_obj.c:390
+#124 0xb7371ed8 in Shunt::anything (this=0x8dcc010, argc=3, argv=0xbfd341b0) at base/flow_objects.c.fcs:2954
+#125 0xb7371fbb in Shunt::anything_wrap (self=0x8dcc010, argc=3, argv=0xbfd341b0) at base/flow_objects.c.fcs:2952
+#126 0xb735ec14 in BFObject_anything (bself=0x8dcbf38, winlet=0, selector=0x81249d0, ac=2, at=0xbfd343e4) at gridflow.c.fcs:547
+#127 0x080b100f in outlet_list (x=0x8dc9ef0, s=0x81249d0, argc=2, argv=0xbfd343e4) at m_obj.c:379
+#128 0x080b3f5f in binbuf_eval (x=0x8dc9ee0, target=0x8dca0f4, argc=0, argv=0x0) at m_binbuf.c:726
+#129 0x080615e9 in message_bang (x=0x8dca0d8) at g_text.c:342
+#130 0x080b1643 in outlet_bang (x=0x8dca1d8) at m_obj.c:331
+#131 0xb73af081 in GridFinished::grinw_0<int> (in=0x8e214b0, dex=4, n=-2, data=0x0) at base/flow_objects.c.fcs:976
+#132 0xb7364560 in GridInlet::finish (this=0x8e214b0) at base/../gridflow.h.fcs:689
+#133 0xb73647ad in GridOutlet::finish (this=0xbfd38658) at base/grid.c.fcs:280
+#134 0xb736ba30 in GridOutlet::send<int> (this=0xbfd38658, n=4, data=0xbfd34560) at base/grid.c.fcs:269
+#135 0xb736c8e2 in GridOutlet::send<float> (this=0xbfd38658, n=4, data=0xbfd386c0) at base/grid.c.fcs:255
+#136 0xb73f92df in GridLabeling::grin_0<int> (this=0x8da9a78, in=0x8e21058, dex=0, n=76800, data=0xb5ee4020) at base/flow_objects.c.fcs:1427
+#137 0xb73f96dc in GridLabeling::grinw_0<int> (in=0x8e21058, dex=0, n=76800, data=0xb5ee4020) at base/flow_objects.c.fcs:1404
+#138 0xb7368473 in GridInlet::flow<int> (this=0x8e21058, n=76800, data=0xb5ee4020) at base/../gridflow.h.fcs:689
+#139 0xb73687aa in GridOutlet::send_direct<int> (this=0x8e20f88, n=76800, data=0xb5ee4020) at base/grid.c.fcs:225
+#140 0xb736bd68 in GridOutlet::send<int> (this=0x8e20f88, n=76800, data=0xb5ee4020) at base/grid.c.fcs:262
+#141 0xb73dca12 in GridStore::grin_0<int> (this=0x8d7cf18, in=0x8db0638, dex=0, n=-2, data=0x0) at base/flow_objects.c.fcs:489
+#142 0xb73dd69c in GridStore::grinw_0<int> (in=0x8db0638, dex=0, n=-2, data=0x0) at base/flow_objects.c.fcs:426
+#143 0xb7364560 in GridInlet::finish (this=0x8db0638) at base/../gridflow.h.fcs:689
+#144 0xb736d2c8 in GridInlet::from_grid2<int> (this=0x8db0638, g=0xbfd38ad0, foo=0) at base/grid.c.fcs:181
+#145 0xb7365792 in GridInlet::from_grid (this=0x8db0638, g=0xbfd38ad0) at base/grid.c.fcs:187
+#146 0xb738ea1c in GridStore::_0_list (this=0x8d7cf18, argc=2, argv=0xbfd38b48) at base/../gridflow.h.fcs:712
+#147 0xb738ebdb in GridStore::_0_list_wrap (self=0x8d7cf18, argc=2, argv=0xbfd38b48) at base/flow_objects.c.fcs:563
+#148 0xb735ea56 in BFObject_anything (bself=0x8d7ce48, winlet=0, selector=0x81249d0, ac=2, at=0xbfd38d34) at gridflow.c.fcs:545
+#149 0xb7374643 in GridStore::_0_bang (this=0x8d7cf18, argc=0, argv=0xbfd38d98) at base/flow_objects.c.fcs:552
+#150 0xb73746d0 in GridStore::_0_bang_wrap (self=0x8d7cf18, argc=0, argv=0xbfd38d98) at base/flow_objects.c.fcs:548
+#151 0xb735ea56 in BFObject_anything (bself=0x8d7ce48, winlet=0, selector=0x81249c4, ac=0, at=0x0) at gridflow.c.fcs:545
+---Type <return> to continue, or q <return> to quit---
+#152 0x080adc66 in pd_defaultbang (x=0x14) at m_class.c:42
+#153 0x080b1643 in outlet_bang (x=0x8d7ce08) at m_obj.c:331
+#154 0xb73af081 in GridFinished::grinw_0<int> (in=0x8d8c868, dex=76800, n=-2, data=0x0) at base/flow_objects.c.fcs:976
+#155 0xb7364560 in GridInlet::finish (this=0x8d8c868) at base/../gridflow.h.fcs:689
+#156 0xb73647ad in GridOutlet::finish (this=0x8de7c80) at base/grid.c.fcs:280
+#157 0xb736ba30 in GridOutlet::send<int> (this=0x8de7c80, n=320, data=0xbfd390a0) at base/grid.c.fcs:269
+#158 0xb740d141 in GridOp::grin_0<int> (this=0x8d8b758, in=0x8de7c48, dex=76480, n=320, data=0xbfd39c90) at base/flow_objects.c.fcs:607
+#159 0xb740d5cc in GridOp::grinw_0<int> (in=0x8de7c48, dex=76480, n=320, data=0xbfd39c90) at base/flow_objects.c.fcs:579
+#160 0xb7368473 in GridInlet::flow<int> (this=0x8de7c48, n=320, data=0xbfd39c90) at base/../gridflow.h.fcs:689
+#161 0xb73687aa in GridOutlet::send_direct<int> (this=0x8db8670, n=320, data=0xbfd39c90) at base/grid.c.fcs:225
+#162 0xb736bd68 in GridOutlet::send<int> (this=0x8db8670, n=320, data=0xbfd39c90) at base/grid.c.fcs:262
+#163 0xb73d86b7 in GridConvolve::grin_0<int> (this=0x8d8b4e8, in=0x8da99f0, dex=76800, n=-2, data=0x0) at base/flow_objects.c.fcs:1659
+#164 0xb73d902c in GridConvolve::grinw_0<int> (in=0x8da99f0, dex=76800, n=-2, data=0x0) at base/flow_objects.c.fcs:1612
+#165 0xb7364560 in GridInlet::finish (this=0x8da99f0) at base/../gridflow.h.fcs:689
+#166 0xb73647ad in GridOutlet::finish (this=0x8d9f7c0) at base/grid.c.fcs:280
+#167 0xb736ba30 in GridOutlet::send<int> (this=0x8d9f7c0, n=341, data=0xbfd3a3a0) at base/grid.c.fcs:269
+#168 0xb740d141 in GridOp::grin_0<int> (this=0x8da99c0, in=0x8d9f788, dex=76459, n=341, data=0xbfd3aad0) at base/flow_objects.c.fcs:607
+#169 0xb740d5cc in GridOp::grinw_0<int> (in=0x8d9f788, dex=76459, n=341, data=0xbfd3aad0) at base/flow_objects.c.fcs:579
+#170 0xb7368473 in GridInlet::flow<int> (this=0x8d9f788, n=341, data=0xbfd3aad0) at base/../gridflow.h.fcs:689
+#171 0xb73687aa in GridOutlet::send_direct<int> (this=0x8db7518, n=341, data=0xbfd3aad0) at base/grid.c.fcs:225
+#172 0xb736bd68 in GridOutlet::send<int> (this=0x8db7518, n=341, data=0xbfd3aad0) at base/grid.c.fcs:262
+#173 0xb740d141 in GridOp::grin_0<int> (this=0x8da9410, in=0x8db74e0, dex=76459, n=341, data=0xbfd3b200) at base/flow_objects.c.fcs:607
+#174 0xb740d5cc in GridOp::grinw_0<int> (in=0x8db74e0, dex=76459, n=341, data=0xbfd3b200) at base/flow_objects.c.fcs:579
+#175 0xb7368473 in GridInlet::flow<int> (this=0x8db74e0, n=341, data=0xbfd3b200) at base/../gridflow.h.fcs:689
+#176 0xb73687aa in GridOutlet::send_direct<int> (this=0x8ded888, n=341, data=0xbfd3b200) at base/grid.c.fcs:225
+#177 0xb736bd68 in GridOutlet::send<int> (this=0x8ded888, n=341, data=0xbfd3b200) at base/grid.c.fcs:262
+#178 0xb73eb337 in GridInner::grin_0<int> (this=0x8da91c8, in=0x8db8598, dex=229377, n=1023, data=0xbfd3e004) at base/flow_objects.c.fcs:796
+#179 0xb73ececc in GridInner::grinw_0<int> (in=0x8db8598, dex=229377, n=1023, data=0xbfd3e004) at base/flow_objects.c.fcs:739
+#180 0xb7368473 in GridInlet::flow<int> (this=0x8db8598, n=1023, data=0xbfd3e004) at base/../gridflow.h.fcs:689
+#181 0xb73687aa in GridOutlet::send_direct<int> (this=0xbfd7a880, n=1024, data=0xbfd3e000) at base/grid.c.fcs:225
+#182 0xb736bd68 in GridOutlet::send<int> (this=0xbfd7a880, n=1024, data=0xbfd3e000) at base/grid.c.fcs:262
+#183 0xb736ae4d in GridOutlet::send<unsigned char> (this=0xbfd7a880, n=1024, data=0xbfd7a450 "g8Gh:Fh9Eg9Df8Ce3AX2@W2>X1=W2;V1:U28R28R25J-0E44B22@/.2437(&%\003\001")
+    at base/grid.c.fcs:255
+#184 0xb756853a in FormatQuickTimeHW::_0_bang (this=0x8dc7b90, argc=0, argv=0xbfd7a918) at format/quicktimehw.c.fcs:111
+#185 0xb75686a0 in FormatQuickTimeHW::_0_bang_wrap (self=0x8dc7b90, argc=0, argv=0xbfd7a918) at format/quicktimehw.c.fcs:86
+#186 0xb735ea56 in BFObject_anything (bself=0x8d9f638, winlet=0, selector=0x81249c4, ac=0, at=0x0) at gridflow.c.fcs:545
+#187 0x080adc66 in pd_defaultbang (x=0x14) at m_class.c:42
+#188 0x080b1643 in outlet_bang (x=0x8dc6328) at m_obj.c:331
+---Type <return> to continue, or q <return> to quit---
+#189 0x080b1643 in outlet_bang (x=0x8db8538) at m_obj.c:331
+#190 0x080ae631 in pd_typedmess (x=0x8db8524, s=0x81249c4, argc=0, argv=0xbfd7abcc) at m_class.c:657
+#191 0x080b3f31 in binbuf_eval (x=0x8db8488, target=0x8db8524, argc=0, argv=0x0) at m_binbuf.c:722
+#192 0x080615e9 in message_bang (x=0x8db8508) at g_text.c:342
+#193 0x080b1643 in outlet_bang (x=0x8db84d8) at m_obj.c:331
+#194 0x080b100f in outlet_list (x=0x8dbbcf0, s=0x0, argc=0, argv=0x0) at m_obj.c:379
+#195 0x080adc40 in pd_defaultbang (x=0x14) at m_class.c:41
+#196 0x080b1643 in outlet_bang (x=0x8dd9e60) at m_obj.c:331
+#197 0x080b1643 in outlet_bang (x=0x8dd8378) at m_obj.c:331
+#198 0x080fda72 in metro_float (x=0x8db5440, f=1) at x_time.c:87
+#199 0x080b1197 in outlet_float (x=0x8db5410, f=1) at m_obj.c:357
+#200 0x080a346d in toggle_newclick (z=0x8dd97a0, glist=0x8d80968, xpix=306, ypix=79, shift=0, alt=0, dbl=0, doit=1) at g_toggle.c:251
+#201 0x0808bf6b in canvas_doclick (x=0x8d80968, xpos=306, ypos=79, which=1, mod=0, doit=1) at g_editor.c:108
+#202 0x0808c617 in canvas_mousedown (x=0x8d80968, xpos=306, ypos=79, which=1, mod=0) at g_editor.c:1427
+#203 0x080ae84a in pd_typedmess (x=0x8d80968, s=0x8d3ae20, argc=4, argv=0xbfd7af3c) at m_class.c:744
+#204 0x080ae41b in pd_typedmess (x=0x8dbc4b0, s=0x8d3ae20, argc=4, argv=0xbfd7af3c) at m_class.c:765
+#205 0x080b3f31 in binbuf_eval (x=0x8d47530, target=0x8dbc4b0, argc=0, argv=0x0) at m_binbuf.c:722
+#206 0x080c2280 in socketreceiver_read (x=0x8d47550, fd=6) at s_inter.c:546
+#207 0x080c0ec7 in sys_domicrosleep (microsec=<value optimized out>, pollem=<value optimized out>) at s_inter.c:184
+#208 0x080c26e7 in sys_pollgui () at s_inter.c:833
+#209 0x080bcfbc in m_mainloop () at m_sched.c:488
+#210 0x080c06f5 in sys_main (argc=1, argv=0xbfd7b324) at s_main.c:313
+#211 0x080cc26f in main (argc=Cannot access memory at address 0x14
+) at s_entry.c:32
+(gdb) 
+
+

@@ -1,0 +1,4 @@
+#N canvas 448 411 450 300 10;
+#X obj 69 102 motex/system;
+#X msg 74 70 cd /tmp && ls -al > ~/Desktop/foobar.txt;
+#X connect 1 0 0 0;

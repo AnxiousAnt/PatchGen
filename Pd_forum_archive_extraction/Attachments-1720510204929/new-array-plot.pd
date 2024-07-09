@@ -1,0 +1,122 @@
+#N canvas 529 279 666 634 10;
+#N canvas 162 153 309 315 count 0;
+#X obj 116 74 inlet;
+#X obj 116 160 f 0;
+#X obj 144 161 + 1;
+#X obj 116 188 outlet;
+#X obj 116 100 t f b;
+#X msg 159 136 0;
+#X obj 116 134 until;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 1 1;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 1 1;
+#X connect 6 0 1 0;
+#X restore 104 204 pd count;
+#X obj 104 385 translateXYZ;
+#X obj 104 349 separator;
+#X obj 104 123 gemhead;
+#X obj 173 122 gemwin;
+#X msg 173 79 create \, 1;
+#X msg 173 99 0 \, destroy;
+#X obj 104 290 gemhead 45;
+#X floatatom 220 205 5 0 0 1 spread - -;
+#X obj 219 222 * 0.01;
+#X msg 104 181 128;
+#X obj 237 269 hsl 128 15 -4 4 0 0 empty empty left-right -2 -6 0 8
+-262144 -1 -1 800 1;
+#X obj 104 153 b;
+#X obj 182 312 * 0.05;
+#X floatatom 257 290 5 0 0 0 - - -;
+#X obj 182 335 + -3;
+#N canvas 0 0 450 300 graph2 0;
+#X array \$0-y 131 float 2;
+#X coords 0 2 131 -2 200 140 1;
+#X restore 420 150 graph;
+#X obj 265 315 tabread \$0-y;
+#X obj 310 10 loadbang;
+#X obj 313 63 until;
+#X obj 314 120 - 2;
+#X msg 311 35 128;
+#X obj 312 93 randomF 4;
+#X obj 312 152 list-lastx 128;
+#X obj 313 176 tabset \$0-y;
+#X obj 100 527 square 1;
+#X obj 103 505 alpha;
+#X obj 101 482 colorRGB 1 1 1 0.1;
+#X obj 240 367 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 234 390 randomF 0.6;
+#X obj 452 45 metro 20;
+#X obj 489 19 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 104 428 rotateXYZ 0;
+#X obj 104 230 t b a a a a a;
+#N canvas 0 0 450 300 graph1 0;
+#X array \$0-rot 128 float 3;
+#A 0 168.738 81.3544 123.411 174.918 40.5602 42.972 12.4025 17.8934
+152.052 117.584 141.633 99.0377 131.092 0.586266 73.9634 36.558 166.343
+148.115 15.3059 54.0083 103.037 105.009 112.906 5.75784 23.7542 27.7855
+158.625 157.46 154.205 2.60223 57.216 121.522 94.0094 38.2306 159.613
+87.5712 72.482 14.0229 21.2051 27.9264 89.4095 122.881 85.1223 118.065
+0.833958 9.22627 170.514 32.0939 9.83354 21.9658 165.833 173.214 122.304
+82.464 47.1132 159.194 7.73883 127.509 121.253 142.836 165.013 147.285
+54.2982 107.443 73.1608 178.334 104.719 17.2945 167.16 71.5336 61.695
+103.106 78.7129 115.059 28.3946 22.503 162.024 172.353 170.257 135.491
+4.58685 35.0989 148.272 34.9198 42.9601 91.1829 37.2651 91.9561 163.552
+147.668 29.173 76.5503 148.402 8.75859 1.32952 72.9057 165.957 8.77409
+29.7451 89.9472 46.8611 60.1132 47.3878 166.79 44.728 96.2249 87.4655
+73.2099 21.9283 109.577 31.7059 45.1081 120.368 144.623 123.639 34.9844
+37.2716 65.7756 86.8778 177.403 145.961 0.369341 88.399 129.464 141.637
+16.6337 126.825 166.268;
+#X coords 0 180 127 0 200 140 1;
+#X restore 384 365 graph;
+#X obj 305 465 until;
+#X obj 304 554 list-lastx 128;
+#X obj 304 495 randomF 1;
+#X obj 306 522 * 180;
+#X obj 305 578 tabset \$0-rot;
+#X obj 356 315 tabread \$0-rot;
+#X connect 0 0 33 0;
+#X connect 1 0 32 0;
+#X connect 2 0 1 0;
+#X connect 3 0 12 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 13 1;
+#X connect 10 0 0 0;
+#X connect 11 0 14 0;
+#X connect 11 0 15 1;
+#X connect 12 0 10 0;
+#X connect 13 0 15 0;
+#X connect 15 0 1 1;
+#X connect 17 0 1 2;
+#X connect 18 0 21 0;
+#X connect 19 0 22 0;
+#X connect 20 0 23 0;
+#X connect 21 0 19 0;
+#X connect 21 0 28 0;
+#X connect 21 0 35 0;
+#X connect 22 0 20 0;
+#X connect 23 0 24 0;
+#X connect 26 0 25 0;
+#X connect 27 0 26 0;
+#X connect 28 0 29 0;
+#X connect 29 0 27 4;
+#X connect 30 0 21 0;
+#X connect 31 0 30 0;
+#X connect 32 0 27 0;
+#X connect 33 0 7 0;
+#X connect 33 1 13 0;
+#X connect 33 2 17 0;
+#X connect 33 3 40 0;
+#X connect 35 0 37 0;
+#X connect 36 0 39 0;
+#X connect 37 0 38 0;
+#X connect 38 0 36 0;
+#X connect 40 0 32 2;

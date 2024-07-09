@@ -1,0 +1,54 @@
+#N canvas 391 98 379 614 10;
+#X obj 185 300 netsend;
+#X msg 196 249 connect 192.168.0.11 3001;
+#X obj 101 88 bng 15 250 50 0 empty empty 1 5 8 0 10 -1794 -1 -262144
+;
+#X obj 97 23 bng 60 250 50 0 empty empty go 5 25 0 40 -1794 -1 -262144
+;
+#X obj 101 104 bng 15 250 50 0 empty empty 1 5 8 0 10 -173826 -1 -262144
+;
+#X obj 72 402 netsend;
+#X obj 121 88 bng 15 250 50 0 empty empty 2 5 8 0 10 -1794 -1 -262144
+;
+#X obj 121 104 bng 15 250 50 0 empty empty 2 5 8 0 10 -173826 -1 -262144
+;
+#X obj 177 489 netsend;
+#X obj 141 88 bng 15 250 50 0 empty empty 3 5 8 0 10 -1794 -1 -262144
+;
+#X obj 141 104 bng 15 250 50 0 empty empty 3 5 8 0 10 -173826 -1 -262144
+;
+#X msg 83 378 connect 192.168.0.12 3001;
+#X msg 188 466 connect 192.168.0.13 3001;
+#X msg 11 194 connect localhost 3001;
+#X text 11 175 for a local test ...;
+#X msg 11 220 send gvim;
+#X text 214 196 the command goes here ..;
+#X text 244 233 the address here;
+#X text 215 267 3001 is the port number;
+#X text 175 43 all go at once;
+#X text 173 89 green = go;
+#X text 172 104 brown = connect;
+#X text 135 589 Simon Wise 2012;
+#X text 185 58 (must be connected first);
+#X text 59 562 just edit commands and addreses to suit!;
+#X msg 185 211 send omxplayer fireleft.mov;
+#X msg 72 350 send omxplayer waterleft.mov;
+#X msg 177 437 send omxplayer fireright.mov;
+#X connect 1 0 0 0;
+#X connect 2 0 25 0;
+#X connect 3 0 2 0;
+#X connect 3 0 6 0;
+#X connect 3 0 9 0;
+#X connect 4 0 1 0;
+#X connect 6 0 26 0;
+#X connect 7 0 11 0;
+#X connect 9 0 27 0;
+#X connect 10 0 12 0;
+#X connect 11 0 5 0;
+#X connect 12 0 8 0;
+#X connect 13 0 0 0;
+#X connect 15 0 0 0;
+#X connect 25 0 0 0;
+#X connect 26 0 5 0;
+#X connect 27 0 8 0;
+#X coords 0 -1 1 1 75 120 1 90 2;

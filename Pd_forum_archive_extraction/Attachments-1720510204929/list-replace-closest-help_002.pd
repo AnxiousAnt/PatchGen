@@ -1,0 +1,26 @@
+#N canvas 0 0 758 388 10;
+#X floatatom 208 211 5 0 0 0 - - -;
+#X obj 91 56 list-random 100 10;
+#X msg 91 30 bang;
+#X obj 91 81 t b a;
+#X obj 118 101 list prepend set;
+#X msg 91 162 4 56 90 62 50 17 2 40 82 17;
+#X obj 118 121 list trim;
+#X obj 91 301 list prepend set;
+#X msg 91 343 4 56 168 62 50 17 2 40 82 17;
+#X obj 91 321 list trim;
+#X text 250 211 <- the closest number in the list will be replace by
+this one;
+#X text 129 29 <- generate a random list;
+#X obj 91 232 list-replace-closest;
+#X connect 0 0 12 1;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 3 1 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 12 0;
+#X connect 6 0 5 0;
+#X connect 7 0 9 0;
+#X connect 9 0 8 0;
+#X connect 12 0 7 0;

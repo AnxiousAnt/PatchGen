@@ -1,0 +1,6 @@
+g++ -DPD -DPD_INTERNAL -DPA_USE_ASIO -DPA_USE_WMME -DWINVER=0x0502 -DUSEAPI_MMIO -DUSEAPI_PORTAUDIO -mms-bitfields -DWISHAPP='"wish85.exe"' -Wall -W -Wstrict-prototypes -Wno-unused -Wno-unused-parameter -Wno-parentheses -Wno-switch  -O3 -funroll-loops -fomit-frame-pointer  -I../../pd/portaudio -I../../pd/portaudio/include -I../../pd/portaudio/src/common -I../../pd/portaudio/src/os/win -I../../pd/asio/ASIOSDK2/common -I../../pd/asio/ASIOSDK2/host -I../../pd/asio/ASIOSDK2/host/pc -c -o ../../pd/portaudio/src/hostapi/asio/iasiothiscallresolver.o ../../pd/portaudio/src/hostapi/asio/iasiothiscallresolver.cpp
+cc1plus.exe: warning: command line option '-Wstrict-prototypes' is valid for Ada/C/ObjC but not for C++ [enabled by default]
+In file included from ../../pd/portaudio/src/hostapi/asio/iasiothiscallresolver.cpp:173:0:
+../../pd/portaudio/src/hostapi/asio/iasiothiscallresolver.h:133:42: fatal error: asiodrvr.h: No such file or directory
+compilation terminated.
+make: *** [../../pd/portaudio/src/hostapi/asio/iasiothiscallresolver.o] Error 1

@@ -1,0 +1,35 @@
+#N canvas 69 275 590 319 10;
+#X obj 327 163 list-shellsort;
+#X obj 395 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 296 210 realtime;
+#X floatatom 304 240 0 0 0 0 - - -;
+#X obj 257 139 t b b b;
+#X obj 159 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 60 186 realtime;
+#X floatatom 68 216 0 0 0 0 - - -;
+#X obj 21 115 t b b b;
+#X obj 91 139 list-sort;
+#X floatatom 197 81 0 0 0 0 - - -;
+#X floatatom 260 82 5 0 0 0 - - -;
+#X floatatom 435 99 0 0 0 0 - - -;
+#X floatatom 496 103 5 0 0 0 - - -;
+#X obj 91 115 list-random 20000 100;
+#X obj 327 139 list-random 20000 100;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 1;
+#X connect 4 1 15 0;
+#X connect 4 2 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 8 0 6 1;
+#X connect 8 1 14 0;
+#X connect 8 2 6 0;
+#X connect 10 0 14 1;
+#X connect 11 0 14 2;
+#X connect 12 0 15 1;
+#X connect 13 0 15 2;
+#X connect 14 0 9 0;
+#X connect 15 0 0 0;

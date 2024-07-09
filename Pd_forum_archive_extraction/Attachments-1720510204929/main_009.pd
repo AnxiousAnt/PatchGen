@@ -1,0 +1,18 @@
+#N canvas 532 61 658 327 10;
+#X obj 317 48 text size instance;
+#X msg 317 23 bang;
+#X floatatom 317 76 5 0 0 0 - - -;
+#X obj 19 90 singleton instance;
+#X obj 20 23 singleton instance;
+#X obj 144 23 singleton instance;
+#X obj 144 90 singleton instance;
+#X floatatom 20 43 5 0 0 0 - - -;
+#X floatatom 19 111 5 0 0 0 - - -;
+#X floatatom 144 44 5 0 0 0 - - -;
+#X floatatom 144 112 5 0 0 0 - - -;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 9 0;
+#X connect 6 0 10 0;

@@ -1,0 +1,29 @@
+#N canvas 524 43 458 308 12;
+#X floatatom 132 28 5 0 0 0 - - -;
+#X floatatom 183 29 5 0 0 0 - - -;
+#X floatatom 233 29 5 0 0 0 - - -;
+#X obj 282 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 307 33 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
+#X obj 19 44 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 45 57 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 53 108 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 82 110 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 212 201 state;
+#X msg 197 159 list list;
+#X msg 277 229 save \, list test;
+#X msg 223 126 list test;
+#X symbolatom 254 78 10 0 0 0 - - -;
+#X msg 308 179 save \, list list;
+#X text 327 156 save;
+#X text 232 107 load;
+#X text 39 266 the preset is a file named state.nameofthepreset;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 12 0 9 0;
+#X connect 14 0 9 0;

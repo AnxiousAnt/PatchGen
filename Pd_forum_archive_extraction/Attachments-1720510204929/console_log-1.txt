@@ -1,0 +1,69 @@
+$ make
+make[1]: Entering directory '/z/Desktop/hidio'
+gcc -DPACKAGE_NAME=\"hidio\" -DPACKAGE_TARNAME=\"hidio\" -DPACKAGE_VERSION=\"0.1\" -DPACKAGE_STRING=\"hidio\ 0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"hidio\" -DVERSION=\"0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_MALLOC_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_TIME_H=1 -Dvfork=fork -DHAVE_STDLIB_H=1 -DHAVE_MALLOC=1 -DRETSIGTYPE=void -I.     -DPD -g -O2 -I/z/Desktop/pure-data/src   -mms-bitfields -MT hidio.o -MD -MP -MF .deps/hidio.Tpo -c -o hidio.o hidio.c
+mv -f .deps/hidio.Tpo .deps/hidio.Po
+gcc -DPACKAGE_NAME=\"hidio\" -DPACKAGE_TARNAME=\"hidio\" -DPACKAGE_VERSION=\"0.1\" -DPACKAGE_STRING=\"hidio\ 0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"hidio\" -DVERSION=\"0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_MALLOC_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_TIME_H=1 -Dvfork=fork -DHAVE_STDLIB_H=1 -DHAVE_MALLOC=1 -DRETSIGTYPE=void -I.     -DPD -g -O2 -I/z/Desktop/pure-data/src   -mms-bitfields -MT hidio_types.o -MD -MP -MF .deps/hidio_types.Tpo -c -o hidio_types.o hidio_types.c
+mv -f .deps/hidio_types.Tpo .deps/hidio_types.Po
+gcc -DPACKAGE_NAME=\"hidio\" -DPACKAGE_TARNAME=\"hidio\" -DPACKAGE_VERSION=\"0.1\" -DPACKAGE_STRING=\"hidio\ 0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"hidio\" -DVERSION=\"0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_MALLOC_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_TIME_H=1 -Dvfork=fork -DHAVE_STDLIB_H=1 -DHAVE_MALLOC=1 -DRETSIGTYPE=void -I.     -DPD -g -O2 -I/z/Desktop/pure-data/src   -mms-bitfields -MT hidio_windows.o -MD -MP -MF .deps/hidio_windows.Tpo -c -o hidio_windows.o hidio_windows.c
+hidio_windows.c: In function 'hidio_print_device_list':
+hidio_windows.c:722:6: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  if ((int)PnPHandle == -1)
+      ^
+hidio_windows.c: In function 'hidio_get_events':
+hidio_windows.c:910:125: warning: passing argument 5 of 'HidP_GetUsageValue' from incompatible pointer type [-Wincompatible-pointer-types]
+    if (HIDP_STATUS_SUCCESS == HidP_GetUsageValue(HidP_Input, current_element[i].usage_page, 0, current_element[i].usage_id, &current_element[i].value,
+                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/Users/camarahalac.1/Desktop/msys2/mingw64/x86_64-w64-mingw32/include/hidsdi.h:34,
+                 from hidio_windows.c:35:
+C:/Users/camarahalac.1/Desktop/msys2/mingw64/x86_64-w64-mingw32/include/hidpi.h:222:125: note: expected 'PULONG' {aka 'long unsigned int *'} but argument is of type 't_int *' {aka 'long long int *'}
+ NTSTATUS NTAPI HidP_GetUsageValue (HIDP_REPORT_TYPE ReportType, USAGE UsagePage, USHORT LinkCollection, USAGE Usage, PULONG UsageValue, PHIDP_PREPARSED_DATA PreparsedData, PCHAR Report, ULONG ReportLength);
+                                                                                                                      ~~~~~~~^~~~~~~~~~
+hidio_windows.c:916:131: warning: passing argument 5 of 'HidP_GetScaledUsageValue' from incompatible pointer type [-Wincompatible-pointer-types]
+    if (HIDP_STATUS_SUCCESS == HidP_GetScaledUsageValue(HidP_Input, current_element[i].usage_page, 0, current_element[i].usage_id, &current_element[i].value,
+                                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/Users/camarahalac.1/Desktop/msys2/mingw64/x86_64-w64-mingw32/include/hidsdi.h:34,
+                 from hidio_windows.c:35:
+C:/Users/camarahalac.1/Desktop/msys2/mingw64/x86_64-w64-mingw32/include/hidpi.h:223:130: note: expected 'PLONG' {aka 'long int *'} but argument is of type 't_int *' {aka 'long long int *'}
+ NTSTATUS NTAPI HidP_GetScaledUsageValue (HIDP_REPORT_TYPE ReportType, USAGE UsagePage, USHORT LinkCollection, USAGE Usage, PLONG UsageValue, PHIDP_PREPARSED_DATA PreparsedData, PCHAR Report, ULONG ReportLength);
+                                                                                                                            ~~~~~~^~~~~~~~~~
+mv -f .deps/hidio_windows.Tpo .deps/hidio_windows.Po
+gcc  -DPD -g -O2 -I/z/Desktop/pure-data/src   -mms-bitfields  -L/z/Desktop/pure-data/src -L/z/Desktop/pure-data/bin -L/z/Desktop/pure-data/obj   -s -shared -o hidio.dll hidio.o hidio_types.o   hidio_windows.o  -L/src -L/bin -L/obj -lpd -lSetupAPI
+hidio.o: In function `hidio_write_event':
+Z:\Desktop\hidio/hidio.c:357: undefined reference to `hidio_write_event_symbols'
+Z:\Desktop\hidio/hidio.c:336: undefined reference to `hidio_write_event_ints'
+Z:\Desktop\hidio/hidio.c:347: undefined reference to `hidio_write_event_symbol_int'
+hidio.o: In function `hidio_setup':
+Z:\Desktop\hidio/hidio.c:643: undefined reference to `hidio_devices'
+Z:\Desktop\hidio/hidio.c:644: undefined reference to `hidio_elements'
+hidio.o:hidio.c:(.rdata$.refptr.hidio_elements[.refptr.hidio_elements]+0x0): undefined reference to `hidio_elements'
+hidio.o:hidio.c:(.rdata$.refptr.hidio_devices[.refptr.hidio_devices]+0x0): undefined reference to `hidio_devices'
+hidio_windows.o: In function `_hid_get_capabilities':
+Z:\Desktop\hidio/hidio_windows.c:333: undefined reference to `HidD_GetPreparsedData'
+Z:\Desktop\hidio/hidio_windows.c:336: undefined reference to `HidP_GetCaps'
+Z:\Desktop\hidio/hidio_windows.c:339: undefined reference to `HidD_FreePreparsedData'
+hidio_windows.o: In function `_hid_get_device_path':
+Z:\Desktop\hidio/hidio_windows.c:288: undefined reference to `HidD_GetHidGuid'
+hidio_windows.o: In function `hidio_print_device_list':
+Z:\Desktop\hidio/hidio_windows.c:713: undefined reference to `HidD_GetHidGuid'
+Z:\Desktop\hidio/hidio_windows.c:764: undefined reference to `HidD_GetAttributes'
+Z:\Desktop\hidio/hidio_windows.c:770: undefined reference to `HidD_GetManufacturerString'
+Z:\Desktop\hidio/hidio_windows.c:772: undefined reference to `HidD_GetProductString'
+hidio_windows.o: In function `hidio_get_events':
+Z:\Desktop\hidio/hidio_windows.c:910: undefined reference to `HidP_GetUsageValue'
+Z:\Desktop\hidio/hidio_windows.c:916: undefined reference to `HidP_GetScaledUsageValue'
+Z:\Desktop\hidio/hidio_windows.c:923: undefined reference to `HidP_MaxUsageListLength'
+Z:\Desktop\hidio/hidio_windows.c:930: undefined reference to `HidP_GetUsages'
+hidio_windows.o: In function `connectDeviceNumber':
+Z:\Desktop\hidio/hidio_windows.c:107: undefined reference to `HidD_GetHidGuid'
+hidio_windows.o: In function `hidio_build_element_list':
+Z:\Desktop\hidio/hidio_windows.c:514: undefined reference to `HidD_GetPreparsedData'
+Z:\Desktop\hidio/hidio_windows.c:515: undefined reference to `HidP_GetCaps'
+Z:\Desktop\hidio/hidio_windows.c:530: undefined reference to `HidP_GetButtonCaps'
+Z:\Desktop\hidio/hidio_windows.c:536: undefined reference to `HidP_GetValueCaps'
+hidio_windows.o: In function `hidio_close_device':
+Z:\Desktop\hidio/hidio_windows.c:1016: undefined reference to `HidD_FreePreparsedData'
+collect2.exe: error: ld returned 1 exit status
+make[1]: *** [Makefile:267: hidio.dll] Error 1
+make[1]: Leaving directory '/z/Desktop/hidio'
+make: *** [Makefile:303: all-recursive] Error 1
+

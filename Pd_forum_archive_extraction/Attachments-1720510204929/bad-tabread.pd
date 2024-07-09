@@ -1,0 +1,56 @@
+#N canvas 572 142 425 392 10;
+#X obj 165 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 92 254 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 759 173 328 180 overlap_tabplay 0;
+#X obj 74 142 outlet~;
+#X obj 183 77 block~ 256 4;
+#X obj 74 69 tabplay~ x;
+#X obj 74 37 inlet;
+#X obj 74 105 /~ 4;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X restore 92 278 pd overlap_tabplay;
+#X obj 165 118 loadbang;
+#X obj 239 253 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 759 173 382 326 overlap_tabread 0;
+#X obj 96 274 outlet~;
+#X obj 227 131 block~ 256 4;
+#X obj 95 50 inlet;
+#X obj 96 216 tabread4~ x;
+#X obj 96 160 vline~;
+#X obj 96 243 /~ 4;
+#X msg 95 136 0 \, 44100 250;
+#X obj 206 204 print~;
+#X obj 206 92 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 206 167 del 1.5;
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 4 0 7 0;
+#X connect 5 0 0 0;
+#X connect 6 0 4 0;
+#X connect 8 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X restore 239 277 pd overlap_tabread;
+#X obj 225 312 dac~;
+#X obj 124 201 table x 44100;
+#X obj 137 168 tabwrite~ x;
+#X obj 91 304 dac~;
+#X msg 229 147 \; pd dsp 1;
+#X obj 137 74 osc~ 440;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 2 0 9 0;
+#X connect 2 0 9 1;
+#X connect 3 0 0 0;
+#X connect 3 0 10 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 11 0 8 0;

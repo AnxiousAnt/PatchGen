@@ -1,0 +1,31 @@
+#N canvas 21 404 600 302 10;
+#X obj 32 166 -~;
+#X obj 32 242 outlet~;
+#X obj 32 203 *~;
+#X obj 31 109 samphold~;
+#X obj 49 134 rzero_rev~ 0;
+#X obj 158 150 samphold~;
+#X text 282 98 <- initial sample-and-hold;
+#X text 230 133 <- delay by one sample to get past phasor~ period value
+;
+#X text 230 153 <- sample and hold this value \, and find the difference
+;
+#X text 131 198 <- linearly interpolate from zero to the difference
+;
+#X text 132 226 <- add the lines to the delayed value to finish the
+interpolation from past to current.;
+#X obj 31 82 inlet~;
+#X obj 208 95 phasor~ \$1;
+#X obj 208 72 inlet;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 0 0 1;
+#X connect 11 0 3 0;
+#X connect 12 0 3 1;
+#X connect 12 0 5 1;
+#X connect 12 0 2 1;
+#X connect 13 0 12 0;

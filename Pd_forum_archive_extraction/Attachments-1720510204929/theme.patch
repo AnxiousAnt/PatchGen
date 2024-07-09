@@ -1,0 +1,210 @@
+diff --git a/all-the-things.pd b/all-the-things.pd
+new file mode 100644
+index 00000000..aec34cda
+--- /dev/null
++++ b/all-the-things.pd
+@@ -0,0 +1,38 @@
++#N canvas 617 258 376 311 12;
++#X obj 15 278 print;
++#X msg 15 11 hello world;
++#X floatatom 31 43 5 0 0 1 label - -;
++#X symbolatom 47 72 10 0 0 1 label - -;
++#X text 159 254 comment;
++#X obj 60 101 bng 15 250 50 0 empty empty label 17 7 0 10 -262144 -1
++-1;
++#X obj 72 127 tgl 15 0 empty empty label 17 7 0 10 -262144 -1 -1 0
++1;
++#X obj 86 163 nbx 5 14 -1e+37 1e+37 0 0 empty empty label 0 -8 0 10
++-262144 -1 -1 0 256;
++#X obj 163 46 vsl 15 128 0 127 0 0 empty empty label 0 -9 0 10 -262144
++-1 -1 0 1;
++#X obj 226 168 hsl 128 15 0 127 0 0 empty empty label -2 -8 0 10 -262144
++-1 -1 0 1;
++#X obj 196 58 vradio 15 1 0 8 empty empty label 0 -8 0 10 -262144 -1
++-1 0;
++#X obj 224 204 hradio 15 1 0 8 empty empty label 0 -8 0 10 -262144
++-1 -1 0;
++#X obj 308 23 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
++#N canvas 0 50 450 250 (subpatch) 0;
++#X array array1 32 float 3;
++#A 0 0.3 0.34 0.4 0.44 0.44 0.46 0.46 0.46 0.46 0.44 0.42 0.4 0.38
++0.36 0.3 0.18 0.0799999 0 -0.02 -0.02 -0.02 -0.02 -0.02 -0.02 -0.02
++0 0 0 0.04 0.04 0.0599999 0.0799999;
++#X coords 0 1 32 -1 32 100 1 0 0;
++#X restore 244 38 graph;
++#X connect 1 0 0 0;
++#X connect 2 0 0 0;
++#X connect 3 0 0 0;
++#X connect 5 0 0 0;
++#X connect 6 0 0 0;
++#X connect 7 0 0 0;
++#X connect 8 0 0 0;
++#X connect 9 0 0 0;
++#X connect 10 0 0 0;
++#X connect 11 0 0 0;
+diff --git a/src/g_canvas.c b/src/g_canvas.c
+index 32dc7d8f..df2c337b 100644
+--- a/src/g_canvas.c
++++ b/src/g_canvas.c
+@@ -821,7 +821,8 @@ static void canvas_drawlines(t_canvas *x)
+         linetraverser_start(&t, x);
+         while ((oc = linetraverser_next(&t)))
+             sys_vgui(
+-        ".x%lx.c create line %d %d %d %d -width %d -tags [list l%lx cord]\n",
++        ".x%lx.c create line %d %d %d %d -width %d -tags [list l%lx cord] "
++        "-fill $::pd_theme::cord_color\n",
+                 glist_getcanvas(x),
+                 t.tr_lx1, t.tr_ly1, t.tr_lx2, t.tr_ly2,
+                 (outlet_getsymbol(t.tr_outlet) == &s_signal ? 2:1) * x->gl_zoom,
+diff --git a/src/g_rtext.c b/src/g_rtext.c
+index ea752318..d9fc2004 100644
+--- a/src/g_rtext.c
++++ b/src/g_rtext.c
+@@ -336,7 +336,8 @@ static void rtext_senditup(t_rtext *x, int action, int *widthp, int *heightp,
+             escbuf,
+             sys_hostfontsize(font, glist_getzoom(x->x_glist)),
+             (glist_isselected(x->x_glist,
+-                &x->x_glist->gl_gobj)? "blue" : "black"));
++                &x->x_glist->gl_gobj)?
++                "$::pd_theme::text_select_color" : "$::pd_theme::text_color"));
+     }
+     else if (action == SEND_UPDATE)
+     {
+@@ -483,7 +484,8 @@ void rtext_select(t_rtext *x, int state)
+     t_glist *glist = x->x_glist;
+     t_canvas *canvas = glist_getcanvas(glist);
+     sys_vgui(".x%lx.c itemconfigure %s -fill %s\n", canvas,
+-        x->x_tag, (state? "blue" : "black"));
++        x->x_tag, (state?
++            "$::pd_theme::text_select_color" : "$::pd_theme::text_color"));
+ }
+ 
+ void rtext_activate(t_rtext *x, int state)
+diff --git a/src/g_text.c b/src/g_text.c
+index 3367d786..2a14a3ee 100644
+--- a/src/g_text.c
++++ b/src/g_text.c
+@@ -1297,7 +1297,8 @@ void glist_drawiofor(t_glist *glist, t_object *ob, int firsttime,
+         int onset = x1 + (width - iow) * i / nplus;
+         if (firsttime)
+             sys_vgui(".x%lx.c create rectangle %d %d %d %d "
+-                "-tags [list %so%d outlet] -fill black\n",
++                "-tags [list %so%d outlet] "
++                "-fill $::pd_theme::outlet_color -outline $::pd_theme::outlet_color\n",
+                 glist_getcanvas(glist),
+                 onset, y2 - oh + glist->gl_zoom,
+                 onset + iow, y2,
+@@ -1315,7 +1316,8 @@ void glist_drawiofor(t_glist *glist, t_object *ob, int firsttime,
+         int onset = x1 + (width - iow) * i / nplus;
+         if (firsttime)
+             sys_vgui(".x%lx.c create rectangle %d %d %d %d "
+-                "-tags [list %si%d inlet] -fill black\n",
++                "-tags [list %si%d inlet] "
++                "-fill $::pd_theme::inlet_color -outline $::pd_theme::inlet_color\n",
+                 glist_getcanvas(glist),
+                 onset, y1,
+                 onset + iow, y1 + ih - glist->gl_zoom,
+@@ -1342,7 +1344,7 @@ void text_drawborder(t_text *x, t_glist *glist,
+         if (firsttime)
+             sys_vgui(".x%lx.c create line %d %d %d %d %d %d %d %d %d %d "
+                 "-dash %s -width %d -capstyle projecting "
+-                "-tags [list %sR obj]\n",
++                "-tags [list %sR obj] -fill $::pd_theme::obj_border_color\n",
+                 glist_getcanvas(glist),
+                 x1, y1,  x2, y1,  x2, y2,  x1, y2,  x1, y1,  pattern,
+                 glist->gl_zoom, tag);
+@@ -1363,7 +1365,8 @@ void text_drawborder(t_text *x, t_glist *glist,
+         if (firsttime)
+             sys_vgui(".x%lx.c create line "
+                 "%d %d %d %d %d %d %d %d %d %d %d %d %d %d "
+-                "-width %d -capstyle projecting -tags [list %sR msg]\n",
++                "-width %d -capstyle projecting -tags [list %sR msg] "
++                "-fill $::pd_theme::msg_border_color\n",
+                 glist_getcanvas(glist),
+                 x1, y1,  x2+corner, y1,  x2, y1+corner,  x2,
+                 y2-corner,  x2+corner, y2, x1, y2,  x1, y1,
+@@ -1382,7 +1385,8 @@ void text_drawborder(t_text *x, t_glist *glist,
+         corner = ((y2-y1)/4);
+         if (firsttime)
+             sys_vgui(".x%lx.c create line %d %d %d %d %d %d %d %d %d %d %d %d "
+-                "-width %d -capstyle projecting -tags [list %sR atom]\n",
++                "-width %d -capstyle projecting -tags [list %sR atom] "
++                "-fill $::pd_theme::atom_border_color\n",
+                 glist_getcanvas(glist),
+                 x1p, y1p,  x2-corner, y1p,  x2, y1p+corner, x2, y2,
+                     x1p, y2,  x1p, y1p, glist->gl_zoom+grabbed, tag);
+@@ -1403,7 +1407,7 @@ void text_drawborder(t_text *x, t_glist *glist,
+     {
+         if (firsttime)
+             sys_vgui(".x%lx.c create line %d %d %d %d "
+-            "-tags [list %sR commentbar]\n",
++            "-tags [list %sR commentbar] -fill $::pd_theme::text_border_color\n",
+                 glist_getcanvas(glist),
+                 x2, y1,  x2, y2, tag);
+         else
+diff --git a/tcl/pd-gui.tcl b/tcl/pd-gui.tcl
+index a611b718..9cd1e502 100755
+--- a/tcl/pd-gui.tcl
++++ b/tcl/pd-gui.tcl
+@@ -32,6 +32,7 @@ package require msgcat
+ 
+ # Pd's packages are stored in the same directory as the main script (pd-gui.tcl)
+ set auto_path [linsert $auto_path 0 [file dirname [info script]]]
++package require pd_theme
+ package require pd_connect
+ package require pd_menus
+ package require pd_bindings
+diff --git a/tcl/pd_theme.tcl b/tcl/pd_theme.tcl
+new file mode 100644
+index 00000000..8f7025d7
+--- /dev/null
++++ b/tcl/pd_theme.tcl
+@@ -0,0 +1,26 @@
++package provide pd_theme 0.1
++
++# TODO: does it save noticable amount of runtime cpu usage when variable names were shorter?
++# TODO: can/should we add different widget background/text/*let colors?
++# TODO: implement system/user theme loading here?
++
++namespace eval ::pd_theme:: {
++
++    ### Background Colors
++
++    variable canvas_color "darkgreen"
++
++    ### Foreground Colors
++
++    variable cord_color          "dodgerblue"
++    variable text_color          "dodgerblue"
++    variable outlet_color        "dodgerblue"
++    variable inlet_color         "dodgerblue"
++
++    variable text_border_color   "dodgerblue"
++    variable obj_border_color    "dodgerblue"
++    variable msg_border_color    "dodgerblue"
++    variable atom_border_color   "dodgerblue"
++
++    variable text_select_color   "orange"
++}
+diff --git a/tcl/pdtk_canvas.tcl b/tcl/pdtk_canvas.tcl
+index e374f5f7..bc048d76 100644
+--- a/tcl/pdtk_canvas.tcl
++++ b/tcl/pdtk_canvas.tcl
+@@ -118,7 +118,7 @@ proc pdtk_canvas_new {mytoplevel width height geometry editable} {
+         -highlightthickness 0 -scrollregion [list 0 0 $width $height] \
+         -xscrollcommand "$mytoplevel.xscroll set" \
+         -yscrollcommand "$mytoplevel.yscroll set" \
+-        -background white
++        -background $::pd_theme::canvas_color
+     scrollbar $mytoplevel.xscroll -orient horizontal -command "$tkcanvas xview"
+     scrollbar $mytoplevel.yscroll -orient vertical -command "$tkcanvas yview"
+     pack $tkcanvas -side left -expand 1 -fill both
+diff --git a/tcl/pkgIndex.tcl b/tcl/pkgIndex.tcl
+index 7d95d3d5..7849db19 100644
+--- a/tcl/pkgIndex.tcl
++++ b/tcl/pkgIndex.tcl
+@@ -35,3 +35,4 @@ package ifneeded pdtk_textwindow 0.1 [list source [file join $dir pdtk_textwindo
+ package ifneeded scrollbox 0.1 [list source [file join $dir scrollbox.tcl]]
+ package ifneeded scrollboxwindow 0.1 [list source [file join $dir scrollboxwindow.tcl]]
+ package ifneeded wheredoesthisgo 0.1 [list source [file join $dir wheredoesthisgo.tcl]]
++package ifneeded pd_theme 0.1 [list source [file join $dir pd_theme.tcl]]

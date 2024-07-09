@@ -1,0 +1,17 @@
+#N canvas 846 514 482 267 10;
+#X declare -lib Gem;
+#X obj 62 163 alpha 1;
+#X obj 62 191 sphere 1 50;
+#X obj 61 102 gemwin;
+#X msg 80 76 0 \, destroy;
+#X obj 62 133 gemhead;
+#X msg 61 34 lighting 1 \, create \, 1 \, view 3.23003 -2.35114 0.197557
+0 0 0 0 1 0;
+#X obj 62 12 declare -lib Gem;
+#X obj 156 191 light;
+#X obj 156 148 gemhead;
+#X connect 0 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X connect 8 0 7 0;

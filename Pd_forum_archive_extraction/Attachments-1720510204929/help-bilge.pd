@@ -1,0 +1,8 @@
+#N canvas 153 68 545 272 12;
+#X obj 62 27 bilge;
+#X text 106 29 - CD player for Windows;
+#X text 65 87 Messages:;
+#X text 113 122 open -- opens the CD player;
+#X text 113 138 play a:b c:d -- plays from track a \, offset b to track c \, offset d;
+#X text 115 169 close -- closes the CD player;
+#X text 56 222 Windows only.;

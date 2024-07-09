@@ -1,0 +1,20 @@
+#N canvas 0 22 181 237 10;
+#X obj 43 123 f;
+#X obj 72 123 + 1;
+#X obj 43 73 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X floatatom 43 151 5 0 0 0 - - -;
+#X msg 87 175 1;
+#X msg 112 175 -1;
+#X obj 43 96 metro 200;
+#X obj 87 151 sel 0 100;
+#X connect 0 0 1 0;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 1 0 7 0;
+#X connect 2 0 6 0;
+#X connect 4 0 1 1;
+#X connect 5 0 1 1;
+#X connect 6 0 0 0;
+#X connect 7 0 4 0;
+#X connect 7 1 5 0;

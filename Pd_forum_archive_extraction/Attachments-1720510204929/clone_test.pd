@@ -1,0 +1,8 @@
+#N canvas 1910 910 450 300 10;
+#X obj 101 152 outlet;
+#X obj 101 63 inlet;
+#X obj 150 143 print patch-\$1;
+#X obj 101 96 t a a;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 1 2 0;

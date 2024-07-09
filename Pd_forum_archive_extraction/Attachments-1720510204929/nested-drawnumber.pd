@@ -1,0 +1,125 @@
+#N struct event float x float y float w float color symbol type float
+pitch float vel float pos symbol data-type float data-nb array data
+data-elem;
+#N struct data-elem float x float y float z;
+#N canvas 1 107 745 692 10;
+#N canvas 702 105 450 586 event 0;
+#X obj 46 107 filledpolygon color 0 1 0 0 w 0 w 10 0 10;
+#X obj 46 23 struct event float x float y float w float color symbol
+type float pitch float vel float pos symbol data-type float data-nb
+array data data-elem;
+#X obj 91 151 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 76 252 plot data 700 0 0 0 4;
+#X obj 92 172 drawsymbol data-type 0 -15;
+#X obj 46 71 s from_structevent;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 2 0 3 0;
+#X restore 467 21 pd event;
+#N canvas 450 89 450 300 array-data 0;
+#X obj 40 41 struct data-elem float x float y float z;
+#X obj 69 175 filledpolygon 0 0 0 0 0 0 5 5 5 5 0;
+#X obj 45 102 drawnumber z 10 -1 0;
+#X obj 40 63 print struct element;
+#X connect 0 0 3 0;
+#X restore 467 41 pd array-data;
+#N canvas 836 227 593 425 window 1;
+#X scalar event 210 201 100 123 symbol 0 0 0 symbol 0 \; 0 16 18 \;
+35 16 -5 \; 70 15 3 \; 107 14 0 \; 0 30 -41 \; 35 30 0 \; 70 30 0 \;
+105 30 0 \; 0 45 0 \; 35 45 0 \; 70 45 0 \; 107 45 0 \; 0 60 0 \; 35
+60 0 \; 70 60 0 \; 105 60 0 \; 0 77 0 \; 35 75 0 \; 70 75 0 \; \;;
+#X scalar event 246 -2 100 123 symbol 0 0 0 symbol 0 \; 0 15 991 \;
+35 15 0 \; 70 15 0 \; 105 15 0 \; 0 30 0 \; 35 30 0 \; 70 30 0 \; 105
+30 0 \; 0 45 0 \; 35 45 0 \; 70 45 0 \; 105 45 0 \; 0 60 0 \; \;;
+#X restore 470 105 pd window;
+#X msg 226 481 traverse pd-window \, bang;
+#X obj 226 503 pointer;
+#X obj 85 527 append event x y w color;
+#X msg 85 487 0 0 100 123;
+#X floatatom 40 489 5 0 0 0 - - -;
+#X obj 487 345 setsize event data;
+#X obj 583 443 getsize event data;
+#X obj 613 561 element event data;
+#X obj 514 659 set data-elem x y;
+#X obj 583 466 t f b;
+#X obj 583 488 until;
+#X obj 583 510 f;
+#X obj 613 510 + 1;
+#X obj 583 420 trigger pointer pointer;
+#X obj 583 532 t f f;
+#X obj 630 485 0;
+#X obj 511 549 t f f;
+#X obj 538 593 + 1;
+#X obj 538 615 * 15;
+#X obj 492 586 mod 4;
+#X obj 538 571 div 4;
+#X obj 511 613 * 35;
+#X msg 487 169 traverse pd-window;
+#X obj 487 191 pointer;
+#X msg 446 174 next;
+#X obj 487 236 getsize event data;
+#X obj 487 213 trigger pointer pointer;
+#X floatatom 487 285 5 0 0 0 set_size - -;
+#X msg 487 257 set \$1;
+#X obj 487 302 t f b;
+#X obj 592 319 pointer;
+#X floatatom 448 368 5 0 0 0 nb_per_row - -;
+#X obj 583 399 pointer;
+#X obj 538 382 t b f;
+#X text 70 40 event = rectangle + array of dots;
+#X text 80 60 dots = position(x \, y) + value(z \, displayed);
+#X text 37 147 I can accurately drag dots. But I cannot click on their
+numbers and change manually the displayed value by mouse or keybord.
+;
+#X obj 314 297 get event x y;
+#X floatatom 314 319 5 0 0 0 - - -;
+#X floatatom 388 321 5 0 0 0 - - -;
+#X text 37 197 The datastructure do not detect mouse clics at the right
+place \, for drawnumber nested in arrays. It looks like a scaling issue
+\, because I can reach them clicking futher down right \, provided
+that I do not clic outside the datastructure.;
+#X connect 3 0 4 0;
+#X connect 4 0 5 4;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 9 0 12 0;
+#X connect 10 0 11 2;
+#X connect 12 0 13 0;
+#X connect 12 1 18 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 14 0 17 0;
+#X connect 15 0 14 1;
+#X connect 16 0 9 0;
+#X connect 16 1 10 1;
+#X connect 17 0 19 0;
+#X connect 17 1 10 0;
+#X connect 18 0 14 1;
+#X connect 19 0 22 0;
+#X connect 19 1 23 0;
+#X connect 20 0 21 0;
+#X connect 21 0 11 1;
+#X connect 22 0 24 0;
+#X connect 23 0 20 0;
+#X connect 24 0 11 0;
+#X connect 25 0 26 0;
+#X connect 26 0 29 0;
+#X connect 26 0 40 0;
+#X connect 27 0 26 0;
+#X connect 28 0 31 0;
+#X connect 29 0 28 0;
+#X connect 29 1 33 1;
+#X connect 29 1 35 1;
+#X connect 30 0 32 0;
+#X connect 31 0 30 0;
+#X connect 32 0 8 0;
+#X connect 32 1 33 0;
+#X connect 33 0 8 1;
+#X connect 34 0 36 0;
+#X connect 35 0 16 0;
+#X connect 36 0 35 0;
+#X connect 36 1 22 1;
+#X connect 36 1 23 1;
+#X connect 40 0 41 0;
+#X connect 40 1 42 0;

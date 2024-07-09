@@ -1,0 +1,8 @@
+#N canvas 218 135 450 300 10;
+#X obj 37 54 r setable_send_receive;
+#X obj 37 88 route \$1;
+#X obj 37 117 outlet;
+#X obj 200 57 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 1;

@@ -1,0 +1,31 @@
+#N canvas 657 353 534 455 10;
+#X obj 282 10 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5400 1;
+#X obj 149 146 Scope~ 130 130 13 3 128 -1 1 0 0 1 0 102 255 51 135
+135 135 0;
+#X obj 140 11 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 293 35 5 0 0 0 - - -, f 5;
+#X floatatom 149 36 5 0 0 0 - - -, f 5;
+#X obj 148 107 *~;
+#X obj 166 81 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4600 1;
+#X floatatom 176 107 5 0 0 0 - - -, f 5;
+#X msg 360 245 \; pd dsp 0;
+#X msg 359 204 \; pd dsp 1;
+#X obj 14 54 cycle~ 110 0;
+#X obj 151 281 hsl 128 15 255 2 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12100 1;
+#X msg 54 119 trigger 1;
+#X obj 149 55 cycle~ 110 0;
+#X connect 0 0 3 0;
+#X connect 0 0 13 1;
+#X connect 2 0 4 0;
+#X connect 2 0 10 1;
+#X connect 5 0 1 0;
+#X connect 6 0 5 1;
+#X connect 6 0 7 0;
+#X connect 10 0 5 0;
+#X connect 11 0 1 0;
+#X connect 12 0 1 0;
+#X connect 13 0 5 0;

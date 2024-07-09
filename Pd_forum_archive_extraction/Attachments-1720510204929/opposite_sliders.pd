@@ -1,0 +1,10 @@
+#N canvas 0 81 559 598 10;
+#X obj 94 74 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 12700 1;
+#X obj 94 210 * -1;
+#X obj 94 232 + 100;
+#X obj 94 254 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;

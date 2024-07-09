@@ -1,0 +1,40 @@
+#N canvas 1982 317 909 374 10;
+#X msg 74 134 4 6545 3 3657 5 2333 1 3454 2 5464;
+#X msg 363 151 1 3454 55555 2 5464 65656 4 6545 87678 3 3657 456 5
+2333 7655 0 44444;
+#X obj 296 297 print sorted;
+#X obj 103 85 t b b;
+#X msg 133 106 2;
+#X obj 368 95 t b b;
+#X msg 397 124 3;
+#X obj 101 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 366 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 590 41 t b b;
+#X obj 588 21 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 575 100 1 234 3 345 0 12 3 333 4 410;
+#X msg 619 70 2;
+#X text 669 58 BUT BEWARE: must be unique keys;
+#X text 67 37 Will sort pairs (record width is 2);
+#X text 353 51 Here the record width is 3;
+#X text 8 -8 [record-sort] use a pseudo hash to sort an incoming list
+of n-tuples based on first item;
+#X obj 296 269 record-sort;
+#X connect 0 0 17 0;
+#X connect 1 0 17 0;
+#X connect 3 0 0 0;
+#X connect 3 1 4 0;
+#X connect 4 0 17 1;
+#X connect 5 0 1 0;
+#X connect 5 1 6 0;
+#X connect 6 0 17 1;
+#X connect 7 0 3 0;
+#X connect 8 0 5 0;
+#X connect 9 0 11 0;
+#X connect 9 1 12 0;
+#X connect 10 0 9 0;
+#X connect 11 0 17 0;
+#X connect 12 0 17 1;
+#X connect 17 0 2 0;

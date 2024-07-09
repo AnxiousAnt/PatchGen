@@ -1,0 +1,67 @@
+#N canvas 326 164 736 482 10;
+#N canvas 0 0 450 300 bm 0;
+#X restore 218 423 pd bm;
+#X obj 100 381 s pd-bm;
+#X msg 220 349 clear;
+#X obj 100 269 until;
+#X obj 100 200 t b b;
+#X floatatom 210 154 5 0 0 2 howmany - -;
+#X obj 100 146 bng 32 250 50 0 empty empty test-x 0 -6 0 8 -24198 -1
+-1;
+#X obj 100 294 f 10;
+#X obj 133 293 + 20;
+#X msg 144 269 10;
+#X obj 494 228 until;
+#X obj 435 150 bng 24 250 50 0 empty empty run_test 0 -6 0 8 -225271
+-1 -1;
+#X floatatom 435 297 8 0 0 1 milliseconds - -;
+#X obj 435 182 t b b b;
+#X obj 435 243 t b b;
+#X obj 435 274 cputime;
+#X obj 494 274 s BANG;
+#X floatatom 531 186 5 0 0 0 - - -;
+#X obj 100 327 pack 0 s;
+#X obj 211 268 list;
+#X symbolatom 211 291 10 0 0 0 - - -;
+#X msg 100 348 obj 10 \$1 \$2;
+#X text 211 185 Which?;
+#X text 25 22 first select \, which and how many objects to create
+\, then create them in [pd bm] by pressing the big green bng. After
+that \, send the test data by the run_test-bng and watch the time it
+takes.;
+#X obj 494 206 f 2000;
+#X msg 211 205 sendsend;
+#X msg 211 234 msgsend;
+#X obj 458 374 r ABC;
+#X obj 494 253 10;
+#X obj 100 244 f 1000;
+#X text 503 372 dummy to make msg-sends happy;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 29 0;
+#X connect 4 1 2 0;
+#X connect 4 1 9 0;
+#X connect 5 0 29 1;
+#X connect 6 0 4 0;
+#X connect 7 0 8 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 1;
+#X connect 9 0 7 1;
+#X connect 10 0 28 0;
+#X connect 11 0 13 0;
+#X connect 13 0 14 0;
+#X connect 13 1 24 0;
+#X connect 13 2 14 0;
+#X connect 14 0 15 0;
+#X connect 14 1 15 1;
+#X connect 15 0 12 0;
+#X connect 17 0 24 1;
+#X connect 18 0 21 0;
+#X connect 19 0 20 0;
+#X connect 20 0 18 1;
+#X connect 21 0 1 0;
+#X connect 24 0 10 0;
+#X connect 25 0 19 0;
+#X connect 26 0 19 0;
+#X connect 28 0 16 0;
+#X connect 29 0 3 0;

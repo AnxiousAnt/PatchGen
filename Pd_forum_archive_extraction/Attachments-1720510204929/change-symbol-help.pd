@@ -1,0 +1,11 @@
+#N canvas 0 0 450 300 10;
+#X obj 151 89 list;
+#X text 201 92 convert to symbol;
+#X msg 151 59 ABC;
+#X msg 183 59 XYZ;
+#X obj 151 162 print CHANGED?;
+#X obj 151 127 change-symbol ABC;
+#X connect 0 0 5 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 5 0 4 0;

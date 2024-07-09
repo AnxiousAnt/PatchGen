@@ -1,0 +1,11 @@
+#N canvas 755 435 564 300 10;
+#X obj 17 -7 cnv 15 200 100 empty normal_canvas normal_canvas 20 12
+0 10 -233017 -66577 0;
+#N canvas 0 0 450 300 gop_canvas 0;
+#X coords 0 0 0.00222222 0.00333333 200 140 1;
+#X restore 281 -1 pd gop_canvas;
+#X msg 18 189 \; normal_canvas vis_size 150 150;
+#X msg 282 188 \; pd-gop_canvas vis_size 300 400;
+#X msg 18 227 \; normal_canvas vis_size 200 100;
+#X text 17 162 This works:;
+#X text 281 163 This doesn't work:;

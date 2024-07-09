@@ -1,0 +1,4 @@
+#N canvas 15 22 450 300 10;
+#X obj 88 65 loaddspstatus~;
+#X obj 88 106 print dspstatus;
+#X connect 0 0 1 0;

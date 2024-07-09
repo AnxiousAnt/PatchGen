@@ -1,0 +1,12 @@
+#N canvas 284 205 631 286 10;
+#X floatatom 113 82 5 0 0 0 - - -;
+#X floatatom 113 135 5 0 0 0 - - -;
+#X floatatom 259 85 5 0 0 0 - - -;
+#X floatatom 259 149 5 0 0 0 - - -;
+#X obj 259 107 hs -300 300;
+#X obj 113 108 hs2 -300 300;
+#X text 256 173 often not equal to input!;
+#X connect 0 0 5 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 5 0 1 0;

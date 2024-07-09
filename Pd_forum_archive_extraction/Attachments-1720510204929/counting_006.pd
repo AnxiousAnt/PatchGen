@@ -1,0 +1,337 @@
+#N struct 1003-goto10 float x float y;
+#N canvas 248 25 581 872 10;
+#X obj 59 21 cnv 15 300 30 empty empty Counters_in_Pd 20 12 0 14 -233017
+-66577 0;
+#X obj 174 122 + 1;
+#X obj 172 266 + 1;
+#X obj 130 266 f 0;
+#X obj 272 122 + 1;
+#X obj 236 122 f 0;
+#X obj 114 122 float 0;
+#X text 207 123 ==;
+#X text 311 125 ~=;
+#X obj 380 122 + 1;
+#X obj 344 122 f;
+#X text 66 158 Every bang sent to the float will first output the current
+value of the float to its outlet and to the [+ 1] \, which then adds
+1 to the internally stored value of the float *without* outputting
+it immediatly.;
+#X text 64 216 The new value will be emitted on the next bang.;
+#X floatatom 130 297 5 0 0 0 current_output - -;
+#X msg 130 244 bang;
+#X floatatom 172 298 5 0 0 1 next_output - -;
+#X obj 192 487 + 1;
+#X obj 150 487 f 0;
+#X floatatom 150 518 5 0 0 0 current_output - -;
+#X msg 150 422 bang;
+#X floatatom 192 518 5 0 0 1 next_output - -;
+#X msg 166 450 0;
+#X obj 70 340 cnv 15 300 20 empty empty Resetting_Counters 20 10 0
+12 -233017 -66577 0;
+#X obj 67 568 cnv 15 300 20 empty empty From-To-Counters_(Modulo-n)
+20 10 0 12 -233017 -66577 0;
+#X obj 195 717 + 1;
+#X obj 155 717 f 0;
+#X floatatom 155 747 5 0 0 0 current_output - -;
+#X msg 155 659 bang;
+#X msg 171 686 0;
+#X obj 230 718 mod 4;
+#X text 65 65 Counting in Pd doesn't require externals \, you can also
+count with the builtin objects. The basic idiom to remember is [f 0]
+x [+ 1]:;
+#X text 280 715 <= count from 0 to 3 (where 3 == 4 - 1);
+#X text 193 449 <= RESET using right inlet of float;
+#X floatatom 230 747 5 0 0 1 next_output - -;
+#N canvas 258 28 576 798 accum 0;
+#X obj 59 21 cnv 15 300 30 empty empty Accumulator/Summing 20 12 0
+14 -233017 -66577 0;
+#X text 62 78 With a little change to the counter idiom you get another
+operation: an accumulator to sum incoming numbers.;
+#X text 63 125 Remember the counter:;
+#X obj 94 156 f 0;
+#X obj 138 214 f 0;
+#X obj 141 157 +;
+#X obj 90 214 +;
+#X obj 134 301 f 0;
+#X obj 86 301 +;
+#X text 63 238 and send numbers into it:;
+#X floatatom 86 331 5 0 0 0 - - -;
+#X obj 86 359 print;
+#X obj 129 480 f 0;
+#X obj 81 480 +;
+#X msg 81 429 1 \, 2 \, 3 \, 4 \, 5;
+#X floatatom 81 510 5 0 0 0 - - -;
+#X obj 81 538 print;
+#X msg 86 272 1 \, 2 \, 3 \, 4 \, 5;
+#X msg 97 451 0;
+#X text 57 401 Resetting works like this:;
+#X text 81 581 And if you only want the final result \, you can store
+the intermediate sums in a float object:;
+#X obj 152 703 f 0;
+#X obj 104 703 +;
+#X msg 104 652 1 \, 2 \, 3 \, 4 \, 5;
+#X floatatom 74 749 5 0 0 0 - - -;
+#X msg 152 675 0;
+#X text 189 675 <== Reset;
+#X obj 74 725 f;
+#X obj 74 624 t b b;
+#X obj 74 768 print;
+#X msg 31 601 bang;
+#X text 146 333 == 1+2+3+4+5 = 15;
+#X text 60 189 Now just turn the objects around like this:;
+#X text 166 452 <== Reset;
+#X obj 374 483 f 0;
+#X obj 326 483 +;
+#X msg 326 432 1 \, 2 \, 3 \, 4 \, 5;
+#X floatatom 326 513 5 0 0 0 - - -;
+#X obj 326 541 print;
+#X msg 374 454 0;
+#X text 411 455 <== Reset;
+#X text 321 406 Or this:;
+#X connect 3 0 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 3 1;
+#X connect 6 0 4 0;
+#X connect 7 0 8 1;
+#X connect 8 0 7 0;
+#X connect 8 0 10 0;
+#X connect 10 0 11 0;
+#X connect 12 0 13 1;
+#X connect 13 0 15 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 17 0 8 0;
+#X connect 18 0 13 1;
+#X connect 21 0 22 1;
+#X connect 22 0 21 0;
+#X connect 22 0 27 1;
+#X connect 23 0 22 0;
+#X connect 24 0 29 0;
+#X connect 25 0 21 0;
+#X connect 27 0 24 0;
+#X connect 28 0 27 0;
+#X connect 28 1 23 0;
+#X connect 30 0 28 0;
+#X connect 34 0 35 1;
+#X connect 35 0 37 0;
+#X connect 35 0 34 0;
+#X connect 36 0 35 0;
+#X connect 37 0 38 0;
+#X connect 39 0 34 0;
+#X restore 481 806 pd accum;
+#X text 480 785 See also:;
+#X obj 397 17 goto10;
+#X text 87 366 To start over \, send the new starting value to the
+right inlet of the float:;
+#N canvas 116 90 510 453 excercises 0;
+#X obj 35 35 cnv 15 300 20 empty empty Excercise 20 10 0 12 -233017
+-66577 0;
+#X text 41 181 Make a counter with accepts a number and then counts
+from 0 to that number minus 1 automatically. Hint: Use [until] and
+send a float to it.;
+#N canvas 320 46 468 737 solution1 0;
+#X obj 130 131 f 10;
+#X obj 166 131 + 1;
+#X msg 153 105 10;
+#X msg 130 77 bang;
+#X floatatom 130 159 5 0 0 0 - - -;
+#X obj 173 326 + 1;
+#X msg 137 272 bang;
+#X floatatom 137 394 5 0 0 0 - - -;
+#X obj 137 326 f 0;
+#X msg 153 300 0;
+#X obj 137 356 + 10;
+#X text 29 31 Basically there are two ways to do that: One is to modify
+the counter-[float] directly like this:;
+#X text 33 224 Or you could keep your counter as a 0 to X counter and
+modify its output afterwards in various ways:;
+#X text 202 130 start counting at 10;
+#X text 221 328 start from 0;
+#X text 226 362 then add 10;
+#X obj 136 578 + 1;
+#X msg 100 524 bang;
+#X obj 100 578 f 0;
+#X obj 100 597 mod 10;
+#X text 230 582 count from 0-10;
+#X obj 100 618 + 3;
+#X obj 100 641 * 0.1;
+#X floatatom 100 667 5 0 0 0 - - -;
+#X text 43 435 I generally prefer the latter solution \, because I
+like to have all my counting behave the same (count from 0) internally.
+Also the latter approach is good to have if you want to do more advanced
+counting \, like counting from 0.3 to 1.2 in 0.1-steps and do so over
+and over ("modulo n");
+#X text 171 668 counts from 0.3 to 1.2 over and over.;
+#X connect 0 0 1 0;
+#X connect 0 0 4 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 1;
+#X connect 3 0 0 0;
+#X connect 5 0 8 1;
+#X connect 6 0 8 0;
+#X connect 8 0 5 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 1;
+#X connect 10 0 7 0;
+#X connect 16 0 18 1;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 21 0;
+#X connect 19 0 16 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X restore 176 122 pd solution1;
+#N canvas 262 124 499 362 solution2 0;
+#X obj 171 237 until;
+#X obj 171 204 t a b;
+#X msg 220 237 0;
+#X obj 171 270 f 0;
+#X obj 204 270 + 1;
+#X obj 171 305 print COUNT_TO;
+#X floatatom 171 182 5 0 20 0 - - -;
+#X text 30 19 A "count-to" counter built with [until]: If you sent
+a float to [until] it will send out as many bangs as the float specified.
+You can use this to drive a counter automatically.;
+#X text 31 84 Note that before sending the float to the until \, an
+additional bang is triggered in [t a b] which resets the counter to
+0;
+#X msg 136 154 3;
+#X msg 171 154 5;
+#X msg 205 154 12;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 1 1 2 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 1;
+#X connect 6 0 1 0;
+#X connect 9 0 6 0;
+#X connect 10 0 6 0;
+#X connect 11 0 6 0;
+#X restore 181 251 pd solution2;
+#X text 40 71 Lets say you want to start counting from 10 instead of
+0 How do you start a counter at a different value than 0?;
+#X text 42 292 Make an up-down-conter \, that counts from 0 to 9 and
+then down from 9 to 0 and so on.;
+#N canvas 263 55 577 797 solution3 0;
+#X obj 100 100 f;
+#X msg 168 219 1;
+#X msg 219 222 -1;
+#X floatatom 100 172 5 0 0 0 - - -;
+#X obj 138 102 + 1;
+#X obj 168 157 select 0;
+#X floatatom 219 91 5 0 0 0 from - -;
+#X floatatom 270 73 5 0 0 0 to - -;
+#X obj 138 124 t a a;
+#X msg 100 66 bang;
+#X obj 219 184 select 9;
+#X text 30 19 The simple approach is to use two select objects and
+change the counter-direction accordingly:;
+#X text 48 289 Another \, very elegant approach is this:;
+#X obj 161 357 f;
+#X obj 191 358 + 1;
+#X obj 161 478 abs;
+#X floatatom 161 517 5 0 0 0 - - -;
+#X obj 198 381 * 2;
+#X floatatom 103 431 5 0 0 0 - - -;
+#X floatatom 257 310 5 0 0 0 - - -;
+#X floatatom 99 480 5 0 0 0 - - -;
+#X obj 257 329 - 1;
+#X obj 161 539 hradio 15 1 0 10 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 100 247 hradio 15 1 0 10 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X msg 161 333 bang;
+#X obj 161 403 mod 18;
+#X obj 161 451 - 9;
+#X text 43 573 How does this work? Inside is a normal modulo-counter
+\, but it counts over twice the range. So with [mod 18] it counts from
+0-17.;
+#X text 43 620 By substracting half the range \, we get a counter from
+-half to +(half-1) \, or from -9 to 8 By taking the absolute values
+from this \, we have a counter from 9 to 0 to 8!;
+#X text 43 727 This approach was posted to pd-list by Steffen Leve
+Poulsen.;
+#X text 38 269 ----------------------------------------------------------
+;
+#X text 44 677 Note that resetting this counter by sending a 0 to the
+[f] will make it start with the downwards ramp. To start from 0 \,
+you have to send (max - 1) to the float.;
+#X connect 0 0 3 0;
+#X connect 0 0 4 0;
+#X connect 1 0 4 1;
+#X connect 2 0 4 1;
+#X connect 3 0 23 0;
+#X connect 4 0 8 0;
+#X connect 5 0 1 0;
+#X connect 5 1 10 0;
+#X connect 6 0 5 1;
+#X connect 7 0 10 1;
+#X connect 8 0 0 1;
+#X connect 8 1 5 0;
+#X connect 9 0 0 0;
+#X connect 10 0 2 0;
+#X connect 13 0 25 0;
+#X connect 14 0 13 1;
+#X connect 15 0 16 0;
+#X connect 16 0 22 0;
+#X connect 17 0 25 1;
+#X connect 19 0 21 0;
+#X connect 21 0 17 0;
+#X connect 21 0 26 1;
+#X connect 21 0 13 1;
+#X connect 24 0 13 0;
+#X connect 25 0 14 0;
+#X connect 25 0 26 0;
+#X connect 25 0 18 0;
+#X connect 26 0 15 0;
+#X connect 26 0 20 0;
+#X restore 179 365 pd solution3;
+#X restore 447 834 pd excercises;
+#X text 92 594 If you want to count from 0 to a max-value and then
+start over \, use a "Modulo N" counter. Note \, that the [mod] is inserted
+either between the [+ 1] and the float or between the float and the
+[+ 1]. To count until N use a [mod N+1] object:;
+#X obj 247 804 + 1;
+#X obj 207 804 f 0;
+#X obj 207 825 mod 4;
+#X msg 207 775 bang;
+#X floatatom 207 848 5 0 0 0 - - -;
+#X text 70 802 Alternate method:;
+#X floatatom 256 828 5 0 0 1 border+1 - -;
+#X msg 246 776 0;
+#X floatatom 260 696 5 0 0 1 border+1 - -;
+#X connect 1 0 6 1;
+#X connect 2 0 3 1;
+#X connect 2 0 15 0;
+#X connect 3 0 2 0;
+#X connect 3 0 13 0;
+#X connect 4 0 5 1;
+#X connect 5 0 4 0;
+#X connect 6 0 1 0;
+#X connect 9 0 10 1;
+#X connect 10 0 9 0;
+#X connect 14 0 3 0;
+#X connect 16 0 17 1;
+#X connect 16 0 20 0;
+#X connect 17 0 16 0;
+#X connect 17 0 18 0;
+#X connect 19 0 17 0;
+#X connect 21 0 17 1;
+#X connect 24 0 29 0;
+#X connect 25 0 24 0;
+#X connect 25 0 26 0;
+#X connect 27 0 25 0;
+#X connect 28 0 25 1;
+#X connect 29 0 25 1;
+#X connect 29 0 33 0;
+#X connect 40 0 41 1;
+#X connect 41 0 42 0;
+#X connect 42 0 40 0;
+#X connect 42 0 44 0;
+#X connect 43 0 41 0;
+#X connect 46 0 42 1;
+#X connect 47 0 41 1;
+#X connect 48 0 29 1;

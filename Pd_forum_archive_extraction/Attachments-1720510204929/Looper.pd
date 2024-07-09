@@ -1,0 +1,36 @@
+#N canvas 564 242 450 300 10;
+#N canvas 1 58 450 300 sampler 0;
+#X obj 138 94 sig~;
+#X obj 138 118 lop~ 2;
+#X obj 123 146 *~;
+#X obj 124 171 tabwrite~ \$0-a1;
+#X obj 131 211 tabplay~ \$0-a1;
+#X obj 267 72 inlet p;
+#X obj 213 72 inlet r;
+#X obj 91 72 inlet~;
+#X obj 131 232 outlet~;
+#X obj 138 72 inlet gain;
+#X obj 159 191 table \$0-a1 88200;
+#X connect 0 0 1 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 0;
+#X connect 7 0 2 0;
+#X connect 9 0 0 0;
+#X restore 33 147 pd sampler;
+#X obj 32 31 adc~;
+#X obj 112 69 bng 15 250 50 0 empty empty record 20 7 1 8 -262144 -1
+-1;
+#X obj 112 89 bng 15 250 50 0 empty empty play 20 7 1 8 -262144 -1
+-1;
+#X obj 52 58 vsl 12 48 0 1 0 0 empty empty gain 16 8 1 8 -262144 -1
+-1 0 1;
+#X obj 34 193 dac~;
+#X connect 0 0 5 0;
+#X connect 0 0 5 1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 2;
+#X connect 3 0 0 3;
+#X connect 4 0 0 1;

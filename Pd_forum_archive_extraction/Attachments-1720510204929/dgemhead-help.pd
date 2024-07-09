@@ -1,0 +1,24 @@
+#N canvas 339 288 724 390 10;
+#X obj 116 158 dgemhead;
+#X obj 116 133 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 116 247 translateXYZ;
+#X obj 142 215 unpack 0 0;
+#X obj 116 278 square 0.1;
+#X obj 118 73 gemwin;
+#X msg 118 47 create \, 1;
+#X msg 217 144 -2.72 1.52 \, -1.12 0.56 \, 3.04 -1.68 \, -2.8 3.92
+\, -2.48 3.28 \, -0.4 -0.72 \, -3.92 -2.64 \, 1.2 -3.28 \, -1.04 -2.16
+\, 1.76 -0.24 \, 0.8 -1.68 \, 3.36 -2.88 \, 0.88 -3.52 \, 0.72 2.64
+\, -3.28 -1.68 \, 2.72 -1.04 \, 1.92 -2.56 \, -1.68 2 \, 0.32 3.52
+\,;
+#X text 259 119 do something here:;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 0 2 7 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 1;
+#X connect 3 1 2 2;
+#X connect 6 0 5 0;
+#X connect 7 0 0 1;

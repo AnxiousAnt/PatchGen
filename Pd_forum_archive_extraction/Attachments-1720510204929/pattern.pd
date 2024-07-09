@@ -1,0 +1,19 @@
+#N canvas 36 327 450 300 10;
+#X obj 49 28 bng 15 250 50 0 empty empty empty 0 -6 32 8 -262144 -1
+-1;
+#X obj 53 182 print;
+#X obj 79 91 makefilename %s-pitch.txt;
+#X obj 50 45 symbol \$1;
+#X obj 50 70 t s s;
+#X obj 52 126 pack s s;
+#X obj 48 4 inlet;
+#X obj 334 20 table \$1-pitch;
+#X msg 52 147 \; \$1-pitch write \$2;
+#X connect 0 0 3 0;
+#X connect 2 0 5 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 1 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 0 0;
+#X connect 8 0 1 0;

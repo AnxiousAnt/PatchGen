@@ -1,0 +1,14 @@
+#N canvas 568 224 583 417 12;
+#X obj 190 347 textfile;
+#X msg 269 310 add pif paf pouf \;;
+#X obj 192 243 r test;
+#X msg 165 106 file mkdir /tmp/test-folder;
+#X obj 164 134 sys_gui test;
+#X obj 192 277 trigger bang bang;
+#X msg 31 312 write /tmp/test-folder/MyFile.txt;
+#X connect 1 0 0 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 5 1 1 0;
+#X connect 6 0 0 0;

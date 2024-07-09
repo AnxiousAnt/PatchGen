@@ -1,0 +1,69 @@
+#N canvas 368 319 1135 382 10;
+#X obj 18 118 sys_gui;
+#X msg 18 85 eval [read [open my_script.tcl]] \, my_proc arg1 arg2
+\, rename my_proc "";
+#X obj 94 300 sys_gui;
+#X obj 34 214 b;
+#X obj 147 213 b;
+#X obj 66 258 t b b;
+#X obj 25 350 b;
+#X obj 157 350 b;
+#X obj 66 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 66 329 do something;
+#X obj 266 284 sys_gui;
+#X obj 266 226 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 266 308 do something;
+#X text 41 184 wrong;
+#X text 266 187 good;
+#X text 69 160 tcl procedure is slower than triggers;
+#X obj 433 133 sys_gui;
+#X obj 433 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 8 1 patko2013;
+#X msg 433 113 pdsend "foo-s Hello World";
+#X obj 432 157 r foo-s;
+#X obj 432 179 print foo;
+#X text 428 46 using FUDI;
+#X obj 664 164 sys_gui;
+#X text 16 48 evaluate a tcl script \, launch a procedure \, and remove
+procedure from memory for avoiding duplicated proc errors;
+#X obj 266 331 print something;
+#X msg 689 131 destroy .mytoplevel;
+#X msg 664 39 toplevel .mytoplevel;
+#X msg 686 88 wm attributes .mytoplevel -fullscreen 1;
+#X text 657 20 build a toplevel widget;
+#X text 685 66 make it fullscreen;
+#X text 695 110 close toplevel;
+#X obj 664 349 sys_gui;
+#X msg 266 264 puts "Hello World!";
+#X msg 94 280 puts "Hello World!";
+#X msg 664 238 font create my_font -family [list Lucida Sans] -size
+14 -weight bold;
+#X msg 696 291 text .mytoplevel.text -font my_font \, pack .mytoplevel.text
+;
+#X text 697 273 puts some text on toplevel;
+#X msg 714 314 .mytoplevel.text insert end "Hello World!";
+#X text 657 205 create some fonts (can be done only once by instance
+\, so it's better inside a proc);
+#X connect 1 0 0 0;
+#X connect 3 0 7 0;
+#X connect 4 0 6 0;
+#X connect 5 0 9 0;
+#X connect 5 1 34 0;
+#X connect 8 0 5 0;
+#X connect 10 0 12 0;
+#X connect 11 0 33 0;
+#X connect 12 0 25 0;
+#X connect 17 0 19 0;
+#X connect 19 0 16 0;
+#X connect 20 0 21 0;
+#X connect 26 0 23 0;
+#X connect 27 0 23 0;
+#X connect 28 0 23 0;
+#X connect 33 0 10 0;
+#X connect 34 0 2 0;
+#X connect 35 0 32 0;
+#X connect 36 0 32 0;
+#X connect 38 0 32 0;

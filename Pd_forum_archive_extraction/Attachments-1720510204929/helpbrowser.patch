@@ -1,0 +1,16 @@
+202c202
+<         "::helpbrowser::dir_navigate $dir 2 %W %x %y"
+---
+>         "::helpbrowser::dir_navigate {$dir} 2 %W %x %y"
+204c204
+<         "::helpbrowser::dir_doubleclick $dir 2 %W %x %y"
+---
+>         "::helpbrowser::dir_doubleclick {$dir} 2 %W %x %y"
+206c206
+<         "::helpbrowser::dir_right $dir 2 %W"
+---
+>         "::helpbrowser::dir_right {$dir} 2 %W"
+208c208
+<         "::helpbrowser::dir_right $dir 2 %W"
+---
+>         "::helpbrowser::dir_right {$dir} 2 %W"

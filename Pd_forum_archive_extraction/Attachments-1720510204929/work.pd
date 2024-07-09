@@ -1,0 +1,39 @@
+#N canvas 0 0 1015 684 10;
+#N canvas 85 9 704 679 GUI_Canvas 0;
+#X obj 0 0 cnv 15 150 650 myCanvas myCanvasR GUI 0 5 2 14 -225271 -355
+0;
+#X coords 0 -1 1 1 150 650 1 0 0;
+#X restore -35 12 pd GUI_Canvas;
+#X obj 240 484 s pd-GUI_Canvas;
+#X msg 215 268 obj 0 0 cnv 15 100 650 myCanvas myCanvasR Essai 0 5
+2 14 3 28;
+#X msg 582 369 obj 0 0 cnv 15 100 325 myCanvas myCanvasR Essai 0 5
+2 14 3 28;
+#X msg 595 404 obj 0 325 cnv 15 100 325 myCanvas myCanvasR Essai 0
+5 2 14 4 28;
+#X obj 208 193 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 602 244 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 254 193 One canvas \, 650 in length.;
+#X text 632 239 Two canvases \, 325 each in length.;
+#X msg 603 119 clear;
+#X obj 516 113 t b b;
+#X obj 515 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 516 154 obj 0 0 cnv 15 150 650 myCanvas myCanvasR GUI 0 5 2
+14 6 28;
+#X obj 603 265 t b b;
+#X text 513 59 Clean up;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 6 0 13 0;
+#X connect 9 0 1 0;
+#X connect 10 0 12 0;
+#X connect 10 1 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 1 0;
+#X connect 13 0 4 0;
+#X connect 13 1 3 0;

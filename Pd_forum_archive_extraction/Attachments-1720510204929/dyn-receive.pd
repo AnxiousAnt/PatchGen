@@ -1,0 +1,26 @@
+#N canvas 80 349 450 300 10;
+#N canvas 781 144 450 300 \$0-receive 1;
+#X obj 10 10 r test;
+#X obj 10 30 s 1227-dyn-receive;
+#X connect 0 0 1 0;
+#X restore 202 43 pd \$0-receive;
+#X obj 83 130 f \$0;
+#X obj 56 150 list;
+#X obj 56 202 s pd-\$0-receive;
+#X obj 56 110 t a b;
+#X obj 204 120 outlet;
+#X obj 56 64 inlet;
+#X msg 56 170 clear \, obj 10 10 r \$1 \, obj 10 30 s \$2-dyn-receive
+\, connect 0 0 1 0;
+#X obj 204 80 r \$0-dyn-receive;
+#X obj 114 38 loadbang;
+#X obj 114 77 symbol \$1;
+#X connect 1 0 2 1;
+#X connect 2 0 7 0;
+#X connect 4 0 2 0;
+#X connect 4 1 1 0;
+#X connect 6 0 4 0;
+#X connect 7 0 3 0;
+#X connect 8 0 5 0;
+#X connect 9 0 10 0;
+#X connect 10 0 4 0;

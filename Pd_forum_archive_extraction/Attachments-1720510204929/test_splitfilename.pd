@@ -1,0 +1,11 @@
+#N canvas 0 0 288 305 10;
+#X obj 63 138 savepanel;
+#X obj 63 111 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 63 171 splitfilename .;
+#X obj 63 199 print;
+#X obj 163 199 print;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;

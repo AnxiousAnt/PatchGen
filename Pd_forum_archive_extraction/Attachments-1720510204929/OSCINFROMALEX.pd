@@ -1,0 +1,67 @@
+#N canvas 299 158 1231 757 10;
+#X declare -lib mrpeach;
+#X floatatom 85 205 3 0 0 0 - - -;
+#X floatatom 112 205 3 0 0 0 - - -;
+#X floatatom 139 205 3 0 0 0 - - -;
+#X floatatom 166 205 3 0 0 0 - - -;
+#X text 45 204 from;
+#X obj -32 261 unpackOSC;
+#X obj -32 287 pipelist;
+#X obj 85 181 unpack 0 0 0 0 0;
+#X floatatom 194 205 8 0 0 0 - - -;
+#X obj 20 158 route received from;
+#X floatatom 20 226 5 0 0 0 - - -;
+#X text 60 226 bytes;
+#X obj 132 28 import mrpeach;
+#X obj 858 237 oscillo 1;
+#X msg -32 110 port \$1;
+#X obj -32 68 loadbang;
+#X obj -32 90 f \$1;
+#X obj -32 132 udpreceive \$1;
+#X msg 91 105 status;
+#X obj 91 79 inlet;
+#X obj 265 555 print;
+#X obj -32 319 t a a;
+#X obj -32 740 outlet t2;
+#X obj 126 742 outlet s2;
+#X obj 43 739 outlet h2;
+#X obj -32 482 routeOSC /space_t2 /space_h2r /space_s2;
+#X text 327 273 Cas T2 le programme envoie /space_t2 x y tu le mappes
+le point de ces coordonnées sur ton carre puis sur le torre de dimension2
+avec ton travail deja fait. La taille du point est le "sphere_radius"
+;
+#X text 324 360 S2: le programme envoie /space_s2 et deux floats x
+y z tu dessines le point de ces coordonnées sur une sphere de rayon
+1 et de centre 0 dans R3 vue de perspective. La taille du point est
+le "sphere_radius";
+#X text 331 427 Cas H2: le programme envoie /angle et deux floats x
+y tu mappes le point ayant ces coordonnées sur ton octogone qui est
+mappé sur le le tore à deux trous avec ton travail deja fait. La
+taille du point est le "sphere_radius" Tu devras travailler avec un
+octogonne régulier et ajuster le mapping pour qu'il n'y ai pas de
+discontinuité.;
+#X msg 162 393 set \$1 \$2 \$3;
+#X msg 177 431;
+#X connect 5 0 6 0;
+#X connect 5 1 6 1;
+#X connect 6 0 21 0;
+#X connect 7 0 0 0;
+#X connect 7 1 1 0;
+#X connect 7 2 2 0;
+#X connect 7 3 3 0;
+#X connect 7 4 8 0;
+#X connect 9 0 10 0;
+#X connect 9 1 7 0;
+#X connect 14 0 17 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X connect 17 0 5 0;
+#X connect 17 1 9 0;
+#X connect 18 0 17 0;
+#X connect 19 0 18 0;
+#X connect 21 0 25 0;
+#X connect 21 0 29 0;
+#X connect 25 0 22 0;
+#X connect 25 1 24 0;
+#X connect 25 2 23 0;
+#X connect 29 0 30 0;

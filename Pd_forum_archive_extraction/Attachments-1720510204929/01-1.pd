@@ -1,0 +1,162 @@
+#N canvas 125 109 636 549 10;
+#X obj 21 84 openpanel;
+#X obj 190 512 dac~;
+#X obj 144 445 mixer~ 4;
+#X obj 255 442 mixer~ 4;
+#X obj 133 86 openpanel;
+#X text 166 207 <-play;
+#X text 193 237 <-stop;
+#X obj 21 41 bng 30 250 50 0 empty empty empty 0 -6 0 8 -258049 -1
+-1;
+#X obj 133 40 bng 30 250 50 0 empty empty empty 0 -6 0 8 -64 -195568
+-262081;
+#X obj 50 242 bng 15 250 50 0 empty empty empty 0 -6 0 8 -258049 -64
+-4033;
+#X text 37 210 <-play;
+#X text 65 243 <-stop;
+#X obj 148 207 bng 15 250 50 0 empty empty empty 0 -6 0 8 -64 -64 -1
+;
+#X obj 177 237 bng 15 250 50 0 empty empty empty 0 -6 0 8 -64 -64 -4033
+;
+#X text 18 22 CHANNEL 1;
+#X text 133 24 CHANNEL 2;
+#X obj 250 85 openpanel;
+#X text 315 235 <-stop;
+#X obj 369 36 bng 30 250 50 0 empty empty empty 0 -6 0 8 -262081 -1
+-1;
+#X obj 271 208 bng 15 250 50 0 empty empty empty 0 -6 0 8 -4033 -64
+-1;
+#X obj 300 235 bng 15 250 50 0 empty empty empty 0 -6 0 8 -4033 -64
+-4033;
+#X text 251 22 CHANNEL 3;
+#X text 289 209 <-play;
+#X text 281 45 <-open file;
+#X text 163 47 <-open file;
+#X text 52 48 <-open file;
+#X obj 369 85 openpanel;
+#X text 446 240 <-stop;
+#X obj 250 38 bng 30 250 50 0 empty empty empty 0 -6 0 8 -4033 -1 -1
+;
+#X obj 400 209 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262081 -64
+-1;
+#X obj 429 240 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262081 -64
+-4033;
+#X text 416 209 <-play;
+#X text 401 42 <-open file;
+#X text 369 19 CHANNEL 4;
+#X msg 509 61 \; pd dsp 1;
+#X text 576 61 audio on;
+#X text 577 103 audio off;
+#X obj 19 371 print didit;
+#X msg 509 102 \; pd dsp 0;
+#X msg 21 274 0;
+#X msg 50 275 0 1;
+#X obj 21 311 tabplay~ buf0-0;
+#X obj 550 215 table buf0-0;
+#X obj 550 232 table buf0-1;
+#X obj 550 253 table buf1-0;
+#X obj 550 270 table buf1-1;
+#X obj 550 292 table buf2-0;
+#X obj 550 309 table buf2-1;
+#X obj 550 330 table buf3-0;
+#X obj 550 347 table buf3-1;
+#X obj 21 339 tabplay~ buf0-1;
+#X obj 154 369 print didit;
+#X msg 148 273 0;
+#X msg 177 274 0 1;
+#X obj 279 370 print didit;
+#X msg 272 271 0;
+#X msg 301 272 0 1;
+#X obj 400 374 print didit;
+#X msg 401 276 0;
+#X msg 430 277 0 1;
+#X obj 19 170 soundfiler;
+#X msg 21 116 read -resize \$1 buf0-0 buf0-1;
+#X msg 133 140 read -resize \$1 buf1-0 buf1-1;
+#X msg 250 116 read -resize \$1 buf2-0 buf2-1;
+#X msg 369 145 read -resize \$1 buf3-0 buf3-1;
+#X obj 156 309 tabplay~ buf1-0;
+#X obj 156 337 tabplay~ buf1-1;
+#X obj 281 310 tabplay~ buf2-0;
+#X obj 281 338 tabplay~ buf2-1;
+#X obj 402 314 tabplay~ buf3-0;
+#X obj 402 342 tabplay~ buf3-1;
+#X obj 21 211 bng 15 250 50 0 empty empty empty 0 -6 0 8 -258049 -64
+-4033;
+#X obj 470 263 tgl 15 0 empty empty empty 0 -6 0 8 -262081 -1 -1 0
+1;
+#X obj 471 290 spigot;
+#X text 489 263 <-loop;
+#X obj 334 256 tgl 15 0 empty empty empty 0 -6 0 8 -4033 -1 -1 0 1
+;
+#X obj 335 283 spigot;
+#X text 353 256 <-loop;
+#X obj 206 257 tgl 15 0 empty empty empty 0 -6 0 8 -64 -1 -1 0 1;
+#X obj 207 284 spigot;
+#X text 225 257 <-loop;
+#X obj 81 261 tgl 15 0 empty empty empty 0 -6 0 8 -258049 -1 -1 0 1
+;
+#X obj 82 288 spigot;
+#X text 100 261 <-loop;
+#X connect 0 0 61 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
+#X connect 4 0 62 0;
+#X connect 7 0 0 0;
+#X connect 8 0 4 0;
+#X connect 9 0 40 0;
+#X connect 12 0 52 0;
+#X connect 13 0 53 0;
+#X connect 16 0 63 0;
+#X connect 18 0 26 0;
+#X connect 19 0 55 0;
+#X connect 20 0 56 0;
+#X connect 26 0 64 0;
+#X connect 28 0 16 0;
+#X connect 29 0 58 0;
+#X connect 30 0 59 0;
+#X connect 39 0 41 0;
+#X connect 39 0 50 0;
+#X connect 40 0 41 0;
+#X connect 40 0 50 0;
+#X connect 41 0 2 0;
+#X connect 41 1 37 0;
+#X connect 41 1 82 0;
+#X connect 50 0 3 0;
+#X connect 52 0 65 0;
+#X connect 52 0 66 0;
+#X connect 53 0 65 0;
+#X connect 53 0 66 0;
+#X connect 55 0 67 0;
+#X connect 55 0 68 0;
+#X connect 56 0 67 0;
+#X connect 56 0 68 0;
+#X connect 58 0 69 0;
+#X connect 58 0 70 0;
+#X connect 59 0 69 0;
+#X connect 59 0 70 0;
+#X connect 61 0 60 0;
+#X connect 62 0 60 0;
+#X connect 63 0 60 0;
+#X connect 64 0 60 0;
+#X connect 65 0 2 1;
+#X connect 65 1 51 0;
+#X connect 65 1 79 0;
+#X connect 66 0 3 1;
+#X connect 67 0 2 2;
+#X connect 67 1 54 0;
+#X connect 67 1 76 0;
+#X connect 68 0 3 2;
+#X connect 69 0 2 3;
+#X connect 69 1 57 0;
+#X connect 69 1 73 0;
+#X connect 70 0 3 3;
+#X connect 71 0 39 0;
+#X connect 72 0 73 1;
+#X connect 73 0 58 0;
+#X connect 75 0 76 1;
+#X connect 76 0 55 0;
+#X connect 78 0 79 1;
+#X connect 79 0 52 0;
+#X connect 81 0 82 1;
+#X connect 82 0 39 0;

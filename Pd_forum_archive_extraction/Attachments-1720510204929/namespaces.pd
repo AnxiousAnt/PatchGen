@@ -1,0 +1,39 @@
+#N canvas 394 98 647 562 10;
+#X declare -lib barlib;
+#X declare -lib foolib;
+#X declare -lib marglib;
+#N canvas 421 339 535 281 subpatch 0;
+#X obj 40 33 import barlib;
+#X text 95 131 subpatches are extensions of the original canvas \,
+in terms of the functionality. Therefore \, they should share the same
+namespace as their parents. Not inherit it \, but share the exact same
+one.;
+#X text 129 33 loads barlib for this subpatch and the "namespaces.pd
+patch;
+#X restore 59 209 pd subpatch;
+#X obj 56 100 import foolib;
+#N canvas 400 119 450 300 abstraction 0;
+#X text 35 105 Pretend this is an abstraction. Since it has no [import]s
+and it is a separate patch \, there are no libraries loaded into the
+local namespace.;
+#X restore 57 303 pd abstraction;
+#X text 54 145 This is the parent patch. Both 'foolib' and 'barlib'
+are loaded into the local namespace for this patch. 'foolib' is loaded
+by the above [import] statement \, and 'barlib' is loaded by the [import]
+inside of the subpatch.;
+#N canvas 0 22 450 300 another 0;
+#X text 42 96 Since 'foolib' and 'barlib' were loaded into the parent
+patch and a related subpatch \, they are both in the local namespace
+of this subpatch too. Subpatches share the same namespace with their
+parent.;
+#X restore 57 246 pd another subpatch;
+#X text 54 33 This is a quick sketch of how I think namespaces should
+be implemented. <hans@eds.org>;
+#N canvas 0 22 450 300 another 0;
+#X obj 114 29 import marglib;
+#X text 26 70 Pretend this is an abstraction. The local namespace of
+this abstraction currently contains only 'marglib' \, since that is
+the only lib that is loaded in the context of this abstraction.;
+#X text 26 130 'foolib' and 'barlib' are not included because they
+have been loaded by a separate patch.;
+#X restore 57 336 pd another abstraction;

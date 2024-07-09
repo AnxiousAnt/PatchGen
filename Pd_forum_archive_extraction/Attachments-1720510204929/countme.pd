@@ -1,0 +1,40 @@
+#N canvas 108 177 472 229 10;
+#X obj 25 88 f;
+#X floatatom 86 66 5 0 0 0 - - -;
+#X obj 82 147 sel 1;
+#X obj 25 32 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 41 60 0;
+#X floatatom 25 122 5 0 0 0 - - -;
+#X obj 70 88 + 0.1;
+#X obj 82 124 >= 3;
+#X obj 189 93 f;
+#X obj 189 37 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 25 -5 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 42 -4 <-bang here;
+#X msg 204 61 0;
+#X floatatom 189 156 5 0 0 0 - - -;
+#X obj 189 133 * 0.1;
+#X obj 189 113 mod 31;
+#X obj 234 94 + 1;
+#X text 148 178 Connect [f] to [mod] \, then [mod] to [+ X];
+#X connect 0 0 5 0;
+#X connect 0 0 6 0;
+#X connect 0 0 7 0;
+#X connect 1 0 6 1;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 6 0 0 1;
+#X connect 7 0 2 0;
+#X connect 8 0 15 0;
+#X connect 9 0 8 0;
+#X connect 10 0 3 0;
+#X connect 10 0 9 0;
+#X connect 12 0 8 0;
+#X connect 14 0 13 0;
+#X connect 15 0 14 0;
+#X connect 15 0 16 0;
+#X connect 16 0 8 1;

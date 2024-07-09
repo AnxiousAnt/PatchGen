@@ -1,0 +1,18 @@
+#N canvas 369 311 257 284 10;
+#X floatatom 53 87 9 0 0 0 - - -;
+#X obj 53 108 * 100;
+#X obj 53 132 % 36000;
+#X obj 53 207 / 100;
+#X floatatom 53 233 9 0 0 0 - - -;
+#X obj 53 155 moses 0;
+#X obj 53 178 + 36000;
+#X text 22 10 360 degrees modulo;
+#X text 23 25 with 1/100 precision;
+#X text 21 43 (drag number box with "shift");
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 5 1 3 0;
+#X connect 6 0 3 0;

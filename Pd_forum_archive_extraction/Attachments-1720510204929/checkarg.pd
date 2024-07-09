@@ -1,0 +1,25 @@
+#N canvas 0 22 643 388 10;
+#X obj 179 184 makefilename $%d-EMPTY;
+#X obj 52 185 symbol \$1-EMPTY;
+#X msg 69 156 bang;
+#X obj 52 217 select DUMMY;
+#X obj 52 39 loadbang;
+#X obj 52 62 t b b;
+#X obj 179 157 1;
+#X obj 52 294 outlet;
+#X text 182 85 Using an idiom by IOhannes;
+#X msg 133 250 1;
+#X msg 52 246 0;
+#X text 182 247 Output 0 if no \$1 argument present \, and 1 if \$1
+is present even if it's 0!;
+#X connect 0 0 3 1;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 10 0;
+#X connect 3 1 9 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 6 0;
+#X connect 6 0 0 0;
+#X connect 9 0 7 0;
+#X connect 10 0 7 0;

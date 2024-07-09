@@ -1,0 +1,31 @@
+#N canvas 228 55 628 380 10;
+#X msg 101 370 \; findagain \, cut;
+#X msg 217 302 \; find label \, cut;
+#X text 76 130 create;
+#X text 333 62 destroy??;
+#X msg 338 301 \; find 'label' \, cut;
+#X obj 109 154 t a a;
+#X floatatom 200 42 5 0 0 0 - - -;
+#X obj 87 154 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 95 199 pack \$0 f f;
+#X obj 342 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 260 118 pack \$0 f;
+#X obj 141 175 * 40;
+#X text 187 21 x coordinate of obj and \$0 is the label index;
+#X msg 245 141 \; pd-dynamic_gop.pd find \$1tgl\$2 \, cut \, editmode
+0;
+#X msg 96 226 \; pd-dynamic_gop.pd obj 10 \$3 pd \$1tgl\$2 \; pd-\$1tgl\$2
+obj 100 100 tgl 15 0 sendsymbol receivesymbol label 0 -6 0 8 -262144
+-1 -1 0 \, donecanvasdialog 1 -1 1 0 -1 1 1 30 30 99 99 \, vis 0;
+#X connect 5 0 8 1;
+#X connect 5 1 11 0;
+#X connect 6 0 5 0;
+#X connect 6 0 10 1;
+#X connect 7 0 8 0;
+#X connect 8 0 14 0;
+#X connect 9 0 10 0;
+#X connect 10 0 13 0;
+#X connect 11 0 8 2;
+#X coords 0 0 1 1 99 99 0;

@@ -1,0 +1,25 @@
+#N canvas 0 22 454 304 10;
+#X msg 51 41 create \, 1;
+#X msg 66 69 0 \, destroy;
+#X msg 89 109 lighting \$1;
+#X obj 89 92 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 36 150 gemwin;
+#X obj 123 208 gemhead 1;
+#X obj 123 243 world_light;
+#X obj 268 36 gemhead 2;
+#X obj 268 253 cylinder_closed;
+#X floatatom 384 107 5 0 0 0 - - -;
+#X floatatom 364 91 5 0 0 0 - - -;
+#X floatatom 336 73 5 0 0 0 - - -;
+#X obj 268 129 rotateXYZ -57 6 0;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 7 0 12 0;
+#X connect 9 0 12 3;
+#X connect 10 0 12 2;
+#X connect 11 0 12 1;
+#X connect 12 0 8 0;

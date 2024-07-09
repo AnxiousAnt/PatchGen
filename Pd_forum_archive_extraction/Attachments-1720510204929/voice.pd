@@ -1,0 +1,11 @@
+#N canvas 268 117 450 300 12;
+#X obj 164 58 r \$1-voice;
+#X obj 164 95 unpack;
+#X obj 164 134 osc~;
+#X obj 164 175 *~ 0;
+#X obj 164 217 throw~ bus;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;

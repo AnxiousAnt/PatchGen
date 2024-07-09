@@ -1,0 +1,50 @@
+#N canvas 528 186 1035 562 10;
+#X obj 198 371 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 198 195 disconnect;
+#X obj 419 147 r OSC;
+#X msg 181 169 connect localhost 12000;
+#X text 425 121 ENVIO;
+#X obj 419 197 spigot;
+#X obj 452 172 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 198 343 netsend -u -b;
+#X obj 419 268 oscformat;
+#X obj 419 297 list prepend send;
+#X obj 419 326 list trim;
+#X obj 644 97 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 7600 1;
+#X floatatom 644 233 5 0 0 0 - - -, f 5;
+#X obj 644 260 sendOSC pd vol;
+#X obj 774 287 route vol;
+#X obj 774 346 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 7600 1;
+#X floatatom 774 319 5 0 0 0 - - -, f 5;
+#X obj 774 172 oscparse;
+#X obj 774 145 netreceive -u -b;
+#X obj 774 96 loadbang;
+#X obj 774 197 list trim;
+#X msg 774 120 listen 12000;
+#X obj 181 145 loadbang;
+#X obj 774 265 route pd;
+#X connect 0 0 6 0;
+#X connect 1 0 7 0;
+#X connect 2 0 5 0;
+#X connect 3 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 1;
+#X connect 7 0 0 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 16 0;
+#X connect 16 0 15 0;
+#X connect 17 0 20 0;
+#X connect 18 0 17 0;
+#X connect 19 0 21 0;
+#X connect 20 0 23 0;
+#X connect 21 0 18 0;
+#X connect 22 0 3 0;
+#X connect 23 0 14 0;

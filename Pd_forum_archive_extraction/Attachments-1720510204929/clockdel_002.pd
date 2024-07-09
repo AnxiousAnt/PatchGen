@@ -1,0 +1,44 @@
+#N canvas 334 220 834 472 10;
+#X obj 56 218 tabwrite~ y;
+#N canvas 0 0 450 300 graph1 0;
+#X array y 128 float 0;
+#X coords 0 1 127 -1 200 100 1;
+#X restore 49 265 graph;
+#X obj 55 166 vline~;
+#X obj 233 68 samplerate~;
+#X msg 295 31 bang;
+#X floatatom 119 116 5 0 0 0 - - -;
+#X obj 233 31 loadbang;
+#X floatatom 66 42 5 0 100 2 samples - -;
+#X obj 55 119 del;
+#X text 193 140 go to 0.4 for 0.5 msec.;
+#X obj 398 273 loadbang;
+#X text 103 375 128 samples;
+#X obj 66 66 t b f;
+#X msg 26 92 bang;
+#X obj 119 93 expr $f1*1000/$f2;
+#X msg 55 138 0.4 0 \, 0 0 0.5;
+#X msg 398 293 \; y const 0 \; y xticks 0 4 16 \; pd dsp 1;
+#X text 395 105 Thus \, time is not quantized for messages triggered
+by clocks \, i.e. initiated by metro \, delay \, qlist \, etc. \, although
+it is for ui-triggered messages. It is up to tilde objects to do some
+extra work and respect the "now".;
+#X text 398 41 Pd has a subsample-accurate notion of "now". When a
+clock-delayed message is served \, the "now" is set to the exact time
+stamp assigned to a clock-serving method in the clock queue.;
+#X text 396 177 vline~ does this extra work.;
+#X text 397 20 Krzysztof Czaja explained:;
+#X connect 2 0 0 0;
+#X connect 3 0 14 1;
+#X connect 4 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 12 0;
+#X connect 8 0 15 0;
+#X connect 10 0 16 0;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 13 0 8 0;
+#X connect 13 0 0 0;
+#X connect 14 0 5 0;
+#X connect 14 0 8 1;
+#X connect 15 0 2 0;

@@ -1,0 +1,15 @@
+#N canvas 21 516 450 300 10;
+#N canvas 0 0 450 300 test 0;
+#X obj 141 124 cnv 15 82 23 empty \$0-canvas-i PLAYING 3 12 0 18 -24198
+-33289 0;
+#X coords 0 -1 1 1 155 60 1 100 100;
+#X restore 59 35 pd test;
+#X obj 85 236 s \$0-canvas-i;
+#X msg 71 193 color 13 12 \, label STOPPED \, label_pos 4 12;
+#X msg 85 217 color 16 12 \, label PLAYING \, label_pos 3 12;
+#X text 48 154 CLICK ON THESE BOXES WITH THE SUBPATCH CLOSED \, AND
+WITH THE SUBPATCH CLOSED. THE LABEL WILL CHANGE POSITION.;
+#X text 58 264 if you select [pd test] \, the label gets drawn correctly
+;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;

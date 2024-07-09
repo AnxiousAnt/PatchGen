@@ -1,0 +1,14 @@
+#N canvas 376 193 450 300 10;
+#X obj 77 192 dac~;
+#X msg 42 41 bang;
+#X obj 78 120 simplenote~;
+#X obj 80 83 pack f f;
+#X floatatom 136 46 4 0 0;
+#X floatatom 91 40 4 0 0;
+#X obj 158 167 print done;
+#X connect 2 0 0 0;
+#X connect 2 0 0 1;
+#X connect 2 1 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 0;

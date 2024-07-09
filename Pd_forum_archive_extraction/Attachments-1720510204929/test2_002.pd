@@ -1,0 +1,7 @@
+#N canvas 185 276 462 312 12;
+#X obj 275 98 block~ 1;
+#N canvas 0 0 470 320 apple 0;
+#X obj 331 78 block~ 1;
+#X obj 44 87 catch~ apple1;
+#X obj 41 165 throw~ apple1;
+#X restore 64 81 pd apple;

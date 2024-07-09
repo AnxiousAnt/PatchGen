@@ -1,0 +1,44 @@
+#N canvas 216 181 715 501 10;
+#X obj 90 195 pack 0 0 0;
+#X obj 112 170 t b a;
+#X obj 162 168 t b a;
+#X obj 90 62 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 -258113
+-262144 -1 3100 1;
+#X obj 125 61 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 -13381
+-262144 -1 2800 1;
+#X obj 162 61 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 -4160
+-262144 -1 4800 1;
+#X floatatom 234 202 5 0 0 1 index - -;
+#X floatatom 92 299 5 0 0 1 index - -;
+#X obj 92 385 list prepend set;
+#X obj 92 405 list trim;
+#X msg 92 429 0.272727 0.646465 0.161616;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-rgb 99 float 2;
+#X coords 0 1 98 -1 200 140 1;
+#X restore 404 123 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array XYZ 99 float 2;
+#X coords 0 1 98 -1 200 140 1;
+#X restore 404 308 graph;
+#X msg 104 228 set XYZ;
+#X msg 103 318 set XYZ;
+#X text 244 30 [tabwrite-three] and [tabread-three] write and read
+groups of three values into a table.;
+#X obj 90 254 tabwrite-three \$0-rgb;
+#X obj 92 348 tabread-three \$0-rgb;
+#X connect 0 0 16 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 0 0;
+#X connect 2 1 0 2;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 6 0 16 1;
+#X connect 7 0 17 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 13 0 16 0;
+#X connect 14 0 17 0;
+#X connect 17 0 8 0;

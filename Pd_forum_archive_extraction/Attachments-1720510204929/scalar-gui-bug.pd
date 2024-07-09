@@ -1,0 +1,111 @@
+#N struct 1105-multiarray float x float y float color float thick float
+x-scale float id float vis array 1105-multiarray-a 1105-ma-element
+;
+#N struct 1105-ma-element float y;
+#N struct 1105-background float x float y float y1 float x2 float y2
+float color;
+#N struct 1105-ma-id float x float y;
+#N struct 1107-color float x float y float farbe;
+#N struct 1107-color-display float x float y float farbe;
+#N struct 1110-color float x float y float farbe;
+#N struct 1110-color-display float x float y float farbe;
+#N struct 1113-color float x float y float farbe;
+#N struct 1113-color-display float x float y float farbe;
+#N struct 1117-multiarray float x float y float color float thick float
+x-scale float id float vis array 1117-multiarray-a 1117-ma-element
+;
+#N struct 1117-ma-element float y;
+#N struct 1117-background float x float y float y1 float x2 float y2
+float color;
+#N struct 1117-ma-id float x float y;
+#N struct 1119-color float x float y float farbe;
+#N struct 1119-color-display float x float y float farbe;
+#N struct 1122-color float x float y float farbe;
+#N struct 1122-color-display float x float y float farbe;
+#N struct 1125-color float x float y float farbe;
+#N struct 1125-color-display float x float y float farbe;
+#N canvas 116 75 643 590 10;
+#X declare -stdpath jmmmp;
+#X obj 12 91 multiarray;
+#X obj 12 71 r \$0-messages;
+#N canvas 718 35 387 269 COPY 0;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 0 0 0 0 0 -0.0285714 0.0428571 0.142857 0.2 0.242857 0.357143
+0.378571 0.428571 0.428571 0.457143 0.457143 0.457143 0.428571 0.407143
+0.385714 0.3 0.264286 0.2 0.1 0.0571429 -0.0142857 -0.0857143 -0.157143
+-0.228571 -0.314286 -0.385714 -0.428571 -0.442857 -0.442857 -0.442857
+-0.442857 -0.457143 -0.457143 -0.4 -0.371429 -0.3 -0.142857 -0.0857143
+-0.0642857 -0.0285714 -0.00714285 0.0142857 0.0714286 0.0857143 0.1
+0.142857 0.185714 0.228571 0.271429 0.314286 0.342857 0.378571 0.414286
+0.485714 0.528571 0.628572 0.671429 0.671429 0.628572 0.585714 0.55
+0.514286 0.428571 0.4 0.314286 0.257143 0.2 0.142857 0.0428572 0.0142858
+-0.0714285 -0.114286 -0.2 -0.228571 -0.257143 -0.328571 -0.4 -0.442857
+-0.471429 -0.485714 -0.485714 -0.485714 -0.478571 -0.471429 -0.464286
+-0.457143 -0.428571 -0.428571 -0.414286 -0.385714 -0.371429 -0.371429
+-0.342857 -0.314286 -0.157143;
+#X coords 0 1 100 -1 100 70 1 0 0;
+#X restore 18 167 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array2 70 float 3;
+#A 0 0.771429 0.742857 0.685714 0.657143 0.6 0.571429 0.542857 0.514286
+0.485714 0.457143 0.428571 0.4 0.371429 0.342857 0.328571 0.314286
+0.285714 0.228571 0.171429 0.171429 0.171429 0.114286 0.0571429 0.0428572
+0.0285715 -0.0285714 -0.0571428 -0.0714285 -0.0857142 -0.142857 -0.171429
+-0.2 -0.228571 -0.228571 -0.228571 -0.257143 -0.285714 -0.314286 -0.314286
+-0.342857 -0.342857 -0.357143 -0.371429 -0.428571 -0.438095 -0.447619
+-0.485714 -0.485714 -0.485714 -0.542857 -0.571429 -0.571429 -0.6 -0.628571
+-0.642857 -0.657143 -0.685714 -0.714286 -0.714286 -0.714286 -0.742857
+-0.742857 -0.771429 -0.771429 -0.771429 -0.771429 -0.771429 -0.771429
+-0.771429 -0.771429;
+#X coords 0 1 70 -1 100 70 1 0 0;
+#X restore 148 167 graph;
+#X restore 536 125 pd COPY;
+#X obj 237 125 s \$0-messages;
+#X msg 237 94 all del \, create 1 \, 1 copy array1 \, create 2 900
+2 \, 2 copy array2;
+#X text 238 64 1 - This message cleans up multiarray \, adds and populates
+2 new arrays;
+#X text 238 264 3 - try moving the object in the left \, or minimizing
+and maaximizing this window. Doing it causes a redrawing \, and the
+same problem.;
+#X obj 237 325 s \$0-messages;
+#X text 237 194 The background is over the arrays. If you send a background
+message \, the internal patch will redraw the arrays on top of the
+backgrund (as a way of circumventing this problem).;
+#N canvas 735 31 494 259 subpatch 0;
+#X obj 14 90 multiarray 200 100 multiarray-example.txt;
+#X obj 14 70 r \$0-messages;
+#X msg 109 62 background 999;
+#X text 109 19 Click here to fix the background. If you close this
+subpatch and open it again \, the backgrround will still be over the
+arrays.;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X restore 238 241 pd subpatch;
+#X obj 29 257 declare -stdpath jmmmp;
+#X text 238 154 2 - the object inside this subpatch is the same as
+on the left. But \, due to the reedrawing \, when you open the subpatch
+the background is above the array scalars.;
+#X msg 237 304 background 999;
+#X msg 347 304 background 89;
+#X text 13 520 Bonus bug: if you search for ## \, you'll find a section
+in [multiarray] where a delay had to added. When loading a canvas from
+a file \, there is a delay which isn't accounted for in the pd scheduling.
+;
+#X text 11 11 This patch explains the bug for the rendering of scalars.
+To see this \, you'll need to install the jmmmp library 0.56 \, and
+Pd 0.50. Follow the steps below:;
+#X text 238 354 4 - bonus: if you create the object [pd-colors] (from
+the jmmmp library) \, the GOP of multiarray will redraw. Probably this
+is a know behaviour \, as new data structures are loaded into the system.
+;
+#X text 233 417 Conclusions: - usually scalars are drawn according
+to their creation order \, as any other object \; - changing a scalar
+causes it to redraw and come to the top \, which is also an expected
+behaviour \; - what's usually not expected is that the drawing order
+changes by other unknown reasons.;
+#X connect 1 0 0 0;
+#X connect 4 0 3 0;
+#X connect 12 0 7 0;
+#X connect 13 0 7 0;

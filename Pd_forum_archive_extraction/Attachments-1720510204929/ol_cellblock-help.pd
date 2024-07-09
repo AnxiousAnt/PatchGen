@@ -1,0 +1,818 @@
+#N canvas 535 92 1029 829 10;
+#X msg 710 173 mode \$1;
+#X obj 25 377 print OUT;
+#X obj 710 749 s \$0-mycellblock-r;
+#X msg 710 209 clickmode \$1;
+#X msg 710 303 rows \$1;
+#X floatatom 727 286 5 5 15 0 - - -, f 5;
+#X text 788 424 size:;
+#X floatatom 727 375 5 50 500 0 - - -, f 5;
+#X msg 710 392 width \$1;
+#X text 766 392 (of all columns);
+#X text 788 438 1.) height of one row;
+#X text 788 448 2.) width of one column (!);
+#X msg 710 428 size 20 50;
+#X msg 710 445 size 12 40;
+#X floatatom 727 331 5 10 40 0 - - -, f 5;
+#X msg 710 348 height \$1;
+#X text 772 348 (of one row);
+#X msg 710 480 font 0 0;
+#X text 779 480 font:;
+#X text 779 492 1.) font type;
+#X text 779 502 2.) size (0 = auto);
+#X msg 710 514 font 1 0;
+#X text 769 153 0 = Cellmode;
+#X text 769 163 1 = Browsermode;
+#X obj 284 40 namecanvas \$0-ol_help;
+#N canvas 1106 142 626 800 init 0;
+#X obj 470 388 cnv 8 120 25 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 97 553 cnv 8 300 80 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 461 76 cnv 8 120 26 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 60 287 cnv 8 200 25 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X msg 245 33 vis 0 \, relocate \$3x\$4+0+0 0x0+\$1+\$2 \, vis 1 \,
+editmode 0;
+#X obj 245 55 s \$0-ol_help;
+#X msg 118 64 300 50 1000 750;
+#X obj 118 219 s \$0-frame-r;
+#X floatatom 118 176 5 0 0 0 - - -, f 5;
+#X obj 28 450 s \$0-title-r;
+#X msg 98 406 label \$1;
+#X floatatom 263 143 5 0 0 0 - - -, f 5;
+#X obj 263 183 s \$0-bgnd-r;
+#X obj 56 119 del 10;
+#X obj 56 99 t b b;
+#X text 244 80 1.) set pos and size of main window;
+#X msg 172 115 \$3;
+#X obj 118 132 f;
+#X text 151 143 minus frame sizes, f 11;
+#X text 124 266 2.) set name of title;
+#X obj 56 141 s \$0-lb;
+#X obj 118 107 r \$0-lb;
+#X obj 29 244 r \$0-lb;
+#X obj 29 406 unpack 0 s;
+#X text 175 530 3.) set description;
+#X obj 263 262 s \$0-frame2-r;
+#X obj 182 463 s \$0-text1-r;
+#X obj 29 626 cnv 3 68 15 empty empty empty 2 7 0 10 -257985 -66577
+0;
+#N canvas 341 335 425 542 tosymbol 0;
+#X obj 67 94 list length;
+#X obj 67 42 list;
+#X obj 101 226 list, f 7;
+#X obj 67 175 f, f 10;
+#X obj 154 175 + 1;
+#X obj 67 150 until;
+#X obj 101 251 list split;
+#X msg 157 94 0;
+#X obj 139 276 list split 1;
+#X obj 139 361 list fromsymbol;
+#X obj 139 302 route symbol float;
+#X obj 191 329 makefilename %s;
+#X obj 139 435 textfile;
+#X msg 202 94 clear;
+#X obj 139 387 list prepend add2;
+#X obj 67 201 t b b b f;
+#X obj 79 276 + 1;
+#X obj 67 122 t f f;
+#X obj 78 300 <;
+#X obj 20 335 spigot;
+#X msg 20 394 add2 32;
+#X obj 139 411 list trim;
+#X obj 67 335 f;
+#X obj 67 361 sel 0;
+#X obj 139 463 list tosymbol;
+#X obj 67 68 t l l b b, f 23;
+#X text 184 486 symbol out with correct spaces;
+#X text 57 2 string in;
+#X msg 136 25 #/zi 3 4 oo ä;
+#X msg 229 25 1.23457e+019;
+#X floatatom 315 28 5 0 0 0 - - -, f 5;
+#X obj 67 22 cnv 13 34 15 empty empty empty 2 2 0 9 -163816 -66577
+0;
+#X obj 139 487 cnv 14 40 15 empty empty empty 2 2 0 9 -163840 -66577
+0;
+#X obj 67 21 inlet;
+#X obj 139 486 outlet;
+#X connect 0 0 17 0;
+#X connect 1 0 25 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 3 0 15 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 0;
+#X connect 6 1 8 0;
+#X connect 7 0 3 1;
+#X connect 8 0 10 0;
+#X connect 9 0 14 0;
+#X connect 10 0 9 0;
+#X connect 10 1 11 0;
+#X connect 11 0 9 0;
+#X connect 12 0 24 0;
+#X connect 13 0 12 0;
+#X connect 14 0 21 0;
+#X connect 15 0 22 0;
+#X connect 15 1 19 0;
+#X connect 15 2 2 0;
+#X connect 15 3 6 1;
+#X connect 15 3 16 0;
+#X connect 16 0 18 0;
+#X connect 17 0 5 0;
+#X connect 17 1 18 1;
+#X connect 18 0 19 1;
+#X connect 18 0 22 1;
+#X connect 19 0 20 0;
+#X connect 20 0 12 0;
+#X connect 21 0 12 0;
+#X connect 22 0 23 0;
+#X connect 23 0 12 0;
+#X connect 24 0 34 0;
+#X connect 25 0 0 0;
+#X connect 25 1 2 1;
+#X connect 25 2 7 0;
+#X connect 25 3 13 0;
+#X connect 28 0 1 0;
+#X connect 29 0 1 0;
+#X connect 30 0 1 0;
+#X connect 33 0 1 0;
+#X restore 28 625 pd tosymbol;
+#X obj 199 390 r \$0-lb;
+#X obj 199 413 t b b;
+#X obj 268 463 s \$0-text2-r;
+#X obj 354 463 s \$0-text3-r;
+#X msg 28 488 bang;
+#X msg 118 195 vis_size \$1 45;
+#X msg 263 240 vis_size \$1 43;
+#X text 349 389 init text labels;
+#X obj 28 719 pack s 0 0;
+#X msg 28 740 label \$1 \, label_pos \$2 \$3;
+#X obj 531 524 unpack;
+#X floatatom 493 391 5 0 0 0 - - -, f 5;
+#X floatatom 531 391 5 0 0 0 - - -, f 5;
+#X obj 531 421 t b f;
+#X msg 545 471 set \$1 \$2;
+#X obj 493 471 t b b l;
+#X text 503 370 x;
+#X text 540 370 y;
+#X text 466 352 4.) set label position;
+#X obj 564 545 f;
+#X msg 321 367 color \$1 \$1 \$1;
+#X msg 263 161 vis_size \$1 55;
+#X floatatom 79 174 5 0 0 0 - - -, f 5;
+#X obj 118 153 - 13;
+#X obj 263 122 + 10;
+#X obj 263 219 - 254;
+#X obj 56 56 t b f;
+#X msg 260 390 -1.47533e+006;
+#X msg 260 368 set \$1;
+#X obj 56 11 loadbang;
+#N canvas 36 456 791 300 better_colors 0;
+#X obj 89 19 inlet;
+#X obj 320 262 outlet;
+#X obj 89 40 random 10;
+#X obj 89 61 sel 0 1 2 3 4 5 6 7 8 9, f 83;
+#X obj 320 239 expr ($f1*(-65536)+$f2*(-256)+$f3*(-1))-1;
+#X msg 16 162 140 0 0;
+#X msg 69 162 0 156 144;
+#X msg 136 162 0 140 0;
+#X msg 252 162 231 112 0;
+#X msg 191 162 100 0 255;
+#X msg 317 162 100 100 100;
+#X msg 397 162 255 255 0;
+#X msg 541 162 123 33 5;
+#X msg 464 162 22 131 5;
+#X msg 607 163 147 0 163;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 1 6 0;
+#X connect 3 2 7 0;
+#X connect 3 3 9 0;
+#X connect 3 4 8 0;
+#X connect 3 5 10 0;
+#X connect 3 6 11 0;
+#X connect 3 7 13 0;
+#X connect 3 8 12 0;
+#X connect 3 9 14 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 10 0 4 0;
+#X connect 11 0 4 0;
+#X connect 12 0 4 0;
+#X connect 13 0 4 0;
+#X connect 14 0 4 0;
+#X restore 56 34 pd better_colors;
+#X obj 56 78 del 50;
+#X msg 170 17 bang;
+#X text 200 114 width;
+#X obj 479 124 list prepend set;
+#X obj 479 146 list trim;
+#X text 246 10 probably dangerous when initialized with loadbang!;
+#X msg 29 383 60 ol_cellblock;
+#X obj 28 775 s \$0-text1-r;
+#X obj 195 719 pack s 0 0;
+#X obj 195 775 s \$0-text2-r;
+#X obj 351 719 pack s 0 0;
+#X msg 351 740 label \$1 \, label_pos \$2 \$3;
+#X obj 351 775 s \$0-text3-r;
+#X obj 28 648 list prepend 0;
+#X obj 564 590 + 14;
+#X obj 28 510 t b b b b b b b, f 20;
+#X obj 28 672 route 1 2 3, f 66;
+#X msg 86 532 2, f 1;
+#X msg 125 531 1, f 1;
+#X msg 47 532 3, f 1;
+#X msg 153 608 empty;
+#X obj 531 272 loadbang;
+#X msg 531 293 set -26;
+#X floatatom 73 292 5 0 0 0 - - -, f 5;
+#X symbolatom 108 292 20 0 0 0 - - -, f 20;
+#X obj 73 333 pack 0 s;
+#X obj 108 310 t b s;
+#X obj 73 354 t b l;
+#X msg 113 354 set \$1 \$2;
+#X msg 73 261 set 66;
+#X obj 493 448 pack 0 -26;
+#X msg 195 740 label \$1 \, label_pos \$2 \$3 \, label_font 1 10,
+f 23;
+#X msg 135 584 (similar to MAX's [jit.cellblock]);
+#X msg 106 560 a cellblock GUI that can also be a filebrowser or playlist
+!;
+#X msg 479 81 300 50 1000 750;
+#X obj 564 567 + 14;
+#X msg 29 428 label_pos \$1 21;
+#X msg 260 412 size 1 \, pos 300 65 \, vis_size 1 1 \, color \$1 \$1
+2 \, label_font 1 11 \, label, f 26;
+#X msg 531 500 166 -33;
+#X obj 414 292 s \$0-ol_help;
+#X msg 414 267 editmode 0;
+#X obj 414 217 r \$0-lb;
+#X obj 414 243 del 10;
+#X connect 4 0 5 0;
+#X connect 6 0 16 0;
+#X connect 8 0 34 0;
+#X connect 8 0 53 0;
+#X connect 8 0 54 0;
+#X connect 10 0 9 0;
+#X connect 11 0 50 0;
+#X connect 13 0 20 0;
+#X connect 14 0 13 0;
+#X connect 14 1 6 0;
+#X connect 16 0 17 1;
+#X connect 17 0 52 0;
+#X connect 21 0 17 0;
+#X connect 22 0 66 0;
+#X connect 22 0 89 0;
+#X connect 23 0 96 0;
+#X connect 23 1 10 0;
+#X connect 28 0 73 0;
+#X connect 29 0 30 0;
+#X connect 30 0 75 0;
+#X connect 30 1 98 0;
+#X connect 30 1 56 0;
+#X connect 33 0 75 0;
+#X connect 34 0 7 0;
+#X connect 35 0 25 0;
+#X connect 37 0 38 0;
+#X connect 38 0 67 0;
+#X connect 39 0 37 1;
+#X connect 39 0 68 1;
+#X connect 39 0 70 1;
+#X connect 39 1 48 0;
+#X connect 40 0 90 0;
+#X connect 41 0 42 0;
+#X connect 42 0 90 0;
+#X connect 42 1 90 1;
+#X connect 43 0 98 0;
+#X connect 44 0 33 0;
+#X connect 44 1 98 0;
+#X connect 44 2 43 0;
+#X connect 48 0 37 2;
+#X connect 48 0 95 0;
+#X connect 49 0 12 0;
+#X connect 50 0 12 0;
+#X connect 51 0 34 0;
+#X connect 52 0 8 0;
+#X connect 53 0 11 0;
+#X connect 54 0 35 0;
+#X connect 55 0 60 0;
+#X connect 55 1 57 0;
+#X connect 56 0 97 0;
+#X connect 56 0 49 0;
+#X connect 57 0 56 0;
+#X connect 58 0 59 0;
+#X connect 59 0 55 0;
+#X connect 60 0 14 0;
+#X connect 61 0 59 0;
+#X connect 63 0 64 0;
+#X connect 64 0 6 0;
+#X connect 66 0 23 0;
+#X connect 68 0 91 0;
+#X connect 70 0 71 0;
+#X connect 71 0 72 0;
+#X connect 73 0 76 0;
+#X connect 74 0 70 2;
+#X connect 75 0 80 0;
+#X connect 75 1 79 0;
+#X connect 75 2 92 0;
+#X connect 75 3 77 0;
+#X connect 75 4 93 0;
+#X connect 75 5 78 0;
+#X connect 76 0 37 0;
+#X connect 76 1 68 0;
+#X connect 76 2 70 0;
+#X connect 77 0 73 1;
+#X connect 78 0 73 1;
+#X connect 79 0 73 1;
+#X connect 80 0 28 0;
+#X connect 81 0 82 0;
+#X connect 82 0 41 0;
+#X connect 83 0 85 0;
+#X connect 84 0 86 0;
+#X connect 85 0 87 0;
+#X connect 86 0 83 0;
+#X connect 86 1 85 1;
+#X connect 87 0 66 0;
+#X connect 87 1 88 0;
+#X connect 88 0 66 0;
+#X connect 89 0 83 0;
+#X connect 90 0 44 0;
+#X connect 91 0 69 0;
+#X connect 92 0 28 0;
+#X connect 93 0 28 0;
+#X connect 94 0 4 0;
+#X connect 94 0 63 0;
+#X connect 95 0 68 2;
+#X connect 95 0 74 0;
+#X connect 96 0 9 0;
+#X connect 97 0 26 0;
+#X connect 97 0 31 0;
+#X connect 97 0 32 0;
+#X connect 98 0 39 0;
+#X connect 100 0 99 0;
+#X connect 101 0 102 0;
+#X connect 102 0 100 0;
+#X restore 19 48 pd init;
+#X obj 11 11 cnv 8 997 55 \$0-bgnd \$0-bgnd-r empty 0 20 0 4 -22530
+-22530 0;
+#X obj 15 16 cnv 8 987 45 \$0-frame \$0-frame-r empty 20 20 0 14 -1
+-262144 0;
+#X obj 16 17 cnv 15 250 43 \$0-title \$0-title-r ol_cellblock 60 21
+1 24 -236864 -64 0;
+#X obj 268 17 cnv 15 733 43 \$0-frame2 \$0-frame2-r empty 25 18 1 24
+-216384 -4160 0;
+#X obj 300 65 cnv 1 1 1 \$0-text1 \$0-text1-r a cellblock GUI that can also be a filebrowser or playlist !
+166 -33 1 11 -22530 -66577 0;
+#X obj 300 65 cnv 1 1 1 \$0-text2 \$0-text2-r (similar to MAX's [jit.cellblock])
+166 -19 1 10 -22530 -66577 0;
+#X obj 300 65 cnv 1 1 1 \$0-text3 \$0-text3-r empty 166 -5 1 11 -22530
+-66577 0;
+#X obj 694 93 cnv 10 310 20 empty empty needs_ZEXY_IEMLIB_IEMGUTS_HCS_and_TOF
+10 11 0 14 -4160 -262144 0;
+#X obj 694 109 cnv 4 310 4 empty empty empty 10 11 0 14 -4160 -262144
+0;
+#X text 769 173 2 = Playlistmode;
+#X obj 710 157 hradio 16 1 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 2;
+#X obj 376 96 cnv 13 94 15 empty empty empty 2 7 0 10 -257985 -66577
+0;
+#X obj 377 120 cnv 13 104 15 empty empty empty 2 7 0 10 -257985 -66577
+0;
+#X obj 377 144 cnv 13 110 15 empty empty empty 2 7 0 10 -257985 -66577
+0;
+#N canvas 960 50 582 730 mode_0_Cells 0;
+#X obj 20 16 cnv 5 310 608 empty empty CELL_MODE 90 25 1 20 -159808
+-262144 0;
+#X obj 25 62 cnv 15 300 160 empty empty Formatting: 110 20 1 14 -261682
+-4160 0;
+#X obj 25 228 cnv 15 300 390 empty empty Setting: 120 20 1 14 -204786
+-4160 0;
+#X obj 46 664 s \$0-mycellblock-r;
+#X floatatom 46 95 5 1 10 0 - - -, f 5;
+#X msg 46 109 cols \$1;
+#X msg 46 174 colsizes 40 20 100 30;
+#X text 52 132 set individual column widths;
+#X text 50 143 (also defines number of columns);
+#X msg 46 191 colsizes 50 30 80 30 40;
+#X text 52 154 deactivates "width" command !;
+#X msg 46 343 setrow 1 eins zwei drei vier fünf;
+#X msg 46 360 setrow 2 ss cc gg hh 456.888;
+#X msg 46 377 setrow 3 dddd gg 88 6 7 4 5 9 8;
+#X obj 46 320 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 46 394 setrow 4 just two;
+#X msg 46 267 clear;
+#X msg 46 488 setcol 4 just two;
+#X msg 46 437 setcol 1 rr rt ze 99.76;
+#X msg 46 454 setcol 2 asd yxc rtz 77;
+#X msg 46 527 setcell 1 3 just;
+#X msg 46 544 setcell 2 4 one;
+#X obj 46 418 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 65 319 set the content of rows:;
+#X msg 46 294 setheader THIS IS THE HEADER !!!;
+#X msg 46 561 setcell 1 3 empty;
+#X obj 345 28 cnv 1 146 1 empty empty MOUSE  BEHAVIOUR: 0 -8 1 14
+-1 -66577 0;
+#X obj 20 48 cnv 10 310 5 empty empty empty 60 20 1 20 -159808 -262144
+0;
+#X text 57 595 numbered from 1 upwards;
+#X text 67 418 set the content of columns:;
+#X text 51 508 set the content of individiual cells:;
+#X text 56 583 rows \, columns and cells are;
+#X msg 46 471 setcol 3 0.999 45 79 22 ff zz 8.76 tzu;
+#X text 103 111 maximum: 20;
+#X obj 345 171 cnv 1 110 1 empty empty SWITCH  MODE: 1 -8 1 14 -1
+-66577 0;
+#X text 344 310 Switchmode 1:;
+#X text 343 35 Clickmode 0:;
+#X text 364 49 single select on mouse down, f 15;
+#X text 343 80 Clickmode 1:;
+#X text 364 94 continous select as long as mouse is down, f 16;
+#X text 344 181 Switchmode 0:;
+#X text 365 196 only 1 cell can be selected. the output will be the
+cell's content \, as well as a list prefixed by the word FULL:, f
+25;
+#X text 364 264 1.) row, f 25;
+#X text 364 275 2.) column, f 25;
+#X text 364 287 3.) cell content, f 25;
+#X text 363 451 1.) row, f 25;
+#X text 363 464 2.) column, f 25;
+#X text 363 489 4.) cell content, f 25;
+#X text 363 476 3.) cell state (0/1/2), f 25;
+#X text 362 360 the output will be the cell's content as well as a
+"dump" output., f 24;
+#X text 363 327 multiple cells can be switched on and off., f 22;
+#X text 363 405 ALL cells will be output \, preceded by the word DUMP
+as a 4 elements list:, f 25;
+#X obj 354 512 cnv 8 8 8 empty empty SHIFT-CLICK: 10 15 1 11 -262144
+-66577 0;
+#X text 363 536 When a cell is clicked \, its state toggles between
+0 and 1 \, or between 1 and 2 when SHIFT-clicked !, f 27;
+#X text 361 597 (only working in SWITCH MODE 1 !);
+#X obj 345 643 cnv 1 145 1 empty empty ROWOUTPUT  MODE: 1 -8 1 14
+-1 -66577 0;
+#X text 345 652 0 = only 1 cell is output;
+#X text 345 667 1 = whole row is output;
+#X text 364 679 (preceded by the word ROW);
+#X obj 40 664 cnv 5 5 17 empty empty empty 20 12 0 14 -194593 -66577
+0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 9 0 3 0;
+#X connect 11 0 3 0;
+#X connect 12 0 3 0;
+#X connect 13 0 3 0;
+#X connect 14 0 11 0;
+#X connect 14 0 12 0;
+#X connect 14 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 3 0;
+#X connect 16 0 3 0;
+#X connect 17 0 3 0;
+#X connect 18 0 3 0;
+#X connect 19 0 3 0;
+#X connect 20 0 3 0;
+#X connect 21 0 3 0;
+#X connect 22 0 18 0;
+#X connect 22 0 19 0;
+#X connect 22 0 32 0;
+#X connect 22 0 17 0;
+#X connect 24 0 3 0;
+#X connect 25 0 3 0;
+#X connect 32 0 3 0;
+#X restore 376 95 pd mode_0_Cells;
+#N canvas 960 50 365 650 mode_1_Browser 0;
+#X obj 28 18 cnv 5 310 161 empty empty BROWSER_MODE 60 25 1 20 -4160
+-262144 0;
+#X obj 33 64 cnv 15 300 110 empty empty SELECT  A  FOLDER: 80 20
+1 14 -261682 -4160 0;
+#X obj 28 50 cnv 10 310 5 empty empty empty 60 20 1 20 -4160 -262144
+0;
+#X obj 98 339 cnv 8 8 8 empty empty MOUSE BEHAVIOUR: 0 0 1 14 -262144
+-66577 0;
+#X text 103 412 ..: One directory up;
+#X text 91 440 FILE: Output filename;
+#X text 103 525 ..: One directory up;
+#X text 91 599 FILE: Output filename;
+#X text 79 539 FOLDER:;
+#X text 79 511 HEADER: Refresh Directory;
+#X text 79 398 HEADER: Refresh Directory;
+#X text 127 571 DOUBLE-CLICK:;
+#X text 79 426 FOLDER: Change into that directory;
+#X text 146 584 Change into that directory;
+#X text 126 540 SINGLE-CLICK:;
+#X text 147 554 Output name of directory;
+#X obj 107 373 cnv 8 8 8 empty empty Clickmode  0: 20 15 1 14 -262144
+-159808 0;
+#X obj 107 486 cnv 8 8 8 empty empty Clickmode  1: 20 15 1 14 -262144
+-159808 0;
+#X obj 160 122 cnv 5 5 5 empty empty * 0 5 0 15 -261682 -66577 0;
+#X text 52 116 Dropping a Folder   onto [ol_cellblock] or clicking
+the top-right button changes into that folder, f 44;
+#X obj 27 213 cnv 3 310 80 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X text 45 218 Due to a restriction in the objects [folder_list] and
+[stat] (from the HCS externals) which do the readout of the dropped
+folder \, its name must not contain any german umlauts \, else it won't
+be read !, f 44;
+#X restore 376 119 pd mode_1_Browser;
+#N canvas 960 50 525 732 mode_2_Playlist 0;
+#X obj 18 14 cnv 5 310 650 empty empty PLAYLIST_MODE 70 25 1 20 -2881
+-262144 0;
+#X obj 23 61 cnv 15 300 180 empty empty ADD_FILES: 110 20 1 14 -261682
+-4160 0;
+#X obj 18 46 cnv 10 310 5 empty empty empty 60 20 1 20 -2881 -262144
+0;
+#X obj 337 14 cnv 8 8 8 empty empty MOUSE  BEHAVIOUR: 10 15 1 14
+-262144 -66577 0;
+#X obj 23 87 cnv 8 300 5 empty empty empty 80 20 1 14 -261682 -4160
+0;
+#X text 34 157 Clicking the top-right button opens a "load" dialog
+to pick a file from a system browser. it will be added at the end of
+the playlist., f 45;
+#X text 35 104 Dropping a File* onto a row of [ol_cellblock] adds that
+file to the playlist on that position.., f 45;
+#X obj 23 247 cnv 15 300 410 empty empty Setting: 120 20 1 14 -249408
+-4160 0;
+#X obj 44 684 s \$0-mycellblock-r;
+#X msg 44 286 clear;
+#X text 74 443 rows are numbered from 1 upwards;
+#X msg 44 540 setrow 1 empty;
+#X text 74 429 add files with a message;
+#X msg 44 463 setrow 1 D:/temp dir/test.wav;
+#X text 55 307 setheader message can have up to 3 elements;
+#X text 55 322 1.) text (underscores become white spaces);
+#X text 55 334 2.) fontsize;
+#X text 55 346 2.) x-position of text;
+#X msg 44 370 setheader Simple_Title:;
+#X msg 44 387 setheader PLAYLIST_TITLE: 14;
+#X msg 44 404 setheader PLAYLIST_TITLE: 12 70;
+#X obj 343 157 cnv 8 8 8 empty empty SELECT  Mode: 20 15 1 14 -262144
+-159808 0;
+#X obj 352 270 cnv 8 8 8 empty empty MOVE  Mode: 20 15 1 14 -262144
+-159808 0;
+#X text 345 115 (= move a playlist entry to another position), f 24
+;
+#X obj 348 57 cnv 3 3 3 empty empty Header: 0 0 1 12 -233017 -66577
+0;
+#X text 345 68 Click the Header Row to zoggle between "select" and
+"move" mode, f 23;
+#X text 381 182 Click:;
+#X text 395 198 Output file name;
+#X text 339 220 STRG + Click:;
+#X text 403 235 Delete Entry;
+#X text 357 298 1st Click:;
+#X text 401 314 Select Entry to be moved, f 13;
+#X text 357 346 2nd Click:;
+#X text 402 361 Select move destination, f 12;
+#X msg 44 480 setrow 2 D:/another dir/test 2.wav;
+#X msg 44 497 setrow 3 D:/a third dir/test drei.avi;
+#X msg 44 514 setrow 4 D:/a fourth dir/test four.avi;
+#X obj 44 443 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 44 596 next;
+#X msg 44 579 prev;
+#X text 140 540 clear a row;
+#X text 86 596 QUERY:;
+#X floatatom 44 613 5 0 0 0 - - -, f 5;
+#X obj 38 684 cnv 5 5 17 empty empty empty 20 12 0 14 -194593 -66577
+0;
+#X connect 9 0 8 0;
+#X connect 11 0 8 0;
+#X connect 13 0 8 0;
+#X connect 18 0 8 0;
+#X connect 19 0 8 0;
+#X connect 20 0 8 0;
+#X connect 34 0 8 0;
+#X connect 35 0 8 0;
+#X connect 36 0 8 0;
+#X connect 37 0 13 0;
+#X connect 37 0 34 0;
+#X connect 37 0 35 0;
+#X connect 37 0 36 0;
+#X connect 38 0 8 0;
+#X connect 39 0 8 0;
+#X connect 42 0 8 0;
+#X restore 376 143 pd mode_2_Playlist;
+#X text 769 564 3.) selected cell;
+#X text 769 575 4.) header background;
+#X text 769 554 2.) cell font (or file);
+#X text 769 586 5.) header font (or folder);
+#X msg 710 232 switchmode \$1;
+#X obj 693 196 tgl 13 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 693 219 tgl 13 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 804 232 (only in cellmode !);
+#X msg 710 497 font 1 11;
+#X msg 710 681 colors;
+#X obj 375 367 cnv 15 133 16 empty empty empty 2 7 0 10 -257985 -66577
+0;
+#X obj 375 392 cnv 15 70 16 empty empty empty 2 7 0 10 -257985 -66577
+0;
+#X obj 374 391 ol_z_colors;
+#X obj 374 366 ol_z_info OL_CELLBLOCK;
+#X msg 710 605 colors orange white blue yellow DarkOrchid;
+#X obj 25 354 spigot;
+#X obj 72 354 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 758 680 defaults for both colors !;
+#X text 721 544 colors: 1.) cell background;
+#X msg 710 656 colors2 LimeGreen white;
+#X text 763 303 (maximum 50);
+#X text 715 628 colors2: 1.) cell when SHIFT-selected;
+#X text 769 638 2.) cell font when SHIFT-selected;
+#X obj 25 436 cnv 10 650 330 empty empty OUTPUT: 200 16 1 20 -221174
+-159808 0;
+#X obj 375 331 cnv 15 100 16 empty empty empty 2 7 0 10 -257985 -66577
+0;
+#X obj 36 467 r \$0-mycellblock;
+#X obj 36 710 list prepend set;
+#X obj 36 727 list trim;
+#X msg 36 744 3 3 88;
+#X obj 30 744 cnv 5 5 17 empty empty empty 20 12 0 14 -137280 -66577
+0;
+#X text 45 692 get full info: row/coll/content;
+#X obj 76 655 print DUMP;
+#X text 84 637 row/coll/state/content;
+#X symbolatom 361 578 0 0 0 0 - - -;
+#X symbolatom 322 601 0 0 0 0 - - -;
+#X symbolatom 400 555 0 0 0 0 - - -;
+#X symbolatom 478 512 0 0 0 0 - - -;
+#X obj 322 490 route FILE DIR NAME STRIPNAME EXT;
+#X symbolatom 439 532 0 0 0 0 - - -;
+#X symbolatom 428 680 0 0 0 0 - - -;
+#X obj 322 467 r \$0-mycellblock;
+#X text 192 467 mode 0 :;
+#X text 471 468 mode 1 :;
+#X text 473 632 mode 2 :;
+#X obj 322 632 r \$0-mycellblock;
+#X obj 322 656 route FULL symbol, f 36;
+#X obj 322 680 list prepend set;
+#X obj 322 697 list trim;
+#X msg 322 714 3 3 88;
+#X obj 316 714 cnv 5 5 17 empty empty empty 20 12 0 14 -137280 -66577
+0;
+#X text 384 697 get full info: row/content;
+#X text 74 671 (only in "SWITCHMODE 1":);
+#X text 375 239 1: width (of all columns) (200) \; 2: row height (20)
+\; 3: rows (1-50) (5) \; 4: columns (1-20) (5) \; 5: mode (0) \;;
+#X text 376 207 Remote Name (optional);
+#X obj 377 199 cnv 1 146 1 empty empty ARGUMENTS: (defaults) 1 -7
+0 12 -66577 -66577 0;
+#X obj 557 566 print INFO;
+#X obj 557 541 spigot;
+#X obj 604 541 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 563 510 r [name]-info;
+#X obj 557 591 cnv 13 86 15 empty empty empty 2 7 0 10 -257985 -66577
+0;
+#N canvas 1159 300 482 292 info_outlet 0;
+#X text 22 26 The right outlet sends several messages about MOUSE \,
+KEY or DRAG'N'DROP states. route them to your needs.;
+#X text 22 61 MESSAGES:;
+#X text 19 218 (needs activation);
+#X text 23 121 mod [f] (= modifier keys: 0/1/2/3 - OFF / SHIFT / STRG
+/ STRG+SHIFT), f 71;
+#X text 21 79 dropped [s] (= full name of dropped file);
+#X text 21 93 drop_pos [f f] (= position where file was dropped);
+#X text 21 107 gop_pos [f f] (= position of GOP relative to parent
+patch);
+#X text 23 147 mousestate [f] (= clicked or not clicked);
+#X text 23 160 mousedown [f f] (= coordinates when clicked);
+#X text 23 173 mouseup [f f] (= coordinates when click released);
+#X text 22 134 pos [f f] (= coordinates of mouse inside GOP);
+#X text 22 245 hover_state [f] (= is mouse hovering over GOP ?);
+#X text 22 232 hover [f f] (coordinates of mouse hovering over GOP)
+;
+#X restore 556 590 pd info_outlet;
+#X obj 710 140 cnv 1 64 1 empty empty MESSAGES: 2 -7 0 12 -66577 -66577
+0;
+#X obj 557 464 r \$0-mycellblock-info, f 15;
+#X text 804 209 (see "mode" subpatches);
+#X obj 693 242 tgl 13 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 804 255 (only in cellmode !);
+#X obj 36 490 route FULL DUMP ROW bang symbol float, f 41;
+#X obj 157 577 bng 20 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X symbolatom 198 544 12 0 0 0 - - -, f 12;
+#X text 182 571 bang on the upper right corner, f 17;
+#X floatatom 238 514 5 0 0 0 - - -, f 5;
+#X obj 117 613 print ROW;
+#X msg 710 255 rowoutput \$1;
+#X text 180 606 row content preceded;
+#X text 181 616 by row number;
+#X text 22 395 [ol_cellblock \$0-mycellblock 200 10 10 5 0];
+#X obj 25 97 ol_cellblock \\\$0-mycellblock 200 10 10 5 0 grey80 black
+orange 255_255_96 blue 0 0 1 no_items;
+#X text 863 699 use "-" \, "_" or "." to;
+#X msg 710 706 colors green - . blue _;
+#X text 863 710 set single defaults;
+#X text 718 724 see subpatch "colors" !;
+#N canvas 811 146 327 479 more messages 0;
+#X obj 30 118 s \$0-mycellblock-r;
+#X msg 30 33 read;
+#X msg 30 75 write;
+#X msg 30 50 readagain;
+#X msg 30 92 writeagain;
+#X text 40 14 STORAGE:;
+#X text 70 33 or (read [filename]);
+#X text 73 74 or (write [filename]);
+#X obj 30 186 s \$0-mycellblock-r;
+#X msg 30 163 gettextnames;
+#X obj 30 335 r \$0-mycellblock;
+#X obj 30 359 route TEXTNAMES;
+#X text 36 377 cells cellstates browser playlist, f 11;
+#X obj 30 440 print TEXTNAMES;
+#X obj 29 280 s \$0-mycellblock-r;
+#X text 29 216 in a colorlist:;
+#X text 30 231 use "_" \, "-" or "." to set defaults;
+#X msg 29 255 colors magenta _ - 0_210_200 .;
+#X obj 24 118 cnv 5 5 17 empty empty empty 20 12 0 14 -194593 -66577
+0;
+#X obj 24 186 cnv 5 5 17 empty empty empty 20 12 0 14 -194593 -66577
+0;
+#X obj 23 280 cnv 5 5 17 empty empty empty 20 12 0 14 -194593 -66577
+0;
+#X obj 24 335 cnv 5 5 17 empty empty empty 20 12 0 14 -260626 -66577
+0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 17 0 14 0;
+#X restore 374 330 pd more messages;
+#X obj 30 467 cnv 5 5 17 empty empty empty 20 12 0 14 -260626 -66577
+0;
+#X obj 704 749 cnv 5 5 17 empty empty empty 20 12 0 14 -194593 -66577
+0;
+#X obj 316 467 cnv 5 5 17 empty empty empty 20 12 0 14 -260626 -66577
+0;
+#X obj 316 632 cnv 5 5 17 empty empty empty 20 12 0 14 -260626 -66577
+0;
+#X text 393 220 (see "ol_z_info" for details);
+#X obj 46 796 cnv 3 3 3 empty empty PLEASE REFER TO "00_README.txt" FOR DRAG AND DROP REQUIREMENTS !
+1 -7 1 12 -262144 -4160 0;
+#X obj 35 792 cnv 3 3 3 empty empty * 0 0 1 18 -262144 -4160 0;
+#X connect 0 0 2 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;
+#X connect 14 0 15 0;
+#X connect 15 0 2 0;
+#X connect 17 0 2 0;
+#X connect 21 0 2 0;
+#X connect 36 0 0 0;
+#X connect 47 0 2 0;
+#X connect 48 0 3 0;
+#X connect 49 0 47 0;
+#X connect 51 0 2 0;
+#X connect 52 0 2 0;
+#X connect 57 0 2 0;
+#X connect 58 0 1 0;
+#X connect 59 0 58 1;
+#X connect 62 0 2 0;
+#X connect 68 0 109 0;
+#X connect 69 0 70 0;
+#X connect 70 0 71 0;
+#X connect 80 0 77 0;
+#X connect 80 1 76 0;
+#X connect 80 2 78 0;
+#X connect 80 3 81 0;
+#X connect 80 4 79 0;
+#X connect 83 0 80 0;
+#X connect 87 0 88 0;
+#X connect 88 0 89 0;
+#X connect 88 1 82 0;
+#X connect 89 0 90 0;
+#X connect 90 0 91 0;
+#X connect 99 0 98 0;
+#X connect 100 0 99 1;
+#X connect 105 0 99 0;
+#X connect 107 0 115 0;
+#X connect 109 0 69 0;
+#X connect 109 1 74 0;
+#X connect 109 2 114 0;
+#X connect 109 3 110 0;
+#X connect 109 4 111 0;
+#X connect 109 5 113 0;
+#X connect 115 0 2 0;
+#X connect 119 0 58 0;
+#X connect 121 0 2 0;

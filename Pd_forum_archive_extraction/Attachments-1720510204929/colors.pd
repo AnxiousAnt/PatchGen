@@ -1,0 +1,149 @@
+#N canvas 495 118 502 610 10;
+#X obj 146 339 hsl 300 80 0 127 0 0 empty HSL HSL 100 -20 0 24 -1888
+-138113 -190643 0 1;
+#X obj 93 249 list prepend color;
+#X obj 93 428 print HSL;
+#X obj 93 272 list trim;
+#X text 85 462 RGB -> Pd/Tk colors:;
+#X text 83 492 -pow(2 \, 16) * R - pow(2 \, 8) * G - pow(2 \, 0) *
+B - 1;
+#X obj 93 44 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -258699
+-1 -1 0 0;
+#X obj 110 44 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -24198
+-1 -1 2900 0;
+#X obj 127 44 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -62784
+-1 -1 3100 0;
+#X text 94 19 Back;
+#X text 169 18 Front;
+#X text 249 20 Label;
+#X floatatom 42 186 5 0 0 0 - - -;
+#X obj 42 162 int;
+#N canvas 0 0 224 236 pak3 0;
+#X obj 76 71 t b f;
+#X obj 123 72 t b f;
+#X obj 24 38 inlet;
+#X obj 76 35 inlet;
+#X obj 123 35 inlet;
+#X obj 24 158 outlet;
+#X obj 24 133 pack 0 0 0;
+#X connect 0 0 6 0;
+#X connect 0 1 6 1;
+#X connect 1 0 6 0;
+#X connect 1 1 6 2;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 6 0 5 0;
+#X restore 93 148 pd pak3;
+#N canvas 0 0 224 236 pak3 0;
+#X obj 76 71 t b f;
+#X obj 123 72 t b f;
+#X obj 24 38 inlet;
+#X obj 76 35 inlet;
+#X obj 123 35 inlet;
+#X obj 24 158 outlet;
+#X obj 24 133 pack 0 0 0;
+#X connect 0 0 6 0;
+#X connect 0 1 6 1;
+#X connect 1 0 6 0;
+#X connect 1 1 6 2;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 6 0 5 0;
+#X restore 93 226 pd pak3;
+#X obj 168 45 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -258699
+-1 -1 3300 0;
+#X obj 185 45 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -24198
+-1 -1 4600 0;
+#X obj 202 45 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -62784
+-1 -1 0 0;
+#N canvas 0 0 224 236 pak3 0;
+#X obj 76 71 t b f;
+#X obj 123 72 t b f;
+#X obj 24 38 inlet;
+#X obj 76 35 inlet;
+#X obj 123 35 inlet;
+#X obj 24 158 outlet;
+#X obj 24 133 pack 0 0 0;
+#X connect 0 0 6 0;
+#X connect 0 1 6 1;
+#X connect 1 0 6 0;
+#X connect 1 1 6 2;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 6 0 5 0;
+#X restore 168 149 pd pak3;
+#X obj 248 46 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -258699
+-1 -1 4600 0;
+#X obj 265 46 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -24198
+-1 -1 3400 0;
+#X obj 282 46 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -62784
+-1 -1 5000 0;
+#N canvas 0 0 224 236 pak3 0;
+#X obj 76 71 t b f;
+#X obj 123 72 t b f;
+#X obj 24 38 inlet;
+#X obj 76 35 inlet;
+#X obj 123 35 inlet;
+#X obj 24 158 outlet;
+#X obj 24 133 pack 0 0 0;
+#X connect 0 0 6 0;
+#X connect 0 1 6 1;
+#X connect 1 0 6 0;
+#X connect 1 1 6 2;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 6 0 5 0;
+#X restore 248 150 pd pak3;
+#X text 76 558 Of course pak3 and rgbtopd should be abstractions;
+#N canvas 281 345 447 195 rgbtopd 0;
+#X obj 35 59 expr -65536 * $i1 - 256 * $i2 - $i3 - 1 \;;
+#X obj 35 25 inlet;
+#X obj 35 89 outlet;
+#X text 26 121 -pow(2 \, 16) * R - pow(2 \, 8) * G - pow(2 \, 0) *
+B - 1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X restore 248 170 pd rgbtopd;
+#N canvas 281 345 447 195 rgbtopd 0;
+#X obj 35 59 expr -65536 * $i1 - 256 * $i2 - $i3 - 1 \;;
+#X obj 35 25 inlet;
+#X obj 35 89 outlet;
+#X text 26 121 -pow(2 \, 16) * R - pow(2 \, 8) * G - pow(2 \, 0) *
+B - 1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X restore 168 170 pd rgbtopd;
+#N canvas 281 345 447 195 rgbtopd 0;
+#X obj 35 59 expr -65536 * $i1 - 256 * $i2 - $i3 - 1 \;;
+#X obj 35 25 inlet;
+#X obj 35 89 outlet;
+#X text 26 121 -pow(2 \, 16) * R - pow(2 \, 8) * G - pow(2 \, 0) *
+B - 1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X restore 93 169 pd rgbtopd;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 0 2 0;
+#X connect 6 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 14 1;
+#X connect 8 0 14 2;
+#X connect 13 0 12 0;
+#X connect 14 0 27 0;
+#X connect 15 0 1 0;
+#X connect 16 0 19 0;
+#X connect 17 0 19 1;
+#X connect 18 0 19 2;
+#X connect 19 0 26 0;
+#X connect 20 0 23 0;
+#X connect 21 0 23 1;
+#X connect 22 0 23 2;
+#X connect 23 0 25 0;
+#X connect 25 0 15 2;
+#X connect 26 0 15 1;
+#X connect 27 0 15 0;

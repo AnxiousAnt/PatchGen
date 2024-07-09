@@ -1,0 +1,247 @@
+Last login: Mon Dec 28 17:04:31 on console
+Jaime-Olivers-MacBook-Pro:~ joliverl$ cd /Users/joliverl/Documents/pd-0.42-5/src/
+Jaime-Olivers-MacBook-Pro:src joliverl$ ./configure
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ANSI C... none needed
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether make sets $(MAKE)... yes
+checking how to run the C preprocessor... gcc -E
+checking for an ANSI C-conforming const... yes
+checking for egrep... grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for ANSI C header files... (cached) yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking malloc.h usability... no
+checking malloc.h presence... no
+checking for malloc.h... no
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking bstring.h usability... no
+checking bstring.h presence... no
+checking for bstring.h... no
+checking whether gcc needs -traditional... rm: conftest.dSYM: is a directory
+rm: conftest.dSYM: is a directory
+no
+checking return type of signal handlers... void
+checking for vprintf... yes
+checking for _doprnt... no
+checking for gettimeofday... yes
+checking for select... yes
+checking for socket... yes
+checking for strerror... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for dlopen in -ldl... yes
+checking for sin in -lffm... no
+checking for sin in -lm... yes
+checking for pthread_create in -lpthread... yes
+checking tcl.h usability... yes
+checking tcl.h presence... yes
+checking for tcl.h... yes
+checking for main in -ltcl85... no
+checking for main in -ltcl8.5... yes
+checking for main in -ltk85... no
+checking for main in -ltk8.5... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+rm: conftest.dSYM: is a directory
+checking for _LARGE_FILES value needed for large files... no
+rm: conftest.dSYM: is a directory
+-n
+-n
+configure: creating ./config.status
+config.status: creating makefile
+Jaime-Olivers-MacBook-Pro:src joliverl$ make
+cc -DDL_OPEN -DMACOSX -DUNISTD -I/usr/X11R6/include         -I../portaudio/include -I../portaudio/src/common         -I../portaudio/src/os/mac_osx/         -I../portmidi/pm_common -I../portmidi/pm_mac         -I../portmidi/porttime         -DUSEAPI_PORTAUDIO -DPA19 -DPA_USE_COREAUDIO -DNEWBUFFER -M g_canvas.c g_graph.c g_text.c g_rtext.c g_array.c g_template.c g_io.c g_scalar.c g_traversal.c g_guiconnect.c g_readwrite.c g_editor.c g_all_guis.c g_bang.c g_hdial.c g_hslider.c g_mycanvas.c g_numbox.c g_toggle.c g_vdial.c g_vslider.c g_vumeter.c m_pd.c m_class.c m_obj.c m_atom.c m_memory.c m_binbuf.c m_conf.c m_glob.c m_sched.c s_main.c s_inter.c s_file.c s_print.c s_loader.c s_path.c s_entry.c s_audio.c s_midi.c d_ugen.c d_ctl.c d_arithmetic.c d_osc.c d_filter.c d_dac.c d_misc.c d_math.c d_fft.c d_array.c d_global.c d_delay.c d_resample.c x_arithmetic.c x_connective.c x_interface.c x_midi.c x_misc.c x_time.c x_acoustics.c x_net.c x_qlist.c x_gui.c x_list.c d_soundfile.c s_midi_pm.c s_audio_pa.c         s_audio_pablio.c             s_audio_paring.c             ../portaudio/src/common/pa_allocation.c          ../portaudio/src/common/pa_converters.c          ../portaudio/src/common/pa_cpuload.c             ../portaudio/src/common/pa_dither.c              ../portaudio/src/common/pa_front.c               ../portaudio/src/common/pa_process.c             ../portaudio/src/common/pa_skeleton.c            ../portaudio/src/common/pa_stream.c              ../portaudio/src/common/pa_trace.c               ../portaudio/src/common/pa_debugprint.c               ../portaudio/src/common/pa_ringbuffer.c          ../portaudio/src/os/unix/pa_unix_util.c             ../portaudio/src/os/mac_osx/pa_mac_hostapis.c           ../portaudio/src/hostapi/coreaudio/pa_mac_core.c          ../portaudio/src/hostapi/coreaudio/pa_mac_core_blocking.c          ../portaudio/src/hostapi/coreaudio/pa_mac_core_utilities.c          ../portmidi/pm_mac/pmmac.c         ../portmidi/pm_mac/pmmacosxcm.c         ../portmidi/pm_common/pmutil.c         ../portmidi/pm_common/portmidi.c         ../portmidi/porttime/ptmacosx_cf.c  d_fft_mayer.c d_fftroutine.c > makefile.dependencies
+cc -g -O2 -DPD  -Wall -W -Wstrict-prototypes -Wno-unused -Wno-parentheses -Wno-switch -DDL_OPEN -DMACOSX -DUNISTD -I/usr/X11R6/include         -I../portaudio/include -I../portaudio/src/common         -I../portaudio/src/os/mac_osx/         -I../portmidi/pm_common -I../portmidi/pm_mac         -I../portmidi/porttime         -DUSEAPI_PORTAUDIO -DPA19 -DPA_USE_COREAUDIO -DNEWBUFFER -isysroot /Developer/SDKs/MacOSX10.4u.sdk             -arch i386 -arch ppc -Wno-error -O2 -DINSTALL_PREFIX=\"/usr/local\"  -c -o ../obj/g_canvas.o g_canvas.c 
+g_canvas.c:8:20: error: stdlib.h: No such file or directory
+g_canvas.c:9:19: error: stdio.h: No such file or directory
+In file included from g_canvas.c:10:
+m_pd.h:51:59: error: stddef.h: No such file or directory
+In file included from g_canvas.c:10:
+m_pd.h:247: error: expected ‘)’ before ‘nbytes’
+m_pd.h:248: error: expected ‘)’ before ‘nbytes’
+m_pd.h:249: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:250: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:251: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:251: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:283: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:404: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:618: error: expected declaration specifiers or ‘...’ before ‘size_t’
+In file included from g_canvas.c:11:
+m_imp.h:36: error: expected specifier-qualifier-list before ‘size_t’
+g_canvas.c:14:20: error: string.h: No such file or directory
+g_canvas.c: In function ‘glist_doupdatewindowlist’:
+g_canvas.c:73: warning: implicit declaration of function ‘strlen’
+g_canvas.c:73: warning: incompatible implicit declaration of built-in function ‘strlen’
+g_canvas.c:76: warning: implicit declaration of function ‘sprintf’
+g_canvas.c:76: warning: incompatible implicit declaration of built-in function ‘sprintf’
+g_canvas.c:78: warning: implicit declaration of function ‘strcat’
+g_canvas.c:78: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c: In function ‘canvas_updatewindowlist’:
+g_canvas.c:95: warning: implicit declaration of function ‘strcpy’
+g_canvas.c:95: warning: incompatible implicit declaration of built-in function ‘strcpy’
+g_canvas.c:100: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c: In function ‘canvas_setargs’:
+g_canvas.c:131: error: too many arguments to function ‘freebytes’
+g_canvas.c:133: error: too many arguments to function ‘copybytes’
+g_canvas.c: In function ‘canvas_realizedollar’:
+g_canvas.c:186: warning: implicit declaration of function ‘strchr’
+g_canvas.c:186: warning: incompatible implicit declaration of built-in function ‘strchr’
+g_canvas.c: In function ‘canvas_makefilename’:
+g_canvas.c:214: warning: implicit declaration of function ‘strncpy’
+g_canvas.c:214: warning: incompatible implicit declaration of built-in function ‘strncpy’
+g_canvas.c:220: warning: incompatible implicit declaration of built-in function ‘strncpy’
+g_canvas.c:222: warning: incompatible implicit declaration of built-in function ‘strlen’
+g_canvas.c:224: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c:225: warning: implicit declaration of function ‘strncat’
+g_canvas.c:225: warning: incompatible implicit declaration of built-in function ‘strncat’
+g_canvas.c: In function ‘canvas_rename’:
+g_canvas.c:232: warning: implicit declaration of function ‘strcmp’
+g_canvas.c: In function ‘glist_init’:
+g_canvas.c:333: warning: implicit declaration of function ‘memset’
+g_canvas.c:333: warning: incompatible implicit declaration of built-in function ‘memset’
+g_canvas.c:336: warning: implicit declaration of function ‘getbytes’
+g_canvas.c: In function ‘canvas_new’:
+g_canvas.c:382: warning: assignment makes pointer from integer without a cast
+g_canvas.c:423: warning: implicit declaration of function ‘strncmp’
+g_canvas.c: In function ‘glist_addglist’:
+g_canvas.c:465: warning: incompatible implicit declaration of built-in function ‘sprintf’
+g_canvas.c:470: warning: implicit declaration of function ‘atoi’
+g_canvas.c: In function ‘canvas_makebindsym’:
+g_canvas.c:575: warning: incompatible implicit declaration of built-in function ‘strcpy’
+g_canvas.c:576: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c: In function ‘canvas_reflecttitle’:
+g_canvas.c:587: warning: incompatible implicit declaration of built-in function ‘strcpy’
+g_canvas.c:590: warning: incompatible implicit declaration of built-in function ‘strlen’
+g_canvas.c:593: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c:597: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c: In function ‘canvas_free’:
+g_canvas.c:746: error: too many arguments to function ‘freebytes’
+g_canvas.c:747: error: too many arguments to function ‘freebytes’
+g_canvas.c: In function ‘canvas_relocate’:
+g_canvas.c:927: warning: implicit declaration of function ‘sscanf’
+g_canvas.c:927: warning: incompatible implicit declaration of built-in function ‘sscanf’
+g_canvas.c: In function ‘table_new’:
+g_canvas.c:1020: warning: incompatible implicit declaration of built-in function ‘sprintf’
+g_canvas.c: In function ‘canvas_completepath’:
+g_canvas.c:1346: warning: incompatible implicit declaration of built-in function ‘strncpy’
+g_canvas.c:1348: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c:1350: warning: incompatible implicit declaration of built-in function ‘strncat’
+g_canvas.c:1350: warning: incompatible implicit declaration of built-in function ‘strlen’
+g_canvas.c: In function ‘canvas_open’:
+g_canvas.c:1441: warning: incompatible implicit declaration of built-in function ‘strncpy’
+g_canvas.c:1443: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c:1445: warning: incompatible implicit declaration of built-in function ‘strncat’
+g_canvas.c:1445: warning: incompatible implicit declaration of built-in function ‘strlen’
+g_canvas.c:8:20: error: stdlib.h: No such file or directory
+g_canvas.c:9:19: error: stdio.h: No such file or directory
+In file included from g_canvas.c:10:
+m_pd.h:51:59: error: stddef.h: No such file or directory
+In file included from g_canvas.c:10:
+m_pd.h:247: error: expected ‘)’ before ‘nbytes’
+m_pd.h:248: error: expected ‘)’ before ‘nbytes’
+m_pd.h:249: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:250: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:251: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:251: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:283: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:404: error: expected declaration specifiers or ‘...’ before ‘size_t’
+m_pd.h:618: error: expected declaration specifiers or ‘...’ before ‘size_t’
+In file included from g_canvas.c:11:
+m_imp.h:36: error: expected specifier-qualifier-list before ‘size_t’
+g_canvas.c:14:20: error: string.h: No such file or directory
+g_canvas.c: In function ‘glist_doupdatewindowlist’:
+g_canvas.c:73: warning: implicit declaration of function ‘strlen’
+g_canvas.c:73: warning: incompatible implicit declaration of built-in function ‘strlen’
+g_canvas.c:76: warning: implicit declaration of function ‘sprintf’
+g_canvas.c:76: warning: incompatible implicit declaration of built-in function ‘sprintf’
+g_canvas.c:78: warning: implicit declaration of function ‘strcat’
+g_canvas.c:78: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c: In function ‘canvas_updatewindowlist’:
+g_canvas.c:95: warning: implicit declaration of function ‘strcpy’
+g_canvas.c:95: warning: incompatible implicit declaration of built-in function ‘strcpy’
+g_canvas.c:100: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c: In function ‘canvas_setargs’:
+g_canvas.c:131: error: too many arguments to function ‘freebytes’
+g_canvas.c:133: error: too many arguments to function ‘copybytes’
+g_canvas.c: In function ‘canvas_realizedollar’:
+g_canvas.c:186: warning: implicit declaration of function ‘strchr’
+g_canvas.c:186: warning: incompatible implicit declaration of built-in function ‘strchr’
+g_canvas.c: In function ‘canvas_makefilename’:
+g_canvas.c:214: warning: implicit declaration of function ‘strncpy’
+g_canvas.c:214: warning: incompatible implicit declaration of built-in function ‘strncpy’
+g_canvas.c:220: warning: incompatible implicit declaration of built-in function ‘strncpy’
+g_canvas.c:222: warning: incompatible implicit declaration of built-in function ‘strlen’
+g_canvas.c:224: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c:225: warning: implicit declaration of function ‘strncat’
+g_canvas.c:225: warning: incompatible implicit declaration of built-in function ‘strncat’
+g_canvas.c: In function ‘canvas_rename’:
+g_canvas.c:232: warning: implicit declaration of function ‘strcmp’
+g_canvas.c: In function ‘glist_init’:
+g_canvas.c:333: warning: implicit declaration of function ‘memset’
+g_canvas.c:333: warning: incompatible implicit declaration of built-in function ‘memset’
+g_canvas.c:336: warning: implicit declaration of function ‘getbytes’
+g_canvas.c: In function ‘canvas_new’:
+g_canvas.c:382: warning: assignment makes pointer from integer without a cast
+g_canvas.c:423: warning: implicit declaration of function ‘strncmp’
+g_canvas.c: In function ‘glist_addglist’:
+g_canvas.c:465: warning: incompatible implicit declaration of built-in function ‘sprintf’
+g_canvas.c:470: warning: implicit declaration of function ‘atoi’
+g_canvas.c: In function ‘canvas_makebindsym’:
+g_canvas.c:575: warning: incompatible implicit declaration of built-in function ‘strcpy’
+g_canvas.c:576: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c: In function ‘canvas_reflecttitle’:
+g_canvas.c:587: warning: incompatible implicit declaration of built-in function ‘strcpy’
+g_canvas.c:590: warning: incompatible implicit declaration of built-in function ‘strlen’
+g_canvas.c:593: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c:597: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c: In function ‘canvas_free’:
+g_canvas.c:746: error: too many arguments to function ‘freebytes’
+g_canvas.c:747: error: too many arguments to function ‘freebytes’
+g_canvas.c: In function ‘canvas_relocate’:
+g_canvas.c:927: warning: implicit declaration of function ‘sscanf’
+g_canvas.c:927: warning: incompatible implicit declaration of built-in function ‘sscanf’
+g_canvas.c: In function ‘table_new’:
+g_canvas.c:1020: warning: incompatible implicit declaration of built-in function ‘sprintf’
+g_canvas.c: In function ‘canvas_completepath’:
+g_canvas.c:1346: warning: incompatible implicit declaration of built-in function ‘strncpy’
+g_canvas.c:1348: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c:1350: warning: incompatible implicit declaration of built-in function ‘strncat’
+g_canvas.c:1350: warning: incompatible implicit declaration of built-in function ‘strlen’
+g_canvas.c: In function ‘canvas_open’:
+g_canvas.c:1441: warning: incompatible implicit declaration of built-in function ‘strncpy’
+g_canvas.c:1443: warning: incompatible implicit declaration of built-in function ‘strcat’
+g_canvas.c:1445: warning: incompatible implicit declaration of built-in function ‘strncat’
+g_canvas.c:1445: warning: incompatible implicit declaration of built-in function ‘strlen’
+lipo: can't figure out the architecture type of: /var/folders/ld/ldqT7xLHF4m2XBZUulCYWE+++TI/-Tmp-//cceUcpVn.out
+make: *** [g_canvas.o] Error 1

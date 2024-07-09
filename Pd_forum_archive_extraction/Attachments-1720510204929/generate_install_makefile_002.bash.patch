@@ -1,0 +1,12 @@
+--- generate_install_makefile.bash~	2010-12-03 20:47:46.000000000 -0500
++++ generate_install_makefile.bash	2010-12-03 20:48:17.000000000 -0500
+@@ -12,7 +12,8 @@
+ 
+ function print_file ()
+ {
+-	 local my_file=$1
++	 #local my_file=$1
++	 local my_file=`echo $1 | sed 's/\\\$/\$\$/g'`
+ 	 echo -e "\tinstall -p '$my_file' '\$(prefix)/$my_file'"
+ }
+ 

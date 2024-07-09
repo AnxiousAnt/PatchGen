@@ -1,0 +1,54 @@
+#N canvas 554 157 615 454 10;
+#X obj 328 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 354 93 0;
+#X obj 302 127 phasor~ 650;
+#X obj 302 212 print~;
+#N canvas 0 50 450 278 (subpatch) 0;
+#X array array1 64 float 3;
+#A 0 0 0.0147392 0.0294785 0.0442177 0.0589569 0.0736961 0.0884354
+0.103175 0.117914 0.132653 0.147392 0.162132 0.176871 0.19161 0.206349
+0.221088 0.235828 0.250567 0.265306 0.280045 0.294785 0.309524 0.324263
+0.339002 0.353741 0.368481 0.38322 0.397959 0.412698 0.427438 0.442177
+0.456916 0.471655 0.486395 0.501134 0.515873 0.530612 0.545351 0.560091
+0.57483 0.589569 0.604308 0.619048 0.633787 0.648526 0.663265 0.678005
+0.692744 0.707483 0.722222 0.736961 0.751701 0.76644 0.781179 0.795918
+0.810658 0.825397 0.840136 0.854875 0.869614 0.884354 0.899093 0.913832
+0.928571;
+#X coords 0 1 64 -1 200 140 1;
+#X restore 166 265 graph;
+#X obj 197 157 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 223 98 0;
+#X obj 171 132 phasor~ 650;
+#X obj 171 210 tabwrite~ array1;
+#X text 43 21 consistency check failed: signal_free 4;
+#X text 48 45 error when dsp toggling;
+#X obj 48 153 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 48 175 metro 100;
+#X obj 48 197 f;
+#X obj 78 199 + 1;
+#X obj 78 221 % 2;
+#X obj 48 219 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 47 120 loadbang;
+#X msg 48 249 \; pd dsp \$1;
+#X connect 0 0 3 0;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 2 0 3 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 6 0 7 1;
+#X connect 7 0 8 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 13 0 16 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 1;
+#X connect 16 0 18 0;
+#X connect 17 0 11 0;

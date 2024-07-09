@@ -1,0 +1,18 @@
+Get this error when hitting option-w, aimed to shot the main Pd window.
+
+-----
+bad window path name ".c"
+bad window path name ".c"
+    while executing
+"winfo geometry $topname.c"
+    (procedure "pdtk_canvas_checkgeometry" line 2)
+    invoked from within
+"pdtk_canvas_checkgeometry $name"
+    (procedure "menu_close" line 2)
+    invoked from within
+"menu_close $topname"
+    (procedure "pdtk_canvas_ctrlkey" line 35)
+    invoked from within
+"pdtk_canvas_ctrlkey . w 0"
+    (command bound to event)
+-----

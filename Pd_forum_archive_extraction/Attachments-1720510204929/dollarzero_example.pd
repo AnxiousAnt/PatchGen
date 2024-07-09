@@ -1,0 +1,9 @@
+#N canvas 113 168 542 325 10;
+#N canvas 0 0 450 300 graph1 0;
+#X array \$0-local_table 1027 float 0;
+#X coords 0 1 1026 -1 200 140 1;
+#X restore 268 81 graph;
+#X obj 38 197 s \$0-local_table;
+#X msg 38 171 sinesum 1024 1;
+#X msg 40 93 \; \$0-local_table sinesum 1024 1;
+#X connect 2 0 1 0;

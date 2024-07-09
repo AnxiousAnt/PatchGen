@@ -1,0 +1,188 @@
+>From 681e9b2b35832559165c7371899d938ca2bec155 Mon Sep 17 00:00:00 2001
+From: Hans-Christoph Steiner <hans@eds.org>
+Date: Mon, 8 Oct 2012 12:21:45 -0400
+Subject: [PATCH 2/2] first working version of "after idle" technique
+
+---
+ po/Makefile.am        |    2 +-
+ src/g_template.c      |   22 +++++++++++-----
+ tcl/Makefile.am       |    2 +-
+ tcl/pd-gui.tcl        |    1 +
+ tcl/pdtk_template.tcl |   67 +++++++++++++++++++++++++++++++++++++++++++++++++
+ tcl/pkgIndex.tcl      |    1 +
+ 6 files changed, 87 insertions(+), 8 deletions(-)
+ create mode 100644 tcl/pdtk_template.tcl
+
+diff --git a/po/Makefile.am b/po/Makefile.am
+index 0dd847f..1558015 100644
+--- a/po/Makefile.am
++++ b/po/Makefile.am
+@@ -9,7 +9,7 @@ if MACOSX
+   PATH := /sw/lib/gettext-tools-0.17/bin:${PATH}
+ endif
+ 
+-TCLFILES = apple_events.tcl dialog_canvas.tcl dialog_gatom.tcl dialog_path.tcl pd_bindings.tcl pd_menus.tcl pdwindow.tcl scrollboxwindow.tcl AppMain.tcl dialog_data.tcl dialog_iemgui.tcl dialog_startup.tcl pd_connect.tcl pkgIndex.tcl wheredoesthisgo.tcl dialog_array.tcl dialog_find.tcl dialog_message.tcl helpbrowser.tcl pdtk_canvas.tcl pkg_mkIndex.tcl dialog_audio.tcl dialog_font.tcl dialog_midi.tcl opt_parser.tcl pd_menucommands.tcl pdtk_text.tcl scrollbox.tcl pd_guiprefs.tcl
++TCLFILES = apple_events.tcl dialog_canvas.tcl dialog_gatom.tcl dialog_path.tcl pd_bindings.tcl pd_menus.tcl pdwindow.tcl scrollboxwindow.tcl AppMain.tcl dialog_data.tcl dialog_iemgui.tcl dialog_startup.tcl pd_connect.tcl pkgIndex.tcl wheredoesthisgo.tcl dialog_array.tcl dialog_find.tcl dialog_message.tcl helpbrowser.tcl pdtk_canvas.tcl pkg_mkIndex.tcl dialog_audio.tcl dialog_font.tcl dialog_midi.tcl opt_parser.tcl pd_menucommands.tcl pdtk_template.tcl pdtk_text.tcl scrollbox.tcl pd_guiprefs.tcl
+ 
+ FILES = $(addprefix ../tcl/, $(TCLFILES)) iemgui_dynamic_strings.tcl pd_dynamic_strings.tcl
+ 
+diff --git a/src/g_template.c b/src/g_template.c
+index a2b583d..1b5f465 100644
+--- a/src/g_template.c
++++ b/src/g_template.c
+@@ -1416,6 +1416,9 @@ static void *plot_new(t_symbol *classsym, t_int argc, t_atom *argv)
+     else fielddesc_setfloat_const(&x->x_xinc, 1);
+     if (argc) fielddesc_setfloatarg(&x->x_style, argc--, argv++);
+     else fielddesc_setfloat_const(&x->x_style, defstyle);
++
++    sys_vgui("pdtk_template_create_plot_line %lx\n", x);
++
+     return (x);
+ }
+ 
+@@ -1828,7 +1831,8 @@ static void plot_vis(t_gobj *z, t_glist *glist,
+                     /* no "w" field.  If the linewidth is positive, draw a
+                     segmented line with the requested width; otherwise don't
+                     draw the trace at all. */
+-                sys_vgui(".x%lx.c create line \\\n", glist_getcanvas(glist));
++                sys_vgui("::%lx::plot_line .x%lx.c {\\\n", x, glist_getcanvas(glist));
++                //sys_vgui(".x%lx.c create line \\\n", glist_getcanvas(glist));
+ 
+                 for (xsum = xloc, i = 0; i < nelem; i++)
+                 {
+@@ -1860,11 +1864,17 @@ static void plot_vis(t_gobj *z, t_glist *glist,
+                     glist_ytopixels(glist, basey + yloc + 
+                         fielddesc_cvttocoord(yfielddesc, yval)));
+ 
+-                sys_vgui("-width %f\\\n", linewidth);
+-                sys_vgui("-fill %s\\\n", outline);
+-                if (style == PLOTSTYLE_BEZ) sys_vgui("-smooth 1\\\n");
+-
+-                sys_vgui("-tags [list plot%lx array]\n", data);
++                //sys_vgui("-width %f\\\n", linewidth);
++                //sys_vgui("-fill %s\\\n", outline);
++                //if (style == PLOTSTYLE_BEZ) sys_vgui("-smooth 1\\\n");
++
++                //sys_vgui("-tags [list plot%lx array]\n", data);
++                // NEW!
++                sys_vgui("} %f %s %i plot%lx \n",
++                         linewidth,
++                         outline,
++                         style == PLOTSTYLE_BEZ,
++                         data);
+             }
+         }
+             /* We're done with the outline; now draw all the points.
+diff --git a/tcl/Makefile.am b/tcl/Makefile.am
+index 3f7809e..04f1ffd 100644
+--- a/tcl/Makefile.am
++++ b/tcl/Makefile.am
+@@ -10,7 +10,7 @@ bin_SCRIPTS = pd-gui.tcl
+ 
+ libpdtcldir = $(pkglibdir)/tcl
+ dist_libpdtcl_SCRIPTS = pd-gui.tcl
+-dist_libpdtcl_DATA = apple_events.tcl dialog_canvas.tcl dialog_gatom.tcl dialog_path.tcl pd_bindings.tcl pd_menus.tcl pdwindow.tcl scrollboxwindow.tcl AppMain.tcl dialog_data.tcl dialog_iemgui.tcl dialog_startup.tcl pd_connect.tcl pkgIndex.tcl wheredoesthisgo.tcl dialog_array.tcl dialog_find.tcl dialog_message.tcl helpbrowser.tcl pdtk_canvas.tcl pkg_mkIndex.tcl dialog_audio.tcl dialog_font.tcl dialog_midi.tcl opt_parser.tcl pd_menucommands.tcl pdtk_text.tcl pdtk_textwindow.tcl scrollbox.tcl pd_guiprefs.tcl pd.ico
++dist_libpdtcl_DATA = apple_events.tcl dialog_canvas.tcl dialog_gatom.tcl dialog_path.tcl pd_bindings.tcl pd_menus.tcl pdwindow.tcl scrollboxwindow.tcl AppMain.tcl dialog_data.tcl dialog_iemgui.tcl dialog_startup.tcl pd_connect.tcl pkgIndex.tcl wheredoesthisgo.tcl dialog_array.tcl dialog_find.tcl dialog_message.tcl helpbrowser.tcl pdtk_canvas.tcl pkg_mkIndex.tcl dialog_audio.tcl dialog_font.tcl dialog_midi.tcl opt_parser.tcl pd_menucommands.tcl pdtk_template.tcl pdtk_text.tcl pdtk_textwindow.tcl scrollbox.tcl pd_guiprefs.tcl pd.ico
+ 
+ etags: TAGS
+ 	etags --append --language=none --regex="/proc[ \t]+\([^ \t]+\)/\1/" *.tcl
+diff --git a/tcl/pd-gui.tcl b/tcl/pd-gui.tcl
+index fe1f87f..c6dc242 100755
+--- a/tcl/pd-gui.tcl
++++ b/tcl/pd-gui.tcl
+@@ -43,6 +43,7 @@ package require helpbrowser
+ package require pd_menucommands
+ package require opt_parser
+ package require pdtk_canvas
++package require pdtk_template
+ package require pdtk_text
+ package require pdtk_textwindow
+ # TODO eliminate this kludge:
+diff --git a/tcl/pdtk_template.tcl b/tcl/pdtk_template.tcl
+new file mode 100644
+index 0000000..b9f5987
+--- /dev/null
++++ b/tcl/pdtk_template.tcl
+@@ -0,0 +1,67 @@
++package provide pdtk_template 0.1
++
++proc pdtk_template_create_plot_points {objectid dataid} {
++    namespace eval ::$dataid {
++        variable x1 0
++        variable y1 0
++        variable x2 0
++        variable y2 0
++        proc plot_points {x1 y1 x2 y2} {
++            set ::${dataid}::x1 $x1
++            set ::${dataid}::y1 $y1
++            set ::${dataid}::x2 $x2
++            set ::${dataid}::y2 $y2
++            $objectid create rectangle $x1 $y1 $x2 $y2 \
++                -fill black -width 0 -tags [list $dataid array]
++        }
++    }
++}
++
++proc pdtk_template_create_plot_line {objid} {
++    puts stderr "pdtk_template_create_plot_points $objid"
++    if { [namespace exists ::$objid] } {
++        return
++    }
++    namespace eval ::$objid {
++        variable ns
++        variable mycanvas
++        variable dataid
++        variable linewidth
++        variable color
++        variable smooth
++        variable coordlist
++        proc plot_line {mycanvas coordlist linewidth color smooth dataid} {
++            # if the previous draw_line hasn't fired yet, cancel it,
++            # we only need the most recent one to fire in a given event
++            # loop redraw cycle
++            variable ns
++            after cancel ::${ns}::do_plot_line
++            set ::${ns}::mycanvas $mycanvas
++            set ::${ns}::coordlist $coordlist
++            set ::${ns}::linewidth $linewidth
++            set ::${ns}::color $color
++            set ::${ns}::smooth $smooth
++            set ::${ns}::dataid $dataid
++            after idle ::${ns}::do_plot_line
++        }
++        proc do_plot_line {} {
++            variable mycanvas
++            variable coordlist
++            variable linewidth
++            variable color
++            variable smooth
++            variable dataid
++            # puts stderr "mycanvas: $mycanvas"
++            # puts stderr "coordlist: $coordlist"
++            # puts stderr "linewidth: $linewidth"
++            # puts stderr "color: $color"
++            # puts stderr "smooth: $smooth"
++            # puts stderr "dataid: $dataid"
++            $mycanvas create line $coordlist \
++                -width $linewidth -fill $color -smooth $smooth \
++                -tags [list $dataid array]
++        }
++    }
++    set ::${objid}::ns $objid
++    puts stderr "pdtk_template_create_plot_points $objid DONE"
++}
+diff --git a/tcl/pkgIndex.tcl b/tcl/pkgIndex.tcl
+index 5532237..7dbeaf4 100644
+--- a/tcl/pkgIndex.tcl
++++ b/tcl/pkgIndex.tcl
+@@ -30,6 +30,7 @@ package ifneeded pdwindow 0.1 [list source [file join $dir pdwindow.tcl]]
+ package ifneeded pd_menucommands 0.1 [list source [file join $dir pd_menucommands.tcl]]
+ package ifneeded pd_menus 0.1 [list source [file join $dir pd_menus.tcl]]
+ package ifneeded pdtk_canvas 0.1 [list source [file join $dir pdtk_canvas.tcl]]
++package ifneeded pdtk_template 0.1 [list source [file join $dir pdtk_template.tcl]]
+ package ifneeded pdtk_text 0.1 [list source [file join $dir pdtk_text.tcl]]
+ package ifneeded pdtk_textwindow 0.1 [list source [file join $dir pdtk_textwindow.tcl]]
+ package ifneeded scrollbox 0.1 [list source [file join $dir scrollbox.tcl]]
+-- 
+1.7.9.5
+

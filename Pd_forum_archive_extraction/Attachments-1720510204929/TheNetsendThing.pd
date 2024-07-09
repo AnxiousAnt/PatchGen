@@ -1,0 +1,21 @@
+#N canvas 70 559 450 300 10;
+#X text 246 230 UDP on port 99999;
+#X msg 20 162 connect localhost 99999;
+#X obj 290 43 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-262144 -1 -1 34 256;
+#X msg 21 205 disconnect;
+#X obj 178 230 netsend 1;
+#X floatatom 351 44 5 0 0 0 - - -;
+#X obj 257 94 pack s 2 3;
+#X msg 252 41 chak;
+#X obj 185 45 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 257 117 send wham \$1 \$2 \$3;
+#X connect 1 0 4 0;
+#X connect 2 0 6 1;
+#X connect 3 0 4 0;
+#X connect 5 0 6 2;
+#X connect 6 0 9 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 4 0;

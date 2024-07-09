@@ -1,0 +1,219 @@
+#N struct circle float x float y float color float p float q float
+ULx float ULy float URx float URy float LRx float LRy float LLx float
+LLy;
+#N canvas 989 128 566 795 12;
+#N canvas 91 197 997 460 circlesin 1;
+#X scalar circle 9 2 0 0 0 -9.99876 140 10.0012 140 10.0012 160 -9.99876
+160 \;;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array sin_array 360 float 0;
+#X coords 0 1 359 -1 500 300 1 0 0;
+#X restore 364 3 graph;
+#X obj 331 5 vsl 25 300 300 0 0 0 empty r-circle-vslide empty 0 -9
+0 10 -262144 -1 -1 14950 1;
+#X obj 8 327 hsl 300 25 0 300 0 0 empty r-circle-hslide empty -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 364 392 bng 35 250 50 0 s_cleararray empty Clear_Array 38 8
+0 16 -258113 -1 -1;
+#X obj 364 353 bng 35 250 50 0 s_startarray empty Start_Plotting 38
+8 0 16 -4034 -1 -1;
+#X obj 364 314 tgl 35 0 plotgate empty Plotting_OnOff 38 8 0 16 -4032
+-1 -1 1 1;
+#X floatatom 180 371 5 0 30 0 Dot_Size r_dotsize dotsize;
+#X floatatom 686 315 5 0 0 0 Num_of_Cycles r_numcycles s_numcycles
+;
+#X floatatom 687 336 5 0 0 0 Duration_in_ms r_speed s_speed;
+#X obj 869 1 vsl 25 150 0 1 0 0 empty s_amplitude empty 0 -9 0 10 -262144
+-1 -1 10132 1;
+#X floatatom 905 141 5 0.01 1 2 Amplitude r_amplitude s_amplitude;
+#X obj 869 155 vsl 25 150 1 0 0 0 empty s_amplitude empty 0 -9 0 10
+-262144 -1 -1 4768 1;
+#X text 735 410 Stephen Lucas (2011);
+#X restore 217 228 pd circlesin;
+#X obj 20 498 append circle x y;
+#X obj 20 333 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 20 353 t b b;
+#X msg 321 422 traverse pd-circlesin \, bang;
+#X obj 175 466 pointer;
+#X msg 20 422 1 2;
+#X obj 20 451 unpack 0 0;
+#X msg 175 429 next;
+#N canvas 753 60 807 818 movingdot 0;
+#X obj 187 761 set circle ULx ULy URx URy LRx LRy LLx LLy;
+#X obj 517 371 inlet;
+#X obj 21 334 % 2261;
+#X obj 21 359 / 360;
+#X obj 21 385 sin;
+#X obj 21 309 * 6.28;
+#X floatatom 145 154 5 0 0 0 - - -;
+#X obj 21 282 % 360;
+#X obj 405 327 % 2261;
+#X obj 405 352 / 360;
+#X obj 405 379 sin;
+#X obj 405 302 * 6.28;
+#X obj 405 277 % 360;
+#X obj 405 252 + 90;
+#X obj 405 405 * -1;
+#X obj 145 176 t b f f;
+#X obj 21 680 s r-circle-hslide;
+#X obj 573 570 s r-circle-vslide;
+#X msg 567 742 \; sin_array const 0;
+#X obj 572 198 t f f;
+#X obj 569 349 tabwrite sin_array;
+#X obj 580 227 pack;
+#X obj 580 252 unpack;
+#X obj 145 123 + 270;
+#X obj 567 708 r s_cleararray;
+#X obj 450 18 r s_numcycles;
+#X msg 388 94 \; sin_array resize \$1;
+#X obj 673 20 r s_speed;
+#X obj 450 42 * 360;
+#X obj 572 115 pack 360 1000;
+#X obj 572 89 float 360;
+#X obj 388 69 * 360;
+#X msg 572 143 0 \, \$1 \$2;
+#X obj 307 411 r dotsize;
+#X obj 569 285 spigot 0;
+#X obj 655 243 r plotgate;
+#X obj 268 386 loadbang;
+#X obj 573 542 s r-circle-vslide_long;
+#X obj 573 514 spigot 0;
+#X obj 405 430 * 150;
+#X obj 405 455 + 150;
+#X obj 21 412 * 150;
+#X obj 21 436 + 150;
+#X obj 572 19 inlet;
+#X obj 307 444 float 10;
+#X msg 268 411 10;
+#X obj 187 680 - 10;
+#X obj 228 710 - 10;
+#X obj 311 709 - 10;
+#X obj 436 686 - 10;
+#X obj 270 678 + 10;
+#X obj 353 683 + 10;
+#X obj 395 714 + 10;
+#X obj 478 721 + 10;
+#X obj 682 284 r s_amplitude;
+#X text 13 8 This patch handles the function driving line \; and the
+polar to cartesian calculation to \; plot the red square's position
+\;;
+#X obj 498 296 *;
+#X obj 572 170 line 0 3;
+#X connect 1 0 0 8;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 41 0;
+#X connect 5 0 2 0;
+#X connect 6 0 15 0;
+#X connect 7 0 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 14 0;
+#X connect 10 0 56 0;
+#X connect 11 0 8 0;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 39 0;
+#X connect 15 0 0 0;
+#X connect 15 1 7 0;
+#X connect 15 2 13 0;
+#X connect 19 0 23 0;
+#X connect 19 1 21 1;
+#X connect 21 0 22 0;
+#X connect 22 0 34 0;
+#X connect 22 1 20 1;
+#X connect 23 0 6 0;
+#X connect 24 0 18 0;
+#X connect 25 0 28 0;
+#X connect 25 0 31 0;
+#X connect 27 0 29 1;
+#X connect 28 0 30 1;
+#X connect 29 0 32 0;
+#X connect 30 0 29 0;
+#X connect 31 0 26 0;
+#X connect 32 0 57 0;
+#X connect 33 0 44 0;
+#X connect 34 0 20 0;
+#X connect 35 0 34 1;
+#X connect 35 0 38 1;
+#X connect 36 0 45 0;
+#X connect 38 0 37 0;
+#X connect 39 0 40 0;
+#X connect 40 0 17 0;
+#X connect 40 0 38 0;
+#X connect 40 0 47 0;
+#X connect 40 0 48 0;
+#X connect 40 0 52 0;
+#X connect 40 0 53 0;
+#X connect 41 0 42 0;
+#X connect 42 0 16 0;
+#X connect 42 0 46 0;
+#X connect 42 0 49 0;
+#X connect 42 0 50 0;
+#X connect 42 0 51 0;
+#X connect 43 0 30 0;
+#X connect 44 0 46 1;
+#X connect 44 0 47 1;
+#X connect 44 0 48 1;
+#X connect 44 0 49 1;
+#X connect 44 0 50 1;
+#X connect 44 0 51 1;
+#X connect 44 0 52 1;
+#X connect 44 0 53 1;
+#X connect 45 0 44 1;
+#X connect 46 0 0 0;
+#X connect 47 0 0 1;
+#X connect 48 0 0 3;
+#X connect 49 0 0 6;
+#X connect 50 0 0 2;
+#X connect 51 0 0 4;
+#X connect 52 0 0 5;
+#X connect 53 0 0 7;
+#X connect 54 0 56 1;
+#X connect 56 0 21 0;
+#X connect 57 0 19 0;
+#X restore 175 530 pd movingdot;
+#X obj 10 642 struct circle float x float y float color float p float
+q float ULx float ULy float URx float URy float LRx float LRy float
+LLx float LLy;
+#X obj 10 746 filledpolygon 900 0 2 ULx ULy URx URy LRx LRy LLx LLy
+ULx ULy;
+#X msg 10 601 \; sin_array normalize \$1;
+#X obj 10 573 r s_amplitude;
+#X obj 19 229 bng 35 250 50 0 empty empty Reinitialize 0 -12 0 18 -4034
+-1 -1;
+#X obj 19 273 t b b b;
+#X msg 345 569 \; pd-circlesin vis 1;
+#X obj 10 702 drawcurve color 10 150 0 252 48 300 150 252 252 150 300
+48 252 0 151 48 48 150 0;
+#X obj 268 321 r s_startarray;
+#X obj 268 346 t b b b;
+#X obj 427 229 loadbang;
+#X text 204 203 |Graphical Patch|;
+#X msg 427 253 \; r_dotsize 10 \; r_numcycles 1 \; r_speed 10000 \;
+r_amplitude 1;
+#X text 9 7 This patch is to help students visualize the relationship
+between the circumference of the unit circle and the sin function \;
+\; Some may also be interested in techniques of incorporating data
+structure graphics into GUI \; \; There may be some bugs but the patch
+mostly runs clean \; \; -Stephen Lucas (2011);
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 3 1 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 2;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
+#X connect 7 1 1 1;
+#X connect 8 0 5 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 8 0;
+#X connect 15 1 2 0;
+#X connect 18 0 19 0;
+#X connect 19 0 9 1;
+#X connect 19 1 8 0;
+#X connect 19 2 4 0;
+#X connect 20 0 22 0;

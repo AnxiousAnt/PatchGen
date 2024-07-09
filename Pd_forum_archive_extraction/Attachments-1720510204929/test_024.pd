@@ -1,0 +1,37 @@
+#N canvas 190 294 450 300 10;
+#X obj 111 24 noise~;
+#X obj 111 56 lp6_butt~ 1000;
+#N canvas 502 326 681 534 thirdoctfilt_125_22050Hz 0;
+#X obj 440 149 switch~ 64 1 0.5;
+#X text 2 374 ------------------------------------------------------------
+;
+#X text 422 374 -------------------------;
+#X obj 156 403 outlet~;
+#X obj 156 295 *~ 2;
+#X obj 156 150 biquad~ 1.99091 -0.992174 1 0 -1;
+#X obj 156 186 biquad~ 1.99418 -0.995714 1 0 -1;
+#X obj 156 226 biquad~ 1.99536 -0.996406 1 0 -1;
+#X obj 156 270 /~ 1.6502e+07;
+#X text 2 114 ------------------------------------------------------------
+;
+#X text 422 114 -------------------------;
+#X obj 155 88 inlet~;
+#X obj 440 84 inlet;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
+#X connect 11 0 5 0;
+#X connect 12 0 0 0;
+#X restore 111 94 pd thirdoctfilt_125_22050Hz;
+#X obj 111 136 lp6_butt~ 1000;
+#X obj 111 184 dac~;
+#X obj 295 60 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 5 0 2 1;

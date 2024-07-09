@@ -1,0 +1,24 @@
+#N canvas 649 315 450 300 10;
+#X obj 58 262 dac~;
+#X obj 58 230 tabread4~ \$0-sample;
+#X obj 58 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 58 90 line~;
+#X msg 141 67 0;
+#X obj 58 44 t b b b;
+#X obj 58 145 *~;
+#X msg 58 67 1 19000;
+#X obj 58 172 *~ 848900;
+#X text 85 145 square the output of line~ for a non-linear ramp;
+#X text 121 171 multiply by the size of your array;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 3 0 6 1;
+#X connect 4 0 3 0;
+#X connect 5 0 7 0;
+#X connect 5 1 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 1 0;

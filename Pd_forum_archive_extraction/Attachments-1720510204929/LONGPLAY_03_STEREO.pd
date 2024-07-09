@@ -1,0 +1,86 @@
+#N canvas 603 65 1240 830 10;
+#X msg 122 400 0 44100;
+#X msg 123 379 44100;
+#X msg 167 336 bang;
+#X msg 121 420 44100 1000;
+#X msg 229 395 stop;
+#X obj 43 249 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 241 247 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 71 240 <-- 3) PLAY;
+#X text 277 245 <-- 4) STOP;
+#X obj -255 219 soundfiler;
+#X obj -255 168 openpanel;
+#X obj 41 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 33 -9 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 363 11 print;
+#X obj 363 -14 r print_this;
+#X text 60 -10 <-- 1) reset;
+#X text 64 152 <-- 2) load file;
+#X obj 196 15 table my_sound_file-2;
+#X obj 196 -15 table my_sound_file-1;
+#X msg -261 6 \; my_sound_file-1 resize 1 \; my_sound_file-1 resize
+1.5876e+008 \; my_sound_file-2 resize 1 \; my_sound_file-2 resize 1.5876e+008
+\; print_this TABLE RESIZE COMPLETE \;;
+#X msg -255 193 read \$1 my_sound_file-1 my_sound_file-2;
+#X msg -255 246 \; my_sound_file-1 resize \$1 \; my_sound_file-2 resize
+\$1 \; print_this DONE LOADING FILE \;;
+#X obj 102 466 tabplay~ my_sound_file-1;
+#X msg 473 408 0 44100;
+#X msg 474 387 44100;
+#X msg 508 333 bang;
+#X msg 472 428 44100 1000;
+#X msg 580 403 stop;
+#X obj 453 474 tabplay~ my_sound_file-2;
+#X obj 296 616 dac~;
+#X obj 295 584 *~;
+#X obj 294 541 clip~ -1 1;
+#X obj 294 516 hip~ 3;
+#X obj 373 584 *~;
+#X obj 381 538 clip~ -1 1;
+#X obj 381 513 hip~ 3;
+#X obj 49 569 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6350 1;
+#X obj -66 491 loadbang;
+#X obj -66 552 line;
+#X msg -66 526 0 \, 0.5 500;
+#X text 218 111 LOAD ONE STEREO SAMPLE AND PLAY IT \, THEN TRY TO LOAD
+ANOTHER - PD CRASHES. WHY ?;
+#X msg -150 609 \; pd dsp 1;
+#X connect 0 0 22 0;
+#X connect 1 0 22 0;
+#X connect 2 0 22 0;
+#X connect 3 0 22 0;
+#X connect 4 0 22 0;
+#X connect 5 0 2 0;
+#X connect 5 0 25 0;
+#X connect 6 0 4 0;
+#X connect 6 0 27 0;
+#X connect 9 0 21 0;
+#X connect 10 0 20 0;
+#X connect 11 0 10 0;
+#X connect 12 0 19 0;
+#X connect 14 0 13 0;
+#X connect 20 0 9 0;
+#X connect 22 0 32 0;
+#X connect 23 0 28 0;
+#X connect 24 0 28 0;
+#X connect 25 0 28 0;
+#X connect 26 0 28 0;
+#X connect 27 0 28 0;
+#X connect 28 0 35 0;
+#X connect 30 0 29 0;
+#X connect 31 0 30 0;
+#X connect 32 0 31 0;
+#X connect 33 0 29 1;
+#X connect 34 0 33 0;
+#X connect 35 0 34 0;
+#X connect 36 0 30 1;
+#X connect 36 0 33 1;
+#X connect 37 0 39 0;
+#X connect 37 0 41 0;
+#X connect 38 0 36 0;
+#X connect 39 0 38 0;

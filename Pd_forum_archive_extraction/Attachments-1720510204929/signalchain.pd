@@ -1,0 +1,281 @@
+#N canvas 59 -14 958 662 10;
+#X msg 514 371 0;
+#X msg 483 371 1;
+#X msg 437 372 0;
+#X msg 406 372 1;
+#X obj 35 63 osc~ 440;
+#X obj 36 588 dac~;
+#N canvas 108 178 552 343 reverb 0;
+#X obj 85 40 inlet~;
+#X obj 85 150 outlet~;
+#X text 81 187 This subpatch is empty. Put any DSP effect you like
+in here.;
+#X connect 0 0 1 0;
+#X restore 35 249 pd reverb;
+#N canvas 104 173 577 384 delay 0;
+#X obj 85 40 inlet~;
+#X obj 85 150 outlet~;
+#X text 81 187 This subpatch is empty. Put any DSP effect you like
+in here.;
+#X connect 0 0 1 0;
+#X restore 193 246 pd delay;
+#X obj 406 271 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 406 336 select 0;
+#X obj 483 336 select 1;
+#X obj 406 411 s delaytf;
+#X obj 483 412 s reverbtf;
+#X obj 406 444 r delaytf;
+#X obj 483 445 r reverbtf;
+#X obj 406 473 tgl 15 0 empty empty empty 0 -6 0 8 -62784 -1 -1 1 1
+;
+#X obj 483 473 tgl 15 0 empty empty empty 0 -6 0 8 -258699 -1 -1 0
+1;
+#X obj 209 110 r delaytf;
+#X obj 209 131 tgl 15 0 empty empty empty 0 -6 0 8 -62784 -1 -1 1 1
+;
+#X obj 210 441 r reverbtf;
+#X obj 210 464 tgl 15 0 empty empty empty 0 -6 0 8 -258699 -1 -1 0
+1;
+#X obj 52 441 r delaytf;
+#X obj 52 465 tgl 15 0 empty empty empty 0 -6 0 8 -62784 -1 -1 1 1
+;
+#X obj 51 111 r reverbtf;
+#X obj 51 131 tgl 15 0 empty empty empty 0 -6 0 8 -258699 -1 -1 0 1
+;
+#X obj 35 218 *~;
+#X obj 193 217 *~;
+#X obj 194 528 *~;
+#X obj 36 529 *~;
+#X obj 226 290 r delaytf;
+#X obj 226 312 tgl 15 0 empty empty empty 0 -6 0 8 -62784 -1 -1 1 1
+;
+#X obj 68 290 r reverbtf;
+#X obj 68 312 tgl 15 0 empty empty empty 0 -6 0 8 -258699 -1 -1 0 1
+;
+#X obj 210 395 s~ to_reverb;
+#X obj 52 395 s~ to_delay;
+#X obj 223 217 r~ to_delay;
+#X obj 64 218 r~ to_reverb;
+#X text 406 605 derek@umatic.nl;
+#X text 406 587 Riddle cracked for PD 0.37.1-devel by Derek Holzer
+;
+#X obj 36 87 *~ 0.5;
+#X obj 52 371 *~;
+#X obj 210 371 *~;
+#X text 403 212 The problem is avoided here by "seperating" these subpatches
+with [send~] and [receive~] pairs.;
+#X text 33 22 Signal Chain: using the [send~] and [receive~] objects
+to create a variable audio signal chain.;
+#X obj 51 152 pack 0 50;
+#X obj 51 173 line~;
+#X obj 209 152 pack 0 50;
+#X obj 209 173 line~;
+#X obj 52 485 pack 0 50;
+#X obj 52 506 line~;
+#X obj 210 485 pack 0 50;
+#X obj 210 506 line~;
+#X obj 68 329 pack 0 50;
+#X obj 68 350 line~;
+#X obj 226 329 pack 0 50;
+#X obj 226 350 line~;
+#X text 564 336 0 = "delay" 1st \, "reverb" 2nd (plays out left channel)
+;
+#X text 564 356 1 = "reverb" 1st \, "delay" 2nd (plays out right channel)
+;
+#X text 480 492 reverb 1st;
+#X text 403 492 delay 1st;
+#X text 60 194 Use [line~] for click-free switching!;
+#X msg 644 412 \; pd dsp 1 \;;
+#X msg 724 412 \; pd dsp 0 \;;
+#X text 459 269 <---click here to switch between "delay"-->"reverb"
+and "reverb"-->"delay". The toggles in the patch will show you the
+signal path.;
+#X text 402 79 The purpose of this patch is to explain how to set up
+a variable signal chain in PD. In this case \, one has the choice to
+put a "reverb" before or after a "delay". The subpatches "reverb" and
+"delay" are both empty \, so imagine them as being any two different
+effects in your signal chain. Simply connecting the different outlets
+and inlets together \, even with a [*~] object inbetween \, causes
+PD to give the message "DSP loop detected" and to shutdown the audio
+processing of the offending tilde objects.;
+#N canvas 161 21 747 633 wrong 0;
+#X obj 209 131 tgl 15 0 empty empty empty 0 -6 0 8 -62784 -1 -1 0 1
+;
+#X obj 210 464 tgl 15 0 empty empty empty 0 -6 0 8 -258699 -1 -1 0
+1;
+#X obj 52 465 tgl 15 0 empty empty empty 0 -6 0 8 -62784 -1 -1 0 1
+;
+#X obj 51 131 tgl 15 0 empty empty empty 0 -6 0 8 -258699 -1 -1 0 1
+;
+#X obj 35 218 *~;
+#X obj 193 217 *~;
+#X obj 194 528 *~;
+#X obj 36 529 *~;
+#X obj 226 312 tgl 15 0 empty empty empty 0 -6 0 8 -62784 -1 -1 0 1
+;
+#X obj 68 312 tgl 15 0 empty empty empty 0 -6 0 8 -258699 -1 -1 0 1
+;
+#X obj 52 371 *~;
+#X obj 210 371 *~;
+#X obj 51 152 pack 0 50;
+#X obj 51 173 line~;
+#X obj 209 152 pack 0 50;
+#X obj 209 173 line~;
+#X obj 52 485 pack 0 50;
+#X obj 52 506 line~;
+#X obj 210 485 pack 0 50;
+#X obj 210 506 line~;
+#X obj 68 329 pack 0 50;
+#X obj 68 350 line~;
+#X obj 226 329 pack 0 50;
+#X obj 226 350 line~;
+#X obj 35 63 osc~ 440;
+#X obj 36 87 *~ 0.5;
+#X obj 36 564 dac~;
+#X msg 403 325 1;
+#X msg 357 326 0;
+#X msg 326 326 1;
+#X obj 326 225 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 326 290 select 0;
+#X obj 403 290 select 1;
+#X obj 326 427 tgl 15 0 empty empty empty 0 -6 0 8 -62784 -1 -1 0 1
+;
+#X obj 403 427 tgl 15 0 empty empty empty 0 -6 0 8 -258699 -1 -1 0
+1;
+#X text 400 446 reverb 1st;
+#X text 323 446 delay 1st;
+#X obj 326 365 s wdelaytf;
+#X obj 326 398 r wdelaytf;
+#X obj 403 399 r wreverbtf;
+#X obj 403 366 s wreverbtf;
+#X obj 210 441 r wreverbtf;
+#X obj 52 441 r wdelaytf;
+#X obj 68 290 r wreverbtf;
+#X obj 226 290 r wdelaytf;
+#X obj 209 107 r wdelaytf;
+#X obj 51 111 r wreverbtf;
+#X msg 446 325 0;
+#X text 322 106 This patch does it all wrong \, without sends.;
+#X msg 403 224 \; pd dsp 1 \;;
+#X msg 483 224 \; pd dsp 0 \;;
+#N canvas 0 0 450 300 "delay-wrong" 0;
+#X obj 19 25 inlet~;
+#X obj 19 54 outlet~;
+#X text 17 83 If these two are connected in both subpatches \, then
+PD would not allow audio processing to continue \, and would give the
+error: "DSP loop detected";
+#X restore 35 248 pd "delay-wrong";
+#N canvas 0 0 450 300 "reverb-wrong" 0;
+#X obj 19 25 inlet~;
+#X obj 19 54 outlet~;
+#X text 17 83 If these two are connected in both subpatches \, then
+PD would not allow audio processing to continue \, and would give the
+error: "DSP loop detected";
+#X restore 194 248 pd "reverb-wrong";
+#X text 323 132 To see the error in your terminal window \, open the
+"delay-wrong" and "reverb-wrong" subpatches and make the connection
+inside \, then turn on signal processing.;
+#X connect 0 0 14 0;
+#X connect 1 0 18 0;
+#X connect 2 0 16 0;
+#X connect 3 0 12 0;
+#X connect 4 0 51 0;
+#X connect 5 0 52 0;
+#X connect 6 0 26 1;
+#X connect 7 0 26 0;
+#X connect 8 0 22 0;
+#X connect 9 0 20 0;
+#X connect 10 0 52 0;
+#X connect 11 0 51 0;
+#X connect 12 0 13 0;
+#X connect 13 0 4 1;
+#X connect 14 0 15 0;
+#X connect 15 0 5 1;
+#X connect 16 0 17 0;
+#X connect 17 0 7 1;
+#X connect 18 0 19 0;
+#X connect 19 0 6 1;
+#X connect 20 0 21 0;
+#X connect 21 0 10 1;
+#X connect 22 0 23 0;
+#X connect 23 0 11 1;
+#X connect 24 0 25 0;
+#X connect 25 0 4 0;
+#X connect 25 0 5 0;
+#X connect 27 0 40 0;
+#X connect 28 0 40 0;
+#X connect 29 0 37 0;
+#X connect 30 0 31 0;
+#X connect 30 0 32 0;
+#X connect 31 0 28 0;
+#X connect 31 0 29 0;
+#X connect 32 0 27 0;
+#X connect 32 0 47 0;
+#X connect 38 0 33 0;
+#X connect 39 0 34 0;
+#X connect 41 0 1 0;
+#X connect 42 0 2 0;
+#X connect 43 0 9 0;
+#X connect 44 0 8 0;
+#X connect 45 0 0 0;
+#X connect 46 0 3 0;
+#X connect 47 0 37 0;
+#X connect 51 0 7 0;
+#X connect 51 0 10 0;
+#X connect 52 0 11 0;
+#X connect 52 0 6 0;
+#X restore 405 548 pd wrong;
+#X text 472 548 To see the wrong way \, open this subpatch!;
+#X connect 0 0 11 0;
+#X connect 1 0 12 0;
+#X connect 2 0 12 0;
+#X connect 3 0 11 0;
+#X connect 4 0 39 0;
+#X connect 6 0 28 0;
+#X connect 6 0 40 0;
+#X connect 7 0 27 0;
+#X connect 7 0 41 0;
+#X connect 8 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 2 0;
+#X connect 9 0 3 0;
+#X connect 10 0 0 0;
+#X connect 10 0 1 0;
+#X connect 13 0 15 0;
+#X connect 14 0 16 0;
+#X connect 17 0 18 0;
+#X connect 18 0 46 0;
+#X connect 19 0 20 0;
+#X connect 20 0 50 0;
+#X connect 21 0 22 0;
+#X connect 22 0 48 0;
+#X connect 23 0 24 0;
+#X connect 24 0 44 0;
+#X connect 25 0 6 0;
+#X connect 26 0 7 0;
+#X connect 27 0 5 1;
+#X connect 28 0 5 0;
+#X connect 29 0 30 0;
+#X connect 30 0 54 0;
+#X connect 31 0 32 0;
+#X connect 32 0 52 0;
+#X connect 35 0 7 0;
+#X connect 36 0 6 0;
+#X connect 39 0 25 0;
+#X connect 39 0 26 0;
+#X connect 40 0 34 0;
+#X connect 41 0 33 0;
+#X connect 44 0 45 0;
+#X connect 45 0 25 1;
+#X connect 46 0 47 0;
+#X connect 47 0 26 1;
+#X connect 48 0 49 0;
+#X connect 49 0 28 1;
+#X connect 50 0 51 0;
+#X connect 51 0 27 1;
+#X connect 52 0 53 0;
+#X connect 53 0 40 1;
+#X connect 54 0 55 0;
+#X connect 55 0 41 1;

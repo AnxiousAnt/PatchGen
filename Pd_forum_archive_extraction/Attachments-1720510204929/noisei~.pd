@@ -1,0 +1,74 @@
+#N canvas 304 100 709 415 10;
+#X obj 77 210 -~;
+#X obj 77 286 outlet~;
+#X obj 77 247 *~;
+#N canvas 501 353 483 351 \$0-readme 0;
+#X text 15 15 noisei~ is a good approximation of a linear interpolating
+random signal generator \, similar to csound's randi or supercollider's
+LFNoise1.;
+#X text 17 240 inlet - frequency of random value update \; can be float
+or signal;
+#X text 17 223 creation argument - initial frequency of random value
+update;
+#X text 15 56 It uses a sample-and-hold noise like the noiseh~ abstraction
+\, but uses a copy of itself delayed by one sample (using rzero_rev~)
+\, which then is sample-and-held at the same rate \, giving the held
+values of the last period over the course of the current period. Finding
+the sample difference between the current period's values and the last
+period's values gives the range for interpolation. Multiplying by the
+phasor~ signal draws lines from zero to that range \, and adding it
+to the delayed copy effects the linear interpolation from the past
+period's values to the current period's values.;
+#X restore 77 313 pd \$0-readme;
+#X obj 76 153 samphold~;
+#X obj 76 129 noise~;
+#X obj 263 137 phasor~;
+#X obj 263 60 inlet~;
+#X obj 263 83 inletinit~ \$1;
+#X obj 94 178 rzero_rev~ 0;
+#X obj 203 194 samphold~;
+#X text 326 140 <- initial sample-and-hold;
+#X text 275 177 <- delay by one sample to get past phasor~ period value
+;
+#X text 275 197 <- sample and hold this value \, and find the difference
+;
+#X text 176 242 <- linearly interpolate from zero to the difference
+;
+#X text 177 270 <- add the lines to the delayed value to finish the
+interpolation from past to current.;
+#X obj 263 108 max~ 0;
+#X text 323 111 <- limit to >0;
+#X obj 203 15 loadbang;
+#X msg 203 108 set \$1;
+#X msg 18 103 set \$1;
+#X obj 18 32 random 65536;
+#X obj 203 37 random 65536;
+#X obj 18 55 - 32768;
+#X obj 18 78 / 32768;
+#X obj 203 60 - 32768;
+#X obj 203 83 / 32768;
+#X text 287 15 <- initialize with a 16-bit value;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 4 0 9 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 1;
+#X connect 6 0 10 1;
+#X connect 6 0 2 1;
+#X connect 7 0 8 0;
+#X connect 8 0 16 0;
+#X connect 9 0 10 0;
+#X connect 10 0 1 0;
+#X connect 10 0 0 1;
+#X connect 16 0 6 0;
+#X connect 18 0 21 0;
+#X connect 18 0 22 0;
+#X connect 19 0 10 0;
+#X connect 20 0 4 0;
+#X connect 21 0 23 0;
+#X connect 22 0 25 0;
+#X connect 23 0 24 0;
+#X connect 24 0 20 0;
+#X connect 25 0 26 0;
+#X connect 26 0 19 0;

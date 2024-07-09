@@ -1,0 +1,18 @@
+#N canvas 431 295 450 300 10;
+#X msg 161 133 set \$1;
+#X obj 161 108 list tosymbol;
+#X msg 95 131 34;
+#X msg 95 184 \\\$1;
+#X obj 95 227 print;
+#X obj 95 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 95 47 t b b;
+#X msg 161 81 list 36 49;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 6 1 7 0;
+#X connect 7 0 1 0;

@@ -1,0 +1,35 @@
+#N canvas 139 343 898 450 10;
+#X obj 88 18 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 89 44 openpanel;
+#X obj 296 301 ezdac~;
+#X obj 89 95 soundfiler;
+#X obj 514 60 table left;
+#X obj 516 80 table right;
+#X msg 89 67 read -resize \$1 left right;
+#X obj 414 160 tabplay~ left;
+#X obj 402 120 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 471 132 spigot;
+#X obj 510 110 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 475 203 spigot;
+#X obj 417 232 tabplay~ right;
+#X obj 327 264 mbeq2~;
+#X msg 168 41 ./test2.wav;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 6 0 3 0;
+#X connect 7 0 13 0;
+#X connect 7 1 9 0;
+#X connect 8 0 7 0;
+#X connect 8 0 12 0;
+#X connect 9 0 7 0;
+#X connect 10 0 9 1;
+#X connect 10 0 11 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 1;
+#X connect 12 1 11 0;
+#X connect 13 0 2 0;
+#X connect 13 1 2 1;
+#X connect 14 0 6 0;

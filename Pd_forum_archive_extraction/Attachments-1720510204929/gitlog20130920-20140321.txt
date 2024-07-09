@@ -1,0 +1,110 @@
+*added installer for disis_spi and disis_gpio
+*reorganized new struct documentation
+*cosmetic improvements to the new preferences dialog
+*improved installer to avoid install of Gem libraries when doing incremental install (should significantly shorten incremental installs)
+*added raspberry pi shortcuts to the K12 module
+*more clean-up, added help files for raspberry pi K12 objects
+*fixed hang bug due to multithreaded nature of disis_gpio
+*cleaned up and debugged abstractions for rpi k12
+*updated help file
+*added new K12 files
+*improved installer
+*converted SVG rotation to degrees
+*fixes to the selection rectangle to conform with tkpath
+*removed stale file and updated tar_em_up.sh script to also build raspberry pi externals
+*fixed infinite recursion in the scalar-help.pd
+*code clean-up and enabling bunch of debugging to hunt down the infinite recursion in the scalar-help.pd (select the left object and observe your own aging process)
+*arrays are not transformable
+*cannot create two structs on the same canvas (otherwise how would you know which one you are talking to)?
+*fixed regression where arbitrary font sizes were not honored by the drawsymbols and drawnumbers
+*other minor clean-ups
+*adjusted help file to reflect the new approach to font sizes
+*aesthetic improvements of source files (courtesy of Jonathan Wilkes)
+*"fix" for scalar array not displacing the actual array
+*fixed regression where k12 signal cords were not blue any more
+*fixed improper scaling of scalars inside the gop-enabled subpatches
+*fixed findrtext consistency check error with 2+ level embedded gop scalars (may need further testing for regressions)
+*first step at cleaning up nested-gop bug (still need to work on scaling the objects to properly fit nested gop xy range)
+*Jonathan's refactoring/cleanup of g_template.c
+*more optimizations for getscroll logic
+*fixed scrolling algorithm for scalars, improved scrolling logic to avoid unnecessary updates, made scrollbars wider (easier to click) and less transparent
+*cleaned up abstractions to make them better conform the l2ork layout
+*Jonathan's clean-up of the g_canvas.c
+*Jonathan's refactored sources to make them consistent/legible
+*implemented improved version of the g_scalar parsing of owner glist to adopt proper repositioning of scalars.
+*stray fixes for the segfault during free when using maximum number of arguments.
+*added dynamic getscroll call whenever a scalar is altered to ensure proper updating of the srollbars
+*fixed double-duty bug where one had an infinite recursion within structs.
+*fixed segfault (affects all flavors) where creating an expr object with more than MAX_VARS variables (currently set to 9) crashed pd when freeing the object. Example: create [expr 1;2;3;4;5;6;7;8;9;10] as opposed to [expr 1;2;3;4;5;6;7;8;9]. Former crashes when being freed (destroyed), while latter doesn't.
+*Jonathan Wilkes' implementation of scalar bbox caching to improve performance
+*another regression fix from Jonathan Wilkes
+*additional improvements and fixes for regressions introduced in the last mega-patch by Jonathan Wilkes
+*added work-in-progress expansion for the svg-based scalars by Jonathan Wilkes
+*made T_TEXT filtering more robust
+*fixed segfault regression in 4.datatructures/05.array.pd example where clicking on the scalar array in a subpatch would cause a segfault
+*experimental: disabled flow control as per http://article.gmane.org/gmane.comp.multimedia.puredata.general/24447
+*made mouse click logic ignore comments at runtime to allow clicks to be sent to proper objects that may be under the comments
+*made array/graph dialog appearance a bit more streamlined.
+*fixed bug where with JOC enabled in subpatch this only works for the bbox of the array, not the entire window
+*made intelligent offset to various forms of array representations so that scrubbing with mouse accurately applies to closest points
+*disabled drawing of a GOP rectangle inside GOP array window
+*disabled ability to insert objects inside a subpatch with an array
+*added Jonathan's fix for improper scope of the new color variable
+*removed unnecessary flicker of the cursor when hovering over jump-on-click-enabled array inside GOP
+*fixed arrays not being displayed properly
+*added Jonathan's revision of the array properties and options with fixed font sizes and other minor fixes. LINGERING PROBLEM: array does not redraw (only after apply does it re-appear). Likely shouldvis problem.
+*added Jonathan's new preferences dialog (needs further testing)
+*added undo checkpoint when creating a graph object from the put menu
+*fixed a bug where scalar is not deselected in a subpatch after being pasted
+*fixed improper paste location for scalars due to incorrect casting of t_scalar to t_text to retrieve its x and y positions
+*fixed incorrect getrect when selecting a plot with scalars at each point (see setsize-help.pd). This was a regression from an earlier "fix" (see https://github.com/pd-l2ork/pd/commit/f0916f85a11894a43067d5b07ae5f8eea2b2c1b9#diff-5ff2b78bd60b3b9c36db43b8d5f5c168). The latest code does not exhibit the said problem so this should be all ok.
+*fixed embedded scalars at each plot point not being selected for displacement with tag due to clumsy way of labeling them. This is achieved by adding scalar arg to the parentvisfn which also alters g_canvas.h spec but also makes things more streamlined.
+*Ported open_via_helppath from pd to fix inability to open help files when starting pd-l2ork from the doc/5.reference folder.
+*clarified -c and -d flags in the help prompt
+*added building of the static wiringPi lib
+*added git pull for wiringPi lib
+*cleaned-up gpio external dependencies and supporting build script. made disis_gpio external into a comprehensive object for all things gpio, including pwm (both hardware and software) with sarcduino-like formatting and verbose output. The external requires sudo due to required access to /dev/mem and /sys/class/gpio
+*forced array graphs to keep GOP/hidetext under all circumstances (later update properties window so that the GUI reflects this rather than printing info in the console)
+*removed unnecessary logic for keeping carriage returns to avoid having an empty line at the top of the console after clearing console
+*forced hidetext on all gop arrays to make its resizing sane. Later update properties to reflect lack of this option.
+*improved proper detection of the topmost object without the redundant gobj_click calls
+*Addendum to the earlier segfault fix which was incomplete
+*made array gop windows hide their text by default (since they are not visible anyhow).
+*fixed segfault when trying to create an object inside an array GOP due to incorrect check whether the object is an array in shouldvis function that is being called as part of gobj_vis to optimize (re)drawing
+*corrected array name font size to match the rest of the patch
+*made GOP aware of minimum size when having an array embedded inside it
+*corrected color for the comment resize line at creation time
+*added ability for comments to be navigated by rows (using up/down), as opposed to home/end which takes you to the beginning/end, or ctrl+left/right which takes you to the next space
+*backported comment resize marker, updated it to support pd-l2ork and selection colors, added fix to the resizable objects to support abstractions and subcanvases.
+*added dynamic switching of the edit menu buttons
+*fixed failure to reposition after applying dialog settings
+*added preset ability for wii_nunchuk_buttons.pd abstraction
+*fixed bug where label handle did not properly get tagged and did not move with the object.
+*updated default control file template
+*added drawimage and drawsprite objects by Jonathan Wilkes, incuding filledopacity option.
+*added forward mess patch by Jonathan Wilkes that enhances in-patch interaction (think: prancing ponies patch demo)
+*fixed regression in the search plugin due to use of negative (universal) font sizes.
+*more cosmetic fixes to the search_plugin.tcl
+*added updated help files for pdinfo, classinfo, and canvasinfo (by Jonathan Wilkes), merged patch by Jonathan Wilkes for the search-plugin.tcl with additional enhancements for tab/focus.
+*added Jonathan Wilkes' search plugin with some cosmetic/usability changes to the search window.
+*Added Jonathan Wilkes' patch for improved classinfo, canvasinfo, and pdinfo objects.
+*reapplied Albert Graef's patch due to wrong patch being applied for the delayed unbind. Still have to work on ensuring that there are no memory leaks in unique cases where an object unbinds a different bindlist when receiving a message to do so on another (faust being an example of this).
+*cosmetic and operational fixes to K12 objects
+*fixed cursor inconsistently failing to reflect topmost clickable object while ignoring non-clickable objects that are above topmost clickable object, both on main canvas and inside gop objects.
+*fixed long-standing bug where on GOP objects click registered on the first detected object, rather than the one that was visually topmost
+*fixed regression in image
+*fixed cut/copy/paste regression with the text due to autorepeat filtering implementation
+*added sys_queuegui to all vanilla iemgui objects to optimize drawing
+*added entry point for antialiasing control
+*simplified selection logic due to callback requirement from tcl/tk
+*added ability for optional argument in the log~ object and updated the doc accordingly.
+*further cleaned-up ggee/image selection logic (now the selection does not incorrectly pick up on the parent GOP selection, so that when opening subpatcher it does not show up as selected
+*fixed regression inside image where selection box showed up erroneously on the parent window
+*improved ggee/image to have a default empty image and ensured that its layer ordering is preserved after loading a new image. Finally, made a check for valid images--if invalid format, the image reverts to default empty image included in the ggee.
+*Merge pull request #4 from agraef/master
+*Fix incompatible behavior in route.
+*Pull latest s_midi_alsa.c from mainstream Pd. Removes autoconnect misfeature.
+*another fix to improper formatting of pdtk_tip messages
+*further refined cursor behavior when resizing text/gop objects.
+*fixed incomplete install of includes and Gem externals
+*updated GEM version query

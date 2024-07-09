@@ -1,0 +1,13 @@
+#N canvas 263 244 450 300 10;
+#X obj 24 41 iemguts/initbang;
+#X obj 26 106 print;
+#X msg 25 80 abstraction loaded!;
+#N canvas 645 129 450 300 sub 1;
+#X obj 25 109 print;
+#X msg 24 74 subpatch loaded!;
+#X obj 23 39 iemguts/initbang;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X restore 26 137 pd sub;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

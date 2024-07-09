@@ -1,0 +1,35 @@
+#N canvas 0 0 695 499 10;
+#X text 106 232 $f1 = x \; $f2 = standard deviation \; $f3 = mean;
+#X msg 420 212 0;
+#X obj 461 212 metro 2;
+#X obj 534 239 + 1;
+#X obj 461 190 inlet draw curve (bang);
+#X obj 551 268 select 512;
+#X obj 454 239 float;
+#X msg 613 294 0;
+#X obj 100 336 expr (1 / ($f2 * (sqrt(8 * atan(1))))) * (exp(-1 * (pow(($f1
+- $f3) \, 2)) / (2 * (pow($f2 \, 2)))));
+#X obj 272 314 expr sqrt($f1);
+#X obj 101 373 * 100;
+#X obj 330 422 tabwrite \$1;
+#X obj 272 292 inlet variance(~2048);
+#X obj 502 310 inlet mean(~256);
+#X text 209 104 Draws a gaussian curve (Tabsize 512). First argument
+gives table name. Variance and mean must be set first.;
+#X connect 1 0 6 1;
+#X connect 2 0 6 0;
+#X connect 3 0 6 1;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 5 0 1 0;
+#X connect 5 0 7 0;
+#X connect 6 0 3 0;
+#X connect 6 0 5 0;
+#X connect 6 0 8 0;
+#X connect 6 0 11 0;
+#X connect 7 0 2 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 1;
+#X connect 10 0 11 1;
+#X connect 12 0 9 0;
+#X connect 13 0 8 2;

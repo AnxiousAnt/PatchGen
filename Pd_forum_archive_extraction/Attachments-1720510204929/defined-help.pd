@@ -1,0 +1,29 @@
+#N canvas 759 389 450 300 10;
+#X obj 50 112 defined;
+#X floatatom 50 134 5 0 0 0 - - -;
+#X obj 77 41 loadbang;
+#X obj 103 114 defined 0;
+#X obj 176 120 defined syms;
+#X floatatom 176 142 5 0 0 0 - - -;
+#X floatatom 103 136 5 0 0 0 - - -;
+#X text 17 221 whether or not argument \$1 is non-zero or a defined
+symbol;
+#X obj 286 76 defined 1;
+#X obj 308 101 defined 1;
+#X obj 285 38 t b b;
+#X obj 287 8 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 290 147 &&;
+#X obj 290 169 print;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 1;
+#X connect 10 0 8 0;
+#X connect 10 1 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;

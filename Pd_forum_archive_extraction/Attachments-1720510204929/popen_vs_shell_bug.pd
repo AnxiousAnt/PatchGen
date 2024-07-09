@@ -1,0 +1,18 @@
+#N canvas 370 140 665 462 10;
+#X obj 68 81 shell;
+#X obj 65 212 popen;
+#X obj 68 109 print shl;
+#X obj 65 250 print ppn;
+#X text 192 136 -versus-;
+#X msg 68 43 cd /usr/lib/pd/extra && ls -al > ~/Desktop/footoo.txt
+;
+#X msg 65 179 cd /usr/lib/pd/extra && ls -al > ~/Desktop/footoo.txt
+;
+#X text 174 220 [popen] crashes Pd when trying to write a text file
+to disk;
+#X text 163 78 [shell] seems to be able to write a text file to ~/Desktop
+;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 1 0;

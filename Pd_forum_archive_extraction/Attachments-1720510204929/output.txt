@@ -1,0 +1,19 @@
+cc  -Wl,-export_dynamic  -shared -o "/home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/abs.pd_linux" "/home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/abs.o"  -lm -lc \
+                `test -f /home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/abs.libs && cat /home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/abs.libs`        \
+                `test -f /home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/../linux/abs.libs && \
+                        cat /home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/../linux/abs.libs`
+chmod a-x "/home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/abs.pd_linux"
+strip --strip-unneeded -R .note -R .comment /home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/abs.pd_linux
+rm -f -- /home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/abs.o
+cc -DPD -O3 -funroll-loops -fomit-frame-pointer -I/home/bastien/pure-data/packages/linux_make/../../pd/src -Wall -W -DUNIX -Dunix -fPIC -o "/home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/bdiag.o" -c "/home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/bdiag.c"
+/home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/bdiag.c:30:25: error: extlib_util.h: No such file or directory
+/home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/bdiag.c: In function ‘bdiag_perform’:
+/home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/bdiag.c:175: warning: implicit declaration of function ‘IS_DENORMAL’
+/home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/bdiag.c: In function ‘bdiag_new’:
+/home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/bdiag.c:237: warning: unused parameter ‘permute’
+make[2]: *** [/home/bastien/pure-data/packages/linux_make/../../externals/creb/modules/bdiag.o] Error 1
+make[2]: Leaving directory `/home/bastien/pure-data/externals'
+make[1]: *** [externals_install] Error 2
+make[1]: Leaving directory `/home/bastien/pure-data/packages'
+make: *** [install] Error 2
+

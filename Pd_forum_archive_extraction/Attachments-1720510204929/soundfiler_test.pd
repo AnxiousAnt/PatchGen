@@ -1,0 +1,12 @@
+#N canvas 408 363 450 300 10;
+#X obj 120 50 openpanel;
+#X obj 120 25 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 120 70 read -resize \$1 file0;
+#X obj 231 155 table file0;
+#X obj 120 155 soundfiler;
+#X msg 189 117 read -resize voice48khz.wav file0;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 5 0 4 0;

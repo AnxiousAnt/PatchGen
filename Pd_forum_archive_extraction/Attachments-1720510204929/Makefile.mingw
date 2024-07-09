@@ -1,0 +1,29 @@
+PDPATH = /home/pat/pd
+
+
+clean: ; rm -f *.pd_* *.o *.dll
+
+
+	
+# ----------------------- MINGW-----------------------
+
+
+pd_msys: partconv~.dll
+
+.SUFFIXES: .dll
+
+
+
+WININCLUDE =  -I.. -I../include -I$(PDPATH)/src
+ 
+WINCFLAGS = -Wall -W -Wshadow -Wstrict-prototypes -DPD -DNT -W3 -WX -Werror -Wno-unused -mms-bitfields -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer
+	
+LDFLAGS = -shared
+
+.c.dll:
+	gcc -mms-bitfields $(WINCFLAGS) $(WININCLUDE) -o $*.o -c $*.c
+	gcc $(LDFLAGS) -o $*.dll $*.o $(PDPATH)/bin/pd.dll -l fftw3f	
+	strip --strip-unneeded $*.dll
+	rm -f $*.o
+	
+

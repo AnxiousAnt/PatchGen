@@ -1,0 +1,16 @@
+#N canvas 377 312 597 304 10;
+#X obj 65 244 gripd;
+#X obj 65 114 del 200;
+#X obj 65 67 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 93 65 load;
+#X text 289 200 <- set your path to .gpd;
+#X text 320 158 <- set your path to gripd;
+#X obj 137 66 loadbang;
+#X msg 123 161 set_path C:/pd/gripd;
+#X msg 65 200 open C:/pd/gripd/gui.gpd;
+#X connect 1 0 8 0;
+#X connect 2 0 7 0;
+#X connect 2 0 1 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;

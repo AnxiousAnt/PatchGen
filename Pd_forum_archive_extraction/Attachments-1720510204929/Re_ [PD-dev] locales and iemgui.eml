@@ -1,0 +1,96 @@
+X-Mozilla-Keys: 
+Message-ID: <4962CE34.4020909@free.fr>
+Date: Tue, 06 Jan 2009 04:21:24 +0100
+From: "ydegoyon@free.fr" <ydegoyon@free.fr>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.17) Gecko/20080829 SeaMonkey/1.1.12 (Ubuntu-1.1.12+nobinonly-0ubuntu0.8.04.1)
+MIME-Version: 1.0
+To: Hans-Christoph Steiner <hans@eds.org>
+Subject: Re: [PD-dev] locales and iemgui
+References: <DFE878AF-50D8-49D3-AD42-3AF2A64117E1@eds.org>
+In-Reply-To: <DFE878AF-50D8-49D3-AD42-3AF2A64117E1@eds.org>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+
+i don't know what you're talking about since years,
+if you want to know my opinion
+
+are these just fancy options that will never come
+to life again ?
+i absolutely do not believe in automatic patching,
+iemgui was proven to be the only thing useful around,
+and of course, people blame it now...
+
+desire data was never released properly
+and sorry to step in,
+but think twice beyond the you-tube videos
+
+my two egyptian pounds
+( wtf with colonialism ? )
+
+sevy
+
+
+Hans-Christoph Steiner wrote:
+> Hey Chun, all,
+>
+> I am thinking that for adding locales to pd-devel, we should leave  
+> iemgui out of it.  It is very messy code that has a lot of legacy use,  
+> so that the iemgui stuff would need to have full backwards  
+> compatibility.  Instead, I think we should build a new GUI library  
+> that includes locale support.  In the process we could make a locale  
+> API for people who want to write their own GUI objects and include  
+> translations.  I have almost the whole framework for such a library  
+> finished, its called 'tkwidgets'.
+>
+> Perhaps it makes sense to use the standard .po file format for  
+> locales, its pretty simple and would be easy to parse in Tcl.  I  
+> imagine there are tools for working with .po files, so then we could  
+> use those.  Then init_locale() could read the .po into a hashtable,  
+> i.e. $hashtable($key).  My guess is that a big hashtable would be  
+> faster than the current say() procedure, but I could be wrong.
+>
+> Or maybe a locale namespace makes more sense, it would just be lots of  
+> variable names, something like:
+>
+> namespace eval ::pd_locale:: {
+> 	variable file_new
+> 	variable file_open
+> 	variable file_save
+> 	variable file_saveas
+> ...
+> 	variable edit_undo
+> 	variable edit_redo
+> 	variable edit_cut
+> 	variable edit_copy
+> ...
+> 	variable put_object
+> 	variable put_message
+> 	variable put_numberbox
+> 	variable put_symbolbox
+> 	variable put_comment
+> ...
+> }
+>
+> Then to use them:
+>
+> $rootmenu add command -label $::pd_locale::file_new -accelerator  
+> "$accelerator+N"
+> $rootmenu add command -label $::pd_locale::file_open -accelerator  
+> "$accelerator+O"
+> $rootmenu add command -label $::pd_locale::file_save -accelerator  
+> "$accelerator+S"
+>
+> But I suppose it might make more sense to programmatically declare the  
+> 'variable's.
+>
+> .hc
+>
+> _______________________________________________
+> Pd-dev mailing list
+> Pd-dev@iem.at
+> http://lists.puredata.info/listinfo/pd-dev
+>
+>
+>   
+
+

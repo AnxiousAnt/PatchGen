@@ -1,0 +1,62 @@
+#N canvas 608 436 902 481 10;
+#X obj 101 396 cnv 15 69 16 empty empty 69x16 2 12 0 9 -128992 -66577
+0;
+#X obj 101 365 cnv 15 78 20 empty empty 78x20 2 12 0 9 -128992 -66577
+0;
+#X text 20 335 Pd-0.39.2-extended-test7;
+#X text 423 335 Pd-0.39-2;
+#X obj 421 397 cnv 15 70 17 empty empty 70x17 2 12 0 9 -128992 -66577
+0;
+#X text 21 399 Mac OS X;
+#X text 20 367 Windows;
+#X text 21 427 GNU/Linux;
+#X obj 521 397 cnv 15 70 17 empty empty 70x17 2 12 0 9 -128992 -66577
+0;
+#X text 523 334 Pd-0.40-2;
+#X obj 621 397 cnv 15 60 15 empty empty 60x15 2 12 0 9 -128992 -66577
+0;
+#X text 613 334 Pd-devel 0.39-1test1;
+#X obj 79 164 cnv 15 100 60 empty empty courier10 20 12 0 10 -233017
+-66577 0;
+#X obj 419 235 cnv 15 100 60 empty empty courier12 20 12 0 12 -233017
+-66577 0;
+#X msg 437 239 courier10;
+#X obj 79 235 cnv 15 100 60 empty empty courier12 20 12 0 12 -233017
+-66577 0;
+#X text 441 263 Mac OS X;
+#X obj 79 24 cnv 15 100 60 empty empty courier6 20 12 0 6 -233017 -66577
+0;
+#X obj 419 24 cnv 15 100 60 empty empty courier6 20 12 0 6 -233017
+-66577 0;
+#X msg 438 28 courier10;
+#X text 424 57 Windows/0.40-2;
+#X obj 79 94 cnv 15 100 60 empty empty courier9 20 12 0 9 -233017 -66577
+0;
+#X obj 419 94 cnv 15 100 60 empty empty courier9 20 12 0 9 -233017
+-66577 0;
+#X msg 439 96 courier10;
+#X text 424 127 Windows/0.39.2-extended-test7;
+#X obj 421 367 cnv 15 60 17 empty empty 60x17 2 12 0 9 -128992 -66577
+0;
+#X obj 521 367 cnv 15 60 17 empty empty 60x17 2 12 0 9 -128992 -66577
+0;
+#X obj 101 426 cnv 15 87 19 empty empty 87x19 2 12 0 9 -128992 -66577
+0;
+#X text 17 314 these represent the size of this message box:;
+#X msg 336 313 courier10;
+#X text 375 2 the fonts line up on these platforms:;
+#X text 8 3 actual font points used on various platforms:;
+#X obj 419 164 cnv 15 100 60 empty empty courier10 20 12 0 10 -233017
+-66577 0;
+#X msg 436 170 courier10;
+#X text 446 208 (closest);
+#X text 439 67 (closest);
+#X obj 264 426 cnv 15 60 18 empty empty 60x18 2 12 0 9 -128992 -66577
+0;
+#X obj 264 396 cnv 15 60 18 empty empty 60x18 2 12 0 9 -128992 -66577
+0;
+#X text 231 335 Pd-0.39.2-extended-RC1;
+#X obj 781 397 cnv 15 71 16 empty empty 71x16 2 12 0 9 -128992 -66577
+0;
+#X text 423 194 Mac OS X/Pd-0.41.0;
+#X text 783 334 Pd-0.41.0;

@@ -1,0 +1,795 @@
+dpkg-shlibdeps: warning: binaries to analyze should already be installed in their package's directory.
+dpkg-shlibdeps: warning: binaries to analyze should already be installed in their package's directory.
+dpkg-shlibdeps: warning: dependency on libgcc_s.so.1 could be avoided if "/home/rolfm/pd-extended-farm/packages/linux_make/build/usr/bin/pd /home/rolfm/pd-extended-farm/packages/linux_make/build/usr/lib/pd-extended/bin/pd" were not uselessly linked against it (they use none of its symbols).
+dpkg-shlibdeps: warning: dependency on libstdc++.so.6 could be avoided if "/home/rolfm/pd-extended-farm/packages/linux_make/build/usr/bin/pd /home/rolfm/pd-extended-farm/packages/linux_make/build/usr/lib/pd-extended/bin/pd" were not uselessly linked against it (they use none of its symbols).
+dpkg-shlibdeps: warning: dependency on librt.so.1 could be avoided if "/home/rolfm/pd-extended-farm/packages/linux_make/build/usr/bin/pd /home/rolfm/pd-extended-farm/packages/linux_make/build/usr/lib/pd-extended/bin/pd" were not uselessly linked against it (they use none of its symbols).
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4/generated -I m4
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --install --copy --force
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: configure.ac: not using Autoheader
+autoreconf: running: automake --add-missing --copy --force-missing
+autoreconf: Leaving directory `.'
+g_readwrite.c: In function ‘canvas_readerror’:
+g_readwrite.c:47: warning: format not a string literal and no format arguments
+s_main.c: In function ‘sys_findprogdir’:
+s_main.c:517: warning: ignoring return value of ‘getcwd’, declared with attribute warn_unused_result
+s_inter.c: In function ‘socketreceiver_doread’:
+s_inter.c:443: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result
+s_inter.c:444: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result
+s_file.c: In function ‘sys_initsavepreferences’:
+s_file.c:142: warning: format not a string literal and no format arguments
+e_gfxstub.c: In function ‘gfxstub_new’:
+e_gfxstub.c:60: warning: format ‘%x’ expects type ‘unsigned int’, but argument 2 has type ‘const char *’
+s_audio_jack.c: In function ‘jack_open_audio’:
+s_audio_jack.c:301: warning: ‘jack_client_new’ is deprecated (declared at /usr/include/jack/jack.h:105)
+s_audio_oss.c: In function ‘oss_open_audio’:
+s_audio_oss.c:465: warning: ignoring return value of ‘read’, declared with attribute warn_unused_result
+s_audio_oss.c:478: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result
+/home/rolfm/pd-extended-farm/externals/grh/adaptive/src/lms2~.c: In function ‘lms2_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/grh/adaptive/src/lms2~.c:246: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/grh/adaptive/src/lms~.c: In function ‘lms_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/grh/adaptive/src/lms~.c:219: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/grh/adaptive/src/nlms2~.c: In function ‘nlms2_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/grh/adaptive/src/nlms2~.c:269: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/grh/adaptive/src/nlms3~.c: In function ‘nlms3_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/grh/adaptive/src/nlms3~.c:325: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/grh/adaptive/src/nlms~.c: In function ‘nlms_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/grh/adaptive/src/nlms~.c:243: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/biquad_freq_resp.c: In function ‘biquad_freq_resp_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/biquad_freq_resp.c:55: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/f2note.c: In function ‘f2note_free’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/f2note.c:171: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/filter~.c: In function ‘filter_tilde_sp_dummy’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/filter~.c:110: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/filter~.c: In function ‘filter_tilde_dp_dummy’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/filter~.c:115: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/filter~.c: In function ‘filter_tilde_set’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/filter~.c:1128: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/filter~.c: In function ‘filter_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/filter~.c:1238: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/for++.c: In function ‘forpp_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/for++.c:132: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/for++.c: In function ‘forpp_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/for++.c:144: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/hml_shelf~.c: In function ‘hml_shelf_tilde_set’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/hml_shelf~.c:428: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/hml_shelf~.c: In function ‘hml_shelf_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/hml_shelf~.c:465: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/iem_cot4~.c: In function ‘iem_cot4_tilde_maketable’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/iem_cot4~.c:130: warning: unused variable ‘fff’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/iem_delay~.c: In function ‘iem_delay_tilde_dsp’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/iem_delay~.c:114: warning: unused variable ‘i’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/iem_sqrt4~.c: In function ‘iem_sqrt4_tilde_dsp’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/iem_sqrt4~.c:60: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/lp1_t~.c: In function ‘lp1_t_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/lp1_t~.c:170: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/para_bp2~.c: In function ‘para_bp2_tilde_set’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/para_bp2~.c:289: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/para_bp2~.c: In function ‘para_bp2_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/para_bp2~.c:338: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/prvu~.c: In function ‘prvu_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/prvu~.c:216: warning: unused variable ‘i’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/prvu~.c:215: warning: unused variable ‘t’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/pvu~.c: In function ‘pvu_tilde_tick’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/pvu~.c:120: warning: unused variable ‘i’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/pvu~.c: In function ‘pvu_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/pvu~.c:151: warning: unused variable ‘t’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/soundfile_info.c: In function ‘soundfile_info_read’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/soundfile_info.c:79: warning: suggest parentheses around ‘&&’ within ‘||’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/soundfile_info.c:69: warning: unused variable ‘at’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/sparse_FIR~.c: In function ‘sparse_FIR_tilde_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/sparse_FIR~.c:136: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/sparse_FIR~.c: In function ‘sparse_FIR_tilde_matrix’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/sparse_FIR~.c:174: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/vcf_filter~.c: In function ‘vcf_filter_tilde_set’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib1/src/vcf_filter~.c:303: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/add2_comma.c: In function ‘add2_comma_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/add2_comma.c:57: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/bpe.c: In function ‘bpe_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/bpe.c:72: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/exp_inc.c: In function ‘exp_inc_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/exp_inc.c:80: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/exp_inc.c: In function ‘exp_inc_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/exp_inc.c:93: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/float24.c: In function ‘float24_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/float24.c:54: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/float24.c: In function ‘float24_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/float24.c:61: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_alisttosym.c: In function ‘iem_alisttosym_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_alisttosym.c:22: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_alisttosym.c: In function ‘iem_alisttosym_free’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_alisttosym.c:48: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_alisttosym.c: At top level:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_alisttosym.c:48: warning: ‘iem_alisttosym_free’ defined but not used
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_anything.c: In function ‘iem_anything_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_anything.c:92: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_append.c: In function ‘iem_append_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_append.c:151: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_append.c: In function ‘iem_append_proxy_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_append.c:220: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_append.c: In function ‘iem_append_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_append.c:262: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_blocksize~.c: In function ‘iem_blocksize_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_blocksize~.c:33: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_i_route.c: In function ‘iem_i_route_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_i_route.c:26: warning: unused parameter ‘sel’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_i_route.c: In function ‘iem_i_route_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_i_route.c:69: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c: In function ‘iem_pbank_csv_write’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:79: warning: suggest parentheses around ‘&&’ within ‘||’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:64: warning: unused variable ‘org_size’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:64: warning: unused variable ‘max’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:64: warning: unused variable ‘state’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:63: warning: unused variable ‘size’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:62: warning: unused variable ‘string’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c: In function ‘iem_pbank_csv_text2atom’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:191: warning: unused variable ‘type’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c: In function ‘iem_pbank_csv_read’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:398: warning: suggest parentheses around ‘&&’ within ‘||’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:383: warning: unused variable ‘max’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:382: warning: unused variable ‘size’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c: In function ‘iem_pbank_csv_recall’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:783: warning: unused variable ‘n’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:781: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c: In function ‘iem_pbank_csv_store’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:826: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c: In function ‘iem_pbank_csv_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:850: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c: In function ‘iem_pbank_csv_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:893: warning: unused variable ‘i’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:893: warning: unused variable ‘nrpp’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:890: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c: At top level:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_pbank_csv.c:321: warning: ‘iem_pbank_csv_debug’ defined but not used
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_prepend.c: In function ‘iem_prepend_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_prepend.c:81: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_prepend.c: In function ‘iem_prepend_proxy_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_prepend.c:151: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_prepend.c: In function ‘iem_prepend_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_prepend.c:189: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_receive.c: In function ‘iem_receive_clear’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_receive.c:34: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_receive.c:34: warning: unused parameter ‘ac’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_receive.c:34: warning: unused parameter ‘av’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_receive.c: In function ‘iem_receive_set’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_receive.c:43: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_receive.c: In function ‘iem_receive_proxy_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_receive.c:99: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_receive.c: In function ‘iem_receive_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_receive.c:125: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_route.c: In function ‘iem_route_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_route.c:68: warning: unused parameter ‘sel’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_route.c: In function ‘iem_route_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_route.c:158: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_samplerate~.c: In function ‘iem_samplerate_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_samplerate~.c:33: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_sel_any.c: In function ‘iem_sel_any_add’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_sel_any.c:48: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_sel_any.c: In function ‘iem_sel_any_set_item_name’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_sel_any.c:71: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_send.c: In function ‘iem_send_proxy_clear’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_send.c:78: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_send.c:78: warning: unused parameter ‘ac’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_send.c:78: warning: unused parameter ‘av’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_send.c: In function ‘iem_send_proxy_set’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_send.c:85: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_send.c: In function ‘iem_send_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_send.c:111: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_symtoalist.c: In function ‘iem_symtoalist_free’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_symtoalist.c:56: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_symtoalist.c: At top level:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/iem_symtoalist.c:56: warning: ‘iem_symtoalist_free’ defined but not used
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/init.c: In function ‘init_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/init.c:74: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/init.c: In function ‘init_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/init.c:120: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c: In function ‘list2send_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c:29: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c: In function ‘list2send_all’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c:77: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c: In function ‘list2send_set_all’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c:101: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c: In function ‘list2send_from’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c:120: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c: In function ‘list2send_set_from’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c:149: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c: In function ‘list2send_add’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c:173: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c: In function ‘list2send_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/list2send.c:219: warning: unused variable ‘ap’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/m2f~.c: In function ‘m2f_tilde_perform’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/m2f~.c:38: warning: unused variable ‘x’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/mergefilename.c: In function ‘mergefilename_separator’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/mergefilename.c:26: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/mergefilename.c: In function ‘mergefilename_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/mergefilename.c:82: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/mergefilename.c: In function ‘mergefilename_free’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/mergefilename.c:195: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/mergefilename.c: At top level:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/mergefilename.c:195: warning: ‘mergefilename_free’ defined but not used
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/modulo_counter.c: In function ‘modulo_counter_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/modulo_counter.c:50: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/post_netreceive.c: In function ‘post_netreceive_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/post_netreceive.c:29: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/post_netreceive.c: In function ‘post_netreceive_set_item_name’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/post_netreceive.c:73: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/post_netreceive.c: In function ‘post_netreceive_all_parameters’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/post_netreceive.c:98: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/post_netreceive.c: In function ‘post_netreceive_set_all_parameters’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/post_netreceive.c:132: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/post_netreceive.c: In function ‘post_netreceive_fetch_all_parameters’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/post_netreceive.c:170: warning: unused variable ‘ap’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/pre_inlet.c: In function ‘pre_inlet_free’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/pre_inlet.c:63: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/prepend_ascii.c: In function ‘prepend_ascii_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/prepend_ascii.c:55: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/prepend_ascii.c: In function ‘prepend_ascii_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/prepend_ascii.c:84: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/protect_against_open.c: In function ‘protect_against_open_vis’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/protect_against_open.c:69: warning: unused parameter ‘glist’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/protect_against_open.c: In function ‘protect_against_open_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/protect_against_open.c:81: warning: unused variable ‘this_canvas’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/protect_against_open.c:77: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/protect_against_open.c:77: warning: unused parameter ‘ac’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/protect_against_open.c:77: warning: unused parameter ‘av’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/receive2list.c: In function ‘receive2list_clear’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/receive2list.c:43: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/receive2list.c:43: warning: unused parameter ‘ac’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/receive2list.c:43: warning: unused parameter ‘av’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/receive2list.c: In function ‘receive2list_add’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/receive2list.c:57: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/receive2list.c: In function ‘receive2list_proxy_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/receive2list.c:126: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/splitfilename.c: In function ‘splitfilename_separator’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/splitfilename.c:28: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c: In function ‘toggle_mess_float’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c:40: warning: unused parameter ‘f’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c: In function ‘toggle_mess_set’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c:48: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c: In function ‘toggle_mess_symbol’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c:65: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c: In function ‘toggle_mess_anything’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c:70: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c:70: warning: unused parameter ‘ac’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c:70: warning: unused parameter ‘av’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c: In function ‘toggle_mess_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/toggle_mess.c:80: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/transf_fader.c: In function ‘transf_fader_pairs’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/transf_fader.c:25: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/transf_fader.c: In function ‘transf_fader_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/transf_fader.c:123: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/wrap.c: In function ‘wrap_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iemlib2/src/wrap.c:40: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_bpe.c: In function ‘t3_bpe_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_bpe.c:81: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_delay.c: In function ‘t3_delay_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_delay.c:51: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_line~.c: In function ‘t3_line_tilde_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_line~.c:173: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_line~.c: In function ‘t3_line_tilde_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_line~.c:247: warning: unused variable ‘i’
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_metro.c: In function ‘t3_metro_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_metro.c:70: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_metro.c: In function ‘t3_metro_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_metro.c:84: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_sig~.c: In function ‘t3_sig_tilde_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/iem_t3_lib/src/t3_sig~.c:50: warning: unused parameter ‘s’
+In file included from /home/rolfm/pd-extended-farm/externals/iemlib/alias/any.c:1:
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib2/src/iem_anything.c: In function ‘iem_anything_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib2/src/iem_anything.c:92: warning: unused parameter ‘s’
+In file included from /home/rolfm/pd-extended-farm/externals/iemlib/alias/for_pp.c:1:
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib1/src/for++.c: In function ‘forpp_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib1/src/for++.c:132: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib1/src/for++.c: In function ‘forpp_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib1/src/for++.c:144: warning: unused parameter ‘s’
+In file included from /home/rolfm/pd-extended-farm/externals/iemlib/alias/pp.c:1:
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib2/src/iem_prepend.c: In function ‘iem_prepend_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib2/src/iem_prepend.c:81: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib2/src/iem_prepend.c: In function ‘iem_prepend_proxy_list’:
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib2/src/iem_prepend.c:151: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib2/src/iem_prepend.c: In function ‘iem_prepend_new’:
+/home/rolfm/pd-extended-farm/externals/iemlib/alias/../iemlib2/src/iem_prepend.c:189: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c: In function ‘cube_sphere_out_sel’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:105: warning: unused variable ‘rad’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:104: warning: unused variable ‘n’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c: In function ‘cube_sphere_motion’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:291: warning: unused variable ‘i’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c: In function ‘cube_sphere_click’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:323: warning: unused parameter ‘shift’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:323: warning: unused parameter ‘ctrl’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:323: warning: unused parameter ‘alt’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c: In function ‘cube_sphere_newclick’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:375: warning: unused parameter ‘glist’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:375: warning: unused parameter ‘dbl’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c: In function ‘cube_sphere_src_dp’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:413: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c: In function ‘cube_sphere_size’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:453: warning: unused variable ‘ypos’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:452: warning: unused variable ‘xpos’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c: In function ‘cube_sphere_vis’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:495: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c: In function ‘cube_sphere_src_col’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:597: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c: In function ‘cube_sphere_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/cube_sphere.c:663: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/hfadl_scale.c: In function ‘hfadl_scale_color’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/hfadl_scale.c:115: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/hfadl_scale.c: In function ‘hfadl_scale_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/hfadl_scale.c:146: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/hfadr_scale.c: In function ‘hfadr_scale_color’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/hfadr_scale.c:114: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/hfadr_scale.c: In function ‘hfadr_scale_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/hfadr_scale.c:145: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_event.c: In function ‘iem_event_click’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_event.c:209: warning: unused parameter ‘dbl’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_event.c: In function ‘iem_event_size’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_event.c:263: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_event.c: In function ‘iem_event_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_event.c:294: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_image.c: In function ‘iem_image_draw_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_image.c:114: warning: suggest parentheses around assignment used as truth value
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_image.c: In function ‘iem_image_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_image.c:284: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c: In function ‘iem_vu_draw_erase’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:293: warning: unused variable ‘i’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c: In function ‘iem_vu_draw_config’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:321: warning: unused variable ‘i’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c: In function ‘iem_vu_scale’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:469: warning: unused variable ‘i’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c: In function ‘iem_vu_properties’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:500: warning: unused parameter ‘owner’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c: In function ‘iem_vu_dialog’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:525: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c: In function ‘iem_vu_size’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:548: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c: In function ‘iem_vu_set’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:621: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c: In function ‘iem_vu_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:682: warning: unused variable ‘str’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:681: warning: unused variable ‘fthold’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:681: warning: unused variable ‘ftbreak’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:680: warning: unused variable ‘f’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/iem_vu.c:675: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_motion’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:635: warning: unused parameter ‘dx’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_click’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:716: warning: unused parameter ‘shift’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:716: warning: unused parameter ‘ctrl’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:716: warning: unused parameter ‘alt’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_newclick’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:722: warning: unused parameter ‘dbl’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:789: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_row’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:822: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_col’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:856: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_matrix’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:893: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_dim’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:938: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_size’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:976: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_font’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:1000: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_range’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:1030: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_color’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:1068: warning: unused variable ‘canvas’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:1066: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c: In function ‘numberbox_matrix_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:1087: warning: unused variable ‘n’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/numberbox_matrix.c:1084: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c: In function ‘room_sim_2d_draw_select’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:178: warning: unused variable ‘ypos’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:177: warning: unused variable ‘xpos’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c: In function ‘room_sim_2d_click’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:304: warning: unused parameter ‘shift’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:304: warning: unused parameter ‘ctrl’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:304: warning: unused parameter ‘alt’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c: In function ‘room_sim_2d_newclick’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:368: warning: unused parameter ‘glist’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:368: warning: unused parameter ‘dbl’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c: In function ‘room_sim_2d_set_src_xy’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:429: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c: In function ‘room_sim_2d_set_head_xy’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:472: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c: In function ‘room_sim_2d_room_dim’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:518: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c: In function ‘room_sim_2d_src_col’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:609: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c: In function ‘room_sim_2d_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_2d.c:705: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c: In function ‘room_sim_3d_draw_select’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:212: warning: unused variable ‘ypos’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:211: warning: unused variable ‘xpos’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c: In function ‘room_sim_3d_motion’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:275: warning: unused variable ‘n’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:275: warning: unused variable ‘i’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c: In function ‘room_sim_3d_click’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:391: warning: unused parameter ‘shift’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:391: warning: unused parameter ‘ctrl’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:391: warning: unused parameter ‘alt’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c: In function ‘room_sim_3d_newclick’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:463: warning: unused parameter ‘glist’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:463: warning: unused parameter ‘dbl’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c: In function ‘room_sim_3d_set_src_xyz’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:539: warning: unused variable ‘pixrad’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:534: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c: In function ‘room_sim_3d_set_head_xyz’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:592: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c: In function ‘room_sim_3d_room_dim’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:651: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c: In function ‘room_sim_3d_src_col’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:733: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c: In function ‘room_sim_3d_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/room_sim_3d.c:832: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c: In function ‘sym_dial_properties’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:356: warning: unused parameter ‘owner’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c: In function ‘sym_dial_dialog’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:401: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c: In function ‘sym_dial_click’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:426: warning: unused parameter ‘xpos’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:426: warning: unused parameter ‘ypos’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:426: warning: unused parameter ‘shift’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:426: warning: unused parameter ‘ctrl’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:426: warning: unused parameter ‘alt’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c: In function ‘sym_dial_newclick’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:435: warning: unused parameter ‘glist’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:436: warning: unused parameter ‘dbl’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c: In function ‘sym_dial_set’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:445: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c: In function ‘sym_dial_size’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:503: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c: In function ‘sym_dial_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:658: warning: unused variable ‘f’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/sym_dial.c:653: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/vfad_scale.c: In function ‘vfad_scale_color’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/vfad_scale.c:114: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/vfad_scale.c: In function ‘vfad_scale_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iemgui/src/vfad_scale.c:145: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_abs.c: In function ‘tab_abs_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_abs.c:72: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_abs.c: In function ‘tab_abs_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_abs.c:120: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_abs.c: In function ‘tab_abs_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_abs.c:124: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add.c: In function ‘tab_add_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add.c:82: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add.c: In function ‘tab_add_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add.c:136: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add.c: In function ‘tab_add_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add.c:140: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add_scalar.c: In function ‘tab_add_scalar_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add_scalar.c:69: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add_scalar.c: In function ‘tab_add_scalar_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add_scalar.c:120: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add_scalar.c: In function ‘tab_add_scalar_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_add_scalar.c:124: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_carth2polar.c: In function ‘tab_carth2polar_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_carth2polar.c:111: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_carth2polar.c: In function ‘tab_carth2polar_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_carth2polar.c:187: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_carth2polar.c: In function ‘tab_carth2polar_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_carth2polar.c:191: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_inv.c: In function ‘tab_complex_inv_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_inv.c:108: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_inv.c: In function ‘tab_complex_inv_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_inv.c:182: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_inv.c: In function ‘tab_complex_inv_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_inv.c:189: warning: unused variable ‘src2_im’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_inv.c:189: warning: unused variable ‘src2_re’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_inv.c:186: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_mul.c: In function ‘tab_complex_mul_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_mul.c:135: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_mul.c: In function ‘tab_complex_mul_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_mul.c:222: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_mul.c: In function ‘tab_complex_mul_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_complex_mul.c:226: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_const.c: In function ‘tab_const_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_const.c:80: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_const.c: In function ‘tab_const_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_const.c:125: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_const.c: In function ‘tab_const_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_const.c:129: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_conv.c: In function ‘tab_conv_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_conv.c:199: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_conv.c: In function ‘tab_conv_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_conv.c:365: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_conv.c: In function ‘tab_conv_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_conv.c:369: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_conv.c: At top level:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_conv.c:199: warning: ‘tab_conv_list’ defined but not used
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_copy.c: In function ‘tab_copy_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_copy.c:68: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_copy.c: In function ‘tab_copy_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_copy.c:116: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_copy.c: In function ‘tab_copy_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_copy.c:120: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_counter.c: In function ‘tab_counter_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_counter.c:80: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_counter.c: In function ‘tab_counter_reset’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_counter.c:135: warning: unused variable ‘beg_dst’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_counter.c: In function ‘tab_counter_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_counter.c:159: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_counter.c: In function ‘tab_counter_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_counter.c:163: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_cross_corr.c: In function ‘tab_cross_corr_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_cross_corr.c:163: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtopow.c: In function ‘tab_dbtopow_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtopow.c:82: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtopow.c: In function ‘tab_dbtopow_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtopow.c:141: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtopow.c: In function ‘tab_dbtopow_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtopow.c:145: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtorms.c: In function ‘tab_dbtorms_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtorms.c:82: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtorms.c: In function ‘tab_dbtorms_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtorms.c:141: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtorms.c: In function ‘tab_dbtorms_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_dbtorms.c:145: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_div.c: In function ‘tab_div_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_div.c:87: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_div.c: In function ‘tab_div_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_div.c:146: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_div.c: In function ‘tab_div_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_div.c:150: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq.c: In function ‘tab_eq_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq.c:90: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq.c: In function ‘tab_eq_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq.c:149: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq.c: In function ‘tab_eq_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq.c:153: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq_scalar.c: In function ‘tab_eq_scalar_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq_scalar.c:77: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq_scalar.c: In function ‘tab_eq_scalar_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq_scalar.c:133: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq_scalar.c: In function ‘tab_eq_scalar_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_eq_scalar.c:137: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_fft.c: In function ‘tab_fft_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_fft.c:198: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_fft.c: In function ‘tab_fft_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_fft.c:333: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_find_exact_peaks.c: In function ‘tab_find_exact_peaks_width_range’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_find_exact_peaks.c:47: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_find_exact_peaks.c: In function ‘tab_find_exact_peaks_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_find_exact_peaks.c:336: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_find_peaks.c: In function ‘tab_find_peaks_width_range’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_find_peaks.c:47: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_find_peaks.c: In function ‘tab_find_peaks_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_find_peaks.c:336: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge.c: In function ‘tab_ge_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge.c:90: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge.c: In function ‘tab_ge_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge.c:149: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge.c: In function ‘tab_ge_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge.c:153: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge_scalar.c: In function ‘tab_ge_scalar_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge_scalar.c:77: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge_scalar.c: In function ‘tab_ge_scalar_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge_scalar.c:133: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge_scalar.c: In function ‘tab_ge_scalar_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ge_scalar.c:137: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_get_size.c: In function ‘tab_get_size_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_get_size.c:38: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_get_size.c: In function ‘tab_get_size_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_get_size.c:42: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt.c: In function ‘tab_gt_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt.c:90: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt.c: In function ‘tab_gt_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt.c:149: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt.c: In function ‘tab_gt_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt.c:153: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt_scalar.c: In function ‘tab_gt_scalar_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt_scalar.c:77: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt_scalar.c: In function ‘tab_gt_scalar_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt_scalar.c:133: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt_scalar.c: In function ‘tab_gt_scalar_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_gt_scalar.c:137: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ifft.c: In function ‘tab_ifft_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ifft.c:205: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ifft.c: In function ‘tab_ifft_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ifft.c:347: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le.c: In function ‘tab_le_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le.c:90: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le.c: In function ‘tab_le_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le.c:149: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le.c: In function ‘tab_le_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le.c:153: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le_scalar.c: In function ‘tab_le_scalar_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le_scalar.c:77: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le_scalar.c: In function ‘tab_le_scalar_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le_scalar.c:133: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le_scalar.c: In function ‘tab_le_scalar_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_le_scalar.c:137: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt.c: In function ‘tab_lt_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt.c:91: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt.c: In function ‘tab_lt_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt.c:150: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt.c: In function ‘tab_lt_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt.c:154: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt_scalar.c: In function ‘tab_lt_scalar_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt_scalar.c:77: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt_scalar.c: In function ‘tab_lt_scalar_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt_scalar.c:133: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt_scalar.c: In function ‘tab_lt_scalar_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_lt_scalar.c:137: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_max_index.c: In function ‘tab_max_index_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_max_index.c:61: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_max_index.c: In function ‘tab_max_index_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_max_index.c:108: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_max_index.c: In function ‘tab_max_index_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_max_index.c:112: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_index.c: In function ‘tab_min_index_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_index.c:62: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_index.c: In function ‘tab_min_index_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_index.c:109: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_index.c: In function ‘tab_min_index_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_index.c:113: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_max.c: In function ‘tab_min_max_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_max.c:62: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_max.c: In function ‘tab_min_max_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_max.c:108: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_max.c: In function ‘tab_min_max_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_min_max.c:112: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mls.c: In function ‘tab_mls_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mls.c:168: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mls.c: In function ‘tab_mls_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mls.c:213: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mls.c: In function ‘tab_mls_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mls.c:221: warning: unused variable ‘time’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mls.c:217: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul.c: In function ‘tab_mul_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul.c:83: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul.c: In function ‘tab_mul_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul.c:137: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul.c: In function ‘tab_mul_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul.c:141: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul_scalar.c: In function ‘tab_mul_scalar_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul_scalar.c:70: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul_scalar.c: In function ‘tab_mul_scalar_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul_scalar.c:121: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul_scalar.c: In function ‘tab_mul_scalar_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_mul_scalar.c:125: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne.c: In function ‘tab_ne_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne.c:91: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne.c: In function ‘tab_ne_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne.c:150: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne.c: In function ‘tab_ne_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne.c:154: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne_scalar.c: In function ‘tab_ne_scalar_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne_scalar.c:77: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne_scalar.c: In function ‘tab_ne_scalar_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne_scalar.c:133: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne_scalar.c: In function ‘tab_ne_scalar_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_ne_scalar.c:137: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_powtodb.c: In function ‘tab_powtodb_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_powtodb.c:82: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_powtodb.c: In function ‘tab_powtodb_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_powtodb.c:140: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_powtodb.c: In function ‘tab_powtodb_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_powtodb.c:144: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_reverse.c: In function ‘tab_reverse_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_reverse.c:75: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_reverse.c: In function ‘tab_reverse_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_reverse.c:129: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_reverse.c: In function ‘tab_reverse_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_reverse.c:133: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rfft.c: In function ‘tab_rfft_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rfft.c:195: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rfft.c: In function ‘tab_rfft_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rfft.c:332: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rifft.c: In function ‘tab_rifft_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rifft.c:205: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rifft.c: In function ‘tab_rifft_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rifft.c:347: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rmstodb.c: In function ‘tab_rmstodb_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rmstodb.c:81: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rmstodb.c: In function ‘tab_rmstodb_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rmstodb.c:140: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rmstodb.c: In function ‘tab_rmstodb_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_rmstodb.c:144: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sqrt.c: In function ‘tab_sqrt_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sqrt.c:106: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sqrt.c: In function ‘tab_sqrt_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sqrt.c:166: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sqrt.c: In function ‘tab_sqrt_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sqrt.c:170: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sub.c: In function ‘tab_sub_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sub.c:83: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sub.c: In function ‘tab_sub_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sub.c:137: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sub.c: In function ‘tab_sub_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sub.c:141: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sum.c: In function ‘tab_sum_list’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sum.c:56: warning: unused parameter ‘s’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sum.c: In function ‘tab_sum_free’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sum.c:96: warning: unused parameter ‘x’
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sum.c: In function ‘tab_sum_new’:
+/home/rolfm/pd-extended-farm/externals/iem/iem_tab/src/tab_sum.c:100: warning: unused parameter ‘s’
+pdlua.c:45:17: error: lua.h: No such file or directory
+pdlua.c:46:21: error: lauxlib.h: No such file or directory
+pdlua.c:47:20: error: lualib.h: No such file or directory
+pdlua.c:86: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+pdlua.c:98: error: expected ‘)’ before ‘*’ token
+pdlua.c: In function ‘pdlua_pushatomtable’:
+pdlua.c:288: warning: implicit declaration of function ‘lua_newtable’
+pdlua.c:288: error: ‘L’ undeclared (first use in this function)
+pdlua.c:288: error: (Each undeclared identifier is reported only once
+pdlua.c:288: error: for each function it appears in.)
+pdlua.c:291: warning: implicit declaration of function ‘lua_pushnumber’
+pdlua.c:298: warning: implicit declaration of function ‘lua_pushstring’
+pdlua.c:301: warning: implicit declaration of function ‘lua_pushlightuserdata’
+pdlua.c:305: warning: implicit declaration of function ‘lua_pushnil’
+pdlua.c:308: warning: implicit declaration of function ‘lua_settable’
+pdlua.c: In function ‘pdlua_new’:
+pdlua.c:343: warning: implicit declaration of function ‘lua_getglobal’
+pdlua.c:343: error: ‘L’ undeclared (first use in this function)
+pdlua.c:344: warning: implicit declaration of function ‘lua_getfield’
+pdlua.c:347: warning: implicit declaration of function ‘lua_pcall’
+pdlua.c:349: warning: implicit declaration of function ‘lua_tostring’
+pdlua.c:350: warning: implicit declaration of function ‘lua_pop’
+pdlua.c:359: warning: implicit declaration of function ‘lua_islightuserdata’
+pdlua.c:361: warning: implicit declaration of function ‘lua_touserdata’
+pdlua.c: In function ‘pdlua_free’:
+pdlua.c:382: error: ‘L’ undeclared (first use in this function)
+pdlua.c: In function ‘pdlua_menu_open’:
+pdlua.c:403: error: ‘L’ undeclared (first use in this function)
+pdlua.c:411: warning: implicit declaration of function ‘luaL_checkstring’
+pdlua.c: At top level:
+pdlua.c:419: error: expected ‘)’ before ‘*’ token
+pdlua.c:446: error: expected ‘)’ before ‘*’ token
+pdlua.c:479: error: expected ‘)’ before ‘*’ token
+pdlua.c:509: error: expected ‘)’ before ‘*’ token
+pdlua.c:539: error: expected ‘)’ before ‘*’ token
+pdlua.c:569: error: expected ‘)’ before ‘*’ token
+pdlua.c:587: error: expected ‘)’ before ‘*’ token
+pdlua.c:609: error: expected ‘)’ before ‘*’ token
+pdlua.c:629: error: expected ‘)’ before ‘*’ token
+pdlua.c:649: error: expected ‘)’ before ‘*’ token
+pdlua.c:664: error: expected ‘)’ before ‘*’ token
+pdlua.c:683: error: expected ‘)’ before ‘*’ token
+pdlua.c: In function ‘pdlua_dispatch’:
+pdlua.c:724: error: ‘L’ undeclared (first use in this function)
+pdlua.c: In function ‘pdlua_receivedispatch’:
+pdlua.c:750: error: ‘L’ undeclared (first use in this function)
+pdlua.c: In function ‘pdlua_clockdispatch’:
+pdlua.c:767: error: ‘L’ undeclared (first use in this function)
+pdlua.c: At top level:
+pdlua.c:781: error: expected ‘)’ before ‘*’ token
+pdlua.c:860: error: expected ‘)’ before ‘*’ token
+pdlua.c:923: error: expected ‘)’ before ‘*’ token
+pdlua.c:978: error: expected ‘)’ before ‘*’ token
+pdlua.c:996: error: expected ‘)’ before ‘*’ token
+pdlua.c:1014: error: expected ‘)’ before ‘*’ token
+pdlua.c:1047: error: expected ‘)’ before ‘*’ token
+pdlua.c:1070: error: expected ‘)’ before ‘*’ token
+pdlua.c:1089: error: expected ‘)’ before ‘*’ token
+pdlua.c:1103: error: expected ‘)’ before ‘*’ token
+pdlua.c:1115: error: expected ‘)’ before ‘*’ token
+pdlua.c:1143: error: expected ‘)’ before ‘*’ token
+pdlua.c:1161: error: expected ‘)’ before ‘*’ token
+pdlua.c:1176: error: expected ‘)’ before ‘*’ token
+pdlua.c:1240: error: expected ‘)’ before ‘*’ token
+pdlua.c: In function ‘pdlua_loader’:
+pdlua.c:1344: warning: implicit declaration of function ‘pdlua_setrequirepath’
+pdlua.c:1344: error: ‘L’ undeclared (first use in this function)
+pdlua.c:1346: warning: implicit declaration of function ‘lua_load’
+pdlua.c:1346: error: ‘pdlua_reader’ undeclared (first use in this function)
+pdlua.c:1351: warning: implicit declaration of function ‘pdlua_clearrequirepath’
+pdlua.c: In function ‘pdlua_setup’:
+pdlua.c:1386: warning: format not a string literal and no format arguments
+pdlua.c:1387: warning: format not a string literal and no format arguments
+pdlua.c:1388: warning: format not a string literal and no format arguments
+pdlua.c:1402: error: ‘L’ undeclared (first use in this function)
+pdlua.c:1402: warning: implicit declaration of function ‘lua_open’
+pdlua.c:1406: warning: implicit declaration of function ‘luaL_openlibs’
+pdlua.c:1410: warning: implicit declaration of function ‘pdlua_init’
+pdlua.c:1431: error: ‘pdlua_reader’ undeclared (first use in this function)
+make[3]: *** [pdlua.o] Error 1
+make[2]: *** [loaders-pdlua] Error 2
+make[1]: *** [externals_install] Error 2
+make: *** [install] Error 2

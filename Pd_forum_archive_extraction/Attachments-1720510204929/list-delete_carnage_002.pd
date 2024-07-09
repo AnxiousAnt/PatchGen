@@ -1,0 +1,148 @@
+#N canvas 452 27 911 805 10;
+#X obj 280 206 list prepend;
+#X obj 259 262 list;
+#X obj 238 488 list-delete;
+#X obj 377 206 t a;
+#X obj 279 171 f;
+#X obj 306 171 + 1;
+#X obj 279 140 until;
+#X obj 308 90 t b b;
+#X msg 277 114 180;
+#X obj 310 62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 353 136 1;
+#X obj 169 281 list-find;
+#X obj 350 353 sel 0;
+#X obj 238 427 list;
+#X obj 444 392 f;
+#X obj 477 393 - 1;
+#X obj 411 418 random;
+#N canvas 0 22 450 300 replace-with-outlet 1;
+#X obj 90 63 inlet;
+#X obj 90 96 prepent add2;
+#X obj 91 231 outlet;
+#X obj 225 60 inlet;
+#X msg 220 113 set;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X restore 249 609 pd replace-with-outlet;
+#X msg 249 649 92 133 18 145 33 100 36 91 141 7 55 156 29 159 13 166
+27 162 1 150 101 50 173 113 25 147 104 167 22 26 82 122 87 175 85 163
+67 54 94 74 117 125 137 160 105 84 37 171 57 120 109 38 148 139 165
+126 161 45 128 42 28 47 121 153 2 80 20 93 118 70 129 127 5 76 15 180
+151 6 108 11 107 114 43 61 53 75 155 168 72 96 132 81 21 140 65 158
+56 17 77 174 66 124 63 64 49 179 90 41 60 62 73 170 51 34 95 78 19
+106 152 46 102 12 178 116 149 134 112 130 79 39 58 177 10 144 110 59
+8 44 86 88 172 4 16 99 3 111 176 123 32 146 68 71 136 119 169 143 48
+23 115 164 52 103 98 30 131 138 83 154 135 157 97 24 89 35 14 40 142
+9 31 69;
+#X obj 326 488 list-idx;
+#X obj 327 416 list;
+#X obj 249 556 f;
+#X obj 117 83 random 181;
+#X obj 118 106 + 1;
+#X obj 117 32 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 525 217 prepent set;
+#X msg 525 242;
+#X obj 350 325 t f b;
+#X obj 350 385 t b b;
+#X obj 240 360 t b f;
+#X obj 133 178 t f f b;
+#X obj 299 439 t a a;
+#X obj 238 514 t b;
+#X obj 126 142 spigot;
+#X msg 199 102 1;
+#X obj 518 444 sel 1;
+#X msg 522 481 0;
+#X obj 96 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 117 57 metro 300;
+#X text 32 146 test spigot;
+#X obj 386 107 s \$0-init;
+#X obj 384 584 r \$0-init;
+#X obj 298 537 r \$0-num;
+#X obj 173 221 s \$0-num;
+#X obj 529 508 s \$0-stop;
+#X obj 194 130 r \$0-stop;
+#X text 364 155 fill a list with numbers from 1-180;
+#X obj 296 234 r \$0-return;
+#X obj 159 514 s \$0-return;
+#X text 29 493 return shorter list to loop;
+#X text 526 192 just to see =o);
+#X text 510 400 this monitors how long the list of numbers that are
+left is \, but counting down from 180 each time you pick a number;
+#X text 149 28 "sensor putting out 1-180";
+#X text 306 45 initialize first!!!;
+#X text 329 456 choose random number from list;
+#X text 330 467 and delete it for loop;
+#X text 58 396 if incoming number is in list;
+#X text 58 408 send it out and delete it;
+#X text 153 455 if not ----->;
+#X text 589 507 <- turn off number stream when;
+#X text 609 519 all numbers have been used;
+#X connect 0 0 1 1;
+#X connect 0 0 3 0;
+#X connect 0 0 25 0;
+#X connect 1 0 13 1;
+#X connect 1 0 20 1;
+#X connect 1 0 11 1;
+#X connect 2 0 32 0;
+#X connect 2 0 48 0;
+#X connect 3 0 0 1;
+#X connect 4 0 5 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 1;
+#X connect 6 0 4 0;
+#X connect 7 0 8 0;
+#X connect 7 1 10 0;
+#X connect 7 1 0 1;
+#X connect 7 1 40 0;
+#X connect 8 0 6 0;
+#X connect 8 0 14 1;
+#X connect 9 0 7 0;
+#X connect 9 0 34 0;
+#X connect 10 0 4 1;
+#X connect 11 0 29 0;
+#X connect 11 1 27 0;
+#X connect 12 0 28 0;
+#X connect 13 0 2 0;
+#X connect 14 0 15 0;
+#X connect 14 0 16 1;
+#X connect 14 0 35 0;
+#X connect 15 0 14 1;
+#X connect 16 0 19 1;
+#X connect 16 0 2 1;
+#X connect 17 0 18 0;
+#X connect 19 0 21 1;
+#X connect 20 0 31 0;
+#X connect 21 0 17 0;
+#X connect 22 0 23 0;
+#X connect 23 0 33 0;
+#X connect 24 0 38 0;
+#X connect 25 0 26 0;
+#X connect 27 0 12 0;
+#X connect 27 1 14 0;
+#X connect 28 0 20 0;
+#X connect 28 1 16 0;
+#X connect 29 0 13 0;
+#X connect 29 1 2 1;
+#X connect 30 0 11 0;
+#X connect 30 1 43 0;
+#X connect 30 2 1 0;
+#X connect 31 0 2 0;
+#X connect 31 1 19 0;
+#X connect 32 0 21 0;
+#X connect 33 0 30 0;
+#X connect 33 0 37 0;
+#X connect 34 0 33 1;
+#X connect 35 0 36 0;
+#X connect 36 0 44 0;
+#X connect 38 0 22 0;
+#X connect 41 0 17 1;
+#X connect 42 0 21 1;
+#X connect 45 0 33 1;
+#X connect 47 0 1 1;
+#X connect 47 0 25 0;

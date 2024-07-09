@@ -1,0 +1,1230 @@
+./configure --with-DeckLink-CFLAGS="-I/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/include" --with-DeckLink-LIBS="-L/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/Samples/bin/x86_64/lib" --with-pd=/usr/include/pd
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking for gcc... gcc
+checking whether we are using the GNU Objective C compiler... no
+checking whether gcc accepts -g... no
+checking dependency style of gcc... gcc3
+checking for g++... g++
+checking whether we are using the GNU Objective C++ compiler... no
+checking whether g++ accepts -g... no
+checking dependency style of g++... gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/x86_64-linux-gnu-ld
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/x86_64-linux-gnu-ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... dlltool
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/x86_64-linux-gnu-ld -m elf_x86_64
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking include paths for Pd... /usr/include/pd
+checking library paths for Pd... /usr/include/pd
+checking for nullfn in -l:pd.dll... no
+checking for nullfn in -lpd... no
+checking m_pd.h usability... yes
+checking m_pd.h presence... yes
+checking for m_pd.h... yes
+checking for s_stuff.h... yes
+checking for m_imp.h... yes
+checking whether gcc needs -Werror to reject unknown flags... yes
+building Gem with Controls-objects
+building Gem with Geos-objects
+building Gem with Manips-objects
+building Gem with Nongeos-objects
+building Gem with Particles-objects
+building Gem with Pixes-objects
+building Gem with openGL-objects
+building Gem without Vertex-objects
+checking windows.h usability... no
+checking windows.h presence... no
+checking for windows.h... no
+checking if compiler needs -Werror to reject unknown flags... no
+checking for the pthreads library -lpthreads... no
+checking whether pthreads work without any flags... no
+checking whether pthreads work with -Kthread... no
+checking whether pthreads work with -kthread... no
+checking for the pthreads library -llthread... no
+checking whether pthreads work with -pthread... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+checking for ptw32_handle_t... no
+checking for ANSI C header files... (cached) yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking float.h usability... yes
+checking float.h presence... yes
+checking for float.h... yes
+checking for memory.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking wordexp.h usability... yes
+checking wordexp.h presence... yes
+checking for wordexp.h... yes
+checking for stdbool.h that conforms to C99... no
+checking for _Bool... no
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking size of unsigned int... 4
+checking size of void *... 8
+checking for error_at_line... yes
+checking for pid_t... yes
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking for bzero... yes
+checking for floor... yes
+checking for gettimeofday... yes
+checking for memset... yes
+checking for munmap... yes
+checking for pow... yes
+checking for sqrt... yes
+checking for strchr... yes
+checking for strdup... yes
+checking for strrchr... yes
+checking for strstr... yes
+checking for strnlen... yes
+checking for sin in -lm... yes
+checking for zlibVersion in -lz... yes
+checking for dlopen in -ldl... yes
+checking for close in -lOLDNAMES... no
+checking for close in -lcoldname... no
+checking for main in -llibcpmt... no
+checking for fclose in -lmsvcrt... no
+checking for main in -lmsvcprt... no
+checking for main in -lws2_32... no
+checking for select in -lwsock32... no
+checking for main in -lgdi32... no
+checking for X... libraries , headers 
+checking for gethostbyname... yes
+checking for connect... yes
+checking for remove... yes
+checking for shmat... yes
+checking for IceConnectionNumber in -lICE... yes
+checking for XF86VidModeGetAllModeLines in -lXxf86vm... yes
+checking X11/extensions/XInput2.h usability... yes
+checking X11/extensions/XInput2.h presence... yes
+checking for X11/extensions/XInput2.h... yes
+checking for XRenderFindVisualFormat in -lXrender... yes
+checking X11/extensions/Xrender.h usability... yes
+checking X11/extensions/Xrender.h presence... yes
+checking for X11/extensions/Xrender.h... yes
+checking for a working OpenGL implementation by pkg-config... yes
+checking for GL... yes
+checking for windows.h... (cached) no
+checking for GL/gl.h... yes
+checking for OpenGL headers... yes
+checking for compiling a minimal OpenGL program... yes
+checking for linking a minimal OpenGL program... yes
+checking for a working OpenGL implementation... yes
+checking for CFLAGS needed for OpenGL... "-I/usr/include/libdrm"
+checking for LIBS needed for OpenGL... "-lGL"
+checking for LDFLAGS needed for OpenGL... ""
+checking for a working OpenGL Utility (GLU) implementation by pkg-config... yes
+checking for GLU... yes
+checking for windows.h... (cached) no
+checking for GL/glu.h... yes
+checking for OpenGL Utility (GLU) headers... yes
+checking for compiling a minimal OpenGL Utility (GLU) program... yes
+checking for linking a minimal OpenGL Utility (GLU) program... yes
+checking for varargs OpenGL Utility (GLU) tesselator callback function type... no
+checking for a working OpenGL Utility (GLU) implementation... yes
+checking for CFLAGS needed for OpenGL Utility (GLU)... "-I/usr/include/libdrm"
+checking for LIBS needed for OpenGL Utility (GLU)... "-lGLU -lGL"
+checking for LDFLAGS needed for OpenGL Utility (GLU)... ""
+checking for windows.h... (cached) no
+checking for GL/glut.h... yes
+checking for library containing glutMainLoop... -lglut
+checking for OpenGL Utility Toolkit (GLUT) libraries... yes
+checking for compiling a minimal OpenGL Utility Toolkit (GLUT) program... yes
+checking for linking a minimal OpenGL Utility Toolkit (GLUT) program... yes
+checking for a working OpenGL Utility Toolkit (GLUT) implementation... yes
+checking for CFLAGS needed for OpenGL Utility Toolkit (GLUT)... " -I/usr/include/libdrm"
+checking for LIBS needed for OpenGL Utility Toolkit (GLUT)... "-lglut -lGLU -lGL"
+checking for LDFLAGS needed for OpenGL Utility Toolkit (GLUT)... ""
+checking GL/glx.h usability... yes
+checking GL/glx.h presence... yes
+checking for GL/glx.h... yes
+checking for AGL-framework... no
+checking for PKG_SDL... no
+checking for sdl-config... no
+checking for SDL_Quit in -lSDL... (cached) yes
+checking SDL.h usability... no
+checking SDL.h presence... no
+checking for SDL.h... no
+checking for SDL_Quit in -lSDL... (cached) no
+checking for SDL.h... (cached) no
+checking for PKG_LIBGLFW... no
+checking for libglfw-config... no
+checking for glfwInit in -lglfw... (cached) yes
+checking GL/glfw.h usability... no
+checking GL/glfw.h presence... no
+checking for GL/glfw.h... no
+checking for glfwInit in -lglfw... (cached) no
+checking for GL/glfw.h... (cached) no
+checking for PKG_GLFW3... no
+checking for glfw3-config... no
+checking for glfwGetPrimaryMonitor in -lglfw3... (cached) yes
+checking GLFW/glfw3.h usability... no
+checking GLFW/glfw3.h presence... no
+checking for GLFW/glfw3.h... no
+checking for glfwGetPrimaryMonitor in -lglfw3... (cached) no
+checking for GLFW/glfw3.h... (cached) no
+checking for main in -lstdc++... yes
+checking for Cocoa-framework... no
+checking for Carbon-framework... no
+checking for QuickTime-framework... no
+checking for AVFoundation-framework... no
+checking for PKG_MAGICKCORE... yes
+checking for IsMagickInstantiated in -lMagick... (cached) yes
+checking magick/MagickCore.h usability... yes
+checking magick/MagickCore.h presence... yes
+checking for magick/MagickCore.h... yes
+checking MagickCore/MagickCore.h usability... no
+checking MagickCore/MagickCore.h presence... no
+checking for MagickCore/MagickCore.h... no
+checking for PKG_IMAGEMAGICK__... yes
+checking for main in -lMagick++... (cached) yes
+checking Magick++.h usability... no
+checking Magick++.h presence... no
+checking for Magick++.h... no
+checking for MAGICK7... no
+checking for PKG_TIFF... no
+checking for tiff-config... no
+checking for TIFFOpen in -ltiff... (cached) yes
+checking tiffio.h usability... yes
+checking tiffio.h presence... yes
+checking for tiffio.h... yes
+checking for TIFFOpen in -ltiff... (cached) yes
+checking for tiffio.h... (cached) yes
+checking for PKG_JPEG... no
+checking for jpeg-config... no
+checking for jpeg_read_header in -ljpeg... (cached) yes
+checking jpeglib.h usability... yes
+checking jpeglib.h presence... yes
+checking for jpeglib.h... yes
+checking for jpeg_read_header in -ljpeg... (cached) yes
+checking for jpeglib.h... (cached) yes
+checking for PKG_FTGL... yes
+checking for main in -lftgl... (cached) yes
+checking FTGL/ftgl.h usability... yes
+checking FTGL/ftgl.h presence... yes
+checking for FTGL/ftgl.h... yes
+checking for PKG_FRIBIDI... no
+checking for fribidi-config... no
+checking for fribidi_log2vis in -lfribidi... (cached) yes
+checking fribidi.h usability... no
+checking fribidi.h presence... no
+checking for fribidi.h... no
+checking for fribidi_log2vis in -lfribidi... (cached) no
+checking for fribidi.h... (cached) no
+checking for PKG_AVIFILE... no
+checking for avifile-config... no
+checking for CreateIAviReadFile in -laviplay... (cached) yes
+checking avifile.h usability... no
+checking avifile.h presence... no
+checking for avifile.h... no
+checking for CreateIAviReadFile in -laviplay... (cached) no
+checking for avifile.h... (cached) no
+checking for PKG_GMERLIN_AVDEC... no
+checking for gmerlin_avdec-config... no
+checking for gavl_start in -lgmerlin_avdec... (cached) yes
+checking gmerlin/avdec.h usability... no
+checking gmerlin/avdec.h presence... no
+checking for gmerlin/avdec.h... no
+checking for gavl_start in -lgmerlin_avdec... (cached) no
+checking for gmerlin/avdec.h... (cached) no
+checking for PKG_MPEG... no
+checking for mpeg-config... no
+checking for OpenMPEG in -lmpeg... (cached) yes
+checking mpeg.h usability... no
+checking mpeg.h presence... no
+checking for mpeg.h... no
+checking for OpenMPEG in -lmpeg... (cached) no
+checking for mpeg.h... (cached) no
+checking for PKG_LIBMPEG3... no
+checking for libmpeg3-config... no
+checking for mpeg3_check_sig in -lmpeg3... (cached) yes
+checking libmpeg3.h usability... no
+checking libmpeg3.h presence... no
+checking for libmpeg3.h... no
+checking for mpeg3_check_sig in -lmpeg3... (cached) no
+checking for libmpeg3.h... (cached) no
+checking for PKG_LIBQUICKTIME... no
+checking for libquicktime-config... no
+checking for quicktime_init in -lquicktime... (cached) yes
+checking quicktime.h usability... no
+checking quicktime.h presence... no
+checking for quicktime.h... no
+checking for quicktime_init in -lquicktime... (cached) no
+checking for quicktime.h... (cached) no
+checking for PKG_LQT... no
+checking for lqt-config... no
+checking for quicktime_init in -lquicktime... (cached) yes
+checking for quicktime.h... (cached) no
+checking for quicktime_init in -lquicktime... (cached) no
+checking for quicktime.h... (cached) no
+checking for lqt_seek_video... no
+checking for lqt_open_write... no
+checking for PKG_LIBDC1394_2... no
+checking for libdc1394-2-config... no
+checking for dc1394_new in -ldc1394... (cached) yes
+checking dc1394/dc1394.h usability... no
+checking dc1394/dc1394.h presence... no
+checking for dc1394/dc1394.h... no
+checking for dc1394_new in -ldc1394... (cached) no
+checking for dc1394/dc1394.h... (cached) no
+checking for PKG_LIBDV... no
+checking for libdv-config... no
+checking for dv_cleanup in -ldv... (cached) yes
+checking libdv/dv.h usability... no
+checking libdv/dv.h presence... no
+checking for libdv/dv.h... no
+checking for dv_cleanup in -ldv... (cached) no
+checking for libdv/dv.h... (cached) no
+checking for PKG_LIBRAW1394... no
+checking for libraw1394-config... no
+checking for raw1394_new_handle in -lraw1394... (cached) yes
+checking libraw1394/raw1394.h usability... no
+checking libraw1394/raw1394.h presence... no
+checking for libraw1394/raw1394.h... no
+checking for raw1394_new_handle in -lraw1394... (cached) no
+checking for libraw1394/raw1394.h... (cached) no
+checking for PKG_LIBIEC61883... no
+checking for libiec61883-config... no
+checking for iec61883_dv_fb_init in -liec61883... (cached) yes
+checking libiec61883/iec61883.h usability... no
+checking libiec61883/iec61883.h presence... no
+checking for libiec61883/iec61883.h... no
+checking for iec61883_dv_fb_init in -liec61883... (cached) no
+checking for libiec61883/iec61883.h... (cached) no
+checking vl/vl.h usability... no
+checking vl/vl.h presence... no
+checking for vl/vl.h... no
+checking for PKG_LIBUNICAP... no
+checking for libunicap-config... no
+checking for unicap_check_version in -lunicap... (cached) yes
+checking unicap.h usability... no
+checking unicap.h presence... no
+checking for unicap.h... no
+checking for unicap_check_version in -lunicap... (cached) no
+checking for unicap.h... (cached) no
+checking linux/videodev.h usability... no
+checking linux/videodev.h presence... no
+checking for linux/videodev.h... no
+checking for PKG_LIBV4L1... yes
+checking for v4l1_open in -lv4l1... (cached) yes
+checking libv4l1.h usability... yes
+checking libv4l1.h presence... yes
+checking for libv4l1.h... yes
+checking linux/videodev2.h usability... yes
+checking linux/videodev2.h presence... yes
+checking for linux/videodev2.h... yes
+checking for PKG_LIBV4L2... yes
+checking for v4l2_open in -lv4l2... (cached) yes
+checking libv4l2.h usability... yes
+checking libv4l2.h presence... yes
+checking for libv4l2.h... yes
+checking for PKG_VFW32... no
+checking for vfw32-config... no
+checking for capGetVideoFormat in -lvfw32... (cached) yes
+checking vfw.h usability... no
+checking vfw.h presence... no
+checking for vfw.h... no
+checking for capGetVideoFormat in -lvfw32... (cached) no
+checking for vfw.h... (cached) no
+checking for PKG_LIBVLC... no
+checking for libvlc-config... no
+checking for libvlc_video_set_callbacks in -lvlc... (cached) yes
+checking vlc/vlc.h usability... no
+checking vlc/vlc.h presence... no
+checking for vlc/vlc.h... no
+checking for libvlc_video_set_callbacks in -lvlc... (cached) no
+checking for vlc/vlc.h... (cached) no
+checking for PKG_LIBVNCCLIENT... no
+checking for libvncclient-config... no
+checking for rfbGetClient in -lvncclient... (cached) yes
+checking rfb/rfbclient.h usability... no
+checking rfb/rfbclient.h presence... no
+checking for rfb/rfbclient.h... no
+checking for rfbGetClient in -lvncclient... (cached) no
+checking for rfb/rfbclient.h... (cached) no
+checking for PKG_ASSIMP... no
+checking for assimp-config... no
+checking for aiDetachAllLogStreams in -lassimp... (cached) yes
+checking assimp.h usability... no
+checking assimp.h presence... no
+checking for assimp.h... no
+checking for aiDetachAllLogStreams in -lassimp... (cached) no
+checking for assimp.h... (cached) no
+checking for assimp.h... (cached) no
+checking assimp/cimport.h usability... no
+checking assimp/cimport.h presence... no
+checking for assimp/cimport.h... no
+checking for lqt_open_write... no
+checking whether compiler accepts "-freg-struct-return"... yes
+enabling "register struct return"
+   allows to make use of FreeFrame-effects without recompiling them
+   might break things, if you are using several different compilers
+checking whether compiler accepts "-O3"... yes
+checking whether compiler accepts "-falign-loops -falign-functions -falign-jumps -funroll-loops"... yes
+checking whether compiler accepts "-ffast-math"... yes
+
+checking whether compiler accepts "-mmmx"... yes
+checking whether compiler accepts "-faltivec"... no
+checking whether compiler accepts "-fpascal-strings"... no
+checking build-date... 
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating abstractions/Makefile
+config.status: creating help/Makefile
+config.status: creating doc/Makefile
+config.status: creating examples/Makefile
+config.status: creating src/Makefile
+config.status: creating src/Gem/Makefile
+config.status: creating src/Utils/Makefile
+config.status: creating src/RTE/Makefile
+config.status: creating src/Base/Makefile
+config.status: creating src/plugins/Makefile
+config.status: creating src/Output/Makefile
+config.status: creating src/deprecated/Makefile
+config.status: creating plugins/Makefile
+config.status: creating plugins/imageQT/Makefile
+config.status: creating plugins/imageMAGICK/Makefile
+config.status: creating plugins/imageTIFF/Makefile
+config.status: creating plugins/imageJPEG/Makefile
+config.status: creating plugins/imageSGI/Makefile
+config.status: creating plugins/filmAVF/Makefile
+config.status: creating plugins/filmAVI/Makefile
+config.status: creating plugins/filmAVIPLAY/Makefile
+config.status: creating plugins/filmDS/Makefile
+config.status: creating plugins/filmDarwin/Makefile
+config.status: creating plugins/filmGMERLIN/Makefile
+config.status: creating plugins/filmMPEG1/Makefile
+config.status: creating plugins/filmMPEG3/Makefile
+config.status: creating plugins/filmQT/Makefile
+config.status: creating plugins/filmQT4L/Makefile
+config.status: creating plugins/filmTEST/Makefile
+config.status: creating plugins/modelOBJ/Makefile
+config.status: creating plugins/modelASSIMP2/Makefile
+config.status: creating plugins/modelASSIMP3/Makefile
+config.status: creating plugins/recordQT/Makefile
+config.status: creating plugins/recordQT4L/Makefile
+config.status: creating plugins/recordV4L/Makefile
+config.status: creating plugins/recordV4L2/Makefile
+config.status: creating plugins/videoDC1394/Makefile
+config.status: creating plugins/videoDS/Makefile
+config.status: creating plugins/videoDV4L/Makefile
+config.status: creating plugins/videoDarwin/Makefile
+config.status: creating plugins/videoSGI/Makefile
+config.status: creating plugins/videoTEST/Makefile
+config.status: creating plugins/videoUNICAP/Makefile
+config.status: creating plugins/videoV4L/Makefile
+config.status: creating plugins/videoV4L2/Makefile
+config.status: creating plugins/videoVFW/Makefile
+config.status: creating plugins/videoVIDS/Makefile
+config.status: creating plugins/videoVLC/Makefile
+config.status: creating plugins/videoVNC/Makefile
+config.status: creating extra/pix_drum/Makefile
+config.status: creating extra/pix_mano/Makefile
+config.status: creating extra/pix_fiducialtrack/Makefile
+config.status: creating extra/pix_hit/Makefile
+config.status: creating build/Makefile
+config.status: creating Gem.pc
+config.status: creating Gem-meta.pd
+config.status: creating src/Controls/Makefile
+config.status: creating src/Geos/Makefile
+config.status: creating src/Manips/Makefile
+config.status: creating src/Nongeos/Makefile
+config.status: creating src/Particles/Makefile
+config.status: creating src/Pixes/Makefile
+config.status: creating src/openGL/Makefile
+config.status: creating src/Vertex/Makefile
+config.status: creating abstractions/gemdefaultwindow.pd
+config.status: creating src/config.h
+config.status: src/config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+=== configuring in extra (/home/thalia/Documents/Pd/externals/Gem-master/extra)
+configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--with-DeckLink-CFLAGS=-I/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/include' '--with-DeckLink-LIBS=-L/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/Samples/bin/x86_64/lib' '--with-pd=/usr/include/pd' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... none
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: executing depfiles commands
+=== configuring in pix_artoolkit (/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_artoolkit)
+configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--with-DeckLink-CFLAGS=-I/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/include' '--with-DeckLink-LIBS=-L/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/Samples/bin/x86_64/lib' '--with-pd=/usr/include/pd' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/x86_64-linux-gnu-ld
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/x86_64-linux-gnu-ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/x86_64-linux-gnu-ld -m elf_x86_64
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking include paths for Pd... /usr/include/pd
+checking library paths for Pd... /usr/include/pd
+checking for nullfn in -l:pd.dll... no
+checking for nullfn in -lpd... no
+checking m_pd.h usability... yes
+checking m_pd.h presence... yes
+checking for m_pd.h... yes
+checking for s_stuff.h... yes
+checking for m_imp.h... yes
+checking whether gcc needs -Werror to reject unknown flags... yes
+checking for PKG_ARTOOLKIT... no
+checking for artoolkit-config... no
+checking for arInitCparam in -lAR... (cached) yes
+checking AR/ar.h usability... no
+checking AR/ar.h presence... no
+checking for AR/ar.h... no
+checking for arInitCparam in -lAR... (cached) no
+checking for AR/ar.h... (cached) no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+=== configuring in plugins/videoAVT (/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoAVT)
+configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--with-DeckLink-CFLAGS=-I/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/include' '--with-DeckLink-LIBS=-L/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/Samples/bin/x86_64/lib' '--with-pd=/usr/include/pd' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/x86_64-linux-gnu-ld
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/x86_64-linux-gnu-ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/x86_64-linux-gnu-ld -m elf_x86_64
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking include paths for Pd... /usr/include/pd
+checking library paths for Pd... /usr/include/pd
+checking for nullfn in -l:pd.dll... no
+checking for nullfn in -lpd... no
+checking m_pd.h usability... yes
+checking m_pd.h presence... yes
+checking for m_pd.h... yes
+checking for s_stuff.h... yes
+checking for m_imp.h... yes
+checking for PKG_LIBPVAPI... no
+checking for libPvAPI-config... no
+checking for PvInitialize in -lPvAPI... (cached) yes
+checking PvApi.h usability... no
+checking PvApi.h presence... no
+checking for PvApi.h... no
+checking for PvInitialize in -lPvAPI... (cached) no
+checking for PvApi.h... (cached) no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+=== configuring in plugins/videoHALCON (/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoHALCON)
+configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--with-DeckLink-CFLAGS=-I/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/include' '--with-DeckLink-LIBS=-L/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/Samples/bin/x86_64/lib' '--with-pd=/usr/include/pd' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/x86_64-linux-gnu-ld
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/x86_64-linux-gnu-ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/x86_64-linux-gnu-ld -m elf_x86_64
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking include paths for Pd... /usr/include/pd
+checking library paths for Pd... /usr/include/pd
+checking for nullfn in -l:pd.dll... no
+checking for nullfn in -lpd... no
+checking m_pd.h usability... yes
+checking m_pd.h presence... yes
+checking for m_pd.h... yes
+checking for s_stuff.h... yes
+checking for m_imp.h... yes
+checking HalconCpp.h usability... no
+checking HalconCpp.h presence... no
+checking for HalconCpp.h... no
+checking for HALCON... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+=== configuring in plugins/videoPYLON (/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoPYLON)
+configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--with-DeckLink-CFLAGS=-I/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/include' '--with-DeckLink-LIBS=-L/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/Samples/bin/x86_64/lib' '--with-pd=/usr/include/pd' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/x86_64-linux-gnu-ld
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/x86_64-linux-gnu-ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/x86_64-linux-gnu-ld -m elf_x86_64
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking include paths for Pd... /usr/include/pd
+checking library paths for Pd... /usr/include/pd
+checking for nullfn in -l:pd.dll... no
+checking for nullfn in -lpd... no
+checking m_pd.h usability... yes
+checking m_pd.h presence... yes
+checking for m_pd.h... yes
+checking for s_stuff.h... yes
+checking for m_imp.h... yes
+checking pylon/PylonIncludes.h usability... no
+checking pylon/PylonIncludes.h presence... no
+checking for pylon/PylonIncludes.h... no
+checking for PYLON... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+=== configuring in plugins/videoDECKLINK (/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDECKLINK)
+configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--with-DeckLink-CFLAGS=-I/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/include' '--with-DeckLink-LIBS=-L/home/thalia/Downloads/Blackmagic_DeckLink_SDK_10.10/Blackmagic_DeckLink_SDK_10.10/Linux/Samples/bin/x86_64/lib' '--with-pd=/usr/include/pd' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/x86_64-linux-gnu-ld
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/x86_64-linux-gnu-ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/x86_64-linux-gnu-ld -m elf_x86_64
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking include paths for Pd... /usr/include/pd
+checking library paths for Pd... /usr/include/pd
+checking for nullfn in -l:pd.dll... no
+checking for nullfn in -lpd... no
+checking m_pd.h usability... yes
+checking m_pd.h presence... yes
+checking for m_pd.h... yes
+checking for s_stuff.h... yes
+checking for m_imp.h... yes
+checking for PKG_DECKLINK... yes
+checking DeckLinkAPI.h usability... yes
+checking DeckLinkAPI.h presence... yes
+checking for DeckLinkAPI.h... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+Result:
+  Target                 : Gem.pd_linux
+  Objects                : 
+  default window         : gemglxwindow
+
+Configuration:
+  Compiler               : g++
+  CXXFLAGS               : -g -O2 -freg-struct-return -O3 -falign-loops -falign-functions -falign-jumps -funroll-loops -ffast-math -mmmx 
+                         :   -I/usr/include/FTGL -I/usr/include/freetype2 -I/usr/include/libpng16   -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/include/x86_64-linux-gnu//ImageMagick-6 -I/usr/include/ImageMagick-6 -I/usr/include/x86_64-linux-gnu//ImageMagick-6 -I/usr/include/ImageMagick-6 -I/usr/include/x86_64-linux-gnu//ImageMagick-6 -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/include/x86_64-linux-gnu//ImageMagick-6 -I/usr/include/ImageMagick-6 
+  DEFINES                : 
+
+  LIBS                   : -lXrender -lXxf86vm -ldl -lz -lm 
+                         : -lv4l2 -lv4l1 -lftgl -ljpeg -ltiff -lMagick++-6.Q16 -lMagickWand-6.Q16 -lMagickCore-6.Q16 -lMagickCore-6.Q16 
+  LDFLAGS                : 
+                         : 
+
+  Install path           : /usr/local
+
+ RTE (Pure Data):
+  external-extension     : pd_linux
+  CFLAGS                 : -DPD -I/usr/include/pd
+  LIBS                   : -L/usr/include/pd
+
+ used optional libraries:
+
+  font-rendering         : FTGL
+     default font        : 
+
+  image-support
+    use ImageMagick      : yes (Magick++)
+    use QuickTime        : no
+    use AVFoundation     : no
+    use TIFF             : yes
+    use JPEG             : yes
+  moviefile-support
+    use PLUGINS          : yes
+    use mpeg             : no
+    use mpeg-3           : no
+    use QuickTime        : no
+    use AVFoundation     : 
+    use aviplay          : no
+    use gmerlin          : no
+  capture-support
+    use PLUGINS          : yes
+    use v4l              : yes (libv4l)
+    use v4l2             : yes (libv4l)
+    use ieee1394         : no
+    use DV               : no
+    use Unicap           : yes
+    use Video-for-WinDOS : no
+    use QuickTime        : no
+    use AVFoundation     : no
+
+Now run make ...
+

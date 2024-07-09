@@ -1,0 +1,13 @@
+#N canvas 414 230 450 300 10;
+#X obj 81 229 outlet;
+#X obj 233 15 inlet reset_bang;
+#X obj 126 15 inlet elements;
+#X obj 53 101 l;
+#X obj 129 101 prepend;
+#X obj 35 14 inlet output;
+#X connect 1 0 4 1;
+#X connect 2 0 4 0;
+#X connect 3 0 4 1;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;

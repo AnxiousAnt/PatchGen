@@ -1,0 +1,13 @@
+#N canvas 236 255 450 300 12;
+#X obj 169 203 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 260 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 81 99 coll;
+#C restore;
+#X msg 96 51 read;
+#X obj 136 255 print;
+#X connect 2 2 0 0;
+#X connect 2 2 4 0;
+#X connect 2 3 1 0;
+#X connect 3 0 2 0;

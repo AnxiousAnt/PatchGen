@@ -1,0 +1,13 @@
+#N canvas 0 0 450 300 12;
+#X obj 123 38 inlet;
+#X obj 121 252 outlet;
+#X obj 121 223 r \$0-sys_gui-r;
+#X obj 123 62 list prepend pdsend "\$0-sys_gui-r [;
+#X obj 123 86 list append ];
+#X obj 123 110 list trim;
+#X obj 123 134 sys_gui;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;

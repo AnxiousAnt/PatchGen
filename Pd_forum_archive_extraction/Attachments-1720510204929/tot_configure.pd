@@ -1,0 +1,11 @@
+#N canvas 299 240 327 174 10;
+#N canvas 0 0 498 348 sub 0;
+#X restore 35 25 pd sub;
+#X obj 37 137 tot sub;
+#X obj 160 26 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X msg 160 47 \; pd-sub vis \$1;
+#X msg 37 107 query .^.c configure -width 400 -height 40;
+#X connect 1 3 4 0;
+#X connect 2 0 3 0;
+#X connect 4 0 1 0;

@@ -1,0 +1,18 @@
+#N canvas 338 204 450 300 10;
+#X obj 205 162 realtime;
+#X obj 32 76 metro 1000;
+#X obj 191 87 bang;
+#X msg 31 37 bang;
+#X floatatom 212 228 5 0 0 0 - - -;
+#X msg 27 190 255;
+#X obj 27 226 ctlout 7;
+#X obj 191 56 ctlin 7;
+#X obj 53 149 delay 10;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 1 0 8 0;
+#X connect 2 0 0 1;
+#X connect 3 0 1 0;
+#X connect 5 0 6 0;
+#X connect 7 0 2 0;
+#X connect 8 0 5 0;

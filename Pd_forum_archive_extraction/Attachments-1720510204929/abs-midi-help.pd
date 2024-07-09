@@ -1,0 +1,17 @@
+#N canvas 240 153 411 369 10;
+#X text 18 78 v;
+#X obj 19 93 abs-midi 4;
+#X text 111 97 example : 4;
+#X obj 9 5 cnv 15 300 30 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X text 92 85 <- selected channel.;
+#X obj 12 10 comment 0 25 helvetica ? 0 0 0 0 MIDI TABLE;
+#X text 16 126 This absract is made to keep the level of each adjustment
+sliders and potars of each channel of a MIDI table \, when you change
+the channel and change the position of slider or potar.;
+#X text 163 19 philippe b;
+#X text 17 188 the 2nd inlet : withe this inlet you can change the
+channel of the abstract;
+#X text 10 39 1rst inlet : entry of the table MIDI [ctlin 18 4] for
+example. The number of channel must be the same than the variable of
+the abstract.;

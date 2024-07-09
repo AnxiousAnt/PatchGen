@@ -1,0 +1,18 @@
+#N canvas 777 503 867 300 10;
+#X msg 87 91 send \$1;
+#X obj 140 165 netsend;
+#X obj 160 110 loadbang;
+#X msg 160 132 connect 127.0.0.1 7777;
+#X text 158 54 <- enter one million and one here \, then send this
+message;
+#X obj 390 102 netreceive 7777;
+#X text 545 130 <- not receiving one million and one;
+#X msg 87 54 1e+06;
+#X obj 11 165 rawprint to_netsend;
+#X obj 390 129 rawprint from_netreceive;
+#X connect 0 0 1 0;
+#X connect 0 0 8 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 5 0 9 0;
+#X connect 7 0 0 0;

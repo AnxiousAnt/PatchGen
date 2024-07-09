@@ -1,0 +1,13 @@
+#N canvas 0 0 450 300 10;
+#X obj 136 123 list prepend run;
+#X obj 136 145 list trim;
+#X msg 45 129 run ls /tmp;
+#X obj 139 170 luaopen;
+#X obj 139 227 print luaopen;
+#X obj 185 192 print errors;
+#X msg 136 92 ls /home/me;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 6 0 0 0;

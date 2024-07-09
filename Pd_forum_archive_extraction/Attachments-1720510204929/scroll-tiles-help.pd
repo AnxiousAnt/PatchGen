@@ -1,0 +1,41 @@
+#N canvas 698 282 463 345 10;
+#X obj 30 102 bng 15 250 50 0 empty empty start 20 7 0 10 -262144 -1
+-1;
+#X text 80 18 time in seconds for a tile to cross screen;
+#X text 86 56 number of tiles to scroll;
+#X text 22 235 1 - basename;
+#X text 21 324 3 - time (see above);
+#X text 22 309 2 - number of tiles;
+#X text 63 279 names are relative to the folder containing the patch
+;
+#X text 11 217 arguments:;
+#X text 61 250 split a wide image into 4x3 tiles;
+#X text 63 265 tiles should be named basename-1.png \, basename-2.png
+\, etc;
+#X text 63 293 an absolute pathname also works eg /path/image;
+#X msg 13 35 time \$1;
+#X msg 21 77 tiles \$1;
+#X msg 41 143 vertical;
+#X msg 36 121 horizontal;
+#X obj 13 18 nbx 5 14 0.1 1000 1 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.1 256;
+#X obj 21 59 nbx 5 14 1 100 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 1 256;
+#X obj 13 195 scroll-tiles image 3 10;
+#X msg 133 169 reset;
+#X msg 180 171 1;
+#X msg 216 171 0;
+#X text 243 170 on/off;
+#X msg 43 165 loop 1;
+#X obj 359 15 gemwindow;
+#X connect 0 0 17 0;
+#X connect 11 0 17 0;
+#X connect 12 0 17 0;
+#X connect 13 0 17 0;
+#X connect 14 0 17 0;
+#X connect 15 0 11 0;
+#X connect 16 0 12 0;
+#X connect 18 0 17 0;
+#X connect 19 0 17 0;
+#X connect 20 0 17 0;
+#X connect 22 0 17 0;

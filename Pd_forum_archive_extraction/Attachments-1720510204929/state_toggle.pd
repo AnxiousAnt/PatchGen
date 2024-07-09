@@ -1,0 +1,25 @@
+#N canvas 746 329 458 378 10;
+#X obj 51 21 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 73 20 <-- switch states;
+#X obj 51 85 ==;
+#X obj 93 85 f;
+#X obj 51 179 select 0 1;
+#X text 64 58 ----------------------------------------;
+#X text 64 145 ----------------------------------------;
+#X text 82 41 (when hit \, it sends a a 'bang';
+#X text 94 109 sends alternating '0' and '1';
+#X text 144 174 if input matches \, send 'bang to;
+#X text 143 191 the appropriate output.;
+#X text 99 216 -----------------------------------;
+#X msg 51 261 stop;
+#X msg 93 261 play/record;
+#X obj 51 307 print;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 1;
+#X connect 4 0 12 0;
+#X connect 4 1 13 0;
+#X connect 12 0 14 0;
+#X connect 13 0 14 0;

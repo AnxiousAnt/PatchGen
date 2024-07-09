@@ -1,0 +1,451 @@
+*** pure data structure ***
+20050630 Martin Peach
+*** Miller Puckette's notes: ***
+--------------------- source notes --------------------------
+
+0.  structure definition roadmap.  First, the containment tree of things
+that can be sent messages ("pure data").  (note that t_object and t_text,
+and t_graph and t_canvas, should be unified...)
+
+m_pd.h	    t_pd    	    	    anything with a class
+    	    	t_gobj	    	    "graphic object"
+    	    	    t_text  	    patchable object, AKA t_object
+g_canvas.h     	    	t_glist     list of graphic objects, AKA t_canvas
+
+... and other structures:
+g_canvas.h  t_selection -- linked list of gobjs
+    	    t_editor -- editor state, allocated for visible glists
+m_imp.h     t_methodentry -- method handler
+    	    t_widgetbehavior -- class-dependent editing behavior for gobjs
+    	    t_parentwidgetbehavior -- objects' behavior on parent window
+    	    t_class -- method definitions, instance size, flags, etc.
+
+
+1.  C coding style.  The source should pass most "warnings" of C compilers
+(-Wall on linux, for instance; see the makefile.)  Some informalities
+are intentional, for instance the loose use of function prototypes (see
+below) and uncast conversions from longer to shorter numerical formats.
+The code doesn't respect "const" yet.
+
+1.1.  Prefixes in structure elements.  The names of structure elements always
+have a K&R-style prefix, as in ((t_atom)x)->a_type, where the "a_" prefix
+indicates "atom."  This is intended to enhance readability (although the
+convention arose from a limitation of early C compilers.)  Common prefixes are
+"w_" (word), "a_" (atom), "s_" (symbol), "ob_" (object), "te_" (text object),
+"g_" (graphical object), and "gl_" (glist, a list of graphical objects).  Also,
+global symbols sometimes get prefixes, as in "s_float" (the symbol whose string
+is "float).  Typedefs are prefixed by "t_".  Most _private_ structures, i.e.,
+structures whose definitions appear in a ".c" file, are prefixed by "x_".
+
+1.2.   Function arguments.  Many functions take as their first
+argument a pointer named "x", which is a pointer to a structure suggested
+by the function prefix; e.g., canvas_dirty(x, n) where "x" points to a canvas
+(t_canvas *x).
+
+1.3.  Function Prototypes.  Functions which are used in at least two different
+files (besides where they originate) are prototyped in the appropriate include
+file. Functions which are provided in one file and used in one other are
+prototyped right where they are used.  This is just to keep the size of the
+".h" files down for readability's sake.
+
+1.4.  Whacko private terminology.  Some terms are lifted from other historically
+relevant programs, notably "ugen" (which is just a tilde object; see d_ugen.c.)
+
+1.5.  Spacing.  Tabs are 8 spaces; indentation is 4 spaces.  Indenting
+curly brackets are by themselves on their own lines, as in:
+
+    if (x)
+    {
+	x = 0;
+    }
+
+Lines should fit within 80 spaces.
+
+2.  Max patch-level compatibility.  "Import" and "Export" functions are
+provided which aspire to strict compatibility with 0.26 patches (ISPW version),
+but which don't get anywhere close to that yet.  Where possible, features
+appearing on the Mac will someday also be provided; for instance, the connect
+message on the Mac offers segmented patch cords; these will devolve into
+straight lines in Pd.  Many, many UI objects in Opcode Max will not appear in
+Pd, at least at first.
+
+3.  Compatibility with Max 0.26 "externs", i.e., source-level compatibility. Pd
+objects follow the style of 0.26 objects as closely as possible, making
+exceptions in cases where the 0.26 model is clearly deficient.  These are:
+
+3.1.  Anything involving the MacIntosh "Handle" data type is changed to use
+char * or void * instead.
+
+3.2.  Pd passes true single-precision floating-point arguments to methods;
+Max uses double.
+Typedefs are provided:
+    t_floatarg, t_intarg for arguments passed by the message system
+    t_float, t_int for the "word" union (in atoms, for example.)
+
+3.3.  Badly-named entities got name changes:
+
+    w_long --> w_int (in the "union word" structure)
+
+3.4.  Many library functions are renamed and have different arguments;
+I hope to provide an include file to alias them when compiling Max externs.
+
+4.  Function name prefixes.
+Many function names have prefixes which indicate what "package" they belong
+to.  The exceptions are:
+    typedmess, vmess, getfn, gensym (m_class.c)
+    getbytes, freebytes, resizebytes (m_memory.c)
+    post, error, bug (s_print.c)
+which are all frequently called and which don't fit into simple categories.
+Important packages are:
+(pd-gui:)   pdgui -- everything
+(pd:)	    pd -- functions common to all "pd" objects
+    	    obj -- fuctions common to all "patchable" objects ala Max
+    	    sys -- "system" level functions
+    	    binbuf -- functions manipulating binbufs
+    	    class -- functions manipulating classes
+    	    (other) -- functions common to the named Pd class
+
+5. Source file prefixes. 
+PD:
+s    system interface
+m    message system
+g    graphics stuff
+d    DSP objects
+x    control objects
+z    other
+
+PD-GUI:
+t    TK front end
+
+***
+
+*** Martin Peach's notes: ***
+
+Here we will trace the flow of control through the various parts of pd as pd starts up.
+
+*** pd / pd.exe ***
+PD starts in s_entry.c, where two types of main function, one for MSW and the other for Unix
+(linux and OSX (and Cygwin, we hope)), call sys_main(argc, argv), which is in s_main.c.
+On Windows, s_entry.c is the only file compiled into pd.exe. The rest ends up in pd.dll, which is linked
+to pd.exe. This is done so that externs will be able to link back to functions defined in pd.
+main() in s_entry.c calls:
+|
+|-sys_main in s_main.c calls:
+  |
+  |-pd_init(): in m_pd.c, calls:
+  | |
+  | |-mess_init(): in m_class.c sets up the builtin symbols s_pointer, s_float,
+  | |   s_symbol, s_bang, s_list, s_anything, s_signal, s__N, s__X,
+  | |   s_x, s_y, and s_, as well as the classes pd_objectmaker,
+  | |   for making boxes and pd_canvasmaker for making canvases.
+  | |   pd_canvasmaker is bound to the symbol s__N (#N, i.e. a new window).
+  | |   pd_objectmaker gets a pointer to new_anything().
+  | |
+  | |-obj_init(): in m_obj.c sets up a generic inlet_class and adds pointers to
+  | |   inlet_bang, inlet_pointer, inlet_float, inlet_symbol, inlet_list,
+  | |   and inlet_anything.
+  | |   Also sets up specific pointerinlet_class, floatinlet_class, and 
+  | |   symbolinlet_class.
+  | |
+  | |-conf_init(): in m_conf.c calls setup functions for the builtin objects.
+  | |   m_pd_setup() sets up the bindlist class that allows the binding
+  | |   of several objects to the same symbol, the way pointerinlet_class,
+  | |   floatinlet_class etc. are all bound to the symbol "inlet"
+  | |
+  | |-glob_init(): in m_glob.c sets up a pd class to respond to messages like "open", "quit", and the
+  |     symbols for the audio and MIDI dialogs, (and watchdog on Non-MacOSX unix).
+  |
+  |-sys_findprogdir(argv[0]): in s_main.c finds the path to the pd program, and from there
+  |   decides what sys_libdir and sys_guidir should be.
+  |
+  |-sys_loadpreferences(): in sfile.c, loads a file named .pdsettings from the user's home directory
+  |   (Unix), or (Windows) gets preferences from the registry.
+  |
+  |-sys_rcfile(): (non-Windows only) in s_path.c, attempts to load and parse a file named ".pdrc" (STARTUPNAME)
+  |
+  |-sys_argparse(): in s_main.c attempts to parse the command line arguments in the same way as
+  |   the .pdrc file. (sys_rcfile also calls sys_argparse).
+  |
+  |-sys_afterargparse(): in s_main.c sets the midi and ausio parameters according to the preferences
+  | | that were loaded from .pdrc and the command line. Calls:
+  | |
+  | |-sys_open_audio(): in s_audio.c: opens audio in platform-specific manner
+  | |
+  | |-sys_open_midi(): in s_midi.c: opens midi in platform-specific manner
+  |
+  |-sys_startgui(sys_guidir->s_name): in s_inter.c sets up some signal handlers, opens a TCP socket (sys_guisock)
+  | | on port 5400 (FIRSTPORTNUM) and then forks.
+  | | *The child starts the gui process:
+  | | *Under unix, the environment variables TCL_LIBRARY and TK_LIBRARY are declared
+  | | *and the pd-gui program is called with the paths to tcl and tk libs, the pd.tk script and the port number as arguments:
+  | | */bin/sh sh -c TCL_LIBRARY="LIBDIRPATH/tcl/library" TK_LIBRARY="LIBDIRPATH/tk/library" "GUIDIRPATH/pd-gui" 5400
+  | | *where LIBDIRPATH = sys_libdir->s_name, usually /lib/pd, and GUIDIRPATH = guidir, usually /lib/pd/bin
+  | | *On Windows and MacOSX, the Wish shell is spawned and fed the pd.tk script.
+  | | *The child exits, doesn't return.
+  | | *On non-MacOSX unix platforms the parent thread opens a pipe, then forks again:
+  | | **The child gives itself a higher priority by calling sys_set_priority(1) and
+  | | **calls the shell to execute pd-watchdog. From the code:
+  | | **"To prevent lockup, we fork off a watchdog process with higher real-time priority than ours.  The GUI has to send
+  | | **a stream of ping messages to the watchdog THROUGH the Pd process which has to pick them up from the GUI and forward
+  | | **them.  If any of these things aren't happening the watchdog starts sending "stop" and "cont" signals to the Pd process
+  | | **to make it timeshare with the rest of the system.  (Version 0.33P2 : if there's no GUI, the watchdog pinging is done
+  | | **from the scheduler idle routine in this process instead.)"
+  | | **The child exits.
+  | | *The parent sets itself to another priority by calling sys_set_priority(0).
+  | | *It assigns the write end of the pipe to sys_watchfd.
+  | | *On Windows and MacOSX the parent uses system-specific calls to set a higher priority for itself. 
+  | | *Finally the parent thread calls
+  | |-socketreceiver_new(0, 0, 0, 0) in s_inter.c. This initializes a t_socketreceiver class with all fields zeroed.
+  | |   struct _socketreceiver
+  | |   {
+  | |     char *sr_inbuf;
+  | |     int sr_inhead;
+  | |     int sr_intail;
+  | |     void *sr_owner;
+  | |     int sr_udp;
+  | |     t_socketnotifier sr_notifier;
+  | |     t_socketreceivefn sr_socketreceivefn;
+  | |    }
+  | |
+  | |-sys_addpollfn(sys_guisock, (t_fdpollfn)socketreceiver_read, sys_socketreceiver) in s_inter.c. This adds socketreceiver_read to
+  | |  the list of functions checked during sys_domicrosleep()
+  | |   typedef struct _fdpoll
+  | |   {
+  | |     int fdp_fd;
+  | |     t_fdpollfn fdp_fn;
+  | |     void *fdp_ptr;
+  | |   } t_fdpoll;
+  | |  socketreceiver_read(t_socketreceiver *x, int fd) in s_inter.c attempts to read data from sys_guisock.
+  | | 
+  | |
+  | | *Non-MacOSX unix platforms call:
+  | |-sys_gui("pdtk_watchdog\n"), this calls the pdtk_watchdog procedure in pd.tk
+  | |
+  | |-sys_get_audio_apis(buf);
+  | |
+  | |-sys_vgui("pdtk_pd_startup {%s} %s\n", pd_version, buf): pdtk_pd_startup is in pd.tk. It calls pd
+  |    with the pd command and the argument init. 
+  |    *The class pd has glob_initfromgui() as the handler for the init message.
+  |
+  | If sys_externalschedlib is zero (always(?) ...looks like a provision for an external scheduler is partly implemented), all versions call:
+  |-sys_reopen_midi(): in s_midi.c opens midi by calling:
+  | |
+  | |-sys_open_midi() (again...)
+  | 
+  |-sys_reopen_audio(): in s_audio.c opens audio by calling:
+  | |
+  | |-sys_open_audio() (again...)
+  |
+  |-m_scheduler(): in m_sched.c is the main loop, calls:
+    |
+    |-sys_clearhist(): in m_sched.c clears the real-time execution histogram.
+    |
+    |-sys_initmidiqueue(): in s_midi.c zeroes some timers.
+    | , then goes into a loop until the int sys_quit has been set (although pd can exit() at other places
+    | when signaled).
+    | In the loop we have, mainly:
+    |
+    |-sys_send_dacs(): in s_audio.c uses platform-specific code to acquire a block of adc and send
+    |  a block of dac numbers
+    |
+    |-sys_getrealtime(): in s_inter.c returns the number of seconds since pd startup.
+    |
+    |-sys_pollmidiqueue(): in s_midi.c calls platform-dependent midi code for midi I/O.
+    |
+    |-sys_poll_gui(): in s_inter.c calls:
+    | |
+    | |-sys_domicrosleep(): in s_inter.c checks for received data on the gui socket sys_guisock (...or any functions added with sys_addpollfn())
+    | |
+    | |-sys_poll_togui() which calls:
+    |    |
+    |    |-sys_flushtogui(): sends queued qui stuff through sys_guisock
+    |    |
+    |    |-sys_flushqueue(): updates the guiqueue and calls sys_flushtogui()
+    |    |
+    |    |-sys_reportidle(): in s_audio.c is empty(?).
+    |
+    |-sys_microsleep(): in s_inter.c calls:
+      |-sys_domicrosleep() in s_inter.c checks for received data on the gui socket sys_guisock (...or any functions added with sys_addpollfn())
+
+*** pd-gui / pdtcl.dll / pdtcl *** the graphical user interface ***
+On all platforms, the gui is compiled from t_main.c and t_tkcmd.c.		  
+Under unix, pd-gui is an executable program. It is started by a child thread of pd in sys_startgui() in s_inter.c.
+Under Windows, pdtcl.dll is a shared library. It is loaded when the Wish shell processes the pd.tk script.
+On MacOSX, pdtcl is the name of the library loaded in pd.tk.
+main() in t_main.c calls:
+|
+|-pdgui_setname(argv[0]): in t_tkcmd.c seems to set the global pdgui_path to the first part of the path to pd-gui.
+|
+|-pdgui_setsock(argv[1]): in t_tkcmd.c with the port number. Sets pd_portno = 5400 and returns.
+|
+|-pdgui_sethost(argv[2]): in t_tkcmd.c with the host name if one was given (probably never happens)
+|
+|-Tk_Main(): in tk.lib is the main entry point of the tk library. Called with arguments "Pd" and "Tcl_AppInit", it starts the tk interpreter and calls
+  |
+  |-Tcl_AppInit(): in t_main.c, with pointer to the interpreter.
+    | (Some of the following is from the Tcl/Tk documentation at http://www.tcl.tk/man/tcl8.4/)
+    | Tcl_AppInit is a "hook" procedure that is invoked by the main programs for Tcl applications such as tclsh and wish.
+    | Its purpose is to allow new Tcl applications to be created without modifying the main programs provided as part of
+    | Tcl and Tk. To create a new application you write a new version of Tcl_AppInit to replace the default version
+    | provided by Tcl, then link your new Tcl_AppInit with the Tcl library.
+    | TclAppInit calls
+    |
+    |-Tcl_Init(interp): In libtcl. Tcl_Init is a helper procedure that finds and sources the init.tcl script, which should exist
+    |   somewhere on the Tcl library path. On Macintosh systems, it additionally checks for an Init
+    |   resource and sources the contents of that resource if init.tcl cannot be found.
+    |
+    |-Tk_Init(interp): In libtk. Tk_Init is the package initialization procedure for Tk.
+    |   It is normally invoked by the Tcl_AppInit procedure for an application or by the load command.
+    |   Tk_Init adds all of Tk's commands to interp and creates a new Tk application, including its main window.
+    |   If the initialization is successful Tk_Init returns TCL_OK; if there is an error it returns TCL_ERROR.
+    |   Tk_Init also leaves a result or error message in interp->result.
+    |   If there is a variable argv in interp, Tk_Init treats the contents of this variable as a list of
+    |   options for the new Tk application. The options may have any of the forms documented for the wish
+    |   application (in fact, wish uses Tk_Init to process its command-line arguments). 
+    |
+    |-pdgui_startup(interp): In t_tkcmd.c. Sets tk_pdinterp=interp. Calls:
+      |
+      |-Tcl_CreateCommand(): In libtcl. Creates a command "pd" implemented by pdCmd()
+      |   Windows versions also create a command "pd_pollsocket" implemented by pd_pollsocketCmd().
+      |
+      |-pdgui_setupsocket(): in t_tkcmd.c Calls
+      | |
+      | |-pdgui_connecttosocket(): in t_tkcmd.c sets up a client socket
+      | |  (AF_INET, SOCK_STREAM, 0) on port 5400 and connects it. (Windows only or when pd_portno is defined)
+      | |
+      | |-pd_startfromgui(): in t_tkcmd.c when portno is not defined (usually).
+      |   |
+      |   | Sets up a client socket on the first available port starting at 5400 and connects it.
+      |   | Unix versions call
+      |   |
+      |   |-Tk_CreateFileHandler(sockfd, TK_READABLE | TK_EXCEPTION, pd_readsocket, 0);
+      |       Tk_CreateFileHandler() is Tcl_CreateFileHandler() and is only implemented on unix. Windows versions have to poll tk instead.
+      |       Tcl_CreateFileHandler with TK_READABLE | TK_EXCEPTION arranges for pd_readsocket() to be invoked in the future whenever reading
+      |       becomes possible on the 'file' sockfd or an exceptional condition exists for the file.
+      |       The callback to pd_readsocket() is made by Tcl_DoOneEvent, so Tcl_CreateFileHandler is only useful in programs that dispatch
+      |       events through Tcl_DoOneEvent or through Tcl commands such as vwait.
+      |       pd_readsocket(): in t_tkcmd.c parses data received on the csocket and calls
+      |       |
+      |       |-tcl_mess(): in t_tkcmd.c calls
+      |         |
+      |         |-Tcl_Eval(): in libtcl, handles the data from pd as a tcl script.
+      |
+      |-pdgui_evalfile("pd.tk"): (non-MacOSX unix only, the others use Wish to do this and so pd.tk is already being processed: that's how we got here)
+        |  in t_tkcmd.c calls
+        |
+        |-pdgui_doevalfile(): in t_tkcmd.c calls
+          |
+          |-Tcl_EvalFile(): in libtcl which parses the pd.tk script. 
+
+***
+*** pd.tk *** 
+The Tcl/tk script pd.tk is a simple copy of u_main.tk.
+
+Tcl/tk is Tool Command Language with the Tool Kit extension for graphical interfaces.
+(http://www.tcl.tk)
+The first line (#!/usr/bin/wish) invokes the wish shell.
+Wish is a simple program comprising the Tcl command language, the Tk toolkit,
+and a main program that reads commands from standard input or from a file.
+It makes a main window, then processes Tcl commands in the script until all windows have been deleted.
+
+The next lines set the global variable pd_nt to 0, 1, or 2 depending on the platform (default=0, Windows=1, Darwin=2).
+The global variable pd_tearoff is set to 1.
+
+On Windows, the next little block loads pdtcl.dll. It gets the path by taking the first argument to wish (the path to the script),
+clipping off the script name, replacing backslashes with forward slashes, appending "/bin/pdtcl.dll" to the path,
+and finally loading it. This will cause tcl to call Tcl_AppInit() in t_main.c and set up the tcl part of the pd application.
+
+On MacOSX (Darwin) a similar procedure loads pdtcl with a similar result. Here we also set up a drag-and-drop handler.
+
+On unix, the main pd-gui program is already running and has called Tcl_EvalFile() to parse this script.
+
+Under Windows, the command pd_pollsocket is executed every 20 milliseconds.
+pd_pollsocketCmd() calls pd_readsocket(). At line 3079 of pd.tk we have:
+############# start a polling process to watch the socket ##############
+# this is needed for nt, and presumably for Mac as well.
+# in UNIX this is handled by a tcl callback (set up in t_tkcmd.c)
+
+if {$pd_nt == 1} {
+    proc polleofloop {} {
+    	pd_pollsocket
+    	after 20 polleofloop
+    }
+
+    polleofloop
+}
+The value of pd_nt is 1 only on Windows machines. This declares a procedure named polleofloop and then calls it.
+polleofloop invokes the pd_pollsocket command that was defined in pdgui_startup() in t_tcmd.c, i.e. it calls pd_pollsocketCmd(), which
+in turn calls pd_readsocket(). The procedure then sleeps for 20 milliseconds and calls itself again.
+
+The ################## set up main window ######################### part:
+
+The menu command creates a new top-level window whose path is ".mbar" and makes it into a menu widget.
+
+The canvas command creates a new window whose path is ".dummy" and makes it into a canvas widget.
+It is given a height of 2p (printer's points: 1/72")and a width of 6c (centimeters).
+
+The frame command creates a new window whose path is ".controls" and makes it into a frame widget.
+A frame is a simple widget. It is used as a spacer or container for complex window layouts.
+A frame has a background color and an optional 3-D border to make the frame appear raised or sunken.
+
+The pack command packs .controls and .dummy at the top of the window and stretches them to fit the width of the window. 	  
+
+Menus are added to the menu bar: file, find, windows, audio. The windows menu is setup with -postcommand [concat pdtk_fixwindowmenu],
+which has the effect of calling the proc pdtk_fixwindow menu before the menu is posted. pdtk_fixwindowmenu fills in the windows menu
+with a list of open windows.
+ 
+Next the checkbuttons audiobutton and meterbutton are added to the .controls.switches frame and bound to the pd command as dsp and meters, resp.
+Buttons are added to .controls.inout to reflect the value of ctrls_inlevel and ctrls_outlevel.
+A button .controls.dio is connected to the pd command as audiostatus. They are all packed together.
+
+A frame .printout with vertical scrollbar is then added and packed. A proc pdtk_post is declared to print text in this frame.
+pdtk_post is invoked from dopost() in s_print.c.
+
+The control key and control-shift combination are bound to pdtk_pd_ctrlkey.
+On MacOSX the Mod1 key and Mod1-shift are bound to pdtk_canvas_ctrlkey.
+
+The window is titled "pd". It's path/name is "."
+The menu bar is set to 200 wide by 150 high.
+The menus are populated with items and procs are defined to correspond to each item.
+
+Usually, clicking on a menu item results in a message being sent to pd using the pd command.
+
+Procedures in pd.tk can also be called from pd via sys_vgui() in s_inter.c.
+For instance, dopost() in s_print.c calls pdtk_post in pd.tk to print messages.
+sys_vgui() adds messages to a queue named sys_guibuf. This is sent via TCP through sys_guisock
+whenever sys_flushtogui() is called, which is only from sys_poll_togui(), which is only called by
+sys_pollgui(), which may be called from sched_tick() and m_scheduler() in m_sched.c. sched_tick()
+is only called from m_scheduler(), which is called from sys_main() in s_main.c as part of the main loop.
+The messages are received by pd_readsocket() which calls tcl_mess() with each complete command.
+tcl_mess() calls Tcl_Eval() in libtcl to evaluate the command.
+
+proc pdtk_ping:
+To stop the pd-gui from choking on too much data arriving too fast, sys_flushqueue() calls pdtk_ping whenever
+more than GUI_BYTESPERPING (1024) bytes are sent in one go. Then sys_flushqueue() waits for pd-gui to send pd the 'ping' message, which is
+handled by glob_ping() in s_inter.c. glob_ping() simply resets the global variable sys_waitingforping, so that sys_flushqueue()
+can resume sending data.
+
+proc pdtk_watchdog:
+proc pdtk_watchdog {} {
+    pd [concat pd watchdog \;]
+    after 2000 {pdtk_watchdog}
+}
+On non-MacOSX unix platforms this is called from sys_startgui(). Every two seconds it will call pd with the 'watchdog' message.
+This is handled by glob_watchdog() in s_inter.c. glob_watchdog() sends an ASCII carriage return through sys_watchfd.
+
+*** pd-watchdog ***
+s_watchdog.c is the source of pd-watchdog, which was spawned in sys_startgui(). pd-watchdog monitors its stdin for 
+any input, timing out after 5 seconds if nothing was received. In this case it kills pd with a SIGHUP, but normally it will
+continue looping as long as characters are received from pd at a rate of at least one every 5 seconds. So if pdtk_watchdog
+calls pd every 2 seconds and glob_watchdog() sends a CR each time through the pipe, everything runs smoothly.
+***
+***
+
+
+
+
+
+
+
+
+

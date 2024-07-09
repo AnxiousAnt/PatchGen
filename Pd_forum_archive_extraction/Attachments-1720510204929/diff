@@ -1,0 +1,23 @@
+--- x_connective.c.orig	2013-02-28 13:31:10.011297224 -0500
++++ x_connective.c	2013-02-28 13:33:08.110292915 -0500
+@@ -977,6 +977,9 @@
+     t_triggerout *x_vec;
+ } t_trigger;
+ 
++// forward declaration
++static void trigger_symbol(t_trigger *x, t_symbol *s);
++
+ static void *trigger_new(t_symbol *s, int argc, t_atom *argv)
+ {
+     t_trigger *x = (t_trigger *)pd_new(trigger_class);
+@@ -1100,8 +1103,8 @@
+ 		else if (u->u_type == TR_STATIC_SYMBOL)
+ 		{
+ 			outlet_symbol(u->u_outlet, &u->u_sym);
+-		}
+-        else pd_error(x, "trigger: can only convert 'a' to 'b' or 'a'");        
++		}        
++		else trigger_symbol(x, s);
+     }
+ }
+ 

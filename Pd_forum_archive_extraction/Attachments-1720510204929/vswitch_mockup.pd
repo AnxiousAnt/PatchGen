@@ -1,0 +1,119 @@
+#N struct vgswitch float x float y float x0 symbol sname array inlets
+inlet-template array drawinlets drawinlet;
+#N struct inlet-template float num symbol list-obj symbol prepend-obj
+symbol send symbol vgswitch_in-obj symbol inlet-obj;
+#N struct drawinlet float something;
+#N canvas 0 86 1004 682 12;
+#N canvas 0 0 450 300 drawinlet 0;
+#X obj 97 111 drawpolygon 0 1 0 0 8 0;
+#X obj 101 46 struct drawinlet float something;
+#X restore 15 -166 pd drawinlet;
+#N canvas 87 309 805 286 vgswitch 0;
+#X obj 45 52 outlet;
+#X obj 74 100 plot drawinlets 0 0 32 1 32;
+#X obj 74 75 plot inlets 0 0 0 110 120;
+#X obj 74 125 drawsymbol sname 2 3 0;
+#X obj 45 11 struct vgswitch float x float y float x0 symbol sname
+array inlets inlet-template array drawinlets drawinlet;
+#X obj 75 158 drawpolygon 0 1 x0(0:1000)(72:1072) 40 72 40 0 40 0 39
+8 39 0 39 0 0 8 0 0 0 0 1 8 1 8 0 32 0 32 1 40 1 40 0 32 0 64 0 64
+1 72 1 72 0 64 0 72 0 x0(0:1000)(72:1072) 0 x0(0:1000)(72:1072) 40
+x0(0:1000)(72:1072) 25 x0(0:1000)(71:1071) 25 x0(0:1000)(62:1062) 20
+x0(0:1000)(71:1071) 25 x0(0:1000)(62:1062) 30 x0(0:1000)(71:1071) 25
+5 25;
+#X connect 4 0 0 0;
+#X restore 15 -116 pd vgswitch;
+#N canvas -26 58 1004 682 mockup 1;
+#X scalar vgswitch 20 20 0 vswitch \; 0 list prepend s vgswitch_in
+inlet \; 1 list prepend s vgswitch_in inlet \; \; 0 \; 0 \; \;;
+#X restore 345 -5 pd mockup;
+#X obj 15 -91 route change;
+#X obj 15 -66 get vgswitch x0;
+#X obj 15 -41 div 32;
+#N canvas 82 306 789 300 inlet-template 0;
+#X obj 32 78 drawpolygon 0 1 8 19 0 19 0 20 44 20 44 0 0 0 0 20 3 20
+3 25 8 25 8 26 0 26 0 25 116 25 116 26 108 26 116 26 116 45 0 45 0
+25 0 44 8 44 3 44 3 50 0 50 0 51 8 51 8 50 4 50 108 50 108 70 0 70
+0 50;
+#X obj 270 153 drawnumber num 106 28 0;
+#X obj 33 152 drawsymbol inlet-obj 2 3 0;
+#X obj 33 179 drawsymbol list-obj 2 28 0;
+#X obj 33 206 drawsymbol prepend-obj 42 28 0;
+#X obj 34 258 drawsymbol vgswitch_in-obj 18 53;
+#X obj 32 14 struct inlet-template float num symbol list-obj symbol
+prepend-obj symbol send symbol vgswitch_in-obj symbol inlet-obj;
+#X obj 33 233 drawsymbol send 2 53 0;
+#X restore 15 -141 pd inlet-template;
+#N canvas 0 0 1004 682 guts 0;
+#X obj 47 15 inlet;
+#X msg 566 130 traverse pd-mockup \, bang;
+#X obj 566 155 pointer;
+#X msg 417 155 20 20;
+#X obj 417 180 append vgswitch x y;
+#X obj 54 329 element vgswitch inlets;
+#X obj 198 247 setsize vgswitch drawinlets;
+#X obj 198 272 setsize vgswitch inlets;
+#X obj 54 243 t a a;
+#X obj 145 65 t b b b b b;
+#X msg 612 85 \; pd-mockup clear;
+#X obj 145 117 t b b a;
+#X obj 54 354 t b a;
+#X msg 145 90 2;
+#X msg 179 148 0;
+#X msg 145 148 1;
+#X obj 54 300 t a a;
+#X obj 8 424 f;
+#X obj 438 241 set -symbol vgswitch sname;
+#X msg 438 216 symbol vswitch;
+#X obj 145 38 loadbang;
+#X obj 8 459 set inlet-template num;
+#X obj 54 405 set -symbol inlet-template list-obj prepend-obj send
+vgswitch_in-obj inlet-obj;
+#X obj 54 179 + 2;
+#X obj 54 217 + 2;
+#X obj 54 268 - 1;
+#X msg 54 379 list list prepend s vgswitch_in inlet;
+#X connect 0 0 23 0;
+#X connect 0 0 24 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 2;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 4 0 6 1;
+#X connect 4 0 7 1;
+#X connect 4 0 18 1;
+#X connect 5 0 12 0;
+#X connect 8 0 25 0;
+#X connect 8 1 7 0;
+#X connect 9 0 13 0;
+#X connect 9 1 19 0;
+#X connect 9 2 3 0;
+#X connect 9 3 1 0;
+#X connect 9 4 10 0;
+#X connect 11 0 15 0;
+#X connect 11 1 14 0;
+#X connect 11 2 6 0;
+#X connect 11 2 7 0;
+#X connect 12 0 17 0;
+#X connect 12 0 26 0;
+#X connect 12 1 21 1;
+#X connect 12 1 22 5;
+#X connect 13 0 11 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X connect 16 0 5 0;
+#X connect 16 1 17 1;
+#X connect 17 0 21 0;
+#X connect 19 0 18 0;
+#X connect 20 0 9 0;
+#X connect 23 0 6 0;
+#X connect 24 0 8 0;
+#X connect 25 0 16 0;
+#X connect 26 0 22 0;
+#X restore 15 -6 pd guts;
+#X text 203 -7 example inside-->;
+#X text 203 10 (fake objects);
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;

@@ -1,0 +1,20 @@
+--- sendOSC.c	2007-02-08 16:38:09.000000000 +0100
++++ sendOSC-no-conversion.c	2007-02-14 17:13:17.000000000 +0100
+@@ -411,17 +411,8 @@
+ 
+     case A_FLOAT:
+       f = atom_getfloat(a);
+-	  i = atom_getint(a);
+-	  if (f == (t_float)i)
+-	  { // assume that if the int and float are the same, it's an int
+-            returnVal.type = INT_osc;
+-        returnVal.datum.i = i;
+-        }
+-	  else
+-	  {
+                 returnVal.type = FLOAT_osc;
+         returnVal.datum.f = f;
+-        }
+ 	  return returnVal;
+     case A_SYMBOL:
+ 	  s = *atom_getsymbol(a);

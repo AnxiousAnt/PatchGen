@@ -1,0 +1,109 @@
+#N canvas 334 108 811 587 10;
+#X obj 24 501 biquad~;
+#X obj 101 499 biquad~;
+#X obj 108 475 r \$0-coeff;
+#X obj 31 477 r \$0-coeff;
+#X obj 28 81 inlet~;
+#X obj 24 538 outlet~;
+#X obj 105 81 inlet~;
+#X obj 101 538 outlet~;
+#X obj 346 520 r \$0-coeff;
+#X obj 346 543 outlet;
+#X obj 347 485 s \$0-coeff;
+#X obj 174 79 inlet;
+#X obj 174 277 s \$0-441;
+#X obj 187 256 s \$0-48;
+#X obj 201 234 s \$0-882;
+#X obj 215 212 s \$0-96;
+#X obj 174 104 sel 0 1 2 3 4 5 6 7;
+#X msg 393 302 0.721892 0.186052 1 -1.70072 0.702938;
+#X msg 351 126 1.70072 -0.702938 1 -0.721892 -0.186052;
+#X text 600 125 <-- 44.1 - playback;
+#X msg 372 213 1.85547 -0.855972 1 -0.847958 -0.112763;
+#X text 617 167 <-- 48 - playback;
+#X text 621 211 <-- 88.2 - playback;
+#X text 630 256 <-- 96 - playback;
+#X msg 382 257 1.86661 -0.867038 1 -0.853533 -0.110459;
+#X msg 362 169 1.73277 -0.734553 1 -0.755552 -0.164626;
+#X obj 229 190 s \$0-441-x;
+#X obj 243 169 s \$0-48-x;
+#X obj 257 148 s \$0-882-x;
+#X obj 271 127 s \$0-96-x;
+#X text 640 301 <-- 44.1 - production;
+#X obj 351 105 r \$0-441;
+#X obj 362 148 r \$0-48;
+#X obj 372 192 r \$0-882;
+#X obj 382 235 r \$0-96;
+#X obj 398 326 r \$0-48-x;
+#X obj 393 281 r \$0-441-x;
+#X text 647 347 <-- 48 - production;
+#X msg 398 347 0.755552 0.164626 1 -1.73277 0.734553;
+#X text 657 390 <-- 88.2 - playback;
+#X text 666 435 <-- 96 - playback;
+#X msg 408 392 0.847958 0.112763 1 -1.85547 0.855972;
+#X msg 418 436 0.853533 0.110459 1 -1.86661 0.867038;
+#X obj 408 371 r \$0-882-x;
+#X obj 418 414 r \$0-96-x;
+#X text 28 37 Digital RIAA biquad~ filter for vinyl playback and production
+(mastering);
+#X text 147 13 megrimm 2014;
+#X text 27 14 snd.eq.riaa~ v0.2;
+#N canvas 842 389 419 374 moreinfo 0;
+#X text 27 14 These are working filter coefficients for biquad implementation
+of RIAA EQ Reproduction filters: 44.1kHz: a = [ 1 -1.70072 0.702938
+] b = [ 1 -0.721892 -0.186052 ] error ~0.23dB 48kHz: a = [ 1 -1.73277
+0.734553 ] b = [ 1 -0.755552 -0.164626 ] error ~0.14dB 88.2kHz: a =
+[ 1 -1.85546 0.855972 ] b = [ 1 -0.847958 -0.112763 ] error 0.008dB
+and 96kHz: a = [ 1 -1.86661 0.867038 ] b = [ 1 -0.853533 -0.11046 ]
+error ~0.006dB NOTES: # - By swapping the a1<->b1 and a2<->b2 you'll
+get the production filter. # - All these given filter coefficients
+produces a bit gained filter (~+12.5dB or so) so \, if you like to
+adjust the 1 kHz = 0dB \, it can be done quite accurately by finding
+linear difference using software like Tobybear's FilterExplorer. Enter
+coefficients into FilterExplorer \, by moving mouse cursor over the
+plotted magnitude curve in magnitude plot window \, find/point the
+~1kHz position and then check the magnitude value (value inside the
+brackets) found in info field. Use this value as divider for b coefficients.
+# - Filter gain can be adjusted by dividing/multiplying Gain coefficients
+a0 \, a1 \, a2 using equal value (i.e. a0/7.5 \, a1/7.5 \, a1/7.5 or
+a0*5 \, a1*5 \, a2*5) !!! Do not change b1 \, b2. By swapping the a1<->b1
+and a2<->b2 you'll get the production filter. # - Feedback coefficients
+must be flipped to match Pd's biquad implementation # - This filter
+can be inverted by swapping the feedback and feed forward coefficients
+and also flipping the signs;
+#X restore 452 540 pd moreinfo;
+#X text 450 487 pd biquad~ syntax: fb1 fb2 ff0 ff1 ff2;
+#X text 450 504 pd implementation based on examples from: http://jiiteepee.tripod.com/riaa.html
+;
+#X connect 0 0 5 0;
+#X connect 1 0 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 6 0 1 0;
+#X connect 8 0 9 0;
+#X connect 11 0 16 0;
+#X connect 16 0 12 0;
+#X connect 16 1 13 0;
+#X connect 16 2 14 0;
+#X connect 16 3 15 0;
+#X connect 16 4 26 0;
+#X connect 16 5 27 0;
+#X connect 16 6 28 0;
+#X connect 16 7 29 0;
+#X connect 17 0 10 0;
+#X connect 18 0 10 0;
+#X connect 20 0 10 0;
+#X connect 24 0 10 0;
+#X connect 25 0 10 0;
+#X connect 31 0 18 0;
+#X connect 32 0 25 0;
+#X connect 33 0 20 0;
+#X connect 34 0 24 0;
+#X connect 35 0 38 0;
+#X connect 36 0 17 0;
+#X connect 38 0 10 0;
+#X connect 41 0 10 0;
+#X connect 42 0 10 0;
+#X connect 43 0 41 0;
+#X connect 44 0 42 0;

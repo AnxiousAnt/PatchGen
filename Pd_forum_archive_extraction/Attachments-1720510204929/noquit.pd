@@ -1,0 +1,10 @@
+#N canvas 297 213 534 352 10;
+#X obj 106 146 sys_gui;
+#X msg 106 90 proc menu_quit [concat] [concat puts stderr noquit];
+#X msg 124 115 proc ::tk::mac::Quit [concat] [concat puts stderr noquit]
+;
+#X obj 153 61 loadbang;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 3 0 2 0;

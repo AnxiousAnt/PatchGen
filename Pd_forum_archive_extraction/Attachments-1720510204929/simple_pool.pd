@@ -1,0 +1,59 @@
+#N canvas 0 0 868 645 12;
+#X obj 94 181 pool bla;
+#X msg 121 98 savex bla.xml;
+#X msg 209 128 clrall;
+#X msg 21 130 printroot;
+#X msg 209 288 clrall;
+#X msg 21 290 printroot;
+#X obj 94 343 pool bla2;
+#X msg 121 258 svxdir bla.xml;
+#X msg 289 287 updir;
+#X msg 94 218 mkdir dir1 \, chdir dir1 \, set var1 23 \, set tvjt rocks
+\, set /this/key/has/a value;
+#X msg 94 38 mkdir dir1 \, chdir dir1 \, set var1 23 \, set tvjt rocks
+\, set /this/key/has/a value;
+#X msg 115 444 clrall \, getall;
+#X obj 145 583 print K;
+#X obj 96 612 print V;
+#X obj 194 557 print D;
+#X obj 243 528 print C;
+#X text 315 528 command;
+#X text 267 557 directory (abs or rel to current);
+#X text 171 613 data value;
+#X text 217 583 data key;
+#X obj 293 505 print A;
+#X obj 96 485 pool test;
+#X msg 96 413 set var 1 \, set another var;
+#X text 11 9 load / save:;
+#X text 19 388 clrall - bug:;
+#X text 396 332 doesn't work \, neither with nor without "updir". I
+attempt to save and load the data in the specified directory only \,
+and I vaguely recall that one had to be at the root of the pool structure
+to get this working ...;
+#X text 331 417 clrall doesn't seem to clear a dir entirely;
+#X msg 224 323 ldxdir bla.xml;
+#X msg 189 353 chdir dir1;
+#X msg 223 163 loadx bla.xml \, printroot;
+#X msg 308 351 printroot;
+#X text 399 116 works \, but will save / load everything in a pool
+;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 0 0;
+#X connect 11 0 21 0;
+#X connect 21 0 13 0;
+#X connect 21 1 12 0;
+#X connect 21 2 14 0;
+#X connect 21 3 15 0;
+#X connect 21 4 20 0;
+#X connect 22 0 21 0;
+#X connect 27 0 6 0;
+#X connect 28 0 6 0;
+#X connect 29 0 0 0;
+#X connect 30 0 6 0;

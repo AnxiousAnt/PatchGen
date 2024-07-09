@@ -1,0 +1,26 @@
+#N canvas 615 105 585 462 10;
+#X obj 88 45 inlet~;
+#N canvas 622 239 464 328 \$0-guts 0;
+#X obj 10 10 inlet~;
+#X obj 10 30 env~ 1024;
+#X obj 10 50 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 87 98 pd \$0-guts;
+#X obj 87 140 outlet;
+#X obj 302 182 s pd-\$0-guts;
+#X msg 302 139 clear \, obj 10 10 inlet~ \, obj 10 30 env~ \$1 \, obj
+10 50 outlet \, connect 0 0 1 0 \, connect 1 0 2 0;
+#X obj 275 281 iemguts/sendcanvas;
+#X obj 275 35 inlet;
+#X msg 275 249 connect 0 0 1 0 \, connect 1 0 2 0;
+#X obj 275 111 t b f;
+#X obj 275 217 delay 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 4 0 3 0;
+#X connect 6 0 8 0;
+#X connect 7 0 5 0;
+#X connect 8 0 9 0;
+#X connect 8 1 4 0;
+#X connect 9 0 7 0;

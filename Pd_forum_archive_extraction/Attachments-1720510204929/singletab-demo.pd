@@ -1,0 +1,15 @@
+#N canvas 213 103 242 168 10;
+#X obj 14 34 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 14 74 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 14 114 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X msg 117 95 \; pd-a vis 1;
+#X obj 14 14 singletab a;
+#X obj 14 55 singletab a;
+#X obj 14 94 singletab a;
+#X text 100 15 instead [table a];
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
+#X connect 6 0 2 0;

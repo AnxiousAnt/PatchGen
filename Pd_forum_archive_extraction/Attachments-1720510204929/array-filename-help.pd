@@ -1,0 +1,15 @@
+#N canvas 593 237 683 217 10;
+#X obj 448 116 print;
+#X msg 107 60 symbol C:/my_dir1/my_dir2/my_dir3/my_dir4/1.wav;
+#X obj 107 138 print;
+#X msg 117 85 symbol /my_dir1/my_dir2/my_dir3/my_dir4/1.wav;
+#X msg 448 59 symbol A/B/C/D/E/F;
+#X text 106 18 [array-filename] : get a symbol filename or last directory
+in a symbol path;
+#X obj 107 112 array-filename;
+#X obj 448 88 array-filename;
+#X connect 1 0 6 0;
+#X connect 3 0 6 0;
+#X connect 4 0 7 0;
+#X connect 6 0 2 0;
+#X connect 7 0 0 0;

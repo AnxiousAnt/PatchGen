@@ -1,0 +1,31 @@
+#N canvas 170 184 638 386 10;
+#X floatatom 185 188 5 0 0 0 - - -;
+#X symbolatom 233 187 10 0 0 0 - - -;
+#X obj 138 208 bng 15 250 50 0 empty empty bang -6 23 1 12 -262144
+-1 -1;
+#X obj 138 164 route bang float symbol list;
+#X obj 185 208 bng 15 250 50 0 empty empty float -4 23 1 12 -262144
+-1 -1;
+#X obj 233 208 bng 15 250 50 0 empty empty symbol -12 23 1 12 -262144
+-1 -1;
+#X obj 281 208 bng 15 250 50 0 empty empty list -2 23 1 12 -262144
+-1 -1;
+#X obj 329 208 bng 15 250 50 0 empty empty undefined -18 23 1 12 -262144
+-1 -1;
+#X msg 217 95 symbol 43;
+#X msg 291 96 23;
+#X text 329 94 symbols;
+#X msg 140 51 symbol 54;
+#X msg 219 54 45;
+#X text 49 50 floats;
+#X connect 0 0 4 0;
+#X connect 1 0 5 0;
+#X connect 3 0 2 0;
+#X connect 3 1 0 0;
+#X connect 3 2 1 0;
+#X connect 3 3 6 0;
+#X connect 3 4 7 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 11 0 3 0;
+#X connect 12 0 3 0;

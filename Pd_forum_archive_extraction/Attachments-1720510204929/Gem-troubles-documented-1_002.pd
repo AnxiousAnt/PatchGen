@@ -1,0 +1,380 @@
+#N canvas 714 433 450 300 10;
+#N canvas 51 160 450 300 1.GemWindowFreezes 0;
+#X text 12 9 My troubles with Gem started when I opened any help patch
+on the target machine. When a Gem window was opened \, the machine
+would freeze when the Gem window was moved or other windows were moved
+to overlap with the Gem window. The freeze would last up to 30 seconds
+then the machine would be OK again. The target machine was an AMD 64
+bit dual core. lspci reported an nVidia GeForce 6150SE nForce 430 (rev
+a2) as the graphics card. This behavior was observed with both ubuntu
+8.10-64 bit and ubuntu 8.10-32 bit \, both running the nVidia proprietary
+driver. I tried several different versions of the nVidia driver and
+this did not change the behavior. For some reason \, changing from
+Gnome/metacity to Gnome/compiz helped \, making the problem less consistent.
+The machine was considered still suitable for the project since running
+in full screen mode the freezes would not happen once the full screen
+was drawn. But it was a constant annoyance throughout development.
+Another target machine \, identical to the first target machine except
+with only a single core AMD \, would freeze but would never come back
+from freezing until it was hard-reset. That machine was running ubuntu
+7.10-32 bit with an nVidia driver. That machine was abandoned. I tried
+the open source nVidia driver but that had more serious problems that
+I do not completely recall at this time. Changing kernels on these
+machines did not help either.;
+#X restore 8 44 pd 1.GemWindowFreezes;
+#N canvas 90 142 581 591 3.IEEE1394video 0;
+#X text -33 2 Gem video quality from the IEEE1394 cameras was OK but
+a bit disappointing. Images moving quickly across the screen seemed
+to have jagged lines around them and some artifacts related to redraw
+and buffering. I experimented with Gem single and double buffering
+but got nowhere. My guess is that Gem is by default double-buffering
+but I was never really sure. I also experimented with various nVidia
+driver settings (sync to vblank etc.) which did not offer any significant
+improvement. I tried 2 different cameras and both had these artifacts.
+The artifacts were not present when capturing video in Kino with the
+same cameras and target machine.;
+#N canvas 596 130 450 589 video 0;
+#X obj 233 224 pix_video;
+#X msg 281 167 device /dev/dv1394/0;
+#X obj 232 267 pix_texture;
+#X obj 233 290 rectangle 4 3;
+#X obj 180 113 gemhead;
+#X msg 270 192 driver 1;
+#X msg 280 141 colorspace YUV;
+#X obj 41 250 gemwin;
+#X msg 73 209 destroy;
+#X msg 8 205 create \, 1;
+#X obj 265 108 t b b b;
+#X obj 201 166 spigot 0;
+#X msg 98 236 1;
+#X obj 233 244 spigot 0;
+#X msg 129 236 0;
+#X obj 138 59 select 0 1;
+#X obj 138 35 inlet;
+#X connect 0 0 13 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 4 0 11 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 8 0 7 0;
+#X connect 8 0 14 0;
+#X connect 9 0 7 0;
+#X connect 9 0 12 0;
+#X connect 10 0 6 0;
+#X connect 10 1 5 0;
+#X connect 10 2 1 0;
+#X connect 11 0 0 0;
+#X connect 12 0 11 1;
+#X connect 12 0 13 1;
+#X connect 13 0 2 0;
+#X connect 14 0 11 1;
+#X connect 14 0 13 1;
+#X connect 15 0 8 0;
+#X connect 15 1 10 0;
+#X connect 15 1 9 0;
+#X connect 16 0 15 0;
+#X restore -34 559 pd video test;
+#X obj -34 156 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg -4 465 1;
+#X msg 31 465 0;
+#X obj 56 326 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 101 469 1;
+#X msg 169 470 1;
+#X text -15 155 <- click to test video;
+#X obj 29 442 delay 1000;
+#X obj 98 442 delay 2000;
+#X obj 166 442 delay 3000;
+#X text 80 324 <- why does this cause seg fault? (If it doesn't \,
+bang again and it will) (apparently doesn't segfault for all machines.)
+;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 3 0;
+#X connect 5 0 9 0;
+#X connect 5 0 10 0;
+#X connect 5 0 11 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;
+#X connect 9 0 4 0;
+#X connect 10 0 6 0;
+#X connect 11 0 7 0;
+#X restore 9 85 pd 3.IEEE1394video;
+#N canvas 388 137 807 595 4.RecordingVideo 0;
+#N canvas 40 217 450 484 capture-from-camera 0;
+#X obj 233 224 pix_video;
+#X msg 281 167 device /dev/dv1394/0;
+#X obj 232 267 pix_texture;
+#X obj 233 290 rectangle 4 3;
+#X obj 180 113 gemhead;
+#X msg 270 192 driver 1;
+#X msg 280 141 colorspace YUV;
+#X obj 41 250 gemwin;
+#X msg 73 209 destroy;
+#X msg 8 205 create \, 1;
+#X obj 143 9 inlet;
+#X obj 265 108 t b b b;
+#X obj 201 166 spigot 0;
+#X msg 109 247 1;
+#X obj 233 244 spigot 0;
+#X msg 144 248 0;
+#X obj 233 316 outlet;
+#X obj 144 35 select 0 1;
+#X connect 0 0 14 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 16 0;
+#X connect 4 0 12 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 8 0 7 0;
+#X connect 8 0 15 0;
+#X connect 9 0 7 0;
+#X connect 9 0 13 0;
+#X connect 10 0 17 0;
+#X connect 11 0 6 0;
+#X connect 11 1 5 0;
+#X connect 11 2 1 0;
+#X connect 12 0 0 0;
+#X connect 13 0 12 1;
+#X connect 13 0 14 1;
+#X connect 14 0 2 0;
+#X connect 15 0 12 1;
+#X connect 15 0 14 1;
+#X connect 17 0 8 0;
+#X connect 17 1 11 0;
+#X connect 17 1 9 0;
+#X restore 201 235 pd capture-from-camera;
+#N canvas 553 172 450 557 record-with-pix_record 0;
+#X obj 213 274 pix_record;
+#X msg 247 231 codec dv;
+#X msg 194 188 auto 1;
+#X obj 147 80 inlet;
+#X msg 211 209 file /tmp/test.mov;
+#X obj 128 184 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 229 36 loadbang;
+#X obj 306 88 inlet;
+#X obj 241 304 outlet;
+#X msg 309 188 record \$1;
+#X obj 331 144 select 1;
+#X obj 307 120 t f f;
+#X text 4 349 My final patch was to record video and mix 3 different
+pre-recorded videos live. Looking at CPU usage for recording and playing
+back with the different codecs \, it became clear quickly my only hope
+in terms of performance was to record uncompressed \, thus the choice
+of codec dv. Even so \, I had to lower the framerate to 6 FPS to make
+the final patch work with this AMD 4.0G dual-core. When trying the
+same thing later with pdp \, I recorded compressed and was still able
+to attain a much higher frame rate with lower CPU usage on the same
+machine.;
+#X connect 0 1 8 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 2 0;
+#X connect 6 0 1 0;
+#X connect 7 0 11 0;
+#X connect 9 0 0 0;
+#X connect 10 0 4 0;
+#X connect 11 0 9 0;
+#X connect 11 1 10 0;
+#X restore 176 388 pd record-with-pix_record;
+#X obj 180 313 pix_flip;
+#X msg 88 282 vertical;
+#X obj 87 260 loadbang;
+#X text 239 313 <- [pix_record] records upside down so we fix here
+;
+#X floatatom 176 410 5 0 0 0 - - -;
+#X text 220 412 <- frame #;
+#X msg 339 338 1;
+#X msg 338 358 0;
+#X msg 226 118 0;
+#X msg 274 168 1;
+#X msg 297 192 0;
+#X text 254 119 <- 2 click me to stop the recording. Then check /tmp/test.mov
+with vlc or mplayer or whatever. It will be blank.;
+#X text 307 167 <- 3 make a new recording.;
+#X text 331 192 <- 4 stop the new recording and check /tmp/test.mov
+again. This recording will be good.;
+#X text 17 44 CPU usage seems a bit high for recording uncompressed
+unprocessed video from a firewire camera. See notes in [pd record-with-pix_record].
+;
+#X text 19 16 With the below patch \, the first video records as a
+blank file. The second video records OK.;
+#X msg 147 282 none;
+#X obj 174 207 t b f;
+#X obj 191 81 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 27 469 NOTE: this patch stopped recording successfully after
+other patches were created. Why doesn't it work? I had this same thing
+happen when building the performance patch leading to this explanation
+of my troubles with Gem. (Works on some machines apparently).;
+#X text 220 80 <- 1 click me first to start recording video from IEEE1394
+camera (you may need to restart patch first);
+#X connect 0 0 2 0;
+#X connect 1 0 6 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 8 0 1 1;
+#X connect 9 0 1 1;
+#X connect 10 0 1 1;
+#X connect 11 0 1 1;
+#X connect 12 0 1 1;
+#X connect 18 0 2 0;
+#X connect 19 0 8 0;
+#X connect 19 1 0 0;
+#X connect 20 0 19 0;
+#X restore 9 105 pd 4.RecordingVideo;
+#N canvas 25 145 450 300 0.SetupForTests 0;
+#X text 35 13 These tests were done on pd-extended 0.40-3 on ubuntu
+8.10-intrepid 32 bit with firewire camera attached. Pd was run as root.
+;
+#X restore 8 22 pd 0.SetupForTests;
+#N canvas 515 320 450 300 2.GemHeadAndGemwin 0;
+#X text 22 3 More of an annoyance than a serious problem \, but the
+concept of [gemhead] makes no sense within the context of Pd to me.
+I finally got used to it when I started thinking of it as analogous
+to [metro] but for Gem objects.;
+#X text 24 59 It's also counterintuitive that Gem objects intended
+to output to the display do not connect to anything. An example would
+be:;
+#X obj 119 116 pix_texture;
+#X obj 119 139 rectangle 4 3;
+#X text 26 172 where the [rectangle 4 3] outlet doesn't attach to anything.
+Following the Pd convention one would expect it to attach to some sort
+of output \, the equivalent of [dac~] or [pdp_glx] in pdp world.;
+#X text 25 228 Also \, [gemwin] doesn't connect to anything directly
+\, which is also counterintuitive to Pd coding style.;
+#X connect 2 0 3 0;
+#X restore 8 65 pd 2.GemHeadAndGemwin;
+#N canvas 243 90 970 643 5.MixingVideo 0;
+#N canvas 780 343 450 484 capture-from-camera 0;
+#X obj 233 224 pix_video;
+#X msg 281 167 device /dev/dv1394/0;
+#X obj 180 113 gemhead;
+#X msg 270 192 driver 1;
+#X msg 280 141 colorspace YUV;
+#X obj 139 52 inlet;
+#X obj 265 108 t b b b;
+#X obj 176 175 spigot 0;
+#X msg 206 148 1;
+#X obj 233 244 spigot 0;
+#X msg 235 148 0;
+#X obj 234 271 outlet;
+#X connect 0 0 9 0;
+#X connect 1 0 0 0;
+#X connect 2 0 7 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 6 1 3 0;
+#X connect 6 2 1 0;
+#X connect 6 2 8 0;
+#X connect 7 0 0 0;
+#X connect 8 0 7 1;
+#X connect 8 0 9 1;
+#X connect 9 0 11 0;
+#X connect 10 0 7 1;
+#X connect 10 0 9 1;
+#X restore 132 317 pd capture-from-camera;
+#N canvas 544 477 450 300 play-prerecorded-video 0;
+#X msg 137 24 open /tmp/test.mov;
+#X msg 213 45 auto 1;
+#X floatatom 283 67 5 0 0 0 - - -;
+#X obj 238 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 88 42 gemhead;
+#X obj 142 -45 inlet;
+#X obj 141 -22 t b b;
+#X obj 187 156 outlet;
+#X obj 203 95 pix_film;
+#X connect 0 0 8 0;
+#X connect 1 0 8 0;
+#X connect 2 0 8 1;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X connect 6 1 0 0;
+#X connect 8 0 7 0;
+#X connect 8 2 3 0;
+#X connect 8 2 0 0;
+#X restore 299 261 pd play-prerecorded-video;
+#X obj 43 443 gemwin;
+#X msg 75 402 destroy;
+#X msg 10 398 create \, 1;
+#X obj 234 381 pix_mix;
+#X obj 318 371 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 315 392 5 0 0 0 - - -;
+#X obj 233 514 rectangle 4 3;
+#X obj 234 483 pix_texture;
+#X obj 41 214 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 299 240 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 182 343 pix_rgba;
+#X obj 299 333 spigot 1;
+#X obj 477 373 spigot 0;
+#X obj 526 348 == 0;
+#X obj 525 312 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 314 354 mix of live w/ prerecorded;
+#X obj 406 299 pix_flip;
+#X msg 465 259 vertical;
+#X msg 468 281 none;
+#X obj 11 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 35 194 <- 1 create window;
+#X text 59 216 <- 2 click once to start live feed (click 2x for seg
+fault);
+#X text 321 234 <- 3 click to start prerecorded video on loop (/tmp/test.mov)
+;
+#X text 549 310 <- 4 uncheck for prerecorded only (no mix). why is
+recorded image upside down only when mixed with live image?;
+#X text 523 258 <- 5 pix_flip will not flip prerecorded image when
+mixed with live image.;
+#X text 7 7 mixing prerecorded with live video created a strange issue
+with the prerecorded image being upside down. Before running this patch
+\, make sure you have a successful prerecorded video as /tmp/test.mov
+from the previous patch.;
+#X obj 233 456 spigot 1;
+#X msg 299 437 0;
+#X text 334 436 <- 6 shut off spigot before going on to next subpatch
+;
+#X connect 0 0 12 0;
+#X connect 1 0 18 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 28 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 2;
+#X connect 9 0 8 0;
+#X connect 10 0 0 0;
+#X connect 11 0 1 0;
+#X connect 12 0 5 0;
+#X connect 13 0 5 1;
+#X connect 14 0 28 0;
+#X connect 15 0 14 1;
+#X connect 16 0 15 0;
+#X connect 16 0 13 1;
+#X connect 18 0 13 0;
+#X connect 18 0 14 0;
+#X connect 19 0 18 0;
+#X connect 20 0 18 0;
+#X connect 21 0 4 0;
+#X connect 28 0 9 0;
+#X connect 29 0 28 1;
+#X restore 9 127 pd 5.MixingVideo;
+#N canvas 10 73 450 300 6.DestroyedVideoBuffer 0;
+#X text 12 16 Please see separate file by the same name as this subpatch.
+The separate file was originally this subpatch \, but the other subpatches
+stopped working when it was in here as a subpatch. Any idea why?;
+#X restore 9 151 pd 6.DestroyedVideoBuffer;

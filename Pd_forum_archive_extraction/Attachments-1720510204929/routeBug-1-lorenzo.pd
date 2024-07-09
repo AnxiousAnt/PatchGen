@@ -1,0 +1,137 @@
+#N canvas 92 151 984 341 10;
+#X obj 15 232 route 12;
+#X obj 76 232 route bug 12;
+#X msg 101 150 12;
+#X obj 101 36 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 15 264 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 110 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 145 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 181 232 route 12 nobug;
+#X obj 181 274 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 101 58 metro 500;
+#X obj 101 10 loadbang;
+#X obj 76 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 221 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 262 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 293 231 route bug 12;
+#X obj 327 274 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 362 274 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 293 274 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 294 137 bug 12;
+#X obj 637 230 route bug 12;
+#X obj 671 273 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 706 273 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 637 273 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 406 116 f;
+#X obj 437 116 + 1;
+#X obj 406 137 mod 13;
+#X obj 406 231 route bug 12;
+#X obj 440 274 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 475 274 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 406 274 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 435 305 5 0 0 0 - - -;
+#X msg 406 160 bug \$1;
+#X floatatom 542 305 5 0 0 0 - - -;
+#X floatatom 583 305 10 0 0 0 - - -;
+#X obj 514 231 route 19 12;
+#X obj 545 271 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 577 271 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 514 271 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 736 303 5 0 0 0 - - -;
+#X floatatom 308 305 5 0 0 0 - - -;
+#X floatatom 378 305 5 0 0 0 - - -;
+#X obj 761 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 802 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 843 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 787 196 symbol;
+#X obj 884 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 513 49 here 12 is \; a selector \; indeed mixing won't \; (work
+(see next);
+#X msg 760 121 booog;
+#X msg 514 120 12 12345;
+#X msg 637 119 12 12345;
+#X obj 761 229 route symbol float booog bug;
+#X obj 926 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 914 300 5 0 0 0 - - -;
+#X text 744 91 Just to spice up things a bit :);
+#X connect 0 0 4 0;
+#X connect 1 0 11 0;
+#X connect 1 1 5 0;
+#X connect 1 2 6 0;
+#X connect 2 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 0 7 0;
+#X connect 2 0 14 0;
+#X connect 2 0 50 0;
+#X connect 3 0 9 0;
+#X connect 7 0 8 0;
+#X connect 7 1 12 0;
+#X connect 7 2 13 0;
+#X connect 9 0 2 0;
+#X connect 9 0 18 0;
+#X connect 9 0 49 0;
+#X connect 9 0 23 0;
+#X connect 9 0 48 0;
+#X connect 9 0 47 0;
+#X connect 10 0 3 0;
+#X connect 14 0 17 0;
+#X connect 14 0 39 0;
+#X connect 14 1 15 0;
+#X connect 14 2 16 0;
+#X connect 14 2 40 0;
+#X connect 18 0 14 0;
+#X connect 19 0 22 0;
+#X connect 19 1 20 0;
+#X connect 19 2 21 0;
+#X connect 19 2 38 0;
+#X connect 23 0 25 0;
+#X connect 23 0 24 0;
+#X connect 24 0 23 1;
+#X connect 25 0 31 0;
+#X connect 26 0 29 0;
+#X connect 26 0 30 0;
+#X connect 26 1 27 0;
+#X connect 26 2 28 0;
+#X connect 31 0 26 0;
+#X connect 31 0 50 0;
+#X connect 34 0 32 0;
+#X connect 34 0 37 0;
+#X connect 34 1 35 0;
+#X connect 34 1 33 0;
+#X connect 34 2 36 0;
+#X connect 44 0 50 0;
+#X connect 47 0 44 0;
+#X connect 47 0 50 0;
+#X connect 48 0 34 0;
+#X connect 49 0 19 0;
+#X connect 50 0 41 0;
+#X connect 50 1 42 0;
+#X connect 50 2 43 0;
+#X connect 50 3 45 0;
+#X connect 50 3 52 0;
+#X connect 50 4 51 0;

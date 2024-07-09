@@ -1,0 +1,103 @@
+#N canvas 85 90 1156 541 10;
+#X declare -lib zexy -lib mrpeach;
+#N canvas 0 0 1173 410 contenu 0;
+#N canvas 33 278 550 217 tableSauvegarde 0;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array 1-tab-addr 17 float 3;
+#A 0 48 48 58 50 52 58 70 51 58 57 65 58 56 55 58 48 52;
+#X coords 0 255 17 0 50 30 1;
+#X restore 43 59 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array 4-tab-addr 17 float 3;
+#A 0 48 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 255 17 0 50 30 1;
+#X restore 433 59 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array 3-tab-addr 17 float 3;
+#A 0 48 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 255 17 0 50 30 1;
+#X restore 303 59 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array 2-tab-addr 17 float 3;
+#A 0 48 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 255 17 0 50 30 1;
+#X restore 173 59 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array 1-tab-deadzone 3 float 3;
+#A 0 0.25 0.25 0.25;
+#X coords 0 10 3 0 50 30 1;
+#X restore 43 149 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array 3-tab-deadzone 3 float 3;
+#A 0 0.25 0.25 0.25;
+#X coords 0 10 3 0 50 30 1;
+#X restore 303 149 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array 2-tab-deadzone 3 float 3;
+#A 0 0.25 0.25 0.25;
+#X coords 0 10 3 0 50 30 1;
+#X restore 173 149 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array 4-tab-deadzone 3 float 3;
+#A 0 0.25 0.25 0.25;
+#X coords 0 10 3 0 50 30 1;
+#X restore 433 149 graph;
+#X restore 50 94 pd tableSauvegarde;
+#X obj 50 130 cnv 15 1070 190 empty empty empty 20 12 0 14 -128992
+-66577 0;
+#X obj 310 130 cnv 15 10 190 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 580 130 cnv 15 10 190 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 850 130 cnv 15 10 190 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 50 64 import zexy mrpeach;
+#X text 1034 337 Jack/RYBN 2010;
+#X text 220 92 1 b) If you know the Wiimote MAC adress \, you can enter
+it in the symbol box and press return.;
+#X text 600 58 2) When you have enter the Wiimote MAC adress \, you
+can press the two bottom buttons on the Wiimote and then press the
+green bang to connect your Wiimote.;
+#X text 600 98 3) Save the patch to save all your settings.;
+#X text 220 26 For Linux only with the last [wiimote] from puredata-svn
+and last libcwiid from git://github.com/abstract/cwiid.git;
+#X text 220 58 1 a) To detect Wiimote MAC adress \, just click on the
+grey bang and press the two bottom buttons on the Wiimote then wait
+to see the adress in the symbol box.;
+#X obj 50 130 forWiimote 1;
+#X obj 320 130 forWiimote 2;
+#X obj 590 130 forWiimote 3;
+#X obj 860 130 forWiimote 4;
+#X coords 0 0 1 1 1070 190 2 50 130;
+#X restore 36 25 pd contenu;
+#X obj 36 282 r wii1-accelTot;
+#X obj 36 302 r wii1-accelX;
+#X obj 36 322 r wii1-accelY;
+#X obj 36 342 r wii1-accelZ;
+#X obj 36 362 r wii1-pitch;
+#X obj 36 382 r wii1-roll;
+#X obj 36 252 r wii1-btn2;
+#X obj 36 232 r wii1-btn1;
+#X obj 36 412 r wii1-btnNunch;
+#X obj 36 432 r wii1-accXNunch;
+#X obj 36 452 r wii1-accYNunch;
+#X obj 36 472 r wii1-accZNunch;
+#X obj 36 492 r wii1-stickXNunch;
+#X obj 36 512 r wii1-stickYNunch;
+#X obj 156 232 r wii1-IR0X;
+#X obj 156 252 r wii1-IR0Y;
+#X obj 156 272 r wii1-IR1X;
+#X obj 156 292 r wii1-IR1Y;
+#X obj 156 312 r wii1-IR2X;
+#X obj 156 332 r wii1-IR2Y;
+#X obj 156 352 r wii1-IR3X;
+#X obj 156 372 r wii1-IR3Y;
+#X obj 156 402 r wii1-MotPlusPitch;
+#X obj 156 422 r wii1-MotPlusRoll;
+#X obj 156 442 r wii1-MotPlusYaw;
+#X obj 156 462 r wii1-MotPlusDPitch;
+#X obj 156 482 r wii1-MotPlusDRoll;
+#X obj 156 502 r wii1-MotPlusDYaw;
+#X text 864 219 For more informations open this subpatch;
+#X text 293 356 <- Repeat this if you use several Wiimotes with [r
+wii2-...] \, [r wii3-...] \, etc.;

@@ -1,0 +1,25 @@
+#N canvas 202 208 663 534 10;
+#X obj 74 59 phasorgrain~;
+#X obj 303 423 table source;
+#X obj 298 390 soundfiler;
+#X msg 298 370 read -resize \$1 source;
+#X obj 299 348 openpanel;
+#X msg 300 331 bang;
+#X obj 74 320 *~ 0.2;
+#X obj 123 320 *~ 0.2;
+#X obj 74 342 dac~;
+#X obj 150 299 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 10900 1;
+#X obj 223 60 phasorgrain~;
+#X text 389 194 set "source" to the source table;
+#X connect 0 0 6 0;
+#X connect 0 1 7 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 1;
+#X connect 9 0 7 1;
+#X connect 9 0 6 1;
+#X connect 10 0 6 0;
+#X connect 10 1 7 0;

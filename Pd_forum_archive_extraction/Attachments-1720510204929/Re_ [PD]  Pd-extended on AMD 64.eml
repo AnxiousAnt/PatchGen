@@ -1,0 +1,74 @@
+X-Mozilla-Keys: 
+Message-ID: <4994F0BC.90104@gmail.com>
+Date: Fri, 13 Feb 2009 05:02:04 +0100
+From: "ydegoyon@gmail.com" <ydegoyon@gmail.com>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.17) Gecko/20080829 SeaMonkey/1.1.12 (Ubuntu-1.1.12+nobinonly-0ubuntu0.8.04.1)
+MIME-Version: 1.0
+To: Loic Kessous <loic.kessous@gmail.com>
+Subject: Re: [PD]  Pd-extended on AMD 64
+References: <20090210143848.GA4131@alien.mur.at>	<4991C390.2030308@iem.at>	<20090210201435.GA20538@alien.mur.at>	<C95349D7-3AAD-43CB-8F27-3E379DBD3C12@eds.org>	<4992B7B1.805@ling.uni-potsdam.de>	<D6B38559-F111-4E41-B6C9-484E65796DA5@eds.org>	<4993EE87.9050504@ling.uni-potsdam.de>	<2DA56879-516D-4305-9773-51B0119A491D@eds.org> <17573546-78A9-4673-822C-0C8E80D3E248@gmail.com>
+In-Reply-To: <17573546-78A9-4673-822C-0C8E80D3E248@gmail.com>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+
+hi,
+
+check that out :
+http://giss.tv/wiki/index.php/G.I.S.S._streaming_packages_for_Ubuntu_Hardy
+
+it has pdp opencv already there,
+and is available for 64 bits hardy,
+what you look for?
+
+to people using already intrepid,
+i must say they should use next release : suicidal...
+
+xiaoo
+sevy
+
+Loic Kessous wrote:
+> Hi all,
+>
+> I try to setup a computer that I got from someone to work with Pd- 
+> extended on linux (I want to work with video openCV , pdp , etc... and  
+> to develop some new openCV stuff with it).
+>
+> I just installed on it Ubuntu hardy 8.04.2 64 bits versions, and I  
+> hoped to be able to install the version compiled for Ubuntu hardy  
+> available on the website puredata.info, but the package installer say:
+>
+> STATUS:    ERROR: WRONG ARCHITECTURE 'I386'
+>
+> I checked on the mailing list archive and I see that there was some   
+> messages in 2006 reporting problems for this processor with tabread  
+> tabwrite and other.
+>
+> So I have three questions:
+>
+> 1) Is there a version already compiled for AMD 64 or should I try to  
+> compiled it myself (and is it possible?)
+>
+> 2) If I compile it myself, will there be some externals that may not  
+> work?
+>
+> 3) is it maybe a very bad idea to try to work with this AMD 64  
+> computer ?
+>
+> thanks,
+>
+> loic
+> ---
+>
+>
+>
+>
+>
+>
+>
+> _______________________________________________
+> Pd-list@iem.at mailing list
+> UNSUBSCRIBE and account-management -> http://lists.puredata.info/listinfo/pd-list
+>
+>   
+
+

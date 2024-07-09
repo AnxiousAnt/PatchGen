@@ -1,0 +1,11 @@
+#N canvas 0 22 454 304 10;
+#X obj 191 191 pdp_sdl;
+#X msg 217 163 fullscreen \$1;
+#X obj 217 142 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X msg 195 116 size 320 240;
+#X msg 171 84 poll;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;

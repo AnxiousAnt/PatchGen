@@ -1,0 +1,11 @@
+--- g_editor.c~	Tue Apr  2 07:14:18 2002
++++ g_editor.c	Mon Apr 22 11:58:32 2002
+@@ -665,7 +665,7 @@
+     	    	if (closest2 >= ninlet2)
+     	    	    closest2 = ninlet2 - 1;
+ 
+-    	    	oc = obj_connect(ob1, closest1, ob2, closest2);
++    	    	if (!(oc = obj_connect(ob1, closest1, ob2, closest2))) return;
+     	    	lx1 = x11 + (noutlet1 > 1 ?
+    	    		((x12-x11-IOWIDTH) * closest1)/(noutlet1-1) : 0)
+    	    		     + IOMIDDLE;

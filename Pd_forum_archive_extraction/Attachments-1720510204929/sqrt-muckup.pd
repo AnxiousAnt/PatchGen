@@ -1,0 +1,19 @@
+#N canvas 54 51 458 308 10;
+#X obj 56 70 osc~ 440;
+#X obj 115 194 print~ sqrt;
+#X obj 109 141 print~ normal;
+#X obj 74 158 sqrt~;
+#X obj 165 95 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
+-1;
+#X text 140 75 click here then look in the main PD window;
+#X obj 122 256 print~ q8_sqrt;
+#X obj 49 207 q8_sqrt~;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 0 0 7 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 4 0 2 0;
+#X connect 4 0 6 0;
+#X connect 7 0 6 0;
+

@@ -1,0 +1,45 @@
+#N canvas 383 189 405 236 10;
+#X obj 331 153 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 289 153 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 248 153 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 206 153 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 164 153 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 122 153 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 81 153 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 -1
+;
+#X obj 39 153 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 -1
+;
+#X obj 103 89 t f f f f f f f f;
+#X floatatom 103 62 5 0 0 0 - - -;
+#X obj 39 130 bit 7;
+#X obj 331 130 bit 0;
+#X obj 289 130 bit 1;
+#X obj 248 130 bit 2;
+#X obj 206 130 bit 3;
+#X obj 164 130 bit 4;
+#X obj 122 130 bit 5;
+#X obj 81 130 bit 6;
+#X text 52 20 decoding a byte;
+#X connect 8 0 10 0;
+#X connect 8 1 17 0;
+#X connect 8 2 16 0;
+#X connect 8 3 15 0;
+#X connect 8 4 14 0;
+#X connect 8 5 13 0;
+#X connect 8 6 12 0;
+#X connect 8 7 11 0;
+#X connect 9 0 8 0;
+#X connect 10 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 1 0;
+#X connect 13 0 2 0;
+#X connect 14 0 3 0;
+#X connect 15 0 4 0;
+#X connect 16 0 5 0;
+#X connect 17 0 6 0;

@@ -1,0 +1,26 @@
+#N canvas 0 0 574 482 10;
+#X obj 127 109 symbol first;
+#X obj 218 108 symbol second;
+#X obj 319 108 symbol third;
+#X obj 134 81 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 219 84 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 323 84 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 113 243 r first;
+#X msg 191 175 \; \$1 12345;
+#X obj 168 245 r second;
+#X obj 235 246 r third;
+#X floatatom 114 274 5 0 0 0 - - -;
+#X floatatom 162 278 5 0 0 0 - - -;
+#X floatatom 238 277 5 0 0 0 - - -;
+#X connect 0 0 7 0;
+#X connect 1 0 7 0;
+#X connect 2 0 7 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 6 0 10 0;
+#X connect 8 0 11 0;
+#X connect 9 0 12 0;

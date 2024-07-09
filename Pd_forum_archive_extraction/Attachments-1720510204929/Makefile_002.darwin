@@ -1,0 +1,70 @@
+PD_DIR = /Users/lluisgomezbigorda/pd-0.41-4
+GEM_DIR = /Users/lluisgomezbigorda/Gem
+
+OPENCV_CFLAGS = -I/usr/local/include/opencv  
+OPENCV_LIBS   = -L/usr/local/lib -lcxcore -lcv -lhighgui -lcvaux -lml 
+
+LIBS =  -lm
+GEM_OPENCV_VERSION = 0.1
+
+# build flags
+
+GEM_OPENCV_INCLUDE =  -I$(PD_DIR)/src -I.  -I$(GEM_DIR)/src -I$(PD_DIR)/src
+GEM_OPENCV_CPPFLAGS  = -DPD -O2 -funroll-loops -fomit-frame-pointer  -ffast-math \
+    -Wall -W -Wno-unused -Wno-parentheses -Wno-switch -g 
+
+
+
+all: pix_opencv_edge.pd_darwin pix_opencv_laplace.pd_darwin pix_opencv_morphology.pd_darwin pix_opencv_distrans.pd_darwin pix_opencv_motempl.pd_darwin pix_opencv_haarcascade.pd_darwin pix_opencv_contours_boundingrect.pd_darwin pix_opencv_bgsubstract.pd_darwin pix_opencv_contours_convexity.pd_darwin
+
+pix_opencv_contours_convexity.pd_darwin: pix_opencv_contours_convexity.o
+	rm -f pix_opencv_contours_convexity.pd_darwin
+	gcc -bundle -undefined dynamic_lookup -o pix_opencv_contours_convexity.pd_darwin pix_opencv_contours_convexity.o $(LIBS) $(OPENCV_LIBS)
+
+pix_opencv_contours_boundingrect.pd_darwin: pix_opencv_contours_boundingrect.o
+	rm -f pix_opencv_contours_boundingrect.pd_darwin
+	gcc -bundle -undefined dynamic_lookup -o pix_opencv_contours_boundingrect.pd_darwin pix_opencv_contours_boundingrect.o $(LIBS) $(OPENCV_LIBS)
+
+pix_opencv_haarcascade.pd_darwin: pix_opencv_haarcascade.o
+	rm -f pix_opencv_haarcascade.pd_darwin
+	gcc -bundle -undefined dynamic_lookup -o pix_opencv_haarcascade.pd_darwin pix_opencv_haarcascade.o $(LIBS) $(OPENCV_LIBS)
+
+pix_opencv_motempl.pd_darwin: pix_opencv_motempl.o
+	rm -f pix_opencv_motempl.pd_darwin
+	gcc -bundle -undefined dynamic_lookup -o pix_opencv_motempl.pd_darwin pix_opencv_motempl.o $(LIBS) $(OPENCV_LIBS)
+
+pix_opencv_distrans.pd_darwin: pix_opencv_distrans.o
+	rm -f pix_opencv_distrans.pd_darwin
+	gcc -bundle -undefined dynamic_lookup -o pix_opencv_distrans.pd_darwin pix_opencv_distrans.o $(LIBS) $(OPENCV_LIBS)
+
+pix_opencv_morphology.pd_darwin: pix_opencv_morphology.o
+	rm -f pix_opencv_morphology.pd_darwin
+	gcc -bundle -undefined dynamic_lookup -o pix_opencv_morphology.pd_darwin pix_opencv_morphology.o $(LIBS) $(OPENCV_LIBS)
+
+pix_opencv_laplace.pd_darwin: pix_opencv_laplace.o
+	rm -f pix_opencv_laplace.pd_darwin
+	gcc -bundle -undefined dynamic_lookup -o pix_opencv_laplace.pd_darwin pix_opencv_laplace.o $(LIBS) $(OPENCV_LIBS)
+
+pix_opencv_edge.pd_darwin: pix_opencv_edge.o 
+	rm -f pix_opencv_edge.pd_darwin
+	gcc -bundle -undefined dynamic_lookup -o pix_opencv_edge.pd_darwin pix_opencv_edge.o $(LIBS) $(OPENCV_LIBS)
+
+pix_opencv_bgsubstract.pd_darwin: pix_opencv_bgsubstract.o 
+	rm -f pix_opencv_bgsubstract.pd_darwin
+	gcc -bundle -undefined dynamic_lookup -o pix_opencv_bgsubstract.pd_darwin pix_opencv_bgsubstract.o $(LIBS) $(OPENCV_LIBS)
+
+clean:
+	rm -f *.o
+	rm -f pix_opencv*.pd_darwin
+
+distro: clean all
+	rm *.o
+
+.cpp.o:
+	g++ $(GEM_OPENCV_CPPFLAGS) $(GEM_OPENCV_INCLUDE) $(OPENCV_CFLAGS) -o $*.o -c $*.cpp
+
+.c.o:
+	gcc $(GEM_OPENCV_CPPFLAGS) $(GEM_OPENCV_INCLUDE) -o $*.o -c $*.c
+
+install:
+	cp -f --remove-destination *.pd $(PD_DIR)/doc/5.reference

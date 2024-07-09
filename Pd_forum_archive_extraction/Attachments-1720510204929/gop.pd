@@ -1,0 +1,219 @@
+#N canvas 13 53 1011 687 10;
+#N canvas 71 178 1011 709 objetos 0;
+#X obj 544 277 cnv 15 170 125 empty empty empty 20 12 0 14 -241291
+-66577 0;
+#X msg 420 100 options cone cube cuboid curve curve3d cylinder disk
+model multimodel newWave polygon primtri rectangle ripple rubber slidesquares
+sphere square text2d text3d triangle tuve;
+#X msg 473 -32 bgcolour #199111;
+#X obj 304 12 s escojer;
+#X msg 492 1 bgcolour #199111;
+#X msg 405 45 name objetos;
+#X msg 159 536 options cone cube cuboid curve curve3d cylinder disk
+model multimodel newWave polygon primtri rectangle ripple rubber slidesquares
+sphere square text2d text3d triangle tuve;
+#N canvas 0 333 1011 691 dyncone 0;
+#X msg 74 278 clear;
+#X obj 144 -14 r crear;
+#X obj 216 69 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 87 30 r escojer;
+#X obj 87 106 select 0;
+#X obj 124 443 s pd-lub;
+#X obj 136 157 t b b b;
+#X msg 157 268 obj 30 100 hsl 100 10 0 127 0 0 hola hula empty -2 -6
+0 8 -20000 -2000 -1000 0 1;
+#X msg 126 227 obj 30 130 hsl 100 10 0 127 0 0 hola hula empty -2 -6
+0 8 -20000 -2000 -1000 0 1;
+#X msg 298 361 obj 30 80 hradio 5 3 0 3 puchikuchi empty empty 0 -6
+0 5 -20000 -1 -1 0;
+#X connect 0 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 0 0;
+#X connect 6 0 8 0;
+#X connect 6 1 7 0;
+#X connect 6 2 9 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X restore 25 358 pd dyncone;
+#N canvas 84 102 1011 709 dyncube 0;
+#X obj 261 58 r escojer;
+#X obj 261 112 select 1;
+#X obj 214 166 t b b;
+#X msg 166 218 clear;
+#X obj 214 367 s pd-lub;
+#X obj 120 157 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 75 218 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 76 265 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 74 246 del 10;
+#X msg 348 277 obj 30 80 hradio 5 3 0 3 pukiki empty empty 0 -6 0 5
+-20000 -1 -1 0;
+#X msg 215 193 obj 30 120 hsl 100 10 0 127 0 0 hola hula holo -2 -6
+0 8 -20000 -2000 -1000 0 1;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 1 1 3 0;
+#X connect 2 0 10 0;
+#X connect 2 1 9 0;
+#X connect 3 0 4 0;
+#X connect 5 0 10 0;
+#X connect 6 0 8 0;
+#X connect 7 0 2 0;
+#X connect 8 0 7 0;
+#X connect 9 0 4 0;
+#X connect 10 0 4 0;
+#X restore 101 359 pd dyncube;
+#N canvas 71 268 1011 684 dyncuboid 0;
+#X msg 303 198 clear;
+#X obj 413 78 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 356 12 r escojer;
+#X obj 332 50 select 2;
+#X obj 352 289 s pd-lub;
+#X msg 294 25 2;
+#X floatatom 271 77 5 0 0 0 - - -;
+#X obj 160 109 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 161 156 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 159 137 del 10;
+#X msg 354 142 obj 30 90 hsl 100 10 0 127 0 0 cuboidre hula empty -2
+-6 0 8 -20000 -2000 -1000 0 1;
+#X msg 384 185 obj 30 130 hsl 100 10 0 127 0 0 cuboidri hula empty
+-2 -6 0 8 -20000 -2000 -1000 0 1;
+#X msg 464 222 obj 30 170 hsl 100 10 0 127 0 0 cuboidro hula empty
+-2 -6 0 8 -20000 -2000 -1000 0 1;
+#X obj 358 109 t b b b b;
+#X msg 543 291 obj 30 60 hradio 5 3 0 3 tutifruti empty empty 0 -6
+0 5 -20000 -1 -1 0;
+#X connect 0 0 4 0;
+#X connect 1 0 13 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 3 1 0 0;
+#X connect 5 0 3 0;
+#X connect 7 0 9 0;
+#X connect 8 0 13 0;
+#X connect 9 0 8 0;
+#X connect 10 0 4 0;
+#X connect 11 0 4 0;
+#X connect 12 0 4 0;
+#X connect 13 0 10 0;
+#X connect 13 1 11 0;
+#X connect 13 2 12 0;
+#X connect 13 3 14 0;
+#X connect 14 0 4 0;
+#X restore 177 358 pd dyncuboid;
+#N canvas 0 0 1011 709 dybcurve 0;
+#X msg 93 316 clear;
+#X obj 293 115 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 229 607 s pd-lub;
+#X obj 129 72 r escojer;
+#X obj 127 127 select 3;
+#X obj 75 218 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 76 265 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 74 246 del 10;
+#X text 605 576 cara carb carc cera cerb cerc cira cirb circ cora corb
+corc;
+#X msg 325 422 obj 140 140 nbx 4 9 -1e+37 1e+37 0 0 cerb hula empty
+-2 -6 0 7 -20000 -2000 -1000 0 1;
+#X msg 254 560 obj 20 80 nbx 4 9 -1e+37 1e+37 0 0 cara hula empty -2
+-6 0 7 -20000 -2000 -1000 0 1;
+#X msg 269 521 obj 140 80 nbx 4 9 -1e+37 1e+37 0 0 carb hula empty
+-2 -6 0 7 -20000 -2000 -1000 0 1;
+#X msg 290 488 obj 260 80 nbx 4 9 -1e+37 1e+37 0 0 carc hula empty
+-2 -6 0 7 -20000 -2000 -1000 0 1;
+#X msg 300 455 obj 20 140 nbx 4 9 -1e+37 1e+37 0 0 cera hula empty
+-2 -6 0 7 -20000 -2000 -1000 0 1;
+#X msg 340 391 obj 260 140 nbx 4 9 -1e+37 1e+37 0 0 cerc hula empty
+-2 -6 0 7 -20000 -2000 -1000 0 1;
+#X msg 354 355 obj 20 200 nbx 4 9 -1e+37 1e+37 0 0 cira hula empty
+-2 -6 0 7 -20000 -2000 -1000 0 1;
+#X msg 364 316 obj 140 200 nbx 4 9 -1e+37 1e+37 0 0 cirb hula empty
+-2 -6 0 7 -20000 -2000 -1000 0 1;
+#X msg 381 279 obj 260 200 nbx 4 9 -1e+37 1e+37 0 0 circ hula empty
+-2 -6 0 7 -20000 -2000 -1000 0 1;
+#X msg 392 244 obj 20 260 nbx 4 9 -1e+37 1e+37 0 0 cora hula empty
+-2 -6 0 7 -20000 -2000 -1000 0 1;
+#X msg 403 207 obj 140 260 nbx 4 9 -1e+37 1e+37 0 0 corb hula empty
+-2 -6 0 7 -20000 -2000 -1000 0 1;
+#X msg 426 172 obj 260 260 nbx 4 9 -1e+37 1e+37 0 0 corc hula empty
+-2 -6 0 7 -20000 -2000 -1000 0 1;
+#X obj 239 142 t b b b b b b b b b b b b b;
+#X msg 471 129 obj 300 300 nbx 4 9 0 8 0 0 tamaaa hula empty -2 -6
+0 7 -20000 -2000 -1000 0 1;
+#X connect 0 0 2 0;
+#X connect 1 0 21 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 1 0 0;
+#X connect 5 0 7 0;
+#X connect 6 0 21 0;
+#X connect 7 0 6 0;
+#X connect 9 0 2 0;
+#X connect 10 0 2 0;
+#X connect 11 0 2 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;
+#X connect 14 0 2 0;
+#X connect 15 0 2 0;
+#X connect 16 0 2 0;
+#X connect 17 0 2 0;
+#X connect 18 0 2 0;
+#X connect 19 0 2 0;
+#X connect 20 0 2 0;
+#X connect 21 0 10 0;
+#X connect 21 1 11 0;
+#X connect 21 2 12 0;
+#X connect 21 3 13 0;
+#X connect 21 4 9 0;
+#X connect 21 5 14 0;
+#X connect 21 6 15 0;
+#X connect 21 7 16 0;
+#X connect 21 8 17 0;
+#X connect 21 9 18 0;
+#X connect 21 10 19 0;
+#X connect 21 11 20 0;
+#X connect 21 12 22 0;
+#X connect 22 0 2 0;
+#X restore 269 358 pd dybcurve;
+#N canvas 0 0 551 424 lub 0;
+#X obj 30 80 hradio 8 1 0 3 puchikuchi empty empty 0 -6 0 5 -20000
+-1 -1 0;
+#X obj 30 100 hsl 100 10 0 127 0 0 hola hula empty -2 -6 0 8 -20000
+-2000 -1000 0 1;
+#X obj 30 130 hsl 100 10 0 127 0 0 hola hula empty -2 -6 0 8 -20000
+-2000 -1000 0 1;
+#X coords 0 0 1 1 300 300 1 0 0;
+#X restore 1 -1 pd lub;
+#X floatatom 123 16 5 0 0 0 - - -;
+#X obj 348 61 + 11;
+#N canvas 0 0 462 312 recivirrr 0;
+#X obj 156 96 hradio 8 1 0 11 empty plinplon empty 0 -6 0 8 -24198
+-260818 -260818 0;
+#X obj 111 76 hradio 8 1 0 11 empty plinplin empty 0 -6 0 8 -24198
+-260818 -1 0;
+#X obj 120 140 outlet;
+#X obj 190 153 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X restore 360 -10 pd recivirrr;
+#X connect 13 0 12 0;
+#X connect 13 0 3 0;
+#X connect 14 0 3 0;
+#X connect 14 1 13 0;
+#X connect 14 1 12 0;
+#X coords 0 0 1 1 300 300 1 0 0;
+#X restore 286 58 pd objetos;
+#X obj 285 31 hradio 8 1 0 4 plinplin empty empty 0 -6 0 8 -24198 -260818
+-1 0;

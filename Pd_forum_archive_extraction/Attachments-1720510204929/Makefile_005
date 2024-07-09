@@ -1,0 +1,16 @@
+CFLAGS = -g -O3 -Wall -ObjC -finline-functions -I$(ARCHSRC)/ink -I/System/Library/Frameworks/AppKit.framework/Headers
+PROGS = aphrodite
+DESTDIR = $(ARCHBIN)
+LDFLAGS = -L$(ARCHSRC)/libel -lpv -lhelper
+OBJS = 
+
+all: $(PROGS)
+
+clean:
+	-rm -f $(PROGS) *.o core
+
+install: $(PROGS)
+	-cp $(PROGS) $(DESTDIR)
+
+aphrodite:	aphrodite.o $(OBJS)
+		cc -o aphrodite $(CFLAGS) $(OBJS) aphrodite.o $(LDFLAGS)

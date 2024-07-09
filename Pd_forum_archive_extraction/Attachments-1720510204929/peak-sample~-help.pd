@@ -1,0 +1,24 @@
+#N canvas 102 453 450 300 10;
+#X obj 76 75 noise~;
+#X obj 77 173 print~ in;
+#X obj 243 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 264 69 block~ 128;
+#X obj 190 174 print~ out;
+#X msg 195 44 set \$1;
+#X msg 128 23 16;
+#X msg 168 21 32;
+#X msg 216 19 64;
+#X msg 253 19 128;
+#X obj 102 113 peak-sample~ 128;
+#X connect 0 0 10 0;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 2 0 4 0;
+#X connect 5 0 3 0;
+#X connect 5 0 10 1;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 10 0 4 0;

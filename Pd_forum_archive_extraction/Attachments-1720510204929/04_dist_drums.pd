@@ -1,0 +1,18 @@
+#N canvas 1460 309 450 300 10;
+#X obj 100 42 simple_sine;
+#X obj 10 12 loadbang;
+#X msg 10 33 \; pd dsp 1;
+#X obj 100 11 notein 1;
+#X obj 204 13 notein 2;
+#X obj 205 69 dac~ 3 4;
+#X obj 101 69 dac~ 1 2;
+#X obj 204 43 triangle_bass;
+#X connect 0 0 6 0;
+#X connect 0 1 6 1;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;
+#X connect 4 0 7 0;
+#X connect 4 1 7 1;
+#X connect 7 0 5 0;
+#X connect 7 1 5 1;

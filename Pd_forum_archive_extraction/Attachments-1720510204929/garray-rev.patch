@@ -1,0 +1,364 @@
+diff -rupN pd-0.43-0-old/src/g_array.c pd-0.43-0/src/g_array.c
+--- pd-0.43-0-old/src/g_array.c	2013-05-01 01:48:51.225292121 -0400
++++ pd-0.43-0/src/g_array.c	2013-05-01 01:51:26.196333680 -0400
+@@ -132,6 +132,7 @@ struct _garray
+     t_symbol *x_realname;   /* expanded name (symbol we're bound to) */
+     char x_usedindsp;       /* true if some DSP routine is using this */
+     char x_saveit;          /* true if we should save this with parent */
++    char x_joc;             /* true if we should "jump on click" in a graph */
+     char x_listviewing;     /* true if list view window is open */
+     char x_hidename;        /* don't print name above graph */
+ };
+@@ -252,6 +253,11 @@ int garray_getname(t_garray *x, t_symbol
+     *namep = x->x_name;
+     return (x->x_hidename);
+ }
++    /* find out if array elements should "jump on click" in a graph */
++int garray_joc(t_garray *x)
++{
++    return (x->x_joc);
++}
+ 
+         /* if there is one garray in a graph, reset the graph's coordinates
+             to fit a new size and style for the garray */
+@@ -263,8 +269,8 @@ static void garray_fittograph(t_garray *
+     {
+         vmess(&gl->gl_pd, gensym("bounds"), "ffff",
+             0., gl->gl_y1, (double)
+-                (style == PLOTSTYLE_POINTS || n == 1 ? n : n-1),
+-                    gl->gl_y2);
++                (style == PLOTSTYLE_POINTS || style == PLOTSTYLE_BARS
++                || n == 1 ? n : n-1), gl->gl_y2);
+                 /* close any dialogs that might have the wrong info now... */
+         gfxstub_deleteforkey(gl);
+     }
+@@ -279,7 +285,7 @@ by a more coherent (and general) invocat
+ t_garray *graph_array(t_glist *gl, t_symbol *s, t_symbol *templateargsym,
+     t_floatarg fsize, t_floatarg fflags)
+ {
+-    int n = fsize, i, zz, nwords, zonset, ztype, saveit;
++    int n = fsize, i, zz, nwords, zonset, ztype, saveit, joc;
+     t_symbol *zarraytype;
+     t_garray *x;
+     t_pd *x2;
+@@ -323,7 +329,7 @@ t_garray *graph_array(t_glist *gl, t_sym
+     saveit = ((flags & 1) != 0);
+     x = graph_scalar(gl, s, templatesym, saveit);
+     x->x_hidename = ((flags & 8) >> 3);
+-
++    x->x_joc = ((flags & 16) >> 4);
+     if (n <= 0)
+         n = 100;
+     array_resize(x->x_scalar->sc_vec[zonset].w_array, n);
+@@ -367,7 +373,8 @@ void garray_properties(t_garray *x)
+         "pdtk_array_dialog %%s %s %d %d 0\n"),
+             x->x_name->s_name, a->a_n, x->x_saveit + 
+             2 * (int)(template_getfloat(template_findbyname(sc->sc_template),
+-            gensym("style"), x->x_scalar->sc_vec, 1)));
++            gensym("style"), x->x_scalar->sc_vec, 1)) + 8 * x->x_hidename +
++            16 * x->x_joc);
+     gfxstub_new(&x->x_gobj.g_pd, x, cmdbuf);
+ }
+ 
+@@ -395,6 +402,8 @@ void garray_arraydialog(t_garray *x, t_s
+     int flags = fflags;
+     int saveit = ((flags & 1) != 0);
+     int style = ((flags & 6) >> 1);
++    int hidename = ((flags & 8) >> 3);
++    int joc = ((flags & 16) >> 4);
+     t_float stylewas = template_getfloat(
+         template_findbyname(x->x_scalar->sc_template),
+             gensym("style"), x->x_scalar->sc_vec, 1);
+@@ -453,6 +462,8 @@ void garray_arraydialog(t_garray *x, t_s
+             x->x_scalar->sc_vec, (t_float)style, 0);
+ 
+         garray_setsaveit(x, (saveit != 0));
++        x->x_joc = joc;
++        x->x_hidename = hidename;
+         garray_redraw(x);
+         canvas_dirty(x->x_glist, 1);
+     }
+@@ -607,6 +618,7 @@ void array_getcoordinate(t_glist *glist,
+     *wp = wpix;
+ }
+ 
++extern int array_joc; /* from g_canvas.h */
+ static t_float array_motion_xcumulative;
+ static t_float array_motion_ycumulative;
+ static t_fielddesc *array_motion_xfield;
+@@ -800,7 +812,7 @@ int array_doclick(t_array *array, t_glis
+                     best = dx + dy;
+             }
+         }
+-        if (best > 8)
++        if (best > 8 && (array_joc == 0))
+         {
+             if (scalarvis != 0)
+                 return (array_doclick_element(array, glist, sc, ap,
+@@ -832,13 +844,30 @@ int array_doclick(t_array *array, t_glis
+                     dy = 100;
+             }
+             else dy2 = dy3 = 100;
+-            if (dx + dy <= best || dx + dy2 <= best || dx + dy3 <= best)
++            int hit = 0;
++            if(array_joc)
++            {
++                if(i + incr >= array->a_n)
++                    hit = xpix >= pxpix;
++                else
++                {
++                    t_float px2pix, py2pix, pw2pix;
++                    array_getcoordinate(glist,
++                        (char *)(array->a_vec) + i + incr * elemsize,
++                        xonset, yonset, wonset, i + incr, xloc, yloc, xinc,
++                        xfield, yfield, wfield, &px2pix, &py2pix, &pw2pix);
++                    hit = (xpix >= pxpix) && (xpix < px2pix);
++                }
++            }
++            else
++                hit = dx + dy <= best || dx + dy2 <= best || dx + dy3 <= best;
++            if (hit)
+             {
+                 if (dy < dy2 && dy < dy3)
+                     array_motion_fatten = 0;
+                 else if (dy2 < dy3)
+                     array_motion_fatten = -1;
+-                else array_motion_fatten = 1;
++                else if (!array_joc) array_motion_fatten = 1;
+                 if (doit)
+                 {
+                     char *elem = (char *)array->a_vec;
+@@ -902,10 +931,12 @@ int array_doclick(t_array *array, t_glis
+                     else if (yonset >= 0)
+                     {
+                         array_motion_yfield = yfield;
+-                        array_motion_ycumulative = 
++                        array_motion_ycumulative =
+                             fielddesc_getcoord(yfield, array_motion_template,
+                                 (t_word *)(elem + i * elemsize), 1);
+                             /* *(t_float *)((elem + elemsize * i) + yonset); */
++                        if(array_joc)
++                            array_motion(0, 0, ypix - pypix);
+                     }
+                     else
+                     {
+@@ -1040,7 +1071,8 @@ static void garray_save(t_gobj *z, t_bin
+         (style == PLOTSTYLE_POLY ? 0 : style)); 
+     binbuf_addv(b, "sssisi;", gensym("#X"), gensym("array"),
+         x->x_name, array->a_n, &s_float,
+-            x->x_saveit + 2 * filestyle + 8*x->x_hidename);
++            x->x_saveit + 2 * filestyle + 8*x->x_hidename +
++            16*x->x_joc);
+     if (x->x_saveit)
+     {
+         int n = array->a_n, n2 = 0;
+@@ -1202,7 +1234,7 @@ static void garray_dofo(t_garray *x, lon
+     if (npoints == 0)
+         npoints = 512;  /* dunno what a good default would be... */
+     if (npoints != (1 << ilog2(npoints)))
+-        post("%s: rounnding to %d points", array->a_templatesym->s_name,
++        post("%s: rounding to %d points", array->a_templatesym->s_name,
+             (npoints = (1<<ilog2(npoints))));
+     garray_resize_long(x, npoints + 3);
+     phaseincr = 2. * 3.14159 / npoints;
+diff -rupN pd-0.43-0-old/src/g_canvas.h pd-0.43-0/src/g_canvas.h
+--- pd-0.43-0-old/src/g_canvas.h	2013-05-01 01:48:51.229292198 -0400
++++ pd-0.43-0/src/g_canvas.h	2013-05-01 01:51:39.968603942 -0400
+@@ -342,6 +342,7 @@ extern int glist_valid;         /* incre
+ #define PLOTSTYLE_POINTS 0     /* plotting styles for arrays */
+ #define PLOTSTYLE_POLY 1
+ #define PLOTSTYLE_BEZ 2
++#define PLOTSTYLE_BARS 3
+ 
+ /* ------------------- functions on any gobj ----------------------------- */
+ EXTERN void gobj_getrect(t_gobj *x, t_glist *owner, int *x1, int *y1,
+@@ -535,6 +536,7 @@ EXTERN t_garray *graph_array(t_glist *gl
+ EXTERN t_array *array_new(t_symbol *templatesym, t_gpointer *parent);
+ EXTERN void array_resize(t_array *x, int n);
+ EXTERN void array_free(t_array *x);
++int array_joc; /* for "jump on click" array inside a graph */
+ 
+ /* --------------------- gpointers and stubs ---------------- */
+ EXTERN t_gstub *gstub_new(t_glist *gl, t_array *a);
+diff -rupN pd-0.43-0-old/src/g_graph.c pd-0.43-0/src/g_graph.c
+--- pd-0.43-0-old/src/g_graph.c	2013-05-01 01:48:51.225292121 -0400
++++ pd-0.43-0/src/g_graph.c	2013-05-01 01:51:52.872857164 -0400
+@@ -14,15 +14,18 @@ to this file... */
+ #include <stdio.h>
+ #include <string.h>
+ 
++extern int array_joc;
++int garray_joc(t_garray *x);
++
+ /* ---------------------- forward definitions ----------------- */
+ 
+ static void graph_vis(t_gobj *gr, t_glist *unused_glist, int vis);
+-static void graph_graphrect(t_gobj *z, t_glist *glist,
++void graph_graphrect(t_gobj *z, t_glist *glist,
+     int *xp1, int *yp1, int *xp2, int *yp2);
+ static void graph_getrect(t_gobj *z, t_glist *glist,
+     int *xp1, int *yp1, int *xp2, int *yp2);
+ 
+-/* -------------------- maintaining the list -------------------- */
++/* -------------------- maintaining tne list -------------------- */
+ 
+ void canvas_drawredrect(t_canvas *x, int doit);
+ 
+@@ -854,7 +857,7 @@ static void graph_vis(t_gobj *gr, t_glis
+     /* get the graph's rectangle, not counting extra swelling for controls
+     to keep them inside the graph.  This is the "logical" pixel size. */
+ 
+-static void graph_graphrect(t_gobj *z, t_glist *glist,
++void graph_graphrect(t_gobj *z, t_glist *glist,
+     int *xp1, int *yp1, int *xp2, int *yp2)
+ {
+     t_glist *x = (t_glist *)z;
+@@ -1046,12 +1049,21 @@ static int graph_click(t_gobj *z, struct
+     {
+         for (y = x->gl_list; y; y = y->g_next)
+         {
+-            int x1, y1, x2, y2;
++            if(pd_class(&y->g_pd) == garray_class &&
++               !y->g_next &&
++               (array_joc = garray_joc((t_garray *)y)) &&
++               (clickreturned = gobj_click(y, x, xpix, ypix,
++                   shift, alt, 0, doit)))
++                       break;
++            else
++            {
++                int x1, y1, x2, y2;
+                 /* check if the object wants to be clicked */
+-            if (canvas_hitbox(x, y, xpix, ypix, &x1, &y1, &x2, &y2)
+-                &&  (clickreturned = gobj_click(y, x, xpix, ypix,
++                if (canvas_hitbox(x, y, xpix, ypix, &x1, &y1, &x2, &y2)
++                    &&  (clickreturned = gobj_click(y, x, xpix, ypix,
+                     shift, alt, 0, doit)))
+                         break;
++            }
+         }
+         if (!doit)
+         {
+diff -rupN pd-0.43-0-old/src/g_template.c pd-0.43-0/src/g_template.c
+--- pd-0.43-0-old/src/g_template.c	2013-05-01 01:48:51.229292198 -0400
++++ pd-0.43-0/src/g_template.c	2013-05-01 01:52:02.277041700 -0400
+@@ -11,7 +11,8 @@
+ #include "g_canvas.h"
+ 
+ void array_redraw(t_array *a, t_glist *glist);
+-
++void graph_graphrect(t_gobj *z, t_glist *glist,
++    int *xp1, int *yp1, int *xp2, int *yp2);
+ /*
+ This file contains text objects you would put in a canvas to define a
+ template.  Templates describe objects of type "array" (g_array.c) and
+@@ -1685,7 +1686,7 @@ static void plot_vis(t_gobj *z, t_glist
+ 
+     if (tovis)
+     {
+-        if (style == PLOTSTYLE_POINTS)
++        if (style == PLOTSTYLE_POINTS || style == PLOTSTYLE_BARS)
+         {
+             t_float minyval = 1e20, maxyval = -1e20;
+             int ndrawn = 0;
+@@ -1721,14 +1722,35 @@ static void plot_vis(t_gobj *z, t_glist
+                     minyval = yval;
+                 if (i == nelem-1 || inextx != ixpix)
+                 {
++                    int py2 = 0;
++                    int border = 0;
++                    t_symbol *fill = gensym("black");
++                    if(style == PLOTSTYLE_POINTS)
++                        py2 = (int)(glist_ytopixels(glist,
++                            basey + fielddesc_cvttocoord(yfielddesc, maxyval))
++                                + linewidth);
++                    else
++                    {
++                        if(glist->gl_isgraph && !glist->gl_havewindow)
++                        {
++                            /* this should probably be changed to anchor to the
++                               y-minimum instead of the bottom of the graph. That
++                               way the user can invert the y min/max to get a graph
++                               anchored from the top */
++                            int x1, y1, x2, y2;
++                            graph_graphrect(&glist->gl_gobj, glist->gl_owner,
++                                &x1, &y1, &x2, &y2);
++                            py2 = y2;
++                            fill = gensym("red");
++                            border = 1;
++                        }
++                    }
+                     sys_vgui(".x%lx.c create rectangle %d %d %d %d \
+--fill black -width 0  -tags [list plot%lx array]\n",
++-fill %s -outline black -width %d -tags [list plot%lx array]\n",
+                         glist_getcanvas(glist),
+                         ixpix, (int)glist_ytopixels(glist, 
+-                            basey + fielddesc_cvttocoord(yfielddesc, minyval)),
+-                        inextx, (int)(glist_ytopixels(glist, 
+-                            basey + fielddesc_cvttocoord(yfielddesc, maxyval))
+-                                + linewidth), data);
++                        basey + fielddesc_cvttocoord(yfielddesc, minyval)),
++                        inextx, py2, fill->s_name, border, data);
+                     ndrawn++;
+                     minyval = 1e20;
+                     maxyval = -1e20;
+diff -rupN pd-0.43-0-old/tcl/dialog_array.tcl pd-0.43-0/tcl/dialog_array.tcl
+--- pd-0.43-0-old/tcl/dialog_array.tcl	2013-05-01 01:48:51.205291726 -0400
++++ pd-0.43-0/tcl/dialog_array.tcl	2013-05-01 01:51:09.752010975 -0400
+@@ -15,6 +15,10 @@ array set pd_array_listview_page {}
+ set pd_array_listview_pagesize 0
+ # this stores the state of the "save me" check button
+ array set saveme_button {}
++# this stores the state of the "joc" check button
++array set joc_button {}
++# whether to hide the array name
++array set hidename_button {}
+ # this stores the state of the "draw as" radio buttons
+ array set drawas_button {}
+ # this stores the state of the "in new graph"/"in last graph" radio buttons
+@@ -221,7 +225,10 @@ proc ::dialog_array::apply {mytoplevel}
+     pdsend "$mytoplevel arraydialog \
+             $mofo \
+             [$mytoplevel.size.entry get] \
+-            [expr $::saveme_button($mytoplevel) + (2 * $::drawas_button($mytoplevel))] \
++            [expr $::saveme_button($mytoplevel) + \
++                (2 * $::drawas_button($mytoplevel)) + \
++                (8 * $::hidename_button($mytoplevel)) + \
++                (16 * $::joc_button($mytoplevel))] \
+             $::otherflag_button($mytoplevel)"
+ }
+ 
+@@ -250,6 +257,8 @@ proc ::dialog_array::pdtk_array_dialog {
+     $mytoplevel.size.entry insert 0 $size
+     set ::saveme_button($mytoplevel) [expr $flags & 1]
+     set ::drawas_button($mytoplevel) [expr ( $flags & 6 ) >> 1]
++    set ::hidename_button($mytoplevel) [expr ( $flags & 8 ) >> 3]
++    set ::joc_button($mytoplevel)    [expr ( $flags & 16) >> 4]
+     set ::otherflag_button($mytoplevel) 0
+ # pd -> tcl
+ #  2 * (int)(template_getfloat(template_findbyname(sc->sc_template), gensym("style"), x->x_scalar->sc_vec, 1)));
+@@ -283,6 +292,12 @@ proc ::dialog_array::create_dialog {myto
+     checkbutton $mytoplevel.saveme -text [_ "Save contents"] \
+         -variable ::saveme_button($mytoplevel) -anchor w
+     pack $mytoplevel.saveme -side top
++    checkbutton $mytoplevel.joc -text [_ "Jump on click"] \
++        -variable ::joc_button($mytoplevel) -anchor w
++    pack $mytoplevel.joc -side top
++    checkbutton $mytoplevel.hidename -text [_ "Hide array name"] \
++        -variable ::hidename_button($mytoplevel) -anchor w
++    pack $mytoplevel.hidename -side top
+ 
+     labelframe $mytoplevel.drawas -text [_ "Draw as:"] -padx 20 -borderwidth 1
+     pack $mytoplevel.drawas -side top -fill x
+@@ -292,9 +307,12 @@ proc ::dialog_array::create_dialog {myto
+         -variable ::drawas_button($mytoplevel) -text [_ "Polygon"]
+     radiobutton $mytoplevel.drawas.bezier -value 2 \
+         -variable ::drawas_button($mytoplevel) -text [_ "Bezier curve"]
++    radiobutton $mytoplevel.drawas.bargraph -value 3 \
++        -variable ::drawas_button($mytoplevel) -text [_ "Bargraph"]
+     pack $mytoplevel.drawas.points -side top -anchor w
+     pack $mytoplevel.drawas.polygon -side top -anchor w
+     pack $mytoplevel.drawas.bezier -side top -anchor w
++    pack $mytoplevel.drawas.bargraph -side top -anchor w
+ 
+     if {$newone != 0} {
+         labelframe $mytoplevel.radio -text [_ "Put array into:"] -padx 20 -borderwidth 1

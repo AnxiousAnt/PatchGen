@@ -1,0 +1,16 @@
+#N canvas 598 180 450 300 10;
+#X msg 73 140 440;
+#X obj 107 193 osc~ 440;
+#X obj 101 246 dac~;
+#X msg 126 134 880;
+#X obj 70 68 delay 500;
+#X obj 66 20 loadbang;
+#X msg 265 70 \; pd dsp 0;
+#X text 332 79 shut off sound;
+#X msg 264 26 \; pd dsp 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;

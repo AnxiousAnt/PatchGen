@@ -1,0 +1,41 @@
+#N canvas 955 288 450 340 10;
+#X obj 283 148 + 1;
+#X floatatom 283 178 5 0 0 0 - - -;
+#X msg 210 97 -1;
+#X obj 283 253 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 303 267 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 323 281 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 343 299 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 283 229 route 0 1 2 3 4;
+#X obj 363 314 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 383 82 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 210 59 loadbang;
+#X obj 94 79 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 210 148 float 0;
+#X obj 94 18 r \$1-someBang;
+#X text 13 209 I just want to continuously bang;
+#X text 11 229 and count from 0 \, 1 \, 2 \, 3 \, 4 \, 0 \, 1 \, 2...
+;
+#X text 12 268 What's wrong here??;
+#X connect 0 0 1 0;
+#X connect 0 0 12 1;
+#X connect 1 0 7 0;
+#X connect 2 0 12 0;
+#X connect 7 0 3 0;
+#X connect 7 1 4 0;
+#X connect 7 2 5 0;
+#X connect 7 3 6 0;
+#X connect 7 4 8 0;
+#X connect 7 5 9 0;
+#X connect 9 0 2 0;
+#X connect 10 0 2 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X connect 13 0 11 0;

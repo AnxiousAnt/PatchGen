@@ -1,0 +1,8 @@
+#N canvas 394 77 432 220 10;
+#X obj 23 111 catch~ mainpatch;
+#X obj 22 161 dac~;
+#X obj 23 134 *~ 0.1;
+#X msg 153 16 \; pd-mainpatch.pd obj 10 10 abstraction~;
+#X connect 0 0 2 0;
+#X connect 2 0 1 1;
+#X connect 2 0 1 0;

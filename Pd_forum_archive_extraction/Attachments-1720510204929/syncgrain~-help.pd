@@ -1,0 +1,70 @@
+#N canvas 293 198 758 548 10;
+#X obj 66 260 syncgrain~;
+#X floatatom 80 102 5 0 0 1 - - -;
+#X floatatom 91 125 5 0 0 1 - - -;
+#X floatatom 106 148 5 0 0 1 - - -;
+#X floatatom 118 171 5 0 0 1 - - -;
+#X floatatom 132 192 5 0 0 1 - - -;
+#X text 131 341 The sound source for the grains is obtained by reading
+from an array containing the source waveform. The grain generator has
+full control of frequency (grains/sec) \, overall amplitude \, grain
+pitch (a sampling increment) and grain size (in millisecs). An extra
+parameter is the grain pointer speed (or rate) \, which controls which
+position the generator will start reading samples in the table for
+each successive grain. It is measured in fractions of grain size \,
+so a value of 1 will make each successive grain read from where the
+previous grain should finish. A value of 0.5 will make the next grain
+start at the midway position from the previous grain start and finish
+\, etc. A value of 0 will make the generator read always from the start
+of the table. This control gives extra flexibility for creating timescale
+modifications in the resynthesis.;
+#N canvas 0 22 454 304 graph1 0;
+#X array source_array 175807 float 0;
+#X coords 0 1 175806 -1 200 140 1;
+#X restore 505 56 graph;
+#X msg 29 18 help;
+#X msg 65 47 set source_array;
+#X obj 175 190 hsl 150 17 0.012 1.2 1 0 empty empty PointerRate_(0-1)
+5 9 1 11 -262144 -1 -1 0 0;
+#X obj 162 168 hsl 150 17 10 100 0 0 empty empty GrainSize 5 9 1 11
+-262144 -1 -1 0 0;
+#X obj 149 146 hsl 150 17 0 500 0 0 empty empty GrainPitch 5 9 1 11
+-262144 -1 -1 0 0;
+#X obj 135 123 hsl 150 17 0 1.2 0 0 empty empty Amplitude 5 9 1 11
+-262144 -1 -1 0 0;
+#X obj 124 100 hsl 150 17 1 1000 1 0 empty empty GrainFrequency_(per_sec)
+5 9 1 11 -262144 -1 -1 0 0;
+#X obj 529 261 openpanel;
+#X msg 530 280 read -resize \$1 source_array;
+#X obj 530 305 soundfiler;
+#X obj 529 230 bng 25 250 50 0 empty empty empty 0 -6 0 8 -155622 -1
+-1;
+#X obj 67 306 *~;
+#X obj 87 285 hsl 150 17 0 1.2 0 0 empty empty master_amp 5 9 1 11
+-262144 -1 -1 0 0;
+#X obj 55 341 dac~;
+#X obj 290 266 print SYNCGRAIN;
+#X obj 376 29 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X msg 376 49 \; pd dsp \$1;
+#X connect 0 0 19 0;
+#X connect 0 1 22 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 2;
+#X connect 3 0 0 3;
+#X connect 4 0 0 4;
+#X connect 5 0 0 5;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 5 0;
+#X connect 11 0 4 0;
+#X connect 12 0 3 0;
+#X connect 13 0 2 0;
+#X connect 14 0 1 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 18 0 15 0;
+#X connect 19 0 21 0;
+#X connect 19 0 21 1;
+#X connect 20 0 19 1;
+#X connect 23 0 24 0;

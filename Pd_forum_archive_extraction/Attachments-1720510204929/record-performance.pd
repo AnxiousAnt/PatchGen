@@ -1,0 +1,103 @@
+#N canvas 617 343 610 531 10;
+#X obj 284 280 timer;
+#X obj 191 308 list prepend 0;
+#X obj 191 334 list prepend add;
+#X obj 342 423 textfile;
+#X obj 284 221 r START-RECORDING;
+#X obj 191 195 r RECORDING-DATA;
+#X obj 284 242 t b b;
+#X msg 342 281 clear;
+#X text 42 26 record-performance;
+#X text 57 54 - send a bang to START-RECORDING to start recording.
+;
+#X text 55 75 - send your recording data to RECORDING-DATA;
+#X obj 79 110 bng 32 250 50 0 empty empty save 36 7 1 10 -262144 -1
+-1;
+#X obj 339 115 bng 32 250 50 0 empty empty start 36 7 1 10 -262144
+-1 -1;
+#X obj 339 152 s START-RECORDING;
+#X obj 192 159 s RECORDING-DATA;
+#X msg 351 398 print;
+#X obj 191 357 list trim;
+#X obj 191 243 t a b b;
+#X obj 79 321 savepanel;
+#N canvas 565 399 659 369 playback 0;
+#X obj 114 140 textfile;
+#X obj 207 77 openpanel;
+#X obj 207 37 bng 32 250 50 0 empty empty load 36 7 1 10 -262144 -1
+-1;
+#X msg 207 122 read \$1 \, rewind;
+#X obj 114 171 list split 1;
+#X text 214 173 split off delay;
+#X obj 144 256 list;
+#X obj 114 207 delay;
+#X obj 114 229 t b b;
+#X obj 114 38 bng 32 250 50 0 empty empty play 36 7 1 10 -262144 -1
+-1;
+#X obj 46 171 bang;
+#X obj 144 277 s PLAYBACK-DATA;
+#X obj 388 115 r PLAYBACK-DATA;
+#X obj 388 214 print playback;
+#X msg 60 97 print;
+#X obj 403 187 hsl 100 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4400 1;
+#X obj 400 144 list trim;
+#X obj 207 98 symbol;
+#X obj 289 83 bng 15 250 50 0 empty empty again 17 7 1 10 -262144 -1
+-1;
+#X obj 400 165 route myslider;
+#X msg 114 96 rewind \, bang;
+#X connect 0 0 4 0;
+#X connect 1 0 17 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 7 0;
+#X connect 4 1 6 1;
+#X connect 6 0 11 0;
+#X connect 7 0 8 0;
+#X connect 8 0 10 0;
+#X connect 8 1 6 0;
+#X connect 9 0 20 0;
+#X connect 10 0 0 0;
+#X connect 12 0 13 0;
+#X connect 12 0 16 0;
+#X connect 14 0 0 0;
+#X connect 16 0 19 0;
+#X connect 17 0 3 0;
+#X connect 18 0 17 0;
+#X connect 19 0 15 0;
+#X connect 20 0 0 0;
+#X restore 463 63 pd playback;
+#X obj 206 110 hsl 100 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4400 1;
+#X msg 203 130 myslider \$1;
+#X msg 79 374 write \$1;
+#X obj 79 348 symbol;
+#X obj 21 323 bng 15 250 50 0 empty empty again 17 7 1 10 -262144 -1
+-1;
+#X text 432 43 See here for playback;
+#X msg 160 130 foo;
+#X msg 160 110 bar;
+#X connect 0 0 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 16 0;
+#X connect 4 0 6 0;
+#X connect 5 0 17 0;
+#X connect 6 0 0 0;
+#X connect 6 1 7 0;
+#X connect 7 0 3 0;
+#X connect 11 0 18 0;
+#X connect 12 0 13 0;
+#X connect 15 0 3 0;
+#X connect 16 0 3 0;
+#X connect 17 0 1 0;
+#X connect 17 1 0 0;
+#X connect 17 2 0 1;
+#X connect 18 0 23 0;
+#X connect 20 0 21 0;
+#X connect 21 0 14 0;
+#X connect 22 0 3 0;
+#X connect 23 0 22 0;
+#X connect 24 0 23 0;
+#X connect 26 0 14 0;
+#X connect 27 0 14 0;

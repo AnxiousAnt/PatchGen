@@ -1,0 +1,91 @@
+#N canvas 657 347 515 570 10;
+#X obj 162 513 cnv 15 115 58 empty empty empty 20 12 0 14 -260097 -260097
+0;
+#X obj 294 13 cnv 15 192 62 empty empty empty 20 12 0 14 -260097 -260097
+0;
+#X obj 228 13 cnv 15 63 61 empty empty empty 20 12 0 14 -260097 -260097
+0;
+#X obj 154 13 cnv 15 71 59 empty empty empty 20 12 0 14 -260097 -260097
+0;
+#X obj 88 13 cnv 15 63 59 empty empty empty 20 12 0 14 -260097 -260097
+0;
+#X obj 186 102 cnv 15 125 162 empty empty empty 20 12 0 14 -260097
+-260097 0;
+#X obj 188 104 cnv 15 121 157 empty empty Síntese_FM 15 16 0 14 -233017
+-260097 0;
+#X text 254 14 I;
+#X obj 84 382 +~;
+#X obj 138 338 *~;
+#X msg 178 296 \$1 10;
+#X obj 178 321 line~;
+#X obj 138 294 sig~;
+#X obj 138 316 osc~;
+#X obj 66 416 osc~;
+#X obj 199 229 hsl 97 26 0 1 0 0 empty empty volume 60 9 0 10 -262144
+-1 -1 0 1;
+#X obj 208 373 pow 4;
+#X obj 192 476 *~;
+#X text 168 544 Saída de linha;
+#X obj 195 197 cnv 15 103 24 empty empty empty 20 12 0 14 -262080 -260097
+0;
+#X floatatom 199 201 5 0 0 1 i - -;
+#X obj 195 167 cnv 15 103 24 empty empty empty 20 12 0 14 -262080 -260097
+0;
+#X floatatom 199 171 5 0 0 1 moduladora - -;
+#X obj 195 137 cnv 15 103 24 empty empty empty 20 12 0 14 -262080 -260097
+0;
+#X floatatom 199 141 5 0 0 1 carrier - -;
+#X text 95 15 Carrier;
+#X text 158 14 Moduladora;
+#X text 298 14 Entrada para envelope externo;
+#X obj 187 521 outlet~;
+#X obj 99 46 inlet;
+#X obj 169 47 inlet;
+#X obj 242 47 inlet;
+#X obj 352 47 inlet;
+#X obj 66 444 *~ 1;
+#X obj 208 422 vline~;
+#X obj 209 396 \$1 5;
+#X obj 22 13 cnv 15 63 59 empty empty empty 20 12 0 14 -260097 -260097
+0;
+#X text 31 26 inlet 0;
+#X text 25 14 Sinal ext;
+#X text 95 26 inlet 1;
+#X text 164 27 inlet 2;
+#X text 237 26 inlet 3;
+#X text 344 28 inlet 4;
+#X obj 33 46 inlet~;
+#X obj 185 262 cnv 3 8 3 empty empty empty 20 12 0 14 -66577 -66577
+0;
+#X obj 185 101 cnv 2 8 2 empty empty empty 20 12 0 14 -66577 -66577
+0;
+#X obj 214 101 cnv 2 8 2 empty empty empty 20 12 0 14 -162280 -66577
+0;
+#X obj 244 101 cnv 2 8 2 empty empty empty 20 12 0 14 -162280 -66577
+0;
+#X obj 274 101 cnv 2 8 2 empty empty empty 20 12 0 14 -162280 -66577
+0;
+#X obj 304 101 cnv 2 8 2 empty empty empty 20 12 0 14 -162280 -66577
+0;
+#X connect 8 0 14 0;
+#X connect 9 0 8 1;
+#X connect 10 0 11 0;
+#X connect 11 0 9 1;
+#X connect 12 0 13 0;
+#X connect 13 0 9 0;
+#X connect 14 0 33 0;
+#X connect 15 0 16 0;
+#X connect 16 0 35 0;
+#X connect 17 0 28 0;
+#X connect 20 0 10 0;
+#X connect 22 0 12 0;
+#X connect 24 0 8 0;
+#X connect 29 0 24 0;
+#X connect 30 0 22 0;
+#X connect 31 0 20 0;
+#X connect 32 0 33 1;
+#X connect 33 0 17 0;
+#X connect 34 0 17 1;
+#X connect 35 0 34 0;
+#X connect 43 0 8 0;
+#X coords 0 -1 1 1 127 164 2 185 101;

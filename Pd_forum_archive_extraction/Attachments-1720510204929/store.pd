@@ -1,0 +1,47 @@
+#N canvas 442 47 594 525 10;
+#X obj 58 120 vsl 15 128 0 127 0 0 s1 empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 103 120 vsl 15 128 0 127 0 0 s2 empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 152 122 vsl 15 128 0 127 0 0 s3 empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X floatatom 53 267 5 0 0 0 - - -;
+#X floatatom 100 267 5 0 0 0 - - -;
+#X floatatom 144 267 5 0 0 0 - - -;
+#X obj 53 299 pack f f f;
+#X obj 32 443 textfile;
+#X msg 191 418 bang;
+#X msg 52 328 set \$1 \$2 \$3;
+#X msg 210 263 bang;
+#X msg 191 399 read /tmp/setting1.txt;
+#X msg 159 339 write /tmp/setting1.txt;
+#X obj 35 72 unpack f f f;
+#X floatatom 152 96 5 0 0 0 - - -;
+#X floatatom 88 97 5 0 0 0 - - -;
+#X floatatom 44 97 5 0 0 0 - - -;
+#X text 229 158 1 choose three values;
+#X text 267 263 2 send to [textfile];
+#X text 341 339 3 write setting;
+#X text 359 400 5 recall saved setting;
+#X text 341 367 4 change values (see 1.);
+#X text 305 422 6 restore saved values;
+#X text 79 34 (does not work);
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 2;
+#X connect 6 0 9 0;
+#X connect 7 0 13 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;
+#X connect 10 0 6 0;
+#X connect 11 0 7 0;
+#X connect 12 0 7 0;
+#X connect 13 0 0 0;
+#X connect 13 0 16 0;
+#X connect 13 1 1 0;
+#X connect 13 1 15 0;
+#X connect 13 2 2 0;
+#X connect 13 2 14 0;

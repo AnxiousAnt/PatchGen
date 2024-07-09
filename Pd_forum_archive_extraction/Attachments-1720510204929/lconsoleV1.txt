@@ -1,0 +1,300 @@
+++++ info: making binaries_src/control/tanh.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/tanh.o -c binaries_src/control/tanh.c
+++++ info: linking objects in tanh.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o tanh.dll binaries_src/control/tanh.o   -lpthread
+++++ info: making binaries_src/signal/selector.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/selector.o -c binaries_src/signal/selector.c
+++++ info: linking objects in selector~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o selector~.dll binaries_src/signal/selector.o   -lpthread
+++++ info: making binaries_src/control/decode.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/decode.o -c binaries_src/control/decode.c
+++++ info: linking objects in decode.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o decode.dll binaries_src/control/decode.o shared/common/loud
+.o shared/common/fitter.o   -lpthread
+++++ info: making binaries_src/control/midiflush.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/midiflush.o -c binaries_src/control/midiflush.c
+++++ info: linking objects in midiflush.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o midiflush.dll binaries_src/control/midiflush.o   -lpthread
+
+++++ info: making binaries_src/control/pong.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/pong.o -c binaries_src/control/pong.c
+++++ info: linking objects in pong.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o pong.dll binaries_src/control/pong.o   -lpthread
+++++ info: making binaries_src/control/split.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/split.o -c binaries_src/control/split.c
+++++ info: linking objects in split.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o split.dll binaries_src/control/split.o   -lpthread
+++++ info: making binaries_src/signal/filtercoeff.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/filtercoeff.o -c binaries_src/signal/filtercoeff.c
+++++ info: linking objects in filtercoeff~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o filtercoeff~.dll binaries_src/signal/filtercoeff.o   -lpthr
+ead
+++++ info: making binaries_src/control/asinh.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/asinh.o -c binaries_src/control/asinh.c
+++++ info: linking objects in asinh.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o asinh.dll binaries_src/control/asinh.o   -lpthread
+++++ info: making binaries_src/control/universal.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/universal.o -c binaries_src/control/universal.c
+++++ info: linking objects in universal.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o universal.dll binaries_src/control/universal.o shared/commo
+n/loud.o shared/unstable/fragile.o   -lpthread
+++++ info: making binaries_src/signal/pong.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/pong.o -c binaries_src/signal/pong.c
+++++ info: linking objects in pong~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o pong~.dll binaries_src/signal/pong.o   -lpthread
+++++ info: making binaries_src/control/uzi.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/uzi.o -c binaries_src/control/uzi.c
+++++ info: linking objects in uzi.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o uzi.dll binaries_src/control/uzi.o   -lpthread
+++++ info: making binaries_src/signal/slide.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/slide.o -c binaries_src/signal/slide.c
+++++ info: linking objects in slide~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o slide~.dll binaries_src/signal/slide.o   -lpthread
+++++ info: making binaries_src/control/onebang.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/onebang.o -c binaries_src/control/onebang.c
+++++ info: linking objects in onebang.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o onebang.dll binaries_src/control/onebang.o   -lpthread
+++++ info: making binaries_src/signal/sinh.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/sinh.o -c binaries_src/signal/sinh.c
+++++ info: linking objects in sinh~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o sinh~.dll binaries_src/signal/sinh.o   -lpthread
+++++ info: making binaries_src/signal/triangle.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/triangle.o -c binaries_src/signal/triangle.c
+++++ info: linking objects in triangle~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o triangle~.dll binaries_src/signal/triangle.o   -lpthread
+++++ info: making binaries_src/signal/lores.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/lores.o -c binaries_src/signal/lores.c
+++++ info: linking objects in lores~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o lores~.dll binaries_src/signal/lores.o   -lpthread
+++++ info: making binaries_src/control/seq.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/seq.o -c binaries_src/control/seq.c
+++++ info: making shared/common/mifi.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+shared/common/mifi.o -c shared/common/mifi.c
+++++ info: linking objects in seq.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o seq.dll binaries_src/control/seq.o shared/common/mifi.o sha
+red/hammer/file.o shared/common/grow.o shared/common/loud.o shared/common/os.o s
+hared/common/fitter.o shared/unstable/forky.o   -lpthread
+++++ info: making binaries_src/control/tosymbol.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/tosymbol.o -c binaries_src/control/tosymbol.c
+++++ info: linking objects in tosymbol.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o tosymbol.dll binaries_src/control/tosymbol.o shared/common/
+grow.o shared/common/loud.o   -lpthread
+++++ info: making binaries_src/signal/equals.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/equals.o -c binaries_src/signal/equals.c
+++++ info: linking objects in equals~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o equals~.dll binaries_src/signal/equals.o   -lpthread
+++++ info: making binaries_src/signal/play.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/play.o -c binaries_src/signal/play.c
+++++ info: linking objects in play~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o play~.dll binaries_src/signal/play.o shared/sickle/sic.o sh
+ared/sickle/arsic.o shared/common/loud.o shared/common/vefl.o shared/unstable/fr
+agile.o   -lpthread
+++++ info: making binaries_src/signal/phaseshift.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/phaseshift.o -c binaries_src/signal/phaseshift.c
+++++ info: linking objects in phaseshift~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o phaseshift~.dll binaries_src/signal/phaseshift.o   -lpthrea
+d
+++++ info: making binaries_src/signal/avg.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/avg.o -c binaries_src/signal/avg.c
+++++ info: linking objects in avg~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o avg~.dll binaries_src/signal/avg.o   -lpthread
+++++ info: making binaries_src/signal/click.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/click.o -c binaries_src/signal/click.c
+++++ info: linking objects in click~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o click~.dll binaries_src/signal/click.o   -lpthread
+++++ info: making binaries_src/control/loadmess.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/loadmess.o -c binaries_src/control/loadmess.c
+++++ info: linking objects in loadmess.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o loadmess.dll binaries_src/control/loadmess.o shared/hammer/
+file.o shared/common/loud.o shared/common/os.o shared/common/fitter.o shared/uns
+table/forky.o   -lpthread
+++++ info: making binaries_src/signal/delay.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/delay.o -c binaries_src/signal/delay.c
+++++ info: linking objects in delay~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o delay~.dll binaries_src/signal/delay.o   -lpthread
+++++ info: making binaries_src/signal/frameaccum.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/frameaccum.o -c binaries_src/signal/frameaccum.c
+++++ info: linking objects in frameaccum~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o frameaccum~.dll binaries_src/signal/frameaccum.o shared/com
+mon/grow.o shared/common/clc.o shared/common/loud.o   -lpthread
+++++ info: making binaries_src/control/rminus.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/rminus.o -c binaries_src/control/rminus.c
+++++ info: linking objects in rminus.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o rminus.dll binaries_src/control/rminus.o   -lpthread
+++++ info: making binaries_src/signal/cosh.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/cosh.o -c binaries_src/signal/cosh.c
+++++ info: linking objects in cosh~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o cosh~.dll binaries_src/signal/cosh.o   -lpthread
+++++ info: making binaries_src/control/xnotein.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/xnotein.o -c binaries_src/control/xnotein.c
+++++ info: linking objects in xnotein.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o xnotein.dll binaries_src/control/xnotein.o   -lpthread
+++++ info: making binaries_src/signal/train.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/train.o -c binaries_src/signal/train.c
+++++ info: linking objects in train~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o train~.dll binaries_src/signal/train.o   -lpthread
+++++ info: making binaries_src/signal/maximum.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/maximum.o -c binaries_src/signal/maximum.c
+++++ info: linking objects in maximum~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o maximum~.dll binaries_src/signal/maximum.o   -lpthread
+++++ info: making binaries_src/control/prob.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/control/prob.o -c binaries_src/control/prob.c
+++++ info: making shared/common/rand.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+shared/common/rand.o -c shared/common/rand.c
+++++ info: linking objects in prob.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o prob.dll binaries_src/control/prob.o shared/common/rand.o s
+hared/hammer/file.o shared/common/loud.o shared/common/os.o shared/common/fitter
+.o shared/unstable/forky.o   -lpthread
+++++ info: making binaries_src/signal/log.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/log.o -c binaries_src/signal/log.c
+++++ info: linking objects in log~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o log~.dll binaries_src/signal/log.o   -lpthread
+++++ info: making binaries_src/signal/sah.o in lib cyclone
+gcc -DMSW -DNT -DPD -I "C:/Users/Lucarda/Downloads/pd/src"   -Ishared -DHAVE_STR
+UCT_TIMESPEC -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -
+funroll-loops -fomit-frame-pointer -march=pentium4 -msse -msse2 -mfpmath=sse -o
+binaries_src/signal/sah.o -c binaries_src/signal/sah.c
+++++ info: linking objects in sah~.dll for lib cyclone
+gcc -static-libgcc -shared -Wl,--enable-auto-import "C:/Users/Lucarda/Downloads/
+pd/bin/pd.dll"    -o sah~.dll binaries_src/signal/sah.o   -lpthread
+
+Lucarda@T410 /c/Users/Lucarda/Downloads/pd-cyclone-master
+$

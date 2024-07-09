@@ -1,0 +1,19 @@
+#N canvas 59 73 524 299 10;
+#X obj 33 195 hsl 128 15 0 127 0 0 empty bla empty -2 -8 0 10 -262144
+-1 -1 3100 1;
+#X obj 134 114 s bla;
+#X msg 134 28 list $ 0;
+#X msg 134 52 receive \$1\$2-bla;
+#X floatatom 26 54 5 0 0 0 - - -, f 5;
+#X floatatom 298 57 5 0 0 0 - - -, f 5;
+#X obj 298 118 s \$0-bla;
+#X obj 26 106 s bla;
+#X text 286 164 this even works after saving patch;
+#X obj 390 255 s \$0-bla;
+#X msg 390 230 receive bla;
+#X text 387 207 reset;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 10 0 9 0;

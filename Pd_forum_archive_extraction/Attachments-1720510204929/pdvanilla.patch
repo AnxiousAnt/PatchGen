@@ -1,0 +1,2913 @@
+diff -rupN newpd/pd-0.45-0/doc/5.reference/all_about_audio_settings.pd pd-0.45-0/doc/5.reference/all_about_audio_settings.pd
+--- newpd/pd-0.45-0/doc/5.reference/all_about_audio_settings.pd	1969-12-31 19:00:00.000000000 -0500
++++ pd-0.45-0/doc/5.reference/all_about_audio_settings.pd	2013-08-27 12:37:35.778359565 -0400
+@@ -0,0 +1,53 @@
++#N canvas 368 76 448 507 10;
++#X text 19 26 Audio API;
++#X text 19 26 _________;
++#X text 19 106 Not all operating systems have the same audio APIs available
++\, and some like Jack Audio Server may need to be installed in order
++to use them. Check your operating system documentation to see what
++the common audio API is.;
++#X text 19 226 Settings;
++#X text 19 226 ________;
++#X text 19 246 Sample rate - for incoming and outgoing audio;
++#X text 19 266 Delay - delay between the time Pd receives audio data
++and the time it sends it to the API.;
++#X text 19 346 Note: Some APIs like the Jack Audio Server have their
++own interface for setting the latency.;
++#X text 19 296 Block size - number of samples to send to the API in
++each block.;
++#X text 19 46 This is the software with which Pd sends and receives
++the audio signals. The audio API is responsible for communicating with
++the operating system (or other software) which ultimately communicates
++with the audio hardware.;
++#X text 19 166 Use multiple devices - with some audio APIs like ALSA
++(available on most GNU/Linux distros) you can specify up to four devices
++within Pd. Some APIs \, like the Jack Audio Server \, have their own
++interface to specify device settings.;
++#X text 19 376 Devices;
++#X text 19 376 _______;
++#X text 19 426 _______;
++#X text 19 391 Choose your input/output devices \, as well as the number
++of channels for each device.;
++#X text 19 426 Connect;
++#X text 19 441 Connect to the audio device(s) with the settings you
++gave above. When you connect \, Pd saves your audio preferences.;
++#X text 19 326 Use callbacks - use callbacks;
+diff -rupN newpd/pd-0.45-0/doc/5.reference/all_about_gui_settings.pd pd-0.45-0/doc/5.reference/all_about_gui_settings.pd
+--- newpd/pd-0.45-0/doc/5.reference/all_about_gui_settings.pd	1969-12-31 19:00:00.000000000 -0500
++++ pd-0.45-0/doc/5.reference/all_about_gui_settings.pd	2013-08-27 12:37:35.782359482 -0400
+@@ -0,0 +1,42 @@
++#N canvas 558 154 448 427 10;
++#X text 19 26 Presets;
++#X text 19 26 _______;
++#X text 19 46 GUI presets will change the look of Pd canvases and the
++objects on them which don't already have colors specified by the user.
++(E.g. \, object boxes \, xlets \, comments \, canvas backgrounds \,
++but not iemgui backgrounds or labels.);
++#X text 19 106 Choose a preset from the dropdown list. When you select
++a new preset all open patches will get changed to the colors of that
++preset \, in addition to all patches opened afterward. Note: selected
++objects don't immediately get updated-- you have to clear the selection
++and reselect to see the change.;
++#X text 19 196 Colors;
++#X text 19 196 ______;
++#X text 19 211 Click the button with the colorswatch to change the
++color for the corresponding attribute. Once you choose a color each
++open canvas will immediately be updated \, and any canvas you open
++after that will inherit the color you chose.;
++#X text 19 281 Note: it is very easy to obscure Pd patches by choosing
++colors that are difficult for others to read. If you make screenshots
++of patches to show on the web or post to a mailinglist \, use one of
++the default non-inverted presets.;diff -rupN newpd/pd-0.45-0/doc/5.reference/all_about_midi_settings.pd pd-0.45-0/doc/5.reference/all_about_midi_settings.pd
+--- newpd/pd-0.45-0/doc/5.reference/all_about_midi_settings.pd	1969-12-31 19:00:00.000000000 -0500
++++ pd-0.45-0/doc/5.reference/all_about_midi_settings.pd	2013-08-27 12:37:35.786359398 -0400
+@@ -0,0 +1,47 @@
++#N canvas 66 59 448 427 10;
++#X text 19 266 Devices;
++#X text 19 266 _______;
++#X text 19 316 _______;
++#X text 19 316 Connect;
++#X text 19 26 MIDI Api;
++#X text 19 26 ________;
++#X text 19 46 This is the software with which Pd sends and receives
++the MIDI data. The MIDI API is responsible for communicating with the
++operating system which ultimately communicates with the MIDI hardware.
++;
++#X text 19 106 Not all operating systems have the same MIDI APIs available
++\, and some devices require software to be installed before using them.
++Check your operating system and device documentation to learn how to
++set up the device.;
++#X text 19 166 Use multiple devices - with some MIDI APIs you can specify
++up to four devices from within Pd. Some MIDI devices have their own
++software interface to change settings specific to the device. Check
++your hardware documentation for more info. Note: if there is only one
++device (or if your specific setup doesn't allow multiple devices to
++be specified from within Pd) then this button will be disabled.;
++#X text 19 281 Choose your input/output devices \, as well as the number
++of channels for each device.;
++#X text 19 331 Connect to the audio device(s) with the settings you
++gave above. When you connect \, Pd saves your MIDI preferences \, so
++when you close Pd and open it again these settings will automatically
++be loaded.;
+diff -rupN newpd/pd-0.45-0/src/g_all_guis.c pd-0.45-0/src/g_all_guis.c
+--- newpd/pd-0.45-0/src/g_all_guis.c	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_all_guis.c	2013-08-27 12:37:35.786359398 -0400
+@@ -123,6 +123,12 @@ char *iemgui_vu_scale_str[]=
+ 
+ /*------------------ global functions -------------------------*/
+ 
++char *iemgui_intcoltostring(int col)
++{
++    static char buf[MAXPDSTRING];
++    sprintf(buf, "#%6.6x", col);
++    return (buf);
++}
+ 
+ int iemgui_clip_size(int size)
+ {
+diff -rupN newpd/pd-0.45-0/src/g_all_guis.h pd-0.45-0/src/g_all_guis.h
+--- newpd/pd-0.45-0/src/g_all_guis.h	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_all_guis.h	2013-08-27 12:37:35.786359398 -0400
+@@ -37,8 +37,8 @@
+ #define IEM_GUI_COLNR_D_BLUE         28
+ #define IEM_GUI_COLNR_D_MAGENTA      29
+ 
+-#define IEM_GUI_COLOR_SELECTED       255
+-#define IEM_GUI_COLOR_NORMAL         0
++#define IEM_GUI_COLOR_SELECTED       "$::pd_colors(selected)"
++#define IEM_GUI_COLOR_NORMAL         "$::pd_colors(iemgui_border)"
+ 
+ #define IEM_GUI_MAX_COLOR            30
+ 
+@@ -283,6 +283,7 @@ extern int iemgui_vu_col[];
+ extern char *iemgui_vu_scale_str[];
+ 
+ EXTERN int iemgui_clip_size(int size);
++EXTERN char *iemgui_intcoltostring(int col);
+ EXTERN int iemgui_clip_font(int size);
+ EXTERN int iemgui_modulo_color(int col);
+ EXTERN t_symbol *iemgui_unique2dollarzero(t_symbol *s, int unique_num, int and_unique_flag);
+diff -rupN newpd/pd-0.45-0/src/g_bang.c pd-0.45-0/src/g_bang.c
+--- newpd/pd-0.45-0/src/g_bang.c	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_bang.c	2013-08-27 12:37:35.790359315 -0400
+@@ -46,16 +46,18 @@ void bng_draw_new(t_bng *x, t_glist *gli
+     int ypos=text_ypix(&x->x_gui.x_obj, glist);
+     t_canvas *canvas=glist_getcanvas(glist);
+ 
+-    sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x -tags %lxBASE\n",
++    sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x \
++        -outline $::pd_colors(iemgui_border) -tags {%lxBASE iemgui border}\n",
+              canvas, xpos, ypos,
+              xpos + x->x_gui.x_w, ypos + x->x_gui.x_h,
+              x->x_gui.x_bcol, x);
+-    sys_vgui(".x%lx.c create oval %d %d %d %d -fill #%6.6x -tags %lxBUT\n",
++    sys_vgui(".x%lx.c create oval %d %d %d %d -fill #%6.6x \
++        -outline $::pd_colors(iemgui_border) -tags {%lxBUT iemgui border}\n",
+              canvas, xpos+1, ypos+1,
+              xpos + x->x_gui.x_w-1, ypos + x->x_gui.x_h-1,
+              x->x_flashed?x->x_gui.x_fcol:x->x_gui.x_bcol, x);
+     sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor w \
+-             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL label text]\n",
++             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL iemgui label text]\n",
+              canvas, xpos+x->x_gui.x_ldx,
+              ypos+x->x_gui.x_ldy,
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"",
+@@ -84,7 +86,8 @@ void bng_draw_move(t_bng *x, t_glist *gl
+     sys_vgui(".x%lx.c coords %lxBUT %d %d %d %d\n",
+              canvas, x, xpos+1,ypos+1,
+              xpos + x->x_gui.x_w-1, ypos + x->x_gui.x_h-1);
+-    sys_vgui(".x%lx.c itemconfigure %lxBUT -fill #%6.6x\n", canvas, x,
++    sys_vgui(".x%lx.c itemconfigure %lxBUT -fill #%6.6x \
++        -outline $::pd_colors(iemgui_border)\n", canvas, x,
+              x->x_flashed?x->x_gui.x_fcol:x->x_gui.x_bcol);
+     sys_vgui(".x%lx.c coords %lxLABEL %d %d\n",
+              canvas, x, xpos+x->x_gui.x_ldx, ypos+x->x_gui.x_ldy);
+@@ -116,12 +119,14 @@ void bng_draw_config(t_bng* x, t_glist*
+ {
+     t_canvas *canvas=glist_getcanvas(glist);
+ 
+-    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill #%6.6x -text {%s} \n",
++    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill %s -text {%s} \n",
+              canvas, x, x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+-             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_lcol,
++             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_lcol),
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"");
+-    sys_vgui(".x%lx.c itemconfigure %lxBASE -fill #%6.6x\n", canvas, x, x->x_gui.x_bcol);
+-    sys_vgui(".x%lx.c itemconfigure %lxBUT -fill #%6.6x\n", canvas, x,
++    sys_vgui(".x%lx.c itemconfigure %lxBASE -fill #%6.6x \
++        -outline $::pd_colors(iemgui_border)\n", canvas, x, x->x_gui.x_bcol);
++    sys_vgui(".x%lx.c itemconfigure %lxBUT \
++        -outline $::pd_colors(iemgui_border) -fill #%6.6x\n", canvas, x,
+              x->x_flashed?x->x_gui.x_fcol:x->x_gui.x_bcol);
+ }
+ 
+@@ -152,14 +157,14 @@ void bng_draw_select(t_bng* x, t_glist*
+ 
+     if(x->x_gui.x_fsf.x_selected)
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+-        sys_vgui(".x%lx.c itemconfigure %lxBUT -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+-        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxBUT -outline %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+     }
+     else
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_NORMAL);
+-        sys_vgui(".x%lx.c itemconfigure %lxBUT -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_NORMAL);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x, IEM_GUI_COLOR_NORMAL);
++        sys_vgui(".x%lx.c itemconfigure %lxBUT -outline %s\n", canvas, x, IEM_GUI_COLOR_NORMAL);
+         sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x, x->x_gui.x_lcol);
+     }
+ }
+diff -rupN newpd/pd-0.45-0/src/g_canvas.c pd-0.45-0/src/g_canvas.c
+--- newpd/pd-0.45-0/src/g_canvas.c	2013-08-18 21:38:22.000000000 -0400
++++ pd-0.45-0/src/g_canvas.c	2013-08-27 12:37:35.790359315 -0400
+@@ -761,11 +761,16 @@ static void canvas_drawlines(t_canvas *x
+     {
+         linetraverser_start(&t, x);
+         while (oc = linetraverser_next(&t))
+-            sys_vgui(".x%lx.c create line %d %d %d %d -width %d -tags [list l%lx cord]\n",
+-                    glist_getcanvas(x),
+-                        t.tr_lx1, t.tr_ly1, t.tr_lx2, t.tr_ly2, 
+-                            (outlet_getsymbol(t.tr_outlet) == &s_signal ? 2:1),
+-                                oc);
++            sys_vgui(".x%lx.c create line %d %d %d %d -width %d \
++                -fill $::pd_colors(%s) -tags [list l%lx %s cord]\n",
++                glist_getcanvas(x),
++                t.tr_lx1, t.tr_ly1, t.tr_lx2, t.tr_ly2, 
++                (outlet_getsymbol(t.tr_outlet) == &s_signal ? 2:1),
++                (outlet_getsymbol(t.tr_outlet) == &s_signal ?
++                    "cord_signal" : "cord_control"),
++                oc,
++               (outlet_getsymbol(t.tr_outlet) == &s_signal ?
++                   "signal" : "control"));
+     }
+ }
+ 
+diff -rupN newpd/pd-0.45-0/src/g_editor.c pd-0.45-0/src/g_editor.c
+--- newpd/pd-0.45-0/src/g_editor.c	2013-08-09 18:17:07.000000000 -0400
++++ pd-0.45-0/src/g_editor.c	2013-08-27 12:37:35.794359232 -0400
+@@ -128,7 +128,7 @@ void glist_selectline(t_glist *x, t_outc
+         x->gl_editor->e_selectline_index2 = index2;
+         x->gl_editor->e_selectline_inno = inno;
+         x->gl_editor->e_selectline_tag = oc;
+-        sys_vgui(".x%lx.c itemconfigure l%lx -fill blue\n",
++        sys_vgui(".x%lx.c itemconfigure l%lx -fill $::pd_colors(selected)\n",
+             x, x->gl_editor->e_selectline_tag);
+     }    
+ }
+@@ -138,8 +138,13 @@ void glist_deselectline(t_glist *x)
+     if (x->gl_editor)
+     {
+         x->gl_editor->e_selectedline = 0;
+-        sys_vgui(".x%lx.c itemconfigure l%lx -fill black\n",
+-            x, x->gl_editor->e_selectline_tag);
++        /* OMG the following is ugly! If there's a way to tell signal cords
++        from control cords here in c then that would be preferable... */
++        sys_vgui(".x%lx.c itemconfigure l%lx -fill \
++            $::pd_colors([lindex {cord_signal cord_control} \
++            [expr {[lsearch -exact [.x%lx.c gettags l%lx] signal] == -1}]])\n",
++                x, x->gl_editor->e_selectline_tag,
++                x, x->gl_editor->e_selectline_tag);
+     }    
+ }
+ 
+@@ -1349,10 +1354,11 @@ void canvas_doclick(t_canvas *x, int xpo
+                         x->gl_editor->e_onmotion = MA_CONNECT;
+                         x->gl_editor->e_xwas = xpos;
+                         x->gl_editor->e_ywas = ypos;
+-                        sys_vgui(
+-                          ".x%lx.c create line %d %d %d %d -width %d -tags x\n",
+-                                x, xpos, ypos, xpos, ypos,
+-                                    (issignal ? 2 : 1));
++                        sys_vgui(".x%lx.c create line %d %d %d %d -width %d \
++                            -fill $::pd_colors(%s) -tags x\n",
++                            x, xpos, ypos, xpos, ypos,
++                            (issignal ? 2 : 1),
++                            (issignal ? "cord_signal" : "cord_control"));
+                     }                                   
+                     else canvas_setcursor(x, CURSOR_EDITMODE_CONNECT);
+                 }
+@@ -1434,7 +1440,8 @@ void canvas_doclick(t_canvas *x, int xpo
+     if (doit)
+     {
+         if (!shiftmod) glist_noselect(x);
+-        sys_vgui(".x%lx.c create rectangle %d %d %d %d -tags x\n",
++        sys_vgui(".x%lx.c create rectangle %d %d %d %d \
++            -outline $::pd_colors(selection_rectangle) -tags x\n",
+               x, xpos, ypos, xpos, ypos);
+         x->gl_editor->e_xwas = xpos;
+         x->gl_editor->e_ywas = ypos;
+@@ -1534,10 +1541,14 @@ void canvas_doconnect(t_canvas *x, int x
+                         ((x22-x21-IOWIDTH) * closest2)/(ninlet2-1) : 0)
+                             + IOMIDDLE;
+                 ly2 = y21;
+-                sys_vgui(".x%lx.c create line %d %d %d %d -width %d -tags [list l%lx cord]\n",
+-                    glist_getcanvas(x),
+-                        lx1, ly1, lx2, ly2,
+-                            (obj_issignaloutlet(ob1, closest1) ? 2 : 1), oc);
++                sys_vgui(".x%lx.c create line %d %d %d %d -width %d \
++                    -fill $::pd_colors(%s) -tags [list l%lx %s cord]\n",
++                    glist_getcanvas(x), lx1, ly1, lx2, ly2,
++                    (obj_issignaloutlet(ob1, closest1) ? 2 : 1),
++                    (obj_issignaloutlet(ob1, closest1) ?
++                        "cord_signal" : "cord_control"),
++                    oc, (obj_issignaloutlet(ob1, closest1) ?
++                        "signal" : "control"));
+                 canvas_dirty(x, 1);
+                 canvas_setundo(x, canvas_undo_connect,
+                     canvas_undo_set_connect(x, 
+@@ -2539,9 +2550,12 @@ void canvas_connect(t_canvas *x, t_float
+     if (!(oc = obj_connect(objsrc, outno, objsink, inno))) goto bad;
+     if (glist_isvisible(x))
+     {
+-        sys_vgui(".x%lx.c create line %d %d %d %d -width %d -tags [list l%lx cord]\n",
++        sys_vgui(".x%lx.c create line %d %d %d %d -width %d \
++            -fill $::pd_colors(%s) -tags [list l%lx %s cord]\n",
+             glist_getcanvas(x), 0, 0, 0, 0,
+-            (obj_issignaloutlet(objsrc, outno) ? 2 : 1),oc);
++            (obj_issignaloutlet(objsrc, outno) ? 2 : 1),
++            (obj_issignaloutlet(objsrc, outno) ? "cord_signal" : "cord_control"),
++            oc, (obj_issignaloutlet(objsrc, outno) ? "signal" : "control"));
+         canvas_fixlinesfor(x, objsrc);
+     }
+     return;
+diff -rupN newpd/pd-0.45-0/src/g_graph.c pd-0.45-0/src/g_graph.c
+--- newpd/pd-0.45-0/src/g_graph.c	2013-08-09 18:17:07.000000000 -0400
++++ pd-0.45-0/src/g_graph.c	2013-08-27 12:37:35.798359149 -0400
+@@ -722,9 +722,10 @@ static void graph_vis(t_gobj *gr, t_glis
+             
+             /* draw a rectangle around the graph */
+         sys_vgui(".x%lx.c create line\
+-            %d %d %d %d %d %d %d %d %d %d -tags [list %s graph]\n",
+-            glist_getcanvas(x->gl_owner),
+-            x1, y1, x1, y2, x2, y2, x2, y1, x1, y1, tag);
++            %d %d %d %d %d %d %d %d %d %d -tags [list %s graph] \
++            -fill $::pd_colors(box_border)\n",
++                glist_getcanvas(x->gl_owner),
++                x1, y1, x1, y2, x2, y2, x2, y1, x1, y1, tag);
+         
+             /* if there's just one "garray" in the graph, write its name
+                 along the top */
+@@ -734,7 +735,8 @@ static void graph_vis(t_gobj *gr, t_glis
+         {
+             i -= sys_fontheight(glist_getfont(x));
+             sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor nw\
+-             -font {{%s} -%d %s} -tags [list %s label graph]\n",
++             -font {{%s} -%d %s} -tags [list %s label graph] \
++             -fill $::pd_colors(text)\n",
+              (long)glist_getcanvas(x),  x1, i, arrayname->s_name, sys_font,
+                 sys_hostfontsize(glist_getfont(x)), sys_fontweight, tag);
+         }
+@@ -752,11 +754,11 @@ static void graph_vis(t_gobj *gr, t_glis
+                     f += x->gl_xtick.k_inc)
+             {
+                 int tickpix = (i % x->gl_xtick.k_lperb ? 2 : 4);
+-                sys_vgui(".x%lx.c create line %d %d %d %d -tags [list %s graph]\n",
++                sys_vgui(".x%lx.c create line %d %d %d %d -tags [list %s graph] -fill blue \n",
+                     glist_getcanvas(x->gl_owner),
+                     (int)glist_xtopixels(x, f), (int)upix,
+                     (int)glist_xtopixels(x, f), (int)upix - tickpix, tag);
+-                sys_vgui(".x%lx.c create line %d %d %d %d -tags [list %s graph]\n",
++                sys_vgui(".x%lx.c create line %d %d %d %d -tags [list %s graph] -fill blue \n",
+                     glist_getcanvas(x->gl_owner),
+                     (int)glist_xtopixels(x, f), (int)lpix,
+                     (int)glist_xtopixels(x, f), (int)lpix + tickpix, tag);
+@@ -766,7 +768,7 @@ static void graph_vis(t_gobj *gr, t_glis
+                     i++, f -= x->gl_xtick.k_inc)
+             {
+                 int tickpix = (i % x->gl_xtick.k_lperb ? 2 : 4);
+-                sys_vgui(".x%lx.c create line %d %d %d %d -tags [list %s graph]\n",
++                sys_vgui(".x%lx.c create line %d %d %d %d -tags [list %s graph] -fill blue \n",
+                     glist_getcanvas(x->gl_owner),
+                     (int)glist_xtopixels(x, f), (int)upix,
+                     (int)glist_xtopixels(x, f), (int)upix - tickpix, tag);
+@@ -943,10 +945,11 @@ static void graph_select(t_gobj *z, t_gl
+         t_rtext *y = glist_findrtext(glist, &x->gl_obj);
+         if (canvas_showtext(x))
+             rtext_select(y, state);
+-        sys_vgui(".x%lx.c itemconfigure %sR -fill %s\n", glist, 
+-        rtext_gettag(y), (state? "blue" : "black"));
+-        sys_vgui(".x%lx.c itemconfigure graph%lx -fill %s\n",
+-            glist_getcanvas(glist), z, (state? "blue" : "black"));
++        sys_vgui(".x%lx.c itemconfigure %s -fill $::pd_colors(%s)\n", glist, 
++        rtext_gettag(y), (state? "selected" : "box_border"));
++        sys_vgui(".x%lx.c itemconfigure graph%lx&&label \
++            -fill $::pd_colors(%s)\n",
++                glist_getcanvas(glist), z, (state? "selected" : "text"));
+     }
+ }
+ 
+diff -rupN newpd/pd-0.45-0/src/g_hdial.c pd-0.45-0/src/g_hdial.c
+--- newpd/pd-0.45-0/src/g_hdial.c	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_hdial.c	2013-08-27 12:37:35.798359149 -0400
+@@ -60,7 +60,9 @@ void hradio_draw_new(t_hradio *x, t_glis
+ 
+     for(i=0; i<n; i++)
+     {
+-        sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x -tags %lxBASE%d\n",
++        sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x \
++            -outline $::pd_colors(iemgui_border) \
++            -tags {%lxBASE%d iemgui border}\n",
+                  canvas, xx11, yy11, xx11+dx, yy12,
+                  x->x_gui.x_bcol, x, i);
+         sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x -outline #%6.6x -tags %lxBUT%d\n",
+@@ -73,7 +75,7 @@ void hradio_draw_new(t_hradio *x, t_glis
+         x->x_drawn = x->x_on;
+     }
+     sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor w \
+-             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL label text]\n",
++             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL iemgui label text]\n",
+              canvas, xx11b+x->x_gui.x_ldx, yy11+x->x_gui.x_ldy,
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"",
+              x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+@@ -141,14 +143,15 @@ void hradio_draw_config(t_hradio* x, t_g
+     t_canvas *canvas=glist_getcanvas(glist);
+     int n=x->x_number, i;
+ 
+-    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill #%6.6x -text {%s} \n",
++    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill %s -text {%s} \n",
+              canvas, x, x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+-             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_lcol,
++             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_lcol),
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"");
+     for(i=0; i<n; i++)
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE%d -fill #%6.6x\n", canvas, x, i,
+-                 x->x_gui.x_bcol);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE%d -fill #%6.6x \
++            -outline $::pd_colors(iemgui_border)\n",
++                canvas, x, i, x->x_gui.x_bcol);
+         sys_vgui(".x%lx.c itemconfigure %lxBUT%d -fill #%6.6x -outline #%6.6x\n", canvas, x, i,
+                  (x->x_on==i)?x->x_gui.x_fcol:x->x_gui.x_bcol,
+                  (x->x_on==i)?x->x_gui.x_fcol:x->x_gui.x_bcol);
+@@ -187,16 +190,16 @@ void hradio_draw_select(t_hradio* x, t_g
+     {
+         for(i=0; i<n; i++)
+         {
+-            sys_vgui(".x%lx.c itemconfigure %lxBASE%d -outline #%6.6x\n", canvas, x, i,
++            sys_vgui(".x%lx.c itemconfigure %lxBASE%d -outline %s\n", canvas, x, i,
+                      IEM_GUI_COLOR_SELECTED);
+         }
+-        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+     }
+     else
+     {
+         for(i=0; i<n; i++)
+         {
+-            sys_vgui(".x%lx.c itemconfigure %lxBASE%d -outline #%6.6x\n", canvas, x, i,
++            sys_vgui(".x%lx.c itemconfigure %lxBASE%d -outline %s\n", canvas, x, i,
+                      IEM_GUI_COLOR_NORMAL);
+         }
+         sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x,
+diff -rupN newpd/pd-0.45-0/src/g_hslider.c pd-0.45-0/src/g_hslider.c
+--- newpd/pd-0.45-0/src/g_hslider.c	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_hslider.c	2013-08-27 12:37:35.802359065 -0400
+@@ -67,7 +67,8 @@ static void hslider_draw_new(t_hslider *
+     int r = xpos + (x->x_val + 50)/100;
+     t_canvas *canvas=glist_getcanvas(glist);
+ 
+-    sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x -tags %lxBASE\n",
++    sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x \
++        -outline $::pd_colors(iemgui_border) -tags {%lxBASE iemgui border}\n",
+              canvas, xpos-3, ypos,
+              xpos + x->x_gui.x_w+2, ypos + x->x_gui.x_h,
+              x->x_gui.x_bcol, x);
+@@ -75,7 +76,7 @@ static void hslider_draw_new(t_hslider *
+              canvas, r, ypos+1, r,
+              ypos + x->x_gui.x_h, x->x_gui.x_fcol, x);
+     sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor w \
+-             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL label text]\n",
++             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL iemgui label text]\n",
+              canvas, xpos+x->x_gui.x_ldx,
+              ypos+x->x_gui.x_ldy,
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"",
+@@ -136,9 +137,9 @@ static void hslider_draw_config(t_hslide
+ {
+     t_canvas *canvas=glist_getcanvas(glist);
+ 
+-    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill #%6.6x -text {%s} \n",
++    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill %s -text {%s} \n",
+              canvas, x, x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+-             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_lcol,
++             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_lcol),
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"");
+     sys_vgui(".x%lx.c itemconfigure %lxKNOB -fill #%6.6x\n", canvas, x, x->x_gui.x_fcol);
+     sys_vgui(".x%lx.c itemconfigure %lxBASE -fill #%6.6x\n", canvas, x, x->x_gui.x_bcol);
+@@ -170,12 +171,12 @@ static void hslider_draw_select(t_hslide
+ 
+     if(x->x_gui.x_fsf.x_selected)
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+-        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+     }
+     else
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_NORMAL);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x, IEM_GUI_COLOR_NORMAL);
+         sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x, x->x_gui.x_lcol);
+     }
+ }
+diff -rupN newpd/pd-0.45-0/src/g_mycanvas.c pd-0.45-0/src/g_mycanvas.c
+--- newpd/pd-0.45-0/src/g_mycanvas.c	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_mycanvas.c	2013-08-27 12:37:35.802359065 -0400
+@@ -39,12 +39,13 @@ void my_canvas_draw_new(t_my_canvas *x,
+              canvas, xpos, ypos,
+              xpos + x->x_vis_w, ypos + x->x_vis_h,
+              x->x_gui.x_bcol, x->x_gui.x_bcol, x);
+-    sys_vgui(".x%lx.c create rectangle %d %d %d %d -outline #%6.6x -tags %lxBASE\n",
++    sys_vgui(".x%lx.c create rectangle %d %d %d %d \
++        -outline #%6.6x -tags {%lxBASE iemgui border}\n",
+              canvas, xpos, ypos,
+              xpos + x->x_gui.x_w, ypos + x->x_gui.x_h,
+              x->x_gui.x_bcol, x);
+     sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor w \
+-             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL label text]\n",
++             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL iemgui label text]\n",
+              canvas, xpos+x->x_gui.x_ldx, ypos+x->x_gui.x_ldy,
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"",
+              x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+@@ -83,8 +84,8 @@ void my_canvas_draw_config(t_my_canvas*
+ 
+     sys_vgui(".x%lx.c itemconfigure %lxRECT -fill #%6.6x -outline #%6.6x\n", canvas, x,
+              x->x_gui.x_bcol, x->x_gui.x_bcol);
+-    sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x,
+-             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_bcol);
++    sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x,
++             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_bcol));
+     sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill #%6.6x -text {%s} \n",
+              canvas, x, x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+              x->x_gui.x_lcol,
+@@ -97,7 +98,7 @@ void my_canvas_draw_select(t_my_canvas*
+ 
+     if(x->x_gui.x_fsf.x_selected)
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+     }
+     else
+     {
+diff -rupN newpd/pd-0.45-0/src/g_numbox.c pd-0.45-0/src/g_numbox.c
+--- newpd/pd-0.45-0/src/g_numbox.c	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_numbox.c	2013-08-27 12:37:35.802359065 -0400
+@@ -162,10 +162,10 @@ static void my_numbox_draw_update(t_gobj
+         {
+             my_numbox_ftoa(x);
+             sys_vgui(
+-                ".x%lx.c itemconfigure %lxNUMBER -fill #%6.6x -text {%s} \n",
++                ".x%lx.c itemconfigure %lxNUMBER -fill %s -text {%s} \n",
+                 glist_getcanvas(glist), x,
+                 x->x_gui.x_fsf.x_selected?
+-                    IEM_GUI_COLOR_SELECTED:x->x_gui.x_fcol,
++                    IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_fcol),
+                 x->x_buf);
+             x->x_buf[0] = 0;
+         }
+@@ -180,8 +180,8 @@ static void my_numbox_draw_new(t_my_numb
+     t_canvas *canvas=glist_getcanvas(glist);
+ 
+     sys_vgui(
+-".x%lx.c create polygon %d %d %d %d %d %d %d %d %d %d -outline #%6.6x \
+--fill #%6.6x -tags %lxBASE1\n",
++".x%lx.c create polygon %d %d %d %d %d %d %d %d %d %d -outline %s \
++-fill #%6.6x -tags {%lxBASE1 iemgui border}\n",
+              canvas, xpos, ypos,
+              xpos + x->x_numwidth-4, ypos,
+              xpos + x->x_numwidth, ypos+4,
+@@ -195,7 +195,7 @@ static void my_numbox_draw_new(t_my_numb
+         xpos, ypos + x->x_gui.x_h,
+         x->x_gui.x_fcol, x);
+     sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor w \
+-        -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL label text]\n",
++        -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL iemgui label text]\n",
+         canvas, xpos+x->x_gui.x_ldx, ypos+x->x_gui.x_ldy,
+         strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"",
+         x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+@@ -271,17 +271,17 @@ static void my_numbox_draw_config(t_my_n
+ {
+     t_canvas *canvas=glist_getcanvas(glist);
+ 
+-    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill #%6.6x -text {%s} \n",
++    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill %s -text {%s} \n",
+              canvas, x, x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+-             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_lcol,
++             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_lcol),
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"");
+-    sys_vgui(".x%lx.c itemconfigure %lxNUMBER -font {{%s} -%d %s} -fill #%6.6x \n",
++    sys_vgui(".x%lx.c itemconfigure %lxNUMBER -font {{%s} -%d %s} -fill %s\n",
+              canvas, x, x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+-             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_fcol);
++             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_fcol));
+     sys_vgui(".x%lx.c itemconfigure %lxBASE1 -fill #%6.6x\n", canvas,
+              x, x->x_gui.x_bcol);
+-    sys_vgui(".x%lx.c itemconfigure %lxBASE2 -fill #%6.6x\n", canvas,
+-             x, x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_fcol);
++    sys_vgui(".x%lx.c itemconfigure %lxBASE2 -fill %s\n", canvas,
++             x, x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_fcol));
+ }
+ 
+ static void my_numbox_draw_io(t_my_numbox* x,t_glist* glist, int old_snd_rcv_flags)
+@@ -321,18 +321,18 @@ static void my_numbox_draw_select(t_my_n
+             x->x_buf[0] = 0;
+             sys_queuegui(x, x->x_gui.x_glist, my_numbox_draw_update);
+         }
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE1 -outline #%6.6x\n",
++        sys_vgui(".x%lx.c itemconfigure %lxBASE1 -outline %s\n",
+             canvas, x, IEM_GUI_COLOR_SELECTED);
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE2 -fill #%6.6x\n",
++        sys_vgui(".x%lx.c itemconfigure %lxBASE2 -fill %s\n",
+             canvas, x, IEM_GUI_COLOR_SELECTED);
+-        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n",
++        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill %s\n",
+             canvas, x, IEM_GUI_COLOR_SELECTED);
+-        sys_vgui(".x%lx.c itemconfigure %lxNUMBER -fill #%6.6x\n",
++        sys_vgui(".x%lx.c itemconfigure %lxNUMBER -fill %s\n",
+             canvas, x, IEM_GUI_COLOR_SELECTED);
+     }
+     else
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE1 -outline #%6.6x\n",
++        sys_vgui(".x%lx.c itemconfigure %lxBASE1 -outline %s\n",
+             canvas, x, IEM_GUI_COLOR_NORMAL);
+         sys_vgui(".x%lx.c itemconfigure %lxBASE2 -fill #%6.6x\n",
+             canvas, x, x->x_gui.x_fcol);
+diff -rupN newpd/pd-0.45-0/src/g_rtext.c pd-0.45-0/src/g_rtext.c
+--- newpd/pd-0.45-0/src/g_rtext.c	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_rtext.c	2013-08-27 17:03:52.967664309 -0400
+@@ -303,12 +303,11 @@ static void rtext_senditup(t_rtext *x, i
+     }
+     if (action == SEND_FIRST)
+     {
+-        sys_vgui("pdtk_text_new .x%lx.c {%s %s text} %f %f {%.*s} %d %s\n",
++        sys_vgui("pdtk_text_new .x%lx.c {%s %s text} %f %f {%.*s} %d %d\n",
+             canvas, x->x_tag, rtext_gettype(x)->s_name,
+             dispx + LMARGIN, dispy + TMARGIN,
+             outchars_b, tempbuf, sys_hostfontsize(font),
+-            (glist_isselected(x->x_glist,
+-                &x->x_glist->gl_gobj)? "blue" : "black"));
++            glist_isselected(x->x_glist, &x->x_glist->gl_gobj));
+     }
+     else if (action == SEND_UPDATE)
+     {
+@@ -448,7 +447,7 @@ void rtext_select(t_rtext *x, int state)
+     t_glist *glist = x->x_glist;
+     t_canvas *canvas = glist_getcanvas(glist);
+     sys_vgui(".x%lx.c itemconfigure %s -fill %s\n", canvas, 
+-        x->x_tag, (state? "blue" : "black"));
++        x->x_tag, (state? "$::pd_colors(selected)" : "$::pd_colors(text)"));
+     canvas_editing = canvas;
+ }
+ 
+diff -rupN newpd/pd-0.45-0/src/g_text.c pd-0.45-0/src/g_text.c
+--- newpd/pd-0.45-0/src/g_text.c	2013-08-09 18:17:07.000000000 -0400
++++ pd-0.45-0/src/g_text.c	2013-08-27 17:54:57.170069350 -0400
+@@ -864,12 +864,12 @@ static void gatom_vis(t_gobj *z, t_glist
+         {
+             int x1, y1;
+             gatom_getwherelabel(x, glist, &x1, &y1);
+-            sys_vgui("pdtk_text_new .x%lx.c {%lx.l label text} %f %f {%s} %d %s\n",
++            sys_vgui("pdtk_text_new .x%lx.c {%lx.l label text} %f %f {%s} %d %d\n",
+                 glist_getcanvas(glist), x,
+                 (double)x1, (double)y1,
+                 canvas_realizedollar(x->a_glist, x->a_label)->s_name,
+                 sys_hostfontsize(glist_getfont(glist)),
+-                "black");
++                0);
+         }
+         else sys_vgui(".x%lx.c delete %lx.l\n", glist_getcanvas(glist), x);
+     }
+@@ -1053,8 +1053,9 @@ static void text_select(t_gobj *z, t_gli
+     t_rtext *y = glist_findrtext(glist, x);
+     rtext_select(y, state);
+     if (glist_isvisible(glist) && gobj_shouldvis(&x->te_g, glist))
+-        sys_vgui(".x%lx.c itemconfigure %sR -fill %s\n", glist, 
+-            rtext_gettag(y), (state? "blue" : "black"));
++        sys_vgui(".x%lx.c itemconfigure %sR -outline %s\n", glist, 
++            rtext_gettag(y),
++            (state? "$::pd_colors(selected)" : "$::pd_colors(box_border)"));
+ }
+ 
+ static void text_activate(t_gobj *z, t_glist *glist, int state)
+@@ -1227,7 +1228,7 @@ void glist_drawiofor(t_glist *glist, t_o
+         int onset = x1 + (width - IOWIDTH) * i / nplus;
+         if (firsttime)
+             sys_vgui(".x%lx.c create rectangle %d %d %d %d \
+--tags [list %so%d outlet]\n",
++-tags [list %so%d outlet] -outline $::pd_colors(outlet)\n",
+                 glist_getcanvas(glist),
+                 onset, y2 - 1,
+                 onset + IOWIDTH, y2,
+@@ -1245,7 +1246,7 @@ void glist_drawiofor(t_glist *glist, t_o
+         int onset = x1 + (width - IOWIDTH) * i / nplus;
+         if (firsttime)
+             sys_vgui(".x%lx.c create rectangle %d %d %d %d \
+--tags [list %si%d inlet]\n",
++-tags [list %si%d inlet] -outline $::pd_colors(inlet)\n",
+                 glist_getcanvas(glist),
+                 onset, y1,
+                 onset + IOWIDTH, y1 + EXTRAPIX,
+@@ -1270,16 +1271,17 @@ void text_drawborder(t_text *x, t_glist
+     {
+         char *pattern = ((pd_class(&x->te_pd) == text_class) ? "-" : "\"\"");
+         if (firsttime)
+-            sys_vgui(".x%lx.c create line\
+- %d %d %d %d %d %d %d %d %d %d -dash %s -tags [list %sR obj]\n",
++            sys_vgui(".x%lx.c create rectangle\
++ %d %d %d %d -dash %s -tags [list %sR obj border] -outline $::pd_colors(box_border) \
++ -fill $::pd_colors(box)\n",
+                 glist_getcanvas(glist),
+-                    x1, y1,  x2, y1,  x2, y2,  x1, y2,  x1, y1,  pattern, tag);
++                    x1, y1, x2, y2, pattern, tag);
+         else
+         {
+             sys_vgui(".x%lx.c coords %sR\
+- %d %d %d %d %d %d %d %d %d %d\n",
++ %d %d %d %d\n",
+                 glist_getcanvas(glist), tag,
+-                    x1, y1,  x2, y1,  x2, y2,  x1, y2,  x1, y1);
++                    x1, y1,  x2, y2);
+             sys_vgui(".x%lx.c itemconfigure %sR -dash %s\n",
+                 glist_getcanvas(glist), tag, pattern);
+         }
+@@ -1287,8 +1289,9 @@ void text_drawborder(t_text *x, t_glist
+     else if (x->te_type == T_MESSAGE)
+     {
+         if (firsttime)
+-            sys_vgui(".x%lx.c create line\
+- %d %d %d %d %d %d %d %d %d %d %d %d %d %d -tags [list %sR msg]\n",
++            sys_vgui(".x%lx.c create polygon\
++ %d %d %d %d %d %d %d %d %d %d %d %d %d %d -tags [list %sR msg border] -outline $::pd_colors(msg_box_border)\
++ -fill $::pd_colors(msg_box)\n",
+                 glist_getcanvas(glist),
+                 x1, y1,  x2+4, y1,  x2, y1+4,  x2, y2-4,  x2+4, y2,
+                 x1, y2,  x1, y1,
+@@ -1303,8 +1306,9 @@ void text_drawborder(t_text *x, t_glist
+     else if (x->te_type == T_ATOM)
+     {
+         if (firsttime)
+-            sys_vgui(".x%lx.c create line\
+- %d %d %d %d %d %d %d %d %d %d %d %d -tags [list %sR atom]\n",
++            sys_vgui(".x%lx.c create polygon\
++ %d %d %d %d %d %d %d %d %d %d %d %d -tags [list %sR atom border] -outline $::pd_colors(box_border) \
++ -fill $::pd_colors(box)\n",
+                 glist_getcanvas(glist),
+                 x1, y1,  x2-4, y1,  x2, y1+4,  x2, y2,  x1, y2,  x1, y1,
+                     tag);
+@@ -1320,8 +1324,8 @@ void text_drawborder(t_text *x, t_glist
+     else if (x->te_type == T_TEXT && glist->gl_edit)
+     {
+         if (firsttime)
+-            sys_vgui(".x%lx.c create line\
+- %d %d %d %d -tags [list %sR commentbar]\n",
++            sys_vgui(".x%lx.c create rectangle\
++ %d %d %d %d -tags [list %sR commentbar] -outline $::pd_colors(box_border)\n",
+                 glist_getcanvas(glist),
+                 x2, y1,  x2, y2, tag);
+         else
+diff -rupN newpd/pd-0.45-0/src/g_toggle.c pd-0.45-0/src/g_toggle.c
+--- newpd/pd-0.45-0/src/g_toggle.c	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_toggle.c	2013-08-27 12:37:35.802359065 -0400
+@@ -51,27 +51,28 @@ void toggle_draw_new(t_toggle *x, t_glis
+         w = 2;
+     if(x->x_gui.x_w >= 60)
+         w = 3;
+-    sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x -tags %lxBASE\n",
++    sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x \
++        -outline $::pd_colors(iemgui_border) -tags {%lxBASE iemgui border}\n",
+              canvas, xx, yy, xx + x->x_gui.x_w, yy + x->x_gui.x_h,
+              x->x_gui.x_bcol, x);
+-    sys_vgui(".x%lx.c create line %d %d %d %d -width %d -fill #%6.6x -tags %lxX1\n",
++    sys_vgui(".x%lx.c create line %d %d %d %d -width %d -fill #%6.6x -tags {%lxX1 iemgui tglx}\n",
+              canvas, xx+w+1, yy+w+1, xx + x->x_gui.x_w-w, yy + x->x_gui.x_h-w, w,
+              (x->x_on!=0.0)?x->x_gui.x_fcol:x->x_gui.x_bcol, x);
+-    sys_vgui(".x%lx.c create line %d %d %d %d -width %d -fill #%6.6x -tags %lxX2\n",
++    sys_vgui(".x%lx.c create line %d %d %d %d -width %d -fill #%6.6x -tags {%lxX2 iemgui tglx}\n",
+              canvas, xx+w+1, yy + x->x_gui.x_h-w-1, xx + x->x_gui.x_w-w, yy+w, w,
+              (x->x_on!=0.0)?x->x_gui.x_fcol:x->x_gui.x_bcol, x);
+     sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor w \
+-             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL label text]\n",
++             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL iemgui label text]\n",
+              canvas, xx+x->x_gui.x_ldx,
+              yy+x->x_gui.x_ldy,
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"",
+              x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+              x->x_gui.x_lcol, x);
+     if(!x->x_gui.x_fsf.x_snd_able)
+-        sys_vgui(".x%lx.c create rectangle %d %d %d %d -tags [list %lxOUT%d outlet]\n",
++        sys_vgui(".x%lx.c create rectangle %d %d %d %d -tags [list %lxOUT%d iemgui outlet]\n",
+              canvas, xx, yy + x->x_gui.x_h-1, xx + IOWIDTH, yy + x->x_gui.x_h, x, 0);
+     if(!x->x_gui.x_fsf.x_rcv_able)
+-        sys_vgui(".x%lx.c create rectangle %d %d %d %d -tags [list %lxIN%d inlet]\n",
++        sys_vgui(".x%lx.c create rectangle %d %d %d %d -tags [list %lxIN%d iemgui inlet]\n",
+              canvas, xx, yy, xx + IOWIDTH, yy+1, x, 0);
+ }
+ 
+@@ -121,9 +122,9 @@ void toggle_draw_config(t_toggle* x, t_g
+ {
+     t_canvas *canvas=glist_getcanvas(glist);
+ 
+-    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill #%6.6x -text {%s} \n",
++    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill %s -text {%s} \n",
+              canvas, x, x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+-             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_lcol,
++             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_lcol),
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"");
+     sys_vgui(".x%lx.c itemconfigure %lxBASE -fill #%6.6x\n", canvas, x,
+              x->x_gui.x_bcol);
+@@ -160,12 +161,12 @@ void toggle_draw_select(t_toggle* x, t_g
+ 
+     if(x->x_gui.x_fsf.x_selected)
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+-        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+     }
+     else
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_NORMAL);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x, IEM_GUI_COLOR_NORMAL);
+         sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x, x->x_gui.x_lcol);
+     }
+ }
+diff -rupN newpd/pd-0.45-0/src/g_vdial.c pd-0.45-0/src/g_vdial.c
+--- newpd/pd-0.45-0/src/g_vdial.c	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_vdial.c	2013-08-27 12:37:35.802359065 -0400
+@@ -61,7 +61,9 @@ void vradio_draw_new(t_vradio *x, t_glis
+ 
+     for(i=0; i<n; i++)
+     {
+-        sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x -tags %lxBASE%d\n",
++        sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x \
++            -outline $::pd_colors(iemgui_border) \
++            -tags {%lxBASE%d iemgui border}\n",
+                  canvas, xx11, yy11, xx12, yy12,
+                  x->x_gui.x_bcol, x, i);
+         sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x -outline #%6.6x -tags %lxBUT%d\n",
+@@ -75,7 +77,7 @@ void vradio_draw_new(t_vradio *x, t_glis
+         x->x_drawn = x->x_on;
+     }
+     sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor w \
+-             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL label text]\n",
++             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL iemgui label text]\n",
+              canvas, xx11+x->x_gui.x_ldx, yy11b+x->x_gui.x_ldy,
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"",
+              x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+@@ -141,9 +143,9 @@ void vradio_draw_config(t_vradio* x, t_g
+     t_canvas *canvas=glist_getcanvas(glist);
+     int n=x->x_number, i;
+ 
+-    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill #%6.6x -text {%s} \n",
++    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill %s -text {%s} \n",
+              canvas, x, x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight, 
+-             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_lcol,
++             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_lcol),
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"");
+     for(i=0; i<n; i++)
+     {
+@@ -187,16 +189,16 @@ void vradio_draw_select(t_vradio* x, t_g
+     {
+         for(i=0; i<n; i++)
+         {
+-            sys_vgui(".x%lx.c itemconfigure %lxBASE%d -outline #%6.6x\n", canvas, x, i,
++            sys_vgui(".x%lx.c itemconfigure %lxBASE%d -outline %s\n", canvas, x, i,
+                      IEM_GUI_COLOR_SELECTED);
+         }
+-        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+     }
+     else
+     {
+         for(i=0; i<n; i++)
+         {
+-            sys_vgui(".x%lx.c itemconfigure %lxBASE%d -outline #%6.6x\n", canvas, x, i,
++            sys_vgui(".x%lx.c itemconfigure %lxBASE%d -outline %s\n", canvas, x, i,
+                      IEM_GUI_COLOR_NORMAL);
+         }
+         sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x,
+diff -rupN newpd/pd-0.45-0/src/g_vslider.c pd-0.45-0/src/g_vslider.c
+--- newpd/pd-0.45-0/src/g_vslider.c	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_vslider.c	2013-08-27 12:37:35.806358982 -0400
+@@ -51,7 +51,8 @@ static void vslider_draw_new(t_vslider *
+     int r = ypos + x->x_gui.x_h - (x->x_val + 50)/100;
+     t_canvas *canvas=glist_getcanvas(glist);
+ 
+-    sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x -tags %lxBASE\n",
++    sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x \
++        -outline $::pd_colors(iemgui_border) -tags {%lxBASE iemgui border}\n",
+              canvas, xpos, ypos-2,
+              xpos + x->x_gui.x_w, ypos + x->x_gui.x_h+3,
+              x->x_gui.x_bcol, x);
+@@ -59,7 +60,7 @@ static void vslider_draw_new(t_vslider *
+              canvas, xpos+1, r,
+              xpos + x->x_gui.x_w, r, x->x_gui.x_fcol, x);
+     sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor w \
+-             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL label text]\n",
++             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL iemgui label text]\n",
+              canvas, xpos+x->x_gui.x_ldx, ypos+x->x_gui.x_ldy,
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"",
+              x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight, 
+@@ -123,9 +124,9 @@ static void vslider_draw_config(t_vslide
+ {
+     t_canvas *canvas=glist_getcanvas(glist);
+ 
+-    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill #%6.6x -text {%s} \n",
++    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill %s -text {%s} \n",
+              canvas, x, x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight, 
+-             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_lcol,
++             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_lcol),
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"");
+     sys_vgui(".x%lx.c itemconfigure %lxKNOB -fill #%6.6x\n", canvas,
+              x, x->x_gui.x_fcol);
+@@ -163,12 +164,12 @@ static void vslider_draw_select(t_vslide
+ 
+     if(x->x_gui.x_fsf.x_selected)
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+-        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+     }
+     else
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_NORMAL);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x, IEM_GUI_COLOR_NORMAL);
+         sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x, x->x_gui.x_lcol);
+     }
+ }
+diff -rupN newpd/pd-0.45-0/src/g_vumeter.c pd-0.45-0/src/g_vumeter.c
+--- newpd/pd-0.45-0/src/g_vumeter.c	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/src/g_vumeter.c	2013-08-27 12:37:35.806358982 -0400
+@@ -104,7 +104,8 @@ static void vu_draw_new(t_vu *x, t_glist
+     int k1=x->x_led_size+1, k2=IEM_VU_STEPS+1, k3=k1/2;
+     int led_col, yyy, i, k4=ypos-k3;
+ 
+-    sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x -tags %lxBASE\n",
++    sys_vgui(".x%lx.c create rectangle %d %d %d %d -fill #%6.6x \
++        -outline $::pd_colors(iemgui_border) -tags {%lxBASE iemgui border}\n",
+              canvas, xpos-1, ypos-2,
+              xpos+x->x_gui.x_w+1,
+              ypos+x->x_gui.x_h+2, x->x_gui.x_bcol, x);
+@@ -138,7 +139,7 @@ static void vu_draw_new(t_vu *x, t_glist
+              canvas, mid, ypos+10,
+              mid, ypos+10, x->x_led_size, x->x_gui.x_bcol, x);
+     sys_vgui(".x%lx.c create text %d %d -text {%s} -anchor w \
+-             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL label text]\n",
++             -font {{%s} -%d %s} -fill #%6.6x -tags [list %lxLABEL iemgui label text]\n",
+              canvas, xpos+x->x_gui.x_ldx, ypos+x->x_gui.x_ldy,
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"",
+              x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+@@ -277,22 +278,22 @@ static void vu_draw_config(t_vu* x, t_gl
+         sys_vgui(".x%lx.c itemconfigure %lxRLED%d -width %d\n", canvas, x, i,
+                  x->x_led_size);
+         if(((i+2)&3) && (x->x_scale))
+-            sys_vgui(".x%lx.c itemconfigure %lxSCALE%d -text {%s} -font {{%s} -%d %s} -fill #%6.6x\n",
++            sys_vgui(".x%lx.c itemconfigure %lxSCALE%d -text {%s} -font {{%s} -%d %s} -fill %s\n",
+                      canvas, x, i, iemgui_vu_scale_str[i], x->x_gui.x_font, 
+                      x->x_gui.x_fontsize, sys_fontweight, 
+-                     x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_lcol);
++                     x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_lcol));
+     }
+     if(x->x_scale)
+     {
+         i=IEM_VU_STEPS+1;
+-        sys_vgui(".x%lx.c itemconfigure %lxSCALE%d -text {%s} -font {{%s} -%d %s} -fill #%6.6x\n",
++        sys_vgui(".x%lx.c itemconfigure %lxSCALE%d -text {%s} -font {{%s} -%d %s} -fill %s\n",
+                  canvas, x, i, iemgui_vu_scale_str[i], x->x_gui.x_font, 
+                  x->x_gui.x_fontsize, sys_fontweight,
+-                 x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_lcol);
++                 x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_lcol));
+     }
+-    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill #%6.6x -text {%s} \n",
++    sys_vgui(".x%lx.c itemconfigure %lxLABEL -font {{%s} -%d %s} -fill %s -text {%s} \n",
+              canvas, x, x->x_gui.x_font, x->x_gui.x_fontsize, sys_fontweight,
+-             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:x->x_gui.x_lcol,
++             x->x_gui.x_fsf.x_selected?IEM_GUI_COLOR_SELECTED:iemgui_intcoltostring(x->x_gui.x_lcol),
+              strcmp(x->x_gui.x_lab->s_name, "empty")?x->x_gui.x_lab->s_name:"");
+ 
+     sys_vgui(".x%lx.c itemconfigure %lxRCOVER -fill #%6.6x -outline #%6.6x\n", canvas,
+@@ -352,24 +353,24 @@ static void vu_draw_select(t_vu* x,t_gli
+ 
+     if(x->x_gui.x_fsf.x_selected)
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+         for(i=1; i<=IEM_VU_STEPS; i++)
+         {
+             if(((i+2)&3) && (x->x_scale))
+-                sys_vgui(".x%lx.c itemconfigure %lxSCALE%d -fill #%6.6x\n",
++                sys_vgui(".x%lx.c itemconfigure %lxSCALE%d -fill %s\n",
+                          canvas, x, i, IEM_GUI_COLOR_SELECTED);
+         }
+         if(x->x_scale)
+         {
+             i=IEM_VU_STEPS+1;
+-            sys_vgui(".x%lx.c itemconfigure %lxSCALE%d -fill #%6.6x\n",
++            sys_vgui(".x%lx.c itemconfigure %lxSCALE%d -fill %s\n",
+                      canvas, x, i, IEM_GUI_COLOR_SELECTED);
+         }
+-        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill #%6.6x\n", canvas, x, IEM_GUI_COLOR_SELECTED);
++        sys_vgui(".x%lx.c itemconfigure %lxLABEL -fill %s\n", canvas, x, IEM_GUI_COLOR_SELECTED);
+     }
+     else
+     {
+-        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline #%6.6x\n", canvas, x, IEM_GUI_COLOR_NORMAL);
++        sys_vgui(".x%lx.c itemconfigure %lxBASE -outline %s\n", canvas, x, IEM_GUI_COLOR_NORMAL);
+         for(i=1; i<=IEM_VU_STEPS; i++)
+         {
+             if(((i+2)&3) && (x->x_scale))
+diff -rupN newpd/pd-0.45-0/tcl/dialog_audio.tcl pd-0.45-0/tcl/dialog_audio.tcl
+--- newpd/pd-0.45-0/tcl/dialog_audio.tcl	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/tcl/dialog_audio.tcl	2013-08-27 12:37:35.806358982 -0400
+@@ -7,6 +7,9 @@ namespace eval ::dialog_audio:: {
+ # TODO this panel really needs some reworking, it works but the code is very
+ # unreadable.  The panel could look a lot better too, like using menubuttons
+ # instead of regular buttons with tk_popup for pulldown menus.
++# * make sure combobox is setting the device number
++# * get focus order to do right
++# * add "Close" button to prefs dialog
+ 
+ ####################### audio dialog ##################3
+ 
+@@ -19,6 +22,29 @@ proc ::dialog_audio::apply {mytoplevel}
+     global audio_outenable1 audio_outenable2 audio_outenable3 audio_outenable4
+     global audio_sr audio_advance audio_callback audio_blocksize
+ 
++    # Hackety hack! Rather than make this audio dialog code sane,
++    # which would be a larger project, I'm just making the user interface
++    # look more friendly. The global "enable" variables were used
++    # for checkbuttons; I simplified the interface by removing them and
++    # adding a "None" option to the device list.  This means I have
++    # to parse the dev names for the string "None" and set the "enable"
++    # variables accordingly. I also assume "None" is the last value in the
++    # list.
++
++    foreach type {in out} {
++        foreach i {1 2 3 4} {
++            if {[set audio_${type}dev${i}] == \
++                [llength [set ::audio_${type}devlist]] || 
++                [set audio_${type}chan${i}] <= 0} {
++                set audio_${type}dev${i} 0
++                set audio_${type}enable${i} 0
++                set audio_${type}chan${i} 0
++            } else {
++                set audio_${type}enable${i} 1
++            }
++        }
++    }
++
+     pdsend "pd audio-dialog \
+         $audio_indev1 \
+         $audio_indev2 \
+@@ -40,10 +66,34 @@ proc ::dialog_audio::apply {mytoplevel}
+         $audio_advance \
+         $audio_callback \
+         $audio_blocksize"
++
++    # Pd always makes devices contiguous-- for example, if you only set
++    # device 1 and device 3 it will change device 3 to device 2.
++    # So we look for non-contiguous devices and request an update
++    # on connect so that the user doesn't see incorrect information
++    # in the GUI. This rebuilds part of the dialog window which causes
++    # a slight flicker-- otherwise I'd just do this everytime:
++    # pdsend "pd audio-properties $::audio_longform
++    foreach type {in out} {
++        set empty_dev 0
++        set aliased_dev 0
++        foreach i {1 2 3 4} {
++            set enabled [set audio_${type}enable$i]
++            if {$empty_dev && $enabled} {
++                set aliased_dev 1
++                break
++            } elseif {!$enabled} {incr empty_dev}
++        }
++        if {$aliased_dev} {
++            pdsend "pd audio-properties $::audio_longform"
++            break
++        }
++    }
++    pdsend "pd save-preferences"
+ }
+ 
+ proc ::dialog_audio::cancel {mytoplevel} {
+-    pdsend "$mytoplevel cancel"
++#    pdsend "$mytoplevel cancel"
+ }
+ 
+ proc ::dialog_audio::ok {mytoplevel} {
+@@ -51,26 +101,45 @@ proc ::dialog_audio::ok {mytoplevel} {
+     ::dialog_audio::cancel $mytoplevel
+ }
+ 
+-# callback from popup menu
+-proc audio_popup_action {buttonname varname devlist index} {
+-    global audio_indevlist audio_outdevlist $varname
+-    $buttonname configure -text [lindex $devlist $index]
+-    set $varname $index
++proc ::dialog_audio::setapi {var - op} {
++    if {$op ne "write"} {return}
++    set name [set $var]
++    set index [lsearch -exact -index 0 $::audio_apilist $name]
++    set ::pd_whichapi [lindex $::audio_apilist $index 1]
++    pdsend "pd audio-setapi $::pd_whichapi"
+ }
+ 
+-# create a popup menu
+-proc audio_popup {name buttonname varname devlist} {
+-    if [winfo exists $name.popup] {destroy $name.popup}
+-    menu $name.popup -tearoff false
+-    if {$::windowingsystem eq "win32"} {
+-        $name.popup configure -font menuFont
++proc ::dialog_audio::setlongform {widget} {
++    set state [set ::$widget]
++    if {$state == 0} {
++        # back to single devs
++        set extra_devs 0
++        foreach type {in out} {
++            foreach i {2 3 4} {
++                if { [set ::audio_${type}chan$i] > 0 &&
++                     [set ::audio_${type}enable$i] > 0 } {
++                          incr extra_devs
++                }
++            }
++        }
++        if {$extra_devs} {
++            set devices devices
++            if {$extra_devs == 1} {set devices device}
++            set continue [tk_messageBox -type yesno -message \
++                [_ "This will disconnect $extra_devs $devices. Continue?"] \
++                 -default "no" -parent [winfo parent $widget] -icon question]
++            if {$continue eq "yes"} {
++               foreach type {in out} {
++                   foreach i {2 3 4} {
++                       set ::audio_${type}chan$i 0
++                       set ::audio_${type}enable$i 0
++                   }
++               }
++            ::dialog_audio::apply [winfo parent $widget]
++            }
++        }
+     }
+-    for {set x 0} {$x<[llength $devlist]} {incr x} {
+-        $name.popup add command -label [lindex $devlist $x] \
+-            -command [list audio_popup_action \
+-                          $buttonname $varname $devlist $x] 
+-    }
+-    tk_popup $name.popup [winfo pointerx $name] [winfo pointery $name] 0
++    pdsend "pd audio-properties $state"
+ }
+ 
+ # start a dialog window to select audio devices and settings.  "multi"
+@@ -97,11 +166,6 @@ proc ::dialog_audio::pdtk_audio_dialog {
+     global pd_indev pd_outdev
+     global audio_longform
+ 
+-    set audio_indev1 $indev1
+-    set audio_indev2 $indev2
+-    set audio_indev3 $indev3
+-    set audio_indev4 $indev4
+-
+     set audio_inchan1 [expr ( $inchan1 > 0 ? $inchan1 : -$inchan1 ) ]
+     set audio_inenable1 [expr $inchan1 > 0 ]
+     set audio_inchan2 [expr ( $inchan2 > 0 ? $inchan2 : -$inchan2 ) ]
+@@ -111,10 +175,15 @@ proc ::dialog_audio::pdtk_audio_dialog {
+     set audio_inchan4 [expr ( $inchan4 > 0 ? $inchan4 : -$inchan4 ) ]
+     set audio_inenable4 [expr $inchan4 > 0 ]
+ 
+-    set audio_outdev1 $outdev1
+-    set audio_outdev2 $outdev2
+-    set audio_outdev3 $outdev3
+-    set audio_outdev4 $outdev4
++    # "None" is added as the last value in the dropdown menu, so it's
++    # equivalent to the length of the devlist
++    set nonein [llength $audio_indevlist]
++    set noneout [llength $audio_outdevlist]
++
++    set audio_indev1 [expr ( $audio_inenable1 ? $indev1 : $nonein )]
++    set audio_indev2 [expr ( $audio_inenable2 ? $indev2 : $nonein )]
++    set audio_indev3 [expr ( $audio_inenable3 ? $indev3 : $nonein )]
++    set audio_indev4 [expr ( $audio_inenable4 ? $indev4 : $nonein )]
+ 
+     set audio_outchan1 [expr ( $outchan1 > 0 ? $outchan1 : -$outchan1 ) ]
+     set audio_outenable1 [expr $outchan1 > 0 ]
+@@ -125,199 +194,159 @@ proc ::dialog_audio::pdtk_audio_dialog {
+     set audio_outchan4 [expr ( $outchan4 > 0 ? $outchan4 : -$outchan4 ) ]
+     set audio_outenable4 [expr $outchan4 > 0 ]
+ 
++    set audio_outdev1 [expr ( $audio_outenable1 ? $outdev1 : $noneout )]
++    set audio_outdev2 [expr ( $audio_outenable2 ? $outdev2 : $noneout )]
++    set audio_outdev3 [expr ( $audio_outenable3 ? $outdev3 : $noneout )]
++    set audio_outdev4 [expr ( $audio_outenable4 ? $outdev4 : $noneout )]
++
+     set audio_sr $sr
+     set audio_advance $advance
+     set audio_callback $callback
+     set audio_blocksize $blocksize
++    set audio_longform $longform
+ 
+-    toplevel $mytoplevel -class DialogWindow
+-    wm title $mytoplevel [_ "Audio Settings"]
+-    wm group $mytoplevel .
+-    wm resizable $mytoplevel 0 0
+-    wm transient $mytoplevel
+-    $mytoplevel configure -menu $::dialog_menubar
+-    $mytoplevel configure -padx 10 -pady 5
+-    ::pd_bindings::dialog_bindings $mytoplevel "audio"
+-    # not all Tcl/Tk versions or platforms support -topmost, so catch the error
+-    catch {wm attributes $mytoplevel -topmost 1}
+-
+-    frame $mytoplevel.buttonframe
+-    pack $mytoplevel.buttonframe -side bottom -fill x -pady 2m
+-    button $mytoplevel.buttonframe.cancel -text [_ "Cancel"]\
+-        -command "::dialog_audio::cancel $mytoplevel"
+-    pack $mytoplevel.buttonframe.cancel -side left -expand 1 -fill x -padx 15
+-    button $mytoplevel.buttonframe.apply -text [_ "Apply"]\
+-        -command "::dialog_audio::apply $mytoplevel"
+-    pack $mytoplevel.buttonframe.apply -side left -expand 1 -fill x -padx 15
+-    button $mytoplevel.buttonframe.ok -text [_ "OK"] \
+-        -command "::dialog_audio::ok $mytoplevel"
+-    pack $mytoplevel.buttonframe.ok -side left -expand 1 -fill x -padx 15
+-
+-    button $mytoplevel.saveall -text [_ "Save All Settings"]\
+-        -command "::dialog_audio::apply $mytoplevel; pdsend {pd save-preferences}"
+-    pack $mytoplevel.saveall -side bottom -expand 1 -pady 5
+-    
+-        # sample rate and advance
+-    frame $mytoplevel.srf
+-    pack $mytoplevel.srf -side top
+-    
+-    label $mytoplevel.srf.l1 -text [_ "Sample rate:"]
+-    entry $mytoplevel.srf.x1 -textvariable audio_sr -width 7
+-    label $mytoplevel.srf.l2 -text [_ "Delay (msec):"]
+-    entry $mytoplevel.srf.x2 -textvariable audio_advance -width 4
+-
+-    label $mytoplevel.srf.l3 -text [_ "Block size:"]
+-    tk_optionMenu $mytoplevel.srf.x3 audio_blocksize 64 128 256 512 1024 2048
+-
+-    pack $mytoplevel.srf.l1 $mytoplevel.srf.x1 $mytoplevel.srf.l2 \
+-        $mytoplevel.srf.x2 $mytoplevel.srf.l3 $mytoplevel.srf.x3 -side left
++    set mytoplevel .prefs.nb.audio
++    set apifr $mytoplevel.api
++    if {![winfo exists $apifr]} {
++
++        # Audio API
++        ttk::labelframe $mytoplevel.api -text [_ "Audio API"] \
++            -style Prefs.TLabelframe
++        pack $apifr -side top -padx 1 -pady 1 -fill x
++        set api_names {}
++        set ::audio_apiname {};
++        foreach api $::audio_apilist {lappend api_names [lindex $api 0]}
++        set api_i [lsearch -exact -index 1 $::audio_apilist $::pd_whichapi]
++        set ::audio_apiname [lindex $::audio_apilist $api_i 0]
++        ::dialog_prefs::dropdown $apifr.apilist ::audio_apiname $api_names
++        trace add variable ::audio_apiname write ::dialog_audio::setapi
++        grid $apifr.apilist -sticky e -column 0 -row 0 -padx 3 -pady 10
++        ttk::checkbutton $apifr.longbutton -text "Use multiple devices" \
++            -command "::dialog_audio::setlongform $apifr.longbutton"
++        grid $apifr.longbutton -sticky w -column 1 -row 0 -padx 3 -pady 10
++        grid columnconfigure $apifr {0 1} -weight 1
++    }
++    # disable longbutton if hardware doesn't support multi devices
++    set state normal
++    if {![expr [llength $audio_indevlist] > 1 && \
++        $multi>1 && [llength $audio_outdevlist] > 1]} {
++            set state disabled
++    }
++    $apifr.longbutton configure -state $state
++
++    # frame to encapsulate api-specific settings and devices,
++    # as well as the "Connect" button
++    set afr $mytoplevel.audio
++
++    destroy $afr
++    ttk::frame $afr
++    pack $afr -side top -fill x
++
++    # todo: put padding with style settings in dialog_prefs.tcl
++    set padx 1
++
++    # sample rate and advance
++    set sfr [ttk::labelframe $afr.settings -text [_ "Settings"] \
++        -style Prefs.TLabelframe -padding 5 ]
++    pack $sfr -side top -fill x -padx 3 -pady 10
++    ttk::label $sfr.l1 -text [_ "Sample rate"]
++    ttk::label $sfr.l2 -text [_ "Block size"]
++    ::dialog_prefs::dropdown $sfr.x2 \
++        ::audio_blocksize {64 128 256 512 1024 2048}
++    ttk::entry $sfr.x1 -textvariable audio_sr -width 7
++    ttk::label $sfr.l3 -text [_ "Delay (ms)"]
++    ttk::entry $sfr.x3 -textvariable audio_advance -width 7
++    grid $sfr.l1 -row 0 -sticky e -padx $padx
++    grid $sfr.x1 -row 0 -column 1 -sticky w -padx $padx
++    grid $sfr.l2 -row 0 -column 2 -sticky e -padx $padx
++    grid $sfr.x2 -row 0 -column 3 -sticky w -padx $padx
++    grid $sfr.l3 -row 1 -column 0 -sticky e -padx $padx
++    grid $sfr.x3 -row 1 -column 1 -sticky w -padx $padx
+     if {$audio_callback >= 0} {
+-        checkbutton $mytoplevel.srf.x4 -variable audio_callback \
+-            -text [_ "Use callbacks"] -anchor e
+-        pack $mytoplevel.srf.x4 -side left
+-    }
+-        # input device 1
+-    frame $mytoplevel.in1f
+-    pack $mytoplevel.in1f -side top
+-
+-    checkbutton $mytoplevel.in1f.x0 -variable audio_inenable1 \
+-        -text [_ "Input device 1:"] -anchor e
+-    button $mytoplevel.in1f.x1 -text [lindex $audio_indevlist $audio_indev1] \
+-        -command [list audio_popup $mytoplevel $mytoplevel.in1f.x1 audio_indev1 $audio_indevlist]
+-    label $mytoplevel.in1f.l2 -text [_ "Channels:"]
+-    entry $mytoplevel.in1f.x2 -textvariable audio_inchan1 -width 3
+-    pack $mytoplevel.in1f.x0 $mytoplevel.in1f.x1 $mytoplevel.in1f.l2 \
+-        $mytoplevel.in1f.x2 -side left -fill x
+-
+-        # input device 2
+-    if {$longform && $multi > 1 && [llength $audio_indevlist] > 1} {
+-        frame $mytoplevel.in2f
+-        pack $mytoplevel.in2f -side top
+-
+-        checkbutton $mytoplevel.in2f.x0 -variable audio_inenable2 \
+-            -text [_ "Input device 2:"] -anchor e
+-        button $mytoplevel.in2f.x1 -text [lindex $audio_indevlist $audio_indev2] \
+-            -command [list audio_popup $mytoplevel $mytoplevel.in2f.x1 audio_indev2 \
+-                $audio_indevlist]
+-        label $mytoplevel.in2f.l2 -text [_ "Channels:"]
+-        entry $mytoplevel.in2f.x2 -textvariable audio_inchan2 -width 3
+-        pack $mytoplevel.in2f.x0 $mytoplevel.in2f.x1 $mytoplevel.in2f.l2 \
+-            $mytoplevel.in2f.x2 -side left -fill x
+-    }
+-
+-        # input device 3
+-    if {$longform && $multi > 1 && [llength $audio_indevlist] > 2} {
+-        frame $mytoplevel.in3f
+-        pack $mytoplevel.in3f -side top
+-
+-        checkbutton $mytoplevel.in3f.x0 -variable audio_inenable3 \
+-            -text [_ "Input device 3:"] -anchor e
+-        button $mytoplevel.in3f.x1 -text [lindex $audio_indevlist $audio_indev3] \
+-            -command [list audio_popup $mytoplevel $mytoplevel.in3f.x1 audio_indev3 \
+-                $audio_indevlist]
+-        label $mytoplevel.in3f.l2 -text [_ "Channels:"]
+-        entry $mytoplevel.in3f.x2 -textvariable audio_inchan3 -width 3
+-        pack $mytoplevel.in3f.x0 $mytoplevel.in3f.x1 $mytoplevel.in3f.l2 $mytoplevel.in3f.x2 -side left
+-    }
+-
+-        # input device 4
+-    if {$longform && $multi > 1 && [llength $audio_indevlist] > 3} {
+-        frame $mytoplevel.in4f
+-        pack $mytoplevel.in4f -side top
+-
+-        checkbutton $mytoplevel.in4f.x0 -variable audio_inenable4 \
+-            -text [_ "Input device 4:"] -anchor e
+-        button $mytoplevel.in4f.x1 -text [lindex $audio_indevlist $audio_indev4] \
+-            -command [list audio_popup $mytoplevel $mytoplevel.in4f.x1 audio_indev4 \
+-                $audio_indevlist]
+-        label $mytoplevel.in4f.l2 -text [_ "Channels:"]
+-        entry $mytoplevel.in4f.x2 -textvariable audio_inchan4 -width 3
+-        pack $mytoplevel.in4f.x0 $mytoplevel.in4f.x1 $mytoplevel.in4f.l2 \
+-            $mytoplevel.in4f.x2 -side left
+-    }
+-
+-        # output device 1
+-    frame $mytoplevel.out1f
+-    pack $mytoplevel.out1f -side top
+-
+-    checkbutton $mytoplevel.out1f.x0 -variable audio_outenable1 \
+-        -text [_ "Output device 1:"] -anchor e
+-    if {$multi == 0} {
+-        label $mytoplevel.out1f.l1 \
+-            -text [_ "(same as input device) ..............      "]
+-    } else {
+-        button $mytoplevel.out1f.x1 -text [lindex $audio_outdevlist $audio_outdev1] \
+-            -command  [list audio_popup $mytoplevel $mytoplevel.out1f.x1 audio_outdev1 \
+-                $audio_outdevlist]
+-    }
+-    label $mytoplevel.out1f.l2 -text [_ "Channels:"]
+-    entry $mytoplevel.out1f.x2 -textvariable audio_outchan1 -width 3
+-    if {$multi == 0} {
+-        pack $mytoplevel.out1f.x0 $mytoplevel.out1f.l1 $mytoplevel.out1f.x2 -side left -fill x
+-    } else {
+-        pack $mytoplevel.out1f.x0 $mytoplevel.out1f.x1 $mytoplevel.out1f.l2\
+-            $mytoplevel.out1f.x2 -side left -fill x
+-    }
+-
+-        # output device 2
+-    if {$longform && $multi > 1 && [llength $audio_outdevlist] > 1} {
+-        frame $mytoplevel.out2f
+-        pack $mytoplevel.out2f -side top
+-
+-        checkbutton $mytoplevel.out2f.x0 -variable audio_outenable2 \
+-            -text [_ "Output device 2:"] -anchor e
+-        button $mytoplevel.out2f.x1 -text [lindex $audio_outdevlist $audio_outdev2] \
+-            -command \
+-            [list audio_popup $mytoplevel $mytoplevel.out2f.x1 audio_outdev2 $audio_outdevlist]
+-        label $mytoplevel.out2f.l2 -text [_ "Channels:"]
+-        entry $mytoplevel.out2f.x2 -textvariable audio_outchan2 -width 3
+-        pack $mytoplevel.out2f.x0 $mytoplevel.out2f.x1 $mytoplevel.out2f.l2\
+-            $mytoplevel.out2f.x2 -side left
+-    }
+-
+-        # output device 3
+-    if {$longform && $multi > 1 && [llength $audio_outdevlist] > 2} {
+-        frame $mytoplevel.out3f
+-        pack $mytoplevel.out3f -side top
+-
+-        checkbutton $mytoplevel.out3f.x0 -variable audio_outenable3 \
+-            -text [_ "Output device 3:"] -anchor e
+-        button $mytoplevel.out3f.x1 -text [lindex $audio_outdevlist $audio_outdev3] \
+-            -command \
+-            [list audio_popup $mytoplevel $mytoplevel.out3f.x1 audio_outdev3 $audio_outdevlist]
+-        label $mytoplevel.out3f.l2 -text [_ "Channels:"]
+-        entry $mytoplevel.out3f.x2 -textvariable audio_outchan3 -width 3
+-        pack $mytoplevel.out3f.x0 $mytoplevel.out3f.x1 $mytoplevel.out3f.l2 \
+-            $mytoplevel.out3f.x2 -side left
+-    }
+-
+-        # output device 4
+-    if {$longform && $multi > 1 && [llength $audio_outdevlist] > 3} {
+-        frame $mytoplevel.out4f
+-        pack $mytoplevel.out4f -side top
+-
+-        checkbutton $mytoplevel.out4f.x0 -variable audio_outenable4 \
+-            -text [_ "Output device 4:"] -anchor e
+-        button $mytoplevel.out4f.x1 -text [lindex $audio_outdevlist $audio_outdev4] \
+-            -command \
+-            [list audio_popup $mytoplevel $mytoplevel.out4f.x1 audio_outdev4 $audio_outdevlist]
+-        label $mytoplevel.out4f.l2 -text [_ "Channels:"]
+-        entry $mytoplevel.out4f.x2 -textvariable audio_outchan4 -width 3
+-        pack $mytoplevel.out4f.x0 $mytoplevel.out4f.x1 $mytoplevel.out4f.l2 \
+-            $mytoplevel.out4f.x2 -side left
+-    }
++        ttk::label $sfr.l4 -text [_ "Use callbacks"] -anchor e
++        ttk::checkbutton $sfr.x4 -variable audio_callback
++        grid $sfr.l4 -column 2 -row 1 -sticky e -padx $padx
++        grid $sfr.x4 -column 3 -row 1 -sticky w -padx $padx
++    }
++    grid columnconfigure $sfr {0 2} -weight 1
++    grid columnconfigure $sfr {1 3} -weight 2
++
++    # Devices 
++    set devfr [ttk::labelframe $afr.devs -text [_ "Devices"] \
++        -style Prefs.TLabelframe]
++    pack $devfr -side top -fill x -padx 3 -pady 10
++    set j 2
++    # todo: change in out to input output and make translatable strings
++    foreach {type name} [list in [_ "Input"] out [_ "Output"]] {
++        set domulti [expr $longform && $multi > 1 && \
++            [llength [set "audio_${type}devlist"]] > 1]
++        if {$domulti} {
++            ttk::label $devfr.$type \
++                -text [concat $name [_ "Devices"]]
++            ttk::label $devfr.${type}ch -text [_ "Channels"]
++            grid $devfr.$type -row $j -column 1 -padx $padx
++            grid $devfr.${type}ch -row $j -column 3 -padx $padx
++            incr j
++        } else {
++            if {$type eq "in"} {
++            ttk::label $devfr.$type \
++                -text [_ "Device Name"]
++            ttk::label $devfr.${type}ch -text [_ "Channels"]
++            grid $devfr.$type -row $j -column 1 -columnspan 2 -padx $padx
++            grid $devfr.${type}ch -row $j -column 3 -padx $padx
++            incr j
++            }
++        }
++        # Note: it'd be fairly easy to change the GUI to accommodate
++        # more than four devices, but Pd only takes and receives at most
++        # four devices, so the entire backend would have to change in order
++        # to do that
++        for {set i 0} {$i < 4} \
++            {incr i} {
++            set devno [expr $i + 1]
++            set row "$devfr.${type}$devno"
++            if {$domulti} {
++                set ctext "$devno."
++            } else {
++                set ctext $name
++            }
++            ttk::label ${row}x0 -text $ctext -anchor w
++            set ::audio_${type}dev${devno}label {}
++            ::dialog_prefs::dropdown_by_index ${row}x1 \
++                "::audio_${type}dev$devno" \
++                [concat [set audio_${type}devlist] None] \
++                "::audio_${type}dev${devno}label"
++            if {[set audio_${type}enable$devno] > 0} {
++                ::dialog_prefs::dropdown_set ${row}x1 [lindex [set audio_${type}devlist] [set audio_${type}dev$devno]]
++            } else {
++                ::dialog_prefs::dropdown_set ${row}x1 "None"
++                set audio_${type} [llength [set audio_${type}devlist]]
++            }
++            ttk::entry ${row}x2 -textvariable "audio_${type}chan$devno" -width 4
++            grid ${row}x0 -row $j -column 0 -sticky e -padx $padx
++            grid ${row}x1 -row $j -column 1 -columnspan 2 -sticky ew -padx $padx
++            grid ${row}x2 -row $j -column 3 -padx $padx
++            grid columnconfigure $afr.devs {1 2 3} -weight 2
++            grid columnconfigure $afr.devs 0 -weight 1
++            incr j
++            if {![expr $longform && $multi > 1 && \
++                [llength [set "audio_${type}devlist"]] > 1]} {
++                break
++            }
++        }
++    }
++    grid rowconfigure $devfr all -pad 3
++
++    # Connect button
++    ttk::frame $afr.buttonframe
++    pack $afr.buttonframe
++    pack $afr.buttonframe -side bottom
++    ttk::button $afr.buttonframe.apply -text [_ "Apply Audio Settings"]\
++        -command "::dialog_audio::apply $mytoplevel"
++    pack $afr.buttonframe.apply -side left -expand 1 -fill x \
++        -padx 15
+ 
+-        # if not the "long form" but if "multi" is 2, make a button to
+-        # restart with longform set. 
+-    
+-    if {$longform == 0 && $multi > 1} {
+-        frame $mytoplevel.longbutton
+-        pack $mytoplevel.longbutton -side top
+-        button $mytoplevel.longbutton.b -text [_ "Use multiple devices"] \
+-            -command  {pdsend "pd audio-properties 1"}
+-        pack $mytoplevel.longbutton.b
+-    }
+-    $mytoplevel.srf.x1 select from 0
+-    $mytoplevel.srf.x1 select adjust end
+-    focus $mytoplevel.srf.x1
++#    $sfr.x1 select from 0
++#    $sfr.x1 select adjust end
++    focus $apifr.apilist
+ }
+diff -rupN newpd/pd-0.45-0/tcl/dialog_gui.tcl pd-0.45-0/tcl/dialog_gui.tcl
+--- newpd/pd-0.45-0/tcl/dialog_gui.tcl	1969-12-31 19:00:00.000000000 -0500
++++ pd-0.45-0/tcl/dialog_gui.tcl	2013-08-27 12:37:35.806358982 -0400
+@@ -0,0 +1,235 @@
++package provide dialog_gui 0.1
++package require dialog_prefs
++
++namespace eval ::dialog_gui:: {
++    namespace export create_gui_dialog
++}
++
++####################### gui dialog ##################3
++
++proc ::dialog_gui::apply {mytoplevel} {
++    # nothing to do
++}
++
++proc ::dialog_gui::cancel {mytoplevel} {
++#    pdsend "$mytoplevel cancel"
++}
++
++proc ::dialog_gui::ok {mytoplevel} {
++    ::dialog_gui::apply $mytoplevel
++    ::dialog_gui::cancel $mytoplevel
++}
++
++proc ::dialog_gui::setswatch {b swatch} {
++    $b configure -image $swatch
++}
++
++# this is triggered whenever the ::gui_preset
++# variable is written to
++proc ::dialog_gui::set_gui_preset {args} {
++    set choice $::gui_preset
++    switch $choice {
++        Default {
++            set ::pd_colors(atombox)       white
++            set ::pd_colors(atombox_border) black
++            set ::pd_colors(canvas_bg)     white
++            set ::pd_colors(canvas_cursor) black
++            set ::pd_colors(text)          black
++            set ::pd_colors(box)           white
++            set ::pd_colors(box_border)    black
++            set ::pd_colors(msg_box)       white
++            set ::pd_colors(msg_box_border) black
++            set ::pd_colors(iemgui_border) black
++            set ::pd_colors(cord_control)  black
++            set ::pd_colors(cord_signal)   black
++            set ::pd_colors(inlet)         black
++            set ::pd_colors(outlet)        black
++            set ::pd_colors(xlet_hover)    grey
++            set ::pd_colors(link)          blue
++            set ::pd_colors(selected)      blue
++            set ::pd_colors(selection_rectangle) black
++            set ::pd_colors(highlighted_text) black
++            set ::pd_colors(highlighted_text_bg) #c3c3c3
++        }
++        Inverted {
++            set ::pd_colors(atombox)       black
++            set ::pd_colors(atombox_border) white
++            set ::pd_colors(canvas_bg)     black
++            set ::pd_colors(canvas_cursor) white
++            set ::pd_colors(text)          white
++            set ::pd_colors(box)           black
++            set ::pd_colors(box_border)    white
++            set ::pd_colors(msg_box)       black
++            set ::pd_colors(msg_box_border) white
++            set ::pd_colors(iemgui_border) white
++            set ::pd_colors(cord_control)  white
++            set ::pd_colors(cord_signal)   white
++            set ::pd_colors(inlet)         white
++            set ::pd_colors(outlet)        white
++            set ::pd_colors(xlet_hover)    white
++            set ::pd_colors(link)          blue
++            set ::pd_colors(selected)      #ffff00
++            set ::pd_colors(selection_rectangle) white
++            set ::pd_colors(highlighted_text) white
++            set ::pd_colors(highlighted_text_bg) #3c3c3c
++        }
++        L2ork    {
++            set ::pd_colors(atombox)       #e0e0e0
++            set ::pd_colors(atombox_border) #c1c1c1
++            set ::pd_colors(canvas_bg)     white
++            set ::pd_colors(canvas_cursor) black
++            set ::pd_colors(text)          black
++            set ::pd_colors(box)           #f6f8f8
++            set ::pd_colors(box_border)    #c1c1c1
++            set ::pd_colors(msg_box)       #f6f8f8
++            set ::pd_colors(msg_box_border) #c1c1c1
++            set ::pd_colors(iemgui_border) black
++            set ::pd_colors(cord_control)  black
++            set ::pd_colors(cord_signal)   #828297
++            set ::pd_colors(inlet)         #536253
++            set ::pd_colors(outlet)        #536253
++            set ::pd_colors(xlet_hover)    grey
++            set ::pd_colors(link)          #e87216
++            set ::pd_colors(selected)      #e87216
++            set ::pd_colors(selection_rectangle) #e87216
++            set ::pd_colors(highlighted_text) black
++            set ::pd_colors(highlighted_text_bg) #c3c3c3
++        }
++        L2ork_Inverted {
++            set ::pd_colors(atombox)       black
++            set ::pd_colors(canvas_bg)     black
++            set ::pd_colors(canvas_cursor) white
++            set ::pd_colors(text)          white
++            set ::pd_colors(box)           #090707
++            set ::pd_colors(box_border)    #3e3e3e
++            set ::pd_colors(msg_box)       #090707
++            set ::pd_colors(msg_box_border) #3e3e3e
++            set ::pd_colors(iemgui_border) white
++            set ::pd_colors(cord_control)  white
++            set ::pd_colors(cord_signal)   #7d7d68
++            set ::pd_colors(inlet)         #a294a2
++            set ::pd_colors(outlet)        #a294a2
++            set ::pd_colors(xlet_hover)    white
++            set ::pd_colors(link)          blue
++            set ::pd_colors(selected)      #ffff00
++            set ::pd_colors(selection_rectangle) white
++            set ::pd_colors(highlighted_text) white
++            set ::pd_colors(highlighted_text_bg) #3c3c3c
++        }
++        Extended    {
++            set ::pd_colors(atombox)       #e0e0e0
++            set ::pd_colors(atombox_border) #c1c1c1
++            set ::pd_colors(canvas_bg)     white
++            set ::pd_colors(canvas_cursor) black
++            set ::pd_colors(text)          black
++            set ::pd_colors(box)           #f6f8f8
++            set ::pd_colors(box_border)    #c1c1c1
++            set ::pd_colors(msg_box)       #f6f8f8
++            set ::pd_colors(msg_box_border) #c1c1c1
++            set ::pd_colors(iemgui_border) black
++            set ::pd_colors(cord_control)  black
++            set ::pd_colors(cord_signal)   #828297
++            set ::pd_colors(inlet)         #536253
++            set ::pd_colors(outlet)        #536253
++            set ::pd_colors(xlet_hover)    grey
++            set ::pd_colors(link)          blue
++            set ::pd_colors(selected)      blue
++            set ::pd_colors(selection_rectangle) black
++            set ::pd_colors(highlighted_text) black
++            set ::pd_colors(highlighted_text_bg) #c3c3c3
++        }
++        C64   {
++            set ::pd_colors(atombox)       #3e32a2
++            set ::pd_colors(atombox_border) #7569d7
++            set ::pd_colors(canvas_bg)     #3e32a2
++            set ::pd_colors(canvas_cursor) white
++            set ::pd_colors(text)          #a49aea
++            set ::pd_colors(box)           #3e32a2
++            set ::pd_colors(box_border)    #7569d7
++            set ::pd_colors(msg_box)       #3e32a2
++            set ::pd_colors(msg_box_border) #7569d7
++            set ::pd_colors(iemgui_border) #7569d7
++            set ::pd_colors(cord_control)  #7569d7
++            set ::pd_colors(cord_signal)   #7569d7
++            set ::pd_colors(inlet)         #7c71da
++            set ::pd_colors(outlet)        #7c71da
++            set ::pd_colors(xlet_hover)    grey
++            set ::pd_colors(link)          #e87216
++            set ::pd_colors(selected)      #cc9933
++            set ::pd_colors(selection_rectangle) #7c71da
++            set ::pd_colors(highlighted_text) #3e32a2
++            set ::pd_colors(highlighted_text_bg) #a49aea
++        }
++        Strongbad {
++            set ::pd_colors(atombox)       black
++            set ::pd_colors(atombox_border) #0b560b
++            set ::pd_colors(canvas_bg)     black
++            set ::pd_colors(canvas_cursor) white
++            set ::pd_colors(text)          #4bd046
++            set ::pd_colors(box)           black
++            set ::pd_colors(box_border)    #0b560b
++            set ::pd_colors(msg_box)       black
++            set ::pd_colors(msg_box_border) #0b560b
++            set ::pd_colors(iemgui_border) #0b560b
++            set ::pd_colors(cord_control)  #53b83b
++            set ::pd_colors(cord_signal)   #53b83b
++            set ::pd_colors(inlet)         #53b83b
++            set ::pd_colors(outlet)        #53b83b
++            set ::pd_colors(xlet_hover)    white
++            set ::pd_colors(link)          blue
++            set ::pd_colors(selected)      green
++            set ::pd_colors(selection_rectangle) #53b83b
++            set ::pd_colors(highlighted_text) black
++            set ::pd_colors(highlighted_text_bg) #4bd046 
++        }
++        Subdued {
++            set ::pd_colors(atombox)       #9fc79f
++            set ::pd_colors(atombox_border) #b1d3b1
++            set ::pd_colors(canvas_bg)     #c0dcc0
++            set ::pd_colors(canvas_cursor) black
++            set ::pd_colors(text)          black
++            set ::pd_colors(box)           #c0dcc0
++            set ::pd_colors(box_border)    #666666
++            set ::pd_colors(msg_box)       #c0dcc0
++            set ::pd_colors(msg_box_border) #666666
++            set ::pd_colors(iemgui_border) #666666
++            set ::pd_colors(cord_control)  #333333
++            set ::pd_colors(cord_signal)   #666666
++            set ::pd_colors(inlet)         #333333
++            set ::pd_colors(outlet)        #333333
++            set ::pd_colors(xlet_hover)    white
++            set ::pd_colors(link)          blue
++            set ::pd_colors(selected)      blue
++            set ::pd_colors(selection_rectangle) #333333
++            set ::pd_colors(highlighted_text) black 
++            set ::pd_colors(highlighted_text_bg) #c3c3c3
++        }
++    }
++}
++
++proc ::dialog_gui::create_gui_dialog {mytoplevel} {
++    if [winfo exists $mytoplevel.colors] then return
++    set fr [ttk::frame $mytoplevel.colors]
++    set p [ttk::frame $fr.presets]
++    ttk::label $p.presetlabel -text "Color Preset"
++#    ttk::combobox $fr.presets -state readonly -values {Inverted L2ork Foo}
++# todo: set presets in _one_ place
++    ::dialog_prefs::dropdown $p.presets ::gui_preset {Default Inverted L2ork L2ork_Inverted Extended C64 Strongbad Subdued}
++    pack $fr -side top
++    grid $p -column 0 -columnspan 3 -row 0 -sticky w -pady 21
++    pack $p.presetlabel -side left -padx 7
++    pack $p.presets -side left
++    set clen [expr {[llength [array names ::pd_colors]] / 2}]
++    set i 0
++    foreach name [lsort [array names ::pd_colors]] {
++        set label [string map {_ " "} $name]
++        set label [string toupper $label 0 0]
++        ::dialog_prefs::swatchbutton $fr.$name ::pd_colors($name)
++        ::dialog_prefs::set_swatchbutton $fr.$name \
++            ::pd_colors($name)
++        ttk::label $fr.${name}label -text "$label"
++        grid $fr.${name} -column [expr $i/$clen * 2] -row [expr $i%$clen+1] -sticky e
++        grid $fr.${name}label -column [expr $i/$clen * 2 + 1] -row [expr $i%$clen+1] -sticky w -padx 7 -pady 3
++        incr i
++    }
++}
+diff -rupN newpd/pd-0.45-0/tcl/dialog_midi.tcl pd-0.45-0/tcl/dialog_midi.tcl
+--- newpd/pd-0.45-0/tcl/dialog_midi.tcl	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/tcl/dialog_midi.tcl	2013-08-27 12:37:35.806358982 -0400
+@@ -38,27 +38,80 @@ proc ::dialog_midi::ok {mytoplevel} {
+     ::dialog_midi::cancel $mytoplevel
+ }
+ 
+-# callback from popup menu
+-proc midi_popup_action {buttonname varname devlist index} {
+-    global midi_indevlist midi_outdevlist $varname
+-    $buttonname configure -text [lindex $devlist $index]
+-    set $varname $index
++proc ::dialog_midi::setapi {var - op} {
++    if {$op ne "write"} {return}
++    set name [set $var]
++    set index [lsearch -exact -index 0 $::midi_apilist $name]
++    set ::pd_whichmidiapi [lindex $::midi_apilist $index 1]
++    pdsend "pd midi-setapi $::pd_whichmidiapi"
+ }
+ 
+-# create a popup menu
+-proc midi_popup {name buttonname varname devlist} {
+-    if [winfo exists $name.popup] {destroy $name.popup}
+-    menu $name.popup -tearoff false
+-    if {$::windowingsystem eq "win32"} {
+-        $name.popup configure -font menuFont
++proc ::dialog_midi::setlongform {widget} {
++    set state [set ::$widget]
++    if {$state == 0} {
++        # back to single devs
++        set extra_devs 0
++        foreach type {in out} {
++            foreach i {2 3 4} {
++                if { [set ::midi_${type}chan$i] > 0 &&
++                     [set ::midi_${type}enable$i] > 0 } {
++                          incr extra_devs
++                }
++            }
++        }
++        if {$extra_devs} {
++            set devices devices
++            if {$extra_devs == 1} {set devices device}
++            set continue [tk_messageBox -type yesno -message \
++                [_ "This will disconnect $extra_devs $devices. Continue?"] \
++                 -default "no" -parent [winfo parent $widget] -icon question]
++            if {$continue eq "yes"} {
++               foreach type {in out} {
++                   foreach i {2 3 4} {
++                       set ::midi_${type}chan$i 0
++                       set ::midi_${type}enable$i 0
++                   }
++               }
++            ::dialog_midi::apply [winfo parent $widget]
++            }
++        }
+     }
+-#    puts stderr [concat $devlist ]
+-    for {set x 0} {$x<[llength $devlist]} {incr x} {
+-        $name.popup add command -label [lindex $devlist $x] \
+-            -command [list midi_popup_action \
+-                $buttonname $varname $devlist $x] 
++    pdsend "pd midi-properties $state"
++}
++
++proc ::dialog_midi::create_api_frame {mytoplevel apifr midi_indevlist \
++    midi_outdevlist longform} {
++    if {![winfo exists $apifr]} {
++
++        # MIDI API
++        ttk::labelframe $mytoplevel.api -text [_ "Midi API"] \
++            -style Prefs.TLabelframe
++        pack $apifr -side top -padx 1 -pady 1 -fill x
++        if {$::midi_apilist eq ""} {
++            ttk::label $apifr.label -text "System Midi"
++            grid $apifr.label -sticky e -column 0 -row 0 -padx 3 -pady 10
++        } else {
++            set api_names {}
++            foreach api $::midi_apilist {lappend api_names [lindex $api 0]}
++            set api_i [lsearch -exact -index 1 $::midi_apilist \
++                $::pd_whichmidiapi]
++            set ::midi_apiname [lindex $::midi_apilist $api_i 0]
++            ::dialog_prefs::dropdown $apifr.apilist ::midi_apiname $api_names
++            trace add variable ::midi_apiname write ::dialog_midi::setapi
++            grid $apifr.apilist -sticky e -column 0 -row 0 -padx 3 -pady 10
++        }
++        ttk::checkbutton $apifr.longbutton -text "Use multiple devices" \
++            -command "::dialog_midi::setlongform $apifr.longbutton"
++        grid $apifr.longbutton -sticky w -column 1 -row 0 -padx 3 -pady 10
++        grid columnconfigure $apifr {0 1} -weight 1
++    }
++    # disable longbutton if hardware doesn't support multi devices
++    set state normal
++    if {![expr [llength $midi_indevlist] > 1 && \
++        [llength $midi_outdevlist] > 1]} {
++            set state disabled
+     }
+-    tk_popup $name.popup [winfo pointerx $name] [winfo pointery $name] 0
++    $apifr.longbutton configure -state disabled
+ }
+ 
+ # start a dialog window to select midi devices.  "longform" asks us to make
+@@ -66,11 +119,11 @@ proc midi_popup {name buttonname varname
+ # turn longform on and restart the dialog.
+ proc ::dialog_midi::pdtk_midi_dialog {id indev1 indev2 indev3 indev4 \
+         outdev1 outdev2 outdev3 outdev4 longform} {
+-    global midi_indev1 midi_indev2 midi_indev3 midi_indev4 
++    global midi_indev1 midi_indev2 midi_indev3 midi_indev4
+     global midi_outdev1 midi_outdev2 midi_outdev3 midi_outdev4
+     global midi_indevlist midi_outdevlist
+     global midi_alsain midi_alsaout
+-
++    global midi_longform
+     set midi_indev1 $indev1
+     set midi_indev2 $indev2
+     set midi_indev3 $indev3
+@@ -81,128 +134,90 @@ proc ::dialog_midi::pdtk_midi_dialog {id
+     set midi_outdev4 $outdev4
+     set midi_alsain [llength $midi_indevlist]
+     set midi_alsaout [llength $midi_outdevlist]
+-
+-    toplevel $id -class DialogWindow
+-    wm title $id [_ "MIDI Settings"]
+-    wm group $id .
+-    wm resizable $id 0 0
+-    wm transient $id
+-    $id configure -menu $::dialog_menubar
+-    $id configure -padx 10 -pady 5
+-    ::pd_bindings::dialog_bindings $id "midi"
+-    # not all Tcl/Tk versions or platforms support -topmost, so catch the error
+-    catch {wm attributes $id -topmost 1}
+-
+-    frame $id.buttonframe
+-    pack $id.buttonframe -side bottom -fill x -pady 2m
+-    button $id.buttonframe.cancel -text [_ "Cancel"]\
+-        -command "::dialog_midi::cancel $id"
+-    button $id.buttonframe.apply -text [_ "Apply"]\
+-        -command "::dialog_midi::apply $id"
+-    button $id.buttonframe.ok -text [_ "OK"]\
+-        -command "::dialog_midi::ok $id"
+-    pack $id.buttonframe.cancel -side left -expand 1
+-    pack $id.buttonframe.apply -side left -expand 1
+-    pack $id.buttonframe.ok -side left -expand 1
+-    
+-        # input device 1
+-    frame $id.in1f
+-    pack $id.in1f -side top
+-
+-    label $id.in1f.l1 -text [_ "Input device 1:"]
+-    button $id.in1f.x1 -text [lindex $midi_indevlist $midi_indev1] \
+-        -command [list midi_popup $id $id.in1f.x1 midi_indev1 $midi_indevlist]
+-    pack $id.in1f.l1 $id.in1f.x1 -side left
+-
+-        # input device 2
+-    if {$longform && [llength $midi_indevlist] > 2} {
+-        frame $id.in2f
+-        pack $id.in2f -side top
+-
+-        label $id.in2f.l1 -text [_ "Input device 2:"]
+-        button $id.in2f.x1 -text [lindex $midi_indevlist $midi_indev2] \
+-            -command [list midi_popup $id $id.in2f.x1 midi_indev2 \
+-                $midi_indevlist]
+-        pack $id.in2f.l1 $id.in2f.x1 -side left
+-    }
+-
+-        # input device 3
+-    if {$longform && [llength $midi_indevlist] > 3} {
+-        frame $id.in3f
+-        pack $id.in3f -side top
+-
+-        label $id.in3f.l1 -text [_ "Input device 3:"]
+-        button $id.in3f.x1 -text [lindex $midi_indevlist $midi_indev3] \
+-            -command [list midi_popup $id $id.in3f.x1 midi_indev3 \
+-                $midi_indevlist]
+-        pack $id.in3f.l1 $id.in3f.x1 -side left
+-    }
+-
+-        # input device 4
+-    if {$longform && [llength $midi_indevlist] > 4} {
+-        frame $id.in4f
+-        pack $id.in4f -side top
+-
+-        label $id.in4f.l1 -text [_ "Input device 4:"]
+-        button $id.in4f.x1 -text [lindex $midi_indevlist $midi_indev4] \
+-            -command [list midi_popup $id $id.in4f.x1 midi_indev4 \
+-                $midi_indevlist]
+-        pack $id.in4f.l1 $id.in4f.x1 -side left
+-    }
+-
+-        # output device 1
+-
+-    frame $id.out1f
+-    pack $id.out1f -side top
+-    label $id.out1f.l1 -text [_ "Output device 1:"]
+-    button $id.out1f.x1 -text [lindex $midi_outdevlist $midi_outdev1] \
+-        -command [list midi_popup $id $id.out1f.x1 midi_outdev1 \
+-            $midi_outdevlist]
+-    pack $id.out1f.l1 $id.out1f.x1 -side left
+-
+-        # output device 2
+-    if {$longform && [llength $midi_outdevlist] > 2} {
+-        frame $id.out2f
+-        pack $id.out2f -side top
+-        label $id.out2f.l1 -text [_ "Output device 2:"]
+-        button $id.out2f.x1 -text [lindex $midi_outdevlist $midi_outdev2] \
+-            -command \
+-            [list midi_popup $id $id.out2f.x1 midi_outdev2 $midi_outdevlist]
+-        pack $id.out2f.l1 $id.out2f.x1 -side left
+-    }
+-
+-        # output device 3
+-    if {$longform && [llength $midi_outdevlist] > 3} {
+-        frame $id.out3f
+-        pack $id.out3f -side top
+-        label $id.out3f.l1 -text [_ "Output device 3:"]
+-        button $id.out3f.x1 -text [lindex $midi_outdevlist $midi_outdev3] \
+-            -command \
+-            [list midi_popup $id $id.out3f.x1 midi_outdev3 $midi_outdevlist]
+-        pack $id.out3f.l1 $id.out3f.x1 -side left
+-    }
+-
+-        # output device 4
+-    if {$longform && [llength $midi_outdevlist] > 4} {
+-        frame $id.out4f
+-        pack $id.out4f -side top
+-        label $id.out4f.l1 -text [_ "Output device 4:"]
+-        button $id.out4f.x1 -text [lindex $midi_outdevlist $midi_outdev4] \
+-            -command \
+-            [list midi_popup $id $id.out4f.x1 midi_outdev4 $midi_outdevlist]
+-        pack $id.out4f.l1 $id.out4f.x1 -side left
+-    }
+-
+-        # if not the "long form" make a button to
+-        # restart with longform set. 
+-    
+-    if {$longform == 0} {
+-        frame $id.longbutton
+-        pack $id.longbutton -side top
+-        button $id.longbutton.b -text [_ "Use multiple devices"] \
+-            -command  {pdsend "pd midi-properties 1"}
+-        pack $id.longbutton.b
+-    }
++    set midi_longform $longform
++    set mytoplevel .prefs.nb.midi
++    set apifr $mytoplevel.api
++
++    # not sure why it's ...midi.midi... should probably
++    # fix that...
++    ::dialog_midi::create_api_frame $mytoplevel $apifr $midi_indevlist \
++        $midi_outdevlist $longform
++    destroy $mytoplevel.midi
++    ttk::frame $mytoplevel.midi
++    pack $mytoplevel.midi -side top -fill x
++
++    # todo: put padding with style settings in dialog_prefs.tcl
++    set padx 1
++
++    # Devices 
++    set devfr [ttk::labelframe $mytoplevel.midi.devs -text [_ "Devices"] \
++        -style Prefs.TLabelframe -padding 5]
++    pack $devfr -side top -fill x -padx 3 -pady 10
++
++    set j 2
++    # todo: change in out to input output and make translatable strings
++    foreach {type name} [list in [_ "Input"] out [_ "Output"]] {
++        set domulti [expr $longform && \
++            [llength [set "midi_${type}devlist"]] > 1]
++        if {$domulti} {
++            ttk::label $devfr.$type \
++                -text [concat $name [_ "Devices"]]
++            ttk::label $devfr.${type}ch -text [_ "Channels"]
++            grid $devfr.$type -row $j -column 1 -padx $padx
++            grid $devfr.${type}ch -row $j -column 3 -padx $padx
++            incr j
++        } else {
++            if {$type eq "in"} {
++            ttk::label $devfr.$type \
++                -text [_ "Device Name"]
++            ttk::label $devfr.${type}ch -text [_ "Channels"]
++            grid $devfr.$type -row $j -column 1 -columnspan 2 -padx $padx
++            grid $devfr.${type}ch -row $j -column 3 -padx $padx
++            incr j
++            }
++        }
++        # Note: it'd be fairly easy to change the GUI to accommodate
++        # more than four devices, but Pd only takes and receives at most
++        # four devices, so the entire backend would have to change in order
++        # to do that
++        for {set i 0} {$i < 4} {incr i} {
++            set devno [expr $i + 1]
++            set row "$devfr.${type}$devno"
++            if {$domulti} {
++                set ctext "$devno."
++            } else {
++                set ctext $name
++            }
++            ttk::label ${row}x0 -text $ctext -anchor w
++            set ::midi_${type}dev${devno}label {}
++            ::dialog_prefs::dropdown_by_index ${row}x1 \
++                "::midi_${type}dev$devno" \
++                [set "midi_${type}devlist"] \
++                "::midi_${type}dev${devno}label"
++            ttk::entry ${row}x2 -textvariable "midi_${type}chan$devno" -width 4
++            grid ${row}x0 -row $j -column 0 -sticky e -padx $padx
++            grid ${row}x1 -row $j -column 1 -columnspan 2 -sticky ew -padx $padx
++            grid ${row}x2 -row $j -column 3 -padx $padx
++            grid columnconfigure $mytoplevel.midi.devs {1 2 3} -weight 2
++            grid columnconfigure $mytoplevel.midi.devs 0 -weight 1
++            incr j
++            if {![expr $longform && \
++                [llength [set "midi_${type}devlist"]] > 1]} {
++                break
++            }
++        }
++    }
++    grid rowconfigure $devfr all -pad 3
++
++    # Connect button
++    ttk::frame $mytoplevel.midi.buttonframe
++    pack $mytoplevel.midi.buttonframe
++    pack $mytoplevel.midi.buttonframe -side bottom
++    ttk::button $mytoplevel.midi.buttonframe.apply \
++        -text [_ "Apply MIDI Settings"] \
++        -command "::dialog_midi::apply $mytoplevel"
++    pack $mytoplevel.midi.buttonframe.apply -side left -expand 1 -fill x \
++        -padx 15
+ }
+ 
+ proc ::dialog_midi::pdtk_alsa_midi_dialog {id indev1 indev2 indev3 indev4 \
+@@ -211,7 +226,6 @@ proc ::dialog_midi::pdtk_alsa_midi_dialo
+     global midi_outdev1 midi_outdev2 midi_outdev3 midi_outdev4
+     global midi_indevlist midi_outdevlist
+     global midi_alsain midi_alsaout
+-
+     set midi_indev1 $indev1
+     set midi_indev2 $indev2
+     set midi_indev3 $indev3
+@@ -222,130 +236,91 @@ proc ::dialog_midi::pdtk_alsa_midi_dialo
+     set midi_outdev4 $outdev4
+     set midi_alsain [llength $midi_indevlist]
+     set midi_alsaout [llength $midi_outdevlist]
+-    
+-    toplevel $id
+-    wm title $id [_ "ALSA MIDI Settings"]
+-    if {$::windowingsystem eq "aqua"} {$id configure -menu .menubar}
+-    ::pd_bindings::dialog_bindings $id "midi"
+-
+-    frame $id.buttonframe
+-    pack $id.buttonframe -side bottom -fill x -pady 2m
+-    button $id.buttonframe.cancel -text [_ "Cancel"]\
+-        -command "::dialog_midi::cancel $id"
+-    button $id.buttonframe.apply -text [_ "Apply"]\
+-        -command "::dialog_midi::apply $id"
+-    button $id.buttonframe.ok -text [_ "OK"]\
+-        -command "::dialog_midi::ok $id"
+-    pack $id.buttonframe.cancel -side left -expand 1
+-    pack $id.buttonframe.apply -side left -expand 1
+-    pack $id.buttonframe.ok -side left -expand 1
+-
+-    frame $id.in1f
+-    pack $id.in1f -side top
+-
+-  if {$alsa == 0} {
+-        # input device 1
+-    label $id.in1f.l1 -text [_ "Input device 1:"]
+-    button $id.in1f.x1 -text [lindex $midi_indevlist $midi_indev1] \
+-        -command [list midi_popup $id $id.in1f.x1 midi_indev1 $midi_indevlist]
+-    pack $id.in1f.l1 $id.in1f.x1 -side left
+-
+-        # input device 2
+-    if {$longform && [llength $midi_indevlist] > 2} {
+-        frame $id.in2f
+-        pack $id.in2f -side top
+-
+-        label $id.in2f.l1 -text [_ "Input device 2:"]
+-        button $id.in2f.x1 -text [lindex $midi_indevlist $midi_indev2] \
+-            -command [list midi_popup $id $id.in2f.x1 midi_indev2 \
+-                $midi_indevlist]
+-        pack $id.in2f.l1 $id.in2f.x1 -side left
+-    }
+-
+-        # input device 3
+-    if {$longform && [llength $midi_indevlist] > 3} {
+-        frame $id.in3f
+-        pack $id.in3f -side top
+-
+-        label $id.in3f.l1 -text [_ "Input device 3:"]
+-        button $id.in3f.x1 -text [lindex $midi_indevlist $midi_indev3] \
+-            -command [list midi_popup $id $id.in3f.x1 midi_indev3 \
+-                $midi_indevlist]
+-        pack $id.in3f.l1 $id.in3f.x1 -side left
+-    }
++    set mytoplevel .prefs.nb.midi
++    set apifr $mytoplevel.api
+ 
+-        # input device 4
+-    if {$longform && [llength $midi_indevlist] > 4} {
+-        frame $id.in4f
+-        pack $id.in4f -side top
+-
+-        label $id.in4f.l1 -text [_ "Input device 4:"]
+-        button $id.in4f.x1 -text [lindex $midi_indevlist $midi_indev4] \
+-            -command [list midi_popup $id $id.in4f.x1 midi_indev4 \
+-                $midi_indevlist]
+-        pack $id.in4f.l1 $id.in4f.x1 -side left
+-    }
+-
+-        # output device 1
+-
+-    frame $id.out1f
+-    pack $id.out1f -side top
+-    label $id.out1f.l1 -text [_ "Output device 1:"]
+-    button $id.out1f.x1 -text [lindex $midi_outdevlist $midi_outdev1] \
+-        -command [list midi_popup $id $id.out1f.x1 midi_outdev1 \
+-            $midi_outdevlist]
+-    pack $id.out1f.l1 $id.out1f.x1 -side left
+-
+-        # output device 2
+-    if {$longform && [llength $midi_outdevlist] > 2} {
+-        frame $id.out2f
+-        pack $id.out2f -side top
+-        label $id.out2f.l1 -text [_ "Output device 2:"]
+-        button $id.out2f.x1 -text [lindex $midi_outdevlist $midi_outdev2] \
+-            -command \
+-            [list midi_popup $id $id.out2f.x1 midi_outdev2 $midi_outdevlist]
+-        pack $id.out2f.l1 $id.out2f.x1 -side left
+-    }
+-
+-        # output device 3
+-    if {$longform && [llength $midi_outdevlist] > 3} {
+-        frame $id.out3f
+-        pack $id.out3f -side top
+-        label $id.out3f.l1 -text [_ "Output device 3:"]
+-        button $id.out3f.x1 -text [lindex $midi_outdevlist $midi_outdev3] \
+-            -command \
+-            [list midi_popup $id $id.out3f.x1 midi_outdev3 $midi_outdevlist]
+-        pack $id.out3f.l1 $id.out3f.x1 -side left
+-    }
+-
+-        # output device 4
+-    if {$longform && [llength $midi_outdevlist] > 4} {
+-        frame $id.out4f
+-        pack $id.out4f -side top
+-        label $id.out4f.l1 -text [_ "Output device 4:"]
+-        button $id.out4f.x1 -text [lindex $midi_outdevlist $midi_outdev4] \
+-            -command \
+-            [list midi_popup $id $id.out4f.x1 midi_outdev4 $midi_outdevlist]
+-        pack $id.out4f.l1 $id.out4f.x1 -side left
+-    }
+-
+-        # if not the "long form" make a button to
+-        # restart with longform set. 
+-    
+-    if {$longform == 0} {
+-        frame $id.longbutton
+-        pack $id.longbutton -side top
+-        button $id.longbutton.b -text [_ "Use multiple ALSA devices"] \
+-            -command  {pdsend "pd midi-properties 1"}
+-        pack $id.longbutton.b
+-    }
+-    }
+-    if {$alsa} {
+-        label $id.in1f.l1 -text [_ "In Ports:"]
+-        entry $id.in1f.x1 -textvariable midi_alsain -width 4
+-        pack $id.in1f.l1 $id.in1f.x1 -side left
+-        label $id.in1f.l2 -text [_ "Out Ports:"]
+-        entry $id.in1f.x2 -textvariable midi_alsaout -width 4
+-        pack $id.in1f.l2 $id.in1f.x2 -side left
+-    }
++    # not sure why it's ...midi.midi... should probably
++    # fix that...
++    ::dialog_midi::create_api_frame $mytoplevel $apifr $midi_indevlist \
++        $midi_outdevlist $longform
++    destroy $mytoplevel.midi
++    ttk::frame $mytoplevel.midi
++    pack $mytoplevel.midi -side top -fill x
++
++    # todo: put padding with style settings in dialog_prefs.tcl
++    set padx 1
++
++    # Devices 
++    set devfr [ttk::labelframe $mytoplevel.midi.devs -text [_ "Devices"] \
++        -style Prefs.TLabelframe -padding 5]
++    pack $devfr -side top -fill x -padx 3 -pady 10
++
++    if {$alsa == 0} {
++        set j 2
++        foreach {type name} [list in [_ "Input"] out [_ "Output"]] {
++            set domulti [expr $longform && \
++                [llength [set "midi_${type}devlist"]] > 1]
++            if {$domulti} {
++                ttk::label $devfr.$type \
++                    -text [concat $name [_ "Devices"]]
++                ttk::label $devfr.${type}ch -text [_ "Channels"]
++                grid $devfr.$type -row $j -column 1 -padx $padx
++                grid $devfr.${type}ch -row $j -column 3 -padx $padx
++                incr j
++            } else {
++                if {$type eq "in"} {
++                ttk::label $devfr.$type \
++                    -text [_ "Device Name"]
++                ttk::label $devfr.${type}ch -text [_ "Channels"]
++                grid $devfr.$type -row $j -column 1 -columnspan 2 -padx $padx
++                grid $devfr.${type}ch -row $j -column 3 -padx $padx
++                incr j
++                }
++            }
++            for {set i 0} {$i < [llength [set "midi_${type}devlist"]]} \
++                {incr i} {
++                set devno [expr $i + 1]
++                set row "$devfr.${type}$devno"
++                if {$domulti} {
++                    set ctext "$devno."
++                } else {
++                    set ctext $name
++                }
++                ttk::label ${row}x0 -text $ctext -anchor w
++                set ::midi_${type}dev${devno}label {}
++                ::dialog_prefs::dropdown_by_index ${row}x1 \
++                    "midi_${type}dev$devno" \
++                    [set "midi_${type}devlist"] \
++                    "::midi_${type}dev${devno}label"
++                ttk::entry ${row}x2 -textvariable "midi_${type}chan$devno" -width 4
++                grid ${row}x0 -row $j -column 0 -sticky e -padx $padx
++                grid ${row}x1 -row $j -column 1 -columnspan 2 -sticky ew -padx $padx
++                grid ${row}x2 -row $j -column 3 -padx $padx
++                grid columnconfigure $mytoplevel.midi.devs {1 2 3} -weight 2
++                grid columnconfigure $mytoplevel.midi.devs 0 -weight 1
++                incr j
++                if {![expr $longform && \
++                    [llength [set "midi_${type}devlist"]] > 1]} {
++                    break
++                }
++            }
++        }
++        grid rowconfigure $devfr all -pad 3
++    } else {
++        label $devfr.l1 -text [_ "In Ports:"]
++        entry $devfr.x1 -textvariable midi_alsain -width 4
++        pack $devfr.l1 $devfr.x1 -side left
++        label $devfr.l2 -text [_ "Out Ports:"]
++        entry $devfr.x2 -textvariable midi_alsaout -width 4
++        pack $devfr.l2 $devfr.x2 -side left
++    }
++
++    # Connect button
++    ttk::frame $mytoplevel.midi.buttonframe
++    pack $mytoplevel.midi.buttonframe
++    pack $mytoplevel.midi.buttonframe -side bottom
++    ttk::button $mytoplevel.midi.buttonframe.apply -text [_ "Connect"]\
++        -command "::dialog_midi::apply $mytoplevel"
++    pack $mytoplevel.midi.buttonframe.apply -side left -expand 1 -fill x \
++        -padx 15
+ }
+diff -rupN newpd/pd-0.45-0/tcl/dialog_prefs.tcl pd-0.45-0/tcl/dialog_prefs.tcl
+--- newpd/pd-0.45-0/tcl/dialog_prefs.tcl	1969-12-31 19:00:00.000000000 -0500
++++ pd-0.45-0/tcl/dialog_prefs.tcl	2013-08-27 12:37:35.806358982 -0400
+@@ -0,0 +1,372 @@
++# the find dialog panel is a bit unusual in that it is created directly by the
++# Tcl 'pd-gui'. Most dialog panels are created by sending a message to 'pd',
++# which then sends a message to 'pd-gui' to create the panel.
++
++package provide dialog_prefs 0.1
++
++package require pd_bindings
++package require dialog_gui
++
++namespace eval ::dialog_prefs:: {
++#    namespace export pdtk_
++}
++
++# mytoplevel isn't used here, but is kept for compatibility with other dialog ok procs
++proc ::dialog_prefs::ok {mytoplevel} {
++    return # hash this out later
++    variable find_history
++
++    if {$findstring eq ""} {
++        if {$::windowingsystem eq "aqua"} {bell}
++        return
++    }
++    if {$find_in_window eq ".pdwindow"} {
++        if {$::tcl_version < 8.5} {
++            # TODO implement in 8.4 style, without -all
++            set matches [.pdwindow.text search -nocase -- $findstring 0.0]
++        } else {
++            set matches [.pdwindow.text search -all -nocase -- $findstring 0.0]
++        }
++        .pdwindow.text tag delete sel
++        if {[llength $matches] > 0} {
++            foreach match $matches {
++                .pdwindow.text tag add sel $match "$match wordend"
++            }
++            .pdwindow.text see [lindex $matches 0]
++            lappend find_history $findstring
++        }
++    } else {
++        if {$findstring eq $previous_findstring \
++                && $wholeword_button == $previous_wholeword_button} {
++            pdsend "$find_in_window findagain"
++        } else {
++            pdsend [concat $find_in_window find [pdtk_encodedialog $findstring] \
++                        $wholeword_button]
++            set previous_findstring $findstring
++            set previous_wholeword_button $wholeword_button
++            lappend find_history $findstring
++        }
++    }
++    if {$::windowingsystem eq "aqua"} {
++        # (Mac OS X) hide panel after success, but keep it if unsuccessful by
++        # having the couldnotfind proc reopen it
++        cancel $mytoplevel
++    } else {
++        # (GNOME/Windows) find panel should retain focus after a find
++        # (yes, a bit of a kludge)
++        after 100 "raise .find; focus .find.entry"
++    }
++}
++
++# mytoplevel isn't used here, but is kept for compatibility with other dialog cancel procs
++proc ::dialog_prefs::cancel {mytoplevel} {
++    wm withdraw .prefs
++}
++
++# the find panel is opened from the menu and key bindings
++proc ::dialog_prefs::open_prefs_dialog {mytoplevel} {
++    if {[winfo exists .prefs]} {
++        wm deiconify .prefs
++        raise .prefs
++    } else {
++        create_dialog $mytoplevel
++    }
++    pdsend "pd audio-properties"
++    pdsend "pd midi-properties"
++    ::dialog_gui::create_gui_dialog .prefs.nb.gui
++#    need to think about what should get focus with ttk::notebook
++#    .prefs.entry selection range 0 end
++}
++
++proc ::dialog_prefs::dropdown_set {name value} {
++    if {$::windowingsystem eq "aqua"} {
++        set my_var [$name cget -textvariable]
++        set $my_var $value
++    } else {
++        $name set "$value"
++    }
++}
++
++proc ::dialog_prefs::dropdown_by_index {name variable values textvar} {
++    ::dialog_prefs::dropdown $name $variable $values $textvar
++}
++
++proc ::dialog_prefs::dropdown {name variable values args} {
++    set textvar $variable
++    if {$args ne ""} {set textvar $args}
++    if {$::windowingsystem eq "aqua"} {
++        ttk::menubutton $name -menu $name.menu -direction flush \
++            -textvariable $textvar -cursor boat
++        menu $name.menu -cursor boat
++        set i 0
++        foreach label $values {
++            set value $label
++            if {$args ne ""} {set value $i}
++            $name.menu add radiobutton -value $value -variable $variable \
++                -label $label -command "set $textvar \"$label\""
++            incr i
++        }
++    } else {
++        # set combobox width to largest string
++        set width 0
++        foreach value $values {
++            set len [string length $value]
++            set width [expr $len > $width ? $len : $width]
++        }
++        ttk::combobox $name -state readonly -width $width \
++            -style Prefs.TCombobox -values $values
++        set command "get"
++        if {$args ne ""} {
++            set command "current"
++            # the following cmd prevents a bug in the alsa midi api
++            # from throwing an index that's out of range. but once
++            # that bug gets fixed, this should be removed so that
++            # it doesn't hide any future bugs
++            set $variable [expr min([set $variable], [llength $values] - 1)]
++        }
++        bind $name <<ComboboxSelected>> "set $variable \
++            [concat {[} $name $command {]} ]; after 0 {%W selection clear}"
++        if {$command eq "get"} {set command "set"}
++        $name $command [set $variable]
++    }
++}
++
++proc ::dialog_prefs::set_color {array key op} {
++    # not sure if this is necessary, but just in case...
++    if {$op ne "write"} {return}
++    set c [set ${array}($key)]
++    set commands {}
++    switch $key {
++        box {set commands [list "itemconfigure \
++            (obj&&border) -fill $c"] }
++        text { set commands [list "itemconfigure \
++            (text&&(!iemgui))||(label&&graph) -fill $c"]}
++        canvas_bg {set commands [list "configure -bg $c"]}
++        canvas_cursor {set commands [list "configure -insertbackground $c"]}
++        highlighted_text_bg \
++            {set commands [list "configure -selectbackground $c"]}
++        highlighted_text {set commands [list "configure -selectforeground $c"]}
++        msg_box_border {set commands [list "itemconfigure \
++            (msg&&border) -outline $c"]}
++        msg_box {set commands [list "itemconfigure \
++            (msg&&border) -fill $c"]}
++        inlet   {set commands [list "itemconfigure inlet -outline $c"]}
++        outlet  {set commands [list "itemconfigure outlet -outline $c"]}
++        cord_signal {set commands [list "itemconfigure \
++            cord&&signal -fill $c"]}
++        cord_control {set commands [list "itemconfigure \
++            cord&&control -fill $c"]}
++        selected {
++            set commands [list "itemconfigure \
++                selected&&text -fill $c"]
++            lappend commands "itemconfigure \
++                selected&&(border&&(!iemgui)) -fill $c"
++            lappend commands "itemconfigure \
++                selected&&border&&iemgui -outline $c"
++        }
++        box_border {set commands [list "itemconfigure \
++            border&&(!iemgui) -outline $c"]}
++        iemgui_border {
++            set commands [list "itemconfigure border&&iemgui -outline $c"]}
++        atombox {set commands [list "itemconfigure \
++            border&&atom -fill $c"]}
++        atombox_border {set commands [list "itemconfigure \
++            border&&atom -outline $c"]}
++        default {}
++    }
++    if {$commands ne ""} {
++        foreach w [array names ::parentwindows] {
++            foreach child [winfo children $w] {
++                if {[winfo class $child] eq "Canvas"} {
++                    foreach command $commands {
++                        eval $child $command
++                    }
++                }
++            }
++        }
++    }
++    # hack! how do I avoid hard-coding the window name here?
++    set mytoplevel .prefs.nb.gui.colors
++    if {[winfo exists $mytoplevel.$key]} {
++        ::dialog_prefs::set_swatchbutton $mytoplevel.$key ${array}($key)
++    }
++    
++}
++
++proc ::dialog_prefs::set_swatchbutton {name variable} {
++    if {[set $variable] eq ""} {return}
++    image create photo ::img::swatchbutton::$name
++    set c [set $variable]
++    set bd #000000
++    set stupid_top_and_bottom \
++        [list $bd $bd $bd $bd $bd $bd $bd $bd $bd $bd $bd $bd $bd $bd $bd $bd]
++    set dumb \
++        [list $bd $c $c $c $c $c $c $c $c $c $c $c $c $c $c $bd]
++    ::img::swatchbutton::$name put [list $stupid_top_and_bottom \
++        $dumb $dumb $dumb $dumb $dumb $dumb $dumb $dumb $dumb $dumb \
++        $dumb $dumb $dumb $dumb $stupid_top_and_bottom] -to 0 0
++    $name configure -image ::img::swatchbutton::$name
++}
++
++proc ::dialog_prefs::swatchmenu_nav {w dir} {
++    set new [expr {[$w index active] + 7 * $dir}]
++    if {$new > [$w index end] || $new < 0} then return
++    $w activate $new
++}
++
++proc ::dialog_prefs::swatchbutton_colorchooser {name variable} {
++    set col [tk_chooseColor -parent $name]
++    if {$col ne ""} {
++        set $variable $col
++    }
++}
++
++proc ::dialog_prefs::swatchbutton {name variable} {
++    if {$::windowingsystem ne "x11"} {
++        ttk::button $name -command "::dialog_prefs::swatchbutton_colorchooser $name $variable"
++        return
++    }
++    # Tk's color chooser for x11 isn't very good. So instead, the user
++    # gets a matrix of predefined colors to choose from. If a few custom
++    # colors could be added (or maybe triggering Ivica's L2ork color
++    # chooser) this would be improved.
++    ttk::menubutton $name -menu $name.m -style PrefsColors.TMenubutton
++    menu $name.m
++    bind $name.m <Left>  "::dialog_prefs::swatchmenu_nav %W -1"
++    bind $name.m <Right> "::dialog_prefs::swatchmenu_nav %W 1"
++    set i 0
++    foreach swatch [::dialog_prefs::get_colorswatches] {
++        set columnbreak [expr {$i % 7 == 0}]
++        # Note: there is a trace set in pd-gui.tcl that calls
++        # ::dialog_prefs::set_color whenever the value of a
++        # ::pd_colors variable is changed.  So for the menu we just
++        # have to link to one of those variables and trace does the rest
++        $name.m add radiobutton -value $swatch -variable $variable \
++            -image ::img::colorswatches::$swatch -columnbreak $columnbreak \
++            -hidemargin 1
++        incr i
++    }
++}
++    
++
++# These are images used to build the menu for choosing
++# colors. The images hang around in memory until you exit
++# Pd, but they shouldn't take up too much space to matter
++# (and this only gets called once).  If there's a simpler
++# way to build a _straightforward_ _user-friendly_
++# colorchooser that would be nice, but I couldn't figure
++# one out.
++proc ::dialog_prefs::get_colorswatches {} {
++    # stolen from the Firefox colorchooser
++    set colors {  \
++        #ffffff #cfcccc #c0c0c0 #999999 #666666 #333333 #000000 \
++        #ffcccc #ff6666 #ff0000 #cc0000 #990000 #660000 #330000 \
++        #ffcc99 #ff9966 #ff9900 #ff6600 #cc6600 #993300 #663300 \
++        #ffff99 #ffff66 #ffcc66 #ffcc33 #cc9933 #996633 #663333 \
++        #ffffcc #ffff33 #ffff00 #ffcc00 #999900 #666600 #333300 \
++        #99ff99 #66ff99 #33ff33 #33cc00 #009900 #006600 #003300 \
++        #99ffff #33ffff #66cccc #00cccc #339999 #336666 #003333 \
++        #ccffff #66ffff #33ccff #3366ff #3333ff #000099 #000066 \
++        #ccccff #9999ff #6666cc #6633ff #6600cc #333399 #330099 \
++        #ffccff #ff99ff #cc66cc #cc33cc #993399 #663366 #330033 \
++    }
++    if {[lsearch [image names] ::img::colorswatches::*] == -1} {
++        foreach color $colors {
++        image create photo ::img::colorswatches::$color
++        ::img::colorswatches::$color put $color -to 0 0 16 16
++        }
++    }
++    return $colors
++}
++
++proc ::dialog_prefs::help {notebook} {
++    set pane [$notebook select]
++    regsub {.*\.(.*)} $pane {\1} topic
++    set file all_about_${topic}_settings.pd
++    set dir [file join $::sys_libdir doc 5.reference]
++    menu_doc_open $dir $file
++}
++
++proc ::dialog_prefs::create_dialog {mytoplevel} {
++    toplevel .prefs -class DialogWindow
++    wm title .prefs [_ "Pure Data Preferences"]
++#    wm geometry .prefs =475x125+150+150
++    wm group .prefs .
++    wm resizable .prefs 0 0
++    wm transient .prefs
++    .prefs configure -menu $::dialog_menubar
++
++# todo: check this on the mac and on windows
++#    .prefs configure -padx 10 -pady 5
++    ::pd_bindings::dialog_bindings .prefs "prefs"
++    bind .prefs <$::modifier-Key-f> break
++
++    # Ttk style setup
++
++    # Common settings
++    ttk::style configure Prefs.TLabelframe -borderwidth 0
++    # todo: don't hardcode font here
++    ttk::style configure Prefs.TLabelframe.Label \
++        -font "{DejaVu Sans} 9 bold"
++
++    # for OSX swatchbutton
++    if {$::windowingsystem eq "x11"} {
++        # custom arrow image for ttk::combobox
++        set ::prefs_arrowimg [image create photo -data \
++            {R0lGODlhGQAVAMIGACEhIVBQUFpaWl1dXXBwcImJif///////yH+EUNyZWF0ZWQg
++            d2l0aCBHSU1QACH5BAEKAAcALAAAAAAZABUAAAMleLrc/jDKSau9OOutC/ggUGRE
++            CBCbAArcEQBBqwxybd94ru9QAgA7
++        }]
++        # ttk::style theme use clam
++        ttk::style element create Prefs.downarrow image $::prefs_arrowimg
++        ttk::style layout Prefs.TCombobox {
++            Combobox.focus -sticky nsew -children {
++                Combobox.field -sticky nswe -children {
++                    Prefs.downarrow -side right -sticky ns
++                    Combobox.padding -expand 1 -sticky nswe -children {
++                        Combobox.textarea -sticky nswe
++                    }
++                }
++            }
++        }
++        ttk::style layout PrefsColors.TMenubutton {
++            Menubutton.border -sticky nswe -children {
++                Menubutton.focus -sticky nswe -children {
++                    Menubutton.padding -expand 1 -sticky we -children {
++                        Menubutton.label -side left -sticky {}
++                    }
++                }
++            }
++        }
++        ttk::style configure Prefs.TCombobox -padding 3
++        ttk::style map Prefs.TCombobox \
++            -fieldbackground {{readonly pressed} #c1c4c7 \
++                              {readonly hover} #fafaf9 \
++                              readonly #f5f5f4} \
++            -foreground {{readonly focus} black}
++        # this shouldn't be global, but I can't get it to work for just
++        # Prefsdialog class
++        option add *TCombobox*Listbox.selectBackground #4a90d9
++        option add *TCombobox*Listbox.selectForeground white
++    }
++
++    ttk::notebook .prefs.nb
++    .prefs.nb add [ttk::frame .prefs.nb.audio -padding 10] \
++        -text "Audio" -sticky nsew
++    .prefs.nb add [ttk::frame .prefs.nb.midi -padding 10] \
++        -text "MIDI" -sticky nsew
++    .prefs.nb add [ttk::frame .prefs.nb.gui -padding 10] \
++        -text "GUI" -stick nsew
++    pack .prefs.nb -fill both -expand 1
++
++    ttk::frame .prefs.bottomframe -padding 10
++    pack .prefs.bottomframe -side bottom -fill both  -expand 1
++    if {$::windowingsystem ne "aqua"} {
++    ttk::button .prefs.bottomframe.closebutton \
++        -text "Close" -command "::dialog_prefs::cancel .prefs"
++    pack .prefs.bottomframe.closebutton -side right
++    }
++    ttk::button .prefs.bottomframe.helpbutton \
++        -text "Help" -command "::dialog_prefs::help .prefs.nb"
++    pack .prefs.bottomframe.helpbutton -side left
++}
+diff -rupN newpd/pd-0.45-0/tcl/pd-gui.tcl pd-0.45-0/tcl/pd-gui.tcl
+--- newpd/pd-0.45-0/tcl/pd-gui.tcl	2013-08-09 18:17:07.000000000 -0400
++++ pd-0.45-0/tcl/pd-gui.tcl	2013-08-27 12:37:35.806358982 -0400
+@@ -27,6 +27,7 @@ package require pd_connect
+ package require pd_menus
+ package require pd_bindings
+ package require pdwindow
++package require dialog_prefs
+ package require dialog_array
+ package require dialog_audio
+ package require dialog_canvas
+@@ -169,6 +170,44 @@ set midi_outdevlist {}
+ set pd_whichapi 0
+ set pd_whichmidiapi 0
+ 
++# gui preferences
++# array set pd_colors {
++#    atombox     {gray}
++#    atombox_border {black}
++#    canvas_bg   {white}
++#    canvas_cursor {green}
++#    text        {black}
++#    box_border  {gray}
++#    box          {gray}
++#    msg_box_border {gray}
++#    msg_box       {white}
++#    iemgui_border {gray}
++#    cord_control {black}
++#    cord_signal {black}
++#    inlet       {black}
++#    outlet      {black}
++#    xlet_hover  {blue}
++#    link        {blue}
++#    selected    {blue}
++#    selection_rectangle {black}
++#    highlighted_text_bg {grey}
++#    highlighted_text {black}
++#}
++
++# Add a trace for the color array. This way any gui-plugin can make
++# color changes simply by changing one of the elements of the pd_colors
++# array, and all the preference dialog stuff and open patches will
++# magically update
++trace add variable pd_colors write ::dialog_prefs::set_color
++
++# ... and a trace for the ::gui_preset variable.  There's probably
++# a way to do this inside the dropdown code, which would be better...
++trace add variable gui_preset write "::dialog_gui::set_gui_preset"
++
++# Now that we've got a trace for the colors, we can set a
++# color scheme (defined in dialog_gui.tcl)
++set gui_preset Default
++
+ # current state of the DSP
+ set dsp 0
+ # state of the peak meters in the Pd window
+@@ -311,9 +350,9 @@ proc init_for_platform {} {
+         }
+         "aqua" {
+             set ::modifier "Mod1"
+-            option add *DialogWindow*background "#E8E8E8" startupFile
+-            option add *DialogWindow*Entry.highlightBackground "#E8E8E8" startupFile
+-            option add *DialogWindow*Button.highlightBackground "#E8E8E8" startupFile
++#            option add *DialogWindow*background "#E8E8E8" startupFile
++#            option add *DialogWindow*Entry.highlightBackground "#E8E8E8" startupFile
++#            option add *DialogWindow*Button.highlightBackground "#E8E8E8" startupFile
+             option add *DialogWindow*Entry.background "white" startupFile
+             # Mac OS X needs a menubar all the time
+             set ::dialog_menubar ".menubar"
+diff -rupN newpd/pd-0.45-0/tcl/pd_menucommands.tcl pd-0.45-0/tcl/pd_menucommands.tcl
+--- newpd/pd-0.45-0/tcl/pd_menucommands.tcl	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/tcl/pd_menucommands.tcl	2013-08-27 12:37:35.806358982 -0400
+@@ -101,6 +101,10 @@ proc ::pd_menucommands::menu_send_float
+ # ------------------------------------------------------------------------------
+ # open the dialog panels
+ 
++proc ::pd_menucommands::menu_prefs_dialog {} {
++    ::dialog_prefs::open_prefs_dialog $::focused_window
++}
++
+ proc ::pd_menucommands::menu_message_dialog {} {
+     ::dialog_message::open_message_dialog $::focused_window
+ }
+diff -rupN newpd/pd-0.45-0/tcl/pd_menus.tcl pd-0.45-0/tcl/pd_menus.tcl
+--- newpd/pd-0.45-0/tcl/pd_menus.tcl	2013-08-18 21:38:22.000000000 -0400
++++ pd-0.45-0/tcl/pd_menus.tcl	2013-08-27 17:24:42.084824250 -0400
+@@ -64,6 +64,9 @@ proc ::pd_menus::configure_for_pdwindow
+     # Undo/Redo change names, they need to have the asterisk (*) after
+     $menubar.edit entryconfigure 0 -state disabled -label [_ "Undo"]
+     $menubar.edit entryconfigure 1 -state disabled -label [_ "Redo"]
++    if {$::windowingsystem ne "aqua"} {
++        $menubar.edit entryconfigure [_ "Preferences"] -state normal
++    }
+     # disable everything on the Put menu
+     for {set i 0} {$i <= [$menubar.put index end]} {incr i} {
+         # catch errors that happen when trying to disable separators
+@@ -83,6 +86,9 @@ proc ::pd_menus::configure_for_canvas {m
+     $menubar.edit entryconfigure [_ "Tidy Up"] -state normal
+     $menubar.edit entryconfigure [_ "Edit Mode"] -state normal
+     pdtk_canvas_editmode $mytoplevel $::editmode($mytoplevel)
++    if {$::windowingsystem ne "aqua"} {
++        $menubar.edit entryconfigure [_ "Preferences"] -state normal
++    }
+     # Put menu
+     for {set i 0} {$i <= [$menubar.put index end]} {incr i} {
+         # catch errors that happen when trying to disable separators
+@@ -112,6 +118,9 @@ proc ::pd_menus::configure_for_dialog {m
+     # Undo/Redo change names, they need to have the asterisk (*) after
+     $menubar.edit entryconfigure 0 -state disabled -label [_ "Undo"]
+     $menubar.edit entryconfigure 1 -state disabled -label [_ "Redo"]
++    if {$::windowingsystem ne "aqua"} {
++        $menubar.edit entryconfigure [_ "Preferences"] -state disabled
++    }
+     # disable everything on the Put menu
+     for {set i 0} {$i <= [$menubar.put index end]} {incr i} {
+         # catch errors that happen when trying to disable separators
+@@ -178,9 +187,8 @@ proc ::pd_menus::build_edit_menu {mymenu
+         -variable ::editmode_button \
+         -command {menu_editmode $::editmode_button}
+     if {$::windowingsystem ne "aqua"} {
+-        $mymenu add  separator
+-        create_preferences_menu $mymenu.preferences
+-        $mymenu add cascade -label [_ "Preferences"] -menu $mymenu.preferences
++        $mymenu add command -label [_ "Preferences"] \
++            -command {menu_prefs_dialog}
+     }
+ }
+ 
+@@ -245,29 +253,6 @@ proc ::pd_menus::build_media_menu {mymen
+         -command {menu_doc_open doc/7.stuff/tools testtone.pd} 
+     $mymenu add command -label [_ "Load Meter"] \
+         -command {menu_doc_open doc/7.stuff/tools load-meter.pd} 
+-
+-    set audio_apilist_length [llength $::audio_apilist]
+-    if {$audio_apilist_length > 0} {$mymenu add separator}
+-    for {set x 0} {$x<$audio_apilist_length} {incr x} {
+-        $mymenu add radiobutton -label [lindex [lindex $::audio_apilist $x] 0] \
+-            -command {menu_audio 0} -variable ::pd_whichapi \
+-            -value [lindex [lindex $::audio_apilist $x] 1]\
+-            -command {pdsend "pd audio-setapi $::pd_whichapi"}
+-    }
+-    
+-    set midi_apilist_length [llength $::midi_apilist]
+-    if {$midi_apilist_length > 0} {$mymenu add separator}
+-    for {set x 0} {$x<$midi_apilist_length} {incr x} {
+-        $mymenu add radiobutton -label [lindex [lindex $::midi_apilist $x] 0] \
+-            -command {menu_midi 0} -variable ::pd_whichmidiapi \
+-            -value [lindex [lindex $::midi_apilist $x] 1]\
+-            -command {pdsend "pd midi-setapi $::pd_whichmidiapi"}
+-    }
+-
+-    $mymenu add command -label [_ "Audio Settings..."] \
+-        -command {pdsend "pd audio-properties"}
+-    $mymenu add command -label [_ "MIDI Settings..."] \
+-        -command {pdsend "pd midi-properties"}
+ }
+ 
+ proc ::pd_menus::build_window_menu {mymenu} {
+@@ -494,6 +479,9 @@ proc ::pd_menus::create_preferences_menu
+ 
+ # for Mac OS X only
+ proc ::pd_menus::create_apple_menu {mymenu} {
++    # this proc add calls to it can probably
++    # just be removed
++    return
+     # TODO this should open a Pd patch called about.pd
+     menu $mymenu.apple
+     $mymenu.apple add command -label [_ "About Pd"] -command {menu_aboutpd}
+diff -rupN newpd/pd-0.45-0/tcl/pdtk_canvas.tcl pd-0.45-0/tcl/pdtk_canvas.tcl
+--- newpd/pd-0.45-0/tcl/pdtk_canvas.tcl	2013-08-18 21:38:22.000000000 -0400
++++ pd-0.45-0/tcl/pdtk_canvas.tcl	2013-08-27 12:37:35.810358899 -0400
+@@ -83,10 +83,11 @@ proc pdtk_canvas_new {mytoplevel width h
+     wm minsize $mytoplevel $::canvas_minwidth $::canvas_minheight
+ 
+     set tkcanvas [tkcanvas_name $mytoplevel]
+-    canvas $tkcanvas -width $width -height $height \
++    canvas $tkcanvas -width $width -height $height -bg $::pd_colors(canvas_bg) \
+         -highlightthickness 0 -scrollregion [list 0 0 $width $height] \
+         -xscrollcommand "$mytoplevel.xscroll set" \
+-        -yscrollcommand "$mytoplevel.yscroll set"
++        -yscrollcommand "$mytoplevel.yscroll set" \
++        -insertbackground $::pd_colors(canvas_cursor)
+     scrollbar $mytoplevel.xscroll -orient horizontal -command "$tkcanvas xview"
+     scrollbar $mytoplevel.yscroll -orient vertical -command "$tkcanvas yview"
+     pack $tkcanvas -side left -expand 1 -fill both
+diff -rupN newpd/pd-0.45-0/tcl/pdtk_text.tcl pd-0.45-0/tcl/pdtk_text.tcl
+--- newpd/pd-0.45-0/tcl/pdtk_text.tcl	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/tcl/pdtk_text.tcl	2013-08-27 12:37:35.810358899 -0400
+@@ -5,7 +5,9 @@ package provide pdtk_text 0.1
+ # are used by 'pd' and therefore need to be in the global namespace.
+ 
+ # create a new text object (ie. obj, msg, comment)
+-proc pdtk_text_new {tkcanvas tags x y text font_size color} {
++proc pdtk_text_new {tkcanvas tags x y text font_size isselected} {
++    set color $::pd_colors(text)
++    if {$isselected} {set color $::pd_colors(selected)}
+     $tkcanvas create text $x $y -tags $tags -text $text -fill $color \
+         -anchor nw -font [get_font_for_size $font_size]
+     set mytag [lindex $tags 0]
+diff -rupN newpd/pd-0.45-0/tcl/pkgIndex.tcl pd-0.45-0/tcl/pkgIndex.tcl
+--- newpd/pd-0.45-0/tcl/pkgIndex.tcl	2013-08-07 16:29:37.000000000 -0400
++++ pd-0.45-0/tcl/pkgIndex.tcl	2013-08-27 12:37:35.810358899 -0400
+@@ -13,6 +13,7 @@ package ifneeded pd_bindings 0.1 [list s
+ package ifneeded pd_connect 0.1 [list source [file join $dir pd_connect.tcl]]
+ package ifneeded dialog_array 0.1 [list source [file join $dir dialog_array.tcl]]
+ package ifneeded dialog_audio 0.1 [list source [file join $dir dialog_audio.tcl]]
++package ifneeded dialog_gui 0.1 [list source [file join $dir dialog_gui.tcl]]
+ package ifneeded dialog_canvas 0.1 [list source [file join $dir dialog_canvas.tcl]]
+ package ifneeded dialog_data 0.1 [list source [file join $dir dialog_data.tcl]]
+ package ifneeded dialog_find 0.1 [list source [file join $dir dialog_find.tcl]]
+@@ -22,6 +23,7 @@ package ifneeded dialog_iemgui 0.1 [list
+ package ifneeded dialog_message 0.1 [list source [file join $dir dialog_message.tcl]]
+ package ifneeded dialog_midi 0.1 [list source [file join $dir dialog_midi.tcl]]
+ package ifneeded dialog_path 0.1 [list source [file join $dir dialog_path.tcl]]
++package ifneeded dialog_prefs 0.1 [list source [file join $dir dialog_prefs.tcl]]
+ package ifneeded dialog_startup 0.1 [list source [file join $dir dialog_startup.tcl]]
+ package ifneeded helpbrowser 0.1 [list source [file join $dir helpbrowser.tcl]]
+ package ifneeded opt_parser 0.1 [list source [file join $dir opt_parser.tcl]]

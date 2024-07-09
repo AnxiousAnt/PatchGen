@@ -1,0 +1,16 @@
+#N canvas 0 22 382 235 10;
+#X symbolatom 164 46 10 0 0 0 - - -;
+#X floatatom 164 182 5 0 0 0 - - -;
+#X msg 173 69 symbol dog;
+#X msg 181 94 symbol nugent;
+#X obj 45 89 makefilename %d;
+#X msg 45 63 6789;
+#X obj 164 153 symbollength;
+#X msg 193 122 symbol e;
+#X connect 0 0 6 0;
+#X connect 2 0 6 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 1 0;
+#X connect 7 0 6 0;

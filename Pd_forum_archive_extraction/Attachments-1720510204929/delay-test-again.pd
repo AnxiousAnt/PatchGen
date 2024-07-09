@@ -1,0 +1,43 @@
+#N canvas 438 161 543 315 10;
+#X obj 95 134 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 95 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 172 129 vd~ x;
+#X obj 347 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 347 139 delwrite~ x 100;
+#N canvas 361 148 392 333 fft 1;
+#X obj 89 130 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 175 119 vd~ x;
+#X obj 89 40 inlet;
+#X obj 138 81 block~ 256 4;
+#X obj 140 198 z~ 64;
+#X obj 203 195 print~ Front;
+#X obj 140 239 print~ Back;
+#X connect 0 0 5 0;
+#X connect 0 0 6 0;
+#X connect 1 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 4 0 6 0;
+#X restore 279 161 pd fft;
+#X obj 347 104 count~;
+#X obj 279 125 del 50;
+#X obj 148 192 z~ 64;
+#X obj 203 196 print~ Front;
+#X obj 148 229 print~ Back;
+#X obj 95 106 del 50;
+#X connect 0 0 9 0;
+#X connect 0 0 10 0;
+#X connect 1 0 6 0;
+#X connect 1 0 11 0;
+#X connect 2 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 6 0;
+#X connect 3 0 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 10 0;
+#X connect 11 0 0 0;

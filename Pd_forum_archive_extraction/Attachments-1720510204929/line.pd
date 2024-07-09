@@ -1,0 +1,31 @@
+#N canvas 31 15 644 468 10;
+#X floatatom 22 323 0 0 0 0 - - -;
+#X msg 31 216 0 1000;
+#X msg 46 238 39;
+#X obj 66 15 line;
+#X text 106 14 - ramp generator;
+#X msg 22 193 1 1000;
+#X text 93 205 send a pair to ramp to a new value;
+#X text 105 235 send a single number to jump;
+#X text 46 347 see also:;
+#X obj 120 347 line~;
+#X msg 57 263 stop;
+#X text 98 262 "stop" message to stop output;
+#X text 273 348 updated for Pd version 0.27;
+#X text 18 36 The line object takes (target \, time) pairs and slews
+to the specified target over the time given \, updating its output
+at a "grain rate" given by the second creation argument. If you dont'
+specify a time \, line jumps immediately to the target. Note that the
+inlet does not remember old values (unlike every other inlet in Pd)
+-- sending a float causes a jump in the output regardless of whatever
+time value was specified in some previous message. If the line object
+receives a message specifying some new target before reaching the previous
+one \, it takes off from its current value.;
+#X obj 22 297 line 10 100;
+#X text 107 291 creation arguments set initial value and time increment.
+In this implementation you can't set this dynamically.;
+#X connect 1 0 14 0;
+#X connect 2 0 14 0;
+#X connect 5 0 14 0;
+#X connect 10 0 14 0;
+#X connect 14 0 0 0;

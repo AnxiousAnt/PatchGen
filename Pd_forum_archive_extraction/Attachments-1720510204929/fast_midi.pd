@@ -1,0 +1,26 @@
+#N canvas 97 271 626 429 10;
+#X obj 160 257 udpsend;
+#X msg 172 229 connect localhost 2348;
+#X floatatom 160 162 5 0 0 0 - - -;
+#X obj 69 230 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 69 258 realtime;
+#X obj 122 127 b;
+#X floatatom 69 280 5 0 0 0 - - -;
+#X msg 160 188 send 176 111 \$1;
+#X obj 122 78 ctlin;
+#X floatatom 137 105 5 0 0 0 - - -;
+#X text 276 39 pdreceive 2348 > /dev/midi1;
+#X obj 171 208 loadbang;
+#X text 274 19 open a terminal and start :;
+#X text 277 60 then click on the connect message box;
+#X connect 1 0 0 0;
+#X connect 2 0 7 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 7 0 0 0;
+#X connect 8 0 5 0;
+#X connect 8 0 9 0;
+#X connect 11 0 1 0;

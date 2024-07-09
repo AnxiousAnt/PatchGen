@@ -1,0 +1,15 @@
+#N canvas 0 50 450 300 10;
+#X obj 256 79 ggee/shell;
+#X msg 249 32 ls;
+#X obj 256 102 print a;
+#X obj 332 108 print b;
+#X obj 249 232 gemwin;
+#X msg 250 160 create \, 1;
+#X msg 289 191 destroy, f 8;
+#X text 30 48 click here ->;
+#X text 24 158 then freeze pd by clicking here->;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 1 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;

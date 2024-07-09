@@ -1,0 +1,256 @@
+
+/* COLORS 
+
+BLUE LINKS #1087B0 */
+
+
+
+/* BODY */
+
+body {
+font: 76% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+background: white url(http://www.ubuntu.com/sites/all/themes/ubuntu10/images/bg_dotted.png) repeat top center;
+color: #222222;
+margin: 0;
+padding: 0;}
+
+#visual-portal-wrapper {
+margin: 0 auto;
+padding: 0;
+width: 70%;}
+
+
+
+/* TYPOGRAPHY */
+
+p {
+margin: 0 0 0.75em 0;
+line-height: 1.8em;
+text-align: justify;}
+
+h1 {
+font-size: 185%;}
+
+h1, h2, h3, h4, h5, h6 {
+color: black;
+background-color: transparent;
+font-family: "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+font-weight: normal;
+margin: 0 0 0.25em 0;}
+
+a {
+color: #1087B0;
+background-color: transparent;}
+
+
+/* LOGO */
+
+#portal-logo {
+background: url(http://puredata.info/logo.png) no-repeat;
+border: 0;
+margin: 0.75em 28em 0.75em 1.2em;
+padding: 0;}
+
+
+
+/* TOP NAVIGATION */
+
+
+#portal-globalnav {
+background-color: transparent;
+padding: 0em 0em 0em 2em;
+white-space: nowrap;
+list-style: none;
+margin: 0;
+height: auto;
+line-height: normal;
+visibility: hidden}
+
+
+/* Log in and Join */
+
+#portal-personaltools {
+line-height: 1.6em;
+color: black;
+padding: 0em 3em 0em 3em;
+margin: 0;
+text-align: right;
+text-transform: capitalize;
+list-style: none;
+font-size: 1.3em;}
+
+
+/* Breadcrumbs */
+
+#portal-breadcrumbs {
+padding-left: 2em;
+padding-right: 2em;
+text-transform: lowercase;
+line-height: 1.6em;
+margin-left: 16.4em;
+
+
+/* SIDE NAVIGATION */
+
+dd.portletItem a:visited, dd.portletFooter a:visited {
+color: #333;}
+
+#portal-column-one .visualPadding {
+padding: 1em 0em 1em 2em;}
+
+.portletHeader {
+text-transform: capitalize;
+font-weight: normal;
+line-height: 0em;
+font-size: 1.2em;
+background-color: black;
+padding: 14px 0px 16px 12px;}
+
+.portletHeader a {
+color: white;}
+
+
+dl.portlet {
+margin: 1px 0 4em 0;
+background-color: white;}
+
+.portletItem {
+margin: 0;
+padding: 1em;}
+
+.portletNavigationTree {
+margin: 0 0 0 0.75em;
+padding: 0;
+list-style: none;
+list-style-image: none;
+line-height: 1em;
+font-size: 1.15em;
+text-transform: capitalize;}
+
+
+.navTreeItem a, dd.portletItem .navTreeItem a {
+border: 1px solid white;
+display: block;
+text-decoration: none;
+padding: 5px 0px 5px 20px;
+padding: 5px 0px 5px 20px;
+}
+
+
+.navTreeCurrentItem {
+background-color: #BCD2EE;
+color: black;}
+
+
+/* SEARCH FORM */
+
+input {
+font-family: "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+visibility: visible;
+color: black;
+vertical-align: middle;
+background: white url(http://puredata.info/input_background.gif) repeat-x;
+height: 18px;
+
+input.searchButton {
+margin-bottom: 1px ! important;
+font-size: 100%;
+background: #F0F0F0;
+cursor: pointer;
+text-transform: lowercase;
+padding: 2px 7px 18px 8px;}
+
+
+/* ELIMINATE SIDEBAR MENU ICONS */
+
+#portal-sitemap .contenttype-plone-site a:hover, #portlet-navigation-tree .contenttype-plone-site a:hover, #portlet-navigation-tree .contenttype-plone-site a.navTreeCurrentItem {
+background-repeat: no-repeat;
+background-position: 0% 3px;}
+
+.contenttype-plonesoftwarecenter, .actionMenu .contenttype-plonesoftwarecenter a:hover {
+background-repeat: no-repeat;
+background-position: 0% 0%;
+
+.contenttype-folder, .actionMenu .contenttype-folder a:hover {
+background-repeat: no-repeat;
+background-position: 0% 0%;}
+
+.contenttype-large-plone-folder, .actionMenu .contenttype-large-plone-folder a:hover {
+background-repeat: no-repeat;
+background-position: 0% 0%;}
+
+
+
+
+
+/* WEBRING */
+
+div.portlet {
+border: none;
+margin-bottom: 1em;
+padding: 0;
+visibility: hidden;}
+
+
+/* LEFT SIDEBAR */
+
+/* images for icons are embedded in the html. can't do anything with css */
+
+#portal-column-two .visualPadding {
+padding: 1em 2em 1em 0em;}
+
+.even {
+background-color: #EBEBEB;}
+
+dd.portletFooter {
+background-color: #E3E3E3;
+margin: 0;
+padding: 1.25em 4em;
+text-align: center;}
+
+
+/* FOOTER */
+
+#portal-colophon {
+float: none;
+border: 0;
+margin: 0em 0em 0em 0em;
+padding: 0.5em 0em 0em 0em;
+text-align: center;}
+
+
+#portal-footer {
+background-color: #EBEBEB;
+border-top: 1px solid #C2C2C2;
+border-bottom: 1px solid #0404FC;
+float: none;
+line-height: 1.2em;
+margin: 2em 0em 1em 0em;
+padding: 0.5em 0em 1em 0em;
+text-align: center;}
+
+@media all
+#portal-footer {
+border-top: 1;
+border-bottom: 0;
+float: none;
+margin: 0em 0em 0em 0em;
+padding: 1em 1em 1em 12em;
+text-align: center;
+}
+
+/* MAIN CONTENTS */
+
+
+/* document action icons */
+.documentActions ul {
+margin: 1px 0 2px 0;
+padding: 0;
+display: block;
+visibility: hidden;}
+
+
+
+
+
+

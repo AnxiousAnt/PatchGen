@@ -1,0 +1,96 @@
+#N canvas 730 171 405 249 10;
+#N canvas 502 233 417 398 quantizedregular 0;
+#X restore 15 28 pd quantizedregular;
+#N canvas 502 234 418 398 quantizedarrayelements 0;
+#X restore 17 102 pd quantizedarrayelements;
+#N canvas 934 393 458 349 regulartemplate 0;
+#X obj 209 277 pointer;
+#X msg 209 249 traverse pd-quantizedregular \, bang;
+#X obj 56 174 loadbang;
+#X obj 56 198 t b b;
+#X obj 34 174 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 18 62 filledpolygon 5 5 5 x0(0:1000)(0:1000) y0(0:1000)(0:1000)(10)
+x0(0:1000)(10:1010) y0(0:1000)(0:1000)(10) x0(0:1000)(10:1010) y0(0:1000)(10:1010)(10)
+x0(0:1000)(0:1000) y0(0:1000)(10:1010)(10) x0(0:1000)(0:1000) y0(0:1000)(0:1000)(10)
+;
+#X msg 56 267 0 0 50 50 \, 0 0 100 100;
+#X obj 56 318 append regulartemplate x y x0 y0;
+#X obj 18 20 struct regulartemplate float x float y float x0 float
+y0 float z;
+#X obj 18 148 drawnumber z x0(0:1000)(20:1000) y0(0:1000)(0:1000)(10)
+900;
+#X connect 0 0 7 4;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 3 1 1 0;
+#X connect 4 0 3 0;
+#X connect 6 0 7 0;
+#X restore 128 176 pd regulartemplate;
+#N canvas 0 22 453 668 arraytemplate 0;
+#X obj 67 57 struct arraytemplate float x float y array myArray elementtemplate
+;
+#X obj 183 259 pointer;
+#X obj 69 180 t b b;
+#X msg 69 249 0 0;
+#X obj 69 327 t a a;
+#X obj 140 344 t b a;
+#X msg 140 368 2;
+#X obj 69 377 t a a;
+#X obj 129 417 t b a;
+#X msg 129 436 0;
+#X obj 69 467 t b a;
+#X msg 69 486 1;
+#X obj 69 613 set elementtemplate x y;
+#X obj 129 533 t b a;
+#X obj 69 548 t b a;
+#X msg 129 557 50 50;
+#X msg 69 572 100 100;
+#X obj 50 157 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 183 231 traverse pd-quantizedarrayelements \, bang;
+#X obj 69 300 append arraytemplate x y;
+#X obj 69 505 element arraytemplate myArray;
+#X obj 129 455 element arraytemplate myArray;
+#X obj 140 393 setsize arraytemplate myArray;
+#X obj 69 156 loadbang;
+#X obj 68 117 plot -y y(0:1000)(0:1000)(10) myArray 155 0 0 0;
+#X connect 1 0 19 2;
+#X connect 2 0 3 0;
+#X connect 2 1 18 0;
+#X connect 3 0 19 0;
+#X connect 4 0 7 0;
+#X connect 4 1 5 0;
+#X connect 5 0 6 0;
+#X connect 5 1 22 1;
+#X connect 6 0 22 0;
+#X connect 7 0 10 0;
+#X connect 7 1 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 21 1;
+#X connect 9 0 21 0;
+#X connect 10 0 11 0;
+#X connect 10 1 20 1;
+#X connect 11 0 20 0;
+#X connect 13 0 15 0;
+#X connect 13 1 12 2;
+#X connect 14 0 16 0;
+#X connect 14 1 12 2;
+#X connect 15 0 12 0;
+#X connect 16 0 12 0;
+#X connect 17 0 2 0;
+#X connect 18 0 1 0;
+#X connect 19 0 4 0;
+#X connect 20 0 14 0;
+#X connect 21 0 13 0;
+#X connect 23 0 2 0;
+#X restore 128 196 pd arraytemplate;
+#N canvas 969 451 432 142 elementtemplate 0;
+#X obj 74 61 filledpolygon 5 5 5 0 0 10 0 10 10 0 10 0 0;
+#X obj 73 29 struct elementtemplate float x float y float z;
+#X obj 74 96 drawnumber z 20 0 900;
+#X restore 128 216 pd elementtemplate;
+#X text 17 6 Works as expected:;
+#X text 17 73 Erratic dragging of elements \, strange offsets in drawnumber
+mouse targets:;

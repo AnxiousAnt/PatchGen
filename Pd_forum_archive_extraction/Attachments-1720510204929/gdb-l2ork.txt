@@ -1,0 +1,187 @@
+GNU gdb (Ubuntu/Linaro 7.4-2012.04-0ubuntu2.1) 7.4-2012.04
+Copyright (C) 2012 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+For bug reporting instructions, please see:
+<http://bugs.launchpad.net/gdb-linaro/>...
+Reading symbols from /usr/local/bin/pd-l2ork...(no debugging symbols found)...done.
+(gdb) run -rt -audiobuf 0 -noaudio -inchannels 0 -outchannels 0 -alsamidi -midid ev 0
+Starting program: /usr/local/bin/pd-l2ork -rt -audiobuf 0 -noaudio -inchannels 0 -outchannels 0 -alsamidi -mididev 0
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+priority 6 scheduling enabled.
+priority 8 scheduling enabled.
+watchdog: signaling pd...
+watchdog: signaling pd...
+loading built-in widget definitions
+tcl/tk error: unknown encoding "yahoo"
+
+Program received signal SIGSEGV, Segmentation fault.
+0x00000000004911f3 in pd_typedmess ()
+(gdb) watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+backtrace full
+#0  0x00000000004911f3 in pd_typedmess ()
+No symbol table info available.
+#1  0x000000000048f7be in bindlist_anything ()
+No symbol table info available.
+#2  0x000000000049136f in pd_typedmess ()
+No symbol table info available.
+#3  0x000000000049136f in pd_typedmess ()
+No symbol table info available.
+#4  0x0000000000492d3a in outlet_anything ()
+No symbol table info available.
+#5  0x000000000049136f in pd_typedmess ()
+No symbol table info available.
+#6  0x000000000049a699 in binbuf_eval ()
+No symbol table info available.
+#7  0x0000000000492a29 in outlet_bang ()
+No symbol table info available.
+#8  0x00000000004bda91 in trigger_anything ()
+No symbol table info available.
+#9  0x000000000049136f in pd_typedmess ()
+No symbol table info available.
+#10 0x0000000000492d3a in outlet_anything ()
+No symbol table info available.
+#11 0x000000000049136f in pd_typedmess ()
+No symbol table info available.
+#12 0x000000000049a699 in binbuf_eval ()
+No symbol table info available.
+#13 0x0000000000492a29 in outlet_bang ()
+No symbol table info available.
+#14 0x0000000000472dcb in bng_newclick ()
+No symbol table info available.
+#15 0x000000000043bec7 in graph_click ()
+No symbol table info available.
+#16 0x000000000046d0f3 in canvas_doclick ()
+No symbol table info available.
+#17 0x0000000000491645 in pd_typedmess ()
+No symbol table info available.
+#18 0x000000000049136f in pd_typedmess ()
+No symbol table info available.
+#19 0x000000000049a699 in binbuf_eval ()
+No symbol table info available.
+#20 0x00000000004a23d9 in socketreceiver_read ()
+No symbol table info available.
+#21 0x00000000004a0618 in sys_domicrosleep.constprop.3 ()
+No symbol table info available.
+#22 0x000000000049d73d in m_mainloop ()
+No symbol table info available.
+#23 0x00000000004a00e8 in sys_main ()
+No symbol table info available.
+#24 0x00007ffff6a6876d in __libc_start_main ()
+   from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#25 0x0000000000413e11 in _start ()
+No symbol table info available.
+(gdb) watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+info registers
+rax            0x7131560	118691168
+rbx            0x70d6420	118318112
+rcx            0x7fffffffd6d0	140737488344784
+rdx            0x7	7
+rsi            0x0	0
+rdi            0xb1fd10	11664656
+rbp            0x7fffffffd6d0	0x7fffffffd6d0
+rsp            0x7fffffffd470	0x7fffffffd470
+r8             0x166795e0	375887328
+r9             0x1c017b82	469859202
+r10            0x2	2
+r11            0x0	0
+r12            0x0	0
+r13            0xb1fd10	11664656
+r14            0x70d6460	118318176
+r15            0x7fffffffd6c0	140737488344768
+rip            0x4911f3	0x4911f3 <pd_typedmess+131>
+eflags         0x10202	[ IF RF ]
+cs             0x33	51
+ss             0x2b	43
+ds             0x0	0
+es             0x0	0
+fs             0x0	0
+gs             0x0	0
+(gdb) watchdog: signaling pd...
+watchdog: signaling pd...
+x/16i $pcwatchdog: signaling pd...
+
+=> 0x4911f3 <pd_typedmess+131>:	cmp    %rdi,(%r10)
+   0x4911f6 <pd_typedmess+134>:	je     0x491378 <pd_typedmess+520>
+   0x4911fc <pd_typedmess+140>:	add    $0x28,%r10
+   0x491200 <pd_typedmess+144>:	cmp    %r9,%r10
+   0x491203 <pd_typedmess+147>:	je     0x491364 <pd_typedmess+500>
+   0x491209 <pd_typedmess+153>:	test   %rdx,%rdx
+   0x49120c <pd_typedmess+156>:	je     0x4912c1 <pd_typedmess+337>
+   0x491212 <pd_typedmess+162>:	cmp    $0x1,%rdx
+   0x491216 <pd_typedmess+166>:	je     0x4912a6 <pd_typedmess+310>
+   0x49121c <pd_typedmess+172>:	cmp    $0x2,%rdx
+   0x491220 <pd_typedmess+176>:	je     0x491294 <pd_typedmess+292>
+   0x491222 <pd_typedmess+178>:	cmp    $0x3,%rdx
+   0x491226 <pd_typedmess+182>:	je     0x491282 <pd_typedmess+274>
+   0x491228 <pd_typedmess+184>:	cmp    $0x4,%rdx
+   0x49122c <pd_typedmess+188>:	je     0x491270 <pd_typedmess+256>
+   0x49122e <pd_typedmess+190>:	cmp    $0x5,%rdx
+(gdb) watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+thread apply all backtrace
+
+Thread 1 (Thread 0x7ffff7fd4740 (LWP 6600)):
+#0  0x00000000004911f3 in pd_typedmess ()
+#1  0x000000000048f7be in bindlist_anything ()
+#2  0x000000000049136f in pd_typedmess ()
+#3  0x000000000049136f in pd_typedmess ()
+#4  0x0000000000492d3a in outlet_anything ()
+#5  0x000000000049136f in pd_typedmess ()
+#6  0x000000000049a699 in binbuf_eval ()
+#7  0x0000000000492a29 in outlet_bang ()
+#8  0x00000000004bda91 in trigger_anything ()
+#9  0x000000000049136f in pd_typedmess ()
+#10 0x0000000000492d3a in outlet_anything ()
+#11 0x000000000049136f in pd_typedmess ()
+#12 0x000000000049a699 in binbuf_eval ()
+#13 0x0000000000492a29 in outlet_bang ()
+#14 0x0000000000472dcb in bng_newclick ()
+#15 0x000000000043bec7 in graph_click ()
+#16 0x000000000046d0f3 in canvas_doclick ()
+#17 0x0000000000491645 in pd_typedmess ()
+#18 0x000000000049136f in pd_typedmess ()
+#19 0x000000000049a699 in binbuf_eval ()
+#20 0x00000000004a23d9 in socketreceiver_read ()
+#21 0x00000000004a0618 in sys_domicrosleep.constprop.3 ()
+#22 0x000000000049d73d in m_mainloop ()
+#23 0x00000000004a00e8 in sys_main ()
+#24 0x00007ffff6a6876d in __libc_start_main ()
+   from /lib/x86_64-linux-gnu/libc.so.6
+#25 0x0000000000413e11 in _start ()
+(gdb) watchdog: signaling pd...
+watchdog: signaling pd...
+quitwatchdog: signaling pd...
+
+A debugging session is active.
+
+	Inferior 1 [process 6600] will be killed.
+
+Quit anyway? (y or n) watchdog: signaling pd...
+watchdog: signaling pd...
+socket receive error: Connection reset by peer (104)

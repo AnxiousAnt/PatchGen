@@ -1,0 +1,16 @@
+#N canvas 330 266 377 228 10;
+#X text 18 176 (c) musil@iem.kug.ac.at;
+#X text 60 186 IEM KUG;
+#X text 35 195 graz \, austria 2001;
+#X text 8 6 once;
+#X obj 23 116 gate 1;
+#X obj 54 77 bang;
+#X obj 23 54 inlet;
+#X obj 23 151 outlet;
+#X obj 54 95 f 0;
+#X text 59 7 only the first message passes through;
+#X connect 4 0 5 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 4 0;
+#X connect 8 0 4 1;

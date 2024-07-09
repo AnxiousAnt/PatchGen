@@ -1,0 +1,38 @@
+X-Mozilla-Keys: 
+Message-ID: <4922FAB3.8050808@gmail.com>
+Date: Tue, 18 Nov 2008 18:26:11 +0100
+From: ydegoyon <ydegoyon@gmail.com>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.17) Gecko/20080829 SeaMonkey/1.1.12 (Ubuntu-1.1.12+nobinonly-0ubuntu0.8.04.1)
+MIME-Version: 1.0
+To: Jack <jack@rybn.org>
+CC: Nicolas Montgermont <nicolas_montgermont@yahoo.fr>, 
+ pd <pd-list@iem.at>
+Subject: Re: [PD] Video stream player / giss
+References: <4920A654.5020502@yahoo.fr> <43C47B75-867F-4EF6-B07D-7A8176A2984F@rybn.org>
+In-Reply-To: <43C47B75-867F-4EF6-B07D-7A8176A2984F@rybn.org>
+Content-Type: text/plain; charset=iso-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Jack wrote:
+> Hello Nicolas,
+> I think there is [pdp_icedthe~] from PiDiP but I have never used it.
+>   
+
+i don't know if it works on mac,
+and don't have any time/will to make it work there,
+but it's perfectly fine on linux :
+
+http://ydegoyon.free.fr/icedthe~.png
+
+two little restrictions :
+
+* be careful to work at the same audio freq
+that the freq of the stream ( often 22050 )
+
+* encoding and decoding in the same patch
+can produce some crashes,
+located in libtheora.
+
+saludos,
+sevy
+

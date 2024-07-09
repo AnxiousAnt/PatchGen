@@ -1,0 +1,7 @@
+#N canvas 0 0 450 300 10;
+#X obj 95 72 inlet;
+#X obj 95 176 outlet;
+#X obj 158 71 namecanvas \$0-this;
+#X obj 95 149 symbol \$0-this;
+#X connect 0 0 3 0;
+#X connect 3 0 1 0;

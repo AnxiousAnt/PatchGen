@@ -1,0 +1,385 @@
+----------------------------------------------------------------
+Environment Variables: 
+MANPATH=/sw/share/man:/usr/share/man:/usr/X11R6/man:/sw/lib/perl5/5.8.6/man
+TERM_PROGRAM=Apple_Terminal
+TERM=xterm-color
+SHELL=/bin/bash
+PERL5LIB=/sw/lib/perl5:/sw/lib/perl5/darwin
+TERM_PROGRAM_VERSION=133
+USER=owen
+__CF_USER_TEXT_ENCODING=0x1F6:0:0
+PATH=/sw/bin:/sw/sbin:/bin:/sbin:/usr/bin:/usr/sbin
+PWD=/Users/owen/src/gridflow
+SHLVL=1
+HOME=/Users/owen
+LOGNAME=owen
+INFOPATH=/sw/share/info:/sw/info:/usr/share/info
+SECURITYSESSIONID=59b3d0
+OLDPWD=/Developer/Makefiles/CoreOS
+_=./configure
+----------------------------------------------------------------
+$C_INCLUDE_PATH: ["/include", "/usr/local/include", "/sw/include", "/Applications/Pd.app/Contents/Resources/include", "/usr/include"]
+$LIBRARY_PATH: ["/usr/local/lib", "/sw/lib", "/Applications/Pd.app/Contents/Resources/lib", "/usr/lib", "/lib"]
+$LD_LIBRARY_PATH: ["/usr/local/lib", "/sw/lib", "/Applications/Pd.app/Contents/Resources/lib", "/usr/lib", "/lib"]
+----------------------------------------------------------------
+This is the GridFlow 0.7.7 configurator within Ruby version 1.8.1
+
+----------------------------------------------------------------
+[gcc3] GNU C++ Compiler 3: 
+found 
+
+----------------------------------------------------------------
+[libruby] Ruby as a dynamic library: 
+
+		#include <stdio.h>
+		#include <ruby.h>
+		int main () {
+			void *bp;
+			printf("#define RUBY_STACK_END 0x%08x",&bp);
+			return rb_rescue==0;
+		}
+/usr/bin/env g++ -g -O2 -fno-common -pipe -fno-common -I/Applications/Pd.app/Contents/Resources/include -I/sw/include -I/usr/local/include -I/include -xc++ -fno-operator-names -fno-omit-frame-pointer -I/usr/X11R6/include -I /sw/lib/ruby/1.8/powerpc-darwin tmp/1794.cpp -o tmp/1794 -L/usr/local/lib -L/sw/lib -L/Applications/Pd.app/Contents/Resources/lib -lruby
+/usr/bin/ld: warning -L: directory name (/Applications/Pd.app/Contents/Resources/lib) does not exist
+
+tmp/1794
+#define RUBY_STACK_END 0xbffffa98
+found 
+
+----------------------------------------------------------------
+[librubystatic] Ruby as a static library: 
+disabled (using libruby instead)
+
+----------------------------------------------------------------
+[fast] Compile for speed (and not debuggability): 
+
+----------------------------------------------------------------
+[pentium] Pentium-compatible CPU: 
+missing (powerpc-darwin instead)
+#<RuntimeError: powerpc-darwin instead>
+./configure:349
+./configure:348:in `call'
+./configure:886:in `try'
+./configure:934
+./configure:934:in `each'
+./configure:934
+
+----------------------------------------------------------------
+[mmx] MMX-compatible CPU (using NASM): 
+disabled (would need pentium)
+
+----------------------------------------------------------------
+[simd] SIMD (MMX/SSE/Altivec) (using GCC): 
+disabled (would need pentium)
+
+----------------------------------------------------------------
+[profiler] profiler (speed measurements): 
+disabled (would need pentium)
+
+----------------------------------------------------------------
+[usb] USB Library: 
+nil
+missing (where is usb.h ?)
+#<RuntimeError: where is usb.h ?>
+./configure:141:in `c_test'
+./configure:138:in `each'
+./configure:138:in `c_test'
+./configure:426
+./configure:422:in `call'
+./configure:886:in `try'
+./configure:934
+./configure:934:in `each'
+./configure:934
+
+----------------------------------------------------------------
+[ieee1394] IEEE1394 Libraries for Linux (raw1394/dc1394): 
+disabled (by author)
+
+----------------------------------------------------------------
+[x11] X11 Display Protocol: 
+
+		#include <X11/Xlib.h>
+
+		int main () {return XSetErrorHandler==0;}
+		
+/usr/bin/env g++ -g -O2 -fno-common -pipe -fno-common -I/Applications/Pd.app/Contents/Resources/include -I/sw/include -I/usr/local/include -I/include -xc++ -fno-operator-names -fno-omit-frame-pointer -I/usr/X11R6/include -I /sw/lib/ruby/1.8/powerpc-darwin tmp/1794.cpp -o tmp/1794 -L/usr/local/lib -L/sw/lib -L/Applications/Pd.app/Contents/Resources/lib -L/usr/X11R6/lib -lX11 -lXext
+/usr/bin/ld: warning -L: directory name (/Applications/Pd.app/Contents/Resources/lib) does not exist
+
+tmp/1794
+
+found 
+
+----------------------------------------------------------------
+[x11_shm] X11 acceleration through shared memory: 
+
+		#include <X11/Xlib.h>
+#include <sys/shm.h>
+#include <X11/extensions/XShm.h>
+
+		#include <X11/Xutil.h>
+		#include <X11/StringDefs.h>
+		#include <sys/ipc.h>
+		int main () {return XShmPutImage==0;}
+		
+/usr/bin/env g++ -g -O2 -fno-common -pipe -fno-common -I/Applications/Pd.app/Contents/Resources/include -I/sw/include -I/usr/local/include -I/include -xc++ -fno-operator-names -fno-omit-frame-pointer -I/usr/X11R6/include -I /sw/lib/ruby/1.8/powerpc-darwin tmp/1794.cpp -o tmp/1794 -L/usr/local/lib -L/sw/lib -L/Applications/Pd.app/Contents/Resources/lib -L/usr/X11R6/lib -L/usr/X11R6/lib -lX11 -lXext
+/usr/bin/ld: warning -L: directory name (/Applications/Pd.app/Contents/Resources/lib) does not exist
+
+tmp/1794
+
+found 
+
+----------------------------------------------------------------
+[sdl] Simple Directmedia Layer (experimental support): 
+nil
+missing (where is SDL/SDL.h ?)
+#<RuntimeError: where is SDL/SDL.h ?>
+./configure:141:in `c_test'
+./configure:138:in `each'
+./configure:138:in `c_test'
+./configure:505
+./configure:501:in `call'
+./configure:886:in `try'
+./configure:934
+./configure:934:in `each'
+./configure:934
+
+----------------------------------------------------------------
+[objcpp] GNU/Apple ObjectiveC++ Compiler: 
+
+		#include <objc/Object.h>
+
+		int main () { [[Object alloc] init]; }
+		
+/usr/bin/env g++ -g -O2 -fno-common -pipe -fno-common -I/Applications/Pd.app/Contents/Resources/include -I/sw/include -I/usr/local/include -I/include -xc++ -fno-operator-names -fno-omit-frame-pointer -I/usr/X11R6/include -I /sw/lib/ruby/1.8/powerpc-darwin -xobjective-c++ tmp/1794.cpp -o tmp/1794 -L/usr/local/lib -L/sw/lib -L/Applications/Pd.app/Contents/Resources/lib -L/usr/X11R6/lib -L/usr/X11R6/lib -lobjc
+/usr/bin/ld: warning -L: directory name (/Applications/Pd.app/Contents/Resources/lib) does not exist
+
+tmp/1794
+
+found 
+
+----------------------------------------------------------------
+[quartz] Apple Quartz/Cocoa Display: 
+
+		#include <objc/Object.h>
+#include <Cocoa/Cocoa.h>
+
+		int main () {return CGImageRelease==0;}
+		
+/usr/bin/env g++ -g -O2 -fno-common -pipe -fno-common -I/Applications/Pd.app/Contents/Resources/include -I/sw/include -I/usr/local/include -I/include -xc++ -fno-operator-names -fno-omit-frame-pointer -I/usr/X11R6/include -I /sw/lib/ruby/1.8/powerpc-darwin -xobjective-c++ tmp/1794.cpp -o tmp/1794 -L/usr/local/lib -L/sw/lib -L/Applications/Pd.app/Contents/Resources/lib -L/usr/X11R6/lib -L/usr/X11R6/lib -lobjc -framework Cocoa
+/usr/bin/ld: warning -L: directory name (/Applications/Pd.app/Contents/Resources/lib) does not exist
+
+tmp/1794
+
+found 
+
+----------------------------------------------------------------
+[aalib] Ascii Art Library: 
+nil
+missing (where is aalib.h ?)
+#<RuntimeError: where is aalib.h ?>
+./configure:141:in `c_test'
+./configure:138:in `each'
+./configure:138:in `c_test'
+./configure:547
+./configure:540:in `call'
+./configure:886:in `try'
+./configure:934
+./configure:934:in `each'
+./configure:934
+
+----------------------------------------------------------------
+[jpeg] JPEG Library: 
+
+		extern "C" {
+		#include <stdio.h>
+		#include <jpeglib.h>
+
+		};
+		int main () {
+		return jpeg_write_scanlines==0;}
+		
+/usr/bin/env g++ -g -O2 -fno-common -pipe -fno-common -I/Applications/Pd.app/Contents/Resources/include -I/sw/include -I/usr/local/include -I/include -xc++ -fno-operator-names -fno-omit-frame-pointer -I/usr/X11R6/include -I /sw/lib/ruby/1.8/powerpc-darwin tmp/1794.cpp -o tmp/1794 -L/usr/local/lib -L/sw/lib -L/Applications/Pd.app/Contents/Resources/lib -L/usr/X11R6/lib -L/usr/X11R6/lib -ljpeg
+/usr/bin/ld: warning -L: directory name (/Applications/Pd.app/Contents/Resources/lib) does not exist
+
+tmp/1794
+
+found 
+
+----------------------------------------------------------------
+[png] PNG Library <libpng12/png.h>: 
+
+		extern "C" {
+		#include <stdio.h>
+		#include <libpng12/png.h>
+
+		};
+		int main () {
+		return png_check_sig==0;}
+		
+/usr/bin/env g++ -g -O2 -fno-common -pipe -fno-common -I/Applications/Pd.app/Contents/Resources/include -I/sw/include -I/usr/local/include -I/include -xc++ -fno-operator-names -fno-omit-frame-pointer -I/usr/X11R6/include -I /sw/lib/ruby/1.8/powerpc-darwin tmp/1794.cpp -o tmp/1794 -L/usr/local/lib -L/sw/lib -L/Applications/Pd.app/Contents/Resources/lib -L/usr/X11R6/lib -L/usr/X11R6/lib -lpng -lz
+/usr/bin/ld: warning -L: directory name (/Applications/Pd.app/Contents/Resources/lib) does not exist
+
+tmp/1794
+
+found 
+
+----------------------------------------------------------------
+[videodev] Video4linux Digitizer Driver Interface: 
+nil
+missing (where is linux/videodev.h ?)
+#<RuntimeError: where is linux/videodev.h ?>
+./configure:141:in `c_test'
+./configure:138:in `each'
+./configure:138:in `c_test'
+./configure:593
+./configure:589:in `call'
+./configure:886:in `try'
+./configure:934
+./configure:934:in `each'
+./configure:934
+
+----------------------------------------------------------------
+[mpeg3] HeroineWarrior LibMPEG3 <libmpeg3/libmpeg3.h>: 
+nil
+missing (where is libmpeg3/libmpeg3.h ?)
+#<RuntimeError: where is libmpeg3/libmpeg3.h ?>
+./configure:141:in `c_test'
+./configure:138:in `each'
+./configure:138:in `c_test'
+./configure:604
+./configure:603:in `call'
+./configure:886:in `try'
+./configure:859:in `try'
+./configure:857:in `each'
+./configure:857:in `try'
+./configure:934
+./configure:934:in `each'
+./configure:934
+
+----------------------------------------------------------------
+[mpeg3] HeroineWarrior LibMPEG3 <libmpeg3.h>: 
+nil
+missing (where is libmpeg3.h ?)
+#<RuntimeError: where is libmpeg3.h ?>
+./configure:141:in `c_test'
+./configure:138:in `each'
+./configure:138:in `c_test'
+./configure:604
+./configure:603:in `call'
+./configure:886:in `try'
+./configure:859:in `try'
+./configure:857:in `each'
+./configure:857:in `try'
+./configure:934
+./configure:934:in `each'
+./configure:934
+
+----------------------------------------------------------------
+[mpeg] Greg Ward's LibMPEG: 
+
+		#include <mpeg.h>
+
+		int main () { return GetMPEGFrame==0; }
+		
+/usr/bin/env g++ -g -O2 -fno-common -pipe -fno-common -I/Applications/Pd.app/Contents/Resources/include -I/sw/include -I/usr/local/include -I/include -xc++ -fno-operator-names -fno-omit-frame-pointer -I/usr/X11R6/include -I /sw/lib/ruby/1.8/powerpc-darwin tmp/1794.cpp -o tmp/1794 -L/usr/local/lib -L/sw/lib -L/Applications/Pd.app/Contents/Resources/lib -L/usr/X11R6/lib -L/usr/X11R6/lib -lmpeg
+/usr/bin/ld: warning -L: directory name (/Applications/Pd.app/Contents/Resources/lib) does not exist
+
+tmp/1794
+
+found 
+
+----------------------------------------------------------------
+[quicktimeapple] Apple's QuickTime: 
+
+		#include <Quicktime/quicktime.h>
+#include <Quicktime/movies.h>
+
+		int main () { return EnterMovies==0; }
+		
+/usr/bin/env g++ -g -O2 -fno-common -pipe -fno-common -I/Applications/Pd.app/Contents/Resources/include -I/sw/include -I/usr/local/include -I/include -xc++ -fno-operator-names -fno-omit-frame-pointer -I/usr/X11R6/include -I /sw/lib/ruby/1.8/powerpc-darwin tmp/1794.cpp -o tmp/1794 -L/usr/local/lib -L/sw/lib -L/Applications/Pd.app/Contents/Resources/lib -L/usr/X11R6/lib -L/usr/X11R6/lib -framework Quicktime
+/usr/bin/ld: warning -L: directory name (/Applications/Pd.app/Contents/Resources/lib) does not exist
+
+tmp/1794
+
+found 
+
+----------------------------------------------------------------
+[quicktimehw] HeroineWarrior QuickTime4Linux (or LibQuickTime) (try #1): 
+disabled (using quicktimeapple instead)
+
+----------------------------------------------------------------
+[quicktimehw] HeroineWarrior QuickTime4Linux (or LibQuickTime) (try #2): 
+disabled (using quicktimeapple instead)
+
+----------------------------------------------------------------
+[xine] Xine movie decoder: 
+disabled (by author)
+
+----------------------------------------------------------------
+[jmax25] IRCAM's jMax 2.5: 
+nil
+missing (where is fts/fts.h ?)
+#<RuntimeError: where is fts/fts.h ?>
+./configure:141:in `c_test'
+./configure:138:in `each'
+./configure:138:in `c_test'
+./configure:695
+./configure:686:in `call'
+./configure:886:in `try'
+./configure:934
+./configure:934:in `each'
+./configure:934
+
+----------------------------------------------------------------
+[jmax4] IRCAM's jMax 4: 
+nil
+missing (where is fts/fts.h ?)
+#<RuntimeError: where is fts/fts.h ?>
+./configure:141:in `c_test'
+./configure:138:in `each'
+./configure:138:in `c_test'
+./configure:715
+./configure:706:in `call'
+./configure:886:in `try'
+./configure:934
+./configure:934:in `each'
+./configure:934
+
+----------------------------------------------------------------
+[puredata] Miller Puckette's Pure Data: 
+
+			#include <m_pd.h>
+
+			#include <stdio.h>
+			int main () {
+			printf("#define PD_VERSION_INT %d\n",
+			#ifdef PD_MAJOR_VERSION
+				(int)(PD_MAJOR_VERSION+PD_MINOR_VERSION*100));
+			#else
+				(int)(PD_VERSION*100));
+			#endif
+			return 0;
+			}
+		
+/usr/bin/env g++ -g -O2 -fno-common -pipe -fno-common -I/Applications/Pd.app/Contents/Resources/include -I/sw/include -I/usr/local/include -I/include -xc++ -fno-operator-names -fno-omit-frame-pointer -I/usr/X11R6/include -I /sw/lib/ruby/1.8/powerpc-darwin tmp/1794.cpp -o tmp/1794 -L/usr/local/lib -L/sw/lib -L/Applications/Pd.app/Contents/Resources/lib -L/usr/X11R6/lib -L/usr/X11R6/lib
+/usr/bin/ld: warning -L: directory name (/Applications/Pd.app/Contents/Resources/lib) does not exist
+
+tmp/1794
+#define PD_VERSION_INT 3900
+
+found 
+
+----------------------------------------------------------------
+[javac] Java Compiler: 
+found 
+
+----------------------------------------------------------------
+[jmax25guiext] jMax 2.5 GridFlow GUI extensions: 
+disabled (would need jmax25)
+----------------------------------------------------------------
+BRIDGE_LDFLAGS: ["-lm", "-lruby"]
+LDSOFLAGS: ["-L/usr/local/lib", "-L/sw/lib", "-L/Applications/Pd.app/Contents/Resources/lib", "-lm", "-L/usr/X11R6/lib", "-lX11", "-lXext", "-lobjc", ["-framework", "Cocoa"], "-ljpeg", "-lpng", "-lz", "-lmpeg", ["-framework", "Quicktime"]]
+FORMATS: ["X11", "Quartz", "JPEG", "PNG", "MPEG", "QuickTimeApple"]
+OPTIONS: ["HAVE_X11_SHARED_MEMORY", "HAVE_PUREDATA", "HAVE_JAVAC"]
+DEFINES: {:PUREDATA_PATH=>"/Applications/Pd.app/Contents/Resources/lib/pd", :RUBY_PREFIX=>"/sw", :PD_VERSION_INT=>3900, :PREFIX=>"/usr/local", :RUBY_STACK_END=>"0xbffffa98", :CPU=>nil, :RUBY_ARCH=>"powerpc-darwin", :JMAX_ARCH=>"i686-linux"}
+OBJS: []
+----------------------------------------------------------------

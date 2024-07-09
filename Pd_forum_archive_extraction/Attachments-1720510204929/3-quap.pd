@@ -1,0 +1,8 @@
+#N canvas 216 110 712 370 12;
+#X obj 74 64 loadbang;
+#X obj 74 104 int \$1;
+#X obj 74 147 print quap;
+#X obj 73 217 \$1-quap \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9 \$10 \$11 \$12
+\$13;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;

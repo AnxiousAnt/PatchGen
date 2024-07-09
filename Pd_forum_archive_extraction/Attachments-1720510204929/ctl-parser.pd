@@ -1,0 +1,18 @@
+#N canvas 225 584 450 300 10;
+#X obj 119 155 pointer;
+#X obj 119 99 route \$1;
+#X obj 119 262 s \$2-result;
+#X text 234 49 args: id \, \$0;
+#X obj 119 70 r \$2-pointer;
+#X obj 133 134 r \$2-readout;
+#X obj 119 183 get \$2-controller id x0 y0;
+#X obj 119 228 pack 0 0 0;
+#X text 229 133 from metro;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 6 1 7 1;
+#X connect 6 2 7 2;
+#X connect 7 0 2 0;

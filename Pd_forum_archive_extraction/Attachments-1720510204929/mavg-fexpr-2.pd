@@ -1,0 +1,36 @@
+#N canvas 497 384 495 386 10;
+#X obj 209 111 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-261682 -1 -1 4 256;
+#X obj 59 107 loadbang;
+#X obj 209 47 loadbang;
+#X obj 312 265 snapshot~;
+#X obj 312 180 loadbang;
+#X obj 312 205 tgl 15 0 empty empty empty 17 7 0 10 -261682 -1 -1 1
+1;
+#X floatatom 312 292 0 0 0 0 - - -;
+#X msg 209 77 4;
+#X obj 209 168 v n;
+#X msg 159 168 clear;
+#X msg 248 72 \; pd dsp 1;
+#X obj 312 227 metro 100;
+#X obj 315 321 hsl 128 15 0 44100 0 0 empty empty empty -2 -8 0 10
+-261682 -1 -1 1251 1;
+#X obj 59 158 count~ 0 44100;
+#X obj 59 133 bng 15 250 50 0 empty empty empty 17 7 0 10 -261682 -1
+-1;
+#X obj 59 205 fexpr~ $y1[-1] + ($x1[0] - $x1[-n]) / n;
+#X connect 0 0 8 0;
+#X connect 0 0 9 0;
+#X connect 1 0 14 0;
+#X connect 2 0 7 0;
+#X connect 2 0 10 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 11 0;
+#X connect 6 0 12 0;
+#X connect 7 0 0 0;
+#X connect 9 0 15 0;
+#X connect 11 0 3 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 15 0 3 0;

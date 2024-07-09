@@ -1,0 +1,345 @@
+make -f ./buildsys/gnumake-sub.mak  PLATFORM=lnx RTSYS=pd COMPILER=gcc BUILDPATH=./buildsys/ PKGINFO=package.txt BUILDCLASS=flext USRCONFIG=config.txt USRMAKE=build/gnumake-lnx-gcc.inc TARGETMODE=release TARGETTYPE=single _build_
+make[1]: Entering directory `/home/r2d2/grrrr/flext'
+mkdir -p pd-linux/release-single
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbase.cpp -o pd-linux/release-single/flbase.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flext.cpp -o pd-linux/release-single/flext.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbuf.cpp -o pd-linux/release-single/flbuf.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fldsp.cpp -o pd-linux/release-single/fldsp.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fllib.cpp -o pd-linux/release-single/fllib.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flxlet.cpp -o pd-linux/release-single/flxlet.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr.cpp -o pd-linux/release-single/flattr.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr_ed.cpp -o pd-linux/release-single/flattr_ed.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsupport.cpp -o pd-linux/release-single/flsupport.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flutil.cpp -o pd-linux/release-single/flutil.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom.cpp -o pd-linux/release-single/flatom.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_pr.cpp -o pd-linux/release-single/flatom_pr.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flthr.cpp -o pd-linux/release-single/flthr.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fltimer.cpp -o pd-linux/release-single/fltimer.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsimd.cpp -o pd-linux/release-single/flsimd.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flout.cpp -o pd-linux/release-single/flout.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_part.cpp -o pd-linux/release-single/flatom_part.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flitem.cpp -o pd-linux/release-single/flitem.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmeth.cpp -o pd-linux/release-single/flmeth.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmsg.cpp -o pd-linux/release-single/flmsg.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flproxy.cpp -o pd-linux/release-single/flproxy.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flqueue.cpp -o pd-linux/release-single/flqueue.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbind.cpp -o pd-linux/release-single/flbind.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmap.cpp -o pd-linux/release-single/flmap.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsndobj.cpp -o pd-linux/release-single/flsndobj.opp
+mkdir -p pd-linux/release-single/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flstk.cpp -o pd-linux/release-single/flstk.opp
+ar rc pd-linux/release-single/libflext-pd_s.a.0.5.1   pd-linux/release-single/flbase.opp pd-linux/release-single/flext.opp pd-linux/release-single/flbuf.opp pd-linux/release-single/fldsp.opp pd-linux/release-single/fllib.opp pd-linux/release-single/flxlet.opp pd-linux/release-single/flattr.opp pd-linux/release-single/flattr_ed.opp pd-linux/release-single/flsupport.opp pd-linux/release-single/flutil.opp pd-linux/release-single/flatom.opp pd-linux/release-single/flatom_pr.opp pd-linux/release-single/flthr.opp pd-linux/release-single/fltimer.opp pd-linux/release-single/flsimd.opp pd-linux/release-single/flout.opp pd-linux/release-single/flatom_part.opp pd-linux/release-single/flitem.opp pd-linux/release-single/flmeth.opp pd-linux/release-single/flmsg.opp pd-linux/release-single/flproxy.opp pd-linux/release-single/flqueue.opp pd-linux/release-single/flbind.opp pd-linux/release-single/flmap.opp pd-linux/release-single/flsndobj.opp pd-linux/release-single/flstk.opp 
+make[1]: Leaving directory `/home/r2d2/grrrr/flext'
+make -f ./buildsys/gnumake-sub.mak  PLATFORM=lnx RTSYS=pd COMPILER=gcc BUILDPATH=./buildsys/ PKGINFO=package.txt BUILDCLASS=flext USRCONFIG=config.txt USRMAKE=build/gnumake-lnx-gcc.inc TARGETMODE=release TARGETTYPE=multi THREADED=1 _build_
+make[1]: Entering directory `/home/r2d2/grrrr/flext'
+mkdir -p pd-linux/release-multi
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbase.cpp -o pd-linux/release-multi/flbase.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flext.cpp -o pd-linux/release-multi/flext.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbuf.cpp -o pd-linux/release-multi/flbuf.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fldsp.cpp -o pd-linux/release-multi/fldsp.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fllib.cpp -o pd-linux/release-multi/fllib.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flxlet.cpp -o pd-linux/release-multi/flxlet.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr.cpp -o pd-linux/release-multi/flattr.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr_ed.cpp -o pd-linux/release-multi/flattr_ed.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsupport.cpp -o pd-linux/release-multi/flsupport.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flutil.cpp -o pd-linux/release-multi/flutil.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom.cpp -o pd-linux/release-multi/flatom.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_pr.cpp -o pd-linux/release-multi/flatom_pr.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flthr.cpp -o pd-linux/release-multi/flthr.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fltimer.cpp -o pd-linux/release-multi/fltimer.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsimd.cpp -o pd-linux/release-multi/flsimd.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flout.cpp -o pd-linux/release-multi/flout.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_part.cpp -o pd-linux/release-multi/flatom_part.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flitem.cpp -o pd-linux/release-multi/flitem.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmeth.cpp -o pd-linux/release-multi/flmeth.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmsg.cpp -o pd-linux/release-multi/flmsg.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flproxy.cpp -o pd-linux/release-multi/flproxy.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flqueue.cpp -o pd-linux/release-multi/flqueue.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbind.cpp -o pd-linux/release-multi/flbind.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmap.cpp -o pd-linux/release-multi/flmap.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsndobj.cpp -o pd-linux/release-multi/flsndobj.opp
+mkdir -p pd-linux/release-multi/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flstk.cpp -o pd-linux/release-multi/flstk.opp
+ar rc pd-linux/release-multi/libflext-pd_t.a.0.5.1   pd-linux/release-multi/flbase.opp pd-linux/release-multi/flext.opp pd-linux/release-multi/flbuf.opp pd-linux/release-multi/fldsp.opp pd-linux/release-multi/fllib.opp pd-linux/release-multi/flxlet.opp pd-linux/release-multi/flattr.opp pd-linux/release-multi/flattr_ed.opp pd-linux/release-multi/flsupport.opp pd-linux/release-multi/flutil.opp pd-linux/release-multi/flatom.opp pd-linux/release-multi/flatom_pr.opp pd-linux/release-multi/flthr.opp pd-linux/release-multi/fltimer.opp pd-linux/release-multi/flsimd.opp pd-linux/release-multi/flout.opp pd-linux/release-multi/flatom_part.opp pd-linux/release-multi/flitem.opp pd-linux/release-multi/flmeth.opp pd-linux/release-multi/flmsg.opp pd-linux/release-multi/flproxy.opp pd-linux/release-multi/flqueue.opp pd-linux/release-multi/flbind.opp pd-linux/release-multi/flmap.opp pd-linux/release-multi/flsndobj.opp pd-linux/release-multi/flstk.opp 
+make[1]: Leaving directory `/home/r2d2/grrrr/flext'
+make -f ./buildsys/gnumake-sub.mak  PLATFORM=lnx RTSYS=pd COMPILER=gcc BUILDPATH=./buildsys/ PKGINFO=package.txt BUILDCLASS=flext USRCONFIG=config.txt USRMAKE=build/gnumake-lnx-gcc.inc TARGETMODE=release TARGETTYPE=shared SHARED=1 _build_
+make[1]: Entering directory `/home/r2d2/grrrr/flext'
+mkdir -p pd-linux/release-shared
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbase.cpp -o pd-linux/release-shared/flbase.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flext.cpp -o pd-linux/release-shared/flext.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbuf.cpp -o pd-linux/release-shared/flbuf.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fldsp.cpp -o pd-linux/release-shared/fldsp.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fllib.cpp -o pd-linux/release-shared/fllib.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flxlet.cpp -o pd-linux/release-shared/flxlet.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr.cpp -o pd-linux/release-shared/flattr.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr_ed.cpp -o pd-linux/release-shared/flattr_ed.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsupport.cpp -o pd-linux/release-shared/flsupport.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flutil.cpp -o pd-linux/release-shared/flutil.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom.cpp -o pd-linux/release-shared/flatom.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_pr.cpp -o pd-linux/release-shared/flatom_pr.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flthr.cpp -o pd-linux/release-shared/flthr.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fltimer.cpp -o pd-linux/release-shared/fltimer.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsimd.cpp -o pd-linux/release-shared/flsimd.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flout.cpp -o pd-linux/release-shared/flout.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_part.cpp -o pd-linux/release-shared/flatom_part.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flitem.cpp -o pd-linux/release-shared/flitem.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmeth.cpp -o pd-linux/release-shared/flmeth.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmsg.cpp -o pd-linux/release-shared/flmsg.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flproxy.cpp -o pd-linux/release-shared/flproxy.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flqueue.cpp -o pd-linux/release-shared/flqueue.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbind.cpp -o pd-linux/release-shared/flbind.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmap.cpp -o pd-linux/release-shared/flmap.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsndobj.cpp -o pd-linux/release-shared/flsndobj.opp
+mkdir -p pd-linux/release-shared/
+g++ -c -msse -mfpmath=sse -ffast-math -O3 -march=pentium4   -pthread -fPIC -DFLEXT_USE_SIMD -DNDEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flstk.cpp -o pd-linux/release-shared/flstk.opp
+g++ -pthread -shared  -Wl,-S -Wl,-soname,libflext-pd.so.0.5  -L/usr/local/src/pd/bin -o pd-linux/release-shared/libflext-pd.so.0.5.1   pd-linux/release-shared/flbase.opp pd-linux/release-shared/flext.opp pd-linux/release-shared/flbuf.opp pd-linux/release-shared/fldsp.opp pd-linux/release-shared/fllib.opp pd-linux/release-shared/flxlet.opp pd-linux/release-shared/flattr.opp pd-linux/release-shared/flattr_ed.opp pd-linux/release-shared/flsupport.opp pd-linux/release-shared/flutil.opp pd-linux/release-shared/flatom.opp pd-linux/release-shared/flatom_pr.opp pd-linux/release-shared/flthr.opp pd-linux/release-shared/fltimer.opp pd-linux/release-shared/flsimd.opp pd-linux/release-shared/flout.opp pd-linux/release-shared/flatom_part.opp pd-linux/release-shared/flitem.opp pd-linux/release-shared/flmeth.opp pd-linux/release-shared/flmsg.opp pd-linux/release-shared/flproxy.opp pd-linux/release-shared/flqueue.opp pd-linux/release-shared/flbind.opp pd-linux/release-shared/flmap.opp pd-linux/release-shared/flsndobj.opp pd-linux/release-shared/flstk.opp  /usr/lib/libstk.a /usr/lib/libsndobj.a
+chmod 755 pd-linux/release-shared/libflext-pd.so.0.5.1
+strip --strip-unneeded pd-linux/release-shared/libflext-pd.so.0.5.1
+make[1]: Leaving directory `/home/r2d2/grrrr/flext'
+make -f ./buildsys/gnumake-sub.mak  PLATFORM=lnx RTSYS=pd COMPILER=gcc BUILDPATH=./buildsys/ PKGINFO=package.txt BUILDCLASS=flext USRCONFIG=config.txt USRMAKE=build/gnumake-lnx-gcc.inc TARGETMODE=debug TARGETTYPE=single DEBUG=1 _build_
+make[1]: Entering directory `/home/r2d2/grrrr/flext'
+mkdir -p pd-linux/debug-single
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbase.cpp -o pd-linux/debug-single/flbase.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flext.cpp -o pd-linux/debug-single/flext.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbuf.cpp -o pd-linux/debug-single/flbuf.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fldsp.cpp -o pd-linux/debug-single/fldsp.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fllib.cpp -o pd-linux/debug-single/fllib.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flxlet.cpp -o pd-linux/debug-single/flxlet.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr.cpp -o pd-linux/debug-single/flattr.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr_ed.cpp -o pd-linux/debug-single/flattr_ed.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsupport.cpp -o pd-linux/debug-single/flsupport.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flutil.cpp -o pd-linux/debug-single/flutil.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom.cpp -o pd-linux/debug-single/flatom.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_pr.cpp -o pd-linux/debug-single/flatom_pr.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flthr.cpp -o pd-linux/debug-single/flthr.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fltimer.cpp -o pd-linux/debug-single/fltimer.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsimd.cpp -o pd-linux/debug-single/flsimd.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flout.cpp -o pd-linux/debug-single/flout.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_part.cpp -o pd-linux/debug-single/flatom_part.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flitem.cpp -o pd-linux/debug-single/flitem.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmeth.cpp -o pd-linux/debug-single/flmeth.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmsg.cpp -o pd-linux/debug-single/flmsg.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flproxy.cpp -o pd-linux/debug-single/flproxy.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flqueue.cpp -o pd-linux/debug-single/flqueue.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbind.cpp -o pd-linux/debug-single/flbind.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmap.cpp -o pd-linux/debug-single/flmap.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsndobj.cpp -o pd-linux/debug-single/flsndobj.opp
+mkdir -p pd-linux/debug-single/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flstk.cpp -o pd-linux/debug-single/flstk.opp
+ar rc pd-linux/debug-single/libflext-pd_sd.a.0.5.1   pd-linux/debug-single/flbase.opp pd-linux/debug-single/flext.opp pd-linux/debug-single/flbuf.opp pd-linux/debug-single/fldsp.opp pd-linux/debug-single/fllib.opp pd-linux/debug-single/flxlet.opp pd-linux/debug-single/flattr.opp pd-linux/debug-single/flattr_ed.opp pd-linux/debug-single/flsupport.opp pd-linux/debug-single/flutil.opp pd-linux/debug-single/flatom.opp pd-linux/debug-single/flatom_pr.opp pd-linux/debug-single/flthr.opp pd-linux/debug-single/fltimer.opp pd-linux/debug-single/flsimd.opp pd-linux/debug-single/flout.opp pd-linux/debug-single/flatom_part.opp pd-linux/debug-single/flitem.opp pd-linux/debug-single/flmeth.opp pd-linux/debug-single/flmsg.opp pd-linux/debug-single/flproxy.opp pd-linux/debug-single/flqueue.opp pd-linux/debug-single/flbind.opp pd-linux/debug-single/flmap.opp pd-linux/debug-single/flsndobj.opp pd-linux/debug-single/flstk.opp 
+make[1]: Leaving directory `/home/r2d2/grrrr/flext'
+make -f ./buildsys/gnumake-sub.mak  PLATFORM=lnx RTSYS=pd COMPILER=gcc BUILDPATH=./buildsys/ PKGINFO=package.txt BUILDCLASS=flext USRCONFIG=config.txt USRMAKE=build/gnumake-lnx-gcc.inc TARGETMODE=debug TARGETTYPE=multi THREADED=1 DEBUG=1 _build_
+make[1]: Entering directory `/home/r2d2/grrrr/flext'
+mkdir -p pd-linux/debug-multi
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbase.cpp -o pd-linux/debug-multi/flbase.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flext.cpp -o pd-linux/debug-multi/flext.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbuf.cpp -o pd-linux/debug-multi/flbuf.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fldsp.cpp -o pd-linux/debug-multi/fldsp.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fllib.cpp -o pd-linux/debug-multi/fllib.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flxlet.cpp -o pd-linux/debug-multi/flxlet.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr.cpp -o pd-linux/debug-multi/flattr.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr_ed.cpp -o pd-linux/debug-multi/flattr_ed.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsupport.cpp -o pd-linux/debug-multi/flsupport.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flutil.cpp -o pd-linux/debug-multi/flutil.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom.cpp -o pd-linux/debug-multi/flatom.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_pr.cpp -o pd-linux/debug-multi/flatom_pr.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flthr.cpp -o pd-linux/debug-multi/flthr.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fltimer.cpp -o pd-linux/debug-multi/fltimer.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsimd.cpp -o pd-linux/debug-multi/flsimd.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flout.cpp -o pd-linux/debug-multi/flout.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_part.cpp -o pd-linux/debug-multi/flatom_part.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flitem.cpp -o pd-linux/debug-multi/flitem.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmeth.cpp -o pd-linux/debug-multi/flmeth.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmsg.cpp -o pd-linux/debug-multi/flmsg.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flproxy.cpp -o pd-linux/debug-multi/flproxy.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flqueue.cpp -o pd-linux/debug-multi/flqueue.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbind.cpp -o pd-linux/debug-multi/flbind.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmap.cpp -o pd-linux/debug-multi/flmap.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsndobj.cpp -o pd-linux/debug-multi/flsndobj.opp
+mkdir -p pd-linux/debug-multi/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_THREADS -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flstk.cpp -o pd-linux/debug-multi/flstk.opp
+ar rc pd-linux/debug-multi/libflext-pd_td.a.0.5.1   pd-linux/debug-multi/flbase.opp pd-linux/debug-multi/flext.opp pd-linux/debug-multi/flbuf.opp pd-linux/debug-multi/fldsp.opp pd-linux/debug-multi/fllib.opp pd-linux/debug-multi/flxlet.opp pd-linux/debug-multi/flattr.opp pd-linux/debug-multi/flattr_ed.opp pd-linux/debug-multi/flsupport.opp pd-linux/debug-multi/flutil.opp pd-linux/debug-multi/flatom.opp pd-linux/debug-multi/flatom_pr.opp pd-linux/debug-multi/flthr.opp pd-linux/debug-multi/fltimer.opp pd-linux/debug-multi/flsimd.opp pd-linux/debug-multi/flout.opp pd-linux/debug-multi/flatom_part.opp pd-linux/debug-multi/flitem.opp pd-linux/debug-multi/flmeth.opp pd-linux/debug-multi/flmsg.opp pd-linux/debug-multi/flproxy.opp pd-linux/debug-multi/flqueue.opp pd-linux/debug-multi/flbind.opp pd-linux/debug-multi/flmap.opp pd-linux/debug-multi/flsndobj.opp pd-linux/debug-multi/flstk.opp 
+make[1]: Leaving directory `/home/r2d2/grrrr/flext'
+make -f ./buildsys/gnumake-sub.mak  PLATFORM=lnx RTSYS=pd COMPILER=gcc BUILDPATH=./buildsys/ PKGINFO=package.txt BUILDCLASS=flext USRCONFIG=config.txt USRMAKE=build/gnumake-lnx-gcc.inc TARGETMODE=debug TARGETTYPE=shared SHARED=1 DEBUG=1 _build_
+make[1]: Entering directory `/home/r2d2/grrrr/flext'
+mkdir -p pd-linux/debug-shared
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbase.cpp -o pd-linux/debug-shared/flbase.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flext.cpp -o pd-linux/debug-shared/flext.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbuf.cpp -o pd-linux/debug-shared/flbuf.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fldsp.cpp -o pd-linux/debug-shared/fldsp.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fllib.cpp -o pd-linux/debug-shared/fllib.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flxlet.cpp -o pd-linux/debug-shared/flxlet.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr.cpp -o pd-linux/debug-shared/flattr.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flattr_ed.cpp -o pd-linux/debug-shared/flattr_ed.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsupport.cpp -o pd-linux/debug-shared/flsupport.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flutil.cpp -o pd-linux/debug-shared/flutil.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom.cpp -o pd-linux/debug-shared/flatom.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_pr.cpp -o pd-linux/debug-shared/flatom_pr.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flthr.cpp -o pd-linux/debug-shared/flthr.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/fltimer.cpp -o pd-linux/debug-shared/fltimer.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsimd.cpp -o pd-linux/debug-shared/flsimd.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flout.cpp -o pd-linux/debug-shared/flout.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flatom_part.cpp -o pd-linux/debug-shared/flatom_part.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flitem.cpp -o pd-linux/debug-shared/flitem.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmeth.cpp -o pd-linux/debug-shared/flmeth.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmsg.cpp -o pd-linux/debug-shared/flmsg.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flproxy.cpp -o pd-linux/debug-shared/flproxy.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flqueue.cpp -o pd-linux/debug-shared/flqueue.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flbind.cpp -o pd-linux/debug-shared/flbind.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flmap.cpp -o pd-linux/debug-shared/flmap.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flsndobj.cpp -o pd-linux/debug-shared/flsndobj.opp
+mkdir -p pd-linux/debug-shared/
+g++ -c -msse -mfpmath=sse -ffast-math  -pthread -fPIC -g -DFLEXT_USE_SIMD -D_DEBUG -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DPD -I/usr/local/src/pd/src -I/usr/include/stk -I/usr/include/SndObj source/flstk.cpp -o pd-linux/debug-shared/flstk.opp
+g++ -pthread -shared  -g -Wl,-soname,libflext-pd_d.so.0.5  -L/usr/local/src/pd/bin -o pd-linux/debug-shared/libflext-pd_d.so.0.5.1   pd-linux/debug-shared/flbase.opp pd-linux/debug-shared/flext.opp pd-linux/debug-shared/flbuf.opp pd-linux/debug-shared/fldsp.opp pd-linux/debug-shared/fllib.opp pd-linux/debug-shared/flxlet.opp pd-linux/debug-shared/flattr.opp pd-linux/debug-shared/flattr_ed.opp pd-linux/debug-shared/flsupport.opp pd-linux/debug-shared/flutil.opp pd-linux/debug-shared/flatom.opp pd-linux/debug-shared/flatom_pr.opp pd-linux/debug-shared/flthr.opp pd-linux/debug-shared/fltimer.opp pd-linux/debug-shared/flsimd.opp pd-linux/debug-shared/flout.opp pd-linux/debug-shared/flatom_part.opp pd-linux/debug-shared/flitem.opp pd-linux/debug-shared/flmeth.opp pd-linux/debug-shared/flmsg.opp pd-linux/debug-shared/flproxy.opp pd-linux/debug-shared/flqueue.opp pd-linux/debug-shared/flbind.opp pd-linux/debug-shared/flmap.opp pd-linux/debug-shared/flsndobj.opp pd-linux/debug-shared/flstk.opp  /usr/lib/libstk.a /usr/lib/libsndobj.a
+chmod 755 pd-linux/debug-shared/libflext-pd_d.so.0.5.1
+make[1]: Leaving directory `/home/r2d2/grrrr/flext'

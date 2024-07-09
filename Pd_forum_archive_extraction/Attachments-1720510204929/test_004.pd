@@ -1,0 +1,5 @@
+#N canvas 309 296 450 300 10;
+#X obj -201 119 osc~ 440;
+#X obj -262 182 dac~;
+#X obj -201 168 schrijf~ sinus 1;
+#X connect 0 0 2 0;

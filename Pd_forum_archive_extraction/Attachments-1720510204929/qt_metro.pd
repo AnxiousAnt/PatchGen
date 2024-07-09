@@ -1,0 +1,27 @@
+#N canvas 335 336 458 308 10;
+#X obj 146 151 pdp_qt;
+#X obj 69 97 metro 40;
+#X floatatom 90 19 5 0 0 0 - - -;
+#X obj 23 60 bng 15 250 50 0 empty empty empty 0 -6 0 8 -139201 -1
+-1;
+#X msg 70 73 stop;
+#X obj 90 44 t b f;
+#X obj 212 49 openpanel;
+#X msg 212 74 open \$1;
+#X msg 212 21 bang;
+#X msg 212 123 stop;
+#X msg 212 99 play;
+#X obj 146 205 pdp_glx;
+#X connect 0 0 11 0;
+#X connect 1 0 0 0;
+#X connect 2 0 5 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 4 0 9 0;
+#X connect 5 0 3 0;
+#X connect 5 1 1 1;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 6 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;

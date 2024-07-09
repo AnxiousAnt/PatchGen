@@ -1,0 +1,148 @@
+#N canvas 1 14 1230 843 12;
+#X obj 41 438 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 40 467 openpanel;
+#X msg 140 436 1;
+#X obj 98 581 dac~;
+#X msg 40 495 open \$1;
+#X obj 102 547 readsf~ 1;
+#X msg 206 461 yes;
+#X msg 300 464 no;
+#X obj 250 530 print readsf_sound?;
+#X msg 443 448 print;
+#X text 250 464 or;
+#X obj 34 606 print;
+#X text 205 435 did you hear sound?;
+#X text 42 404 5;
+#X text 144 405 6;
+#X text 260 408 7;
+#X text 441 411 8;
+#X obj 182 615 timer;
+#X obj 182 639 print time_beween_open_and_start;
+#X obj 148 590 bang;
+#X obj 245 590 bang;
+#N canvas 0 0 1151 678 corrections 0;
+#X msg 247 129 start;
+#X msg 386 121 stop;
+#X obj 8 238 osc~ 440;
+#X msg 111 161 open \$1.wav;
+#X obj 111 101 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 111 125 savepanel;
+#X text 112 77 1;
+#X text 237 19 2;
+#X obj 9 267 *~ 0.1;
+#X obj 242 41 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 382 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 382 32 3;
+#X obj 218 418 writesf~ 1;
+#X obj 399 367 print time_beween_start_and_stop;
+#X obj 399 336 timer;
+#X obj 241 62 t b b;
+#X obj 381 88 t b b;
+#X msg 481 168 print;
+#X text 496 142 4;
+#X text 457 88 You MUST use triggers to correctly order the sequence
+of bangs to the message boxes;
+#X text 465 303 Dont use [bang] objects \, use bangs from triggers
+;
+#X connect 0 0 12 0;
+#X connect 1 0 12 0;
+#X connect 2 0 8 0;
+#X connect 3 0 12 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 8 0 12 0;
+#X connect 9 0 15 0;
+#X connect 10 0 16 0;
+#X connect 14 0 13 0;
+#X connect 15 0 0 0;
+#X connect 15 1 14 0;
+#X connect 16 0 1 0;
+#X connect 16 1 14 1;
+#X connect 17 0 12 0;
+#X restore 812 125 pd corrections;
+#X obj 69 280 cnv 15 60 30 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 173 279 cnv 15 60 30 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 357 199 cnv 15 60 30 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 414 199 cnv 15 60 30 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 41 97 cnv 15 120 30 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 170 75 cnv 15 120 30 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 273 78 cnv 15 120 30 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X msg 409 45 print;
+#X msg 174 69 start;
+#X msg 283 67 stop;
+#X obj 130 136 osc~ 440;
+#X msg 51 88 open \$1.wav;
+#X obj 52 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 53 60 savepanel;
+#X text 53 7 1;
+#X text 171 11 2;
+#X obj 132 165 *~ 0.1;
+#X obj 176 33 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 281 43 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 281 12 3;
+#X obj 143 216 writesf~ 1;
+#X obj 458 170 print;
+#X obj 112 315 timer;
+#X obj 112 339 print time_beween_open_and_start;
+#X obj 343 269 print time_beween_start_and_stop;
+#X obj 78 290 bang;
+#X obj 175 290 bang;
+#X obj 386 235 timer;
+#X obj 368 206 bang;
+#X obj 417 207 bang;
+#X text 424 19 4;
+#X text 631 122 ______________>;
+#X text 637 114 see here;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 2 0 11 0;
+#X connect 2 0 20 0;
+#X connect 4 0 5 0;
+#X connect 4 0 11 0;
+#X connect 4 0 19 0;
+#X connect 5 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X connect 9 0 5 0;
+#X connect 17 0 18 0;
+#X connect 19 0 17 0;
+#X connect 20 0 17 1;
+#X connect 29 0 42 0;
+#X connect 30 0 42 0;
+#X connect 30 0 43 0;
+#X connect 30 0 48 0;
+#X connect 30 0 50 0;
+#X connect 31 0 42 0;
+#X connect 31 0 43 0;
+#X connect 31 0 51 0;
+#X connect 32 0 38 0;
+#X connect 33 0 42 0;
+#X connect 33 0 43 0;
+#X connect 33 0 47 0;
+#X connect 34 0 35 0;
+#X connect 35 0 33 0;
+#X connect 38 0 42 0;
+#X connect 39 0 30 0;
+#X connect 40 0 31 0;
+#X connect 44 0 45 0;
+#X connect 47 0 44 0;
+#X connect 48 0 44 1;
+#X connect 49 0 46 0;
+#X connect 50 0 49 0;
+#X connect 51 0 49 1;

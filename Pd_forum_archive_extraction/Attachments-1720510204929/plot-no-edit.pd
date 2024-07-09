@@ -1,0 +1,103 @@
+#N struct help-plot-template float x float y array array1 help-plot-array1-template
+array array2 help-plot-array2-template array array3 help-plot-array3-template
+;
+#N struct help-plot-array1-template float y;
+#N struct help-plot-array2-template float x float y;
+#N struct help-plot-array3-template float y float w;
+#N canvas 355 151 1282 829 12;
+#N canvas 435 109 626 710 help-plot-template 0;
+#X text 29 34 creation arguments:;
+#X text 49 241 - RGB color (0=black \, 999=white \, 900=red \, 90=green
+\, 9=blue \, 555=grey \, etc.);
+#X text 47 271 - line width;
+#X text 47 290 - relative x and y location;
+#X text 48 310 - x spacing;
+#X obj 40 397 plot curve array2 70 3 100 0;
+#X obj 31 488 plot curve array3 9 1 120 50 20;
+#X obj 45 12 plot array1 500 1 10 15 20;
+#X text 30 327 This first example plots the red trace (500) \, width
+1 \, at point (10 \, 15) \, with horizontal spacing 20 The black diamonds
+come from the template of the array1 element itself.;
+#X text 51 508 If a "w" variable is present in the template as for
+array3 \, it is added to the line width.;
+#X obj 23 672 filledpolygon 509 509 0 -10 -10 10 -10 10 10 -10 10;
+#X text 28 634 To see the data itself \, select "properties" for the
+scalar by right clicking on the purple square.;
+#X obj 25 567 struct help-plot-template float x float y array array1
+help-plot-array1-template array array2 help-plot-array2-template array
+array3 help-plot-array3-template;
+#X text 34 546 here's the "struct" for all this:;
+#X text 46 220 - field to plot (the array);
+#X text 48 51 - optional "-n" flag to make invisible initially;
+#X text 47 70 - alternatively \, an optional "-v [variable]" flag to
+assign a variable to make this visible/invisible.;
+#X text 51 101 - Opional "-vs [constant or variable] to set visibility
+of scalars along the path of the plot.;
+#X text 47 199 - optional word "curve" to specify bezier;
+#X text 47 132 - optional "-x [variable]" flag to use different x variable
+;
+#X text 48 153 - optional "-y [variable]" flag to use different y variable
+;
+#X text 48 173 - optional "-w [variable]" flag to use different w variable
+;
+#X text 63 419 This is the green spiral (color 70 \, line width 3 \,
+location (100 \, 0). Since the template for array2 contains an "x"
+variable \, plot ignores x spacing requests and takes x from the data
+itself.;
+#X restore 43 3 pd help-plot-template;
+#N canvas 196 292 273 120 help-plot-array1-template 0;
+#X obj 30 71 filledpolygon 0 0 0 -5 0 0 5 5 0 0 -5;
+#X obj 32 27 struct help-plot-array1-template float y;
+#X restore 42 26 pd help-plot-array1-template;
+#N canvas 161 163 273 120 help-plot-array2-template 0;
+#X obj 32 26 struct help-plot-array2-template float x float y;
+#X restore 43 48 pd help-plot-array2-template;
+#N canvas 257 708 860 300 help-plot-data 0;
+#X scalar help-plot-template 39 73 \; 70 \; 56 \; 42 \; 70 \; 62 \;
+\; 0 0 \; 0 10 \; 20 0 \; 0 -30 \; -40 0 \; 0 50 \; 60 0 \; \; 0 0
+\; 10 10 \; 0 10 \; 0 1 \; 20 1 \; 20 10 \; 20 1 \; \;;
+#X coords 0 0 2 2 1 1 2 0 0;
+#X restore 55 264 pd help-plot-data;
+#N canvas 161 163 273 120 help-plot-array3-template 0;
+#X obj 43 32 struct help-plot-array3-template float y float w;
+#X restore 42 69 pd help-plot-array3-template;
+#X obj 60 102 loadbang;
+#X text 217 284 <- visible \, but not editable;
+#X msg 142 127 20 10;
+#X msg 325 129 200 100;
+#X obj 60 152 t l;
+#X msg 55 177 \; pd-help-plot-data donecanvasdialog 0 0 2 0 0 \$1 \$1
+\$2 \$2 0 0;
+#X msg 60 126 2 1;
+#X text 321 31 graph extends GOP area (which itself is just 2 pixels
+wide) to inhibit editing the array with the mouse.;
+#X text 142 101 make GOP larger:;
+#X text -1 130 "lock":;
+#X text 240 128 "unlock":;
+#N canvas 260 378 844 510 (subpatch) 0;
+#X array array1 200 float 3;
+#A 0 122 122 122 122 122 121 120 119 118 118 118 118 118 118 118 118
+118 117.5 117 117 115 114.5 114 113.5 113 113 111 111 111 110 109 108
+107 105 103 102 101 100 99 98 97 97 97 95 99 98 97 97 97 86 85 80 79
+78 77 77 77 73 73 71 71 71 71 69 69 66 65 65 65 65 65 63 63 63 63 63
+63 63 63 63 63 63 63 63 63 63 63 56 56 56 56 56 56 56 54 54 54 54 54
+54 54 54 54 54 54 54 54 54 56 56 56 56 58 59 60 61 62 62 64 65 66 67
+68 69 70 70 72 73 74 75 76 76 80 80 82 83 84 85 86 87 90 90 92 93 94
+94 96 96 98 99 102 102 102 103 104 105 108 108 108 109 110 111 112
+113 114 115 116 116 118 118 118 119 120 121 122 122 122 123 124 124
+124 124 124 124 124 124 124 124 124 124 124 124 124 124 124 124 120
+120 120 118;
+#X obj 128 49 namecanvas array1-graph;
+#X coords 0 0 2 2 1 1 2 0 0;
+#X restore 54 441 graph;
+#X msg 80 221 \; array1-graph donecanvasdialog 0 0 2 0 0 \$1 \$1 \$2
+\$2 0 0;
+#X text 180 441 <- also works with arrays. usually the array graph
+is anonymous but you can use namecanvas to give it a name (and there
+being able to change it dynamically). have a look inside!;
+#X connect 5 0 11 0;
+#X connect 7 0 9 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 9 0 17 0;
+#X connect 11 0 9 0;

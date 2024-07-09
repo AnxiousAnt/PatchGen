@@ -1,0 +1,270 @@
+#N canvas 57 80 1080 667 10;
+#X obj 102 346 env~;
+#X floatatom 102 367 5 0 0 0 - - -;
+#X obj 458 97 metro 1000;
+#X obj 458 31 loadbang;
+#X msg 458 52 1;
+#X obj 458 76 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 505 56 \; pd dsp 1;
+#X obj 104 211 osc~ 440;
+#X obj 365 209 osc~ 880;
+#X obj 103 410 vu 15 120 empty empty -1 -8 0 8 -66577 -1 1 0;
+#X obj 102 386 - 100;
+#N canvas 494 210 944 679 cpfade 0;
+#X obj 183 233 pack 0 50;
+#X obj 166 295 *~;
+#X obj 72 231 pack 0 50;
+#X obj 55 293 *~;
+#X obj 183 259 line~;
+#X obj 72 256 line~;
+#X obj 248 128 * 1.5708;
+#X obj 55 24 inlet~;
+#X obj 165 24 inlet~;
+#X obj 56 362 outlet~;
+#X obj 248 23 inlet;
+#X obj 292 22 loadbang;
+#X obj 292 67 f \$1;
+#X obj 72 202 cos;
+#X obj 183 198 sin;
+#X obj 338 71 atan;
+#X msg 338 45 1;
+#X obj 338 96 * 2;
+#X obj 292 46 t b b;
+#X text 319 128 * M_PI/2;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X restore 572 59 pd LICENSE-GPL;
+#X connect 0 0 4 0;
+#X connect 1 0 9 0;
+#X connect 2 0 5 0;
+#X connect 3 0 9 0;
+#X connect 4 0 1 1;
+#X connect 5 0 3 1;
+#X connect 6 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 3 0;
+#X connect 8 0 1 0;
+#X connect 10 0 6 0;
+#X connect 11 0 18 0;
+#X connect 12 0 6 0;
+#X connect 13 0 2 0;
+#X connect 14 0 0 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 17 0 6 1;
+#X connect 18 0 12 0;
+#X connect 18 1 16 0;
+#X restore 335 295 pd cpfade;
+#X msg 458 185 1 1000;
+#X msg 516 185 0 1000;
+#N canvas 0 0 478 335 linfade 0;
+#X obj 76 87 inlet~;
+#X obj 142 87 inlet~;
+#X obj 77 198 outlet~;
+#X obj 201 87 inlet;
+#X obj 201 127 vline~;
+#X obj 141 136 -~;
+#X obj 141 156 *~;
+#X text 371 150 (1-x)*a + x*b;
+#X text 371 167 = a - x*a + x*b;
+#X text 371 184 = a + x*(b - a);
+#X text 366 119 x: fade factor (0-1);
+#X text 366 90 a: sig from inlet~ 0;
+#X text 339 50 Linear crossfade according to the following calculation:
+;
+#X text 367 104 b: sig from inlet~ 1;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X restore 614 19 pd LICENSE-GPL;
+#X connect 0 0 5 1;
+#X connect 0 0 2 0;
+#X connect 1 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X restore 103 285 pd linfade;
+#X obj 458 121 f;
+#X obj 495 120 ==;
+#X obj 458 145 select 0 1;
+#X obj 645 213 osc~ 440;
+#N canvas 494 210 944 679 cpfade 0;
+#X obj 183 233 pack 0 50;
+#X obj 166 295 *~;
+#X obj 72 231 pack 0 50;
+#X obj 55 293 *~;
+#X obj 183 259 line~;
+#X obj 72 256 line~;
+#X obj 248 128 * 1.5708;
+#X obj 55 24 inlet~;
+#X obj 165 24 inlet~;
+#X obj 56 362 outlet~;
+#X obj 248 23 inlet;
+#X obj 292 22 loadbang;
+#X obj 292 67 f \$1;
+#X obj 72 202 cos;
+#X obj 183 198 sin;
+#X obj 338 71 atan;
+#X msg 338 45 1;
+#X obj 338 96 * 2;
+#X obj 292 46 t b b;
+#X text 319 128 * M_PI/2;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X restore 572 59 pd LICENSE-GPL;
+#X connect 0 0 4 0;
+#X connect 1 0 9 0;
+#X connect 2 0 5 0;
+#X connect 3 0 9 0;
+#X connect 4 0 1 1;
+#X connect 5 0 3 1;
+#X connect 6 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 3 0;
+#X connect 8 0 1 0;
+#X connect 10 0 6 0;
+#X connect 11 0 18 0;
+#X connect 12 0 6 0;
+#X connect 13 0 2 0;
+#X connect 14 0 0 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 17 0 6 1;
+#X connect 18 0 12 0;
+#X connect 18 1 16 0;
+#X restore 745 295 pd cpfade;
+#N canvas 0 0 478 335 linfade 0;
+#X obj 76 87 inlet~;
+#X obj 142 87 inlet~;
+#X obj 77 198 outlet~;
+#X obj 201 87 inlet;
+#X obj 201 127 vline~;
+#X obj 141 136 -~;
+#X obj 141 156 *~;
+#X text 371 150 (1-x)*a + x*b;
+#X text 371 167 = a - x*a + x*b;
+#X text 371 184 = a + x*(b - a);
+#X text 366 119 x: fade factor (0-1);
+#X text 366 90 a: sig from inlet~ 0;
+#X text 339 50 Linear crossfade according to the following calculation:
+;
+#X text 367 104 b: sig from inlet~ 1;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X restore 614 19 pd LICENSE-GPL;
+#X connect 0 0 5 1;
+#X connect 0 0 2 0;
+#X connect 1 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X restore 511 295 pd linfade;
+#X obj 334 346 env~;
+#X floatatom 334 367 5 0 0 0 - - -;
+#X obj 335 410 vu 15 120 empty empty -1 -8 0 8 -66577 -1 1 0;
+#X obj 334 386 - 100;
+#X obj 512 346 env~;
+#X floatatom 512 367 5 0 0 0 - - -;
+#X obj 513 410 vu 15 120 empty empty -1 -8 0 8 -66577 -1 1 0;
+#X obj 512 386 - 100;
+#X obj 745 346 env~;
+#X floatatom 745 367 5 0 0 0 - - -;
+#X obj 746 410 vu 15 120 empty empty -1 -8 0 8 -66577 -1 1 0;
+#X obj 745 386 - 100;
+#X text 641 160 Same signal;
+#X text 103 149 Low-correlated signals;
+#X obj 458 216 line 0 20;
+#X connect 0 0 1 0;
+#X connect 1 0 10 0;
+#X connect 2 0 15 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 7 0 11 0;
+#X connect 7 0 14 0;
+#X connect 8 0 11 1;
+#X connect 8 0 14 1;
+#X connect 10 0 9 0;
+#X connect 11 0 21 0;
+#X connect 12 0 35 0;
+#X connect 13 0 35 0;
+#X connect 14 0 0 0;
+#X connect 15 0 16 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 1;
+#X connect 17 0 12 0;
+#X connect 17 1 13 0;
+#X connect 18 0 19 0;
+#X connect 18 0 20 0;
+#X connect 18 0 20 1;
+#X connect 18 0 19 1;
+#X connect 19 0 29 0;
+#X connect 20 0 25 0;
+#X connect 21 0 22 0;
+#X connect 22 0 24 0;
+#X connect 24 0 23 0;
+#X connect 25 0 26 0;
+#X connect 26 0 28 0;
+#X connect 28 0 27 0;
+#X connect 29 0 30 0;
+#X connect 30 0 32 0;
+#X connect 32 0 31 0;
+#X connect 35 0 11 2;
+#X connect 35 0 14 2;
+#X connect 35 0 20 2;
+#X connect 35 0 19 2;

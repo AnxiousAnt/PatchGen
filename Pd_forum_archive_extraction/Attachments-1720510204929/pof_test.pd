@@ -1,0 +1,42 @@
+#N canvas 369 107 552 414 10;
+#X declare -lib pof;
+#X obj 224 19 declare -lib pof;
+#X obj 36 316 print MapaS;
+#X obj 36 290 pofxml mapas;
+#X msg 36 51 getnum /;
+#X msg 36 26 load ./mapa_modelo.xml;
+#X msg 36 88 getnum links;
+#X msg 36 69 getnum nodes;
+#X obj 53 127 hradio 15 1 0 15 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X msg 58 190 18849;
+#X obj 143 273 print msg;
+#X obj 36 257 t a a;
+#X text 956 533 .;
+#X msg 36 218 gets nodes/node[@id=\$1][@x];
+#X msg 36 162 gets nodes/node[\$1][@id];
+#X obj 314 128 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X msg 314 170 get links/link[\$1][@shapeLng];
+#X obj 314 215 pofxml mapas;
+#X obj 375 272 list length;
+#X floatatom 375 293 5 0 0 0 - - -, f 5;
+#X obj 314 314 print getLink;
+#X text 117 350 Note: "get" converts the data to a Pd list \, while
+"gets" returns a symbol., f 44;
+#X connect 2 0 1 0;
+#X connect 3 0 10 0;
+#X connect 4 0 10 0;
+#X connect 5 0 10 0;
+#X connect 6 0 10 0;
+#X connect 7 0 13 0;
+#X connect 8 0 12 0;
+#X connect 10 0 2 0;
+#X connect 10 1 9 0;
+#X connect 12 0 10 0;
+#X connect 13 0 10 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 16 0 19 0;
+#X connect 17 0 18 0;

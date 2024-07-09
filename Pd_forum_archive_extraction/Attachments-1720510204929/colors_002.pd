@@ -1,0 +1,205 @@
+#N canvas 495 107 485 685 10;
+#X obj 157 418 hsl 300 80 0 127 0 0 empty HSL HSL 100 -20 0 24 -244937
+-243273 -242441 10200 1;
+#X obj 107 347 list prepend color;
+#X obj 107 526 print HSL;
+#X obj 107 370 list trim;
+#X text 82 582 -pow(2 \, 16) * R - pow(2 \, 8) * G - pow(2 \, 0) *
+B - 1;
+#X obj 107 172 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -258699
+-1 -1 5880 0;
+#X obj 124 172 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -24198
+-1 -1 5040 0;
+#X obj 141 172 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -62784
+-1 -1 840 0;
+#X text 149 242 Back;
+#X text 221 241 Front;
+#X text 309 242 Label;
+#X floatatom 56 314 5 0 0 0 - - -;
+#X obj 56 290 int;
+#N canvas 0 0 224 236 pak3 0;
+#X obj 76 71 t b f;
+#X obj 123 72 t b f;
+#X obj 24 38 inlet;
+#X obj 76 35 inlet;
+#X obj 123 35 inlet;
+#X obj 24 158 outlet;
+#X obj 24 133 pack 0 0 0;
+#X connect 0 0 6 0;
+#X connect 0 1 6 1;
+#X connect 1 0 6 0;
+#X connect 1 1 6 2;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 6 0 5 0;
+#X restore 107 276 pd pak3;
+#N canvas 0 0 224 236 pak3 0;
+#X obj 76 71 t b f;
+#X obj 123 72 t b f;
+#X obj 24 38 inlet;
+#X obj 76 35 inlet;
+#X obj 123 35 inlet;
+#X obj 24 158 outlet;
+#X obj 24 133 pack 0 0 0;
+#X connect 0 0 6 0;
+#X connect 0 1 6 1;
+#X connect 1 0 6 0;
+#X connect 1 1 6 2;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 6 0 5 0;
+#X restore 107 324 pd pak3;
+#X obj 182 173 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -258699
+-1 -1 5880 0;
+#X obj 199 173 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -24198
+-1 -1 2520 0;
+#X obj 216 173 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -62784
+-1 -1 840 0;
+#N canvas 0 0 224 236 pak3 0;
+#X obj 76 71 t b f;
+#X obj 123 72 t b f;
+#X obj 24 38 inlet;
+#X obj 76 35 inlet;
+#X obj 123 35 inlet;
+#X obj 24 158 outlet;
+#X obj 24 133 pack 0 0 0;
+#X connect 0 0 6 0;
+#X connect 0 1 6 1;
+#X connect 1 0 6 0;
+#X connect 1 1 6 2;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 6 0 5 0;
+#X restore 182 277 pd pak3;
+#X obj 262 174 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -258699
+-1 -1 5880 0;
+#X obj 279 174 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -24198
+-1 -1 1260 0;
+#X obj 296 174 vsl 15 64 0 255 0 0 empty empty empty 0 -8 0 8 -62784
+-1 -1 840 0;
+#N canvas 0 0 224 236 pak3 0;
+#X obj 76 71 t b f;
+#X obj 123 72 t b f;
+#X obj 24 38 inlet;
+#X obj 76 35 inlet;
+#X obj 123 35 inlet;
+#X obj 24 158 outlet;
+#X obj 24 133 pack 0 0 0;
+#X connect 0 0 6 0;
+#X connect 0 1 6 1;
+#X connect 1 0 6 0;
+#X connect 1 1 6 2;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 6 0 5 0;
+#X restore 262 278 pd pak3;
+#X text 88 612 Of course pak3 and rgbtopd should be abstractions;
+#N canvas 281 345 447 195 rgbtopd 0;
+#X obj 35 59 expr -65536 * $i1 - 256 * $i2 - $i3 - 1 \;;
+#X obj 35 25 inlet;
+#X obj 35 89 outlet;
+#X text 26 121 -pow(2 \, 16) * R - pow(2 \, 8) * G - pow(2 \, 0) *
+B - 1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X restore 262 298 pd rgbtopd;
+#N canvas 281 345 447 195 rgbtopd 0;
+#X obj 35 59 expr -65536 * $i1 - 256 * $i2 - $i3 - 1 \;;
+#X obj 35 25 inlet;
+#X obj 35 89 outlet;
+#X text 26 121 -pow(2 \, 16) * R - pow(2 \, 8) * G - pow(2 \, 0) *
+B - 1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X restore 182 298 pd rgbtopd;
+#N canvas 281 345 447 195 rgbtopd 0;
+#X obj 35 59 expr -65536 * $i1 - 256 * $i2 - $i3 - 1 \;;
+#X obj 35 25 inlet;
+#X obj 35 89 outlet;
+#X text 26 121 -pow(2 \, 16) * R - pow(2 \, 8) * G - pow(2 \, 0) *
+B - 1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X restore 107 297 pd rgbtopd;
+#X msg 200 60 e 6 2;
+#X text 111 41 Back;
+#X text 202 42 Front;
+#X text 296 42 Label;
+#X msg 106 60 e c 2;
+#X msg 292 60 e 3 2;
+#X obj 344 28 bng 32 2000 50 0 empty empty test1 0 -6 0 12 -244937
+-243273 -242441;
+#X obj 384 52 bng 32 2000 50 0 empty empty test2 0 -6 0 12 -191407
+-1903 -34991;
+#X msg 293 84 2 8 b;
+#X msg 106 84 b b b;
+#X msg 200 84 0 7 b;
+#X obj 292 107 hexcolor;
+#X obj 106 105 hexcolor;
+#X obj 200 106 hexcolor;
+#X text 86 629 Example color schemes taken from: http://www.returnofdesign.com/color.php
+;
+#X obj 155 394 nbx 5 20 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 15
+-244937 -243273 -242441 0 256;
+#X obj 46 423 tgl 50 1 empty empty LABEL 0 60 0 12 -244937 -243273
+-242441 1 1;
+#X obj 106 127 unpack 0 0 0;
+#X obj 200 127 unpack 0 0 0;
+#X obj 292 128 unpack 0 0 0;
+#X obj 9 11 cnv 15 100 30 empty \$0-title _Colors_ 7 14 0 14 -244937
+-242441 0;
+#X obj 107 506 s \$0-title;
+#X text 122 12 RGB -> Pd/Tk colors;
+#X text 81 561 Formula:;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 0 2 0;
+#X connect 3 0 43 0;
+#X connect 3 0 42 0;
+#X connect 3 0 48 0;
+#X connect 5 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 13 1;
+#X connect 7 0 13 2;
+#X connect 12 0 11 0;
+#X connect 13 0 26 0;
+#X connect 14 0 1 0;
+#X connect 15 0 18 0;
+#X connect 16 0 18 1;
+#X connect 17 0 18 2;
+#X connect 18 0 25 0;
+#X connect 19 0 22 0;
+#X connect 20 0 22 1;
+#X connect 21 0 22 2;
+#X connect 22 0 24 0;
+#X connect 24 0 14 2;
+#X connect 25 0 14 1;
+#X connect 26 0 14 0;
+#X connect 27 0 40 0;
+#X connect 31 0 39 0;
+#X connect 32 0 38 0;
+#X connect 33 0 32 0;
+#X connect 33 0 27 0;
+#X connect 33 0 31 0;
+#X connect 34 0 35 0;
+#X connect 34 0 37 0;
+#X connect 34 0 36 0;
+#X connect 35 0 38 0;
+#X connect 36 0 39 0;
+#X connect 37 0 40 0;
+#X connect 38 0 46 0;
+#X connect 39 0 44 0;
+#X connect 40 0 45 0;
+#X connect 44 0 5 0;
+#X connect 44 1 6 0;
+#X connect 44 2 7 0;
+#X connect 45 0 15 0;
+#X connect 45 1 16 0;
+#X connect 45 2 17 0;
+#X connect 46 0 19 0;
+#X connect 46 1 20 0;
+#X connect 46 2 21 0;

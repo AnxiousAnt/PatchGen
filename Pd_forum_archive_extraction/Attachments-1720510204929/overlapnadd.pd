@@ -1,0 +1,115 @@
+#N canvas 83 67 873 556 10;
+#X text 32 163 any input signal you want -->;
+#N canvas 54 111 925 483 fft-convolution 0;
+#N canvas 0 0 450 300 graph1 0;
+#X array array1 256 float 0;
+#X coords 0 1 255 -1 256 100 1;
+#X restore 556 83 graph;
+#X obj 101 35 block~ 256 2;
+#X obj 71 146 tabreceive~ array1;
+#X text 89 65 overlap of 2 means that after 128 samples another routine
+is started and at the outlet added...;
+#X text 551 199 don't worry \, the display is only renewed maybe every
+second \, but the content actually changes every 128 samples (2.8 ms)
+;
+#X obj 71 176 rfft~;
+#X obj 71 431 outlet~;
+#X obj 71 237 *~;
+#X obj 96 237 *~;
+#X obj 230 178 rfft~;
+#X obj 230 239 *~;
+#X obj 255 239 *~;
+#X obj 230 147 tabreceive~ filter;
+#X obj 71 377 rifft~;
+#X text 313 243 convolution;
+#X text 317 314 normalize;
+#N canvas 0 0 450 300 graph2 0;
+#X array filter 256 float 0;
+#X coords 0 1 255 -1 256 100 1;
+#X restore 555 294 graph;
+#X obj 71 270 -~;
+#X obj 230 271 +~;
+#X obj 71 319 /~ 16384;
+#X obj 230 315 /~ 16384;
+#X connect 2 0 5 0;
+#X connect 5 0 7 0;
+#X connect 5 0 11 1;
+#X connect 5 1 8 0;
+#X connect 5 1 10 1;
+#X connect 7 0 17 0;
+#X connect 8 0 17 1;
+#X connect 9 0 10 0;
+#X connect 9 0 7 1;
+#X connect 9 1 11 0;
+#X connect 9 1 8 1;
+#X connect 10 0 18 0;
+#X connect 11 0 18 1;
+#X connect 12 0 9 0;
+#X connect 13 0 6 0;
+#X connect 17 0 19 0;
+#X connect 18 0 20 0;
+#X connect 19 0 13 0;
+#X connect 20 0 13 1;
+#X restore 235 294 pd fft-convolution;
+#X obj 289 366 dac~;
+#N canvas 478 311 456 349 split_in_128_sample_slices 0;
+#X obj 75 66 inlet~;
+#X obj 211 66 block~ 128;
+#X obj 75 105 tabsend~ array1;
+#X text 51 148 sends portions of 128 samples to "array1" (which is
+located in "pd fft-convolution");
+#X text 53 187 array1 is 256 samples long \, so the rest stays 0;
+#X obj 71 254 tabreceive~ filterarray;
+#X obj 71 279 tabsend~ filter;
+#X text 182 278 the same with the filter;
+#X connect 0 0 2 0;
+#X connect 5 0 6 0;
+#X restore 221 173 pd split_in_128_sample_slices;
+#N canvas 0 0 450 300 graph3 0;
+#X array filterarray 128 float 1;
+#A 0 0 0 0 -0.00714284 -0.0142857 -0.0214285 -0.0285714 -0.0285714
+-0.0285714 -0.0285714 -0.0285714 -0.0142857 0 0.0142857 0.0571427 0.0857141
+0.114285 0.128571 0.128571 0.128571 0.128571 0.128571 0.128571 0.114285
+0.128571 0.114285 -0.228571 -0.271428 -0.285714 -0.299999 -0.342856
+-0.342856 -0.371428 -0.399999 -0.42857 -0.42857 -0.447618 -0.45238
+-0.457142 -0.471428 -0.471428 -0.471428 -0.457142 -0.442856 -0.399999
+-0.385713 0.128571 0.242857 0.271428 0.328571 0.357142 0.42857 0.485713
+0.657141 0.742855 0.757141 0.814284 0.835712 0.871427 0.885712 0.899998
+0.899998 0.907141 0.914284 0.899998 0.88095 0.861903 0.842855 0.785713
+0.771427 0.742855 0.685713 0.599999 0.499999 0.399999 0.342856 0.285714
+0.185714 0.142857 -0.0285713 -0.0999997 -0.128571 -0.185714 -0.242857
+-0.314285 -0.342856 -0.357142 -0.371428 -0.37619 -0.380951 -0.385713
+-0.385713 -0.385713 -0.385713 -0.385713 -0.378571 -0.357142 -0.342856
+-0.242857 -0.171428 -0.0285714 0.114285 0.147619 0.180952 0.214285
+0.242857 0.271428 0.271428 0.271428 0.271428 0.257142 0.242857 0.207142
+0.128571 0.0857141 0 -0.0285714 -0.0714284 -0.0785712 -0.0999998 -0.128571
+-0.135714 -0.142857 -0.157143 -0.171428 -0.0999998 -0.0714284 -0.042857
+;
+#X coords 0 1 127 -1 200 140 1;
+#X restore 455 31 graph;
+#X msg 674 94 \; filterarray const 0;
+#X obj 67 343 tabwrite~ input;
+#X obj 235 326 tabwrite~ output;
+#N canvas 0 0 450 300 graph4 0;
+#X array input 256 float 0;
+#X coords 0 1 255 -1 256 100 1;
+#X restore 556 220 graph;
+#N canvas 0 0 450 300 graph4 0;
+#X array output 256 float 0;
+#X coords 0 1 255 -1 256 100 1;
+#X restore 556 326 graph;
+#X msg 48 237 bang;
+#X obj 221 140 phasor~ 200;
+#X obj 67 293 delwrite~ calctime 10;
+#X obj 67 316 delread~ calctime 3;
+#X text 85 235 compare input with output signal;
+#X text 35 47 example of a convolution with a filterkernel of 128 points
+;
+#X text 359 294 <-- filter;
+#X connect 1 0 7 0;
+#X connect 1 0 2 0;
+#X connect 10 0 6 0;
+#X connect 10 0 7 0;
+#X connect 11 0 3 0;
+#X connect 11 0 12 0;
+#X connect 13 0 6 0;

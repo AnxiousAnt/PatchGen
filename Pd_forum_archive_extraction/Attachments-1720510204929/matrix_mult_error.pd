@@ -1,0 +1,17 @@
+#N canvas 540 51 445 244 10;
+#X declare -stdlib iemmatrix -lib iemmatrix;
+#X obj 52 160 mtx_.*;
+#X obj 52 195 mtx_print;
+#X obj 52 75 mtx_diag 1 2 3;
+#X obj 89 101 mtx_ones 3;
+#X obj 52 54 t b b;
+#X msg 52 26 bang;
+#X obj 89 125 mtx_* 2;
+#X obj 134 25 declare -stdlib iemmatrix -lib iemmatrix;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 6 0;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 0 1;

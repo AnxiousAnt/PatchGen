@@ -1,0 +1,248 @@
+#N struct arrayarray float x float y array array-A array1 float distance
+float right-b;
+#N struct array1 float y array array-s element float distance float
+right-b;
+#N struct element float y float w;
+#N canvas 10 10 490 569 12;
+#X obj 10 10 cnv 20 260 30 empty empty Data.structures.workshop 10
+15 0 17 -195568 -33289 0;
+#X obj 360 10 cnv 20 110 30 empty empty João.Pais 10 15 0 17 -195568
+-33289 0;
+#X obj 10 50 cnv 20 190 30 empty empty Array.encapsulation 10 15 0
+15 -228856 -33289 0;
+#N canvas 34 653 541 299 graphic 0;
+#X scalar arrayarray 20 100 51 459 \; 63 0 0 \; 0 0 \; \; -16 17 0
+\; 6 0 \; 41 0 \; 32 0 \; 39 0 \; 24 0 \; \; 120 18 0 \; 17 0 \; 5
+0 \; 12 0 \; 7 0 \; 9 0 \; 12 0 \; 6 0 \; 0 0 \; 9 0 \; 1 0 \; 14 0
+\; 7 0 \; \; 54 0 0 \; 0 0 \; \; 13 0 0 \; 0 0 \; \; -6 0 0 \; 0 0
+\; \; 79 0 0 \; 0 0 \; \; 146 0 0 \; -1 0 \; \; 21 0 0 \; 0 0 \; \;
+82 16 0 \; 12 0 \; 36 0 \; -26 0 \; \; \;;
+#X coords 0 299 1 298 0 0 0;
+#X restore 33 436 pd graphic;
+#N canvas 475 200 448 239 structure 0;
+#X text 18 18 The same structure as before is used. Only the color
+and size of the squares changes.;
+#X obj 19 63 struct array1 float y array array-s element float distance
+float right-b;
+#X obj 19 203 drawnumber y 0 -5 0 y;
+#X text 18 167 A number with the label y states the current y point
+of the top array.;
+#X obj 19 113 plot array-s 6 2 0 0 distance;
+#X obj 19 143 filledpolygon 900 900 1 -1 -1 1 -1 1 1 -1 1;
+#X restore 33 246 pd structure;
+#N canvas 521 14 444 157 element 0;
+#X obj 15 55 struct element float y float w;
+#X text 17 12 The basic element has the same structure as in the previous
+example:;
+#X obj 15 115 drawnumber y 0 20 0;
+#X obj 15 85 filledpolygon 6 6 1 -3 -3 3 -3 3 3 -3 3;
+#X restore 32 185 pd element;
+#X msg 33 486 clear;
+#X obj 33 516 s pd-graphic;
+#N canvas 452 32 463 315 structure 0;
+#X obj 29 113 route click;
+#X obj 29 143 unpack p f;
+#X obj 29 173 s \$0-arrayarray;
+#X text 18 16 The array on the top has the same structure as the previous
+example. To create it \, just change the array fields \, so that "array1"
+is the element used.;
+#X text 17 244 Down below \, again a black line indicating 0;
+#X obj 29 213 plot array-A 90 2 0 0 distance;
+#X obj 29 73 struct arrayarray float x float y array array-A array1
+float distance float right-b;
+#X obj 29 274 drawpolygon 0 2 0 0 right-b 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 6 0 0 0;
+#X restore 33 306 pd structure;
+#X text 19 156 First \, the element to the first array:;
+#X text 19 216 Then \, the structure of the array to be encapsulated:
+;
+#X text 19 276 Finally \, the array that will use arrays as elements:
+;
+#N canvas 649 40 572 870 main-array 0;
+#X obj 231 133 pointer;
+#X obj 24 223 t b p;
+#X msg 24 253 10;
+#X obj 24 73 t b b;
+#X msg 231 103 traverse pd-graphic \, bang;
+#X obj 24 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 24 513 8 0 0 0 - - -;
+#X floatatom 202 513 5 0 0 0 - - -;
+#X obj 102 808 expr ($f1-1)*$f2;
+#X obj 188 688 t p p p;
+#X msg 24 483 set \$1;
+#X msg 202 483 set \$1;
+#X obj 112 778 t b f;
+#X obj 24 163 append arrayarray x y distance;
+#X obj 24 313 setsize arrayarray array-A;
+#X obj 24 573 set arrayarray distance;
+#X obj 24 453 get arrayarray distance;
+#X obj 202 452 getsize arrayarray array-A;
+#X obj 202 573 setsize arrayarray array-A;
+#X obj 188 658 r \$0-arrayarray;
+#X obj 162 383 r \$0-arrayarray;
+#X obj 102 718 getsize arrayarray array-A;
+#X obj 34 543 s \$0-array-distance;
+#X obj 112 748 r \$0-array-distance;
+#X obj 211 778 get arrayarray distance;
+#X obj 102 838 set arrayarray right-b;
+#X obj 212 543 s \$0-array-size;
+#X obj 32 688 r \$0-array-size;
+#X obj 34 193 s \$0-arrayarray;
+#X msg 24 133 20 100 50;
+#X text 15 633 This part updates the reference line's horizontal size.
+;
+#X text 23 345 Set array's size and distance between points here. First
+click the array \, so you get its pointer.;
+#X obj 34 283 s \$0-array-size;
+#X floatatom 423 542 5 0 0 0 - - -;
+#X msg 423 512 set \$1;
+#X obj 472 452 t p p;
+#X obj 423 482 get array1 y;
+#X obj 423 572 set array1 y;
+#X text 399 597 Edit individual points.;
+#X obj 162 413 t p p p p p;
+#X text 12 9 Bang to add an array to the canvas \, just as in the previous
+example.;
+#X connect 0 0 13 3;
+#X connect 1 0 2 0;
+#X connect 1 1 14 1;
+#X connect 2 0 14 0;
+#X connect 2 0 32 0;
+#X connect 3 0 29 0;
+#X connect 3 1 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X connect 6 0 15 0;
+#X connect 6 0 22 0;
+#X connect 7 0 18 0;
+#X connect 7 0 26 0;
+#X connect 8 0 25 0;
+#X connect 9 0 21 0;
+#X connect 9 1 24 0;
+#X connect 9 2 25 1;
+#X connect 10 0 6 0;
+#X connect 11 0 7 0;
+#X connect 12 0 8 0;
+#X connect 12 1 8 1;
+#X connect 13 0 1 0;
+#X connect 13 0 28 0;
+#X connect 16 0 10 0;
+#X connect 17 0 11 0;
+#X connect 19 0 9 0;
+#X connect 20 0 39 0;
+#X connect 21 0 8 0;
+#X connect 23 0 12 0;
+#X connect 24 0 8 1;
+#X connect 27 0 8 0;
+#X connect 29 0 13 0;
+#X connect 33 0 37 0;
+#X connect 34 0 33 0;
+#X connect 35 0 36 0;
+#X connect 35 1 37 1;
+#X connect 36 0 34 0;
+#X connect 39 0 16 0;
+#X connect 39 1 15 1;
+#X connect 39 2 17 0;
+#X connect 39 3 18 1;
+#X connect 39 4 35 0;
+#X restore 33 336 pd main-array;
+#N canvas 552 75 631 816 encapsulated-array 0;
+#X floatatom 17 168 5 0 1000 0 - - -;
+#X obj 17 143 hradio 15 1 0 10 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X msg 17 83 number \$1;
+#X obj 17 198 element arrayarray array-A;
+#X floatatom 63 379 5 0 0 0 - - -;
+#X msg 63 349 set \$1;
+#X obj 63 409 setsize array1 array-s;
+#X obj 63 318 getsize array1 array-s;
+#X floatatom 243 379 5 0 0 0 - - -;
+#X msg 243 349 set \$1;
+#X obj 243 318 get array1 distance;
+#X obj 243 409 set array1 distance;
+#X obj 196 174 r \$0-arrayarray;
+#X obj 17 53 r \$0-array-size;
+#X floatatom 17 752 5 0 0 0 - - -;
+#X msg 17 722 set \$1;
+#X floatatom 127 752 5 0 0 0 - - -;
+#X msg 127 722 set \$1;
+#X obj 17 692 get element y;
+#X obj 17 782 set element y;
+#X obj 17 662 t p p p p;
+#X obj 17 632 element array1 array-s;
+#X obj 127 692 get element w;
+#X obj 127 782 set element w;
+#X obj 17 518 getsize array1 array-s;
+#X text 187 492 After getting the pointer of one arrayarray's elements
+\, we can get the pointer of the individual elements of the encapsulated
+array.;
+#X obj 182 282 t p p;
+#X obj 341 282 t p p;
+#X floatatom 17 603 5 0 1000 0 - - -;
+#X obj 17 578 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X msg 17 548 number \$1;
+#X obj 17 488 t p p;
+#X obj 17 225 t p p;
+#X text 24 105 After getting the pointer (e.g. by clicking in the scalar)
+\, choose the element you want to edit;
+#X text 98 594 After changing the arraysize of each individual element
+\, click in the radio above to refresh the size of this one.;
+#X obj 182 255 t p p;
+#X text 16 7 Here you can access/edit the individual elements (which
+\, in turn \, are also arrays).;
+#X text 52 433 Edit array size (initally 1) or distance between points
+of the arrays inside each element.;
+#X text 234 692 Individual sub-elements don't seem to respont to mouse
+actions \, you have to edit them here.;
+#X text 181 228 Get/set the top-level parameters \, array size and
+distance.;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 32 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 11 0;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
+#X connect 12 0 3 1;
+#X connect 13 0 2 0;
+#X connect 14 0 19 0;
+#X connect 15 0 14 0;
+#X connect 16 0 23 0;
+#X connect 17 0 16 0;
+#X connect 18 0 15 0;
+#X connect 20 0 18 0;
+#X connect 20 1 19 1;
+#X connect 20 2 22 0;
+#X connect 20 3 23 1;
+#X connect 21 0 20 0;
+#X connect 22 0 17 0;
+#X connect 24 0 30 0;
+#X connect 26 0 7 0;
+#X connect 26 1 6 1;
+#X connect 27 0 10 0;
+#X connect 27 1 11 1;
+#X connect 28 0 21 0;
+#X connect 29 0 28 0;
+#X connect 30 0 29 0;
+#X connect 31 0 24 0;
+#X connect 31 1 21 1;
+#X connect 32 0 31 0;
+#X connect 32 1 35 0;
+#X connect 35 0 26 0;
+#X connect 35 1 27 0;
+#X restore 33 366 pd encapsulated-array;
+#X text 133 336 Add/edit the top level of the array;
+#X text 193 366 Edit the encapsulated elements (arrays);
+#X text 19 86 Since an array is a group of elements \, the basic element
+can also be itself an array. This array is declared like before \,
+the difference lies one level above. As expected \, the programming
+gets a bit more complicated.;
+#X text 19 406 Scalars are painted here:;
+#X connect 6 0 7 0;

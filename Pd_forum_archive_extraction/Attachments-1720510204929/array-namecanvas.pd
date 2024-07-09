@@ -1,0 +1,9 @@
+#N canvas 410 616 778 300 10;
+#N canvas 0 50 618 416 (subpatch) 0;
+#X array array1 100 float 2;
+#X obj 136 314 namecanvas \$0-this;
+#X coords 0 1 100 -1 200 140 1 0 0;
+#X restore 25 36 graph;
+#X obj 252 78 s \$0-this;
+#X msg 251 55 vis 1;
+#X connect 2 0 1 0;

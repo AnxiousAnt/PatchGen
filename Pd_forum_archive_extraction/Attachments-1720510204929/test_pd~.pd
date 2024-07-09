@@ -1,0 +1,58 @@
+#N canvas 696 172 634 816 12;
+#X msg 33 730 pd~ stop;
+#X msg 26 198 pd~ start pd~-subprocess.pd;
+#X obj 26 269 pd~ -fifo 20;
+#X obj 26 300 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 243 269 pd~ -fifo 20;
+#X obj 243 302 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 26 10 loadbang;
+#X msg 26 34 dsp 0;
+#X obj 26 60 s pd;
+#X obj 28 449 s pd;
+#X msg 243 198 pd~ start -nogui pd~-subprocess.pd;
+#X obj 30 581 s to_pd~;
+#X obj 46 233 r to_pd~;
+#X obj 264 235 r to_pd~;
+#X obj 33 759 s to_pd~;
+#X obj 32 669 s pd;
+#X msg 32 643 dsp 0;
+#X text 154 480 the subprocess 1 is clocked: the metro output bangs
+;
+#X msg 30 554 pd~_dsp 1;
+#X msg 28 423 dsp 1;
+#X obj 26 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 24 376 wait few seconds;
+#X text 89 425 <- 2 : start dsp of the main patch \, but not on the
+pd~ subprocess;
+#X obj 243 325 print pd_with_no_gui;
+#X obj 26 322 print pd_with_gui;
+#X text 155 499 the subprocess 2 crash after few seconds;
+#X text 99 643 <- 4 : stop process 1 : pd~ will crash after few seconds
+;
+#X text 130 138 gui-less pd : pd~ open the patch and execute the loadbang
+;
+#X text 109 120 <- pd with gui : pd~ open a new pd: the patch did not
+load;
+#X text 25 100 DSP OFF;
+#X text 101 557 <- 3 : start the audio in the pd~ subprocess. It did
+not change anything for the 1st subprocess \, and start the 2nd subprocess
+if it is not crashed, f 67;
+#X connect 0 0 14 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 24 0;
+#X connect 4 0 5 0;
+#X connect 5 0 23 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 10 0 4 0;
+#X connect 12 0 2 0;
+#X connect 13 0 4 0;
+#X connect 16 0 15 0;
+#X connect 18 0 11 0;
+#X connect 19 0 9 0;
+#X connect 20 0 1 0;
+#X connect 20 0 10 0;

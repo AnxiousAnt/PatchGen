@@ -1,0 +1,39 @@
+X-Mozilla-Keys: 
+Message-ID: <4B0C6377.3060008@gmail.com>
+Date: Tue, 24 Nov 2009 14:51:35 -0800
+From: Justin Glenn Smith <noisesmith@gmail.com>
+User-Agent: Mozilla-Thunderbird 2.0.0.22 (X11/20090706)
+MIME-Version: 1.0
+To: chi ball <c_cb@hotmail.it>
+Subject: Re: [PD] problem with MIDI (linux)
+References: <COL106-W4377AC9E635895EEFAD8418E9D0@phx.gbl>
+In-Reply-To: <COL106-W4377AC9E635895EEFAD8418E9D0@phx.gbl>
+X-Enigmail-Version: 0.96.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+chi ball wrote:
+> 
+> 
+> Hi, I have a problem with pd 0.41.4 on Linux Mandriva 2010.
+> I run JACK (qjackctl from terminal as root), and then I open pd.
+> 
+> If in "media" I set: ALSA, ALSA-MIDI, in "testtone" audio is ok, MIDI is mute!
+> If in "media" I set "jack", audio and midi in testtone are mute.
+> (In jack connections, pure data is connect with snd_emu10k1...)
+> 
+> My sound card use "snd_emu10k1" driver.
+> I can listen correctly MIDI with Timidity...,sound from cd or YT..)
+> sound card is ok)
+> 
+> Any suggestions?
+
+When you send MIDI into pd, what do you expect to happen?
+
+MIDI coming into pd will not make any sound, it will provide messages to
+control things that make sound, if you build them or load them.
+
+You should not be running jack or pd as root usually, if you are running
+jack as root you need to run pd as root too, or better yet, run both as
+your regular login.
+

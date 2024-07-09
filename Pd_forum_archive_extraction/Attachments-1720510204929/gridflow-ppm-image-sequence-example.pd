@@ -1,0 +1,44 @@
+#N canvas 13 12 1149 431 10;
+#X obj 462 150 t a a b;
+#X obj 484 299 #out;
+#X obj 506 193 f 0;
+#X obj 546 193 + 1;
+#X obj 414 216 #finished;
+#X msg 414 239 close;
+#X obj 506 232 rubysprintf /tmp/%08d.ppm;
+#X obj 462 50 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 462 108 # rand;
+#X msg 462 84 ( 240 320 3 # 256 );
+#X text 25 222 Close file after writing. Only necessary for the last
+image in a sequence \, as each "open" message closes the previous file.
+;
+#X text 695 208 For an image sequence it is useful to have sequential
+numbering \, but in other instances it is more useful to name with
+a time stamp (for example \, if the patch crashes and you need to restart
+without overwriting previous images...).;
+#X text 615 93 A simple image is pseudo-random noise.;
+#X text 278 18 Click here to generate and save images (in ppm format
+to /tmp by default).;
+#X msg 506 264 open ppm file \$1;
+#X text 23 328 For writing to a named pipe created with mkfifo (say
+it is called "fifo.ppm") \, you would "open ppm file fifo.ppm" once
+\, then send multiple image grids (of the same size) to #out \, and
+only "close" after the last image has been sent.;
+#X text 580 325 Note: when saving to a named pipe \, gridflow (and
+Pd) will appear to hang until the data is read from the other end of
+the fifo. When experimenting try "cat fifo.ppm >/dev/null" to magically
+bring Pd back to life.;
+#X connect 0 0 4 0;
+#X connect 0 1 1 0;
+#X connect 0 2 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 1;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 14 0;
+#X connect 7 0 9 0;
+#X connect 8 0 0 0;
+#X connect 9 0 8 0;
+#X connect 14 0 1 0;

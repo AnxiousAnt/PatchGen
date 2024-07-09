@@ -1,0 +1,34 @@
+>From 0830fff9c3c6533c3a68ded1f921acc66b4a9c24 Mon Sep 17 00:00:00 2001
+From: IOhannes m zmoelnig <zmoelnig@umlautO.umlaeute.mur.at>
+Date: Thu, 21 Mar 2013 21:13:16 +0100
+Subject: [PATCH 3/3] pointers are output as lists
+
+a pointer message is really a "list <ptr>" rather than
+"pointer <ptr>" (which i would have guessed due to the
+existance of 's_pointer').
+this can be confirmed by sending a pointer via [t a] to the
+right inlet of [set] (which gives the error:
+  "inlet: expected 'pointer' but got 'pointer'"
+
+checking back in m_class.c, it seems that the pointer-method
+will only ever get called from within the pd_defaultlist.
+---
+ src/x_connective.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/x_connective.c b/src/x_connective.c
+index 0ac8cc6..08cb97c 100644
+--- a/src/x_connective.c
++++ b/src/x_connective.c
+@@ -1026,7 +1026,7 @@ static void trigger_pointer(t_trigger *x, t_gpointer *gp)
+ {
+     t_atom at;
+     SETPOINTER(&at, gp);
+-    trigger_list(x, &s_pointer, 1, &at);
++    trigger_list(x, &s_list, 1, &at);
+ }
+ 
+ static void trigger_float(t_trigger *x, t_float f)
+-- 
+1.7.10.4
+

@@ -1,0 +1,14 @@
+#N canvas 67 83 725 297 10;
+#X msg 39 34 create \, 1;
+#X obj 39 76 gemwin;
+#X msg 49 54 destroy;
+#X obj 149 62 gemhead;
+#X obj 149 144 text3d;
+#X obj 253 64 loadbang;
+#X msg 253 95 string 84 104 105 115 32 105 115 10 109 117 108 116 105
+108 105 110 101 10 117 110 100 101 114 32 71 101 109;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;

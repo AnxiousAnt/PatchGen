@@ -1,0 +1,227 @@
+#N struct 1026-color float x float y float farbe;
+#N struct 1026-color-display float x float y float farbe;
+#N canvas 10 35 441 506 10;
+#X obj 17 180 r \$0-command;
+#X obj 17 220 arrays;
+#N canvas 349 91 450 386 test-arrays 0;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 0.174287 0.202858 0.202858 0.202858 0.23143 0.288572 0.288572
+0.317144 0.317144 0.374286 0.488572 0.488572 0.428572 0.428572 0.428572
+0.408572 0.388572 0.368572 0.348572 0.348572 0.348572 0.288572 0.268572
+0.248572 0.188572 0.148572 0.128572 0.108572 0.048572 0.028572 0.00857196
+-0.00342804 -0.015428 -0.027428 -0.039428 -0.051428 -0.071428 -0.091428
+-0.111428 -0.126428 -0.141428 -0.156428 -0.171428 -0.178095 -0.184761
+-0.191428 -0.231428 -0.211428 -0.181428 -0.151428 -0.011428 0.028572
+0.0685719 0.108572 0.188572 0.328572 0.408572 -0.391428 -0.411428 -0.451428
+-0.461428 -0.471428 -0.471428 -0.471428 -0.471428 -0.411427 -0.391427
+-0.371427 -0.331427 -0.271426 -0.251426 -0.231426 -0.191425 -0.191425
+-0.191425 -0.191425 -0.191425 -0.311426 -0.291426 -0.291426 -0.251426
+-0.231426 -0.211426 -0.131425 0.588582 0.588582 0.508581 0.508581 0.508581
+0.508581 0.508581 -0.586428 -0.591428 -0.591428 -0.591428 -0.591428
+-0.591428 -0.591428 -0.591428 -0.611428;
+#X coords 0 1 99 -1 200 70 1 0 0;
+#X restore 20 47 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array2 50 float 3;
+#A 0 0 0 0 0.057143 0.200001 0.314287 0.37143 0.400001 0.457144 0.457144
+0.457144 0.442859 0.428573 0.357144 0.285715 0.257144 0.114286 0.0857146
+2.98023e-008 -0.171429 -0.257144 -0.400001 -0.514287 -0.571431 -0.657145
+-0.771431 -0.771431 -0.771431 -0.74286 -0.714288 -0.657145 -0.571431
+-0.485716 -0.428573 -0.228572 -0.114286 -0.0285715 0.228572 0.314287
+0.37143 0.485716 0.528573 0.57143 0.628573 0.657145 0.714288 0.714288
+0.685717 0.685717 -0.228572;
+#X coords 0 1 50 -1 200 70 1 0 0;
+#X restore 20 157 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array3 35 float 3;
+#A 0 1.65716 1.65716 1.5143 1.42858 1.3143 -0.714297 -0.714297 -0.685725
+-0.685725 -0.685725 -0.705725 -0.705725 -0.745725 -0.805725 -0.77144
+-0.857155 -1.00001 -1.08573 -1.17144 -1.20002 -1.34287 -1.45716 -1.62859
+-1.80002 -1.97145 -2.0286 -2.0286 -1.77145 -2.00002 0.88572 -0.314293
+-0.42858 -0.657153 -0.685725 -0.857155;
+#X coords 0 1 35 -1 200 70 1 0 0;
+#X restore 20 267 graph;
+#X text 224 43 100 indices;
+#X text 224 153 50 indices;
+#X text 224 263 35 indices \, over 1 and under -1;
+#X text 18 12 These arrays are used in the help file:;
+#X restore 17 150 pd test-arrays;
+#X text 13 478 Released under the BSD License;
+#N canvas 504 106 494 344 META 0;
+#X text 12 55 AUTHOR João Pais <jmmmpais@googlemail.com>;
+#X text 12 95 LICENSE BSD;
+#X text 12 75 LIBRARY jmmmp;
+#X text 13 115 WEBSITE http://puredata.info/Members/jmmmp;
+#X text 14 185 OUTLET_0 - Float;
+#X text 12 35 KEYWORDS array;
+#X text 12 135 VERSION 2013;
+#X text 14 165 INLET_0 - operations;
+#X text 14 205 OUTLET_0 - List;
+#X text 12 5 DESCRIPTION Container to display and operate several arrays
+simultaneously;
+#X restore 284 477 pd META;
+#X text 13 458 (C) 2013 João Pais - jmmmpais@googlemail.com;
+#X floatatom 17 433 5 0 0 0 - - -;
+#X text 54 435 Output of current index;
+#X text 117 414 array name \, color \, thickness;
+#X text 117 400 Output of display parameters for current array:;
+#X msg 110 383 array1 229 1;
+#X msg 311 440 \; pd-patch vis 1;
+#N canvas 200 95 707 298 display 0;
+#X msg 237 131 color 900;
+#X msg 237 111 color;
+#X msg 227 81 thick \$1;
+#X floatatom 227 61 5 0 0 0 - - -;
+#X obj 227 221 s \$0-command;
+#X msg 247 161 dump;
+#X text 334 122 0ref 0/1 - show 0 line for reference;
+#X text 334 172 To define array properties \, choose the array first:
+;
+#X text 334 192 color - open color chart;
+#X text 334 212 color \$1 - sends color value;
+#X text 334 232 thick \$1 - sets line thickness (default and minimum
+1);
+#X text 334 22 display x y - size of display;
+#X text 334 252 dump - dumps display settings through right outlet
+;
+#X text 334 102 display ybounds \$1 \$2 - y bounds of display (default
+-1 1);
+#X text 334 42 display xprop 0/1 - all arrays displayed in their original
+lenght \, or fit into the display window (default 0);
+#X text 334 72 display yprop 0/1 - all arrays displayed between bounds
+1 and -1 \, or fit into the display window (default 0);
+#X obj 27 241 s \$0-command;
+#X msg 27 41 display 300 150;
+#X msg 27 61 display 100 100;
+#X obj 37 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 37 111 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 67 141 display ybounds 1 -1;
+#X msg 67 161 display ybounds 2 -3;
+#X msg 57 111 display yprop \$1;
+#X msg 57 91 display xprop \$1;
+#X msg 67 211 0ref \$1;
+#X obj 67 191 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 27 11 Display operations;
+#X msg 247 191 active;
+#X text 334 142 active - blinks and shows name of active array;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 4 0;
+#X connect 17 0 16 0;
+#X connect 18 0 16 0;
+#X connect 19 0 24 0;
+#X connect 20 0 23 0;
+#X connect 21 0 16 0;
+#X connect 22 0 16 0;
+#X connect 23 0 16 0;
+#X connect 24 0 16 0;
+#X connect 25 0 16 0;
+#X connect 26 0 25 0;
+#X connect 28 0 4 0;
+#X restore 167 100 pd display;
+#N canvas 195 135 707 509 display 0;
+#X obj 67 461 s \$0-command;
+#X floatatom 67 231 5 0 0 0 - - -;
+#X floatatom 137 231 5 0 0 0 - - -;
+#X obj 182 231 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 182 251 + 1;
+#X msg 182 271 symbol array\$1;
+#X obj 137 291 pack f s;
+#X text 124 202 1st chhose an array to query \; 2nd send the index
+number;
+#X obj 27 281 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 27 301 properties \$1;
+#X msg 137 311 read \$1 \$2;
+#X msg 67 251 read \$1;
+#X text 67 11 Data operations;
+#X text 324 202 read \$1 - outputs index \$1 of active array;
+#X text 324 222 read \$1 \$2 - outputs index \$1 of array \$2;
+#X text 324 262 properties 1/0 - open/close window with array properties
+;
+#X obj 67 71 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 67 161 s \$0-command;
+#X obj 67 91 + 1;
+#X obj 177 71 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 177 91 + 1;
+#X msg 67 111 open array\$1;
+#X msg 177 111 save array\$1;
+#X msg 177 131 save;
+#X text 325 111 save - writes contents of active array to original
+array;
+#X text 325 91 save "arrayname" - write contents to an external array
+;
+#X text 325 72 open "arrayname" - copy contents from an external array
+;
+#X msg 137 391 write \$1 \$2;
+#X obj 137 371 pack f f;
+#X floatatom 137 351 5 0 0 0 - - -;
+#X floatatom 182 351 5 0 0 0 - - -;
+#N canvas 437 79 340 236 random 0;
+#X obj 25 61 metro 100;
+#X obj 25 81 t b b;
+#X obj 25 151 expr ($f1 / 50) - 1;
+#X obj 25 181 pack f f;
+#X obj 25 201 outlet;
+#X obj 25 41 inlet;
+#X text 25 19 Generate random values to try out with array1;
+#X obj 52 101 random 100;
+#X obj 25 131 random 100;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 1 1 7 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 0 0;
+#X connect 7 0 3 1;
+#X connect 8 0 2 0;
+#X restore 147 441 pd random;
+#X obj 147 421 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 166 420 Try this with array1 (100 indices);
+#X text 324 242 write \$1 \$2 - write value \$1 in index \$2;
+#X text 67 31 == Start by importing some data into [arrays] ==;
+#X connect 1 0 11 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 1;
+#X connect 6 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 16 0 18 0;
+#X connect 18 0 21 0;
+#X connect 19 0 20 0;
+#X connect 20 0 22 0;
+#X connect 21 0 17 0;
+#X connect 22 0 17 0;
+#X connect 23 0 17 0;
+#X connect 27 0 0 0;
+#X connect 28 0 27 0;
+#X connect 29 0 28 0;
+#X connect 30 0 28 1;
+#X connect 31 0 27 0;
+#X connect 32 0 31 0;
+#X restore 17 100 pd display;
+#X text 167 80 Display operations;
+#X text 17 80 Data operations;
+#X text 16 130 Arrays used to test [arrays];
+#X text 17 67 Start here:;
+#X text 167 67 Continue here:;
+#X text 17 10 [arrays] - container to display and operate several arrays
+simultaneously;
+#X text 17 50 Array contents are copied from the original arrays.;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 1 1 10 0;

@@ -1,0 +1,48 @@
+#N canvas 149 189 575 494 10;
+#X obj 124 262 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 124 286 metro 500;
+#X floatatom 178 263 5 0 0 0 - - -;
+#X text 214 261 speedlimit;
+#X obj 124 362 pack 0 0 0 0;
+#X obj 148 333 unpack 0 0 0;
+#X obj 124 386 route 0;
+#X obj 45 49 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 45 72 metro 500;
+#X floatatom 98 50 5 0 0 0 - - -;
+#X text 133 48 speedlimit;
+#X obj 124 413 print;
+#X obj 45 148 f;
+#X obj 45 172 print;
+#X obj 253 54 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 253 77 metro 500;
+#X floatatom 306 54 5 0 0 0 - - -;
+#X text 345 53 speedlimit;
+#X obj 253 177 print;
+#X obj 253 153 symbol;
+#X obj 60 115 r your_stream_of_floats;
+#X obj 287 123 r your_stream_of_symbols;
+#X obj 148 310 r your_stream_of_lists;
+#X text 222 351 change unpack and pack arguments to match your data.
+;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 5 1 4 2;
+#X connect 5 2 4 3;
+#X connect 6 0 11 0;
+#X connect 7 0 8 0;
+#X connect 8 0 12 0;
+#X connect 9 0 8 1;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 19 0;
+#X connect 16 0 15 1;
+#X connect 19 0 18 0;
+#X connect 20 0 12 1;
+#X connect 21 0 19 1;
+#X connect 22 0 5 0;

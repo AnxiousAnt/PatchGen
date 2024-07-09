@@ -1,0 +1,6 @@
+#N canvas 435 322 450 300 10;
+#X obj 41 76 clone 16 test-abs-wrapper 1 2 3;
+#X obj 44 100 print;
+#X msg 41 52 all bang;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;

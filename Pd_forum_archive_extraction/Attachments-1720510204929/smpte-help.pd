@@ -1,0 +1,18 @@
+#N canvas 315 246 603 433 12;
+#X obj 133 111 timer 1 msec;
+#X msg 214 74 bang;
+#X msg 133 46 bang;
+#X listbox 133 294 20 0 0 0 - - - 0;
+#X floatatom 152 151 10 0 0 0 - - - 0;
+#X msg 156 209 fps 24;
+#X msg 218 211 msec;
+#X obj 133 254 smpte 25;
+#X listbox 293 295 20 0 0 0 - - - 0;
+#X connect 0 0 4 0;
+#X connect 0 0 7 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 0;
+#X connect 7 1 8 0;

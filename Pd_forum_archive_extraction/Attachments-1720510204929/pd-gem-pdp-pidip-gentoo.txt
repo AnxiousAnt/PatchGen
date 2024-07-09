@@ -1,0 +1,136 @@
+------------------------------------------------------------------------------
+Pure-Data / Gem / PDP-PiDiP / PF on a gentoo box.
+------------------------------------------------------------------------------
+step by step howto (according you already have alsa...)
+24/08/04 - v.1.0
+------------------------------------------------------------------------------
+
+-- Changes
+
+v.1.0 - first version, probably the last.
+
+-- Notes
+
+everything should be fine :)
+you may have already some deps installed.
+
+
+** Pure-Data
+
+-- some deps for pd to compile and run
+
+# emerge jack-audio-connection-kit
+# emerge tk (it will get tcl as well as dep)
+
+-- creating a common install directory
+
+% cd ~
+% mkdir pure-data
+% cd pure-data
+
+-- downloading the pd sources and extract
+
+% wget http://www-crca.ucsd.edu/~msp/Software/pd-0.37-4.src.tar.gz
+% tar xzvf pd-0.37-4.src.tar.gz 
+% cd pd-0.37-4/src
+
+-- configuration and compilation
+
+# ./configure --enable-jack && make && make install
+
+
+** PDP & PF
+
+-- some deps
+
+# emerge gsl
+# emerge libquicktime
+
+-- downloading the sources
+
+% cd ~/pure-data
+% cvs -d:pserver:anonymous@zwizwa.fartit.com:/usr/local/cvsroot login
+% cvs -d:pserver:anonymous@zwizwa.fartit.com:/usr/local/cvsroot co libtile libpdp pdp
+
+-- configuration and compilation
+
+% cd ~/pure-data/libtile
+# ./bootstrap && ./configure && make && make install
+% cd ~/pure-data/libpdp
+# ./bootstrap && ./configure && make all_install 
+% cd ~/pure-data/pdp
+% autoconf
+% ./configure --enable-mmx --enable-pwc --enable-pf (mmx and pwc are optional)
+# make && make install
+
+
+** PiDiP
+
+-- some deps
+
+# emerge imagemagick
+# emerge imlib2
+# emerge libtheora
+
+-- ffmpeg
+-- we need to do something here if you want to keep the ffmpeg ebuild from
+portage
+
+# emerge ffmpeg
+% cp /usr/portage/distfiles/ffmpeg-0.4.7.tar.gz ~/pure-data
+% cd ~/pure-data
+% tar xzf ffmpeg-0.4.7.tar.gz
+% cd ffmpeg-0.4.7
+% ./configure --enable-mp3lame --enable-vorbis
+% make
+
+-- downloading the sources
+
+% cd ~/pure-data
+% wget http://ydegoyon.free.fr/pidip-0.12.16.tar.gz
+% tar xzf pidip-0.12.16.tar.gz
+
+-- configuration and compilation
+
+% cd pidip-0.12.16
+% ./configure --with-pd=../pd-0.37-4/ --with-pdp=../pdp/libpdp --with-ffmpeg=../ffmpeg-0.4.7
+% make
+# cp pidip.pd_linux /usr/local/lib/pd/extra
+# cp doc/* /usr/local/lib/pd/doc/5.reference
+
+
+** Gem
+
+-- some deps
+
+# emerge glut
+# emerge tiff 
+# emerge jpeg 
+# emerge freetype
+# emerge gltt
+# emerge libquicktime (already there with pdp)
+# emerge mpeg-lib
+# emerge libmpeg3
+# emerge avifile
+
+-- downloading the sources
+
+% cd ~/pure-data
+% wget http://gem.iem.at/download/gem-0.90.0.tgz
+% tar xzf gem-0.90.0.tgz
+% wget http://gem.iem.at/download/GemLibs-linux-1.tgz
+% tar xzf GemLibs-linux-1.tgz
+
+-- configuration and compilation
+
+% cd gem-0.90.0/src/Gnu
+% ./makeauxlibs
+% ./configure
+% make
+# make install && make installdocs
+
+------------------------------------------------------------------------
+
+now create a .pdrc file in your home dir and add at least those lines
+ -path /usr/local/lib/pd/extra
+ -lib pdp:pidip:Gem

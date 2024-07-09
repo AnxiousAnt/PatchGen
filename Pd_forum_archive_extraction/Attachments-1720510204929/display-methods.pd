@@ -1,0 +1,14 @@
+#N canvas 0 22 454 304 10;
+#X msg 79 245 this is only a test;
+#X obj 79 222 prepend set;
+#X obj 155 172 list2symbol;
+#X symbolatom 155 195 0 0 0 0 - - -;
+#X obj 166 112 prepend this;
+#X msg 79 39 is only a test;
+#X msg 200 62 works;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 4 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;

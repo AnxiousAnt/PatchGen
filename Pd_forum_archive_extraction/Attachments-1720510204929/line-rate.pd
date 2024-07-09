@@ -1,0 +1,13 @@
+#N canvas 0 0 450 300 10;
+#X obj 164 162 line;
+#X msg 164 128 0 \, 10 5000;
+#X obj 164 190 t b b;
+#X obj 164 212 timer;
+#X obj 164 256 print;
+#X floatatom 187 237 5 0 0 0 - - -;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 1 3 1;
+#X connect 3 0 5 0;
+#X connect 3 0 4 0;

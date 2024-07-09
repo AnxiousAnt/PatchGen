@@ -1,0 +1,13 @@
+--- makefile.in~	Sun Sep  9 22:39:59 2001
++++ makefile.in	Fri Sep 21 17:12:47 2001
+@@ -28,8 +28,8 @@
+ LDFLAGS = -Wl,-export-dynamic
+ LIB =  @PDLIB@
+ 
+-#select either the DBG and OPT compiler flags below:
+-OPT_CFLAGS = @OPT_CFLAGS@
++DBG_CFLAGS = @DBG_CFLAGS@
++OPT_CFLAGS = @OPT_CFLAGS@ @DBG_CFLAGS@
+ WARN_CFLAGS = -Wall -W -Wstrict-prototypes  -Werror \
+     -Wno-unused -Wno-parentheses -Wno-switch
+ ARCH_CFLAGS = -DPD -DUNIX 

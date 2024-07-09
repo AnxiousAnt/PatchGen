@@ -1,0 +1,27 @@
+diff -r pd.orig/doc/6.externs/makefile pd/doc/6.externs/makefile
+3a4,6
+> clean:
+> 	rm -f *.o *.pd_*
+> 
+diff -r pd.orig/src/makefile.linux pd/src/makefile.linux
+11,12c11,12
+< # INSTALL_PREFIX = /usr/local
+< # GFLAGS = -DINSTALL_PREFIX=\"$(INSTALL_PREFIX)\"
+---
+> INSTALL_PREFIX = /usr/local
+> GFLAGS = -DINSTALL_PREFIX=\"$(INSTALL_PREFIX)\"
+123,124d122
+< 	install -D $(BIN_DIR)/pd-gui $(BIN_DIR)/pd-watchdog \
+< 	    $(BIN_DIR)/pd.tk $(INSTALL_PREFIX)/lib/pd/bin/
+125a124,126
+> 	install -D $(BIN_DIR)/pd-gui $(INSTALL_PREFIX)/lib/pd/bin/
+> 	install -D $(BIN_DIR)/pd-watchdog $(INSTALL_PREFIX)/lib/pd/bin/
+> 	install -D $(BIN_DIR)/pd.tk $(INSTALL_PREFIX)/lib/pd/bin/
+131c132
+< 	-rm ../obj/*
+---
+> 	-rm -f ../obj/*
+133c134
+< 	rm makefile.dependencies
+---
+> 	rm -f makefile.dependencies

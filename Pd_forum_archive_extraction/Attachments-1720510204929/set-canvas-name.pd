@@ -1,0 +1,14 @@
+#N canvas 355 308 462 312 10;
+#X obj 50 14 cnv 15 200 60 empty \$0-canvas-receive-symbol 32-canvas-name
+20 12 0 14 -233017 -66577 0;
+#X msg 57 138 label canvas_name;
+#X msg 78 169 label new_canvas_name;
+#X obj 57 113 loadbang;
+#X obj 58 259 s \$0-canvas-receive-symbol;
+#X msg 93 221 label \$1-canvas-name;
+#X floatatom 93 197 5 0 0 0 - - -;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;

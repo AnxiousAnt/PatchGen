@@ -1,0 +1,82 @@
+X-Mozilla-Keys: 
+Message-ID: <4AC62E83.1000100@gmail.com>
+Date: Fri, 02 Oct 2009 18:46:59 +0200
+From: "ydegoyon@gmail.com" <ydegoyon@gmail.com>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.22) Gecko/20090605 SeaMonkey/1.1.17 (Ubuntu-1.1.17+nobinonly-0ubuntu0.8.04.1)
+MIME-Version: 1.0
+To: Loic Kessous <loic.kessous@gmail.com>
+CC: lluisgomez@hangar.org
+Subject: Re: pd and openCV
+References: <949A4269-3652-4622-83B4-475F84C5D20E@gmail.com>
+In-Reply-To: <949A4269-3652-4622-83B4-475F84C5D20E@gmail.com>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 8bit
+
+
+estimado Loic,
+
+i don't have an idea of what you men by 'Jean Yves implementation'.
+i never saw it posted anywhere
+and where is the code?
+
+apart from this we try to make things easy for the people
+and not a head-breaking library like gridflow is.
+and that can only be used by scientifics..
+
+tom schouten already went  in that direction
+and i totally disagree with it
+
+ciao,
+sevy
+
+Loic Kessous wrote:
+> Dear Lluis and Yves,
+>
+> I'm reading your paper about openCV from the pdconf, and I was 
+> thinking about a few things that I'd like to share with you.
+>
+> Some month ago I work on a project with pd and openCV and I observe 
+> that there was quit different approaches...
+>
+> with different advantage regarding platforms and implementations, 
+> including the use of flext o not apparently also.
+>
+> I recompiled and test for different purposes those different ones: 
+> pix_ , pdp_ and the one from Jean-Yves Gratius, and also some new 
+> experiment from myself (which the idea was to use openCV for display 
+> and video acquisition, this works more or less depending on the 
+> platform and configuration).
+>
+> ...this on MSW, Ubuntu and os X..., which tend to show that the 
+> cross-platform issue is not so obvious :)
+>
+> one very interesting thing with Jean-Yves approach is that from one 
+> external to another only a pointer (the one of the OpenCV image) is 
+> passed, and not the full image as (except if I'm confusing) with pix_ 
+> or pdp_ . But this need  to compile the external as a full library 
+> (well it is like this in his implementation, I don't know if there is 
+> a issue to avoid this), and understanding the code and writing new 
+> codes is diiferent, I would say more complicated.
+> This may make things more complicated for people who want to improve 
+> the library but just want to add new externals and not deal with all 
+> the lib.
+>
+> He use code:block to compile it, which is both a advantage and an 
+> inconvenient:
+>  it took me more sometime to understand it, make link to flex, pd, 
+> gem...but then it is in a way comfortable, and it is cross-platform.
+>
+> I wonder if it should not be possible to keep the idea to pass only 
+> the openCV image pointer (much more efficient) but using an approach 
+> closer to pix_ or pdp_ . From another project, I heard that there was 
+> some work about using shared memory in max and pd for similar issue. 
+> do you have any idea about this?
+>
+> Best,
+>
+> Loïc
+>
+>
+>
+
+

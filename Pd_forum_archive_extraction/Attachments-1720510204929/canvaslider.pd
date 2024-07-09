@@ -1,0 +1,22 @@
+#N canvas 85 15 458 479 10;
+#X obj 82 96 cnv 90 67 60 empty mycanvas empty 20 12 0 14 -233017 -66577
+0;
+#X obj 69 296 r \$0-sizex;
+#X obj 211 371 pack f f;
+#X msg 211 411 \; mycanvas vis_size \$1 \$2;
+#X obj 232 342 t b f;
+#X obj 211 294 r \$0-vsizex;
+#X obj 295 294 r \$0-vsizey;
+#X obj 214 19 hsl 128 15 0 127 0 0 \$0-vsizex empty vsize_x 30 8 1
+10 -262144 -1 -258699 6700 1;
+#X obj 213 51 hsl 128 15 0 127 0 0 \$0-vsizey empty vsize_y 30 8 1
+10 -262144 -1 -24198 6000 1;
+#X obj 72 20 hsl 128 15 0 127 0 0 \$0-sizex empty size 30 8 1 10 -262144
+-1 -258699 9000 1;
+#X msg 69 413 \; mycanvas size \$1;
+#X connect 1 0 10 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X connect 4 1 2 1;
+#X connect 5 0 2 0;
+#X connect 6 0 4 0;

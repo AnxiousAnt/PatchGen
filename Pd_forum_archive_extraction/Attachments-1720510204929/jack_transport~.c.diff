@@ -1,0 +1,18 @@
+105a106,114
+> // This adds a simple way to rewind unsing jack_transport_locate
+> static void jack_transport_rewindwer(jack_transport_tilde_t * x)
+> {
+> 	if (!x->x_jack_client)
+> 		return;
+> 
+> 	jack_transport_locate(x->x_jack_client,0);
+> }
+> 
+193c202
+< 	                gensym("start"), 0, 0);
+---
+> 	                gensym("start"), 0, 0);               
+197a207,209
+> 	                (t_method)jack_transport_rewindwer,
+> 	                gensym("rewind"), 0, 0);	                
+> 	class_addmethod(jack_transport_tilde_class,

@@ -1,0 +1,56 @@
+(gdb) run
+Starting program: /usr/local/bin/pd 
+[Thread debugging using libthread_db enabled]
+[New Thread -1210984768 (LWP 4511)]
+priority 6 scheduling enabled.
+memory locking enabled.
+priority 8 scheduling enabled.
+memory locking enabled.
+open: No such file or directory
+No such file or directory
+open: No such file or directory
+No such file or directory
+open: No such file or directory
+No such file or directory
+constructor
+fluid_init
+samplerate
+creating settings
+creating settings 2
+*** glibc detected *** malloc(): memory corruption: 0x08258600 ***
+
+Program received signal SIGABRT, Aborted.
+[Switching to Thread -1210984768 (LWP 4511)]
+0xb7d487c7 in raise () from /lib/tls/libc.so.6
+(gdb) watchdog: signaling pd...
+
+(gdb) bt
+#0  0xb7d487c7 in raise () from /lib/tls/libc.so.6
+#1  0xb7d4a06b in abort () from /lib/tls/libc.so.6
+#2  0xb7d7f545 in __fsetlocking () from /lib/tls/libc.so.6
+#3  0xb7d86aaf in free () from /lib/tls/libc.so.6
+#4  0xb7d87dfc in malloc () from /lib/tls/libc.so.6
+#5  0xb7ace5ce in new_fluid_hashtable (del=0xb7ad8f4a <fluid_settings_hash_delete>) at fluid_hash.c:81
+#6  0xb7ad8efb in new_fluid_settings () at fluid_settings.c:153
+#7  0xb7b03cea in fluid::fluid_init () from /usr/local/lib/pd/extra/fluid~.pd_linux
+#8  0xb7b04386 in fluid::__init__ () from /usr/local/lib/pd/extra/fluid~.pd_linux
+#9  0xb7c39ee6 in flext_obj_single::obj_new () from /usr/local/lib/pd/extra/xsample.pd_linux
+#10 0x080a7ce4 in pd_typedmess (x=0x8221834, s=0x823ba98, argc=1, argv=0x811b488) at m_class.c:664
+#11 0x080a8da6 in new_anything (dummy=0x0, s=0x823ba98, argc=1, argv=0x811b488) at m_class.c:530
+#12 0x080a778c in pd_typedmess (x=0x8221834, s=0x823ba98, argc=1, argv=0x811b488) at m_class.c:749
+#13 0x080ac226 in binbuf_eval (x=0x0, target=0x8221834, argc=0, argv=0x0) at m_binbuf.c:574
+#14 0x0805e183 in canvas_objtext (gl=0x8256340, xpix=375, ypix=146, selected=0, b=0x8256f40) at g_text.c:94
+#15 0x0805e34f in canvas_obj (gl=0x8256340, s=0x822b6a0, argc=4, argv=0x811b460) at g_text.c:145
+#16 0x080a7982 in pd_typedmess (x=0x8256340, s=0x822b6a0, argc=4, argv=0x811b460) at m_class.c:665
+#17 0x080ac226 in binbuf_eval (x=0x0, target=0x8256340, argc=0, argv=0x0) at m_binbuf.c:574
+#18 0x080b0f55 in binbuf_evalfile (name=0x823ca28, dir=0x823ca38) at m_binbuf.c:1193
+#19 0x080b1031 in glob_evalfile (ignore=0x8221840, name=0x823ca28, dir=0x823ca38) at m_binbuf.c:1209
+#20 0x080a7b31 in pd_typedmess (x=0x8221840, s=0x82367e8, argc=0, argv=0x811b458) at m_class.c:732
+#21 0x080ac226 in binbuf_eval (x=0x0, target=0x8221840, argc=0, argv=0x0) at m_binbuf.c:574
+#22 0x080b8d4c in socketreceiver_read (x=0x823cae0, fd=7) at s_inter.c:539
+#23 0x080b6a9f in sys_domicrosleep (microsec=<value optimized out>, pollem=<value optimized out>) at s_inter.c:180
+#24 0x080b3486 in m_scheduler () at m_sched.c:487
+#25 0x080b6765 in sys_main (argc=1, argv=0x0) at s_main.c:292
+#26 0xb7d33eb0 in __libc_start_main () from /lib/tls/libc.so.6
+#27 0x08055281 in _start () at ../sysdeps/i386/elf/start.S:119
+(gdb) 

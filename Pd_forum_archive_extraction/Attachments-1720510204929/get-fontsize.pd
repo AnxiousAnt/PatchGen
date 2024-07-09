@@ -1,0 +1,33 @@
+#N canvas 481 192 534 581 10;
+#X obj 45 79 cnv 10 69 17 empty \$0-cnv 69x17 2 30 0 11 -260818 -128992
+0;
+#X obj 146 145 pack 0 0;
+#X floatatom 146 80 5 0 0 0 - - -;
+#X obj 176 119 t b a;
+#X floatatom 176 99 5 0 0 0 - - -;
+#X obj 146 235 s \$0-cnv;
+#X msg 45 79 courier10;
+#X msg 146 207 vis_size \$1 \$2 \, label \$1x\$2;
+#X text 144 261 setting label this way only works with pd >= 0-40;
+#X obj 50 319 cnv 10 61 8 empty \$0-cnv2 61x8 2 30 0 11 -260818 -128992
+0;
+#X obj 152 387 pack 0 0;
+#X floatatom 152 322 5 0 0 0 - - -;
+#X obj 182 361 t b a;
+#X floatatom 182 341 5 0 0 0 - - -;
+#X msg 152 449 vis_size \$1 \$2 \, label \$1x\$2;
+#X text 150 503 setting label this way only works with pd >= 0-40;
+#X obj 152 477 s \$0-cnv2;
+#X text 48 316 courier10;
+#X connect 1 0 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 3 1 1 1;
+#X connect 4 0 3 0;
+#X connect 7 0 5 0;
+#X connect 10 0 14 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
+#X connect 12 1 10 1;
+#X connect 13 0 12 0;
+#X connect 14 0 16 0;

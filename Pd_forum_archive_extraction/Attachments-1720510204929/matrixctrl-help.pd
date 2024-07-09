@@ -1,0 +1,127 @@
+#N struct 1402-matrixctrl float x float y float size float color float
+state;
+#N struct 1411-matrixctrl float x float y float size float color float
+state;
+#N struct 1420-matrixctrl float x float y float size float color float
+state;
+#N struct 1429-matrixctrl float x float y float size float color float
+state;
+#N struct 1438-matrixctrl float x float y float size float color float
+state;
+#N canvas 167 136 810 713 10;
+#N canvas 0 0 426 446 license 0;
+#X text 8 47 All rights reserved.;
+#X text 8 227 The names of its contributors may not be used to endorse
+or promote products derived from this software without specific prior
+written permission.;
+#X text 8 87 Redistribution and use in source and binary forms \, with
+or without modification \, are permitted provided that the following
+conditions are met:;
+#X text 8 127 Redistributions of source code must retain the above
+copyright notice \, this list of conditions and the following disclaimer.
+;
+#X text 8 297 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES \, INCLUDING
+\, BUT NOT LIMITED TO \, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT \, INDIRECT
+\, INCIDENTAL \, SPECIAL \, EXEMPLARY \, OR CONSEQUENTIAL DAMAGES (INCLUDING
+\, BUT NOT LIMITED TO \, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES
+;
+#X text 8 167 Redistributions in binary form must reproduce the above
+copyright notice \, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the distribution.
+;
+#X text 8 27 jmmmpais@googlemail.com;
+#X text 8 7 Copyright 2006 \, Joã Pais;
+#X restore 61 686 pd license;
+#X text 58 668 (C) 2013 João Pais - jmmmpais@googlemail.com;
+#X text 59 608 The third argument sets cell size. Here with 5 points:
+;
+#X text 15 236 Inputs;
+#X obj 101 329 sig~ 1;
+#X obj 59 439 snaps~;
+#X obj 102 419 snaps~;
+#X obj 144 399 snaps~;
+#X obj 188 379 snaps~;
+#X obj 59 359 iemmatrix/mtx_mul~ 4 2;
+#X obj 145 329 sig~ 2;
+#X obj 69 279 prepend set;
+#X msg 59 508 mode AND;
+#X msg 69 528 mode OR;
+#X text 67 220 Outputs;
+#X text 60 96 To control the GUI \, either click with your mouse \,
+or send messages. These are formated as a list with the horizontal
+& vertical positions starting from 0 \, and state (0/1):;
+#X msg 59 158 0 0 \$1;
+#X obj 59 138 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 59 188 t a;
+#X obj 110 138 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 110 158 2 1 \$1;
+#X obj 160 138 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 160 158 3 0 \$1;
+#X text 91 200 The layout is like Max/MSP's matrixctrl object.;
+#X msg 69 299 matrix 4 2 0 0 0 0 0 0 0 0;
+#X text 144 279 The output is a matrix message;
+#X text 11 11 [matrixctrl] - GUI for [iemmatrix/mtx_mul~];
+#X text 12 41 Clone of Max/MSP's matrixctrl. Can most also be used
+for normal matrixes. Click in the cells or send messages to change
+state.;
+#X text 59 467 2 modes: AND allows for multiple selection \, OR keeps
+only one selected field \, setting all other fields to 0 AND is the
+standard mode.;
+#X text 119 237 this is [matrixctrl 4 2];
+#X text 149 547 == [matrixctrl 5 3];
+#X text 100 627 == [matrixctrl 5 5 6];
+#X msg 439 507 size 2 4;
+#X msg 449 527 size 2 3;
+#X obj 439 647 matrixctrl 2 2;
+#X msg 439 607 cellsize 25;
+#X msg 449 627 cellsize 13;
+#X text 439 587 "cellsize x" changes cell size;
+#X text 439 487 "size x y" changes matrix size;
+#X obj 59 238 matrixctrl 4 2;
+#X obj 61 626 matrixctrl 5 5 6;
+#X obj 59 548 matrixctrl 6 3;
+#X obj 439 547 matrixctrl 2 2;
+#X text 439 156 Arguments;
+#X text 439 246 Inlets;
+#X text 439 366 Outlets;
+#X text 439 387 - output for [iemmatrix/mtx_mul~];
+#X text 439 216 - cell size (default is 13);
+#X text 439 266 - x y z - list with horizontal & vertical positions
+\, and state (0/1);
+#X text 439 296 - "mode AND" / "mode OR" - matrix behaviour (default
+is AND);
+#X text 439 336 - cellsize x - change cell size;
+#X text 439 316 - size x y - change matrix size;
+#X text 438 196 - number of inputs/rows;
+#X text 439 176 - number of outputs/columns;
+#X text 439 447 !! Mind \, for "size" and "cellsize" the object doesn't
+get saved with the new parameters !! You must edit the object itself.
+;
+#X connect 4 0 9 1;
+#X connect 9 0 5 0;
+#X connect 9 1 6 0;
+#X connect 9 2 7 0;
+#X connect 9 3 8 0;
+#X connect 10 0 9 2;
+#X connect 11 0 24 0;
+#X connect 12 0 41 0;
+#X connect 13 0 41 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 18 0 39 0;
+#X connect 19 0 20 0;
+#X connect 20 0 18 0;
+#X connect 21 0 22 0;
+#X connect 22 0 18 0;
+#X connect 32 0 42 0;
+#X connect 33 0 42 0;
+#X connect 35 0 34 0;
+#X connect 36 0 34 0;
+#X connect 39 0 11 0;
+#X connect 39 0 9 0;

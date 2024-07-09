@@ -1,0 +1,14 @@
+#N canvas 435 238 450 300 10;
+#X obj 59 70 loadbang;
+#X msg 59 96 440;
+#X obj 59 127 osc~;
+#X obj 58 159 *~ 0.1;
+#X obj 51 202 dac~;
+#X text 52 21 This is the patch that I sent in the email as a text
+file. The next PD patch will show you how it can be built dynamically.
+;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;

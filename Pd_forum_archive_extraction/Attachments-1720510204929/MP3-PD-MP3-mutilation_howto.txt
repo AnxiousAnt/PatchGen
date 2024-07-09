@@ -1,0 +1,189 @@
+MP3-PD-MP3_mutilation
+
+what u need:
+
+mpg123 (http://www.mpg123.de/)
+	standard on many distributions
+
+
+piperead~ object:
+        http://loopool.live.fm
+        http://loopool.live.fm/filez/pd/
+        get ext13
+
+
+pipewrite~:
+        get an old version of ggext ( <= 0.15, after which the sfwrite~ code changed)
+        http://gige.xdv.org
+        ftp://xdv.org/pub/gige/ggext/
+
+        or get:
+        http://barely.a.live.fm/pd/pipewrite/ 
+        probably buggy and approx. 0 support
+
+
+pd:
+	http://www.crca.ucsd.edu/~msp/software.html
+	http://iem.kug.ac.at/pd/
+
+
+lame:
+	http://www.mp3dev.org/mp3/
+	http://lame.sourceforge.net
+
+
+liveice:
+	http://star.arm.ac.uk/~spm/software/liveice.html
+	its also possibly in the icecast distro
+
+
+icecast:
+	http://www.icecast.org/
+
+
+setup:
+
+	install all the stuff.
+	get pd running and the externals, refer to other documentation on how.
+
+	get mpg123 running. shouldnt be any prob.
+	tar zxvf mpg123.tgz
+	cd mpg123
+	make linux-help &c
+	make linux-oss or so ..
+	make install
+	
+	get lame running, either.
+	tar zxvf lame-0.8x.tgz
+	cd lame
+	./configure
+	make
+	make install
+
+	get icecast running. also easy. edit the config file to suit your needs, maybe you only change the passwords.
+	tar zxvf icecast-1.3.10.tgz
+	cd icecast
+	./configure
+	make
+	make install
+	cp /usr/local/icecast/conf/icecast.conf.dist /usr/local/icecast/conf/icecast.conf
+	jed /usr/local/icecast/conf/icecast.conf
+	put the passwords, ports,names,locations,limitations as like
+	the give:
+	/usr/local/icecast/bin/icecast -c /usr/local/icecast/conf/icecast.conf
+
+	add this to your /etc/init.d/ ..
+
+
+	mpg123,liveice,pd and icecast are also avail as debian packages.
+	lame and the externals isnt ...
+
+
+	now the trickier bits:
+	get liveice to run. compiling should go slumpi as well.
+	then make a:
+	mknod bla p
+
+	edit your liveice.cfg, like this:
+
+<SNIP>
+
+# liveice configuration file
+# Automatically generated
+SERVER localhost
+PORT 8000
+NAME :et.d,^C8-7_}rS_
+GENRE experimental
+URL http://my.url.com
+PUBLIC 0
+X_AUDIOCAST_LOGIN
+PASSWORD hackme
+SAMPLE_RATE 22050
+#MONO
+STEREO
+NO_SOUNDCARD
+HALF_DUPLEX
+USE_LAME3 /maybe/full/path/to/which/lame
+BITRATE 48000
+ENCODING_QUALITY 80
+#VBR_QUALITY 1
+#MIXER
+# slurp.wav is not a real wav file but a pipe as well, made via 'mknod slurp.wav p'
+# its just what i call it instead of bla. your choice here.
+MIXER_CMD /bin/cat /spz/A/pd/slurp.wav
+PLAYLIST playlist
+DECODER_COMMAND mpg123
+MIX_CONTROL_MANUAL
+CONTROL_FILE mix_command
+TRACK_LOGFILE track.log
+
+</SNIP>
+
+
+	edit all the rates, sample,bits,quality etc ...
+
+	then start liveice whith the following commandline:
+
+	/usr/bin/liveice -@ 0 -F liveice.cfg 2>liveice_error.log
+
+	redirect stder to the log is necessary so the erroutput doesnt fukc your interface.
+	you can also go interfaceless with -@ 1 or so ..
+
+	(if it doesnt work rightaway its a good idea to look int liveice_error.log and see what it says there.
+	anbother good thing 4 debugging is to do a
+	telnet localhost 8000
+	Trying localhost...
+	Connected to localhost.
+	Escape character is '^]'.
+	ADMIN hackme
+
+	OK
+	-> oper hackme
+	You are now an icecast operator
+	> tail
+	Now tailing logfile
+	> 
+
+	notice the two times return after the ADMIN statement. after you said tail, you should see
+	wether liveice actually connect to the server etc etc)
+
+	anyhowm you start it, and then it does nothing (well, you should see it connect in the icecast tail),
+	but instead waits for the pipe-file to fill.
+	this will only fill when you open your pd, put the pipewrite~ object, say ; dsp 1;, send
+	| open bla | to the pipewrite~ objekto, send '1' into pipewrite~ so it starts pipewriting, 
+	and then yeah, connect some osc~ to pipewrite
+	and you should see the levels jump to a steady state (or not so steady if yaou send toher than plain osc~ output) 
+	in the liveice interface in the neighbouring window.
+	
+	maybe give absolute path to open message to avoid further confusion .
+
+
+	oke, that's the output bit.
+
+
+	niput: (stream)
+
+	put a 'piperead~ 2 1024' object in your patcher window.
+	consult the piperead~ helppatcher for details.
+	in short, make another pipe, lets say mkfifo /tmp/xyz
+	send open /tmp/xyz, send '1' into piperead so it starts reading.
+
+	now say
+	mpg123 -s http://bli.bla.blo:8000/mystreami.mp3
+	from another terminal ..
+	youckidoo, there you are.
+
+	connect piperead~ to pipewrite~ and its MP3-PD-MP3-ultramultilation.
+	well, not mutilation yet.
+	so, place your preferred mutilation rout!n in between and youre set.
+
+
+
+	[ ] ant	  [ ] other	 [ ] undecided
+
+
+
+
+cxc@web.fm, 20010516
+
+

@@ -1,0 +1,17 @@
+#N canvas 800 366 450 300 10;
+#X obj 98 117 hcs/sys_gui;
+#X msg 98 89 bind \$1 <$ctrl_key-w> "puts stderr noclose";
+#X msg 98 36 bang;
+#X obj 98 64 hcs/canvas_name;
+#X obj 98 247 hcs/sys_gui;
+#X msg 98 166 bang;
+#X obj 98 194 hcs/canvas_name;
+#X text 27 15 platform neutral;
+#X text 33 145 platform specific (Mod1 vs. Ctrl);
+#X msg 98 219 bind \$1 <Ctrl-w> "puts stderr noclose";
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 9 0;
+#X connect 9 0 4 0;

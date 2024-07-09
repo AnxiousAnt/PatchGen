@@ -1,0 +1,28 @@
+From e644fcb0af94eb05a26411ebb9c24da4ce55ffbb Mon Sep 17 00:00:00 2001
+From: Hans-Christoph Steiner <hans@eds.org>
+Date: Sun, 14 Oct 2012 13:24:09 -0400
+Subject: [PATCH 1/1] "bind all <KeyPress>" does not get Tab KeyPress, only
+ KeyRelease, so force it
+
+---
+ tcl/pd_bindings.tcl |    4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/tcl/pd_bindings.tcl b/tcl/pd_bindings.tcl
+index 48331e6..56e866b 100644
+--- a/tcl/pd_bindings.tcl
++++ b/tcl/pd_bindings.tcl
+@@ -105,6 +105,10 @@ proc ::pd_bindings::global_bindings {} {
+     bind all <KeyRelease>       {::pd_bindings::sendkey %W 0 %K %A 0}
+     bind all <Shift-KeyPress>   {::pd_bindings::sendkey %W 1 %K %A 1}
+     bind all <Shift-KeyRelease> {::pd_bindings::sendkey %W 0 %K %A 1}
++
++    # "bind all <KeyPress>" does not get Tab KeyPress, only KeyRelease
++    bind all <Key-Tab>          {+::pd_bindings::sendkey %W 1 %K %A 0}
++    bind all <Shift-Key-Tab>    {+::pd_bindings::sendkey %W 1 %K %A 1}
+ }
+ 
+ # this is for the dialogs: find, font, sendmessage, gatom properties, array
+-- 
+1.7.10.1
+

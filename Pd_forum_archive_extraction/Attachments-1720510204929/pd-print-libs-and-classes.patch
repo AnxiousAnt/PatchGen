@@ -1,0 +1,31 @@
+--- pd-0.41-4/src/s_loader.c.orig	2008-05-13 10:09:24.000000000 +0100
++++ pd-0.41-4/src/s_loader.c	2008-05-13 10:41:55.000000000 +0100
+@@ -235,8 +235,10 @@
+     int dspstate = canvas_suspend_dsp();
+     int ok = 0;
+     loader_queue_t *q;
++    if (sys_verbose) post("loader: BEGIN(%s)", classname);
+     for(q = &loaders; q; q = q->next)
+         if (ok = q->loader(canvas, classname)) break;
++    if (sys_verbose) post("loader: END(%s)", classname);
+     canvas_resume_dsp(dspstate);
+     return ok;
+ }
+--- pd-0.41-4/src/m_class.c.orig	2008-05-13 10:35:13.000000000 +0100
++++ pd-0.41-4/src/m_class.c	2008-05-13 10:38:56.000000000 +0100
+@@ -219,6 +219,7 @@
+ #if 0 
+     post("class: %s", c->c_name->s_name);
+ #endif
++    if (sys_verbose) post("class_new(%s)", c->c_name->s_name);
+     return (c);
+ }
+ 
+@@ -249,6 +250,7 @@
+         *vp = va_arg(ap, t_atomtype);
+     } 
+     va_end(ap);
++    if (sys_verbose) post("class_addcreator(%s)", s->s_name);
+     class_addmethod(pd_objectmaker, (t_method)newmethod, s,
+         vec[0], vec[1], vec[2], vec[3], vec[4], vec[5]);
+ }

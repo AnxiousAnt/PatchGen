@@ -1,0 +1,15 @@
+#N canvas 274 209 694 404 10;
+#X obj 87 71 add2_comma;
+#X obj 33 71 pp set;
+#X msg 189 52 i'm fine.;
+#X obj 189 74 pp add2;
+#X msg 87 51 how are you?;
+#X msg 70 126 hi rory \, how are you? i'm fine.;
+#X msg 33 50 hi rory;
+#X text 30 14 use: -lib iemlib2;
+#X connect 0 0 5 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 0;
+#X connect 6 0 1 0;

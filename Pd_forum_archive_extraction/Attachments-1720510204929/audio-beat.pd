@@ -1,0 +1,36 @@
+#N canvas 285 272 604 394 12;
+#X floatatom 71 333 8 0 0 0 - - -;
+#X floatatom 92 307 5 0 0 0 - - -;
+#X text 148 335 beats per minute;
+#X obj 114 276 bng 20 250 50 0 empty empty empty 0 -6 0 8 -262144 -258699
+-1;
+#X text 144 277 'on beat';
+#X text 147 309 milliseconds;
+#X obj 71 245 beat 4;
+#X obj 71 222 makenote 60 60;
+#X msg 71 196 60;
+#X obj 36 127 readsf~;
+#X msg 36 92 open \$1;
+#X msg 36 38 bang;
+#X obj 36 66 openpanel;
+#X obj 35 155 fiddle~ 1024 1 20 3;
+#X text 124 35 fiddle~ outputs a bang whenever it thinks a new note
+arrived \, just use this bang to create a faked midi note using makenote
+and feed this data into beat...;
+#X msg 105 92 1;
+#X msg 144 92 0;
+#X msg 210 222 reset;
+#X connect 6 0 0 0;
+#X connect 6 1 1 0;
+#X connect 6 2 3 0;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 8 0 7 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 13 1 8 0;
+#X connect 15 0 9 0;
+#X connect 16 0 9 0;
+#X connect 17 0 6 0;

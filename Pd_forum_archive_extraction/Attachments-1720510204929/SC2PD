@@ -1,0 +1,8 @@
+//• SuperCollider to PureData	
+	// Use loopback IP and the same port as the pd patch to communicate
+	~pdOut = NetAddr("127.0.0.1", 47110);
+	// test it with one message:
+	~pdOut.sendMsg("/from_SC", 0);
+        // 
+        ~pdOut.sendMsg("/from_SC", 1);
+	

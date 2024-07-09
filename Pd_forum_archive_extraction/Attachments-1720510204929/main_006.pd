@@ -1,0 +1,13 @@
+#N canvas 2212 816 658 327 10;
+#X msg 135 55 vis 5 1;
+#X obj 135 99 clone singleton 14 instance;
+#X obj 325 97 text size instance;
+#X msg 325 72 bang;
+#X floatatom 325 125 5 0 0 0 - - -;
+#X obj 136 220 singleton instance;
+#X obj 133 182 singleton instance;
+#X obj 262 187 singleton instance;
+#X obj 261 219 singleton instance;
+#X connect 0 0 1 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;

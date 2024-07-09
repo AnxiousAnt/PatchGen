@@ -1,0 +1,53 @@
+#N canvas 1258 135 504 735 10;
+#X obj 22 14 loadbang;
+#X text 81 15 - send "bang" when canvas loads.;
+#X obj 39 158 print foo;
+#X obj 39 120 loadbang;
+#X msg 39 139 you have opened the loadbang help document;
+#X text 20 42 The loadbang object will send a "bang" message when a
+canvas loads and is used most often to 'initialize' or set default
+values in a patch. For example \, when you opened this patch \, the
+message below was immediately printed in the terminal window.;
+#X text 22 193 As well \, the following [float]s were set with a group
+of numbers. Click the [bng] below to verify that the numbers were stored
+in the [float] objects.;
+#X obj 38 323 f;
+#X floatatom 38 341 2 0 0;
+#X obj 77 323 f;
+#X floatatom 77 341 2 0 0;
+#X obj 117 323 f;
+#X floatatom 117 341 2 0 0;
+#X obj 234 266 loadbang;
+#X obj 38 258 bng 15 250 50 0 empty empty Click_here_to_see_the_numbers_stored_in_the_float_objects.
+0 -6 0 7 -262144 -1 -1;
+#X obj 234 287 random 10;
+#X obj 175 287 random 10;
+#X obj 117 287 random 10;
+#X text 23 383 IMPORTANT;
+#X text 22 404 Loadbangs are a useful tool to set initial values in
+a patch \; however \, there are times when it might be necessary to
+debug a patch and "turn off" all the loadbang objects. This can be
+accomplished by opening PD with the -noloadbang flag.;
+#X text 21 520 c:/pd/pd.exe -noloadbang;
+#X text 21 484 For example \, to suppress all loadbangs \, your command
+line might look something like this:;
+#X text 22 565 RELATED OBJECTS;
+#X obj 23 586 bang;
+#X obj 62 586 init;
+#X text 21 646 This document was updated for PD version 0.35 by Dave
+Sabine as part of a project called pddp proposed to build comprehensive
+documentation for PD.;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 11 0 12 0;
+#X connect 13 0 15 0;
+#X connect 13 0 16 0;
+#X connect 13 0 17 0;
+#X connect 14 0 7 0;
+#X connect 14 0 9 0;
+#X connect 14 0 11 0;
+#X connect 15 0 11 1;
+#X connect 16 0 9 1;
+#X connect 17 0 7 1;

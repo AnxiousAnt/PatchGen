@@ -1,0 +1,38 @@
+#N canvas 393 177 422 470 10;
+#X obj 88 59 bng 25 250 50 0 empty empty - 7 10 0 24 -257985 -1 -1
+;
+#X obj 205 60 bng 25 250 50 0 empty empty + 7 10 0 24 -257985 -1 -1
+;
+#X obj 157 143 - 1;
+#X obj 232 141 + 1;
+#X obj 123 143 f;
+#X msg 107 215 0;
+#X floatatom 112 332 5 0 0 0 - - -;
+#X msg 218 214 10;
+#X obj 203 140 f;
+#X obj 107 188 moses 1;
+#X obj 146 214 moses 10;
+#X text 32 369 the first moses should be set to your minimum +1 and
+the second should be set to your maximum.;
+#X text 29 420 you could change the counting increments by changing
+the values in the + and - boxes;
+#X connect 0 0 4 0;
+#X connect 1 0 8 0;
+#X connect 2 0 4 1;
+#X connect 3 0 8 1;
+#X connect 4 0 2 0;
+#X connect 4 0 3 0;
+#X connect 4 0 9 0;
+#X connect 5 0 4 1;
+#X connect 5 0 6 0;
+#X connect 5 0 3 0;
+#X connect 7 0 6 0;
+#X connect 7 0 2 0;
+#X connect 7 0 8 1;
+#X connect 8 0 3 0;
+#X connect 8 0 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 5 0;
+#X connect 9 1 10 0;
+#X connect 10 0 6 0;
+#X connect 10 1 7 0;

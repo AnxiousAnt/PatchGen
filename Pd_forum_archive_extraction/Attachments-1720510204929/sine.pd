@@ -1,0 +1,10 @@
+#N canvas 0 0 286 282 12;
+#X msg 127 46 0.75;
+#X obj 76 71 osc~ \$1;
+#X obj 76 104 /~ \$1;
+#X obj 75 141 throw~ sig;
+#X obj 127 15 r phase;
+#X connect 0 0 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;

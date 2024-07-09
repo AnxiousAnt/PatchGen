@@ -1,0 +1,58 @@
+#N canvas 68 126 855 489 10;
+#X text 490 90 Inlets;
+#X text 490 180 Outlets;
+#X text 490 230 GUI;
+#X text 18 437 (C) 2006 Joao Miguel Pais - jmmmpais@googlemail.com
+;
+#X text 18 457 Released under the BSD License;
+#X obj 15 120 metrum 500 1;
+#X obj 15 140 random 10;
+#X obj 15 170 * 1;
+#X msg 82 153 2;
+#X msg 112 153 20;
+#X floatatom 183 156 5 0 0 0 - - -;
+#X text 167 120 Generate a stream of numbers (change the speed);
+#X text 219 154 Scale the stream to different boundaries;
+#X msg 142 153 -0.1;
+#X obj 161 225 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X text 490 110 - Floats;
+#X text 181 226 On / Off;
+#X obj 308 227 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X text 490 150 - Trigger: Value/Time (0/1);
+#X text 490 200 - Memory dump [not ready];
+#X text 490 250 - On / Off;
+#X text 490 290 - Memory reset;
+#X text 490 330 - Current value;
+#X text 490 350 - Higher / Lower borders;
+#X text 490 390 - Index count;
+#X obj 15 245 grapher;
+#X text 318 354 <--- Current value;
+#X text 320 369 <- Higher / Lower borders;
+#X text 320 383 <- Index count;
+#X text 150 408 `- Trigger velocity (with time rastering);
+#X text 490 370 - Trigger velocity for time rastering (ms);
+#X floatatom 15 190 5 0 0 0 - - -;
+#X text 490 270 - Time triggering (reads the value each x ms);
+#X text 490 310 - Filtering: direct \; without repetitions \; with
+metro [???];
+#X text 73 407 `- Filtering;
+#X text 328 228 Value / Time;
+#X text 490 130 - On/Off (1/0);
+#X text 19 13 THIS ABSTRACTION IS NOT YET COMPLETE \, AND NOT FULLY
+FUNCTIONAL.;
+#X text 13 46 [grapher] - Graphic representation of a group of values.
+Input can be collected as it comes in (float triggered) or at defined
+time intervals (time triggered). The graphical representation adjusts
+itself to the values automatically.;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 31 0;
+#X connect 8 0 7 1;
+#X connect 9 0 7 1;
+#X connect 10 0 7 1;
+#X connect 13 0 7 1;
+#X connect 14 0 25 1;
+#X connect 17 0 25 2;
+#X connect 31 0 25 0;

@@ -1,0 +1,27 @@
+#N canvas 366 232 459 265 10;
+#X obj 66 100 hsl 100 15 0.1 10 0 0 \$0-on empty empty -2 -6 1152 8
+-262144 -1 -1 1900 0;
+#X floatatom 63 126 5 0 0 0 - - -;
+#X obj 63 145 div;
+#X msg 63 53 1;
+#X obj 264 99 hsl 100 15 0 9.9 0 0 \$0-on empty empty -2 -6 1152 8
+-262144 -1 -1 2000 0;
+#X floatatom 261 123 5 0 0 0 - - -;
+#X obj 261 141 div;
+#X floatatom 261 163 5 0 0 0 - - -;
+#X msg 261 53 1;
+#X text 274 76 range 0 - 9.9;
+#X text 74 76 range 0.1 - 10;
+#X floatatom 63 166 5 0 0 0 - - -;
+#X msg 97 53 2;
+#X msg 294 51 2;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 11 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 4 0;
+#X connect 12 0 0 0;
+#X connect 13 0 4 0;

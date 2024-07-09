@@ -1,0 +1,8 @@
+#N canvas 388 403 450 300 12;
+#X floatatom 155 153 5 0 0 0 - - -;
+#X obj 155 115 quantized_slider_control mycontrol;
+#X obj 52 57 vsl 15 80 0 10 0 0 mycontrol-sl1-send unused-receive empty
+0 -9 0 10 -262144 -1 -1 7900 1;
+#X obj 52 57 vsl 15 80 0 10 0 0 unused-send mycontrol-sl2-receive empty
+0 -9 0 10 -262144 -1 -1 7900 1;
+#X connect 1 0 0 0;

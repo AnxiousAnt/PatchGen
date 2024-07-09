@@ -1,0 +1,363 @@
+#N canvas 515 92 858 824 10;
+#X declare -stdpath iemguts -path iemguts;
+#X declare -stdlib zexy -lib zexy;
+#X obj 415 717 cnv 14 63 15 empty empty empty 2 2 0 9 -248636 -66577
+0;
+#X obj 415 716 closebang, f 10;
+#X obj 280 209 t b b;
+#X obj 330 209 t b b;
+#X msg 280 406 1;
+#X msg 295 361 stop;
+#X obj 280 384 del 500;
+#X msg 376 433 1;
+#X msg 390 385 stop;
+#X obj 376 411 del 500;
+#X obj 396 575 s ol_key;
+#X msg 307 486 UP;
+#X msg 359 486 DOWN;
+#X obj 280 429 metro 50;
+#X obj 376 456 metro 50;
+#X msg 408 486 LEFT;
+#X msg 457 486 RIGHT;
+#X obj 280 182 route Up Down Left Right, f 34;
+#X msg 465 430 1;
+#X msg 478 383 stop;
+#X obj 465 408 del 500;
+#X msg 529 429 1;
+#X msg 537 384 stop;
+#X obj 529 407 del 500;
+#X obj 465 453 metro 50;
+#X obj 529 452 metro 50;
+#X obj 537 268 route Up Down Left Right, f 34;
+#X obj 380 209 t b b;
+#X obj 430 209 t b b;
+#X obj 50 72 keyname;
+#X obj 50 216 pack 0 s;
+#X obj 50 262 route 1 0, f 21;
+#X obj 50 288 route Control_L Shift_L;
+#X obj 111 369 route Control_L Shift_L;
+#X obj 50 311 t b;
+#X obj 120 311 t b;
+#X obj 111 390 t b;
+#X obj 178 390 t b;
+#X obj 161 513 s shiftstate;
+#X msg 50 335 1;
+#X msg 111 413 0;
+#X msg 178 412 0;
+#X msg 120 333 1;
+#X text 282 161 ARROW KEYS;
+#X obj 396 524 symbol;
+#X obj 589 541 outlet;
+#X obj 517 541 outlet;
+#X text 508 562 KEY DOWN;
+#X text 587 561 KEY UP;
+#X obj 607 511 s ol_keyup;
+#X obj 589 451 symbol;
+#X text 52 46 STRG + SHIFT, f 13;
+#X obj 219 398 s \$0-up;
+#X obj 537 246 r \$0-up;
+#X obj 126 685 spigot;
+#X msg 167 656 0;
+#X msg 145 656 1;
+#X obj 45 618 t b b b b;
+#X msg 96 656 1;
+#X msg 126 706 0;
+#X obj 96 733 s \$0-ol_key_spigot;
+#X obj 155 513 cnv 5 5 17 empty empty empty 20 12 0 14 -173398 -66577
+0;
+#X obj 390 575 cnv 5 5 17 empty empty empty 20 12 0 14 -173398 -66577
+0;
+#X obj 601 511 cnv 5 5 17 empty empty empty 20 12 0 14 -173398 -66577
+0;
+#X obj 56 760 cnv 5 5 17 empty empty empty 20 12 0 14 -173398 -66577
+0;
+#X obj 90 733 cnv 5 5 17 empty empty empty 20 12 0 14 -173398 -66577
+0;
+#X obj 120 619 cnv 5 5 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 213 398 cnv 5 5 17 empty empty empty 20 12 0 14 -173398 -66577
+0;
+#X obj 531 246 cnv 5 5 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X text 413 680 this has to be created before everything else !, f
+25;
+#X obj 126 619 r ol_key_single_check;
+#X obj 62 760 s ol_key_single_check;
+#X obj 45 594 del 50;
+#X obj 45 572 r check_ol_key_instances;
+#X text 44 551 check for multiple instances;
+#X obj 415 746 s check_ol_key_instances;
+#X obj 570 746 print \$0-CB;
+#X obj 511 542 cnv 5 5 17 empty empty empty 20 12 0 14 -102336 -66577
+0;
+#X obj 583 541 cnv 5 5 17 empty empty empty 20 12 0 14 -102336 -66577
+0;
+#X obj 573 41 cnv 10 170 20 empty empty needs_IEMGUTS_ZEXY 10 11 0
+14 -4160 -262144 0;
+#X obj 573 57 cnv 4 130 4 empty empty empty 10 11 0 14 -4160 -262144
+0;
+#X obj 512 71 cnv 14 230 15 empty empty empty 2 2 0 9 -253181 -66577
+0;
+#X msg 406 433 0;
+#X msg 495 430 0;
+#X msg 559 429 0;
+#X msg 315 406 0;
+#X obj 537 291 t b b;
+#X obj 587 292 t b b;
+#X obj 637 292 t b b;
+#X obj 687 293 t b b;
+#X msg 311 676 1;
+#X obj 291 746 s \$0-mainspigot-r;
+#X obj 50 240 spigot 1;
+#X obj 112 240 cnv 5 5 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 118 240 r \$0-mainspigot;
+#X obj 1 1 cnv 3 68 13 \$0-bgnd \$0-bgnd-r Control_L 20 7 1 9 -241339
+-66577 0;
+#X obj 0 0 tgl 15 0 \$0-mainspigot \$0-mainspigot-r empty 17 7 0 10
+-203904 -1 -1 1 1;
+#X msg 225 702 pos 0 \$1;
+#X msg 208 673 0;
+#X msg 237 673 20;
+#X msg 119 195 label \$1;
+#X obj 119 216 s \$0-bgnd-r;
+#X obj 650 746 s \$0-bgnd-r;
+#X msg 650 725 label;
+#X obj 683 615 cnv 5 5 17 empty empty empty 20 12 0 14 -173398 -66577
+0;
+#X obj 619 113 namecanvas \$0-ol_key;
+#X obj 689 615 s \$0-ol_key;
+#X obj 689 472 \$1;
+#X obj 689 495 route float;
+#X obj 689 517 != 0;
+#X msg 689 563 donecanvasdialog 1 -1 \$1 0 -1 1 1 70 15 0 0 10 \, dirty
+0, f 18;
+#X obj 689 539 * 3;
+#X obj 511 69 declare -stdpath iemguts -path iemguts;
+#X obj 200 288 t a b;
+#X obj 113 216 cnv 5 5 17 empty empty empty 20 12 0 14 -173398 -66577
+0;
+#X text 139 6 get rid of key repetitions when pressing down a key for
+too long. also reports CTRL and STRG state. must be loaded once in
+a PD instance to work "globally", f 101;
+#X obj 640 406 r \$0-ol_key_spigot;
+#X obj 634 406 cnv 5 5 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 396 551 spigot;
+#X obj 607 480 spigot;
+#X obj 161 489 spigot;
+#X obj 50 488 spigot;
+#X obj 44 512 cnv 5 5 17 empty empty empty 20 12 0 14 -173398 -66577
+0;
+#X obj 50 512 s ctrlstate;
+#X obj 117 449 r \$0-ol_key_spigot;
+#X obj 111 449 cnv 5 5 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 117 480 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 291 596 inlet;
+#X obj 285 596 cnv 5 5 17 empty empty empty 20 12 0 14 -118750 -66577
+0;
+#X text 282 577 messages;
+#X obj 291 618 route float;
+#X obj 291 642 clip 0 1;
+#X obj 377 618 cnv 5 5 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 383 618 r ol_key_active;
+#X obj 285 747 cnv 5 5 17 empty empty empty 20 12 0 14 -173398 -66577
+0;
+#X obj 512 88 cnv 14 230 15 empty empty empty 2 2 0 9 -253181 -66577
+0;
+#X obj 511 87 declare -stdlib zexy -lib zexy, f 38;
+#X obj 145 68 operating_system;
+#X obj 145 91 select linux windows macos;
+#X obj 107 165 change;
+#N canvas 42 92 450 300 UNIX 0;
+#X obj 170 23 inlet;
+#X obj 170 75 realtime;
+#X obj 170 50 sel 0 1;
+#X msg 103 115 stop;
+#X obj 103 141 del 51;
+#X obj 170 98 > 50;
+#X obj 170 123 sel 1;
+#X obj 145 219 outlet;
+#X msg 170 191 1;
+#X msg 103 164 0;
+#X connect 0 0 2 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 2 0 4 0;
+#X connect 2 1 1 1;
+#X connect 2 1 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 9 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;
+#X restore 50 165 pd UNIX;
+#X msg 178 119 0;
+#X msg 207 119 1;
+#X obj 50 141 demux, f 10;
+#X obj 118 119 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 313 44 windows and unix have different key repetition behaviours.
+Windows only sends 1s on key-down \, whereas Unix sends alterations
+of 1s and 0s, f 24;
+#X obj 587 659 cnv 3 27 15 empty empty empty 20 12 0 14 -135105 -66577
+0;
+#X obj 586 685 del 1;
+#X obj 586 658 init;
+#X text 640 686 <--- IMPORTANT ! Else PD quits !;
+#X text 638 649 [init] instead of [loadbang] allows dynamic creation
+, f 28;
+#X obj 580 709 cnv 5 5 17 empty empty empty 20 12 0 14 -173398 -66577
+0;
+#X obj 586 709 s \$0-lb;
+#X obj 683 450 cnv 5 5 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 689 450 r \$0-lb;
+#X obj 139 43 cnv 5 5 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 145 43 r \$0-lb;
+#X obj 30 368 cnv 5 5 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 36 368 r \$0-lb;
+#X connect 1 0 75 0;
+#X connect 2 0 6 0;
+#X connect 2 1 11 0;
+#X connect 3 0 9 0;
+#X connect 3 1 12 0;
+#X connect 4 0 13 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 14 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 11 0 44 0;
+#X connect 12 0 44 0;
+#X connect 13 0 11 0;
+#X connect 14 0 12 0;
+#X connect 15 0 44 0;
+#X connect 16 0 44 0;
+#X connect 17 0 2 0;
+#X connect 17 1 3 0;
+#X connect 17 2 27 0;
+#X connect 17 3 28 0;
+#X connect 17 4 44 0;
+#X connect 18 0 24 0;
+#X connect 19 0 20 0;
+#X connect 20 0 18 0;
+#X connect 21 0 25 0;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
+#X connect 24 0 15 0;
+#X connect 25 0 16 0;
+#X connect 26 0 86 0;
+#X connect 26 1 87 0;
+#X connect 26 2 88 0;
+#X connect 26 3 89 0;
+#X connect 26 4 50 0;
+#X connect 27 0 20 0;
+#X connect 27 1 15 0;
+#X connect 28 0 23 0;
+#X connect 28 1 16 0;
+#X connect 29 0 143 0;
+#X connect 29 1 100 0;
+#X connect 29 1 30 1;
+#X connect 30 0 92 0;
+#X connect 31 0 32 0;
+#X connect 31 1 33 0;
+#X connect 32 0 34 0;
+#X connect 32 1 35 0;
+#X connect 32 2 113 0;
+#X connect 33 0 36 0;
+#X connect 33 1 37 0;
+#X connect 33 2 52 0;
+#X connect 34 0 39 0;
+#X connect 35 0 42 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 39 0 121 0;
+#X connect 40 0 121 0;
+#X connect 41 0 120 0;
+#X connect 42 0 120 0;
+#X connect 44 0 46 0;
+#X connect 44 0 118 0;
+#X connect 50 0 45 0;
+#X connect 50 0 119 0;
+#X connect 53 0 26 0;
+#X connect 54 0 59 0;
+#X connect 55 0 54 1;
+#X connect 56 0 54 1;
+#X connect 57 0 56 0;
+#X connect 57 1 71 0;
+#X connect 57 2 55 0;
+#X connect 57 3 58 0;
+#X connect 58 0 60 0;
+#X connect 59 0 60 0;
+#X connect 70 0 54 0;
+#X connect 72 0 57 0;
+#X connect 73 0 72 0;
+#X connect 82 0 14 0;
+#X connect 83 0 24 0;
+#X connect 84 0 25 0;
+#X connect 85 0 13 0;
+#X connect 86 0 85 0;
+#X connect 86 1 5 0;
+#X connect 87 0 82 0;
+#X connect 87 1 8 0;
+#X connect 88 0 83 0;
+#X connect 88 1 19 0;
+#X connect 89 0 84 0;
+#X connect 89 1 22 0;
+#X connect 90 0 91 0;
+#X connect 92 0 31 0;
+#X connect 94 0 92 1;
+#X connect 97 0 91 0;
+#X connect 98 0 97 0;
+#X connect 99 0 97 0;
+#X connect 100 0 101 0;
+#X connect 103 0 102 0;
+#X connect 107 0 108 0;
+#X connect 108 0 109 0;
+#X connect 109 0 111 0;
+#X connect 110 0 106 0;
+#X connect 111 0 110 0;
+#X connect 113 0 17 0;
+#X connect 113 1 41 0;
+#X connect 113 1 40 0;
+#X connect 116 0 118 1;
+#X connect 116 0 119 1;
+#X connect 118 0 10 0;
+#X connect 119 0 49 0;
+#X connect 120 0 38 0;
+#X connect 121 0 123 0;
+#X connect 124 0 121 1;
+#X connect 124 0 120 1;
+#X connect 124 0 126 0;
+#X connect 127 0 130 0;
+#X connect 130 0 131 0;
+#X connect 131 0 91 0;
+#X connect 133 0 130 0;
+#X connect 137 0 138 0;
+#X connect 138 0 141 0;
+#X connect 138 1 142 0;
+#X connect 138 2 141 0;
+#X connect 139 0 30 0;
+#X connect 140 0 30 0;
+#X connect 141 0 144 0;
+#X connect 142 0 144 0;
+#X connect 143 0 140 0;
+#X connect 143 1 139 0;
+#X connect 144 0 143 1;
+#X connect 147 0 152 0;
+#X connect 148 0 147 0;
+#X connect 148 0 90 0;
+#X connect 148 0 75 0;
+#X connect 148 0 103 0;
+#X connect 154 0 107 0;
+#X connect 156 0 137 0;
+#X connect 158 0 40 0;
+#X connect 158 0 41 0;
+#X coords 0 0 1 1 70 15 0;

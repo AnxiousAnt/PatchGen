@@ -1,0 +1,26 @@
+#N canvas 6 56 1478 773 10;
+#X obj 107 162 * 256;
+#X obj 107 194 +;
+#X obj 107 110 repack 2;
+#X obj 107 135 unpack f f;
+#X obj 107 220 - 32768;
+#X obj 107 243 / 32768;
+#X obj 107 317 array set echodata;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array echodata 10 float 3;
+#A 0 0.0285714 -1.78814e-07 0.0142856 0.0142856 0.0142856 0.0142856
+0.0142856 0.0142856 0.0142856 0.0142856;
+#X coords 0 1 10 -1 200 140 1 0 0;
+#X restore 225 133 graph;
+#X obj 107 268 repack 10;
+#X msg 107 66 256 0 0 0 127 0 200 256 100 256 92 256 25 256 50 256
+0 256 127 256;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 1 1 1;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 8 0 6 0;
+#X connect 9 0 2 0;

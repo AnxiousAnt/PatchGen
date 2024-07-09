@@ -1,0 +1,28 @@
+#N canvas 189 137 374 367 10;
+#X obj 27 19 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 27 39 openpanel;
+#X obj 27 132 textfile;
+#X msg 27 61 read \$1 cr \, rewind \, bang;
+#X obj 72 155 print END_OF_PLAYLIST;
+#X obj 27 244 readsf~;
+#X obj 28 309 dac~ 1 2;
+#X obj 27 191 symbol;
+#X msg 27 216 open \$1 \, 1;
+#X obj 66 276 s next;
+#X obj 55 101 r next;
+#X obj 262 19 loadbang;
+#X msg 262 41 \; pd dsp 1;
+#X text 48 18 <- load your playlist;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 7 0;
+#X connect 2 1 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 5 1 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 5 0;
+#X connect 10 0 2 0;
+#X connect 11 0 12 0;

@@ -1,0 +1,32 @@
+#N canvas 277 66 475 431 10;
+#X obj 43 123 line;
+#X obj 43 78 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 43 241 vsl 15 128 0.01 1 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 11716 1;
+#X obj 68 241 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 11617 1;
+#X obj 68 191 pow 0.25;
+#X text 31 371 log;
+#X obj 43 51 metro 3000;
+#X obj 43 100 pack f 3000;
+#X obj 43 28 loadbang;
+#X obj 124 152 expr 0.01 * exp((log(1 / 0.01) / 0.01) * $f1 * 0.01)
+;
+#X obj 124 241 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3190 1;
+#X text 65 373 linear;
+#X obj 139 241 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3190 1;
+#X obj 139 191 scalelog 0.01 1;
+#X connect 0 0 2 0;
+#X connect 0 0 4 0;
+#X connect 0 0 9 0;
+#X connect 0 0 13 0;
+#X connect 1 0 7 0;
+#X connect 4 0 3 0;
+#X connect 6 0 1 0;
+#X connect 7 0 0 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 13 0 12 0;

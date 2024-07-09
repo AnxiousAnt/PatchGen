@@ -1,0 +1,29 @@
+#N canvas 131 63 657 285 10;
+#X obj 18 196 print;
+#X obj 76 166 print EOF;
+#X obj 18 12 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 47 32 eins due trois four;
+#X msg 56 52 1 2 3 4 5;
+#X symbolatom 69 73 10 0 0 0 - - -;
+#X floatatom 82 90 5 0 0 0 - - -;
+#X text 204 65 [list-fifo] keeps back incoming messages \, so that
+they can be outputted afterwards.;
+#X text 202 150 [list-fifo] can be used to limit the number of messages
+passing during a certain time (might be usefull to limit the used network
+bandwidth).;
+#X symbolatom 114 117 10 0 0 0 - - -;
+#X text 194 116 <- change delimiter symbol;
+#X text 202 215 !! PROBLEM !!;
+#X text 42 11 <- trigger output;
+#X obj 18 137 list-fifo;
+#X text 203 233 when a message contains the delimiter symbol \, it
+is falsely split into two parts.;
+#X connect 2 0 13 0;
+#X connect 3 0 13 1;
+#X connect 4 0 13 1;
+#X connect 5 0 13 1;
+#X connect 6 0 13 1;
+#X connect 9 0 13 2;
+#X connect 13 0 0 0;
+#X connect 13 1 1 0;

@@ -1,0 +1,103 @@
+#N canvas 225 23 924 693 10;
+#X obj 539 352 rpole~;
+#X obj 539 376 rzero~ 1;
+#X obj 619 199 hip~;
+#X obj 640 155 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-261682 -1 -1 0 256;
+#X obj 534 109 noise~;
+#X obj 540 417 output~;
+#X obj 643 128 hsl 128 15 20 20000 1 0 empty empty empty -2 -8 0 10
+-261682 -1 -1 0 1;
+#X obj 599 249 output~;
+#X obj 691 212 clip 0 1;
+#N canvas 0 22 450 300 init 0;
+#X obj 97 157 samplerate~;
+#X obj 87 93 loadbang;
+#X msg 103 118 \; pd dsp 1;
+#X obj 87 202 expr atan(1) * 4;
+#X obj 97 180 v sr;
+#X obj 87 223 v pi;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 3 0 5 0;
+#X restore 771 230 pd init;
+#X text 52 73 y[n] = x[n] - a[n] * x[n-1];
+#X text 43 20 O [hip~] é um filtro de um Polo e um Zero. Podemos implementa-lo
+a partir dos objetos de polo e zero reais [rpole~] e [rzero~]. A equação
+de diferença do [rzero~] é:;
+#X text 46 102 E a implementação num [fexpr~] é:;
+#X obj 249 139 v a;
+#X text 44 295 Lembrando que a implementação de um Polo no [fexpr~]
+é:;
+#X text 47 359 Juntamos ambas as equações e temos:;
+#X obj 99 626 clip 0 1;
+#X floatatom 99 572 5 0 0 0 - - -;
+#X floatatom 99 654 5 0 0 0 - - -;
+#X text 138 572 Hz;
+#X text 137 654 coeficiente;
+#X obj 684 507 v a;
+#X text 35 497 Precisamos agora apenas calcular o coeficiente do polo
+\, que \, a partir da entrada de frequência \, é dado por 1 menos a
+frequência em radianos por amostra:;
+#X text 157 628 mantém valores entre 0 e 1;
+#X obj 467 537 output~;
+#X text 485 28 Compare abaixo o filtro de Passa Alta de um Polo e um
+Zero em diferentes possíveis implementações.;
+#X obj 691 241 send \$0-a;
+#X obj 572 327 receive \$0-a;
+#X obj 684 483 receive \$0-a;
+#X obj 691 185 expr 1 - ($f1 * 2*pi/sr);
+#X obj 99 600 expr 1 - ($f1 * 2*pi/sr);
+#X text 56 425 E a equação de diferença:;
+#X text 85 451 y[n] = x[n] - x[n-1] + a * y[n-1];
+#N canvas 0 22 456 398 calculo 0;
+#X text 27 81 Notação da Transformada Z:;
+#X text 25 43 Vejamos agora a Função de Transferência. Partimos da
+equação de diferença: y[n] = x[n] - x[n-1] + a * y[n-1];
+#X text 98 109 Y(z) = X(z) - X(z)z^-1 + a * Y(z)z^-1;
+#X text 105 134 X(z) - X(z)z^-1 = Y(z) - a * Y(z)z^-1;
+#X text 106 154 X(z) (1 - z^-1) = Y(z) - a * Y(z)z^-1;
+#X text 106 176 X(z) = Y(z) - a * Y(z)z^-1 / (1 - z^-1);
+#X text 79 205 H(z) = Y(z) * (1 - z^-1) / Y(z) - a * Y(z)z^-1;
+#X text 165 267 _____________;
+#X text 124 270 H(z) =;
+#X text 171 284 1 - a * z^-1;
+#X text 178 261 1 - z^-1;
+#X restore 748 385 pd calculo de H(z);
+#X obj 710 334 cnv 15 150 50 empty empty empty 5 12 0 14 -261234 -66577
+0;
+#X text 762 344 _____________;
+#X text 721 347 H(z) =;
+#X text 768 361 1 - a * z^-1;
+#X text 775 338 1 - z^-1;
+#X text 43 171 Podemos juntar essa equação com a de um polo \, que
+se caracterizaria como um sistema de primeira ordem. No caso do [hip~]
+\, o coeficiente do zero ("a") é igual a 1 \, então simplificamos a
+equação desconsiderando o coeficiente "a" dessa forma:;
+#X obj 467 494 fexpr~ $x1 - $x1[-1] + a * $y1[-1];
+#X obj 79 395 fexpr~ $x1 - $x1[-1] + a * $y1[-1];
+#X obj 67 325 fexpr~ $x1 + a * $y1[-1];
+#X obj 68 260 fexpr~ $x1 - $x1[-1];
+#X obj 86 139 fexpr~ $x1 - a * $x1[-1];
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 0 5 1;
+#X connect 2 0 7 1;
+#X connect 2 0 7 0;
+#X connect 3 0 2 1;
+#X connect 3 0 29 0;
+#X connect 4 0 0 0;
+#X connect 4 0 2 0;
+#X connect 4 0 40 0;
+#X connect 6 0 3 0;
+#X connect 8 0 26 0;
+#X connect 16 0 18 0;
+#X connect 17 0 30 0;
+#X connect 27 0 0 1;
+#X connect 28 0 21 0;
+#X connect 29 0 8 0;
+#X connect 30 0 16 0;
+#X connect 40 0 24 0;
+#X connect 40 0 24 1;

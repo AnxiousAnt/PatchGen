@@ -1,0 +1,17 @@
+#N canvas 1261 188 1084 614 12;
+#X obj 496 260 expr ((($f1-$f2)/($f3-$f2))*($f5-$f4))+$f4;
+#X obj 496 207 inlet;
+#X obj 568 207 inlet;
+#X obj 641 207 inlet;
+#X obj 714 207 inlet;
+#X obj 787 207 inlet;
+#X obj 496 285 outlet;
+#X text 311 295 Input range min: a max: b Output range min: c max: d Input: y Output: x;
+#X text 574 293 (x-c)/(d-c) = (y-a)/(b-a) x = ( (y-a)/(b-a) * (b-a) ) + a;
+#X text 522 110 [scale] by rph-r;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 2;
+#X connect 4 0 0 3;
+#X connect 5 0 0 4;

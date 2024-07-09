@@ -1,0 +1,14 @@
+#N canvas 0 18 636 420 10;
+#X obj 142 122 list trim;
+#X obj 142 146 t b a;
+#X obj 112 50 loadbang;
+#X obj 142 100 list prepend add2;
+#X msg 112 178 self-coded documentation like this sends the wrong automated
+message to our children who will no longer learn the skills necessary
+for writing self-documenting code because;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;

@@ -1,0 +1,17 @@
+#N canvas 0 0 536 308 10;
+#X obj 102 182 s pd-sub;
+#N canvas 515 139 450 300 sub 1;
+#X restore 130 226 pd sub;
+#X symbolatom 104 77 10 0 0 2 sender - -;
+#X symbolatom 186 77 10 0 0 2 receiver - -;
+#X msg 48 137 clear;
+#X msg 102 135 obj 123 133 hsl 128 15 0 127 0 0 \$1 \$2 \$3 -2 -6 0
+8 -262144;
+#X obj 104 104 pack s s s;
+#X symbolatom 264 77 10 0 0 2 label - -;
+#X connect 2 0 6 0;
+#X connect 3 0 6 1;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 2;

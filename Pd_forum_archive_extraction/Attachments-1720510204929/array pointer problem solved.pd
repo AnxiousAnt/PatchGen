@@ -1,0 +1,18 @@
+#N canvas 130 130 453 201 10;
+#X text 83 129 what does "float-array z" mean ? why those specific arguments ?, f 33;
+#X obj 266 70 array define;
+#X obj 41 110 array sum -s float-array z;
+#X obj 266 94 t p;
+#X obj 60 78 array set -s float-array z;
+#X obj 41 54 t b l b;
+#X floatatom 41 136 5 0 0 0 - - - 0;
+#X msg 41 26 12 13 14 15;
+#X text 122 26 calcualte the sum of these floats;
+#X connect 1 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 2;
+#X connect 3 0 4 2;
+#X connect 5 0 2 0;
+#X connect 5 1 4 0;
+#X connect 5 2 1 0;
+#X connect 7 0 5 0;

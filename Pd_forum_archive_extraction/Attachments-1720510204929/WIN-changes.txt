@@ -1,0 +1,70 @@
+GGEXT-changes to make it run under WINdos
+of course you need pd-0.25 to use this extern (but that goes for linux too)
+you'll need Visual C++ 6.0 (mICROsOFT) to compile it right
+
+
+makefile:
+>change "current: linux" to "current: NT"
+>remove the IRIX- and LINUX-sections of the makefile (this 
+>change paths...
+>add toddle.obj slider.obj envgen.obj w_envgen.obj savestate.obj adsr.obj ticker.obj(?)
+>add "$(PDNTLDIR)\uuid.lib" to the PDNTLIB-setting
+
+ggext.c
+<unbelievable :: I didn't find any winbugs...
+
+streamin.c
+>replace line 165: "char* cbuf = (char*)getbytes(sizeof(char)*n);" is better
+>delete line 166
+>line 167(was 168): replay "(char*)tbuf" with "cbuf"
+?> I suggest to remove (or comment out) the lines 133-142 (that is "FD_SET"..."return(w+4);}")
+?> I do not know why, but on my system pd crashes because of segmentation faults...
+
+
+streamout.c
+>line 156: insert "break;"
+>line 161 (was 160): change ", &x->x_format," to ", (char*)&x->x_format,"
+>> this (l 161) should be no major problem, but the compiler is set to handle warnings as errors...
+
+fofsynth.c
+>remove line 10: "void garray_usedindsp(t_garray *x);"
+
+g_canvas.h
+>remove line 286: "t_canvas *canvas_getcurrent(void);"
+
+w_envgen.c
+>line 1: add "#include <math.h>"
+>line 6 (was 5): add "#define abs fabs"
+
+envgen.h
+>line 41: remove the "EXTERN  " from the t_widgetbehaviour declaration
+
+savestate.c
+>line 2: add "#include <string.h>"
+>line 62: remove this line ("...canvas_getdir(...)...")
+>line 64 (was 65): remove the first of the 3 "%s/"; then remove ",dir->s_name"
+>line 66 (was 67): same as in line 64
+>lines 128(was 129), 130(131(132)) & 132(133(134)) : same as in lines 62, 64, 66
+
+
+of course it would be great, not to simply remove lines and change them without thinking, but to use pre-compiler-directives:: #ifdef linux etc...
+
+
+changes on pd itself...
+
+m_pd.h
+>line 478: add "EXTERN " before the "void sys_vgui(..."
+>line 479: add "EXTERN " before the "void sys_gui(..."
+
+g_array.c
+>line 286: remove the "static" before the "void garray_usedindsp(..." declaration
+
+g_canvas.h
+>line 212: add "EXTERN " before the "t_canvas *glist_getcanvas(..."
+>line 220: add "EXTERN " before the "void glist_grab(..."
+>line 221: add "EXTERN " before the "int glist_isvisible(..."
+>line 270: add "EXTERN " before the "void canvas_fixlinesfor(..."
+>line 271: add "EXTERN " before the "void canvas_deletelinesfor(..."
+>line 311: add "EXTERN void garray_usedindsp(t_garray *x);"
+
+after that you will have to recompile pd...

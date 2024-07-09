@@ -1,0 +1,16 @@
+#N canvas 619 417 632 300 10;
+#X obj 133 116 sigmoid_neuron;
+#X floatatom 214 96 5 0 0 0 - - -;
+#X floatatom 173 72 5 0 0 0 - - -;
+#X floatatom 133 52 5 0 0 0 - - -;
+#X floatatom 133 144 12 0 0 0 - - -;
+#X text 122 173 Martin Peach 2010/07/28;
+#X text 211 69 gain changes the sharpness of the switch (default 1)
+;
+#X text 247 95 bias is the value at which the output is halfway switched
+(default 0);
+#X text 172 49 input value;
+#X connect 0 0 4 0;
+#X connect 1 0 0 2;
+#X connect 2 0 0 1;
+#X connect 3 0 0 0;

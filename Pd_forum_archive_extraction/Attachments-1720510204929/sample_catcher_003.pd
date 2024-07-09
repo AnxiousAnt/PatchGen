@@ -1,0 +1,475 @@
+#N canvas 227 270 201 258 10;
+#X obj 7 27 tgl 25 0 \$0-s_ctrl_rec \$0-r_ctrl_rec REC 3 13 1 8 -258699
+-262144 -1 0 1;
+#X obj 7 5 inlet~ rec;
+#N canvas 284 359 298 214 non_gui 0;
+#X obj 12 153 table \$0-mainbuffer \$1;
+#N canvas 557 72 650 299 set_defaults 0;
+#X obj 17 148 s \$0-r_ctrl_rhead;
+#X msg 17 124 range 0 \$1;
+#X obj 17 19 loadbang;
+#X obj 81 24 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 17 71 f \$1;
+#X obj 17 171 s \$0-r_ctrl_phead;
+#X obj 17 193 s \$0-r_ctrl_playfrom;
+#X obj 163 193 s \$0-r_ctrl_playto;
+#X obj 178 111 s \$0-r_xgroove;
+#X msg 178 74 loop 1;
+#X msg 233 74 interp 1;
+#X msg 305 75 xshape 1;
+#X msg 373 75 xfade 3;
+#X obj 17 215 s \$0-r_ctrl_recfrom;
+#X obj 163 215 s \$0-r_ctrl_recto;
+#X msg 303 191 resize \$1;
+#X obj 303 215 s \$0-displaybuffer;
+#X msg 409 167 draw 200;
+#X obj 479 139 f \$0;
+#X obj 449 215 s \$0-r_rec_display;
+#X msg 479 169 set \$1-displaybuffer;
+#X obj 492 90 s \$0-r_ctrl_playspeed;
+#X msg 492 65 1;
+#X obj 491 36 s \$0-r_ctrl_xfadetime;
+#X msg 491 12 500;
+#X obj 409 139 delay 20;
+#X obj 303 167 / 8;
+#X connect 1 0 0 0;
+#X connect 1 0 5 0;
+#X connect 1 0 6 0;
+#X connect 1 0 7 0;
+#X connect 1 0 13 0;
+#X connect 1 0 14 0;
+#X connect 2 0 4 0;
+#X connect 2 0 9 0;
+#X connect 2 0 10 0;
+#X connect 2 0 11 0;
+#X connect 2 0 12 0;
+#X connect 2 0 22 0;
+#X connect 2 0 24 0;
+#X connect 2 0 25 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 0 7 0;
+#X connect 4 0 14 0;
+#X connect 4 0 26 0;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
+#X connect 12 0 8 0;
+#X connect 15 0 16 0;
+#X connect 17 0 19 0;
+#X connect 18 0 20 0;
+#X connect 20 0 19 0;
+#X connect 22 0 21 0;
+#X connect 24 0 23 0;
+#X connect 25 0 17 0;
+#X connect 25 0 18 0;
+#X connect 26 0 15 0;
+#X restore 12 181 pd set_defaults;
+#N canvas 531 185 426 423 rec 0;
+#X obj 13 7 r \$0-s_ctrl_rec;
+#X obj 92 284 s \$0-r_ctrl_rec;
+#X obj 76 42 sel 0 1;
+#X msg 76 65 stop;
+#X obj 13 286 metro 50;
+#X obj 75 310 snapshot~;
+#X obj 13 261 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 118 67 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 184 73 reset;
+#X msg 184 93 getbuffer;
+#X obj 225 280 print \$0-xrecord~;
+#X obj 76 201 xrecord~ \$0-mainbuffer;
+#X msg 184 114 getattributes;
+#X obj 120 257 sel;
+#X obj 75 333 s \$0-r_ctrl_rhead;
+#X obj 7 6 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577 0
+;
+#X obj 88 282 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 70 330 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 125 6 inlet~ rec;
+#X obj 180 25 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 184 27 r \$0-s_ctrl_reset_rec;
+#X obj 189 140 r \$0-s_ctrl_recfrom;
+#X obj 189 161 r \$0-s_ctrl_recto;
+#X obj 184 138 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 184 160 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 184 51 t b b;
+#X obj 82 228 del 10;
+#X obj 22 118 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X msg 26 96 0;
+#X obj 26 120 s \$0-r_ctrl_playpause;
+#X obj 119 86 t b b;
+#X connect 0 0 2 0;
+#X connect 0 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 1 7 0;
+#X connect 3 0 11 0;
+#X connect 4 0 5 0;
+#X connect 5 0 13 0;
+#X connect 5 0 14 0;
+#X connect 6 0 4 0;
+#X connect 7 0 30 0;
+#X connect 8 0 11 0;
+#X connect 9 0 11 0;
+#X connect 11 0 5 0;
+#X connect 11 2 13 1;
+#X connect 11 4 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 1 0;
+#X connect 18 0 11 0;
+#X connect 20 0 25 0;
+#X connect 21 0 11 2;
+#X connect 22 0 11 3;
+#X connect 25 0 26 0;
+#X connect 25 1 8 0;
+#X connect 26 0 5 0;
+#X connect 28 0 29 0;
+#X connect 30 0 11 0;
+#X connect 30 1 28 0;
+#X restore 13 42 pd rec;
+#X obj 13 16 inlet~;
+#X obj 13 128 outlet~;
+#N canvas 411 542 488 360 play 0;
+#X obj 119 242 xgroove~ \$0-mainbuffer;
+#X obj -5 43 sel 0 1;
+#X msg -5 66 stop;
+#X obj 37 68 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj -5 9 r \$0-s_ctrl_playpause;
+#X obj -9 8 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#N canvas 0 0 450 300 playhead 0;
+#X obj 92 14 loadbang;
+#X obj 16 76 snapshot~;
+#X obj 92 40 metro 50;
+#X obj 16 10 inlet~;
+#X obj 16 135 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X restore 148 276 pd playhead;
+#X obj 148 313 s \$0-r_ctrl_phead;
+#X obj 143 311 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 193 192 r \$0-s_ctrl_playfrom;
+#X obj 268 216 r \$0-s_ctrl_playto;
+#X obj 143 311 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 263 214 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 189 190 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 120 339 outlet~;
+#X obj 133 160 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 138 162 r \$0-r_xgroove;
+#X obj 133 112 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 138 114 r \$0-s_ctrl_xfadetime;
+#X msg 138 136 xzone \$1;
+#X msg -2 175 getattributes;
+#X msg -1 196 getbuffer;
+#X floatatom 295 316 8 0 0 0 - - -;
+#X floatatom 357 316 8 0 0 0 - - -;
+#X obj 268 273 print \$0-xgroove~;
+#X obj 119 80 r \$0-s_ctrl_playspeed;
+#X obj 115 78 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 66 53 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X msg 70 31 0;
+#X obj 70 55 s \$0-r_ctrl_rec;
+#X obj 43 104 t b b;
+#X connect 0 0 14 0;
+#X connect 0 1 6 0;
+#X connect 0 2 22 0;
+#X connect 0 3 23 0;
+#X connect 0 5 24 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 30 0;
+#X connect 4 0 1 0;
+#X connect 6 0 7 0;
+#X connect 9 0 0 1;
+#X connect 10 0 0 2;
+#X connect 16 0 0 0;
+#X connect 18 0 19 0;
+#X connect 19 0 0 0;
+#X connect 20 0 0 0;
+#X connect 21 0 0 0;
+#X connect 25 0 0 0;
+#X connect 28 0 29 0;
+#X connect 30 0 0 0;
+#X connect 30 1 28 0;
+#X restore 13 71 pd play;
+#N canvas 531 185 364 489 rec_display 0;
+#X obj 34 85 r \$0-s_ctrl_rec;
+#X obj 34 128 sel 0 1;
+#X msg 34 151 stop;
+#X obj 76 153 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 126 151 reset;
+#X obj 28 84 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 17 9 inlet~ rec;
+#X obj 122 126 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 126 128 r \$0-s_ctrl_reset_rec;
+#X obj 130 219 r \$0-s_ctrl_recfrom;
+#X obj 130 240 r \$0-s_ctrl_recto;
+#X obj 125 217 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 125 239 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 187 321 print xrecord~_display;
+#X obj 16 49 r \$0-r_rec_display;
+#X obj 9 47 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 164 12 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 168 13 r \$0-s_ctrl_redraw;
+#X obj 168 66 tabplay~ \$0-mainbuffer;
+#X obj 177 265 / 8;
+#X obj 130 263 / 8;
+#X floatatom 49 392 8 0 0 0 - - -;
+#X obj 24 331 metro 50;
+#X obj 35 364 snapshot~;
+#X obj 113 325 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X msg 127 174 print;
+#X msg 129 194 all;
+#X obj 17 288 xrecord~ \$0-displaybuffer;
+#X obj 135 427 block~ 64 1 0.125;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 2 0 27 0;
+#X connect 3 0 27 0;
+#X connect 4 0 27 0;
+#X connect 6 0 27 0;
+#X connect 8 0 4 0;
+#X connect 9 0 20 0;
+#X connect 10 0 19 0;
+#X connect 14 0 27 0;
+#X connect 17 0 18 0;
+#X connect 17 0 27 0;
+#X connect 18 0 27 0;
+#X connect 19 0 27 3;
+#X connect 20 0 27 2;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
+#X connect 24 0 22 0;
+#X connect 25 0 27 0;
+#X connect 26 0 27 0;
+#X connect 27 0 23 0;
+#X connect 27 4 13 0;
+#X restore 62 42 pd rec_display;
+#N canvas 0 0 450 300 volume 0;
+#X obj 107 92 dbtorms;
+#X obj 23 88 *~;
+#X obj 107 137 line~;
+#X obj 107 115 pack 0 10;
+#X obj 22 245 outlet~;
+#X obj 23 13 inlet~;
+#X obj 103 38 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 107 40 r \$0-s_ctrl_vol;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 3 0 2 0;
+#X connect 5 0 1 0;
+#X connect 7 0 0 0;
+#X restore 13 100 pd volume;
+#N canvas 236 599 593 300 file_management 0;
+#X obj 20 10 r \$0-s_ctrl_loadfile;
+#X obj 20 80 openpanel;
+#X obj 140 251 soundfiler;
+#X msg 20 161 read \$1 \$2;
+#X obj 20 125 pack s s;
+#X obj 17 8 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 20 38 t b b;
+#X obj 386 30 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 389 32 r \$0-s_ctrl_setprefix;
+#X obj 265 4 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 268 6 r \$0-s_ctrl_savefile;
+#X obj 89 80 symbol \$0-mainbuffer;
+#X obj 268 196 pack s s;
+#N canvas 0 0 450 300 create_filename 0;
+#X obj 27 20 inlet b_go;
+#X obj 27 85 f \$0;
+#X obj 81 139 time -----;
+#X obj 27 231 makefilename add-time;
+#X msg 27 159 set \$1;
+#X obj 27 140 t b s;
+#X obj 81 207 makesymbol %sh%sm%ss%sms;
+#X obj 27 252 outlet;
+#X obj 81 186 pack f f f f;
+#X obj 150 164 i;
+#X msg 119 93 set \$1;
+#X obj 119 44 savepanel;
+#X obj 27 116 makefilename rec-%d-%%s;
+#X msg 191 45 bang;
+#X obj 119 71 makesymbol %s-%%d-%%%%s;
+#X obj 119 21 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 12 0;
+#X connect 2 0 8 0;
+#X connect 2 1 8 1;
+#X connect 2 2 8 2;
+#X connect 2 3 9 0;
+#X connect 3 0 7 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 5 1 4 0;
+#X connect 6 0 3 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 3;
+#X connect 10 0 12 0;
+#X connect 11 0 14 0;
+#X connect 12 0 5 0;
+#X connect 13 0 11 0;
+#X connect 14 0 10 0;
+#X connect 15 0 11 0;
+#X restore 268 86 pd create_filename;
+#X obj 268 54 t b b;
+#X msg 268 229 write \$1 \$2;
+#X obj 319 128 symbol \$0-mainbuffer;
+#X obj 140 277 s \$0-r_ctrl_playto;
+#X obj 137 275 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X connect 0 0 6 0;
+#X connect 1 0 4 0;
+#X connect 2 0 17 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 6 0 1 0;
+#X connect 6 0 11 0;
+#X connect 8 0 13 1;
+#X connect 10 0 14 0;
+#X connect 11 0 4 1;
+#X connect 12 0 15 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 14 1 16 0;
+#X connect 15 0 2 0;
+#X connect 16 0 12 1;
+#X restore 134 180 pd file_management;
+#N canvas 614 152 442 480 readme 0;
+#X text 7 89 Sample Catcher is designed as a free \, fancy \, and easily
+expandable delay box \, allowing one to layer samples from live inputs
+and tweak them.;
+#X text 8 149 This new version is based around Thomas Grill's fantastic
+xrecord~ and xgroove~ externals which do everything my sample_catcher
+v.1 did \, but better and easier.;
+#X text 8 209 The main limitation at this point is that you have to
+set the maximum buffer size at initialization because of Pd's current
+problems with resizing arrays in realtime. I played with some workarounds
+\, but the best seems to be to just allocate all the space you might
+need \, then maybe not use it all.;
+#X text 10 311 Usage should be pretty self-explanatory. REC to record
+\, PLY to play \, from and to set a section of the buffer to play/rec
+from/to. There are some advanced options if you click on the sub_menu
+bang. xfade_samples sets the crossfade length in samples. Play_speed
+sets the multiplier of the playing speed \, so 1 is normal \, -1 is
+backwards at normal speed \, 2 is twice as fast \, and -0.5 would be
+backwards at half-speed.;
+#X obj 5 9 cnv 15 400 40 empty empty sample_catcher.pd 5 10 1 14 -228992
+-99865 0;
+#X text 32 32 by Ian Smith-Heisters \, heisters[at]0x09.com;
+#X text 193 10 version 2;
+#X restore 188 24 pd readme;
+#N canvas 664 164 450 300 1005_submenu 0;
+#X obj 7 9 bng 25 250 50 0 \$0-s_ctrl_submenuclose \$0-r_ctrl_submenuclose
+Close 28 12 1 10 -99865 -228992 -1;
+#N canvas 640 93 450 300 openclose 0;
+#X obj 26 17 r \$0-s_ctrl_submenu;
+#X obj 26 110 makefilename pd-%d_submenu;
+#X msg 26 188 \; \$1 vis 1;
+#X obj 26 58 f \$0;
+#X obj 252 20 r \$0-s_ctrl_submenuclose;
+#X obj 248 18 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 22 16 cnv 1 1 20 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X obj 252 110 makefilename pd-%d_submenu;
+#X obj 252 58 f \$0;
+#X msg 252 188 \; \$1 vis 0;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X restore 359 278 pd openclose;
+#X obj 7 59 cnv 15 245 110 empty empty file_management 10 12 1 12 -195568
+-66577 0;
+#X obj 15 139 bng 20 250 50 0 \$0-s_ctrl_savefile \$0-r_ctrl_savefile
+save_file 23 10 1 8 -62784 -99865 -1;
+#X text 124 117 set file prefix;
+#X obj 90 140 bng 20 250 50 0 \$0-s_ctrl_loadfile \$0-r_ctrl_loadfile
+load_file 23 10 1 8 -260818 -99865 -1;
+#X symbolatom 15 118 15 0 0 0 - - #0-s_ctrl_setprefix;
+#X obj 15 96 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 166 145 bng 15 250 50 0 \$0-s_ctrl_redraw \$0-r_ctrl_redraw
+redraw_display 0 -6 1 8 -262144 -1 -1;
+#X obj 16 188 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 17 210 f \$0;
+#X msg 17 238 \; \$1-mainbuffer normalize \; \$1-displaybuffer normalize
+;
+#X connect 7 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X restore 188 45 pd \$0_submenu;
+#X connect 3 0 2 0;
+#X connect 3 0 6 0;
+#X connect 5 0 7 0;
+#X connect 7 0 4 0;
+#X restore 79 5 pd non_gui;
+#X obj 10 82 hsl 170 12 0 480000 0 0 \$0-s_ctrl_rhead \$0-r_ctrl_rhead
+rec_position 4 6 1 8 -228992 -258699 -1 0 1;
+#X obj 36 27 bng 25 250 50 0 \$0-s_ctrl_reset_rec \$0-r_ctrl_reset_rec
+reset_rec 28 12 1 8 -99865 -228992 -1;
+#X obj 10 54 hsl 170 12 0 480000 0 0 \$0-s_ctrl_recfrom \$0-r_ctrl_recfrom
+from 4 6 1 8 -233017 -128992 -1 0 1;
+#X obj 10 68 hsl 170 12 0 480000 0 0 \$0-s_ctrl_recto \$0-r_ctrl_recto
+to 4 6 1 8 -195568 -66577 -1 16900 1;
+#X obj 184 56 vsl 15 169 0 110 0 0 \$0-s_ctrl_vol \$0-r_ctrl_vol vol
+1 105 1 8 -195568 -66577 -1 0 1;
+#X obj 151 5 outlet~;
+#X obj 10 188 hsl 170 12 0 480000 0 0 \$0-s_ctrl_phead \$0-r_ctrl_phead
+play_position 4 6 1 8 -228992 -258699 -1 0 1;
+#X obj 7 230 tgl 25 0 \$0-s_ctrl_playpause \$0-r_ctrl_playpause PLY
+3 13 1 8 -1 -258699 -262144 0 1;
+#X obj 10 202 hsl 170 12 0 480000 0 0 \$0-s_ctrl_playfrom \$0-r_ctrl_playfrom
+from 4 6 1 8 -195568 -66577 -1 0 1;
+#X obj 10 216 hsl 170 12 0 480000 0 0 \$0-s_ctrl_playto \$0-r_ctrl_playto
+to 4 6 1 8 -233017 -128992 -1 16900 1;
+#X obj 37 240 nbx 6 15 -1e+37 1e+37 0 0 \$0-s_ctrl_xfadetime \$0-r_ctrl_xfadetime
+xfade_samples 0 -6 1 8 -99865 -228992 -1 500 256;
+#X obj 118 240 nbx 8 15 -1e+37 1e+37 0 0 \$0-s_ctrl_playspeed \$0-r_ctrl_playspeed
+play_speed 0 -6 1 8 -99865 -228992 -1 1 256;
+#X obj 119 27 bng 25 250 50 0 \$0-s_ctrl_submenu \$0-r_ctrl_submenu
+submenu 28 12 1 8 -99865 -228992 -1;
+#N canvas 0 0 450 300 graph3 0;
+#X array \$0-displaybuffer 60000 float 0;
+#X coords 0 1 59999 -1 175 90 1;
+#X restore 7 96 graph;
+#X connect 1 0 2 0;
+#X connect 2 0 8 0;
+#X coords 0 0 1 1 202 259 1;

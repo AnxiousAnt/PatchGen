@@ -1,0 +1,30 @@
+#N canvas 142 119 579 382 10;
+#X obj 94 112 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 90 154 \; pd-$0-name vis 1;
+#N canvas 0 22 454 304 1002-name 0;
+#X restore 120 210 pd \$0-name;
+#X obj 369 99 symbol \$0-name;
+#X obj 369 124 makefilename pd-%s;
+#X msg 369 147 \; \$1 vis 1;
+#X obj 369 78 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 372 279 pack 0 s;
+#X obj 424 231 symbol \$0-name;
+#X obj 424 256 makefilename pd-%s;
+#X obj 424 210 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 372 258 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X msg 372 305 \; \$2 vis \$1;
+#X text 115 90 There is NO \$0 in messages!!;
+#X text 367 37 These work:;
+#X connect 0 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 3 0;
+#X connect 7 0 12 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 1;
+#X connect 10 0 8 0;
+#X connect 11 0 7 0;

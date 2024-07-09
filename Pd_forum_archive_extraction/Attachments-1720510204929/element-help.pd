@@ -1,0 +1,70 @@
+#N struct help-element-template float x float y float z array array1
+help-element-array1-template;
+#N struct help-element-array1-template float x float y float z;
+#N canvas 231 44 688 749 12;
+#N canvas 403 636 515 285 help-element-template 0;
+#X obj 27 76 plot array1 500 1 10 15 20;
+#X obj 27 174 filledpolygon 509 509 0 -10 -10 10 -10 10 10 -10 10;
+#X msg 31 114 \; pd-help-element-data write test.txt;
+#X obj 24 16 template float x float y float z array array1 
+help-element-array1-template
+;
+#X msg 33 206 \; pd-help-element-data read test.txt;
+#X restore 451 324 pd help-element-template;
+#N canvas 0 0 320 191 help-element-data 0;
+#X scalar help-element-template 35 24 0 \; 0.3 0.3 0.4 \; 0.2 0.1 0.34
+\; 0.1 0.23 0.45 \; 0 10 0 \; 10 0 0 \; 0 0 0 \; 0 0 0 \; 0 0 0 \;
+0 0 10 \; \;;
+#X restore 487 303 pd help-element-data;
+#N canvas 59 554 385 261 help-element-array1-template 0;
+#X obj 30 71 filledpolygon 0 0 0 -5 0 0 5 5 0 0 -5;
+#X obj 32 27 template float x float y float z;
+#X msg 32 115 \; pd-help-element-data read test.txt;
+#X restore 391 346 pd help-element-array1-template;
+#X obj 22 11 element;
+#X text 91 10 -- get pointer to an element of an array;
+#X text 24 44 "element" takes a pointer at right and a number at left.
+It looks up a field from the pointer \, which should be an array \,
+and outputs the element of the array specified by the number. There
+are no pointers to arrays themselves \, just to individual elements.
+The template and field mane are specified as creation arguments.;
+#X obj 150 228 pointer;
+#X msg 150 204 traverse pd-help-element-data \, next;
+#X floatatom 38 228 5 0 0 0 - - -;
+#X obj 38 256 element help-element-template array1;
+#X floatatom 38 330 5 0 0 0 - - -;
+#X text 36 209 index;
+#X text 24 143 Indices range from 0 to the number of elements minus
+one \; indices out of range are quietly replaced by the nearest endpoint.
+;
+#X text 152 184 click here first;
+#X obj 38 303 get help-element-array1-template x y z;
+#X floatatom 188 357 5 0 0 0 - - -;
+#X floatatom 317 351 5 0 0 0 - - -;
+#X obj 200 565 print match;
+#X obj 335 554 print nomatch;
+#X obj 313 410 pack 0 0 0;
+#X obj 221 457 print pack;
+#X obj 333 495 select;
+#X text 123 336;
+#X msg 427 414 0.1 0.23 0.45;
+#X msg 429 449 0.5 0.3 0.43;
+#X connect 6 0 9 1;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 14 0;
+#X connect 10 0 19 0;
+#X connect 14 0 10 0;
+#X connect 14 1 15 0;
+#X connect 14 2 16 0;
+#X connect 15 0 19 1;
+#X connect 16 0 19 2;
+#X connect 19 0 20 0;
+#X connect 19 0 21 0;
+#X connect 19 0 21 0;
+#X connect 21 0 17 0;
+#X connect 21 0 17 0;
+#X connect 21 1 18 0;
+#X connect 23 0 21 1;
+#X connect 24 0 21 1;
+

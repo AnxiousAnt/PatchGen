@@ -1,0 +1,26 @@
+#N canvas 351 18 450 490 10;
+#X obj 187 246 list append \$1;
+#X msg 138 131 bang;
+#X obj 134 202 select s;
+#X obj 134 152 t b b;
+#X obj 242 179 makefilename $%d-test;
+#X obj 134 179 symbol \$1-test;
+#X msg 242 159 1;
+#X obj 187 224 t b;
+#X obj 8 292 t b;
+#X text 15 312 no arg given;
+#X text 217 225 this is \$1;
+#X obj 8 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 187 279 print arg1;
+#X connect 0 0 12 0;
+#X connect 1 0 3 0;
+#X connect 2 0 8 0;
+#X connect 2 1 7 0;
+#X connect 3 0 5 0;
+#X connect 3 1 6 0;
+#X connect 4 0 2 1;
+#X connect 5 0 2 0;
+#X connect 6 0 4 0;
+#X connect 7 0 0 0;
+#X connect 8 0 11 0;

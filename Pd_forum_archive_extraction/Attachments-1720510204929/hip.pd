@@ -1,0 +1,38 @@
+#N canvas 275 24 443 464 10;
+#X obj 76 298 rpole~;
+#X obj 76 322 rzero~ 1;
+#X obj 106 145 hip~;
+#X obj 127 101 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-261682 -1 -1 0 256;
+#X obj 71 55 noise~;
+#X obj 77 363 output~;
+#X obj 130 74 hsl 128 15 20 20000 1 0 empty empty empty -2 -8 0 10
+-261682 -1 -1 0 1;
+#X obj 86 195 output~;
+#X obj 167 233 clip 0 1;
+#N canvas 0 22 450 300 init 0;
+#X obj 97 157 samplerate~;
+#X obj 87 93 loadbang;
+#X msg 103 118 \; pd dsp 1;
+#X obj 87 202 expr atan(1) * 4;
+#X obj 97 180 v sr;
+#X obj 87 223 v pi;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 3 0 5 0;
+#X restore 247 251 pd init;
+#X obj 167 206 expr 1 - ($f1 * 2*pi/sr);
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 0 5 1;
+#X connect 2 0 7 1;
+#X connect 2 0 7 0;
+#X connect 3 0 2 1;
+#X connect 3 0 10 0;
+#X connect 4 0 0 0;
+#X connect 4 0 2 0;
+#X connect 6 0 3 0;
+#X connect 8 0 0 1;
+#X connect 10 0 8 0;

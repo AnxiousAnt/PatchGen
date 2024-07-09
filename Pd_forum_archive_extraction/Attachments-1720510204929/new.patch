@@ -1,0 +1,850 @@
+diff -rupN pd-0.43-0-old/src/g_array.c pd-0.43-0/src/g_array.c
+--- pd-0.43-0-old/src/g_array.c	2013-05-01 01:48:51.225292121 -0400
++++ pd-0.43-0/src/g_array.c	2013-05-04 22:39:40.503151248 -0400
+@@ -132,16 +132,19 @@ struct _garray
+     t_symbol *x_realname;   /* expanded name (symbol we're bound to) */
+     char x_usedindsp;       /* true if some DSP routine is using this */
+     char x_saveit;          /* true if we should save this with parent */
++    char x_joc;             /* true if we should "jump on click" in a graph */
+     char x_listviewing;     /* true if list view window is open */
+     char x_hidename;        /* don't print name above graph */
++    t_symbol *x_fillcolor;       /* color for filled area of the are */
++    t_symbol *x_outlinecolor;    /* color of the outline around the element */
+ };
+ 
+ static t_pd *garray_arraytemplatecanvas;
+ static char garray_arraytemplatefile[] = "\
+ #N canvas 0 0 458 153 10;\n\
+ #X obj 43 31 struct _float_array array z float float style\n\
+-float linewidth float color;\n\
+-#X obj 43 70 plot z color linewidth 0 0 1 style;\n\
++float linewidth float color symbol fillcolor symbol outlinecolor;\n\
++#X obj 43 70 plot z color linewidth 0 0 1 style fillcolor outlinecolor;\n\
+ ";
+ static char garray_floattemplatefile[] = "\
+ #N canvas 0 0 458 153 10;\n\
+@@ -179,7 +182,7 @@ always called by graph_array() below; bu
+ to save and create arrays this might get called more directly. */
+ 
+ static t_garray *graph_scalar(t_glist *gl, t_symbol *s, t_symbol *templatesym,
+-    int saveit)
++    t_symbol *fill, t_symbol *outline, int saveit)
+ {
+     int i, zz;
+     t_garray *x;
+@@ -187,8 +190,8 @@ static t_garray *graph_scalar(t_glist *g
+     t_template *template;
+     char *str;
+     t_gpointer gp;
+-    if (!template_findbyname(templatesym))
+-        return (0);  
++    if (!(template = template_findbyname(templatesym)))
++        return (0);
+     x = (t_garray *)pd_new(garray_class);
+     x->x_scalar = scalar_new(gl, templatesym);
+     x->x_name = s;
+@@ -197,6 +200,10 @@ static t_garray *graph_scalar(t_glist *g
+     x->x_usedindsp = 0;
+     x->x_saveit = saveit;
+     x->x_listviewing = 0;
++    template_setsymbol(template, gensym("fillcolor"), x->x_scalar->sc_vec,
++        fill, 1);
++    template_setsymbol(template, gensym("outlinecolor"), x->x_scalar->sc_vec,
++        outline, 1);
+     glist_add(gl, &x->x_gobj);
+     x->x_glist = gl;
+     return (x);
+@@ -252,6 +259,11 @@ int garray_getname(t_garray *x, t_symbol
+     *namep = x->x_name;
+     return (x->x_hidename);
+ }
++    /* find out if array elements should "jump on click" in a graph */
++int garray_joc(t_garray *x)
++{
++    return (x->x_joc);
++}
+ 
+         /* if there is one garray in a graph, reset the graph's coordinates
+             to fit a new size and style for the garray */
+@@ -263,8 +275,8 @@ static void garray_fittograph(t_garray *
+     {
+         vmess(&gl->gl_pd, gensym("bounds"), "ffff",
+             0., gl->gl_y1, (double)
+-                (style == PLOTSTYLE_POINTS || n == 1 ? n : n-1),
+-                    gl->gl_y2);
++                (style == PLOTSTYLE_POINTS || style == PLOTSTYLE_BARS
++                || n == 1 ? n : n-1), gl->gl_y2);
+                 /* close any dialogs that might have the wrong info now... */
+         gfxstub_deleteforkey(gl);
+     }
+@@ -276,10 +288,21 @@ an appropriate template; then set size a
+ from the menu and in the file format for patches.  LATER replace this
+ by a more coherent (and general) invocation. */
+ 
+-t_garray *graph_array(t_glist *gl, t_symbol *s, t_symbol *templateargsym,
+-    t_floatarg fsize, t_floatarg fflags)
++t_garray *graph_array(t_glist *gl, t_symbol *s, int argc, t_atom *argv)
+ {
+-    int n = fsize, i, zz, nwords, zonset, ztype, saveit;
++    t_symbol *fill;
++    t_symbol *outline;
++
++    if (argc < 4) {pd_error(gl, "arraydialog: not enough args"); return 0;}
++    t_symbol *name = atom_getsymbolarg(0, argc--, argv++);
++    int fsize = (int)atom_getfloatarg(0, argc--, argv++);
++    t_symbol *templateargsym = atom_getsymbolarg(0, argc--, argv++);
++    int fflags = (int)atom_getfloatarg(0, argc--, argv++);
++    if (argc) fill = atom_getsymbolarg(0, argc--, argv++);
++    else fill = gensym("black");
++    if (argc) outline = atom_getsymbolarg(0, argc--, argv++);
++    else outline = gensym("black");
++    int n = fsize, i, zz, nwords, zonset, ztype, saveit, joc;
+     t_symbol *zarraytype;
+     t_garray *x;
+     t_pd *x2;
+@@ -321,17 +344,25 @@ t_garray *graph_array(t_glist *gl, t_sym
+         return (0);
+     }
+     saveit = ((flags & 1) != 0);
+-    x = graph_scalar(gl, s, templatesym, saveit);
+-    x->x_hidename = ((flags & 8) >> 3);
+ 
++    x = graph_scalar(gl, name, templatesym, fill, outline, saveit);
++    x->x_hidename = ((flags & 8) >> 3);
++    x->x_joc = ((flags & 16) >> 4);
++    x->x_fillcolor = fill;
++    x->x_outlinecolor = outline;
+     if (n <= 0)
+         n = 100;
++
+     array_resize(x->x_scalar->sc_vec[zonset].w_array, n);
+ 
+     template_setfloat(template, gensym("style"), x->x_scalar->sc_vec,
+         style, 1);
+     template_setfloat(template, gensym("linewidth"), x->x_scalar->sc_vec, 
+         ((style == PLOTSTYLE_POINTS) ? 2 : 1), 1);
++    template_setsymbol(template, gensym("fillcolor"), x->x_scalar->sc_vec,
++        fill, 1);
++    template_setsymbol(template, gensym("outlinecolor"), x->x_scalar->sc_vec,
++        outline, 1);
+     if (x2 = pd_findbyclass(gensym("#A"), garray_class))
+         pd_unbind(x2, gensym("#A"));
+ 
+@@ -345,7 +376,8 @@ void canvas_menuarray(t_glist *canvas)
+ {
+     t_glist *x = (t_glist *)canvas;
+     char cmdbuf[200];
+-    sprintf(cmdbuf, "pdtk_array_dialog %%s array%d 100 3 1\n", gcount+1);
++    sprintf(cmdbuf, "pdtk_array_dialog %%s array%d 100 3 1 black black\n",
++        gcount+1);
+     gfxstub_new(&x->gl_pd, x, cmdbuf);
+ }
+ 
+@@ -363,38 +395,60 @@ void garray_properties(t_garray *x)
+         properly; right now we just detect a leading '$' and escape
+         it.  There should be a systematic way of doing this. */
+     sprintf(cmdbuf, ((x->x_name->s_name[0] == '$') ?
+-        "pdtk_array_dialog %%s \\%s %d %d 0\n" :
+-        "pdtk_array_dialog %%s %s %d %d 0\n"),
+-            x->x_name->s_name, a->a_n, x->x_saveit + 
++        "pdtk_array_dialog %%s \\%s %d %d 0 %s %s\n" :
++        "pdtk_array_dialog %%s %s %d %d 0 %s %s\n"), x->x_name->s_name,
++            a->a_n, x->x_saveit + 
+             2 * (int)(template_getfloat(template_findbyname(sc->sc_template),
+-            gensym("style"), x->x_scalar->sc_vec, 1)));
++            gensym("style"), x->x_scalar->sc_vec, 1)) + 8 * x->x_hidename +
++            16 * x->x_joc, x->x_fillcolor->s_name, x->x_outlinecolor->s_name);
+     gfxstub_new(&x->x_gobj.g_pd, x, cmdbuf);
+ }
+ 
+     /* this is called back from the dialog window to create a garray. 
+     The otherflag requests that we find an existing graph to put it in. */
+-void glist_arraydialog(t_glist *parent, t_symbol *name, t_floatarg size,
+-    t_floatarg fflags, t_floatarg otherflag)
++void glist_arraydialog(t_glist *parent, t_symbol *s, int argc, t_atom *argv)
+ {
++    t_atom at[6];
++    if (argc !=6) {pd_error(parent,
++        "arraydialog: wrong number of args"); return;}
+     t_glist *gl;
+     t_garray *a;
+-    int flags = fflags;
++    t_symbol *name = atom_getsymbolarg(0, argc, argv);
++    int size = atom_getfloatarg(1, argc, argv);
++    int flags = atom_getfloatarg(2, argc, argv);
++    int otherflag = atom_getfloatarg(3, argc, argv);
++    t_symbol *fillcolor = atom_getsymbolarg(4, argc, argv);
++    t_symbol *outlinecolor = atom_getsymbolarg(5, argc, argv);
++/* fflags; */
+     if (size < 1)
+         size = 1;
+     if (otherflag == 0 || (!(gl = glist_findgraph(parent))))
+         gl = glist_addglist(parent, &s_, 0, 1,
+             (size > 1 ? size-1 : size), -1, 0, 0, 0, 0);
+-    a = graph_array(gl, sharptodollar(name), &s_float, size, flags);
++    SETSYMBOL(at, sharptodollar(name));
++    SETFLOAT(at+1, size);
++    SETSYMBOL(at+2, &s_float);
++    SETFLOAT(at+3, flags);
++    SETSYMBOL(at+4, fillcolor);
++    SETSYMBOL(at+5, outlinecolor);
++    a = graph_array(gl, gensym("array"), 6, at);
+     canvas_dirty(parent, 1);
+ }
+ 
+     /* this is called from the properties dialog window for an existing array */
+-void garray_arraydialog(t_garray *x, t_symbol *name, t_floatarg fsize,
+-    t_floatarg fflags, t_floatarg deleteit)
++void garray_arraydialog(t_garray *x, t_symbol *s, int argc, t_atom *argv)
+ {
+-    int flags = fflags;
++    if (argc !=6) {pd_error(x, "arraydialog: wrong number of args"); return;}
++    t_symbol *name = atom_getsymbolarg(0, argc, argv);
++    int fsize = atom_getfloatarg(1, argc, argv);
++    int flags = atom_getfloatarg(2, argc, argv);
++    int deleteit = atom_getfloatarg(3, argc, argv);
++    t_symbol *fill = atom_getsymbolarg(4, argc, argv);
++    t_symbol *outline = atom_getsymbolarg(5, argc, argv);
+     int saveit = ((flags & 1) != 0);
+     int style = ((flags & 6) >> 1);
++    int hidename = ((flags & 8) >> 3);
++    int joc = ((flags & 16) >> 4);
+     t_float stylewas = template_getfloat(
+         template_findbyname(x->x_scalar->sc_template),
+             gensym("style"), x->x_scalar->sc_vec, 1);
+@@ -451,8 +505,16 @@ void garray_arraydialog(t_garray *x, t_s
+             garray_fittograph(x, size, style);
+         template_setfloat(scalartemplate, gensym("style"),
+             x->x_scalar->sc_vec, (t_float)style, 0);
++        template_setsymbol(scalartemplate, gensym("fillcolor"),
++            x->x_scalar->sc_vec, fill, 0);
++        template_setsymbol(scalartemplate, gensym("outlinecolor"),
++            x->x_scalar->sc_vec, outline, 0);
+ 
+         garray_setsaveit(x, (saveit != 0));
++        x->x_joc = joc;
++        x->x_hidename = hidename;
++        x->x_fillcolor = fill;
++        x->x_outlinecolor = outline;
+         garray_redraw(x);
+         canvas_dirty(x->x_glist, 1);
+     }
+@@ -607,6 +669,7 @@ void array_getcoordinate(t_glist *glist,
+     *wp = wpix;
+ }
+ 
++extern int array_joc; /* from g_canvas.h */
+ static t_float array_motion_xcumulative;
+ static t_float array_motion_ycumulative;
+ static t_fielddesc *array_motion_xfield;
+@@ -800,7 +863,7 @@ int array_doclick(t_array *array, t_glis
+                     best = dx + dy;
+             }
+         }
+-        if (best > 8)
++        if (best > 8 && (array_joc == 0))
+         {
+             if (scalarvis != 0)
+                 return (array_doclick_element(array, glist, sc, ap,
+@@ -832,13 +895,30 @@ int array_doclick(t_array *array, t_glis
+                     dy = 100;
+             }
+             else dy2 = dy3 = 100;
+-            if (dx + dy <= best || dx + dy2 <= best || dx + dy3 <= best)
++            int hit = 0;
++            if(array_joc)
++            {
++                if(i + incr >= array->a_n)
++                    hit = xpix >= pxpix;
++                else
++                {
++                    t_float px2pix, py2pix, pw2pix;
++                    array_getcoordinate(glist,
++                        (char *)(array->a_vec) + i + incr * elemsize,
++                        xonset, yonset, wonset, i + incr, xloc, yloc, xinc,
++                        xfield, yfield, wfield, &px2pix, &py2pix, &pw2pix);
++                    hit = (xpix >= pxpix) && (xpix < px2pix);
++                }
++            }
++            else
++                hit = dx + dy <= best || dx + dy2 <= best || dx + dy3 <= best;
++            if (hit)
+             {
+                 if (dy < dy2 && dy < dy3)
+                     array_motion_fatten = 0;
+                 else if (dy2 < dy3)
+                     array_motion_fatten = -1;
+-                else array_motion_fatten = 1;
++                else if (!array_joc) array_motion_fatten = 1;
+                 if (doit)
+                 {
+                     char *elem = (char *)array->a_vec;
+@@ -902,10 +982,12 @@ int array_doclick(t_array *array, t_glis
+                     else if (yonset >= 0)
+                     {
+                         array_motion_yfield = yfield;
+-                        array_motion_ycumulative = 
++                        array_motion_ycumulative =
+                             fielddesc_getcoord(yfield, array_motion_template,
+                                 (t_word *)(elem + i * elemsize), 1);
+                             /* *(t_float *)((elem + elemsize * i) + yonset); */
++                        if(array_joc)
++                            array_motion(0, 0, ypix - pypix);
+                     }
+                     else
+                     {
+@@ -1038,9 +1120,10 @@ static void garray_save(t_gobj *z, t_bin
+             x->x_scalar->sc_vec, 0);    
+     filestyle = (style == PLOTSTYLE_POINTS ? 1 : 
+         (style == PLOTSTYLE_POLY ? 0 : style)); 
+-    binbuf_addv(b, "sssisi;", gensym("#X"), gensym("array"),
++    binbuf_addv(b, "sssisiss;", gensym("#X"), gensym("array"),
+         x->x_name, array->a_n, &s_float,
+-            x->x_saveit + 2 * filestyle + 8*x->x_hidename);
++            x->x_saveit + 2 * filestyle + 8*x->x_hidename +
++            16*x->x_joc, x->x_fillcolor, x->x_outlinecolor);
+     if (x->x_saveit)
+     {
+         int n = array->a_n, n2 = 0;
+@@ -1202,7 +1285,7 @@ static void garray_dofo(t_garray *x, lon
+     if (npoints == 0)
+         npoints = 512;  /* dunno what a good default would be... */
+     if (npoints != (1 << ilog2(npoints)))
+-        post("%s: rounnding to %d points", array->a_templatesym->s_name,
++        post("%s: rounding to %d points", array->a_templatesym->s_name,
+             (npoints = (1<<ilog2(npoints))));
+     garray_resize_long(x, npoints + 3);
+     phaseincr = 2. * 3.14159 / npoints;
+@@ -1524,7 +1607,7 @@ void g_array_setup(void)
+     class_addmethod(garray_class, (t_method)garray_normalize,
+         gensym("normalize"), A_DEFFLOAT, 0);
+     class_addmethod(garray_class, (t_method)garray_arraydialog,
+-        gensym("arraydialog"), A_SYMBOL, A_FLOAT, A_FLOAT, A_FLOAT, A_NULL);
++        gensym("arraydialog"), A_GIMME, 0);
+ /* jsarlo { */
+     class_addmethod(garray_class, (t_method)garray_arrayviewlist_new,
+         gensym("arrayviewlistnew"), A_NULL);
+diff -rupN pd-0.43-0-old/src/g_canvas.c pd-0.43-0/src/g_canvas.c
+--- pd-0.43-0-old/src/g_canvas.c	2013-05-01 01:48:51.229292198 -0400
++++ pd-0.43-0/src/g_canvas.c	2013-05-02 16:56:02.411892760 -0400
+@@ -968,6 +968,7 @@ static int tabcount = 0;
+ static void *table_new(t_symbol *s, t_floatarg f)
+ {
+     t_atom a[9];
++    t_atom ga[4];
+     t_glist *gl;
+     t_canvas *x, *z = canvas_getcurrent();
+     if (s == &s_)
+@@ -992,8 +993,12 @@ static void *table_new(t_symbol *s, t_fl
+         /* create a graph for the table */
+     gl = glist_addglist((t_glist*)x, &s_, 0, -1, (f > 1 ? f-1 : 1), 1,
+         50, 350, 550, 50);
+-
+-    graph_array(gl, s, &s_float, f, 0);
++    
++    SETSYMBOL(ga, s);
++    SETSYMBOL(ga+1, &s_float);
++    SETFLOAT(ga+2, f);
++    SETFLOAT(ga+3, 0);
++    graph_array(gl, gensym("array"), 4, ga);
+ 
+     canvas_pop(x, 0); 
+ 
+diff -rupN pd-0.43-0-old/src/g_canvas.h pd-0.43-0/src/g_canvas.h
+--- pd-0.43-0-old/src/g_canvas.h	2013-05-01 01:48:51.229292198 -0400
++++ pd-0.43-0/src/g_canvas.h	2013-05-03 23:55:50.551835685 -0400
+@@ -342,6 +342,7 @@ extern int glist_valid;         /* incre
+ #define PLOTSTYLE_POINTS 0     /* plotting styles for arrays */
+ #define PLOTSTYLE_POLY 1
+ #define PLOTSTYLE_BEZ 2
++#define PLOTSTYLE_BARS 3
+ 
+ /* ------------------- functions on any gobj ----------------------------- */
+ EXTERN void gobj_getrect(t_gobj *x, t_glist *owner, int *x1, int *y1,
+@@ -396,8 +397,8 @@ EXTERN void glist_glist(t_glist *g, t_sy
+ EXTERN t_glist *glist_addglist(t_glist *g, t_symbol *sym,
+     t_float x1, t_float y1, t_float x2, t_float y2,
+     t_float px1, t_float py1, t_float px2, t_float py2);
+-EXTERN void glist_arraydialog(t_glist *parent, t_symbol *name,
+-    t_floatarg size, t_floatarg saveit, t_floatarg newgraph);
++EXTERN void glist_arraydialog(t_glist *parent, t_symbol *s,
++    int argc, t_atom *argv);
+ EXTERN t_binbuf *glist_writetobinbuf(t_glist *x, int wholething);
+ EXTERN int glist_isgraph(t_glist *x);
+ EXTERN void glist_redraw(t_glist *x);
+@@ -530,11 +531,11 @@ EXTERN void linetraverser_skipobject(t_l
+ EXTERN t_template *garray_template(t_garray *x);
+ 
+ /* -------------------- arrays --------------------- */
+-EXTERN t_garray *graph_array(t_glist *gl, t_symbol *s, t_symbol *tmpl,
+-    t_floatarg f, t_floatarg saveit);
++EXTERN t_garray *graph_array(t_glist *gl, t_symbol *s, int argc, t_atom *argv);
+ EXTERN t_array *array_new(t_symbol *templatesym, t_gpointer *parent);
+ EXTERN void array_resize(t_array *x, int n);
+ EXTERN void array_free(t_array *x);
++int array_joc; /* for "jump on click" array inside a graph */
+ 
+ /* --------------------- gpointers and stubs ---------------- */
+ EXTERN t_gstub *gstub_new(t_glist *gl, t_array *a);
+diff -rupN pd-0.43-0-old/src/g_editor.c pd-0.43-0/src/g_editor.c
+--- pd-0.43-0-old/src/g_editor.c	2013-05-01 01:48:51.229292198 -0400
++++ pd-0.43-0/src/g_editor.c	2013-05-02 17:47:06.958763747 -0400
+@@ -2715,7 +2715,7 @@ void g_editor_setup(void)
+     class_addmethod(canvas_class, (t_method)canvas_donecanvasdialog,
+         gensym("donecanvasdialog"), A_GIMME, A_NULL);
+     class_addmethod(canvas_class, (t_method)glist_arraydialog,
+-        gensym("arraydialog"), A_SYMBOL, A_FLOAT, A_FLOAT, A_FLOAT, A_NULL);
++        gensym("arraydialog"), A_GIMME, 0);
+ 
+ /* -------------- connect method used in reading files ------------------ */
+     class_addmethod(canvas_class, (t_method)canvas_connect,
+diff -rupN pd-0.43-0-old/src/g_graph.c pd-0.43-0/src/g_graph.c
+--- pd-0.43-0-old/src/g_graph.c	2013-05-01 01:48:51.225292121 -0400
++++ pd-0.43-0/src/g_graph.c	2013-05-02 02:44:40.533781373 -0400
+@@ -14,15 +14,18 @@ to this file... */
+ #include <stdio.h>
+ #include <string.h>
+ 
++extern int array_joc;
++int garray_joc(t_garray *x);
++
+ /* ---------------------- forward definitions ----------------- */
+ 
+ static void graph_vis(t_gobj *gr, t_glist *unused_glist, int vis);
+-static void graph_graphrect(t_gobj *z, t_glist *glist,
++void graph_graphrect(t_gobj *z, t_glist *glist,
+     int *xp1, int *yp1, int *xp2, int *yp2);
+ static void graph_getrect(t_gobj *z, t_glist *glist,
+     int *xp1, int *yp1, int *xp2, int *yp2);
+ 
+-/* -------------------- maintaining the list -------------------- */
++/* -------------------- maintaining tne list -------------------- */
+ 
+ void canvas_drawredrect(t_canvas *x, int doit);
+ 
+@@ -854,7 +857,7 @@ static void graph_vis(t_gobj *gr, t_glis
+     /* get the graph's rectangle, not counting extra swelling for controls
+     to keep them inside the graph.  This is the "logical" pixel size. */
+ 
+-static void graph_graphrect(t_gobj *z, t_glist *glist,
++void graph_graphrect(t_gobj *z, t_glist *glist,
+     int *xp1, int *yp1, int *xp2, int *yp2)
+ {
+     t_glist *x = (t_glist *)z;
+@@ -1046,12 +1049,21 @@ static int graph_click(t_gobj *z, struct
+     {
+         for (y = x->gl_list; y; y = y->g_next)
+         {
+-            int x1, y1, x2, y2;
++            if(pd_class(&y->g_pd) == garray_class &&
++               !y->g_next &&
++               (array_joc = garray_joc((t_garray *)y)) &&
++               (clickreturned = gobj_click(y, x, xpix, ypix,
++                   shift, alt, 0, doit)))
++                       break;
++            else
++            {
++                int x1, y1, x2, y2;
+                 /* check if the object wants to be clicked */
+-            if (canvas_hitbox(x, y, xpix, ypix, &x1, &y1, &x2, &y2)
+-                &&  (clickreturned = gobj_click(y, x, xpix, ypix,
++                if (canvas_hitbox(x, y, xpix, ypix, &x1, &y1, &x2, &y2)
++                    &&  (clickreturned = gobj_click(y, x, xpix, ypix,
+                     shift, alt, 0, doit)))
+                         break;
++            }
+         }
+         if (!doit)
+         {
+@@ -1102,7 +1114,7 @@ void g_graph_setup(void)
+     class_addmethod(canvas_class, (t_method)graph_ylabel, gensym("ylabel"),
+         A_GIMME, 0);
+     class_addmethod(canvas_class, (t_method)graph_array, gensym("array"),
+-        A_SYMBOL, A_FLOAT, A_SYMBOL, A_DEFFLOAT, A_NULL);
++        A_GIMME, A_NULL);
+     class_addmethod(canvas_class, (t_method)canvas_menuarray,
+         gensym("menuarray"), A_NULL);
+     class_addmethod(canvas_class, (t_method)glist_sort,
+diff -rupN pd-0.43-0-old/src/g_template.c pd-0.43-0/src/g_template.c
+--- pd-0.43-0-old/src/g_template.c	2013-05-01 01:48:51.229292198 -0400
++++ pd-0.43-0/src/g_template.c	2013-05-04 22:40:50.548670259 -0400
+@@ -11,7 +11,8 @@
+ #include "g_canvas.h"
+ 
+ void array_redraw(t_array *a, t_glist *glist);
+-
++void graph_graphrect(t_gobj *z, t_glist *glist,
++    int *xp1, int *yp1, int *xp2, int *yp2);
+ /*
+ This file contains text objects you would put in a canvas to define a
+ template.  Templates describe objects of type "array" (g_array.c) and
+@@ -1352,6 +1353,8 @@ typedef struct _plot
+     t_fielddesc x_wpoints;
+     t_fielddesc x_vis;          /* visible */
+     t_fielddesc x_scalarvis;    /* true if drawing the scalar at each point */
++    t_fielddesc x_symoutlinecolor; /* color as hex symbol */
++    t_fielddesc x_symfillcolor;    /* fill color as hex symbol */
+ } t_plot;
+ 
+ static void *plot_new(t_symbol *classsym, t_int argc, t_atom *argv)
+@@ -1416,6 +1419,9 @@ static void *plot_new(t_symbol *classsym
+     else fielddesc_setfloat_const(&x->x_xinc, 1);
+     if (argc) fielddesc_setfloatarg(&x->x_style, argc--, argv++);
+     else fielddesc_setfloat_const(&x->x_style, defstyle);
++    if (argc) fielddesc_setsymbolarg(&x->x_symfillcolor, argc--, argv++);
++    else argc--, argv++;
++    if (argc) fielddesc_setsymbolarg(&x->x_symoutlinecolor, argc--, argv++);
+     return (x);
+ }
+ 
+@@ -1446,7 +1452,8 @@ static int plot_readownertemplate(t_plot
+     t_symbol **elemtemplatesymp, t_array **arrayp,
+     t_float *linewidthp, t_float *xlocp, t_float *xincp, t_float *ylocp, t_float *stylep,
+     t_float *visp, t_float *scalarvisp,
+-    t_fielddesc **xfield, t_fielddesc **yfield, t_fielddesc **wfield)
++    t_fielddesc **xfield, t_fielddesc **yfield, t_fielddesc **wfield, t_symbol **fillcolorp,
++    t_symbol **outlinecolorp)
+ {
+     int arrayonset, type;
+     t_symbol *elemtemplatesym;
+@@ -1482,6 +1489,10 @@ static int plot_readownertemplate(t_plot
+     *xfield = &x->x_xpoints;
+     *yfield = &x->x_ypoints;
+     *wfield = &x->x_wpoints;
++    *fillcolorp = fielddesc_getsymbol(&x->x_symfillcolor, ownertemplate,
++        data, 1);
++    *outlinecolorp = fielddesc_getsymbol(&x->x_symoutlinecolor, ownertemplate,
++        data, 1);
+     return (0);
+ }
+ 
+@@ -1553,6 +1564,8 @@ static void plot_getrect(t_gobj *z, t_gl
+     t_template *elemtemplate;
+     t_symbol *elemtemplatesym;
+     t_float linewidth, xloc, xinc, yloc, style, xsum, yval, vis, scalarvis;
++    t_symbol *symfillcolor;
++    t_symbol *symoutlinecolor;
+     t_array *array;
+     int x1 = 0x7fffffff, y1 = 0x7fffffff, x2 = -0x7fffffff, y2 = -0x7fffffff;
+     int i;
+@@ -1560,7 +1573,8 @@ static void plot_getrect(t_gobj *z, t_gl
+     t_fielddesc *xfielddesc, *yfielddesc, *wfielddesc;
+     if (!plot_readownertemplate(x, data, template, 
+         &elemtemplatesym, &array, &linewidth, &xloc, &xinc, &yloc, &style,
+-            &vis, &scalarvis, &xfielddesc, &yfielddesc, &wfielddesc) &&
++            &vis, &scalarvis, &xfielddesc, &yfielddesc, &wfielddesc,
++            &symfillcolor, &symoutlinecolor) &&
+                 (vis != 0) &&
+             !array_getfields(elemtemplatesym, &elemtemplatecanvas,
+                 &elemtemplate, &elemsize, 
+@@ -1659,6 +1673,11 @@ static void plot_vis(t_gobj *z, t_glist
+     t_symbol *elemtemplatesym;
+     t_float linewidth, xloc, xinc, yloc, style, usexloc, xsum, yval, vis,
+         scalarvis;
++    t_symbol *symfill;
++    t_symbol *symoutline;
++    char outline[20];
++    numbertocolor(fielddesc_getfloat(&x->x_outlinecolor, template,
++        data, 1), outline);
+     t_array *array;
+     int nelem;
+     char *elem;
+@@ -1674,7 +1693,8 @@ static void plot_vis(t_gobj *z, t_glist
+         
+     if (plot_readownertemplate(x, data, template, 
+         &elemtemplatesym, &array, &linewidth, &xloc, &xinc, &yloc, &style,
+-        &vis, &scalarvis, &xfielddesc, &yfielddesc, &wfielddesc) ||
++        &vis, &scalarvis, &xfielddesc, &yfielddesc, &wfielddesc, &symfill,
++        &symoutline) ||
+             ((vis == 0) && tovis) /* see above for 'tovis' */
+             || array_getfields(elemtemplatesym, &elemtemplatecanvas,
+                 &elemtemplate, &elemsize, xfielddesc, yfielddesc, wfielddesc,
+@@ -1685,8 +1705,17 @@ static void plot_vis(t_gobj *z, t_glist
+ 
+     if (tovis)
+     {
+-        if (style == PLOTSTYLE_POINTS)
++        /* check if old 3-digit color field is being used... */
++        int dscolor = fielddesc_getfloat(&x->x_outlinecolor, template, data, 1);
++        if (dscolor != 0)
+         {
++            char outline[20];
++            numbertocolor(dscolor, outline);
++            symoutline = gensym(outline); 
++        }
++        if (style == PLOTSTYLE_POINTS || style == PLOTSTYLE_BARS)
++        {
++            symfill = style == PLOTSTYLE_POINTS ? symoutline : symfill;
+             t_float minyval = 1e20, maxyval = -1e20;
+             int ndrawn = 0;
+             for (xsum = basex + xloc, i = 0; i < nelem; i++)
+@@ -1721,14 +1750,34 @@ static void plot_vis(t_gobj *z, t_glist
+                     minyval = yval;
+                 if (i == nelem-1 || inextx != ixpix)
+                 {
++                    int py2 = 0;
++                    int border = 0;
++                    if(style == PLOTSTYLE_POINTS)
++                        py2 = (int)(glist_ytopixels(glist,
++                            basey + fielddesc_cvttocoord(yfielddesc, maxyval))
++                                + linewidth);
++                    else
++                    {
++                        /* this should probably be changed to anchor to the
++                           y-minimum instead of the bottom of the graph. That
++                           way the user can invert the y min/max to get a graph
++                           anchored from the top */
++                        if(glist->gl_isgraph && !glist->gl_havewindow)
++                        {
++                            int x1, y1, x2, y2;
++                            graph_graphrect(&glist->gl_gobj, glist->gl_owner,
++                                &x1, &y1, &x2, &y2);
++                            py2 = y2;
++                            border = 1;
++                        }
++                    }
+                     sys_vgui(".x%lx.c create rectangle %d %d %d %d \
+--fill black -width 0  -tags [list plot%lx array]\n",
++-fill %s -outline %s -width %d -tags [list plot%lx array]\n",
+                         glist_getcanvas(glist),
+                         ixpix, (int)glist_ytopixels(glist, 
+-                            basey + fielddesc_cvttocoord(yfielddesc, minyval)),
+-                        inextx, (int)(glist_ytopixels(glist, 
+-                            basey + fielddesc_cvttocoord(yfielddesc, maxyval))
+-                                + linewidth), data);
++                        basey + fielddesc_cvttocoord(yfielddesc, minyval)),
++                        inextx, py2, symfill->s_name, symoutline->s_name,
++                        border, data);
+                     ndrawn++;
+                     minyval = 1e20;
+                     maxyval = -1e20;
+@@ -1738,13 +1787,10 @@ static void plot_vis(t_gobj *z, t_glist
+         }
+         else
+         {
+-            char outline[20];
+             int lastpixel = -1, ndrawn = 0;
+             t_float yval = 0, wval = 0, xpix;
+             int ixpix = 0;
+                 /* draw the trace */
+-            numbertocolor(fielddesc_getfloat(&x->x_outlinecolor, template,
+-                data, 1), outline);
+             if (wonset >= 0)
+             {
+                     /* found "w" field which controls linewidth.  The trace is
+@@ -1818,7 +1864,7 @@ static void plot_vis(t_gobj *z, t_glist
+                 }
+             ouch:
+                 sys_vgui(" -width 1 -fill %s -outline %s\\\n",
+-                    outline, outline);
++                    symfill->s_name, symoutline->s_name);
+                 if (style == PLOTSTYLE_BEZ) sys_vgui("-smooth 1\\\n");
+ 
+                 sys_vgui("-tags [list plot%lx array]\n", data);
+@@ -1861,12 +1907,15 @@ static void plot_vis(t_gobj *z, t_glist
+                         fielddesc_cvttocoord(yfielddesc, yval)));
+ 
+                 sys_vgui("-width %f\\\n", linewidth);
+-                sys_vgui("-fill %s\\\n", outline);
++                sys_vgui("-fill %s\\\n", symoutline->s_name);
+                 if (style == PLOTSTYLE_BEZ) sys_vgui("-smooth 1\\\n");
+ 
+                 sys_vgui("-tags [list plot%lx array]\n", data);
+             }
+         }
++        /* make sure the array drawings are behind the graph */
++        sys_vgui(".x%lx.c lower plot%lx graph%lx\n", glist_getcanvas(glist),
++            data, glist);
+             /* We're done with the outline; now draw all the points.
+             This code is inefficient since the template has to be
+             searched for drawing instructions for every last point. */
+@@ -1931,11 +1980,14 @@ static int plot_click(t_gobj *z, t_glist
+     t_float linewidth, xloc, xinc, yloc, style, vis, scalarvis;
+     t_array *array;
+     t_fielddesc *xfielddesc, *yfielddesc, *wfielddesc;
++    t_symbol *symfillcolor;
++    t_symbol *symoutlinecolor;
+ 
+     if (!plot_readownertemplate(x, data, template, 
+         &elemtemplatesym, &array, &linewidth, &xloc, &xinc, &yloc, &style,
+         &vis, &scalarvis,
+-        &xfielddesc, &yfielddesc, &wfielddesc) && (vis != 0))
++        &xfielddesc, &yfielddesc, &wfielddesc, &symfillcolor, &symoutlinecolor)
++        && (vis != 0))
+     {
+         return (array_doclick(array, glist, sc, ap,
+             elemtemplatesym,
+diff -rupN pd-0.43-0-old/tcl/dialog_array.tcl pd-0.43-0/tcl/dialog_array.tcl
+--- pd-0.43-0-old/tcl/dialog_array.tcl	2013-05-01 01:48:51.205291726 -0400
++++ pd-0.43-0/tcl/dialog_array.tcl	2013-05-04 22:11:20.773728018 -0400
+@@ -1,5 +1,7 @@
+ package provide dialog_array 0.1
+ 
++# todo: probably not a bad idea to unset these arrays
++
+ namespace eval ::dialog_array:: {
+     namespace export pdtk_array_dialog
+     namespace export pdtk_array_listview_new
+@@ -15,8 +17,16 @@ array set pd_array_listview_page {}
+ set pd_array_listview_pagesize 0
+ # this stores the state of the "save me" check button
+ array set saveme_button {}
++# this stores the state of the "joc" check button
++array set joc_button {}
++# whether to hide the array name
++array set hidename_button {}
+ # this stores the state of the "draw as" radio buttons
+ array set drawas_button {}
++# border color for an element
++array set pd_array_outlinecolor {}
++# inner color for an element
++array set pd_array_fillcolor {}
+ # this stores the state of the "in new graph"/"in last graph" radio buttons
+ # and the "delete array" checkbutton
+ array set otherflag_button {}
+@@ -217,18 +227,47 @@ proc ::dialog_array::apply {mytoplevel}
+     set mofo [$mytoplevel.name.entry get]
+     if {[string index $mofo 0] == "$"} {
+         set mofo [string replace $mofo 0 0 #] }
+-
+     pdsend "$mytoplevel arraydialog \
+             $mofo \
+             [$mytoplevel.size.entry get] \
+-            [expr $::saveme_button($mytoplevel) + (2 * $::drawas_button($mytoplevel))] \
+-            $::otherflag_button($mytoplevel)"
++            [expr $::saveme_button($mytoplevel) + \
++                (2 * $::drawas_button($mytoplevel)) + \
++                (8 * $::hidename_button($mytoplevel)) + \
++                (16 * $::joc_button($mytoplevel))] \
++            $::otherflag_button($mytoplevel) \
++            $::pd_array_fillcolor($mytoplevel) \
++            $::pd_array_outlinecolor($mytoplevel)"
+ }
+ 
+ proc ::dialog_array::openlistview {mytoplevel} {
+     pdsend "$mytoplevel arrayviewlistnew"
+ }
+ 
++proc ::dialog_array::choosecolor {mytoplevel type} {
++    set colorp [format "::pd_array_%scolor(%s)" $type $mytoplevel]
++    if {[info exists $colorp]} {
++        set initcolor [set $colorp]
++    } else {
++        set initcolor "black"}
++    set tmp [tk_chooseColor -parent $mytoplevel -initialcolor $initcolor]
++    if {$tmp eq ""} {return} else {set $colorp $tmp}
++}
++
++proc ::dialog_array::update_colorpreview {color widget args} {
++    upvar #0 $color c
++    $widget configure -background $c -activebackground $c
++}
++
++proc ::dialog_array::update_drawas {mytoplevel outlineframe filllabel args} {
++    if {$::drawas_button($mytoplevel) == 3} {
++        pack $outlineframe -before $mytoplevel.colors.o -side top -anchor w
++        $filllabel configure -text "Outline color"
++    } else {
++        pack forget $outlineframe
++        $filllabel configure -text "Trace color"
++    }
++}
++
+ proc ::dialog_array::cancel {mytoplevel} {
+     pdsend "$mytoplevel cancel"
+ }
+@@ -238,7 +277,8 @@ proc ::dialog_array::ok {mytoplevel} {
+     ::dialog_array::cancel $mytoplevel
+ }
+ 
+-proc ::dialog_array::pdtk_array_dialog {mytoplevel name size flags newone} {
++proc ::dialog_array::pdtk_array_dialog {mytoplevel name \
++    size flags newone fillcolor outlinecolor} {
+     if {[winfo exists $mytoplevel]} {
+         wm deiconify $mytoplevel
+         raise $mytoplevel
+@@ -250,7 +290,12 @@ proc ::dialog_array::pdtk_array_dialog {
+     $mytoplevel.size.entry insert 0 $size
+     set ::saveme_button($mytoplevel) [expr $flags & 1]
+     set ::drawas_button($mytoplevel) [expr ( $flags & 6 ) >> 1]
++    set ::hidename_button($mytoplevel) [expr ( $flags & 8 ) >> 3]
++    set ::joc_button($mytoplevel)    [expr ( $flags & 16) >> 4]
+     set ::otherflag_button($mytoplevel) 0
++    set ::pd_array_fillcolor($mytoplevel) $fillcolor
++    set ::pd_array_outlinecolor($mytoplevel) $outlinecolor
++
+ # pd -> tcl
+ #  2 * (int)(template_getfloat(template_findbyname(sc->sc_template), gensym("style"), x->x_scalar->sc_vec, 1)));
+ 
+@@ -280,9 +325,17 @@ proc ::dialog_array::create_dialog {myto
+     entry $mytoplevel.size.entry
+     pack $mytoplevel.size.label $mytoplevel.size.entry -anchor w
+ 
+-    checkbutton $mytoplevel.saveme -text [_ "Save contents"] \
+-        -variable ::saveme_button($mytoplevel) -anchor w
+-    pack $mytoplevel.saveme -side top
++    frame $mytoplevel.flags
++    pack $mytoplevel.flags -side top -fill x -padx 20
++    checkbutton $mytoplevel.flags.saveme -text [_ "Save contents"] \
++        -variable ::saveme_button($mytoplevel)
++    pack $mytoplevel.flags.saveme -side top -anchor w
++    checkbutton $mytoplevel.flags.joc -text [_ "Jump on click"] \
++        -variable ::joc_button($mytoplevel) -anchor w
++    pack $mytoplevel.flags.joc -side top -anchor w
++    checkbutton $mytoplevel.flags.hidename -text [_ "Hide array name"] \
++        -variable ::hidename_button($mytoplevel) -anchor w
++    pack $mytoplevel.flags.hidename -side top -anchor w
+ 
+     labelframe $mytoplevel.drawas -text [_ "Draw as:"] -padx 20 -borderwidth 1
+     pack $mytoplevel.drawas -side top -fill x
+@@ -292,9 +345,50 @@ proc ::dialog_array::create_dialog {myto
+         -variable ::drawas_button($mytoplevel) -text [_ "Polygon"]
+     radiobutton $mytoplevel.drawas.bezier -value 2 \
+         -variable ::drawas_button($mytoplevel) -text [_ "Bezier curve"]
++    radiobutton $mytoplevel.drawas.bargraph -value 3 \
++        -variable ::drawas_button($mytoplevel) -text [_ "Bargraph"]
+     pack $mytoplevel.drawas.points -side top -anchor w
+     pack $mytoplevel.drawas.polygon -side top -anchor w
+     pack $mytoplevel.drawas.bezier -side top -anchor w
++    pack $mytoplevel.drawas.bargraph -side top -anchor w
++    trace add variable ::drawas_button($mytoplevel) write \
++        "::dialog_array::update_drawas $mytoplevel $mytoplevel.colors.f \
++        $mytoplevel.colors.o.outlinecolor"
++
++    set fillp ::pd_array_fillcolor($mytoplevel)
++    set outlinep ::pd_array_outlinecolor($mytoplevel)
++    labelframe $mytoplevel.colors -text [_ "Colors:"] -padx 20 -pady 5 \
++        -borderwidth 1
++    pack $mytoplevel.colors -side top -fill both
++    frame $mytoplevel.colors.f
++    frame $mytoplevel.colors.o
++    pack $mytoplevel.colors.f -side top -anchor w
++    pack $mytoplevel.colors.o -side top -anchor w
++    set fillpreview $mytoplevel.colors.f.preview
++    set flabel [label $mytoplevel.colors.f.fillcolor -text [_ "Fill color"]]
++    set olabel \
++        [label $mytoplevel.colors.o.outlinecolor -text [_ "Outline color"]]
++    bind $flabel <Enter> "$flabel configure -foreground blue"
++    bind $flabel <Leave> "$flabel configure -foreground black"
++    bind $flabel <1> "::dialog_array::choosecolor $mytoplevel fill"
++    bind $olabel <Enter> "$olabel configure -foreground blue"
++    bind $olabel <Leave> "$olabel configure -foreground black"
++    bind $olabel <1> "::dialog_array::choosecolor $mytoplevel outline"
++    button $fillpreview -relief raised -padx 7 -pady 0 \
++        -command "::dialog_array::choosecolor $mytoplevel fill"
++    set outlinepreview $mytoplevel.colors.o.preview
++    button $outlinepreview -relief raised -padx 7 -pady 0 \
++        -command \
++        "::dialog_array::choosecolor $mytoplevel outline"
++    #automagically update the preview buttons when the variables are changed
++    trace add variable $fillp write \
++        "::dialog_array::update_colorpreview $fillp $fillpreview"
++    trace add variable $outlinep write \
++        "::dialog_array::update_colorpreview $outlinep $outlinepreview"
++    pack $mytoplevel.colors.f.fillcolor -side right -anchor w
++    pack $mytoplevel.colors.f.preview -side left -anchor e -padx 3
++    pack $mytoplevel.colors.o.outlinecolor -side right -anchor w
++    pack $mytoplevel.colors.o.preview -side left -anchor e -padx 3
+ 
+     if {$newone != 0} {
+         labelframe $mytoplevel.radio -text [_ "Put array into:"] -padx 20 -borderwidth 1

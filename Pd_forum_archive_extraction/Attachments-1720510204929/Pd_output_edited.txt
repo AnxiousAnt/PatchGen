@@ -1,0 +1,49 @@
+				Ed...normal operation - lists sent to [print M2_notes]:
+M2_notes: abruptbar
+M2_notes: group 7 16
+M2_notes: note 0 73 1 0 69 0
+M2_notes: note + 68 1 0 124 1
+M2_notes: note + 69 1 0 71 0
+M2_notes: note + 73 1 0 77 0
+M2_notes: note + 73 1 0 69 0
+M2_notes: note + 71 1 0 77 0
+M2_notes: note + 66 1 0 71 0
+M2_notes: dyn 3
+M2_notes: group 7 16
+ rest 22.16 16 3 35
+... couldn't create
+ rest 22.64 16 2 36
+... couldn't create
+ barline 22.895
+... couldn't create
+ noteobject 23.01 16 73 1 0 0.36 1 0 1 0 4 38 0 0 0 group_0 0
+... couldn't create
+M2_notes: note 0 73 1 0 99 0
+ noteobject 23.33 16 68 1 0 0.36 1 0 1 0 4 39 0 0 0 group_0 0
+... couldn't create
+M2_notes: note + 68 1 0 88 0
+ noteobject 23.65 16 69 1 0 0.36 1 0 1 0 4 40 1 0 0 group_0 1
+... couldn't create
+M2_notes: note + 69 1 0 104 1
+ noteobject 23.97 16 73 1 0 0.36 1 0 1 0 4 41 2 0 0 group_0 0
+... couldn't create
+M2_notes: note + 73 1 0 96 0
+ noteobject 24.29 16 73 1 0 0.36 1 0 1 0 4 42 3 0 0 group_0 1
+... couldn't create
+M2_notes: note + 73 1 0 127 1
+error: can't open in C:/Data/puredata/2012/Islands_Steel_Pan_v6.983/scores/part2/Is_m2_a_06.score
+error: inlet: expected 'float' but got 'bang'
+error: inlet: expected 'float' but got 'bang'
+error: can't open in C:/Data/puredata/2012/Islands_Steel_Pan_v6.983/scores/part2/Is_m2_a_04.score
+error: inlet: expected 'float' but got 'bang'
+error: inlet: expected 'float' but got 'bang'
+error: can't open in C:/Data/puredata/2012/Islands_Steel_Pan_v6.983/scores/part2/Is_m2_a_04.score
+error: inlet: expected 'float' but got 'bang'
+error: inlet: expected 'float' but got 'bang'
+error: can't open in C:/Data/puredata/2012/Islands_Steel_Pan_v6.983/scores/part2/Is_m2_a_01.score
+error: inlet: expected 'float' but got 'bang'
+				Ed...(this line is repeated many, many times, possibly due to the [end, where( message to empty msgfile objects)
+error: inlet: expected 'float' but got 'bang'
+				Ed...then, when I try to save the file:
+error: C:/Data/puredata/2012/Islands_Steel_Pan_v6.983/Islands_score_M1_2.pd: Bad file descriptor
+error: C:/Data/puredata/2012/Islands_Steel_Pan_v6.983/Islands_score_M1_2.pd: Too many open files

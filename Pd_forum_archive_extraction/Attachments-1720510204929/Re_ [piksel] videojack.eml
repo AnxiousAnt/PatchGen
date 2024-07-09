@@ -1,0 +1,183 @@
+X-Account-Key: account6
+X-Mozilla-Keys: 
+Delivered-To: gissnetwork@gmail.com
+Received: by 10.220.178.8 with SMTP id bk8cs38222vcb;
+        Sat, 14 Aug 2010 10:44:02 -0700 (PDT)
+Received: by 10.223.103.72 with SMTP id j8mr3456013fao.4.1281807838760;
+        Sat, 14 Aug 2010 10:43:58 -0700 (PDT)
+Return-Path: <piksel-bounces@piksel.no>
+Received: from flux.bek.no (flux.bek.no [158.37.56.30])
+        by mx.google.com with ESMTP id q14si3952079faa.188.2010.08.14.10.43.57;
+        Sat, 14 Aug 2010 10:43:58 -0700 (PDT)
+Received-SPF: neutral (google.com: 158.37.56.30 is neither permitted nor denied by best guess record for domain of piksel-bounces@piksel.no) client-ip=158.37.56.30;
+Authentication-Results: mx.google.com; spf=neutral (google.com: 158.37.56.30 is neither permitted nor denied by best guess record for domain of piksel-bounces@piksel.no) smtp.mail=piksel-bounces@piksel.no
+Received: from localhost.localdomain ([127.0.0.1])
+	by flux.bek.no with esmtp (Exim 4.67)
+	(envelope-from <piksel-bounces@piksel.no>)
+	id 1OkKlk-0005Zs-Ge; Sat, 14 Aug 2010 19:43:48 +0200
+Received: from mail-ww0-f49.google.com ([74.125.82.49])
+	by flux.bek.no with esmtp (Exim 4.67)
+	(envelope-from <ydegoyon@gmail.com>) id 1OkKlS-0005Zg-OX
+	for piksel@piksel.no; Sat, 14 Aug 2010 19:43:32 +0200
+Received: by wwi14 with SMTP id 14so3165707wwi.30
+	for <piksel@piksel.no>; Sat, 14 Aug 2010 10:43:18 -0700 (PDT)
+Received: by 10.227.37.8 with SMTP id v8mr2534156wbd.180.1281807798601;
+	Sat, 14 Aug 2010 10:43:18 -0700 (PDT)
+Received: from [192.168.1.3] (61.14.19.95.dynamic.jazztel.es [95.19.14.61])
+	by mx.google.com with ESMTPS id a1sm3540105wbb.14.2010.08.14.10.43.14
+	(version=SSLv3 cipher=RC4-MD5); Sat, 14 Aug 2010 10:43:17 -0700 (PDT)
+Message-ID: <4C66D5A7.4040905@free.fr>
+Date: Sat, 14 Aug 2010 19:43:03 +0200
+From: "ydegoyon@free.fr" <ydegoyon@gmail.com>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US;
+	rv:1.9.1.11) Gecko/20100722 SeaMonkey/2.0.6
+MIME-Version: 1.0
+To: p1k53l workshop <piksel@piksel.no>
+References: <AANLkTikzo_gKtm335Y+E-_u8D1ykj5E0cE2K_H0n6R1x@mail.gmail.com>	<AANLkTik5wVSLwXTL5Jy2Bsr2ozC60Dhdnp_okV5xMqAX@mail.gmail.com>	<1281562956.1910.122.camel@arturo-laptop>	<4C63DE86.9040402@free.fr>	<3c65a112d6199e3e60dd12a153a726db.squirrel@webmail.xs4all.nl>	<AANLkTikGZ9JQH8dS56qsvnz1PzqNL3tFPGBb3b_53EUr@mail.gmail.com>	<4C642086.1050908@gmail.com>	<83ed120b7c5cbe4c85cf37ed9fed271e.squirrel@webmail.xs4all.nl>	<20100814080118.GG19818@dyne.org>
+	<4C6671BF.4050000@free.fr>
+In-Reply-To: <4C6671BF.4050000@free.fr>
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: Spam detection software, running on the system "flux.bek.no",
+	has
+	identified this incoming email as possible spam. The original message
+	has been attached to this so you can view it (if it isn't spam) or
+	label similar future email.  If you have any questions, see
+	the administrator of that system for details.
+	Content preview:  ola again, it was so straightforward to do,
+	reading a little
+	bit the code of mjpegtools_yuv_to_v4l by Jan Panteltje that there is
+	now a pdp_vloopback in PiDiP,
+	meaning that you can input your pd output to any
+	other program that supports v4l. [...] 
+	Content analysis details:   (-2.5 points, 5.0 required)
+	pts rule name              description
+	---- ----------------------
+	--------------------------------------------------
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-2.6 BAYES_00 BODY: Bayesian spam probability is 0 to 1%
+	[score: 0.0000]
+	0.1 AWL AWL: From: address is in the auto white-list
+Cc: jaromil <jaromil@dyne.org>, "ydegoyon@free.fr" <ydegoyon@gmail.com>
+Subject: Re: [piksel] videojack
+X-BeenThere: piksel@piksel.no
+X-Mailman-Version: 2.1.9
+Precedence: list
+Reply-To: p1k53l workshop <piksel@piksel.no>
+List-Id: p1k53l workshop <piksel.piksel.no>
+List-Unsubscribe: <https://piksel.no/mailman/listinfo/piksel>,
+	<mailto:piksel-request@piksel.no?subject=unsubscribe>
+List-Archive: <http://piksel.no/pipermail/piksel>
+List-Post: <mailto:piksel@piksel.no>
+List-Help: <mailto:piksel-request@piksel.no?subject=help>
+List-Subscribe: <https://piksel.no/mailman/listinfo/piksel>,
+	<mailto:piksel-request@piksel.no?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: piksel-bounces@piksel.no
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: Spam detection software, running on the system "flux.bek.no", has
+	identified this incoming email as possible spam.  The original message
+	has been attached to this so you can view it (if it isn't spam) or label
+	similar future email.  If you have any questions, see
+	the administrator of that system for details.
+	Content preview:  ola again, it was so straightforward to do, reading a little
+	bit the code of mjpegtools_yuv_to_v4l by Jan Panteltje that there is now
+	a pdp_vloopback in PiDiP, meaning that you can input your pd output to any
+	other program that supports v4l. [...] 
+	Content analysis details:   (-2.5 points, 5.0 required)
+	pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-2.6 BAYES_00               BODY: Bayesian spam probability is 0 to 1%
+	[score: 0.0000]
+	0.1 AWL                    AWL: From: address is in the auto white-list
+
+ola again,
+
+it was so straightforward to do,
+reading a little bit the code
+of mjpegtools_yuv_to_v4l by Jan Panteltje
+that there is now a pdp_vloopback
+in PiDiP, meaning that you can input your pd output
+to any other program that supports v4l.
+
+the only 'trick' is that the size is not detected automagically,
+so your client must have the same size settings
+than your pd patch.
+
+you can get it from pd svn
+( the only way to get pidip anyway )
+it's in trunk/externals/pidip
+and will be included in tonight's autobuild
+
+salaam,
+sevy
+
+ydegoyon@free.fr wrote:
+> good morning,
+>
+> i also don't like applications that takes the focus
+> when they start and i totally disaprove
+> of desktop notifications
+> ( the one that says 'you're one year older'
+> specially )...
+> i think i will create a group against these two plagues.
+>
+> ok. let's be serious, all that vloopback module
+> does is a memcpy which on modern computers
+> does not jeopardize all the system...
+> much less than other kernel modules
+> that do much more dangerous stuff..
+>
+> and basically it works smooth..
+>
+> even though, what if we like system that _can_ crash?
+>
+> saludos,
+> sevy
+>
+> jaromil wrote:
+>    
+>> -----BEGIN PGP SIGNED MESSAGE-----
+>> Hash: SHA256
+>>
+>>
+>> re all,
+>>
+>> vloopback is a kernel-level hack that makes Linux in charge of large
+>> buffer operations: such an approach doesn't fits at all the
+>> architecture of the Linux kernel for which CPU intensive operations
+>> must be done at application level; a violation of this guideline will
+>> likely jam the kernel scheduler and override its prioritization; since
+>> vloopback is meant to connect between multiple processes and threads,
+>> this condition should be avoided.
+>>
+>> if the aim is to trick applications to use another application's
+>> output, then i'd recommend looking at LD_PRELOAD related tricks.
+>>
+>> ciao
+>>
+>> - --
+>> jaromil, dyne.org developer, http://jaromil.dyne.org
+>>
+>>
+>>
+>>
+>>      
+>
+> _______________________________________________
+> piksel mailing list
+> piksel@piksel.no
+> https://piksel.no/mailman/listinfo/piksel
+> http://www.piksel.no
+>
+>
+>    
+
+
+_______________________________________________
+piksel mailing list
+piksel@piksel.no
+https://piksel.no/mailman/listinfo/piksel
+http://www.piksel.no
+

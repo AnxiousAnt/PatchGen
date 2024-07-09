@@ -1,0 +1,84 @@
+pd 0.37:
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000008
+
+Thread 0 Crashed:
+0   pd                            	0x000350c8 outlet_anything + 0x40
+1   pd                            	0x0005ba2c netreceive_doit + 0x134
+2   pd                            	0x0003c308 socketreceiver_read + 0x1b4
+3   pd                            	0x0003be44 sys_domicrosleep + 0x140
+4   pd                            	0x0003a704 m_scheduler + 0x2a8
+5   pd                            	0x000027d0 _start + 0x17c (crt.c:267)
+6   pd                            	0x00002650 start + 0x30
+
+Thread 1:
+0   libSystem.B.dylib             	0x900074c8 mach_msg_trap + 0x8
+1   libSystem.B.dylib             	0x90007018 mach_msg + 0x38
+2   com.apple.audio.midi.CoreMIDI 	0x81ebdc9c XServerMachPort::ReceiveMessage(int&, void*, int&) + 0x54
+3   com.apple.audio.midi.CoreMIDI 	0x81eb0d58 MIDIInPortThread::Run() + 0x13c
+4   com.apple.audio.midi.CoreMIDI 	0x81eb4e50 XThread::RunHelper(void*) + 0x3c
+5   libSystem.B.dylib             	0x900246e8 _pthread_body + 0x28
+
+Thread 2:
+0   libSystem.B.dylib             	0x900074c8 mach_msg_trap + 0x8
+1   libSystem.B.dylib             	0x90007018 mach_msg + 0x38
+2   com.apple.CoreFoundation      	0x90191700 __CFRunLoopRun + 0x350
+3   com.apple.CoreFoundation      	0x90195e8c CFRunLoopRunSpecific + 0x148
+4   com.apple.audio.CoreAudio     	0x90732f80 HALRunLoop::OwnThread(void*) + 0x104
+5   com.apple.audio.CoreAudio     	0x907391e0 CAPThread::Entry(CAPThread*) + 0x30
+6   libSystem.B.dylib             	0x900246e8 _pthread_body + 0x28
+
+Thread 3:
+0   libSystem.B.dylib             	0x90018be8 semaphore_timedwait_signal_trap + 0x8
+1   libSystem.B.dylib             	0x9000e788 _pthread_cond_wait + 0x268
+2   com.apple.audio.CoreAudio     	0x907244fc CAGuard::WaitFor(unsigned long long) + 0xdc
+3   com.apple.audio.CoreAudio     	0x90724130 CAGuard::WaitUntil(unsigned long long) + 0x130
+4   com.apple.audio.CoreAudio     	0x90722b20 HPIOThread::WorkLoop() + 0x358
+5   com.apple.audio.CoreAudio     	0x9073919c HPIOThread::ThreadEntry(HPIOThread*) + 0x1c
+6   com.apple.audio.CoreAudio     	0x907391e0 CAPThread::Entry(CAPThread*) + 0x30
+7   libSystem.B.dylib             	0x900246e8 _pthread_body + 0x28
+
+
+
+pd 0.38:
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000008
+
+Thread 0 Crashed:
+0   pd                            	0x000341d0 outlet_anything + 0x48 (m_obj.c:444)
+1   pd                            	0x0005d234 netreceive_doit + 0x134 (x_net.c:233)
+2   pd                            	0x0003b9c4 socketreceiver_read + 0x1b4 (s_inter.c:509)
+3   pd                            	0x0003b160 sys_domicrosleep + 0x140 (s_inter.c:167)
+4   pd                            	0x000397a4 m_scheduler + 0x2e4 (m_sched.c:485)
+5   pd                            	0x00002728 _start + 0x188 (crt.c:267)
+6   pd                            	0x0000259c start + 0x30
+
+Thread 1:
+0   libSystem.B.dylib             	0x900074c8 mach_msg_trap + 0x8
+1   libSystem.B.dylib             	0x90007018 mach_msg + 0x38
+2   com.apple.audio.midi.CoreMIDI 	0x81ebdc9c XServerMachPort::ReceiveMessage(int&, void*, int&) + 0x54
+3   com.apple.audio.midi.CoreMIDI 	0x81eb0d58 MIDIInPortThread::Run() + 0x13c
+4   com.apple.audio.midi.CoreMIDI 	0x81eb4e50 XThread::RunHelper(void*) + 0x3c
+5   libSystem.B.dylib             	0x900246e8 _pthread_body + 0x28
+
+Thread 2:
+0   libSystem.B.dylib             	0x900074c8 mach_msg_trap + 0x8
+1   libSystem.B.dylib             	0x90007018 mach_msg + 0x38
+2   com.apple.CoreFoundation      	0x90191700 __CFRunLoopRun + 0x350
+3   com.apple.CoreFoundation      	0x90195e8c CFRunLoopRunSpecific + 0x148
+4   com.apple.audio.CoreAudio     	0x90732f80 HALRunLoop::OwnThread(void*) + 0x104
+5   com.apple.audio.CoreAudio     	0x907391e0 CAPThread::Entry(CAPThread*) + 0x30
+6   libSystem.B.dylib             	0x900246e8 _pthread_body + 0x28
+
+Thread 3:
+0   libSystem.B.dylib             	0x90018be8 semaphore_timedwait_signal_trap + 0x8
+1   libSystem.B.dylib             	0x9000e788 _pthread_cond_wait + 0x268
+2   com.apple.audio.CoreAudio     	0x907244fc CAGuard::WaitFor(unsigned long long) + 0xdc
+3   com.apple.audio.CoreAudio     	0x90724130 CAGuard::WaitUntil(unsigned long long) + 0x130
+4   com.apple.audio.CoreAudio     	0x90722b20 HPIOThread::WorkLoop() + 0x358
+5   com.apple.audio.CoreAudio     	0x9073919c HPIOThread::ThreadEntry(HPIOThread*) + 0x1c
+6   com.apple.audio.CoreAudio     	0x907391e0 CAPThread::Entry(CAPThread*) + 0x30
+7   libSystem.B.dylib             	0x900246e8 _pthread_body + 0x28
+

@@ -1,0 +1,15 @@
+#N canvas 785 164 954 756 12;
+#X obj 355 577 comment 0 10 helvetica ? 0 0 0 0 comment;
+#X obj 356 600 comment 0 10 helvetica ? 0 0 0 0 ffff s;
+#X obj 218 444 comment 0 10 helvetica ? 0 0 0 0 comment;
+#X msg 84 84 read;
+#X obj 80 162 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 149 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 84 122 coll;
+#C restore;
+#X connect 3 0 6 0;
+#X connect 6 2 4 0;
+#X connect 6 3 5 0;
+#X coords 0 756 1 755 134 24 0;

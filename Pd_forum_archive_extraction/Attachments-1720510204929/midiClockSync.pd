@@ -1,0 +1,79 @@
+#N canvas 486 41 565 560 12;
+#X obj 112 10 midirealtimein;
+#X obj 112 96 timer;
+#X obj 112 125 select 0;
+#X obj 147 357 spigot;
+#X obj 191 263 del 500;
+#X obj 190 289 1;
+#X obj 112 67 t b b;
+#X obj 147 445 f;
+#X msg 220 470 0;
+#X obj 165 499 + 1;
+#X obj 217 217 0;
+#X obj 147 471 moses 95;
+#X obj 273 465 select 0 24 48 72;
+#X obj 166 191 t b b b;
+#X obj 166 379 24;
+#X obj 217 337 t f f;
+#X obj 292 133 /;
+#X floatatom 292 73 5 0 0 0 - - -;
+#X msg 292 105 60000 \$1;
+#X obj 273 505 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 305 505 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 338 505 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 371 505 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 341 73 <-set to master BPM;
+#X text 276 432 MIDIClock is 96 tics per bar;
+#X obj 323 200 cpu;
+#N canvas 0 0 534 580 comments 1;
+#X text 56 29 This is working on winXP with \;;
+#X text 116 97 - PD-Puckette 0.40-2;
+#X text 56 141 It's a workaround \, since [midirealtimein] doesn't
+;
+#X text 159 357 start: 250 (FA);
+#X text 158 379 clock-tick: 248 (F8);
+#X text 158 401 stop: 252 (FC);
+#X text 157 423 continue: 251 (FB);
+#X text 111 70 - MIDI-yoke and! MIDI-oxe;
+#X text 60 164 give you standart MIDI-Clock-messages \, only timing.
+;
+#X text 403 16 december 2006;
+#X text 53 207 So the startmessage and first tick appears as time 0
+[select 0] \, wait one beat \, start counting.;
+#X text 135 328 MIDI-Clock-messages are \;;
+#X text 37 533 Steffen Leve Poulsen slagmark at worldonline dot dk
+;
+#X restore 8 9 pd comments;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 13 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 1;
+#X connect 6 0 1 0;
+#X connect 6 1 1 1;
+#X connect 6 1 3 0;
+#X connect 7 0 11 0;
+#X connect 7 0 12 0;
+#X connect 8 0 7 1;
+#X connect 9 0 7 1;
+#X connect 10 0 15 0;
+#X connect 11 0 9 0;
+#X connect 11 1 8 0;
+#X connect 12 0 19 0;
+#X connect 12 1 20 0;
+#X connect 12 2 21 0;
+#X connect 12 3 22 0;
+#X connect 13 0 14 0;
+#X connect 13 1 4 0;
+#X connect 13 2 10 0;
+#X connect 14 0 7 1;
+#X connect 15 0 7 0;
+#X connect 15 1 3 1;
+#X connect 16 0 4 1;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;

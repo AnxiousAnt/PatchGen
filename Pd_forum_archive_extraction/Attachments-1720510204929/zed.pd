@@ -1,0 +1,25 @@
+#N canvas 672 289 331 146 10;
+#X obj 34 41 #camera;
+#X obj 34 5 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 34 79 #out window;
+#X obj 138 51 t a a;
+#X obj 138 89 # C./;
+#X obj 138 108 # + (120 160);
+#X obj 138 32 # || 1;
+#X obj 138 13 # - (120 160);
+#X obj 34 22 metro 33.3333;
+#X obj 34 60 #remap_image;
+#X obj 138 70 # put 30000;
+#X connect 0 0 9 0;
+#X connect 1 0 8 0;
+#X connect 3 0 10 0;
+#X connect 3 1 4 1;
+#X connect 4 0 5 0;
+#X connect 5 0 9 1;
+#X connect 6 0 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 0 0;
+#X connect 9 0 2 0;
+#X connect 9 1 7 0;
+#X connect 10 0 4 0;

@@ -1,0 +1,12 @@
+#N canvas 438 379 450 300 10;
+#X obj 111 166 ireceive yesyes;
+#X obj 113 200 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6800 1;
+#X obj 115 135 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6800 1;
+#X obj 64 64 send yesyes;
+#X obj 65 31 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5400 1;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 4 0 3 0;

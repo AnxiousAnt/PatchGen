@@ -1,0 +1,25 @@
+#N canvas 562 248 1358 936 10;
+#X obj 54 200 dmx_ONAIR;
+#N canvas 0 0 1097 738 black 0;
+#X obj 104 102 bng 55 250 50 0 empty empty BLACK 17 7 0 10 -1 -262144
+-262144;
+#X obj 104 204 t b b;
+#X msg 132 271 set blackArray;
+#X obj 133 349 s ONAIRMEM;
+#X obj 84 311 s GOONAIR;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array blackArray 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 100 99 0 200 140 1;
+#X restore 321 220 graph;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 2 0;
+#X connect 2 0 3 0;
+#X coords 0 -1 1 1 85 60 1 100 100;
+#X restore 1171 392 pd black;
+#X obj 684 130 dmx_mem 2;
+#X obj 676 60 dmx_mem 1;

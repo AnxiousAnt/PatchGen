@@ -1,0 +1,50 @@
+#N canvas 1 53 450 618 10;
+#X obj 63 90 list append add #X obj 16 17 loadbang \, add #X obj 16
+46 t b b b b b \, add #X msg 79 68 add #N canvas 1 53 450 618 10 \,
+add #X obj 63 454 t a a \, add #X obj 90 473 list prepend add #X obj
+63 90 list append \, add #X obj 63 500 list prepend add #X msg 47 270
+\, add #X obj 63 537 list trim \, add #X msg 16 561 write self.pd \,
+add #X obj 31 586 textfile \, add #X text 171 564 Copyright 2011 Jonathan
+Wilkes \, add #X connect 2 0 3 0 \, add #X connect 3 4 4 0 \, add #X
+connect 3 3 0 0 \, add #X connect 3 2 1 0 \, add #X connect 3 1 10
+0 \, add #X connect 3 0 9 0 \, add #X connect 4 0 10 0 \, add #X connect
+0 0 5 0 \, add #X connect 1 0 10 0 \, add #X connect 5 1 6 0 \, add
+#X connect 5 0 7 0 \, add #X connect 6 0 8 0 \, add #X connect 7 0
+8 0 \, add #X connect 8 0 10 0 \, add #X connect 9 0 10 0;
+#X msg 47 270 add #X obj 16 17 loadbang \, add #X obj 16 46 t b b b
+b b \, add #X msg 79 68 add #N canvas 1 53 450 618 10 \, add #X obj
+63 454 t a a \, add #X obj 90 473 list prepend add #X obj 63 90 list
+append \, add #X obj 63 500 list prepend add #X msg 47 270 \, add #X
+obj 63 537 list trim \, add #X msg 16 561 write self.pd \, add #X obj
+31 586 textfile \, add #X text 171 564 Copyright 2011 Jonathan Wilkes
+\, add #X connect 2 0 3 0 \, add #X connect 3 4 4 0 \, add #X connect
+3 3 0 0 \, add #X connect 3 2 1 0 \, add #X connect 3 1 10 0 \, add
+#X connect 3 0 9 0 \, add #X connect 4 0 10 0 \, add #X connect 0 0
+5 0 \, add #X connect 1 0 10 0 \, add #X connect 5 1 6 0 \, add #X
+connect 5 0 7 0 \, add #X connect 6 0 8 0 \, add #X connect 7 0 8 0
+\, add #X connect 8 0 10 0 \, add #X connect 9 0 10 0;
+#X obj 16 17 loadbang;
+#X obj 16 46 t b b b b b;
+#X msg 79 68 add #N canvas 1 53 450 618 10;
+#X obj 63 454 t a a;
+#X obj 90 473 list prepend add #X obj 63 90 list append;
+#X obj 63 500 list prepend add #X msg 47 270;
+#X obj 63 537 list trim;
+#X msg 16 561 write self.pd;
+#X obj 31 586 textfile;
+#X text 171 564 Copyright 2011 Jonathan Wilkes;
+#X connect 0 0 5 0;
+#X connect 1 0 10 0;
+#X connect 2 0 3 0;
+#X connect 3 0 9 0;
+#X connect 3 1 10 0;
+#X connect 3 2 1 0;
+#X connect 3 3 0 0;
+#X connect 3 4 4 0;
+#X connect 4 0 10 0;
+#X connect 5 0 7 0;
+#X connect 5 1 6 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X connect 8 0 10 0;
+#X connect 9 0 10 0;

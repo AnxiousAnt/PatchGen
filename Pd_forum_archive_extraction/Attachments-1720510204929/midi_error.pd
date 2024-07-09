@@ -1,0 +1,23 @@
+#N canvas 929 135 693 479 10;
+#X obj 22 185 ctlin;
+#X obj 24 66 random 128;
+#X obj 24 20 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 81 239 print midi_error;
+#X text 142 92 send random value over midi \, CC1;
+#X text 22 135 Please \, connect your midi out to midi in;
+#X text 102 184 we should receive exactly what is send.;
+#X obj 24 45 metro 5;
+#X obj 24 91 ctlout 1;
+#X obj 37 214 route 1;
+#X text 102 212 so \, we should not have any other message than CC1
+;
+#X text 203 239 with my computer \, i do have some midi error \, if
+i wait a few minutes.;
+#X text 21 281 Tested on ubuntu linux (dapper) \, pd 0.40.2 \, with
+a MOTU fastlane MIDI interface and a DELL M70 laptop.;
+#X connect 0 1 9 0;
+#X connect 1 0 8 0;
+#X connect 2 0 7 0;
+#X connect 7 0 1 0;
+#X connect 9 1 3 0;

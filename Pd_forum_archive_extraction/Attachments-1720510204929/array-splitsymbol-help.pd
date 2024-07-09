@@ -1,0 +1,28 @@
+#N canvas 968 460 683 433 10;
+#X obj 108 148 print;
+#X msg 107 210 symbol C:/my_dir1/my_dir2/my_dir3/my_dir4/1.wav;
+#X obj 107 348 print;
+#X obj 107 320 symbol;
+#X obj 107 262 t b s;
+#X msg 117 235 symbol /my_dir1/my_dir2/my_dir3/my_dir4/1.wav;
+#X text 242 121 argument 1 : the character delimiter;
+#X msg 108 61 symbol AB:22:CD:4444:E:F;
+#X text 105 187 Example to get basename in a path :;
+#X text 106 18 [array-splitsymbol] : split a symbol into new symbols
+with a specific character delimiter;
+#X obj 108 120 array-splitsymbol :;
+#X msg 271 61 symbol foo;
+#X msg 351 61 symbol;
+#X obj 134 291 array-splitsymbol /;
+#X msg 116 85 symbol :GH:333:IJ:55:KK:LL:;
+#X connect 1 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 4 1 13 0;
+#X connect 5 0 4 0;
+#X connect 7 0 10 0;
+#X connect 10 0 0 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
+#X connect 13 0 3 1;
+#X connect 14 0 10 0;

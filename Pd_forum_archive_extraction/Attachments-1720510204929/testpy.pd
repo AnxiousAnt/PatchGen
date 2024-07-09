@@ -1,0 +1,17 @@
+#N canvas 98 517 848 412 10;
+#X msg 380 35 reload orchestra1;
+#X msg 410 58 reload orchestra2;
+#X msg 579 44 9;
+#X msg 610 70 11;
+#X obj 389 117 pyext doesnt Test orchestra1;
+#X msg 204 61 9;
+#X msg 235 87 11;
+#X msg 107 77 reload;
+#X obj 107 115 pyext works Test;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 1;
+#X connect 5 0 8 1;
+#X connect 6 0 8 1;
+#X connect 7 0 8 0;

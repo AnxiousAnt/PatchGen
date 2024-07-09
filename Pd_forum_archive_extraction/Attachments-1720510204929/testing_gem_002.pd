@@ -1,0 +1,41 @@
+#N canvas 233 251 906 417 10;
+#X declare -lib Gem;
+#X obj 62 191 sphere 1 50;
+#X msg 80 76 0 \, destroy;
+#X obj 62 133 gemhead;
+#X msg 61 34 lighting 1 \, create \, 1 \, view 3.23003 -2.35114 0.197557
+0 0 0 0 1 0;
+#X obj 62 12 declare -lib Gem;
+#X obj 156 191 light;
+#X obj 156 148 gemhead;
+#X obj 317 104 gemhead 1;
+#X obj 372 188 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 444 238 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 373 207 GLdefine GL_LIGHT_MODEL_TWO_SIDE;
+#X obj 446 257 GLdefine GL_FALSE;
+#X obj 476 282 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 477 302 GLdefine GL_TRUE;
+#X obj 374 149 loadbang;
+#X obj 62 101 gemwin;
+#X obj 62 163 alpha 1;
+#X obj 126 133 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 317 334 GEMglLightModeli;
+#X connect 1 0 15 0;
+#X connect 2 0 16 0;
+#X connect 3 0 15 0;
+#X connect 6 0 5 0;
+#X connect 7 0 18 0;
+#X connect 8 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 18 1;
+#X connect 11 0 18 2;
+#X connect 12 0 13 0;
+#X connect 13 0 18 2;
+#X connect 14 0 8 0;
+#X connect 14 0 9 0;
+#X connect 16 0 0 0;
+#X connect 17 0 16 1;

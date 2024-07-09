@@ -1,0 +1,11 @@
+--- s_midi_alsa.c.org	2005-07-08 19:28:04.803141880 +0200
++++ s_midi_alsa.c	2005-07-08 19:27:48.376639088 +0200
+@@ -145,7 +145,7 @@
+         }
+         snd_seq_ev_set_direct(&ev);
+         snd_seq_ev_set_subs(&ev);
+-        snd_seq_ev_set_source(&ev,alsa_midioutfd[0]);
++        snd_seq_ev_set_source(&ev,alsa_midioutfd[portno]); /* JMZ: changed from 0 to portno */
+         snd_seq_event_output_direct(midi_handle,&ev);
+     }
+     //post("%d %d %d\n",a,b,c);

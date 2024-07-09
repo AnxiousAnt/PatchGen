@@ -1,0 +1,72 @@
+#N canvas 967 163 891 537 10;
+#X msg 39 177 bang;
+#X obj 29 234 float 6.5;
+#X floatatom 29 259 0 0 0;
+#X floatatom 29 154 0 0 0;
+#X floatatom 53 202 0 0 0;
+#X obj 55 12 float;
+#X text 97 11 - STORE A (FLOATING POINT) NUMBER;
+#X text 487 10 WHAT IS A FLOATING POINT NUMBER?;
+#X text 492 141 The following are examples of floating point numbers:
+;
+#X text 492 158 3;
+#X text 494 189 -111.5;
+#X text 492 174 0.5;
+#X text 492 227 3e-005 : This example is a computer shorthand for scientific
+notation. It means 3*10-5 (or 10 to the negative 5th power multiplied
+by 3).;
+#X text 493 29 According to Webopedia.com \, "computers are integer
+machines and are capable of representing real numbers only by using
+complex codes." Hence \, real numbers must be 'approximated' by computers
+using the "floating point standard". In such a number \, the decimal
+point can "float" meaning that there is no fixed number of digits preceding
+or following the decimal. A floating point number is therefore a computer's
+approximation of a real number.;
+#X text 491 281 Interesting side-note: In the early 1990's \, the Intel
+80486 was shipped with a math coprocessor to help accelerate the process
+of computing floating point numbers (which previously required a considerable
+amount of CPU power.) Math coprocessors have since found there way
+into nearly every graphics card and CPU available today.;
+#X text 492 210 1 \, 0 \, 0 \, 0 \, 0 to 1e-016;
+#X text 77 177 You can force the object to output the stored number.
+;
+#X text 64 153 You can set and output the value simoultaneously.;
+#X text 111 202 You can store the number \, without outputting it.
+;
+#X text 24 107 Tip: Press and hold SHIFT while click-n-dragging these
+number boxes to see how the [float] object handles decimal places.
+;
+#X text 28 288 The float object can be abbreviated as follows:;
+#X obj 29 310 float;
+#X text 73 310 is the same as;
+#X obj 171 310 f;
+#X text 93 228 The creation argument initializes the object and stores
+the value until the value is reset. The creation argument is optional.
+;
+#X obj 29 332 float 4.2;
+#X text 91 333 is the same as;
+#X obj 187 332 f 4.2;
+#X text 26 367 NOTE;
+#X obj 450 8 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 450 419 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 286 447 This document was updated for PD version 0.35 test
+24 by Dave Sabine as part of a project called pddp proposed by Krzysztof
+Czaja to build comprehensive documentation for PD.;
+#X text 486 381 RELATED OBJECTS;
+#X obj 495 408 int;
+#X obj 570 408 randomF;
+#X obj 625 408 randF;
+#X obj 524 408 symbol;
+#X text 33 384 All numbers in PD are kept in 32-bit floating point
+and can represent real numbers between -8 \, 388 \, 608 and 8 \, 388
+\, 608;
+#X text 22 41 The float object stores a floating point number (which
+is set either by its creation argument or by the right inlet) and then
+outputs that number when it receives a "bang" message.;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 1;
+#X connect 29 0 30 0;

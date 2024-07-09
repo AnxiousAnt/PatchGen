@@ -1,0 +1,33 @@
+#N canvas 422 118 666 504 12;
+#X obj 40 74 notein;
+#X obj 40 215 mtof;
+#X obj 40 265 osc~;
+#X obj 41 317 dac~;
+#X obj 40 182 * 1.33;
+#X obj 40 106 spigot;
+#X text 94 216 <- Midi to frequency conversion.;
+#X text 117 234 Doesn't have to be integer!;
+#X text 91 267 <- A sine wave oscillator. Try phasor~ too.;
+#X text 112 106 <- removes velocity=0 (note off) data from the stream.
+;
+#X text 116 178 <-change up and expand the math section to adjust tonalities.
+;
+#X text 50 358 A quick and dirty microtonal synth by sam@samwatson.com
+;
+#X text 105 316 <- digital to analog conversion for output.;
+#X text 115 73 <- receives input from your midi device;
+#X floatatom 40 143 5 0 0;
+#X text 110 140 <- incase you don't have a keyboard connected.;
+#X text 135 157 Just scroll the number box.;
+#X msg 42 9 \; pd dsp 1;
+#X msg 146 9 \; pd dsp 0;
+#X text 57 46 ON;
+#X text 166 46 OFF;
+#X connect 0 0 5 0;
+#X connect 0 1 5 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 4 0 1 0;
+#X connect 5 0 14 0;
+#X connect 14 0 4 0;

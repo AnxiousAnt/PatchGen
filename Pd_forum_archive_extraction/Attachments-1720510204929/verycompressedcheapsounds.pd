@@ -1,0 +1,7 @@
+#N canvas 545 396 518 304 10;
+#X obj 142 114 adc~;
+#X obj 138 166 dac~;
+#X text 213 123 now turn dsp on \, adjust volumes and sing some very
+compressed chip sounds;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;

@@ -1,0 +1,17 @@
+#N canvas 0 22 458 308 10;
+#X obj 37 48 trigger bang bang;
+#X obj 152 77 symbol;
+#X obj 37 114 select symbol;
+#X obj 37 76 symbol \$1;
+#X obj 123 246 outlet;
+#X obj 282 13 inlet;
+#X text 320 14 convenience inlet;
+#X obj 38 13 inlet;
+#X text 38 188 TODO: this needs default argument logic added;
+#X connect 0 0 3 0;
+#X connect 0 1 1 0;
+#X connect 1 0 2 1;
+#X connect 2 1 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 4 0;
+#X connect 7 0 0 0;

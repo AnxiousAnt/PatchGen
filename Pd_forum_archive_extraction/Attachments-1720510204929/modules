@@ -1,0 +1,33 @@
+# /etc/modules: kernel modules to load at boot time.
+#
+# This file should contain the names of kernel modules that are
+# to be loaded at boot time, one per line.  Comments begin with
+# a `#', and everything on the line after them are ignored.
+# An entry named `auto' will cause the system to start kerneld immediately.
+# Kerneld then loads modules on demand. `noauto' disables kerneld completely.
+
+agpgart
+intel-agp
+ide-disk
+ide-cd
+ide-scsi
+rtc
+analog
+usbhid
+joydev
+psmouse
+
+thermal
+processor
+battery
+
+# cool n quiet:
+speedstep_centrino
+cpufreq-powersave
+cpufreq-ondemand
+freq-table
+
+capability
+snd-seq-midi
+ipw2200
+

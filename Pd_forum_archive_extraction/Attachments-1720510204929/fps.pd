@@ -1,0 +1,9 @@
+#N canvas 1 86 450 300 10;
+#X obj 223 71 gemhead;
+#X obj 223 92 t b b;
+#X obj 223 113 realtime;
+#X floatatom 223 135 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;

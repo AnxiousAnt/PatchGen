@@ -1,0 +1,5 @@
+#N canvas 472 428 577 300 10;
+#X obj 390 52 text define -k help;
+#A set Here the Help about my patch.;
+#X msg 39 41 \; help click;
+#X text 129 48 <- open help !;

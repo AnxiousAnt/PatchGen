@@ -1,0 +1,48 @@
+#N canvas 0 25 1257 692 10;
+#X obj 154 -70 expr pow(1 - $f5 \, 3) * $f1 + 3 * $f5 * pow(1 - $f5
+\, 2) * $f2 + 3 * pow($f5 \, 2) * (1 - $f5) * $f3 + pow($f5 \, 3) *
+$f4;
+#X text 592 -72 x1 \, x2 \, x3 \, x4 \, ndx in x out;
+#X obj 275 65 expr pow(1 - $f5 \, 3) * $f1 + 3 * $f5 * pow(1 - $f5
+\, 2) * $f2 + 3 * pow($f5 \, 2) * (1 - $f5) * $f3 + pow($f5 \, 3) *
+$f4;
+#X text 698 63 y1 \, y2 \, y3 \, y4 \, ndx in y out;
+#X obj 547 119 * 100;
+#X obj 468 -121 t b f;
+#X obj 425 -289 inlet draw(bang);
+#X msg 496 -211 0;
+#X obj 450 174 tabwrite \$1-map;
+#X text 5 -272 4 point cubic bezier curve. First argument gives table
+number.;
+#X obj 50 -128 inlet x0;
+#X obj 121 -129 inlet x1;
+#X obj 193 -129 inlet x3;
+#X obj 259 -130 inlet x4;
+#X obj 104 0 inlet y0;
+#X obj 175 -1 inlet y1;
+#X obj 246 -1 inlet y3;
+#X obj 313 -2 inlet y4;
+#X obj 424 -260 t b b;
+#X obj 435 -163 line;
+#X msg 434 -210 1 7000;
+#X connect 0 0 4 0;
+#X connect 2 0 8 0;
+#X connect 4 0 8 1;
+#X connect 5 0 0 0;
+#X connect 5 0 2 0;
+#X connect 5 1 0 4;
+#X connect 5 1 2 4;
+#X connect 6 0 18 0;
+#X connect 7 0 19 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 1;
+#X connect 12 0 0 2;
+#X connect 13 0 0 3;
+#X connect 14 0 2 0;
+#X connect 15 0 2 1;
+#X connect 16 0 2 2;
+#X connect 17 0 2 3;
+#X connect 18 0 20 0;
+#X connect 18 1 7 0;
+#X connect 19 0 5 0;
+#X connect 20 0 19 0;

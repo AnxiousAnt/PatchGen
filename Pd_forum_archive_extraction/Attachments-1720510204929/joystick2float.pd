@@ -1,0 +1,125 @@
+#N canvas 0 0 1230 661 10;
+#X obj 67 178 joystick;
+#X obj 65 117 tgl 15 0 empty on/off empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X floatatom 45 230 5 0 0 0 A - -;
+#X floatatom 94 228 5 0 0 1 B - -;
+#X msg 117 137 open 4;
+#X obj 119 104 loadbang;
+#X obj 47 267 * 2;
+#X obj 104 268 * 2;
+#X obj 46 304 - 1;
+#X obj 105 303 - 1;
+#X floatatom 47 341 5 0 0 0 - - -;
+#X floatatom 108 339 5 0 0 0 - - -;
+#X obj 72 395 atan2;
+#X floatatom 73 419 5 0 0 0 - - -;
+#X floatatom 70 576 5 0 0 0 - - -;
+#X obj 66 536 + 180;
+#X obj 62 608 send joystick;
+#X obj 56 469 rad2deg;
+#X floatatom 58 504 5 0 0 0 - - -;
+#X obj 125 557 s pack;
+#X obj 144 200 s buttons;
+#X obj 679 185 joystick;
+#X obj 679 114 tgl 15 0 empty on/off empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X floatatom 611 236 5 0 0 0 A - -;
+#X floatatom 742 236 5 0 0 1 B - -;
+#X msg 729 144 open 4;
+#X obj 729 112 loadbang;
+#X obj 659 274 * 2;
+#X obj 716 275 * 2;
+#X obj 659 311 - 1;
+#X obj 716 310 - 1;
+#X floatatom 569 341 5 0 0 0 - - -;
+#X floatatom 778 339 5 0 0 0 - - -;
+#X obj 659 445 atan2;
+#X floatatom 754 501 5 0 0 0 - - -;
+#X floatatom 750 578 5 0 0 0 - - -;
+#X obj 659 544 + 180;
+#X obj 659 622 send joystick;
+#X obj 659 490 rad2deg;
+#X floatatom 754 529 5 0 0 0 - - -;
+#X obj 689 593 s pack;
+#X obj 756 207 s buttons;
+#X obj 63 33 cnv 15 100 60 empty empty You 20 12 0 14 -233017 -66577
+0;
+#X obj 574 39 cnv 15 100 60 empty empty Me 20 12 0 14 -233017 -66577
+0;
+#X text 696 42 A core thing to understand in Pd is the trigger-object
+\, abbreviated [t]. It also will trigger from right to left and you
+can use it to manually control triggering.;
+#X obj 659 392 t b a;
+#X obj 659 567 t a a;
+#X floatatom 742 253 5 0 0 1 B - -;
+#X floatatom 611 254 5 0 0 0 A - -;
+#X obj 659 420 f;
+#X text 817 526 <== Hint: remove all these debugging numbers later
+\, they are performance hogs!;
+#X text 158 231 Pd normally triggers outlets from right to left \,
+so "A" will be triggered after "B";
+#X text 134 365 Inlets also get read from right to left \, but generally
+only the left-most inlet will actually generate any output. So everything
+coming from number "A" above will have to wait for something coming
+from "B" arriving a [atna2]'s left inlet first.;
+#X text 134 448 But as "A" is triggered after "B" from the [joystick]
+object \, you will always lag one coordinate pair behind!!;
+#X text 754 369 Here the trigger is used to make the output of [joystick]
+update the [atan2] correctly: The [f] just stores the "B"-coordinate
+\, then the "A" coordinate will first be send out to the "a"nything
+part of the [t b a] trigger \, and then it will "b"ang the [float]
+that has the current "B" coordinate stored.;
+#X text 752 459 Now the correct pair of A and B will arrive at the
+[atan2] at the same time!;
+#X text 775 601 [trigger] also should be used everywhere you have a
+"fanning" outlet \, where more than one connection leaves. Make triggering
+a habit!;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 0 6 20 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 12 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 17 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 15 0 19 0;
+#X connect 17 0 18 0;
+#X connect 18 0 15 0;
+#X connect 21 0 23 0;
+#X connect 21 0 27 0;
+#X connect 21 1 24 0;
+#X connect 21 1 28 0;
+#X connect 21 6 41 0;
+#X connect 22 0 21 0;
+#X connect 25 0 21 0;
+#X connect 26 0 25 0;
+#X connect 27 0 29 0;
+#X connect 28 0 30 0;
+#X connect 29 0 31 0;
+#X connect 29 0 45 0;
+#X connect 30 0 32 0;
+#X connect 30 0 49 1;
+#X connect 33 0 34 0;
+#X connect 33 0 38 0;
+#X connect 36 0 46 0;
+#X connect 36 0 35 0;
+#X connect 38 0 39 0;
+#X connect 38 0 36 0;
+#X connect 45 0 49 0;
+#X connect 45 1 33 1;
+#X connect 46 0 37 0;
+#X connect 46 1 40 0;
+#X connect 47 0 28 0;
+#X connect 48 0 27 0;
+#X connect 49 0 33 0;

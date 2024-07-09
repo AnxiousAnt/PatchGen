@@ -1,0 +1,12 @@
+#N canvas 567 353 450 300 10;
+#X declare -lib mrpeach;
+#X obj 74 69 udpreceive \$1;
+#X obj 71 28 import mrpeach;
+#X obj 74 92 unpackOSC;
+#X text 159 68 \$1 has to be the port you specified in the send patch
+;
+#X obj 74 139 s /ev/ctl;
+#X obj 156 124 print REC;
+#X connect 0 0 2 0;
+#X connect 0 1 5 0;
+#X connect 2 0 4 0;

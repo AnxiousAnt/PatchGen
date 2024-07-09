@@ -1,0 +1,66 @@
+#N canvas 0 0 1010 692 12;
+#N canvas 0 0 450 300 graph8 0;
+#X array a1 16 float 0;
+#X coords 0 90 15 20 200 140 1;
+#X restore 226 36 graph;
+#X obj 107 449 noteout;
+#X msg 151 387 125;
+#X msg 118 388 125;
+#X obj 255 714 tabwrite;
+#X obj 255 714 tabwrite;
+#X obj 255 714 tabwrite;
+#X obj 255 714 tabwrite;
+#X obj 91 244 tabread a1;
+#X floatatom 188 156 0 0 0 0 - - -;
+#X obj 189 130 + 1;
+#X obj 134 131 float;
+#X floatatom 93 277 5 0 0 0 - - -;
+#X obj 110 164 select 15;
+#X obj 213 185 hradio 15 1 0 16 empty empty empty 0 -6 0 8 -262144
+-1 -1 13;
+#X obj 106 192 0;
+#X obj 197 388 tabwrite a1;
+#X obj 363 255 vsl 15 128 20 110 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 1300 1;
+#X obj 323 248 vsl 15 128 0 1000 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 1500 1;
+#X floatatom 317 403 5 0 0 0 - - -;
+#X obj 50 246 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 7300 1;
+#X obj 90 422 makenote 64 100 250;
+#X obj 141 49 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X text 317 424 note duration and tempo;
+#X text 381 375 pitch slider;
+#X text 296 201 step selector;
+#X obj 190 322 notein;
+#X text 32 490 this is a 16 step sequencer.. use the pitch slider to
+record the pitch while the metro is playing when the metro is stopped
+\, select the step you want to add a note to with the step selector
+\, then use the pitch slider to set the pitch of that note. a midi
+keyboard can also be used to set the pitch.. i think the duration and
+tempo slider sets those things.. enjoy;
+#X obj 139 105 metro 150;
+#X connect 2 0 21 2;
+#X connect 3 0 21 1;
+#X connect 8 0 12 0;
+#X connect 9 0 8 0;
+#X connect 9 0 14 0;
+#X connect 10 0 9 0;
+#X connect 10 0 11 1;
+#X connect 11 0 10 0;
+#X connect 11 0 13 0;
+#X connect 12 0 21 0;
+#X connect 13 0 15 0;
+#X connect 14 0 16 1;
+#X connect 15 0 11 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 0;
+#X connect 19 0 21 2;
+#X connect 19 0 28 1;
+#X connect 20 0 21 0;
+#X connect 21 0 1 0;
+#X connect 21 1 1 1;
+#X connect 22 0 28 0;
+#X connect 26 0 16 0;
+#X connect 28 0 11 0;

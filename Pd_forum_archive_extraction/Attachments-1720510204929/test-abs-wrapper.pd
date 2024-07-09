@@ -1,0 +1,6 @@
+#N canvas 834 316 450 300 10;
+#X obj 79 107 test-abs \$2 \$3 \$4;
+#X obj 77 74 inlet;
+#X obj 79 137 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;

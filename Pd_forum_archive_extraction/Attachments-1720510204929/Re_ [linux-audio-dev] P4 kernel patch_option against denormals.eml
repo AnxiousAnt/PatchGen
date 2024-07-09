@@ -1,0 +1,66 @@
+Return-Path: <linux-audio-dev-bounces@music.columbia.edu>
+Received: from roar.music.columbia.edu (root@roar.music.columbia.edu
+	[128.59.195.116]) by pallit.lhi.is (8.12.8/8.12.8) with ESMTP id
+	i8JIrTMv014399 for <palli@pallit.lhi.is>; Sun, 19 Sep 2004 18:53:30 GMT
+Received: from roar.music.columbia.edu (localhost [127.0.0.1]) by
+	roar.music.columbia.edu (8.12.8/8.12.8) with ESMTP id i8JIU2qL029580; Sun,
+	19 Sep 2004 14:30:12 -0400
+Received: from mail.gmx.net (mail.gmx.net [213.165.64.20]) by
+	roar.music.columbia.edu (8.12.8/8.12.8) with SMTP id i8JISkqI029544 for
+	<linux-audio-dev@music.columbia.edu>; Sun, 19 Sep 2004 14:28:47 -0400
+Received: (qmail 13412 invoked by uid 65534); 19 Sep 2004 18:11:53 -0000
+Received: from dialin-145-254-252-159.arcor-ip.net (EHLO
+	dialin-145-254-252-159.arcor-ip.net) (145.254.252.159) by mail.gmx.net
+	(mp024) with SMTP; 19 Sep 2004 20:11:53 +0200
+X-Authenticated: #2669139
+From: Ralf Beck <musical_snake@gmx.de>
+To: "The Linux Audio Developers' Mailing List" <linux-audio-dev@music.columbia.edu>
+Subject: Re: [linux-audio-dev] P4 kernel patch/option against denormals
+Date: Sun, 19 Sep 2004 19:07:32 +0200
+User-Agent: KMail/1.5.1
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Disposition: inline
+Message-Id: <200409191907.33322.musical_snake@gmx.de>
+X-BeenThere: linux-audio-dev@music.columbia.edu
+X-Mailman-Version: 2.1.3
+Precedence: list
+Reply-To: "The Linux Audio Developers' Mailing List" <linux-audio-dev@music.columbia.edu>
+List-Id: The Linux Audio Developers' Mailing List
+	<linux-audio-dev.music.columbia.edu>
+List-Unsubscribe: 
+	<http://music.columbia.edu/mailman/listinfo/linux-audio-dev>, 
+	<mailto:linux-audio-dev-request@music.columbia.edu?subject=unsubscribe>
+List-Archive: <http://music.columbia.edu/pipermail/linux-audio-dev>
+List-Post: <mailto:linux-audio-dev@music.columbia.edu>
+List-Help: <mailto:linux-audio-dev-request@music.columbia.edu?subject=help>
+List-Subscribe: 
+	<http://music.columbia.edu/mailman/listinfo/linux-audio-dev>, 
+	<mailto:linux-audio-dev-request@music.columbia.edu?subject=subscribe>
+Sender: linux-audio-dev-bounces@music.columbia.edu
+Errors-To: linux-audio-dev-bounces@music.columbia.edu
+Status:   
+Content-Transfer-Encoding: 7bit
+
+The following proggi does the job:
+
+#include <xmmintrin.h>
+
+#define _MM_DENORM_ZERO_ON    0x0040
+
+main()
+{
+// enable flush to zero
+ _mm_setcsr(_MM_FLUSH_ZERO_ON | _MM_MASK_UNDERFLOW | _mm_getcsr());
+
+// enable denormals are zero
+ _mm_setcsr(_MM_DENORM_ZERO_ON | _mm_getcsr());
+}
+
+Note: you will need compiler option -mfpmath=sse and -march=pentium4 
+(works for both P4 and Athlon64)
+
+After reboot, both FZ and DAZ flags are reset to zero, so you should run this 
+program in your /etc/profile. But as said earlier,  works only for 
+applications that use (are compiled to use) the SSE unit instead of the old 
+style X86 FPU.

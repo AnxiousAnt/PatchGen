@@ -1,0 +1,19 @@
+#N canvas 745 235 450 300 10;
+#X obj 31 85 r pd;
+#X obj 31 107 route dsp;
+#X obj 31 129 v dsp_on_off;
+#X msg 91 28 \; pd dsp 1;
+#X msg 31 28 \; pd dsp 0;
+#X obj 272 70 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 272 93 v dsp_on_off;
+#X obj 272 135 print;
+#X obj 272 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 157 35 <- 1;
+#X text 293 69 <- 2;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;

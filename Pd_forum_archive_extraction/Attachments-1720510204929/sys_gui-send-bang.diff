@@ -1,0 +1,72 @@
+--- hcs/sys_gui.c.old	2010-01-16 17:40:03 +0000
++++ hcs/sys_gui.c	2010-01-18 17:13:06 +0000
+@@ -10,12 +10,22 @@
+ typedef struct _sys_gui
+ {
+     t_object x_obj;
++    t_symbol* x_variable_name;
++	t_outlet* x_outlet;
+     char *send_buffer;
+ } t_sys_gui;
+ 
++static void sys_gui_send(t_sys_gui *x)
++{
++    char message[MAXPDSTRING];
++    sprintf(message,"pdsend \"%s  bang\";",  x->x_variable_name->s_name );
++    sys_gui(message); 
++}
++
+ static void sys_gui_bang(t_sys_gui *x)
+ {
+     sys_gui(x->send_buffer);
++    sys_gui_send(x); 
+ }
+ 
+ static void sys_gui_anything(t_sys_gui *x, t_symbol *s, int argc, t_atom *argv)
+@@ -33,6 +43,7 @@
+     }
+     strncat(x->send_buffer, " ;\n", 3);
+     sys_gui(x->send_buffer);
++    sys_gui_send(x);  
+ }
+ 
+ static void sys_gui_list(t_sys_gui *x, t_symbol *s, int argc, t_atom *argv)
+@@ -49,6 +60,7 @@
+     }
+     strncat(x->send_buffer, " ;\n", 3);
+     sys_gui(x->send_buffer);
++    sys_gui_send(x); 
+ }
+ 
+ static void sys_gui_free(t_sys_gui *x)
+@@ -59,8 +71,10 @@
+ static void *sys_gui_new(t_symbol *s)
+ {
+     t_sys_gui *x = (t_sys_gui *)pd_new(sys_gui_class);
+-
+-	outlet_new(&x->x_obj, &s_anything);
++    post(s);
++	x->x_outlet = outlet_new(&x->x_obj, &s_anything);
++    symbolinlet_new(&x->x_obj, &x->x_variable_name);
++    x->x_variable_name = s;
+     x->send_buffer = (char *)getbytes(MAXPDSTRING);
+ 
+     return(x);
+@@ -68,9 +82,14 @@
+ 
+ void sys_gui_setup(void)
+ {
+-    sys_gui_class = class_new(gensym("sys_gui"),
+-        (t_newmethod)sys_gui_new, (t_method)sys_gui_free,
+-        sizeof(t_sys_gui), 0, 0);
++    sys_gui_class = class_new(
++		gensym("sys_gui"),
++        (t_newmethod)sys_gui_new,
++		(t_method)sys_gui_free,
++        sizeof(t_sys_gui),
++		0,
++		A_DEFSYMBOL,
++		0);
+ 
+     class_addanything(sys_gui_class, (t_method)sys_gui_anything);
+     class_addbang(sys_gui_class, (t_method)sys_gui_bang);

@@ -1,0 +1,9 @@
+#N canvas 296 585 710 316 12;
+#X text 29 22 [tot] and [MouseState] in the same patch cause PD to
+quit.;
+#X text 31 50 libraries are: hammer 0.1 \, 47th alpha build;
+#X text 151 66 tot 0.1 \, 11th alpha build;
+#X text 33 114 1.) click this first;
+#X text 33 184 2.) then this;
+#X msg 67 138 \; pd-pd-crash.pd obj 500 160 MouseState;
+#X msg 67 207 \; pd-pd-crash.pd obj 500 200 tot;

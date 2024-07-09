@@ -1,0 +1,22 @@
+#N canvas 630 217 450 300 10;
+#X obj 39 157 atof;
+#X msg 39 73 12.993;
+#X obj 39 179 print;
+#X obj 39 105 makefilename %f;
+#X msg 91 73 24;
+#X obj 197 105 makefilename %d;
+#X msg 58 52 0.0234;
+#X msg 197 73 42023;
+#X msg 251 78 -50;
+#X msg 123 54 -0.23;
+#X text 39 9 convert symbolic float representations into Pd floats.
+Exponents not yet supported.;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 3 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 3 0;

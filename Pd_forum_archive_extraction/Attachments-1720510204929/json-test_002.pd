@@ -1,0 +1,45 @@
+#N canvas 253 27 402 464 10;
+#X obj 13 78 text define \$0-json;
+#X msg 13 58 read -c test.json;
+#X obj 17 247 text get \$0-json;
+#X obj 17 267 list prepend;
+#X obj 17 287 list trim;
+#X obj 17 307 print;
+#X obj 17 227 t f f;
+#X msg 23 38 read test.json;
+#X obj 110 267 sel 2;
+#X text 9 15 1 - open file with or without carriage returns;
+#X obj 17 207 f;
+#X obj 46 207 + 1;
+#X obj 17 167 t b b;
+#X obj 64 187 0;
+#X obj 17 187 until;
+#X obj 17 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 16 114 2 - click to print the file with a line number at the
+start of each line (compare with your original file);
+#X obj 44 392 text tolist \$0-json;
+#X obj 44 413 print;
+#X obj 44 371 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 20 337 maybe it helps to export the content as a list for the
+processing?;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 1 8 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 2 0;
+#X connect 6 1 3 1;
+#X connect 7 0 0 0;
+#X connect 8 0 14 1;
+#X connect 10 0 11 0;
+#X connect 10 0 6 0;
+#X connect 11 0 10 1;
+#X connect 12 0 14 0;
+#X connect 12 1 13 0;
+#X connect 13 0 10 1;
+#X connect 14 0 10 0;
+#X connect 15 0 12 0;
+#X connect 17 0 18 0;
+#X connect 19 0 17 0;

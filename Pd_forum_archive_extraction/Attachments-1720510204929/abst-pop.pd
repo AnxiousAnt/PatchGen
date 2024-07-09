@@ -1,0 +1,33 @@
+#N canvas 302 22 744 364 10;
+#X obj 102 105 popup 124 25 #000000 popup GalaxySwirl36.aif GalaxySwirl42.aif
+GalaxySwirl48.aif GalaxySwirl54.aif GalaxySwirl60.aif GalaxySwirl66.aif
+GalaxySwirl72.aif GalaxySwirl78.aif GalaxySwirl84.aif GalaxySwirl90.aif
+GalaxySwirl96.aif Stackvox_36.aif Stackvox_42.aif Stackvox_48.aif Stackvox_54.aif
+Stackvox_60.aif Stackvox_66.aif Stackvox_72.aif Stackvox_78.aif Stackvox_84.aif
+Stackvox_90.aif Stackvox_96.aif;
+#X msg 247 42 bgcolour #000000;
+#X msg 224 17 name sample;
+#X msg 398 80 options;
+#X obj 219 186 print index;
+#X obj 214 148 route bang;
+#X msg 160 66 10;
+#X symbolatom 305 190 10 0 0 0 - - -;
+#X obj 214 248 outlet;
+#X msg 214 226 open ../data/sample/\$1;
+#X msg 367 16 options bell.aiff rainshower.aif icewalk.aif hithard.aif
+singing.aif store-paging.aif showercurtain.aif underwater.aif people-talking.aif
+sneezewoman.aif nape1.aif campagne.aif feu-art.aif feu-foret.aif source.aif
+labess.aif;
+#X connect 0 0 5 0;
+#X connect 0 1 7 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 5 0 6 0;
+#X connect 5 0 9 0;
+#X connect 5 1 4 0;
+#X connect 6 0 0 0;
+#X connect 7 0 9 0;
+#X connect 9 0 8 0;
+#X connect 10 0 0 0;
+#X coords 0 -1 1 1 127 40 1 100 100;

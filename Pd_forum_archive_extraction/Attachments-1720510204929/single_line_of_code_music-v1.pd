@@ -1,0 +1,22 @@
+#N canvas 206 341 444 273 10;
+#X obj -64 239 dac~;
+#X obj -62 92 rpole~ 1;
+#X msg 29 65 set 0;
+#X obj -60 207 hip~ 10;
+#X obj -59 179 expr~ ($v1*(($v1>>12|$v1>>8)&63&$v1>>4) & 0xff) / 256
+;
+#X obj -60 145 -~;
+#X obj -37 120 wrap~;
+#X obj -63 64 sig~ 0.181405;
+#X text -83 -13 pd implementation of the method presented by 'viznut'
+on the countercomplex-blog. now with (proper?) 'typeconversion' and
+scaling and about 8 khz samplingrate;
+#X connect 1 0 6 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 3 0 0 1;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 1;
+#X connect 7 0 1 0;

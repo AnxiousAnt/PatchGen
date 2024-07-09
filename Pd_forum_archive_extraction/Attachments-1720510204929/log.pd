@@ -1,0 +1,12 @@
+#N canvas 764 118 535 297 10;
+#X obj 83 83 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3700 1;
+#X obj 83 199 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 9299 1;
+#X obj 83 215 hsl 128 15 1.27 127 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 9299 1;
+#X obj 91 134 expr ln($f1 / 1.27) / (((log(127 / 1.27) / 1.27)) * 0.01)
+;
+#X connect 0 0 3 0;
+#X connect 0 0 2 0;
+#X connect 3 0 1 0;

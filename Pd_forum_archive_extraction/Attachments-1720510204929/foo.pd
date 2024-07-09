@@ -1,0 +1,12 @@
+#N canvas 450 563 450 300 10;
+#N canvas 0 0 450 300 foo 0;
+#X restore 22 39 pd foo;
+#X msg 121 60 vis 1;
+#X obj 116 111 s pd-foo;
+#X msg 188 59 vis 0;
+#X text 23 158 Loadbang opens and selects foo on startup;
+#X obj 123 24 loadbang;
+#X text 23 142 foo window is opened with vis 1;
+#X connect 1 0 2 0;
+#X connect 3 0 2 0;
+#X connect 5 0 1 0;

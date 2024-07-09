@@ -1,0 +1,529 @@
+#N struct 1061-bez-array float x float y array 1061-bez-c-arr 1061-bez-c
+float p0x float p0y float p0x. float p0y. float p1x float p1y float
+p1x. float p1y. float p2x float p2y float p2x. float p2y. float p3x
+float p3y float p3x. float p3y.;
+#N struct 1061-bez-c float x float y;
+#N struct 1014-bez-array float x float y array 1014-bez-c-arr 1014-bez-c
+float p0x float p0y float p0x. float p0y. float p1x float p1y float
+p1x. float p1y. float p2x float p2y float p2x. float p2y. float p3x
+float p3y float p3x. float p3y.;
+#N struct 1014-bez-c float x float y;
+#N canvas 782 212 382 399 10;
+#N canvas 308 41 842 885 bezier-a 0;
+#X scalar 1061-bez-array 0 0 0 0 5 5 20 40 25 45 80 60 85 65 100 100
+105 105 \; 2 2 \; 2.55252 3.13464 \; 3.12976 4.25872 \; 3.73124 5.37248
+\; 4.35648 6.47616 \; 5.005 7.57 \; 5.67632 8.65424 \; 6.36996 9.72912
+\; 7.08544 10.7949 \; 7.82228 11.8518 \; 8.58 12.9 \; 9.35812 13.9398
+\; 10.1562 14.9715 \; 10.9736 15.9953 \; 11.8101 17.0114 \; 12.665
+18.02 \; 13.5379 19.0214 \; 14.4284 20.0159 \; 15.3358 21.0037 \; 16.2599
+21.985 \; 17.2 22.96 \; 18.1557 23.929 \; 19.1266 24.8923 \; 20.112
+25.8501 \; 21.1117 26.8026 \; 22.125 27.75 \; 23.1515 28.6926 \; 24.1908
+29.6307 \; 25.2422 30.5645 \; 26.3055 31.4942 \; 27.38 32.42 \; 28.4653
+33.3422 \; 29.561 34.2611 \; 30.6664 35.1769 \; 31.7813 36.0898 \;
+32.905 37 \; 34.0371 37.9078 \; 35.1772 38.8135 \; 36.3246 39.7173
+\; 37.4791 40.6194 \; 38.64 41.52 \; 39.8069 42.4194 \; 40.9794 43.3179
+\; 42.1568 44.2157 \; 43.3389 45.113 \; 44.525 46.01 \; 45.7147 46.907
+\; 46.9076 47.8043 \; 48.103 48.7021 \; 49.3007 49.6006 \; 50.5 50.5
+\; 51.7005 51.4006 \; 52.9018 52.3027 \; 54.1032 53.2065 \; 55.3045
+54.1122 \; 56.505 55.02 \; 57.7043 55.9302 \; 58.902 56.8431 \; 60.0974
+57.7589 \; 61.2903 58.6778 \; 62.48 59.6 \; 63.6661 60.5258 \; 64.8482
+61.4555 \; 66.0256 62.3893 \; 67.1981 63.3274 \; 68.365 64.27 \; 69.5259
+65.2174 \; 70.6804 66.1699 \; 71.8278 67.1277 \; 72.9679 68.091 \;
+74.1 69.06 \; 75.2237 70.035 \; 76.3386 71.0163 \; 77.444 72.0041 \;
+78.5397 72.9986 \; 79.625 74 \; 80.6995 75.0086 \; 81.7628 76.0247
+\; 82.8142 77.0485 \; 83.8535 78.0802 \; 84.88 79.12 \; 85.8933 80.1682
+\; 86.893 81.2251 \; 87.8784 82.2909 \; 88.8493 83.3658 \; 89.805 84.45
+\; 90.7451 85.5438 \; 91.6692 86.6475 \; 92.5766 87.7613 \; 93.4671
+88.8854 \; 94.34 90.02 \; 95.1949 91.1654 \; 96.0313 92.3219 \; 96.8488
+93.4897 \; 97.6469 94.669 \; 98.425 95.86 \; 99.1827 97.063 \; 99.9196
+98.2783 \; 100.635 99.5061 \; 101.329 100.747 \; 102 102 \; \;;
+#X scalar 1014-bez-array 0 0 0 0 5 5 16.2 58.2001 21.2 63.2001 73 50
+78 55 100 100 105 105 \; 2 2 \; 2.43871 3.66681 \; 2.90255 5.29572
+\; 3.39112 6.8875 \; 3.90397 8.44287 \; 4.44069 9.96259 \; 5.00087
+11.4474 \; 5.58406 12.8981 \; 6.18987 14.3153 \; 6.81785 15.6999 \;
+7.46759 17.0526 \; 8.13867 18.3742 \; 8.83066 19.6653 \; 9.54314 20.9267
+\; 10.2757 22.1592 \; 11.0279 23.3636 \; 11.7993 24.5405 \; 12.5895
+25.6907 \; 13.3981 26.815 \; 14.2247 27.9142 \; 15.0688 28.9888 \;
+15.93 30.0399 \; 16.8079 31.0679 \; 17.702 32.0738 \; 18.6121 33.0582
+\; 19.5375 34.0219 \; 20.4779 34.9657 \; 21.4329 35.8903 \; 22.4021
+36.7964 \; 23.385 37.6848 \; 24.3812 38.5563 \; 25.3903 39.4115 \;
+26.4118 40.2513 \; 27.4454 41.0763 \; 28.4907 41.8874 \; 29.5471 42.6853
+\; 30.6143 43.4707 \; 31.6918 44.2443 \; 32.7793 45.007 \; 33.8763
+45.7595 \; 34.9824 46.5024 \; 36.0971 47.2367 \; 37.2201 47.9629 \;
+38.3509 48.6819 \; 39.4891 49.3945 \; 40.6343 50.1012 \; 41.786 50.803
+\; 42.9439 51.5005 \; 44.1074 52.1945 \; 45.2763 52.8858 \; 46.45 53.5751
+\; 47.6281 54.263 \; 48.8103 54.9505 \; 49.9961 55.6382 \; 51.185 56.3269
+\; 52.3767 57.0174 \; 53.5707 57.7103 \; 54.7666 58.4064 \; 55.964
+59.1065 \; 57.1625 59.8113 \; 58.3616 60.5216 \; 59.5609 61.2381 \;
+60.76 61.9616 \; 61.9585 62.6928 \; 63.1559 63.4324 \; 64.3519 64.1813
+\; 65.5459 64.9401 \; 66.7377 65.7096 \; 67.9267 66.4906 \; 69.1125
+67.2837 \; 70.2948 68.0898 \; 71.473 68.9096 \; 72.6469 69.7438 \;
+73.8158 70.5933 \; 74.9795 71.4586 \; 76.1375 72.3406 \; 77.2894 73.2401
+\; 78.4347 74.1577 \; 79.573 75.0943 \; 80.704 76.0506 \; 81.8272 77.0272
+\; 82.9421 78.025 \; 84.0484 79.0448 \; 85.1456 80.0872 \; 86.2333
+81.153 \; 87.3111 82.243 \; 88.3785 83.3578 \; 89.4352 84.4984 \; 90.4807
+85.6653 \; 91.5146 86.8594 \; 92.5364 88.0814 \; 93.5458 89.332 \;
+94.5423 90.612 \; 95.5255 91.9222 \; 96.495 93.2632 \; 97.4503 94.6359
+\; 98.3911 96.041 \; 99.3168 97.4792 \; 100.227 98.9513 \; 101.122
+100.458 \; 102 102 \; \;;
+#X obj 217 10 inlet;
+#N canvas 674 269 516 357 inside 0;
+#X obj 30 42 inlet;
+#X obj 200 252 s \$0-bezier-a;
+#X obj 200 182 sel 0;
+#N canvas 0 0 450 300 element 0;
+#X obj 52 46 struct \$0-bez-c float x float y;
+#X restore 16 242 pd element;
+#N canvas 113 250 606 425 array 0;
+#X obj 58 96 route change click;
+#X obj 78 130 unpack p f;
+#X obj 58 24 struct \$0-bez-array float x float y array \$0-bez-c-arr
+\$0-bez-c float p0x float p0y float p0x. float p0y. float p1x float
+p1y float p1x. float p1y. float p2x float p2y float p2x. float p2y.
+float p3x float p3y float p3x. float p3y.;
+#X obj 31 312 filledpolygon 0 0 1 p1x p1y p1x. p1y p1x. p1y. p1x p1y.
+p1x p1y;
+#X obj 31 345 filledpolygon 0 0 1 p2x p2y p2x. p2y p2x. p2y. p2x p2y.
+p2x p2y;
+#X obj 78 150 t b p;
+#X obj 78 210 outlet;
+#X obj 105 170 s \$0-arrpoint;
+#X obj 78 190 speedlim 150;
+#X text 40 254 4 control points \, 2 extremos nao saem da caixa;
+#X obj 213 160 drawpolygon 0 1 0 0 0 100 100 100 100 0 0 0;
+#X obj 31 378 filledpolygon 0 0 1 p3x(-2:98)(-2:98) p3y(-2:98)(-2:98)
+p3x. p3y p3x. p3y. p3x p3y. p3x p3y;
+#X obj 31 279 filledpolygon 0 0 1 p0x(-2:98)(-2:98) p0y(-2:98)(-2:98)
+p0x. p0y p0x. p0y. p0x p0y. p0x p0y;
+#X obj 213 130 plot \$0-bez-c-arr 9 2 0 0;
+#X connect 0 0 1 0;
+#X connect 0 1 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 5 0 8 0;
+#X connect 5 1 7 0;
+#X connect 8 0 6 0;
+#X restore 16 262 pd array;
+#N canvas 604 353 469 520 calculate 0;
+#X obj 27 42 inlet;
+#X obj 27 112 until;
+#X obj 27 132 f+ 0;
+#X obj 27 92 101;
+#X obj 27 172 * 0.01;
+#X obj 27 262 expr (-$f2+3*$f3-3*$f4+$f5)*pow($f1 \, 3) + (3*$f2-6*$f3+3*$f4)*pow($f1
+\, 2) + (3*$f3-3*$f2)*$f1 + $f2;
+#X obj 46 335 expr (-$f2+3*$f3-3*$f4+$f5)*pow($f1 \, 3) + (3*$f2-6*$f3+3*$f4)*pow($f1
+\, 2) + (3*$f3-3*$f2)*$f1 + $f2;
+#X obj 27 242 pack f f f f f;
+#X obj 46 315 pack f f f f f;
+#X obj 228 378 r \$0-arrpoint;
+#X obj 108 408 element \$0-bez-array \$0-bez-c-arr;
+#X obj 46 468 set \$0-bez-c y;
+#X obj 27 448 set \$0-bez-c x;
+#X obj 108 428 t p p;
+#X obj 27 152 t f f f;
+#X obj 46 192 * 0.01;
+#X text 142 11 array com 100 pontos. fazer 200? \; e necessario estar
+a escalonar tudo? talvez nao;
+#X obj 121 120 get \$0-bez-array p0x;
+#X obj 291 120 get \$0-bez-array p0y;
+#X obj 321 180 get \$0-bez-array p3y;
+#X obj 151 180 get \$0-bez-array p3x;
+#X obj 141 160 get \$0-bez-array p2x;
+#X obj 311 160 get \$0-bez-array p2y;
+#X obj 300 140 get \$0-bez-array p1y;
+#X obj 131 140 get \$0-bez-array p1x;
+#X obj 27 72 t b b;
+#X obj 121 200 + 2;
+#X obj 151 200 + 2;
+#X obj 321 200 + 2;
+#X obj 291 200 + 2;
+#X obj 77 32 inlet;
+#X obj 121 50 r \$0-arrpoint;
+#X obj 121 80 pointer;
+#X obj 77 52 t b b;
+#X connect 0 0 25 0;
+#X connect 1 0 2 0;
+#X connect 2 0 14 0;
+#X connect 3 0 1 0;
+#X connect 4 0 7 0;
+#X connect 5 0 12 0;
+#X connect 6 0 11 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 1;
+#X connect 10 0 13 0;
+#X connect 13 0 12 1;
+#X connect 13 1 11 1;
+#X connect 14 0 4 0;
+#X connect 14 1 15 0;
+#X connect 14 2 10 0;
+#X connect 15 0 8 0;
+#X connect 17 0 26 0;
+#X connect 18 0 29 0;
+#X connect 19 0 28 0;
+#X connect 20 0 27 0;
+#X connect 21 0 7 3;
+#X connect 22 0 8 3;
+#X connect 23 0 8 2;
+#X connect 24 0 7 2;
+#X connect 25 0 3 0;
+#X connect 25 1 2 1;
+#X connect 26 0 7 1;
+#X connect 27 0 7 4;
+#X connect 28 0 8 4;
+#X connect 29 0 8 1;
+#X connect 30 0 33 0;
+#X connect 31 0 32 0;
+#X connect 32 0 17 0;
+#X connect 32 0 18 0;
+#X connect 32 0 23 0;
+#X connect 32 0 22 0;
+#X connect 32 0 19 0;
+#X connect 32 0 24 0;
+#X connect 32 0 21 0;
+#X connect 32 0 20 0;
+#X connect 33 0 25 0;
+#X connect 33 1 32 0;
+#X restore 16 282 pd calculate;
+#X obj 75 112 outlet;
+#X text 68 130 escalonar 0-1;
+#X obj 259 92 pointer;
+#X obj 259 52 symbol \$0-bezier-a;
+#X obj 210 162 \$1;
+#X obj 210 12 loadbang;
+#X obj 259 172 s \$0-arrpoint;
+#X obj 30 62 route size float canvas;
+#X obj 200 202 100;
+#X msg 200 232 donecanvasdialog 1 -1 2 -10 110 110 -10 \$1 \$1 0 0
+;
+#N canvas 0 0 450 300 index 0;
+#X obj 65 258 outlet;
+#X obj 185 88 r \$0-arrpoint;
+#X obj 65 138 get \$0-bez-c y;
+#X obj 65 118 element \$0-bez-array \$0-bez-c-arr;
+#X obj 80 218 inv;
+#X obj 65 238 *;
+#X obj 80 158 r \$0-arrpoint;
+#X obj 80 178 getsize \$0-bez-array \$0-bez-c-arr;
+#X obj 80 198 - 1;
+#X obj 65 98 inlet;
+#X connect 1 0 3 1;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 1;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
+#X connect 9 0 3 0;
+#X restore 75 92 pd index;
+#N canvas 0 0 450 300 size 0;
+#X obj 99 149 inlet;
+#X obj 294 149 r \$0-arrpoint;
+#X obj 99 169 setsize \$0-bez-array \$0-bez-c-arr;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X restore 26 92 pd size;
+#X obj 259 152 append \$0-bez-array x y;
+#X msg 259 132 0 0;
+#N canvas 608 134 643 585 point-befehle 0;
+#X obj 230 58 route p0 p1 p2 p3;
+#X obj 191 18 inlet;
+#X obj 62 166 unpack;
+#X obj 62 206 * 100;
+#X obj 95 186 * 100;
+#X obj 152 86 r \$0-arrpoint;
+#X obj 152 116 t p p p p;
+#X obj 62 236 set \$0-bez-array p0x;
+#X obj 62 256 set \$0-bez-array p0y;
+#X obj 202 236 set \$0-bez-array p1x;
+#X obj 202 256 set \$0-bez-array p1y;
+#X obj 342 236 set \$0-bez-array p2x;
+#X obj 482 236 set \$0-bez-array p3x;
+#X obj 482 256 set \$0-bez-array p3y;
+#X obj 342 256 set \$0-bez-array p2y;
+#X obj 49 116 pointer;
+#X obj 49 352 get \$0-bez-array p0x;
+#X obj 59 392 set \$0-bez-array p0x.;
+#X obj 69 422 get \$0-bez-array p0y;
+#X obj 69 462 set \$0-bez-array p0y.;
+#X obj 49 332 t p p p p;
+#X obj 49 292 t p p p p;
+#X obj 189 332 t p p p p;
+#X obj 329 332 t p p p p;
+#X obj 469 332 t p p p p;
+#X obj 189 352 get \$0-bez-array p1x;
+#X obj 199 392 set \$0-bez-array p1x.;
+#X obj 209 422 get \$0-bez-array p1y;
+#X obj 219 462 set \$0-bez-array p1y.;
+#X obj 329 352 get \$0-bez-array p2x;
+#X obj 339 392 set \$0-bez-array p2x.;
+#X obj 349 422 get \$0-bez-array p2y;
+#X obj 359 462 set \$0-bez-array p2y.;
+#X obj 469 352 get \$0-bez-array p3x;
+#X obj 479 392 set \$0-bez-array p3x.;
+#X obj 489 422 get \$0-bez-array p3y;
+#X obj 499 462 set \$0-bez-array p3y.;
+#X obj 49 372 + 5;
+#X obj 69 442 + 5;
+#X obj 202 166 unpack;
+#X obj 202 206 * 100;
+#X obj 235 186 * 100;
+#X obj 342 166 unpack;
+#X obj 342 206 * 100;
+#X obj 375 186 * 100;
+#X obj 482 166 unpack;
+#X obj 482 206 * 100;
+#X obj 515 186 * 100;
+#X obj 25 82 outlet;
+#X obj 191 38 t b b a;
+#X obj 189 372 + 5;
+#X obj 209 442 + 5;
+#X obj 349 442 + 5;
+#X obj 329 372 + 5;
+#X obj 469 372 + 5;
+#X obj 489 442 + 5;
+#X obj 152 216 t p p;
+#X obj 293 216 t p p;
+#X obj 432 216 t p p;
+#X obj 572 216 t p p;
+#N canvas 118 276 450 300 convert 0;
+#X obj 192 68 inlet;
+#X obj 192 188 outlet;
+#X obj 192 108 - 5;
+#X obj 192 128 * 0.01;
+#X obj 192 88 + 2;
+#X obj 242 68 inlet;
+#X obj 242 108 - 5;
+#X obj 242 128 * 0.01;
+#X obj 242 88 + 2;
+#X obj 192 158 pack f f;
+#X connect 0 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 9 0;
+#X connect 4 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 1;
+#X connect 8 0 6 0;
+#X connect 9 0 1 0;
+#X restore 49 492 pd convert;
+#X obj 295 548 outlet;
+#X msg 49 512 p0 \$1 \$2;
+#N canvas 118 276 450 300 convert 0;
+#X obj 192 68 inlet;
+#X obj 192 188 outlet;
+#X obj 192 108 - 5;
+#X obj 192 128 * 0.01;
+#X obj 192 88 + 2;
+#X obj 242 68 inlet;
+#X obj 242 108 - 5;
+#X obj 242 128 * 0.01;
+#X obj 242 88 + 2;
+#X obj 192 158 pack f f;
+#X connect 0 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 9 0;
+#X connect 4 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 1;
+#X connect 8 0 6 0;
+#X connect 9 0 1 0;
+#X restore 189 492 pd convert;
+#X msg 189 512 p1 \$1 \$2;
+#N canvas 118 276 450 300 convert 0;
+#X obj 192 68 inlet;
+#X obj 192 188 outlet;
+#X obj 192 108 - 5;
+#X obj 192 128 * 0.01;
+#X obj 192 88 + 2;
+#X obj 242 68 inlet;
+#X obj 242 108 - 5;
+#X obj 242 128 * 0.01;
+#X obj 242 88 + 2;
+#X obj 192 158 pack f f;
+#X connect 0 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 9 0;
+#X connect 4 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 1;
+#X connect 8 0 6 0;
+#X connect 9 0 1 0;
+#X restore 329 492 pd convert;
+#X msg 329 512 p2 \$1 \$2;
+#N canvas 118 276 450 300 convert 0;
+#X obj 192 68 inlet;
+#X obj 192 188 outlet;
+#X obj 192 108 - 5;
+#X obj 192 128 * 0.01;
+#X obj 192 88 + 2;
+#X obj 242 68 inlet;
+#X obj 242 108 - 5;
+#X obj 242 128 * 0.01;
+#X obj 242 88 + 2;
+#X obj 192 158 pack f f;
+#X connect 0 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 9 0;
+#X connect 4 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 1;
+#X connect 8 0 6 0;
+#X connect 9 0 1 0;
+#X restore 470 492 pd convert;
+#X msg 470 512 p3 \$1 \$2;
+#X connect 0 0 2 0;
+#X connect 0 1 39 0;
+#X connect 0 2 42 0;
+#X connect 0 3 45 0;
+#X connect 1 0 49 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 5 0 15 0;
+#X connect 6 0 56 0;
+#X connect 6 1 57 0;
+#X connect 6 2 58 0;
+#X connect 6 3 59 0;
+#X connect 15 0 21 0;
+#X connect 16 0 37 0;
+#X connect 18 0 38 0;
+#X connect 20 0 16 0;
+#X connect 20 1 17 1;
+#X connect 20 2 18 0;
+#X connect 20 3 19 1;
+#X connect 21 0 20 0;
+#X connect 21 1 22 0;
+#X connect 21 2 23 0;
+#X connect 21 3 24 0;
+#X connect 22 0 25 0;
+#X connect 22 1 26 1;
+#X connect 22 2 27 0;
+#X connect 22 3 28 1;
+#X connect 23 0 29 0;
+#X connect 23 1 30 1;
+#X connect 23 2 31 0;
+#X connect 23 3 32 1;
+#X connect 24 0 33 0;
+#X connect 24 1 34 1;
+#X connect 24 2 35 0;
+#X connect 24 3 36 1;
+#X connect 25 0 50 0;
+#X connect 27 0 51 0;
+#X connect 29 0 53 0;
+#X connect 31 0 52 0;
+#X connect 33 0 54 0;
+#X connect 35 0 55 0;
+#X connect 37 0 17 0;
+#X connect 37 0 60 0;
+#X connect 38 0 19 0;
+#X connect 38 0 60 1;
+#X connect 39 0 40 0;
+#X connect 39 1 41 0;
+#X connect 40 0 9 0;
+#X connect 41 0 10 0;
+#X connect 42 0 43 0;
+#X connect 42 1 44 0;
+#X connect 43 0 11 0;
+#X connect 44 0 14 0;
+#X connect 45 0 46 0;
+#X connect 45 1 47 0;
+#X connect 46 0 12 0;
+#X connect 47 0 13 0;
+#X connect 49 0 48 0;
+#X connect 49 1 15 0;
+#X connect 49 2 0 0;
+#X connect 50 0 26 0;
+#X connect 50 0 63 0;
+#X connect 51 0 28 0;
+#X connect 51 0 63 1;
+#X connect 52 0 32 0;
+#X connect 52 0 65 1;
+#X connect 53 0 30 0;
+#X connect 53 0 65 0;
+#X connect 54 0 34 0;
+#X connect 54 0 67 0;
+#X connect 55 0 36 0;
+#X connect 55 0 67 1;
+#X connect 56 0 8 1;
+#X connect 56 1 7 1;
+#X connect 57 0 10 1;
+#X connect 57 1 9 1;
+#X connect 58 0 14 1;
+#X connect 58 1 11 1;
+#X connect 59 0 13 1;
+#X connect 59 1 12 1;
+#X connect 60 0 62 0;
+#X connect 62 0 61 0;
+#X connect 63 0 64 0;
+#X connect 64 0 61 0;
+#X connect 65 0 66 0;
+#X connect 66 0 61 0;
+#X connect 67 0 68 0;
+#X connect 68 0 61 0;
+#X restore 85 262 pd point-befehle;
+#X msg 259 72 traverse \$1 \, bang;
+#X obj 259 112 t b p;
+#X obj 220 32 t b b b;
+#X obj 229 62 101;
+#X msg 105 312 p0 0 0 \, p1 0.2 0.4 \, p2 0.8 0.6 \, p3 1 1;
+#X obj 178 282 outlet;
+#X connect 0 0 13 0;
+#X connect 2 0 14 0;
+#X connect 2 1 15 0;
+#X connect 4 0 5 0;
+#X connect 8 0 22 0;
+#X connect 9 0 21 0;
+#X connect 10 0 2 0;
+#X connect 11 0 10 0;
+#X connect 11 0 23 0;
+#X connect 13 0 17 0;
+#X connect 13 1 16 0;
+#X connect 13 2 2 0;
+#X connect 13 3 20 0;
+#X connect 14 0 15 0;
+#X connect 15 0 1 0;
+#X connect 16 0 6 0;
+#X connect 18 0 12 0;
+#X connect 19 0 18 0;
+#X connect 20 0 5 1;
+#X connect 20 1 26 0;
+#X connect 21 0 8 0;
+#X connect 22 0 19 0;
+#X connect 22 1 18 2;
+#X connect 23 0 25 0;
+#X connect 23 1 24 0;
+#X connect 23 2 9 0;
+#X connect 24 0 17 0;
+#X connect 25 0 20 0;
+#X restore 217 30 pd inside;
+#X obj 287 10 namecanvas \$0-bezier-a;
+#X obj 217 50 outlet;
+#X obj 268 50 outlet;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 1 6 0;
+#X coords -10 110 110 -10 100 100 2 0 0;
+#X restore 34 86 pd bezier-a;
+#X floatatom 34 190 5 0 0 0 - - -;
+#X floatatom 47 60 5 0 0 0 - - -;
+#X msg 24 19 size 101;
+#X text 12 291 falta adaptar os calculos para tamanho variavel;
+#X msg 34 39 canvas 100;
+#X msg 95 60 p0 0 0 \, p1 0.2 0.4 \, p2 0.8 0.6 \, p3 1 1;
+#X text 13 315 botao para adicionar curva \; botao para adicionar x
+curvas (p3 da anterior == p0 da seguinte) \, criando uma mega-curva
+\; tornar tudo variavel \, nr pontos do array... \; ajustar tamanha
+dos pontos kr de acordo com o tamanho do display;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;

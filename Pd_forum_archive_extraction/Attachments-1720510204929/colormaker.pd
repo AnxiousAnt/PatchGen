@@ -1,0 +1,61 @@
+#N canvas 223 210 406 489 10;
+#X floatatom 46 64 5 0 255 0 - - -;
+#X floatatom 111 90 5 0 255 0 - - -;
+#X obj 37 12 hsl 200 15 0 255 0 0 empty empty empty -2 -8 0 10 -4160
+-1 -1 17700 0;
+#X obj 104 42 hsl 200 15 0 255 0 0 empty empty empty -2 -8 0 10 -4034
+-1 -1 15300 0;
+#X obj 173 69 hsl 200 15 0 255 0 0 empty empty empty -2 -8 0 10 -258113
+-1 -1 12900 0;
+#X obj 101 112 * 256;
+#X obj 170 139 * 65536;
+#X obj 34 249 * -1;
+#X obj 170 91 i;
+#X obj 101 64 i;
+#X obj 34 37 i;
+#X obj 34 195 expr $f1 + $f2 + $f3;
+#X obj 34 223 + 1;
+#X obj 161 300 cnv 15 120 120 empty \$0-thiscolor \$0-thiscolor 2 12
+0 14 -171129 -1 0;
+#X obj 34 356 s \$0-thiscolor;
+#X msg 34 331 color \$1 22;
+#X obj 47 276 prepend set;
+#X msg 47 300 -1.08638e+07;
+#X floatatom 182 116 8 0 255 0 - - -;
+#X obj 170 91 i;
+#X obj 101 64 i;
+#X obj 34 37 i;
+#X obj 101 140 t f b;
+#X obj 170 167 t f b;
+#X text 33 430 Make RGB colors. Many colors can't be saved because
+the numbers are stored with reduced precision.;
+#X floatatom 139 269 14 0 0 0 - - -;
+#X symbolatom 139 245 14 0 0 0 - - -;
+#X obj 139 220 makefilename %10f;
+#X text 232 244 number;
+#X text 230 268 reduced precision number;
+#X connect 2 0 10 0;
+#X connect 3 0 9 0;
+#X connect 4 0 8 0;
+#X connect 5 0 22 0;
+#X connect 6 0 23 0;
+#X connect 7 0 15 0;
+#X connect 7 0 16 0;
+#X connect 8 0 6 0;
+#X connect 8 0 18 0;
+#X connect 9 0 1 0;
+#X connect 9 0 5 0;
+#X connect 10 0 0 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 0 25 0;
+#X connect 11 0 27 0;
+#X connect 12 0 7 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 22 0 11 1;
+#X connect 22 1 11 0;
+#X connect 23 0 11 2;
+#X connect 23 1 11 0;
+#X connect 27 0 26 0;

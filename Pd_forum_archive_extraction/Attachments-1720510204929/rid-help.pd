@@ -1,0 +1,19 @@
+#N canvas 168 312 781 399 10;
+#X obj 179 210 rid 0;
+#X msg 179 112 0-id 123;
+#X msg 264 109 list 0-id 123;
+#X obj 179 265 print HIT;
+#X msg 264 137 list 0-id 123;
+#X obj 264 161 list trim;
+#X text 164 307 Hint: Move [list trim] into the abstraction directly
+in frot of the[route];
+#X text 180 87 HIT;
+#X text 268 86 MISS;
+#X text 374 137 HIT again;
+#X obj 209 236 print MISS;
+#X connect 0 0 3 0;
+#X connect 0 1 10 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;

@@ -1,0 +1,10 @@
+#N canvas 122 78 450 300 10;
+#X obj -87 84 comport 8 9600;
+#X msg -60 21 devicename /dev/tty.usbserial-A9007UXK;
+#X floatatom -83 142 5 0 0 0 - - -;
+#X msg -160 59 close;
+#X msg -144 12 open;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;

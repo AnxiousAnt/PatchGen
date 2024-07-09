@@ -1,0 +1,36 @@
+#N canvas 681 74 467 391 10;
+#X msg -38 57 listplugins;
+#X msg -4 81 info;
+#X text 335 198 Sound ON/OFF;
+#X msg 313 220 \; pd dsp \$1;
+#X obj 313 199 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 239 254 dac~;
+#X obj 181 160 plugin~ amp;
+#X obj 245 131 noise~;
+#X obj 238 211 *~;
+#X obj 261 211 *~;
+#X obj 116 16 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 114 41 control #1 \$1;
+#X obj 265 166 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 600 1;
+#X text 49 -13 what is the correct nomenclature for sending control
+messages?;
+#X obj 138 241 print plug;
+#X text 133 59 console -> plugin ports: audio 1/1 ctrl 1/0;
+#X text -28 -76 June 9 2010 scons build of [plugin~] - Kim Cascone
+;
+#X connect 0 0 6 0;
+#X connect 1 0 6 0;
+#X connect 4 0 3 0;
+#X connect 6 0 14 0;
+#X connect 6 1 8 0;
+#X connect 6 1 9 0;
+#X connect 7 0 6 1;
+#X connect 8 0 5 0;
+#X connect 9 0 5 1;
+#X connect 10 0 11 0;
+#X connect 11 0 6 0;
+#X connect 12 0 9 1;
+#X connect 12 0 8 1;

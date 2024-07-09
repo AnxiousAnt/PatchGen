@@ -1,0 +1,11 @@
+#N canvas 0 22 458 308 10;
+#X obj 23 93 symbol_argument \$1;
+#X obj 157 93 symbol_argument \$2;
+#X obj 24 134 prepend set;
+#X msg 23 159;
+#X obj 158 139 prepend set;
+#X msg 157 164;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;

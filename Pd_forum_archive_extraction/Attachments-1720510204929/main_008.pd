@@ -1,0 +1,15 @@
+#N canvas 162 146 542 348 10;
+#X obj 242 156 abstraction theDollarName;
+#N canvas 0 0 450 300 subpatch 0;
+#X obj 71 86 inlet;
+#X obj 71 124 t b;
+#X obj 71 156 symbol \$1;
+#X obj 71 190 print SubPatchCalled;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X restore 241 212 pd subpatch theDollarName;
+#X obj 177 96 bng 32 250 50 0 empty empty Bang_This_And_Watch_Console
+-18 -6 0 8 -260818 -1 -1;
+#X connect 2 0 0 0;
+#X connect 2 0 1 0;

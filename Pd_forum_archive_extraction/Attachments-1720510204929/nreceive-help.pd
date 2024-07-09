@@ -1,0 +1,22 @@
+#N canvas 0 0 450 300 10;
+#X obj 26 47 s \$0-0-r;
+#X obj 96 47 s \$0-1-r;
+#X obj 166 47 s \$0-2-r;
+#X floatatom 26 26 5 0 0 0 - - -;
+#X floatatom 96 26 5 0 0 0 - - -;
+#X floatatom 166 26 5 0 0 0 - - -;
+#X floatatom 36 225 5 0 0 0 - - -;
+#X floatatom 100 225 5 0 0 0 - - -;
+#X obj 76 182 route 0 1 2;
+#X floatatom 160 225 5 0 0 0 - - -;
+#X obj 76 141 nreceive \$0-%d-r 0 3;
+#X text 12 122 arguments are: sender-pattern start-number count;
+#X text 13 70 really you would use the GUI send-name field \, but this
+is a help patch;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 8 0 6 0;
+#X connect 8 1 7 0;
+#X connect 8 2 9 0;
+#X connect 10 0 8 0;

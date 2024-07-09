@@ -1,0 +1,18 @@
+#N canvas 936 358 563 388 10;
+#X obj 105 261 print;
+#X msg 105 127 A 1.32 B 2 C 3 D 4 E 5 F;
+#X msg 180 167 :;
+#X msg 220 167 2;
+#X symbolatom 105 231 30 0 0 0 - - -, f 30;
+#X text 103 41 [list2symbol] convert a list into symbol;
+#X text 101 299 ATTENTION : if the argument is equal to '0' then it
+is interpreted as if there is no argument.;
+#X obj 105 199 list2symbol /;
+#X text 262 167 it is possible to use float;
+#X msg 220 190 0;
+#X connect 1 0 7 0;
+#X connect 2 0 7 1;
+#X connect 3 0 7 1;
+#X connect 4 0 0 0;
+#X connect 7 0 4 0;
+#X connect 9 0 7 1;

@@ -1,0 +1,113 @@
+#N canvas 290 165 706 544 10;
+#X obj 182 42 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 182 65 metro 10;
+#X obj 182 237 msd2D;
+#X obj 182 267 route massesPos;
+#X obj 182 436 s \$0-Y;
+#X obj 439 300 tabosc4~ \$0-Y;
+#X obj 439 400 dac~;
+#X obj 463 348 dbtorms;
+#X floatatom 463 328 5 0 0 0 - - -;
+#X floatatom 439 267 5 0 0 0 - - -;
+#X obj 440 371 *~ 0;
+#X obj 240 436 table \$0-Y 35;
+#X obj 182 318 list split 1;
+#X obj 182 340 + 1;
+#X obj 221 344 list split 1;
+#X obj 182 406 pack 0 0;
+#X obj 260 370 list split 1;
+#X floatatom 233 39 5 0 0 0 - - -;
+#X msg 201 129 get massesPos;
+#X obj 201 106 bang~;
+#X text 219 359 x;
+#X text 261 385 y;
+#N canvas 0 0 902 602 read-model 0;
+#X obj 108 187 textfile;
+#X msg 159 162 read \$1 \, rewind;
+#X obj 108 156 until;
+#X obj 108 132 t b a;
+#X obj 108 112 openpanel;
+#X msg 175 185 print;
+#X obj 108 66 inlet;
+#X obj 108 530 outlet;
+#X obj 346 34 inlet;
+#X msg 346 61 reset \, mass 0-m 0 100 -4 0 \, mass 0-m 1 100 -3.75
+0 \, mass 0-m 1 100 -3.5 0 \, mass 0-m 1 100 -3.25 0 \, mass 0-m 1
+100 -3 0 \, mass 0-m 1 100 -2.75 0 \, mass 0-m 1 100 -2.5 0 \, mass
+0-m 1 100 -2.25 0 \, mass 0-m 1 100 -2 0 \, mass 0-m 1 100 -1.75 0
+\, mass 0-m 1 100 -1.5 0 \, mass 0-m 1 100 -1.25 0 \, mass 0-m 1 100
+-1 0 \, mass 0-m 1 100 -0.75 0 \, mass 0-m 1 100 -0.5 0 \, mass 0-m
+1 100 -0.25 0 \, mass 0-m 1 100 0 0 \, mass 0-m 1 100 0.25 0 \, mass
+0-m 1 100 0.5 0 \, mass 0-m 1 100 0.75 0 \, mass 0-m 1 100 1 0 \, mass
+0-m 1 100 1.25 0 \, mass 0-m 1 100 1.5 0 \, mass 0-m 1 100 1.75 0 \,
+mass 0-m 1 100 2 0 \, mass 0-m 1 100 2.25 0 \, mass 0-m 1 100 2.5 0
+\, mass 0-m 1 100 2.75 0 \, mass 0-m 1 100 3 0 \, mass 0-m 1 100 3.25
+0 \, mass 0-m 1 100 3.5 0 \, mass 0-m 0 100 3.75 0 \, link 0-l 30 31
+10 2.5 1 0 1e+10 \, link 0-l 29 30 10 2.5 1 0 1e+10 \, link 0-l 28
+29 10 2.5 1 0 1e+10 \, link 0-l 27 28 10 2.5 1 0 1e+10 \, link 0-l
+26 27 10 2.5 1 0 1e+10 \, link 0-l 25 26 10 2.5 1 0 1e+10 \, link 0-l
+24 25 10 2.5 1 0 1e+10 \, link 0-l 23 24 10 2.5 1 0 1e+10 \, link 0-l
+22 23 10 2.5 1 0 1e+10 \, link 0-l 21 22 10 2.5 1 0 1e+10 \, link 0-l
+20 21 10 2.5 1 0 1e+10 \, link 0-l 19 20 10 2.5 1 0 1e+10 \, link 0-l
+18 19 10 2.5 1 0 1e+10 \, link 0-l 17 18 10 2.5 1 0 1e+10 \, link 0-l
+16 17 10 2.5 1 0 1e+10 \, link 0-l 15 16 10 2.5 1 0 1e+10 \, link 0-l
+14 15 10 2.5 1 0 1e+10 \, link 0-l 13 14 10 2.5 1 0 1e+10 \, link 0-l
+12 13 10 2.5 1 0 1e+10 \, link 0-l 11 12 10 2.5 1 0 1e+10 \, link 0-l
+10 11 10 2.5 1 0 1e+10 \, link 0-l 9 10 10 2.5 1 0 1e+10 \, link 0-l
+8 9 10 2.5 1 0 1e+10 \, link 0-l 7 8 10 2.5 1 0 1e+10 \, link 0-l 6
+7 10 2.5 1 0 1e+10 \, link 0-l 5 6 10 2.5 1 0 1e+10 \, link 0-l 4 5
+10 2.5 1 0 1e+10 \, link 0-l 3 4 10 2.5 1 0 1e+10 \, link 0-l 2 3 10
+2.5 1 0 1e+10 \, link 0-l 1 2 10 2.5 1 0 1e+10 \, link 0-l 0 1 10 2.5
+1 0 1e+10 \, Xmin -4 \, Xmax 4 \, Ymin -1 \, Ymax 1 \, setL 0-l 0 \,
+;
+#X connect 0 0 7 0;
+#X connect 0 1 2 1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 3 1 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X restore 314 160 pd read-model;
+#X obj 314 140 bng 15 250 50 0 empty empty open-file 17 7 1 10 -262144
+-1 -1;
+#X text 41 338 for 4-point interp.;
+#X obj 400 140 bng 15 250 50 0 empty empty 32-string 17 7 1 10 -262144
+-1 -1;
+#X msg 514 220 posY 16 0.7;
+#X msg 291 220 setK 0-l \$1;
+#X floatatom 292 203 5 0 0 0 - - -;
+#X floatatom 386 203 5 0 0 0 - - -;
+#X msg 385 220 setD 0-l \$1;
+#X text 513 204 pluck;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 12 0;
+#X connect 5 0 10 0;
+#X connect 7 0 10 1;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 6 0;
+#X connect 10 0 6 1;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 13 0 15 0;
+#X connect 14 1 16 0;
+#X connect 15 0 4 0;
+#X connect 16 0 15 1;
+#X connect 17 0 1 1;
+#X connect 18 0 2 0;
+#X connect 19 0 18 0;
+#X connect 22 0 2 0;
+#X connect 23 0 22 0;
+#X connect 25 0 22 1;
+#X connect 26 0 2 0;
+#X connect 27 0 2 0;
+#X connect 28 0 27 0;
+#X connect 29 0 30 0;
+#X connect 30 0 2 0;

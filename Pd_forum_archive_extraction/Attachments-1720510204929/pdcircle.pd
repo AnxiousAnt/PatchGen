@@ -1,0 +1,33 @@
+#N canvas 731 262 454 304 12;
+#N canvas 196 64 606 419 circle 0;
+#X obj 30 37 struct circle float x float y float rad;
+#X obj 83 339 drawpolygon 0 2 rad(0:1000)(0:-1000) 0 rad 0;
+#X obj 10 98 drawcurve 90 1 rad 0 rad(0:1000)(0:924) rad(0:1000)(0:-383)
+rad(0:1000)(0:707) rad(0:1000)(0:-707) rad(0:1000)(0:383) rad(0:1000)(0:-924)
+0 rad(0:1000)(0:-1000) rad(0:1000)(0:-383) rad(0:1000)(0:-924) rad(0:1000)(0:-707)
+rad(0:1000)(0:-707) rad(0:1000)(0:-924) rad(0:1000)(0:-383) rad(0:1000)(0:-1000)
+0 rad(0:1000)(0:-924) rad(0:1000)(0:383) rad(0:1000)(0:-707) rad(0:1000)(0:707)
+rad(0:1000)(0:-383) rad(0:1000)(0:924) 0 rad rad(0:1000)(0:383) rad(0:1000)(0:924)
+rad(0:1000)(0:707) rad(0:1000)(0:707) rad(0:1000)(0:924) rad(0:1000)(0:383)
+rad 0;
+#X restore 81 197 pd circle;
+#N canvas 14 78 643 619 show 1;
+#X restore 71 251 pd show;
+#X obj 280 172 pointer circle;
+#X msg 255 122 traverse pd-show \, next;
+#X obj 266 215 set circle rad;
+#X floatatom 197 174 5 0 0 0 - - -;
+#X obj 61 157 s pd-show;
+#X msg 39 116 clear;
+#X msg 151 71 scalar circle 300 300 200;
+#X obj 151 35 loadbang;
+#X connect 2 0 4 1;
+#X connect 3 0 2 0;
+#X connect 5 0 4 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 0;
+
+
+
+

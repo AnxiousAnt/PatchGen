@@ -1,0 +1,522 @@
+hans@linuxlatitude:~$ export LANG=C
+hans@linuxlatitude:~$ MAINREPO=https://deb.debian.org/debian/pool/main/
+hans@linuxlatitude:~$ PDVER=0.50.2-1
+hans@linuxlatitude:~$ sudo apt-get install devscripts
+[sudo] password for hans: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+You might want to run 'apt-get -f install' to correct these:
+The following packages have unmet dependencies:
+ devscripts : Depends: dpkg-dev (>= 1.16.4) but it is not going to be installed
+              Recommends: at but it is not going to be installed
+              Recommends: dctrl-tools but it is not going to be installed
+              Recommends: dput or
+                          dupload but it is not going to be installed
+              Recommends: fakeroot but it is not going to be installed
+              Recommends: libdistro-info-perl but it is not going to be installed
+              Recommends: libjson-perl but it is not going to be installed
+              Recommends: libparse-debcontrol-perl but it is not going to be installed
+              Recommends: python3-magic but it is not going to be installed
+              Recommends: wdiff but it is not going to be installed
+ puredata-core : Depends: libc6 (>= 2.28) but 2.19-0ubuntu6.15 is to be installed
+                 Recommends: puredata-gui but it is not going to be installed
+E: Unmet dependencies. Try 'apt-get -f install' with no packages (or specify a solution).
+
+hans@linuxlatitude:~$ apt-get -f install
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+
+hans@linuxlatitude:~$ sudo apt-get -f install
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Correcting dependencies... Done
+The following packages were automatically installed and are no longer required:
+  attr cabextract cyclist fonts-horai-umefont fonts-wqy-microhei freeglut3
+  gnome-exe-thumbnailer libaio1 libbaloocore4 libbaloofiles4 libbalooxapian4
+  libcapi20-3 libepub0 libftgl2 libgmerlin-avdec1 libhdb9-heimdal
+  libkdc2-heimdal libkidletime4 libmxml1 libnepomukcleaner4 libnss-winbind
+  libntdb1 libodbc1 libpam-winbind libplotmm0 libqmobipocket1 libqpdf13
+  libqtscript4-core libqtscript4-gui libqtscript4-network libqtscript4-uitools
+  libqtscript4-xml libraul10 libzip2 linux-headers-3.16.0-30
+  linux-headers-3.16.0-30-generic linux-headers-3.16.0-30-lowlatency
+  linux-headers-3.16.0-49-generic linux-image-3.16.0-30-generic
+  linux-image-3.16.0-30-lowlatency linux-image-3.16.0-49-generic
+  linux-image-extra-3.16.0-30-generic linux-image-extra-3.16.0-49-generic
+  musescore-soundfont-gm nepomuk-core-runtime ocl-icd-libopencl1 p7zip
+  python-dnspython python-ntdb samba samba-dsdb-modules samba-vfs-modules
+  tdb-tools ttf-mscorefonts-installer ttf-wqy-microhei unixodbc winbind
+  wine-gecko2.21 wine-mono0.0.8 wine1.6 wine1.6-i386 winetricks
+Use 'apt-get autoremove' to remove them.
+The following packages will be REMOVED:
+  puredata-core
+0 upgraded, 0 newly installed, 1 to remove and 11 not upgraded.
+1 not fully installed or removed.
+After this operation, 4.062 kB disk space will be freed.
+Do you want to continue? [Y/n] Y
+(Reading database ... 465183 files and directories currently installed.)
+Removing puredata-core (0.50.2-1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+
+hans@linuxlatitude:~$ sudo apt-get install devscripts
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  attr cabextract cyclist fonts-horai-umefont fonts-wqy-microhei freeglut3
+  gnome-exe-thumbnailer libaio1 libbaloocore4 libbaloofiles4 libbalooxapian4
+  libcapi20-3 libepub0 libftgl2 libgmerlin-avdec1 libhdb9-heimdal
+  libkdc2-heimdal libkidletime4 libmxml1 libnepomukcleaner4 libnss-winbind
+  libntdb1 libodbc1 libpam-winbind libplotmm0 libqmobipocket1 libqpdf13
+  libqtscript4-core libqtscript4-gui libqtscript4-network libqtscript4-uitools
+  libqtscript4-xml libraul10 libzip2 linux-headers-3.16.0-30
+  linux-headers-3.16.0-30-generic linux-headers-3.16.0-30-lowlatency
+  linux-headers-3.16.0-49-generic linux-image-3.16.0-30-generic
+  linux-image-3.16.0-30-lowlatency linux-image-3.16.0-49-generic
+  linux-image-extra-3.16.0-30-generic linux-image-extra-3.16.0-49-generic
+  musescore-soundfont-gm nepomuk-core-runtime ocl-icd-libopencl1 p7zip
+  python-dnspython python-ntdb samba samba-dsdb-modules samba-vfs-modules
+  tdb-tools ttf-mscorefonts-installer ttf-wqy-microhei unixodbc winbind
+  wine-gecko2.21 wine-mono0.0.8 wine1.6 wine1.6-i386 winetricks
+Use 'apt-get autoremove' to remove them.
+The following extra packages will be installed:
+  at build-essential dctrl-tools distro-info-data dpkg-dev dput fakeroot g++
+  g++-4.8 libalgorithm-diff-perl libalgorithm-diff-xs-perl
+  libalgorithm-merge-perl libcommon-sense-perl libdistro-info-perl
+  liberror-perl libexporter-lite-perl libfakeroot libio-stringy-perl
+  libjson-perl libjson-xs-perl libparse-debcontrol-perl libstdc++-4.8-dev
+  python3-magic wdiff
+Suggested packages:
+  default-mta mail-transport-agent debtags bsd-mailx mailx cvs-buildpackage
+  devscripts-el gnuplot libterm-size-perl libyaml-syck-perl mutt
+  svn-buildpackage w3m debian-keyring equivs libsoap-lite-perl mini-dinstall
+  python-bzrlib g++-multilib g++-4.8-multilib gcc-4.8-doc libstdc++6-4.8-dbg
+  libstdc++-4.8-doc
+The following NEW packages will be installed:
+  at build-essential dctrl-tools devscripts distro-info-data dpkg-dev dput
+  fakeroot g++ g++-4.8 libalgorithm-diff-perl libalgorithm-diff-xs-perl
+  libalgorithm-merge-perl libcommon-sense-perl libdistro-info-perl
+  liberror-perl libexporter-lite-perl libfakeroot libio-stringy-perl
+  libjson-perl libjson-xs-perl libparse-debcontrol-perl libstdc++-4.8-dev
+  python3-magic wdiff
+0 upgraded, 25 newly installed, 0 to remove and 11 not upgraded.
+Need to get 21,1 MB of archives.
+After this operation, 45,0 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://be.archive.ubuntu.com/ubuntu/ trusty/main at i386 3.1.14-1ubuntu1 [36,0 kB]
+Get:2 http://be.archive.ubuntu.com/ubuntu/ trusty-updates/main libstdc++-4.8-dev i386 4.8.4-2ubuntu1~14.04.4 [1.058 kB]
+Get:3 http://be.archive.ubuntu.com/ubuntu/ trusty-updates/main g++-4.8 i386 4.8.4-2ubuntu1~14.04.4 [17,9 MB]
+Get:4 http://be.archive.ubuntu.com/ubuntu/ trusty/main g++ i386 4:4.8.2-1ubuntu6 [1.500 B]
+Get:5 http://be.archive.ubuntu.com/ubuntu/ trusty-updates/main dpkg-dev all 1.17.5ubuntu5.8 [726 kB]
+Get:6 http://be.archive.ubuntu.com/ubuntu/ trusty/main build-essential i386 11.6ubuntu6 [4.824 B]
+Get:7 http://be.archive.ubuntu.com/ubuntu/ trusty/main dctrl-tools i386 2.23ubuntu1 [99,2 kB]
+Get:8 http://be.archive.ubuntu.com/ubuntu/ trusty-updates/main devscripts i386 2.14.1ubuntu0.1 [792 kB]
+Get:9 http://be.archive.ubuntu.com/ubuntu/ trusty-updates/main distro-info-data all 0.18ubuntu0.13 [4.462 B]
+Get:10 http://be.archive.ubuntu.com/ubuntu/ trusty-updates/main dput all 0.9.6.4ubuntu1.1 [33,0 kB]
+Get:11 http://be.archive.ubuntu.com/ubuntu/ trusty/main libfakeroot i386 1.20-3ubuntu2 [25,4 kB]
+Get:12 http://be.archive.ubuntu.com/ubuntu/ trusty/main fakeroot i386 1.20-3ubuntu2 [55,4 kB]
+Get:13 http://be.archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-diff-perl all 1.19.02-3 [50,0 kB]
+Get:14 http://be.archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-diff-xs-perl i386 0.04-2build4 [13,1 kB]
+Get:15 http://be.archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-merge-perl all 0.08-2 [12,7 kB]
+Get:16 http://be.archive.ubuntu.com/ubuntu/ trusty/main libcommon-sense-perl i386 3.72-2build1 [20,3 kB]
+Get:17 http://be.archive.ubuntu.com/ubuntu/ trusty-updates/main libdistro-info-perl all 0.12ubuntu0.2 [4.722 B]
+Get:18 http://be.archive.ubuntu.com/ubuntu/ trusty/main liberror-perl all 0.17-1.1 [21,1 kB]
+Get:19 http://be.archive.ubuntu.com/ubuntu/ trusty/main libexporter-lite-perl all 0.02-2 [8.924 B]
+Get:20 http://be.archive.ubuntu.com/ubuntu/ trusty/main libio-stringy-perl all 2.110-5 [93,5 kB]
+Get:21 http://be.archive.ubuntu.com/ubuntu/ trusty/main libjson-perl all 2.61-1 [94,4 kB]
+Get:22 http://be.archive.ubuntu.com/ubuntu/ trusty/main libjson-xs-perl i386 2.340-1build1 [83,3 kB]
+Get:23 http://be.archive.ubuntu.com/ubuntu/ trusty/main libparse-debcontrol-perl all 2.005-4 [24,2 kB]
+Get:24 http://be.archive.ubuntu.com/ubuntu/ trusty/main wdiff i386 1.2.1-2 [28,0 kB]
+Get:25 http://be.archive.ubuntu.com/ubuntu/ trusty-updates/main python3-magic all 1:5.14-2ubuntu3.4 [4.576 B]
+Fetched 21,1 MB in 9s (2.246 kB/s)                                             
+Selecting previously unselected package at.
+(Reading database ... 464976 files and directories currently installed.)
+Preparing to unpack .../at_3.1.14-1ubuntu1_i386.deb ...
+Unpacking at (3.1.14-1ubuntu1) ...
+Selecting previously unselected package libstdc++-4.8-dev:i386.
+Preparing to unpack .../libstdc++-4.8-dev_4.8.4-2ubuntu1~14.04.4_i386.deb ...
+Unpacking libstdc++-4.8-dev:i386 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package g++-4.8.
+Preparing to unpack .../g++-4.8_4.8.4-2ubuntu1~14.04.4_i386.deb ...
+Unpacking g++-4.8 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a4.8.2-1ubuntu6_i386.deb ...
+Unpacking g++ (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../dpkg-dev_1.17.5ubuntu5.8_all.deb ...
+Unpacking dpkg-dev (1.17.5ubuntu5.8) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../build-essential_11.6ubuntu6_i386.deb ...
+Unpacking build-essential (11.6ubuntu6) ...
+Selecting previously unselected package dctrl-tools.
+Preparing to unpack .../dctrl-tools_2.23ubuntu1_i386.deb ...
+Unpacking dctrl-tools (2.23ubuntu1) ...
+Selecting previously unselected package devscripts.
+Preparing to unpack .../devscripts_2.14.1ubuntu0.1_i386.deb ...
+Unpacking devscripts (2.14.1ubuntu0.1) ...
+Selecting previously unselected package distro-info-data.
+Preparing to unpack .../distro-info-data_0.18ubuntu0.13_all.deb ...
+Unpacking distro-info-data (0.18ubuntu0.13) ...
+Selecting previously unselected package dput.
+Preparing to unpack .../dput_0.9.6.4ubuntu1.1_all.deb ...
+Unpacking dput (0.9.6.4ubuntu1.1) ...
+Selecting previously unselected package libfakeroot:i386.
+Preparing to unpack .../libfakeroot_1.20-3ubuntu2_i386.deb ...
+Unpacking libfakeroot:i386 (1.20-3ubuntu2) ...
+Selecting previously unselected package fakeroot.
+Preparing to unpack .../fakeroot_1.20-3ubuntu2_i386.deb ...
+Unpacking fakeroot (1.20-3ubuntu2) ...
+Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../libalgorithm-diff-perl_1.19.02-3_all.deb ...
+Unpacking libalgorithm-diff-perl (1.19.02-3) ...
+Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../libalgorithm-diff-xs-perl_0.04-2build4_i386.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-2build4) ...
+Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../libalgorithm-merge-perl_0.08-2_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-2) ...
+Selecting previously unselected package libcommon-sense-perl.
+Preparing to unpack .../libcommon-sense-perl_3.72-2build1_i386.deb ...
+Unpacking libcommon-sense-perl (3.72-2build1) ...
+Selecting previously unselected package libdistro-info-perl.
+Preparing to unpack .../libdistro-info-perl_0.12ubuntu0.2_all.deb ...
+Unpacking libdistro-info-perl (0.12ubuntu0.2) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../liberror-perl_0.17-1.1_all.deb ...
+Unpacking liberror-perl (0.17-1.1) ...
+Selecting previously unselected package libexporter-lite-perl.
+Preparing to unpack .../libexporter-lite-perl_0.02-2_all.deb ...
+Unpacking libexporter-lite-perl (0.02-2) ...
+Selecting previously unselected package libio-stringy-perl.
+Preparing to unpack .../libio-stringy-perl_2.110-5_all.deb ...
+Unpacking libio-stringy-perl (2.110-5) ...
+Selecting previously unselected package libjson-perl.
+Preparing to unpack .../libjson-perl_2.61-1_all.deb ...
+Unpacking libjson-perl (2.61-1) ...
+Selecting previously unselected package libjson-xs-perl.
+Preparing to unpack .../libjson-xs-perl_2.340-1build1_i386.deb ...
+Unpacking libjson-xs-perl (2.340-1build1) ...
+Selecting previously unselected package libparse-debcontrol-perl.
+Preparing to unpack .../libparse-debcontrol-perl_2.005-4_all.deb ...
+Unpacking libparse-debcontrol-perl (2.005-4) ...
+Selecting previously unselected package wdiff.
+Preparing to unpack .../wdiff_1.2.1-2_i386.deb ...
+Unpacking wdiff (1.2.1-2) ...
+Selecting previously unselected package python3-magic.
+Preparing to unpack .../python3-magic_1%3a5.14-2ubuntu3.4_all.deb ...
+Unpacking python3-magic (1:5.14-2ubuntu3.4) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+ureadahead will be reprofiled on next reboot
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for doc-base (0.10.5) ...
+Processing 1 added doc-base file...
+Registering documents with scrollkeeper...
+Processing triggers for install-info (5.2.0.dfsg.1-2) ...
+Setting up at (3.1.14-1ubuntu1) ...
+atd start/running, process 6772
+Setting up libstdc++-4.8-dev:i386 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up g++-4.8 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up g++ (4:4.8.2-1ubuntu6) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up dpkg-dev (1.17.5ubuntu5.8) ...
+Setting up build-essential (11.6ubuntu6) ...
+Setting up dctrl-tools (2.23ubuntu1) ...
+Setting up devscripts (2.14.1ubuntu0.1) ...
+Setting up distro-info-data (0.18ubuntu0.13) ...
+Setting up dput (0.9.6.4ubuntu1.1) ...
+Setting up libfakeroot:i386 (1.20-3ubuntu2) ...
+Setting up fakeroot (1.20-3ubuntu2) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Setting up libalgorithm-diff-perl (1.19.02-3) ...
+Setting up libalgorithm-diff-xs-perl (0.04-2build4) ...
+Setting up libalgorithm-merge-perl (0.08-2) ...
+Setting up libcommon-sense-perl (3.72-2build1) ...
+Setting up libdistro-info-perl (0.12ubuntu0.2) ...
+Setting up liberror-perl (0.17-1.1) ...
+Setting up libexporter-lite-perl (0.02-2) ...
+Setting up libio-stringy-perl (2.110-5) ...
+Setting up libjson-perl (2.61-1) ...
+Setting up libjson-xs-perl (2.340-1build1) ...
+Setting up libparse-debcontrol-perl (2.005-4) ...
+Setting up wdiff (1.2.1-2) ...
+Setting up python3-magic (1:5.14-2ubuntu3.4) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.15) ...
+
+hans@linuxlatitude:~$ mkdir -p build
+
+hans@linuxlatitude:~$ cd build
+
+hans@linuxlatitude:~/build$ dget -u ${MAINREPO}/p/puredata/puredata_${PDVER}.dscdget: retrieving https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2-1.dsc
+--2020-01-13 21:52:42--  https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2-1.dsc
+Resolving deb.debian.org (deb.debian.org)... 151.101.38.133, 2a04:4e42:1d::645
+Connecting to deb.debian.org (deb.debian.org)|151.101.38.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2660 (2,6K)
+Saving to: 'puredata_0.50.2-1.dsc'
+
+100%[======================================>] 2.660       --.-K/s   in 0s      
+
+2020-01-13 21:52:42 (176 MB/s) - 'puredata_0.50.2-1.dsc' saved [2660/2660]
+
+dget: retrieving https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2.orig.tar.gz
+--2020-01-13 21:52:42--  https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2.orig.tar.gz
+Resolving deb.debian.org (deb.debian.org)... 151.101.38.133, 2a04:4e42:1d::645
+Connecting to deb.debian.org (deb.debian.org)|151.101.38.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 9303966 (8,9M) [application/x-gzip]
+Saving to: 'puredata_0.50.2.orig.tar.gz'
+
+100%[======================================>] 9.303.966   1,20MB/s   in 6,7s   
+
+2020-01-13 21:52:49 (1,32 MB/s) - 'puredata_0.50.2.orig.tar.gz' saved [9303966/9303966]
+
+dget: retrieving https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2-1.debian.tar.xz
+--2020-01-13 21:52:49--  https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2-1.debian.tar.xz
+Resolving deb.debian.org (deb.debian.org)... 151.101.38.133, 2a04:4e42:1d::645
+Connecting to deb.debian.org (deb.debian.org)|151.101.38.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 29096 (28K) [application/x-xz]
+Saving to: 'puredata_0.50.2-1.debian.tar.xz'
+
+100%[======================================>] 29.096      --.-K/s   in 0,03s   
+
+2020-01-13 21:52:49 (908 KB/s) - 'puredata_0.50.2-1.debian.tar.xz' saved [29096/29096]
+
+dpkg-source: info: extracting puredata in puredata-0.50.2
+dpkg-source: info: unpacking puredata_0.50.2.orig.tar.gz
+dpkg-source: info: unpacking puredata_0.50.2-1.debian.tar.xz
+dpkg-source: info: applying debian_pd2puredata.patch
+dpkg-source: info: applying debian_usrlibpd_path.patch
+dpkg-source: info: applying debian_fixmanpage.patch
+dpkg-source: info: applying debian_helpbrowser_puredata-doc.patch
+dpkg-source: info: applying debian_remove_timestamp-macros.patch
+dpkg-source: info: applying debian_etc-gui-plugins.patch
+
+hans@linuxlatitude:~/build$ cd puredata-${PDVER%-*}
+
+hans@linuxlatitude:~/build/puredata-0.50.2$ mk-build-deps -ir      mk-build-deps: You must have equivs installed to use this program.
+
+hans@linuxlatitude:~/build/puredata-0.50.2$ sudo apt-get install equivs
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  attr cabextract cyclist fonts-horai-umefont fonts-wqy-microhei freeglut3
+  gnome-exe-thumbnailer libaio1 libbaloocore4 libbaloofiles4 libbalooxapian4
+  libcapi20-3 libepub0 libftgl2 libgmerlin-avdec1 libhdb9-heimdal
+  libkdc2-heimdal libkidletime4 libmxml1 libnepomukcleaner4 libnss-winbind
+  libntdb1 libodbc1 libpam-winbind libplotmm0 libqmobipocket1 libqpdf13
+  libqtscript4-core libqtscript4-gui libqtscript4-network libqtscript4-uitools
+  libqtscript4-xml libraul10 libzip2 linux-headers-3.16.0-30
+  linux-headers-3.16.0-30-generic linux-headers-3.16.0-30-lowlatency
+  linux-headers-3.16.0-49-generic linux-image-3.16.0-30-generic
+  linux-image-3.16.0-30-lowlatency linux-image-3.16.0-49-generic
+  linux-image-extra-3.16.0-30-generic linux-image-extra-3.16.0-49-generic
+  musescore-soundfont-gm nepomuk-core-runtime ocl-icd-libopencl1 p7zip
+  python-dnspython python-ntdb samba samba-dsdb-modules samba-vfs-modules
+  tdb-tools ttf-mscorefonts-installer ttf-wqy-microhei unixodbc winbind
+  wine-gecko2.21 wine-mono0.0.8 wine1.6 wine1.6-i386 winetricks
+Use 'apt-get autoremove' to remove them.
+The following extra packages will be installed:
+  debhelper dh-apparmor libmail-sendmail-perl libsys-hostname-long-perl
+  po-debconf
+Suggested packages:
+  dh-make apparmor-easyprof libmail-box-perl
+The following NEW packages will be installed:
+  debhelper dh-apparmor equivs libmail-sendmail-perl libsys-hostname-long-perl
+  po-debconf
+0 upgraded, 6 newly installed, 0 to remove and 11 not upgraded.
+Need to get 882 kB of archives.
+After this operation, 1.835 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://be.archive.ubuntu.com/ubuntu/ trusty/main po-debconf all 1.0.16+nmu2ubuntu1 [210 kB]
+Get:2 http://be.archive.ubuntu.com/ubuntu/ trusty-updates/main dh-apparmor all 2.10.95-0ubuntu2.6~14.04.4 [11,3 kB]
+Get:3 http://be.archive.ubuntu.com/ubuntu/ trusty/main debhelper all 9.20131227ubuntu1 [604 kB]
+Get:4 http://be.archive.ubuntu.com/ubuntu/ trusty/main libsys-hostname-long-perl all 1.4-3 [11,3 kB]
+Get:5 http://be.archive.ubuntu.com/ubuntu/ trusty/main libmail-sendmail-perl all 0.79.16-1 [26,5 kB]
+Get:6 http://be.archive.ubuntu.com/ubuntu/ trusty/universe equivs all 2.0.9 [18,5 kB]
+Fetched 882 kB in 0s (1.684 kB/s) 
+Selecting previously unselected package po-debconf.
+(Reading database ... 466634 files and directories currently installed.)
+Preparing to unpack .../po-debconf_1.0.16+nmu2ubuntu1_all.deb ...
+Unpacking po-debconf (1.0.16+nmu2ubuntu1) ...
+Selecting previously unselected package dh-apparmor.
+Preparing to unpack .../dh-apparmor_2.10.95-0ubuntu2.6~14.04.4_all.deb ...
+Unpacking dh-apparmor (2.10.95-0ubuntu2.6~14.04.4) ...
+Selecting previously unselected package debhelper.
+Preparing to unpack .../debhelper_9.20131227ubuntu1_all.deb ...
+Unpacking debhelper (9.20131227ubuntu1) ...
+Selecting previously unselected package libsys-hostname-long-perl.
+Preparing to unpack .../libsys-hostname-long-perl_1.4-3_all.deb ...
+Unpacking libsys-hostname-long-perl (1.4-3) ...
+Selecting previously unselected package libmail-sendmail-perl.
+Preparing to unpack .../libmail-sendmail-perl_0.79.16-1_all.deb ...
+Unpacking libmail-sendmail-perl (0.79.16-1) ...
+Selecting previously unselected package equivs.
+Preparing to unpack .../archives/equivs_2.0.9_all.deb ...
+Unpacking equivs (2.0.9) ...
+Processing triggers for doc-base (0.10.5) ...
+Processing 1 added doc-base file...
+Registering documents with scrollkeeper...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up po-debconf (1.0.16+nmu2ubuntu1) ...
+Setting up dh-apparmor (2.10.95-0ubuntu2.6~14.04.4) ...
+Setting up debhelper (9.20131227ubuntu1) ...
+Setting up libsys-hostname-long-perl (1.4-3) ...
+Setting up libmail-sendmail-perl (0.79.16-1) ...
+Setting up equivs (2.0.9) ...
+
+hans@linuxlatitude:~/build/puredata-0.50.2$ mk-build-deps -ir
+dh_testdir
+dh_testroot
+dh_prep
+dh_testdir
+dh_testroot
+dh_install
+dh_installdocs
+dh_installchangelogs
+dh_compress
+dh_fixperms
+dh_installdeb
+dh_gencontrol
+dh_md5sums
+dh_builddeb
+dpkg-deb: building package `puredata-build-deps' in `../puredata-build-deps_0.50.2-1_i386.deb'.
+
+The package has been created.
+Attention, the package has been created in the current directory,
+not in ".." as indicated by the message above!
+dpkg: error: requested operation requires superuser privilege
+dpkg call failed
+
+hans@linuxlatitude:~/build/puredata-0.50.2$ sudo mk-build-deps -ir
+dh_testdir
+dh_testroot
+dh_prep
+dh_testdir
+dh_testroot
+dh_install
+dh_installdocs
+dh_installchangelogs
+dh_compress
+dh_fixperms
+dh_installdeb
+dh_gencontrol
+dh_md5sums
+dh_builddeb
+dpkg-deb: building package `puredata-build-deps' in `../puredata-build-deps_0.50.2-1_i386.deb'.
+
+The package has been created.
+Attention, the package has been created in the current directory,
+not in ".." as indicated by the message above!
+Selecting previously unselected package puredata-build-deps.
+(Reading database ... 467104 files and directories currently installed.)
+Preparing to unpack puredata-build-deps_0.50.2-1_i386.deb ...
+Unpacking puredata-build-deps (0.50.2-1) ...
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Correcting dependencies... Done
+The following packages were automatically installed and are no longer required:
+  attr cabextract cyclist fonts-horai-umefont fonts-wqy-microhei freeglut3
+  gnome-exe-thumbnailer help2man libaio1 libasound2-dev libbaloocore4
+  libbaloofiles4 libbalooxapian4 libcapi20-3 libdbus-1-dev libepub0 libftgl2
+  libgmerlin-avdec1 libhdb9-heimdal libkdc2-heimdal libkidletime4 libmxml1
+  libnepomukcleaner4 libnss-winbind libntdb1 libodbc1 libpam-winbind
+  libplotmm0 libportaudiocpp0 libqmobipocket1 libqpdf13 libqtscript4-core
+  libqtscript4-gui libqtscript4-network libqtscript4-uitools libqtscript4-xml
+  libraul10 libzip2 linux-headers-3.16.0-30 linux-headers-3.16.0-30-generic
+  linux-headers-3.16.0-30-lowlatency linux-headers-3.16.0-49-generic
+  linux-image-3.16.0-30-generic linux-image-3.16.0-30-lowlatency
+  linux-image-3.16.0-49-generic linux-image-extra-3.16.0-30-generic
+  linux-image-extra-3.16.0-49-generic musescore-soundfont-gm
+  nepomuk-core-runtime ocl-icd-libopencl1 p7zip python-dnspython python-ntdb
+  samba samba-dsdb-modules samba-vfs-modules tdb-tools
+  ttf-mscorefonts-installer ttf-wqy-microhei unixodbc winbind wine-gecko2.21
+  wine-mono0.0.8 wine1.6 wine1.6-i386 winetricks
+Use 'apt-get autoremove' to remove them.
+The following extra packages will be installed:
+  help2man libasound2-dev
+Suggested packages:
+  libasound2-doc
+The following packages will be REMOVED:
+  puredata-build-deps
+The following NEW packages will be installed:
+  help2man libasound2-dev
+0 upgraded, 2 newly installed, 1 to remove and 11 not upgraded.
+1 not fully installed or removed.
+Need to get 119 kB of archives.
+After this operation, 772 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://be.archive.ubuntu.com/ubuntu/ trusty/main help2man i386 1.44.1 [59,4 kB]
+Get:2 http://be.archive.ubuntu.com/ubuntu/ trusty/main libasound2-dev i386 1.0.27.2-3ubuntu7 [59,2 kB]
+Fetched 119 kB in 0s (841 kB/s)           
+(Reading database ... 467107 files and directories currently installed.)
+Removing puredata-build-deps (0.50.2-1) ...
+Selecting previously unselected package help2man.
+(Reading database ... 467104 files and directories currently installed.)
+Preparing to unpack .../help2man_1.44.1_i386.deb ...
+Unpacking help2man (1.44.1) ...
+Selecting previously unselected package libasound2-dev:i386.
+Preparing to unpack .../libasound2-dev_1.0.27.2-3ubuntu7_i386.deb ...
+Unpacking libasound2-dev:i386 (1.0.27.2-3ubuntu7) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for install-info (5.2.0.dfsg.1-2) ...
+Setting up help2man (1.44.1) ...
+Setting up libasound2-dev:i386 (1.0.27.2-3ubuntu7) ...
+
+hans@linuxlatitude:~/build/puredata-0.50.2$ dpkg-buildpackage -rfakeroot
+dpkg-buildpackage: source package puredata
+dpkg-buildpackage: source version 0.50.2-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>
+dpkg-buildpackage: host architecture i386
+ dpkg-source --before-build puredata-0.50.2
+dpkg-source: warning: unknown information field 'Rules-Requires-Root' in input data in general section of control info file
+dpkg-checkbuilddeps: Unmet build dependencies: debhelper-compat (= 12) portaudio19-dev libjack-dev
+dpkg-buildpackage: warning: build dependencies/conflicts unsatisfied; aborting
+dpkg-buildpackage: warning: (Use -d flag to override.)
+
+hans@linuxlatitude:~/build/puredata-0.50.2$ sudo apt-get install build-essential
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+build-essential is already the newest version.
+build-essential set to manually installed.
+The following packages were automatically installed and are no longer required:
+  attr cabextract cyclist fonts-horai-umefont fonts-wqy-microhei freeglut3
+  gnome-exe-thumbnailer help2man libaio1 libasound2-dev libbaloocore4
+  libbaloofiles4 libbalooxapian4 libcapi20-3 libepub0 libftgl2
+  libgmerlin-avdec1 libhdb9-heimdal libkdc2-heimdal libkidletime4 libmxml1
+  libnepomukcleaner4 libnss-winbind libntdb1 libodbc1 libpam-winbind
+  libplotmm0 libqmobipocket1 libqpdf13 libqtscript4-core libqtscript4-gui
+  libqtscript4-network libqtscript4-uitools libqtscript4-xml libraul10 libzip2
+  linux-headers-3.16.0-30 linux-headers-3.16.0-30-generic
+  linux-headers-3.16.0-30-lowlatency linux-headers-3.16.0-49-generic
+  linux-image-3.16.0-30-generic linux-image-3.16.0-30-lowlatency
+  linux-image-3.16.0-49-generic linux-image-extra-3.16.0-30-generic
+  linux-image-extra-3.16.0-49-generic musescore-soundfont-gm
+  nepomuk-core-runtime ocl-icd-libopencl1 p7zip python-dnspython python-ntdb
+  samba samba-dsdb-modules samba-vfs-modules tdb-tools
+  ttf-mscorefonts-installer ttf-wqy-microhei unixodbc winbind wine-gecko2.21
+  wine-mono0.0.8 wine1.6 wine1.6-i386 winetricks
+Use 'apt-get autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
+
+hans@linuxlatitude:~/build/puredata-0.50.2$ dpkg-buildpackage -rfakeroot
+dpkg-buildpackage: source package puredata
+dpkg-buildpackage: source version 0.50.2-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>
+dpkg-buildpackage: host architecture i386
+ dpkg-source --before-build puredata-0.50.2
+dpkg-source: warning: unknown information field 'Rules-Requires-Root' in input data in general section of control info file
+dpkg-checkbuilddeps: Unmet build dependencies: debhelper-compat (= 12) portaudio19-dev libjack-dev
+dpkg-buildpackage: warning: build dependencies/conflicts unsatisfied; aborting
+dpkg-buildpackage: warning: (Use -d flag to override.)
+
+hans@linuxlatitude:~/build/puredata-0.50.2$ 
+
+

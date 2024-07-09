@@ -1,0 +1,24 @@
+#N canvas 476 364 641 274 10;
+#X obj 53 100 hsl 128 15 -100 100 0 0 empty empty hs2_-100_100 20 9
+1 8 -262144 -1 -1 2100 0;
+#X obj 20 137 outlet;
+#X msg 155 49 range \$1 \$2;
+#X text 313 17 hs: horizontal slider with range as arguments;
+#X text 321 42 2 arguments: left border / right border;
+#X text 393 119 Honk Abstractions -- Kreidler 2007;
+#X text 434 144 www.kreidler-net.de;
+#X obj 20 -2 inlet;
+#X obj 155 3 loadbang;
+#X obj 155 27 list append \$1 \$2;
+#X msg 155 71 label hs2_\$1_\$2;
+#X msg 50 35 set \$1;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 7 0 11 0;
+#X connect 7 0 1 0;
+#X connect 8 0 9 0;
+#X connect 9 0 2 0;
+#X connect 9 0 10 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 133 15 2 50 100;

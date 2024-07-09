@@ -1,0 +1,17 @@
+#N canvas 0 0 450 300 10;
+#X obj 55 170 *~;
+#X obj 70 141 route 1;
+#X msg 70 112 1 2;
+#X msg 161 108 1;
+#X obj 161 140 list trim;
+#X obj 146 169 *~;
+#X msg 252 110 list 1;
+#X obj 252 139 route list;
+#X obj 309 166 print;
+#X text 50 51 pd-0.41-4 on Linux has 3 annoyances (or more..);
+#X connect 1 0 0 1;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 6 0 7 0;
+#X connect 7 1 8 0;

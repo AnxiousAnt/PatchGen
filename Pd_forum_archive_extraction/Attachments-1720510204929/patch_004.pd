@@ -1,0 +1,39 @@
+#N canvas 183 493 692 254 10;
+#X obj 62 122 pdp_qt~;
+#X obj 90 164 dac~;
+#X msg 39 51 play;
+#X obj 133 42 openpanel;
+#X msg 133 67 open \$1;
+#X msg 133 14 bang;
+#X text 257 67 pdp_qt~ is the same as pdp_qt exept that it also outputs
+the audio data corresponding to the current frame on its 2 rightmost
+outlets. if there is a lag between audio and video a pdp_del object
+can be inserted to delay the image. note that in order to get acceptable
+audio quality with relatively few dropouts you might need to increase
+the pd audio latency.;
+#X msg 15 24 loop 1;
+#X floatatom 84 52 5 0 0 0 - - -;
+#X floatatom 102 189 5 0 0 0 - - -;
+#X floatatom 158 176 5 0 0 0 - - -;
+#X obj 177 201 ==;
+#X obj 265 186 sel 1;
+#X obj 144 205 + 1;
+#X msg 141 100 0;
+#X obj 37 216 pdp_glx;
+#X connect 0 0 15 0;
+#X connect 0 1 9 0;
+#X connect 0 2 10 0;
+#X connect 0 3 1 0;
+#X connect 0 4 1 1;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 1;
+#X connect 9 0 13 0;
+#X connect 10 0 11 1;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
+#X connect 13 0 11 0;
+#X connect 14 0 0 1;

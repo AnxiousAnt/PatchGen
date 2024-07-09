@@ -1,0 +1,12 @@
+#N canvas 0 0 450 300 10;
+#X obj 39 48 inlet;
+#X obj 41 163 print starts-with-0;
+#X obj 78 197 print starts-with-scale;
+#X obj 124 228 print starts-with-image;
+#X obj 58 117 route \$1 scale image;
+#X obj 174 258 print reject;
+#X connect 0 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 2 0;
+#X connect 4 2 3 0;
+#X connect 4 3 5 0;

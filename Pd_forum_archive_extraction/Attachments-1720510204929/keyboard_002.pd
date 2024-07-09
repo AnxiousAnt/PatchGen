@@ -1,0 +1,258 @@
+#N canvas 0 0 679 279 10;
+#X obj 66 145 pack;
+#N canvas 316 18 572 64 keygraph 0;
+#X obj 107 66 inlet;
+#N canvas 730 24 546 947 keygraph-works 0;
+#X floatatom 80 247 5 0 0 0 - - -;
+#X floatatom 110 332 5 0 0 0 - - -;
+#X obj 80 271 t f f;
+#X obj 80 358 pack 0 0;
+#X msg 80 393 \; \$1-cnv-key-in color \$2;
+#X obj 80 123 inlet;
+#X msg 80 146 \$2 \$1;
+#X obj 80 171 route 0;
+#X msg 124 197 \$2;
+#X obj 43 556 loadbang;
+#X msg 120 495 \; 22-cnv-key-in color \$1;
+#X msg 294 493 \; 23-cnv-key-in color \$1;
+#X floatatom 309 554 5 0 0 0 - - -;
+#X msg 337 445 10;
+#X msg 186 441 1;
+#X msg 150 441 2;
+#X msg 297 444 11;
+#X obj 64 765 table keycolors-up 128;
+#X obj 67 787 table keycolors-down 128;
+#X floatatom 255 248 5 0 0 0 - - -;
+#X floatatom 285 333 5 0 0 0 - - -;
+#X obj 255 272 t f f;
+#X obj 255 359 pack 0 0;
+#X obj 110 301 tabread keycolors-up;
+#X obj 285 302 tabread keycolors-down;
+#X msg 57 623 \; keycolors-up 21 10 1 10 10 1 10 1 10 10 1 10 1 10
+1 10 10 1 10 1 10 10 1 10 1 10 1 10 10 1 10 1 10 10 1 10 1 10 1 10
+10 1 10 1 10 10 1 10 1 10 1 10 10 1 10 1 10 10 1 10 1 10 1 10 10 1
+10 1 10 10 1 10 1 10 1 10 10 1 10 1 10 10 1 10 1 10 1 10 10;
+#X msg 44 848 \; keycolors-down 21 11 2 11 11 2 11 2 11 11 2 11 2 11
+2 11 11 2 11 2 11 11 2 11 2 11 2 11 11 2 11 2 11 11 2 11 2 11 2 11
+11 2 11 2 11 11 2 11 2 11 2 11 11 2 11 2 11 11 2 11 2 11 2 11 11 2
+11 2 11 11 2 11 2 11 2 11 11 2 11 2 11 11 2 11 2 11 2 11 11;
+#X msg 255 393 \; \$1-cnv-key-in color \$2;
+#X connect 0 0 2 0;
+#X connect 1 0 3 1;
+#X connect 2 0 3 0;
+#X connect 2 1 23 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 7 1 8 0;
+#X connect 8 0 19 0;
+#X connect 9 0 25 0;
+#X connect 9 0 26 0;
+#X connect 13 0 11 0;
+#X connect 14 0 10 0;
+#X connect 15 0 10 0;
+#X connect 16 0 11 0;
+#X connect 19 0 21 0;
+#X connect 20 0 22 1;
+#X connect 21 0 22 0;
+#X connect 21 1 24 0;
+#X connect 22 0 27 0;
+#X connect 23 0 1 0;
+#X connect 24 0 20 0;
+#X restore 107 120 pd keygraph-works;
+#X obj 0 1 cnv 15 572 62 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 1 2 cnv 7 9 60 21-cnv-key-out 21-cnv-key-in empty 20 12 0 14
+-233017 -262144 0;
+#X obj 12 2 cnv 7 9 60 23-cnv-key-out 23-cnv-key-in empty 20 12 0 14
+-233017 -262144 0;
+#X obj 23 2 cnv 7 9 60 24-cnv-key-out 24-cnv-key-in empty 20 12 0 14
+-233017 -262144 0;
+#X obj 34 2 cnv 7 9 60 26-cnv-key-out 26-cnv-key-in empty 20 12 0 14
+-233017 -262144 0;
+#X obj 45 2 cnv 7 9 60 28-cnv-key-out 28-cnv-key-in empty 20 12 0 14
+-233017 -262144 0;
+#X obj 56 2 cnv 7 9 60 29-cnv-key-out 29-cnv-key-in empty 20 12 0 14
+-233017 -262144 0;
+#X obj 67 2 cnv 7 9 60 31-cnv-key-out 31-cnv-key-in empty 20 12 0 14
+-233017 -262144 0;
+#X obj 78 2 cnv 7 9 60 33-cnv-key-out 33-cnv-key-in empty 20 12 0 14
+-233017 -262144 0;
+#X obj 89 2 cnv 7 9 60 35-cnv-key-out 35-cnv-key-in empty 20 12 0 14
+-233017 -262144 0;
+#X obj 100 2 cnv 7 9 60 36-cnv-key-out 36-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 111 2 cnv 7 9 60 38-cnv-key-out 38-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 122 2 cnv 7 9 60 40-cnv-key-out 40-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 133 2 cnv 7 9 60 41-cnv-key-out 41-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 144 2 cnv 7 9 60 43-cnv-key-out 43-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 155 2 cnv 7 9 60 45-cnv-key-out 45-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 166 2 cnv 7 9 60 47-cnv-key-out 47-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 177 2 cnv 7 9 60 48-cnv-key-out 48-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 188 2 cnv 7 9 60 50-cnv-key-out 50-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 199 2 cnv 7 9 60 52-cnv-key-out 52-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 210 2 cnv 7 9 60 53-cnv-key-out 53-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 221 2 cnv 7 9 60 55-cnv-key-out 55-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 232 2 cnv 7 9 60 57-cnv-key-out 57-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 243 2 cnv 7 9 60 59-cnv-key-out 59-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 254 2 cnv 7 9 60 60-cnv-key-out 60-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 265 2 cnv 7 9 60 62-cnv-key-out 62-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 276 2 cnv 7 9 60 64-cnv-key-out 64-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 287 2 cnv 7 9 60 65-cnv-key-out 65-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 298 2 cnv 7 9 60 67-cnv-key-out 67-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 309 2 cnv 7 9 60 69-cnv-key-out 69-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 320 2 cnv 7 9 60 71-cnv-key-out 71-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 331 2 cnv 7 9 60 72-cnv-key-out 72-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 342 2 cnv 7 9 60 74-cnv-key-out 74-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 353 2 cnv 7 9 60 76-cnv-key-out 76-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 364 2 cnv 7 9 60 77-cnv-key-out 77-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 375 2 cnv 7 9 60 79-cnv-key-out 79-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 386 2 cnv 7 9 60 81-cnv-key-out 81-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 397 2 cnv 7 9 60 83-cnv-key-out 83-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 408 2 cnv 7 9 60 84-cnv-key-out 84-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 419 2 cnv 7 9 60 86-cnv-key-out 86-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 430 2 cnv 7 9 60 88-cnv-key-out 88-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 441 2 cnv 7 9 60 89-cnv-key-out 89-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 452 2 cnv 7 9 60 91-cnv-key-out 91-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 463 2 cnv 7 9 60 93-cnv-key-out 93-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 474 2 cnv 7 9 60 95-cnv-key-out 95-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 485 2 cnv 7 9 60 96-cnv-key-out 96-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 496 2 cnv 7 9 60 98-cnv-key-out 98-cnv-key-in empty 20 12 0
+14 -233017 -262144 0;
+#X obj 507 2 cnv 7 9 60 100-cnv-key-out 100-cnv-key-in empty 20 12
+0 14 -233017 -262144 0;
+#X obj 518 2 cnv 7 9 60 101-cnv-key-out 101-cnv-key-in empty 20 12
+0 14 -233017 -262144 0;
+#X obj 529 2 cnv 7 9 60 103-cnv-key-out 103-cnv-key-in empty 20 12
+0 14 -233017 -262144 0;
+#X obj 540 2 cnv 7 9 60 105-cnv-key-out 105-cnv-key-in empty 20 12
+0 14 -233017 -262144 0;
+#X obj 551 2 cnv 7 9 60 107-cnv-key-out 107-cnv-key-in empty 20 12
+0 14 -233017 -262144 0;
+#X obj 562 2 cnv 7 9 60 108-cnv-key-out 108-cnv-key-in empty 20 12
+0 14 -233017 -262144 0;
+#X obj 8 2 cnv 5 6 40 22-cnv-key-out 22-cnv-key-in empty 20 12 0 14
+-166441 -262144 0;
+#X obj 30 2 cnv 5 6 40 25-cnv-key-out 25-cnv-key-in empty 20 12 0 14
+-166441 -262144 0;
+#X obj 41 2 cnv 5 6 40 27-cnv-key-out 27-cnv-key-in empty 20 12 0 14
+-166441 -262144 0;
+#X obj 63 2 cnv 5 6 40 30-cnv-key-out 30-cnv-key-in empty 20 12 0 14
+-166441 -262144 0;
+#X obj 74 2 cnv 5 6 40 32-cnv-key-out 32-cnv-key-in empty 20 12 0 14
+-166441 -262144 0;
+#X obj 85 2 cnv 5 6 40 34-cnv-key-out 34-cnv-key-in empty 20 12 0 14
+-166441 -262144 0;
+#X obj 107 2 cnv 5 6 40 37-cnv-key-out 37-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 118 2 cnv 5 6 40 39-cnv-key-out 39-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 140 2 cnv 5 6 40 42-cnv-key-out 42-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 151 2 cnv 5 6 40 44-cnv-key-out 44-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 162 2 cnv 5 6 40 46-cnv-key-out 46-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 184 2 cnv 5 6 40 49-cnv-key-out 49-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 195 2 cnv 5 6 40 51-cnv-key-out 51-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 217 2 cnv 5 6 40 54-cnv-key-out 54-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 228 2 cnv 5 6 40 56-cnv-key-out 56-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 239 2 cnv 5 6 40 58-cnv-key-out 58-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 261 2 cnv 5 6 40 61-cnv-key-out 61-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 272 2 cnv 5 6 40 63-cnv-key-out 63-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 294 2 cnv 5 6 40 66-cnv-key-out 66-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 305 2 cnv 5 6 40 68-cnv-key-out 68-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 316 2 cnv 5 6 40 70-cnv-key-out 70-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 338 2 cnv 5 6 40 73-cnv-key-out 73-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 349 2 cnv 5 6 40 75-cnv-key-out 75-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 371 2 cnv 5 6 40 78-cnv-key-out 78-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 382 2 cnv 5 6 40 80-cnv-key-out 80-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 393 2 cnv 5 6 40 82-cnv-key-out 82-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 415 2 cnv 5 6 40 85-cnv-key-out 85-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 426 2 cnv 5 6 40 87-cnv-key-out 87-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 448 2 cnv 5 6 40 90-cnv-key-out 90-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 459 2 cnv 5 6 40 92-cnv-key-out 92-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 470 2 cnv 5 6 40 94-cnv-key-out 94-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 492 2 cnv 5 6 40 97-cnv-key-out 97-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 503 2 cnv 5 6 40 99-cnv-key-out 99-cnv-key-in empty 20 12 0
+14 -166441 -262144 0;
+#X obj 525 2 cnv 5 6 40 102-cnv-key-out 102-cnv-key-in empty 20 12
+0 14 -166441 -262144 0;
+#X obj 536 2 cnv 5 6 40 104-cnv-key-out 104-cnv-key-in empty 20 12
+0 14 -166441 -262144 0;
+#X obj 547 2 cnv 5 6 40 106-cnv-key-out 106-cnv-key-in empty 20 12
+0 14 -166441 -262144 0;
+#X connect 0 0 1 0;
+#X coords 0 0 1 1 573 62 1;
+#X restore 66 170 pd keygraph;
+#X floatatom 66 101 5 0 0 0 - - -;
+#X obj 66 57 random 88;
+#X obj 66 78 + 21;
+#X obj 66 35 metro 500;
+#X obj 66 12 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 66 121 makenote 64 1000;
+#X connect 0 0 1 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 0 0;
+#X connect 7 1 0 1;

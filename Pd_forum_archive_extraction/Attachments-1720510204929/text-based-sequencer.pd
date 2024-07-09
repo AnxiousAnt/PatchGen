@@ -1,0 +1,86 @@
+#N canvas 568 137 1072 804 10;
+#X msg 606 354 line 0;
+#X obj 716 510 print;
+#X obj 507 554 r A;
+#X obj 507 576 print A;
+#X obj 575 554 r B;
+#X obj 575 576 print B;
+#X obj 721 290 text define -k myseq;
+#A set A 1 \; B 1 \; step \; A 2 \; B 2 \; step \; A 3 \; step \; B
+3 \; step \;;
+#X obj 606 327 loadbang;
+#X text 922 409 auto loop;
+#X obj 716 369 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 716 454 text sequence myseq -g -w step;
+#X msg 921 427 line 0 \, bang;
+#X msg 40 368 line 0;
+#X obj 150 524 print;
+#X obj 40 341 loadbang;
+#X text 309 426 auto loop;
+#X obj 155 304 text define -k myseq_;
+#A set A 1 \, B 1 \; A 2 \, B 2 \; A 3 \; B 3 \;;
+#X obj 150 468 text sequence myseq_ -g;
+#X msg 308 444 line 0 \, step;
+#X msg 150 378 step;
+#X text 715 347 output everything until next wait;
+#X obj 553 218 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 553 511 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 89 228 How i thought it would work : write messages for A and
+B on the same line \, comma-separated. Send "step" message to ouput
+whole line \, get both messages sent respectively to A and B.;
+#X text 606 231 How it really works : write each message on its own
+line \, use waits to separate "steps". Send a bang to output everything
+until next wait;
+#X obj 663 45 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 663 65 metro 500;
+#X msg 663 133 \; A 1 \; B 1;
+#X msg 702 133 \; A 2 \; B 2;
+#X text 148 355 output the line (says the help file);
+#X text 74 621 result : comma-separated messages are considered as
+two differents steps/lines \, and are sent to the line-leading symbol
+;
+#X text 327 695 conclusion : steps/lines are actually comma-separated
+rather than line-separated \, as told by [pd sequence] help file :
+"The text is interpreted as a sequence of lists" : help file is confusing
+and im a bit dumb.;
+#X text 623 622 result : on each bang \, several messages are sent
+to their receive. Yay !;
+#X msg 663 87 1;
+#X obj 695 87 +;
+#X obj 722 87 f;
+#X obj 749 87 % 4;
+#X msg 742 133 \; A 3;
+#X msg 781 133 \; B 3;
+#X obj 663 109 sel 1 2 3 4, f 23;
+#X text 224 43 Goal : use [text sequence] to send one or several messages
+to their receive on each step \, as a civilised version of this :;
+#X connect 0 0 10 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 7 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 1 0;
+#X connect 10 1 11 0;
+#X connect 11 0 10 0;
+#X connect 12 0 17 0;
+#X connect 14 0 12 0;
+#X connect 17 0 13 0;
+#X connect 17 1 18 0;
+#X connect 18 0 17 0;
+#X connect 19 0 17 0;
+#X connect 21 0 22 0;
+#X connect 25 0 26 0;
+#X connect 26 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
+#X connect 34 0 39 0;
+#X connect 35 0 36 0;
+#X connect 36 0 34 1;
+#X connect 39 0 27 0;
+#X connect 39 1 28 0;
+#X connect 39 2 37 0;
+#X connect 39 3 38 0;

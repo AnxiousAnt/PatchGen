@@ -1,0 +1,56 @@
+#N canvas 727 198 317 385 10;
+#N canvas 965 225 452 494 GOP 0;
+#X obj 0 0 cnv 15 200 200 empty empty one 20 12 0 14 -233017 -66577
+0;
+#X obj 200 0 cnv 15 200 200 empty empty two 20 12 0 14 -128992 -66577
+0;
+#X obj 0 200 cnv 15 200 200 empty empty three 20 12 0 14 -162280 -66577
+0;
+#X obj 200 200 cnv 15 200 200 empty empty four 20 12 0 14 -66577 -228856
+0;
+#X coords 0 -1 1 1 200 200 1 0 0;
+#X restore -75 79 pd GOP;
+#X obj -46 28 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#N canvas 135 89 324 216 code 0;
+#N canvas 234 215 435 247 gop-offset 0;
+#X obj 96 192 s pd-GOP;
+#X floatatom 96 69 5 0 0 0 - - -;
+#X obj 96 90 t f b;
+#X obj 153 91 t f b;
+#X floatatom 153 69 5 0 0 0 - - -;
+#X obj 96 24 inlet offset;
+#X obj 96 45 unpack f f;
+#X obj 96 139 pack f f;
+#X msg 96 168 donecanvasdialog 1 -1 1 0 -1 1 1 200 200 \$1 \$2;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 2 1 7 0;
+#X connect 3 0 7 1;
+#X connect 3 1 7 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X connect 6 1 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X restore -130 126 pd gop-offset;
+#X msg -130 97 0 0;
+#X msg -97 96 200 0;
+#X msg -53 96 0 200;
+#X msg -12 96 200 200;
+#X obj -130 72 sel 0 1 2 3;
+#X obj -130 48 inlet;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
+#X connect 5 1 2 0;
+#X connect 5 2 3 0;
+#X connect 5 3 4 0;
+#X connect 6 0 5 0;
+#X restore -46 48 pd code;
+#X text 7 349 Marco Donnarumma aka TheSAD;
+#X text 7 362 2009;
+#X connect 1 0 2 0;

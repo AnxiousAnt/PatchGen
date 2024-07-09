@@ -1,0 +1,12 @@
+#N canvas 549 176 425 189 10;
+#X obj 116 94 expr size("$s2");
+#X obj 223 36 loadbang;
+#X obj 116 62 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 116 121 5 0 0 0 - - -;
+#X obj 291 102 table array1;
+#X msg 223 63 symbol array1;
+#X connect 0 0 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 5 0 0 1;

@@ -1,0 +1,12 @@
+#N canvas 0 0 298 185 10;
+#X obj 96 29 r onload;
+#X obj 96 57 list prepend add;
+#X obj 96 81 list trim;
+#X obj 35 29 loadbang;
+#X obj 35 50 delay 0;
+#X obj 96 111 qlist;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;

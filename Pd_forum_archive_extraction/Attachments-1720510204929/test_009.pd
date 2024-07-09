@@ -1,0 +1,8 @@
+#N struct 1006-arrow-template float x0;
+#N struct 1006-vinlet-template float x float y array inlets 1006-inlet-template
+;
+#N struct 1006-inlet-template float num;
+#N canvas 0 0 1004 682 12;
+#X text 92 172 ds structures bleed over from abstraction to canvas
+(scroll down to see);
+#X obj 97 111 vswitch;

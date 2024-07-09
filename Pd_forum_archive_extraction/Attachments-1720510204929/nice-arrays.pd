@@ -1,0 +1,93 @@
+#N canvas 624 356 797 523 10;
+#N canvas 70 257 1089 530 sub 0;
+#X msg 116 144 clear;
+#X msg 96 166 obj 39 26 struct float float y;
+#X obj 39 352 s \$0-this;
+#X msg 39 327 vis 0 \, vis 1;
+#X obj 77 294 s pd-_float_template;
+#X obj 23 39 r \$0-oops;
+#X obj 76 190 sel 1;
+#X msg 77 217 obj 39 40 filledpolygon 900 90 1 -0.5 -0.1 0.5 -0.1 0.5
+0.1 -0.5 0.1;
+#X obj 38 91 r \$0-switch;
+#X obj 40 119 t b b f b b;
+#X msg 57 258 dirty 0;
+#X msg 211 267 vis 1;
+#X msg 260 271 vis 0;
+#X text 318 306 don't manually close the window or the canvas will
+be gone and garray will be broken forever (well \, until you restart
+Pd).;
+#X obj 406 6 loadbang;
+#X msg 451 56 1;
+#X obj 451 78 s \$0-switch;
+#X text 317 270 show/hide the mysterious canvas which contains the
+template for garray elements.;
+#X obj 23 64 t b b b;
+#X msg 429 98 \; pd-sub vis 0;
+#X obj 406 34 t b b b;
+#X obj 404 178 s \$0-this;
+#X obj 402 135 spigot 0;
+#X msg 403 157 vis 0;
+#X text 487 143 change this to 1 for the whole patch to disappear immediately.
+if you're evil \, manipulate you're friends startup flags so that this
+patch gets loaded automatically.;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 18 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 3 0;
+#X connect 9 1 10 0;
+#X connect 9 2 6 0;
+#X connect 9 3 1 0;
+#X connect 9 4 0 0;
+#X connect 10 0 4 0;
+#X connect 11 0 4 0;
+#X connect 12 0 4 0;
+#X connect 14 0 20 0;
+#X connect 15 0 16 0;
+#X connect 18 0 3 0;
+#X connect 18 1 10 0;
+#X connect 18 2 0 0;
+#X connect 20 0 22 0;
+#X connect 20 1 19 0;
+#X connect 20 2 15 0;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
+#X coords 0 -1 1 1 1 1 2 100 100;
+#X restore 384 148 pd sub;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 -0.157143 -0.128571 -0.1 -0.0857143 -0.0714286 -0.0714286 -0.0714286
+-0.0714286 -0.0714286 -0.0714286 -0.0714286 -0.0714286 -0.0714286 -0.0857143
+-0.114286 -0.128571 -0.142857 -0.142857 -0.171429 -0.171429 -0.171429
+-0.142857 -0.114286 -0.0857143 -0.0571429 -0.0285714 3.72529e-009 0.0214286
+0.0428571 0.0571429 0.0857143 0.114286 0.142857 0.157143 0.185714 0.2
+0.2 0.2 0.2 0.2 0.185714 0.157143 0.142857 0.142857 0.128571 0.1 0.0714286
+0.0285714 1.30385e-008 -0.0428571 -0.0571428 -0.0571428 -0.0571428
+-0.0428571 -0.0428571 -0.0285714 -0.0142857 -0.0142857 1.30385e-008
+1.30385e-008 1.30385e-008 0.0142857 0.0142857 0.0142857 0.0142857 0
+0.0142857 0.0571429 0.0714286 0.1 0.128571 0.157143 0.185714 0.2 0.228571
+0.257143 0.3 0.342857 0.357143 0.357143 0.357143 0.357143 0.342857
+0.3 0.271429 0.242857 0.2 0.171429 0.157143 0.114286 0.1 0.0428572
+-0.0142857 -0.128571 -0.157143 -0.2 -0.242857 -0.271429 -0.3 -0.471429
+;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 34 38 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array2 10 float 3;
+#A 0 -0.0285715 0.271429 0.428571 0.257143 -0.0285714 0.4 0.457143
+0.128572 -0.242857 0.0428572;
+#X coords 0 1 10 -1 200 140 1;
+#X restore 35 206 graph;
+#X obj 267 144 namecanvas \$0-this;
+#X obj 268 113 bng 15 250 50 0 \$0-oops \$0-oops empty 17 7 0 10 -262144
+-1 -1;
+#X obj 266 80 tgl 15 0 \$0-switch \$0-switch empty 17 7 0 10 -262144
+-1 -1 1 1;
+#X text 286 80 turn it off \, if you don't like it;
+#X text 290 114 oops...;
+#X text 260 37 enjoy the new default drawing style for graphical arrays.
+nice \, isn't it?;

@@ -1,0 +1,145 @@
+#N canvas 32 56 1283 623 10;
+#X obj 985 470 biquad~;
+#X obj 689 117 lop~;
+#X obj 121 265 hsl 128 15 20 7050 1 1 empty set-Hz empty -2 -8 0 10
+-191407 -1 -1 6970 1;
+#X obj 118 429 clip 0 1;
+#X obj 463 117 onepole~ 0 radians;
+#X obj 130 321 s \$0-hz;
+#X obj 710 89 r \$0-hz;
+#X floatatom 118 288 0 0 0 0 - - -;
+#X text 96 288 Hz;
+#X floatatom 118 390 0 0 0 0 - - -;
+#X text 50 382 radianos;
+#X text 50 387 ________;
+#X text 53 401 amostra;
+#N canvas 487 22 450 300 init 0;
+#X obj 74 152 samplerate~;
+#X obj 62 47 loadbang;
+#X obj 64 197 expr atan(1) * 4;
+#X msg 84 92 \; pd dsp 1 \; set-Hz 500;
+#X obj 64 218 v pi;
+#X obj 74 175 v sr;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 1 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X restore 198 430 pd init;
+#X obj 689 151 output~;
+#X floatatom 118 456 0 0 0 0 - - -;
+#X obj 463 152 output~;
+#X obj 463 67 noise~;
+#X obj 689 58 noise~;
+#X obj 907 91 noise~;
+#X obj 985 418 noise~;
+#X obj 907 159 output~;
+#X obj 524 342 *~;
+#X obj 524 421 output~;
+#X obj 577 355 expr 1 - $f1;
+#X obj 524 388 rpole~;
+#X obj 524 313 noise~;
+#X text 22 29 O objeto [onepole~] é um external e é um filtro de Passa
+Baixa de um Polo. Aliás \, o [lop~] também o é \, e ambos podem ser
+implementados com um [rpole~] \, como demonstraremos aqui.;
+#X text 23 87 O [onpole~] é um clone de um objeto de MAX/MSP e \, para
+funcionar exatamente como um [lop~] \, ele precisa receber a frequência
+de corte em radianos por amostra \, por isso ele está com o argumento
+de "radians".;
+#X obj 118 486 s \$0-radianos;
+#X obj 568 85 r \$0-radianos;
+#X obj 577 321 r \$0-radianos;
+#X obj 1132 96 r \$0-radianos;
+#X msg 1058 433 \$1 0 \$2 0 0;
+#X obj 1058 316 r \$0-radianos;
+#X obj 1058 405 pack float float;
+#X obj 1058 347 trigger float float;
+#X obj 1058 377 expr 1 - $f1;
+#X text 636 116 =;
+#X text 432 23 Segue abaixo então a comparação do [onepole~] com o
+[lop~].;
+#X text 589 377 coeficiente;
+#X text 437 230 A forma de implementar com um [rpole~] é pegar o valor
+de radianos e usar como ajuste de ganho. Já para converter o valor
+de radianos para o valor do coeficiente do Polo \, basta subtrair esse
+valor de 1!;
+#X obj 907 123 fexpr~ ($x1 * $x2) + ((1 - $x2) * $y1);
+#X obj 985 498 output~;
+#X text 887 39 O [fexpr~] também aceita sinal de áudio \, e uma forma
+de implementar em um [fexpr~] é a seguinte:;
+#X obj 118 353 expr $f1 * 2*pi/sr;
+#N canvas 132 29 551 223 lop~ 0;
+#X obj 50 43 inlet~;
+#X obj 98 43 inlet~;
+#X obj 65 166 outlet~;
+#X obj 65 92 *~;
+#X obj 65 138 rpole~;
+#X obj 98 69 expr~ $v1 * 2*pi/sr;
+#X obj 98 103 expr~ 1 - $v1;
+#X text 201 104 [lop~] implementado para aceitar sinal de áudio como
+controle de frequência de corte.;
+#X connect 0 0 3 0;
+#X connect 1 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 1;
+#X connect 5 0 6 0;
+#X connect 6 0 4 1;
+#X restore 770 509 pd lop~;
+#X obj 758 471 noise~;
+#X obj 809 477 sig~;
+#X floatatom 809 450 5 0 0 0 - #0-hz -;
+#X obj 770 539 output~;
+#X text 24 153 Precisamos então converter frequência em Hz para Radianos
+por Amostra. Essa conversão já foi aresentada anteriormente em 01.Intro-Audio-Digital/5.Senoide/4.Frequencia.
+Eis a conversão abaixo. Um detalhe é que o valor máximo em rad/amostra
+para o filtro é de 1 \, o que dá em torno de 7Khz:;
+#X text 376 502 Perceba que o [onepole~] aceita sinal de áudio para
+a frequência de corte \, enquanto o [lop~] não. O [rpole~] também nos
+permite uma entrada de áudio para controle do coeficiente! Veja a implementação
+do subpatch [pd lop~] ao lado então \, que implemente um [lop~] que
+recebe sina de áudio para frequência de corte.;
+#X text 813 428 Hz;
+#X text 888 235 Já para obter o [lop~] com o [biquad~] \, basta somente
+colocar o coeficiente do polo e do ganho na ordem certa da lista \,
+que é \, respectivamente \, o primeiro e o terceiro ítem.;
+#X connect 0 0 43 0;
+#X connect 0 0 43 1;
+#X connect 1 0 14 0;
+#X connect 1 0 14 1;
+#X connect 2 0 7 0;
+#X connect 3 0 15 0;
+#X connect 4 0 16 0;
+#X connect 4 0 16 1;
+#X connect 6 0 1 1;
+#X connect 7 0 5 0;
+#X connect 7 0 45 0;
+#X connect 9 0 3 0;
+#X connect 15 0 29 0;
+#X connect 17 0 4 0;
+#X connect 18 0 1 0;
+#X connect 19 0 42 0;
+#X connect 20 0 0 0;
+#X connect 22 0 25 0;
+#X connect 24 0 25 1;
+#X connect 25 0 23 0;
+#X connect 25 0 23 1;
+#X connect 26 0 22 0;
+#X connect 30 0 4 1;
+#X connect 31 0 22 1;
+#X connect 31 0 24 0;
+#X connect 32 0 42 1;
+#X connect 33 0 0 0;
+#X connect 34 0 36 0;
+#X connect 35 0 33 0;
+#X connect 36 0 37 0;
+#X connect 36 1 35 1;
+#X connect 37 0 35 0;
+#X connect 42 0 21 0;
+#X connect 42 0 21 1;
+#X connect 45 0 9 0;
+#X connect 46 0 50 0;
+#X connect 46 0 50 1;
+#X connect 47 0 46 0;
+#X connect 48 0 46 1;
+#X connect 49 0 48 0;

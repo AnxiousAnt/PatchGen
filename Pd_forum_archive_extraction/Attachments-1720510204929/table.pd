@@ -1,0 +1,16 @@
+#N canvas 365 192 607 364 12;
+#X obj 34 22 table \$0-table 4096;
+#X obj 49 237 osc~ 100;
+#X obj 49 288 tabwrite~ \$0-table;
+#X msg 312 236 \; pd dsp 1;
+#X obj 57 262 loadbang;
+#X text 550 325 sme.;
+#X text 31 140 here the \$0-variable gives the table a unique number/name
+\, so that you can open this patch as often as you like. (helpful \,
+for dealing with arrays in abstractions);
+#X text 32 56 the table-object holds an array in a subwindow. (klick
+on it to see);
+#X text 31 89 table takes the first argument as its name \, and a secomd
+for its size. You then can work with it like with a normal array.;
+#X connect 1 0 2 0;
+#X connect 4 0 2 0;

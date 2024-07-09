@@ -1,0 +1,238 @@
+#N canvas 111 0 1004 767 12;
+#X declare -lib mrpeach;
+#X obj 25 16 import mrpeach;
+#X obj 131 728 udpsend;
+#X obj 71 170 vsl 15 128 0 255 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 82 317 int;
+#X msg 141 692 connect 192.168.1.101 6454;
+#X text 409 180 byte 13 secuencia > puesto en 0;
+#X msg 81 357 send 65 114 116 45 78 101 116 0 0 80 0 14 0 0 0 0 2 0
+\$1 0 0 0 0 0 0 202 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0;
+#N canvas 271 212 848 407 sampler 0;
+#X obj 470 332 spigot;
+#X obj 547 176 f;
+#X obj 615 177 + 1;
+#X obj 556 233 sel 50;
+#X msg 604 138 1;
+#X obj 470 133 t l b;
+#X obj 539 289 == 1;
+#X obj 548 203 t f f;
+#X obj 466 43 udpreceive 6454;
+#X obj 464 86 spigot;
+#X obj 626 50 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 466 368 print;
+#X text 79 101 imprime en la consola 1 de cada 50 artdmx;
+#X text 95 156 el qlc+ tira uno cada 20ms;
+#X text 63 291 todavia no me queda muy claro por que;
+#X text 44 315 recibi el envio de artnet de qlc+ desde la netbook;
+#X text 55 334 me refiero a cuestiones ip;
+#X text 654 46 <--click imprimir;
+#X text 91 119 imprimir todos es mucho para mi P4;
+#X text 42 359 pero me falta aprender casi todo sobre eso.;
+#X text 67 13 Recibe artdmx de otra computadora;
+#X connect 0 0 11 0;
+#X connect 1 0 7 0;
+#X connect 2 0 1 1;
+#X connect 3 0 4 0;
+#X connect 4 0 1 1;
+#X connect 5 0 0 0;
+#X connect 5 1 1 0;
+#X connect 6 0 0 1;
+#X connect 7 0 3 0;
+#X connect 7 0 6 0;
+#X connect 7 1 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 5 0;
+#X connect 10 0 9 1;
+#X restore 747 721 pd sampler;
+#X msg 221 719 disconnect;
+#X text 120 334 A;
+#X text 146 336 R;
+#X text 172 335 T;
+#X text 195 333 -;
+#X text 219 335 N;
+#X text 242 335 E;
+#X text 269 334 T;
+#X text 290 334 0;
+#X text 300 313 0x5000;
+#X text 343 334 14;
+#X obj 373 330 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 390 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 390 333 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 402 246 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 421 245 Physical?;
+#X obj 410 338 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 414 277 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 435 273 estos 2 universe;
+#X obj 436 337 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 440 309 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 355 125 OpOutput / OpDmx 0x5000 This is an ArtDmx data packet.
+It contains zero start code DMX512 information for a single Universe.
+;
+#X obj 310 294 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 329 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 536 488 1 SubUni Int8 - The low byte of the 15 bit Port-Address
+to which this packet is destined.;
+#X text 535 539 2 Net Int8 - The top 7 bits of the 15 bit Port-Address
+to which this packet is destined.;
+#X obj 771 432 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 944 317 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 561 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 130 311 -----ASCII code-------;
+#X text 461 305 estos 2 length = 512;
+#X text 839 719 <--click aqui;
+#X text 451 715 - el nodo ethernet/dmx;
+#X text 378 703 el ip de;
+#X text 443 693 -la compu con el qlc+ recibiendo artnet;
+#X text 559 452 ---esto por el momento no totalmente claro para mi---
+;
+#X text 573 659 -------------------------------------------------;
+#X text 870 332 slider.;
+#X text 549 368 202 para joder;
+#X text 638 584 0 0 para transmitir al universo 0;
+#X text 637 601 1 0 para transmitir al universo 1;
+#X text 98 249 <-- ch1 dmx;
+#X text 598 46 en 2 bytes >;
+#X text 740 66 80;
+#X text 853 69 0;
+#X text 551 66 bytes en decimal >;
+#X text 367 22 hexadecimal 0x5000 = decimal 20480 > binario >;
+#X text 585 85 Transmitted low byte first.;
+#X obj 341 29 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 414 740 6454 > puerto artnet;
+#X text 575 209 The physical input port from which DMX512 data was
+input. This field is for information only. Use Universe for data routing.
+;
+#X obj 551 212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 547 350 el resto de los bytes es cada canal \, el 8 puesto
+;
+#X text 468 332 \$1 el 1er byte/dmx \, el canal 1 del dmx \, aqui conectado
+al;
+#X text 350 213 version artnet;
+#X obj 348 317 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 332 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 706 21 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0;
+#X text 704 43 1 0 1 0 0 0 0 - 0 0 0 0 0 0 0 0;
+#N canvas 81 47 1013 680 Quaranta 0;
+#X obj 510 200 tabdump a;
+#X obj 508 245 print;
+#X obj 470 127 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 227 59 vsl 15 128 0 255 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6350 1;
+#X obj 319 58 vsl 15 128 0 255 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6350 1;
+#X obj 104 74 osc~ 0.2;
+#X obj 104 110 unsig~ 20;
+#X obj 114 240 * 255;
+#X obj 108 150 + 1;
+#X obj 111 192 * 0.5;
+#X obj 222 204 int;
+#X obj 321 202 int;
+#X obj 487 38 table a 512;
+#X msg 236 259 \; a 0 \$1;
+#X msg 317 259 \; a 7 \$1;
+#X text 419 57 memoria con 512 lugares \, uno por cada canal dmx;
+#X text 140 304 envian data en todos los momentos a la memoria;
+#X text 581 193 baja de una todos los lugares de la memoria en un momento
+determinado.;
+#X obj 299 482 metro 20;
+#X obj 295 528 tabdump;
+#X obj 292 592 udpsend;
+#X text 383 578 \$1 \$2 es cada lugar en la memoria;
+#X text 371 483 aprieta el boton cada 20ms \, el qlc+ envia un udp
+cada 20ms.;
+#X obj 17 72 s pd;
+#X msg 23 13 dsp 1;
+#X msg 33 40 dsp 0;
+#X text 497 123 <-- click para mostrar lo que hay en ese momento en
+la memoria \, en la ventana principal del pd.;
+#X text 301 423 -----Boceto esquema para 1 universo "Quaranta"----
+;
+#X text 78 9 <--click \, movimiento de sliders;
+#X obj 97 384 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 788 384 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 295 559 send los codigos artnet y \$1 \$2 \$3 \$4... hasta 512
+;
+#N canvas 409 231 591 370 mejoras 0;
+#X text 85 59 ---agregar el byte secuencia \, no es obligatorio pero
+ponerlo es una gilada;
+#X text 87 132 ---Un mecanismo que envie solo cuando hay cambios \,
+para no enviar todo el tiempo \, el qlc+ envia todo el tiempo pero
+se puede reducir el trafico y los computos con algun mecanismo. Mas
+adelante.;
+#X restore 808 629 pd mejoras;
+#X text 891 627 <--click;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 7 0 3 0;
+#X connect 7 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 10 0 13 0;
+#X connect 11 0 14 0;
+#X connect 24 0 23 0;
+#X connect 25 0 23 0;
+#X connect 29 0 30 0;
+#X restore 97 104 pd Quaranta;
+#X text 19 38 Martin Peach \, el tigre que hizo el udpsend;
+#X text 12 81 Luego de pipear este patch \,;
+#X text 14 102 abrir -->;
+#X text 548 628 Solo probado transmitiendo a una pc \, me temo que
+no es lo mismo transmitiendo a un nodo \, pero se averigua y modifica
+;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 4 0 1 0;
+#X connect 6 0 1 0;
+#X connect 8 0 1 0;
+#X connect 20 0 19 0;
+#X connect 22 0 21 0;
+#X connect 25 0 24 0;
+#X connect 28 0 27 0;
+#X connect 31 0 30 0;
+#X connect 35 0 34 0;
+#X connect 36 0 35 0;
+#X connect 56 0 31 0;
+#X connect 59 0 22 0;
+#X connect 64 0 63 0;

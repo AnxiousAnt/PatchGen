@@ -1,0 +1,35 @@
+#N canvas 608 22 373 377 10;
+#X obj 203 58 pdgst;
+#X obj 203 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 39 145 filesrc;
+#X msg 39 122 location /Users/ncio/Desktop/bj_nilsen.mp3;
+#X obj 49 99 loadbang;
+#X text 63 32 1 : locate mp3 file;
+#X obj 39 33 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 39 77 set location \$1 \, bang;
+#X obj 39 54 openpanel;
+#X obj 39 167 mad;
+#X obj 39 193 audioconvert;
+#X obj 39 220 audioresample;
+#X msg 266 86 \; pd dsp 1;
+#X obj 266 63 loadbang;
+#X obj 77 272 pdgst_adc~ 2;
+#X obj 124 307 dac~;
+#X obj 39 247 osxaudiosink;
+#X text 229 33 3 : start gstreamer;
+#X text 144 246 2 : choose connection;
+#X connect 1 0 0 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 6 0 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 16 0;
+#X connect 13 0 12 0;
+#X connect 14 2 15 0;
+#X connect 14 3 15 1;

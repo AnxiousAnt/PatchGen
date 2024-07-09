@@ -1,0 +1,110 @@
+#N canvas 99 36 845 662 10;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-s1 64 float 3;
+#A 0 -0.285715 -0.0285718 0.0714285 0.142857 0.2 0.242858 0.271429
+0.285715 0.285715 0.300001 0.300001 0.300001 0.300001 0.285715 0.257143
+0.228572 0.2 -0.700002 -0.771431 -0.828574 -0.857146 -0.871431 -0.900003
+-0.900003 -0.914289 -0.914289 -0.914289 -0.914289 -0.914289 -0.900003
+-0.885717 -0.871431 -0.828574 -0.800003 -0.700002 -0.514288 0.0142855
+0.157143 0.242858 0.271429 0.300001 0.314286 0.357144 0.385715 0.400001
+0.428572 0.442858 0.457144 0.47143 0.500001 0.528573 0.600001 0.628573
+0.67143 0.685716 0.728573 0.77143 0.785716 0.828573 0.857145 0.885716
+0.900002 0.900002 0.914288;
+#X coords 0 1 64 -1 200 140 1;
+#X restore 154 18 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-s2 64 float 3;
+#A 0 0.914288 0.900003 0.885717 0.857145 0.828574 0.800002 0.771431
+0.757145 0.742859 0.735717 0.728574 0.700002 0.685716 0.671431 0.642859
+0.628573 0.614288 0.57143 0.557145 0.542859 0.528573 0.485716 0.414287
+0.392859 0.37143 0.328573 0.285715 0.27143 0.257144 0.185715 0.142858
+0.114286 0.0714289 0.0285716 -0.0428572 -0.0857144 -0.142857 -0.2 -0.271429
+-0.314287 -0.357144 -0.385715 -0.414287 -0.442858 -0.485716 -0.500001
+-0.542859 -0.57143 -0.585716 -0.614287 -0.657145 -0.700002 -0.714288
+-0.728573 -0.785716 -0.814288 -0.842859 -0.871431 -0.900002 -0.94286
+-0.971431 -1 -1.02857 -1.04286;
+#X coords 0 1 64 -1 200 140 1;
+#X restore 369 18 graph;
+#N canvas 323 289 598 463 interpolate 0;
+#X obj 182 97 switch~;
+#X obj 182 52 loadbang;
+#X msg 182 73 0;
+#X obj 115 63 inlet;
+#X obj 115 89 t b b;
+#X obj 134 222 tabplay~ \$0-s1;
+#X obj 154 197 tabplay~ \$0-s2;
+#X obj 364 146 inlet;
+#N canvas 0 0 882 533 xfade 0;
+#X obj 76 87 inlet~;
+#X obj 142 87 inlet~;
+#X obj 77 198 outlet~;
+#X obj 201 87 inlet;
+#X obj 141 136 -~;
+#X obj 141 156 *~;
+#X text 371 150 (1-x)*a + x*b;
+#X text 371 167 = a - x*a + x*b;
+#X text 371 184 = a + x*(b - a);
+#X text 366 119 x: fade factor (0-1);
+#X text 366 90 a: sig from inlet~ 0;
+#X text 339 50 Linear crossfade according to the following calculation:
+;
+#X text 367 104 b: sig from inlet~ 1;
+#X obj 201 127 line~;
+#X connect 0 0 4 1;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 3 0 13 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 13 0 5 1;
+#X restore 135 267 pd xfade;
+#X text 361 120 fade factor (0...1);
+#X obj 115 297 tabwrite~ \$0-inter;
+#X obj 115 110 t b b b;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 11 0;
+#X connect 4 1 0 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 1;
+#X connect 7 0 8 2;
+#X connect 8 0 10 0;
+#X connect 11 0 10 0;
+#X connect 11 1 5 0;
+#X connect 11 2 6 0;
+#X restore 492 352 pd interpolate;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-inter 64 float 2;
+#X coords 0 1 63 -1 200 140 1;
+#X restore 233 330 graph;
+#X obj 492 320 metro 50;
+#X obj 492 300 tgl 15 0 empty empty empty 17 7 0 10 -4034 -1 -1 1 1
+;
+#X msg 450 318 bang;
+#X obj 576 308 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4400 1;
+#X floatatom 573 326 5 0 0 0 - - -;
+#X obj 184 535 tabread \$0-inter;
+#X floatatom 184 556 5 0 0 0 - - -;
+#X floatatom 184 512 5 0 0 0 - - -;
+#X obj 549 287 line 0 50;
+#X msg 549 265 0 \, 1 1000;
+#X obj 488 222 / 100;
+#X floatatom 488 189 5 0 0 0 - - -;
+#X msg 487 246 \$1 100;
+#X obj 696 156 loadbang;
+#X msg 696 175 \; pd dsp 1;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 1;
+#X connect 9 0 10 0;
+#X connect 11 0 9 0;
+#X connect 12 0 8 0;
+#X connect 13 0 12 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 16 0 12 0;
+#X connect 17 0 18 0;

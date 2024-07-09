@@ -1,0 +1,31 @@
+#N canvas 0 22 657 515 10;
+#X floatatom 249 79 5 0 0 0 - - -;
+#X obj 253 52 hsl 128 15 0 300 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 2600 1;
+#X obj 176 180 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 350 177 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 116 372 gemhead;
+#X obj 176 372 gemhead;
+#X obj 236 372 gemhead;
+#X obj 236 220 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 176 149 <= 100;
+#X obj 296 149 <= 200;
+#X obj 236 148 >= 100;
+#X obj 237 181 ==;
+#X obj 350 150 >= 200;
+#X connect 0 0 8 0;
+#X connect 0 0 9 0;
+#X connect 0 0 10 0;
+#X connect 0 0 12 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 6 0;
+#X connect 7 0 5 0;
+#X connect 8 0 2 0;
+#X connect 9 0 11 1;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 12 0 3 0;

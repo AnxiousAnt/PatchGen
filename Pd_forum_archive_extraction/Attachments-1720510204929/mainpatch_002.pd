@@ -1,0 +1,11 @@
+#N canvas 0 22 337 178 10;
+#X obj 76 80 firstabstraction 1;
+#X floatatom 47 116 5 0 0 0 - - -;
+#X obj 47 135 s 1-1-test;
+#X floatatom 133 116 5 0 0 0 - - -;
+#X obj 133 135 s 1-2-test;
+#X floatatom 213 115 5 0 0 0 - - -;
+#X obj 213 134 s 1-3-test;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;

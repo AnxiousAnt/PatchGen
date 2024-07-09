@@ -1,0 +1,298 @@
+#N canvas 45 17 754 690 10;
+#N canvas 0 0 458 308 dsp_meter 0;
+#X obj 149 153 cputime;
+#X obj 149 13 loadbang;
+#X obj 149 97 metro 1000;
+#X msg 149 41 1;
+#X floatatom 149 69 0 0 0 0 - - -;
+#X obj 149 125 t b b;
+#X obj 149 213 * 0.1;
+#X obj 149 182 int;
+#X text 194 69 <-- on/off;
+#X text 82 269 CPU load in percent;
+#X msg 29 49 \; pd dsp \$1;
+#X obj 29 19 inlet;
+#X obj 149 238 outlet;
+#X connect 0 0 7 0;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 0 0;
+#X connect 5 1 0 1;
+#X connect 6 0 12 0;
+#X connect 7 0 6 0;
+#X connect 11 0 10 0;
+#X restore 26 45 pd dsp_meter;
+#X obj 26 23 tgl 15 0 empty empty empty 0 -6 0 8 -260818 -1 -1 0 1
+;
+#X obj 161 152 s~ audio_signal;
+#X obj 25 342 r~ audio_signal;
+#X text 46 9 DSP;
+#X text 45 21 on/off;
+#X obj 56 427 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X floatatom 117 427 5 0 0 0 - - -;
+#X text 153 425 dB;
+#X obj 29 249 tgl 35 0 empty empty empty 0 -6 0 8 -24198 -1 -1 0 1
+;
+#X obj 192 234 loadbang;
+#X msg 192 254 -20;
+#X text 225 275 dB;
+#X floatatom 68 473 9 0 0 0 - - -;
+#X text 26 221 audio_in;
+#X text 27 232 on/off;
+#X obj 29 290 s audio_in;
+#X obj 56 364 r audio_in;
+#X obj 192 293 s loop_damp;
+#X obj 117 405 r loop_damp;
+#X obj 192 275 cnv 14 31 14 empty empty empty 20 12 0 14 -250685 -66577
+0;
+#X floatatom 192 275 5 0 0 0 - - -;
+#X obj 283 7 cnv 15 420 250 empty empty empty 20 12 0 14 -44926 -66577
+0;
+#X obj 26 72 cnv 14 31 14 empty empty empty 20 12 0 14 -260818 -66577
+0;
+#X floatatom 26 72 5 0 0 0 - - -;
+#X text 63 71 percent;
+#X text 289 236 Thomas Musil \, Graz Austria \, 29 May 2004;
+#N canvas 0 0 491 509 clock 0;
+#X obj 57 31 inlet;
+#X obj 57 187 metro 1000;
+#X msg 57 135 1;
+#X msg 93 156 0;
+#X obj 57 236 f 0;
+#X obj 88 236 + 1;
+#X obj 89 262 t f f;
+#X obj 114 306 sel 1;
+#X obj 57 54 sel 0 1;
+#X obj 57 352 outlet;
+#X obj 229 352 outlet;
+#X obj 229 330 del 1000;
+#X msg 150 158 0;
+#X obj 138 80 t b b b;
+#X obj 56 79 t b b b;
+#X obj 150 185 t f f;
+#X msg 232 248 4;
+#X msg 151 247 64;
+#X obj 114 284 >= 64;
+#X connect 0 0 8 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 4 0 9 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 1;
+#X connect 6 1 18 0;
+#X connect 7 0 3 0;
+#X connect 7 0 11 0;
+#X connect 8 0 14 0;
+#X connect 8 1 13 0;
+#X connect 11 0 10 0;
+#X connect 12 0 15 0;
+#X connect 13 0 2 0;
+#X connect 13 1 12 0;
+#X connect 13 2 16 0;
+#X connect 14 0 2 0;
+#X connect 14 1 12 0;
+#X connect 14 2 17 0;
+#X connect 15 0 4 1;
+#X connect 15 1 5 0;
+#X connect 16 0 18 1;
+#X connect 17 0 18 1;
+#X connect 18 0 7 0;
+#X restore 99 267 pd clock;
+#X obj 99 289 cnv 14 31 14 empty empty empty 20 12 0 14 -260818 -66577
+0;
+#X floatatom 99 289 5 0 0 0 - - -;
+#X text 99 301 sec;
+#X text 223 261 damping;
+#X text 225 251 loop;
+#X obj 142 289 bng 15 1250 50 0 empty empty empty 0 -6 0 8 -24198 -1
+-1;
+#X text 137 302 ready;
+#X obj 160 98 osc~ 223.786;
+#X text 6 19 1.);
+#X obj 25 128 tgl 35 0 empty empty empty 0 -6 0 8 -250685 -1 -1 0 1
+;
+#X text 23 111 on/off;
+#X obj 25 170 s fdbk;
+#X obj 86 385 r fdbk;
+#X obj 86 427 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 195 342 r~ audio_signal;
+#X obj 226 427 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X floatatom 287 427 5 0 0 0 - - -;
+#X text 323 425 dB;
+#X floatatom 238 473 9 0 0 0 - - -;
+#X obj 226 364 r audio_in;
+#X obj 287 405 r loop_damp;
+#X obj 256 385 r fdbk;
+#X obj 256 427 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 365 342 r~ audio_signal;
+#X obj 396 427 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X floatatom 457 427 5 0 0 0 - - -;
+#X text 493 425 dB;
+#X floatatom 408 473 9 0 0 0 - - -;
+#X obj 396 364 r audio_in;
+#X obj 457 405 r loop_damp;
+#X obj 426 385 r fdbk;
+#X obj 426 427 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 535 342 r~ audio_signal;
+#X obj 566 427 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X floatatom 627 427 5 0 0 0 - - -;
+#X text 663 425 dB;
+#X floatatom 578 473 9 0 0 0 - - -;
+#X obj 566 364 r audio_in;
+#X obj 627 405 r loop_damp;
+#X obj 596 385 r fdbk;
+#X obj 596 427 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 25 502 r~ audio_signal;
+#X obj 56 587 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X floatatom 117 587 5 0 0 0 - - -;
+#X text 153 585 dB;
+#X floatatom 68 633 9 0 0 0 - - -;
+#X obj 56 524 r audio_in;
+#X obj 117 565 r loop_damp;
+#X obj 86 545 r fdbk;
+#X obj 86 587 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 195 502 r~ audio_signal;
+#X obj 226 587 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X floatatom 287 587 5 0 0 0 - - -;
+#X text 323 585 dB;
+#X floatatom 238 633 9 0 0 0 - - -;
+#X obj 226 524 r audio_in;
+#X obj 287 565 r loop_damp;
+#X obj 256 545 r fdbk;
+#X obj 256 587 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 365 502 r~ audio_signal;
+#X obj 396 587 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X floatatom 457 587 5 0 0 0 - - -;
+#X text 493 585 dB;
+#X floatatom 408 633 9 0 0 0 - - -;
+#X obj 396 524 r audio_in;
+#X obj 457 565 r loop_damp;
+#X obj 426 545 r fdbk;
+#X obj 426 587 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 535 502 r~ audio_signal;
+#X obj 566 587 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X floatatom 627 587 5 0 0 0 - - -;
+#X text 663 585 dB;
+#X floatatom 578 633 9 0 0 0 - - -;
+#X obj 566 524 r audio_in;
+#X obj 627 565 r loop_damp;
+#X obj 596 545 r fdbk;
+#X obj 596 587 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X text 3 133 2.);
+#X text 22 100 feedback;
+#X text 7 255 3.);
+#X obj 161 124 *~ 1e-018;
+#X text 289 124 I verfied this denormal floatingpoint phenomena under
+Windows XP and linux \, with Pentium 4 2800 MHz \, with AMD 1600+ \,
+with AMD 3200+ \, running pd-0.37-1.;
+#X text 287 11 This are 8 feedbackloops a 3 sec. with switchable inputs
+and a damping of -20 dB per 3 sec. and a vu-meter \, which shows you
+the averagevalue of the signal in the loop. 1.) turn on DSP. 2.) close
+Feedback-Loop. 3.) Fill the loops with a 1e-018 sine-wave and turn
+off the toggle after 3 sec. Wait for 3 x 21 sec. = 63 sec. \, [ 20*log10(1e-18
+/ 1e-39) / (20 dB / 3 sec) ] until the averagevalue is less than 1e-39.
+Now the cpu-load explode.;
+#X obj 26 448 fdbkloop _______;
+#X obj 196 448 fdbkloop _______;
+#X obj 366 448 fdbkloop _______;
+#X obj 536 448 fdbkloop _______;
+#X obj 26 608 fdbkloop _______;
+#X obj 196 608 fdbkloop _______;
+#X obj 366 608 fdbkloop _______;
+#X obj 536 608 fdbkloop _______;
+#X connect 0 0 24 0;
+#X connect 1 0 0 0;
+#X connect 3 0 111 0;
+#X connect 6 0 111 1;
+#X connect 7 0 111 3;
+#X connect 9 0 16 0;
+#X connect 9 0 27 0;
+#X connect 10 0 11 0;
+#X connect 11 0 21 0;
+#X connect 17 0 6 0;
+#X connect 19 0 7 0;
+#X connect 21 0 18 0;
+#X connect 27 0 29 0;
+#X connect 27 1 33 0;
+#X connect 35 0 108 0;
+#X connect 37 0 39 0;
+#X connect 40 0 41 0;
+#X connect 41 0 111 2;
+#X connect 42 0 112 0;
+#X connect 43 0 112 1;
+#X connect 44 0 112 3;
+#X connect 47 0 43 0;
+#X connect 48 0 44 0;
+#X connect 49 0 50 0;
+#X connect 50 0 112 2;
+#X connect 51 0 113 0;
+#X connect 52 0 113 1;
+#X connect 53 0 113 3;
+#X connect 56 0 52 0;
+#X connect 57 0 53 0;
+#X connect 58 0 59 0;
+#X connect 59 0 113 2;
+#X connect 60 0 114 0;
+#X connect 61 0 114 1;
+#X connect 62 0 114 3;
+#X connect 65 0 61 0;
+#X connect 66 0 62 0;
+#X connect 67 0 68 0;
+#X connect 68 0 114 2;
+#X connect 69 0 115 0;
+#X connect 70 0 115 1;
+#X connect 71 0 115 3;
+#X connect 74 0 70 0;
+#X connect 75 0 71 0;
+#X connect 76 0 77 0;
+#X connect 77 0 115 2;
+#X connect 78 0 116 0;
+#X connect 79 0 116 1;
+#X connect 80 0 116 3;
+#X connect 83 0 79 0;
+#X connect 84 0 80 0;
+#X connect 85 0 86 0;
+#X connect 86 0 116 2;
+#X connect 87 0 117 0;
+#X connect 88 0 117 1;
+#X connect 89 0 117 3;
+#X connect 92 0 88 0;
+#X connect 93 0 89 0;
+#X connect 94 0 95 0;
+#X connect 95 0 117 2;
+#X connect 96 0 118 0;
+#X connect 97 0 118 1;
+#X connect 98 0 118 3;
+#X connect 101 0 97 0;
+#X connect 102 0 98 0;
+#X connect 103 0 104 0;
+#X connect 104 0 118 2;
+#X connect 108 0 2 0;
+#X connect 111 1 13 0;
+#X connect 112 1 46 0;
+#X connect 113 1 55 0;
+#X connect 114 1 64 0;
+#X connect 115 1 73 0;
+#X connect 116 1 82 0;
+#X connect 117 1 91 0;
+#X connect 118 1 100 0;

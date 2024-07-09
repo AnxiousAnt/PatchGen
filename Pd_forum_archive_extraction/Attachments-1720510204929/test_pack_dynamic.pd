@@ -1,0 +1,29 @@
+#N canvas 270 239 470 358 10;
+#X obj 65 91 until;
+#X msg 65 65 64;
+#X msg 65 121 add2 f;
+#X msg 148 150 set;
+#X msg 48 185 \; pd-packtest obj 10 100 pack f f f f f f f f f f f
+f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f f f f;
+#X obj 48 18 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 1 113 450 300 packtest 0;
+#X obj 10 100 pack f f f f f f f f f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f
+f f f f f f;
+#X restore 46 249 pd packtest;
+#X msg 114 122 addsemi \, add2 pd-packtest obj 10 100 pack;
+#X obj 48 40 t b b b b b;
+#X msg 122 69 \; pd-packtest clear;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 5 0 8 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 8 1 1 0;
+#X connect 8 2 7 0;
+#X connect 8 3 3 0;
+#X connect 8 4 9 0;

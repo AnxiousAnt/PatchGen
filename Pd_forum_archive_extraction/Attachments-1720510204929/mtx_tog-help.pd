@@ -1,0 +1,36 @@
+#N canvas 129 0 450 326 10;
+#X obj 324 251 mtx_print;
+#X obj 324 229 matrix;
+#X obj 45 110 mtx_eye 8;
+#X obj 46 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 323 207 spigot;
+#X obj 374 188 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 244 48 print 1;
+#X msg 256 67 print 0;
+#X text 263 86 print (including \$0 arg);
+#X text 34 283 warning! can choke pd when building larger matrices
+;
+#X text 33 9 [mtx_tog] is a binary viewer/editor abs for iemmatrix
+;
+#X text 292 299 (c) 2006 dmotd;
+#X obj 244 177 mtx_tog 2 2;
+#X obj 241 105 mtx_tog 4 4;
+#X obj 46 138 mtx_tog 8 8;
+#X obj 246 220 mtx_tog 3 1;
+#X obj 212 176 mtx_tog 3 1;
+#X text 65 28 usage: [mtx_tog m n];
+#X text 65 46 where m = rows;
+#X text 79 65 and n = columns;
+#X connect 1 0 0 0;
+#X connect 2 0 14 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 1;
+#X connect 6 0 13 0;
+#X connect 7 0 13 0;
+#X connect 12 0 4 0;
+#X connect 12 0 15 0;
+#X connect 13 0 12 0;
+#X connect 13 0 16 0;

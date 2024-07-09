@@ -1,0 +1,77 @@
+Package: libfreenect
+Version: 0.0.1
+Revision: 1
+Homepage: http://openkinect.org
+License: GPL2+
+Maintainer: Hans-Christoph Steiner <hans@eds.org>
+#
+Source: https://download.github.com/OpenKinect-libfreenect-4a159f8.tar.gz
+Source-MD5: 15e9c9f25f4bb038617a21d666bc7303
+#Source-SHA1: 7f6c1fcb88b4cf9316429520f0ef67a768e12234
+#
+BuildDepends: <<
+	cmake,
+	fink (>= 0.28),
+	pkgconfig (>= 0.23)
+<<
+Depends: %n-shlibs (= %v-%r), darwin (>= 9-1)
+BuildDependsOnly: true
+#
+CompileScript: <<
+	cmake -DCMAKE_INSTALL_PREFIX=%p -DCMAKE_INSTALL_NAME_DIR=%p/lib
+	make VERBOSE=1
+<<
+InstallScript: <<
+	make install DESTDIR=%d
+        rm %i/lib/libfreenect.0.0.dylib
+        rm %i/lib/libfreenect_sync.0.0.dylib
+        rm %i/lib/fakenect/libfreenect.0.0.dylib
+        mv %i/lib/libfreenect.0.0.1.dylib %i/lib/libfreenect.0.0.dylib
+        mv %i/lib/libfreenect_sync.0.0.1.dylib %i/lib/libfreenect_sync.0.0.dylib
+        mv %i/lib/fakenect/libfreenect.0.0.1.dylib %i/lib/fakenect/libfreenect.0.0.dylib
+<<
+SplitOff: <<
+	Package: %N-shlibs
+	Files: <<
+               %p/lib/libfreenect.0.0.dylib
+               %p/lib/libfreenect_sync.0.0.dylib
+               %p/lib/fakenect/libfreenect.0.0.dylib
+	<<
+	Shlibs: <<
+		%p/lib/libfreenect.0.0.dylib 0.0.0 %n (>= 0.0.1-1)
+		%p/lib/libfreenect_sync.0.0.dylib 0.0.0 %n (>= 0.0.1-1)
+		%p/lib/fakenect/libfreenect.0.0.dylib 0.0.0 %n (>= 0.0.1-1)
+	<<
+	DocFiles: APACHE20 CONTRIB GPL2 HACKING README.asciidoc
+<<
+SplitOff2: <<
+	Package: libfreenect-bin
+	Depends: %N-shlibs (>= %v-%r)
+	Files: bin
+	Description: Utils and demos for working with libfreenect
+	DocFiles: APACHE20 CONTRIB GPL2 HACKING README.asciidoc
+<<
+DocFiles: APACHE20 CONTRIB GPL2 HACKING README.asciidoc
+Description: Generic access to network proxy settings
+DescDetail: <<
+ libfreenect is the core library for accessing the Microsoft Kinect
+ USB camera. Currently, the library supports access to:
+
+ * RGB and Depth Images
+ * Motors
+ * Accelerometer
+ * LED
+
+ The libfreenect software includes all code necessary to activate,
+ initialize, and communicate data with the Kinect hardware. This
+ includes drivers and a cross-platform API that works on Windows,
+ Linux, and OS X. The API will have bindings and extensions for these
+ languages/platforms:
+
+ * C
+ * C++
+ * .NET (C#/VB.NET)
+ * Java ( JNA and JNI)
+ * Python
+ * C Synchronous Interface 
+<<

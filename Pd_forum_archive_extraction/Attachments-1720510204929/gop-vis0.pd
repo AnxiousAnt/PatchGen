@@ -1,0 +1,24 @@
+#N canvas 694 252 450 300 12;
+#N canvas 511 525 450 300 sub 0;
+#X msg 65 87 \; pd-sub vis 0;
+#N canvas 0 50 450 300 gop 0;
+#X floatatom 108 126 5 0 0 0 - - -, f 5;
+#X obj 244 105 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 122 242 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X symbolatom 106 165 10 0 0 0 - - -, f 10;
+#X obj 110 192 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 112 221 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 264 133 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 109 147 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 172 125 number;
+#X text 173 145 number2;
+#X text 183 166 symbol;
+#X coords 0 -1 1 1 185 160 1 100 100;
+#X restore 219 68 pd gop;
+#X restore 217 114 pd sub;

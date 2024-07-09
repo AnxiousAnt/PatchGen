@@ -1,0 +1,215 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf380
+{\fonttbl\f0\fswiss\fcharset77 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 Waz:/Applications/Audio_Applications/Pure_Data/pd-externals-20030311/plugin~ scott$ sudo make\
+Making all in ladspa\
+make[1]: Nothing to be done for `all'.\
+Making all in vst\
+make[1]: Nothing to be done for `all'.\
+Making all in win\
+make[1]: Nothing to be done for `all'.\
+gcc -DPACKAGE_NAME=\\"\\" -DPACKAGE_TARNAME=\\"\\" -DPACKAGE_VERSION=\\"\\" -DPACKAGE_STRING=\\"\\" -DPACKAGE_BUGREPORT=\\"\\" -DPACKAGE=\\"plugin\\~\\" -DVERSION=\\"0.2\\" -DHAVE_LIBC=1 -DHAVE_LIBM=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DIRENT_H=1 -DHAVE_DLFCN_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLOPEN=1  -I. -I.  -I. -INONE/pd/src    -DPD -O2 -funroll-loops -fomit-frame-pointer     -Wall -W -Wshadow -Wstrict-prototypes -Werror     -Wno-unused -Wno-parentheses -Wno-switch -c plugin~.c\
+In file included from plugin~.c:21:\
+config.h:42:2: error: #error Either PLUGIN_TILDE_USE_LADSPA or PLUGIN_TILDE_USE_VST must be positive\
+In file included from plugin~.c:28:\
+plugin~.h:32:18: error: m_pd.h: No such file or directory\
+In file included from plugin~.c:28:\
+plugin~.h:94: error: parse error before 't_object'\
+cc1: warnings being treated as errors\
+plugin~.h:94: warning: no semicolon at end of struct or union\
+plugin~.h:95: warning: type defaults to 'int' in declaration of 'x_clock'\
+plugin~.h:95: warning: data definition has no type or storage class\
+plugin~.h:116: error: parse error before '*' token\
+plugin~.h:116: warning: type defaults to 'int' in declaration of 'audio_inlets'\
+plugin~.h:116: warning: data definition has no type or storage class\
+plugin~.h:117: error: parse error before '*' token\
+plugin~.h:117: warning: type defaults to 'int' in declaration of 'audio_outlets'\
+plugin~.h:117: warning: data definition has no type or storage class\
+plugin~.h:118: error: parse error before '*' token\
+plugin~.h:118: warning: type defaults to 'int' in declaration of 'control_outlet'\
+plugin~.h:118: warning: data definition has no type or storage class\
+plugin~.h:121: error: parse error before '*' token\
+plugin~.h:121: warning: type defaults to 'int' in declaration of 'dsp_vec'\
+plugin~.h:121: warning: data definition has no type or storage class\
+plugin~.h:124: error: parse error before '\}' token\
+plugin~.h:124: warning: type defaults to 'int' in declaration of 'Pd_Plugin_Tilde'\
+plugin~.h:124: warning: data definition has no type or storage class\
+plugin~.h:128: error: parse error before '*' token\
+plugin~.h:128: warning: function declaration isn't a prototype\
+plugin~.h:129: error: parse error before '*' token\
+plugin~.h:129: warning: function declaration isn't a prototype\
+plugin~.h:130: error: parse error before '*' token\
+plugin~.h:130: warning: function declaration isn't a prototype\
+plugin~.h:133: error: parse error before '*' token\
+plugin~.h:133: warning: function declaration isn't a prototype\
+plugin~.h:134: error: parse error before '*' token\
+plugin~.h:134: error: parse error before '*' token\
+plugin~.h:134: warning: type defaults to 'int' in declaration of 'plugin_tilde_perform'\
+plugin~.h:134: warning: function declaration isn't a prototype\
+plugin~.h:134: warning: data definition has no type or storage class\
+plugin~.h:137: error: parse error before '*' token\
+plugin~.h:140: warning: function declaration isn't a prototype\
+plugin~.h:143: error: parse error before '*' token\
+plugin~.h:145: warning: function declaration isn't a prototype\
+plugin~.h:148: error: parse error before '*' token\
+plugin~.h:148: warning: function declaration isn't a prototype\
+plugin~.h:151: error: parse error before '*' token\
+plugin~.h:151: warning: function declaration isn't a prototype\
+plugin~.h:153: error: parse error before '*' token\
+plugin~.h:154: warning: function declaration isn't a prototype\
+plugin~.h:157: error: parse error before '*' token\
+plugin~.h:158: warning: function declaration isn't a prototype\
+plugin~.h:159: error: parse error before '*' token\
+plugin~.h:162: warning: function declaration isn't a prototype\
+plugin~.h:163: error: parse error before '*' token\
+plugin~.h:163: warning: function declaration isn't a prototype\
+plugin~.h:164: error: parse error before '*' token\
+plugin~.h:164: warning: function declaration isn't a prototype\
+plugin~.h:166: error: parse error before '*' token\
+plugin~.h:169: warning: function declaration isn't a prototype\
+plugin~.h:170: error: parse error before '*' token\
+plugin~.h:172: warning: function declaration isn't a prototype\
+plugin~.h:173: error: parse error before '*' token\
+plugin~.h:175: warning: function declaration isn't a prototype\
+plugin~.h:178: error: parse error before '*' token\
+plugin~.h:178: warning: function declaration isn't a prototype\
+plugin~.c:40: error: parse error before '*' token\
+plugin~.c:40: warning: type defaults to 'int' in declaration of 'plugin_tilde_class'\
+plugin~.c:40: warning: data definition has no type or storage class\
+plugin~.c: In function 'plugin_tilde_setup':\
+plugin~.c:46: warning: implicit declaration of function 'class_new'\
+plugin~.c:46: warning: implicit declaration of function 'gensym'\
+plugin~.c:47: error: 't_newmethod' undeclared (first use in this function)\
+plugin~.c:47: error: (Each undeclared identifier is reported only once\
+plugin~.c:47: error: for each function it appears in.)\
+plugin~.c:47: error: parse error before 'plugin_tilde_new'\
+plugin~.c:55: error: 't_float' undeclared (first use in this function)\
+plugin~.c:61: warning: implicit declaration of function 'class_addmethod'\
+plugin~.c:62: error: 't_method' undeclared (first use in this function)\
+plugin~.c:62: error: parse error before 'plugin_tilde_dsp'\
+plugin~.c:70: error: parse error before 'plugin_tilde_control'\
+plugin~.c:77: error: parse error before 'plugin_tilde_print'\
+plugin~.c:84: error: parse error before 'plugin_tilde_reset'\
+plugin~.c:91: error: 'nullfn' undeclared (first use in this function)\
+plugin~.c: At top level:\
+plugin~.c:97: error: parse error before '*' token\
+plugin~.c:98: warning: function declaration isn't a prototype\
+plugin~.c: In function 'plugin_tilde_new':\
+plugin~.c:99: error: 'x' undeclared (first use in this function)\
+plugin~.c:103: error: parse error before ')' token\
+plugin~.c:120: error: 's_name' undeclared (first use in this function)\
+plugin~.c:122: warning: implicit declaration of function 'error'\
+plugin~.c:122: error: parse error before 'PLUGIN_TILDE_BRAND'\
+plugin~.c:127: warning: implicit declaration of function 'clock_new'\
+plugin~.c:127: error: 't_method' undeclared (first use in this function)\
+plugin~.c:127: error: parse error before 'plugin_tilde_tick'\
+plugin~.c:159: warning: implicit declaration of function 'sys_getsr'\
+plugin~.c:160: error: parse error before 'PLUGIN_TILDE_BRAND'\
+plugin~.c:170: error: 't_inlet' undeclared (first use in this function)\
+plugin~.c:170: error: parse error before ')' token\
+plugin~.c:171: error: 't_outlet' undeclared (first use in this function)\
+plugin~.c:171: error: parse error before ')' token\
+plugin~.c:178: warning: implicit declaration of function 'inlet_new'\
+plugin~.c:186: warning: implicit declaration of function 'outlet_new'\
+plugin~.c:195: error: 't_int' undeclared (first use in this function)\
+plugin~.c:195: error: parse error before ')' token\
+plugin~.c:207: warning: implicit declaration of function 'clock_free'\
+plugin~.c: At top level:\
+plugin~.c:214: error: parse error before '*' token\
+plugin~.c:215: warning: function declaration isn't a prototype\
+plugin~.c: In function 'plugin_tilde_free':\
+plugin~.c:219: error: 'x' undeclared (first use in this function)\
+plugin~.c:222: warning: implicit declaration of function 'clock_unset'\
+plugin~.c:239: warning: implicit declaration of function 'inlet_free'\
+plugin~.c:247: warning: implicit declaration of function 'outlet_free'\
+plugin~.c: At top level:\
+plugin~.c:265: error: parse error before '*' token\
+plugin~.c:266: warning: function declaration isn't a prototype\
+plugin~.c: In function 'plugin_tilde_tick':\
+plugin~.c:268: error: 'x' undeclared (first use in this function)\
+plugin~.c:274: warning: implicit declaration of function 'clock_delay'\
+plugin~.c: At top level:\
+plugin~.c:278: error: parse error before '*' token\
+plugin~.c:279: warning: function declaration isn't a prototype\
+plugin~.c: In function 'plugin_tilde_dsp':\
+plugin~.c:283: error: 'sp' undeclared (first use in this function)\
+plugin~.c:286: error: 'x' undeclared (first use in this function)\
+plugin~.c:286: error: 't_int' undeclared (first use in this function)\
+plugin~.c:286: error: parse error before 'x'\
+plugin~.c:287: error: parse error before 'num_samples'\
+plugin~.c:301: warning: implicit declaration of function 'dsp_addv'\
+plugin~.c: At top level:\
+plugin~.c:304: error: parse error before '*' token\
+plugin~.c:305: error: parse error before '*' token\
+plugin~.c:306: warning: return type defaults to 'int'\
+plugin~.c:306: warning: function declaration isn't a prototype\
+plugin~.c: In function 'plugin_tilde_perform':\
+plugin~.c:308: error: 'x' undeclared (first use in this function)\
+plugin~.c:309: error: 't_float' undeclared (first use in this function)\
+plugin~.c:309: error: 'audio_inputs' undeclared (first use in this function)\
+plugin~.c:310: error: 'audio_outputs' undeclared (first use in this function)\
+plugin~.c:314: error: 'w' undeclared (first use in this function)\
+plugin~.c:317: error: parse error before ')' token\
+plugin~.c:319: error: parse error before ')' token\
+plugin~.c:320: error: parse error before ')' token\
+plugin~.c: At top level:\
+plugin~.c:329: error: parse error before '*' token\
+plugin~.c:333: warning: function declaration isn't a prototype\
+plugin~.c: In function 'plugin_tilde_emit_control_output':\
+plugin~.c:335: error: 't_atom' undeclared (first use in this function)\
+plugin~.c:335: error: parse error before 'anything_atoms'\
+plugin~.c:336: error: 'anything_atoms' undeclared (first use in this function)\
+plugin~.c:336: error: 'A_SYMBOL' undeclared (first use in this function)\
+plugin~.c:337: error: 'name' undeclared (first use in this function)\
+plugin~.c:338: error: 'A_FLOAT' undeclared (first use in this function)\
+plugin~.c:339: error: 'new_value' undeclared (first use in this function)\
+plugin~.c:341: error: 'output_port_index' undeclared (first use in this function)\
+plugin~.c:342: warning: implicit declaration of function 'outlet_anything'\
+plugin~.c:342: error: 'x' undeclared (first use in this function)\
+plugin~.c: At top level:\
+plugin~.c:346: error: parse error before '*' token\
+plugin~.c:350: warning: function declaration isn't a prototype\
+plugin~.c: In function 'plugin_tilde_control':\
+plugin~.c:354: error: 'x' undeclared (first use in this function)\
+plugin~.c:357: error: 'ctrl_name' undeclared (first use in this function)\
+plugin~.c:363: error: 'ctrl_value' undeclared (first use in this function)\
+plugin~.c: At top level:\
+plugin~.c:371: error: parse error before '*' token\
+plugin~.c:381: warning: function declaration isn't a prototype\
+plugin~.c: In function 'plugin_tilde_print':\
+plugin~.c:383: error: 'x' undeclared (first use in this function)\
+plugin~.c: At top level:\
+plugin~.c:396: error: parse error before '*' token\
+plugin~.c:397: warning: function declaration isn't a prototype\
+plugin~.c: In function 'plugin_tilde_reset':\
+plugin~.c:399: error: 'x' undeclared (first use in this function)\
+plugin~.c: At top level:\
+plugin~.c:409: error: parse error before '*' token\
+plugin~.c:413: warning: function declaration isn't a prototype\
+plugin~.c: In function 'plugin_tilde_get_parm_number':\
+plugin~.c:417: error: 'x' undeclared (first use in this function)\
+plugin~.c:418: error: 'str' undeclared (first use in this function)\
+plugin~.c: At top level:\
+plugin~.c:440: error: parse error before '*' token\
+plugin~.c:442: warning: function declaration isn't a prototype\
+plugin~.c:452: error: parse error before '*' token\
+plugin~.c:456: warning: function declaration isn't a prototype\
+plugin~.c:482: error: parse error before '*' token\
+plugin~.c:483: warning: function declaration isn't a prototype\
+plugin~.c:501: error: parse error before '*' token\
+plugin~.c:502: warning: function declaration isn't a prototype\
+plugin~.c:512: error: parse error before '*' token\
+plugin~.c:516: warning: function declaration isn't a prototype\
+plugin~.c:528: error: parse error before '*' token\
+plugin~.c:531: warning: function declaration isn't a prototype\
+plugin~.c:541: error: parse error before '*' token\
+plugin~.c:545: warning: function declaration isn't a prototype\
+plugin~.c:555: error: parse error before '*' token\
+plugin~.c:556: warning: function declaration isn't a prototype\
+make[1]: *** [plugin~.o] Error 1\
+make: *** [all-recursive] Error 1\
+Waz:/Applications/Audio_Applications/Pure_Data/pd-externals-20030311/plugin~ scott$ \
+}

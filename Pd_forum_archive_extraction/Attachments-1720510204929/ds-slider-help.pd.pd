@@ -1,0 +1,58 @@
+#N struct 1005-slider float n0 float c;
+#N struct 1006-slider float n0 float c;
+#N struct 1007-slider float n0 float c;
+#N struct 1008-slider float n0 float c;
+#N struct 1009-slider float n0 float c;
+#N canvas 342 9 594 616 12;
+#X text 72 10 [ds-slider];
+#X text 172 10 - simple slider prototype using data structures;
+#X text 20 40 The ds-slider object attempts to mimick the functionality
+of [vsl] and [hsl] within one object. Setting the draggable hotspots
+on ds-polygons is still a bit clunky \, so the handle is restricted
+to a 10x10 gray square. It's possible to simulate "jump-on-click" behavior
+\, but it requires adding lots of hidden ds-instances so I left it
+out here.;
+#X floatatom 41 384 5 0 0 0 - - -;
+#X text 61 307 [ds-slider];
+#X obj 254 310 ds-slider v 40 0 1;
+#X floatatom 254 364 5 0 0 0 - - -;
+#X floatatom 95 267 5 0 0 0 - - -;
+#X obj 41 242 ds-slider;
+#X obj 95 252 ds-slider h;
+#X text 20 176 Creation arguments: sliderType(v or h) Size min(bottom/left)
+max(top/right);
+#X text 217 394 bottom value may be larger than the top:;
+#X floatatom 375 474 5 0 0 0 - - -;
+#X text 270 324 [ds-slider v 40 0 1];
+#X text 403 431 [ds-slider v 40 1 0];
+#X obj 375 418 ds-slider v 40 1 0;
+#X floatatom 95 223 5 0 0 0 - - -;
+#X obj 117 505 snapshot~;
+#X obj 41 423 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 117 480 osc~ 0.5;
+#X obj 41 480 metro 75;
+#X obj 117 581 ds-slider h 90 -1 1;
+#X text 224 576 [ds-slider h 90 -1 1];
+#X msg 131 553 color \$1;
+#X msg 254 284 color 900;
+#X text 339 283 ds-color range: 0-999;
+#X obj 254 259 loadbang;
+#X text 147 223 [ds-slider h] (range defaults to 0-127);
+#X msg 62 442 \; pd dsp \$1;
+#X obj 131 529 expr ( $f1 * 0.5 + 0.5 ) * 9 + 740;
+#X connect 5 0 6 0;
+#X connect 8 0 3 0;
+#X connect 9 0 7 0;
+#X connect 15 0 12 0;
+#X connect 16 0 9 0;
+#X connect 17 0 21 0;
+#X connect 17 0 29 0;
+#X connect 18 0 28 0;
+#X connect 18 0 20 0;
+#X connect 19 0 17 0;
+#X connect 20 0 17 0;
+#X connect 23 0 21 0;
+#X connect 24 0 5 0;
+#X connect 26 0 24 0;
+#X connect 29 0 23 0;

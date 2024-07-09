@@ -1,0 +1,35 @@
+#N canvas 281 23 538 331 10;
+#X obj 81 93 t b f;
+#X obj 32 125 f;
+#X obj 153 89 v L1;
+#X obj 197 90 v L2;
+#X text 29 21 Inverse Kinematics for 2 Joint Arm in 2D space;
+#X obj 394 241 v s2;
+#X obj 485 241 v c2;
+#X obj 303 241 v theta;
+#X obj 213 241 v psi;
+#X obj 32 154 expr theta *180 / (4 * atan(1)) \; psi * 180 / (4 * atan(1))
+\; acos ((($f1 * $f1) + ($f2 * $f2) - (L1 * L1) - (L2 * L2)) / (2 *
+L1 * L2)) \; asin (($f2 * (L1 + L2 * c2) - $f1 * L2 * s2) / (($f1*$f1)
++ ($f2*$f2))) \; sqrt (1 - (c2 * c2)) \; (($f1*$f1) + ($f2*$f2) - (L1*L1)
+- (L2*L2)) / (2 * L1 * L2), f 76;
+#X obj 32 68 inlet;
+#X obj 81 68 inlet;
+#X obj 153 67 inlet;
+#X obj 197 68 inlet;
+#X obj 32 244 outlet;
+#X obj 122 243 outlet;
+#X text 32 287 megrimm 2017;
+#X connect 0 0 1 0;
+#X connect 0 1 9 1;
+#X connect 1 0 9 0;
+#X connect 9 0 14 0;
+#X connect 9 1 15 0;
+#X connect 9 2 8 0;
+#X connect 9 3 7 0;
+#X connect 9 4 5 0;
+#X connect 9 5 6 0;
+#X connect 10 0 1 0;
+#X connect 11 0 0 0;
+#X connect 12 0 2 0;
+#X connect 13 0 3 0;

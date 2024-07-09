@@ -1,0 +1,64 @@
+Packages for Pd-extended
+========================
+
+In the Puredata wiki on 'http://puredata.org/docs/developer/darwin' H.C. Steiner have compiled a list of Fink packages that are to be used in order to build Pd-extended. This is a list of DarwinPorts (or MacPorts for the future) packages that I think might be able to substitute the Fink packages in order to build Pd-extended via DarwinPorts.
+
+The list are sorted to be in order of appearance in the above webpage, and is accompanied by blank lines to highlight the connection to the context of the webpage.
+
+As it shows in the list there are Fink packages, that I didn't find a substitute for! First of all the '*-shlibs' packages. However they are specific to Fink, and might not be needed if there magic is covered by the Darwinport packages, hence might not be considered as lacking in the DarwinPorts list. 
+
+However, there are Fink packages that i didn't find a DarwinPorts substitute for that are not '*-shlibs'. Therefor, I think, it is fair to conclude that DarwinPorts as it is, can not be used to build Pd-extended. Or at least, I can't: there might, ofcause, exists substitutes in DarwinPorts where i didn't find them. Happy hunting.
+
+Repo:	Fink				DarwinPorts
+---------------------------------------------------
+	fftw3				fftw-3
+	fftw3-shlibs
+
+	flac 				flac
+	flac-shlibs 
+	libsndfile1			libsndfile 
+	libsndfile1-shlibs 
+	libogg 				libogg
+	libogg-shlibs 
+	libvorbis0			libvorbis
+	libvorbis0-shlibs 
+	libtiff 			tiff
+	libtiff-shlibs 
+	graphviz			graphviz
+	libtheora0 			libtheora
+	libtheora0-shlibs 
+	imagemagick 			ImageMagick 
+	imagemagick-shlibs 
+	imagemagick-dev 
+	imlib2 				imlib2
+	imlib2-shlibs 
+	libjpeg 			jpeg
+	libjpeg-shlibs 
+	libpng-shlibs 
+	libpng3 			libpng
+	libpng3-shlibs 
+	libmpeg 			libmpeg2
+	libmpeg-shlibs 
+	freetype219 			freetype
+	freetype219-shlibs 
+	libquicktime0
+	libquicktime0-shlibs 
+	gsl 				gsl
+	gsl-shlibs	liblo0 
+	liblo0-shlibs 
+	ladspa 
+	ladspa-cmt 
+	ladspa-dev
+	ffmpeg 				ffmpeg
+	ffmpeg-dev 
+	libavcodec1-dev 
+	libavcodec1-shlibs 
+	libdv4 				libdv
+	libdv4-shlibs 
+	speex3 				speex
+	speex3-shlibs 
+	lame-dev 			lame
+	lame-shlibs
+
+--By: Steffen <stffn@dibidut.dk>
+Date: 21 Oct 2006

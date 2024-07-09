@@ -1,0 +1,53 @@
+#N canvas 751 294 762 395 10;
+#N canvas 340 50 497 258 data 1;
+#X obj 50 50 +;
+#X restore 176 23 pd data;
+#N canvas 1058 309 450 300 template 0;
+#X obj 21 69 struct test-struct float x float y;
+#X obj 24 201 filledpolygon 999 0 1 -10 -10 10 -10 10 10 -10 10;
+#X restore 176 48 pd template;
+#X obj 307 190 pointer;
+#X obj 181 218 append test-struct x y;
+#X obj 179 169 random 100;
+#X obj 229 193 random 100;
+#X obj 181 135 t b b;
+#X obj 176 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 306 166 traverse pd-data \, bang;
+#X obj 142 250 pointer;
+#X obj 143 210 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 142 271 print;
+#X text 55 209 check pointer;
+#X text 176 83 append new scalar;
+#X obj 326 43 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 328 67 t b b b;
+#X msg 349 139 \; pd-data obj 50 50 +;
+#X text 323 23 init;
+#X obj 349 46 loadbang;
+#X text 39 278 issues:;
+#X text 37 315 a) deleting the [+ ] object will invalidate all gpointers
+(although it is not a scalar);
+#X text 37 349 1) delete [+ ];
+#X text 37 366 2) click 'check pointer' -> 'empty pointer';
+#X text 406 364 2) click 'check pointer' -> 'empty pointer';
+#X text 406 313 b) adding another [+ ] object will also invalidate
+all gpointers.;
+#X text 406 347 1) add another [+ ];
+#X msg 368 92 \; pd-data clear \; pd-data vis 1;
+#X connect 2 0 3 2;
+#X connect 3 0 9 1;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 4 0;
+#X connect 6 1 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 2 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 14 0 15 0;
+#X connect 15 0 8 0;
+#X connect 15 1 16 0;
+#X connect 15 2 26 0;
+#X connect 18 0 15 0;

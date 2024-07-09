@@ -1,0 +1,35 @@
+#N canvas 210 237 602 435 10;
+#X obj 0 0 cnv 15 100 60 empty \$0-button button-0 5 50 0 14 -233017
+-66577 0;
+#X obj 30 3 bng 20 250 50 0 empty empty empty 0 -6 0 8 -228992 -1 -1
+;
+#X obj 290 170 makefilename button-%d;
+#X obj 290 146 float \$1;
+#X msg 221 68 bang;
+#X obj 220 152 float \$0;
+#N canvas 0 22 498 348 1006-subpatch 0;
+#X obj 250 95 send button-0;
+#X restore 272 10 pd \$0-subpatch;
+#X obj 79 10 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-228992 -1 -1 0 256;
+#X obj 138 214 makefilename pd-%d-subpatch;
+#X msg 76 277 \; \$1 vis 1;
+#X msg 179 373 \; pd-1004-subpatch obj 250 95 send button-0;
+#X obj 240 307 pack s s;
+#X msg 178 341 set \, addsemi \, add2 \$1 \, add2 obj 250 95 send \$2
+;
+#X obj 220 96 t b b b;
+#N canvas 0 22 454 304 1006-subpatch 0;
+#X restore 332 101 pd \$0-subpatch;
+#X connect 2 0 11 1;
+#X connect 3 0 2 0;
+#X connect 4 0 13 0;
+#X connect 5 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 13 0 5 0;
+#X connect 13 1 3 0;
+#X connect 13 2 10 0;
+#X coords 0 0 1 1 200 140 1 0 0;

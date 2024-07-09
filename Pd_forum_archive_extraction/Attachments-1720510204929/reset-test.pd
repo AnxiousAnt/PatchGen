@@ -1,0 +1,12 @@
+#N canvas 246 98 530 442 10;
+#X obj 164 110 sssad A;
+#X floatatom 223 111 5 0 0 0 - - -;
+#X obj 128 321 s SSSAD_ADMIN;
+#X msg 128 295 set;
+#X text 95 79 1) change this to some number different from 0;
+#X text 95 148 2) duplicate the above construct with Ctrl-D;
+#X text 96 263 3) press "set":;
+#X text 93 367 Result: The first [sssad A] will be reset to 0;
+#X connect 0 0 1 0;
+#X connect 1 0 0 1;
+#X connect 3 0 2 0;

@@ -1,0 +1,12 @@
+#N canvas 480 396 450 300 10;
+#X floatatom 171 105 5 0 0 0 - - -;
+#X floatatom 177 179 5 0 0 0 - - -;
+#X obj 173 141 scaler 0 127 1 10;
+#X msg 313 99 -1;
+#X obj 240 196 print;
+#X msg 225 99 bang;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 4;
+#X connect 5 0 2 0;

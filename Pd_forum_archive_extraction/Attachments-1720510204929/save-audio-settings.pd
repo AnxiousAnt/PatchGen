@@ -1,0 +1,29 @@
+#N canvas 640 425 478 362 10;
+#X obj 37 252 loadbang;
+#X obj 82 38 receive pd;
+#X obj 83 60 route audio-dialog;
+#X msg 71 170 \; pd audio-dialog 0 0 0 0 2 0 0 0 0 0 0 0 2 0 0 0 48000
+99;
+#X obj 83 85 trigger anything bang bang bang;
+#X msg 401 114 set;
+#X msg 179 113 add2 pd audio-dialog;
+#X msg 313 113 addsemi;
+#X text 77 199 ^-- this is the last one that was configured;
+#X text 47 303 ^-- this is the one that will load by default when starting
+;
+#X msg 37 273 \; pd audio-dialog 0 0 0 0 2 0 0 0 0 0 0 0 2 0 0 0 48000
+25;
+#X obj 52 113 list prepend add2;
+#X obj 52 133 list trim;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 4 0 11 0;
+#X connect 4 1 6 0;
+#X connect 4 2 7 0;
+#X connect 4 3 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X connect 11 0 12 0;
+#X connect 12 0 3 0;

@@ -1,0 +1,8 @@
+#N canvas 318 125 454 304 10;
+#X obj 147 171 print;
+#X obj 147 117 makefilename array%d.wav;
+#X msg 147 143 open \$1;
+#X floatatom 147 94 5 0 0 0 - - -;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;

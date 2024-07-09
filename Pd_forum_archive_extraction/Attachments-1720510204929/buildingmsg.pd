@@ -1,0 +1,13 @@
+#N canvas 468 181 263 293 10;
+#X floatatom 36 24 5 0 0 0 - - -;
+#X floatatom 92 24 5 0 0 0 - - -;
+#X obj 35 199 print test;
+#X obj 36 123 pack f f;
+#X obj 91 70 t b f;
+#X msg 36 159 /messagename \$1 \$2;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 4 1 3 1;
+#X connect 5 0 2 0;

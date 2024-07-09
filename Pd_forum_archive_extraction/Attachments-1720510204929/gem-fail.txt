@@ -1,0 +1,100 @@
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src -DPD -I/Applications/Pd-0.43-0.app/Contents/Resources//src -arch i386 -g -O2 -freg-struct-return -Os -falign-loops -falign-functions -falign-jumps -funroll-loops -ffast-math -mmmx -fpascal-strings -MT libBase_la-GemWinCreateMac.lo -MD -MP -MF .deps/libBase_la-GemWinCreateMac.Tpo -c GemWinCreateMac.cpp  -fno-common -DPIC -o .libs/libBase_la-GemWinCreateMac.o
+GemWinCreateMac.cpp:83: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp:117: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp:120: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp:122: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp:125: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp:126: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp:134: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp: In function 'int createGemWindow(WindowInfo&, WindowHints&)':
+GemWinCreateMac.cpp:205: error: 'DMGetFirstScreenDevice' was not declared in this scope
+GemWinCreateMac.cpp:255: error: 'DMGetNextScreenDevice' was not declared in this scope
+GemWinCreateMac.cpp:269: error: 'SetRect' was not declared in this scope
+GemWinCreateMac.cpp:294: error: 'DMGetNextScreenDevice' was not declared in this scope
+GemWinCreateMac.cpp:334: error: 'SetRect' was not declared in this scope
+GemWinCreateMac.cpp: In function 'void destroyGemWindow(WindowInfo&)':
+GemWinCreateMac.cpp:467: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp:467: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp:472: error: '::UnlockPixels' has not been declared
+GemWinCreateMac.cpp:473: error: '::DisposeGWorld' has not been declared
+GemWinCreateMac.cpp:481: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp:481: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp: In function 'int cursorGemWindow(WindowInfo&, int)':
+GemWinCreateMac.cpp:500: error: 'ShowCursor' was not declared in this scope
+GemWinCreateMac.cpp:502: error: 'HideCursor' was not declared in this scope
+GemWinCreateMac.cpp: In function '__AGLContextRec* SetupAGLFullScreen(GDevice**, short int*, short int*)':
+GemWinCreateMac.cpp:563: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp:563: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp: In function 'OSStatus BuildGLFromWindow(OpaqueWindowPtr*, __AGLContextRec**, structGLWindowInfo*, __AGLContextRec*)':
+GemWinCreateMac.cpp:628: error: 'GetPort' was not declared in this scope
+GemWinCreateMac.cpp:726: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp:726: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp: At global scope:
+GemWinCreateMac.cpp:759: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp: In function 'OSStatus BuildGL(OpaqueGrafPtr**, __AGLContextRec**, short int*, structGLInfo*, __AGLContextRec*)':
+GemWinCreateMac.cpp:774: error: 'GetMainDevice' was not declared in this scope
+GemWinCreateMac.cpp:780: error: 'DMGetFirstScreenDevice' was not declared in this scope
+GemWinCreateMac.cpp:785: error: 'DMGetNextScreenDevice' was not declared in this scope
+GemWinCreateMac.cpp:803: error: 'DMGetFirstScreenDevice' was not declared in this scope
+GemWinCreateMac.cpp:806: error: 'DMGetNextScreenDevice' was not declared in this scope
+GemWinCreateMac.cpp:824: error: 'DMGetFirstScreenDevice' was not declared in this scope
+GemWinCreateMac.cpp:832: error: 'DMGetNextScreenDevice' was not declared in this scope
+GemWinCreateMac.cpp: At global scope:
+GemWinCreateMac.cpp:849: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp: In function 'OSStatus DestroyGLFromWindow(__AGLContextRec**, structGLWindowInfo*)':
+GemWinCreateMac.cpp:874: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp:874: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp: At global scope:
+GemWinCreateMac.cpp:906: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp:956: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp: In function 'void DumpCurrent(OpaqueGrafPtr**, __AGLContextRec**, structGLInfo*)':
+GemWinCreateMac.cpp:962: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp:962: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp: In function 'Boolean CheckRenderer(GDevice**, long int*, long int*, GLint*, Boolean)':
+GemWinCreateMac.cpp:1000: warning: 'aglQueryRendererInfo' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:289)
+GemWinCreateMac.cpp:1000: warning: 'aglQueryRendererInfo' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:289)
+GemWinCreateMac.cpp: In function 'Boolean CheckAllDeviceRenderers(long int*, long int*, GLint*, Boolean)':
+GemWinCreateMac.cpp:1082: error: 'GetDeviceList' was not declared in this scope
+GemWinCreateMac.cpp:1085: warning: 'aglQueryRendererInfo' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:289)
+GemWinCreateMac.cpp:1085: warning: 'aglQueryRendererInfo' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:289)
+GemWinCreateMac.cpp:1145: error: 'GetNextDevice' was not declared in this scope
+GemWinCreateMac.cpp: In function 'Boolean CheckWindowExtents(GDevice**, short int, short int)':
+GemWinCreateMac.cpp:1173: warning: 'NewCWindow' is deprecated (declared at /System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/MacWindows.h:11218)
+GemWinCreateMac.cpp:1173: warning: 'NewCWindow' is deprecated (declared at /System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/MacWindows.h:11218)
+GemWinCreateMac.cpp: At global scope:
+GemWinCreateMac.cpp:1201: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp: In function 'OSStatus BuildGLContext(OpaqueGrafPtr**, __AGLContextRec**, GDevice**, structGLInfo*, __AGLContextRec*)':
+GemWinCreateMac.cpp:1255: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp:1255: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp: In function 'short int FindGDHandleFromWindow(OpaqueWindowPtr*, GDevice***)':
+GemWinCreateMac.cpp:1310: error: 'GetPort' was not declared in this scope
+GemWinCreateMac.cpp:1315: error: 'LocalToGlobal' was not declared in this scope
+GemWinCreateMac.cpp:1317: error: 'GetDeviceList' was not declared in this scope
+GemWinCreateMac.cpp:1323: error: 'screenDevice' was not declared in this scope
+GemWinCreateMac.cpp:1323: error: 'TestDeviceAttribute' was not declared in this scope
+GemWinCreateMac.cpp:1324: error: 'screenActive' was not declared in this scope
+GemWinCreateMac.cpp:1330: error: 'SectRect' was not declared in this scope
+GemWinCreateMac.cpp:1341: error: 'GetNextDevice' was not declared in this scope
+GemWinCreateMac.cpp:1345: error: 'SetPort' was not declared in this scope
+GemWinCreateMac.cpp: At global scope:
+GemWinCreateMac.cpp:1363: warning: 'AGLDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:47)
+GemWinCreateMac.cpp: In function 'OSStatus BuildDrawable(OpaqueGrafPtr**, GDevice**, structGLInfo*)':
+GemWinCreateMac.cpp:1380: warning: 'NewCWindow' is deprecated (declared at /System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/MacWindows.h:11218)
+GemWinCreateMac.cpp:1380: warning: 'NewCWindow' is deprecated (declared at /System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/MacWindows.h:11218)
+GemWinCreateMac.cpp:1382: warning: 'NewCWindow' is deprecated (declared at /System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/MacWindows.h:11218)
+GemWinCreateMac.cpp:1382: warning: 'NewCWindow' is deprecated (declared at /System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/MacWindows.h:11218)
+GemWinCreateMac.cpp:1385: error: 'GetPort' was not declared in this scope
+GemWinCreateMac.cpp:1386: error: 'SetPort' was not declared in this scope
+GemWinCreateMac.cpp:1387: error: 'GetForeColor' was not declared in this scope
+GemWinCreateMac.cpp:1388: error: 'RGBForeColor' was not declared in this scope
+GemWinCreateMac.cpp:1392: error: 'PaintRect' was not declared in this scope
+GemWinCreateMac.cpp: In function 'OSStatus evtHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*)':
+GemWinCreateMac.cpp:1486: error: 'QDGlobalToLocalPoint' was not declared in this scope
+GemWinCreateMac.cpp: In function 'void gemWinMakeCurrent(WindowInfo&)':
+GemWinCreateMac.cpp:1554: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+GemWinCreateMac.cpp:1554: warning: 'aglSetDrawable' is deprecated (declared at /System/Library/Frameworks/AGL.framework/Headers/agl.h:312)
+make[3]: *** [libBase_la-GemWinCreateMac.lo] Error 1
+make[2]: *** [all-recursive] Error 1
+make[1]: *** [all] Error 2
+make: *** [all-recursive] Error 1
+joliver-mpb-new:Gem-0.93.3 joliver-

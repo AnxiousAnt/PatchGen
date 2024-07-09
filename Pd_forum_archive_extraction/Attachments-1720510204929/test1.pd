@@ -1,0 +1,8 @@
+#N canvas 310 87 250 256 10;
+#X obj 74 116 symbol \$1;
+#X obj 74 66 loadbang;
+#X obj 74 89 delay \$2;
+#X obj 74 140 s killme;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;

@@ -1,0 +1,17 @@
+#N canvas 0 0 424 451 12;
+#X msg 299 136 rewind;
+#X obj 224 209 print;
+#X msg 253 78 next;
+#X msg 135 96 bang;
+#X obj 280 235 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 334 79 where;
+#X msg 217 29 read club1.txt;
+#X obj 222 169 textfile;
+#X connect 0 0 7 0;
+#X connect 2 0 7 0;
+#X connect 3 0 7 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
+#X connect 7 1 4 0;

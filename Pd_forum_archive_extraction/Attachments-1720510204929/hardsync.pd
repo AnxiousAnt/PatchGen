@@ -1,0 +1,38 @@
+#N canvas 597 130 633 559 10;
+#X floatatom 44 142 5 0 0 0 - - -;
+#X floatatom 119 141 5 0 0 0 - - -;
+#X text 45 115 master;
+#X text 115 114 slave;
+#X obj 149 393 tabwrite~ slave;
+#X obj 81 425 tabwrite~ master;
+#X obj 81 299 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array master 50 float 0;
+#X coords 0 1 49 0 300 100 1;
+#X restore 265 249 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array slave 50 float 0;
+#X coords 0 1 49 0 300 100 1;
+#X restore 265 349 graph;
+#X obj 182 343 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 44 233 phasor~;
+#X obj 119 236 phasor~;
+#X msg 158 210 0;
+#X obj 158 185 threshold~ 0.75 0 0.25 0;
+#X obj 81 338 metro 99;
+#X obj 158 161 fexpr~ if($x1[0] < $x1[-1] \, 1 \, 0);
+#X connect 0 0 10 0;
+#X connect 1 0 11 0;
+#X connect 6 0 14 0;
+#X connect 9 0 4 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 10 0 15 0;
+#X connect 11 0 4 0;
+#X connect 12 0 11 1;
+#X connect 13 0 12 0;
+#X connect 14 0 5 0;
+#X connect 14 0 4 0;
+#X connect 15 0 13 0;

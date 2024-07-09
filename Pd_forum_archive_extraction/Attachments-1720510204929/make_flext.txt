@@ -1,0 +1,194 @@
+McLaren:~/Desktop/flext max$ sh build-pd-darwin.sh
+build-pd-darwin.sh: line 28: -malign-power: command not found
+mkdir ./pd-darwin
+touch source/flbase.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbase.cpp -o pd-darwin/flbase.o
+touch source/flext.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flext.cpp -o pd-darwin/flext.o
+touch source/flbuf.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbuf.cpp -o pd-darwin/flbuf.o
+touch source/fldsp.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fldsp.cpp -o pd-darwin/fldsp.o
+touch source/fllib.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fllib.cpp -o pd-darwin/fllib.o
+touch source/flxlet.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flxlet.cpp -o pd-darwin/flxlet.o
+touch source/flattr.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr.cpp -o pd-darwin/flattr.o
+touch source/flattr_ed.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr_ed.cpp -o pd-darwin/flattr_ed.o
+touch source/flsupport.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsupport.cpp -o pd-darwin/flsupport.o
+touch source/flutil.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flutil.cpp -o pd-darwin/flutil.o
+touch source/flatom.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom.cpp -o pd-darwin/flatom.o
+touch source/flatom_pr.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_pr.cpp -o pd-darwin/flatom_pr.o
+touch source/flthr.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flthr.cpp -o pd-darwin/flthr.o
+touch source/fltimer.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fltimer.cpp -o pd-darwin/fltimer.o
+touch source/flsimd.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsimd.cpp -o pd-darwin/flsimd.o
+touch source/flout.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flout.cpp -o pd-darwin/flout.o
+touch source/flatom_app.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_app.cpp -o pd-darwin/flatom_app.o
+touch source/flatom_part.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_part.cpp -o pd-darwin/flatom_part.o
+touch source/flitem.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flitem.cpp -o pd-darwin/flitem.o
+touch source/flmeth.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmeth.cpp -o pd-darwin/flmeth.o
+touch source/flmsg.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmsg.cpp -o pd-darwin/flmsg.o
+touch source/flproxy.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flproxy.cpp -o pd-darwin/flproxy.o
+touch source/flqueue.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flqueue.cpp -o pd-darwin/flqueue.o
+touch source/flbind.cpp
+g++ -c -dynamic -O2 -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbind.cpp -o pd-darwin/flbind.o
+libtool -static -o pd-darwin/libflext.a pd-darwin/flbase.o pd-darwin/flext.o pd-darwin/flbuf.o pd-darwin/fldsp.o pd-darwin/fllib.o pd-darwin/flxlet.o pd-darwin/flattr.o pd-darwin/flattr_ed.o pd-darwin/flsupport.o pd-darwin/flutil.o pd-darwin/flatom.o pd-darwin/flatom_pr.o pd-darwin/flthr.o pd-darwin/fltimer.o pd-darwin/flsimd.o pd-darwin/flout.o pd-darwin/flatom_app.o pd-darwin/flatom_part.o pd-darwin/flitem.o pd-darwin/flmeth.o pd-darwin/flmsg.o pd-darwin/flproxy.o pd-darwin/flqueue.o pd-darwin/flbind.o
+libtool: file: pd-darwin/flthr.o has no symbols
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbase.cpp -o pd-darwin/flbase.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flext.cpp -o pd-darwin/flext.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbuf.cpp -o pd-darwin/flbuf.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fldsp.cpp -o pd-darwin/fldsp.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fllib.cpp -o pd-darwin/fllib.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flxlet.cpp -o pd-darwin/flxlet.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr.cpp -o pd-darwin/flattr.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr_ed.cpp -o pd-darwin/flattr_ed.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsupport.cpp -o pd-darwin/flsupport.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flutil.cpp -o pd-darwin/flutil.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom.cpp -o pd-darwin/flatom.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_pr.cpp -o pd-darwin/flatom_pr.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flthr.cpp -o pd-darwin/flthr.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fltimer.cpp -o pd-darwin/fltimer.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsimd.cpp -o pd-darwin/flsimd.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flout.cpp -o pd-darwin/flout.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_app.cpp -o pd-darwin/flatom_app.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_part.cpp -o pd-darwin/flatom_part.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flitem.cpp -o pd-darwin/flitem.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmeth.cpp -o pd-darwin/flmeth.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmsg.cpp -o pd-darwin/flmsg.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flproxy.cpp -o pd-darwin/flproxy.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flqueue.cpp -o pd-darwin/flqueue.do
+g++ -c -dynamic -g -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbind.cpp -o pd-darwin/flbind.do
+libtool -static -o pd-darwin/libflext_d.a pd-darwin/flbase.do pd-darwin/flext.do pd-darwin/flbuf.do pd-darwin/fldsp.do pd-darwin/fllib.do pd-darwin/flxlet.do pd-darwin/flattr.do pd-darwin/flattr_ed.do pd-darwin/flsupport.do pd-darwin/flutil.do pd-darwin/flatom.do pd-darwin/flatom_pr.do pd-darwin/flthr.do pd-darwin/fltimer.do pd-darwin/flsimd.do pd-darwin/flout.do pd-darwin/flatom_app.do pd-darwin/flatom_part.do pd-darwin/flitem.do pd-darwin/flmeth.do pd-darwin/flmsg.do pd-darwin/flproxy.do pd-darwin/flqueue.do pd-darwin/flbind.do
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbase.cpp -o pd-darwin/flbase.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flext.cpp -o pd-darwin/flext.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbuf.cpp -o pd-darwin/flbuf.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fldsp.cpp -o pd-darwin/fldsp.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fllib.cpp -o pd-darwin/fllib.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flxlet.cpp -o pd-darwin/flxlet.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr.cpp -o pd-darwin/flattr.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr_ed.cpp -o pd-darwin/flattr_ed.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsupport.cpp -o pd-darwin/flsupport.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flutil.cpp -o pd-darwin/flutil.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom.cpp -o pd-darwin/flatom.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_pr.cpp -o pd-darwin/flatom_pr.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flthr.cpp -o pd-darwin/flthr.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fltimer.cpp -o pd-darwin/fltimer.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsimd.cpp -o pd-darwin/flsimd.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flout.cpp -o pd-darwin/flout.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_app.cpp -o pd-darwin/flatom_app.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_part.cpp -o pd-darwin/flatom_part.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flitem.cpp -o pd-darwin/flitem.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmeth.cpp -o pd-darwin/flmeth.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmsg.cpp -o pd-darwin/flmsg.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flproxy.cpp -o pd-darwin/flproxy.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flqueue.cpp -o pd-darwin/flqueue.to
+g++ -c -dynamic -O2 -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbind.cpp -o pd-darwin/flbind.to
+libtool -static -o pd-darwin/libflext_t.a pd-darwin/flbase.to pd-darwin/flext.to pd-darwin/flbuf.to pd-darwin/fldsp.to pd-darwin/fllib.to pd-darwin/flxlet.to pd-darwin/flattr.to pd-darwin/flattr_ed.to pd-darwin/flsupport.to pd-darwin/flutil.to pd-darwin/flatom.to pd-darwin/flatom_pr.to pd-darwin/flthr.to pd-darwin/fltimer.to pd-darwin/flsimd.to pd-darwin/flout.to pd-darwin/flatom_app.to pd-darwin/flatom_part.to pd-darwin/flitem.to pd-darwin/flmeth.to pd-darwin/flmsg.to pd-darwin/flproxy.to pd-darwin/flqueue.to pd-darwin/flbind.to
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbase.cpp -o pd-darwin/flbase.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flext.cpp -o pd-darwin/flext.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbuf.cpp -o pd-darwin/flbuf.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fldsp.cpp -o pd-darwin/fldsp.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fllib.cpp -o pd-darwin/fllib.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flxlet.cpp -o pd-darwin/flxlet.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr.cpp -o pd-darwin/flattr.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr_ed.cpp -o pd-darwin/flattr_ed.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsupport.cpp -o pd-darwin/flsupport.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flutil.cpp -o pd-darwin/flutil.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom.cpp -o pd-darwin/flatom.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_pr.cpp -o pd-darwin/flatom_pr.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flthr.cpp -o pd-darwin/flthr.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fltimer.cpp -o pd-darwin/fltimer.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsimd.cpp -o pd-darwin/flsimd.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flout.cpp -o pd-darwin/flout.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_app.cpp -o pd-darwin/flatom_app.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_part.cpp -o pd-darwin/flatom_part.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flitem.cpp -o pd-darwin/flitem.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmeth.cpp -o pd-darwin/flmeth.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmsg.cpp -o pd-darwin/flmsg.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flproxy.cpp -o pd-darwin/flproxy.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flqueue.cpp -o pd-darwin/flqueue.tdo
+g++ -c -dynamic -g -DFLEXT_THREADS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbind.cpp -o pd-darwin/flbind.tdo
+libtool -static -o pd-darwin/libflext_td.a pd-darwin/flbase.tdo pd-darwin/flext.tdo pd-darwin/flbuf.tdo pd-darwin/fldsp.tdo pd-darwin/fllib.tdo pd-darwin/flxlet.tdo pd-darwin/flattr.tdo pd-darwin/flattr_ed.tdo pd-darwin/flsupport.tdo pd-darwin/flutil.tdo pd-darwin/flatom.tdo pd-darwin/flatom_pr.tdo pd-darwin/flthr.tdo pd-darwin/fltimer.tdo pd-darwin/flsimd.tdo pd-darwin/flout.tdo pd-darwin/flatom_app.tdo pd-darwin/flatom_part.tdo pd-darwin/flitem.tdo pd-darwin/flmeth.tdo pd-darwin/flmsg.tdo pd-darwin/flproxy.tdo pd-darwin/flqueue.tdo pd-darwin/flbind.tdo
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbase.cpp -o pd-darwin/flbase.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flext.cpp -o pd-darwin/flext.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbuf.cpp -o pd-darwin/flbuf.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fldsp.cpp -o pd-darwin/fldsp.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fllib.cpp -o pd-darwin/fllib.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flxlet.cpp -o pd-darwin/flxlet.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr.cpp -o pd-darwin/flattr.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr_ed.cpp -o pd-darwin/flattr_ed.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsupport.cpp -o pd-darwin/flsupport.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flutil.cpp -o pd-darwin/flutil.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom.cpp -o pd-darwin/flatom.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_pr.cpp -o pd-darwin/flatom_pr.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flthr.cpp -o pd-darwin/flthr.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fltimer.cpp -o pd-darwin/fltimer.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsimd.cpp -o pd-darwin/flsimd.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flout.cpp -o pd-darwin/flout.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_app.cpp -o pd-darwin/flatom_app.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_part.cpp -o pd-darwin/flatom_part.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flitem.cpp -o pd-darwin/flitem.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmeth.cpp -o pd-darwin/flmeth.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmsg.cpp -o pd-darwin/flmsg.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flproxy.cpp -o pd-darwin/flproxy.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flqueue.cpp -o pd-darwin/flqueue.so
+g++ -c -dynamic -O2 -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbind.cpp -o pd-darwin/flbind.so
+ld -dylib -dynamic -flat_namespace -undefined suppress -o pd-darwin/libflext.dylib pd-darwin/flbase.so pd-darwin/flext.so pd-darwin/flbuf.so pd-darwin/fldsp.so pd-darwin/fllib.so pd-darwin/flxlet.so pd-darwin/flattr.so pd-darwin/flattr_ed.so pd-darwin/flsupport.so pd-darwin/flutil.so pd-darwin/flatom.so pd-darwin/flatom_pr.so pd-darwin/flthr.so pd-darwin/fltimer.so pd-darwin/flsimd.so pd-darwin/flout.so pd-darwin/flatom_app.so pd-darwin/flatom_part.so pd-darwin/flitem.so pd-darwin/flmeth.so pd-darwin/flmsg.so pd-darwin/flproxy.so pd-darwin/flqueue.so pd-darwin/flbind.so -ldylib1.o -lgcc -lstdc++  
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbase.cpp -o pd-darwin/flbase.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flext.cpp -o pd-darwin/flext.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbuf.cpp -o pd-darwin/flbuf.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fldsp.cpp -o pd-darwin/fldsp.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fllib.cpp -o pd-darwin/fllib.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flxlet.cpp -o pd-darwin/flxlet.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr.cpp -o pd-darwin/flattr.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flattr_ed.cpp -o pd-darwin/flattr_ed.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsupport.cpp -o pd-darwin/flsupport.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flutil.cpp -o pd-darwin/flutil.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom.cpp -o pd-darwin/flatom.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_pr.cpp -o pd-darwin/flatom_pr.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flthr.cpp -o pd-darwin/flthr.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/fltimer.cpp -o pd-darwin/fltimer.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flsimd.cpp -o pd-darwin/flsimd.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flout.cpp -o pd-darwin/flout.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_app.cpp -o pd-darwin/flatom_app.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flatom_part.cpp -o pd-darwin/flatom_part.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flitem.cpp -o pd-darwin/flitem.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmeth.cpp -o pd-darwin/flmeth.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flmsg.cpp -o pd-darwin/flmsg.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flproxy.cpp -o pd-darwin/flproxy.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flqueue.cpp -o pd-darwin/flqueue.sdo
+g++ -c -dynamic -g -DFLEXT_THREADS  -DFLEXT_SHARED -DFLEXT_EXPORTS -DFLEXT_SYS=2 -DFLEXT_USE_SIMD -malign-power -maltivec -faltivec -I/Applications/Pd-0.38.app/Contents/Resources/src -I./source  source/flbind.cpp -o pd-darwin/flbind.sdo
+ld -dylib -dynamic -flat_namespace -undefined suppress -o pd-darwin/libflext_d.dylib pd-darwin/flbase.sdo pd-darwin/flext.sdo pd-darwin/flbuf.sdo pd-darwin/fldsp.sdo pd-darwin/fllib.sdo pd-darwin/flxlet.sdo pd-darwin/flattr.sdo pd-darwin/flattr_ed.sdo pd-darwin/flsupport.sdo pd-darwin/flutil.sdo pd-darwin/flatom.sdo pd-darwin/flatom_pr.sdo pd-darwin/flthr.sdo pd-darwin/fltimer.sdo pd-darwin/flsimd.sdo pd-darwin/flout.sdo pd-darwin/flatom_app.sdo pd-darwin/flatom_part.sdo pd-darwin/flitem.sdo pd-darwin/flmeth.sdo pd-darwin/flmsg.sdo pd-darwin/flproxy.sdo pd-darwin/flqueue.sdo pd-darwin/flbind.sdo -ldylib1.o -lgcc -lstdc++  
+Now install as root
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these two things:
+
+        #1) Respect the privacy of others.
+        #2) Think before you type.
+
+Password:
+cp pd-darwin/libflext.a pd-darwin/libflext_d.a pd-darwin/libflext_t.a pd-darwin/libflext_td.a pd-darwin/libflext.dylib pd-darwin/libflext_d.dylib source/flprefix.h source/flstdc.h source/flbase.h source/flclass.h source/flext.h source/flsupport.h source/flmap.h source/fldsp.h source/flinternal.h source/fldefs.h source/fldefs_hdr.h source/fldefs_setup.h source/fldefs_methcb.h source/fldefs_meththr.h source/fldefs_methadd.h source/fldefs_methbind.h source/fldefs_methcall.h source/fldefs_attrcb.h source/fldefs_attrvar.h source/fldefs_attradd.h /Applications/Pd-0.38.app/Contents/Resources/extra
+mv /Applications/Pd-0.38.app/Contents/Resources/extra/lib*.dylib /usr/local/lib
+ranlib /Applications/Pd-0.38.app/Contents/Resources/extra/*.a  # have to rerun ranlib at install dir ?!
+ranlib: file: /Applications/Pd-0.38.app/Contents/Resources/extra/libflext.a(flthr.o) has no symbols
+#make compatibility links for old-style naming
+for i in flext flext_d flext_t flext_td; do rm -f /Applications/Pd-0.38.app/Contents/Resources/extra/$i.a && ln -sf lib$i.a /Applications/Pd-0.38.app/Contents/Resources/extra/$i.a; done 
+McLaren:~/Desktop/flext max$ 

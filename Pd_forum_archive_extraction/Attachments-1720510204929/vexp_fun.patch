@@ -1,0 +1,68 @@
+28a29
+> /* May 2002 - additional floor, ceil and fmod for expr -- Orm Finnendahl */
+83a85,87
+> static void ex_floor(t_expr *expr, long int argc, struct ex_ex *argv, struct ex_ex *optr);
+> static void ex_fmod(t_expr *expr, long int argc, struct ex_ex *argv, struct ex_ex *optr);
+> static void ex_ceil(t_expr *expr, long int argc, struct ex_ex *argv, struct ex_ex *optr);
+109a114,116
+> 	{"floor",	ex_floor,	1},
+> 	{"fmod",	ex_fmod,	2},
+> 	{"ceil",	ex_ceil,	1},
+356c363
+<  * ex_min -- if any of the arfuments are or the output are vectors, a vector
+---
+>  * ex_min -- if any of the arguments are or the output are vectors, a vector
+481a489,541
+> 
+> /*
+>  * ex_floor -- floor
+>  */
+> static void
+> ex_floor(t_expr *e, long int argc, struct ex_ex *argv, struct ex_ex *optr)
+> {
+> 	struct ex_ex *left;
+> 	float *op; /* output pointer */
+> 	float *lp, *rp; 	/* left and right vector pointers */
+> 	float scalar;
+> 	int j;
+> 	left = argv++;
+> 
+> 	FUNC_EVAL_UNARY(left, floor, (double), optr);
+> }
+> 
+> 
+> /*
+>  * ex_fmod -- fmod
+>  */
+> static void
+> ex_fmod(t_expr *e, long int argc, struct ex_ex *argv, struct ex_ex *optr)
+> {
+> 	struct ex_ex *left, *right;
+> 	float *op; /* output pointer */
+> 	float *lp, *rp; 	/* left and right vector pointers */
+> 	float scalar;
+> 	int j;
+> 
+> 	left = argv++;
+> 	right = argv;
+> 	FUNC_EVAL(left, right, fmod, (double), (double), optr);
+> }
+> 
+> /*
+>  * ex_ceil -- ceil
+>  */
+> static void
+> ex_ceil(t_expr *e, long int argc, struct ex_ex *argv, struct ex_ex *optr)
+> {
+> 	struct ex_ex *left;
+> 	float *op; /* output pointer */
+> 	float *lp, *rp; 	/* left and right vector pointers */
+> 	float scalar;
+> 	int j;
+> 
+> 	left = argv++;
+> 
+> 	FUNC_EVAL_UNARY(left, ceil, (double), optr);
+> }
+> 
+> 

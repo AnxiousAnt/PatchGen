@@ -1,0 +1,22 @@
+Index: GemGL.h
+===================================================================
+RCS file: /cvsroot/pd-gem/Gem/src/Base/GemGL.h,v
+retrieving revision 1.3
+diff -u -r1.3 GemGL.h
+--- GemGL.h	10 Dec 2005 18:40:23 -0000	1.3
++++ GemGL.h	17 Jan 2006 10:58:01 -0000
+@@ -61,6 +61,14 @@
+ #  ifdef GL_ARB_fragment_program
+ #   undef GL_ARB_fragment_program
+ #  endif
++
++# ifdef GL_ARB_shader_objects
++#  undef GL_ARB_shader_objects
++# endif
++# ifdef GL_ARB_shading_language_100
++#  undef GL_ARB_shading_language_100
++# endif
++
+ # endif /* DONT_USE_ARB */
+ 
+ /* using ATI's GL-libraries you don't have nvidia's extensions... */

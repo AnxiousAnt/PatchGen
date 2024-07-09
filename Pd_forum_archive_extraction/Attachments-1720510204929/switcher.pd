@@ -1,0 +1,37 @@
+#N canvas 267 274 450 300 10;
+#X obj 100 94 f 0;
+#X obj 133 95 + 1;
+#X obj 100 37 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 100 66 metro 200;
+#X floatatom 52 148 5 0 0 0 - - -;
+#X obj 100 214 bng 15 250 50 0 empty empty out-a 0 -6 0 8 -262144 -1
+-1;
+#X obj 100 123 mod 12;
+#X obj 146 214 bng 15 250 50 0 empty empty out-b 0 -6 0 8 -262144 -1
+-1;
+#X obj 222 63 f \$1;
+#X obj 170 95 * 2;
+#X obj 100 147 select 0;
+#X obj 146 166 select 6;
+#X obj 222 20 loadbang;
+#X floatatom 243 42 5 0 0 1 set-repetition-count - -;
+#X obj 114 246 print a;
+#X obj 169 247 print b;
+#X connect 0 0 1 0;
+#X connect 0 0 6 0;
+#X connect 1 0 0 1;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 5 0 14 0;
+#X connect 6 0 4 0;
+#X connect 6 0 10 0;
+#X connect 7 0 15 0;
+#X connect 8 0 9 0;
+#X connect 8 0 11 1;
+#X connect 9 0 6 1;
+#X connect 10 0 5 0;
+#X connect 10 1 11 0;
+#X connect 11 0 7 0;
+#X connect 12 0 8 0;
+#X connect 13 0 8 0;

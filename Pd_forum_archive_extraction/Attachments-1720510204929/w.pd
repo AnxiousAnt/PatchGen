@@ -1,0 +1,95 @@
+#N struct grob-lib-w float x float y array numbers num-w;
+#N struct num-w float y float x float w;
+#N canvas 399 173 763 587 12;
+#N canvas 0 0 450 300 paint 1;
+#X scalar grob-lib-w 160 167 \; 0 -12 23 \; 0 86 15 \; \;;
+#X restore 577 17 pd paint;
+#X msg 490 168 bang;
+#X msg 582 169 clear;
+#X obj 582 200 s pd-paint;
+#X text 76 168 <----------------;
+#X text 311 166 <----------------;
+#X text 536 167 <--;
+#X floatatom 87 479 5 0 0 0 change-x - -;
+#X msg 261 168 100;
+#X obj 223 290 hradio 15 1 0 8 empty empty select-array-element 0 -10
+0 10 -262144 -1 -1 0;
+#X text 33 291 |;
+#X text 33 271 |;
+#X floatatom 52 220 5 0 8 0 - - -;
+#X msg 87 444 set \$1;
+#X text 45 304 --------------->;
+#X obj 261 203 x-append pd-paint grob-lib-w;
+#X obj 32 245 setsize grob-lib-w numbers;
+#X obj 223 311 element grob-lib-w numbers;
+#X floatatom 547 487 5 0 0 0 change-w - -;
+#X msg 547 452 set \$1;
+#X obj 547 514 set num-w w;
+#X obj 547 425 get num-w w;
+#X obj 87 417 get num-w x;
+#X obj 87 506 set num-w x;
+#X obj 223 334 s \$0-cur;
+#X obj 641 485 r \$0-cur;
+#X obj 547 400 r \$0-cur;
+#X obj 182 483 r \$0-cur;
+#X obj 87 392 r \$0-cur;
+#X msg 32 168 2;
+#X floatatom 311 453 5 0 0 0 change-y - -;
+#X msg 311 418 set \$1;
+#X obj 405 451 r \$0-cur;
+#X obj 311 366 r \$0-cur;
+#X obj 311 391 get num-w y;
+#X obj 311 480 set num-w y;
+#X msg 652 169 vis 1;
+#N canvas 0 0 450 300 tpl 0;
+#X text 168 109 float with x \, y and w fields;
+#X text 204 135 num-w plotted;
+#N canvas 445 540 648 345 grob-lib-w 0;
+#X text 42 137 Arrays are painted using "plot" drawing instructions:
+;
+#X text 44 21 This declares an array named "numbers" whose elements
+are described by the template "num". Note that array declarations take
+three arguments: the word "array" \, the name of the array and the
+name of the elements.;
+#X obj 57 166 plot numbers 90 5 15 0 15;
+#X obj 65 98 struct grob-lib-w float x float y array numbers num-w
+;
+#X restore 66 139 pd grob-lib-w;
+#N canvas 686 559 581 359 num-w 0;
+#X obj 91 184 filledpolygon 900 900 1 0 -5 10 -5 10 5 0 5;
+#X text 112 154 A red box visualizes the float values:;
+#X obj 135 95 struct num-w float y float x float w;
+#X text 80 32 The num-w float has a w and an x field added.;
+#X restore 65 111 pd num-w;
+#X restore 633 97 pd tpl;
+#X text 53 109 Now we added a field "w" as well. It will control the
+line width. Additionally it will make it impossible to still control
+y with the mouse. :(;
+#X text 26 17 An Array's Alphabet: W \, X \, Y;
+#X text 54 56 Array plots behave differently \, if the array elements
+contain fields named "x" \, "y" and/or "w".;
+#X connect 1 0 15 1;
+#X connect 2 0 3 0;
+#X connect 7 0 23 0;
+#X connect 8 0 15 0;
+#X connect 9 0 17 0;
+#X connect 12 0 16 0;
+#X connect 13 0 7 0;
+#X connect 15 0 16 1;
+#X connect 15 0 17 1;
+#X connect 17 0 24 0;
+#X connect 18 0 20 0;
+#X connect 19 0 18 0;
+#X connect 21 0 19 0;
+#X connect 22 0 13 0;
+#X connect 25 0 20 1;
+#X connect 26 0 21 0;
+#X connect 27 0 23 1;
+#X connect 28 0 22 0;
+#X connect 29 0 16 0;
+#X connect 30 0 35 0;
+#X connect 31 0 30 0;
+#X connect 32 0 35 1;
+#X connect 33 0 34 0;
+#X connect 34 0 31 0;
+#X connect 36 0 3 0;

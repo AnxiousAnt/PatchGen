@@ -1,0 +1,74 @@
+[349350.593101] BUG: using smp_processor_id() in preemptible [00000001] code: pd-gui/15595
+[349350.593118] caller is oops_begin+0x8/0x69
+[349350.593121] 
+[349350.593122] Call Trace:
+[349350.593136]  [<ffffffff803816b5>] debug_smp_processor_id+0xad/0xbc
+[349350.593142]  [<ffffffff805159b5>] oops_begin+0x8/0x69
+[349350.593150]  [<ffffffff8020b37b>] die+0x16/0x4e
+[349350.593156]  [<ffffffff80515de2>] do_general_protection+0xfe/0x107
+[349350.593163]  [<ffffffff8051563d>] error_exit+0x0/0x84
+[349350.593194]  [<ffffffff880088a8>] :snd:snd_ctl_release+0x0/0xfc
+[349350.593208]  [<ffffffff880088a8>] :snd:snd_ctl_release+0x0/0xfc
+[349350.593218]  [<ffffffff80437731>] hcd_buffer_free+0x8/0x57
+[349350.593229]  [<ffffffff8832fc10>] :snd_usb_lib:snd_usbmidi_out_endpoint_delete+0x28/0x3a
+[349350.593237]  [<ffffffff8832fdad>] :snd_usb_lib:snd_usbmidi_free+0x1d/0x3f
+[349350.593251]  [<ffffffff8802e279>] :snd_rawmidi:snd_rawmidi_free+0xa8/0xb4
+[349350.593265]  [<ffffffff8800b54c>] :snd:snd_device_free+0xd7/0x132
+[349350.593278]  [<ffffffff8800b8c4>] :snd:snd_device_free_all+0x76/0x8a
+[349350.593292]  [<ffffffff88006c18>] :snd:snd_card_do_free+0x4c/0xe4
+[349350.593305]  [<ffffffff880074ec>] :snd:snd_card_file_remove+0xec/0x132
+[349350.593320]  [<ffffffff8800899a>] :snd:snd_ctl_release+0xf2/0xfc
+[349350.593327]  [<ffffffff8027d6ca>] __fput+0xa1/0x165
+[349350.593335]  [<ffffffff8027bfdf>] filp_close+0x5a/0x62
+[349350.593344]  [<ffffffff80236f6e>] put_files_struct+0x63/0xa8
+[349350.593351]  [<ffffffff802379bc>] do_exit+0x258/0x81e
+[349350.593359]  [<ffffffff80238028>] sys_exit_group+0x0/0xe
+[349350.593367]  [<ffffffff802406c7>] get_signal_to_deliver+0x401/0x430
+[349350.593374]  [<ffffffff802091dc>] do_notify_resume+0x9c/0x670
+[349350.593379]  [<ffffffff80517e50>] kprobe_flush_task+0x5c/0x9f
+[349350.593391]  [<ffffffff80512b2f>] thread_return+0xc3/0xec
+[349350.593403]  [<ffffffff8020a1ec>] retint_signal+0x3d/0x81
+[349350.593412] 
+[349350.593416] general protection fault: 0000 [1] PREEMPT SMP 
+[349350.593422] CPU 1 
+[349350.593425] Modules linked in: isofs snd_seq_oss snd_seq_dummy snd_usb_audio snd_usb_lib radeon snd_emu10k1_synth snd_emux_synth snd_seq_virmidi snd_seq_midi_emul snd_seq_midi snd_seq_midi_event snd_seq snd_emu10k1 snd_ac97_codec snd_util_mem snd_hdsp snd_rawmidi snd_seq_device snd_pcm snd_timer snd_page_alloc snd_hwdep snd reiser4 ipv6 ohci1394 ieee1394 capability commoncap softdog raid0 pcspkr forcedeth emu10k1_gp gameport radeonfb fb fb_ddc i2c_algo_bit cfbcopyarea cfbimgblt cfbfillrect ac97_bus serio_raw
+[349350.593458] Pid: 15595, comm: pd-gui Not tainted 2.6.20-gentoo-r8-111 #7
+[349350.593463] RIP: 0010:[<ffffffff80437731>]  [<ffffffff80437731>] hcd_buffer_free+0x8/0x57
+[349350.593470] RSP: 0018:ffff810025b0fc50  EFLAGS: 00010286
+[349350.593475] RAX: ffff810038940440 RBX: ffff81003da6cc00 RCX: 000000003fa82060
+[349350.593480] RDX: ffff81003fa82060 RSI: 0000000000000020 RDI: 01010000a568e0f8
+[349350.593485] RBP: 0000000000000001 R08: ffff81003fa82060 R09: ffff810025b0fc28
+[349350.593490] R10: ffffffff880088a8 R11: ffffffff880088a8 R12: ffff8100036310c0
+[349350.593495] R13: 0000000000000001 R14: ffff81003e9565c0 R15: ffff8100335696c8
+[349350.593501] FS:  00002b521c5d0f70(0000) GS:ffff810001ff9540(0000) knlGS:00000000f5c2eb90
+[349350.593505] CS:  0010 DS: 0000 ES: 0000 CR0: 000000008005003b
+[349350.593509] CR2: 00002b7077526100 CR3: 0000000000201000 CR4: 00000000000006e0
+[349350.593515] Process pd-gui (pid: 15595, threadinfo ffff810025b0e000, task ffff810033569100)
+[349350.593518] Stack:  ffffffff8832fc10 ffff8100036310c0 ffffffff8832fdad ffff81003eb59000
+[349350.593528]  0000000000001000 0000000000001fff ffffffff8802e279 ffff81000c880180
+[349350.593535]  ffffffff8800b54c ffff81000391e000 ffffffff8800b8c4 ffff81000391e000
+[349350.593541] Call Trace:
+[349350.593548]  [<ffffffff8832fc10>] :snd_usb_lib:snd_usbmidi_out_endpoint_delete+0x28/0x3a
+[349350.593556]  [<ffffffff8832fdad>] :snd_usb_lib:snd_usbmidi_free+0x1d/0x3f
+[349350.593565]  [<ffffffff8802e279>] :snd_rawmidi:snd_rawmidi_free+0xa8/0xb4
+[349350.593579]  [<ffffffff8800b54c>] :snd:snd_device_free+0xd7/0x132
+[349350.593592]  [<ffffffff8800b8c4>] :snd:snd_device_free_all+0x76/0x8a
+[349350.593605]  [<ffffffff88006c18>] :snd:snd_card_do_free+0x4c/0xe4
+[349350.593618]  [<ffffffff880074ec>] :snd:snd_card_file_remove+0xec/0x132
+[349350.593632]  [<ffffffff8800899a>] :snd:snd_ctl_release+0xf2/0xfc
+[349350.593638]  [<ffffffff8027d6ca>] __fput+0xa1/0x165
+[349350.593645]  [<ffffffff8027bfdf>] filp_close+0x5a/0x62
+[349350.593651]  [<ffffffff80236f6e>] put_files_struct+0x63/0xa8
+[349350.593657]  [<ffffffff802379bc>] do_exit+0x258/0x81e
+[349350.593665]  [<ffffffff80238028>] sys_exit_group+0x0/0xe
+[349350.593671]  [<ffffffff802406c7>] get_signal_to_deliver+0x401/0x430
+[349350.593678]  [<ffffffff802091dc>] do_notify_resume+0x9c/0x670
+[349350.593682]  [<ffffffff80517e50>] kprobe_flush_task+0x5c/0x9f
+[349350.593689]  [<ffffffff80512b2f>] thread_return+0xc3/0xec
+[349350.593700]  [<ffffffff8020a1ec>] retint_signal+0x3d/0x81
+[349350.593709] 
+[349350.593710] 
+[349350.593712] Code: 48 8b 07 31 d2 41 b9 03 00 00 00 48 83 b8 10 02 00 00 00 75 
+[349350.593723] RIP  [<ffffffff80437731>] hcd_buffer_free+0x8/0x57
+[349350.593729]  RSP <ffff810025b0fc50>
+[349350.593732]  <1>Fixing recursive fault but reboot is needed!

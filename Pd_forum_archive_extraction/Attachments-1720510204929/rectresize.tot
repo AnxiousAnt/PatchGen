@@ -1,0 +1,40 @@
+proc resize'rect'click {w x y} {
+ global X Y RSZPOS ID
+ set X [$w canvasx $x]
+ set Y [$w canvasy $y]
+ catch {unset RSZPOS}
+ set ID [$w find withtag current]
+ set coords [$w coords $ID]
+ foreach {x0 y0 x1 y1} $coords break
+ if {[between $x0 $y0 $X $Y $x0 $y1]} {
+  set RSZPOS 0
+ } elseif {[between $x0 $y1 $X $Y $x1 $y1]} {
+  set RSZPOS 3
+ } elseif {[between $x1 $y1 $X $Y $x1 $y0]} {
+  set RSZPOS 2
+ } elseif {[between $x1 $y0 $X $Y $x0 $y0]} {
+  set RSZPOS 1
+ }
+}
+proc resize'rect {w x y} {
+ global X Y RSZPOS ID
+ set x [$w canvasx $x]
+ set y [$w canvasy $y]
+ if [info exists RSZPOS] {
+  set coords [$w coords $ID]
+  set d [expr {$RSZPOS%2? $y: $x}]
+  $w coords $ID [lset coords $RSZPOS $d]
+ } else {
+  $w move $ID [expr {$x-$X}] [expr {$y-$Y}]
+ }
+  set X $x; set Y $y
+ }
+proc between {x0 y0 x1 y1 x2 y2} {
+ set t  10
+ set xm [expr {($x0+$x2)/2.}]
+ set ym [expr {($y0+$y2)/2.}]
+ expr {abs($xm-$x1)<$t && abs($ym-$y1)<$t}
+}
+.^.c create rect 50 50 100 100 -fill red -tag rsz
+.^.c bind rsz <1>         {resize'rect'click %W %x %y}
+.^.c bind rsz <B1-Motion> {resize'rect %W %x %y}

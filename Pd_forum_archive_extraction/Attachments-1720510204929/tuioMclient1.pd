@@ -1,0 +1,126 @@
+#N canvas 611 236 950 719 10;
+#X declare -lib mrpeach;
+#X obj -94 -307 import mrpeach;
+#X obj 17 -282 unpackOSC;
+#X obj 17 -307 udpreceive 3333;
+#X obj 17 -208 list split 1;
+#X obj 84 -146 unpack s;
+#X obj 84 -174 t l b;
+#X obj 147 -146 str set;
+#X obj 84 -119 str compare;
+#X obj 51 -91 spigot;
+#X obj 51 -45 list split 1;
+#X obj 301 131 >;
+#X obj 301 67 t f f b;
+#X floatatom 301 101 5 0 0 0 - - -;
+#X obj 301 158 sel 1;
+#X obj 301 185 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 17 -41 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -81 361 print leave;
+#X obj -10 94 timer;
+#X obj 50 -17 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 17 62 spigot;
+#X obj 23 8 - 1;
+#X obj -10 36 spigot;
+#X floatatom -10 123 5 0 0 0 - - -;
+#X obj 34 88 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -80 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -81 310 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 36 310 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -81 237 line;
+#X floatatom -71 262 5 0 0 0 - - -;
+#X floatatom 21 182 5 0 0 0 - - -;
+#X obj -42 208 pack;
+#X msg -42 182 10;
+#X obj -81 285 threshold 10 10 9 10;
+#X obj -80 152 t b b;
+#X obj -10 182 int;
+#X msg -81 208 1;
+#X obj -81 334 zl reg;
+#X obj 301 218 zl reg;
+#X obj 301 262 print enter;
+#X obj 85 -3 print update;
+#X obj 301 -3 unpack f;
+#X obj -2 361 outlet;
+#X obj 377 262 outlet;
+#X obj 73 22 outlet;
+#X obj -10 151 * 2;
+#X text -43 228 count to 10 in 2 times the time in between the previous
+bangs (bang means list update received);
+#X text 330 122 check if id number has changed: this means elvis has
+entered the building;
+#X text -35 327 bang if 10 is hit and time exceeds 2 times the time
+in between two previously received messages;
+#X text 43 362 elvis has left the building;
+#X text 423 263 elvis has entered the building;
+#X text 70 41 output fudicial updates;
+#X text 116 -306 reacTIVision incoming signal;
+#X text 80 -287 unpack udp data to OSC data;
+#X text 98 -211 split the "/tuio/2Dobj" symbol;
+#X text 80 -274 message form for fiducial is list of 2 symbols with
+10 floats: "/tuio/2Dobj set #id #fudicial x y rotation float5 float6
+float7 float8 float9 float10";
+#X text 355 -142 Alternative Tuioclient;
+#X text 362 -116 2010 \, menno;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 1 5 0;
+#X connect 3 1 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 4 0;
+#X connect 5 1 6 0;
+#X connect 6 0 7 1;
+#X connect 7 0 8 1;
+#X connect 8 0 9 0;
+#X connect 8 0 15 0;
+#X connect 9 1 36 1;
+#X connect 9 1 37 1;
+#X connect 9 1 39 0;
+#X connect 9 1 40 0;
+#X connect 9 1 43 0;
+#X connect 10 0 13 0;
+#X connect 11 0 12 0;
+#X connect 11 1 10 0;
+#X connect 11 2 12 0;
+#X connect 12 0 10 1;
+#X connect 13 0 14 0;
+#X connect 14 0 37 0;
+#X connect 15 0 18 0;
+#X connect 15 0 21 0;
+#X connect 15 0 19 0;
+#X connect 17 0 22 0;
+#X connect 18 0 19 1;
+#X connect 18 0 20 0;
+#X connect 19 0 17 1;
+#X connect 19 0 23 0;
+#X connect 19 0 24 0;
+#X connect 20 0 21 1;
+#X connect 21 0 17 0;
+#X connect 21 0 24 0;
+#X connect 22 0 44 0;
+#X connect 24 0 33 0;
+#X connect 25 0 36 0;
+#X connect 27 0 28 0;
+#X connect 27 0 32 0;
+#X connect 30 0 27 0;
+#X connect 31 0 30 0;
+#X connect 32 0 25 0;
+#X connect 32 1 26 0;
+#X connect 33 0 31 0;
+#X connect 33 1 35 0;
+#X connect 34 0 30 1;
+#X connect 35 0 27 0;
+#X connect 36 0 16 0;
+#X connect 36 0 41 0;
+#X connect 37 0 38 0;
+#X connect 37 0 42 0;
+#X connect 40 0 11 0;
+#X connect 44 0 29 0;
+#X connect 44 0 34 0;

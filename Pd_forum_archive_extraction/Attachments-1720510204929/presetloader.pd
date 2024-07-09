@@ -1,0 +1,44 @@
+#N canvas 79 70 920 310 12;
+#X obj 239 198 textfile;
+#X obj 239 225 select end;
+#X obj 239 111 openpanel;
+#X obj 188 37 bng 15 250 50 0 empty empty select_presets_file 0 -6
+0 8 -258699 -241291 -1;
+#X obj 133 142 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X msg 133 118 1;
+#X msg 168 117 0;
+#X obj 188 63 t b b b;
+#X msg 213 161 rewind;
+#X obj 133 161 metro 100;
+#X obj 239 277 print open;
+#X obj 314 253 s \$0_eof;
+#X obj 168 93 r \$0_eof;
+#X msg 239 137 read \$1;
+#X msg 283 172 clear;
+#X obj 341 69 print one;
+#X obj 343 97 print two;
+#X obj 344 124 print three;
+#X text 75 35 click here ->;
+#X text 436 93 <- we get this output in the console before we selected
+a file in openpanel;
+#X connect 0 0 1 0;
+#X connect 0 1 11 0;
+#X connect 1 0 10 0;
+#X connect 1 1 11 0;
+#X connect 2 0 13 0;
+#X connect 3 0 7 0;
+#X connect 4 0 9 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 5 0;
+#X connect 7 0 17 0;
+#X connect 7 1 8 0;
+#X connect 7 1 16 0;
+#X connect 7 2 2 0;
+#X connect 7 2 15 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 12 0 6 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;

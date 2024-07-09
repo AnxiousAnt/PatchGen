@@ -1,0 +1,19 @@
+#N canvas 14 15 299 270 10;
+#X text 83 52 off;
+#X floatatom 48 102 0 0 0 0 - - -;
+#X obj 48 207 noteout;
+#X obj 48 181 makenote 64 250;
+#X obj 48 128 metro 500;
+#X msg 48 75 1;
+#X msg 80 75 0;
+#X text 48 52 on;
+#X msg 48 155 60;
+#X text 41 19 THE [MAKENOTE] APPARATUS;
+#X connect 1 0 4 0;
+#X connect 3 0 2 0;
+#X connect 3 1 2 1;
+#X connect 4 0 8 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 8 0 3 0;
+

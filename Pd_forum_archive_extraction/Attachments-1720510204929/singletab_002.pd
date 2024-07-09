@@ -1,0 +1,48 @@
+#N canvas 440 52 627 636 10;
+#N canvas 0 22 236 173 1004-container 0;
+#X restore 227 18 pd \$0-container;
+#X obj 114 300 f \$0;
+#X obj 114 320 makefilename pd-%d-container;
+#X obj 47 18 loadbang;
+#X obj 47 491 outlet;
+#X obj 77 418 pack s s;
+#X obj 47 82 value \$1.st.req;
+#X obj 47 261 select 0;
+#X obj 47 107 t f f;
+#X obj 77 127 + 1;
+#X obj 77 147 value \$1.st.req;
+#X obj 47 285 t b b;
+#X msg 47 469 1;
+#X obj 114 341 t s s;
+#X msg 144 363 \; \$1 clear;
+#X obj 77 397 symbol \$1;
+#X msg 77 446 \; \$2 obj 10 10 table \$1;
+#X text 189 90 more simple-minded \, we would just set \$1.st.req to
+"1" instead of incrementing it each time. (however \, this way we also
+now how many instances of the class we have). and of course we could
+use just one [value] - i use 2 for better readability.;
+#X obj 346 320 del 0;
+#X obj 47 48 t b b b;
+#X obj 346 339 value \$1.st.req;
+#X floatatom 346 362 5 0 0 0 - - -;
+#X text 386 365 wow! the number of instances;
+#X connect 1 0 2 0;
+#X connect 2 0 13 0;
+#X connect 3 0 19 0;
+#X connect 5 0 16 0;
+#X connect 6 0 8 0;
+#X connect 7 0 11 0;
+#X connect 8 0 7 0;
+#X connect 8 1 9 0;
+#X connect 9 0 10 0;
+#X connect 11 0 12 0;
+#X connect 11 1 15 0;
+#X connect 12 0 4 0;
+#X connect 13 0 5 1;
+#X connect 13 1 14 0;
+#X connect 15 0 5 0;
+#X connect 18 0 20 0;
+#X connect 19 0 6 0;
+#X connect 19 1 1 0;
+#X connect 19 2 18 0;
+#X connect 20 0 21 0;

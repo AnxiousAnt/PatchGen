@@ -1,0 +1,17 @@
+No application knows how to open URL file:///Users/porres/Documents/Pd/externals/else%5Bv1.0-0rc1-test_with_live_electronics_tutorial%5D(Darwin-amd64-32).dek (Error Domain=NSOSStatusErrorDomain Code=-10814 "kLSApplicationNotFoundErr: E.g. no application claims the file" UserInfo={_LSLine=1489, _LSFunction=runEvaluator}).
+No application knows how to open URL file:///Users/porres/Documents/Pd/externals/else%5Bv1.0-0rc1-test_with_live_electronics_tutorial%5D(Darwin-amd64-32).dek (Error Domain=NSOSStatusErrorDomain Code=-10814 "kLSApplicationNotFoundErr: E.g. no application claims the file" UserInfo={_LSLine=1489, _LSFunction=runEvaluator}).
+    while executing
+"exec sh -c [format "open '%s'" $filename]"
+    (procedure "pd_menucommands::menu_openfile" line 3)
+    invoked from within
+"pd_menucommands::menu_openfile $fullpkgfile"
+    (procedure "::deken::utilities::extract" line 60)
+    invoked from within
+"::deken::utilities::extract $installdir $filename $fullpkgfile $keep"
+    (procedure "::deken::install_package" line 38)
+    invoked from within
+"::deken::install_package ${fullpkgfile} ${filename} ${installdir} ${::deken::keep_package}"
+    (procedure "::deken::clicked_link" line 37)
+    invoked from within
+"::deken::clicked_link {http://puredata.info/Members/porres/software/else/1.0-0rc1-test_with_live_electronics_tutorial/else[v1.0-0rc1-test_with_live_el..."
+    (command bound to event)

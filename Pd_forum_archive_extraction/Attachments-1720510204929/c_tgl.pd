@@ -1,0 +1,7 @@
+#N canvas 0 0 453 340 10;
+#X obj 130 113 tgl 15 0 0 0 empty 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 130 45 r TOGGLE;
+#X obj 130 72 == \$1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X coords 0 -1 1 1 85 30 1 100 100;

@@ -1,0 +1,73 @@
+#N canvas 328 22 986 866 10;
+#X obj 152 448 triangle~;
+#X obj 411 331 loadbang;
+#X obj 152 390 phasor~ 100;
+#X obj 322 360 phasor~ 1;
+#X obj 322 419 triangle~ 0.5;
+#X text 113 736 SuperCollider Code \; VarSaw.ar(LFPulse.kr(1 \, 0 \,
+0.3 \, 50 \, 50) \, 0 \, LFTri.ar(1 \, 0 \, 0.5 \, 0.5))!2.play;
+#X obj 137 687 dac~;
+#X msg 411 360 lo 0.001 \, hi 0.999;
+#X obj 137 642 *~;
+#X obj 45 599 line~;
+#X obj 152 182 metro 1000;
+#X obj 245 213 del 300;
+#X msg 152 240 100;
+#X msg 245 240 50;
+#X obj 72 486 samplerate~;
+#X obj 45 40 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 155 88 sel 0;
+#X msg 245 151 stop;
+#X obj 298 151 b;
+#X obj 45 572 pack;
+#X obj 45 458 t f b;
+#X obj 72 516 swap 64000;
+#X obj 72 543 /;
+#X text 355 174 It's hard to reset [train~]'s phase \, so [metro] and
+[del] work better here.;
+#X msg 298 300 0;
+#X msg 373 300 0.25;
+#X text 379 225 VarSaw.ar()'s phase 0 is the same as [phasor~]-[triangle~]'s.
+They both ramp up from -1 at phase=0. LFTri.ar()'s phase 0 \, on the
+other hand actually corresponds with output 0 (that is \, halfway up
+the ramp). This is the same as phase 0.25 in [phasor~]-[triangle~].
+;
+#X msg 411 389 lo 0 \, hi 1;
+#X text 538 358 Small point \, but SC3 clips the peak-value phase offset
+to 0.001 to 0.999. It makes very little difference in the sound (try
+it with 0 to 1).;
+#X text 175 597 SC3 ramps one block when it starts a Synth.;
+#X connect 0 0 8 1;
+#X connect 1 0 7 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 1;
+#X connect 7 0 4 0;
+#X connect 8 0 6 0;
+#X connect 8 0 6 1;
+#X connect 9 0 8 0;
+#X connect 10 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;
+#X connect 14 0 21 0;
+#X connect 15 0 16 0;
+#X connect 15 0 20 0;
+#X connect 16 0 17 0;
+#X connect 16 1 10 0;
+#X connect 16 1 18 0;
+#X connect 17 0 11 0;
+#X connect 17 0 10 0;
+#X connect 18 0 24 0;
+#X connect 18 0 25 0;
+#X connect 19 0 9 0;
+#X connect 20 0 19 0;
+#X connect 20 1 14 0;
+#X connect 21 0 22 0;
+#X connect 21 1 22 1;
+#X connect 22 0 19 1;
+#X connect 24 0 2 1;
+#X connect 25 0 3 1;
+#X connect 27 0 4 0;

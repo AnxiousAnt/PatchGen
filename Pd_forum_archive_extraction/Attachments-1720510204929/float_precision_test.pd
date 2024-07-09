@@ -1,0 +1,16 @@
+#N canvas 364 685 450 300 10;
+#X msg 32 18 1;
+#X obj 32 44 atan;
+#X obj 32 68 * 4;
+#X floatatom 61 104 15 0 0 0 - - -;
+#X obj 111 138 sin;
+#X floatatom 141 160 15 0 0 0 - - -;
+#X obj 112 188 print sin;
+#X obj 32 132 print atan;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 4 0;
+#X connect 2 0 7 0;
+#X connect 4 0 5 0;
+#X connect 4 0 6 0;

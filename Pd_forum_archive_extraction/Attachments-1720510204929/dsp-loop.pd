@@ -1,0 +1,13 @@
+#N canvas 193 181 509 239 10;
+#N canvas 0 0 450 300 a~ 0;
+#X obj 64 54 inlet~;
+#X obj 62 127 outlet~;
+#X restore 173 105 pd a~;
+#N canvas 0 0 450 300 b~ 0;
+#X obj 64 54 inlet~;
+#X obj 62 127 outlet~;
+#X restore 229 105 pd b~;
+#X text 81 50 The most simple dsp-loop: Both subpatches are empty!
+;
+#X connect 0 0 1 0;
+#X connect 1 0 0 0;

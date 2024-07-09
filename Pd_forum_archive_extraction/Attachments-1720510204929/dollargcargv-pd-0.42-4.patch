@@ -1,0 +1,246 @@
+Index: src/m_binbuf.c
+===================================================================
+--- src/m_binbuf.c	(revision 11196)
++++ src/m_binbuf.c	(working copy)
+@@ -59,6 +59,7 @@
+     const char *textp = text, *etext = text+size;
+     t_atom *ap;
+     int nalloc = 16, natom = 0;
++
+     t_freebytes(x->b_vec, x->b_n * sizeof(*x->b_vec));
+     x->b_vec = t_getbytes(nalloc * sizeof(*x->b_vec));
+     ap = x->b_vec;
+@@ -77,6 +78,7 @@
+                 /* it's an atom other than a comma or semi */
+             char c;
+             int floatstate = 0, slash = 0, lastslash = 0, dollar = 0;
++            int dollarat=0;
+             bufp = buf;
+             do
+             {
+@@ -142,16 +144,19 @@
+                     }
+                 }
+                 if (!lastslash && c == '$' && (textp != etext && 
+-                    textp[0] >= '0' && textp[0] <= '9'))
++                    ((textp[0] >= '0' && textp[0] <= '9')||
++                     textp[0]=='#'||textp[0]=='@'))) /* JMZ: $@ and $# expansion */
+                         dollar = 1;
++
+                 if (!slash) bufp++;
+             }
+             while (textp != etext && bufp != ebuf && 
+                 (slash || (*textp != ' ' && *textp != '\n' && *textp != '\r'
+                     && *textp != '\t' &&*textp != ',' && *textp != ';')));
++
+             *bufp = 0;
+ #if 0
+-            post("binbuf_text: buf %s", buf);
++            post("binbuf_text: buf %s, dollar=%d", buf, dollar);
+ #endif
+             if (floatstate == 2 || floatstate == 4 || floatstate == 5 ||
+                 floatstate == 8)
+@@ -162,6 +167,31 @@
+                 was. */
+             else if (dollar)
+             {
++              if(buf[1]=='@') /* JMZ: $@ expansion */
++                {
++                  if(buf[2]==0) /* only expand A_DOLLAR $@ */
++                    {
++                      ap->a_type = A_DOLLAR;
++                      ap->a_w.w_symbol = gensym("@");
++                    } 
++                  else /* there is no A_DOLLSYM $@ */
++                    {
++                      SETSYMBOL(ap, gensym(buf));
++                    }
++                }
++              else if(buf[1]=='#') /* JMZ: $# expansion (just like $1,...) */
++                {
++                  if(buf[2]==0) 
++                    {
++                      ap->a_type = A_DOLLAR;
++                      ap->a_w.w_symbol = gensym("#");
++                    } 
++                  else 
++                    {
++                      SETDOLLSYM(ap, gensym(buf));
++                    }
++                }
++              else {
+                 if (buf[0] != '$') 
+                     dollar = 0;
+                 for (bufp = buf+1; *bufp; bufp++)
+@@ -170,6 +200,7 @@
+                 if (dollar)
+                     SETDOLLAR(ap, atoi(buf+1));
+                 else SETDOLLSYM(ap, gensym(buf));
++              }
+             }
+             else SETSYMBOL(ap, gensym(buf));
+         }
+@@ -306,8 +337,14 @@
+             SETSYMBOL(ap, gensym(","));
+             break;
+         case A_DOLLAR:
+-            sprintf(tbuf, "$%d", ap->a_w.w_index);
+-            SETSYMBOL(ap, gensym(tbuf));
++             if(ap->a_w.w_symbol==gensym("@")){ /* JMZ: $@ expansion */
++               SETSYMBOL(ap, gensym("$@"));
++             } else if(ap->a_w.w_symbol==gensym("#")){ /* JMZ: $# expansion */
++               SETSYMBOL(ap, gensym("$#"));
++             } else {
++               sprintf(tbuf, "$%d", ap->a_w.w_index);
++               SETSYMBOL(ap, gensym(tbuf));
++             }
+             break;
+         case A_DOLLSYM:
+             atom_string(ap, tbuf, MAXPDSTRING);
+@@ -358,12 +395,21 @@
+             char *str = argv->a_w.w_symbol->s_name, *str2;
+             if (!strcmp(str, ";")) SETSEMI(ap);
+             else if (!strcmp(str, ",")) SETCOMMA(ap);
+-            else if ((str2 = strchr(str, '$')) && str2[1] >= '0'
+-                && str2[1] <= '9')
++            else if (!strcmp(str, "$@")) /* JMZ: $@ expansion */
++              {
++                ap->a_type = A_DOLLAR;
++                ap->a_w.w_symbol = gensym("@");
++              }
++            else if ((str2 = strchr(str, '$')) && 
++                     ((str2[1] >= '0'  && str2[1] <= '9') || str2[1] == '#'))
+             {
+                 int dollsym = 0;
+                 if (*str != '$')
+                     dollsym = 1;
++                else if (str2[1]=='#'){ /* JMZ: $# expansion */
++                  if(str2[2]!=0)
++                     dollsym = 1;
++                }
+                 else for (str2 = str + 1; *str2; str2++)
+                     if (*str2 < '0' || *str2 > '9')
+                 {
+@@ -374,9 +420,14 @@
+                     SETDOLLSYM(ap, gensym(str));
+                 else
+                 {
++                  if(str2[1]=='#'){
++                    ap->a_type = A_DOLLAR;
++                    ap->a_w.w_symbol = gensym("#");
++                  } else {
+                     int dollar = 0;
+                     sscanf(argv->a_w.w_symbol->s_name + 1, "%d", &dollar);
+                     SETDOLLAR(ap, dollar);
++                  }
+                 }
+             }
+             else *ap = *argv;
+@@ -438,10 +489,16 @@
+ {
+   int argno=atol(s);
+   int arglen=0;
++  int dash=0;
+   char*cs=s;
+   char c=*cs;
+   *buf=0;
+ 
++  if(c=='#'){
++    c=*cs++;
++    dash=1;
++    arglen++;
++  } else
+   while(c&&(c>='0')&&(c<='9')){
+     c=*cs++;
+     arglen++;
+@@ -451,6 +508,11 @@
+     sprintf(buf, "$");
+     return 0;
+   }
++  else if (dash!=0) /* $# */
++    {
++      sprintf(buf, "%d", ac);
++      return (arglen);
++    }
+   else if (argno < 0 || argno > ac) /* undefined argument */
+     {
+       if(!tonew)return 0;
+@@ -604,8 +666,13 @@
+             if (!ac) break;
+             if (at->a_type == A_DOLLAR)
+             {
+-                if (at->a_w.w_index <= 0 || at->a_w.w_index > argc)
++                if (at->a_w.w_symbol == gensym("#"))
+                 {
++                  error("$#: symbol needed as message destination");
++                  goto cleanup;
++                }
++                else if (at->a_w.w_index <= 0 || at->a_w.w_index > argc)
++                {
+                     error("$%d: not enough arguments supplied",
+                             at->a_w.w_index);
+                     goto cleanup; 
+@@ -678,6 +745,20 @@
+                 *msp = *at;
+                 break;
+             case A_DOLLAR:
++              if (at->a_w.w_symbol==gensym("@")) 
++                { /* JMZ: $@ expansion */
++                  int i;
++                  for (i=0; i<argc; i++)
++                    {
++                      *msp++=argv[i];
++                      nargs++;
++                    }
++                  msp--;
++                  nargs--;
++                }
++              else if (at->a_w.w_symbol==gensym("#")) /* JMZ: $# expansion */
++                SETFLOAT(msp, argc);
++              else
+                 if (at->a_w.w_index > 0 && at->a_w.w_index <= argc)
+                     *msp = argv[at->a_w.w_index-1];
+                 else if (at->a_w.w_index == 0)
+Index: src/m_atom.c
+===================================================================
+--- src/m_atom.c	(revision 11196)
++++ src/m_atom.c	(working copy)
+@@ -86,10 +86,14 @@
+         char *sp;
+         unsigned int len;
+         int quote;
++        if(!strcmp(a->a_w.w_symbol->s_name, "$@")) /* JMZ: #@ quoting */
++          quote=1;
++        else
+         for (sp = a->a_w.w_symbol->s_name, len = 0, quote = 0; *sp; sp++, len++)
+             if (*sp == ';' || *sp == ',' || *sp == '\\' || 
+-                (*sp == '$' && sp[1] >= '0' && sp[1] <= '9'))
++                (*sp == '$' && ((sp[1] >= '0' && sp[1] <= '9')||sp[1]=='#')))
+                 quote = 1;
++        
+         if (quote)
+         {
+             char *bp = buf, *ep = buf + (bufsize-2);
+@@ -97,7 +101,7 @@
+             while (bp < ep && *sp)
+             {
+                 if (*sp == ';' || *sp == ',' || *sp == '\\' ||
+-                    (*sp == '$' && sp[1] >= '0' && sp[1] <= '9'))
++                    (*sp == '$' && ((sp[1] >= '0' && sp[1] <= '9')||sp[1]=='#'||sp[1]=='@')))
+                         *bp++ = '\\';
+                 *bp++ = *sp++;
+             }
+@@ -117,7 +121,13 @@
+     }
+         break;
+     case A_DOLLAR:
++      if(a->a_w.w_symbol==gensym("#")) { /* JMZ: $# expansion */
++        sprintf(buf, "$#");
++      } else if(a->a_w.w_symbol==gensym("@")) { /* JMZ: $@ expansion */
++        sprintf(buf, "$@");
++      } else {
+         sprintf(buf, "$%d", a->a_w.w_index);
++      }
+         break;
+     case A_DOLLSYM:
+         strncpy(buf, a->a_w.w_symbol->s_name, bufsize);

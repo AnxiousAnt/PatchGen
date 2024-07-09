@@ -1,0 +1,54 @@
+#N canvas 218 94 758 591 10;
+#X obj 33 54 t a a;
+#X obj 33 211 spigot;
+#X obj 72 119 bang;
+#X obj 72 138 1;
+#X obj 193 119 route bang;
+#X obj 153 120 bang;
+#X obj 153 139 0;
+#X obj 72 84 list split 2;
+#X obj 202 349 list split;
+#X obj 269 298 list length;
+#X obj 269 320 >> 1;
+#X obj 33 230 t a a a a;
+#X obj 33 416 list split;
+#X obj 100 368 list length;
+#X obj 100 393 >> 1;
+#X obj 33 19 inlet;
+#X obj 260 145 outlet;
+#X text 75 19 Copyright 2009 by Mathieu Bouchard;
+#X text 289 347 Split list at center \, send first half back and repeat
+until there's only one element in the first half. This element is sent
+to the outlet and the spigot is closed. The previous list that has
+passed the open spigot consisted of the first two elements of the list.
+This is now handled by the next section.;
+#X text 399 307 Comments by Frank Barknecht:;
+#X text 38 448 Split list at center \, sent second half back. If second
+half has only one element \, this is sent to the outlet \, the spigot
+stays closed and this branch finishes. If the second half has more
+than one element \, the spigot gets opened again with the second half
+of the list. This now is sent through the [t a a a a] again \, where
+it meets the front splitter again which will reduce it to its first
+element again.;
+#X connect 0 0 1 0;
+#X connect 0 1 7 0;
+#X connect 1 0 11 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 1;
+#X connect 4 1 16 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 1;
+#X connect 7 0 2 0;
+#X connect 7 2 4 0;
+#X connect 7 2 5 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 1;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 11 2 8 0;
+#X connect 11 3 9 0;
+#X connect 12 1 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 1;
+#X connect 15 0 0 0;

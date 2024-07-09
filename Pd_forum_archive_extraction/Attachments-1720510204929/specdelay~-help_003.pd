@@ -1,0 +1,51 @@
+#N canvas 168 45 708 581 10;
+#X obj 71 137 specdelay~;
+#X obj 71 108 tabplay~ \$0-sample;
+#X obj 87 83 spigot 1;
+#X obj 154 60 tgl 15 0 empty empty loop 17 7 1 10 -204786 -1 -1 1 1
+;
+#N canvas 0 22 510 294 sample 0;
+#X obj 76 84 openpanel;
+#X obj 76 161 soundfiler;
+#X obj 75 189 table \$0-sample;
+#X msg 76 135 read -resize \$1 \$2-sample;
+#X obj 76 110 pack s \$0;
+#X obj 76 57 inlet;
+#X connect 0 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X restore 250 99 pd sample;
+#X obj 250 74 bng 20 250 50 0 empty empty open-sample 0 -6 0 8 -204786
+-1 -1;
+#X obj 70 511 *~ 0;
+#X obj 91 489 dbtorms;
+#X obj 94 465 hsl 150 20 0 127 0 0 empty empty amplitude 10 12 0 12
+-204786 -1 -1 10800 1;
+#X obj 71 538 dac~;
+#X text 275 25 HOWTO:;
+#X text 324 32 1 click the 'open-sample' button and load a .wav file
+;
+#X text 324 46 2 enabling looping by clicking the 'loop' toggle;
+#X text 324 60 3 click the '[bang(' message to start the playback;
+#X obj 623 8 pddp/dsp;
+#X text 324 74 4 turn on the dsp at the upper left;
+#X text 324 88 5 turn up the amplitude to hear the result;
+#X obj 71 49 cnv 15 30 18 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X msg 71 49 bang;
+#X text 324 102 6 move the lines around by dragging it with the mouse
+;
+#X text 324 115 7 try moving the sliders and draggin in the number
+boxes;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 1 1 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 5 0 4 0;
+#X connect 6 0 9 0;
+#X connect 6 0 9 1;
+#X connect 7 0 6 1;
+#X connect 8 0 7 0;
+#X connect 18 0 1 0;

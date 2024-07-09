@@ -1,0 +1,25 @@
+#N canvas 1 26 482 331 10;
+#X obj 45 91 r test1;
+#X obj 108 50 hradio 15 1 0 8 test1 test1 empty 0 -8 0 10 -262144 -1
+-1 2;
+#X obj 111 263 s test1;
+#X msg 111 199 preset 2;
+#X obj 111 220 route preset;
+#X obj 45 112 print;
+#X obj 44 50 nbx 5 14 -1e+37 1e+37 0 0 test1 test1 empty 0 -8 0 10
+-262144 -1 -1 2 256;
+#X obj 326 238 float;
+#X obj 326 260 s test1;
+#X msg 326 196 preset 2;
+#X obj 326 217 route preset;
+#X msg 43 197 2;
+#X obj 43 262 s test1;
+#X text 110 177 this prints the message twice;
+#X text 320 175 "casting" seems to help:;
+#X connect 0 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 0;
+#X connect 11 0 12 0;

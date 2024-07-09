@@ -1,0 +1,77 @@
+#N canvas 359 216 660 689 12;
+#X obj 63 291 +;
+#X obj 201 291 +;
+#X obj 41 172 hsl 100 15 0 127 0 0 a1 a2 empty -2 -6 0 8 -262144 -1
+-1 0 1;
+#X obj 194 169 hsl 100 15 0 127 0 0 b1 b2 empty -2 -6 0 8 -262144 -1
+-1 0 1;
+#X obj 173 88 hsl 200 15 0 127 0 0 c1 c2 dad -2 -6 0 8 -24198 -1 -1
+0 1;
+#X obj 63 222 r c1;
+#X obj 63 371 s a2;
+#X obj 201 345 s b2;
+#X msg 63 331 set \$1;
+#X msg 201 317 set \$1;
+#X obj 85 248 r a1;
+#X obj 223 263 r b1;
+#X obj 201 237 r c1;
+#X obj 395 217 hsl 128 15 0 127 0 0 x x x -2 -6 0 8 -262144 -1 -1 2200
+1;
+#X msg 394 359 set \$1;
+#X obj 394 250 r c1;
+#X obj 416 276 r x;
+#X obj 394 387 s x;
+#X text 162 14 A Famlily Affair;
+#X obj 154 483 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 4400 1;
+#X obj 60 537 +;
+#X msg 60 563 set \$1;
+#X obj 60 511 r c1;
+#X obj 416 298 route set;
+#X text 511 300 ... are tricky!;
+#X obj 291 486 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 7400 1;
+#X obj 197 540 +;
+#X msg 197 566 set \$1;
+#X obj 197 514 r c1;
+#X obj 420 486 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 1200 1;
+#X obj 326 540 +;
+#X msg 326 566 set \$1;
+#X obj 326 514 r c1;
+#X obj 552 487 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 5800 1;
+#X obj 458 541 +;
+#X msg 458 567 set \$1;
+#X obj 458 515 r c1;
+#X obj 394 333 + 0;
+#X text 319 185 Careful: same sends and receives ...;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 5 0 0 0;
+#X connect 8 0 6 0;
+#X connect 9 0 7 0;
+#X connect 10 0 0 1;
+#X connect 11 0 1 1;
+#X connect 12 0 1 0;
+#X connect 14 0 17 0;
+#X connect 15 0 37 0;
+#X connect 16 0 23 0;
+#X connect 19 0 20 1;
+#X connect 20 0 21 0;
+#X connect 21 0 19 0;
+#X connect 22 0 20 0;
+#X connect 23 1 37 1;
+#X connect 25 0 26 1;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 28 0 26 0;
+#X connect 29 0 30 1;
+#X connect 30 0 31 0;
+#X connect 31 0 29 0;
+#X connect 32 0 30 0;
+#X connect 33 0 34 1;
+#X connect 34 0 35 0;
+#X connect 35 0 33 0;
+#X connect 36 0 34 0;
+#X connect 37 0 14 0;

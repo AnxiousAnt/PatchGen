@@ -1,0 +1,12 @@
+#N canvas 376 158 786 344 10;
+#X text 387 133 <-- 2 Click me to save the abstraction;
+#X text 430 173 <-- 3 Click me to call a new copy of the abstraction.
+;
+#X text 244 283 David McCallum \, sintheta.org;
+#X msg 235 16 label;
+#X text 284 12 <-- 1 Click me to clear the label.;
+#X msg 233 126 \; pd-radioabs.pd menusave;
+#X msg 232 170 \; pd-radiomain.pd obj 0 0 radioabs;
+#X obj 235 40 radioabs;
+#X text 235 231 4 Observe the weirdness.;
+#X connect 3 0 7 0;

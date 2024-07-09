@@ -1,0 +1,10 @@
+#N canvas 310 494 450 300 10;
+#X obj 97 99 -> osc~ pitch + 2;
+#X obj 97 166 dac~;
+#X obj 249 168 s pitch;
+#X floatatom 250 105 5 0 0 0 - - -;
+#X obj 97 139 *~ 0.3;
+#X connect 0 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 4 0 1 1;

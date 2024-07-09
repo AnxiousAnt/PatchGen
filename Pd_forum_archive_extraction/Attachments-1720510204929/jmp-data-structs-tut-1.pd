@@ -1,0 +1,173 @@
+#N struct data-s float x float y float number symbol symb;
+#N canvas 155 20 679 919 10;
+#X obj 62 513 pointer;
+#X floatatom 62 643 5 0 0 0 - - -;
+#X floatatom 62 713 5 0 0 0 - - -;
+#X floatatom 80 841 5 0 0 0 x - -;
+#X floatatom 121 821 5 0 0 0 y - -;
+#X obj 121 841 t b f;
+#X obj 62 533 s pointer-set;
+#X obj 162 601 r pointer-set;
+#X obj 161 713 r pointer-set;
+#X obj 173 841 r pointer-set;
+#X floatatom 173 891 5 0 0 0 x - -;
+#X floatatom 254 891 5 0 0 0 y - -;
+#X obj 94 789 hsl 100 8 0 200 0 0 empty empty x -12 2 0 11 -262144
+-1 -1 3762 1;
+#X msg 469 745 write jmp-dat.txt;
+#X msg 469 765 read jmp-dat.txt;
+#X msg 89 493 next;
+#X text 17 11 DATA STRUCTURES - TUTORIAL BY JOÃO PAIS;
+#X text 23 72 1 - Create 2 subpatches:;
+#X text 133 95 with the structure settings;
+#X text 133 115 where the structure will be painted;
+#N canvas 392 94 433 593 data-s 0;
+#X obj 19 397 drawnumber number;
+#X text 17 37 - floats x and y \, reserved by Pd for x and y coordinates
+;
+#X text 17 17 [struct] defines a data structure named "data-s" containing:
+;
+#X obj 19 182 route change click;
+#X text 27 138 These strings give information about the pointer that
+was just manipulated on screen. The pointer can be sent to set other
+values.;
+#X text 134 182 -> in normal mode;
+#X text 318 202 -> in edit mode;
+#X obj 19 102 struct data-s float x float y float number symbol symb
+;
+#X obj 19 417 drawsymbol symb 0 12 7;
+#X text 19 377 Draw numeric fields or symbols from data structures
+;
+#X text 17 57 - float "number";
+#X text 17 77 - symbol "symb";
+#X obj 38 298 s pointer-set;
+#X obj 38 238 unpack p f;
+#X text 106 248 -> extra value:;
+#X text 201 268 - x movement for "displace";
+#X obj 124 202 route select deselect displace;
+#X text 201 248 - y for "click";
+#X text 19 319 Some of the selectors might be available only in the
+latest pd-vanilla version (wait until Pd-Ext catches up).;
+#X text 19 456 The data carried can be of the following four basic
+types:;
+#X text 53 476 1) floats;
+#X text 54 496 2) symbols;
+#X text 53 516 3) arrays containing several elements of one other data
+structure type.;
+#X text 53 547 4) lists containing elements of various other data structure
+types.;
+#X connect 3 0 13 0;
+#X connect 3 1 13 0;
+#X connect 3 2 16 0;
+#X connect 7 0 3 0;
+#X connect 13 0 12 0;
+#X connect 16 0 13 0;
+#X connect 16 1 13 0;
+#X connect 16 2 13 0;
+#X restore 62 95 pd data-s;
+#X obj 62 623 get data-s number;
+#X obj 62 733 set data-s number;
+#X obj 80 861 set data-s x y;
+#X obj 173 871 get data-s x y;
+#X text 23 152 2 - optionally delete the paint patch;
+#X msg 62 175 clear;
+#X obj 203 333 pointer;
+#X msg 62 293 13;
+#X floatatom 62 313 5 0 0 0 - - -;
+#X text 23 232 3 - add/append a new item to a list;
+#X text 256 333 points at a data structure object;
+#X text 312 272 painting area for [pointer] to look for objects;
+#X msg 213 313 next;
+#X text 252 313 goes to next object;
+#X msg 213 293 bang;
+#X text 252 293 outputs the head of the list of objects in that area
+;
+#N canvas 7 102 502 352 draw 1;
+#X scalar data-s 23 68 78 aaaa1 \;;
+#X scalar data-s 33 129 11 aa14 \;;
+#X scalar data-s 76 200 12 12aa \;;
+#X scalar data-s 84 98 1211 symbol \;;
+#X scalar data-s 173 124 13 symbol \;;
+#X scalar data-s 128 37 24 symbol \;;
+#X restore 62 115 pd draw;
+#X obj 62 195 s pd-draw;
+#X msg 203 273 traverse pd-draw;
+#X obj 459 785 s pd-draw;
+#X msg 62 473 traverse pd-draw \, next;
+#X text 202 253 1st traverse & bang;
+#X text 32 273 2nd set the value(s);
+#X obj 126 513 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 23 562 5 - connect grafic -> patch;
+#X text 148 510 loop;
+#X text 59 583 Check out the data on the graphic;
+#X text 59 693 Set the data on the graphic;
+#X text 60 762 Send/receive coordinates to an element;
+#X obj 94 800 hsl 100 8 0 200 0 0 empty empty y -12 2 0 11 -262144
+-1 -1 9900 1;
+#X text 17 31 1 - MANAGING INFORMATION;
+#X text 23 672 6 - connect patch -> graphic;
+#X text 443 721 7 - Save / load data;
+#X msg 462 866 sort;
+#X obj 462 886 s pd-paint;
+#X text 443 821 8 - order the objects to x position;
+#X text 463 841 When is this useful?;
+#X text 23 402 3a - to edit a numeric value \, click on it and write
+- like a number box;
+#X obj 182 623 get data-s symb;
+#X symbolatom 182 643 10 0 0 0 - - -;
+#X symbolatom 252 713 10 0 0 0 - - -;
+#X obj 252 733 set -symbol data-s symb;
+#X obj 62 373 s pointer-set;
+#X msg 62 333 20 20 \$1;
+#X obj 62 353 append data-s x y number;
+#X text 242 351 |-> bangs at end of list;
+#X text 202 375 To edit/add symbols \, only with set -symbol. See below.
+;
+#X text 23 442 4 - to send commands to a pointer \, get it first. Directly
+after appending \, or traversing a pointer patch.;
+#X obj 235 493 s pd-draw;
+#X msg 235 473 sort;
+#X text 276 471 Optionally sort the items through their x value.;
+#X msg 301 772 set \$1;
+#X msg 351 783 set \$1;
+#X connect 0 0 6 0;
+#X connect 0 1 41 0;
+#X connect 0 1 44 0;
+#X connect 2 0 22 0;
+#X connect 3 0 23 0;
+#X connect 4 0 5 0;
+#X connect 5 0 12 0;
+#X connect 5 1 23 1;
+#X connect 7 0 21 0;
+#X connect 7 0 59 0;
+#X connect 8 0 22 1;
+#X connect 8 0 62 1;
+#X connect 9 0 23 2;
+#X connect 9 0 24 0;
+#X connect 10 0 72 0;
+#X connect 11 0 73 0;
+#X connect 12 0 3 0;
+#X connect 13 0 40 0;
+#X connect 14 0 40 0;
+#X connect 15 0 0 0;
+#X connect 21 0 1 0;
+#X connect 24 0 10 0;
+#X connect 24 1 11 0;
+#X connect 26 0 38 0;
+#X connect 27 0 65 3;
+#X connect 28 0 29 0;
+#X connect 29 0 64 0;
+#X connect 33 0 27 0;
+#X connect 35 0 27 0;
+#X connect 39 0 27 0;
+#X connect 41 0 0 0;
+#X connect 50 0 4 0;
+#X connect 54 0 55 0;
+#X connect 59 0 60 0;
+#X connect 61 0 62 0;
+#X connect 64 0 65 0;
+#X connect 65 0 63 0;
+#X connect 70 0 69 0;
+#X connect 72 0 12 0;
+#X connect 73 0 50 0;

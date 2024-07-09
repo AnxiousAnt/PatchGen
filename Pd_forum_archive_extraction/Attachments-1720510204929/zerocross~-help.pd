@@ -1,0 +1,50 @@
+#N canvas 248 204 788 420 10;
+#X obj 94 85 osc~ 100;
+#X floatatom 94 64 8 0 0 0 - - -;
+#X obj 94 33 mtof;
+#X floatatom 94 14 5 0 0 0 - - -;
+#X obj 95 128 c_xfade;
+#X obj 119 105 noise~;
+#X obj 174 128 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 1 10 -262144
+-1 -1 0 1;
+#X obj 94 288 snapshot~;
+#X obj 115 253 metro 100;
+#X obj 115 227 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 94 344 5 0 0 0 - - -;
+#X obj 97 368 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 39 1;
+#X obj 94 313 / 23.22;
+#X floatatom 175 222 5 0 0 0 - - -;
+#X text 163 313 divide by block-duration;
+#X obj 94 181 zerocross~;
+#X msg 150 154 64;
+#X msg 184 153 1024;
+#X msg 226 153 2048;
+#X obj 225 279 m_sm2ms;
+#X obj 226 182 s \$0-bs;
+#X obj 225 257 r \$0-bs;
+#X text 275 52 Calculates the zero crossings per block and reports
+it as a signal.;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 15 0;
+#X connect 5 0 4 1;
+#X connect 6 0 4 2;
+#X connect 7 0 12 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 12 0 10 0;
+#X connect 13 0 8 1;
+#X connect 15 0 7 0;
+#X connect 16 0 15 1;
+#X connect 16 0 20 0;
+#X connect 17 0 15 1;
+#X connect 17 0 20 0;
+#X connect 18 0 15 1;
+#X connect 18 0 20 0;
+#X connect 19 0 12 1;
+#X connect 21 0 19 0;

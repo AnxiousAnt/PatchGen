@@ -1,0 +1,136 @@
+#N canvas 0 22 980 667 10;
+#X obj 241 396 cnv 15 69 16 empty empty 69x16 2 12 0 9 -128992 -66577
+0;
+#X obj 241 365 cnv 15 78 20 empty empty 78x20 2 12 0 9 -128992 -66577
+0;
+#X obj 611 397 cnv 15 70 17 empty empty 70x17 2 12 0 9 -128992 -66577
+0;
+#X text 21 399 Mac OS X;
+#X text 20 367 Windows;
+#X text 21 437 GNU/Linux;
+#X obj 710 398 cnv 15 69 16 empty empty 69x16 2 12 0 9 -128992 -66577
+0;
+#X obj 811 397 cnv 15 60 15 empty empty 60x15 2 12 0 9 -128992 -66577
+0;
+#X obj 601 167 cnv 15 100 60 empty empty courier10 20 12 0 8 -233017
+-66577 0;
+#X msg 620 171 courier10;
+#X obj 731 97 cnv 15 100 60 empty empty courier10 20 12 0 9 -233017
+-66577 0;
+#X msg 751 99 courier10;
+#X text 732 118 Windows/0.39.2-extended-test7;
+#X obj 611 367 cnv 15 60 17 empty empty 60x17 2 12 0 9 -128992 -66577
+0;
+#X obj 711 367 cnv 15 60 17 empty empty 60x17 2 12 0 9 -128992 -66577
+0;
+#X obj 241 426 cnv 15 87 19 empty empty 87x19 2 12 0 9 -128992 -66577
+0;
+#X text 17 324 these represent the size of this message box:;
+#X text 15 1 the fonts line up on these platforms:;
+#X obj 139 35 cnv 15 100 60 empty empty courier10 20 12 0 9 -233017
+-66577 0;
+#X msg 157 41 courier10;
+#X obj 103 397 cnv 15 63 17 empty empty 63x17 2 12 0 9 -128992 -66577
+0;
+#X text 91 344 0.39.2-extended-RC1;
+#X text 240 345 0.39.2-extended-test7;
+#X text 613 345 0.39-2;
+#X text 713 344 0.40-2;
+#X text 803 344 devel 0.39-1test1;
+#X obj 401 396 cnv 15 69 16 empty empty 69x16 2 12 0 9 -128992 -66577
+0;
+#X text 400 345 0.38.4-extended;
+#X obj 522 397 cnv 15 70 17 empty empty 70x17 2 12 0 9 -128992 -66577
+0;
+#X text 524 345 0.38-4;
+#X text 18 484 these represent the size of this comment:;
+#X obj 140 240 cnv 15 100 60 empty empty courier10 20 12 0 10 -233017
+-66577 0;
+#X msg 158 243 courier10;
+#X obj 100 540 cnv 7 52 7 empty empty 52x7 2 15 0 11 -128992 -66577
+0;
+#X text 21 539 Mac OS X;
+#X text 20 507 Windows;
+#X text 21 567 GNU/Linux;
+#X obj 714 540 cnv 7 63 8 empty empty 63x8 2 15 0 11 -128992 -66577
+0;
+#X obj 404 540 cnv 7 62 7 empty empty 62x7 2 15 0 11 -128992 -66577
+0;
+#X obj 20 170 cnv 15 100 60 empty empty courier10 20 12 0 12 -233017
+-66577 0;
+#X msg 39 174 courier10;
+#X text 47 212 12 pt;
+#X text 176 284 10pt;
+#X text 767 134 9 pt;
+#X obj 20 35 cnv 15 100 60 empty empty courier10 20 12 0 12 -233017
+-66577 0;
+#X msg 39 39 courier10;
+#X text 47 77 12 pt;
+#X text 40 64 0.38-4;
+#X text 40 199 0.40-2;
+#X text 139 64 devel 0.39-1test1;
+#X text 140 265 0.39-2-extended-rc1;
+#X text 32 16 ---------- Mac OS X ----------;
+#X obj 524 540 cnv 7 63 8 empty empty 63x8 2 15 0 11 -128992 -66577
+0;
+#X text 435 482 ----------------------------------------------------------
+;
+#X text 445 322 ----------------------------------------------------------
+;
+#X obj 614 540 cnv 7 63 8 empty empty 63x8 2 15 0 11 -128992 -66577
+0;
+#X obj 21 102 cnv 15 100 60 empty empty courier10 20 12 0 12 -233017
+-66577 0;
+#X msg 40 106 courier10;
+#X text 48 144 12 pt;
+#X text 41 131 0.39-2;
+#X text 141 78 9 pt (closest);
+#X obj 810 540 cnv 6 53 6 empty empty 53x6 2 15 0 11 -128992 -66577
+0;
+#X obj 601 97 cnv 15 100 60 empty empty courier10 20 12 0 8 -233017
+-66577 0;
+#X msg 620 101 courier10;
+#X text 629 118 0.39-2;
+#X text 623 18 ---------- Windows ----------;
+#X text 609 134 8 pt (closest);
+#X text 630 191 0.40-2;
+#X obj 614 510 cnv 5 51 5 empty empty 51x5 2 15 0 11 -128992 -66577
+0;
+#X text 607 207 8 pt (closest);
+#X obj 714 510 cnv 5 51 5 empty empty 51x5 2 15 0 11 -128992 -66577
+0;
+#X obj 315 38 cnv 15 100 60 empty empty courier8 20 12 0 8 -233017
+-66577 0;
+#X msg 334 41 courier10;
+#X text 329 59 Kubuntu/0.39.2-extended-test7;
+#X text 351 75 8 pt;
+#X obj 241 449 cnv 15 87 17 empty empty 87x17 2 12 0 9 -128992 -66577
+0;
+#X obj 244 571 cnv 7 80 10 empty empty 80x10 2 15 0 11 -128992 -66577
+0;
+#N canvas 0 22 458 308 instructions 0;
+#X text 18 24 If the sizing was all working nicely \, the fonts would
+line up exactly on the top section when both are set to 10 point since
+they are the same font. That is what we are trying to achieve. But
+that doesn't happen very much. So here are the three tests \, from
+the top to bottom: - top: adjust the font size in the canvas until
+it matches the message box. Move the message box over the canvas font
+so it lines up it exactly. Mark down the font size in the canvas. If
+you can't get an exact match \, write (closest) - middle: copy and
+paste one of the canvases with the dimensions in it (e.g. 69x16). Take
+this canvas and make it fit exactly over the [courier10( message box.
+then put it in the right place in the grid. - bottom: copy and paste
+one of the canvases with the dimensions in it (e.g. 53x6). Take this
+canvas and make it fit exactly over the comment "courier1)". then put
+it in the correct place in the grid.;
+#X restore 23 620 pd instructions;
+#X obj 244 540 cnv 7 63 8 empty empty 63x8 2 15 0 11 -128992 -66577
+0;
+#X text 280 486 courier10;
+#X obj 140 170 cnv 15 100 60 empty empty courier10 20 12 0 12 -233017
+-66577 0;
+#X msg 159 174 courier10;
+#X text 167 212 12 pt;
+#X text 142 196 0.39.2-extended-test7;
+#X text 324 17 ---------- GNU/Linux ----------;
+#X msg 297 322 courier10;

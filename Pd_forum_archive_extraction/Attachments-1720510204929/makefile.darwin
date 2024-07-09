@@ -1,0 +1,83 @@
+current: all
+
+# This makefile is a ripoff of the zexy lib makefile
+# by johannes m. zmoelnig (thanks, johannes :-)
+# mahash/mapwrite/mapread makefile 
+# everything is GnuGPL that should come with the object
+# make sure that the "m_pd.h" is somehow available either by putting it into this
+# directory, by adding it's path to the INCLUDE-path or by putting it into an
+# already included path, e.g. "/usr/local/include/"
+
+#these are the user adjustables : adjust them to fit into your system
+# PD will install to $(DESTDIR)$(INSTALLL_PREFIX)$(PDLIBDIR), which is /usr/local/lib/pd
+# by default
+DESTDIR =
+INSTALL_PREFIX = /usr/local
+PDLIBDIR = /pd/extra
+INSTALLDIR = /externs
+HELPFILEDIR = /doc/5.reference
+PDEXECUTABLE = /usr/local/pd/bin/pd
+PDINCLUDE = /usr/local/pd/src
+#these were the user adjustables
+
+
+TARGETS = maphash hashtable keyval tdebug
+
+# ----------------------- MacOSX ----------------------------
+.SUFFIXES: .pd_darwin
+
+
+LINUXOBJECTS = $(TARGETS:%=%.o)
+ARCH = $(shell uname --machine)
+
+PD_DIR = $(DESTDIR)$(INSTALL_PREFIX)$(PDLIBDIR)
+
+ifeq (${ARCH},alpha)
+AFLAGS = -mieee  -mcpu=ev56
+endif
+
+LINCLUDE = -I$(PDINCLUDE)
+
+$(LINUXOBJECTS): *.h
+
+CFLAGS = -O2 -DMACOSX -Dunix -g -Wall -Wno-unused \
+         -Wno-parentheses -Wno-switch $(LINCLUDE) $(UCFLAGS) $(AFLAGS)
+
+everything: clean all install distclean
+
+install: 
+	cp maphash.pd_darwin $(PD_DIR)$(INSTALLDIR)
+	cp maphash-help.pd $(PD_DIR)$(HELPFILEDIR)/maphash.pd
+	cp maphash-io.pd $(PD_DIR)$(INSTALLDIR)
+	cp maphash-io-example.txt $(PD_DIR)$(INSTALLDIR)
+	ln -s $(PD_DIR)$(HELPFILEDIR)/maphash.pd $(PD_DIR)$(HELPFILEDIR)/mapread.pd
+	ln -s $(PD_DIR)$(HELPFILEDIR)/maphash.pd $(PD_DIR)$(HELPFILEDIR)/mapwrite.pd
+
+uninstall:
+	rm $(PD_DIR)$(INSTALLDIR)/maphash.pd_darwin
+	rm $(PD_DIR)$(INSTALLDIR)/maphash-io.pd
+	rm $(PD_DIR)$(INSTALLDIR)/maphash-io-example.txt
+	rm $(PD_DIR)$(HELPFILEDIR)/maphash.pd 
+	rm $(PD_DIR)$(HELPFILEDIR)/mapread.pd 
+	rm $(PD_DIR)$(HELPFILEDIR)/mapwrite.pd 
+
+distclean:
+	touch dummy.o
+	touch dummy.pd_darwin
+	touch dummy~
+	touch _dummy
+	rm *.o *.pd_darwin *~ _*
+
+clean:
+	touch dummy.o
+	touch dummy.pd_darwin
+	rm *.o *.pd_darwin
+
+all: $(LINUXOBJECTS)
+
+	@echo :: $(LINUXOBJECTS)
+	cc -bundle -bundle_loader $(PDEXECUTABLE) -flat_namespace \
+		-o maphash.pd_darwin *.o -lc -lm
+
+.c.pd_darwin:
+	cc $(CFLAGS) -DPD  $(INCLUDE) -c -o $*.o $*.c

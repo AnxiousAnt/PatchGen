@@ -1,0 +1,24 @@
+current:
+	echo make pd_linux, pd_nt, pd_irix5, or pd_irix6
+
+clean: ; rm -f *.pd_linux *.o
+
+
+
+# ----------------------- LINUX i386 -----------------------
+
+pd_linux: analista.pd_linux 
+
+.SUFFIXES: .pd_linux
+
+LINUXCFLAGS = -DPD -O2 -funroll-loops -fomit-frame-pointer \
+    -Wall -W -Wshadow -Wstrict-prototypes -Werror \
+    -Wno-unused -Wno-parentheses -Wno-switch
+
+LINUXINCLUDE =  -I../../src
+
+.c.pd_linux:
+	cc $(LINUXCFLAGS) $(LINUXINCLUDE) -o $*.o -c $*.c
+	ld -export_dynamic  -shared -o $*.pd_linux $*.o -lc -lm
+	strip --strip-unneeded $*.pd_linux
+	rm $*.o

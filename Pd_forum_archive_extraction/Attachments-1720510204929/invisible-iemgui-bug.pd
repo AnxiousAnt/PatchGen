@@ -1,0 +1,20 @@
+#N canvas 558 108 635 300 10;
+#N canvas 5 49 450 300 sub 0;
+#X obj 147 160 hradio 15 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 147 86 inlet;
+#X msg 147 108 number \$1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X restore 101 154 pd sub;
+#X floatatom 101 135 5 0 0 0 - - -;
+#X msg 101 36 bang;
+#X obj 101 108 random 10;
+#X text 35 36 click the;
+#X text 151 157 (if you open this \, everything works as expected)
+;
+#X text 142 36 repeatedly to trigger a Tcl/TK backtrace \, as long
+as [pd sub] stays closed.;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;

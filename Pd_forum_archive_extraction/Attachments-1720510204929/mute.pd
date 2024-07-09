@@ -1,0 +1,29 @@
+#N canvas 67 36 868 491 12;
+#X obj 94 13 inlet;
+#X obj 94 43 get notes y;
+#X obj 466 60 r ratmute;
+#X msg 304 171 set set \$1;
+#X obj 88 261 change;
+#X obj 650 61 r ratstart;
+#X msg 307 227 set 28;
+#X obj 302 140 r ratsy;
+#X msg 94 73 \; ratsy \$1 \; raty \$1;
+#X obj 265 181 bng 15 250 50 0 empty ratskip empty 0 -6 0 8 -262144
+-1 -1;
+#X msg 426 122 \; raty receive nothing;
+#X msg 621 123 \; ratskip bang \; nothing receive raty;
+#X obj 88 230 nbx 5 14 -1e+037 1e+037 0 0 empty raty empty 0 -6 0 10
+-262144 -1 -1 28 256;
+#X floatatom 88 293 5 0 0 0 - - -;
+#X floatatom 254 43 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 2 0 10 0;
+#X connect 3 0 6 0;
+#X connect 4 0 13 0;
+#X connect 5 0 11 0;
+#X connect 6 0 4 0;
+#X connect 7 0 3 0;
+#X connect 9 0 6 0;
+#X connect 12 0 4 0;
+#X connect 14 0 8 0;

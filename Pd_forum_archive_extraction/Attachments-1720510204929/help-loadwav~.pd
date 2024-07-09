@@ -1,0 +1,24 @@
+#N canvas 70 269 268 291 12;
+#X obj 27 67 loadwav~ l r;
+#X obj 27 45 openpanel;
+#X obj 27 24 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 204 17 table l;
+#X obj 204 37 table r;
+#X obj 102 160 tabplay~ l;
+#X obj 127 180 tabplay~ r;
+#X obj 101 218 dac~;
+#X obj 102 139 t b b;
+#X obj 102 111 bng 20 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 48 264 loadwav~ : eskogen // audionerd.com;
+#X text 129 114 play;
+#X text 46 24 load;
+#X text 106 68 <-- look inside;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 1;
+#X connect 8 0 5 0;
+#X connect 8 1 6 0;
+#X connect 9 0 8 0;

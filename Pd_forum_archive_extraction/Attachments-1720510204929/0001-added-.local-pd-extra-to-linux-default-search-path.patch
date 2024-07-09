@@ -1,0 +1,27 @@
+>From fee5072fb8dc45fb7ca511016efcd7d4d76e12c3 Mon Sep 17 00:00:00 2001
+From: ritsch <ritsch@iem.at>
+Date: Sat, 7 May 2016 23:59:00 +0200
+Subject: [PATCH] added ~/.local/pd/extra to linux default search path
+
+---
+ src/s_path.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/s_path.c b/src/s_path.c
+index 0127fac..a74a84c 100644
+--- a/src/s_path.c
++++ b/src/s_path.c
+@@ -243,8 +243,9 @@ void sys_setextrapath(const char *p)
+     namelist_free(sys_staticpath);
+     /* add standard place for users to install stuff first */
+ #ifdef __gnu_linux__
+-    sys_expandpath("~/pd-externals", pathbuf, MAXPDSTRING);
++    sys_expandpath("~/.local/lib/pd/extra", pathbuf, MAXPDSTRING);
+     sys_staticpath = namelist_append(0, pathbuf, 0);
++    sys_staticpath = namelist_append(sys_staticpath, "~/pd-externals", 0);
+     sys_staticpath = namelist_append(sys_staticpath, "/usr/local/lib/pd-externals", 0);
+ #endif
+ 
+-- 
+2.8.1
+

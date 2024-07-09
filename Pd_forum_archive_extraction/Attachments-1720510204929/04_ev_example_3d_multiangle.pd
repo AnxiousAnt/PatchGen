@@ -1,0 +1,109 @@
+#N canvas 255 22 954 721 10;
+#X declare -path . -path .. -path data -path ../data -path ev-in -path
+../ev-in -path ev-main -path ../ev-main -path ev-pano -path ../ev-pano
+-path ev-pro -path ../ev-pro -path libs/gil -path ../libs/gil -path
+libs/kollabs -path ../libs/kollabs -path media -path ../media -path
+ev-glsl -path ../ev-glsl;
+#X obj 203 573 world_light;
+#X obj 203 549 gemhead;
+#X obj 14 14 cnv 15 700 30 empty empty Example:_3d_renderings 20 12
+0 14 -233017 -66577 0;
+#X obj 776 81 loadbang;
+#X obj 776 103 del 3000;
+#X obj 120 89 gemhead 20;
+#N canvas 321 175 482 487 teapot-movement 0;
+#X obj 81 -49 inlet;
+#X obj 81 263 outlet;
+#X obj 81 189 rotateXYZ 0 0 0;
+#X obj 177 -12 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 198 -12 metro 10000;
+#X obj 81 211 scaleXYZ 0.6 0.6 0.6;
+#X msg 198 20 0 \, 1 10000;
+#X obj 198 149 * 360;
+#X obj 198 -49 loadbang;
+#X obj 81 233 color 1 1 1;
+#X obj 198 50 line 0 40;
+#X connect 0 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 9 0;
+#X connect 6 0 10 0;
+#X connect 7 0 2 3;
+#X connect 7 0 2 2;
+#X connect 7 0 2 1;
+#X connect 8 0 4 0;
+#X connect 9 0 1 0;
+#X connect 10 0 7 0;
+#X restore 43 488 pd teapot-movement;
+#X obj 14 47 cnv 15 80 40 empty empty declare_paths 2 8 0 10 -258113
+-262144 0;
+#N canvas 518 150 548 468 init 0;
+#X obj 56 92 loadbang;
+#X obj 44 -23 cnv 15 400 100 empty empty IMPORTANT 20 12 0 14 -261234
+-66577 0;
+#X text 49 -3 Such a declare object should always be in the main patch
+of your project \, to set the pathes to the abstractions.;
+#X text 159 170 load the preset file on startup:;
+#X text 66 272 Recall scene '0' from the loaded preset file \, and
+load the still image files.;
+#X obj 158 43 ev-main/ev_declare;
+#X obj 56 144 t b b;
+#X obj 83 168 del 1000;
+#X obj 56 231 del 3000;
+#X msg 56 308 \; /0/ds/scene 0 \;;
+#X msg 83 190 \; /0/ds/loadfile ../../data/ev_example_3d_preset.txt
+;
+#X text 157 223 (pathes relative to "./libs/kollabs");
+#X connect 0 0 6 0;
+#X connect 6 0 8 0;
+#X connect 6 1 7 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X restore 32 64 pd init;
+#X obj 396 181 gemhead 50;
+#X text 477 14 (c)2011 Peter Venus & Marian Weger \; /part of EXTENDED
+VIEW toolkit/ gpl v3;
+#X obj 638 478 ev_storage;
+#X obj 43 139 ev_buf 0;
+#X obj 393 503 ev_pro_22 l;
+#X obj 436 373 ev_pro_22 c;
+#X obj 350 77 ev_gemwin;
+#X text 566 56 click "create" to start;
+#X obj 453 242 ev_pro_22 r;
+#X obj 57 232 ev_buf 1;
+#X obj 796 171 s /ev/buf/1/color;
+#X obj 776 191 s /ev/buf/2/color;
+#X obj 806 151 s /ev/buf/0/color;
+#X obj 43 580 teapot 3;
+#X obj 57 312 rotateXYZ 0 120 0;
+#X obj 77 342 ev_buf 2;
+#X obj 77 422 rotateXYZ 0 240 0;
+#X msg 776 126 0.5 0.5 0.5 1;
+#X msg 59 550 draw line;
+#X obj 61 521 loadbang;
+#X connect 1 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 26 0;
+#X connect 5 0 12 0;
+#X connect 5 0 18 0;
+#X connect 5 0 24 0;
+#X connect 6 0 22 0;
+#X connect 9 0 17 0;
+#X connect 9 0 14 0;
+#X connect 9 0 13 0;
+#X connect 12 0 6 0;
+#X connect 12 1 17 1;
+#X connect 18 0 23 0;
+#X connect 18 1 14 1;
+#X connect 23 0 6 0;
+#X connect 24 0 25 0;
+#X connect 24 1 13 1;
+#X connect 25 0 6 0;
+#X connect 26 0 21 0;
+#X connect 26 0 19 0;
+#X connect 26 0 20 0;
+#X connect 27 0 22 0;
+#X connect 28 0 27 0;
+#X coords 0 0 1 1 85 60 0;

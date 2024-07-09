@@ -1,0 +1,16 @@
+#N canvas 500 350 461 406 10;
+#X obj 28 45 print arg1;
+#X obj 91 65 print no_arg1;
+#X obj 28 23 default_arg;
+#X obj 24 138 print arg2;
+#X obj 99 139 print no_arg2;
+#X obj 24 116 default_arg 0;
+#X obj 23 229 print arg3;
+#X obj 98 232 print no_arg3;
+#X obj 23 207 default_arg 1;
+#X connect 2 0 0 0;
+#X connect 2 1 1 0;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 8 0 6 0;
+#X connect 8 1 7 0;

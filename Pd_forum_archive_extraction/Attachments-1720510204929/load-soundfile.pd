@@ -1,0 +1,106 @@
+#N canvas 641 39 875 856 10;
+#X obj 128 140 iemlib/soundfile_info;
+#X obj 128 24 openpanel;
+#X obj 127 -2 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 127 50 symbol;
+#X msg 127 108 read \$1;
+#X floatatom 324 278 10 0 0 0 - - -, f 10;
+#X obj 129 169 list split 2;
+#X obj 178 231 /;
+#X obj 170 199 t f f;
+#X obj 179 258 t f f;
+#X obj 181 307 -;
+#X obj 178 333 != 0;
+#X obj 177 358 +;
+#X obj 214 284 int;
+#X obj 214 306 t f f;
+#X floatatom 279 398 5 0 0 0 - - -, f 5;
+#X obj 168 516 int;
+#X obj 206 511 + 1;
+#X msg 192 475 0;
+#X obj 178 666 soundfiler;
+#X obj 310 716 table buffer;
+#X obj 127 78 t s s;
+#X obj 168 543 *;
+#X obj 176 573 t f f;
+#X obj 310 748 table result 6e+006;
+#X obj 178 748 array set result;
+#X obj 179 694 b;
+#X obj 178 718 array get buffer;
+#X obj 126 444 bang~;
+#X obj 137 472 spigot;
+#X obj 174 418 t b b f;
+#X msg 173 448 1;
+#X obj 250 511 <;
+#X obj 177 613 pack f f s;
+#X obj 305 224 t f;
+#X msg 179 639 read -skip \$1 -resize -maxsize \$2 \$3 buffer;
+#X msg 199 24 path/file.wav;
+#X obj 100 49 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 305 200 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 44100 256;
+#X obj 307 147 loadbang;
+#X msg 307 169 44100;
+#X text 364 218 tweek this value according to your CPU and latency
+settings;
+#X text 404 717 intermediate buffer;
+#X text 460 748 this is your soundfile;
+#X text 306 771 be sure to set its size to the maximum number of samples
+you would expect. it is not resized (since that would again cause dropouts)
+\, but you know the size of your soundfile and can work with that.
+;
+#X text 329 298 length of your sound file in samples;
+#X text 366 199 number of samples to read per DSP block (via [bang~]).
+;
+#X text 320 395 number of DSP blocks it will take to completely load
+the soundfile.;
+#X connect 0 0 6 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 21 0;
+#X connect 4 0 0 0;
+#X connect 6 1 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 8 1 5 0;
+#X connect 9 0 10 0;
+#X connect 9 1 13 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 15 0;
+#X connect 12 0 30 0;
+#X connect 13 0 14 0;
+#X connect 14 0 10 1;
+#X connect 14 1 12 1;
+#X connect 16 0 17 0;
+#X connect 16 0 22 0;
+#X connect 17 0 16 1;
+#X connect 17 0 32 0;
+#X connect 18 0 16 1;
+#X connect 19 0 26 0;
+#X connect 21 0 4 0;
+#X connect 21 1 33 2;
+#X connect 22 0 23 0;
+#X connect 23 0 33 0;
+#X connect 23 1 25 1;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 28 0 29 0;
+#X connect 29 0 16 0;
+#X connect 30 0 31 0;
+#X connect 30 1 18 0;
+#X connect 30 2 32 1;
+#X connect 31 0 29 1;
+#X connect 32 0 29 1;
+#X connect 33 0 35 0;
+#X connect 34 0 7 1;
+#X connect 34 0 22 1;
+#X connect 34 0 33 1;
+#X connect 35 0 19 0;
+#X connect 36 0 3 0;
+#X connect 37 0 3 0;
+#X connect 38 0 34 0;
+#X connect 39 0 40 0;
+#X connect 40 0 38 0;

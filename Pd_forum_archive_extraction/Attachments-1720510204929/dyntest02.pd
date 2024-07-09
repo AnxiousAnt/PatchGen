@@ -1,0 +1,8 @@
+#N canvas 340 64 452 302 12;
+#X msg 25 190 obj 30 10 toggle 10 1 1t-s 1t-r empty 0 0 0 10 1 2 3
+0;
+#X msg 57 218 obj 10 10 vslider 32 64 1 32 1s-s 1s-r empty 0 0 0 10
+1 2 3 0;
+#X obj 29 265 s pd-dyntest02.pd;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;

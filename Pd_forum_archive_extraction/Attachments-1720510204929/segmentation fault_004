@@ -1,0 +1,1035 @@
+$ gdb --args pd -nrt -stderr -lib /usr/local/lib/pd/extra/Gem/Gem /home/is/Desktop/IS/trackerping.pd
+GNU gdb (Ubuntu 8.1-0ubuntu3) 8.1.0.20180409-git
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from pd...done.
+(gdb) thread apply all bt
+(gdb) run
+Starting program: /usr/local/bin/pd -nrt -stderr -lib /usr/local/lib/pd/extra/Gem/Gem /home/is/Desktop/IS/trackerping.pd
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+GEM: Graphics Environment for Multimedia
+verbose(2): GEM: ver: 0.93.git 3550ede3
+verbose(2): GEM: compiled  on Aug 29 2018
+verbose(2): GEM: maintained by IOhannes m zmoelnig
+verbose(2): GEM: Authors :	Mark Danks (original version)
+verbose(2): GEM:		Chris Clepper
+verbose(2): GEM:		Cyrille Henry
+verbose(2): GEM:		IOhannes m zmoelnig
+verbose(2): GEM: with help by Guenter Geiger, Daniel Heckenberg, James Tittle, Hans-Christoph Steiner, et al.
+verbose(2): GEM: found a bug? miss a feature? please report it:
+verbose(2): GEM: 	homepage https://gem.iem.at/
+verbose(2): GEM: 	bug-tracker https://bugs.gem.iem.at/
+verbose(2): GEM: 	mailing-list https://lists.puredata.info/listinfo/gem-dev/
+open: /etc/pd/gem.conf: No such file or directory
+open: /home/is/.config/pure-data/gem.conf: No such file or directory
+open: ./gem.conf: No such file or directory
+verbose(2): GEM: compiled for MMX/SSE2 architecture
+verbose(2): GEM: using SSE2 optimization
+verbose(2): GEM: detected 8 CPUs
+load plugins 'film' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_film*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'model' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_model*.so
+load plugins 'record' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_record*.so
+load plugins 'video' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_video*.so
+dylib loading file '/usr/local/lib/pd/extra/Gem/Gem/gem_videoPYLON.so'!
+GEM: Graphics Environment for Multimedia
+verbose(2): GEM: ver: 0.93.git 3550ede3
+verbose(2): GEM: compiled  on Aug 29 2018
+verbose(2): GEM: maintained by IOhannes m zmoelnig
+verbose(2): GEM: Authors :	Mark Danks (original version)
+verbose(2): GEM:		Chris Clepper
+verbose(2): GEM:		Cyrille Henry
+verbose(2): GEM:		IOhannes m zmoelnig
+verbose(2): GEM: with help by Guenter Geiger, Daniel Heckenberg, James Tittle, Hans-Christoph Steiner, et al.
+verbose(2): GEM: found a bug? miss a feature? please report it:
+verbose(2): GEM: 	homepage https://gem.iem.at/
+verbose(2): GEM: 	bug-tracker https://bugs.gem.iem.at/
+verbose(2): GEM: 	mailing-list https://lists.puredata.info/listinfo/gem-dev/
+load plugins 'film' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_film*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_image*.so
+load plugins 'model' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_model*.so
+load plugins 'record' in '/usr/local/lib/pd/extra/Gem/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/Gem/gem_record*.so
+not reloading 'video' plugins (already 1 loaded)
+not reloading 'video' plugins (already 1 loaded)
+[pix_video]: backend #0='pylon'	: pylon USB usb GigE gige 
+not reloading 'video' plugins (already 1 loaded)
+[pix_video]: backend #0='pylon'	: pylon USB usb GigE gige 
+[New Thread 0x7fffedb76700 (LWP 14185)]
+[New Thread 0x7fffed375700 (LWP 14186)]
+verbose(3): [GEM:videoPYLON] found device '2676:ba02:6:3:46'
+[New Thread 0x7fffecb74700 (LWP 14196)]
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] found device '2676:ba02:4:3:44'
+[New Thread 0x7fffe7fff700 (LWP 14206)]
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+verbose(3): [GEM:videoPYLON] Node is not readable.
+GLEW version 1.10.0
+[gemglxwindow]: Direct Rendering enabled!
+[New Thread 0x7fffd9e75700 (LWP 14210)]
+[New Thread 0x7fffd8c10700 (LWP 14211)]
+[New Thread 0x7fffd3fff700 (LWP 14212)]
+error: *: no method for 'gem_state'
+verbose(4): ... you might be able to track this down from the Find menu.
+[New Thread 0x7fffd37fe700 (LWP 14213)]
+[New Thread 0x7fffd241d700 (LWP 14214)]
+[New Thread 0x7fffd1c1c700 (LWP 14215)]
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+error: *: no method for 'gem_state'
+
+Thread 1 "pd" received signal SIGSEGV, Segmentation fault.
+pd_bang (x=0x21) at m_pd.c:268
+268	    (*(*x)->c_bangmethod)(x);
+(gdb) bt
+#0  pd_bang (x=0x21) at m_pd.c:268
+#1  0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#2  0x00005555555a6da2 in bng_bout2 (x=0x555555b3f220) at g_bang.c:306
+#3  bng_bang2 (x=0x555555b3f220) at g_bang.c:379
+#4  bng_float (x=0x555555b3f220, f=<optimized out>) at g_bang.c:360
+#5  0x000055555561720f in outlet_float (x=<optimized out>, f=0) at m_obj.c:389
+#6  0x000055555561720f in outlet_float (x=<optimized out>, f=0) at m_obj.c:389
+#7  0x00005555555f41a8 in gatom_bang (x=0x555555b3ee80) at g_text.c:592
+#8  gatom_float (x=0x555555b3ee80, f=<optimized out>) at g_text.c:622
+#9  0x00005555556163a9 in inlet_float (x=<optimized out>, f=<optimized out>)
+    at m_obj.c:112
+#10 0x000055555561720f in outlet_float (x=<optimized out>, f=0) at m_obj.c:389
+#11 0x000055555561720f in outlet_float (x=<optimized out>, f=0) at m_obj.c:389
+#12 0x00005555555f41a8 in gatom_bang (x=0x555555b3d220) at g_text.c:592
+#13 gatom_float (x=0x555555b3d220, f=<optimized out>) at g_text.c:622
+#14 0x00005555556163a9 in inlet_float (x=<optimized out>, f=<optimized out>)
+    at m_obj.c:112
+#15 0x000055555561720f in outlet_float (x=<optimized out>, f=0) at m_obj.c:389
+#16 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#17 0x00005555555a6bb2 in bng_bout1 (x=0x555555b3cbc0) at g_bang.c:294
+#18 bng_bang (x=0x555555b3cbc0) at g_bang.c:316
+#19 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#20 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+---Type <return> to continue, or q <return> to quit---
+#21 0x00005555555a6e92 in bng_bout2 (x=0x55555594db10) at g_bang.c:306
+#22 bng_bang2 (x=0x55555594db10) at g_bang.c:379
+#23 bng_list (x=0x55555594db10, s=<optimized out>, ac=<optimized out>, 
+    av=<optimized out>) at g_bang.c:369
+#24 0x000055555561733a in outlet_list (x=<optimized out>, 
+    s=0x5555558f6840 <s_list>, argc=1, argv=0x7fffffffb230) at m_obj.c:411
+#25 0x0000555555616529 in inlet_list (x=0x5555561a7750, s=<optimized out>, 
+    argc=<optimized out>, argv=<optimized out>) at m_obj.c:142
+#26 0x000055555561733a in outlet_list (x=<optimized out>, 
+    s=0x5555558f6840 <s_list>, argc=argc@entry=1, 
+    argv=argv@entry=0x7fffffffb230) at m_obj.c:411
+#27 0x000055555563e2d5 in trigger_list (x=0x5555561b07c0, s=<optimized out>, 
+    argc=1, argv=0x7fffffffb230) at x_connective.c:1033
+#28 0x000055555561733a in outlet_list (x=<optimized out>, 
+    s=0x5555558f6840 <s_list>, argc=1, argv=0x7fffffffb230) at m_obj.c:411
+#29 0x000055555561733a in outlet_list (x=<optimized out>, 
+    s=0x5555558f6840 <s_list>, argc=argc@entry=1, 
+    argv=argv@entry=0x7fffffffb230) at m_obj.c:411
+#30 0x000055555563e2d5 in trigger_list (x=0x555555b86830, s=<optimized out>, 
+    argc=1, argv=0x7fffffffb230) at x_connective.c:1033
+#31 0x000055555561733a in outlet_list (x=<optimized out>, s=0x0, argc=1, 
+    argv=0x7fffffffb230) at m_obj.c:411
+#32 0x0000555555611670 in pd_defaultfloat (x=<optimized out>, 
+---Type <return> to continue, or q <return> to quit---
+    f=<optimized out>) at m_class.c:306
+#33 0x000055555561720f in outlet_float (x=<optimized out>, f=1) at m_obj.c:389
+#34 0x00005555556163a9 in inlet_float (x=<optimized out>, f=<optimized out>)
+    at m_obj.c:112
+#35 0x000055555561720f in outlet_float (x=<optimized out>, f=1) at m_obj.c:389
+#36 0x000055555561720f in outlet_float (x=<optimized out>, f=1) at m_obj.c:389
+#37 0x00005555555f41a8 in gatom_bang (x=0x5555561d2b60) at g_text.c:592
+#38 gatom_float (x=0x5555561d2b60, f=<optimized out>) at g_text.c:622
+#39 0x00005555556163a9 in inlet_float (x=<optimized out>, f=<optimized out>)
+    at m_obj.c:112
+#40 0x000055555561720f in outlet_float (x=<optimized out>, f=1) at m_obj.c:389
+#41 0x000055555561720f in outlet_float (x=<optimized out>, f=0.159733906)
+    at m_obj.c:389
+#42 0x00007ffff35f47d4 in pix_blob::processRGBAImage (this=0x5555561d2d10, 
+    image=...) at pix_blob.cpp:143
+#43 0x00007ffff34c8bac in GemPixObj::render (this=0x5555561d2d10, 
+    state=0x555555acaf50) at GemPixObj.cpp:99
+#44 0x00007ffff34c0fe0 in GemBase::gem_renderMess (this=0x5555561d2d10, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:159
+#45 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffb610)
+    at m_obj.c:422
+#46 0x00007ffff34c0dd5 in GemBase::continueRender (
+---Type <return> to continue, or q <return> to quit---
+    this=this@entry=0x5555561b3450, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#47 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x5555561b3450, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#48 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffb6e0)
+    at m_obj.c:422
+#49 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x5555561b9ea0, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#50 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x5555561b9ea0, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#51 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffb7b0)
+    at m_obj.c:422
+#52 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555b22570, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#53 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555b22570, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#54 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffb880)
+    at m_obj.c:422
+---Type <return> to continue, or q <return> to quit---
+#55 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x5555561b9a10, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#56 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x5555561b9a10, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#57 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffb950)
+    at m_obj.c:422
+#58 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555b21660, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#59 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555b21660, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#60 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffba20)
+    at m_obj.c:422
+#61 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x55555592abf0, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#62 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x55555592abf0, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#63 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffbaf0)
+---Type <return> to continue, or q <return> to quit---
+    at m_obj.c:422
+#64 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x55555592aa60, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#65 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x55555592aa60, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#66 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffbbc0)
+    at m_obj.c:422
+#67 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x5555561a79e0, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#68 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x5555561a79e0, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#69 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffbc90)
+    at m_obj.c:422
+#70 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555b5f4c0, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#71 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555b5f4c0, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#72 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+---Type <return> to continue, or q <return> to quit---
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffbd60)
+    at m_obj.c:422
+#73 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x5555561a7d60, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#74 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x5555561a7d60, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#75 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffbe30)
+    at m_obj.c:422
+#76 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x5555561d3360, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#77 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x5555561d3360, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#78 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffbf00)
+    at m_obj.c:422
+#79 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555b6f130, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#80 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555b6f130, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+---Type <return> to continue, or q <return> to quit---
+#81 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc060) at m_obj.c:422
+#82 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc060) at m_obj.c:422
+#83 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc060) at m_obj.c:422
+#84 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffc060)
+    at m_obj.c:422
+#85 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x5555559fb5d0, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#86 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x5555559fb5d0, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#87 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffc180)
+    at m_obj.c:422
+#88 0x00007ffff3517018 in gemhead::renderGL (this=0x5555559bd3c0, 
+    state=0x555555acaf50) at gemhead.cpp:179
+#89 0x00007ffff351a01c in gemreceive::proxyCallback (p=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at gemreceive.cpp:313
+#90 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at m_obj.c:422
+---Type <return> to continue, or q <return> to quit---
+#91 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffc730)
+    at m_obj.c:422
+#92 0x000055555563c40f in trigger_anything (x=0x555555accce0, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at x_connective.c:1046
+#93 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at m_obj.c:422
+#94 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffc730)
+    at m_obj.c:422
+#95 0x000055555563c40f in trigger_anything (x=0x555555a89b30, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at x_connective.c:1046
+#96 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at m_obj.c:422
+#97 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at m_obj.c:422
+#98 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at m_obj.c:422
+#99 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=s@entry=0x55555595ba60, argc=argc@entry=2, 
+    argv=argv@entry=0x7fffffffc730) at m_obj.c:422
+#100 0x000055555563c2b5 in trigger_anything (x=0x555555aa0080, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at x_connective.c:1046
+---Type <return> to continue, or q <return> to quit---
+#101 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=s@entry=0x55555595ba60, argc=argc@entry=2, 
+    argv=argv@entry=0x7fffffffc730) at m_obj.c:422
+#102 0x000055555563c2b5 in trigger_anything (x=0x555555aa1d20, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at x_connective.c:1046
+#103 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at m_obj.c:422
+#104 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffc730)
+    at m_obj.c:422
+#105 0x000055555563c40f in trigger_anything (x=0x555555accac0, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at x_connective.c:1046
+#106 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at m_obj.c:422
+#107 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at m_obj.c:422
+#108 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffc730)
+    at m_obj.c:422
+#109 0x000055555563c40f in trigger_anything (x=0x555555a7c4b0, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc730) at x_connective.c:1046
+#110 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffc730)
+---Type <return> to continue, or q <return> to quit---
+    at m_obj.c:422
+#111 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555a7c300, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#112 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555a7c300, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#113 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc950) at m_obj.c:422
+#114 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=s@entry=0x55555595ba60, argc=argc@entry=2, 
+    argv=argv@entry=0x7fffffffc950) at m_obj.c:422
+#115 0x000055555563c2b5 in trigger_anything (x=0x555555a7c090, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc950) at x_connective.c:1046
+#116 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc950) at m_obj.c:422
+#117 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc950) at m_obj.c:422
+#118 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffc950) at m_obj.c:422
+#119 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffc950)
+    at m_obj.c:422
+#120 0x00007ffff34c0dd5 in GemBase::continueRender (
+---Type <return> to continue, or q <return> to quit---
+    this=this@entry=0x555555a24490, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#121 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555a24490, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#122 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffca20)
+    at m_obj.c:422
+#123 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x5555559bbe80, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#124 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x5555559bbe80, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#125 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffcaf0)
+    at m_obj.c:422
+#126 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x5555559bd7d0, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#127 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x5555559bd7d0, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#128 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffcc20) at m_obj.c:422
+#129 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+---Type <return> to continue, or q <return> to quit---
+    s=0x55555595ba60, argc=2, argv=0x7fffffffcc20) at m_obj.c:422
+#130 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffcc20)
+    at m_obj.c:422
+#131 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555a256a0, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#132 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555a256a0, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#133 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffccf0)
+    at m_obj.c:422
+#134 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555a24890, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#135 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555a24890, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#136 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffcdc0)
+    at m_obj.c:422
+#137 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555a1cab0, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+---Type <return> to continue, or q <return> to quit---
+#138 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555a1cab0, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#139 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffcef0) at m_obj.c:422
+#140 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffcef0) at m_obj.c:422
+#141 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffcef0)
+    at m_obj.c:422
+#142 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x5555559bbff0, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#143 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x5555559bbff0, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#144 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd0e0) at m_obj.c:422
+#145 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd0e0) at m_obj.c:422
+#146 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd0e0) at m_obj.c:422
+#147 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffd0e0)
+    at m_obj.c:422
+---Type <return> to continue, or q <return> to quit---
+#148 0x000055555563c40f in trigger_anything (x=0x555555a83860, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd0e0) at x_connective.c:1046
+#149 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffd0e0)
+    at m_obj.c:422
+#150 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555a82980, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#151 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555a82980, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#152 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffd1b0)
+    at m_obj.c:422
+#153 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555a82790, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#154 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555a82790, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#155 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffd280)
+    at m_obj.c:422
+#156 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555a825a0, state=state@entry=0x555555acaf50)
+---Type <return> to continue, or q <return> to quit---
+    at GemBase.cpp:176
+#157 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555a825a0, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#158 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffd350)
+    at m_obj.c:422
+#159 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555a823b0, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#160 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555a823b0, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#161 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd450) at m_obj.c:422
+#162 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffd450)
+    at m_obj.c:422
+#163 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555a82d20, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#164 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555a82d20, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#165 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd550) at m_obj.c:422
+---Type <return> to continue, or q <return> to quit---
+#166 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffd550)
+    at m_obj.c:422
+#167 0x00007ffff34c0dd5 in GemBase::continueRender (
+    this=this@entry=0x555555a87180, state=state@entry=0x555555acaf50)
+    at GemBase.cpp:176
+#168 0x00007ffff34c0feb in GemBase::gem_renderMess (this=0x555555a87180, 
+    cache=<optimized out>, state=0x555555acaf50) at GemBase.cpp:161
+#169 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd8f0) at m_obj.c:422
+#170 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=s@entry=0x55555595ba60, argc=argc@entry=2, 
+    argv=argv@entry=0x7fffffffd8f0) at m_obj.c:422
+#171 0x000055555563c2b5 in trigger_anything (x=0x555555a81f40, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd8f0) at x_connective.c:1046
+#172 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd8f0) at m_obj.c:422
+#173 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd8f0) at m_obj.c:422
+#174 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=s@entry=0x55555595ba60, argc=argc@entry=2, 
+    argv=argv@entry=0x7fffffffd8f0) at m_obj.c:422
+#175 0x000055555563c2b5 in trigger_anything (x=0x555555a88db0, 
+---Type <return> to continue, or q <return> to quit---
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd8f0) at x_connective.c:1046
+#176 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd8f0) at m_obj.c:422
+#177 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd8f0) at m_obj.c:422
+#178 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=s@entry=0x55555595ba60, argc=argc@entry=2, 
+    argv=argv@entry=0x7fffffffd8f0) at m_obj.c:422
+#179 0x000055555563c2b5 in trigger_anything (x=0x555555acf630, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd8f0) at x_connective.c:1046
+#180 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=2, argv=0x7fffffffd8f0) at m_obj.c:422
+#181 0x00005555556173ca in outlet_anything (x=<optimized out>, 
+    s=0x55555595ba60, argc=argc@entry=2, argv=argv@entry=0x7fffffffd8f0)
+    at m_obj.c:422
+#182 0x00007ffff351872e in gemlist::sendCacheState (this=0x555555acae20, 
+    cache=<optimized out>, state=0x555555acaf50) at gemlist.cpp:105
+#183 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#184 0x000055555563ee19 in trigger_list (s=0x0, argc=0, argv=0x0, 
+    x=0x555555acc160) at x_connective.c:1023
+#185 trigger_bang (x=0x555555acc160) at x_connective.c:1053
+#186 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#187 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+---Type <return> to continue, or q <return> to quit---
+#188 0x000055555563ee19 in trigger_list (s=0x0, argc=0, argv=0x0, 
+    x=0x555555ad1520) at x_connective.c:1023
+#189 trigger_bang (x=0x555555ad1520) at x_connective.c:1053
+#190 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#191 0x000055555561729c in outlet_symbol (x=<optimized out>, s=0x555555a09c70)
+    at m_obj.c:400
+#192 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#193 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#194 0x000055555563ec29 in trigger_list (s=0x0, argc=0, argv=0x0, 
+    x=0x555555a43650) at x_connective.c:1023
+#195 trigger_bang (x=0x555555a43650) at x_connective.c:1053
+#196 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#197 0x000055555561733a in outlet_list (x=<optimized out>, 
+    s=0x5555558f6840 <s_list>, argc=argc@entry=0, argv=0x0) at m_obj.c:411
+#198 0x000055555563e382 in trigger_list (x=0x5555559e2d30, s=<optimized out>, 
+    argc=0, argv=0x0) at x_connective.c:1033
+#199 0x000055555561733a in outlet_list (x=<optimized out>, 
+    s=0x5555558f6840 <s_list>, argc=0, argv=0x0) at m_obj.c:411
+#200 0x0000555555616529 in inlet_list (x=0x555555a38cc0, s=<optimized out>, 
+    argc=<optimized out>, argv=<optimized out>) at m_obj.c:142
+#201 0x000055555561733a in outlet_list (x=<optimized out>, 
+    s=0x5555558f6840 <s_list>, argc=argc@entry=0, argv=argv@entry=0x0)
+    at m_obj.c:411
+---Type <return> to continue, or q <return> to quit---
+#202 0x000055555563ecb1 in trigger_list (s=0x0, argc=0, argv=0x0, 
+    x=0x555555a38d60) at x_connective.c:1033
+#203 trigger_bang (x=0x555555a38d60) at x_connective.c:1053
+#204 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#205 0x00007ffff34cd38d in GemWindow::bang (this=this@entry=0x5555559faca0)
+    at GemWindow.cpp:245
+#206 0x00007ffff34cd796 in GemWindow::render (this=0x5555559faca0)
+    at GemWindow.cpp:412
+#207 GemWindow::_CallbackClass_render_488::callback (data=<optimized out>)
+    at GemWindow.cpp:488
+#208 0x000055555561733a in outlet_list (x=<optimized out>, 
+    s=0x5555558f6840 <s_list>, argc=0, argv=0x0) at m_obj.c:411
+#209 0x0000555555616529 in inlet_list (x=0x555555a38b10, s=<optimized out>, 
+    argc=<optimized out>, argv=<optimized out>) at m_obj.c:142
+#210 0x000055555561733a in outlet_list (x=<optimized out>, 
+    s=0x5555558f6840 <s_list>, argc=argc@entry=0, argv=argv@entry=0x0)
+    at m_obj.c:411
+#211 0x000055555563eda4 in trigger_list (s=0x0, argc=0, argv=0x0, 
+    x=0x5555559e2c40) at x_connective.c:1033
+#212 trigger_bang (x=0x5555559e2c40) at x_connective.c:1053
+#213 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#214 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#215 0x0000555555640659 in trigger_list (s=0x0, argc=1, argv=0x7fffffffdcb0, 
+---Type <return> to continue, or q <return> to quit---
+    x=0x555555ad7c20) at x_connective.c:1023
+#216 trigger_symbol (x=0x555555ad7c20, s=<optimized out>)
+    at x_connective.c:1074
+#217 0x000055555561729c in outlet_symbol (x=<optimized out>, s=0x555555a09c70)
+    at m_obj.c:400
+#218 0x000055555560df98 in binbuf_eval (x=<optimized out>, 
+    target=0x555555ad7d30, argc=0, argv=0x0) at m_binbuf.c:773
+#219 0x00005555556170d9 in outlet_bang (x=<optimized out>) at m_obj.c:363
+#220 0x000055555565f7e4 in metro_tick (x=0x555555acab10) at x_time.c:162
+#221 0x0000555555619ca1 in sched_tick () at m_sched.c:412
+#222 0x000055555561a805 in m_pollingscheduler () at m_sched.c:517
+#223 m_mainloop () at m_sched.c:596
+#224 0x00007ffff6d14b97 in __libc_start_main (main=0x55555556aaf0 <main>, 
+    argc=6, argv=0x7fffffffdf58, init=<optimized out>, fini=<optimized out>, 
+    rtld_fini=<optimized out>, stack_end=0x7fffffffdf48)
+    at ../csu/libc-start.c:310
+#225 0x000055555556ab2a in _start ()
+(gdb) quit

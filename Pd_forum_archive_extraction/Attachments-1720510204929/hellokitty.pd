@@ -1,0 +1,136 @@
+#N canvas 507 158 631 357 12;
+#X text 38 19 Hello Kitty!;
+#N canvas 448 186 627 283 kitty01 0;
+#X text 38 34 What's the favourite game of this kitty?;
+#X obj 69 97 f 0;
+#X obj 103 97 + 1;
+#X msg 69 72 bang;
+#X floatatom 69 133 5 0 0 0 - - -;
+#X text 39 192 The kitty doesn't have a name yet. Please name that
+kitty!;
+#X connect 1 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X restore 173 86 pd kitty01;
+#N canvas 448 186 675 301 kitty02 0;
+#X text 38 34 What's the favourite game of this kitty?;
+#X text 39 229 The kitty doesn't have a name yet. Please name that
+kitty!;
+#X msg 70 163 meow;
+#X msg 112 163 miaow;
+#X msg 159 163 woof;
+#X msg 199 164 cock-a-doodle-doo;
+#X obj 70 91 random 4;
+#X obj 70 117 select 0 1 2 3;
+#X obj 199 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 159 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 112 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 70 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 70 68 bang;
+#X connect 2 0 11 0;
+#X connect 3 0 10 0;
+#X connect 4 0 9 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X connect 7 1 3 0;
+#X connect 7 2 4 0;
+#X connect 7 3 5 0;
+#X connect 12 0 6 0;
+#X restore 173 114 pd kitty02;
+#N canvas 448 186 630 299 kitty03 0;
+#X text 38 34 What's the favourite game of this kitty?;
+#X text 39 229 The kitty doesn't have a name yet. Please name that
+kitty!;
+#X obj 70 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 70 111 spigot 1;
+#X obj 70 141 t a b;
+#X msg 151 111 0;
+#X msg 137 76 1;
+#X msg 70 75 meow;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 4 1 5 0;
+#X connect 5 0 3 1;
+#X connect 6 0 3 1;
+#X connect 7 0 3 0;
+#X restore 173 141 pd kitty03;
+#N canvas 515 180 675 416 kitty04 0;
+#X text 39 34 What's the favourite game of this kitty?;
+#X text 40 328 The kitty doesn't have a name yet. Please name that
+kitty!;
+#X obj 70 151 list prepend 0;
+#X obj 70 181 route 0 1 2 3;
+#X msg 70 66 woof-woof;
+#X msg 191 65 0;
+#X msg 224 65 1;
+#X msg 261 65 2;
+#X msg 296 65 3;
+#X obj 70 292 print r0;
+#X obj 126 240 print r2;
+#X obj 98 266 print r1;
+#X obj 154 212 print r3;
+#X floatatom 191 126 5 0 0 0 - - -;
+#X connect 2 0 3 0;
+#X connect 3 0 9 0;
+#X connect 3 1 11 0;
+#X connect 3 2 10 0;
+#X connect 3 3 12 0;
+#X connect 4 0 2 0;
+#X connect 5 0 13 0;
+#X connect 6 0 13 0;
+#X connect 7 0 13 0;
+#X connect 8 0 13 0;
+#X connect 13 0 2 1;
+#X restore 173 169 pd kitty04;
+#N canvas 515 180 651 430 kitty05 0;
+#X text 39 34 What's the favourite game of this kitty?;
+#X text 40 358 The kitty doesn't have a name yet. Please name that
+kitty!;
+#X obj 70 151 list;
+#X obj 70 181 list split 1;
+#X msg 70 66 bang;
+#N canvas 0 0 450 300 show 0;
+#X obj 153 101 list prepend set;
+#X obj 153 130 list trim;
+#X obj 153 158 outlet;
+#X obj 153 72 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X restore 70 292 pd show;
+#N canvas 0 0 450 300 show 0;
+#X obj 153 101 list prepend set;
+#X obj 153 130 list trim;
+#X obj 153 158 outlet;
+#X obj 153 72 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X restore 121 244 pd show;
+#X msg 121 266;
+#X msg 117 116 list miau meow miow woof-woof;
+#X obj 173 219 bng 15 250 50 0 empty empty End 17 7 1 10 -262144 -1
+-1;
+#X msg 70 314;
+#X msg 101 89 1 2 3 4 5 6 7 8;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 1 2 1;
+#X connect 3 1 6 0;
+#X connect 3 2 9 0;
+#X connect 4 0 2 0;
+#X connect 5 0 10 0;
+#X connect 6 0 7 0;
+#X connect 8 0 2 1;
+#X connect 11 0 2 1;
+#X restore 172 197 pd kitty05;
+#X text 83 44 What are the favourite games of these kittys?;
+#X text 77 230 The kittens don't have a name yet. Please think of names
+for them!;

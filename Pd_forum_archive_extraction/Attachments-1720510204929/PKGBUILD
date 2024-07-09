@@ -1,0 +1,26 @@
+# Maintainer: Carlos Franke <contact at carlosfranke dot net>
+
+pkgname=gem-experimental
+pkgver=0.94_pre1
+pkgrel=1
+pkgdesc="Graphics Environment for Multimedia - an external for Pure Data"
+arch=('i686' 'x86_64')
+url="https://gem.iem.at/"
+depends=('pd') #TODO
+license=('GPL2')
+source=(https://gem.iem.at/releases/0.94_pre1/Gem%5Bv0.94%7Epre1%5D%28Sources%29.dek)
+provides=('gem' 'pd-gem')
+sha256sums=('910a7088ed6a524b3d76a7a1583df83d36c6fde8ace2a2ca71af2a605739ae5b')
+
+build() {
+  cd Gem
+  ./autogen.sh
+  ./configure --prefix=/usr --with-pd=/usr/include/pd
+  make
+}
+
+package() {
+  cd Gem
+  make DESTDIR="$pkgdir/" install
+}
+

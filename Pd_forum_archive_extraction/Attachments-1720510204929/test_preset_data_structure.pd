@@ -1,0 +1,9 @@
+#N struct myname-preset-template float x array presets presets-element
+;
+#N struct presets-element text preset-text;
+#N canvas 253 216 450 300 10;
+#X obj 151 125 preset_data_structure myname;
+#X msg 119 83 read preset.txt;
+#X msg 256 82 write preset.txt;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;

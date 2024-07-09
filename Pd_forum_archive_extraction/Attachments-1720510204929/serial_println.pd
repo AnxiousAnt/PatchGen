@@ -1,0 +1,44 @@
+#N canvas 390 157 570 389 10;
+#X obj 50 15 inlet;
+#X obj 146 135 t f b;
+#X obj 146 199 +;
+#X obj 173 160 f;
+#X obj 173 182 * 10;
+#X msg 188 129 0;
+#X obj 146 221 t f f;
+#X obj 50 238 f;
+#X obj 50 112 t b b;
+#X obj 50 260 outlet;
+#X obj 50 37 sel 10 13;
+#X text 142 7 to be used with [comport] for utilising Arduino's Serial.println()
+function;
+#X obj 146 106 - 48;
+#X text 176 201 this is taken from the code often used in the Arduino:
+;
+#X text 198 219 while(Serial.available));
+#X text 206 234 byte inByte = Serial.read() \;;
+#X text 206 247 if((inByte >= '0') && (inByte <= '9'));
+#X text 198 285 (curly brackets are not available in Pd's comments)
+;
+#X text 225 263 int temp = temp * 10 + inByte - '0' \;;
+#X text 204 335 written by Alexandros Drymonitis;
+#X obj 101 63 moses 48;
+#X obj 146 85 moses 58;
+#X text 162 62 let only digits through;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 1;
+#X connect 5 0 3 1;
+#X connect 6 0 7 1;
+#X connect 6 1 3 1;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 8 1 5 0;
+#X connect 10 0 8 0;
+#X connect 10 2 20 0;
+#X connect 12 0 1 0;
+#X connect 20 1 21 0;
+#X connect 21 0 12 0;

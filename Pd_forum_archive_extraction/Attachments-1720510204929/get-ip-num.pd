@@ -1,0 +1,8 @@
+#N canvas 0 0 450 300 10;
+#X obj 154 103 shell;
+#X obj 154 122 prepend set;
+#X msg 154 84 ip_num.sh;
+#X msg 153 140 217.88.112.67;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;

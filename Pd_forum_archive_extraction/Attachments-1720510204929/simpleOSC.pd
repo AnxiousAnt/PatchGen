@@ -1,0 +1,15 @@
+#N canvas 0 0 450 300 10;
+#X obj 50 162 sendOSC;
+#X msg 73 109 connect localhost 8000;
+#X obj 215 156 dumpOSC 8000;
+#X obj 248 248 print;
+#X obj 223 186 OSCroute /all;
+#X msg 50 74 send /all/value myvalue;
+#X obj 248 222 OSCroute /value;
+#X obj 174 235 print;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 0 7 0;
+#X connect 5 0 0 0;
+#X connect 6 0 3 0;

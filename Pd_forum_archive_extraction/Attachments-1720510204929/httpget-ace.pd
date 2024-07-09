@@ -1,0 +1,108 @@
+#N canvas 195 255 745 613 10;
+#X declare -lib moocow;
+#X text 31 109 from;
+#X obj 65 86 unpack 0 0 0 0;
+#X floatatom 65 109 3 0 0 0 - - -;
+#X floatatom 92 109 3 0 0 0 - - -;
+#X floatatom 119 109 3 0 0 0 - - -;
+#X floatatom 146 109 3 0 0 0 - - -;
+#X obj 85 63 tgl 15 0 empty empty connected 18 7 0 8 -24198 -241291
+-1 0 1;
+#X text 172 109 (Server IP Address);
+#X obj 46 40 httpget;
+#X msg 46 19 http://www.swpc.noaa.gov/ftpdir/lists/ace/ace_swepam_1m.txt
+;
+#X obj 103 177 list length;
+#X obj 46 130 t a a;
+#X obj 46 226 list split;
+#X floatatom 74 335 7 0 0 0 - - -;
+#X floatatom 74 355 7 0 0 0 - - -;
+#X floatatom 74 374 7 0 0 0 - - -;
+#X floatatom 176 377 7 0 0 0 - - -;
+#X floatatom 193 354 7 0 0 0 - - -;
+#X floatatom 210 330 7 0 0 0 - - -;
+#X obj 74 250 unpack 0 0 0 0 0 0 0 0 0 0;
+#X floatatom 74 274 7 0 0 0 - - -;
+#X floatatom 74 294 7 0 0 0 - - -;
+#X floatatom 74 314 7 0 0 0 - - -;
+#X text 43 274 YEAR;
+#X text 36 295 MONTH;
+#X text 48 314 DAY;
+#X text 44 335 HHMM;
+#X text 26 374 SECONDS;
+#X floatatom 227 305 7 0 0 0 - - -;
+#X text 146 348 PROTON DENSITY;
+#X text 175 323 BULK SPEED;
+#X text 153 295 ION TEMPERATURE;
+#X obj 46 -2 metro 60000;
+#X obj 46 -21 tgl 15 0 empty empty periodic_updates 18 7 0 8 -24198
+-241291 -1 1 1;
+#X text 132 378 STATUS;
+#X obj 176 400 select 0 1 2 3 4 5 6 7 8 9;
+#X symbolatom 176 524 10 0 0 0 - - -;
+#X obj 176 494 prepend set;
+#X msg 313 477 no_data;
+#X msg 232 458 bad_data_record;
+#X msg 176 458 nominal;
+#X obj 103 203 - 30;
+#X text 136 201 extract the last 30 "words";
+#X text 135 216 (The file has 10 values per line \, the last 2 lines
+are usually no-data \, so we get the 3rd line from the end.);
+#X text 2 355 JULIAN_DATE;
+#X obj 355 346 ftom;
+#X obj 355 391 pack 0 0;
+#X obj 355 436 noteout;
+#X msg 355 413 \$1 \$2;
+#X obj 407 430 print note;
+#X text 328 74 Units: Proton density p/cc Units: Bulk speed km/s Units:
+Ion temperature degrees K Status(S): 0 = nominal data \, 1 to 8 = bad
+data record \, 9 = no data Missing data values: Density and Speed =
+-9999.9 \, Temp. = -100000 Source: ACE Satellite - Solar Wind Electron
+Proton Alpha Monitor 1-minute averaged Real-time Bulk Parameters of
+the Solar Wind Plasma;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X connect 8 0 11 0;
+#X connect 8 1 1 0;
+#X connect 8 2 6 0;
+#X connect 9 0 8 0;
+#X connect 10 0 41 0;
+#X connect 11 0 12 0;
+#X connect 11 1 10 0;
+#X connect 12 1 19 0;
+#X connect 17 0 46 1;
+#X connect 18 0 45 0;
+#X connect 19 0 20 0;
+#X connect 19 1 21 0;
+#X connect 19 2 22 0;
+#X connect 19 3 13 0;
+#X connect 19 4 14 0;
+#X connect 19 5 15 0;
+#X connect 19 6 16 0;
+#X connect 19 6 35 0;
+#X connect 19 7 17 0;
+#X connect 19 8 18 0;
+#X connect 19 9 28 0;
+#X connect 32 0 9 0;
+#X connect 33 0 32 0;
+#X connect 35 0 40 0;
+#X connect 35 1 39 0;
+#X connect 35 2 39 0;
+#X connect 35 3 39 0;
+#X connect 35 4 39 0;
+#X connect 35 5 39 0;
+#X connect 35 6 39 0;
+#X connect 35 7 39 0;
+#X connect 35 8 39 0;
+#X connect 35 9 38 0;
+#X connect 37 0 36 0;
+#X connect 38 0 37 0;
+#X connect 39 0 37 0;
+#X connect 40 0 37 0;
+#X connect 41 0 12 1;
+#X connect 45 0 46 0;
+#X connect 46 0 48 0;
+#X connect 48 0 47 0;
+#X connect 48 0 49 0;

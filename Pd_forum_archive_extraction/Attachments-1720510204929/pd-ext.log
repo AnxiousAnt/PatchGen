@@ -1,0 +1,137 @@
+input channels = 0, output channels = 0
+Pd-0.43.4 ("extended") compiled 21:59:17 Jan 21 2013
+port 5400
+TCL_LIBRARY="/usr/lib/pd-extended/lib/tcl/library" TK_LIBRARY="/usr/lib/pd-extended/lib/tk/library"   wish8.5 "/usr/lib/pd-extended/tcl//pd-gui.tcl" 5400
+Waiting for connection request... 
+... connected
+opened 0 MIDI input device(s) and 0 MIDI output device(s).
+input channels = 0, output channels = 0
+verbose(5): Using /usr/lib/pd-extended/startup as startup.
+verbose(4): Loading /usr/lib/pd-extended/startup/0.libdir.pd_linux
+tried /usr/lib/pd-extended/extra/libdir/libdir.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/libdir/libdir.pd_linux and succeeded
+verbose(3): libdir loader 1.9
+verbose(3): 	compiled on Jan 21 2013 at 21:43:41 
+verbose(3): 	compiled against Pd version 0.43.4.extended
+verbose(4): Loading /usr/lib/pd-extended/startup/1.list.pd_linux
+tried ./.l_ia64 and failed
+tried /home/jwmatthys/pd-externals/.l_ia64 and failed
+tried /usr/local/lib/pd-externals/.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/.l_ia64 and failed
+tried ./.pd_linux and failed
+tried /home/jwmatthys/pd-externals/.pd_linux and failed
+tried /usr/local/lib/pd-externals/.pd_linux and failed
+tried /usr/lib/pd-extended/extra/.pd_linux and failed
+tried .//.l_ia64 and failed
+tried /home/jwmatthys/pd-externals//.l_ia64 and failed
+tried /usr/local/lib/pd-externals//.l_ia64 and failed
+tried /usr/lib/pd-extended/extra//.l_ia64 and failed
+tried .//.pd_linux and failed
+tried /home/jwmatthys/pd-externals//.pd_linux and failed
+tried /usr/local/lib/pd-externals//.pd_linux and failed
+tried /usr/lib/pd-extended/extra//.pd_linux and failed
+tried .//-meta.pd and failed
+tried /home/jwmatthys/pd-externals//-meta.pd and failed
+tried /usr/local/lib/pd-externals//-meta.pd and failed
+tried /usr/lib/pd-extended/extra//-meta.pd and failed
+error: /usr/lib/pd-extended/startup/1.list.pd_linux: can't load startup library'!
+
+verbose(4): Loading extra in /usr/lib/pd-extended/startup/extra
+tried ./extra.l_ia64 and failed
+tried /home/jwmatthys/pd-externals/extra.l_ia64 and failed
+tried /usr/local/lib/pd-externals/extra.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/extra.l_ia64 and failed
+tried ./extra.pd_linux and failed
+tried /home/jwmatthys/pd-externals/extra.pd_linux and failed
+tried /usr/local/lib/pd-externals/extra.pd_linux and failed
+tried /usr/lib/pd-extended/extra/extra.pd_linux and failed
+tried ./extra/extra.l_ia64 and failed
+tried /home/jwmatthys/pd-externals/extra/extra.l_ia64 and failed
+tried /usr/local/lib/pd-externals/extra/extra.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/extra/extra.l_ia64 and failed
+tried ./extra/extra.pd_linux and failed
+tried /home/jwmatthys/pd-externals/extra/extra.pd_linux and failed
+tried /usr/local/lib/pd-externals/extra/extra.pd_linux and failed
+tried /usr/lib/pd-extended/extra/extra/extra.pd_linux and failed
+tried ./extra/extra-meta.pd and failed
+tried /home/jwmatthys/pd-externals/extra/extra-meta.pd and failed
+tried /usr/local/lib/pd-externals/extra/extra-meta.pd and failed
+tried /usr/lib/pd-extended/extra/extra/extra-meta.pd and succeeded
+verbose(3): libdir_loader: added 'extra' to the global objectclass path
+verbose(14): Loaded libdir 'extra' from '/usr/lib/pd-extended/extra/extra'
+verbose(4): Loading pdlua in /usr/lib/pd-extended/startup/pdlua
+tried ./pdlua.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/extra/pdlua.l_ia64 and failed
+tried /home/jwmatthys/pd-externals/pdlua.l_ia64 and failed
+tried /usr/local/lib/pd-externals/pdlua.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/pdlua.l_ia64 and failed
+tried ./pdlua.pd_linux and failed
+tried /usr/lib/pd-extended/extra/extra/pdlua.pd_linux and failed
+tried /home/jwmatthys/pd-externals/pdlua.pd_linux and failed
+tried /usr/local/lib/pd-externals/pdlua.pd_linux and failed
+tried /usr/lib/pd-extended/extra/pdlua.pd_linux and failed
+tried ./pdlua/pdlua.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/extra/pdlua/pdlua.l_ia64 and failed
+tried /home/jwmatthys/pd-externals/pdlua/pdlua.l_ia64 and failed
+tried /usr/local/lib/pd-externals/pdlua/pdlua.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/pdlua/pdlua.l_ia64 and failed
+tried ./pdlua/pdlua.pd_linux and failed
+tried /usr/lib/pd-extended/extra/extra/pdlua/pdlua.pd_linux and failed
+tried /home/jwmatthys/pd-externals/pdlua/pdlua.pd_linux and failed
+tried /usr/local/lib/pd-externals/pdlua/pdlua.pd_linux and failed
+tried /usr/lib/pd-extended/extra/pdlua/pdlua.pd_linux and succeeded
+verbose(3): pdlua 0.7.1 (GPL) 2012 Martin Peach, based on
+verbose(3): lua 0.6~svn (GPL) 2008 Claude Heiland-Allen <claudiusmaximus@goto10.org>
+verbose(3): pdlua: compiled for pd-0.43 on Jan 21 2013 21:43:41
+verbose(4): Loading tclpd in /usr/lib/pd-extended/startup/tclpd
+tried ./tclpd.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/extra/tclpd.l_ia64 and failed
+tried /home/jwmatthys/pd-externals/tclpd.l_ia64 and failed
+tried /usr/local/lib/pd-externals/tclpd.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/tclpd.l_ia64 and failed
+tried ./tclpd.pd_linux and failed
+tried /usr/lib/pd-extended/extra/extra/tclpd.pd_linux and failed
+tried /home/jwmatthys/pd-externals/tclpd.pd_linux and failed
+tried /usr/local/lib/pd-externals/tclpd.pd_linux and failed
+tried /usr/lib/pd-extended/extra/tclpd.pd_linux and failed
+tried ./tclpd/tclpd.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/extra/tclpd/tclpd.l_ia64 and failed
+tried /home/jwmatthys/pd-externals/tclpd/tclpd.l_ia64 and failed
+tried /usr/local/lib/pd-externals/tclpd/tclpd.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/tclpd/tclpd.l_ia64 and failed
+tried ./tclpd/tclpd.pd_linux and failed
+tried /usr/lib/pd-extended/extra/extra/tclpd/tclpd.pd_linux and failed
+tried /home/jwmatthys/pd-externals/tclpd/tclpd.pd_linux and failed
+tried /usr/local/lib/pd-externals/tclpd/tclpd.pd_linux and failed
+tried /usr/lib/pd-extended/extra/tclpd/tclpd.pd_linux and succeeded
+verbose(3): tclpd loader v0.3.0
+verbose(3): tclpd: trying to load /usr/lib/pd-extended/extra/tclpd/tclpd.tcl...
+verbose(3): tclpd: loaded /usr/lib/pd-extended/extra/tclpd/tclpd.tcl
+verbose(4): Loading vanilla in /usr/lib/pd-extended/startup/vanilla
+tried ./vanilla.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/extra/vanilla.l_ia64 and failed
+tried /home/jwmatthys/pd-externals/vanilla.l_ia64 and failed
+tried /usr/local/lib/pd-externals/vanilla.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/vanilla.l_ia64 and failed
+tried ./vanilla.pd_linux and failed
+tried /usr/lib/pd-extended/extra/extra/vanilla.pd_linux and failed
+tried /home/jwmatthys/pd-externals/vanilla.pd_linux and failed
+tried /usr/local/lib/pd-externals/vanilla.pd_linux and failed
+tried /usr/lib/pd-extended/extra/vanilla.pd_linux and failed
+tried ./vanilla/vanilla.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/extra/vanilla/vanilla.l_ia64 and failed
+tried /home/jwmatthys/pd-externals/vanilla/vanilla.l_ia64 and failed
+tried /usr/local/lib/pd-externals/vanilla/vanilla.l_ia64 and failed
+tried /usr/lib/pd-extended/extra/vanilla/vanilla.l_ia64 and failed
+tried ./vanilla/vanilla.pd_linux and failed
+tried /usr/lib/pd-extended/extra/extra/vanilla/vanilla.pd_linux and failed
+tried /home/jwmatthys/pd-externals/vanilla/vanilla.pd_linux and failed
+tried /usr/local/lib/pd-externals/vanilla/vanilla.pd_linux and failed
+tried /usr/lib/pd-extended/extra/vanilla/vanilla.pd_linux and failed
+tried ./vanilla/vanilla-meta.pd and failed
+tried /usr/lib/pd-extended/extra/extra/vanilla/vanilla-meta.pd and failed
+tried /home/jwmatthys/pd-externals/vanilla/vanilla-meta.pd and failed
+tried /usr/local/lib/pd-externals/vanilla/vanilla-meta.pd and failed
+tried /usr/lib/pd-extended/extra/vanilla/vanilla-meta.pd and succeeded
+verbose(3): libdir_loader: added 'vanilla' to the global objectclass path
+verbose(14): Loaded libdir 'vanilla' from '/usr/lib/pd-extended/extra/vanilla'

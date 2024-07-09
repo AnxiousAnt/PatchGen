@@ -1,0 +1,14 @@
+#N canvas 7 74 428 368 10;
+#X obj 36 118 starter;
+#X obj 250 117 playit;
+#X text 116 201 open me using right-click for more info;
+#X text 125 327 Simon Wise 2012;
+#X text 139 219 (or control-click on OSX);
+#X text 222 96 put this on each Pi ..;
+#X text 6 279 IMPORTANT: if [netsend] can't connect it will hang;
+#X text 5 294 for a long time \, until eventually it times out;
+#X text 77 27 sudo apt-get install pd-ggee;
+#X text 12 65 THEN:;
+#X text 11 4 FIRST: to get [shell] install package pd-ggee on the Pi's
+;
+#X text 30 95 put this on your laptop;

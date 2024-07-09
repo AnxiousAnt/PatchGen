@@ -1,0 +1,107 @@
+#N canvas 341 34 537 676 10;
+#X obj 58 84 random 10;
+#X text 136 86 for 10 soundfiles \, change to suit your needs;
+#X obj 58 48 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 58 129 route 0 1 2 3 4 5 6 7 8 9;
+#X obj 211 158 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 194 158 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 177 158 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 160 158 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 143 158 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 126 158 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 109 158 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 92 158 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 75 158 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 58 158 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 249 132 for more soundfiles 10 11 12 ....;
+#X obj 58 494 readsf~;
+#X msg 58 412 open file1.wav \, 1;
+#X msg 75 386 open file2.wav \, 1;
+#X msg 92 360 open file3.wav \, 1;
+#X msg 109 335 open file4.wav \, 1;
+#X msg 126 311 open file5.wav \, 1;
+#X msg 143 285 open file6.wav \, 1;
+#X msg 160 259 open file7.wav \, 1;
+#X msg 177 234 open file8.wav \, 1;
+#X msg 194 208 open file9.wav \, 1;
+#X msg 211 183 open file10.wav \, 1;
+#X obj 59 533 dac~;
+#X text 285 294 the files should be in the;
+#X text 285 306 same dir as the patch \, for;
+#X text 285 318 this to work.;
+#X obj 102 534 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 125 535 this bangs when playback is finished;
+#X text 59 569 You might want to make sure that playback is finished
+before;
+#X text 59 585 new sounds can actually be triggered this is not implemented
+;
+#X text 60 603 here on how to do it please right click for help on
+;
+#X obj 435 603 spigot;
+#X obj 88 625 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X text 57 626 and;
+#N canvas 632 202 259 266 pseudogate 0;
+#X obj 125 123 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 125 90 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 88 155 spigot;
+#X obj 88 52 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 88 218 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 84 23 you get the idea ...;
+#X connect 0 0 2 1;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X restore 234 624 pd pseudogate;
+#X text 107 626 or click on this:;
+#X connect 0 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 13 0;
+#X connect 3 1 12 0;
+#X connect 3 2 11 0;
+#X connect 3 3 10 0;
+#X connect 3 4 9 0;
+#X connect 3 5 8 0;
+#X connect 3 6 7 0;
+#X connect 3 7 6 0;
+#X connect 3 8 5 0;
+#X connect 3 9 4 0;
+#X connect 4 0 25 0;
+#X connect 5 0 24 0;
+#X connect 6 0 23 0;
+#X connect 7 0 22 0;
+#X connect 8 0 21 0;
+#X connect 9 0 20 0;
+#X connect 10 0 19 0;
+#X connect 11 0 18 0;
+#X connect 12 0 17 0;
+#X connect 13 0 16 0;
+#X connect 15 0 26 0;
+#X connect 15 0 26 1;
+#X connect 15 1 30 0;
+#X connect 16 0 15 0;
+#X connect 17 0 15 0;
+#X connect 18 0 15 0;
+#X connect 19 0 15 0;
+#X connect 20 0 15 0;
+#X connect 21 0 15 0;
+#X connect 22 0 15 0;
+#X connect 23 0 15 0;
+#X connect 24 0 15 0;
+#X connect 25 0 15 0;

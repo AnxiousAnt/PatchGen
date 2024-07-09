@@ -1,0 +1,8 @@
+#N canvas 0 0 528 419 10;
+#X obj 138 207 pyext sql pysql;
+#X msg 238 174 select %bird%;
+#X msg 138 174 reload;
+#X obj 138 230 print match;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;

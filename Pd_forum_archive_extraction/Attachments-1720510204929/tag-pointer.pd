@@ -1,0 +1,15 @@
+#N canvas 0 22 498 348 10;
+#X obj 96 111 pointer;
+#X obj 139 37 r \$1.\$2.set-tag-pointer;
+#X obj 97 58 r \$1.\$2.get-tag-pointer;
+#X obj 95 201 send;
+#X msg 124 170 symbol \$2.\$1;
+#X msg 125 146 list tag-pointer \$1;
+#X obj 96 84 t b f;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 2 0 6 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 0;
+#X connect 6 0 0 0;
+#X connect 6 1 5 0;

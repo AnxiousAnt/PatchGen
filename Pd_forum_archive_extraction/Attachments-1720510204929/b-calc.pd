@@ -1,0 +1,13 @@
+#N canvas 631 289 450 300 10;
+#X obj 143 191 f;
+#X obj 143 44 r BANG;
+#X obj 143 132 f 1000;
+#X obj 143 68 f 12;
+#X obj 143 97 t b a;
+#X obj 143 158 /;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 4 1 5 1;
+#X connect 5 0 0 0;

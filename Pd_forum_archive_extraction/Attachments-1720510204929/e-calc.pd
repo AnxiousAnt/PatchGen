@@ -1,0 +1,8 @@
+#N canvas 231 180 450 300 10;
+#X obj 97 54 r BANG;
+#X obj 97 135 f;
+#X obj 97 103 expr 1000/$f1;
+#X obj 97 80 f 12;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;

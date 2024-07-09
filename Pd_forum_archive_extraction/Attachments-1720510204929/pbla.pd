@@ -1,0 +1,125 @@
+#N canvas 577 134 233 162 12;
+#X msg 334 351 \; \$0-gdfx_sdly1 649 \; \$0-gdfx_sdly2 727 \; \$0-gdfx_ldly1
+866 \; \$0-gdfx_ldly2 4000 \; \$0-gdfx_mdly_fdbck 0.4 \;;
+#X msg 364 471 \; \$0-gdfx_sdly1 8.93 \; \$0-gdfx_sdly2 23 \; \$0-gdfx_ldly1
+40 \; \$0-gdfx_ldly2 4000 \; \$0-gdfx_mdly_fdbck 0.5 \;;
+#X text 365 452 perc transorm;
+#X text 303 227 dly 1;
+#X text 336 333 dly 2;
+#X msg 304 248 \; \$0-gdfx_sdly1 1073 \; \$0-gdfx_sdly2 1560 \; \$0-gdfx_ldly1
+2276 \; \$0-gdfx_ldly2 2965 \;;
+#X obj 0 0 cnv 15 230 160 empty empty mdly 5 12 1 10 -220522 -33289
+0;
+#X obj 6 26 hsl 150 12 0 8 0 0 empty \$0-gdfx_mdly_invol input_vol
+5 6 65 8 -260634 -208896 -1 0 1;
+#X obj 7 43 hsl 150 12 0.32 32 1 0 \$0-sgdfx_mdly_outvol \$0-gdfx_mdly_outvol
+output_vol 5 6 193 8 -260634 -208896 -1 0 1;
+#X obj 43 302 *~;
+#X obj 7 65 hsl 150 12 5 2000 0 0 \$0-sgdfx_sdly1 \$0-gdfx_sdly1
+dly1 5 6 193 8 -186740 -208896 -1 0 1;
+#X obj 7 81 hsl 150 12 5 2000 0 0 \$0-sgdfx_sdly2 \$0-gdfx_sdly2
+dly2 5 6 193 8 -186740 -208896 -1 0 1;
+#X obj 7 97 hsl 150 12 5 4000 0 0 \$0-sgdfx_ldly1 \$0-gdfx_ldly1
+dly3 5 6 193 8 -186740 -208896 -1 0 1;
+#X obj 7 114 hsl 150 12 5 4000 0 0 \$0-sgdfx_ldly2 \$0-gdfx_ldly2
+dly4 5 6 193 8 -186740 -208896 -1 0 1;
+#N canvas 250 193 959 476 multidelay~ 0;
+#X obj 290 376 clip~ -1 1;
+#X obj 557 378 clip~ -1 1;
+#X obj 557 71 delread~ \$0-ln02 800;
+#X obj 290 352 *~;
+#X obj 557 354 *~;
+#X obj 13 6 inlet~;
+#X obj 290 401 outlet~;
+#X obj 557 403 outlet~;
+#X obj 303 248 r \$0-sgdfx_sdly1;
+#X obj 582 237 r \$0-sgdfx_sdly2;
+#X obj 290 47 r \$0-sgdfx_ldly1;
+#X obj 408 318 r \$0-sgdfx_mdly_outvol;
+#X obj 557 46 r \$0-sgdfx_ldly2;
+#X obj 329 113 r \$0-sgdfx_mdly_fdbck;
+#X obj 310 136 *~;
+#X obj 310 162 throw~ \$0-gdfx_mdly_signalin;
+#X obj 303 298 /~ 2;
+#X obj 582 285 /~ 2;
+#X obj 14 81 catch~ \$0-gdfx_mdly_signalin;
+#X obj 13 30 clip~ -0.99 0.99;
+#X obj 13 53 throw~ \$0-gdfx_mdly_signalin;
+#X obj 290 72 delread~ \$0-ln02 1000;
+#X obj 14 106 delwrite~ \$0-ln02 4000;
+#X obj 303 273 delread~ \$0-ln02 70;
+#X obj 582 262 delread~ \$0-ln02 100;
+#X obj 586 111 r \$0-sgdfx_mdly_fdbck;
+#X obj 567 134 *~;
+#X obj 567 160 throw~ \$0-gdfx_mdly_signalin;
+#X connect 0 0 6 0;
+#X connect 1 0 7 0;
+#X connect 2 0 4 0;
+#X connect 2 0 26 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 19 0;
+#X connect 8 0 23 0;
+#X connect 9 0 24 0;
+#X connect 10 0 21 0;
+#X connect 11 0 4 1;
+#X connect 11 0 3 1;
+#X connect 12 0 2 0;
+#X connect 13 0 14 1;
+#X connect 14 0 15 0;
+#X connect 16 0 3 0;
+#X connect 17 0 4 0;
+#X connect 18 0 22 0;
+#X connect 19 0 20 0;
+#X connect 21 0 3 0;
+#X connect 21 0 14 0;
+#X connect 23 0 16 0;
+#X connect 24 0 17 0;
+#X connect 25 0 26 1;
+#X connect 26 0 27 0;
+#X restore 43 327 pd multidelay~;
+#X obj 7 136 hsl 150 12 0 0.6 0 0 \$0-sgdfx_mdly_fdbck \$0-gdfx_mdly_fdbck
+feedback 5 6 193 8 -159018 -208896 -1 0 1;
+#X obj 163 65 nbx 5 11 5 2000 0 0 empty \$0-sgdfx_sdly1 empty 0 -6
+64 10 -186740 -208896 -1 5 256;
+#X obj 163 81 nbx 5 11 5 2000 0 0 empty \$0-sgdfx_sdly2 empty 0 -6
+64 10 -186740 -208896 -99865 5 256;
+#X obj 163 97 nbx 5 11 5 4000 0 0 empty \$0-sgdfx_ldly1 empty 0 -6
+64 10 -186740 -208896 -1 5 256;
+#X obj 163 114 nbx 5 11 5 4000 0 0 empty \$0-sgdfx_ldly2 empty 0 -6
+64 10 -186740 -208896 -1 5 256;
+#X obj 163 136 nbx 5 11 0 1 0 0 empty \$0-sgdfx_mdly_fdbck empty 0
+-6 64 10 -159018 -208896 -1 0 256;
+#X obj 163 43 nbx 5 11 0.32 32 0 0 empty \$0-sgdfx_mdly_outvol empty
+0 -6 64 10 -260634 -208896 -1 0.32 256;
+#X obj 150 350 clip~ -1 1;
+#X obj 43 224 inlet~;
+#X obj 162 26 nbx 5 11 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+10 -260634 -208896 -1 0 256;
+#X obj 43 277 +~;
+#X obj 62 250 inlet~;
+#X obj 43 351 clip~ -1 1;
+#X obj 43 375 outlet~;
+#X obj 150 376 outlet~;
+#X obj 304 207 select 0 1 2;
+#X obj 71 2 tgl 13 0 empty empty on -17 6 1 9 -226901 -208896 -1 0
+1;
+#X obj 318 47 switch~;
+#X obj 122 2 hradio 12 1 0 3 empty empty pre -20 6 1 8 -162544 -208896
+-1 0;
+#X connect 7 0 9 1;
+#X connect 7 0 24 0;
+#X connect 9 0 14 0;
+#X connect 14 0 27 0;
+#X connect 14 1 22 0;
+#X connect 22 0 29 0;
+#X connect 23 0 25 0;
+#X connect 25 0 9 0;
+#X connect 26 0 25 1;
+#X connect 27 0 28 0;
+#X connect 30 0 5 0;
+#X connect 30 1 0 0;
+#X connect 30 2 1 0;
+#X connect 31 0 32 0;
+#X connect 33 0 30 0;
+#X coords 0 0 1 1 230 160 1;

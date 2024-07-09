@@ -1,0 +1,60 @@
+#N canvas -46 14 782 534 12;
+#X obj 258 370 /;
+#X obj -112 271 r reset;
+#X obj 32 173 inlet;
+#X obj 13 504 outlet;
+#X obj 127 504 outlet;
+#X obj 56 405 f 0;
+#X msg 262 443 bang;
+#X obj 269 329 r \$1total;
+#X obj 166 451 * 100;
+#X obj 121 406 f 0;
+#X obj -112 301 delay 50;
+#X obj 177 284 + 1;
+#X obj 115 284 float 0;
+#X obj -111 330 f -1;
+#X obj 371 175 inlet;
+#X obj 373 227 pipe 50;
+#X obj 373 203 - 1;
+#X text -69 -126 inputs a bang representing a categorized event (specific
+harmonic sequence);
+#X text -73 -88 outputs total number of events that match that category
+;
+#X text -71 -75 outputs probability of that category of event occuring
+;
+#X text -72 -57 e.g. if the analysis algorithm sees a two-five-one
+progression \, a bang is sent to the "one" probcalc module inside the
+"fiveone" harmanalmod. This probcalc keeps a running total of bangs
+it recieves. It also inputs the total number of two-five-xxx sequences
+that have occured. It divides the total number by the local count \,
+yielding the probability that \, when the sequence two-five occurs
+\, the next interval will be a one.;
+#X text 75 -151 probcalc abstraction;
+#X text -161 234 reset function;
+#X text -189 247 resets counter to zero;
+#X text 10 147 bang input;
+#X text 126 259 counter;
+#X text 327 122 load function;
+#X text 249 137 sets counter to number from table;
+#X text 251 149 stored in text file;
+#X text 231 302 total input from parent harmonanalmod;
+#X text -25 525 number counted;
+#X text 113 524 probability;
+#X connect 0 0 8 0;
+#X connect 1 0 10 0;
+#X connect 2 0 12 0;
+#X connect 5 0 3 0;
+#X connect 6 0 9 0;
+#X connect 7 0 0 1;
+#X connect 7 0 6 0;
+#X connect 8 0 4 0;
+#X connect 9 0 0 0;
+#X connect 10 0 13 0;
+#X connect 11 0 5 0;
+#X connect 11 0 9 0;
+#X connect 11 0 12 1;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 16 0;
+#X connect 15 0 12 0;
+#X connect 16 0 15 0;

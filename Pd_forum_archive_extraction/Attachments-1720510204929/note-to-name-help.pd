@@ -1,0 +1,8 @@
+#N canvas 227 292 450 300 10;
+#X floatatom 173 96 5 0 0 0 - - -;
+#X symbolatom 173 166 10 0 0 0 note-name - -;
+#X obj 173 140 note-to-name;
+#X floatatom 252 166 5 0 0 1 octave - -;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 0;

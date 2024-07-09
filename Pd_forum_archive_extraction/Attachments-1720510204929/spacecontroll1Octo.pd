@@ -1,0 +1,216 @@
+#N canvas 200 113 667 352 10;
+#X obj 515 264 cnv 15 100 60 empty empty empty 20 12 0 14 -258007 -66577
+0;
+#X obj 18 176 cnv 15 400 85 empty empty Horizontal_Representation 20
+12 1 14 -245668 -66577 0;
+#X obj 509 36 cnv 15 95 180 empty empty Audio 20 12 1 14 -55417 -66577
+0;
+#X obj 20 18 cnv 15 400 85 empty empty empty 20 12 0 14 -88953 -66577
+0;
+#N canvas 412 22 788 718 joystick 0;
+#X obj 51 554 coll;
+#C restore;
+#X obj 50 397 hradio 15 1 0 40 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 155 475 pack 0 0;
+#X obj 55 586 hsl 200 15 0 360 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 28 274 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 126 501 clear;
+#X msg 78 501 reset;
+#X obj 34 492 print;
+#X obj 49 274 hradio 15 1 0 40 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 160 310 int;
+#X floatatom 51 618 5 0 0 0 - - -;
+#X msg 507 507 write;
+#X msg 461 507 read;
+#X msg 313 504 write programm.coll;
+#X msg 173 502 read programm.coll;
+#X obj 224 476 loadbang;
+#X msg 111 251 stop;
+#X obj 46 180 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X msg 269 302 stop;
+#X obj 96 331 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 45 106 tgl 25 0 record_movement empty empty 0 -6 0 8 -195568
+-1 -1 0 1;
+#X obj 97 108 tgl 25 0 play_movement empty empty 0 -6 1 8 -195568 -1
+-1 0 1;
+#X obj 177 210 metro 250;
+#X obj 179 334 metro 250;
+#X obj 46 52 route btn_0 btn_1 btn_2;
+#X obj 150 109 tgl 25 0 clear empty empty 0 -6 0 8 -195568 -1 -1 0
+1;
+#X obj 124 526 print;
+#X obj 149 429 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 47 18 r buttons;
+#X obj 176 242 counter 0 40;
+#X obj 179 367 counter 0 40;
+#X obj 207 443 r pack;
+#X obj 59 652 s joystick;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 2 0 7 0;
+#X connect 3 0 10 0;
+#X connect 4 0 9 0;
+#X connect 5 0 0 0;
+#X connect 5 0 26 0;
+#X connect 6 0 0 0;
+#X connect 8 0 9 1;
+#X connect 9 0 2 0;
+#X connect 10 0 32 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 14 0;
+#X connect 16 0 22 0;
+#X connect 17 0 22 0;
+#X connect 18 0 23 0;
+#X connect 19 0 23 0;
+#X connect 20 0 17 0;
+#X connect 21 0 19 0;
+#X connect 22 0 4 0;
+#X connect 22 0 29 0;
+#X connect 23 0 30 0;
+#X connect 24 0 20 0;
+#X connect 24 1 21 0;
+#X connect 24 2 25 0;
+#X connect 25 0 27 0;
+#X connect 27 0 5 0;
+#X connect 28 0 24 0;
+#X connect 29 0 8 0;
+#X connect 29 1 16 0;
+#X connect 30 0 1 0;
+#X connect 30 1 18 0;
+#X connect 31 0 2 1;
+#X restore 163 317 pd joystick recorder;
+#N canvas 138 461 910 697 joystick 0;
+#X obj 81 90 joystick;
+#X obj 79 29 tgl 15 0 empty on/off empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X floatatom 59 142 5 0 0 0 - - -;
+#X floatatom 108 140 5 0 0 0 - - -;
+#X msg 131 49 open 4;
+#X obj 133 16 loadbang;
+#X obj 61 179 * 2;
+#X obj 118 180 * 2;
+#X obj 60 216 - 1;
+#X obj 119 215 - 1;
+#X floatatom 61 253 5 0 0 0 - - -;
+#X floatatom 122 251 5 0 0 0 - - -;
+#X obj 86 307 atan2;
+#X floatatom 87 331 5 0 0 0 - - -;
+#X floatatom 84 488 5 0 0 0 - - -;
+#X obj 80 448 + 180;
+#X obj 76 520 send joystick;
+#X obj 70 381 rad2deg;
+#X floatatom 72 416 5 0 0 0 - - -;
+#X obj 139 469 s pack;
+#X obj 158 112 s buttons;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 0 6 20 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 12 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 17 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 15 0 19 0;
+#X connect 17 0 18 0;
+#X connect 18 0 15 0;
+#X restore 18 317 pd joystick control;
+#N canvas 354 303 618 391 audio 0;
+#X obj 378 114 vsl 15 128 -127 0 0 0 empty master empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X floatatom 193 213 5 0 0 3 dB - -;
+#X floatatom 225 58 5 0 0 1 degrees - -;
+#X floatatom 235 85 5 0 0 0 - - -;
+#X floatatom 244 111 5 0 0 0 - - -;
+#X text 285 112 fadetime_ms;
+#X text 274 86 separastion;
+#X obj 227 24 receive joystick;
+#X obj 105 11 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 9 30 openpanel;
+#X obj 11 62 prepend open;
+#X obj 9 132 readsf~;
+#X obj 116 88 noise~;
+#X obj 251 189 dac~;
+#X obj 19 91 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 85 -2 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 99 152 opan2~ ......;
+#X obj 60 326 dac~ 1 2 3 4 5 6 7 8;
+#X obj 95 211 omap-octo~;
+#X obj 99 257 ogain2~;
+#X connect 0 0 1 0;
+#X connect 1 0 19 8;
+#X connect 2 0 16 1;
+#X connect 7 0 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 12 0 16 0;
+#X connect 14 0 11 0;
+#X connect 15 0 10 0;
+#X connect 16 0 18 0;
+#X connect 16 1 18 1;
+#X connect 16 2 18 2;
+#X connect 16 3 18 3;
+#X connect 16 4 18 4;
+#X connect 16 5 18 5;
+#X connect 16 6 18 6;
+#X connect 16 7 18 7;
+#X connect 18 0 19 0;
+#X connect 18 1 19 1;
+#X connect 18 2 19 2;
+#X connect 18 3 19 3;
+#X connect 18 4 19 4;
+#X connect 18 5 19 5;
+#X connect 18 6 19 6;
+#X connect 18 7 19 7;
+#X connect 19 0 17 0;
+#X connect 19 1 17 1;
+#X connect 19 2 17 2;
+#X connect 19 3 17 3;
+#X connect 19 4 17 4;
+#X connect 19 5 17 5;
+#X connect 19 6 17 6;
+#X connect 19 7 17 7;
+#X restore 315 317 pd audio spatialisation;
+#X obj 529 68 vsl 15 128 -127 0 0 0 master empty Master_Volume -15
+140 1 10 -262144 -1 -1 0 1;
+#X obj 32 214 hsl 300 30 0 360 0 0 empty joystick empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X text 20 247 0 degrees;
+#X text 312 246 360 degrees;
+#X obj 36 42 tgl 35 0 empty record_movement Record_Movement -10 -10
+1 10 -262144 -1 -1 0 1;
+#X obj 161 43 tgl 35 0 empty play_movement Play_Movement -10 -10 1
+10 -262144 -1 -1 0 1;
+#X text 26 78 Joystick Button 1;
+#X text 158 81 Joystick Button 2;
+#X obj 289 43 tgl 35 0 empty clear Clear -1 -10 1 10 -262144 -1 -1
+0 1;
+#X text 284 80 Joystick Button 3;
+#X obj 534 283 tgl 25 0 on/off empty Joystick_on/off -5 -6 1 10 -262144
+-1 -1 0 1;
+#X text 548 63 0 dB;
+#X text 547 186 inf.;

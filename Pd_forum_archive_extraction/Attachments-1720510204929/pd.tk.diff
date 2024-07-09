@@ -1,0 +1,46 @@
+--- ../src/u_main.tk	Sun Aug  5 03:42:10 2001
++++ pd.tk	Fri Aug 17 18:41:58 2001
+@@ -379,7 +379,7 @@
+     pd [concat $name graph \;]
+ }
+ 
+-proc menu_array {name accel} {
++proc menu_array {name} {
+     pd [concat $name array \;]
+ }
+ 
+@@ -694,6 +694,23 @@
+     
+     $name.m.put.m add cascade -label "IO-lets" \
+         -menu $name.m.put.m.subm
++
++menu $name.m.put.m.subm
++    $name.m.put.m.subm add command -label "Control inlet" \
++    	-command [concat menu_cinlet $name 0] \
++	-accelerator "Alt+1"
++
++    $name.m.put.m.subm add command -label "Signal inlet" \
++    	-command [concat menu_sinlet $name 0] \
++	-accelerator "Alt+2"
++
++    $name.m.put.m.subm add command -label "Control outlet" \
++    	-command [concat menu_coutlet $name 0] \
++	-accelerator "Alt+3"
++
++    $name.m.put.m.subm add command -label "Signal outlet" \
++    	-command [concat menu_soutlet $name 0] \
++	-accelerator "Alt+4"
+     
+     $name.m.put.m add command -label Graph \
+     	-command [concat menu_graph $name] 
+@@ -1211,8 +1228,8 @@
+     set var_graph_ypix [concat graph_ypix_$vid]
+     global $var_graph_ypix
+ 
+-    puts stderr $var_graph_x2
+-    puts stderr [eval concat $$var_graph_x2]
++#    puts stderr $var_graph_x2
++#    puts stderr [eval concat $$var_graph_x2]
+     pd [concat $id dialog \
+     	[eval concat $$var_graph_x1] \
+     	[eval concat $$var_graph_y1] \

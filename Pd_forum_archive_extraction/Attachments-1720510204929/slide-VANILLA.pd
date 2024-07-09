@@ -1,0 +1,40 @@
+#N canvas 124 23 453 520 10;
+#X obj 203 330 Scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X obj 97 121 square~ 2;
+#X obj 204 201 Scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#N canvas 228 108 770 335 slide 0;
+#X obj 381 129 fexpr~ if($x1[0] - $x1[-1] > 0 \, 1 \, if($x1[0] - $x1[-1]
+< 0 \, -1 \, 0));
+#X obj 381 175 fexpr~ if($x1[0] == 0 \, $y1[-1] \, $x1[0]);
+#X obj 60 59 inlet~;
+#X obj 60 273 outlet~;
+#X obj 167 59 inlet~;
+#X obj 274 59 inlet~;
+#X obj 60 212 fexpr~ if($x4[0] > 0 \, $y[-1] + (($x[0] - $y[-1])/$x2)
+\, $y[-1] + (($x[0] - $y[-1])/$x3));
+#X connect 0 0 1 0;
+#X connect 1 0 6 3;
+#X connect 2 0 0 0;
+#X connect 2 0 6 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 2;
+#X connect 6 0 3 0;
+#X restore 97 223 pd slide;
+#X floatatom 186 87 5 0 0 0 - - -;
+#X floatatom 232 87 5 0 0 0 - - -;
+#X obj 204 158 slide~;
+#X msg 218 57 1;
+#X obj 218 33 loadbang;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 1;
+#X connect 4 0 6 1;
+#X connect 5 0 3 2;
+#X connect 5 0 6 2;
+#X connect 6 0 2 0;
+#X connect 7 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;

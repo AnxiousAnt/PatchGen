@@ -1,0 +1,20 @@
+#N canvas 186 173 878 305 10;
+#X obj 243 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 243 235 bng 15 250 50 0 empty empty center 17 7 1 10 -24198
+-1 -1;
+#X obj 65 250 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 381 173 Then try to open the context menu of the green bang
+again: It now will appear displaced away from the mouse position.;
+#X text 381 226 Morale of story: Don't ever move anything over the
+top or over the left border!;
+#X text 382 22 The Magically Moving Menu;
+#X text 384 38 -------------------------;
+#X text 379 111 Then select the three bangs all together and move them
+by holding the green "center" bang \, so that the green bang is in
+the upper left corner of the window.;
+#X text 381 66 First open the right-click context menu of the bangs:
+It will appear near the mouse position as usual.;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;

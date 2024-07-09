@@ -1,0 +1,48 @@
+audioapi: 1
+noaudioin: False
+audioindev1: 0 2
+audioindevname1: HDA Intel MID (hardware)
+noaudioout: False
+audiooutdev1: 0 2
+audiooutdevname1: HDA Intel MID (hardware)
+audiobuf: 25
+rate: 48000
+callback: 0
+audioblocksize: 128
+midiapi: 1
+nomidiin: False
+midiindev1: 0
+midiindevname1: ALSA MIDI device #1
+nomidiout: False
+midioutdev1: 0
+midioutdevname1: ALSA MIDI device #1
+path1: /usr/lib/puredata/extra
+path2: /home/joe/Pure-Data/Live-Electronics-Tutorial
+path3: /home/joe/Pure-Data/externals/jmmmp
+path4: /home/joe/Pure-Data/externals
+path5: /home/joe/Pure-Data/externals/cyclone
+path6: /home/joe/Pure-Data/externals/else
+path7: /home/joe/Pure-Data/externals/ext13
+path8: /home/joe/Pure-Data/externals/ggee
+path9: /home/joe/Pure-Data/externals/hcs
+path10: /home/joe/Pure-Data/externals/iemlib
+path11: /home/joe/Pure-Data/externals/iemmatrix
+path12: /home/joe/Pure-Data/externals/libdir
+path13: /home/joe/Pure-Data/externals/list-abs
+path14: /home/joe/Pure-Data/externals/maxlib
+path15: /home/joe/Pure-Data/externals/pddp
+path16: /home/joe/Pure-Data/externals/pdogg
+path17: /home/joe/Pure-Data/externals/tof
+path18: /home/joe/Pure-Data/externals/zexy
+npath: 18
+standardpath: 0
+verbose: 1
+loadlib1: cyclone
+loadlib2: else
+loadlib3: iemlib
+loadlib4: zexy
+nloadlib: 4
+defeatrt: 0
+flags: 
+zoom: 1
+loading: no

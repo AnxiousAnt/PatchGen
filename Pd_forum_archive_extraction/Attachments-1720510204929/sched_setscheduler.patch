@@ -1,0 +1,84 @@
+? Makefile
+? sched_setscheduler.patch
+Index: pdp_icedthe~.c
+===================================================================
+RCS file: /cvsroot/pure-data/externals/pidip/modules/pdp_icedthe~.c,v
+retrieving revision 1.2.2.1
+diff -u -w -r1.2.2.1 pdp_icedthe~.c
+--- pdp_icedthe~.c	11 Dec 2006 16:34:51 -0000	1.2.2.1
++++ pdp_icedthe~.c	9 May 2007 03:59:22 -0000
+@@ -488,10 +488,12 @@
+     twait.tv_nsec = 25000000; // 25 ms
+  
+     schedprio.sched_priority = sched_get_priority_min(SCHED_FIFO) + x->x_priority;
++#ifdef __gnu_linux__
+     if ( sched_setscheduler(0, SCHED_FIFO, &schedprio) == -1)
+     {
+         post("pdp_icedthe~ : couldn't set priority for decoding thread.");
+     }
++#endif
+ 
+     while ( x->x_decodechild )
+     {
+Index: pdp_live~.c
+===================================================================
+RCS file: /cvsroot/pure-data/externals/pidip/modules/pdp_live~.c,v
+retrieving revision 1.6
+diff -u -w -r1.6 pdp_live~.c
+--- pdp_live~.c	4 Oct 2005 20:37:14 -0000	1.6
++++ pdp_live~.c	9 May 2007 03:59:22 -0000
+@@ -535,11 +535,12 @@
+     twait.tv_nsec = 10000000; // 10 ms
+  
+     schedprio.sched_priority = sched_get_priority_min(SCHED_FIFO) + x->x_priority;
++#ifdef __gnu_linux__
+     if ( sched_setscheduler(0,SCHED_FIFO,&schedprio) == -1)
+     {
+         post("pdp_live~ : couldn't set priority for decoding thread.");
+     }
+-
++#endif
+     if ( ! (x->x_avcontext->iformat->flags & AVFMT_NOHEADER ) )
+     {
+        if (x->x_avcontext->iformat->read_header(x->x_avcontext, &x->x_avparameters) < 0) 
+Index: pdp_mp4player~.cpp
+===================================================================
+RCS file: /cvsroot/pure-data/externals/pidip/modules/pdp_mp4player~.cpp,v
+retrieving revision 1.2
+diff -u -w -r1.2 pdp_mp4player~.cpp
+--- pdp_mp4player~.cpp	18 May 2004 00:44:09 -0000	1.2
++++ pdp_mp4player~.cpp	9 May 2007 03:59:22 -0000
+@@ -127,10 +127,12 @@
+     twait.tv_nsec = 10000000; // 10 ms
+ 
+     schedprio.sched_priority = 0;
++#ifdef __gnu_linux__
+     if ( sched_setscheduler(0, SCHED_OTHER, &schedprio) == -1)
+     {
+        post("pdp_mp4player~ : couldn't set scheduler for decoding thread.\n");
+     }
++#endif
+     if ( setpriority( PRIO_PROCESS, 0, x->x_priority ) < 0 )
+     {
+        post("pdp_mp4player~ : couldn't set priority to %d for decoding thread.\n", x->x_priority );
+Index: pdp_theorin~.c
+===================================================================
+RCS file: /cvsroot/pure-data/externals/pidip/modules/pdp_theorin~.c,v
+retrieving revision 1.2
+diff -u -w -r1.2 pdp_theorin~.c
+--- pdp_theorin~.c	2 Jan 2005 06:02:49 -0000	1.2
++++ pdp_theorin~.c	9 May 2007 03:59:23 -0000
+@@ -404,11 +404,12 @@
+     twait.tv_nsec = 10000000; // 10 ms
+  
+     schedprio.sched_priority = sched_get_priority_min(SCHED_FIFO) + x->x_priority;
++#ifdef __gnu_linux__
+     if ( sched_setscheduler(0, SCHED_FIFO, &schedprio) == -1)
+     {
+         post("pdp_theorin~ : couldn't set priority for decoding thread.");
+     }
+-
++#endif
+     while ( x->x_decodechild )
+     {
+       if ( ( x->x_reading ) && ( ( x->x_autoplay ) || ( x->x_nextimage == 1 ) ) )

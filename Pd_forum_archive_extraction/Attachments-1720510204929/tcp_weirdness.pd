@@ -1,0 +1,36 @@
+#N canvas 441 357 685 385 10;
+#X obj 37 311 netsend;
+#X msg 37 41 connect localhost 3000;
+#X msg 46 289 send foo \$1;
+#X floatatom 46 262 0 0 0 0 - - -;
+#X msg 37 234 disconnect;
+#X floatatom 37 338 0 0 0 0 - - -;
+#X text 80 12 TCP \, ascii;
+#X obj 76 337 print backward;
+#X msg 37 176 connect 169.254.34.130 5555;
+#X msg 37 124 connect 10.0.0.9 5555;
+#X obj 194 311 netreceive 3000;
+#X obj 194 335 print REC;
+#X msg 37 68 connect localhost 4000;
+#X text 187 40 if present: immediate connection \, left outlet = 1
+;
+#X text 114 232 left outlet = 0;
+#X text 186 67 if not present: 1 second freeze \, left outlet = no
+change;
+#X msg 37 103 connect 192.254.34.130 5555;
+#X text 221 101 if IP address not present: no freeze \, left outlet
+= no change, f 28;
+#X text 220 163 if IP address present \, but no [netreceive] on other
+machine: 20 seconds freeze on local PD before error in console \, left
+outlet = no change;
+#X connect 0 0 5 0;
+#X connect 0 1 7 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 11 0;
+#X connect 12 0 0 0;
+#X connect 16 0 0 0;

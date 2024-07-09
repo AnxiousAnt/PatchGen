@@ -1,0 +1,34 @@
+#N canvas 925 438 634 474 10;
+#X obj 202 284 line~;
+#X obj 67 325 switch~;
+#X obj 67 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 97 300 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 67 215 u_delswitch 10 1000 0 0;
+#X obj 202 326 env~;
+#X obj 202 348 dbtorms;
+#X floatatom 202 370 5 0 0 0 - - -;
+#X obj 104 71 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 104 104 \$1 1000 1000;
+#X text 256 61 Arg: 0 - Switch value (BOOL);
+#X text 256 81 Arg: 1 - Ramp time (ms);
+#X text 256 101 Arg: 2 - Delay time (ms);
+#X text 226 41 Message Input Arguments;
+#X text 246 215 Object Arguments;
+#X text 270 271 Arg: 2 - Delay before ramp-up time (ms);
+#X text 270 291 Arg: 3 - Delay before ramp-down time (ms);
+#X text 270 251 Arg: 1 - Ramp-down time (ms);
+#X text 270 231 Arg: 0 - Ramp-up time (ms);
+#X text 256 121 // If only one argument it'll take the default object
+parameters.;
+#X connect 0 0 5 0;
+#X connect 2 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 0 3 0;
+#X connect 4 1 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 0;

@@ -1,0 +1,26 @@
+#N canvas 0 22 717 253 10;
+#X msg 52 184 osascript -e 'tell application "Finder" to \$1' &;
+#X obj 55 142 list;
+#X obj 55 163 l2s;
+#X obj 59 43 metro 2000;
+#X obj 56 20 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 53 65 f;
+#X obj 80 65 + 1;
+#X obj 55 86 l2s;
+#X obj 48 204 system;
+#X msg 53 107 open document file "Image \$1.png" of folder "Desktop"
+of folder "XXXXXXXXXXXXX" of folder "Users" of startup disk;
+#X text 407 99 replaces "XXXXXXXXXX" by your own foldername;
+#X text 408 112 or change adress;
+#X text 148 6 small patch to open a series of image;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 1;
+#X connect 7 0 9 0;
+#X connect 9 0 1 0;

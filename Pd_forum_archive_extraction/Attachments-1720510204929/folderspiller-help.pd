@@ -1,0 +1,12 @@
+#N canvas 0 0 454 304 10;
+#X msg 349 35 panel;
+#X msg 90 33 criteria *.wav;
+#X obj 131 161 folderspiller ../sounds *.wav;
+#X obj 131 201 print;
+#X msg 185 33 criteria *.aif*;
+#X text 53 4 choose filetype;
+#X text 291 6 and select a folder;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;

@@ -1,0 +1,60 @@
+X-Mozilla-Keys: 
+Message-ID: <47D141BB.1010701@eircom.net>
+Date: Fri, 07 Mar 2008 13:23:07 +0000
+From: robcanning <robcanning@eircom.net>
+User-Agent: Mozilla-Thunderbird 2.0.0.9 (X11/20080110)
+MIME-Version: 1.0
+To: Derek Holzer <derek@umatic.nl>
+Subject: Re: [PD] vbap define_loudspeakers messages
+References: <47D13544.8050807@eircom.net> <47D13AEB.40803@umatic.nl>
+In-Reply-To: <47D13AEB.40803@umatic.nl>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Derek Holzer wrote:
+hi derek,
+> Kind of an odd way to do it...move locations of the speakers instead 
+> of the locations of the sounds ;-)
+i like it, its kinda fun - you can have a sound orbiting then jumble up 
+the speaker definitions in various ways
+not very elegant perhaps but simple and can give some nice results with 
+minimum fuss
+would be interested to hear how other people create spatialisation 
+routines/choreographies...
+>
+> One thing I would watch our for is if redefining the speakers 
+> interrupts the DSP chain or not, in which case you'd get some dropouts 
+> every time you did it. You might want to check that out before 
+> proceeding.
+yes this happens, thats why i was wondering if it was possible to to 
+send a message rather than initiating a new instance
+not that this may help, just wanted to give it a try...
+
+cheers
+
+rob c
+>
+> best!
+> d.
+>
+> PS... some multichannel inspiration now showing at the Hamburger 
+> Bahnhohf, Berlin:
+>
+> http://www.hamburgerbahnhof.de/sonder/08/leitner0108/leitnere.html
+>
+>
+> robcanning wrote:
+>> hi,
+>>
+>> is it possible to send messages to the define_loadspeakers with the 
+>> speaker definitions
+>>
+>> i would like to manipulate my spatialisation routines by manipulating 
+>> the speaker definitions but don't want to create new instances of the 
+>> [define_loudspeaker] each time
+>>
+>> any suggestions?
+>
+>
+
+

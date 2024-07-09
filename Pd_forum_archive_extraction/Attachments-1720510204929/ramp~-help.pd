@@ -1,0 +1,52 @@
+#N canvas 212 31 559 582 10;
+#X obj 9 523 cnv 15 550 20 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 9 7 cnv 15 554 54 empty \$0-pddp.cnv.header creb/ramp~ 3 12
+0 18 -204280 -1 0;
+#X obj 8 263 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 8 323 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlet 8 12 0 13
+-228856 -1 0;
+#X obj 8 383 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
+0 13 -228856 -1 0;
+#X obj 77 283 cnv 17 3 30 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X msg 157 135 \; pd dsp 1;
+#X obj 78 343 cnv 17 3 30 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 107 342 signal;
+#N canvas 308 206 494 344 META 0;
+#X text 12 140 HELP_PATCH_AUTHORS "pd meta" information added by Jonathan
+Wilkes for Pd version 0.42.;
+#X text 12 25 LICENSE GPL v2;
+#X text 12 5 KEYWORDS signal;
+#X text 12 100 OUTLET_0 signal;
+#X text 12 45 DESCRIPTION start a signal ramp to read an array at any
+point;
+#X text 12 80 INLET_0 control;
+#X text 12 120 AUTHOR Tom Schouten;
+#X restore 510 524 pd META;
+#X text 20 30 description: generates a signal ramp starting from the
+float it's presented with.;
+#X obj 68 122 ramp~;
+#X obj 446 23 import creb;
+#X msg 57 93 0;
+#X msg 100 92 800;
+#X obj 68 144 envrms~;
+#X floatatom 68 166 0 0 0 0 - - -;
+#X text 107 283 control;
+#X text 157 283 - the ramp will start from this value;
+#X text 157 342 - a ramp starting from that value;
+#X text 105 390 The creb ramp~ object generates a signal to read arrays
+using tabread~ or tabread4~. Other array readers are available (such
+as the IEM16 library). Sending a float into the inlet re-triggers the
+ramp from the value given by the float.;
+#X msg 138 93 600000;
+#X text 105 463 In 32bit Pure Data \, there is a limit of 4 million
+samples (about 90 seconds) that Pd can address in a smooth fashion.
+;
+#X connect 11 0 15 0;
+#X connect 13 0 11 0;
+#X connect 14 0 11 0;
+#X connect 15 0 16 0;
+#X connect 21 0 11 0;

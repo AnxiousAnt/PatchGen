@@ -1,0 +1,12 @@
+#N canvas 615 277 450 300 10;
+#X obj 98 95 metro 0.1;
+#X obj 101 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 91 125 t b b;
+#X obj 92 154 realtime;
+#X obj 93 180 print;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 1 3 1;
+#X connect 3 0 4 0;

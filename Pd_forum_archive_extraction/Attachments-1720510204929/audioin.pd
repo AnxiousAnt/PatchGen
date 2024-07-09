@@ -1,0 +1,25 @@
+#N canvas 294 392 914 713 12;
+#X msg 176 25 \; pd dsp 1;
+#X obj 6 33 adc~ 1;
+#X obj 6 106 env~;
+#X obj 6 83 bp~ 100 10;
+#X floatatom 6 159 5 0 0 0 - - -;
+#X obj 109 83 fiddle~;
+#X floatatom 109 158 5 0 0 0 - - -;
+#X obj 198 82 bonk~;
+#X floatatom 198 157 5 0 0 0 - - -;
+#X text 2 -9 listen to audio in;
+#X obj 198 184 >= 90;
+#X obj 176 -3 loadbang;
+#X obj 198 215 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X connect 1 0 3 0;
+#X connect 1 0 5 0;
+#X connect 1 0 7 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 10 0;
+#X connect 10 0 12 0;
+#X connect 11 0 0 0;

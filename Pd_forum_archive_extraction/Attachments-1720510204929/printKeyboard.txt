@@ -1,0 +1,183 @@
+hid_new
+[hid] 0.6, written by Hans-Christoph Steiner <hans@eds.org>
+hid_open
+[hid] opened device 0 (/dev/input/event0): AT Translated Set 2 keyboard
+
+Device 0: 'AT Translated Set 2 keyboard' on '/dev/input/event0'
+Device 1: 'SynPS/2 Synaptics TouchPad' on '/dev/input/event1'
+Device 2: 'Microsoft Microsoft Wheel Mouse Optical®' on '/dev/input/event2'
+
+
+Supported events:
+
+  TYPE  CODE    EVENT NAME
+-----------------------------------------------------------
+  syn   syn_report      Synchronization
+  syn   syn_config      Synchronization
+  syn   ?       Synchronization
+  syn   ev_9    Synchronization
+  syn   ev_12   Synchronization
+
+  TYPE  CODE    EVENT NAME
+-----------------------------------------------------------
+  key   key_esc Keys/Buttons
+  key   key_1   Keys/Buttons
+  key   key_2   Keys/Buttons
+  key   key_3   Keys/Buttons
+  key   key_4   Keys/Buttons
+  key   key_5   Keys/Buttons
+  key   key_6   Keys/Buttons
+  key   key_7   Keys/Buttons
+  key   key_8   Keys/Buttons
+  key   key_9   Keys/Buttons
+  key   key_0   Keys/Buttons
+  key   key_minus       Keys/Buttons
+  key   key_equal       Keys/Buttons
+  key   key_backspace   Keys/Buttons
+  key   key_tab Keys/Buttons
+  key   key_q   Keys/Buttons
+  key   key_w   Keys/Buttons
+  key   key_e   Keys/Buttons
+  key   key_r   Keys/Buttons
+  key   key_t   Keys/Buttons
+  key   key_y   Keys/Buttons
+  key   key_u   Keys/Buttons
+  key   key_i   Keys/Buttons
+  key   key_o   Keys/Buttons
+  key   key_p   Keys/Buttons
+  key   key_leftbrace   Keys/Buttons
+  key   key_rightbrace  Keys/Buttons
+  key   key_enter       Keys/Buttons
+  key   key_leftctrl    Keys/Buttons
+  key   key_a   Keys/Buttons
+  key   key_s   Keys/Buttons
+  key   key_d   Keys/Buttons
+  key   key_f   Keys/Buttons
+  key   key_g   Keys/Buttons
+  key   key_h   Keys/Buttons
+  key   key_j   Keys/Buttons
+  key   key_k   Keys/Buttons
+  key   key_l   Keys/Buttons
+  key   key_semicolon   Keys/Buttons
+  key   key_apostrophe  Keys/Buttons
+  key   key_grave       Keys/Buttons
+  key   key_leftshift   Keys/Buttons
+  key   key_backslash   Keys/Buttons
+  key   key_z   Keys/Buttons
+  key   key_x   Keys/Buttons
+  key   key_c   Keys/Buttons
+  key   key_v   Keys/Buttons
+  key   key_b   Keys/Buttons
+  key   key_n   Keys/Buttons
+  key   key_m   Keys/Buttons
+  key   key_comma       Keys/Buttons
+  key   key_dot Keys/Buttons
+  key   key_slash       Keys/Buttons
+  key   key_rightshift  Keys/Buttons
+  key   key_kpasterisk  Keys/Buttons
+  key   key_leftalt     Keys/Buttons
+  key   key_space       Keys/Buttons
+  key   key_capslock    Keys/Buttons
+  key   key_f1  Keys/Buttons
+  key   key_f2  Keys/Buttons
+  key   key_f3  Keys/Buttons
+  key   key_f4  Keys/Buttons
+  key   key_f5  Keys/Buttons
+  key   key_f6  Keys/Buttons
+  key   key_f7  Keys/Buttons
+  key   key_f8  Keys/Buttons
+  key   key_f9  Keys/Buttons
+  key   key_f10 Keys/Buttons
+  key   key_numlock     Keys/Buttons
+  key   key_scrolllock  Keys/Buttons
+  key   key_kp7 Keys/Buttons
+  key   key_kp8 Keys/Buttons
+  key   key_kp9 Keys/Buttons
+  key   key_kpminus     Keys/Buttons
+  key   key_kp4 Keys/Buttons
+  key   key_kp5 Keys/Buttons
+  key   key_kp6 Keys/Buttons
+  key   key_kpplus      Keys/Buttons
+  key   key_kp1 Keys/Buttons
+  key   key_kp2 Keys/Buttons
+  key   key_kp3 Keys/Buttons
+  key   key_kp0 Keys/Buttons
+  key   key_kpdot       Keys/Buttons
+  key   key_zenkakuhankaku      Keys/Buttons
+  key   key_102nd       Keys/Buttons
+  key   key_f11 Keys/Buttons
+  key   key_f12 Keys/Buttons
+  key   key_ro  Keys/Buttons
+  key   key_katakana    Keys/Buttons
+  key   key_hiragana    Keys/Buttons
+  key   key_henkan      Keys/Buttons
+  key   key_katakanahiragana    Keys/Buttons
+  key   key_muhenkan    Keys/Buttons
+  key   key_kpjpcomma   Keys/Buttons
+  key   key_kpenter     Keys/Buttons
+  key   key_rightctrl   Keys/Buttons
+  key   key_kpslash     Keys/Buttons
+  key   key_sysrq       Keys/Buttons
+  key   key_rightalt    Keys/Buttons
+  key   key_home        Keys/Buttons
+  key   key_up  Keys/Buttons
+  key   key_pageup      Keys/Buttons
+  key   key_left        Keys/Buttons
+  key   key_right       Keys/Buttons
+  key   key_end Keys/Buttons
+  key   key_down        Keys/Buttons
+  key   key_pagedown    Keys/Buttons
+  key   key_insert      Keys/Buttons
+  key   key_delete      Keys/Buttons
+  key   key_macro       Keys/Buttons
+  key   key_mute        Keys/Buttons
+  key   key_volumedown  Keys/Buttons
+  key   key_volumeup    Keys/Buttons
+  key   key_power       Keys/Buttons
+  key   key_kpequal     Keys/Buttons
+  key   key_kpplusminus Keys/Buttons
+  key   key_pause       Keys/Buttons
+  key   key_kpcomma     Keys/Buttons
+  key   key_yen Keys/Buttons
+  key   key_leftmeta    Keys/Buttons
+  key   key_rightmeta   Keys/Buttons
+  key   key_compose     Keys/Buttons
+  key   key_stop        Keys/Buttons
+  key   key_calc        Keys/Buttons
+  key   key_sleep       Keys/Buttons
+  key   key_wakeup      Keys/Buttons
+  key   key_www Keys/Buttons
+  key   key_mail        Keys/Buttons
+  key   key_bookmarks   Keys/Buttons
+  key   key_computer    Keys/Buttons
+  key   key_back        Keys/Buttons
+  key   key_forward     Keys/Buttons
+  key   key_nextsong    Keys/Buttons
+  key   key_playpause   Keys/Buttons
+  key   key_previoussong        Keys/Buttons
+  key   key_stopcd      Keys/Buttons
+  key   key_refresh     Keys/Buttons
+  key   key_f13 Keys/Buttons
+  key   key_f14 Keys/Buttons
+  key   key_f15 Keys/Buttons
+  key   key_search      Keys/Buttons
+  key   key_media       Keys/Buttons
+
+  TYPE  CODE    EVENT NAME
+-----------------------------------------------------------
+  msc   msc_scan        Miscellaneous
+
+  TYPE  CODE    EVENT NAME
+-----------------------------------------------------------
+  led   led_numl        LEDs
+  led   led_capsl       LEDs
+  led   led_scrolll     LEDs
+
+  TYPE  CODE    EVENT NAME
+-----------------------------------------------------------
+
+Detected:
+  5 Sync types
+  142 Key/Button types
+  1 Misc types
+  3 LED types

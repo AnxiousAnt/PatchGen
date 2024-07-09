@@ -1,0 +1,58 @@
+#N canvas 767 228 454 444 12;
+#X text 39 20 A library of graphical objects;
+#N canvas 686 559 581 359 num 0;
+#X obj 91 184 filledpolygon 900 900 1 0 -5 10 -5 10 5 0 5;
+#X text 80 32 The float value can only be moved on the y-axis;
+#X text 112 154 A red box visualizes the float value:;
+#X obj 193 66 struct num float y;
+#X restore 95 69 pd num;
+#N canvas 445 540 648 345 grob-lib 0;
+#X text 42 137 Arrays are painted using "plot" drawing instructions:
+;
+#X text 44 21 This declares an array named "numbers" whose elements
+are described by the template "num". Note that array declarations take
+three arguments: the word "array" \, the name of the array and the
+name of the elements.;
+#X obj 57 166 plot numbers 90 5 15 0 15;
+#X obj 65 100 struct grob-lib float x float y array numbers num;
+#X restore 96 93 pd grob-lib;
+#X text 180 65 float as red-box;
+#X text 218 92 num plotted as numbers;
+#N canvas 686 559 581 359 num-x 0;
+#X obj 91 184 filledpolygon 900 900 1 0 -5 10 -5 10 5 0 5;
+#X obj 135 95 struct num-x float y float x;
+#X text 80 32 The num-x float has an and an x field.;
+#X text 112 154 A red box visualizes the float values:;
+#X restore 91 193 pd num-x;
+#N canvas 445 540 648 345 grob-lib-x 0;
+#X text 42 137 Arrays are painted using "plot" drawing instructions:
+;
+#X text 44 21 This declares an array named "numbers" whose elements
+are described by the template "num". Note that array declarations take
+three arguments: the word "array" \, the name of the array and the
+name of the elements.;
+#X obj 57 166 plot numbers 90 5 15 0 15;
+#X obj 65 100 struct grob-lib-x float x float y array numbers num-x
+;
+#X restore 92 221 pd grob-lib-x;
+#X text 228 221 num-x plotted;
+#X text 194 191 float with x and y fields;
+#X text 194 289 float with x \, y and w fields;
+#X text 228 319 num-w plotted;
+#N canvas 445 540 648 345 grob-lib-w 0;
+#X text 42 137 Arrays are painted using "plot" drawing instructions:
+;
+#X text 44 21 This declares an array named "numbers" whose elements
+are described by the template "num". Note that array declarations take
+three arguments: the word "array" \, the name of the array and the
+name of the elements.;
+#X obj 65 98 struct grob-lib-w float x float y array numbers num-w
+;
+#X obj 57 166 plot numbers 90 5 15 0 15;
+#X restore 92 319 pd grob-lib-w;
+#N canvas 686 559 581 359 num-w 0;
+#X obj 91 184 filledpolygon 900 900 1 0 -5 10 -5 10 5 0 5;
+#X text 112 154 A red box visualizes the float values:;
+#X obj 135 95 struct num-w float y float x float w;
+#X text 80 32 The num-w float has a w and an x field added.;
+#X restore 91 291 pd num-w;

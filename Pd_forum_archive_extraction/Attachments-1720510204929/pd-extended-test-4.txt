@@ -1,0 +1,156 @@
+couldn't create:
+
+creb/
+
+ biquadseries~,  blosc~, bmatrix~,clog~ ,filterortho~ (missing dll)
+
+matrix~ :
+error (miXed): bad creation arguments for class 'matrix~'
+               missing number of inlets
+ matrix~
+... couldn't create
+
+
+cxc/
+
+cxc.prepend:
+load_object: Symbol "cxc.prepend_setup" not found
+load_object: Symbol "setup_cxc0x2eprepend" not found
+error: cxc.prepend: can't load abstraction within itself
+
+cxc.split:
+load_object: Symbol "cxc.split_setup" not found
+load_object: Symbol "setup_cxc0x2esplit" not found
+error: cxc.split: can't load abstraction within itself
+
+statistics:
+
+ cx.mean blir
+... couldn't create
+load_object: Symbol "histo_setup" not found
+ histo
+... couldn't create
+ cx.avgdev blir
+... couldn't create
+ cx.stddev blir
+... couldn't create
+
+randomix:
+ random1~
+... couldn't create
+ random_fl~
+... couldn't create
+ random_icg~
+... couldn't create
+
+
+cyclone/
+
+buddy, funnel, prob, pv, substitute, universal, and zl  are closing suddenly puredata.
+
+
+ext13/
+
+load_object: Symbol "send13_tilde_setup" not found
+load_object: Symbol "setup_send130x7e" not found
+
+load_object: Symbol "receive13_tilde_setup" not found
+load_object: Symbol "setup_receive130x7e" not found
+
+load_object: Symbol "openpatch_setup" not found
+
+load_object: Symbol "streamin13_tilde_setup" not found
+load_object: Symbol "setup_streamin130x7e" not found
+
+load_object: Symbol "catch13_tilde_setup" not found
+load_object: Symbol "setup_catch130x7e" not found
+
+
+load_object: Symbol "throw13_tilde_setup" not found
+load_object: Symbol "setup_throw130x7e" not found
+
+
+load_object: Symbol "cdplayer_setup" not found
+
+
+
+Gem/
+
+gemorb: 
+gemtablet: 
+glsl_program: 
+glsl_vertex: 
+glsl_fragment: 
+part_sink:
+pix_fiducialtrack:
+pix_indycam:
+pix_sig2pix~:
+pix_threshold_bernsen:
+pqtorusknots: can't load abstraction within itself
+
+pix_dot is crashing pd
+
+
+ggee/
+
+sliderh:
+sfread~: missing dll
+shell:Symbol "shell_setup" not found
+toddle: couldn't create
+
+maxlib/
+
+borax: Symbol "borax_setup" not found (we can use cyclone/Borax instead)
+
+
+
+mjlib/
+
+prob closes suddenly pd
+
+
+motex/
+
+strconcat .wav
+... couldn't create
+ strconcat
+... couldn't create
+getenv: Environment variable does not exist
+
+
+nqpoly4, nqpoly~, nusmuk abstractions couldn't be created (pdsettings problem?)
+
+
+pixeltango still crashes pd
+
+
+pmpd~ closes suddenly pd
+
+
+rradical/
+
+rrad.pattseq-help crashes pd
+rrad.split~-help crashes pd
+
+
+smlib/
+
+ vv+
+... couldn't create
+ vv-
+... couldn't create
+
+toxy/
+
+objects aren't loaded from pd/extra/toxy folder, crashes pd
+
+
+unauthorized/
+
+objects aren't loaded from pd/extra/unauthorized folder
+
+
+vasp/
+
+objects aren't loaded from pd/extra/vasp folder
+

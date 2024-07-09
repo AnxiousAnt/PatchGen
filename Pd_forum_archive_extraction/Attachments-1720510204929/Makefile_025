@@ -1,0 +1,71 @@
+###########################################
+#  Comment out the ones you don't have/need
+###########################################
+
+### Ogg Vorbis support
+#DEFINES += -DREAD_VORBIS
+#LDFLAGS += -lvorbis -logg -lvorbisfile
+
+### Mp3 support using libmad
+#DEFINES += -DREAD_MAD
+#LDFLAGS += -lmad
+
+### Mp3 streaming support using libmad 
+#DEFINES += -DREAD_MAD_URL
+#LDFLAGS += -lmad
+
+### Flac support using libflac
+#DEFINES += -DREAD_FLAC
+#LDFLAGS += -lFLAC
+
+#DEFINES += -DNT
+
+PDPATH = /cygdrive/c/pd/
+FLEXTDIR = ./flext
+SRCDIR = ./SRC
+
+### change to suit your CPU
+CFLAGS+= -mcpu=i486
+#i386, i486, i586, i686, pentium, pentium-mmx,
+#pentiumpro, pentium2, pentium3, pentium4, k6, k6-2, k6-3
+#athlon, athlon-tbird, athlon-4, athlon-xp athlon-mp
+
+
+
+###################################################
+# From here on, it should be ok...no need to change
+###################################################
+
+CFLAGS+= -O6 -fno-rtti -DFLEXT_SYS=2 -DFLEXT_THREADS $(DEFINES)
+CFLAGS += -DFLEXT_OS=3
+CFLAGS+= -I/src  -I$(FLEXTDIR) -I$(SRCDIR) -I./ -Wall 
+LDFLAGS += -lm  -lpd -lpthreadVC
+DIR=pd_win
+
+all: readanysf
+
+readanysf:  main.cpp Fifo.cpp Readsf.cpp ReadVorbis.cpp ReadRaw.cpp ReadMad.cpp ReadFlac.cpp ReadMadUrl.cpp
+	g++ -c $(CFLAGS) main.cpp -o $(DIR)/main.o
+	g++ -c $(CFLAGS) Fifo.cpp  -o $(DIR)/Fifo.o
+	g++ -c $(CFLAGS) Readsf.cpp  -o $(DIR)/Readsf.o
+	g++ -c $(CFLAGS) ReadRaw.cpp  -o $(DIR)/ReadRaw.o
+	g++ -c $(CFLAGS) ReadVorbis.cpp  -o $(DIR)/ReadVorbis.o
+	g++ -c $(CFLAGS) ReadMad.cpp  -o $(DIR)/ReadMad.o
+	g++ -c $(CFLAGS) ReadMadUrl.cpp  -o $(DIR)/ReadMadUrl.o
+	g++ -c $(CFLAGS) ReadFlac.cpp  -o $(DIR)/ReadFlac.o
+	g++  -shared  $(DIR)/main.o -L./bin -L./flext \
+		$(DIR)/Fifo.o \
+		$(DIR)/Readsf.o \
+		$(DIR)/ReadRaw.o \
+ 		$(SRCDIR)/libsamplerate.a\
+		$(FLEXTDIR)/flext_t-pdwin.lib \
+		$(LDFLAGS)\
+		-o $(DIR)/readanysf~.dll  	
+	chmod 755 $(DIR)/readanysf~.dll
+
+clean:
+	rm pd_linux/*.o	pd_linux/readanysf~.pd_linux  ./*~
+#		$(DIR)/ReadVorbis.o \
+#		$(DIR)/ReadMad.o \
+#		$(DIR)/ReadMadUrl.o \
+#		$(DIR)/ReadFlac.o \

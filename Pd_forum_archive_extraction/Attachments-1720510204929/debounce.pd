@@ -1,0 +1,51 @@
+#N canvas 219 53 691 541 10;
+#X obj 246 296 + 1;
+#X obj 202 296 f;
+#X obj 202 371 >=;
+#X obj 202 264 metro 1;
+#X obj 202 232 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X text 283 296 Standard counter construction;
+#X obj 169 415 spigot;
+#X obj 142 107 random 128;
+#X obj 142 87 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
+-1;
+#X floatatom 169 466 5 0 0 0 - - -;
+#X obj 142 146 t b f;
+#X msg 142 175 0;
+#X text 222 106 Let's simulate some input!;
+#X obj 247 329 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-262144 -1 -1 0 256;
+#X text 310 328 Debounce time in ms;
+#X text 231 370 Is the current time greater than or equal to the debounce
+time? If so \, open the spigot. Otherwise \, keep it closed.;
+#X text 502 468 derek@umatic.nl;
+#X text 51 25 DEBOUNCE.PD;
+#X text 201 144 First send the numeric message to the spigot to be
+passed or not passed \, then reset the counter with a "0" so that no
+more messages can be passed within the debounce time.;
+#N canvas 0 22 453 181 more 0;
+#X obj 119 60 trigger float bang symbol list pointer anything;
+#X text 22 48 "float" = f;
+#X text 22 60 "bang" = b;
+#X text 21 72 "symbol" = s;
+#X text 22 86 "list" = l;
+#X text 22 114 "anything" = a;
+#X text 22 100 "pointer" = p;
+#X text 24 11 So your input isn't just a float? Nao problemo! Use a
+different creation argument:;
+#X restore 378 217 pd more info on [trigger];
+#X connect 0 0 1 1;
+#X connect 1 0 0 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 1;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 6 0 9 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 10 0 11 0;
+#X connect 10 1 6 0;
+#X connect 11 0 1 0;
+#X connect 13 0 2 1;
+

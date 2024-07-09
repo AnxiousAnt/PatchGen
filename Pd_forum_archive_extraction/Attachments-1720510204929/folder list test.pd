@@ -1,0 +1,16 @@
+#N canvas 51 566 495 368 10;
+#X obj 151 260 print;
+#X obj 150 227 folder_list;
+#X msg 150 151 symbol \$1/testfolder/*;
+#X obj 175 177 print NAME;
+#X msg 150 82 bang;
+#X obj 149 110 getdir;
+#X msg 166 205 symbol testfolder/*;
+#X msg 62 169 symbol /*;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;

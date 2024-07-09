@@ -1,0 +1,24 @@
+#N canvas 348 147 490 309 10;
+#X obj 24 96 pyext debug_nbx nbx;
+#X msg 135 37 bind;
+#X obj 148 66 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 234 105 nbx 5 14 -1e+37 1e+37 0 0 s_nbx r_nbx empty 0 -8 0 10
+-262144 -1 -1 50 256;
+#X msg 24 59 reload;
+#X floatatom 233 171 5 0 0 0 - r_float s_float;
+#X text 295 95 s_nbx r_nbx;
+#X text 277 165 s_float r_float;
+#X text 170 36 #1 - bind [nbx] and [floatatom];
+#X text 168 64 #2 - send them a bang and watch the post window;
+#X obj 389 205 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 389 225 s r_nbx;
+#X text 357 243 this works though;
+#X text 10 223 when sending a bang to r_nbx from the script \, nothing
+is printed by `def recv' although it works if we change nbx manually
+;
+#X connect 1 0 0 1;
+#X connect 2 0 0 1;
+#X connect 4 0 0 0;
+#X connect 10 0 11 0;

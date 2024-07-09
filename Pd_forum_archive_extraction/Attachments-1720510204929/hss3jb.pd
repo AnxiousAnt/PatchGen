@@ -1,0 +1,74 @@
+#N canvas 58 82 929 997 10;
+#N canvas 1135 213 464 467 guts 1;
+#X obj 29 384 int;
+#X obj 29 424 ctlout 20 1;
+#X obj 29 344 r ctl20;
+#X obj 129 384 int;
+#X obj 129 424 ctlout 21 1;
+#X obj 129 344 r ctl21;
+#X obj 229 384 int;
+#X obj 229 424 ctlout 22 1;
+#X obj 229 344 r ctl22;
+#X obj 129 274 int;
+#X obj 229 274 int;
+#X obj 129 314 ctlout 24 1;
+#X obj 229 314 ctlout 23 1;
+#X obj 129 234 r ctl24;
+#X obj 229 234 r ctl23;
+#X obj 29 144 int;
+#X obj 29 104 r ctl26;
+#X obj 29 184 ctlout 26 1;
+#X obj 129 144 int;
+#X obj 129 184 ctlout 25 1;
+#X obj 129 104 r ctl25;
+#X obj 262 144 r port;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 8 0 6 0;
+#X connect 9 0 11 0;
+#X connect 10 0 12 0;
+#X connect 13 0 9 0;
+#X connect 14 0 10 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 18 0 19 0;
+#X connect 20 0 18 0;
+#X connect 21 0 19 2;
+#X connect 21 0 17 2;
+#X connect 21 0 11 2;
+#X connect 21 0 12 2;
+#X connect 21 0 1 2;
+#X connect 21 0 4 2;
+#X connect 21 0 7 2;
+#X restore 100 340 pd guts;
+#X obj 100 100 cnv 15 290 220 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X obj 121 272 knob 32 32 0 127 0 0 ctl20 empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 120 111 knob 32 32 0 127 0 0 ctl26 empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 250 191 knob 32 32 0 127 0 0 ctl24 empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 331 172 knob 32 32 0 127 0 0 ctl23 empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 211 272 knob 32 32 0 127 0 0 ctl21 empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 331 272 knob 32 32 0 127 0 0 ctl22 empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 281 112 knob 32 32 0 127 0 0 ctl25 empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X text 158 284 0;
+#X text 248 284 1;
+#X text 368 284 3;
+#X text 368 184 3;
+#X text 288 204 4;
+#X text 318 124 select;
+#X text 158 124 volume;
+#X obj 110 190 cnv 15 80 30 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X floatatom 120 199 5 1 128 0 - - port;
+#X text 157 198 port;
+#X coords 0 -1 1 1 290 220 2 100 100;

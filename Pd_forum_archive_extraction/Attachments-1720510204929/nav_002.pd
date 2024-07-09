@@ -1,0 +1,184 @@
+#N struct 1002-h float x float y;
+#N struct 1002-p float x float y;
+#N struct 1002-n float x float y;
+#N canvas 412 92 649 467 10;
+#X obj 281 258 f \$0;
+#X obj 281 185 t b b;
+#X msg 310 208 clear;
+#N canvas 450 249 573 425 \$0-p 0;
+#X obj 40 40 struct \$0-p float x float y;
+#X obj 40 62 route click;
+#X obj 40 84 b;
+#X obj 40 106 outlet;
+#X obj 42 132 drawpolygon 0 1 0 -7 0 0 1 0 1 -7 5 -7 5 -4 6 -4 6 -6
+5 -3 1 -3;
+#X obj 42 167 drawpolygon 0 1 11 -5 11 -5 8 -5 8 0 9 0 9 -5;
+#X obj 42 189 drawpolygon 0 1 18 0 18 0 14 0 13 -1 13 -4 14 -1 14 -5
+17 -5 17 -3 14 -3 18 -3 18 -4 19 -4 19 -5 20 -5 20 -2 21 -3 21 0 23
+0 22 -1 23 -1 23 -3 24 -2 24 -5 25 -5 25 -4;
+#X obj 42 237 drawpolygon 0 1 27 -7 27 -8 28 -8 28 -7 27 -7;
+#X obj 42 259 drawpolygon 0 1 27 -5 27 0 28 0 28 -5 28 -5;
+#X obj 42 281 drawpolygon 0 1 31 -4 31 -1 32 -1 32 -5 35 -5 35 -1 36
+-1 36 -4 35 -4 35 0 32 0;
+#X obj 42 316 drawpolygon 0 1 39 0 39 -5 40 -5 40 0 44 0 44 -5 43 -5
+43 0;
+#X obj 42 338 drawpolygon 0 1 47 0 50 0 50 -1 51 -1 51 -2 48 -2 50
+-3 47 -3 47 -4 48 -4 48 -5 51 -5 52 -5;
+#X obj 42 373 drawpolygon 0 1 0 2 52 2;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X restore 44 175 pd \$0-p;
+#N canvas 598 281 534 314 \$0-h 0;
+#X obj 40 142 drawpolygon 0 1 0 -7 0 0 1 0 1 -7 1 -4 5 -4 5 0 6 0 6
+-7 5 -7 5 0;
+#X obj 40 177 drawpolygon 0 1 9 -4 9 -1 10 -1 10 -5 13 -5 13 -1 14
+-1 14 -4 13 -4 13 0 10 0 10 -4;
+#X obj 40 212 drawpolygon 0 1 17 -5 17 0 18 0 18 -5 21 -5 21 0 22 0
+22 -5 25 -5 25 0 26 0 26 -4;
+#X obj 40 247 drawpolygon 0 1 34 0 29 0 29 -5 32 -5 32 -4 33 -4 33
+-3 28 -3 28 -4 28 0;
+#X obj 40 40 struct \$0-h float x float y;
+#X obj 40 62 route click;
+#X obj 40 84 b;
+#X obj 40 106 outlet;
+#X obj 40 287 drawpolygon 0 1 0 2 34 2;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X restore 165 175 pd \$0-h;
+#X msg 44 197 -1;
+#N canvas 393 226 450 484 navigate 0;
+#X obj 91 6 inlet;
+#X obj 91 28 t a b;
+#N canvas 457 335 450 375 find-this-file 0;
+#X obj 159 29 inlet;
+#X obj 159 130 hcs/split_path;
+#X obj 186 228 f;
+#X obj 216 228 + 1;
+#X obj 240 156 sel \$1;
+#X obj 132 270 f;
+#X obj 159 53 t b b;
+#X msg 328 81 0;
+#X obj 159 103 t a b;
+#X obj 132 292 outlet;
+#X obj 332 138 t a;
+#X obj 332 116 list prepend;
+#X obj 332 282 outlet;
+#X obj 108 54 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 159 81 hcs/folder_list ./*.pd;
+#X connect 0 0 6 0;
+#X connect 1 1 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 2 1;
+#X connect 3 0 5 1;
+#X connect 4 0 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 14 0;
+#X connect 6 1 7 0;
+#X connect 7 0 2 1;
+#X connect 8 0 1 0;
+#X connect 8 1 2 0;
+#X connect 10 0 11 1;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 8 0;
+#X connect 14 0 11 0;
+#X restore 118 50 pd find-this-file;
+#X obj 235 235 list;
+#X text 272 234 all path/files;
+#X obj 91 101 +;
+#X msg 157 288 symbol \$1;
+#X obj 130 198 t b a;
+#X obj 157 310 hcs/split_path;
+#X msg 157 265 set symbol \, adddollar \$1;
+#X obj 91 123 moses 1;
+#X obj 130 145 moses;
+#X obj 157 103 list length;
+#X obj 157 125 + 1;
+#X obj 210 413 pack s s s;
+#X obj 267 310 loadbang;
+#X obj 267 332 symbol \$1;
+#X msg 210 435 \; pd-\$3 menuclose 1 \; pd open \$2 \$1;
+#X obj 52 150 sel;
+#X obj 52 71 sel 0;
+#X msg 52 98 1;
+#X obj 60 123 == 1;
+#X connect 0 0 1 0;
+#X connect 1 0 19 0;
+#X connect 1 1 2 0;
+#X connect 2 0 5 1;
+#X connect 2 0 21 0;
+#X connect 2 1 3 1;
+#X connect 2 1 12 0;
+#X connect 3 0 6 0;
+#X connect 5 0 10 0;
+#X connect 6 0 8 0;
+#X connect 7 0 3 0;
+#X connect 7 1 9 0;
+#X connect 8 0 14 0;
+#X connect 8 1 14 1;
+#X connect 9 0 6 0;
+#X connect 10 1 11 0;
+#X connect 11 0 7 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 1;
+#X connect 14 0 17 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 2;
+#X connect 18 1 7 0;
+#X connect 19 0 20 0;
+#X connect 19 1 5 0;
+#X connect 20 0 18 0;
+#X connect 21 0 18 1;
+#X restore 44 241 pd navigate;
+#X msg 104 197 1;
+#X msg 165 197 0;
+#X obj 281 158 loadbang;
+#X obj 365 158 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 434 323 589 336 \$0-n 0;
+#X obj 42 172 drawpolygon 0 1 0 -7 0 0 1 0 1 -7 2 -7 2 -5 3 -4 3 -3
+4 -2 4 0 5 0 5 -7 6 -7 6 0 6 1;
+#X obj 42 207 drawpolygon 0 1 9 -1 9 -4 10 -4 10 -5 13 -5 13 -4 14
+-4 14 -3 10 -3 10 0 16 0 16 -1 17 -1 17 -4 16 -4 16 -5 15 -5 16 -5
+16 -4 17 -4 17 -3 18 -3 18 -2 19 -2 19 -1 20 -1 20 0 21 0 20 0 20 -1
+19 -1 19 -4 20 -4 20 -5 26 -5 24 -5 24 -7 23 -7 23 0 26 0 24 0 24 -5
+;
+#X obj 40 82 route click;
+#X obj 40 104 b;
+#X obj 40 146 outlet;
+#X obj 84 125 del 0;
+#X text 126 123 <-- this seems to fix things;
+#X obj 40 40 struct \$0-n float x float y;
+#X obj 42 285 drawpolygon 0 1 0 2 27 2;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 7 0 2 0;
+#X restore 104 175 pd \$0-n;
+#X msg 281 280 scalar \$1-h 6 12 \, scalar \$1-p 50 12 \, scalar \$1-n
+115 12;
+#N canvas 417 413 450 300 \$0-gop 0;
+#X scalar 1002-h 6 12 \;;
+#X scalar 1002-p 50 12 \;;
+#X scalar 1002-n 115 12 \;;
+#X coords 0 0 150 18 150 18 2 0 0;
+#X restore 100 100 pd \$0-gop;
+#X obj 281 322 s pd-\$0-gop;
+#X text 319 62 TODO: exclude nav.pd;
+#X connect 0 0 12 0;
+#X connect 1 0 0 0;
+#X connect 1 1 2 0;
+#X connect 2 0 14 0;
+#X connect 3 0 5 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 1 0;
+#X connect 10 0 1 0;
+#X connect 11 0 7 0;
+#X connect 12 0 14 0;
+#X coords 0 -1 1 1 150 18 2 100 100;

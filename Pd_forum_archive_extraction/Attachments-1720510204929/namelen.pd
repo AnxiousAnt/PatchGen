@@ -1,0 +1,8 @@
+#N canvas 481 272 608 289 10;
+#X obj 15 217 splitfilename;
+#X obj 106 244 print;
+#X text 478 79 freeze pd!!!;
+#X msg 44 76 symbol qwertzuiopasdfghjklyxcvbnmqwertzuiopasdfghjklyxcvbnmqwertzuiopasdfghjklqasdf
+;
+#X connect 0 1 1 0;
+#X connect 3 0 0 0;

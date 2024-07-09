@@ -1,0 +1,16 @@
+Author: IOhannes m zmölnig
+Description: original configure detects libv4l by checking ordinary V4L headers
+ and V4L by checking libv4l headers; it should be the other way round.
+--- pdp.orig/configure.ac
++++ pdp/configure.ac
+@@ -179,8 +179,8 @@
+ else
+   have_v4l="no"
+   have_libv4l="no"
+-  AC_CHECK_HEADERS([libv4l1-videodev.h], have_v4l="yes")
+-  AC_CHECK_HEADERS([linux/videodev.h], have_libv4l="yes")
++  AC_CHECK_HEADERS([libv4l1-videodev.h], have_libv4l="yes")
++  AC_CHECK_HEADERS([linux/videodev.h], have_v4l="yes")
+ 
+   if test "x$have_libv4l" = "xyes"
+   then

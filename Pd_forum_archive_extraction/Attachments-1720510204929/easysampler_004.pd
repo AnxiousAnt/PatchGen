@@ -1,0 +1,205 @@
+#N canvas 257 44 813 670 10;
+#X obj 40 -53 soundfiler;
+#X obj 40 -89 openpanel;
+#X msg 40 -71 read -resize \$1 sample-table1;
+#X obj 26 466 throw~;
+#X obj 26 394 tabread4~ sample-table1;
+#X obj 26 448 *~;
+#X obj 521 34 vsl 15 80 0 1 0 0 empty volume-set empty 0 -8 0 8 -262144
+-1 -1 7900 1;
+#X text 494 31 vol;
+#X obj 42 412 r vol;
+#X obj 521 137 s vol;
+#X obj 521 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array sample-table1 546820 float 0;
+#X coords 0 1 546819 -1 200 140 1;
+#X restore 520 -132 graph;
+#X obj 524 245 dac~;
+#X obj 42 430 line~;
+#X obj 522 203 catch~;
+#X obj 645 242 tabwrite~ master;
+#X obj 645 201 metro 50;
+#X obj 645 184 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array master 100 float 1;
+#A 0 -0.00624575 -0.0204405 -0.0314144 -0.0299231 -0.0176474 -0.00533009
+0.000933389 0.00052613 -0.00801951 -0.0157802 -0.0155784 -0.01174 -0.0135571
+-0.0203168 -0.0251187 -0.0182753 -0.00164619 0.01496 0.0186281 0.0108309
+-0.00143255 -0.0103989 -0.0194202 -0.0324758 -0.0419521 -0.0452312
+-0.0445428 -0.0389709 -0.0275924 -0.0106796 -0.00304508 -0.00574167
+-0.00783194 -0.00505224 -0.00546198 -0.0149721 -0.0290814 -0.0322038
+-0.022876 -0.0093227 -0.00692564 -0.00690432 -0.00245686 -0.000503003
+-0.00335568 -0.00865775 -0.0120252 -0.0093432 -0.00439055 -0.00134334
+0.00106012 0.000144377 -0.0112899 -0.0236821 -0.0267486 -0.0209127
+-0.014534 -0.0186334 -0.0317047 -0.0490234 -0.0534536 -0.0466239 -0.0332947
+-0.0217161 -0.0175297 -0.0186868 -0.0208508 -0.0216424 -0.0209579 -0.0133786
+-0.002422 -5.12402e-05 -0.0122695 -0.0286029 -0.034965 -0.0311358 -0.025016
+-0.0116946 0.00534049 0.0178354 0.0187407 0.0106258 0.000900439 -0.0127939
+-0.0276199 -0.0339174 -0.0227923 -0.00731157 -0.00248149 -0.00725281
+-0.00997504 -0.00504502 0.00650455 0.0238895 0.0403762 0.051159 0.0510231
+0.0340881 0.0111286 -0.0119882;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 517 300 graph;
+#X obj 153 167 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 214 114 5 0 1e+06 0 - - -;
+#X msg 182 257 1320.05;
+#X obj 212 166 +;
+#X obj 26 292 pack f f;
+#X obj 26 310 t l b;
+#X msg 56 350 439654;
+#X msg 181 312 set \$1;
+#X text 252 112 Pause;
+#X text 82 244 OUT-Point;
+#X msg 27 243 376454;
+#X msg 28 199 set \$1;
+#X obj 231 377 spigot 0;
+#X obj 290 377 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 236 405 spigot 0;
+#X text 309 372 DEBUG;
+#X text 309 384 Konsole Info;
+#X obj 277 -135 hsl 200 12 1 546820 0 0 in_out in_in empty -2 -6 0
+8 -262144 -1 -1 16000 1;
+#X obj 277 -123 hsl 200 12 1 546820 0 0 out_out out_in empty -2 -6
+0 8 -262144 -1 -1 13700 1;
+#X text 479 -137 IN;
+#X text 480 -125 OUT;
+#X obj 120 11 s in_in;
+#X obj 113 30 s out_in;
+#X msg 113 -8 range 1 \$1;
+#X obj 181 293 r in_out;
+#X obj 28 181 r out_out;
+#X obj 236 423 print IN-Point;
+#X obj 232 442 print OUT-Point/Zeit;
+#X text 664 183 Oscilloscope;
+#X obj 214 129 t b f;
+#X obj 274 -160 cnv 15 100 24 empty sample_display 546820 5 12 0 12
+-233017 -66577 0;
+#X text 381 -157 Samplelänge;
+#X obj 48 48 s sample_display;
+#X msg 48 30 label \$1;
+#X obj 48 12 ftos;
+#X obj 295 0 r in_out;
+#X obj 227 0 r out_out;
+#X obj 295 36 -;
+#X obj 295 18 t b f;
+#X obj 295 163 abs;
+#X msg 295 217 set \$1;
+#X obj 296 90 / 44.1;
+#X obj 41 84 / 44.1;
+#X obj 300 54 r rate;
+#X obj 77 66 r rate;
+#X obj 241 -18 s rate;
+#X msg 274 -56 44.1;
+#X msg 274 -36 32;
+#X obj 300 72 t b f;
+#X msg 274 -76 48;
+#X text 313 -57 kHz;
+#X msg 40 -107 bang;
+#X obj 521 119 pack 0 10;
+#X text 76 -107 Sample laden;
+#X obj 93 448 snapshot~;
+#X obj 26 376 vline~;
+#X obj 100 430 metro 50;
+#X obj 100 413 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 277 -111 hsl 200 12 1 546820 0 0 nope playhead empty -2 -6 0
+8 -99865 -262144 -1 15092 1;
+#X obj 93 466 s playhead;
+#X text 480 -113 Play;
+#X obj 153 184 metro 500;
+#X obj 426 401 loadbang;
+#X obj 84 -27 t f f;
+#X msg 115 299 stop;
+#X obj 295 145 * 1;
+#X obj 300 108 r speed;
+#X obj 277 -99 hsl 200 12 2 0.1 0 0 speed speed_in empty -2 -6 0 8
+-262144 -1 -1 11300 1;
+#X text 481 -101 Speed;
+#X obj 300 126 t b f;
+#X msg 426 420 1;
+#X obj 425 440 s speed_in;
+#X obj 173 30 s playhead;
+#X obj 153 202 t b b;
+#X connect 0 0 53 0;
+#X connect 0 0 61 0;
+#X connect 0 0 82 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 71 0;
+#X connect 8 0 13 0;
+#X connect 10 0 6 0;
+#X connect 13 0 5 1;
+#X connect 14 0 12 0;
+#X connect 14 0 12 1;
+#X connect 14 0 15 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 19 0 80 0;
+#X connect 20 0 48 0;
+#X connect 21 0 23 1;
+#X connect 22 0 80 1;
+#X connect 23 0 24 0;
+#X connect 24 0 31 0;
+#X connect 24 0 74 0;
+#X connect 24 1 25 0;
+#X connect 25 0 33 0;
+#X connect 25 0 74 0;
+#X connect 26 0 25 0;
+#X connect 29 0 23 0;
+#X connect 30 0 29 0;
+#X connect 31 0 46 0;
+#X connect 32 0 31 1;
+#X connect 32 0 33 1;
+#X connect 33 0 45 0;
+#X connect 42 0 41 0;
+#X connect 42 0 40 0;
+#X connect 42 0 91 0;
+#X connect 43 0 26 0;
+#X connect 44 0 30 0;
+#X connect 48 0 22 0;
+#X connect 48 1 22 1;
+#X connect 52 0 51 0;
+#X connect 53 0 52 0;
+#X connect 54 0 57 0;
+#X connect 55 0 56 0;
+#X connect 56 0 60 0;
+#X connect 57 0 56 0;
+#X connect 57 1 56 1;
+#X connect 58 0 59 0;
+#X connect 58 0 22 0;
+#X connect 59 0 21 0;
+#X connect 60 0 84 0;
+#X connect 61 0 22 0;
+#X connect 62 0 67 0;
+#X connect 63 0 61 1;
+#X connect 65 0 64 0;
+#X connect 66 0 64 0;
+#X connect 67 0 60 0;
+#X connect 67 1 60 1;
+#X connect 68 0 64 0;
+#X connect 70 0 1 0;
+#X connect 71 0 9 0;
+#X connect 73 0 78 0;
+#X connect 74 0 4 0;
+#X connect 74 0 73 0;
+#X connect 75 0 73 0;
+#X connect 76 0 75 0;
+#X connect 80 0 92 0;
+#X connect 81 0 89 0;
+#X connect 82 0 41 0;
+#X connect 82 1 42 0;
+#X connect 83 0 74 0;
+#X connect 84 0 58 0;
+#X connect 85 0 88 0;
+#X connect 88 0 84 0;
+#X connect 88 1 84 1;
+#X connect 89 0 90 0;
+#X connect 92 0 29 0;
+#X connect 92 1 21 0;

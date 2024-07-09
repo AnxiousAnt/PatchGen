@@ -1,0 +1,23 @@
+#N canvas 140 91 534 242 10;
+#X obj 277 75 symbol \$1;
+#X text 284 54 table-name;
+#X text 415 55 label;
+#X msg 277 113 \; array1 rename \$1 \;;
+#X msg 404 103 label \$1;
+#X obj 404 127 s \$0-canvas-r;
+#X obj 304 39 t b b;
+#X obj 404 76 symbol \$2;
+#N canvas 0 0 450 300 graph1 0;
+#X array array1 100 float 2;
+#X coords 0 1 100 0 225 133 1;
+#X restore 10 61 graph;
+#X obj 11 41 cnv 15 223 20 empty \$0-canvas-r empty 4 11 0 10 -233017
+-66577 0;
+#X obj 304 18 r \$3-bang;
+#X connect 0 0 3 0;
+#X connect 4 0 5 0;
+#X connect 6 0 0 0;
+#X connect 6 1 7 0;
+#X connect 7 0 4 0;
+#X connect 10 0 6 0;
+#X coords 0 -1 1 1 225 154 1 10 40;

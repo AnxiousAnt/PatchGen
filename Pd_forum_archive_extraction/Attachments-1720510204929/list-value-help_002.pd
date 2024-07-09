@@ -1,0 +1,51 @@
+#N canvas 182 196 462 413 10;
+#X obj 13 181 list-value foo;
+#X obj 13 154 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 15 283 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 142 283 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 15 313 list-value \$0-bar;
+#X obj 142 313 list-value \$0-bar;
+#X text 12 252 A [list-value] local to this patch:;
+#X msg 39 283 toast man;
+#X msg 169 283 soda pop 2 3;
+#X obj 15 342 print local0;
+#X obj 142 342 print local1;
+#X obj 13 210 print s0;
+#X obj 122 181 list-value foo;
+#X obj 122 154 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 229 181 list-value foo;
+#X obj 229 154 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 122 210 print s1;
+#X obj 229 210 print s2;
+#X msg 41 154 0 23;
+#X floatatom 147 154 5 0 0 0 - - -;
+#X msg 254 154 x y z;
+#X text 13 101 bang outputs the value from the [list-value] object
+\, anything else sets the value of the shared list without outputing
+anything.;
+#X obj 17 12 list-value;
+#X text 101 11 -- a nonlocal shared list;
+#X text 16 44 A [value] for lists. Stores a list which is shared between
+all [list-value]s with the sane name (which need not be in the same
+Pd window).;
+#X text 211 387 By Alex Norman (http://x37v.info);
+#X connect 0 0 11 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 9 0;
+#X connect 5 0 10 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
+#X connect 12 0 16 0;
+#X connect 13 0 12 0;
+#X connect 14 0 17 0;
+#X connect 15 0 14 0;
+#X connect 18 0 0 0;
+#X connect 19 0 12 0;
+#X connect 20 0 14 0;

@@ -1,0 +1,80 @@
+#N canvas 173 160 211 172 10;
+#N canvas 603 346 555 404 guts 0;
+#X obj 48 21 r \$0-hradio;
+#X msg 48 154 color \$1;
+#X floatatom 48 134 5 0 0 0 - - -;
+#X obj 48 191 s \$0-top;
+#X obj 48 43 moses 2;
+#X obj 92 66 moses 4;
+#X msg 112 108 1;
+#X msg 80 106 20;
+#X msg 48 108 10;
+#X msg 210 188 donecanvasdialog 0 0 \$1;
+#X obj 210 212 s pd-dc1;
+#X msg 287 217 donecanvasdialog 0 0 \$1;
+#X msg 354 244 donecanvasdialog 0 0 \$1;
+#X obj 354 268 s pd-dc3;
+#X obj 208 165 unpack 1 0 0;
+#X msg 207 121 1 0 0;
+#X msg 308 119 0 0 1;
+#X msg 257 119 0 1 0;
+#X obj 224 24 r \$0-hradio;
+#X obj 224 46 moses 2;
+#X obj 268 69 moses 4;
+#X obj 287 241 s pd-dc2;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 4 0 8 0;
+#X connect 4 1 5 0;
+#X connect 5 0 7 0;
+#X connect 5 1 6 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 2 0;
+#X connect 9 0 10 0;
+#X connect 11 0 21 0;
+#X connect 12 0 13 0;
+#X connect 14 0 9 0;
+#X connect 14 1 11 0;
+#X connect 14 2 12 0;
+#X connect 15 0 14 0;
+#X connect 16 0 14 0;
+#X connect 17 0 14 0;
+#X connect 18 0 19 0;
+#X connect 19 0 15 0;
+#X connect 19 1 20 0;
+#X connect 20 0 17 0;
+#X connect 20 1 16 0;
+#X restore 91 132 pd guts;
+#N canvas 312 106 107 87 gop 0;
+#X obj 3 3 hradio 17 1 0 6 \$0-hradio \$0-hradio empty 0 -6 0 8 -233017
+-1 -1 1;
+#N canvas 183 153 99 69 dc1 0;
+#X obj 1 2 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 17 24 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-262144 -1 -1 0 256;
+#X coords 0 0 1 1 102 62 1;
+#X restore 3 21 pd dc1;
+#N canvas 183 153 99 69 dc2 0;
+#X obj 1 2 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
+0;
+#X obj 14 22 hsl 60 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X coords 0 0 1 1 102 62 0;
+#X restore 3 21 pd dc2;
+#N canvas 183 153 99 69 dc3 0;
+#X obj 1 2 cnv 15 100 60 empty empty empty 20 12 0 14 -166441 -66577
+0;
+#X obj 28 29 hradio 15 1 0 3 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X coords 0 0 1 1 102 62 0;
+#X restore 3 21 pd dc3;
+#X obj 4 4 cnv 15 33 20 empty \$0-top empty 20 12 0 14 -233017 -262144
+0;
+#X obj 37 4 cnv 15 33 20 empty empty empty 20 12 0 14 -195568 -262144
+0;
+#X obj 71 4 cnv 15 33 20 empty empty empty 20 12 0 14 -166441 -262144
+0;
+#X coords 0 0 1 1 105 85 1;
+#X restore 59 39 pd gop;

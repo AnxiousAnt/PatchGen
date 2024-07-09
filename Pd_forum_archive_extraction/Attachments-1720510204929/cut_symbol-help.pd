@@ -1,0 +1,6 @@
+#N canvas 512 327 450 521 10;
+#X obj 128 158 print;
+#X msg 128 94 drums_file2.wav;
+#X obj 128 126 cut_symbol _ .;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;

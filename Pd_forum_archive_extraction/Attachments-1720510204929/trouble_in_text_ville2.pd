@@ -1,0 +1,38 @@
+#N canvas 409 32 787 369 10;
+#X obj 91 92 entry 124 100 grey70 black;
+#X obj 105 39 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
+-1;
+#X msg 153 33 clear;
+#X obj 218 259 print append;
+#X obj 218 239 spigot;
+#X obj 251 221 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 343 132 2 now turn on the spigot \, and redo step 1;
+#X text 342 66 1 select the widget and type some text. besure that
+the spigot is turned off. try typing an open brace. does PD lock up
+\, it doesn't for me? I get a message in the console saying it dropped
+keycode 123;
+#X obj 245 153 loadbang;
+#X msg 247 187 0;
+#X text 340 16 0 besure there is a connection two the spigot coming
+from the right outlet;
+#X text 343 164 3 with the spigot on \, and the moment I type an open
+brace \, the widget will keep operating \, and I can deselect and reselect
+it. The only thing that works is the TCL Quit menu (if you are on a
+Mac \, the quit menu under the application menu \, not file.) didn't
+try this with any sound of video stuff \, just the stuff you see on
+the left.;
+#X obj 95 309 print text;
+#X text 346 263 4 the same thing will happen when the spigot is off
+\, and an open brace is entered \, and then the widget receives a bang
+and tries to print it...;
+#X text 346 318 5 and did you notice that I wrote this \, all without
+typing an open brace. Why?;
+#X connect 0 0 12 0;
+#X connect 0 1 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 1;
+#X connect 8 0 9 0;
+#X connect 9 0 5 0;

@@ -1,0 +1,24 @@
+#N canvas 540 360 450 523 10;
+#X obj 128 64 ctlin 0;
+#X obj 128 92 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 9100 1;
+#X obj 128 262 mrpeach/packOSC;
+#X obj 126 331 mrpeach/udpreceive 9999;
+#X obj 126 444 print received;
+#X msg 9 278 connect localhost 9999;
+#X obj 128 300 mrpeach/udpsend;
+#X msg 128 236 /ctl/0 \$1;
+#X floatatom 80 234 5 0 0 0 - - -;
+#X obj 126 351 mrpeach/unpackOSC;
+#X obj 126 374 mrpeach/routeOSC /ctl;
+#X obj 128 404 mrpeach/routeOSC /0 /1 /2;
+#X connect 0 0 1 0;
+#X connect 1 0 7 0;
+#X connect 1 0 8 0;
+#X connect 2 0 6 0;
+#X connect 3 0 9 0;
+#X connect 5 0 6 0;
+#X connect 7 0 2 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 4 0;

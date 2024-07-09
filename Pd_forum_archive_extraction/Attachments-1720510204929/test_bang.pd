@@ -1,0 +1,28 @@
+#N canvas 102 129 518 438 10;
+#X obj 87 81 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 139 297 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 87 114 trigger;
+#X obj 139 253 == 42;
+#X msg 87 174 clear;
+#X obj 139 230 oneshot;
+#X msg 153 201 42;
+#X obj 139 276 select 1;
+#X obj 151 327 send gotit;
+#X obj 70 49 r gotit;
+#X obj 126 141 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 196 201 <-- click and shouldn't it be cleared anew?;
+#X text 149 27 Why can't I clear the message automatically?;
+#X connect 0 0 2 0;
+#X connect 1 0 8 0;
+#X connect 2 0 4 0;
+#X connect 2 1 10 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 0;
+#X connect 9 0 0 0;
+#X connect 10 0 4 0;

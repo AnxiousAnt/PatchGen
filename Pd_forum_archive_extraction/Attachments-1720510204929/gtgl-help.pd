@@ -1,0 +1,28 @@
+#N canvas 377 341 512 323 10;
+#X obj 73 127 gtgl;
+#X msg 73 70 get;
+#X msg 83 96 bang;
+#X floatatom 73 158 5 0 0 0 - - -;
+#X obj 73 184 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 169 75 get;
+#X msg 179 101 bang;
+#X floatatom 169 153 5 0 0 0 - - -;
+#X obj 169 179 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 207 127 [gtgl 100] to change non-zero value;
+#X obj 252 222 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 252 194 get;
+#X floatatom 252 250 5 0 0 0 - - -;
+#X obj 169 125 gtgl 100;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 5 0 13 0;
+#X connect 6 0 13 0;
+#X connect 7 0 8 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 13 0 7 0;

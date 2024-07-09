@@ -1,0 +1,93 @@
+#N canvas 107 15 892 656 10;
+#X obj 12 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 47 99 start;
+#X msg 32 80 clock;
+#X msg 60 118 stop;
+#X msg 75 141 continue;
+#X obj 12 215 x37v-midi_sync_out;
+#X text 102 79 <- send a midi clock message;
+#X text 103 97 <- send a midi start message;
+#X text 104 118 <- send a midi stop message;
+#X text 140 141 <- send a midi continue message;
+#X obj 319 414 select 1 0;
+#X msg 319 457 start;
+#X msg 352 479 stop;
+#X obj 224 517 i 0;
+#X msg 242 494 0;
+#X obj 224 347 t f f;
+#X obj 252 516 + 1;
+#X obj 224 582 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 7 581 flashes on the quarter note ->;
+#X obj 224 241 tgl 15 0 empty empty start/stop 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 224 444 metro 20;
+#X obj 224 540 mod 24;
+#X obj 224 560 select 0;
+#X obj 280 280 hsl 128 15 80 200 0 1 empty empty tempo_slider -2 -8
+0 10 -262144 -1 -1 4300 1;
+#X obj 210 392 delay 10;
+#X obj 177 373 select 0 1;
+#X msg 210 411 1;
+#X msg 177 392 0;
+#X text 428 261 Here is an example sync out solution;
+#X msg 358 503 continue;
+#X text 447 478 If you hit stop while the clock is still running \,
+then you hit continue \, the device should continue from where it stopped.
+;
+#X text 427 274 Usually it is a good idea to send a start then delay
+before starting your clock so the device has some time to get set up
+\, that is why you see a delay here for staring the metro.;
+#X obj 277 356 /;
+#X floatatom 277 298 5 0 0 0 - - -;
+#X obj 277 317 t b f;
+#X msg 277 336 2500;
+#X text 326 340 60000 ms / (BPM * 24 ticks per quarter note);
+#X text 622 11 by Alex Norman (http://www.x37v.info);
+#X text 159 9 - Send midi clock messages out of pd \, so you can sync
+external midi devices. Sends 'clock' \, 'start' \, 'stop' \, and 'continue'
+messages.;
+#X text 624 29 Works with pd-0.41-4;
+#X obj 319 540 x37v-midi_sync_out;
+#X obj 18 9 x37v-midi_sync_out;
+#X text 148 207 <- the right inlet sets the 'port' of the [midiout]
+object;
+#X text 395 81 Midi devices expect 24 clock messages per quarter note.
+Usually you send a midi start message and then send clock messages
+\, often after a delay of 10ms to give the device time to get set up.
+;
+#X text 95 495 reset the count ->;
+#X connect 0 0 5 0;
+#X connect 1 0 5 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
+#X connect 10 0 11 0;
+#X connect 10 0 14 0;
+#X connect 10 1 12 0;
+#X connect 11 0 40 0;
+#X connect 12 0 40 0;
+#X connect 13 0 16 0;
+#X connect 13 0 21 0;
+#X connect 14 0 13 1;
+#X connect 15 0 25 0;
+#X connect 15 1 10 0;
+#X connect 16 0 13 1;
+#X connect 19 0 15 0;
+#X connect 20 0 13 0;
+#X connect 20 0 40 0;
+#X connect 21 0 22 0;
+#X connect 22 0 17 0;
+#X connect 23 0 33 0;
+#X connect 24 0 26 0;
+#X connect 25 0 27 0;
+#X connect 25 1 24 0;
+#X connect 26 0 20 0;
+#X connect 27 0 20 0;
+#X connect 29 0 40 0;
+#X connect 32 0 20 1;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
+#X connect 34 1 32 1;
+#X connect 35 0 32 0;

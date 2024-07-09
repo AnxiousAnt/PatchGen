@@ -1,0 +1,8 @@
+#N canvas 250 174 300 184 10;
+#X obj 123 22 bng 100 250 50 0 empty bang empty 0 -6 64 8 -262144 -1
+-262144;
+#X obj 47 97 s bang;
+#X msg 47 61 color \$1;
+#X floatatom 47 30 5 0 0 0 - - -;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;

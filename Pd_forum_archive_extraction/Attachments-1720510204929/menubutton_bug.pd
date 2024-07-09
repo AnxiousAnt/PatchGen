@@ -1,0 +1,20 @@
+#N canvas 565 344 459 314 12;
+#X obj 41 236 tof/menubutton 124 25 empty empty 0 grey90 black grey95
+black -1;
+#X obj 41 271 print;
+#X msg 99 162 2;
+#X text 169 103 works;
+#X msg 56 89 symbol tre;
+#X text 154 175 doesn't work;
+#X obj 41 23 loadbang;
+#X msg 41 58 clear \, add uno due tre quattro;
+#X msg 103 192 set 3;
+#X msg 68 117 set quattro;
+#X text 186 238 TOF v 0.2.2.;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 4 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;

@@ -1,0 +1,32 @@
+#N canvas 210 51 450 367 10;
+#X obj 100 102 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5300 1;
+#X obj 100 102 vsl 15 128 0 1 0 0 \$0-intslider \$0-intslider empty
+0 -9 0 10 -262144 -1 -1 3629 1;
+#X obj 100 17 inlet;
+#X obj 100 323 outlet;
+#X obj 100 238 * \$1;
+#X obj 100 260 i;
+#X obj 100 282 t f f;
+#X obj 165 297 s \$0-intslider;
+#X obj 165 274 / \$1;
+#X obj 100 69 / \$1;
+#X obj 100 39 route float set;
+#X obj 151 65 / \$1;
+#X obj 151 87 t f f;
+#X msg 151 109 set \$1;
+#X connect 0 0 4 0;
+#X connect 2 0 10 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 6 1 8 0;
+#X connect 8 0 7 0;
+#X connect 9 0 0 0;
+#X connect 10 0 9 0;
+#X connect 10 1 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 12 1 4 0;
+#X connect 13 0 0 0;
+#X coords 0 -1 1 1 15 133 2 100 100;

@@ -1,0 +1,28 @@
+#N canvas 18 93 713 599 10;
+#X obj 65 88 inlet~;
+#X obj 66 443 outlet~;
+#X obj 65 122 *~ 1e+38;
+#X obj 66 303 -~;
+#X obj 65 198 +~ 2;
+#X obj 66 158 clip~ -1 2;
+#X text 130 120 -inf \, 0 \, +inf;
+#X text 142 157 -1 0 2;
+#X text 109 198 levels: 1 \, 2 \, 4 (low \, 0 \, high);
+#X text 226 120 (0 hardly ever happens in practice);
+#X obj 82 274 z1~;
+#X text 77 333 some common signal changes and their output \; hi -
+lo: -3 \; lo - hi: 3 \; hi-0-lo: -2 -1 \; lo-0-hi: 2 1 \; lo-0-0-hi:
+1 0 2 \; hi-0-0-lo: -2 0 -1 \;;
+#X text 222 399 this is not correct for many situations \, but accurate
+enough for my purpose.;
+#X text 64 485 Martin Schied \, 2009 \, license like pd.;
+#X text 64 15 simple zero crossing detection with some flaws (doesn't
+detect crossings correctly if signal stays 0 for more than 1 sample
+\, see below.);
+#X connect 0 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 4 0 10 0;
+#X connect 5 0 4 0;
+#X connect 10 0 3 1;

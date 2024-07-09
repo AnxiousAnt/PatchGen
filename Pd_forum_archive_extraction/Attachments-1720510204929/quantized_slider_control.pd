@@ -1,0 +1,12 @@
+#N canvas 329 283 651 355 12;
+#X obj 153 112 int;
+#X obj 153 145 t f f;
+#X msg 190 174 set \$1;
+#X obj 153 225 outlet;
+#X obj 153 74 r \$1-sl1-send;
+#X obj 190 200 s \$1-sl2-receive;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 2 0 5 0;
+#X connect 4 0 0 0;

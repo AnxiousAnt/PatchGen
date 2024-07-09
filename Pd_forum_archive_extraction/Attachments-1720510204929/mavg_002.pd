@@ -1,0 +1,96 @@
+#N canvas 46 106 1280 618 10;
+#X obj 124 329 -~;
+#X obj 171 262 max 1;
+#X msg 227 260 clear;
+#X obj 139 305 z~;
+#X obj 200 224 t f b;
+#X obj 124 233 /~;
+#X obj 200 199 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 4 256;
+#X obj 124 100 count~ 0 100;
+#X obj 124 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 124 49 loadbang;
+#X text 212 100 loops between 0-100;
+#X obj 200 135 loadbang;
+#X obj 202 465 snapshot~;
+#X obj 216 380 loadbang;
+#X obj 216 405 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 202 496 0 0 0 0 - - -;
+#X msg 200 165 4;
+#X obj 216 427 metro 100;
+#X text 239 161 <= hit it again or change the number and it goes crazy
+forever \, nothing you can do about it.;
+#X obj 124 383 rpole~ 1;
+#X obj 387 413 loadbang;
+#X msg 387 439 \; pd dsp 1;
+#X obj 699 361 -~;
+#X obj 746 294 max 1;
+#X msg 802 292 clear;
+#X obj 714 337 z~;
+#X obj 775 256 t f b;
+#X obj 699 265 /~;
+#X obj 775 231 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 4 256;
+#X obj 699 132 count~ 0 100;
+#X obj 699 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 699 81 loadbang;
+#X obj 775 167 loadbang;
+#X obj 847 487 snapshot~;
+#X obj 861 402 loadbang;
+#X obj 861 427 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 847 518 0 0 0 0 - - -;
+#X msg 775 197 4;
+#X obj 861 449 metro 100;
+#X obj 962 445 loadbang;
+#X msg 962 471 \; pd dsp 1;
+#X obj 699 415 fexpr~ $x1[0] + $y1[-1];
+#X text 865 292 [fexpr~] gives us the same issue.;
+#X text 277 253 <= problem is that whenever you change the number of
+samples without clearing or clearing the filter \, it goes crazy. So
+I believe [rpole~] is not the best way to go.;
+#X connect 0 0 19 0;
+#X connect 1 0 3 1;
+#X connect 1 0 5 1;
+#X connect 2 0 19 0;
+#X connect 3 0 0 1;
+#X connect 4 0 1 0;
+#X connect 4 1 2 0;
+#X connect 5 0 0 0;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
+#X connect 11 0 16 0;
+#X connect 12 0 15 0;
+#X connect 13 0 14 0;
+#X connect 14 0 17 0;
+#X connect 16 0 6 0;
+#X connect 17 0 12 0;
+#X connect 19 0 12 0;
+#X connect 20 0 21 0;
+#X connect 22 0 41 0;
+#X connect 23 0 25 1;
+#X connect 23 0 27 1;
+#X connect 24 0 41 0;
+#X connect 25 0 22 1;
+#X connect 26 0 23 0;
+#X connect 26 1 24 0;
+#X connect 27 0 22 0;
+#X connect 27 0 25 0;
+#X connect 28 0 26 0;
+#X connect 29 0 27 0;
+#X connect 30 0 29 0;
+#X connect 31 0 30 0;
+#X connect 32 0 37 0;
+#X connect 33 0 36 0;
+#X connect 34 0 35 0;
+#X connect 35 0 38 0;
+#X connect 37 0 28 0;
+#X connect 38 0 33 0;
+#X connect 39 0 40 0;
+#X connect 41 0 33 0;

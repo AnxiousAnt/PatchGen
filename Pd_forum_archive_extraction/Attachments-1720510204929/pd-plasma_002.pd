@@ -1,0 +1,47 @@
+#N canvas 344 67 655 519 10;
+#X obj 127 145 pdp_yqt;
+#X obj 231 31 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X msg 86 103 loop \$1;
+#X obj 87 81 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 1 1
+;
+#X msg 333 11 open \$1;
+#X obj 332 -13 openpanel;
+#X obj 317 -30 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X floatatom 279 66 5 0 0 0 - - -;
+#X msg 188 32 stop;
+#X obj 286 35 hsl 300 15 0 1000 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 7100 1;
+#X obj 220 102 metro 70;
+#X obj 158 318 pdp_add;
+#X obj 227 198 pdp_plasma;
+#X obj 150 375 pdp_xv;
+#X msg 346 87 dim 320 240;
+#X msg 346 114 type grey;
+#X msg 346 137 type yv12;
+#X msg 346 168 seed 123;
+#X floatatom 346 192 5 0 0 0 - - -;
+#X obj 216 268 pdp_scale 320 240;
+#X obj 85 254 pdp_scale 320 240;
+#X connect 0 0 20 0;
+#X connect 1 0 10 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 10 1;
+#X connect 8 0 10 0;
+#X connect 9 0 7 0;
+#X connect 10 0 0 0;
+#X connect 10 0 12 0;
+#X connect 11 0 13 0;
+#X connect 12 0 19 0;
+#X connect 14 0 12 0;
+#X connect 15 0 12 0;
+#X connect 16 0 12 0;
+#X connect 17 0 12 0;
+#X connect 18 0 12 1;
+#X connect 19 0 11 1;
+#X connect 20 0 11 0;

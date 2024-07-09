@@ -1,0 +1,32 @@
+#N canvas 75 83 489 521 10;
+#X obj 15 121 osc~ 440;
+#X obj 15 161 writesafe2~;
+#X msg 95 121 start;
+#X msg 145 121 stop;
+#X msg 87 79 samples 100000 \, bytes 4 \, format wave \, rate 44100
+\, open /home/claude/tmp/test%04d.wav \, index 3;
+#X text 15 4 writesafe2~.pd and writesafe2~-help.pd (c) 2004 ClaudiusMaximus
+\, licensed to you under GPL;
+#X text 24 243 bytes <float> -- sample format: 2 (integer PCM) or 3
+(integer PCM) or 4 (float);
+#X text 24 275 format wave \, format aiff -- choice of file format
+\, default is wave;
+#X text 24 211 samples <float> -- approximate maximum number of samples
+in each output file;
+#X text 24 307 rate <float> -- sets file header \, does NOT resample
+;
+#X text 24 326 open <symbol> -- set pattern for filenames \, should
+include one %d or variant;
+#X text 24 358 index <integer> -- set starting file index number;
+#X obj 38 469 writesf~;
+#X text 24 447 SEE ALSO:;
+#X text 24 377 start -- when not recording = start recording \; when
+recording = skip to the next index;
+#X text 24 409 stop -- stop recording;
+#X text 86 61 click this one first;
+#X text 185 122 then control recording with these;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 2 0 1 2;
+#X connect 3 0 1 2;
+#X connect 4 0 1 2;

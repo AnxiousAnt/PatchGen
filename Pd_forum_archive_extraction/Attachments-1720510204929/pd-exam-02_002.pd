@@ -1,0 +1,47 @@
+#N canvas 350 279 651 539 10;
+#X floatatom 106 471 5 0 0 0 - - -;
+#X floatatom 75 496 5 0 0 0 - - -;
+#N canvas 0 0 450 300 ???????? 0;
+#X obj 89 47 inlet;
+#X obj 89 240 outlet;
+#X text 178 52 Fill in this part.;
+#X connect 0 0 1 0;
+#X restore 75 333 pd ????????;
+#X text 176 333 <== fill in this part.;
+#X text 42 29 Assignment 2:;
+#X text 69 153 If there is no 2nd element in the list because the list
+is too short \, send 200 instead.;
+#X text 69 116 If there is no 3rd element in the list because the list
+is too short \, send 300 instead.;
+#X text 71 81 If there is no 4th element in the list because the list
+is too short \, send 400 instead.;
+#X msg 75 202 1 2 3 4;
+#X text 155 199 this should set the number boxes to 1 \, 2 \, 3 \,
+4;
+#X msg 116 231 1 2 3;
+#X text 176 232 this should set the number boxes to 1 \, 2 \, 3 \,
+400;
+#X msg 131 265 1 2;
+#X text 177 268 this should set the number boxes to 1 \, 2 \, 300 \,
+400;
+#X msg 140 296 1;
+#X text 185 298 this should set the number boxes to 1 \, 200 \, 300
+\, 400;
+#X text 42 50 Complete a longer list with default values.;
+#X obj 75 395 unpack 0 0 0 0;
+#X floatatom 170 419 5 0 0 0 - - -;
+#X floatatom 138 444 5 0 0 0 - - -;
+#X text 241 478 - Discuss the results with your classmates.;
+#X text 241 452 - Go for a Pd-vanilla solution.;
+#X msg 90 363 0 0 0 0;
+#X text 150 362 reset;
+#X connect 2 0 17 0;
+#X connect 8 0 2 0;
+#X connect 10 0 2 0;
+#X connect 12 0 2 0;
+#X connect 14 0 2 0;
+#X connect 17 0 1 0;
+#X connect 17 1 0 0;
+#X connect 17 2 19 0;
+#X connect 17 3 18 0;
+#X connect 22 0 17 0;

@@ -1,0 +1,9 @@
+#N canvas 812 739 450 300 10;
+#X msg 97 86 1 xx;
+#X text 146 85 < should send XX to the 2nd copy (index 1);
+#X obj 99 221 print host;
+#X obj 99 182 clone 16 clone_test;
+#X msg 116 111 2 xx;
+#X connect 0 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;

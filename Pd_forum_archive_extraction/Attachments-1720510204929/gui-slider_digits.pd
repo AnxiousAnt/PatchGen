@@ -1,0 +1,75 @@
+#N canvas 27 22 485 698 10;
+#X obj 92 228 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12345 1;
+#X floatatom 89 269 15 0 0 0 - - -;
+#X msg 89 58 123.453;
+#X msg 96 79 123.456;
+#X obj 89 36 loadbang;
+#X text 171 59 Rounds down to 123.45;
+#X text 171 79 Rounds down to 123.46;
+#X msg 129 136 1.234;
+#X msg 128 115 1.237;
+#X msg 171 162 62.583;
+#X floatatom 171 186 7 0 0 0 - - -;
+#X text 182 126 The same...;
+#X text 234 175 The same...;
+#X obj 32 128 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 12345 1;
+#X floatatom 32 269 7 0 0 0 - - -;
+#X floatatom 300 535 9 0 0 0 - - -;
+#X floatatom 98 462 7 0 0 0 - - -;
+#X obj 303 515 hsl 20 15 25 75 0 1 empty n empty 8 -8 0 10 -262144
+-1109 -1 1428 1;
+#X msg 98 433 62.583;
+#X msg 156 433 34.453;
+#X text 29 317 the closet of a posiable value matching the input;
+#X text 29 301 The resolution "grid" matters. Looks as if it finds
+;
+#X text 28 332 value.;
+#X obj 100 515 hsl 100 15 25 75 0 1 empty n empty 8 -8 0 10 -262144
+-1109 -1 7441 1;
+#X floatatom 98 536 9 0 0 0 - - -;
+#X text 29 368 and sometimes it seams as if it's rounded off.;
+#X obj 301 563 hsl 128 15 0 127 0 0 empty n empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 298 587 9 0 0 0 - - -;
+#X obj 100 564 hsl 100 15 0 127 0 1 empty n empty 8 -8 0 10 -262144
+-1109 -1 4879 1;
+#X floatatom 97 586 9 0 0 0 - - -;
+#X text 226 512 d:20 \, 15;
+#X text 226 522 r:25 \, 75;
+#X text 226 562 d:128 \, 15;
+#X text 226 573 r:0 \, 127;
+#X obj 97 481 s n;
+#X text 24 628 d means dimension \, r menas range \, rows are of equal
+range.;
+#X text 233 224 d:128 \, 15;
+#X text 234 234 r:0 \, 127;
+#X text 25 513 d:100 \, 15;
+#X text 25 524 r:25 \, 75;
+#X text 25 564 d:100 \, 15;
+#X text 26 575 r:0 \, 127;
+#X text 29 351 Different resolution gives different results \,;
+#X text 29 387 The resolution is influence by both the range and the
+;
+#X text 29 401 dimension of the slider.;
+#X text 12 7 Why did the slider rund down? Or otherwice alter the input?
+;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 2 0 13 0;
+#X connect 3 0 0 0;
+#X connect 3 0 13 0;
+#X connect 4 0 2 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 0 0;
+#X connect 13 0 14 0;
+#X connect 16 0 34 0;
+#X connect 17 0 15 0;
+#X connect 18 0 16 0;
+#X connect 19 0 16 0;
+#X connect 23 0 24 0;
+#X connect 26 0 27 0;
+#X connect 28 0 29 0;

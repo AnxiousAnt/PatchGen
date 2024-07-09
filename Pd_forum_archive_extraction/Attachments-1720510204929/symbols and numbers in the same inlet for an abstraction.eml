@@ -1,0 +1,34 @@
+Received: from [141.117.101.22] by msv2.ryerson.ca (mshttpd); Mon,
+ 12 May 2003 09:16:39 -0400
+Date: Mon, 12 May 2003 09:16:39 -0400
+From: bbogart@ryerson.ca
+Subject: symbols and numbers in the same inlet for an abstraction
+To: pd@iem.kug.ac.at
+Message-id: <485c64265d.4265d485c6@ryerson.ca>
+MIME-version: 1.0
+X-Mailer: iPlanet Messenger Express 5.2 HotFix 0.9 (built Jul 29 2002)
+Content-type: text/plain; charset=us-ascii
+Content-language: en
+Content-transfer-encoding: 7BIT
+Content-disposition: inline
+X-Accept-Language: en
+Priority: normal
+
+hello all,
+
+I'm working on an XY controller abstraction that has a number of methods.
+
+Problem is I already have 4 inlets and don't want to add a fifth.
+
+The first inlet takes messages, 0/1/show/hide for on and off, etc. The second sets the interpolation speed, and the 3rd and 4th are the setable x-y coords.
+
+I can't get my first inlet to take both symbol's and numbers without select generating errors on the console.
+
+Whats the best way to funnel the input by datatype? floats out one inlet, symbols out another, lists out another etc.. ?
+
+I right now have all my values converted into symbol via "symbol" object, then sent to 4 selects (select show, select 1 etc..) problem is when the symbol 1 is sent to select 1 it does nothing, does not see it at all, so numbers should not be changed to symbols for use with select. If I don't convert the words "show" and "hide" to symbols first then the "select" objects complain about not having methods for "show" or "hide"
+
+PS: anyone using accelerated controllers? (by accelerated I mean the smoothly go from the current position to the target non-linearly. The start off slow and accelerate towards the target, when they get close then they slow down and stop smoothly. My x-y controller does this but I was thinking just an abtsraction that acts like line, but does it with acceleration, would be useful? 
+
+Thanks!
+Ben

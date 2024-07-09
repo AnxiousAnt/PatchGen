@@ -1,0 +1,17 @@
+#N canvas 180 152 295 220 10;
+#X obj -15 -64 t f f f f f f f f f;
+#X obj -15 -42 * 1;
+#X obj -15 -20 / 1;
+#X obj 14 -42 * 49;
+#X obj 14 -20 / 25;
+#X obj 54 -42 * 28;
+#X obj 54 -20 / 27;
+#X obj 54 2 * 2;
+#X text 103 -25 ...;
+#X connect 0 0 1 0;
+#X connect 0 1 3 0;
+#X connect 0 2 5 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;

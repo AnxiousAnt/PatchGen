@@ -1,0 +1,26 @@
+#N canvas 751 323 706 461 10;
+#X obj 63 128 list tosymbol;
+#X msg 64 94 123;
+#X msg 99 94 92;
+#X msg 135 95 125;
+#X msg 62 158 set \$1;
+#X text 64 23 92 will work fine \, but 123 and 125 will give me error
+messages or crash pd..., f 24;
+#X msg 62 181 \\;
+#X obj 60 213 symbol;
+#X obj 60 235 list fromsymbol;
+#X floatatom 58 262 5 0 0 0 - - -, f 5;
+#X obj 26 151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 130 175 it's possible to display backslashes \, but not curly
+braces. a backslash escaped by a backslash will be converted to the
+correct ASCII value.;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 6 0;

@@ -1,0 +1,9 @@
+#N canvas 366 348 450 300 10;
+#X obj 97 148 tabread \$0-table;
+#X floatatom 97 173 5 0 0 0 - - -;
+#X msg 98 66 0 1 2 3 4 5 6 7 8;
+#X floatatom 97 127 5 0 0 0 - - -;
+#X obj 98 98 tablein \$0-table 8;
+#X connect 0 0 1 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;

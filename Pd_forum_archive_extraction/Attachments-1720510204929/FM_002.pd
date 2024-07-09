@@ -1,0 +1,73 @@
+#N canvas 663 337 515 570 10;
+#X obj 162 513 cnv 15 115 58 empty empty empty 20 12 0 14 -260097 -260097
+0;
+#X obj 278 13 cnv 15 192 62 empty empty empty 20 12 0 14 -260097 -260097
+0;
+#X obj 202 13 cnv 15 63 61 empty empty empty 20 12 0 14 -260097 -260097
+0;
+#X obj 108 13 cnv 15 71 59 empty empty empty 20 12 0 14 -260097 -260097
+0;
+#X obj 12 13 cnv 15 63 61 empty empty empty 20 12 0 14 -260097 -260097
+0;
+#X obj 186 102 cnv 15 125 162 empty empty empty 20 12 0 14 -260097
+-260097 0;
+#X obj 188 104 cnv 15 121 157 empty empty Síntese_FM 15 16 0 14 -233017
+-260097 0;
+#X text 228 14 I;
+#X obj 84 382 +~;
+#X obj 138 338 *~;
+#X msg 178 296 \$1 10;
+#X obj 178 321 line~;
+#X obj 138 294 sig~;
+#X obj 138 316 osc~;
+#X obj 66 416 osc~;
+#X obj 195 229 hsl 98 26 0 1 0 0 empty empty volume 60 9 0 10 -262144
+-1 -1 0 1;
+#X obj 208 373 pow 4;
+#X obj 192 476 *~;
+#X text 211 26 inlet 2;
+#X text 168 544 Saída de linha;
+#X obj 195 197 cnv 15 103 24 empty empty empty 20 12 0 14 -262080 -260097
+0;
+#X floatatom 199 201 5 0 0 1 i - -;
+#X obj 195 167 cnv 15 103 24 empty empty empty 20 12 0 14 -262080 -260097
+0;
+#X floatatom 199 171 5 0 0 1 moduladora - -;
+#X obj 195 137 cnv 15 103 24 empty empty empty 20 12 0 14 -262080 -260097
+0;
+#X floatatom 199 141 5 0 0 1 carrier - -;
+#X text 19 16 Carrier;
+#X text 19 27 inlet 0;
+#X text 112 14 Moduladora;
+#X text 118 27 inlet 1;
+#X text 282 14 Entrada para envelope externo;
+#X text 328 28 inlet 3;
+#X obj 187 521 outlet~;
+#X obj 23 47 inlet;
+#X obj 123 47 inlet;
+#X obj 216 47 inlet;
+#X obj 336 47 inlet;
+#X obj 66 444 *~ 1;
+#X obj 208 422 vline~;
+#X obj 209 396 \$1 5;
+#X connect 8 0 14 0;
+#X connect 9 0 8 1;
+#X connect 10 0 11 0;
+#X connect 11 0 9 1;
+#X connect 12 0 13 0;
+#X connect 13 0 9 0;
+#X connect 14 0 37 0;
+#X connect 15 0 16 0;
+#X connect 16 0 39 0;
+#X connect 17 0 32 0;
+#X connect 21 0 10 0;
+#X connect 23 0 12 0;
+#X connect 25 0 8 0;
+#X connect 33 0 25 0;
+#X connect 34 0 23 0;
+#X connect 35 0 21 0;
+#X connect 36 0 37 1;
+#X connect 37 0 17 0;
+#X connect 38 0 17 1;
+#X connect 39 0 38 0;
+#X coords 0 -1 1 1 127 164 2 185 101;

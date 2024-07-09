@@ -1,0 +1,17 @@
+#N canvas 227 181 450 300 12;
+#N canvas 428 306 277 188 example1 0;
+#X text 32 13 scroll bars flicker when;
+#X text 32 27 patch is opened;
+#X text 24 65 (only happens when subpatch;
+#X text 30 84 isn't empty);
+#X restore 182 58 pd example1;
+#N canvas 469 242 167 218 example2 0;
+#X obj 20 43 cnv 15 150 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 11 6 bottom scroll bar;
+#X text 11 21 flickers when you;
+#X text 6 42 create an object \,;
+#X text 8 58 message \, comment;
+#X text 10 81 or move mouse across;
+#X text 10 98 window border;
+#X restore 182 98 pd example2;

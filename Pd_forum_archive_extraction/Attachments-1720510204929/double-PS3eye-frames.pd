@@ -1,0 +1,27 @@
+#N canvas 738 369 999 544 10;
+#X msg 127 60 create \, 1;
+#X obj 141 215 gemwin;
+#X msg 188 92 destroy;
+#X msg 711 252 dialog;
+#X msg 678 225 device \$1;
+#X obj 678 202 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 2;
+#X obj 578 153 gemhead;
+#X obj 602 377 pix_texture;
+#X obj 578 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 216 168 reset \, buffer 1 \, dimen 320 240;
+#X obj 216 140 loadbang;
+#X obj 602 397 rectangle 4 3;
+#X obj 602 333 pix_video;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 3 0 12 0;
+#X connect 4 0 12 0;
+#X connect 5 0 4 0;
+#X connect 6 0 12 0;
+#X connect 7 0 11 0;
+#X connect 8 0 6 0;
+#X connect 9 0 1 0;
+#X connect 10 0 9 0;
+#X connect 12 0 7 0;

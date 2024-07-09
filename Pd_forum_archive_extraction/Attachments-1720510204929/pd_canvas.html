@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/dejavu.css">
+    <link id="page_style" rel="stylesheet"
+          type="text/css" href="css/default.css">
+    <title></title>
+  </head>
+  <body class="patch_body">
+
+  <div style="position: fixed;
+    top: 0;
+    left: 0; z-index: 1"><iframe src="http://www.lucarda.com.ar/pd-tutorial" width="600" height="400"></iframe><br>
+	
+	<a href="http://lucarda.com.ar" target="_blank"> ljhglajsdhgfa
+</a>	
+	</div>
+	
+	
+    <span id = "fileDialogSpan">
+      <input style="display:none;" id="fileDialog" type="file" multiple />
+    </span>
+    <span id = "saveDialogSpan">
+      <input style="display:none;" id="saveDialog" type="file"
+             nwsaveas nwworkingdir accept=".pd" />
+    </span>
+    <input style="display:none;" id="openpanel_dialog" type="file" />
+    <input style="display:none;" id="savepanel_dialog" type="file"
+           nwsaveas nwworkingdir />
+    <svg xmlns="http://www.w3.org/2000/svg"
+         version="1.1"
+         id="patchsvg"
+         class="noselect"
+         viewBox="0 0 0 0">
+    </svg>
+	
+	
+	
+	
+	
+	
+    <div id="canvas_find" style="display:none;">
+      <label><input type="text"
+                    id="canvas_find_text"
+                    name="canvas_find_text"
+                    defaultValue="Search in Canvas"
+                    style="width:10em"/>
+      </label>
+      <label><span data-i18n="canvas.find.whole_word"></span>
+        <input type="checkbox"
+               id="canvas_find_whole_word"
+               name="canvas_find_whole_word"
+               onchange="canvas_find_whole_word(this);"/> 
+      </label>
+      <button type="button"
+              id="canvas_find_button"
+              data-i18n="[title]canvas.find.search_tt">
+        <span data-i18n="canvas.find.search"></span>
+      </button>
+    </div>
+    <dialog id="save_before_quit">
+      <h4><span data-i18n="canvas.save_dialog.prompt"></span>
+        <span id="save_before_quit_filename"></span>?
+      </h4>
+      <div class="submit_buttons">
+        <button type="button"
+                id="yes_button"
+                data-i18n="[title]canvas.save_dialog.yes_tt">
+          <span data-i18n="canvas.save_dialog.yes"></span>
+        </button>
+        <button type="button"
+                id="no_button"
+                data-i18n="[title]canvas.save_dialog.no_tt">
+          <span data-i18n="canvas.save_dialog.no"></span>
+        </button>
+        <button type="button"
+                id="cancel_button"
+                data-i18n="[title]canvas.save_dialog.cancel_tt">
+          <span data-i18n="canvas.save_dialog.cancel"></span>
+        </button>
+      </div>
+    </dialog>
+    <script type="text/javascript" src="./pd_canvas.js"></script>
+  </body>
+</html>

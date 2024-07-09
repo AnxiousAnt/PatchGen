@@ -1,0 +1,62 @@
+#N canvas 176 88 564 588 10;
+#X obj 140 381 dac~;
+#X obj 147 140 loadbang;
+#X obj 140 175 metro 1000;
+#X obj -23 386 loadbang;
+#X obj -23 413 del 1000;
+#X obj 61 173 osc~ 220;
+#X obj 69 273 *~;
+#X msg 88 222 1 \, 0 100;
+#X obj 88 247 line~;
+#X text 235 368 Florian Hollerweger \, 2010;
+#X obj 140 352 *~;
+#X obj 213 316 dbtorms;
+#X obj 213 268 loadbang;
+#X msg 213 292 80;
+#X obj 170 242 delread~ line 350;
+#X obj -5 354 delwrite~ line 580;
+#X text 257 294 Master volume;
+#X obj 169 354 *~;
+#X msg 172 215 500;
+#X obj 63 499 switch~;
+#X text 45 408 <- HACK: [del 1000] also required due to audio initialization
+problems with -nogui;
+#X obj 63 448 loadbang;
+#X msg 63 475 0;
+#X obj 101 473 r switch;
+#X msg -23 441 \; pd dsp 1 \; switch 1;
+#X text -19 -41 -nogui bug: This patch creates a test signal on the
+left channel once a second \, which is delayed through [delwrite~]
+and [delread~] and then repeated on the right channel 500ms later.
+-nogui bug: This patch creates a test signal on the left channel once
+a second \, which is delayed through [delwrite~] and [delread~] and
+then repeated on the right channel 500ms later. The [switch~] object
+is supposed to serve as a workaround for the audio initialization problems
+with Pd (both vanilla 0.41.4 and vanilla 0.42-5) demonstrate at least
+under Debian GNU/Linux when started with the -nogui flag. However \,
+the patch keeps failing for me under Debian and with -nogui \, although
+it works fine under Windows XP and -nogui.;
+#X text 121 495 <- This does not seem to solve the -nogui audio init
+problems either (also not if the order of turning on dsp and switch
+is reversed in the message box on the left).;
+#X connect 1 0 2 0;
+#X connect 1 0 18 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 24 0;
+#X connect 5 0 6 0;
+#X connect 6 0 15 0;
+#X connect 6 0 10 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 1;
+#X connect 10 0 0 0;
+#X connect 11 0 10 1;
+#X connect 11 0 17 1;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 17 0;
+#X connect 17 0 0 1;
+#X connect 18 0 14 0;
+#X connect 21 0 22 0;
+#X connect 22 0 19 0;
+#X connect 23 0 19 0;

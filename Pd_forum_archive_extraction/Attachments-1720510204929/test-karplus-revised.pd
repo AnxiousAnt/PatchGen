@@ -1,0 +1,88 @@
+#N canvas 70 40 513 492 10;
+#X obj 315 92 samplerate~;
+#X obj 315 113 /;
+#X obj 315 72 t b f;
+#X obj 315 222 sig~;
+#X obj 331 132 / 1000;
+#X obj 315 152 /;
+#X obj 315 199 line;
+#X obj 318 11 hsl 128 15 0 127 0 0 empty empty MIDI_note -2 -6 0 8
+-262144 -1 -1 8600 1;
+#X obj 315 43 mtof;
+#X floatatom 379 40 5 0 0 0 - - -;
+#X floatatom 378 74 5 0 0 0 - - -;
+#X obj 315 174 pack 0 50;
+#X obj 269 13 vsl 15 128 0.9 0.999 0 0 empty empty F_back 0 -8 0 8
+-262144 -1 -1 11400 1;
+#X obj 54 11 noise~;
+#X obj 107 11 hsl 128 15 0 1 0 0 empty empty noise_level -2 -6 0 8
+-262144 -1 -1 600 1;
+#X obj 88 78 *~;
+#X obj 271 287 fiddle~;
+#X obj 224 359 dac~;
+#X floatatom 271 315 5 0 0 0 - - -;
+#X text 383 474 derek@umatic.nl;
+#X obj 421 37 s midi-note;
+#X obj 340 287 r midi-note;
+#X floatatom 340 316 5 0 0 0 - - -;
+#X msg 53 279 \; pd dsp \$1;
+#X obj 53 248 tgl 25 0 empty empty empty 0 -6 0 8 -258699 -1 -1 1 1
+;
+#X text 37 433 [fiddle~] will not be accurate at very low frequencies!
+;
+#X text 37 393 The sound produced by the comb filter becomes less and
+less sinusoidal the lower in frequency/longer in delay length.;
+#N canvas 0 0 483 366 comb_filter 0;
+#X obj 235 0 inlet~ delay_length;
+#X obj 119 0 inlet feedback;
+#X obj 35 187 *~;
+#X obj 18 0 inlet~ signal;
+#X obj 19 214 +~;
+#X obj 119 119 line;
+#X obj 19 245 delwrite~ \$0-pluck 124;
+#X obj 235 245 outlet~;
+#X obj 295 245 block~ 1;
+#X obj 236 96 vd~ \$0-pluck;
+#X obj 119 96 pack 0 50;
+#X text 19 280 Put only ESSENTIAL stuff in this small-blocksize subpatch!
+;
+#X connect 0 0 9 0;
+#X connect 1 0 10 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 2 1;
+#X connect 9 0 7 0;
+#X connect 9 0 2 0;
+#X connect 10 0 5 0;
+#X restore 223 249 pd comb_filter;
+#X text 36 462 (i.e. below 138.5 Hz = MIDI note 49);
+#X floatatom 117 38 5 0 0 0 - - -;
+#X floatatom 231 155 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 0 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 2 1 1 1;
+#X connect 3 0 27 2;
+#X connect 4 0 5 1;
+#X connect 5 0 11 0;
+#X connect 6 0 3 0;
+#X connect 7 0 8 0;
+#X connect 7 0 9 0;
+#X connect 7 0 20 0;
+#X connect 8 0 2 0;
+#X connect 8 0 10 0;
+#X connect 11 0 6 0;
+#X connect 12 0 27 1;
+#X connect 12 0 30 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 1;
+#X connect 14 0 29 0;
+#X connect 15 0 27 0;
+#X connect 16 0 18 0;
+#X connect 21 0 22 0;
+#X connect 24 0 23 0;
+#X connect 27 0 17 0;
+#X connect 27 0 17 1;
+#X connect 27 0 16 0;

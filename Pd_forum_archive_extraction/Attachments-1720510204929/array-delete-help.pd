@@ -1,0 +1,67 @@
+#N canvas 530 41 880 713 10;
+#X obj 122 372 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 122 574 print;
+#X floatatom 213 185 5 0 0 0 - - - 0;
+#X floatatom 247 355 5 0 0 0 - - - 0;
+#X floatatom 122 117 5 0 0 0 - - - 0;
+#X msg 122 139 set \$1;
+#X msg 168 331 99 88 77 66;
+#X obj 122 185 t b f, f 6;
+#X obj 168 354 t b l;
+#X text 500 191 Right Inlet - Name of array to use;
+#X text 500 361 Right Inlet - Name of array to use;
+#X text 458 345 Middle Inlet - Number of fields to insert;
+#X obj 632 131 array-delete;
+#X obj 632 301 array-insert;
+#X msg 577 492 resize 20;
+#X msg 537 538 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20,
+f 26;
+#X obj 537 477 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 537 453 loadbang;
+#X text 458 175 Middle Inlet - Number of points to delete;
+#X text 458 159 Left Inlet - Index to delete from or bang;
+#X text 344 207 Optional Arguments - Array name \, index \, and number
+of points;
+#X text 422 329 Left Inlet - Index to insert at \, bang inserts 0;
+#X text 452 377 Opptional Arguments - Array name and index;
+#X msg 122 162 0;
+#X obj 195 377 array-insert \$0a 5;
+#X obj 537 574 array set \$0a;
+#X obj 577 515 array define \$0a;
+#X obj 122 551 array get \$0a;
+#X obj 155 207 array-delete \$0a;
+#X obj 155 271 20;
+#X obj 155 294 array size \$0a;
+#X obj 195 420 spigot;
+#X obj 195 443 array size \$0a;
+#X obj 228 401 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 155 249 spigot;
+#X obj 188 229 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X connect 0 0 27 0;
+#X connect 2 0 28 1;
+#X connect 3 0 24 1;
+#X connect 4 0 5 0;
+#X connect 5 0 23 0;
+#X connect 6 0 8 0;
+#X connect 7 0 0 0;
+#X connect 7 1 28 0;
+#X connect 8 0 0 0;
+#X connect 8 1 24 0;
+#X connect 14 0 26 0;
+#X connect 15 0 25 0;
+#X connect 16 0 14 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 23 0 7 0;
+#X connect 24 0 31 0;
+#X connect 27 0 1 0;
+#X connect 28 0 34 0;
+#X connect 29 0 30 0;
+#X connect 31 0 32 0;
+#X connect 33 0 31 1;
+#X connect 34 0 29 0;
+#X connect 35 0 34 1;

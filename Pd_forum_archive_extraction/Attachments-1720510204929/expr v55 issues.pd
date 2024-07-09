@@ -1,0 +1,151 @@
+#N canvas 664 42 383 356 10;
+#N canvas 134 23 421 273 hyperbolic 0;
+#X obj 172 105 expr atanh($f1);
+#X obj 172 133 expr asinh($f1);
+#X obj 173 161 expr acosh($f1);
+#X text 86 70 none of these are loading in windows:;
+#X restore 62 56 pd hyperbolic functions in windows;
+#N canvas 913 121 375 226 fact 0;
+#X obj 78 60 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 78 97 expr fact(-1);
+#X floatatom 78 134 5 0 0 0 - - -, f 5;
+#X text 105 59 this freezes pd for a while;
+#X floatatom 161 140 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 62 96 pd fact bug;
+#N canvas 80 176 878 382 $f1 1;
+#X floatatom 253 158 0 0 0 0 - - -;
+#X floatatom 166 161 5 0 0 0 - - -, f 5;
+#X obj 166 307 snapshot~;
+#X obj 186 280 metro 100;
+#X obj 186 259 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 186 225 loadbang;
+#X floatatom 166 335 0 0 0 0 - - -;
+#X msg 266 261 \; pd dsp 1;
+#X floatatom 687 129 0 0 0 0 - - -;
+#X floatatom 594 132 5 0 0 0 - - -, f 5;
+#X text 710 128 works;
+#X obj 594 278 snapshot~;
+#X obj 614 251 metro 100;
+#X obj 614 230 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 614 206 loadbang;
+#X floatatom 594 306 0 0 0 0 - - -;
+#X text 508 133 doesn't work;
+#X obj 594 168 fexpr~ $x1 + $x2;
+#X text 55 72 I actually think that is annoying and never realized
+this was mentioned in the documentation. So here's a request to allow
+these other possibilities \, as I've already had to create "dummy"
+left inlet in my patches.;
+#X obj 166 199 expr~ $v1 + $v2;
+#X text 480 44 Same thing applies to fexpr~ \, but note that unlike
+expr~ \, fexpr~ cannot promote float inputs to signal like expr~ does
+\, and as it common for Pd.;
+#X text 54 29 The help file mentions: "NOTES: the first inlet of expr~
+cannot be a $f1 or $i1 \, this may change in later releases";
+#X connect 0 0 19 1;
+#X connect 1 0 19 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 5 0 7 0;
+#X connect 8 0 17 1;
+#X connect 9 0 17 0;
+#X connect 11 0 15 0;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 17 0 11 0;
+#X connect 19 0 2 0;
+#X restore 62 127 pd $f1 or $i1 as 1st inlet in expr~/fexpr~ \; float
+to signal promotion in fexpr~;
+#X text 54 219 feature/addition requests;
+#X text 52 26 bugs:;
+#N canvas 612 76 482 290 false 0;
+#X obj 131 138 expr~ if($v1 == 0 \, 1 \, 1/$v1);
+#X msg 131 109 0;
+#X text 42 66 not evaluate the false expression in expr~/fexpr~;
+#X text 56 182 this keeps printing an annoying "Divide by 0 detected"
+error;
+#X connect 1 0 0 0;
+#X restore 62 173 pd false expression evaluation in audio;
+#N canvas 439 23 910 566 add 0;
+#X floatatom 82 504 0 0 0 0 - - -;
+#X msg 82 440 3 9;
+#X floatatom 516 166 0 0 0 0 - - -;
+#X msg 516 104 3 9;
+#X text 38 107 It has been mentioned how these can be achieved in other
+ways \, but this reasoning does not actually stop 'expr' to have many
+fucntions that achieve the same result.;
+#X text 41 161 Such as:;
+#X obj 78 233 expr nearbyint($f1);
+#X floatatom 216 186 5 0 0 0 - - -, f 5;
+#X floatatom 78 266 5 0 0 0 - - -, f 5;
+#X obj 216 233 expr rint($f1);
+#X floatatom 216 264 5 0 0 0 - - -, f 5;
+#X floatatom 323 263 5 0 0 0 - - -, f 5;
+#X obj 323 232 expr round($f1);
+#X text 53 298 all three are the same \, and two of them were dded
+in v0.5 (nearbyint and round).;
+#X obj 82 470 expr Sum("array2" \, $f1 \, $f2) / ($f2 - $f1 + 1);
+#X obj 516 132 expr Avg("array2" \, $f1 \, $f2);
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array array2 10 float 3;
+#A 0 -0.885712 -0.514285 -0.271428 0.0714284 -0.485713 -0.185714 0.285714
+0.485713 0.571427 0.757141;
+#X coords 0 1 10 -1 100 100 1 0 0;
+#X restore 561 227 graph;
+#X text 30 358 for 'avg' and 'Avg' there isn't really any other function
+that covers them. It's just that youy can get there somehow. But specially
+for Avg \, this would be much more convenient if it were just simply
+available. For instance \, this is how you need to do Avg.;
+#X text 494 48 but it'd be much more convenient if we could just do
+this:;
+#X text 493 367 Moreover \, the [expr] object has been long incorporated
+into the Max family of objects \, though it reflects an earlier version
+than available in Pd roight now. One way or another \, people might
+expect them to be related \, and the Max version does have working
+'avg' / 'Avg' / 'store' functions.;
+#X text 36 30 'avg' / 'Avg' and 'store' were deleted from v0.5 but
+I'd like to make a case to include it back. These were supposedly available
+\, but not working at least in version 0.4 \, but I assume they were
+working at some point. Thus \, they're important for backwards compatibility.
+;
+#X text 499 483 So please consider having them working back in Pd.
+;
+#X connect 1 0 14 0;
+#X connect 3 0 15 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 7 0 9 0;
+#X connect 7 0 12 0;
+#X connect 9 0 10 0;
+#X connect 12 0 11 0;
+#X connect 14 0 0 0;
+#X connect 15 0 2 0;
+#X restore 70 245 pd add avg/Avg/store again;
+#N canvas 504 23 490 309 add 0;
+#X text 64 74 "The following are done but not popular enough in math
+libss \; * to be included yet \; * hypoth - Euclidean distance function
+\; * trunc \; * round \; * nearbyint \;;
+#X text 62 178 but trunc/round/nearbyint have been included already.
+So this can be commented out.;
+#X text 66 41 the current code now says:;
+#X text 64 223 Now \, a question \, hypoth is not really popular yet?
+Could it be added? It would really make FFT processing more convenient
+in PD!;
+#X restore 70 271 pd add hypoth as once planned;
+#N canvas 439 23 423 317 add 0;
+#X obj 119 130 expr x += 1;
+#X obj 263 132 v x;
+#X text 21 54 Now that we have the '=' syntax to update variables and
+store values to tables \, I think it is a good idea to add the "+="
+functionality \,;
+#X text 49 132 so this:;
+#X text 50 202 would be the same as this:;
+#X obj 228 202 expr x = x + 1;
+#X restore 70 298 pd add += casuse I think it'd be cool;

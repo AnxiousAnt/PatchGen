@@ -1,0 +1,83 @@
+--- g_canvas.c	Mon Apr  1 23:34:49 2002
++++ coloredPatchPD/g_canvas.c	Tue Apr 23 16:24:21 2002
+@@ -58,7 +58,7 @@
+ void canvas_create_editor(t_glist *x, int createit);
+ 
+ /* --------- functions to handle the canvas environment ----------- */
+-
++int obj_sigoutletindex(t_object *x, int m);
+ static t_symbol *canvas_newfilename = &s_;
+ static t_symbol *canvas_newdirectory = &s_;
+ static int canvas_newargc;
+@@ -800,10 +800,18 @@
+     t_outconnect *oc;
+     {
+     	linetraverser_start(&t, x);
+-    	while (oc = linetraverser_next(&t))
+-    	    sys_vgui(".x%x.c create line %d %d %d %d -tags l%x\n",
+-		    glist_getcanvas(x),
+-		    	t.tr_lx1, t.tr_ly1, t.tr_lx2, t.tr_ly2, oc);
++    	while (oc = linetraverser_next(&t)) {
++	    if (obj_sigoutletindex(t.tr_ob, t.tr_outno) < 0) {
++	      sys_vgui(".x%x.c create line %d %d %d %d -tags l%x\n",
++		       glist_getcanvas(x),
++		       t.tr_lx1, t.tr_ly1, t.tr_lx2, t.tr_ly2, oc);
++              }
++	    else {
++    	      sys_vgui(".x%x.c create line %d %d %d %d -width 2 -fill #999900 -tags l%x\n",
++		       glist_getcanvas(x),
++		       t.tr_lx1, t.tr_ly1, t.tr_lx2, t.tr_ly2, oc);
++	    }
++	}
+     }
+ }
+ 
+--- g_editor.c	Tue Apr  2 00:14:18 2002
++++ coloredPatchPD/g_editor.c	Tue Apr 23 16:24:26 2002
+@@ -7,7 +7,7 @@
+ #include "m_imp.h"
+ #include "g_canvas.h"
+ #include <string.h>
+-
++int obj_sigoutletindex(t_object *x, int m);
+ void glist_readfrombinbuf(t_glist *x, t_binbuf *b, char *filename,
+     int selectem);
+ 
+@@ -521,9 +521,14 @@
+     	    	    	x->gl_editor->e_onmotion = MA_CONNECT;
+     	    	    	x->gl_editor->e_xwas = xpos;
+     	    	    	x->gl_editor->e_ywas = ypos;
+-    	    	    	sys_vgui(
+-    	    	    	    ".x%x.c create line %d %d %d %d -tags x\n",
+-    	    	    	    	x, xpos, ypos, xpos, ypos);
++			if (obj_sigoutletindex(ob, closest) < 0) {
++			    sys_vgui(".x%x.c create line %d %d %d %d -tags x\n",
++		                     x, xpos, ypos, xpos, ypos);
++			}
++			else {
++			    sys_vgui(".x%x.c create line %d %d %d %d -width 2 -fill #999900 -tags x\n",
++    	    	    	             x, xpos, ypos, xpos, ypos);
++			}
+     	    	    }    	    	    	    	
+     	    	    else canvas_setcursor(x, CURSOR_EDITMODE_CONNECT);
+     	    	}
+@@ -674,9 +679,16 @@
+    	    		((x22-x21-IOWIDTH) * closest2)/(ninlet2-1) : 0)
+    	    		    + IOMIDDLE;
+     	    	ly2 = y21;
+-    	    	sys_vgui(".x%x.c create line %d %d %d %d -tags l%x\n",
+-		    glist_getcanvas(x),
+-		    	lx1, ly1, lx2, ly2, oc);
++		if (obj_sigoutletindex(ob1, closest1) < 0) {
++		  sys_vgui(".x%x.c create line %d %d %d %d -tags l%x\n",
++		           glist_getcanvas(x),
++		    	   lx1, ly1, lx2, ly2, oc);
++		}
++		else {
++    	    	  sys_vgui(".x%x.c create line %d %d %d %d -width 2 -fill #999900 -tags l%x\n",
++		           glist_getcanvas(x),
++		    	   lx1, ly1, lx2, ly2, oc);
++	        }
+     	    }
+     	    else canvas_setcursor(x, CURSOR_EDITMODE_CONNECT);
+     	    return;

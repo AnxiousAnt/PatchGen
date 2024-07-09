@@ -1,0 +1,52 @@
+#N canvas 256 33 725 351 10;
+#X obj 291 270 send HarmWaveForm;
+#X obj 391 86 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 339 86 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0.1 256;
+#X obj 287 86 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 236 86 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 184 86 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 133 86 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 81 86 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10 -191672
+-1 -1 0.19 256;
+#X obj 31 86 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10 -191672
+-1 -1 0.15 256;
+#X obj 491 121 cnv 15 198 138 empty empty empty 20 12 0 14 -204800
+-66577 0;
+#N canvas 0 22 474 324 (subpatch) 0;
+#X array HarmWaveForm 515 float 0;
+#X coords 0 1 514 -1 200 140 1;
+#X restore 490 120 graph;
+#X text 476 114 1;
+#X text 471 249 -1;
+#X msg 168 236 normalize 1;
+#X obj 168 133 cyclone/bondo 8;
+#X obj 168 158 pack f f f f f f f f;
+#X obj 168 209 trigger bang anything;
+#X obj 168 183 prepend sinesum 512;
+#X connect 1 0 14 7;
+#X connect 2 0 14 6;
+#X connect 3 0 14 5;
+#X connect 4 0 14 4;
+#X connect 5 0 14 3;
+#X connect 6 0 14 2;
+#X connect 7 0 14 1;
+#X connect 8 0 14 0;
+#X connect 13 0 0 0;
+#X connect 14 0 15 0;
+#X connect 14 1 15 1;
+#X connect 14 2 15 2;
+#X connect 14 3 15 3;
+#X connect 14 4 15 4;
+#X connect 14 5 15 5;
+#X connect 14 6 15 6;
+#X connect 14 7 15 7;
+#X connect 15 0 17 0;
+#X connect 16 0 13 0;
+#X connect 16 1 0 0;
+#X connect 17 0 16 0;

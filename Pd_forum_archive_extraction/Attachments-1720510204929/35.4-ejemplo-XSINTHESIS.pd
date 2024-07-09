@@ -1,0 +1,111 @@
+#N canvas 290 105 673 566 16;
+#X declare -lib windowing;
+#X declare -lib cyclone;
+#N canvas 422 167 756 660 X-SINTHESIS 1;
+#X obj 14 164 *~;
+#X obj 14 86 inlet~;
+#X obj 14 218 rfft~;
+#X obj 14 353 *~;
+#X obj 61 353 *~;
+#X obj 14 563 *~;
+#X obj 14 399 rifft~;
+#X obj 14 609 outlet~;
+#X obj 176 227 rfft~;
+#X obj 176 264 cartopol~;
+#X obj 176 165 *~;
+#X obj 176 88 inlet~;
+#X obj 390 30 declare -lib windowing;
+#X obj 41 111 sig~ 1;
+#X obj 203 113 sig~ 1;
+#X obj 41 475 sig~ 1;
+#X obj 434 547 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 434 567 switch~ 2048 4;
+#X obj 41 137 hamming~;
+#X obj 203 139 hamming~;
+#X obj 41 506 hamming~;
+#X text 368 592 tamaño de la FFT con 4 de Overlapping;
+#X obj 434 520 loadbang;
+#X text 93 434 <- Normalizacion de la Señal;
+#X text 300 114 |;
+#X text 300 132 |;
+#X text 288 104 __;
+#X text 289 132 __;
+#X text 304 117 ___Ventana de Analisis;
+#X obj 390 52 declare -lib cyclone;
+#X obj 14 436 /~ 4096;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 1;
+#X connect 5 0 7 0;
+#X connect 6 0 30 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 9 0 3 1;
+#X connect 9 0 4 1;
+#X connect 10 0 8 0;
+#X connect 11 0 10 0;
+#X connect 13 0 18 0;
+#X connect 14 0 19 0;
+#X connect 15 0 20 0;
+#X connect 16 0 17 0;
+#X connect 18 0 0 1;
+#X connect 19 0 10 1;
+#X connect 20 0 5 1;
+#X connect 22 0 16 0;
+#X connect 30 0 5 0;
+#X restore 37 288 pd X-SINTHESIS;
+#X obj 37 158 sfplayer;
+#X obj 174 220 sfplayer;
+#X obj 370 287 *~;
+#X obj 388 180 vsl 25 100 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 446 287 *~;
+#X obj 464 180 vsl 25 100 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 522 287 *~;
+#X obj 540 180 vsl 25 100 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 422 331 ezdac~;
+#X text 78 27 SINTESIS CRUZADA;
+#X obj 522 151 r~ mod;
+#X obj 446 151 r~ port;
+#X obj 370 151 r~ sint;
+#X obj 46 177 s~ port;
+#X obj 185 239 s~ mod;
+#X obj 37 313 send~ sint;
+#X text 44 419 La síntesis cruzada es la modulacion de la amplitud
+de las componentes espectrales de un sonido con el valor de amplitud
+de las mismas componentes en otro sonido. Es analogo a un vocoder de
+muchas bandas (el tamaño de la FFT) La distancia de las bandas se da
+por la Frecuencia de Analisis;
+#X obj 397 28 comment 0 12 courier ? 0 0 0 0 ejemplo 35.4;
+#X obj 397 42 comment 0 12 courier ? 0 0 0 0 Lic. José Rafael Subía
+Valdez;
+#X obj 397 56 comment 0 12 courier ? 0 0 0 0 PD-Tutorial - CAM3 - UNQ
+;
+#X obj 397 70 comment 0 12 courier ? 0 0 0 0 https://puredata.info/author/rafasubia
+;
+#X obj 397 98 comment 0 12 courier ? 0 0 0 0 copyleft (c);
+#X obj 397 84 comment 0 12 courier ? 0 0 0 0 jsubiavaldez@gmail.com
+;
+#X connect 0 0 16 0;
+#X connect 1 0 0 0;
+#X connect 1 0 14 0;
+#X connect 2 0 0 1;
+#X connect 2 0 15 0;
+#X connect 3 0 9 0;
+#X connect 3 0 9 1;
+#X connect 4 0 3 1;
+#X connect 5 0 9 0;
+#X connect 5 0 9 1;
+#X connect 6 0 5 1;
+#X connect 7 0 9 0;
+#X connect 7 0 9 1;
+#X connect 8 0 7 1;
+#X connect 11 0 7 0;
+#X connect 12 0 5 0;
+#X connect 13 0 3 0;

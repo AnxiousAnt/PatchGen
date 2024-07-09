@@ -1,0 +1,14 @@
+#N canvas 0 0 450 300 10;
+#N canvas 0 0 600 400 1001-bug 0;
+#N canvas 0 0 450 300 graph1 0;
+#X array 1000-bug 515 float 0;
+#X coords 0 1 514 -1 500 300 1;
+#X restore 50 50 graph;
+#X restore 122 102 table \$0-bug;
+#X obj 222 103 symbol \$0-bug;
+#X msg 222 78 bang;
+#X msg 222 132 \; \$1 sinesum 512 1;
+#X obj 224 50 inlet;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 4 0 2 0;

@@ -1,0 +1,6 @@
+#N canvas 918 348 450 300 10;
+#X obj 12 65 print;
+#X msg 12 21 bang;
+#X obj 12 43 named-arguments foo=bar height=12 cats=miaow;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;

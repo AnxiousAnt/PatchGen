@@ -1,0 +1,16 @@
+#N canvas 0 0 629 557 10;
+#X obj 107 369 print;
+#X msg 107 250 set \$1;
+#X obj 107 341 makefilename;
+#X msg 118 302 2048;
+#X obj 107 221 makefilename %d%%s.mtx;
+#X msg 107 157 symbol test;
+#X text 93 63 first press symbol \, then after pressing the number
+message \, pd crashes;
+#X text 276 221 (i know it should be %%d%s.mtx);
+#X text 97 117 I wanted to create 2048test.mtx;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;

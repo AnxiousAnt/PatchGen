@@ -1,0 +1,38 @@
+#N canvas 341 235 591 321 10;
+#X obj 53 72 metro 1000;
+#X obj 53 46 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0 1
+;
+#X obj 53 125 f 0;
+#X msg 68 95 0;
+#X obj 93 125 + 1;
+#X floatatom 69 154 5 0 0 0 - - -;
+#X obj 215 97 * 1000;
+#X obj 215 127 mod 2000;
+#X obj 53 213 s mastercounter;
+#X obj 215 49 r mastercounter;
+#X obj 215 161 delay;
+#X obj 274 200 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X floatatom 271 163 5 0 0 0 - - -;
+#X obj 72 185 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
+-1;
+#X obj 215 223 print delay;
+#X text 47 11 master metro/counter;
+#X text 205 12 2nd metro (rate 2000);
+#X text 216 251 delay stores 1000 from [mod] \, however \, being the
+next event 0 \, it sends both the previous delayed event \, and the
+new event at the same time.;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 2 0 5 0;
+#X connect 2 0 8 0;
+#X connect 2 0 13 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 1;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X connect 7 0 12 0;
+#X connect 9 0 6 0;
+#X connect 10 0 11 0;
+#X connect 10 0 14 0;

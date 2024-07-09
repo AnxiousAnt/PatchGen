@@ -1,0 +1,59 @@
+#N canvas 97 39 496 630 10;
+#X text 45 6 http://en.wikipedia.org/wiki/Binary_numeral_system#Decimal
+;
+#X floatatom 171 190 5 0 0 0 - - -;
+#X obj 118 362 div 2;
+#X obj 148 334 mod 2;
+#X obj 190 335 f;
+#X obj 118 385 > 0;
+#X obj 118 406 sel 0;
+#X obj 190 246 until;
+#X obj 78 478 list append;
+#X obj 246 453 t l;
+#X obj 150 452 list prepend;
+#X text 39 44 To convert from a base-10 integer numeral to its base-2
+(binary) equivalent \, the number is divided by two \, and the remainder
+is the least-significant bit. The (integer) result is again divided
+by two \, its remainder is the next most significant bit. This process
+repeats until the result of further division becomes zero. For example
+\, 11810 \, in binary \, is: [Operation \, Remainder] 118 ÷ 2 = [59
+0] 59 ÷ 2 = [29 1] 29 ÷ 2 = [14 1] 14 ÷ 2 = [7 0] 7 ÷ 2 = [3 1] 3 ÷
+2 = [1 1] 1 ÷ 2 = [0 1];
+#X obj 171 212 t b b f b;
+#X text 291 561 < bit order: LSB first;
+#X obj 118 303 t f f;
+#X floatatom 78 542 2 0 0 0 - - -;
+#X floatatom 99 542 2 0 0 0 - - -;
+#X floatatom 120 542 2 0 0 0 - - -;
+#X floatatom 141 542 2 0 0 0 - - -;
+#X floatatom 163 542 2 0 0 0 - - -;
+#X floatatom 184 542 2 0 0 0 - - -;
+#X floatatom 205 542 2 0 0 0 - - -;
+#X floatatom 227 542 2 0 0 0 - - -;
+#X obj 78 503 unpack 0 0 0 0 0 0 0 0;
+#X connect 1 0 12 0;
+#X connect 2 0 4 1;
+#X connect 2 0 5 0;
+#X connect 3 0 10 0;
+#X connect 4 0 14 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 1;
+#X connect 7 0 4 0;
+#X connect 8 0 23 0;
+#X connect 9 0 10 1;
+#X connect 10 0 9 0;
+#X connect 10 0 8 1;
+#X connect 12 0 8 0;
+#X connect 12 1 7 0;
+#X connect 12 2 4 0;
+#X connect 12 3 10 1;
+#X connect 14 0 2 0;
+#X connect 14 1 3 0;
+#X connect 23 0 15 0;
+#X connect 23 1 16 0;
+#X connect 23 2 17 0;
+#X connect 23 3 18 0;
+#X connect 23 4 19 0;
+#X connect 23 5 20 0;
+#X connect 23 6 21 0;
+#X connect 23 7 22 0;

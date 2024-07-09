@@ -1,0 +1,23 @@
+#N canvas 0 0 767 388 12;
+#X obj 30 37 bng 15 250 50 0 empty empty Click_here_first 0 -6 0 8
+-262144 -1 -1;
+#X obj 30 66 epochtime;
+#X floatatom 30 102 0 0 0 0 - - -;
+#X obj 271 75 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 271 104 epochtime;
+#X floatatom 271 140 0 0 0 0 - - -;
+#X obj 166 196 -;
+#X floatatom 166 231 0 0 0 0 - - -;
+#X text 260 32 2.wait more than a minute! then click a few times (wait
+a minute or so between each bang).;
+#X text 294 166 This number doesn't appear to change...but in reality
+the value changes every 64 seconds or so. We can see this occur by
+subtracting the FIRST value (the one on the left).;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;

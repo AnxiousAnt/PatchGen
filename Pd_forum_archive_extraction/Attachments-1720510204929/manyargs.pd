@@ -1,0 +1,8 @@
+#N canvas 335 262 691 299 10;
+#X obj 86 117 OSCroute /arg1 /arg2 /... /arg20;
+#X obj 305 141 OSCroute /arg21 /arg22 /... /arg30;
+#X msg 86 84 /arg30 1;
+#X obj 479 170 print arg30;
+#X connect 0 4 1 0;
+#X connect 1 3 3 0;
+#X connect 2 0 0 0;

@@ -1,0 +1,123 @@
+--- ../../pd-0.42-5/src/makefile.in	2008-12-29 19:08:26.000000000 +0000
++++ makefile.in	2009-07-15 13:44:11.000000000 +0100
+@@ -2,6 +2,7 @@
+ OBJ_DIR = ../obj
+ BIN_DIR = ../bin
+ PDEXEC = $(BIN_DIR)/pd
++LIBPD = $(BIN_DIR)/libpd.a
+ EXT= @EXT@
+ GUINAME= @GUINAME@
+ 
+@@ -26,7 +27,7 @@
+ GLIB = @LIBS@
+ 
+ LDFLAGS = @LDFLAGS@
+-LIB =  @PDLIB@
++LIB =  @LIBPD@
+ 
+ WARN_CFLAGS = -Wall -W -Wstrict-prototypes \
+     -Wno-unused -Wno-parentheses -Wno-switch
+@@ -42,14 +43,14 @@
+ 
+ ASIOOBJ = $(ASIOSRC:.cpp=.o)
+ 
+-SRC = g_canvas.c g_graph.c g_text.c g_rtext.c g_array.c g_template.c g_io.c \
++LSRC = g_canvas.c g_graph.c g_text.c g_rtext.c g_array.c g_template.c g_io.c \
+     g_scalar.c g_traversal.c g_guiconnect.c g_readwrite.c g_editor.c \
+     g_all_guis.c g_bang.c g_hdial.c g_hslider.c g_mycanvas.c g_numbox.c \
+     g_toggle.c g_vdial.c g_vslider.c g_vumeter.c \
+     m_pd.c m_class.c m_obj.c m_atom.c m_memory.c m_binbuf.c \
+     m_conf.c m_glob.c m_sched.c \
+     s_main.c s_inter.c s_file.c s_print.c \
+-    s_loader.c s_path.c s_entry.c s_audio.c s_midi.c \
++    s_loader.c s_path.c s_audio.c s_midi.c \
+     d_ugen.c d_ctl.c d_arithmetic.c d_osc.c d_filter.c d_dac.c d_misc.c \
+     d_math.c d_fft.c d_array.c d_global.c \
+     d_delay.c d_resample.c \
+@@ -57,7 +58,12 @@
+     x_time.c x_acoustics.c x_net.c x_qlist.c x_gui.c x_list.c d_soundfile.c \
+     $(SYSSRC)
+ 
+-OBJ = $(SRC:.c=.o) 
++# the main() file isn't required by libpd
++SRC = $(LSRC) s_entry.c
++
++OBJ = $(SRC:.c=.o)
++
++LOBJ = $(LSRC:.c=.o)
+ 
+ GSRC =  @GUISRC@
+ 
+@@ -123,6 +129,15 @@
+ $(PDEXEC): $(OBJ) $(BIN_DIR)
+ 	cd ../obj;  $(CC) $(LDFLAGS) $(DBG_CFLAGS) -o $(PDEXEC) $(OBJ) $(LIB)
+ 
++libpd: $(LOBJ) $(BIN_DIR)
++	cd ../obj; $(AR) r $(LIBPD) $(LOBJ)
++	@# linux
++	@#cd ../obj; $(CC) -shared -Wl,-soname,libpd.so.1 -o libpd.so.$(PD_VERSION) $(LOBJ)
++	@# mac OS
++	@#cd ../obj; $(CC) -Wl,-dylib_install_name -Wl,libpd.dylib.$(PD_VERSION) -o libpd.dylib $(LOBJ)
++	@# windows
++	@#???
++
+ $(BIN_DIR)/pd-gui: $(GOBJ) $(GSRC)
+ 	cd ../obj; $(CC) $(INCLUDE) -o $(BIN_DIR)/$(GUINAME) $(GOBJ) $(GLIB)
+ 
+--- ../../pd-0.42-5/src/makefile.in	2008-12-29 19:08:26.000000000 +0000
++++ makefile.in	2009-07-15 14:16:53.000000000 +0100
+@@ -2,6 +2,7 @@
+ OBJ_DIR = ../obj
+ BIN_DIR = ../bin
+ PDEXEC = $(BIN_DIR)/pd
++LIBPD = $(BIN_DIR)/libpd.a
+ EXT= @EXT@
+ GUINAME= @GUINAME@
+ 
+@@ -42,14 +43,14 @@
+ 
+ ASIOOBJ = $(ASIOSRC:.cpp=.o)
+ 
+-SRC = g_canvas.c g_graph.c g_text.c g_rtext.c g_array.c g_template.c g_io.c \
++LSRC = g_canvas.c g_graph.c g_text.c g_rtext.c g_array.c g_template.c g_io.c \
+     g_scalar.c g_traversal.c g_guiconnect.c g_readwrite.c g_editor.c \
+     g_all_guis.c g_bang.c g_hdial.c g_hslider.c g_mycanvas.c g_numbox.c \
+     g_toggle.c g_vdial.c g_vslider.c g_vumeter.c \
+     m_pd.c m_class.c m_obj.c m_atom.c m_memory.c m_binbuf.c \
+     m_conf.c m_glob.c m_sched.c \
+     s_main.c s_inter.c s_file.c s_print.c \
+-    s_loader.c s_path.c s_entry.c s_audio.c s_midi.c \
++    s_loader.c s_path.c s_audio.c s_midi.c \
+     d_ugen.c d_ctl.c d_arithmetic.c d_osc.c d_filter.c d_dac.c d_misc.c \
+     d_math.c d_fft.c d_array.c d_global.c \
+     d_delay.c d_resample.c \
+@@ -57,7 +58,12 @@
+     x_time.c x_acoustics.c x_net.c x_qlist.c x_gui.c x_list.c d_soundfile.c \
+     $(SYSSRC)
+ 
+-OBJ = $(SRC:.c=.o) 
++# the main() file isn't required by libpd
++SRC = $(LSRC) s_entry.c
++
++OBJ = $(SRC:.c=.o)
++
++LOBJ = $(LSRC:.c=.o)
+ 
+ GSRC =  @GUISRC@
+ 
+@@ -123,6 +129,15 @@
+ $(PDEXEC): $(OBJ) $(BIN_DIR)
+ 	cd ../obj;  $(CC) $(LDFLAGS) $(DBG_CFLAGS) -o $(PDEXEC) $(OBJ) $(LIB)
+ 
++libpd: $(LOBJ) $(BIN_DIR)
++	cd ../obj; $(AR) r $(LIBPD) $(LOBJ)
++	@# linux
++	@#cd ../obj; $(CC) -shared -Wl,-soname,libpd.so.1 -o libpd.so.$(PD_VERSION) $(LOBJ)
++	@# mac OS
++	@#cd ../obj; $(CC) -Wl,-dylib_install_name -Wl,libpd.dylib.$(PD_VERSION) -o libpd.dylib $(LOBJ)
++	@# windows
++	@#???
++
+ $(BIN_DIR)/pd-gui: $(GOBJ) $(GSRC)
+ 	cd ../obj; $(CC) $(INCLUDE) -o $(BIN_DIR)/$(GUINAME) $(GOBJ) $(GLIB)
+ 

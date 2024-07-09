@@ -1,0 +1,35 @@
+#N canvas 732 47 509 439 10;
+#X obj 16 119 pix_film;
+#X obj 16 349 pix_texture;
+#X obj 16 395 rectangle 4 3;
+#X obj 256 88 gemwin;
+#X msg 266 64 create \, 1;
+#X obj 32 64 openpanel;
+#X obj 32 42 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 256 41 0 \, destroy;
+#X obj 16 18 gemhead;
+#X obj 89 147 sel 0;
+#X msg 89 118 0;
+#X obj 79 273 hsl 128 15 0 1 0 1 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 16 151 t a a;
+#X msg 32 88 open anim-1.mov \, auto 1;
+#X obj 16 297 pix_mix 0;
+#X obj 48 230 pix_2grey;
+#X connect 0 0 12 0;
+#X connect 0 2 9 0;
+#X connect 1 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 13 0;
+#X connect 6 0 5 0;
+#X connect 7 0 3 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 0 1;
+#X connect 11 0 14 2;
+#X connect 12 0 14 0;
+#X connect 12 1 15 0;
+#X connect 13 0 0 0;
+#X connect 14 0 1 0;
+#X connect 15 0 14 1;

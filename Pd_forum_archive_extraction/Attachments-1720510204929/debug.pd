@@ -1,0 +1,12 @@
+#N canvas 204 92 452 302 12;
+#X obj 89 49 key;
+#X obj 89 88 sel 32;
+#X obj 89 118 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X msg 89 151 \; pd-empty vis \$1;
+#N canvas 0 0 452 302 empty 0;
+#X restore 257 156 pd empty;
+#X text 179 50 press space bar many times;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;

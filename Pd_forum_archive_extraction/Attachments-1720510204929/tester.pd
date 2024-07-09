@@ -1,0 +1,16 @@
+#N canvas 192 47 450 300 12;
+#X msg 162 111 set \$1\$2;
+#X obj 164 71 pack f f;
+#X msg 161 37 7 17;
+#X obj 163 178 f;
+#X obj 162 216 print;
+#X msg 199 145 717;
+#X msg 234 146 bang;
+#X msg 160 145;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;

@@ -1,0 +1,72 @@
+#N canvas 78 93 1147 528 10;
+#X msg 414 41 create \, 1;
+#X obj 414 61 gemwin;
+#X obj 94 98 gemhead;
+#X obj 94 121 b;
+#X obj 94 78 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 94 260 gemhead;
+#X msg 26 229 0;
+#X obj 26 209 loadbang;
+#X obj 94 184 t b a;
+#X obj 157 260 unpack 0 0 0;
+#X obj 94 309 translateXYZ 0 -2 0;
+#X msg 94 149 0 -2 0 \, 0 2 0;
+#X text 204 149 two messages in one;
+#X text 152 98 gemhead-"metro";
+#X obj 94 350 circle 0.2;
+#X text 40 25 The Double [gemhead] Idiom vs. [repeat];
+#X obj 438 163 gemhead;
+#X obj 438 143 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 501 325 unpack 0 0 0;
+#X text 548 214 two messages in one;
+#X obj 438 415 square 0.2;
+#X obj 533 264 select 0 1;
+#X obj 533 241 f;
+#X obj 562 241 ==;
+#X obj 438 249 t a b;
+#X obj 438 186 repeat 2;
+#X obj 438 374 translateXYZ 0 0 0;
+#X text 527 61 The gemhead object resets the states for OpenGL and
+also some pix_ settings. Anything after it is starts as a clean slate
+similar to combining [separator] and [pix_separator]. (cc);
+#X msg 533 285 0 -2 0;
+#X msg 565 305 0 2 0;
+#X obj 354 341 loadbang;
+#X msg 354 368 draw line;
+#X text 620 303 <= this one will not be at 0 2 0 \, because [translateXYZ]
+is still at 0 -2 0 \, when this message arrives \, so it just translates
+the second square back to 0 0 0;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 11 0;
+#X connect 4 0 2 0;
+#X connect 5 0 10 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 8 1 9 0;
+#X connect 9 0 10 1;
+#X connect 9 1 10 2;
+#X connect 9 2 10 3;
+#X connect 10 0 14 0;
+#X connect 11 0 8 0;
+#X connect 16 0 25 0;
+#X connect 17 0 16 0;
+#X connect 18 0 26 1;
+#X connect 18 1 26 2;
+#X connect 18 2 26 3;
+#X connect 21 0 28 0;
+#X connect 21 1 29 0;
+#X connect 22 0 23 0;
+#X connect 22 0 21 0;
+#X connect 23 0 22 1;
+#X connect 24 0 26 0;
+#X connect 24 1 22 0;
+#X connect 25 0 24 0;
+#X connect 26 0 20 0;
+#X connect 28 0 18 0;
+#X connect 29 0 18 0;
+#X connect 30 0 31 0;
+#X connect 31 0 20 0;

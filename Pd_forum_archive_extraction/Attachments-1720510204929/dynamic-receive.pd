@@ -1,0 +1,18 @@
+#N canvas 192 154 610 329 10;
+#X obj 68 62 s \$0-foo;
+#X obj 152 25 r \$0-foo;
+#X floatatom 68 24 5 0 0;
+#X floatatom 152 59 5 0 0;
+#X obj 162 193 cnv 15 100 60 empty empty \$0 20 12 256 14 -233017 -66577
+0;
+#X obj 68 214 r 1000-foo;
+#X floatatom 93 262 5 0 0;
+#X obj 368 110 s pd-dynamic-receive.pd;
+#X text 353 32 put this in an abstraction and call;
+#X text 351 48 with args then use:;
+#X msg 368 73 obj 500 200 r \$1-bla;
+#X text 47 191 change 1000 to;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 5 0 6 0;
+#X connect 10 0 7 0;

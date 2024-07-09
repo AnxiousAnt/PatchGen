@@ -1,0 +1,28 @@
+#N canvas 611 463 594 301 10;
+#X obj 82 22 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 85 49 openpanel;
+#X obj 84 223 readsf~ 2;
+#X msg 84 130 set \$1 \$2;
+#X msg 83 152 open /Users/max/mitte_beute.aif
+;
+#X obj 83 254 dac~;
+#X obj 155 199 t b b;
+#X msg 118 199 1;
+#X obj 84 110 pack s s;
+#X msg 86 89 open;
+#X obj 85 69 t b s;
+#X connect 0 0 1 0;
+#X connect 1 0 10 0;
+#X connect 2 0 5 0;
+#X connect 2 1 5 1;
+#X connect 2 2 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 6 1 4 0;
+#X connect 7 0 2 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
+#X connect 10 1 8 1;

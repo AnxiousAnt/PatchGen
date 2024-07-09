@@ -1,0 +1,21 @@
+#N canvas 738 143 1325 741 36;
+#X msg 734 354 label ⏯, f 10;
+#X obj 735 442 s cnv;
+#X obj 542 335 bng 95 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 542 335 cnv 15 95 95 empty cnv ⏯ 3 54 0 90 -233017 -66577
+0;
+#X obj 542 458 bng 95 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 125 383 send ⏯, f 7;
+#X obj 121 444 receive ⏯, f 10;
+#X floatatom 131 322 5 0 0 0 - - -;
+#X floatatom 143 514 5 0 0 0 - - -;
+#X text 402 354 [cnv]:;
+#X text 212 174 if(x ≥ y), f 12;
+#X text 108 71 check it out ➜ ⏸⏯⏹⏺⏭⏮⏩⏪⏫⏬◀️
+;
+#X connect 0 0 1 0;
+#X connect 2 0 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 5 0;

@@ -1,0 +1,177 @@
+Index: src/Base/GemMan.cpp
+===================================================================
+RCS file: /cvsroot/pd-gem/Gem/src/Base/GemMan.cpp,v
+retrieving revision 1.59
+diff -r1.59 GemMan.cpp
+792a793,808
+>   //test to see if stereo is supported if we're trying to do stereo
+>   GLboolean stereoTest;
+>   glGetBooleanv (GL_STEREO, &stereoTest);
+>   if(m_stereo == 3){
+>     if(!stereoTest){
+>       post("you've selected Crystal Glasses Stereo but your graphics card isn't set up for stereo, setting stereo=0");
+>       //GetMyClass(data)->error("you've selected Crystal Glasses Stereo but your graphics card isn't set up for stereo, setting stereo=0");
+>       m_stereo = GemMan::m_stereo = 0;
+>     }
+>   } else if(stereoTest) {
+>     //clear out the right buffer and select the left buffer for drawing
+> 	  glDrawBuffer(GL_BACK_RIGHT);
+> 	  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+> 	  glDrawBuffer(GL_BACK_LEFT);
+>   }
+> 
+959a976,1037
+>     case 3: // Crystal Eyes Stereo
+>       {
+>         int xSize = m_w;
+>         int ySize = m_h;
+>         float xDivy = (float)xSize / (float)ySize;
+> 
+>         // setup the left viewpoint
+> 
+>         // setup the matrices
+>         glMatrixMode(GL_PROJECTION);
+>         glLoadIdentity();
+>         glFrustum(GemMan::m_perspect[0] * xDivy, GemMan::m_perspect[1] * xDivy, // left, right
+>             GemMan::m_perspect[2], GemMan::m_perspect[3],     // bottom, top
+>             GemMan::m_perspect[4], GemMan::m_perspect[5]);      // front, back
+> 
+>         glMatrixMode(GL_MODELVIEW);
+>         glDrawBuffer(GL_BACK_LEFT);
+>         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+> 
+>         glLoadIdentity();
+>         gluLookAt(m_lookat[0] - m_stereoSep / 100.f, m_lookat[1], m_lookat[2], m_lookat[3], m_lookat[4],
+>             m_lookat[5] + m_stereoFocal, m_lookat[6], m_lookat[7], m_lookat[8]);
+> 
+>         // render left view
+>         fillGemState(currentState);
+>         renderChain(s_linkHead, &currentState);
+>         glMatrixMode(GL_MODELVIEW);
+>         glLoadIdentity();
+>         gluLookAt(0 - m_stereoSep / 100.f, 0, 4, 0, 0, 0 + m_stereoFocal, 0, 1, 0);
+>         renderChain(s_linkHead_2, &currentState);
+> 
+>         // setup the right viewpoint
+>         glClear(GL_DEPTH_BUFFER_BIT & m_clear_mask);
+> 
+>         // setup the matrices
+>         glMatrixMode(GL_PROJECTION);
+>         glLoadIdentity();
+>         glFrustum(GemMan::m_perspect[0] * xDivy, GemMan::m_perspect[1] * xDivy, // left, right
+>             GemMan::m_perspect[2], GemMan::m_perspect[3],     // bottom, top
+>             GemMan::m_perspect[4], GemMan::m_perspect[5]);      // front, back
+> 
+>         glMatrixMode(GL_MODELVIEW);
+>         glDrawBuffer(GL_BACK_RIGHT);
+>         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+> 
+>         glLoadIdentity();
+>         gluLookAt(m_lookat[0] + m_stereoSep / 100.f, m_lookat[1], m_lookat[2], m_lookat[3], m_lookat[4],
+>             m_lookat[5] + m_stereoFocal, m_lookat[6], m_lookat[7], m_lookat[8]);
+> 
+>         // render right view
+>         fillGemState(currentState);
+>         currentState.tickTime=0.f;
+>         renderChain(s_linkHead, &currentState);
+> 
+>         glMatrixMode(GL_MODELVIEW);
+>         glLoadIdentity();
+>         gluLookAt(0 + m_stereoSep / 100.f, 0, 4, 0, 0, 0 + m_stereoFocal, 0, 1, 0);
+>         renderChain(s_linkHead_2, &currentState);
+> 
+>         glColorMask(GL_TRUE,GL_TRUE,GL_TRUE,GL_TRUE);
+>       }
+>       break;
+Index: src/Base/GemWinCreateXWin.cpp
+===================================================================
+RCS file: /cvsroot/pd-gem/Gem/src/Base/GemWinCreateXWin.cpp,v
+retrieving revision 1.20
+diff -r1.20 GemWinCreateXWin.cpp
+40a41,51
+> static int snglBuf24Stereo[] = {GLX_RGBA, 
+>                           GLX_RED_SIZE, 8, 
+>                           GLX_GREEN_SIZE, 8, 
+>                           GLX_BLUE_SIZE, 8, 
+>                           GLX_DEPTH_SIZE, 16, 
+>                           GLX_STENCIL_SIZE, 8, 
+>                           GLX_ACCUM_RED_SIZE, 8,
+>                           GLX_ACCUM_GREEN_SIZE, 8,
+>                           GLX_ACCUM_BLUE_SIZE, 8,
+> 								  GLX_STEREO,
+>                           None};
+51a63,74
+> static int dblBuf24Stereo[] =  {GLX_RGBA, 
+>                           GLX_RED_SIZE, 4, 
+>                           GLX_GREEN_SIZE, 4, 
+>                           GLX_BLUE_SIZE, 4, 
+>                           GLX_DEPTH_SIZE, 16, 
+>                           GLX_STENCIL_SIZE, 8, 
+>                           GLX_ACCUM_RED_SIZE, 8,
+>                           GLX_ACCUM_GREEN_SIZE, 8,
+>                           GLX_ACCUM_BLUE_SIZE, 8,
+>                           GLX_DOUBLEBUFFER, 
+> 								  GLX_STEREO,
+>                           None};
+57a81,87
+> static int snglBuf8Stereo[] =  {GLX_RGBA, 
+>                           GLX_RED_SIZE, 3, 
+>                           GLX_GREEN_SIZE, 3, 
+>                           GLX_BLUE_SIZE, 2, 
+>                           GLX_DEPTH_SIZE, 16, 
+> 								  GLX_STEREO,
+>                           None};
+65a96,103
+> static int dblBuf8Stereo[] =   {GLX_RGBA, 
+>                           GLX_RED_SIZE, 1, 
+>                           GLX_GREEN_SIZE, 2, 
+>                           GLX_BLUE_SIZE, 1, 
+>                           GLX_DEPTH_SIZE, 16, 
+>                           GLX_DOUBLEBUFFER, 
+> 								  GLX_STEREO,
+>                           None};
+139,140c177,180
+<     // try for a double-buffered on 24bit machine
+<     vi = glXChooseVisual(info.dpy, info.screen, dblBuf24);
+---
+>     // try for a double-buffered on 24bit machine (try stereo first)
+>     vi = glXChooseVisual(info.dpy, info.screen, dblBuf24Stereo);
+> 	 if (vi == NULL)
+> 		 vi = glXChooseVisual(info.dpy, info.screen, dblBuf24);
+142,143c182,185
+<       // try for a double buffered on a 8bit machine
+<       vi = glXChooseVisual(info.dpy, info.screen, dblBuf8);
+---
+>       // try for a double buffered on a 8bit machine (try stereo first)
+>       vi = glXChooseVisual(info.dpy, info.screen, dblBuf8Stereo);
+> 		if(vi == NULL)
+> 			vi = glXChooseVisual(info.dpy, info.screen, dblBuf8);
+154,155c196,199
+<     // try for a single buffered on a 24bit machine
+<     vi = glXChooseVisual(info.dpy, info.screen, snglBuf24);
+---
+>     // try for a single buffered on a 24bit machine (try stereo first)
+>     vi = glXChooseVisual(info.dpy, info.screen, snglBuf24Stereo);
+> 	 if (vi == NULL)
+> 		 vi = glXChooseVisual(info.dpy, info.screen, snglBuf24);
+157,158c201,204
+<       // try for a single buffered on a 8bit machine
+<       vi = glXChooseVisual(info.dpy, info.screen, snglBuf8);
+---
+>       // try for a single buffered on a 8bit machine (try stereo first)
+>       vi = glXChooseVisual(info.dpy, info.screen, snglBuf8Stereo);
+> 		if (vi == NULL)
+> 			vi = glXChooseVisual(info.dpy, info.screen, snglBuf8);
+Index: src/Controls/gemwin.cpp
+===================================================================
+RCS file: /cvsroot/pd-gem/Gem/src/Controls/gemwin.cpp,v
+retrieving revision 1.28
+diff -r1.28 gemwin.cpp
+571,572c571,572
+<   if (mode<0 || mode>2){
+<     GetMyClass(data)->error("possible stereo-modes are: 0, 1, 2");
+---
+>   if (mode<0 || mode>3){
+>     GetMyClass(data)->error("possible stereo-modes are: 0, 1, 2, 3");
+574a575
+> 

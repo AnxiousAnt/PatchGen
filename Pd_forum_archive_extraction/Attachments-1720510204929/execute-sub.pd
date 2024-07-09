@@ -1,0 +1,33 @@
+#N canvas 285 273 562 515 10;
+#N canvas 1 50 450 300 sub 0;
+#X obj 113 105 r A;
+#X obj 113 139 print A-Inside-sub;
+#X connect 0 0 1 0;
+#X restore 201 104 pd sub;
+#X obj 155 61 s A;
+#X obj 155 34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 265 101 r A;
+#X obj 265 138 print A-Outside-1;
+#X obj 150 99 r A;
+#X obj 150 136 print A-Outside-2;
+#X obj 152 230 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 152 257 s B;
+#N canvas 1 50 450 300 sub-B 0;
+#X obj 114 93 inlet;
+#X obj 114 170 print B-inside-Inlet;
+#X connect 0 0 1 0;
+#X restore 170 373 pd sub-B;
+#X obj 151 395 print B-Outside-1;
+#X obj 190 350 print B-Outside-2;
+#X obj 151 324 t b b b;
+#X obj 151 299 r B;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 12 0 10 0;
+#X connect 12 1 9 0;
+#X connect 12 2 11 0;
+#X connect 13 0 12 0;

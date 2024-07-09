@@ -1,0 +1,89 @@
+#N canvas 857 0 496 635 10;
+#X obj 42 140 metro 500;
+#X obj 42 120 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 103 65 s tempo;
+#X obj -9 49 loadbang;
+#X obj 291 6 midirealtimein;
+#X obj 369 64 mod 96;
+#X obj 393 43 + 1;
+#X obj 369 43 f;
+#X obj 291 26 select 248;
+#X obj 369 85 select 0;
+#X obj 166 61 mod 24;
+#X obj 166 81 select 0;
+#X msg 45 48 150;
+#X obj 93 119 r tempo;
+#X obj 166 101 s quarter;
+#X obj 369 105 s bar;
+#X obj 247 60 mod 12;
+#X obj 313 60 mod 6;
+#X obj 313 101 s 16th;
+#X obj 247 100 s eigth;
+#X text -2 362 The message that controls the playback rate (ie \, ultimately
+tempo) is MIDI Clock. This is sent by the master at a rate dependent
+upon the master's tempo. Specifically \, the master sends 24 MIDI Clocks
+\, spaced at equal intervals \, during every quarter note interval.(12
+MIDI Clocks are in an eighth note \, 6 MIDI Clocks in a 16th \, etc).
+Therefore \, when a slave device counts down the receipt of 24 MIDI
+Clock messages \, it knows that one quarter note has passed. When the
+slave counts off another 24 MIDI Clock messages \, it knows that another
+quarter note has passed.;
+#X obj 236 174 timer;
+#X obj 270 217 mean;
+#X floatatom 270 241 5 0 0 0 - - -;
+#X msg 324 200 clear;
+#X obj 236 134 mod 4;
+#X obj 236 153 select 0 3;
+#X text -1 483 For example \, if a master is set at a tempo of 120
+BPM (ie \, there are 120 quarter notes in every minute) \, the master
+sends a MIDI clock every 20833 microseconds. (ie \, There are 100 microseconds
+in a second. Therefore \, there are 6000 microseconds in a minute.
+At a tempo of 120 BPM \, there are 120 quarter notes per minute. There
+are 24 MIDI clocks in each quarter note. Therefore \, there should
+be 24 * 120 MIDI Clocks per minute. So \, each MIDI Clock is sent at
+a rate of 600000/(24 * 120) microseconds).;
+#X msg 79 234 600000 \$1;
+#X floatatom 79 297 5 0 0 0 - - -;
+#X obj 79 254 /;
+#X obj 79 275 / 12;
+#X obj 246 81 select 0;
+#X obj 313 81 select 0;
+#X obj 271 262 s tempo;
+#X text 174 277 for setting metro or delays etc aprroximtl;
+#X text 121 296 beats per minute;
+#X obj 236 195 * 6.55;
+#X connect 1 0 0 0;
+#X connect 3 0 12 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 1;
+#X connect 7 0 5 0;
+#X connect 7 0 10 0;
+#X connect 7 0 16 0;
+#X connect 7 0 17 0;
+#X connect 7 0 25 0;
+#X connect 8 0 7 0;
+#X connect 9 0 15 0;
+#X connect 9 0 24 0;
+#X connect 10 0 11 0;
+#X connect 11 0 14 0;
+#X connect 12 0 2 0;
+#X connect 13 0 0 1;
+#X connect 16 0 32 0;
+#X connect 17 0 33 0;
+#X connect 21 0 37 0;
+#X connect 22 0 23 0;
+#X connect 22 0 28 0;
+#X connect 22 0 34 0;
+#X connect 24 0 22 0;
+#X connect 25 0 26 0;
+#X connect 26 0 21 0;
+#X connect 26 1 21 1;
+#X connect 28 0 30 0;
+#X connect 30 0 31 0;
+#X connect 31 0 29 0;
+#X connect 32 0 19 0;
+#X connect 33 0 18 0;
+#X connect 37 0 22 0;

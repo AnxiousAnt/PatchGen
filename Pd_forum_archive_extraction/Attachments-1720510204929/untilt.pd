@@ -1,0 +1,19 @@
+#N canvas 404 165 450 300 10;
+#X obj 185 172 print;
+#X obj 278 174 print EOG;
+#X obj 142 102 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 236 100 random 20;
+#X floatatom 285 143 5 0 0 0 - - -;
+#X obj 185 41 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 185 67 metro 200;
+#X obj 184 142 mycount 0 20;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 3 0 7 2;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 7 1 1 0;
+#X connect 7 1 3 0;

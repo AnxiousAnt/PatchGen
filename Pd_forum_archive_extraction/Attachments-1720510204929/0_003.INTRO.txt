@@ -1,0 +1,667 @@
+The "reference" section of the documentation should contain a patch 
+demonstrating how to use each of Pd's classes.  As of version 0.29, a complete
+list of "object" classes follows.  Not included in this list are messages,
+atoms, graphs, etc. which aren't typed into object boxes but come
+straight off the "add" menu.
+
+---------------------------- GLUE --------------------------------
+bang      - output a bang message
+change (+g) - remove repeated numbers from a stream
+float     - store and recall a number
+int       - store and recall an integer
+makefilename - format a symbol with a variable field
+moses     - part a numeric stream
+pack      - make compound messages
+print     - print out messages
+receive   - catch "sent" messages
+route     - route messages according to first element
+swap      - swap two numbers
+select    - test for matching numbers or symbols
+send      - send a message to a named object
+spigot    - interruptible message connection
+symbol    - store and recall a symbol
+trigger   - sequence and convert messagess
+unpack    - get elements of compound messages
+until     - looping mechanism
+value     - shared numeric value
+;
+add2_comma (ie) - add a comma-separated message to a messagebox
+allow (mx)	- lets only "allowed" floats or symbols through
+alternate (g)	- alternate between two outlets
+any (Pie)	- store and recall any message (like f, or symbol)
+any2list / a2l (z)	- convert "anythings" to "lists"
+atoi (z)	- ascii to integer
+bpe (ie)	- break point envelope controller
+choice (P)	- search for a best match to an incoming list
+counter (g)	- counts the number of bangs
+default (Pie)	- replace initial-argument, if it is zero
+demultiplex (z)	- demultiplex the input to a specified outlet
+deny (ms)	- blocks "denyed" floats or symbols
+dist (mx)	- send data to a list of receive objects
+dollarg (ie)	- receive parent initial-arguments (abbr. $n)
+drip (z)	- extract the atoms of a package (opt. scheduled)
+dsp (Pie)	- control audio-engine, calculate dsp-performance (aka. dsp~)
+edge (mx)	- detect rising or falling edge in floats
+exp_inc (ie)	- exponential increment counter (bang triggered)
+fifo (mx)	- first in first out buffer for floats
+fifop (z)	- list FIFO with priorities
+float24 (ie)	- store a 24-bit accurate float-number
+for++	(ie)	- incremental counter (triggered by internal metro)
+gate (ie)	- interruptible message connection (like spigot)
+glue (z)	- append a package to another (glue them together)
+ iem_anything (ie) - latch for anything
+iem_append (Pie) - append a message to any messages (obsolete: merge_any)
+iem_i_route (ie) - variation of route (abbr. iiroute)
+iem_prepend (Pie) - prepend a message to any messages (abbr. pp or prepend)
+iem_receive (Pie) - catch "sent" messages (receive-name-input) (abbr. iem_r)
+iem_route (ie) - improvement of route
+iem_sel_any (ie) - control a message-box with multiple content
+iem_send (Pie) - send messages to named object (send-name-input)(ab. iem_s)
+ignore (mx)    - lets information through only when it was present at input longer than N ms
+index (z)      - map symbols to indices
+init (ie)      - initialize a message via loadbang (abbr. ii)
+iso (mx)       - queues up lists of pitches and attack points
+knob
+length (z)     - get the length of a list
+lifo (mx)      - last in first out buffer for floats
+lifop (z)      - list LIFO with priorities
+lister (z)     - store lists (like "float" for floats)
+list2int (z)   - cast each float of a list to integer
+list2send (ie) - array of send-objects
+list2symbol	(z) - convert a list into a single symbol
+listfifo (mx)  - first in first out buffer for lists
+listfunnel (mx) - send values out as list with source index
+lpt (z)         - write to the (parallel) port (linux only)
+kalashnikov - serialize bangs
+makesymbol (z) - concatenate lists to formatted symbols
+match (mx)     - outputs a list when a list of input values matches the creation arguments
+mergefilename (ie) - merge a list of symbols together
+modulo_counter (ie) - endless loop counter (bang triggered)
+multiselect/multisel (g) - a select object which accepts a list in the right inlet
+nchange (mx)   - a "new" [change]
+niagara (z)    - split 1 packages into 2
+nop (zA)        - no-operation
+nroute (mx)    - rout if Nth element is matched
+once (Pie)     - any message pass through only the first time
+oneshot (g)    - send a bang, then block until reset
+packel (z)     - get a specified element of a list
+pique (P)      - find peaks in an FFT spectrum - 0.1
+pre_inlet (ie) - output an identifier-message and then the incoming message
+prepend_output (ie) - an identifier-message and then the incoming message
+receive2list (Pie) - array of receive-objects
+remote (mx)    - send data to any receive object
+repack (z)     - (re)pack atoms to packages of a given size
+ sl / rl (ge)  - send messages locally per canvas
+scrolllist     - displays and scrolls a text in  a patch window
+ sendlocal / receivelocal (ge)
+serialize (ge) - turn a stream of floats into a list
+subst (mx)     - self-similar substitution/diminution of rows
+segregate (zA)  - segregate the input to various outlets, depending on the type
+slider (ge)    - slider from ggee
+sort (z)       - shell-sort a list of floats
+soundfile_info (ie) - output header-info of a wav-file
+speedlim (ie) (mx) - reduce speed of a numeric stream
+split3 (Pie)   - part a numeric stream into 3 ways
+split (ie) (mx) - part a numeric stream into 2 ways (like moses)
+splitfilename (ie) - divide a symbol into 2 parts
+state (ge)     - saves settings in a patch to a file
+strcmp (z)     - compare lists as strings
+stripfilename (ie) - strip n characters of a symbol
+sync (mx) - extended trigger object based on sync from jMax
+ t3_bpe (ie)  - t3_break-point-envelope message-controller
+temperature (mx) - output number of input changes in N ms
+ticker (ge)    - toggle from ggee
+tilt (mx)      - measure "tilt" of input
+toddle (ge)    - bang that routes messages through
+toggle_mess (ie) - control a message-box with multiple content (abbr. tm)
+transf_fader (ie) - partial linear characteristic diagram (like table)
+unroute (mx)   - merges all inputs into one output and prepend an identifier
+unsymbol (ie)  - convert a symbol- to a anything-message
+uzi - serialize bangs
+v2db (ie) - rms to db
+ unsymbol (ie) - converts symbol to anything
+unwonk (ge)    - unpack which sends unused symbols to the last outlet
+xerox
+
+------------------------------ TIME ----------------------------------
+delay -   send a message after a time delay
+metro -   send a message periodically
+line -    send a series of linearly stepped numbers
+timer -   measure time intervals
+cputime - measure CPU time
+realtime - measure real time
+pipe -    dynamically growable delay line for numbers
+;
+ bpm (Pm) - calculate meanvalue of times between clicks
+ clock (Pm) - show (simple) clock
+date (z) - get system date
+exciter - controls a list of bang-events scheduled in time - 0.2
+ for++ (ie) - increment- or decrement-counter
+ help-timeconvert (Pm) - shows conversion of hertz, milliseconds, bpm, ...
+ metroplus (mj) - allows complex timing bangs to be delivered
+ monorhythm (mj) - basic rhythm pattern building blocks that allows polyrhthms to be generated quickly and easily
+ prob (mj) - generates random events with a given probability
+pulse (mx) - a better metro
+speedlim (mx) (ie) - float-message-speed-limiter
+step (mx) - output sequence of numbers (similar to "line")
+time (z) - get system time
+timebang (mx) - send out bangs at given times of day
+t3_bpe (ie) - time tagged trigger break point envelope
+t3_delay (ie) - time tagged trigger delay
+t3_metro (ie) - time tagged trigger metronom
+t3_timer (ie) - time tagged trigger timer
+tripleLine (g) - line object for 3 values
+urn (z) (mx) - unique random numbers
+velocity (mx) - get velocity of digits per second
+
+------------------------------ MATH ----------------------------------
++ - * / pow                                      arithmetic
+== != > < >= <=                                  relational tests
+& && | || %                                      bit twiddling
+mtof ftom powtodb rmstodb dbtopow dbtorms        convert acoustical units
+mod div sin cos tan atan atan2 sqrt log exp abs  higher math
+random                                           lower math
+max min                                          greater or lesser of 2 numbers
+clip                                             force a number into a range
+;
+. (z) - scalar multiplication of vectors (=lists of floats)
+1/x / inv - takes the inverse of the input
+ about (mj)   - delivers a number that is "about" the same as the input number
+average (g) (mx) - calculates the average of the last N items (floats)
+beta (mx) - beta distributed random numbers
+bilex (mx) - bilinear exponentionally distributed random numbers
+cart2pol (zA) - convert cartesian coordinates to polar
+cart2sph (zA) - convert cartesian coordinates to spheric
+cauchy (mx) - cauchy distributed random numbers
+db2v (ie) - db to rms
+dbtofad (Pie) - midi-db to fader-characteristic
+deg2rad (zA) - convert degree to radiant
+delta (mx) - calculate 1st or 2nd order difference
+divide (mx) - like "/" but calculates result when second inlet is changed
+divmod (mx) - calculates division and modulo
+expo (ms) - exponentially distributed random numbers
+expr (P) - expression evaluation - 0.4
+ f2note (ie) - frequency to [midi + note + cents]-converter
+fadtodb (Pie) - fader-characteristic to midi-db
+fadtorms (Pie) - fader-characteristic to rms
+f2note (ie) - frequency to midi+cents+note
+gauss (mx) - gauss distributed random numbers
+history (mx) - calculates the average of the items (floats) that came in within the last N seconds
+invert (g) - non-zero numbers to 0, 0 to 1
+limit (mx) - limits input to lie between boundaries
+linear (mx) - linearly distributed random numbers
+mavg (z) - moving average filter for floats
+mean (zA) - get the mean value of a list of floats
+minmax (z) - get minimum and maximum of a list of floats
+minus (mx) - like "-" but calculates result when leftmost or second inlet is changed
+mlife (mx) - cellular automata object
+multi (mx) - like "*" but calculates result when leftmost or second inlet is changed
+ n2m (mj) - note to midi
+plus (mx) - like "+" but calculates result when leftmost or second inlet is changed
+poisson (mx) - poisson distributed random numbers
+pol2cart (zA) - convert polar coordinates to cartesian
+pol2sph (zA) - convert polar coordinates to spheric
+prime (z) - test whether a number is prime or not
+rad2deg (zA) - convert radiant to degree
+randomF randF (g) - floating point random number
+rewrap (mx) - wraps floats back and forth into a range
+rmstofad (Pie) - rms to fader-characteristic
+round_zero (ie) - round numbers near zero to zero
+ runden (Pm) - set numbers behind the comma
+scale (g) (mx) - scale input from a certain input range to lie between output boundaries
+shuffle (mo) - a no-repeat random generator
+sph2cart (zA) - convert spheric coordinates to cartesian
+sph2pol (zA) - convert spheric coordinates to polar
+sum (z) - get the sum of a list of floats
+triang (mx) - triangularly distributed random numbers
+tripleRand (g) - three random numbers
+ v2db (ie) - value to dB converter
+v+ v- v* v/ (g) - math on a list of numbers
+vectorabs / vabs (g) - computes the absolute value on a list of numbers
+vectorpack / vpack (g) - appends one value in the end of a list
+wrap (ie) (mx) - wraparound
+wrap (z) - wrap the float-input between to boundaries
+weibull (mx) - weibull distributed random numbers
+
+------------------------------ MIDI ----------------------------------
+notein ctlin pgmin bendin touchin polytouchin midiin sysexin - MIDI input
+noteout ctlout pgmout bendout touchout polytouchout midiout  - MIDI output
+makenote -  schedule a delayed "note off" message corresponding to a note-on
+stripnote - strip "note off" messages
+;
+beat (mx) - beat tracker
+borax (mx) - analyse incoming midi notes - 0.1
+chord (mx) - tries to detect chords
+gestalt (mx) - gestalt detection for monophonic melodies
+pitch (mx) - get info about pitch
+rhythm (mx) - detects the beat of rhythmic patterns
+score (mx) - score follower that tries to match incoming MIDI data to a score stored in an array
+
+------------------------------ TABLES----------------------------------
+tabread -    read a number from a table
+tabread4 -   read a number from a table, with 4 point interpolation
+tabwrite -   write a number to a table
+soundfiler - read and write tables to soundfiles
+;
+envgen (ge) - (not so) simple envelope generator
+pianoroll - graphical sequencer controller - 0.3
+tabdump (z) - dump out a table as a list of floats
+tabminmax (z) - get minimum and maximum of a table
+tabread4 (z) - interpolating tabread (obsolete since pd>=0.30)
+tabset (z) - set a table with a list of floats
+
+------------------------------ MISC ----------------------------------
+loadbang -   bang on load
+serial -     serial device control for NT only
+netclient (mx) - simple client that connects to netserver or pd's native netreceive object
+netdist (mx) - distribute data to several netreceive
+netrec (mx) - ?report of netsend connections?
+netsend - send messages over the internet
+netserver (mx) - netclient
+netreceive - receive them
+qlist -      message sequencer
+textfile -   file to message converter
+openpanel -  "Open" dialog
+savepanel -  "Save as" dialog
+bag -        set of numbers
+poly -       polyphonic voice allocation
+key, keyup - numeric key values from keyboard
+keyname -    symbolic key name
+;
+getenv (mo) - sends value of an environment variable argument on bang
+ init (ie) - initialize by loadbang <anything>
+grid
+hsv2rgb, rgb2hsv (g) - convert between RGB and HSV colour space
+iem_pbank_csv (ie) - parameter memory manager (csv-format) (like textfile)
+mapper
+msgfile (z)  - a powerful "textfile" derivative
+operating_system (z) - get the current OS
+stripdir (ge) - strips all leading directories from a path
+system (mo) - send a system message to the console
+vbap (ge) - vector-based amplitude panning external
+ qread (ge) - ???
+ rtout (ge) - ???
+ sinh (ge) - ???
+ unserialize (ge) - ???
+
+;---------------------- PD Container 0.2 -------------------------
+[noch zu dokumentieren]
+h_deque
+h_list
+h_map
+h_multimap
+h_multiset
+h_priority_queue
+h_queue
+h_set
+h_stack
+h_vector
+
+;------------------------- matrix -------------------------------
+matrix (z) - create/store/... matrices
+mtx_.* (z) - multiply 2 matrices element by element
+mtx_./ (z) - divide 2 matrices element by element
+mtx_add, mtx_+ (z) - add 2 matrices (or an offset to 1 matrix)
+mtx_check (z) - check the consistency of a matrix and repair
+mtx_col (z) - set columns of a matrix
+mtx_diag (z) - get the diagonal of a matrix
+mtx_diegg (z) - diagonal matrix (from upper-right to lower-left)
+mtx_egg (z) - identity matrix (from upper-right to lower-left)
+mtx_element (z) - set elements of a matrix
+mtx_eye (z) - identity matrix
+mtx_inverse (z) - get the inverse of a matrix
+mtx_mean (z) - get the mean value of each column
+mtx_mul, mtx_* (z) - multiply 2 matrices (or a factor with 1 matrix)
+mtx_ones (z) - matrix with all elements==1
+mtx_pivot (z) - pivot-transform a matrix
+mtx_print (z) - print a matrix to the stderr
+mtx_resize (z) - resize a matrix (evtl. with zero-padding)
+mtx_rand (z) - matrix with random elements
+mtx_roll (z) - column-shift a matrix
+mtx_row (z) - set rows of a matrix
+mtx_scroll (z) - row-shift a matrix
+mtx_size (z) - get the size of a matrix
+mtx_trace (z) - get the trace of a matrix
+mtx_transpose (z) - transpose a matrix
+mtx_zeros (z) - matrix with all elements==0
+
+;------------------------- vasp_modular -------------------------------
+"vasp" Hilfe hervorrufen
+
+-------------------------- AUDIO GLUE ----------------------------------
+adc~ -      audio input
+dac~ -      audio output
+bang~ -     send a bang message after each DSP block
+block~ -    specify block size and overlap
+catch~ -    define and read a summing bus
+throw~ -    add to a summing bus
+env~ -      envelope follower
+line~ -     generate audio ramps
+threshold~ - detect signal thresholds
+snapshot~ - sample a signal (convert it back to a number)
+samplerate~ get the sample rate
+readsf~ -   soundfile playback from disk (UNIX only.)  <-- VERWENDEN
+receive~ -  get signal from send~
+send~ -     nonlocal signal connection with fanout
+switch~ -   switch DSP computation on and off
+writesf~ -  record sound to disk (UNIX only.)  <-- VERWENDEN
+sig~ -      convert numbers to audio signals
+;
+blockmirror~ (z) - time-reverse a signal-vector (1,2,...,64 -> 64,63,...,1)
+blockswap~ (z) - swap the upper and lower half of a signal-vector
+cooled~ - sound editor - 0.11
+dfreq~ (z) - frequency detector
+envrms~ (z) - like env~, but outputting rms instead of dB
+fade~ (ie) - fade-in fade-out shaper (need line~)
+iem_blocksize~ (ie) - blocksize of a window in samples
+iem_samplerate~ (ie) - samplerate of a window in Hertz
+int_fract~ (Pie) - split signal-float to integer- and fractal-part
+mp3play~ (ie) - mp3 stereo player
+pack~ (z) - convert a signal to a list of floats
+unpack~ (z) - convert a list of floats to a signal
+oggamp~ - 
+oggcast~ - 
+ogglive~ - 
+patcher~ - 16x16 patchbay inspired by Synthi AKS - 0.3
+pdf~ (z) - probability density function 
+peakenv~ (ie) - peak envelope shaper
+polygate~ (mo) - switch between multiple signal inputs
+prvu~ (ie) - peak and rms VU-meter interface
+pvu~ (ie) - peak VU-meter interface
+rvu~ (ie) - rms VU-meter interface
+ rlshift~ (P) - shift signal vector elements left or right
+sfplay (z) - play back (multi-channel) soundfiles  <-- NICHT VERWENDEN
+sfrecord (z) - record (multichannel) soundfiles  <-- NICHT VERWENDEN
+sfread~  <-- NICHT VERWENDEN
+sfwrite~  <-- NICHT VERWENDEN
+sigzero~ (z) - detects whether a signal is zero throughout the vector or not
+spigot~ - signal router - 0.11
+tavg~ (z) - arithmetic mean between two bangs
+t3_sig~ (ie) - time tagged trigger sig~
+t3_line~ (ie) - time tagged trigger line~
+unsig~ (Pie) - signal to float converter
+xgroove~ (xs)
+xrecord~ (xs)
+xplay~ (xs)
+
+-------------------------- AUDIO MATH ----------------------------------
++~ -~ *~ /~ arithmetic on audio signals
+max~ min~ - maximum or minimum of 2 inputs
+clip~ -     constrict signal to lie between two bounds
+q8_rsqrt~ - cheap reciprocal square root (beware -- 8 bits!)
+q8_sqrt~ -  cheap square root (beware -- 8 bits!)
+wrap~ -     wraparound (fractional part, sort of)
+fft~ -      complex forward discrete Fourier transform
+ifft~ -     complex inverse discrete Fourier transform
+rfft~ -     real forward discrete Fourier transform
+rifft~ -    real inverse discrete Fourier transform
+framp~ -    output a ramp for each block
+mtof~, ftom~, rmstodb~, dbtorms~, rmstopow~, powtorms~ - acoustic conversions
+;
+>~, <~, ==~, &&~, ||~ (z) - logical operators
+abs~ (g) (z) - absolute value of a signal
+addl~ (Pie) - signal-addition with line~
+atan2~ (ge) - get the phase from a imaginary value of the fft
+avg~ (z) - arithmetic mean of 1 signal-vector
+divl~ (Pie) - signal-divison with line~
+exp~ log~ (ge) - signal math
+expr~ (P) - expression evaluation - 0.4
+fexpr~ (P) - expression evaluation - 0.4
+ln~ (mo) - natural log + inverse
+ m2f~ (ie) - signal-midi-to-frequency-converter
+mull~ (Pie) - signal-multiplication with line~
+multiline~ (z) - line~d multiplication of multiple signals
+pol2rec~ (mo) - inverse of rec2pol~
+rec2pol~ (mo) - convert rectangular coordinates to polar
+round~ (Pie) - round signal-float to nearest integer
+sgn~ (z) - signum of a signal
+sin_phase~ (ie) - output phase-difference of 2 sinewaves in samples
+subl~ (Pie) - signal-subtraction with line~
+ t3_sig~ (ie) - convert numbers to signal with sample-accuracy
+
+-------------------- AUDIO OSCILLATORS AND TABLES ------------------------
+phasor~ -   sawtooth oscillator
+cos~ -      cosine
+osc~ -      cosine oscillator
+tabwrite~ - write to a table
+tabplay~ -  play back from a table (non-transposing)
+tabread~ -  non-interpolating table read
+tabread4~ - four-point interpolating table read
+tabsend~ -  write one block continuously to a table
+tabreceive~ read one block continuously from a table
+;
+ agogo~ (p)
+ bamboo~ (p)
+ blotar~ (p)
+bonk~ (P) - attack detector for small percussion instruments - 1.1 Test3
+ bowed~ (p)
+ bowedbar~ (p)
+ brass~ (p)
+buzz~ - subctractive synthesis without filters
+ cabasa~ (p)
+ chase~ (p) -  uses a sync signal to determine who gets out which outlet
+ clarinet~ (p)
+ dcblock~ (p) - blocks DC components in audio signals
+dirac~ (z) - dirac-pulse
+ escalator~ (p)
+fiddle~ (P) - pitch estimator and sinusoidal peak finder - 1.1 Test4
+ flute~ (p)
+ formant~ - formant synthesis
+ gq~ (p) - equalizer with variable number of filter banks
+ guiro~ (p)
+LFO_noise~ (ie) - downsampled 2-point interpolated white noise
+loop~ (P) - phase generator for looping samples (test-loop~.pd)
+lrshift~ (P) - shift signal vector elements left or right
+ mandolin~ (p)
+ marimba~ (p)
+ morse (mj)
+ munger~ (p) - granular sampling instrument
+noish~ (z) - downsampled noise (hold)
+noisi~ (z) - downsampled noise (interpolate)
+paf~ 0.06
+pink~ (Pie) - pink noise
+ plucked~ (p)
+ rechteck~ (Pm) - a squarewave-generator
+ scrub~ (p)
+ sinesum (Pm) - examples of sinesum
+ sleigh~ (p) - sleigh bell
+step~ (z) - unity step
+susloop~ - another phase generator for sample looping
+syncgrain~ - implements synchronous granular synthesis
+ vibraphone~ (p)
+ testsig~ (Pm) - choose noise, osc, phasor by clicking
+
+;------------------ AUDIO WINDOWING -----------------------
+hanning~
+hamming~
+blackman~
+connes~
+cosine~
+bartlett~
+welch~
+lanczos~
+gaussian~
+kaiser~
+
+-------------------- AUDIO FILTERS ------------------------
+vcf~ -      voltage controlled filter
+noise~ -    white noise generator
+hip~ -      high pass filter
+lop~ -      low pass filter
+bp~ -       band pass filter
+biquad~ -   raw filter
+bandpass, equalizer, highpass, highshelf, hlshelf, lowpass, lowshelf, notch (ge) - parameters for biquad~
+samphold~ - sample and hold unit
+print~ -    print out one or more "blocks"
+;
+1p1z (Pie) - float-message-filter 1.order
+aenv~ - asymptotic ADSR envelope generator
+ allpass~
+ap1~ (Pie) - allpass 1.order
+ap2~ (Pie) - allpass 2.order
+bpq2~ (Pie) - bandpass 2.order with Q-inlet
+bpw2~ (Pie) - bandpass 2.order with bandwidth-inlet
+bsq2~ (Pie) - bandstop 2.order (notch) with Q-inlet
+bsw2~ (Pie) - bandstop 2.order (notch) with bandwidth-inlet
+ comb~
+complex-mod~ (P) - frequency shifter
+compressor~ - audio compressor - 0.1
+convol~ (Pm) - convobrosfilter
+cverb~ - implementation of the Csound reverb
+ enveloper~ (Pm) - the (old???) envelope-generator of iemlib
+ filter~ (ie) - multiple object for all useful IIR-filters 1. and 2. order like lowpass, highpass, bandpass, bandstop, allpass, etc
+ filterbank~ - outputs the frequence response against a set of band-pass filters - 0.1
+filtersme1~ (Pm) - a hard-filtering of low(soft) frequencies
+  filtersme2~ (Pm) - filtering by drawing with mouse in array
+FIR~ (ie) - finite impuls response filter, with array-coefficients
+freeverb~ - Schroeder/Moorer reverb model - 0.2c
+hilbert~ (P) - phase quadrature of input for complex modulation
+hml_shelf~ (ie) - high-mid-low-shelving-filter with freq- and gain-inlets
+hp1~ (Pie) - highpass 1.order
+hp2~ (Pie) - highpass 2.order
+hp2_butt~, hp3_butt~, hp4_butt~, hp5_butt~, hp6_butt~, hp7_butt~,
+hp8_butt~, hp9_butt~, hp10_butt~ (Pie) - 
+	highpass 2.3.4.5.6.7.8.9.10.order with butterworth characteristic
+hp2_cheb~, hp3_cheb~, hp4_cheb~, hp5_cheb~, hp6_cheb~, hp7_cheb~,
+hp8_cheb~, hp9_cheb~, hp10_cheb~ (Pie) - 
+	highpass 2.3.4.5.6.7.8.9.10.order with chebyshev characteristic
+hp2_bess~, hp3_bess~, hp4_bess~, hp5_bess~, hp6_bess~, hp7_bess~,
+hp8_bess~, hp9_bess~, hp10_bess~ (Pie) - 
+	highpass 2.3.4.5.6.7.8.9.10.order with bessel characteristic
+hp2_crit~, hp3_crit~, hp4_crit~, hp5_crit~, hp6_crit~, hp7_crit~,
+hp8_crit~, hp9_crit~, hp10_crit~ (Pie) - 
+	highpass 2.3.4.5.6.7.8.9.10.order with critical damping
+limiter~ (z) - a limiter/compressor module
+lp1~ (Pie) - lowpass 1.order
+lp2~ (Pie) - lowpass 2.order
+lp1_t~ (ie) - lowpass 1.order with time_constant inlet
+lp2_butt~, lp3_butt~, lp4_butt~, lp5_butt~, lp6_butt~, lp7_butt~,
+lp8_butt~, lp9_butt~, lp10_butt~ (Pie) - 
+	lowpass 2.3.4.5.6.7.8.9.10.order with butterworth characteristic
+lp2_cheb~, lp3_cheb~, lp4_cheb~, lp5_cheb~, lp6_cheb~, lp7_cheb~,
+lp8_cheb~, lp9_cheb~, lp10_cheb~ (Pie) - 
+	lowpass 2.3.4.5.6.7.8.9.10.order with chebyshev characteristic
+lp2_bess~, lp3_bess~, lp4_bess~, lp5_bess~, lp6_bess~, lp7_bess~,
+lp8_bess~, lp9_bess~, lp10_bess~ (Pie) - 
+	lowpass 2.3.4.5.6.7.8.9.10.order with bessel characteristic
+lp2_crit~, lp3_crit~, lp4_crit~, lp5_crit~, lp6_crit~, lp7_crit~,
+lp8_crit~, lp9_crit~, lp10_crit~ (Pie) - 
+	lowpass 2.3.4.5.6.7.8.9.10.order with critical damping
+maverage~ (Pie) - moving average filter, (IIR + delay)
+moog~ - signal controlled "moog" resonant lowpass
+multiverb~ - Schroeder/Moorer reverb model
+pan~ (mo) - equal power stereo panning
+pansig~ (mo) - same as above but takes a signal modulator rather than a float
+para_bp2~ (ie) - parametrical bandpass 2. order with freq-, Q- and gain-inlet
+ pin~ (mj)- randomly delivers the input signal to either the right or left outlet with a given probability
+quantize~ (z) - quantizes signals
+ mov_avrg_kern~ (ie) - moving average-filter-kernel
+ mypol2rec~ (Pm) - fft-stuff, needed as abstraction for some other patches
+ myrec2pol~ (Pm) - fft-stuff, as above (ggee)
+ para_pb2~ (ie) - parametrical bandpass ???
+rbpq2~ (Pie) - resonance-bandpass 2.order with Q-inlet
+rbpw2~ (Pie) - resonance-bandpass 2.order with bandwidth-inlet
+ reccombfilter~ (Pm) - rough combfilter feedback
+rev1~ (P) - series of allpass with exponentially growing delay lines
+rev2~ (P) - simple 1-in, 4-out reverberator
+rev3~ (P) - hard-core, 2-in, 4-out reverberator
+ schroeder~ - schroeder reverb
+swap~ (z) - bytes swap a 16bit-signal
+vcf_hp2~, vcf_hp4~, vcf_hp6~, vcf_hp8~ (Pie) - 
+	highpass 2.4.6.8.order with freq- and Q-signal-inlets
+vcf_lp2~, vcf_lp4~, vcf_lp6~, vcf_lp8~ (Pie) - 
+	lowpass 2.4.6.8.order with freq- and Q-signal-inlets
+vcf_bp2~, vcf_bp4~, vcf_bp6~, vcf_bp8~ (Pie) - 
+	bandpass 2.4.6.8.order with freq- and Q-signal-inlets
+vcf_rbp2~, vcf_rbp4~, vcf_rbp6~, vcf_rbp8~ (Pie) - 
+	resonance-bandpass 2.4.6.8.order with freq- and Q-signal-inlets
+
+-------------------- AUDIO DELAY ------------------------
+delwrite~ - write to a delay line
+delread~ -  read from a delay line
+vd~ -       read from a delay line at a variable delay time
+;
+ blockdelay~ (Pm) - high-resolution delay for smaller delay times
+ delay~
+z~ (z) - samplewise delay
+
+;-------------------------- misc~ -----------------------------
+matrix~ (z) - matrix-multiply m IN-signals to n OUT-signals
+mixer~ - beginning of a dynamic matrix object
+multiplex~ (z) - multiplex 1-of-n inlets to 1 outlet
+demultiplex~ (z) - demultiplex 1 inlet to 1-of-n outlets
+nop~ (zA) - no-operation
+vst~
+ impact_2modalb~
+ impact_modalb~
+ linpact_2modalb~
+ linpact_modalb~
+
+------------------------------ SUBWINDOWS ----------------------------------
+pd -      define a subwindow
+inlet -   add an inlet to a pd
+outlet -  add an outlet to a pd
+table -   array of numbers in a subwindow
+;
+dyn~ - dynamic object mangement	0.1.1
+
+------------------------------ DATA TEMPLATES -----------------------------
+template - define the fields in a template
+drawcurve, filledcurve - draw a curve
+drawpolygon, filledpolygon - draw a polygon
+plot -       plot an array field
+drawnumber - print a numeric value
+
+------------------------------ ACCESSING DATA ----------------------------
+pointer - point to an object belonging to a template
+get -     get numeric fields
+set -     change numeric fields
+element - get an array element
+getsize - get the size of an array
+setsize - change the size of an array
+append -  add an element to a list
+sublist - get a pointer into a list which is an element of another scalar
+scalar -  draw a scalar on parent
+;
+arraycopy (mx) - copy data from one array to another
+arraysize - returns the size of an array
+prepend (Pie) - list-prefixer
+
+------------------------------ OBSOLETE ----------------------------
+scope~ (use tabwrite~ now)
+namecanvas
+
+;------------------------------ gem ----------------------------
+
+
+------------------------------ LEGENDA ---------------------
+; - items acrescentados
+ (ge) - ggee 0.24
+(g) - gem 0.90
+(ie) - iemlib 1.15
+(mx) - maxlib 1.5.2
+ (mj) - mjlib 1/2/02
+ (mo) - motex 2001
+PD Container 0.2
+ (p) - Percolate 0.03
+vasp_modular 0.1.2
+ (xs) - xsample 0.2.1
+(z) - zexy 2.1
+(zA) - zexy Abstractions
+
+(P$) - patches externos
+ (P) - patches /externals incluídos
+ (Pm) - marius@chello.at, [31.1.2002]
+ (Pie) - iemlib 1.15
+
+
+------------------------------ pdpatches ---------------------
+actualizar seg (se houver)
+bilge?
+filtersme2~, myrec2pol~ - falta atan2~
+marcar externos que estao instalados mas nao prontos a usar, porque nao sao necessarios
+
+faltam ficheiros help: average change abs~ reson~ scale
+
+
+maxlib: arbran

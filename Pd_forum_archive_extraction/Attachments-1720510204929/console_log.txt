@@ -1,0 +1,107 @@
+camarahalac.1@ACD-NC054624 MINGW64 ~/Desktop/hidio
+$ ./configure --with-pd=/z/Desktop/pure-data LDFLAGS='-L/z/Desktop/pure-data/src -L/z/Desktop/pure-data/bin -L/z/Desktop/pure-data/obj'
+configure: loading site script /mingw64/etc/config.site
+checking build system type... x86_64-w64-mingw32
+checking host system type... x86_64-w64-mingw32
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.exe
+checking for suffix of executables... .exe
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking for ranlib... ranlib
+checking whether make sets $(MAKE)... (cached) yes
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for pd sourcecode... /z/Desktop/pure-data
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking for string.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for size_t... yes
+checking for pid_t... yes
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... no
+checking for vfork... no
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking return type of signal handlers... void
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating HID_Utilities_Source/Makefile
+config.status: executing depfiles commands
+
+Building using Pd headers in /z/Desktop/pure-data/src
+
+
+camarahalac.1@ACD-NC054624 MINGW64 ~/Desktop/hidio
+$ make
+make[1]: Entering directory '/z/Desktop/hidio'
+gcc -DPACKAGE_NAME=\"hidio\" -DPACKAGE_TARNAME=\"hidio\" -DPACKAGE_VERSION=\"0.1\" -DPACKAGE_STRING=\"hidio\ 0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"hidio\" -DVERSION=\"0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_MALLOC_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_TIME_H=1 -Dvfork=fork -DHAVE_STDLIB_H=1 -DHAVE_MALLOC=1 -DRETSIGTYPE=void -I.     -DPD -g -O2 -I/z/Desktop/pure-data/src   -mms-bitfields -MT hidio.o -MD -MP -MF .deps/hidio.Tpo -c -o hidio.o hidio.c
+mv -f .deps/hidio.Tpo .deps/hidio.Po
+gcc -DPACKAGE_NAME=\"hidio\" -DPACKAGE_TARNAME=\"hidio\" -DPACKAGE_VERSION=\"0.1\" -DPACKAGE_STRING=\"hidio\ 0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"hidio\" -DVERSION=\"0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_MALLOC_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_TIME_H=1 -Dvfork=fork -DHAVE_STDLIB_H=1 -DHAVE_MALLOC=1 -DRETSIGTYPE=void -I.     -DPD -g -O2 -I/z/Desktop/pure-data/src   -mms-bitfields -MT hidio_types.o -MD -MP -MF .deps/hidio_types.Tpo -c -o hidio_types.o hidio_types.c
+mv -f .deps/hidio_types.Tpo .deps/hidio_types.Po
+gcc -DPACKAGE_NAME=\"hidio\" -DPACKAGE_TARNAME=\"hidio\" -DPACKAGE_VERSION=\"0.1\" -DPACKAGE_STRING=\"hidio\ 0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"hidio\" -DVERSION=\"0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_MALLOC_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_TIME_H=1 -Dvfork=fork -DHAVE_STDLIB_H=1 -DHAVE_MALLOC=1 -DRETSIGTYPE=void -I.     -DPD -g -O2 -I/z/Desktop/pure-data/src   -mms-bitfields -MT hidio_windows.o -MD -MP -MF .deps/hidio_windows.Tpo -c -o hidio_windows.o hidio_windows.c
+mv -f .deps/hidio_windows.Tpo .deps/hidio_windows.Po
+gcc  -DPD -g -O2 -I/z/Desktop/pure-data/src   -mms-bitfields  -L/z/Desktop/pure-data/src -L/z/Desktop/pure-data/bin -L/z/Desktop/pure-data/obj   -s -shared -o hidio.dll hidio.o hidio_types.o   hidio_windows.o  -L/src -L/bin -L/obj -lpd
+hidio.o: In function `hidio_tick':
+Z:\Desktop\hidio/hidio.c:513: undefined reference to `hidio_get_events'
+hidio.o: In function `hidio_info':
+Z:\Desktop\hidio/hidio.c:546: undefined reference to `hidio_platform_specific_info'
+hidio.o: In function `hidio_write_event':
+Z:\Desktop\hidio/hidio.c:357: undefined reference to `hidio_write_event_symbols'
+Z:\Desktop\hidio/hidio.c:336: undefined reference to `hidio_write_event_ints'
+Z:\Desktop\hidio/hidio.c:347: undefined reference to `hidio_write_event_symbol_int'
+hidio.o: In function `get_device_number_from_arguments':
+Z:\Desktop\hidio/hidio.c:292: undefined reference to `get_device_number_by_id'
+Z:\Desktop\hidio/hidio.c:282: undefined reference to `get_device_number_from_usage'
+Z:\Desktop\hidio/hidio.c:253: undefined reference to `get_device_number_from_usage'
+hidio.o: In function `hidio_new':
+Z:\Desktop\hidio/hidio.c:614: undefined reference to `hidio_platform_specific_new'
+hidio.o: In function `hidio_close':
+Z:\Desktop\hidio/hidio.c:438: undefined reference to `hidio_close_device'
+hidio.o: In function `hidio_open':
+Z:\Desktop\hidio/hidio.c:470: undefined reference to `hidio_open_device'
+hidio.o: In function `hidio_setup':
+Z:\Desktop\hidio/hidio.c:641: undefined reference to `hidio_build_device_list'
+Z:\Desktop\hidio/hidio.c:643: undefined reference to `hidio_devices'
+Z:\Desktop\hidio/hidio.c:644: undefined reference to `hidio_elements'
+hidio.o: In function `hidio_free':
+Z:\Desktop\hidio/hidio.c:583: undefined reference to `hidio_platform_specific_free'
+hidio.o:hidio.c:(.rdata$.refptr.hidio_elements[.refptr.hidio_elements]+0x0): undefined reference to `hidio_elements'
+hidio.o:hidio.c:(.rdata$.refptr.hidio_devices[.refptr.hidio_devices]+0x0): undefined reference to `hidio_devices'
+hidio.o:hidio.c:(.rdata$.refptr.hidio_build_device_list[.refptr.hidio_build_device_list]+0x0): undefined reference to `hidio_build_device_list'
+collect2.exe: error: ld returned 1 exit status
+make[1]: *** [Makefile:267: hidio.dll] Error 1
+make[1]: Leaving directory '/z/Desktop/hidio'
+make: *** [Makefile:303: all-recursive] Error 1

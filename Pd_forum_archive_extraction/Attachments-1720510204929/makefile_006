@@ -1,0 +1,16 @@
+all: xcorr
+
+DARWINCFLAGS = -DPD -O2 -Wall -W -Wshadow -Wstrict-prototypes \
+    -Wno-unused -Wno-parentheses -Wno-switch \
+    -I/Applications/Pd-0.40.2-extended-2007-06-17.app/Contents/Resources/include/
+
+xcorr:
+ 
+  $(CC) -arch i386 -arch ppc $(DARWINCFLAGS) $(LINUXINCLUDE) -o xcorr~.o -c xcorr~.c
+
+  $(CC) -arch i386 -arch ppc -bundle -undefined suppress -flat_namespace\ -o xcorr~.pd_darwin xcorr~.o rm -f $*.o
+
+# ----------------------------------------------------------
+
+clean:
+	rm -f *.o *.pd_* so_locations

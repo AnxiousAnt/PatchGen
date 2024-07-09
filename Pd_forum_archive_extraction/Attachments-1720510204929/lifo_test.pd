@@ -1,0 +1,21 @@
+#N canvas 0 0 450 300 10;
+#X obj 66 225 lifo;
+#X msg 67 25 1;
+#X msg 76 45 2;
+#X obj 88 66 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 66 250 p;
+#X msg 98 85 3;
+#X obj 108 108 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 124 184 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 154 186 <- should output 1 and not 2;
+#X text 65 6 click 1 time on each \, in this order;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;

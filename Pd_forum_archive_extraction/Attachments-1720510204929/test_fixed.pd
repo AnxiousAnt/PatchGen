@@ -1,0 +1,39 @@
+#N canvas 350 277 1137 794 12;
+#X msg 102 1 bang;
+#X obj 106 36 openpanel;
+#X obj 143 140 symbol;
+#X obj 113 77 t b b b s;
+#X obj 93 174 pack s s s;
+#N canvas 0 0 450 300 graph2 0;
+#X array \$0sample 44100 float 0;
+#X coords 0 1 44099 -1 200 140 1;
+#X restore 464 83 graph;
+#X obj 63 353 soundfiler;
+#X obj 167 392 unpack s s s;
+#X symbolatom 139 423 10 0 0 0 - - -;
+#X symbolatom 230 423 10 0 0 0 - - -;
+#X symbolatom 317 422 10 0 0 0 - - -;
+#X msg 39 140 read;
+#X obj 34 236 route list;
+#X obj 252 138 symbol \$0sample;
+#X text 283 120 1st change;
+#X text 228 317 I'e used the [route] object so that the "list" is sent
+to [soundfiler]...: read <yourfile> <yourarray>;
+#X text 127 236 2nd change: The type of atom coming out of the [pack]
+object is actually a LIST. So \, you were sending the following message
+to [soundfiler]: list read <yourfile> <bogusarray>;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 1;
+#X connect 3 0 11 0;
+#X connect 3 1 2 0;
+#X connect 3 2 13 0;
+#X connect 3 3 2 1;
+#X connect 4 0 7 0;
+#X connect 4 0 12 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 7 2 10 0;
+#X connect 11 0 4 0;
+#X connect 12 0 6 0;
+#X connect 13 0 4 2;

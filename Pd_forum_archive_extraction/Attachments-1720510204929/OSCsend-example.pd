@@ -1,0 +1,25 @@
+#N canvas 559 207 631 244 10;
+#X obj 210 147 prepend send;
+#X obj 38 198 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X msg 38 116 connect 127.0.0.1 12000;
+#X obj 38 89 loadbang;
+#X text 35 61 Connect to Processing;
+#X obj 38 175 mrpeach/udpsend;
+#X obj 210 115 mrpeach/packOSC;
+#X msg 210 24 send /int 1;
+#X msg 258 77 send /negative -1;
+#X msg 234 53 send /float 0.1;
+#X text 293 24 <- works well;
+#X text 343 53 <- convert float to negative value: ERROR!;
+#X text 375 77 <- negative value. ERROR!;
+#X msg 55 145 disconnect;
+#X connect 0 0 5 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 13 0 5 0;

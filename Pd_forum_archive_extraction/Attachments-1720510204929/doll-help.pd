@@ -1,0 +1,12 @@
+#N struct 1014-grob-lib-x float x float y array numbers 1014-num-x
+;
+#N struct 1014-num-x float y float x;
+#N canvas 122 69 512 495 10;
+#X floatatom 56 339 5 0 0 0 - - -;
+#X floatatom 251 344 5 0 0 0 - - -;
+#X msg 70 46 bang;
+#X text 114 46 reinit;
+#X obj 56 107 doll;
+#X connect 2 0 4 0;
+#X connect 4 0 0 0;
+#X connect 4 1 1 0;

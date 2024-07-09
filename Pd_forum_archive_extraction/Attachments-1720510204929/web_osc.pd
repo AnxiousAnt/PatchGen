@@ -1,0 +1,9 @@
+#N canvas 632 124 450 300 10;
+#X obj 217 38 dumpOSC 1025;
+#X obj 263 144 print url:;
+#X obj 179 144 print text:;
+#X obj 215 70 route /text /url;
+#X obj 15 27 load me first;
+#X connect 0 0 3 0;
+#X connect 3 0 2 0;
+#X connect 3 1 1 0;

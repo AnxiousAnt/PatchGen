@@ -1,0 +1,6 @@
+#N canvas 764 529 289 103 10;
+#X obj 15 16 loadbang;
+#X obj 15 65 print;
+#X msg 15 41 this should be printed when created;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

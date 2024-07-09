@@ -1,0 +1,26 @@
+#N canvas 0 0 660 300 10;
+#X obj 168 159 delay 1000;
+#X obj 159 49 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 253 108 1000;
+#X msg 201 130 500;
+#X obj 138 180 timer;
+#X obj 158 70 t b b b;
+#X floatatom 165 202 5 0 0 0 - - -;
+#X obj 199 107 del 250;
+#X text 205 200 <--- would show 500;
+#X text 197 44 bang;
+#X text 236 83 after 250ms changes delay time;
+#X text 240 155 delay ignores time changing \, it would be nice only
+if new time value is too older than time that has passed \, eg 501
+would be ignored.;
+#X connect 0 0 4 1;
+#X connect 1 0 5 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 1;
+#X connect 4 0 6 0;
+#X connect 5 0 0 0;
+#X connect 5 1 7 0;
+#X connect 5 2 2 0;
+#X connect 5 2 4 0;
+#X connect 7 0 3 0;

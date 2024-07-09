@@ -1,0 +1,62 @@
+#N canvas 0 0 949 935 10;
+#N canvas 377 111 827 710 REFERENCE 0;
+#X text 114 141 Summary distort by reducing the sample rate to generate
+aliasing;
+#X text 114 174 Argument0 name for state saving (required);
+#X text 114 194 Argument1 aliasing factor (optional);
+#X text 114 214 Inlet0 audio signal to distort;
+#X text 114 234 Inlet1 alias <factor>: set aliasing. dry <amount>:
+regulat dry/wet mix \, default 0 which is fully wet.;
+#X text 114 267 Outlet0 alias-distorted audio signal.;
+#X text 114 121 Name e_alias;
+#X text 112 301 Description distorts any audio signal by reducing the
+sample rate to generate aliasing.;
+#X text 122 529 Tags distortion effect samplerate reduction;
+#X coords 0 -1 1 1 450 450 1 100 100;
+#X restore 469 460 pd REFERENCE;
+#N canvas 377 111 827 710 REFERENCE 0;
+#X text 114 121 Name: e_alias;
+#X text 114 141 Summary: distort by reducing the sample rate to generate
+aliasing;
+#X text 114 174 Argument 0: name for state saving (required);
+#X text 114 194 Argument 1: aliasing factor (optional);
+#X text 114 214 Inlet 0: audio signal to distort;
+#X text 114 267 Outlet 0: alias-distorted audio signal.;
+#X text 112 301 Description: distorts any audio signal by reducing
+the sample rate to generate aliasing.;
+#X text 114 234 Inlet 1: alias <factor>: set aliasing. dry <amount>:
+regulat dry/wet mix \, default 0 which is fully wet.;
+#X text 122 529 Tags: distortion \, effect \, samplerate reduction
+;
+#X coords 0 -1 1 1 450 450 1 100 100;
+#X restore 19 10 pd REFERENCE;
+#N canvas 377 111 827 710 REFERENCE 0;
+#X text 114 141 Summary : distort by reducing the sample rate to generate
+aliasing;
+#X text 114 174 Argument 0 : name for state saving (required);
+#X text 114 194 Argument 1 : aliasing factor (optional);
+#X text 114 234 Inlet 1 : alias <factor>: set aliasing. dry <amount>:
+regulat dry/wet mix \, default 0 which is fully wet.;
+#X text 114 214 Inlet 0 : audio signal to distort;
+#X text 114 121 Name : e_alias;
+#X text 114 267 Outlet 0 : alias-distorted audio signal.;
+#X text 112 301 Description : distorts any audio signal by reducing
+the sample rate to generate aliasing.;
+#X text 122 529 Tags : distortion - effect - samplerate reduction;
+#X coords 0 -1 1 1 450 450 1 100 100;
+#X restore 469 10 pd REFERENCE;
+#N canvas 377 111 827 710 REFERENCE 0;
+#X text 114 267 Outlet 0 : alias-distorted audio signal.;
+#X text 114 121 Name - e_alias;
+#X text 114 141 Summary - distort by reducing the sample rate to generate
+aliasing;
+#X text 114 174 Argument 0 - name for state saving (required);
+#X text 114 194 Argument 1 - aliasing factor (optional);
+#X text 114 214 Inlet 0 - audio signal to distort;
+#X text 114 234 Inlet 1 - alias <factor>: set aliasing. dry <amount>:
+regulat dry/wet mix \, default 0 which is fully wet.;
+#X text 112 301 Description - distorts any audio signal by reducing
+the sample rate to generate aliasing.;
+#X text 122 529 Tags - distortion - effect - samplerate reduction;
+#X coords 0 -1 1 1 450 450 1 100 100;
+#X restore 19 460 pd REFERENCE;

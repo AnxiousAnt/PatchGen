@@ -1,0 +1,7 @@
+#N canvas 0 22 450 300 10;
+#X msg 138 75 open my file.txt;
+#X obj 138 109 absforspace;
+#X obj 138 142 print;
+#X text 285 208 Jack/RYBN 2009;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;

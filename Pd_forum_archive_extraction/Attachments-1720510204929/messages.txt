@@ -1,0 +1,70 @@
+messages to pd:
+        init  [gimme]
+        filename  [symbol] [symbol]
+        open  [symbol] [symbol]
+        quit 
+        foo  [gimme]
+        dsp  [gimme]
+        meters  [float]
+        key  [gimme]
+        audiostatus 
+        finderror 
+        ping 
+
+messages to canvas:
+        obj  [gimme]
+        msg  [gimme]
+        floatatom  [gimme]
+        symbolatom  [gimme]
+        text  [gimme]
+        graph  [gimme]
+        array 
+        scalar  [gimme]
+        bng  [gimme]
+        toggle  [gimme]
+        vslider  [gimme]
+        hslider  [gimme]
+        radio  [gimme]
+        vumeter  [gimme]
+        mycnv  [gimme]
+        connect  [float] [float] [float] [float]
+        restore  [gimme]
+        write  [symbol] [defsymbol]
+        read  [symbol] [defsymbol]
+        mergefile  [symbol] [defsymbol]
+        sort 
+        click  [float] [float] [float] [float]
+        mouseup  [float] [float] [float]
+        key  [gimme]
+        motion  [float] [float] [float]
+        print  [symbol]
+        menusave 
+        menusaveas 
+        menuclose  [deffloat]
+        saveto  [symbol] [symbol]
+        cut 
+        copy 
+        paste 
+        duplicate 
+        selectall 
+        tidy 
+        texteditor 
+        editmode  [deffloat]
+        protectmode  [deffloat]
+        print  [symbol]
+        pop  [deffloat]
+        loadbang 
+        relocate  [symbol] [symbol]
+        menufont 
+        font  [float] [float] [float]
+        find  [gimme]
+        findagain 
+        findparent 
+        vis  [float]
+        properties  [float] [float]
+        help  [float] [float]
+        arraydialog  [symbol] [float] [float] [float]
+        map  [float]
+        clear 
+        intatom  [gimme]
+        atom  [gimme]

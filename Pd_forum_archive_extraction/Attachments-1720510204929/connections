@@ -1,0 +1,35 @@
+#N canvas 549 501 688 415 10;
+#X floatatom 140 21 5 0 0 0 - - -;
+#N canvas 111 54 529 505 tablet 1;
+#X restore 48 354 pd tablet;
+#X obj 246 263 s pd-tablet;
+#X obj 186 146 + 1;
+#X obj 49 301 r booyah;
+#X obj 140 98 t f f;
+#X obj 140 172 pack 0 0 0 0 0;
+#X obj 233 152 + 1;
+#X msg 178 229 clear;
+#X obj 140 76 * 50;
+#X obj 163 121 + 25;
+#X obj 209 124 + 16;
+#X msg 246 211 editmode 1 \, font 10 100 1 \, msg \$1 \$1 bang \, obj
+\$2 \$2 s booyah \, mouse \$3 \$4 0 0 \, mouseup \$5 \$2 0 \, editmode
+0 \, mouse \$2 \$3 0 0 \, mouseup \$2 \$3 0;
+#X obj 49 327 print booyah;
+#X msg 194 49 1;
+#X connect 0 0 9 0;
+#X connect 3 0 6 2;
+#X connect 4 0 13 0;
+#X connect 5 0 6 0;
+#X connect 5 1 3 0;
+#X connect 5 1 10 0;
+#X connect 5 1 11 0;
+#X connect 6 0 12 0;
+#X connect 7 0 6 4;
+#X connect 8 0 2 0;
+#X connect 9 0 5 0;
+#X connect 10 0 6 1;
+#X connect 10 0 7 0;
+#X connect 11 0 6 3;
+#X connect 12 0 2 0;
+#X connect 14 0 9 0;

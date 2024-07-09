@@ -1,0 +1,32 @@
+#N canvas 170 294 450 423 10;
+#X obj 29 252 s-autocompress~;
+#X obj 30 125 osc~ 440;
+#X obj 30 193 *~;
+#X obj 46 172 / 127;
+#X obj 198 187 *~ 100;
+#X obj 200 120 line~;
+#X obj 29 278 s-ezdac~ out;
+#X obj 198 165 osc~;
+#X obj 49 151 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 197 213 *~;
+#X msg 200 97 1 \, 0 200;
+#X obj 200 143 *~ 440;
+#X text 19 10 s-autocompress~ is a dodgy automatic compressor which
+tries to always make the sound have an rms of 1.0. If a loud sound
+comes in the whole signal will be compressed down until the loud sound
+fits in. Once the loud sound is gone \, the level will go back up to
+bring the quiet sounds are as loud as possible without clipping.;
+#X connect 0 0 6 0;
+#X connect 0 0 6 1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 1;
+#X connect 4 0 9 0;
+#X connect 5 0 9 1;
+#X connect 5 0 11 0;
+#X connect 7 0 4 0;
+#X connect 8 0 3 0;
+#X connect 9 0 0 0;
+#X connect 10 0 5 0;
+#X connect 11 0 7 0;

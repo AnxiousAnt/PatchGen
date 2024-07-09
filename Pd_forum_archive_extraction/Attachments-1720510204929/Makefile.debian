@@ -1,0 +1,22 @@
+# Debian/Ubuntu:
+LUA_LIB=lua5.1
+LUA_INCLUDE=/usr/include/lua5.1
+
+# everything from here on can stay:
+CFLAGS = -ansi -pedantic -Wall -fPIC
+CFLAGS += -I$(LUA_INCLUDE)
+
+
+all: lua.pd_linux
+
+clean:
+	rm -f lua.pd_linux
+
+lua.pd_linux: lua.c
+	gcc $(CFLAGS) -shared -o lua.pd_linux lua.c -l$(LUA_LIB)
+
+# FIXME: check this works, see about fat/universal binaries
+lua.pd_darwin: lua.c
+	gcc $(CFLAGS) -bundle -undefined suppress -flat_namespace -o lua.pd_darwin lua.c -l$(LUA_LIB)
+
+# FIXME: Windows?

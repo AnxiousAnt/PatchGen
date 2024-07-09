@@ -1,0 +1,15 @@
+#N canvas 318 171 664 452 10;
+#X obj 191 170 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 304 168 bng 15 250 50 0 empty aaa empty 17 7 0 10 -262144 -1
+-1;
+#X obj 191 192 send aaa;
+#X obj 414 171 bng 15 250 50 0 empty aaa empty 17 7 0 10 -262144 -1
+-1;
+#X msg 413 195 receive bbb;
+#X text 186 148 click here;
+#X text 279 148 2nd created object;
+#X text 407 147 3rd created object;
+#X connect 0 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;

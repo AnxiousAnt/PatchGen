@@ -1,0 +1,17 @@
+#N canvas 149 468 454 304 10;
+#X obj 317 25 import flatspace;
+#X obj 54 66 openpanel;
+#X symbolatom 257 141 10 0 0 3 extension - -;
+#X msg 51 33 bang;
+#X obj 222 177 print R;
+#X obj 120 167 print L;
+#X text 11 124 from iemlib -->;
+#X obj 54 92 split_path;
+#X obj 119 125 splitfilename .;
+#X text 132 92 <-- from hcs lib;
+#X connect 1 0 7 0;
+#X connect 3 0 1 0;
+#X connect 7 1 8 0;
+#X connect 8 0 5 0;
+#X connect 8 1 2 0;
+#X connect 8 1 4 0;

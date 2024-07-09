@@ -1,0 +1,16 @@
+#N canvas 386 179 450 300 10;
+#X obj 94 41 loadbang;
+#X obj 94 83 trigger bang bang bang;
+#X msg 223 107 1;
+#X obj 223 131 send init-1;
+#X msg 154 127 symbol foo;
+#X obj 154 151 send init-2;
+#X obj 94 174 send init-3;
+#X msg 94 150 -2;
+#X connect 0 0 1 0;
+#X connect 1 0 7 0;
+#X connect 1 1 4 0;
+#X connect 1 2 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 7 0 6 0;

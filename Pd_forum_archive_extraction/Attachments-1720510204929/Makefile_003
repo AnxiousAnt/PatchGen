@@ -1,0 +1,13 @@
+all: dyna~ rms~
+
+dyna~:
+	gcc -c -o dyna_tilde.o -I.   -g -O2 -DPD dyna_tilde.c
+	gcc -export_dynamic -shared -o dyna~.pd_linux dyna_tilde.o -lm -lc
+
+rms~:
+	gcc -c -o rms_tilde.o -I.   -g -O2 -DPD rms_tilde.c
+	gcc -export_rmsmic -shared -o rms~.pd_linux rms_tilde.o -lm -lc
+
+
+clean:
+	-rm -f *.o *.pd_linux

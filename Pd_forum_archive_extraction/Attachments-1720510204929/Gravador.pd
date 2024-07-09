@@ -1,0 +1,29 @@
+#N canvas 710 490 450 300 10;
+#X msg 113 223 open -bytes 3 \$1.wav;
+#X msg 248 222 start;
+#X msg 293 222 stop;
+#X obj 139 270 writesf~;
+#X obj 76 8 inlet~;
+#X obj 102 42 cnv 15 152 168 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 104 44 cnv 15 148 163 empty empty Gravador 40 14 0 14 -228856
+-33289 0;
+#X obj 125 151 bng 40 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 191 152 bng 40 250 50 0 empty empty empty 17 7 0 10 -258113
+-1 -1;
+#X obj 156 7 inlet;
+#X obj 226 7 inlet;
+#X obj 117 86 cnv 15 122 42 empty empty empty 20 12 0 14 -257983 -66577
+0;
+#X symbolatom 125 106 17 0 0 2 Nome: - -;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 4 0 3 0;
+#X connect 7 0 1 0;
+#X connect 8 0 2 0;
+#X connect 9 0 7 0;
+#X connect 10 0 8 0;
+#X connect 12 0 0 0;
+#X coords 0 -1 1 1 156 172 2 100 40;

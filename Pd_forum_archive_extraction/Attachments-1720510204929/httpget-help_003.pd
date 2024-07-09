@@ -1,0 +1,38 @@
+#N canvas 63 520 510 383 10;
+#X declare -lib moocow;
+#X text 131 149 from;
+#X obj 165 126 unpack 0 0 0 0;
+#X floatatom 165 149 3 0 0 0 - - -;
+#X floatatom 192 149 3 0 0 0 - - -;
+#X floatatom 219 149 3 0 0 0 - - -;
+#X floatatom 246 149 3 0 0 0 - - -;
+#X obj 185 103 tgl 15 0 empty empty connected 18 7 0 8 -24198 -241291
+-1 0 1;
+#X obj 183 328 pddp/print;
+#X obj 183 242 list split 1;
+#X obj 146 182 list split 20;
+#X obj 183 265 zexy/symbol2list <;
+#X obj 183 287 list split 1;
+#X text 272 149 (Server IP Address);
+#X obj 154 313 bng 15 250 50 0 empty empty clear 17 7 0 8 -4034 -1
+-1;
+#X msg 118 35 http://checkip.dyndns.org/index.html;
+#X obj 146 80 httpget;
+#X msg 141 58 http://132.205.142.12/index.php;
+#X obj 80 97 print got;
+#X text 234 182 split at the 20th "word";
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X connect 8 0 10 0;
+#X connect 9 1 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 13 0 7 0;
+#X connect 14 0 15 0;
+#X connect 15 0 9 0;
+#X connect 15 0 17 0;
+#X connect 15 1 1 0;
+#X connect 15 2 6 0;
+#X connect 16 0 15 0;

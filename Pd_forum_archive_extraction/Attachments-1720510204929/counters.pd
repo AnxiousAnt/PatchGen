@@ -1,0 +1,65 @@
+#N canvas 0 0 1264 739 12;
+#X obj 98 210 f;
+#X msg 164 190 0;
+#X obj 98 236 + 1;
+#X obj 539 336 f;
+#X obj 639 299 bng 15 250 50 0 empty empty reset 17 8 1 8 -262144 -1
+-1;
+#X obj 164 167 bng 15 250 50 0 empty empty reset 17 8 1 8 -262144 -1
+-1;
+#X msg 558 313 60;
+#X obj 544 248 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X floatatom 539 388 5 0 0 0 - - -;
+#X obj 98 115 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X floatatom 107 289 5 0 0 0 - - -;
+#X obj 540 460 f;
+#X obj 539 361 expr if ($f1 > 0 \, $f1-1 \, 59);
+#X obj 539 427 select 0;
+#X obj 107 263 expr if ($f1 < 60 \, $f1 \, 0);
+#X obj 98 136 metro 250;
+#X text 28 63 counter that goes up 59 then resets to 0 to begin again
+;
+#X obj 540 490 expr if ($f1 > 0 \, $f1-1 \, 29);
+#X floatatom 539 513 5 0 0 0 - - -;
+#X obj 304 535 expr if ($f1 + $f2 == 0 \, 0 \, 1);
+#X obj 304 562 select 0;
+#X obj 304 587 s stop;
+#X obj 545 226 r stop;
+#X text 707 294 Uses expressions to count backwards. Chain them together
+and you can make all sorts of strange rule based counters.;
+#X msg 638 440 30;
+#X obj 471 281 select 1;
+#X obj 539 281 metro 250;
+#X text 588 383 seconds;
+#X text 588 512 minutes;
+#X connect 0 0 2 0;
+#X connect 1 0 0 1;
+#X connect 2 0 14 0;
+#X connect 3 0 12 0;
+#X connect 4 0 6 0;
+#X connect 4 0 24 0;
+#X connect 5 0 1 0;
+#X connect 6 0 3 1;
+#X connect 7 0 25 0;
+#X connect 7 0 26 0;
+#X connect 8 0 13 0;
+#X connect 8 0 19 0;
+#X connect 9 0 15 0;
+#X connect 11 0 17 0;
+#X connect 12 0 3 1;
+#X connect 12 0 8 0;
+#X connect 13 0 11 0;
+#X connect 14 0 0 1;
+#X connect 14 0 10 0;
+#X connect 15 0 0 0;
+#X connect 17 0 11 1;
+#X connect 17 0 18 0;
+#X connect 18 0 19 1;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 22 0 7 0;
+#X connect 24 0 11 1;
+#X connect 25 0 11 0;
+#X connect 26 0 3 0;

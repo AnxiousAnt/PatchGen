@@ -1,0 +1,184 @@
+Section "ServerLayout"
+	Identifier     "Layout0"
+	Screen      0  "Screen0" 0 0
+	InputDevice    "Keyboard0" "CoreKeyboard"
+#	InputDevice    "AllMice" "CorePointer"
+	InputDevice    "Trackpad" "CorePointer"
+	InputDevice    "MouseButtonEmulation" "SendCoreEvents"
+	InputDevice    "Mouse2" "SendCoreEvents"
+#	InputDevice    "Mouse3" "SendCoreEvents"
+EndSection
+
+Section "Files"
+	FontPath "/usr/lib/X11/fonts/misc/"
+#	FontPath "/usr/lib/X11/fonts/cyrillic/"
+	FontPath "/usr/lib/X11/fonts/75dpi/:unscaled"
+	FontPath "/usr/lib/X11/fonts/100dpi/:unscaled"
+	FontPath "/usr/lib/X11/fonts/Type1/"
+#	FontPath "/usr/lib/X11/fonts/CID"
+	FontPath "/usr/lib/X11/fonts/Speedo/"
+	FontPath "/usr/lib/X11/fonts/75dpi/"
+	FontPath "/usr/lib/X11/fonts/100dpi/"
+	FontPath "/var/lib/defoma/x-ttcidfont-conf.d/dirs/CID"
+	FontPath "/var/lib/defoma/x-ttcidfont-conf.d/dirs/TrueType"	
+	FontPath "/usr/lib/X11/fonts/TrueType/"
+EndSection
+
+Section "Module"
+	Load  "GLcore"
+	Load  "bitmap"
+	Load  "dbe"
+	Load  "ddc"
+#	Load  "dri"
+	Load  "extmod"
+	Load  "freetype"
+	Load  "glx"
+	Load  "int10"
+	# Load  "pex5"
+	Load  "record"
+	Load  "speedo"
+	Load  "type1"
+	Load  "vbe"
+	# Load  "xie"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Keyboard0"
+	Driver      "keyboard"
+
+	#Option	    "Protocol"		"Standard"
+        Option	    "AutoRepeat"	"200 35"
+
+	Option      "CoreKeyboard"
+	Option	    "XkbRules"		"xfree86"
+#	Option	    "XkbModel"		"macintosh"
+	Option	    "XkbLayout"		"us"
+
+	# KEY MAPPINGS
+	Option	    "LeftAlt"		"Meta"
+	Option	    "RightAlt"		"Meta"
+	#Option	    "ScrollLock"	"Compose"
+	Option	    "RightCtl"		"Control"
+#	Option	    "XkbOptions"	"altwin:meta_win"
+EndSection
+
+Section "InputDevice"
+	Identifier  "AllMice"
+	Driver      "mouse"
+	Option      "CorePointer"
+	Option      "ZAxisMapping"	"4 5"
+	Option	    "Protocol"		"IMPS/2"
+	Option      "Emulate3Buttons"	"true"
+	Option	    "Device"		"/dev/input/mice"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Trackpad"
+	Driver      "mouse"
+	Option      "CorePointer"
+	Option      "ZAxisMapping"	"4 5"
+	Option	    "Protocol"		"IMPS/2"
+	Option      "Emulate3Buttons"	"true"
+	Option	    "Device"		"/dev/input/mouse0"
+EndSection
+
+Section "InputDevice"
+	Identifier  "MouseButtonEmulation"
+	Driver      "mouse"
+	Option      "CorePointer"
+	Option      "ZAxisMapping"	"4 5"
+	Option	    "Protocol"		"IMPS/2"
+	Option      "Emulate3Buttons"	"true"
+	Option	    "Device"		"/dev/input/mouse1"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Mouse2"
+	Driver      "mouse"
+	Option      "CorePointer"
+	Option      "ZAxisMapping"	"4 5"
+	Option	    "Protocol"		"IMPS/2"
+	Option      "Emulate3Buttons"	"true"
+	Option	    "Device"		"/dev/input/mouse2"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Mouse3"
+	Driver      "mouse"
+	Option      "CorePointer"
+	Option      "ZAxisMapping"	"4 5"
+	Option	    "Protocol"		"IMPS/2"
+	Option      "Emulate3Buttons"	"true"
+	Option	    "Device"		"/dev/input/mouse3"
+EndSection
+
+Section "Monitor"
+	Identifier   "LCD"
+	Option       "DPMS"
+	HorizSync    40 - 100
+	VertRefresh  40 - 120
+
+	Mode "1280x960"
+	        # D: 79.815 MHz, H: 51.963 kHz, V: 60.003 Hz
+		DotClock 79.816
+		HTimings 1280 1296 1408 1536
+		VTimings 854 855 858 866
+		Flags "-HSync" "-VSync"
+	EndMode
+EndSection
+
+Section "Device"
+	Identifier  "Card0"
+	Driver      "radeon"
+	Option      "UseFBDev"		"true"
+#	Option	    "NoAccel"
+#	Driver      "fbdev"
+	BusID	    "PCI:0:16:0"
+
+	Option	    "MonitorLayout"     "LVDS"
+
+	# From http://spacepants.org/hw/tibook/
+	# I found that XFree86 and the radeon driver can't actually recover from
+	# a sleep unless the following option is also set 
+	# (for a TiBook IV)
+#	Option	    "AGPMode"		"4"
+
+	## DEBUG
+        ### Available Driver options are:-
+        ### Values: <i>: integer, <f>: float, <bool>: "True"/"False",
+        ### <string>: "String", <freq>: "<f> Hz/kHz/MHz"
+        ### [arg]: arg optional
+        #Option     "NoAccel"			# [<bool>]
+        #Option     "SWcursor"			# [<bool>]
+        #Option     "Dac6Bit"			# [<bool>]
+        #Option     "Dac8Bit"			# [<bool>]
+        #Option     "ForcePCIMode"		# [<bool>]
+        #Option     "CPPIOMode"			# [<bool>]
+        #Option     "CPusecTimeout"		# <i>
+        #Option     "AGPMode"			# <i>
+        #Option     "AGPSize"			# <i>
+        #Option     "RingSize"			# <i>
+        #Option     "BufferSize"		# <i>
+        #Option     "EnableDepthMoves"		# [<bool>]
+        #Option     "CrtScreen"			# [<bool>]
+        #Option     "PanelSize"			# [<str>]
+        #Option     "UseFBDev"			# [<bool>]
+EndSection
+
+Section "Screen"
+	Identifier	"Screen0"
+	Device		"Card0"
+	Monitor		"LCD"
+	DefaultDepth    24
+#	DefaultFbBpp	32
+	SubSection "Display"
+		Depth     24
+#		FbBpp	  32
+		Modes    "1280x854"
+	EndSubSection
+EndSection
+
+Section "DRI"
+	Mode	0666
+EndSection
+

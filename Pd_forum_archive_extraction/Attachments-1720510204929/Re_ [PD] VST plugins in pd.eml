@@ -1,0 +1,116 @@
+X-Account-Key: account2
+X-Mozilla-Keys: 
+Delivered-To: noisesmith@gmail.com
+Received: by 10.114.47.17 with SMTP id u17cs153691wau;
+        Thu, 7 Jan 2010 17:58:08 -0800 (PST)
+Received: by 10.150.80.20 with SMTP id d20mr32314001ybb.141.1262915887638;
+        Thu, 07 Jan 2010 17:58:07 -0800 (PST)
+Return-Path: <hans@at.or.at>
+Received: from out4.smtp.messagingengine.com (out4.smtp.messagingengine.com [66.111.4.28])
+        by mx.google.com with ESMTP id 14si3966333iwn.86.2010.01.07.17.58.05;
+        Thu, 07 Jan 2010 17:58:06 -0800 (PST)
+Received-SPF: neutral (google.com: 66.111.4.28 is neither permitted nor denied by best guess record for domain of hans@at.or.at) client-ip=66.111.4.28;
+Authentication-Results: mx.google.com; spf=neutral (google.com: 66.111.4.28 is neither permitted nor denied by best guess record for domain of hans@at.or.at) smtp.mail=hans@at.or.at; dkim=pass header.i=@messagingengine.com
+Received: from compute1.internal (compute1.internal [10.202.2.41])
+	by gateway1.messagingengine.com (Postfix) with ESMTP id ADEECC978C
+	for <noisesmith@gmail.com>; Thu,  7 Jan 2010 20:58:05 -0500 (EST)
+Received: from heartbeat2.messagingengine.com ([10.202.2.161])
+  by compute1.internal (MEProxy); Thu, 07 Jan 2010 20:58:05 -0500
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=messagingengine.com; h=message-id:from:to:in-reply-to:content-type:content-transfer-encoding:mime-version:subject:date:references; s=smtpout; bh=zANDrEfDD24LB6mPNUhTkqsVvb8=; b=ZYmmXSEQDlzmLeAuS59ZP5EcL3FIk0eupLDOIp6lcXamhG3zZkDOMFG/QuO2cpv163TJs6ZL1St5DjfREiyzTr1puTMtj4tmRMe/5FAAZlKNdciyaSy2vtnyt2p32Soium6FGh8drcj91TDjS8yfQQECX5IL6kxkVfCVPg34tA0=
+X-Sasl-enc: KaU/2Fj3wIRJMVG9N8DkJI6o2z3mZkfMrOm9DUL3k1YZ 1262915885
+Received: from [192.168.0.159] (unknown [74.72.56.157])
+	by mail.messagingengine.com (Postfix) with ESMTPSA id 4827A3B0CC
+	for <noisesmith@gmail.com>; Thu,  7 Jan 2010 20:58:05 -0500 (EST)
+Message-Id: <C3E766BE-4EE1-48BC-92A5-24CD7B5425D7@at.or.at>
+From: Hans-Christoph Steiner <hans@at.or.at>
+To: Justin Glenn Smith <noisesmith@gmail.com>
+In-Reply-To: <4B468F6B.4090203@gmail.com>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: Re: [PD] VST plugins in pd
+Date: Thu, 7 Jan 2010 20:57:43 -0500
+References: <4721f89d1001070802v3d447527w73ab3b4926d14e4a@mail.gmail.com> <F43C1BA1-5A86-456A-9DFA-B610A6027772@at.or.at> <4B468F6B.4090203@gmail.com>
+X-Mailer: Apple Mail (2.936)
+
+
+I think you meant to CC the list :)
+
+.hc
+
+On Jan 7, 2010, at 8:50 PM, Justin Glenn Smith wrote:
+
+> Also there is the issue of the VST license, which for the  
+> development headers is explicitly incompatible with Free Software.  
+> To do Free Software that is VST compatible you either have to use  
+> someone's incomplete reverse engineered version (one's only option  
+> for GPL software as far as I know), or for BSD / MIT licensed code  
+> you could distribute your code without the VST headers and trust the  
+> users to get the headers on their own.
+>
+> Hans-Christoph Steiner wrote:
+>>
+>> Pd is a programming environment for writing things like VST  
+>> plugins, so
+>> I guess most Pd devs would rather write something Pd than use a VST.
+>> But its also free software, so anyone who things VST support should  
+>> be
+>> better should definitely work on it.
+>>
+>> I think LADSPA and other free plugins are better supported.
+>>
+>> .hc
+>>
+>> On Jan 7, 2010, at 11:02 AM, Austin Huang wrote:
+>>
+>>> Hello PD users,
+>>>
+>>> I am using PD under windows. I'm new to this list, but I've been
+>>> dabbling in max/msp and PD for a while now.
+>>>
+>>> I know there are some options for loading VST plugins in pd. I
+>>> downloaded vst~ and I seem to be able to load it into the patcher  
+>>> but
+>>> I can't find documentation or a home page for it anywhere. I've also
+>>> heard of a plugin~ external but I haven't found many details on that
+>>> either.
+>>>
+>>> At a curiosity, since vsti/vst support would massively expand the
+>>> power, usability, and appeal of PD, why isn't vst support part of  
+>>> the
+>>> pd-extended distribution?
+>>>
+>>> Thanks,
+>>> Austin
+>>> _______________________________________________
+>>> Pd-list@iem.at mailing list
+>>> UNSUBSCRIBE and account-management ->
+>>> http://lists.puredata.info/listinfo/pd-list
+>>
+>>
+>>
+>> ----------------------------------------------------------------------------
+>>
+>>
+>> Computer science is no more related to the computer than astronomy is
+>> related to the telescope.      -Edsger Dykstra
+>>
+>>
+>>
+>> _______________________________________________
+>> Pd-list@iem.at mailing list
+>> UNSUBSCRIBE and account-management ->
+>> http://lists.puredata.info/listinfo/pd-list
+>>
+>
+
+
+
+----------------------------------------------------------------------------
+
+As we enjoy great advantages from inventions of others, we should be  
+glad of an opportunity to serve others by any invention of ours; and  
+this we should do freely and generously.         - Benjamin Franklin
+
+
+

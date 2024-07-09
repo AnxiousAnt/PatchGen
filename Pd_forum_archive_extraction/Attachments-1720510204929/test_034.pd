@@ -1,0 +1,160 @@
+#N struct 1372-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1373-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1374-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1375-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1376-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1377-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1378-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1379-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1380-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1381-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1382-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1383-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1384-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1385-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1386-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1387-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1388-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1389-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1390-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1391-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1392-ds-tgl-template float s1 float s2 float bg float color
+;
+#N struct 1393-ds-tgl-template float s1 float s2 float bg float color
+;
+#N canvas 0 11 1004 682 12;
+#X floatatom 38 -61 5 0 0 0 - - -;
+#X floatatom 38 1 5 0 0 0 - - -;
+#X msg -93 -46 set \$1;
+#X floatatom -88 -77 5 0 0 0 - - -;
+#X floatatom -92 28 5 0 0 0 - - -;
+#X obj 346 -17 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 346 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 346 85 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 346 111 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 346 154 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 359 190 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 359 247 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 359 315 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 219 -127 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 346 -75 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 219 448 5 0 0 0 - - -;
+#X floatatom 359 449 5 0 0 0 - - -;
+#X obj 110 515 dac~;
+#X obj 110 440 osc~ 220;
+#X obj 110 465 *~ 0.4;
+#X obj 110 490 *~;
+#X obj 219 470 spigot;
+#X obj 359 470 spigot;
+#X obj 404 392 == 0;
+#X msg 417 418 set \$1;
+#X obj 264 393 == 0;
+#X msg 279 418 set \$1;
+#X text -66 280 delete me...;
+#X obj -75 72 loadbang;
+#X msg -75 201 \; pd dsp \$1;
+#X obj 281 470 s b;
+#X obj -116 207 s a;
+#X obj 264 368 r a;
+#X obj 404 367 r b;
+#X obj 435 469 s a;
+#X obj -122 306 ds-tgl 300 20;
+#X obj 219 211 ds-tgl 80;
+#X obj -92 -17 ds-tgl;
+#X obj 38 -24 ds-tgl 20;
+#X obj -75 110 ds-tgl 20 80;
+#X obj 54 109 ds-tgl 10;
+#X obj 219 34 ds-tgl 30 40;
+#X obj 219 84 ds-tgl 40 20;
+#X obj 219 112 ds-tgl 60 15;
+#X obj 219 140 ds-tgl 70 30;
+#X obj 219 -33 ds-tgl 10 60;
+#X obj 219 -82 ds-tgl;
+#X obj 219 196 ds-tgl 10;
+#X obj 219 295 ds-tgl 20 80;
+#X obj 279 443 ds-tgl 20;
+#X obj 417 445 ds-tgl 20;
+#X obj -40 148 ds-tgl 60 15;
+#X obj 70 108 ds-tgl 15;
+#X obj 94 108 ds-tgl 20;
+#X obj 121 109 ds-tgl 25;
+#X obj 154 110 ds-tgl 30;
+#X obj 64 179 ds-tgl 35;
+#X obj 110 180 ds-tgl 40;
+#X connect 0 0 38 0;
+#X connect 2 0 37 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 16 0;
+#X connect 13 0 14 0;
+#X connect 13 0 46 0;
+#X connect 14 0 5 0;
+#X connect 15 0 21 0;
+#X connect 16 0 22 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 17 0;
+#X connect 21 0 20 1;
+#X connect 22 0 20 1;
+#X connect 23 0 22 1;
+#X connect 23 0 24 0;
+#X connect 24 0 50 0;
+#X connect 25 0 21 1;
+#X connect 25 0 26 0;
+#X connect 26 0 49 0;
+#X connect 28 0 39 0;
+#X connect 32 0 25 0;
+#X connect 33 0 23 0;
+#X connect 36 0 48 0;
+#X connect 37 0 4 0;
+#X connect 38 0 1 0;
+#X connect 39 0 29 0;
+#X connect 39 0 31 0;
+#X connect 41 0 42 0;
+#X connect 42 0 43 0;
+#X connect 43 0 44 0;
+#X connect 44 0 47 0;
+#X connect 45 0 41 0;
+#X connect 46 0 45 0;
+#X connect 47 0 36 0;
+#X connect 48 0 15 0;
+#X connect 49 0 21 1;
+#X connect 49 0 30 0;
+#X connect 50 0 22 1;
+#X connect 50 0 34 0;

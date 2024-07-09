@@ -1,0 +1,15 @@
+#N canvas 58 157 450 300 10;
+#X obj 72 82 phasor~;
+#X obj 72 102 *~ -1;
+#X obj 72 122 +~ 1;
+#X obj 125 108 min~;
+#X obj 71 178 outlet~;
+#X text 72 18 frequency;
+#X text 69 196 audio out;
+#X obj 72 37 inlet~;
+#X connect 0 0 1 0;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 0;
+#X connect 7 0 0 0;

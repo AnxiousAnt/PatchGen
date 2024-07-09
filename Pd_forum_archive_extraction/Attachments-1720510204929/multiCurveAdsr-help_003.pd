@@ -1,0 +1,68 @@
+#N canvas 158 75 478 554 10;
+#N canvas 0 22 458 308 (subpatch) 0;
+#X array envelope 10000 float 2;
+#X coords 0 1 10000 0 400 140 1;
+#X restore 22 180 graph;
+#X obj 304 -173 loadbang;
+#X obj 138 -30 nbx 5 14 0 100 0 1 empty empty Level 0 -8 0 10 -262144
+-1 -1 1 256;
+#X obj 170 -1 nbx 5 14 0 3000 0 1 empty empty A 0 -8 0 10 -262144 -1
+-1 60 256;
+#X obj 200 30 nbx 5 14 0 2000 0 1 empty empty D 0 -8 0 10 -262144 -1
+-1 20 256;
+#X obj 232 60 nbx 5 14 0 100 0 1 empty empty S 0 -8 0 10 -262144 -1
+-1 50 256;
+#X obj 262 89 nbx 5 14 0 100 0 1 empty empty R 0 -8 0 10 -262144 -1
+-1 79 256;
+#X msg 304 -147 \; pd dsp 1;
+#X obj 41 -177 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X msg 80 -41 0;
+#X obj 80 -65 delay 200;
+#X obj 131 -88 nbx 5 14 -1e+37 1e+37 0 1 empty empty hold_time 0 -6
+0 10 -262144 -1 -1 138 256;
+#X msg 41 -41 1;
+#X obj 96 153 tabwrite~ envelope;
+#X obj 311 122 nbx 5 14 0 20 0 1 empty empty curve_factor 0 -6 0 10
+-262144 -1 -1 1 256;
+#X obj 106 -185 notein;
+#X obj 106 -162 sel 0;
+#X obj 41 -159 t b b;
+#X obj 41 -4 t f b;
+#X obj 133 -139 t b f;
+#X obj 212 -97 / 127;
+#X obj 12 -201 loadbang;
+#X text 91 -208 Hit bang or MIDI key to see current envelope;
+#X text 293 -79 Curve Factors;
+#X text 240 -47 1 - linear;
+#X text 229 -32 > 1 - exponential (fat) curves \, varying with C;
+#X obj 110 124 multiCurveAdsr 0.98 10 20 99 20;
+#X floatatom 316 159 5 0 0 0 - - -;
+#X text 350 155 for switch~ing parent;
+#X text 229 -62 < 1 - "quartic-like" (hollow) curve \, C=-0.214;
+#X connect 1 0 7 0;
+#X connect 2 0 26 1;
+#X connect 3 0 26 2;
+#X connect 4 0 26 3;
+#X connect 5 0 26 4;
+#X connect 6 0 26 5;
+#X connect 8 0 17 0;
+#X connect 9 0 26 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 1;
+#X connect 12 0 18 0;
+#X connect 14 0 26 6;
+#X connect 15 1 16 0;
+#X connect 16 0 9 0;
+#X connect 16 1 19 0;
+#X connect 17 0 12 0;
+#X connect 17 1 10 0;
+#X connect 18 0 26 0;
+#X connect 18 1 13 0;
+#X connect 19 0 12 0;
+#X connect 19 1 20 0;
+#X connect 20 0 2 0;
+#X connect 21 0 17 0;
+#X connect 26 0 13 0;
+#X connect 26 1 27 0;
+

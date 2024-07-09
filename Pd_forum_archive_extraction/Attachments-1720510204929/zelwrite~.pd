@@ -1,0 +1,4 @@
+#N canvas 255 222 450 300 10;
+#X obj 99 91 catch~ \$1-sig;
+#X obj 98 125 delwrite~ \$1-del \$2;
+#X connect 0 0 1 0;

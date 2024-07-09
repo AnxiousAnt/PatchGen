@@ -1,0 +1,20 @@
+#N canvas 220 77 450 300 10;
+#X obj 153 65 metro 1000;
+#X obj 153 93 t b b;
+#X obj 180 158 f;
+#X msg 153 127 0;
+#X msg 246 106 1;
+#X obj 245 60 receive ones;
+#X obj 180 206 print;
+#X obj 153 39 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 153 15 loadbang;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 1;
+#X connect 5 0 2 1;
+#X connect 7 0 0 0;
+#X connect 8 0 7 0;

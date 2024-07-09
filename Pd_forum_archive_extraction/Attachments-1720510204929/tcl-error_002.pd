@@ -1,0 +1,22 @@
+#N canvas 476 251 450 300 10;
+#N canvas 925 321 608 300 test 0;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array foo 128 float 3;
+#A 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 128 -1 200 140 1;
+#X restore 100 20 graph;
+#X text 116 202 closing this window will cause a tcl error and sometimes
+visually freeze my GUI elements;
+#X restore 34 74 pd test;
+#X text 92 74 <-click me;
+#X obj 43 194 array set foo;
+#X obj 43 109 loadbang;
+#X obj 41 136 metro 50;
+#X msg 41 164 1;
+#X text 105 137 needs to be fast;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;

@@ -1,0 +1,18 @@
+#N canvas 463 315 356 225 10;
+#X obj 61 55 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 83 56 click me!;
+#X text 5 181 (oh \, and what about this visible cord appearing?);
+#X text 65 82 watch me!;
+#X obj 211 81 cnv-adr-testabstr;
+#X obj 211 55 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 233 56 click me!;
+#X text 215 82 watch me!;
+#X obj 61 81 cnv-adr-testabstr;
+#X text 32 155 tested in Pd-0.42.6 \, ext-0.42.5 & 0.43.0;
+#X text 10 30 of the same abstraction?;
+#X text 10 17 how do I address multiple instances;
+#X text 5 193 (remove one of the abstractions to avoid crash);
+#X connect 0 0 8 0;
+#X connect 5 0 4 0;

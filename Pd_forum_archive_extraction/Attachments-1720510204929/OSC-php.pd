@@ -1,0 +1,9 @@
+#N canvas 0 0 454 304 12;
+#X obj 125 92 dumpOSC 3333;
+#X obj 121 151 OSCroute /bar;
+#X obj 118 214 print bar;
+#X obj 248 152 print dumped;
+#X text 69 26 receive messages sent by OSC.php;
+#X connect 0 0 3 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;

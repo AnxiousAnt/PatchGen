@@ -1,0 +1,11 @@
+#N canvas 766 262 260 315 10;
+#X obj 26 22 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0 1
+;
+#X obj 26 50 sel 1 0;
+#X obj 25 196 chorus~;
+#X msg 26 127 \; pd open chorus~.pd .;
+#X msg 45 85 \; pd-chorus~.pd menuclose 1;
+#X text 49 20 open/close chorus~ patch;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 4 0;

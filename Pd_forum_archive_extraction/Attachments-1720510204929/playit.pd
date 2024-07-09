@@ -1,0 +1,6 @@
+#N canvas 5 102 227 118 10;
+#X obj 31 23 netreceive 3001;
+#X floatatom 118 56 5 0 0 0 - - -;
+#X obj 31 52 ggee/shell;
+#X connect 0 0 2 0;
+#X connect 0 1 1 0;

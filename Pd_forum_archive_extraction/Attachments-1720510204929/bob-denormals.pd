@@ -1,0 +1,47 @@
+#N canvas 565 278 755 300 10;
+#X obj 42 242 bob~;
+#X obj 119 216 sig~ 1;
+#X obj 54 215 sig~ 400;
+#X obj 42 97 osc~ 400;
+#X obj 43 152 *~;
+#X obj 129 118 line~;
+#X obj 129 60 dbtorms;
+#X msg 129 89 \$1 50;
+#X obj 129 32 nbx 5 14 0 100 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 36 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X msg 36 64 \; pd dsp \$1;
+#X obj 42 179 +~;
+#X obj 115 147 noise~;
+#X obj 115 169 *~ 0.001;
+#X obj 115 191 *~ 0;
+#X obj 155 191 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 118 240 clear;
+#X msg 129 5 100;
+#X text 108 4 1);
+#X text 165 5 2);
+#X msg 193 7 0;
+#X text 230 7 3) watch CPU load rise;
+#X text 232 33 4) clear the filter or add some noise to kill the denormals
+, f 32;
+#X text 176 190 adding tiny noise;
+#X text 167 241 clear the filter;
+#X connect 1 0 0 2;
+#X connect 2 0 0 1;
+#X connect 3 0 4 0;
+#X connect 4 0 11 0;
+#X connect 5 0 4 1;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 11 0 0 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 11 1;
+#X connect 15 0 14 1;
+#X connect 16 0 0 0;
+#X connect 17 0 8 0;
+#X connect 20 0 8 0;

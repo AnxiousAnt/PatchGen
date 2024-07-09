@@ -1,0 +1,14 @@
+#N canvas 913 569 689 300 10;
+#X obj 47 110 s pd-subpatch;
+#N canvas 0 107 450 300 subpatch 0;
+#X restore 47 41 pd subpatch;
+#X msg 47 75 obj 227 35 tgl 15 0 send_name receive_name empty 17 7
+0 10 -262144 -1 -1 0;
+#X obj 46 161 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 46 181 s receive_name;
+#X text 132 41 <- 1) open subpatch;
+#X text 411 81 <- 2) click;
+#X text 69 159 <- 3) click;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;

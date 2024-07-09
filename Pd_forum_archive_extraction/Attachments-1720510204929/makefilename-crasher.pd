@@ -1,0 +1,4 @@
+#N canvas 564 194 450 300 10;
+#X msg 17 19 1;
+#X obj 17 42 makefilename %1000f;
+#X connect 0 0 1 0;

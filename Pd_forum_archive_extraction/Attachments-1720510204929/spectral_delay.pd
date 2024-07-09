@@ -1,0 +1,168 @@
+#N canvas 743 101 605 750 12;
+#N canvas 191 0 663 682 fft-analysis 0;
+#X obj 20 126 *~;
+#X obj 19 61 inlet~;
+#X obj 20 180 rfft~;
+#X obj 41 102 tabreceive~ \$0-hann;
+#X obj 21 549 *~;
+#X obj 66 530 tabreceive~ \$0-hann;
+#X obj 21 476 rifft~;
+#X obj 21 581 outlet~;
+#X obj 22 441 vd~ amp;
+#X obj 92 440 vd~ phase;
+#X obj 43 320 wrap~;
+#X obj 22 344 -~;
+#X obj 22 410 /~ 44.1;
+#X obj 21 505 /~ 64;
+#X obj 21 292 tabreceive~ \$0-delay;
+#X obj 154 326 tabreceive~ \$0-feedback;
+#X obj 158 366 *~;
+#X obj 122 367 *~;
+#X obj 16 7 block~ 512 4;
+#X obj 22 372 *~ 512;
+#X obj 59 212 delwrite~ phase 3000;
+#X obj 20 235 delwrite~ amp 3000;
+#X text 118 183;
+#X text 274 211 write amp and phase into delay-buffer;
+#X text 246 443 read out the delay and feedbackarrays for;
+#X text 246 469 every audio block (= fft frame) and use the;
+#X text 247 491 integer value of each delay bin as multiplier;
+#X text 252 512 of the blocksize to calculate the pointer;
+#X text 250 533 back into the vd~s before resynthesis.;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 21 0;
+#X connect 2 1 20 0;
+#X connect 3 0 0 1;
+#X connect 4 0 7 0;
+#X connect 5 0 4 1;
+#X connect 6 0 13 0;
+#X connect 8 0 6 0;
+#X connect 8 0 17 0;
+#X connect 9 0 6 1;
+#X connect 9 0 16 0;
+#X connect 10 0 11 1;
+#X connect 11 0 19 0;
+#X connect 12 0 8 0;
+#X connect 12 0 9 0;
+#X connect 13 0 4 0;
+#X connect 14 0 10 0;
+#X connect 14 0 11 0;
+#X connect 15 0 17 1;
+#X connect 15 0 16 1;
+#X connect 16 0 20 0;
+#X connect 17 0 21 0;
+#X connect 19 0 12 0;
+#X restore 75 514 pd fft-analysis;
+#N canvas 35 66 600 441 Hann-window 0;
+#N canvas 0 0 450 300 graph1 0;
+#X array \$0-hann 512 float 0;
+#X coords 0 1 511 0 200 120 1;
+#X restore 293 249 graph;
+#X msg 171 263 0;
+#X obj 65 312 osc~;
+#X obj 65 264 samplerate~;
+#X obj 65 335 *~ -0.5;
+#X obj 65 358 +~ 0.5;
+#X obj 57 383 tabwrite~ \$0-hann;
+#X text 279 241 1;
+#X text 272 359 0;
+#X text 288 372 0;
+#X obj 65 288 / 512;
+#X obj 57 241 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 336 221 Hann window;
+#X text 113 310 period 512;
+#X text 90 215 recalculate Hann;
+#X text 125 230 window table;
+#X obj 57 146 loadbang;
+#X msg 79 179 \; pd dsp 1;
+#X text 40 27 The Hann window is now recomputed on 'loadbang' to make
+the file smaller (it doesn't have to be saved with the array.);
+#X text 474 375 511;
+#X connect 1 0 2 1;
+#X connect 2 0 4 0;
+#X connect 3 0 10 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 10 0 2 0;
+#X connect 11 0 3 0;
+#X connect 11 0 1 0;
+#X connect 11 0 6 0;
+#X connect 16 0 11 0;
+#X connect 16 0 17 0;
+#X restore 230 488 pd Hann-window;
+#N canvas 0 0 454 304 graph1 0;
+#X array \$0-delay 256 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 256 256 0 256 60 1;
+#X restore 23 158 graph;
+#X text 17 220 0;
+#X text 265 225 22K;
+#X obj 43 549 dac~;
+#X msg 240 435 const 100;
+#X obj 74 489 readsf~;
+#X msg 29 445 1;
+#X msg 29 475 0;
+#X obj 74 418 openpanel;
+#X obj 60 373 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 74 441 symbol;
+#X obj 55 418 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 230 406 const 0;
+#X text 9 150 2;
+#X obj 230 465 s \$0-delay;
+#N canvas 0 0 450 300 graph1 0;
+#X array \$0-feedback 256 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 256 0 256 60 1;
+#X restore 23 266 graph;
+#X text 19 330 0;
+#X text 268 334 22K;
+#X msg 261 558 const 0;
+#X obj 261 617 s \$0-feedback;
+#X text 318 405 <- reset delay;
+#X text 347 553 <- reset feedback;
+#X msg 272 586 const 0.7;
+#X msg 73 465 open \$1 \, 1;
+#X text 7 262 1;
+#X text 82 369 <- click to open and play soundfile;
+#X text 25 78 in each individual bin.;
+#X text 27 63 The two arrays below are for setting the delay and feedback
+;
+#X text 195 2 SPECTRAL DELAY;
+#X text 25 99 See the fft-analysis subpatch for details how it is done.
+;
+#X text 207 719 Johannes Kreidler and Orm Finnendahl 2006;
+#X text 23 23 Example patch for spectral delay \, utilizing Miller
+;
+#X text 24 38 Puckette's patch on Fourier Resynthesis.;
+#X connect 0 0 5 1;
+#X connect 6 0 16 0;
+#X connect 7 0 0 0;
+#X connect 7 1 0 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 25 0;
+#X connect 13 0 12 0;
+#X connect 14 0 16 0;
+#X connect 20 0 21 0;
+#X connect 24 0 21 0;
+#X connect 25 0 7 0;

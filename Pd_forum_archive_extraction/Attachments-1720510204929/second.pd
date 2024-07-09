@@ -1,0 +1,14 @@
+#N canvas 632 331 450 300 10;
+#X obj 165 69 loadbang;
+#X msg 165 121 1;
+#X obj 165 143 metro 300;
+#X msg 165 165 50;
+#X msg 265 116 \; pd dsp 1;
+#X obj 165 91 t b b;
+#X obj 165 197 stdout;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 5 0 1 0;
+#X connect 5 1 4 0;

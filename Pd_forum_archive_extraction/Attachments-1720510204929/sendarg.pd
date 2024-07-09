@@ -1,0 +1,8 @@
+#N canvas 0 0 450 300 10;
+#X obj 172 110 s~ \$1-sig;
+#X obj 172 61 noise~;
+#X obj 178 84 print~ \$1-send;
+#X obj 230 60 r PRINT;
+#X connect 1 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;

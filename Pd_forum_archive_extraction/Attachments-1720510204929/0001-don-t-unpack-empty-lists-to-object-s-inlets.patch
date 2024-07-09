@@ -1,0 +1,28 @@
+>From 049904da3f4019593e6565bb7b2723b5154f5e87 Mon Sep 17 00:00:00 2001
+From: IOhannes m zmoelnig <zmoelnig@iem.at>
+Date: Thu, 28 Feb 2013 10:05:45 +0100
+Subject: [PATCH 1/3] don't unpack empty lists to object's inlets
+
+since the list is empty, this will effectively be a no-op
+(and thus an empty list is silently discarded).
+better call the pd_defaultanything() method.
+---
+ src/m_class.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/m_class.c b/src/m_class.c
+index bbc2fe7..3fb6d5c 100644
+--- a/src/m_class.c
++++ b/src/m_class.c
+@@ -132,7 +132,7 @@ static void pd_defaultlist(t_pd *x, t_symbol *s, int argc, t_atom *argv)
+ 
+         /* if the object is patchable (i.e., can have proper inlets)
+             send it on to obj_list which will unpack the list into the inlets */
+-    else if ((*x)->c_patchable)
++    else if (argc>0 && (*x)->c_patchable)
+         obj_list((t_object *)x, s, argc, argv);
+             /* otherwise gove up and complain. */
+     else pd_defaultanything(x, &s_list, argc, argv);
+-- 
+1.7.10.4
+

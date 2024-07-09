@@ -1,0 +1,216 @@
+diff -Naur pd-0.35-test3/doc/3.audio.examples/74.up.downsampling.pd pd-0.35-mytest/doc/3.audio.examples/74.up.downsampling.pd
+--- pd-0.35-test3/doc/3.audio.examples/74.up.downsampling.pd	Sat Nov 17 09:19:27 2001
++++ pd-0.35-mytest/doc/3.audio.examples/74.up.downsampling.pd	Mon Nov 19 13:37:49 2001
+@@ -1,4 +1,4 @@
+-#N canvas 15 36 1089 690 10;
++#N canvas 32 42 1089 690 10;
+ #X obj 57 567 osc~ 412;
+ #X floatatom 58 543 5 0 0;
+ #X obj 122 595 tabwrite~ scope;
+@@ -6,35 +6,35 @@
+ #X msg 205 43 bang;
+ #X obj 42 191 tabwrite~ scope;
+ #X msg 54 165 bang;
+-#N canvas 470 197 600 400 simple 0;
++#N canvas 335 193 600 400 simple 0;
+ #X obj 185 46 inlet;
+ #X obj 185 102 tabwrite~ scope;
+-#X obj 317 103 block~ 64 1 4;
+ #X obj 78 38 inlet~;
+ #X obj 78 258 outlet~;
++#X obj 317 103 block~ 64 1 0.25;
+ #X connect 0 0 1 0;
+-#X connect 3 0 1 0;
+-#X connect 3 0 4 0;
++#X connect 2 0 1 0;
++#X connect 2 0 3 0;
+ #X restore 42 64 pd simple downsampling 4;
+-#X msg 451 42 bang;
++#X msg 452 40 bang;
+ #X obj 275 190 tabwrite~ scope;
+ #X msg 287 164 bang;
+ #X graph graph2 0 -1 511 1 297 629 897 489;
+ #X array scope 512 float 0;
+ #X pop;
+-#X msg 683 45 bang;
++#X msg 669 44 bang;
+ #X obj 520 193 tabwrite~ scope;
+ #X msg 532 167 bang;
+-#X msg 929 44 bang;
++#X msg 958 43 bang;
+ #X obj 753 192 tabwrite~ scope;
+ #X msg 765 166 bang;
+-#N canvas 255 160 600 400 simple 0;
++#N canvas 235 161 600 400 simple 0;
+ #X obj 185 74 inlet;
+ #X obj 185 102 tabwrite~ scope;
+ #X obj 78 38 inlet~;
+ #X obj 78 258 outlet~;
+-#X obj 317 103 block~ 64 1 0.25;
+ #X text 130 38 zero-padding upsampling;
++#X obj 317 103 block~ 64 1 4;
+ #X connect 0 0 1 0;
+ #X connect 2 0 1 0;
+ #X connect 2 0 3 0;
+@@ -54,38 +54,36 @@
+ #X obj 152 416 tabwrite~ scope;
+ #X msg 158 370 bang;
+ #X text 43 431 zero-padded;
+-#N canvas 220 161 600 400 downsampling 0;
+-#X obj 317 103 block~ 64 1 4;
++#N canvas 176 162 600 400 downsampling 0;
+ #X obj 78 38 inlet~;
+ #X obj 78 258 outlet~;
+ #X obj 152 258 outlet~ hold;
+-#X connect 1 0 2 0;
+-#X connect 1 0 3 0;
++#X obj 318 103 block~ 64 1 0.25;
++#X connect 0 0 1 0;
++#X connect 0 0 2 0;
+ #X restore 41 288 pd downsampling 4 (mixed);
+-#N canvas 215 161 600 400 bad 0;
++#N canvas 137 106 600 400 bad 0;
+ #X obj 185 81 inlet;
+ #X obj 185 102 tabwrite~ scope;
+-#X obj 78 258 outlet~ lin;
+-#X obj 78 38 inlet~ lin;
+-#X text 172 257 "lin" is for linear upsampling;
+-#X text 160 39 "lin" has no meaning when downsampling;
+ #X obj 317 103 block~ 64 2;
++#X obj 78 38 inlet~;
++#X obj 78 258 outlet~;
+ #X connect 0 0 1 0;
+ #X connect 3 0 1 0;
+-#X connect 3 0 2 0;
++#X connect 3 0 4 0;
+ #X restore 711 288 pd bad overlap;
+ #X msg 1018 263 bang;
+ #X obj 841 415 tabwrite~ scope;
+ #X msg 853 389 bang;
+ #X obj 841 264 r~ sine;
+-#N canvas 172 172 600 400 bad 0;
++#N canvas 160 172 600 400 bad 0;
+ #X obj 185 81 inlet;
+ #X obj 185 102 tabwrite~ scope;
+ #X obj 78 258 outlet~ lin;
+ #X obj 78 38 inlet~ lin;
+ #X text 172 257 "lin" is for linear upsampling;
+ #X text 160 39 "lin" has no meaning when downsampling;
+-#X obj 317 103 block~ 64 2 0.5;
++#X obj 317 103 block~ 64 2 2;
+ #X connect 0 0 1 0;
+ #X connect 3 0 1 0;
+ #X connect 3 0 2 0;
+@@ -95,54 +93,54 @@
+ #X msg 335 391 bang;
+ #X obj 323 266 r~ sine;
+ #X text 155 433 sample&hold;
+-#X msg 653 265 bang;
++#X msg 660 265 bang;
+ #X obj 511 416 tabwrite~ scope;
+ #X msg 523 390 bang;
+ #X obj 511 265 r~ sine;
+-#N canvas 184 119 600 400 downsampled 0;
++#N canvas 167 119 600 400 downsampled 0;
+ #X obj 185 81 inlet;
+ #X obj 185 102 tabwrite~ scope;
+ #X obj 78 258 outlet~ lin;
+ #X obj 78 230 *~ 0.5;
+-#X obj 317 103 block~ 128 2 2;
+ #X obj 78 38 inlet~;
++#X obj 317 103 block~ 128 2 0.5;
+ #X connect 0 0 1 0;
+ #X connect 3 0 2 0;
+-#X connect 5 0 1 0;
+-#X connect 5 0 3 0;
++#X connect 4 0 1 0;
++#X connect 4 0 3 0;
+ #X restore 511 289 pd downsampled overlap;
+-#N canvas 97 100 600 400 upsampled 0;
++#N canvas 88 100 600 400 upsampled 0;
+ #X obj 185 81 inlet;
+ #X obj 185 102 tabwrite~ scope;
+ #X obj 78 258 outlet~ lin;
+ #X obj 78 38 inlet~ lin;
+-#X obj 317 103 block~ 256 2 0.5;
+ #X obj 78 230 *~ 0.5;
++#X obj 317 103 block~ 256 2 2;
+ #X connect 0 0 1 0;
+ #X connect 3 0 1 0;
+-#X connect 3 0 5 0;
+-#X connect 5 0 2 0;
++#X connect 3 0 4 0;
++#X connect 4 0 2 0;
+ #X restore 323 290 pd upsampled overlap;
+-#N canvas 214 111 600 400 upsampling 0;
++#N canvas 164 135 600 400 upsampling 0;
+ #X obj 185 81 inlet;
+ #X obj 185 102 tabwrite~ scope;
+ #X obj 78 38 inlet~ hold;
+ #X obj 78 258 outlet~;
+ #X text 160 39 "hold" is for sample&hold upsampling;
+-#X text 397 128 0.25=1/4 --> 4* upsampling;
+-#X obj 317 103 block~ 64 1 0.0625;
++#X obj 317 103 block~ 64 1 16;
+ #X connect 0 0 1 0;
+ #X connect 2 0 1 0;
+ #X connect 2 0 3 0;
+ #X restore 753 65 pd upsampling 16 (sample&hold);
+-#N canvas 246 175 600 400 downsampling 0;
++#N canvas 166 169 600 400 downsampling 0;
+ #X obj 185 81 inlet;
+ #X obj 185 102 tabwrite~ scope;
+ #X obj 78 258 outlet~ lin;
+ #X obj 78 38 inlet~ lin;
+ #X text 172 257 "lin" is for linear upsampling;
+ #X text 160 39 "lin" has no meaning when downsampling;
+-#X obj 320 102 block~ 64 1 8;
++#X obj 320 102 block~ 64 1 0.125;
++#X text 330 131 0.125 = 1/8 = 8*downsampling;
+ #X connect 0 0 1 0;
+ #X connect 3 0 1 0;
+ #X connect 3 0 2 0;
+diff -Naur pd-0.35-test3/src/d_ugen.c pd-0.35-mytest/src/d_ugen.c
+--- pd-0.35-test3/src/d_ugen.c	Sat Nov 17 09:21:14 2001
++++ pd-0.35-mytest/src/d_ugen.c	Mon Nov 19 13:38:17 2001
+@@ -135,7 +135,7 @@
+ } t_block;
+ 
+ static void *block_new(t_floatarg fvecsize, t_floatarg foverlap,
+-		       t_floatarg fdownsample)  /* IOhannes */
++		       t_floatarg fupsample)  /* IOhannes */
+ {
+     int vecsize = fvecsize;
+     int overlap = foverlap;
+@@ -147,13 +147,13 @@
+     	vecsize = 0;	/* this means we'll get it from parent later. */
+ 
+     /* IOhannes { */
+-    if (fdownsample <= 0) downsample = upsample = 1;
+-    else if (fdownsample >= 1) {
+-      downsample = fdownsample;
+-      upsample   = 1;
++    if (fupsample <= 0) downsample = upsample = 1;
++    else if (fupsample >= 1) {
++      upsample = fupsample;
++      downsample   = 1; 
+     } else {
+-      upsample = 1.0 / fdownsample;
+-      downsample   = 1;
++      downsample = 1. / fupsample;
++      upsample   = 1;
+     }
+     /* } IOhannes */
+ 
+@@ -196,9 +196,9 @@
+ }
+ 
+ static void *switch_new(t_floatarg fvecsize, t_floatarg foverlap,
+-			t_floatarg fdownsample) /* IOhannes */
++			t_floatarg fupsample) /* IOhannes */
+ {
+-    t_block *x = (t_block *)(block_new(fvecsize, foverlap, fdownsample)); /* IOhannes */
++    t_block *x = (t_block *)(block_new(fvecsize, foverlap, fupsample)); /* IOhannes */
+     x->x_switched = 1;
+     x->x_switchon = 0;
+     return (x);

@@ -1,0 +1,59 @@
+#N canvas 344 25 596 554 12;
+#X msg 121 92 cat;
+#X msg 143 132 1;
+#X obj 51 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 120 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 38 432 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 93 433 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 148 433 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 203 433 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 259 433 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 276 279 choose your own adventure;
+#X msg 38 241 one;
+#X msg 78 241 two;
+#X msg 51 92 cat dog;
+#X msg 18 128 1 2;
+#X obj 18 202 print outlet0;
+#X obj 12 459 print outlet0;
+#X msg 276 241 one two three four;
+#X msg 109 279 choose outlet zero;
+#X text 16 14 dynaroute: settable route;
+#X msg 119 241 three;
+#X msg 276 354 booze;
+#X msg 108 381 garbage;
+#X obj 51 156 dynaroute;
+#X obj 38 407 dynaroute one two three four;
+#X msg 109 354 booze wine beer;
+#X msg 109 327 own to rent;
+#X msg 109 303 your outlet one;
+#X connect 0 0 22 1;
+#X connect 1 0 22 1;
+#X connect 9 0 23 1;
+#X connect 10 0 23 0;
+#X connect 11 0 23 0;
+#X connect 12 0 22 0;
+#X connect 13 0 22 0;
+#X connect 16 0 23 1;
+#X connect 17 0 23 0;
+#X connect 19 0 23 0;
+#X connect 20 0 23 1;
+#X connect 21 0 23 0;
+#X connect 22 0 2 0;
+#X connect 22 0 14 0;
+#X connect 22 1 3 0;
+#X connect 23 0 4 0;
+#X connect 23 0 15 0;
+#X connect 23 1 5 0;
+#X connect 23 2 6 0;
+#X connect 23 3 7 0;
+#X connect 23 4 8 0;
+#X connect 24 0 23 0;
+#X connect 25 0 23 0;
+#X connect 26 0 23 0;

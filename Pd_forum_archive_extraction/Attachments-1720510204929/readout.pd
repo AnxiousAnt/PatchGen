@@ -1,0 +1,23 @@
+#N canvas 417 183 530 475 10;
+#X obj 207 173 tabread seq;
+#X obj 288 44 bng 15 250 50 0 empty \$0-jp1-r empty 0 -6 576 8 -262144
+-1 -1;
+#X obj 34 41 table seq 3;
+#X obj 309 44 bng 15 250 50 0 empty \$0-jp2-r empty 0 -6 576 8 -262144
+-1 -1;
+#X obj 330 44 bng 15 250 50 0 empty \$0-jp3-r empty 0 -6 576 8 -262144
+-1 -1;
+#X obj 124 104 for++ 1 3 1000;
+#X obj 40 174 makefilename \$0-jp%d-r;
+#X obj 104 259 pack s 0;
+#X msg 104 296 \; \$1 \$2;
+#X obj 229 40 bng 32 250 50 0 empty empty start 0 -6 0 8 -260818 -1
+-1;
+#X floatatom 175 259 5 0 0;
+#X connect 0 0 7 1;
+#X connect 0 0 10 0;
+#X connect 5 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 5 0;

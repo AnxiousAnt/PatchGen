@@ -1,0 +1,92 @@
+#N canvas 187 275 792 456 10;
+#X obj 108 377 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 125 377 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 142 377 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 159 377 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 176 377 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 218 321 list append 0;
+#X obj 108 320 list append 1;
+#X msg 108 156 bang;
+#N canvas 0 0 450 300 count 0;
+#X obj 158 193 + 1;
+#X obj 122 158 until;
+#X obj 122 194 f;
+#X obj 122 101 inlet;
+#X msg 167 157 0;
+#X obj 122 120 t a b;
+#X obj 122 224 outlet;
+#X connect 0 0 2 1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
+#X connect 4 0 2 1;
+#X connect 5 0 1 0;
+#X connect 5 1 4 0;
+#X restore 218 276 pd count;
+#X obj 138 273 print urne;
+#X obj 159 252 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 182 158 seed 10;
+#X msg 184 181 clear;
+#X obj 108 346 route 0 1 2 3 4 5 6 7 8 9;
+#X obj 193 377 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 210 377 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 227 377 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 244 377 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 261 377 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X msg 218 245 10;
+#X floatatom 166 233 5 0 0 0 - - -;
+#X text 78 41 generates random numbers without repetition;
+#X obj 108 230 urne 10;
+#X text 37 23 urne: Unique Random Generator;
+#X text 83 68 Clone of the Max object [urn]. Stops when all values
+have been chosen and bangs left outlet. Send "clear" message to make
+it start over.;
+#X text 352 177 bang: output next random number without repetitions.
+;
+#X text 351 200 clear: put all numbers back into urn.;
+#X text 351 224 seed NUM: seed random number generator;
+#X text 331 157 Inlet 0:;
+#X text 332 258 Inlet 1:;
+#X text 335 319 Outlet 0:;
+#X text 361 338 random number;
+#X text 337 371 Outlet 1:;
+#X text 363 389 bang \, when urn is empty.;
+#X text 333 125 Argsuments: int - range of random numbers in urn (optional)
+;
+#X text 373 279 int - set range of random numbers and reset the urn.
+;
+#X connect 5 0 13 0;
+#X connect 6 0 13 0;
+#X connect 7 0 22 0;
+#X connect 8 0 5 0;
+#X connect 11 0 22 0;
+#X connect 12 0 19 0;
+#X connect 12 0 22 0;
+#X connect 13 0 0 0;
+#X connect 13 1 1 0;
+#X connect 13 2 2 0;
+#X connect 13 3 3 0;
+#X connect 13 4 4 0;
+#X connect 13 5 14 0;
+#X connect 13 6 15 0;
+#X connect 13 7 16 0;
+#X connect 13 8 17 0;
+#X connect 13 9 18 0;
+#X connect 19 0 8 0;
+#X connect 20 0 8 0;
+#X connect 20 0 22 1;
+#X connect 22 0 6 0;
+#X connect 22 0 9 0;
+#X connect 22 1 10 0;

@@ -1,0 +1,140 @@
+linux:/home/huolong/downloads/puredata/pd-0.36-0/src # ./configure --enable-alsa
+loading cache ./config.cache
+checking for gcc... (cached) gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for a BSD compatible install... (cached) /usr/bin/install -c
+checking whether make sets ${MAKE}... (cached) yes
+checking how to run the C preprocessor... (cached) gcc -E
+checking for working const... (cached) yes
+checking for ANSI C header files... (cached) yes
+checking for pid_t... (cached) yes
+checking for size_t... (cached) yes
+checking whether time.h and sys/time.h may both be included... (cached) yes
+checking for ANSI C header files... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for limits.h... (cached) yes
+checking for malloc.h... (cached) yes
+checking for sys/ioctl.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for bstring.h... (cached) no
+checking whether gcc needs -traditional... (cached) no
+checking return type of signal handlers... (cached) void
+checking for vprintf... (cached) yes
+checking for gettimeofday... (cached) yes
+checking for select... (cached) yes
+checking for socket... (cached) yes
+checking for strerror... (cached) yes
+checking for dlopen in -ldl... (cached) yes
+checking for sin in -lffm... (cached) no
+checking for sin in -lm... (cached) yes
+checking for pthread_create in -lpthread... (cached) yes
+checking for snd_pcm_info in -lasound... (cached) yes
+checking for X... (cached) libraries /usr/X11R6/lib, headers /usr/X11R6/include
+checking for XCreateWindow in -lX11... (cached) yes
+checking for tcl.h... (cached) yes
+checking for main in -ltcl8.7... (cached) no
+checking for main in -ltcl8.6... (cached) no
+checking for main in -ltcl8.5... (cached) no
+checking for main in -ltcl8.4... (cached) no
+checking for main in -ltcl8.3... (cached) yes
+checking for main in -ltk8.7... (cached) no
+checking for main in -ltk8.6... (cached) no
+checking for main in -ltk8.5... (cached) no
+checking for main in -ltk8.4... (cached) no
+checking for main in -ltk8.3... (cached) yes
+creating ./config.status
+creating makefile
+
+
+
+
+linux:/home/huolong/downloads/puredata/pd-0.36-0/src # make depend
+cc -I. -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -M g_canvas.c g_graph.c g_text.c g_rtext.c g_array.c g_template.c g_io.c g_scalar.c g_traversal.c g_guiconnect.c g_readwrite.c g_editor.c g_all_guis.c g_bang.c g_hdial.c g_hslider.c g_mycanvas.c g_numbox.c g_toggle.c g_vdial.c g_vslider.c g_vumeter.c m_pd.c m_class.c m_obj.c m_atom.c m_memory.c m_binbuf.c m_conf.c m_glob.c m_sched.c s_main.c s_inter.c s_unix.c s_file.c s_print.c s_loader.c s_path.c s_entry.c d_ugen.c d_ctl.c d_arithmetic.c d_osc.c d_filter.c d_dac.c d_misc.c d_math.c d_fft.c d_mayer_fft.c d_fftroutine.c d_array.c d_global.c d_delay.c d_resample.c x_arithmetic.c x_connective.c x_interface.c x_midi.c x_misc.c x_time.c x_acoustics.c x_net.c x_qlist.c x_gui.c d_soundfile.c s_linux.c > makefile.dependencies
+
+
+
+
+linux:/home/huolong/downloads/puredata/pd-0.36-0/src # make install
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_canvas.o g_canvas.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_graph.o g_graph.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_text.o g_text.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_rtext.o g_rtext.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_array.o g_array.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_template.o g_template.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_io.o g_io.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_scalar.o g_scalar.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_traversal.o g_traversal.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_guiconnect.o g_guiconnect.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_readwrite.o g_readwrite.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_editor.o g_editor.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_all_guis.o g_all_guis.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_bang.o g_bang.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_hdial.o g_hdial.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_hslider.o g_hslider.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_mycanvas.o g_mycanvas.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_numbox.o g_numbox.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_toggle.o g_toggle.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_vdial.o g_vdial.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_vslider.o g_vslider.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/g_vumeter.o g_vumeter.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/m_pd.o m_pd.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/m_class.o m_class.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/m_obj.o m_obj.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/m_atom.o m_atom.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/m_memory.o m_memory.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/m_binbuf.o m_binbuf.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/m_conf.o m_conf.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/m_glob.o m_glob.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/m_sched.o m_sched.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/s_main.o s_main.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/s_inter.o s_inter.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/s_unix.o s_unix.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/s_file.o s_file.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/s_print.o s_print.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/s_loader.o s_loader.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/s_path.o s_path.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/s_entry.o s_entry.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_ugen.o d_ugen.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_ctl.o d_ctl.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_arithmetic.o d_arithmetic.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_osc.o d_osc.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_filter.o d_filter.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_dac.o d_dac.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_misc.o d_misc.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_math.o d_math.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_fft.o d_fft.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_mayer_fft.o d_mayer_fft.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_fftroutine.o d_fftroutine.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_array.o d_array.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_global.o d_global.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_delay.o d_delay.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_resample.o d_resample.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/x_arithmetic.o x_arithmetic.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/x_connective.o x_connective.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/x_interface.o x_interface.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/x_midi.o x_midi.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/x_misc.o x_misc.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/x_time.o x_time.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/x_acoustics.o x_acoustics.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/x_net.o x_net.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/x_qlist.o x_qlist.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/x_gui.o x_gui.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/d_soundfile.o d_soundfile.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I. -c -o ../obj/s_linux.o s_linux.c
+cd ../obj;  cc -Wl,-export-dynamic  -o ../bin/pd g_canvas.o g_graph.o g_text.o g_rtext.o g_array.o g_template.o g_io.o g_scalar.o g_traversal.o g_guiconnect.o g_readwrite.o g_editor.o g_all_guis.o g_bang.o g_hdial.o g_hslider.o g_mycanvas.o g_numbox.o g_toggle.o g_vdial.o g_vslider.o g_vumeter.o m_pd.o m_class.o m_obj.o m_atom.o m_memory.o m_binbuf.o m_conf.o m_glob.o m_sched.o s_main.o s_inter.o s_unix.o s_file.o s_print.o s_loader.o s_path.o s_entry.o d_ugen.o d_ctl.o d_arithmetic.o d_osc.o d_filter.o d_dac.o d_misc.o d_math.o d_fft.o d_mayer_fft.o d_fftroutine.o d_array.o d_global.o d_delay.o d_resample.o x_arithmetic.o x_connective.o x_interface.o x_midi.o x_misc.o x_time.o x_acoustics.o x_net.o x_qlist.o x_gui.o d_soundfile.o s_linux.o  \
+-ldl -lm -lpthread -lasound
+s_linux.o: In function `alsa_open_audio':
+s_linux.o(.text+0x3634): Warning: start_mode is deprecated, consider to use start_threshold
+s_linux.o(.text+0x3652): Warning: xrun_mode is deprecated, consider to use stop_threshold
+cc -O2  -o ../bin/pd-watchdog s_watchdog.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I.  -c -o ../obj/t_main.o t_main.c
+cc -DPD -DUNIX  -Wall -W -Wstrict-prototypes  -Werror -Wno-unused -Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer  -DDL_OPEN -DALSA01 -DINSTALL_PREFIX=\"/usr/local\" -I.  -c -o ../obj/t_tkcmd.o t_tkcmd.c
+cc1: warnings being treated as errors
+t_tkcmd.c: In function `pdgui_startup':
+t_tkcmd.c:349: warning: passing arg 3 of `Tcl_CreateCommand' from incompatible pointer type
+make: *** [t_tkcmd.o] Error 1
+

@@ -1,0 +1,33 @@
+#N canvas 449 170 758 514 10;
+#X obj 333 152 symbol \$1;
+#X obj 469 247 iemguts/canvasargs;
+#X obj 463 56 inlet;
+#X msg 381 97 list 10 11;
+#X obj 296 378 outlet;
+#X msg 464 212 list 8 \$0-test \;;
+#X msg 472 159 set list 8 \, adddollsym 0-test \, addsemi \, bang;
+#X msg 252 212 list 8 \\\$0-test \;;
+#X obj 290 351 receive \$2;
+#X obj 441 302 loadbang;
+#X msg 441 323 0;
+#X obj 441 365 oreceive;
+#X obj 496 375 print;
+#X msg 441 344 symbol $\$1-test;
+#X obj 96 320 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 2171 256;
+#X obj 91 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 96 299 \$0;
+#X connect 2 0 6 0;
+#X connect 3 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 0;
+#X connect 8 0 4 0;
+#X connect 9 0 10 0;
+#X connect 10 0 13 0;
+#X connect 11 0 4 0;
+#X connect 13 0 11 0;
+#X connect 13 0 12 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;

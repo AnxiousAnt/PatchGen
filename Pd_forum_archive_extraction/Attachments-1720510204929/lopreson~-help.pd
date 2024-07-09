@@ -1,0 +1,14 @@
+#N canvas 309 332 462 312 10;
+#X obj 96 39 noise~;
+#X obj 94 188 dac~;
+#X floatatom 145 88 5 0 0 0 - - -;
+#X floatatom 195 89 5 0 0 0 - - -;
+#X obj 95 115 lopreson~ 100 1;
+#X text 141 71 cutoff;
+#X text 209 71 Q;
+#X text 82 23 input signal;
+#X connect 0 0 4 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 2;
+#X connect 4 0 1 0;
+#X connect 4 0 1 1;

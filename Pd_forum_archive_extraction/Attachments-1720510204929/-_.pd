@@ -1,0 +1,8 @@
+#N canvas 769 454 450 300 10;
+#X obj 117 220 outlet~;
+#X obj 117 177 \$1;
+#X obj 117 94 r \$2;
+#X obj 117 138 \$3 \$4;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;

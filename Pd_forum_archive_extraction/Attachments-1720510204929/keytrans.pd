@@ -1,0 +1,30 @@
+#N canvas 311 204 782 431 10;
+#X obj 195 61 keyname;
+#X obj 195 187 route \$1;
+#X obj 274 267 f \$2;
+#X obj 58 357 outlet;
+#X text 295 95 swap output of [keyname] to be a list: <keyname> <state>
+;
+#X obj 195 146 list trim;
+#X text 294 145 trim the "list" selector;
+#X obj 58 61 inlet;
+#X text 28 34 pass-through trick to make connecting easier;
+#X obj 274 289 mtof;
+#X text 38 386 list <freq> <0|1>;
+#X obj 195 95 list prepend;
+#X obj 274 247 loadbang;
+#X obj 195 312 list prepend;
+#X text 316 280 prepend the desired frequency from a midi note passed
+as argument 2;
+#X text 293 181 wait for the key passed as first argument. Output after
+this stage is: 1 (down) or 0 (up) for the selected keyname.;
+#X connect 0 0 11 0;
+#X connect 0 1 11 1;
+#X connect 1 0 13 0;
+#X connect 2 0 9 0;
+#X connect 5 0 1 0;
+#X connect 7 0 3 0;
+#X connect 9 0 13 1;
+#X connect 11 0 5 0;
+#X connect 12 0 2 0;
+#X connect 13 0 3 0;

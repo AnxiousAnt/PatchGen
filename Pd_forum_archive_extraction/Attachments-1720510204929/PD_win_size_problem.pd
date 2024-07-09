@@ -1,0 +1,72 @@
+#N canvas 42 256 984 291 12;
+#X declare -stdpath iemguts;
+#X obj 27 200 cnv 5 5 17 empty empty empty 20 12 0 14 -194593 -66577
+0;
+#X msg 33 141 vis 0 \, relocate \$1x\$2+0+0 0x0+\$3+\$4 \, vis 1 \,
+editmode 0, f 20;
+#X obj 33 200 s pd-\$0-subpatch;
+#N canvas 42 92 400 100 \$0-subpatch 0;
+#X text 95 35 Put in anything you like;
+#X restore 33 244 pd \$0-subpatch;
+#X msg 33 113 400 100 30 30;
+#X obj 213 92 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 207 232 cnv 5 5 17 empty empty empty 20 12 0 14 -194593 -66577
+0;
+#X msg 213 173 vis 0 \, relocate \$1x\$2+0+0 0x0+\$3+\$4 \, vis 1 \,
+editmode 0, f 20;
+#X obj 213 232 s pd-\$0-subpatch;
+#X msg 213 145 400 100 30 30;
+#X text 213 19 window opens with correct size but with scroll-sidebars.
+, f 24;
+#X text 36 21 window opens correctly - no sidebars, f 18;
+#X text 780 165 As long as the window is created within the visual
+response of the GUI \, it is opening without the sidebars, f 23;
+#X obj 213 116 del 250;
+#X obj 413 92 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 407 232 cnv 5 5 17 empty empty empty 20 12 0 14 -194593 -66577
+0;
+#X msg 413 173 vis 0 \, relocate \$1x\$2+0+0 0x0+\$3+\$4 \, vis 1 \,
+editmode 0, f 20;
+#X obj 413 232 s pd-\$0-subpatch;
+#X msg 413 144 400 100 30 30;
+#X text 778 58 It seems \, like the "hold" time of [bang] or the visual
+"flash" of the message box is a crucial factor here., f 25;
+#X text 413 19 where is the threshold ?, f 12;
+#X floatatom 459 91 5 0 0 0 - - -;
+#X obj 413 116 delay;
+#X msg 13 85 bang;
+#X obj 57 85 r remoteopen;
+#X obj 593 219 s remoteopen;
+#N canvas 176 611 450 300 with 0;
+#X obj 110 126 propertybang;
+#X obj 110 146 t b b;
+#X obj 135 166 print property;
+#X obj 110 200 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X restore 593 118 pd with propertybang;
+#X obj 781 16 declare -stdpath iemguts;
+#X text 601 56 right-click here and select "Properties", f 17;
+#X obj 617 171 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 591 15 also with scrollbars:;
+#X msg 659 182 bang;
+#X connect 1 0 2 0;
+#X connect 4 0 1 0;
+#X connect 5 0 13 0;
+#X connect 7 0 8 0;
+#X connect 9 0 7 0;
+#X connect 13 0 9 0;
+#X connect 14 0 22 0;
+#X connect 16 0 17 0;
+#X connect 18 0 16 0;
+#X connect 21 0 22 1;
+#X connect 22 0 18 0;
+#X connect 23 0 4 0;
+#X connect 24 0 4 0;
+#X connect 26 0 25 0;
+#X connect 29 0 25 0;
+#X connect 31 0 25 0;

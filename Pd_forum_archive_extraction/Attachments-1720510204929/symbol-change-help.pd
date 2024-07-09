@@ -1,0 +1,11 @@
+#N canvas 252 111 450 300 10;
+#X obj 14 79 symbol-change;
+#X obj 14 103 print;
+#X msg 14 32 test1;
+#X msg 70 32 test2;
+#X msg 121 32 test3;
+#X text 11 5 Only reports a change in the incoming symbol.;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;

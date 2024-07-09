@@ -1,0 +1,81 @@
+#N canvas 475 199 597 500 10;
+#X obj 21 28 inlet~;
+#X text 12 9 audio input;
+#X obj 36 314 *~;
+#X obj 51 263 r depth;
+#X obj 20 348 +~;
+#X obj 20 443 outlet~;
+#X text 15 462 audio output;
+#X obj 198 64 osc~;
+#X text 232 64 sweep depth;
+#X obj 197 193 +~;
+#X obj 212 169 r delay;
+#X text 101 262 quantity of delayed signal mixed (0-1);
+#X obj 198 125 *~;
+#X obj 213 100 r width;
+#X text 263 99 width of variable delay (ms);
+#X text 210 151 minimum delay (ms);
+#X text 250 29 delay frequency (Hz);
+#X text 479 456 Raul Diaz [2007];
+#X obj 198 30 r speed;
+#X obj 230 398 cnv 15 202 75 empty empty empty 20 12 0 14 -33289 -66577
+0;
+#X obj 271 407 hsl 100 12 0 1 0 0 depth empty depth -36 6 0 10 -228856
+-258113 -258113 0 1;
+#X obj 271 424 hsl 100 12 0 30 0 0 delay empty delay -36 6 0 10 -228856
+-62783 -204352 0 1;
+#X obj 271 439 hsl 100 12 0 30 0 0 width empty width -36 6 0 10 -228856
+-62783 -62783 0 1;
+#X obj 377 424 nbx 3 12 -1e+037 1e+037 0 0 empty delay ms 39 6 0 10
+-228856 -62783 -204352 0 256;
+#X obj 377 439 nbx 3 12 -1e+037 1e+037 0 0 empty width ms 39 6 0 10
+-228856 -62783 -62783 0 256;
+#X obj 271 456 hsl 100 12 0 5 0 0 speed empty speed -36 6 0 10 -228856
+-260097 -260097 0 1;
+#X obj 377 456 nbx 3 12 -1e+037 1e+037 0 0 empty speed Hz 39 6 0 10
+-228856 -260097 -260097 0 256;
+#X obj 36 238 vd~ signal;
+#X obj 37 56 delwrite~ signal 1000;
+#X text 420 25 DELAY BETWEEN 20-30 MS;
+#X obj 443 193 +~;
+#X obj 458 125 random;
+#X obj 458 102 metro 10;
+#X obj 516 102 r delay;
+#X obj 516 124 * 0.5;
+#X obj 458 149 -;
+#X obj 516 149 * 0.5;
+#X text 453 79 random minimum delay;
+#X obj 444 314 *~;
+#X obj 459 265 r depth;
+#X obj 444 238 vd~ signal;
+#X obj 51 288 * 0.5;
+#X obj 459 290 * 0.5;
+#X obj 20 394 +~;
+#X connect 0 0 4 0;
+#X connect 0 0 28 0;
+#X connect 2 0 4 1;
+#X connect 3 0 41 0;
+#X connect 4 0 43 0;
+#X connect 7 0 12 0;
+#X connect 9 0 27 0;
+#X connect 10 0 9 1;
+#X connect 12 0 9 0;
+#X connect 12 0 30 0;
+#X connect 13 0 12 1;
+#X connect 18 0 7 0;
+#X connect 27 0 2 0;
+#X connect 30 0 40 0;
+#X connect 31 0 35 0;
+#X connect 32 0 31 0;
+#X connect 33 0 34 0;
+#X connect 34 0 31 1;
+#X connect 34 0 36 0;
+#X connect 35 0 30 1;
+#X connect 36 0 35 1;
+#X connect 38 0 43 1;
+#X connect 39 0 42 0;
+#X connect 40 0 38 0;
+#X connect 41 0 2 1;
+#X connect 42 0 38 1;
+#X connect 43 0 5 0;
+#X coords 0 -1 1 1 202 93 1 230 380;

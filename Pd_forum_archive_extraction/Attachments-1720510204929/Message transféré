@@ -1,0 +1,40 @@
+Subject: Re: [PD] pd-0.46-7: segfault with jack-1.9.10
+To: =?UTF-8?Q?IOhannes_m_zm=c3=b6lnig?= <zmoelnig@iem.at>
+References: <56BCE3ED.3060500@cauwe.org> <56BCE571.9020901@iem.at>
+ <56BCE7DA.4080309@cauwe.org> <56BCE8AF.8050305@iem.at>
+From: Xavier Miller <xavier.miller@cauwe.org>
+Message-ID: <56BD8919.9050406@cauwe.org>
+Date: Fri, 12 Feb 2016 08:26:17 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101
+ Thunderbird/38.5.0
+MIME-Version: 1.0
+In-Reply-To: <56BCE8AF.8050305@iem.at>
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi!
+
+Test without DBUS, same results: segmentation fault.
+
+I run jackd with those parameters:
+/usr/bin/jackd -P80 -u -dalsa -dhw:0 -r48000 -p512 -n3
+
+Kind regards,
+Xavier Miller.
+
+Le 11/02/16 21:01, IOhannes m zm=C3=B6lnig a =C3=A9crit :
+> On 02/11/2016 08:58 PM, Xavier Miller wrote:
+>> I use jack-dbus. I attached the ~/config/jack/conf.xml file
+>=20
+> would it be possible to *not* use jack-dbus for testing?
+>=20
+> mgfdsar
+> IOhannes
+>=20
+>=20
+>=20
+> _______________________________________________
+> Pd-list@lists.iem.at mailing list
+> UNSUBSCRIBE and account-management -> http://lists.puredata.info/listin=
+fo/pd-list
+>=20

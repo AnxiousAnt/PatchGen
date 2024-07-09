@@ -1,0 +1,14 @@
+#N canvas 155 626 409 255 10;
+#X obj 220 88 f \$0;
+#X obj 220 120 s \$1-main-id;
+#X obj 82 97 r \$0-my-id;
+#X obj 67 136 f;
+#X floatatom 102 139 5 0 0 0 - - -, f 5;
+#X obj 47 50 inlet;
+#X text 47 27 For whatever data;
+#X text 220 37 Init ID;
+#X obj 220 62 loadbang;
+#X connect 0 0 1 0;
+#X connect 2 0 3 1;
+#X connect 2 0 4 0;
+#X connect 8 0 0 0;

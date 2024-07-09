@@ -1,0 +1,88 @@
+#N canvas 129 301 620 382 10;
+#X symbolatom 19 351 72 0 0 0 - - -;
+#X obj 19 323 makefilename %.70f;
+#N canvas 0 50 190 245 nan 0;
+#X obj 45 17 inlet;
+#X obj 46 173 outlet;
+#X obj 45 74 t b f;
+#X msg 46 96 2;
+#X obj 46 143 * 0;
+#X obj 46 118 pow 1024;
+#X msg 45 49 1024;
+#X connect 0 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 1 5 1;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 0;
+#X restore 18 44 pd nan;
+#X obj 18 20 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 0 50 168 259 inf 0;
+#X obj 45 17 inlet;
+#X obj 46 173 outlet;
+#X obj 45 74 t b f;
+#X msg 46 96 2;
+#X obj 46 118 pow 1024;
+#X msg 45 49 1024;
+#X connect 0 0 5 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X restore 71 44 pd inf;
+#X obj 71 20 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 18 181 8 0 0 0 - - -;
+#X msg 72 116 1;
+#X msg 72 86 0;
+#X msg 106 202 \; pd dsp 1;
+#X msg 106 241 \; pd dsp 0;
+#X obj 106 179 loadbang;
+#N canvas 0 50 200 224 unsig~ 0;
+#X obj 32 40 inlet~;
+#X obj 32 122 snapshot~;
+#X obj 61 89 metro 200;
+#X obj 61 62 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 32 153 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X restore 19 266 pd unsig~;
+#X floatatom 19 296 17 0 0 0 - - -;
+#X text 183 133 Small floats which can't be expressed with the bits
+of the datatype are also denormal \, more specifically: subnormal.
+Computations with subnormal numbers are still possible \, but very
+CPU intensive. Test: click 1 first \, then 0 to see how small the numbers
+become. If all is OK \, numbers smaller than ~1e-19 are flushed to
+zero. If not OK \, numbers smaller than 1e-39 are seen. These are subnormals.
+Check CPU load difference. It is always possible to recover from subnormals
+by sending a normal number (like 1) in.;
+#X text 184 320 Katja Vetter Jan 2013;
+#X obj 18 216 lop~ 1;
+#X text 183 261 IIR filters have internal feedback delay lines \, therefore
+objects like [lop~] \, [hip~] and [biquad~] must be protected against
+denormals.;
+#X text 183 18 NaN and inf are denormal numbers. When inf or nan starts
+recirculating in a feedback delay line \, the object can't do further
+calculations \, even if the input goes back to normal. Therefore Pd
+must avoid writing nan or inf into a feedback delay line. Test: click
+nan or inf first \, and 1 thereafter. If all is OK \, the output returns
+to normal. If not OK \, inf or nan will stay at the output and the
+patch must be reloaded to recover.;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 16 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 11 0 9 0;
+#X connect 12 0 13 0;
+#X connect 13 0 1 0;
+#X connect 16 0 12 0;

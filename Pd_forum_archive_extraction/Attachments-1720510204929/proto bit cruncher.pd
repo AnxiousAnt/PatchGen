@@ -1,0 +1,101 @@
+#N canvas 0 0 889 677 10;
+#X obj 154 104 soundfiler;
+#X obj 153 62 openpanel;
+#X obj 153 29 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array1 173440 float 2;
+#X coords 0 1 173440 -1 200 140 1;
+#X restore 314 12 graph;
+#X msg 153 84 read -resize \$1 array1;
+#X obj 45 146 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 41 536 dac~;
+#X obj 46 191 tabplay~ array1;
+#X obj 452 375 hsl 100 15 2 100 1 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 7200 1;
+#X obj 44 49 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 45 419 /~;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array3 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 237 473 graph;
+#X obj 624 438 tabwrite~ array3;
+#X obj 451 182 metro 10;
+#X obj 42 90 metro 3920;
+#X obj 44 275 samphold~;
+#X obj 153 251 phasor~ 1050;
+#X obj 156 231 hsl 128 15 220.5 22050 1 1 empty empty empty -2 -8 0
+10 -262144 -1 -1 12700 1;
+#X text 454 358 Bit crunching;
+#X text 154 218 Sample rate abuse;
+#X msg 83 62 stop;
+#X obj 44 320 expr~ pow((int(pow(($v1*$i2) \, 3))) \, -3);
+#X obj 294 313 expr~ int($v1*$i2);
+#X text 76 301 Cubic;
+#X text 314 296 Linear;
+#X obj 87 539 savepanel;
+#X obj 87 584 writesf~ 2;
+#X msg 87 562 open \$1;
+#X obj 87 518 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 142 562 start;
+#X msg 182 562 stop;
+#X obj 295 369 *~;
+#X floatatom 308 350 5 0 1 0 - - -;
+#X obj 45 363 *~;
+#X floatatom 58 342 5 0 1 0 - - -;
+#X text 71 362 Ye problem lies here!;
+#X text 218 182 Debug noise;
+#X obj 177 182 noise~;
+#X text 525 10 This is a WIP bitcrusher and sample rate reduction unit.
+Obviously it's not quite working yet. The first linear bit reduction
+method turns on and off just fine. However the cubic one I just can't
+seem to get to stop. Just a side note - there's also a cute little
+loop player in here - that's what array1 is for. Array3 just displays
+the output. Even though the output isn't showing up \, I can still
+hear it. What the fark? The problem is marked with Ye problem lies
+here. \, over yonder about in the middle on the left. Any help would
+me totally appreciated. Also creative input would be handy. :) Thanks!
+;
+#X msg 714 199 \; pd dsp 1;
+#X msg 714 239 \; pd dsp 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 7 0;
+#X connect 5 0 13 0;
+#X connect 7 0 15 0;
+#X connect 8 0 21 1;
+#X connect 8 0 22 1;
+#X connect 8 0 10 1;
+#X connect 9 0 14 0;
+#X connect 10 0 12 0;
+#X connect 10 0 26 0;
+#X connect 10 0 26 1;
+#X connect 10 0 6 0;
+#X connect 10 0 6 1;
+#X connect 13 0 12 0;
+#X connect 14 0 5 0;
+#X connect 15 0 21 0;
+#X connect 15 0 22 0;
+#X connect 16 0 15 1;
+#X connect 17 0 16 0;
+#X connect 20 0 14 0;
+#X connect 21 0 33 0;
+#X connect 22 0 31 0;
+#X connect 25 0 27 0;
+#X connect 27 0 26 0;
+#X connect 28 0 25 0;
+#X connect 29 0 26 0;
+#X connect 30 0 26 0;
+#X connect 31 0 10 0;
+#X connect 32 0 31 1;
+#X connect 33 0 10 0;
+#X connect 34 0 33 1;
+#X connect 37 0 15 0;

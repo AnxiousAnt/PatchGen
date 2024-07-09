@@ -1,0 +1,13 @@
+#N canvas 0 0 632 356 10;
+#X obj 80 192 dollars word;
+#X text 79 46 Empty arguments are assumed to be 0:;
+#X text 141 70 equals:;
+#X text 81 114 But with numbers \, [symbol \$1] inside will not work:
+;
+#X text 79 167 With symbol-arguments \, [f \$1] will not work:;
+#X obj 82 254 list append \$1;
+#X text 195 253 works for both kinds as does;
+#X obj 405 254 s \$1-window;
+#X obj 81 69 dollars;
+#X obj 81 134 dollars 100;
+#X obj 200 69 dollars 0;

@@ -1,0 +1,27 @@
+#N canvas 679 232 805 338 10;
+#X declare -lib sfruit;
+#X floatatom 111 36 5 0 0 0 - - -;
+#X floatatom 110 82 5 0 0 0 - - -;
+#X floatatom 112 130 5 0 0 0 - - -;
+#X obj 113 244 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 115 294 5 0 0 0 - - -;
+#X obj 261 244 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 263 294 5 0 0 0 - - -;
+#X obj 114 266 v oneInst;
+#X obj 111 106 instance one;
+#X obj 109 58 instance one;
+#X obj 110 12 instance one;
+#X obj 572 259 import sfruit;
+#X text 368 18 CREATE OBJECTS;
+#X obj 262 267 v twoInst;
+#X msg 368 84 \; pd-instance-test.pd obj 250 100 instance two;
+#X msg 368 42 \; pd-instance-test.pd obj 250 50 instance two;
+#X connect 3 0 7 0;
+#X connect 5 0 13 0;
+#X connect 7 0 4 0;
+#X connect 8 0 2 0;
+#X connect 9 0 1 0;
+#X connect 10 0 0 0;
+#X connect 13 0 6 0;

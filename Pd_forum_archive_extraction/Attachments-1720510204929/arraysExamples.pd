@@ -1,0 +1,45 @@
+#N canvas 299 102 875 544 10;
+#X declare -lib ofelia;
+#X obj 9 9 declare -lib ofelia;
+#X obj 441 111 ofelia d -k \$0-tables2;
+#A __set local tab={} \; \; for i=0 \, 161 do \; tab[i]=ofRandom(0
+\, 255) \; end \; \; function M.bang() \; return tab \; end \;;
+#X obj 441 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 202 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 202 103 ofelia d \$0-tables \; \; local tab=ofTable() \; \;
+for i=0 \, 161 do \; tab[i]=ofRandom(0 \, 255) \; end \; \; function
+M.bang() \; return tab \; end \;;
+#X obj 202 234 print tab1;
+#X obj 441 132 print tab2;
+#X text 192 36 Using Arrays with lua scripts;
+#X text 265 271 Interacting with pd Arrays;
+#X obj 392 345 ofelia d -k \$0-recuperandoTabelasDoPd;
+#A __set local aTable = ofArray("\$0-tabela_do_pd_ex1") \; \; function
+M.bang() \; return aTable:get(0) \; end \; \; \; function M.tamanho()
+\; return aTable:getSize() \; end \;;
+#X obj 392 318 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 392 381 print exemploTabelas_2__;
+#X obj 22 321 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 56 316 Recuperar Tabela como list;
+#X obj 22 481 print exemploTabelas_2__;
+#X msg 416 315 tamanho;
+#X obj 22 345 ofelia f \; \; local aTable = ofArray("\$0-tabela_do_pd_ex1")
+\; local saida = aTable:get(0) \; \; return saida \;;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-tabela_do_pd_ex1 4 float 3;
+#A 0 -0.0285741 -0.300001 0.285708 -0.642853;
+#X coords 0 1 4 -1 200 140 1 0 0;
+#X restore 651 313 graph;
+#X connect 1 0 6 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 12 0 16 0;
+#X connect 15 0 9 0;
+#X connect 16 0 14 0;

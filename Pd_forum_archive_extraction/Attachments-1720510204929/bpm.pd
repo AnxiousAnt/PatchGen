@@ -1,0 +1,24 @@
+#N canvas 332 297 376 341 10;
+#X floatatom 149 104 5 0 0 1 bpm - -;
+#X obj 149 152 t b f;
+#X obj 149 203 /;
+#X msg 149 178 60000;
+#X floatatom 174 237 5 0 0 1 ms - -;
+#X obj 122 267 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 33 197 tgl 15 0 empty empty metro_on/off 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 149 22 loadbang;
+#X msg 149 44 120;
+#X text 61 103 set bpm here;
+#X obj 122 237 metro;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 1;
+#X connect 2 0 4 0;
+#X connect 2 0 10 1;
+#X connect 3 0 2 0;
+#X connect 6 0 10 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 10 0 5 0;

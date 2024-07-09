@@ -1,0 +1,21 @@
+#N canvas 15 90 449 232 10;
+#X floatatom 42 164 15 0 0 0 - - -;
+#X floatatom 42 73 5 0 0 0 - - -;
+#X text 27 49 samples;
+#X text 142 164 seconds;
+#X text 19 13 samptosec: Convert samples to seconds (and msec) at current
+samplerate;
+#X msg 85 72 44100;
+#X msg 133 72 48000;
+#X floatatom 129 138 8 0 0 0 - - -;
+#X text 179 134 second outlet gives mseconds;
+#X text 36 206 Lorenzo Sutton 2008 lsutton@;
+#X text 207 206 libero.it;
+#X obj 356 204 sectosamp;
+#X obj 42 114 samptosec 88200;
+#X text 301 204 see also;
+#X connect 1 0 12 0;
+#X connect 5 0 12 0;
+#X connect 6 0 12 0;
+#X connect 12 0 0 0;
+#X connect 12 1 7 0;

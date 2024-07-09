@@ -1,0 +1,18 @@
+#N canvas 68 83 251 293 10;
+#X msg 82 157 set open \$1;
+#X obj 82 60 route 0;
+#X obj 82 256 readsf~ 2;
+#X obj 82 39 ii \$1;
+#X obj 82 115 symbol stevie.aif;
+#X obj 82 83 t b;
+#X obj 82 189 t b a;
+#X msg 82 225;
+#X connect 0 0 6 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 6 1 7 0;
+#X connect 7 0 2 0;

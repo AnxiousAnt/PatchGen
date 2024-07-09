@@ -1,0 +1,20 @@
+#N canvas 330 490 450 300 10;
+#X declare -lib mroeach;
+#X obj 70 23 declare -lib mroeach;
+#X obj 135 154 httpreq;
+#X msg 135 115 GET http://192.168.1.123/relay/0/?turn=on;
+#X obj 135 187 tcpclient;
+#X msg 74 88 connect 192.168.1.123 80;
+#X obj 169 214 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
+-1 0 1;
+#X msg 12 138 verbosity \$1;
+#X obj 13 113 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 150 133 GET http://192.168.1.123/relay/0/?turn=off;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 2 5 0;
+#X connect 4 0 3 0;
+#X connect 6 0 1 0;
+#X connect 7 0 6 0;
+#X connect 8 0 1 0;

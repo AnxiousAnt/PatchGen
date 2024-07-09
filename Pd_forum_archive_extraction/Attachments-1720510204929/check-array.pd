@@ -1,0 +1,9 @@
+#N canvas 207 232 521 362 12;
+#X msg 34 28 bang \; pd dsp 1 \; mew rename grrr...;
+#X msg 85 138 bang;
+#X obj 34 234 tabwrite~ mew;
+#X graph graph1 0 -1 99 1 261 312 461 172;
+#X array mew 100 float 0;
+#X pop;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;

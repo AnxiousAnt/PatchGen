@@ -1,0 +1,28 @@
+#N canvas 0 0 450 300 10;
+#X obj 17 168 gemwin;
+#X msg 38 109 create;
+#X msg 32 65 destroy;
+#X obj 12 132 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X msg 94 137 dimen 320 320;
+#X obj 257 111 gemhead;
+#X obj 250 155 pix_movie;
+#X msg 187 76 auto \$1;
+#X obj 187 52 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 248 214 imageVert;
+#X msg 335 97 open \$1;
+#X obj 334 61 openpanel;
+#X obj 330 18 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 9 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 6 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;

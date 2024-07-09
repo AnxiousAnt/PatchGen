@@ -1,0 +1,265 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.77 [en] (X11; U; Linux 2.4.16-686-smp i686) [Netscape]">
+</head>
+<body>
+
+<h2>
+A short Description of the Initial-Arguments of IEMGUI-Objects.</h2>
+
+<h3>
+(pd-0.35test23)</h3>
+
+<hr WIDTH="100%">
+<h3>
+Special Structures:</h3>
+&lt;binstruct1> is a 32 Bit-struct:
+<br>&nbsp; bit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0: loadbang-init
+(0 or 1) * 1;
+<br>&nbsp; bit&nbsp; 1 ..&nbsp; 6: tail-length of receive-name (0 .. 63)
+* 2;
+<br>&nbsp; bit&nbsp; 7 .. 12: tail-length of send-name (0 .. 63) * 128;
+<br>&nbsp; bit 13 .. 18: dollar-number of receive-name (0 .. 63) * 8192;
+<br>&nbsp; bit 19 .. 24: dollar-number of send-name (0 .. 63) * 524288;
+<br>&nbsp; bit 25 .. 31: used for internal flags;
+<br>&nbsp;
+<br>&lt;binstruct2> is a 32 Bit-struct:
+<br>&nbsp; bit&nbsp; 0 ..&nbsp; 5: font-style (0 .. 63) * 1;
+<br>&nbsp; bit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6: if there is
+a receive-name not eqval "empty" (0 or 1) * 64;
+<br>&nbsp; bit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7: if there is
+a send-name not eqval "empty" (0 or 1) * 128;
+<br>&nbsp; bit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8: label-name
+begins with "$0" {= unique-name} (0 or 1) * 256;
+<br>&nbsp; bit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9: receive-name
+begins with "$0" {= unique-name} (0 or 1) * 512;
+<br>&nbsp; bit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10: send-name begins
+with "$0" {= unique-name} (0 or 1) * 1024;
+<br>&nbsp; bit 11 .. 16: tail-length of label-name (0 .. 63) * 2048;
+<br>&nbsp; bit 17 .. 22: dollar-number {$n} of label-name (0 .. 63) * 131072;
+<br>&nbsp; bit 23 .. 31: used for internal flags;
+<p>
+<hr WIDTH="100%">
+<h3>
+the Objects and their Arguments:</h3>
+
+<h4>
+<b>bng: 14 args</b></h4>
+&nbsp; &lt;float> size [pix] (default: 15)
+<br>&nbsp; &lt;float> flash-hold-time [ms] (default: 250)
+<br>&nbsp; &lt;float> flash-interrupt-time [ms] (default: 50)
+<br>&nbsp; &lt;binstruct1> loadbang-init-dollar [-] (default: 0)
+<br>&nbsp; &lt;symbol> send-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> receive-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> label-name [-] (default: empty)
+<br>&nbsp; &lt;float> label-x-offset [pix] (default: 0)
+<br>&nbsp; &lt;float> label-y-offset [pix] (default: -6)
+<br>&nbsp; &lt;binstruct2> font-style-dollar [-] (default: 0)
+<br>&nbsp; &lt;float> label-font-size [pix] (default: 8)
+<br>&nbsp; &lt;float> background-color [-] (default: -262144)
+<br>&nbsp; &lt;float> foreground-color [-] (default: -1)
+<br>&nbsp; &lt;float> label-color [-] (default: -1)
+<p>
+<hr WIDTH="100%">
+<h4>
+hdl: 15 args&nbsp; (hdial)</h4>
+&nbsp; &lt;float> size [pix] (default: 15)
+<br>&nbsp; &lt;float> new-old-value-output-behavior [-] (default: 1)
+<br>&nbsp; &lt;binstruct1> loadbang-init-dollar [-] (default: 0)
+<br>&nbsp; &lt;float> number of cells [-] (default: 8)
+<br>&nbsp; &lt;symbol> send-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> receive-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> label-name [-] (default: empty)
+<br>&nbsp; &lt;float> label-x-offset [pix] (default: 0)
+<br>&nbsp; &lt;float> label-y-offset [pix] (default: -6)
+<br>&nbsp; &lt;binstruct2> font-style-dollar [-] (default: 0)
+<br>&nbsp; &lt;float> label-font-size [pix] (default: 8)
+<br>&nbsp; &lt;float> background-color [-] (default: -262144)
+<br>&nbsp; &lt;float> foreground-color [-] (default: -1)
+<br>&nbsp; &lt;float> label-color [-] (default: -1)
+<br>&nbsp; &lt;float> selected-cell-index [-] (default: 0)
+<p>
+<hr WIDTH="100%">
+<h4>
+hsl: 18 args&nbsp; (hslider)</h4>
+&nbsp; &lt;float> width [pix] (default: 128)
+<br>&nbsp; &lt;float> height [pix] (default: 15)
+<br>&nbsp; &lt;float> left-value [-] (default: 0)
+<br>&nbsp; &lt;float> right-value [-] (default: 127)
+<br>&nbsp; &lt;float> linear or logarithmical [-] (default: 0) {0 is lin;
+1 is log}
+<br>&nbsp; &lt;binstruct1> loadbang-init-dollar [-] (default: 0)
+<br>&nbsp; &lt;symbol> send-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> receive-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> label-name [-] (default: empty)
+<br>&nbsp; &lt;float> label-x-offset [pix] (default: -2)
+<br>&nbsp; &lt;float> label-y-offset [pix] (default: -6)
+<br>&nbsp; &lt;binstruct2> font-style-dollar [-] (default: 0)
+<br>&nbsp; &lt;float> label-font-size [pix] (default: 8)
+<br>&nbsp; &lt;float> background-color [-] (default: -262144)
+<br>&nbsp; &lt;float> foreground-color [-] (default: -1)
+<br>&nbsp; &lt;float> label-color [-] (default: -1)
+<br>&nbsp; &lt;float> value, if init [-] (default: 0)
+<br>&nbsp; &lt;float> steady or jump behavior [-] (default: 1) {0 is ggee-jumpy;
+1 is steady}
+<p>
+<hr WIDTH="100%">
+<h4>
+cnv: 13 args&nbsp; (my_canvas)</h4>
+&nbsp; &lt;float> selectable square-size [pix] (default: 15)
+<br>&nbsp; &lt;float> only visible width [pix] (default: 100)
+<br>&nbsp; &lt;float> only visible height [pix] (default: 60)
+<br>&nbsp; &lt;symbol> send-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> receive-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> label-name [-] (default: empty)
+<br>&nbsp; &lt;float> label-x-offset [pix] (default: 20)
+<br>&nbsp; &lt;float> label-y-offset [pix] (default: 12)
+<br>&nbsp; &lt;binstruct2> font-style-dollar [-] (default: 0)
+<br>&nbsp; &lt;float> label-font-size [pix] (default: 14)
+<br>&nbsp; &lt;float> background-color [-] (default: -233017)
+<br>&nbsp; &lt;float> label-color [-] (default: -66577)
+<br>&nbsp; &lt;binstruct1> loadbang-init-dollar [-] (default: 0)
+<br>&nbsp;
+<br>
+<hr WIDTH="100%">
+<h4>
+nbx: 18 args&nbsp; (my_numbox)</h4>
+&nbsp; &lt;float> box-width [digits] (default: 5)
+<br>&nbsp; &lt;float> box-height [pix] (default: 14)
+<br>&nbsp; &lt;float> minimum-value [-] (default: -1e+37)
+<br>&nbsp; &lt;float> maximum-value [-] (default: 1e+37)
+<br>&nbsp; &lt;float> linear or logarithmical [-] (default: 0) {0 is lin;
+1 is log}
+<br>&nbsp; &lt;binstruct1> loadbang-init-dollar [-] (default: 0)
+<br>&nbsp; &lt;symbol> send-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> receive-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> label-name [-] (default: empty)
+<br>&nbsp; &lt;float> label-x-offset [pix] (default: 0)
+<br>&nbsp; &lt;float> label-y-offset [pix] (default: -6)
+<br>&nbsp; &lt;binstruct2> font-style-dollar [-] (default: 0)
+<br>&nbsp; &lt;float> label- and front-font-size [pix] (default: 10)
+<br>&nbsp; &lt;float> background-color [-] (default: -262144)
+<br>&nbsp; &lt;float> foreground-color [-] (default: -1)
+<br>&nbsp; &lt;float> label-color [-] (default: -1)
+<br>&nbsp; &lt;float> value, if init [-] (default: 0)
+<br>&nbsp; &lt;float> virtuell height, if logarithmical [pix] (default:
+256)
+<p>
+<hr WIDTH="100%">
+<h4>
+tgl: 14 args&nbsp; (toggle)</h4>
+&nbsp; &lt;float> size [pix] (default: 15)
+<br>&nbsp; &lt;binstruct1> loadbang-init-dollar [-] (default: 0)
+<br>&nbsp; &lt;symbol> send-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> receive-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> label-name [-] (default: empty)
+<br>&nbsp; &lt;float> label-x-offset [pix] (default: 0)
+<br>&nbsp; &lt;float> label-y-offset [pix] (default: -6)
+<br>&nbsp; &lt;binstruct2> font-style-dollar [-] (default: 0)
+<br>&nbsp; &lt;float> label-font-size [pix] (default: 8)
+<br>&nbsp; &lt;float> background-color [-] (default: -262144)
+<br>&nbsp; &lt;float> foreground-color [-] (default: -1)
+<br>&nbsp; &lt;float> label-color [-] (default: -1)
+<br>&nbsp; &lt;float> on-off-state [-] (default: 0)
+<br>&nbsp; &lt;float> non-zero-value [-] (default: 1)
+<br>&nbsp;
+<br>
+<hr WIDTH="100%">
+<h4>
+vdl: 15 args&nbsp; (vdial)</h4>
+&nbsp; &lt;float> size [pix] (default: 15)
+<br>&nbsp; &lt;float> new-old-value-output-behavior [-] (default: 1)
+<br>&nbsp; &lt;binstruct1> loadbang-init-dollar [-] (default: 0)
+<br>&nbsp; &lt;float> number of cells [-] (default: 8)
+<br>&nbsp; &lt;symbol> send-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> receive-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> label-name [-] (default: empty)
+<br>&nbsp; &lt;float> label-x-offset [pix] (default: 0)
+<br>&nbsp; &lt;float> label-y-offset [pix] (default: -6)
+<br>&nbsp; &lt;binstruct2> font-style-dollar [-] (default: 0)
+<br>&nbsp; &lt;float> label-font-size [pix] (default: 8)
+<br>&nbsp; &lt;float> background-color [-] (default: -262144)
+<br>&nbsp; &lt;float> foreground-color [-] (default: -1)
+<br>&nbsp; &lt;float> label-color [-] (default: -1)
+<br>&nbsp; &lt;float> selected-cell-index [-] (default: 0)
+<p>
+<hr WIDTH="100%">
+<h4>
+vsl: 18 args&nbsp; (vslider)</h4>
+&nbsp; &lt;float> width [pix] (default: 15)
+<br>&nbsp; &lt;float> height [pix] (default: 128)
+<br>&nbsp; &lt;float> bottom-value [-] (default: 0)
+<br>&nbsp; &lt;float> top-value [-] (default: 127)
+<br>&nbsp; &lt;float> linear or logarithmical [-] (default: 0) {0 is lin;
+1 is log}
+<br>&nbsp; &lt;binstruct1> loadbang-init-dollar [-] (default: 0)
+<br>&nbsp; &lt;symbol> send-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> receive-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> label-name [-] (default: empty)
+<br>&nbsp; &lt;float> label-x-offset [pix] (default: 0)
+<br>&nbsp; &lt;float> label-y-offset [pix] (default: -8)
+<br>&nbsp; &lt;binstruct2> font-style-dollar [-] (default: 0)
+<br>&nbsp; &lt;float> label-font-size [pix] (default: 8)
+<br>&nbsp; &lt;float> background-color [-] (default: -262144)
+<br>&nbsp; &lt;float> foreground-color [-] (default: -1)
+<br>&nbsp; &lt;float> label-color [-] (default: -1)
+<br>&nbsp; &lt;float> value, if init [-] (default: 0)
+<br>&nbsp; &lt;float> steady or jump behavior [-] (default: 1) {0 is ggee-jumpy;
+1 is steady}
+<p>
+<hr WIDTH="100%">
+<h4>
+vu: 12 args</h4>
+&nbsp; &lt;float> width [pix] (default: 15)
+<br>&nbsp; &lt;float> height [pix] (default: 120)
+<br>&nbsp; &lt;symbol> receive-name [-] (default: empty)
+<br>&nbsp; &lt;symbol> label-name [-] (default: empty)
+<br>&nbsp; &lt;float> label-x-offset [pix] (default: -1)
+<br>&nbsp; &lt;float> label-y-offset [pix] (default: -8)
+<br>&nbsp; &lt;binstruct2> font-style-dollar [-] (default: 0)
+<br>&nbsp; &lt;float> label-font-size [pix] (default: 8)
+<br>&nbsp; &lt;float> background-color [-] (default: -66577)
+<br>&nbsp; &lt;float> label-color [-] (default: -1)
+<br>&nbsp; &lt;float> visible scale [-] (default: 1) {0 is no scale; 1
+is show scale}
+<br>&nbsp; &lt;binstruct1> loadbang-init-dollar [-] (default: 0)
+<p>
+<hr WIDTH="100%">
+<br>&nbsp;
+<h3>
+Examples:</h3>
+
+<p><br><b>colors:</b> 0 .. 29 are the presets of prop.-dialog-window, top-left-color
+is 0, top-right is 9, middle-left is 10, ..
+<br>&nbsp; and bottom-right is 29;
+<br>&nbsp; if negativ numbers: you can compose RGB-colors; each component
+from 0 to 63; GREEN-component * 64; RED-comp. * 4096;
+<br>&nbsp; and then add RED + GREEN + BLUE, negate it and add -1. (rgb_color
+= -BLUE -64*GREEN -4096*RED - 1);
+<p><b>send-receive-label:</b> if you want to give the object a send- or
+receive-name, replace the "empty"-symbol
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+with "my_name".
+<br>&nbsp; if you want to give the object an unique-name, replace "empty"
+with "\$0-my_name" and set BIT 10, 9 or 8
+<br>&nbsp;&nbsp;&nbsp; of &lt;binstruct2> (add 1024, 512 or 256 to font-style-dollar).
+<br>&nbsp; if you want to give the object a dollar-argument-send-name,
+replace 1st "empty" with&nbsp; e.g. "\$12-my_send" and
+<br>&nbsp;&nbsp;&nbsp; add to &lt;binstruct1> loadbang-init-dollar: 524288
+* 12 = 6291456;
+<br>&nbsp;&nbsp;&nbsp; add to &lt;binstruct1> loadbang-init-dollar: 128
+* 8 = 1024; ("-my_send" is the tail and has 8 characters)
+<br>&nbsp;&nbsp;&nbsp; <i>(1024 + 6291456 = 6292480).</i>
+<br>&nbsp; if you want to give the object a dollar-argument-receive-name,
+replace 2nd "empty" with&nbsp; e.g. "\$3-my_receive" and
+<br>&nbsp;&nbsp;&nbsp; add to &lt;binstruct1> loadbang-init-dollar: 8192
+* 3 = 24576;
+<br>&nbsp;&nbsp;&nbsp; add to &lt;binstruct1> loadbang-init-dollar: 2 *
+11 = 22; ("-my_receive" is the tail and has 11 characters)
+<br>&nbsp;&nbsp;&nbsp; <i>(22 + 24576 = 24598).</i>
+<br>&nbsp;
+<br>&nbsp;
+</body>
+</html>

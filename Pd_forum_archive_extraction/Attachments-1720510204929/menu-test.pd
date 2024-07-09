@@ -1,0 +1,41 @@
+#N canvas 469 45 478 600 10;
+#X msg 137 31 add 1 dog \, add 2 cat \, add 3 test;
+#X floatatom 73 71 2 0 0 0 - - -;
+#X msg 74 113 index \$1;
+#X msg 176 75 clear;
+#X obj 158 229 menu test;
+#X text 171 57 clear the menu content;
+#N canvas 0 0 506 356 array 0;
+#X obj 105 32 r test-msg-in;
+#X obj 102 121 s test-msg-out;
+#X msg 107 74 1 dog \, 2 cat \, 3 test;
+#X text 235 32 this is the memory;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 259 197 pd array;
+#X obj 212 145 s pd-menu-test.pd;
+#X text 259 181 menu content is here;
+#X obj 36 200 s test-menu;
+#X floatatom 30 134 2 0 0 0 - - -;
+#X msg 31 163 index \$1;
+#X msg 212 121 menusave;
+#X text 47 454 just don't forget to associate an array subpatch with
+the send-receive objects in the same patch \, like in this example.
+;
+#X text 167 211 menu <test>;
+#X text 45 392 creation arguments: menu <name of the menu>;
+#X text 46 421 with this method you can put several different menus
+in the same patch;
+#X floatatom 160 262 5 0 0 0 - - -;
+#X text 208 100 save the menus content;
+#X text 150 14 fill the menu;
+#X text 46 309 When the menu is filled \, choose a number and click
+on the slider;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 17 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
+#X connect 12 0 7 0;

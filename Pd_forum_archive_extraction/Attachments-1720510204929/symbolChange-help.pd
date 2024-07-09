@@ -1,0 +1,9 @@
+#N canvas 0 22 450 300 10;
+#X obj 167 135 absSymbolChange;
+#X symbolatom 167 108 10 0 0 0 - - -;
+#X symbolatom 167 166 10 0 0 0 - - -;
+#X obj 138 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;

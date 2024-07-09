@@ -1,0 +1,4 @@
+gcc -DPD -DPD_INTERNAL -DPA_USE_ASIO -DPA_USE_WMME -DWINVER=0x0502 -DUSEAPI_MMIO -DUSEAPI_PORTAUDIO -DUSEAPI_JACK -DJACK_XRUN -mms-bitfields -DWISHAPP='"wish85.exe"' -Wall -W -Wstrict-prototypes -Wno-unused -Wno-unused-parameter -Wno-parentheses -Wno-switch  -O3 -funroll-loops -fomit-frame-pointer  -DINSTALL_PREFIX=\"/usr/local/pd\" -I../../pd/portaudio -I../../pd/portaudio/include -I../../pd/portaudio/src/common -I../../pd/portaudio/src/os/win -I../../pd/asio/ASIOSDK2/common -I../../pd/asio/ASIOSDK2/host -I../../pd/asio/ASIOSDK2/host/pc -c -o s_audio_jack.o s_audio_jack.c 
+s_audio_jack.c:11:23: fatal error: jack/jack.h: No such file or directory
+compilation terminated.
+make: *** [s_audio_jack.o] Error 1

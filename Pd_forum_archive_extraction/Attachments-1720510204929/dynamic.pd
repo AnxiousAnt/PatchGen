@@ -1,0 +1,11 @@
+#N canvas 331 170 607 439 10;
+#X msg 101 370 \; findagain \, cut;
+#X msg 101 279 \; find tgl \, cut;
+#X msg 96 226 \; pd-dynamic.pd obj 100 100 tgl 15 0 sendsymbol receivesymbol
+label 0 -6 0 8 -262144 -1 -1 0;
+#X msg 210 278 \; find label \, cut;
+#X text 26 239 create;
+#X obj 100 100 tgl 15 0 sendsymbol receivesymbol label 0 -6 0 8 -262144
+-1 -1 0 1;
+#X text 27 289 destroy??;
+#X msg 331 277 \; find 'label' \, cut;

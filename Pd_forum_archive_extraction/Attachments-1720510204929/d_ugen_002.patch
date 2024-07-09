@@ -1,0 +1,11 @@
+--- d_ugen.c.org	2006-08-24 15:05:04.000000000 +0200
++++ d_ugen.c	2006-08-24 15:05:13.000000000 +0200
+@@ -333,7 +333,7 @@
+     if (dsp_chain)
+     {
+         t_int *ip;
+-        for (ip = dsp_chain; ip; ) ip = (*(t_perfroutine)(*ip))(ip);
++        for (ip = dsp_chain; *ip; ) ip = (*(t_perfroutine)(*ip))(ip);
+         dsp_phase++;
+     }
+ }

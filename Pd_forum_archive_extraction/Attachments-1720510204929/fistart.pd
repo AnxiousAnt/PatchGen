@@ -1,0 +1,32 @@
+#N canvas 1173 434 562 559 10;
+#X obj 21 13 hsl 128 14 -12 36 0 0 vco1_coarse vco1_coarse_r COARSE
+9 8 0 8 -262144 -1 -1 12700 1;
+#X floatatom 153 13 3 -12 36 0 - vco1_coarse_n_r vco1_coarse_n, f
+3;
+#X obj 8 434 int;
+#X obj 8 413 r vco1_coarse;
+#X obj 8 455 s vco1_coarse_n_r;
+#X obj 9 496 int;
+#X obj 9 475 r vco1_coarse_n;
+#X obj 9 535 s vco1_coarse_r;
+#X obj 9 515 change;
+#X obj 21 30 hsl 128 14 -63 63 0 0 vco1_fine vco1_fine_r FINE 9 8 0
+8 -262144 -1 -1 12700 1;
+#X floatatom 153 30 3 -63 63 0 - vco1_fine_n_r vco1_fine_n, f 3;
+#X obj 122 433 int;
+#X obj 123 495 int;
+#X obj 123 514 change;
+#X obj 122 412 r vco1_fine;
+#X obj 122 454 s vco1_fine_n_r;
+#X obj 123 474 r vco1_fine_n;
+#X obj 123 534 s vco1_fine_r;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 8 0 7 0;
+#X connect 11 0 15 0;
+#X connect 12 0 13 0;
+#X connect 13 0 17 0;
+#X connect 14 0 11 0;
+#X connect 16 0 12 0;

@@ -1,0 +1,13 @@
+#N canvas 52 293 592 236 10;
+#X obj 225 160 s pd-loadybangy.pd;
+#X msg 225 140 obj 0 0 abstrloabang;
+#X obj 225 108 bng 15 250 50 0 empty empty click_me 17 6 1 8 -262144
+-1 -1;
+#X text 19 203 David McCallum \, http://mentalfloss.ca/sintheta;
+#X text 228 43 The abstraction's number box should have a 3 in it \,
+but this doesn't happen.;
+#X text 229 75 After you've clicked the button \, try cut/pasting the
+abstraction \, there's the 3!;
+#X text 228 23 Click the button;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;

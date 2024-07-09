@@ -1,0 +1,25 @@
+#N canvas 0 50 546 412 12;
+#X declare -lib iemlib;
+#X obj 283 139 declare -lib iemlib;
+#X obj 22 42 inlet~;
+#X obj 84 70 inlet;
+#X obj 22 263 outlet~;
+#X text 62 42 ~signal_in~;
+#X text 130 71 <float> cutoff_frequency [Hz];
+#X text 38 170 ~filtered signal_out~;
+#X text 220 268 IEM KUG;
+#X text 204 256 musil;
+#X text 234 256 @;
+#X text 240 256 iem.at;
+#X text 155 245 (c) Thomas Musil 2000 - 2005;
+#X text 203 278 Graz \, Austria;
+#X text 5 5 hp3_butt_db~;
+#X text 115 5 highpass 3.order with butterworth characteristic and
+double precision, f 50;
+#X obj 23 116 filter~ dhp2c 20 1 1 100;
+#X obj 22 142 filter~ dhp1c 20 1 1 100;
+#X connect 1 0 15 0;
+#X connect 2 0 15 1;
+#X connect 2 0 16 1;
+#X connect 15 0 16 0;
+#X connect 16 0 3 0;

@@ -1,0 +1,383 @@
+#N canvas 189 74 811 706 10;
+#X text 42 28 Playing a sample from a table;
+#X obj 492 60 table \$0-mysample;
+#X text 46 102 1) Loading a sample:;
+#N canvas 0 0 684 417 load-sample 0;
+#X obj 104 132 openpanel;
+#X msg 154 87 bang;
+#X msg 208 87 symbol ~/loops;
+#X text 284 165 append table name (\$0-mysample) as \$2;
+#X obj 104 165 list append \$0-mysample;
+#X text 222 65 Or go directly to your sample directory;
+#X msg 104 198 read -resize \$1 \$2;
+#X obj 104 228 soundfiler;
+#X obj 104 265 outlet;
+#X text 169 264 length in samples to outlet;
+#X text 280 200 "read -resize <filename> <tablename>";
+#X obj 104 86 inlet;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 4 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 11 0 0 0;
+#X restore 77 161 pd load-sample;
+#X msg 77 140 bang;
+#X obj 77 213 s \$0-slength;
+#X floatatom 87 185 12 0 0 1 length_in_samples - -;
+#X text 490 34 Our sample table;
+#N canvas 303 73 707 729 vline-player 0;
+#X obj 89 604 tabread4~ \$0-mysample;
+#X text 41 33 3) Playing a sample with [vline~];
+#X text 65 69 Once you know \, how long it takes to play N samples
+\, actually playing these samples with [vline~] or [line~] becomes
+almost trivial:;
+#X obj 183 295 pack 0 0;
+#X floatatom 183 272 8 0 0 0 START_(smps) - -;
+#X floatatom 245 272 8 0 0 1 END_(smps) - -;
+#X obj 90 346 t a a;
+#X obj 162 427 / 44.1;
+#X obj 90 494 list append;
+#X text 185 494 append duration as \$3;
+#X msg 90 527 \$1 \, \$2 \$3;
+#X text 190 527 start at START (\$1) \, then go to END (\$2) over \$3
+msec.;
+#X obj 90 560 vline~;
+#X obj 88 677 *~ 0;
+#X obj 111 654 dbtorms;
+#X obj 114 634 hsl 100 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 9700 1;
+#X obj 88 703 dac~;
+#X text 223 428 convert to milliseconds (see 2);
+#X floatatom 183 202 8 0 0 0 START_(ms) - -;
+#X floatatom 245 202 8 0 0 1 END_(ms) - -;
+#X obj 183 222 * 44.1;
+#X obj 245 220 * 44.1;
+#X obj 90 325 list;
+#X msg 90 299 bang;
+#X text 191 558 or use [line~];
+#X obj 162 462 * 1;
+#X floatatom 191 464 5 0 0 1 transpose - -;
+#X text 203 399 START-END;
+#X text 64 125 Just let the line ramp from START to END over the time
+it takes to play (END - START) samples and send that line to [tabread4~]:
+;
+#X text 310 464 Optionally stretch or shrink the duration here.;
+#X obj 162 375 swap;
+#X obj 162 397 -;
+#X connect 0 0 13 0;
+#X connect 3 0 22 1;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 8 0;
+#X connect 6 1 30 0;
+#X connect 7 0 25 0;
+#X connect 8 0 10 0;
+#X connect 10 0 12 0;
+#X connect 12 0 0 0;
+#X connect 13 0 16 0;
+#X connect 13 0 16 1;
+#X connect 14 0 13 1;
+#X connect 15 0 14 0;
+#X connect 18 0 20 0;
+#X connect 19 0 21 0;
+#X connect 20 0 4 0;
+#X connect 21 0 5 0;
+#X connect 22 0 6 0;
+#X connect 23 0 22 0;
+#X connect 25 0 8 1;
+#X connect 26 0 25 1;
+#X connect 30 0 31 0;
+#X connect 30 1 31 1;
+#X connect 31 0 7 0;
+#X restore 80 607 pd vline-player;
+#X text 58 571 3) Playing a sample with [vline~];
+#N canvas 0 0 967 440 samples-to-time 0;
+#X text 62 205 Generally the time in msec to play N samples with a
+samplerate of SR Hz is this:;
+#X text 97 247 time(N) = N * 1000/SR;
+#X text 65 280 If you get your samplerate SRk in kHz instead of Hz
+\, then it becomes this formula:;
+#X text 92 311 time(N) = N * 1/SRk = N/SRk;
+#X text 36 55 2) Calculating lengths in milliseconds.;
+#X obj 631 139 inlet;
+#X text 608 121 number of samples;
+#X obj 790 140 inlet;
+#X text 767 122 SR in kHz!;
+#X obj 631 187 / 44.1;
+#X obj 631 223 outlet;
+#X text 64 354 See the patch on the right for how easy this is in Pd:
+;
+#X text 62 104 Assuming your soundfile was recorded with a samplerate
+of 44100 Hz \, then to play one sample takes a time of 1/44100 seconds
+\, which is 1000/44100 milliseconds or 1/44.1 msec.;
+#X text 61 151 N samples then will take N times that duration. They
+play over a duration of N * 1/44100 seconds or N*1/44.1 msec at the
+original speed.;
+#X text 621 254 Time for N samples in msec;
+#X connect 5 0 9 0;
+#X connect 7 0 9 1;
+#X connect 9 0 10 0;
+#X restore 92 345 pd samples-to-time;
+#X floatatom 92 325 8 0 0 2 num_of_samples - -;
+#X floatatom 213 324 5 0 0 1 SR_in_kHz - -;
+#X msg 200 297 44.1;
+#X msg 240 296 48;
+#X floatatom 92 369 8 0 0 1 time_in_msec - -;
+#X obj 114 405 / 1000;
+#X floatatom 114 428 8 0 0 1 time_in_sec - -;
+#N canvas 323 227 631 302 time-to-samples 0;
+#X text 46 41 Converting a time in msec to samples is just the inverse
+of converting from samples to msec:;
+#X text 45 79 Instead of dividing by samplerate (kHz) we multiply by
+samplerate (kHz):;
+#X obj 50 150 inlet;
+#X text 48 131 time in msec;
+#X obj 189 153 inlet;
+#X text 187 134 SR in kHz;
+#X obj 50 202 * 44.1;
+#X obj 50 233 outlet;
+#X text 50 258 number of samples;
+#X connect 2 0 6 0;
+#X connect 4 0 6 1;
+#X connect 6 0 7 0;
+#X restore 92 465 pd time-to-samples;
+#X floatatom 92 499 8 0 0 3 num_of_samples - -;
+#X text 42 57 Please read the inside of the subpatches for explanations.
+;
+#X text 51 255 2) Converting duration units between samples and milliseconds.
+;
+#X text 410 573 4) Playing a sample with [phasor~];
+#N canvas 263 73 577 527 phasor-player 0;
+#X text 40 37 4) Playing a sample with [phasor~];
+#X text 61 81 Sometimes a [phasor~] is more appropriate for playing
+samples. A bit more math is needed to use a phasor \, though.;
+#X text 44 131 Modifying the range of a [phasor~];
+#N canvas 231 67 664 534 modify-phasor-range 0;
+#X obj 311 234 pack 0 0;
+#X floatatom 311 211 8 0 0 0 START_(smps) - -;
+#X floatatom 373 211 8 0 0 1 END_(smps) - -;
+#X floatatom 311 141 8 0 0 0 START_(ms) - -;
+#X floatatom 373 141 8 0 0 1 END_(ms) - -;
+#X obj 311 161 * 44.1;
+#X obj 373 159 * 44.1;
+#X obj 249 319 -;
+#X obj 116 384 *~ 1;
+#X text 297 320 Calculate (END-START) as with [vline~];
+#X obj 241 427 snapshot~;
+#X obj 241 378 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 241 451 8 0 0 1 before - -;
+#X floatatom 117 471 8 0 0 1 after - -;
+#X obj 117 450 snapshot~;
+#X msg 249 244 bang;
+#X obj 241 398 metro 50;
+#X obj 249 272 list;
+#X obj 116 323 phasor~ 0.01;
+#X msg 195 287 0;
+#X text 41 43 Modifying the range of a [phasor~];
+#X obj 249 294 swap;
+#X obj 249 340 abs;
+#X text 298 343 For duration we want the absolute value.;
+#X text 65 65 A phasor always goes from 0 to 1 each cycle with positive
+frequencies \, and from 0 to -1 with negative freq. To make it go from
+START to END instead \, we first stretch that range so that it goes
+from 0 to (END-START):;
+#X connect 0 0 17 1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
+#X connect 6 0 2 0;
+#X connect 7 0 22 0;
+#X connect 8 0 14 0;
+#X connect 10 0 12 0;
+#X connect 11 0 16 0;
+#X connect 14 0 13 0;
+#X connect 15 0 17 0;
+#X connect 16 0 10 0;
+#X connect 16 0 14 0;
+#X connect 17 0 21 0;
+#X connect 18 0 8 0;
+#X connect 18 0 10 0;
+#X connect 19 0 18 1;
+#X connect 21 0 7 0;
+#X connect 21 1 7 1;
+#X connect 22 0 8 1;
+#X restore 62 226 pd modify-phasor-range;
+#X text 43 259 Setting a different starting point;
+#N canvas 152 74 659 632 modify-phasor-start 0;
+#X obj 321 250 pack 0 0;
+#X floatatom 321 227 8 0 0 0 START_(smps) - -;
+#X floatatom 383 227 8 0 0 1 END_(smps) - -;
+#X floatatom 321 157 8 0 0 0 START_(ms) - -;
+#X floatatom 383 157 8 0 0 1 END_(ms) - -;
+#X obj 321 177 * 44.1;
+#X obj 383 175 * 44.1;
+#X obj 126 400 *~ 1;
+#X obj 278 436 snapshot~;
+#X obj 278 387 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 278 460 8 0 0 0 before - -;
+#X floatatom 127 537 8 0 0 0 after - -;
+#X obj 127 516 snapshot~;
+#X msg 259 260 bang;
+#X obj 278 407 metro 50;
+#X obj 259 288 list;
+#X obj 126 339 phasor~ 0.01;
+#X msg 205 303 0;
+#X text 53 42 Setting a different starting point;
+#X text 73 70 After we've stretched the phasor~'s range we just add
+the new START point to make the modified phasor signal start there
+instead of at 0:;
+#X obj 149 430 unpack 0 0;
+#X obj 126 460 +~ 0;
+#X text 44 460 add START;
+#X obj 259 315 swap;
+#X obj 259 337 -;
+#X obj 259 358 abs;
+#X text 307 336 Calculate (END-START) as befor;
+#X connect 0 0 15 1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
+#X connect 6 0 2 0;
+#X connect 7 0 21 0;
+#X connect 8 0 10 0;
+#X connect 9 0 14 0;
+#X connect 12 0 11 0;
+#X connect 13 0 15 0;
+#X connect 14 0 8 0;
+#X connect 14 0 12 0;
+#X connect 15 0 20 0;
+#X connect 15 0 23 0;
+#X connect 16 0 7 0;
+#X connect 16 0 8 0;
+#X connect 17 0 16 1;
+#X connect 20 0 21 1;
+#X connect 21 0 12 0;
+#X connect 23 0 24 0;
+#X connect 23 1 24 1;
+#X connect 24 0 25 0;
+#X connect 25 0 7 1;
+#X restore 59 337 pd modify-phasor-start;
+#X text 45 378 Setting speed of phasor~ to match original speed:;
+#N canvas 152 74 968 757 modify-phasor-speed 0;
+#X obj 257 271 pack 0 0;
+#X floatatom 257 248 8 0 0 0 START_(smps) - -;
+#X floatatom 319 248 8 0 0 1 END_(smps) - -;
+#X floatatom 257 178 8 0 0 0 START_(ms) - -;
+#X floatatom 319 178 8 0 0 1 END_(ms) - -;
+#X obj 257 198 * 44.1;
+#X obj 319 196 * 44.1;
+#X obj 197 510 *~ 1;
+#X msg 214 272 bang;
+#X obj 197 465 phasor~ 0.01;
+#X msg 276 441 0;
+#X obj 357 509 unpack 0 0;
+#X obj 197 570 +~ 0;
+#X text 116 573 add START;
+#X text 41 21 Setting speed of phasor~ to match original speed:;
+#X text 67 51 Finally we also need to set the frequency of the phasor
+so that it plays the sample at the original speed.;
+#X text 67 95 Frequency is the inverse of duration. We know the duration
+in samples is (END-START). That duration has to be converted to *seconds*
+(not milliseconds!) and then the inverse is taken as the frequency
+of the phasor.;
+#X obj 257 363 t a a;
+#X obj 257 294 t a a;
+#X text 65 355 END-START in msec;
+#X obj 196 378 / 1000;
+#X text 66 375 END-START in sec;
+#X text 32 407 convert to freq in Hz.;
+#X obj 198 594 tabread4~ \$0-mysample;
+#X obj 197 667 *~ 0;
+#X obj 220 644 dbtorms;
+#X obj 223 624 hsl 100 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 9900 1;
+#X obj 197 693 dac~;
+#X floatatom 129 442 5 0 0 0 freq - -;
+#X text 137 512 * DUR;
+#X obj 196 353 / 44.1;
+#X obj 696 413 / 44100;
+#X obj 548 335 / 1000;
+#X obj 548 310 / 44.1;
+#X text 533 260 Instead of;
+#X obj 257 320 swap;
+#X obj 257 341 -;
+#X obj 220 485 abs;
+#X text 523 98 Hint: If END is smaller thant START \, the phasor~ will
+get a negative frequency. This will make it ramp from 0 to -1 instead
+and this play the sample range backwards!;
+#X obj 197 397 swap 1;
+#X obj 197 421 /;
+#X text 521 50 To transpose the [phasor~] just multiply the original
+frequency with some number.;
+#X text 518 381 you can also do it in one step and divide by SR in
+Hz as in:;
+#X floatatom 548 290 5 0 0 0 smps - -;
+#X floatatom 548 357 5 0 0 0 freq - -;
+#X floatatom 696 439 5 0 0 0 freq - -;
+#X connect 0 0 18 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
+#X connect 6 0 2 0;
+#X connect 7 0 12 0;
+#X connect 8 0 0 0;
+#X connect 9 0 7 0;
+#X connect 10 0 9 1;
+#X connect 11 0 12 1;
+#X connect 12 0 23 0;
+#X connect 17 0 30 0;
+#X connect 17 1 37 0;
+#X connect 18 0 35 0;
+#X connect 18 1 11 0;
+#X connect 20 0 39 0;
+#X connect 23 0 24 0;
+#X connect 24 0 27 0;
+#X connect 24 0 27 1;
+#X connect 25 0 24 1;
+#X connect 26 0 25 0;
+#X connect 30 0 20 0;
+#X connect 31 0 45 0;
+#X connect 32 0 44 0;
+#X connect 33 0 32 0;
+#X connect 35 0 36 0;
+#X connect 35 1 36 1;
+#X connect 36 0 17 0;
+#X connect 37 0 7 1;
+#X connect 39 0 40 0;
+#X connect 39 1 40 1;
+#X connect 40 0 9 0;
+#X connect 40 0 28 0;
+#X connect 43 0 31 0;
+#X connect 43 0 33 0;
+#X restore 61 421 pd modify-phasor-speed;
+#X text 61 154 A phasor always goes from 0 to 1 each cycle with positive
+frequencies \, and from 0 to -1 with negative freq. To make it go from
+START to END instead \, we first stretch that range so that it goes
+from 0 to (END-START):;
+#X text 58 283 After we've stretched the [phasor~]'s range we just
+add the new START point to make the modified phasor signal start there
+instead of at 0:;
+#X restore 423 609 pd phasor-player;
+#X connect 3 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 10 0 15 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 1;
+#X connect 12 0 18 1;
+#X connect 13 0 12 0;
+#X connect 14 0 12 0;
+#X connect 15 0 16 0;
+#X connect 15 0 18 0;
+#X connect 16 0 17 0;
+#X connect 18 0 19 0;

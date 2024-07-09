@@ -1,0 +1,37 @@
+>>> bt
+#0  0x00007ffff29fccc9 in _GLOBAL__sub_I_ofeliaWindow.cpp () from /home/alex/.local/lib/pd/extra/ofelia/ofelia.l_ia64
+#1  0x00007ffff7de76ba in call_init (l=<optimized out>, argc=argc@entry=1, argv=argv@entry=0x7fffffffe108, env=env@entry=0x7fffffffe118) at dl-init.c:72
+#2  0x00007ffff7de77cb in call_init (env=0x7fffffffe118, argv=0x7fffffffe108, argc=1, l=<optimized out>) at dl-init.c:30
+#3  _dl_init (main_map=main_map@entry=0x7d5070, argc=1, argv=0x7fffffffe108, env=0x7fffffffe118) at dl-init.c:120
+#4  0x00007ffff7dec8e2 in dl_open_worker (a=a@entry=0x7fffffffc180) at dl-open.c:575
+#5  0x00007ffff7de7564 in _dl_catch_error (objname=objname@entry=0x7fffffffc170, errstring=errstring@entry=0x7fffffffc178, mallocedp=mallocedp@entry=0x7fffffffc16f, operate=operate@entry=0x7ffff7dec4d0 <dl_open_worker>, args=args@entry=0x7fffffffc180) at dl-error.c:187
+#6  0x00007ffff7debda9 in _dl_open (file=0x7fffffffc7f0 "/home/alex/.local/lib/pd/extra/ofelia/ofelia.l_ia64", mode=-2147483390, caller_dlopen=0x4c4646 <sys_do_load_lib+518>, nsid=-2, argc=<optimized out>, argv=<optimized out>, env=0x7fffffffe118) at dl-open.c:660
+#7  0x00007ffff7157f09 in dlopen_doit (a=a@entry=0x7fffffffc3b0) at dlopen.c:66
+#8  0x00007ffff7de7564 in _dl_catch_error (objname=0x7ba130, errstring=0x7ba138, mallocedp=0x7ba128, operate=0x7ffff7157eb0 <dlopen_doit>, args=0x7fffffffc3b0) at dl-error.c:187
+#9  0x00007ffff7158571 in _dlerror_run (operate=operate@entry=0x7ffff7157eb0 <dlopen_doit>, args=args@entry=0x7fffffffc3b0) at dlerror.c:163
+#10 0x00007ffff7157fa1 in __dlopen (file=file@entry=0x7fffffffc7f0 "/home/alex/.local/lib/pd/extra/ofelia/ofelia.l_ia64", mode=mode@entry=258) at dlopen.c:87
+#11 0x00000000004c4646 in sys_do_load_lib (canvas=<optimized out>, objectname=<optimized out>, path=<optimized out>) at s_loader.c:223
+#12 0x00000000004c4cd0 in sys_loadlib_iter (data=0x7fffffffd010, path=0x7fffffffd030 "/home/alex/.local/lib/pd/extra/") at s_loader.c:293
+#13 sys_load_lib (canvas=canvas@entry=0x0, classname=classname@entry=0x7fffffffd460 "/home/alex/.local/lib/pd/extra//ofelia") at s_loader.c:329
+#14 0x000000000044d583 in canvas_stdlib (stdlib=<optimized out>, e=<optimized out>) at g_canvas.c:1461
+#15 0x000000000044d9b0 in canvas_declare (x=0x7d7cd0, s=s@entry=0x79e160, argc=argc@entry=2, argv=argv@entry=0x7fffffffd9c0) at g_canvas.c:1497
+#16 0x000000000044da88 in declare_new (s=0x79e160, argc=2, argv=0x7fffffffd9c0) at g_canvas.c:1336
+#17 0x00000000004b42b6 in pd_typedmess (x=0x77ec40 <pd_objectmaker>, s=<optimized out>, argc=<optimized out>, argv=<optimized out>) at m_class.c:897
+#18 0x00000000004adff7 in binbuf_eval (x=x@entry=0x7d6cd0, target=0x77ec40 <pd_objectmaker>, argc=0, argv=0x7d7e60) at m_binbuf.c:773
+#19 0x0000000000492016 in canvas_objtext (gl=0x7d7cd0, xpix=37, ypix=37, width=0, selected=0, b=0x7d6cd0) at g_text.c:100
+#20 0x0000000000497ecb in text_setto (x=x@entry=0x7d7af0, glist=glist@entry=0x7d7cd0, buf=<optimized out>, bufsize=<optimized out>) at g_text.c:1408
+#21 0x000000000045ae11 in glist_deselect (x=x@entry=0x7d7cd0, y=0x7d7af0) at g_editor.c:276
+#22 0x0000000000460f04 in glist_noselect (x=0x7d7cd0) at g_editor.c:290
+#23 canvas_doclick (x=0x7d7cd0, xpos=969, ypos=406, which=<optimized out>, mod=<optimized out>, doit=<optimized out>) at g_editor.c:1509
+#24 0x00000000004b427c in pd_typedmess (x=0x7d7cd0, s=<optimized out>, argc=<optimized out>, argv=<optimized out>) at m_class.c:964
+#25 0x00000000004adff7 in binbuf_eval (x=<optimized out>, target=0x7cb7d0, target@entry=0x0, argc=argc@entry=0, argv=argv@entry=0x0) at m_binbuf.c:773
+#26 0x00000000004c2a44 in socketreceiver_read (x=0x7d76c0, fd=34) at s_inter.c:606
+#27 0x00000000004c175e in sys_domicrosleep (microsec=<optimized out>, pollem=1) at s_inter.c:233
+#28 0x00000000004c1e55 in sys_microsleep (microsec=<optimized out>) at s_inter.c:257
+#29 0x00000000004ba32a in m_pollingscheduler () at m_sched.c:541
+#30 m_mainloop () at m_sched.c:596
+#31 0x00007ffff69a2830 in __libc_start_main (main=0x413210 <main>, argc=1, argv=0x7fffffffe108, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffe0f8) at ../csu/libc-start.c:291
+#32 0x0000000000413269 in _start ()
+>>> watchdog: signaling pd...
+watchdog: signaling pd...
+quit

@@ -1,0 +1,25 @@
+#N canvas 192 232 665 376 10;
+#X obj 207 245 msgfile;
+#X msg 146 100 add 34 45;
+#X obj 207 274 print;
+#X obj 255 272 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 166 126 flush;
+#X msg 408 247 clear;
+#X msg 412 224 rewind;
+#X msg 181 156 bang;
+#X msg 405 273 _____________;
+#X text 221 100 1 \, enter some lines;
+#X text 222 123 2 \, click flush (outputs stored data);
+#X text 222 153 3 \, bang outputs one row \, but then stored data is
+gone.;
+#X msg 197 192 flush;
+#X text 243 189 4 \, click flush again (no more data output);
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 1 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 2 0;

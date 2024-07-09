@@ -1,0 +1,6 @@
+#N canvas 538 60 879 604 10;
+#N canvas 387 681 450 300 creation_pool 0;
+#X restore 601 431 pd creation_pool;
+#X obj 415 370 s pd-creation_pool;
+#X msg 405 325 obj 10 20 test \, loadbang;
+#X connect 2 0 1 0;

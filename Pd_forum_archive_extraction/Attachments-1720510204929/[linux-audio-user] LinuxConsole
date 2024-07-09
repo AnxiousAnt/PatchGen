@@ -1,0 +1,70 @@
+Return-Path: <linux-audio-user-admin@music.columbia.edu>
+Delivered-To: online.fr-periclite@free.fr
+Received: (qmail 30304 invoked from network); 20 Mar 2003 15:50:49 -0000
+Received: from roar.music.columbia.edu (128.59.195.116)
+  by mrelay3-2.free.fr with SMTP; 20 Mar 2003 15:50:49 -0000
+Received: from roar.music.columbia.edu (IDENT:mailman@localhost [127.0.0.1])
+	by roar.music.columbia.edu (8.11.6/8.11.0) with ESMTP id h2KFsDQ08137;
+	Thu, 20 Mar 2003 10:54:13 -0500
+Received: from mwinf0402.wanadoo.fr (smtp3.wanadoo.fr [193.252.22.27])
+	by roar.music.columbia.edu (8.11.6/8.11.0) with ESMTP id h2KFpLQ08033
+	for <linux-audio-user@music.columbia.edu>; Thu, 20 Mar 2003 10:51:21 -0500
+Received: from free.fr (ABrest-102-1-4-218.abo.wanadoo.fr [81.49.107.218])
+	by mwinf0402.wanadoo.fr (Postfix) with ESMTP id 375528000EA
+	for <linux-audio-user@music.columbia.edu>; Thu, 20 Mar 2003 16:42:12 +0100 (CET)
+Message-ID: <3E79E152.2090308@free.fr>
+From: =?ISO-8859-1?Q?Yann_Le_Doar=E9?= <yledoare@free.fr>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; fr-FR; rv:1.2.1) Gecko/20021130
+X-Accept-Language: fr, en
+MIME-Version: 1.0
+To: linux-audio-user@music.columbia.edu
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 8bit
+Subject: [linux-audio-user] LinuxConsole
+Sender: linux-audio-user-admin@music.columbia.edu
+Errors-To: linux-audio-user-admin@music.columbia.edu
+X-BeenThere: linux-audio-user@music.columbia.edu
+X-Mailman-Version: 2.0.13
+Precedence: bulk
+Reply-To: linux-audio-user@music.columbia.edu
+List-Help: <mailto:linux-audio-user-request@music.columbia.edu?subject=help>
+List-Post: <mailto:linux-audio-user@music.columbia.edu>
+List-Subscribe: <http://music.columbia.edu/mailman/listinfo/linux-audio-user>,
+	<mailto:linux-audio-user-request@music.columbia.edu?subject=subscribe>
+List-Id: A list for linux audio users <linux-audio-user.music.columbia.edu>
+List-Unsubscribe: <http://music.columbia.edu/mailman/listinfo/linux-audio-user>,
+	<mailto:linux-audio-user-request@music.columbia.edu?subject=unsubscribe>
+List-Archive: <http://music.columbia.edu/pipermail/linux-audio-user/>
+X-Original-Date: Thu, 20 Mar 2003 16:42:10 +0100
+Date: Thu, 20 Mar 2003 16:42:10 +0100
+
+Hi evrybody !
+
+(sorry for my poor english)
+
+I am developing a live Linux CD, called LinuxConsole 
+(http://linuxconsole.tuxfamily.org)
+
+First it was made to use a PC box as a console games.
+
+Now it plays games, music, videos, browse Web, disks, burn CDs,...
+
+It is a "modularized" CD, the 'core' system (drivers+X11+Window maker) 
+stays in memory, while modules (mozilla, games, cups, openoffice) stay 
+on CD or hard disk (ext fs,fat,ntfs,...).
+I'am using ALSA drivers.
+
+I search someone to help me to make an 'audio' module, with most linux 
+audio applications
+
+If someone is intrested, thanks to post a message to LinuxConsole forum
+
+Thanks
+
+Yann Le Doaré
+Brest
+France
+
+
+
+

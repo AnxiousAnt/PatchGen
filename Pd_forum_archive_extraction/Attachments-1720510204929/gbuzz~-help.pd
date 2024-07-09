@@ -1,0 +1,37 @@
+#N canvas 21 369 765 485 10;
+#X floatatom 102 285 5 0 0 0 - - -;
+#X obj 177 401 output~;
+#X obj 279 401 tabwrite~ test;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array test 1000 float 0;
+#X coords 0 1 999 -1 200 140 1;
+#X restore 457 225 graph;
+#X obj 292 372 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 215 277 5 0 0 0 - - -;
+#X floatatom 234 317 5 0 0 0 - - -;
+#X obj 196 161 osc~ 0.2;
+#X floatatom 196 139 5 0 0 0 - - -;
+#X floatatom 270 171 5 0 0 0 - - -;
+#X text 101 264 hertz;
+#X text 87 81 spectral multiplier -- successive partials multiplied
+by this value -- 0<x<1 == "darker \, " x>1 == "brighter" -- this number
+may be negative;
+#X text 214 260 number of harmonics present;
+#X text 232 299 lowest harmonic present;
+#X text 90 16 [gbuzz~] -- band-limited pulse-train \, like csound "gbuzz"
+opcode.;
+#X text 248 337 <- args -- # harms. \, lowest harm.;
+#X obj 177 337 gbuzz~ 9 3;
+#X obj 196 188 *~ 0.5;
+#X connect 0 0 16 0;
+#X connect 4 0 2 0;
+#X connect 5 0 16 2;
+#X connect 6 0 16 3;
+#X connect 7 0 17 0;
+#X connect 8 0 7 0;
+#X connect 9 0 17 1;
+#X connect 16 0 1 0;
+#X connect 16 0 2 0;
+#X connect 16 0 1 1;
+#X connect 17 0 16 1;

@@ -1,0 +1,36 @@
+#N canvas 721 528 651 481 10;
+#X obj 134 433 print;
+#X obj 122 318 until;
+#X msg 148 262 1 2 3 4 a b c;
+#X text 95 128 example 3: serializing a message without delays;
+#X text 82 161 The "until" object can be used as shown to iterate through
+all the items of a list.;
+#X text 285 217 <- click to test;
+#X text 250 245 First store list \, then start the loop;
+#X text 225 269 "until" bangs its output until told to stop by a "bang"
+to its right inlet.;
+#X text 230 330 Store the remaining list.;
+#X obj 135 401 list store;
+#X obj 148 285 t b b l;
+#X obj 122 343 f;
+#X obj 160 344 + 1;
+#X msg 174 318 0, f 2;
+#X msg 121 372 range \$1 1;
+#X text 147 54 /usr/local/lib/pd/doc/5.reference/example3.pd;
+#X text 70 29 TEST;
+#X obj 104 203 loadbang;
+#X obj 104 224 delay 1000;
+#X connect 1 0 11 0;
+#X connect 2 0 10 0;
+#X connect 9 0 0 0;
+#X connect 9 1 1 1;
+#X connect 10 0 1 0;
+#X connect 10 1 13 0;
+#X connect 10 2 9 1;
+#X connect 11 0 12 0;
+#X connect 11 0 14 0;
+#X connect 12 0 11 1;
+#X connect 13 0 11 1;
+#X connect 14 0 9 0;
+#X connect 17 0 18 0;
+#X connect 18 0 2 0;

@@ -1,0 +1,198 @@
+Description: make array-access 64bit safe
+Author: IOhannes m zmölnig
+Forwarded: no
+Last-Update: 2018-02-01
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- pd-cxc.orig/mean~.c
++++ pd-cxc/mean~.c
+@@ -19,7 +19,7 @@
+   t_object  x_obj;
+   t_symbol *x_arrayname;
+   t_float   x_mean;
+-  float    *x_vec;
++  t_word   *x_vec;
+   t_float   f;
+   int       x_nsampsintab;
+ } t_cxmean;
+@@ -44,7 +44,7 @@
+     	    x->x_arrayname->s_name);
+     	x->x_vec = 0;
+     }
+-    else if (!garray_getfloatarray(a, &x->x_nsampsintab, &x->x_vec))
++    else if (!garray_getfloatwords(a, &x->x_nsampsintab, &x->x_vec))
+     {
+     	error("%s: bad template for mean~", x->x_arrayname->s_name);
+     	x->x_vec = 0;
+@@ -62,20 +62,21 @@
+   // t_float *bl;
+   t_garray *a;
+   int cnt;
+-  t_float *fp;
++  t_word *fp;
+   t_float xz = 0.;
+ 
+   cnt = 0;
+   if(!(a = (t_garray *)pd_findbyclass(x->x_arrayname,garray_class))) {
+     pd_error(x, "%s: no such table", x->x_arrayname->s_name);
+   }
+-  garray_getfloatarray(a,&x->x_nsampsintab,&x->x_vec);
++  garray_getfloatwords(a,&x->x_nsampsintab,&x->x_vec);
+ 
+   fp = x->x_vec;
+ 
+   while(cnt < x->x_nsampsintab) {
+     //post("cxc/mean.c: %f",*fp++);
+-    xz += *fp++;
++    xz += fp->w_float;
++    fp++;
+     cnt++;
+   }
+ #ifdef DEBUG
+@@ -118,7 +119,7 @@
+   t_object  x_obj;
+   t_symbol *x_arrayname;
+   t_float   x_avgdev;
+-  float    *x_vec;
++  t_word   *x_vec;
+   t_float   f;
+   int       x_nsampsintab;
+ } t_cxavgdev;
+@@ -143,7 +144,7 @@
+     	    x->x_arrayname->s_name);
+     	x->x_vec = 0;
+     }
+-    else if (!garray_getfloatarray(a, &x->x_nsampsintab, &x->x_vec))
++    else if (!garray_getfloatwords(a, &x->x_nsampsintab, &x->x_vec))
+     {
+     	error("%s: bad template for mean~", x->x_arrayname->s_name);
+     	x->x_vec = 0;
+@@ -161,7 +162,7 @@
+   // t_float *bl;
+   t_garray *a;
+   int cnt;
+-  t_float *fp;
++  t_word *fp;
+   t_float xz = 0.;
+   t_float tz = 0.;
+ 
+@@ -169,12 +170,13 @@
+   if(!(a = (t_garray *)pd_findbyclass(x->x_arrayname,garray_class))) {
+     pd_error(x, "%s: no such table", x->x_arrayname->s_name);
+   }
+-  garray_getfloatarray(a,&x->x_nsampsintab,&x->x_vec);
++  garray_getfloatwords(a,&x->x_nsampsintab,&x->x_vec);
+ 
+   fp = x->x_vec;
+ 
+   while(cnt < x->x_nsampsintab) {
+-    tz = *fp++;
++    tz = fp->w_float;
++    fp++;
+     tz = fabs(tz - f);
+     xz += tz;
+ #ifdef DEBUG
+@@ -222,7 +224,7 @@
+   t_object  x_obj;
+   t_symbol *x_arrayname;
+   t_float   x_stddev;
+-  float    *x_vec;
++  t_word   *x_vec;
+   t_float   f;
+   int       x_nsampsintab;
+ } t_cxstddev;
+@@ -247,7 +249,7 @@
+     	    x->x_arrayname->s_name);
+     	x->x_vec = 0;
+     }
+-    else if (!garray_getfloatarray(a, &x->x_nsampsintab, &x->x_vec))
++    else if (!garray_getfloatwords(a, &x->x_nsampsintab, &x->x_vec))
+     {
+     	error("%s: bad template for mean~", x->x_arrayname->s_name);
+     	x->x_vec = 0;
+@@ -265,7 +267,7 @@
+   // t_float *bl;
+   t_garray *a;
+   int cnt;
+-  t_float *fp;
++  t_word *fp;
+   t_float xz = 0.;
+   t_float tz = 0.;
+ 
+@@ -273,12 +275,13 @@
+   if(!(a = (t_garray *)pd_findbyclass(x->x_arrayname,garray_class))) {
+     pd_error(x, "%s: no such table", x->x_arrayname->s_name);
+   }
+-  garray_getfloatarray(a,&x->x_nsampsintab,&x->x_vec);
++  garray_getfloatwords(a,&x->x_nsampsintab,&x->x_vec);
+ 
+   fp = x->x_vec;
+ 
+   while(cnt < x->x_nsampsintab) {
+-    tz = *fp++;
++    tz = fp->w_float;
++    fp++;
+     tz = pow(tz - f,2); // power of 2
+     xz += tz;
+ #ifdef DEBUG
+@@ -323,7 +326,7 @@
+   t_object  x_obj;
+   t_symbol *x_arrayname;
+   t_float   x_mean;
+-  float    *x_vec;
++  t_word   *x_vec;
+   t_float   f;
+   int       x_nsampsintab;
+ } t_mean_tilde;
+@@ -341,14 +344,15 @@
+ {
+   t_mean_tilde *x = (t_mean_tilde *)(w[1]);
+   //t_float *out = (t_float *)(w[3]), 
+-  t_float *fp;
++  t_word *fp;
+   //// t_float *in  = (t_float *)(w[2]);
+   //// *out = *in;
+   int n = (int)(w[2]);
+   t_float xz = 0.;
+   fp = x->x_vec;
+   while(n--) {
+-    xz += abs(*fp++);
++    xz += abs(fp->w_float);
++    fp++;
+     //post("cxc/mean.c: %d : %f : %f",n,xz,fp);
+   }
+   x->x_mean = (t_float)(xz / n);
+@@ -368,7 +372,7 @@
+     	    x->x_arrayname->s_name);
+     	x->x_vec = 0;
+     }
+-    else if (!garray_getfloatarray(a, &x->x_nsampsintab, &x->x_vec))
++    else if (!garray_getfloatwords(a, &x->x_nsampsintab, &x->x_vec))
+     {
+     	error("%s: bad template for mean~", x->x_arrayname->s_name);
+     	x->x_vec = 0;
+@@ -394,20 +398,21 @@
+   // t_float *bl;
+   t_garray *a;
+   int cnt;
+-  t_float *fp;
++  t_word *fp;
+   t_float xz = 0.;
+ 
+   cnt = 0;
+   if(!(a = (t_garray *)pd_findbyclass(x->x_arrayname,garray_class))) {
+     pd_error(x, "%s: no such table", x->x_arrayname->s_name);
+   }
+-  garray_getfloatarray(a,&x->x_nsampsintab,&x->x_vec);
++  garray_getfloatwords(a,&x->x_nsampsintab,&x->x_vec);
+ 
+   fp = x->x_vec;
+ 
+   while(cnt < x->x_nsampsintab) {
+     //post("cxc/mean.c: %f",*fp++);
+-    xz += *fp++;
++    xz += fp->w_float;
++    fp++;
+     cnt++;
+   }
+ #ifdef DEBUG

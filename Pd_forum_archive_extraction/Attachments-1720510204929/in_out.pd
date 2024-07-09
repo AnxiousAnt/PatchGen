@@ -1,0 +1,46 @@
+#N canvas 362 126 620 608 10;
+#X text 131 15 Here comes your signal;
+#X text 132 30 Use these bangs to simulate it;
+#X text 149 59 =====> coming in;
+#X text 149 74 <===== going out;
+#X obj 126 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 260 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 278 +;
+#X obj 197 301 t f f;
+#X obj 197 330 select 0;
+#X obj 200 371 f;
+#X obj 203 401 select -1 1;
+#X obj 166 444 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 257 442 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 151 468 IN;
+#X text 251 470 OUT;
+#X msg 128 103 1;
+#X msg 260 104 -1;
+#X obj 238 288 clip -1 1;
+#X obj 196 158 t f f b b;
+#X obj 242 212 delay 1000;
+#X msg 260 186 stop;
+#X msg 237 242 0;
+#X connect 4 0 15 0;
+#X connect 5 0 16 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 1 17 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 10 1 12 0;
+#X connect 15 0 18 0;
+#X connect 16 0 18 0;
+#X connect 17 0 6 1;
+#X connect 18 0 6 0;
+#X connect 18 1 9 1;
+#X connect 18 2 19 0;
+#X connect 18 3 20 0;
+#X connect 19 0 21 0;
+#X connect 20 0 19 0;
+#X connect 21 0 6 1;

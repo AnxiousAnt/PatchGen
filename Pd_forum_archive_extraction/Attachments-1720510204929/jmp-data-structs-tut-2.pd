@@ -1,0 +1,54 @@
+#N struct data-s float x float y float lang;
+#N canvas 155 27 389 434 10;
+#X text 17 11 DATA STRUCTURES - TUTORIAL BY JOÃO PAIS;
+#X text 23 72 1 - Create 2 subpatches:;
+#X text 133 95 with the structure settings;
+#X text 133 115 where the structure will be painted;
+#N canvas 589 124 450 509 data-s 0;
+#X text 16 37 - floats x and y \, reserved by Pd for x and y coordinates
+;
+#X text 16 17 [struct] defines a data structure named "data-s" containing:
+;
+#X text 19 112 draw forms with straight lines - just keep adding pairs
+of cordinates;
+#X obj 18 312 filledpolygon 1000 0 3 0 30 60 30 60 40 0 40 0 30;
+#X text 102 292 color inside + c. outside + width + coordidate pairs
+;
+#X text 90 142 color + width + coordidate pairs (x y);
+#X text 19 424 to edit any field with the mouse \, the field must be
+defined by a variable \, and not with a fixed value;
+#X obj 18 352 drawcurve 258 2 0 50 30 80 60 50;
+#X obj 18 392 filledcurve 450 420 2 0 90 30 120 60 90;
+#X obj 21 474 drawnumber lang lang -15 0 lenght=;
+#X text 120 232 Scaling: variable(original values)(scaled values);
+#X text 120 182 Give limits to a variable through value pairs.;
+#X obj 18 57 struct data-s float x float y float lang;
+#X obj 18 162 drawpolygon 0 2 0 0 lang(0:100)(0:100)(5) 0;
+#X obj 18 212 drawpolygon 0 2 0 10 50 10 lang(0:100)(70:120)(5) 20
+;
+#X text 120 252 Step: integer step value (floats get truncated);
+#X restore 62 95 pd data-s;
+#X text 23 152 2 - optionally delete the paint patch;
+#X msg 62 175 clear;
+#N canvas 0 0 502 353 draw 1;
+#X scalar data-s 49 93 100 \;;
+#X restore 62 115 pd draw;
+#X obj 62 195 s pd-draw;
+#X text 17 31 2 - DRAWING;
+#X obj 62 255 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 62 275 t b b;
+#X obj 191 315 pointer;
+#X msg 191 295 traverse pd-draw \, bang;
+#X text 23 232 3 - add some elements;
+#X obj 62 335 append data-s x y lang;
+#X msg 62 315 50 50 100;
+#X text 8 374 View struct patch to know about limiting \, scaling and
+step.;
+#X connect 6 0 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 16 0;
+#X connect 11 1 13 0;
+#X connect 12 0 15 3;
+#X connect 13 0 12 0;
+#X connect 16 0 15 0;

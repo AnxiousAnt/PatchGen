@@ -1,0 +1,9 @@
+#N canvas 0 0 450 300 10;
+#X obj 66 164 gemwin;
+#X msg 66 77 create \, 1;
+#X msg 80 117 destroy;
+#X obj 235 104 gemhead;
+#X obj 235 149 pix_hand;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;

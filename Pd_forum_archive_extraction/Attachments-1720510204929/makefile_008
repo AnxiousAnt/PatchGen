@@ -1,0 +1,35 @@
+PD_DIR = /home/nusmuk/pd/pd/src
+GEM_DIR = /home/nusmuk/pd/Gem/src
+
+LIBS =  -lm
+
+# build flags
+
+INCLUDE =  -I$(PD_DIR) -I.  -I$(GEM_DIR) -I$(PD_DIR)
+CPPFLAGS  = -DPD -O2 -funroll-loops -fomit-frame-pointer  -ffast-math \
+    -Wall -W -Wno-unused -Wno-parentheses -Wno-switch -g
+
+all:	test.pd_linux 
+	rm -f *.o
+
+.SUFFIXES: .pd_linux
+
+clean:
+	rm -f *.o
+	rm -f *.pd_linux
+
+.cpp.o:
+	g++ $(CPPFLAGS) $(INCLUDE) -o $*.o -c $*.cpp
+
+.cpp.pd_linux:
+	g++ $(CPPFLAGS) $(INCLUDE) -o $*.o -c $*.cpp
+	gcc -export_dynamic -shared -o $*.pd_linux $*.o $(LIBS)
+	rm -f *.o
+
+
+
+
+
+
+
+

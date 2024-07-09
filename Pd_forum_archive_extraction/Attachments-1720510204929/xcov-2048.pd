@@ -1,0 +1,105 @@
+#N canvas 776 83 1137 946 10;
+#X obj 434 506 samplerate~;
+#X obj 435 484 loadbang;
+#X obj 434 588 expr $f1/1000;
+#X obj 434 614 s samples_per_ms;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array \$0-xcov-2048 2048 float 2;
+#X coords 0 1 2048 -1 600 250 2 0 0;
+#X restore 180 120 graph;
+#X obj 142 528 metro 16;
+#X obj 140 504 loadbang;
+#X obj 120 530 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 559 491 xcov~ can be re-written to compute only forward or
+backward cross-covariance by changing the rectangular window array
+and left-right shift values;
+#X text 567 616 64 96 -32;
+#X text 566 633 128 192 -64;
+#X text 566 682 1024 1536 -512;
+#X text 566 666 512 768 -256;
+#X text 566 650 256 384 -128;
+#X text 565 700 2048 3072 -1024;
+#X text 567 718 4096 6144 -2048;
+#X text 566 736 8192 12288 -4096;
+#X text 564 531 xcov~ takes its first arguement the blocksize to initialize
+because it requires changing its blocksize internally arguments 2 and
+3 are required unless xcov~ is rewritten for lrshift~ for now \, the
+blocksize and shifting can be set properly from one of these sets of
+arguments;
+#X text 567 755 16384 24576 -8192;
+#X text 567 775 32768 49152 -16384;
+#X obj 203 529 xcov~ 2048 3072 -1024;
+#X obj 344 530 block~ 2048;
+#X obj 214 497 inlet~;
+#X obj 292 496 inlet~;
+#X obj 202 564 tabwrite~ \$0-xcov-2048;
+#X obj 170 902 s \$0-samples;
+#X obj 362 697 r samples_per_ms;
+#X obj 434 534 t f f;
+#X obj 258 900 s \$0-ms;
+#X obj 100 190 nbx 8 14 -1e+37 1e+37 0 0 latency \$0-samples empty
+0 -8 0 10 -262144 -1 -1 598 256;
+#X obj 100 226 nbx 8 14 -1e+37 1e+37 0 0 empty \$0-ms empty 0 -8 0
+10 -262144 -1 -1 13.5601 256;
+#X text 114 207 ms;
+#X text 108 167 samples;
+#X text 109 145 delay time;
+#X text 179 379 -1024;
+#X text 735 379 1024;
+#X obj 16 749 tabread \$0-xcov-2048;
+#X obj 38 652 f;
+#X msg 89 611 0;
+#X obj 65 652 + 1;
+#X obj 38 620 until;
+#X msg 33 591 2048;
+#X obj 32 560 t b b;
+#X obj 164 750 f;
+#X obj 47 803 abs;
+#X obj 75 802 max;
+#X obj 75 827 t f f;
+#X obj 75 853 change;
+#X msg 121 782 bang;
+#X obj 169 827 f;
+#X obj 38 673 t f f f;
+#X obj 198 787 select 2047;
+#X obj 171 856 - 1024;
+#X obj 235 853 / 1;
+#X connect 0 0 27 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 5 0 24 0;
+#X connect 5 0 42 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 20 0 24 0;
+#X connect 22 0 20 0;
+#X connect 23 0 20 1;
+#X connect 26 0 53 1;
+#X connect 27 1 2 0;
+#X connect 36 0 44 0;
+#X connect 37 0 39 0;
+#X connect 37 0 50 0;
+#X connect 38 0 37 1;
+#X connect 38 0 45 1;
+#X connect 39 0 37 1;
+#X connect 40 0 37 0;
+#X connect 41 0 40 0;
+#X connect 42 0 41 0;
+#X connect 42 1 38 0;
+#X connect 43 0 49 1;
+#X connect 44 0 45 0;
+#X connect 45 0 46 0;
+#X connect 46 0 47 0;
+#X connect 46 1 45 1;
+#X connect 47 0 48 0;
+#X connect 48 0 43 0;
+#X connect 49 0 52 0;
+#X connect 50 0 51 0;
+#X connect 50 1 36 0;
+#X connect 50 2 43 1;
+#X connect 51 0 49 0;
+#X connect 52 0 53 0;
+#X connect 52 0 25 0;
+#X connect 53 0 28 0;
+#X coords 0 -1 1 1 700 350 1 100 100;

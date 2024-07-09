@@ -1,0 +1,35 @@
+#N canvas 54 33 754 336 10;
+#X obj 85 171 nbx 5 14 -1e+037 1e+037 0 0 blarg blarg empty 0 -8 0
+10 -262144 -1 -1 100 256;
+#X obj 38 119 vsl 15 128 0 127 0 0 blarg blarg empty 0 -9 0 10 -262144
+-1 -1 5600 1;
+#X floatatom 85 117 5 0 0 0 - - -;
+#X floatatom 38 84 5 0 0 0 - - -;
+#X obj 396 146 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5600 1;
+#X obj 484 187 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 56 256;
+#X msg 484 108 set \$1;
+#X obj 396 282 s ex_2;
+#X obj 484 83 r ex_2;
+#X obj 484 206 s ex_2;
+#X floatatom 396 101 5 0 0 0 - - -;
+#X floatatom 501 156 5 0 0 0 - - -;
+#X text 13 52 Answer: see source code for iemgui objects.;
+#X text 18 259 Example 1: two GUIs bound by "magic";
+#X text 396 309 Example 2: two GUIs bound in a visually clear manner
+;
+#X text 391 25 Question: what will happen when you scroll the gatom
+boxes?;
+#X text 11 32 Question: what will happen when you scroll the gatom
+boxes?;
+#X text 394 46 Answer: look at the patch.;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 7 0;
+#X connect 5 0 9 0;
+#X connect 6 0 5 0;
+#X connect 6 0 4 0;
+#X connect 8 0 6 0;
+#X connect 10 0 4 0;
+#X connect 11 0 5 0;

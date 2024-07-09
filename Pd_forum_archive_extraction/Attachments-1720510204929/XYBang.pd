@@ -1,0 +1,29 @@
+#N canvas 869 354 450 300 10;
+#X floatatom 39 49 5 0 0 0 - - -;
+#X floatatom 226 48 5 0 0 0 - - -;
+#X obj 173 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 41 107 expr if ($f1 == 1 && $f2 == 1 \, 1 \, 0) \; if ($f1 ==
+2 && $f2 == 2 \, 2 \, 0) \; if ($f1 == 3 && $f2 == 3 \, 3 \, 0) \;
+if ($f1 == 4 && $f2 == 4 \, 4 \, 0) \;;
+#X obj 41 181 sel 1 2 3 4;
+#X obj 44 206 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 63 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 85 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 104 208 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 1;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 3 1 4 0;
+#X connect 3 2 4 0;
+#X connect 3 3 4 0;
+#X connect 4 0 5 0;
+#X connect 4 1 6 0;
+#X connect 4 2 7 0;
+#X connect 4 3 8 0;

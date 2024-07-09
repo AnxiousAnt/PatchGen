@@ -1,0 +1,28 @@
+#N canvas 0 0 616 396 10;
+#X obj 99 158 route noop;
+#X msg 86 96 noop;
+#X obj 99 184 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 203 71 bang;
+#X msg 247 69 1;
+#X msg 278 69 1 2 3;
+#X msg 326 69 list noop;
+#X msg 535 68 a b c;
+#X obj 164 234 print passed;
+#X obj 179 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 53 71 noop blocked;
+#X text 51 41 blocked;
+#X text 201 44 passed;
+#X msg 403 67 list noop passed;
+#X connect 0 0 2 0;
+#X connect 0 1 8 0;
+#X connect 0 1 9 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 10 0 0 0;
+#X connect 13 0 0 0;

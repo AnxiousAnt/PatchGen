@@ -1,0 +1,116 @@
+input channels = 2, output channels = 2
+Pd-0.46.7 ("") compiled 23:14:22 Jan 15 2016
+port 5400
+TCL_LIBRARY="/usr/local/lib/pd/lib/tcl/library" TK_LIBRARY="/usr/local/lib/pd/lib/tk/library"   wish "/usr/local/lib/pd/tcl//pd-gui.tcl" 5400
+priority 6 scheduling enabled.
+
+Waiting for connection request... 
+/usr/local/lib/pd/bin/pd-watchdog
+... connected
+opened 0 MIDI input device(s) and 0 MIDI output device(s).
+input channels = 2, output channels = 2
+verbose(4): JACK: started server as 'pure_data_0'
+tried ./Cream/Cream.l_ia64 and failed
+tried /mnt/HDD-1T/Cloud/Dropbox/3.PROJECTS/z.Library-Pd/Cream/Cream.l_ia64 and failed
+tried /home/ak/pd-externals/Gem/Cream/Cream.l_ia64 and failed
+tried /home/ak/pd-externals/zexy/Cream/Cream.l_ia64 and failed
+tried /home/ak/pd-externals/cyclone/Cream/Cream.l_ia64 and failed
+tried /home/ak/pd-externals/flatgui/Cream/Cream.l_ia64 and failed
+tried /home/ak/pd-externals/moonlib/Cream/Cream.l_ia64 and failed
+tried /home/ak/pd-externals/Cream/Cream.l_ia64 and succeeded
+verbose(3): Cream Library by Pierre Guillot
+© 2013 - 2015  CICM | Paris 8 University
+Version Beta 0.4 (Nov 23 2015) for Pure Data 0.46
+
+tried ./Hoa/Hoa.l_ia64 and failed
+tried /mnt/HDD-1T/Cloud/Dropbox/3.PROJECTS/z.Library-Pd/Hoa/Hoa.l_ia64 and failed
+tried /home/ak/pd-externals/Gem/Hoa/Hoa.l_ia64 and failed
+tried /home/ak/pd-externals/zexy/Hoa/Hoa.l_ia64 and failed
+tried /home/ak/pd-externals/cyclone/Hoa/Hoa.l_ia64 and failed
+tried /home/ak/pd-externals/flatgui/Hoa/Hoa.l_ia64 and failed
+tried /home/ak/pd-externals/moonlib/Hoa/Hoa.l_ia64 and failed
+tried /home/ak/pd-externals/Hoa/Hoa.l_ia64 and failed
+tried /usr/local/lib/pd-externals/Hoa/Hoa.l_ia64 and failed
+tried /usr/local/lib/pd/extra/Hoa/Hoa.l_ia64 and failed
+tried /home/ak/pd-externals/Cream/misc/Hoa/Hoa.l_ia64 and failed
+tried /home/ak/pd-externals/Cream/helps/Hoa/Hoa.l_ia64 and failed
+tried ./Hoa/Hoa.pd_linux and failed
+tried /mnt/HDD-1T/Cloud/Dropbox/3.PROJECTS/z.Library-Pd/Hoa/Hoa.pd_linux and failed
+tried /home/ak/pd-externals/Gem/Hoa/Hoa.pd_linux and failed
+tried /home/ak/pd-externals/zexy/Hoa/Hoa.pd_linux and failed
+tried /home/ak/pd-externals/cyclone/Hoa/Hoa.pd_linux and failed
+tried /home/ak/pd-externals/flatgui/Hoa/Hoa.pd_linux and failed
+tried /home/ak/pd-externals/moonlib/Hoa/Hoa.pd_linux and failed
+tried /home/ak/pd-externals/Hoa/Hoa.pd_linux and succeeded
+verbose(3): HOA Library by Julien Colafrancesco, Pierre Guillot, Eliott Paris & Thomas Le Meur
+© 2013 - 2015  CICM | Paris 8 University
+Version Beta 2.2 (Jun 25 2015) for Pure Data 0.46
+
+tried ./Gem/Gem.l_ia64 and failed
+tried /mnt/HDD-1T/Cloud/Dropbox/3.PROJECTS/z.Library-Pd/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/Gem/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/zexy/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/cyclone/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/flatgui/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/moonlib/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/Gem/Gem.l_ia64 and failed
+tried /usr/local/lib/pd-externals/Gem/Gem.l_ia64 and failed
+tried /usr/local/lib/pd/extra/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/Cream/misc/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/Cream/helps/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/Hoa/patchers/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/Hoa/clippings/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/Hoa/dependencies/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/Hoa/media/Gem/Gem.l_ia64 and failed
+tried /home/ak/pd-externals/Hoa/misc/Gem/Gem.l_ia64 and failed
+tried ./Gem/Gem.pd_linux and failed
+tried /mnt/HDD-1T/Cloud/Dropbox/3.PROJECTS/z.Library-Pd/Gem/Gem.pd_linux and failed
+tried /home/ak/pd-externals/Gem/Gem/Gem.pd_linux and failed
+tried /home/ak/pd-externals/zexy/Gem/Gem.pd_linux and failed
+tried /home/ak/pd-externals/cyclone/Gem/Gem.pd_linux and failed
+tried /home/ak/pd-externals/flatgui/Gem/Gem.pd_linux and failed
+tried /home/ak/pd-externals/moonlib/Gem/Gem.pd_linux and failed
+tried /home/ak/pd-externals/Gem/Gem.pd_linux and succeeded
+verbose(6): not registering [pix_filmQT] again...
+verbose(4): GEM: Graphics Environment for Multimedia
+verbose(4): GEM: ver: 0.93.3 
+verbose(4): GEM: compiled: Aug  8 2013
+verbose(4): GEM: maintained by IOhannes m zmoelnig
+verbose(4): GEM: Authors :	Mark Danks (original version)
+verbose(4): GEM:		Chris Clepper
+verbose(4): GEM:		Cyrille Henry
+verbose(4): GEM:		IOhannes m zmoelnig
+verbose(4): GEM: with help by Guenter Geiger, Daniel Heckenberg, James Tittle, Hans-Christoph Steiner, et al.
+verbose(4): GEM: found a bug? miss a feature? please report it:
+verbose(4): GEM: 	homepage http://gem.iem.at/
+verbose(4): GEM: 	bug-tracker http://sourceforge.net/projects/pd-gem/
+verbose(4): GEM: 	mailing-list http://lists.puredata.info/listinfo/gem-dev/
+open: /etc/pd/gem.conf: No such file or directory
+open: /home/ak/.pd/gem.conf: No such file or directory
+open: ./gem.conf: No such file or directory
+tried ./hsv2rgb.pd and failed
+tried /mnt/HDD-1T/Cloud/Dropbox/3.PROJECTS/z.Library-Pd/hsv2rgb.pd and failed
+tried /home/ak/pd-externals/Gem/hsv2rgb.pd and succeeded
+verbose(4): GEM: compiled for SIMD architecture: SSE2 MMX 
+verbose(4): GEM: using SSE2 optimization
+tried /home/ak/Desktop/png.pd and succeeded
+[pix_draw]: requesting [pix_draw] - consider using [pix_texture]
+tried /home/ak/pd-externals/Gem/gem_imageJPEG.so and succeeded
+tried /home/ak/pd-externals/Gem/gem_imageMAGICK.so and succeeded
+tried /home/ak/pd-externals/Gem/gem_imageSGI.so and succeeded
+tried /home/ak/pd-externals/Gem/gem_imageTIFF.so and succeeded
+verbose(6): backend 'magick' unavailable
+verbose(6): trying to add 'SGI' as backend
+verbose(6): added backend#0 'SGI' @ 0x14df720
+verbose(6): trying to add 'jpeg' as backend
+verbose(6): added backend#1 'jpeg' @ 0x14dcf10
+Image loading support: SGI jpeg
+GEM: Only using 8 color bits
+GEM: Direct Rendering enabled!
+verbose(4): GEM: GLEW version 1.5.4
+verbose(3): GEM: Start rendering
+tried /home/ak/Desktop/test.png and succeeded
+verbose(5): loading image '/home/ak/Desktop/test.png' with ID:1
+verbose(6): reading '/home/ak/Desktop/test.png' with libJPEG
+error: [pix_image]: failed to load image '/home/ak/Desktop/test.png'
+verbose(4): ... you might be able to track this down from the Find menu.

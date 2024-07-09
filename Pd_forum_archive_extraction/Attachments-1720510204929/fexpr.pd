@@ -1,0 +1,26 @@
+#N canvas 394 51 455 425 10;
+#X obj 77 70 count~;
+#X obj 77 41 bang~;
+#X obj 77 156 print~;
+#X obj 105 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 77 98 fexpr~ ($x + $x[-1] + $x[-2] + $x[-3]) * 0.25;
+#X obj 82 248 count~;
+#X obj 82 219 bang~;
+#X obj 82 334 print~;
+#X obj 110 310 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 82 276 fexpr~ ($x1 + $x1[-1] + $x1[-2] + $x1[-3]) * 0.25;
+#X text 137 309 Works for previous samples from previous block;
+#X obj 256 182 loadbang;
+#X msg 256 206 \; pd dsp 1;
+#X text 124 69 sample values from 0-63;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 9 0;
+#X connect 6 0 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;
+#X connect 11 0 12 0;

@@ -1,0 +1,37 @@
+#N canvas 494 189 885 373 10;
+#X obj 88 208 r ranFile;
+#X obj 88 235 print;
+#X obj 435 245 sys_gui;
+#X obj 435 216 r sys_gui;
+#X msg 72 112 \; sys_gui set wav_dir [tk_chooseDirectory];
+#X obj 72 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 217 155 r ranFile;
+#X obj 218 316 readsf~ 2 1e+06;
+#X obj 218 338 dac~;
+#X msg 218 241 open \$1 0 0 2 2 b \, 1;
+#X text 68 65 choose directory;
+#X text 439 13 choose extension to be played;
+#X obj 217 177 route aif wav;
+#X text 67 13 play a stereo soundfile randomly from a directory with
+tcl scripting using [hc/sys_gui];
+#X obj 446 64 list append wav;
+#X msg 572 42 aif;
+#X msg 486 37 P01;
+#X msg 445 37 a;
+#X msg 439 89 \; sys_gui set l [glob -nocomplain -directory $wav_dir
+\$1*.\$2] \, if [expr [llength $l] > 0] [list pdsend [list ranFile
+\$2 symbol [lindex $l [expr int(floor(rand()*[llength $l]))]]]];
+#X connect 0 0 1 0;
+#X connect 3 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 12 0;
+#X connect 7 0 8 0;
+#X connect 7 1 8 1;
+#X connect 9 0 7 0;
+#X connect 12 0 9 0;
+#X connect 12 1 9 0;
+#X connect 14 0 18 0;
+#X connect 15 0 14 1;
+#X connect 16 0 14 0;
+#X connect 17 0 14 0;

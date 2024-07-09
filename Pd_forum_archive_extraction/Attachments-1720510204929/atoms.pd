@@ -1,0 +1,35 @@
+#N canvas 601 150 479 526 12;
+#X obj 31 53 hsl 128 15 1 4 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 10600 0;
+#X obj 178 53 hsl 128 15 1 4 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 0;
+#X obj 28 212 float;
+#X symbolatom 48 176 10 0 0 0 - - -;
+#X obj 175 76 t b f;
+#X obj 28 236 change;
+#X obj 28 263 print NO REPEATS;
+#X obj 349 54 loadbang;
+#X msg 349 81 1;
+#X text 345 28 initialize it;
+#X obj 28 73 int;
+#X floatatom 46 106 5 0 0 0 - - -;
+#X obj 28 144 makefilename;
+#X text 27 23 VANILLA:;
+#X msg 207 125 set %d\$1;
+#X obj 207 100 int;
+#X text 136 154 see helpfile for [makefilename] ("multiple substitutions")
+, f 32;
+#X connect 0 0 10 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 4 0 0 0;
+#X connect 4 1 15 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 15 0;
+#X connect 10 0 11 0;
+#X connect 10 0 12 0;
+#X connect 12 0 3 0;
+#X connect 12 0 2 0;
+#X connect 14 0 12 0;
+#X connect 15 0 14 0;

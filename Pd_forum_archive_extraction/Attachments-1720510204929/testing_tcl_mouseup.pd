@@ -1,0 +1,24 @@
+#N canvas 0 50 450 300 10;
+#X obj 167 31 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144 -262144
+-1;
+#X obj 235 138 r MOUSE;
+#X obj 267 166 spigot;
+#X obj 267 189 route mouseup;
+#X obj 263 220 t b b;
+#X msg 350 136 0;
+#X obj 188 95 t b b;
+#X msg 303 136 1;
+#X msg 62 201 color 0 0 -1;
+#X msg 57 160 color 16 16 -1;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 8 0;
+#X connect 4 1 5 0;
+#X connect 5 0 2 1;
+#X connect 6 0 9 0;
+#X connect 6 1 7 0;
+#X connect 7 0 2 1;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;

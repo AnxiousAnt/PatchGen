@@ -1,0 +1,8 @@
+#N canvas 0 0 313 125 10;
+#X obj 14 18 r \$1;
+#X obj 14 38 list prepend \$2;
+#X obj 14 58 list trim;
+#X obj 14 78 s \$3;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;

@@ -1,0 +1,10 @@
+#N canvas 0 0 450 300 10;
+#X obj 152 85 r DATE;
+#X obj 152 112 unpack 0 0 0;
+#X floatatom 152 148 3 0 0 1 h - -;
+#X floatatom 192 148 3 0 0 1 m - -;
+#X floatatom 233 148 3 0 0 1 s - -;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;

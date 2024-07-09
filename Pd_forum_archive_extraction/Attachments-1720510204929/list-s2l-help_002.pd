@@ -1,0 +1,37 @@
+#N canvas 326 22 1071 347 10;
+#X obj 62 188 print;
+#X obj 349 215 print;
+#X msg 349 71 symbol 1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()_+~`./?><[]|
+;
+#X obj 422 172 unpack 0 0 0 0 0 0 0 0 0 0 s s;
+#X floatatom 422 234 5 0 0 0 - - -;
+#X floatatom 438 210 5 0 0 0 - - -;
+#X symbolatom 582 237 10 0 0 0 - - -;
+#X symbolatom 599 211 10 0 0 0 - - -;
+#X msg 78 89 symbol VanillaRulzw007;
+#X text 463 153 floats and symbols should come out right;
+#X text 52 269 neither this nor [list-l2s] handles % appropriately
+;
+#X obj 62 143 list-s2l -;
+#X text 61 31 Now with delimiters;
+#X msg 62 63 symbol 21-split-the-atoms;
+#X msg 82 119 symbol -1.2830e+27-teddy-roosevelt;
+#X obj 349 155 list-s2l;
+#X obj 813 150 list-s2l Pd;
+#X msg 876 125 symbol is;
+#X msg 813 77 symbol PdisgreatPdisgreatPdisgreat;
+#X obj 813 178 print;
+#X connect 2 0 15 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 3 10 6 0;
+#X connect 3 11 7 0;
+#X connect 8 0 11 0;
+#X connect 11 0 0 0;
+#X connect 13 0 11 0;
+#X connect 14 0 11 0;
+#X connect 15 0 1 0;
+#X connect 15 0 3 0;
+#X connect 16 0 19 0;
+#X connect 17 0 16 1;
+#X connect 18 0 16 0;

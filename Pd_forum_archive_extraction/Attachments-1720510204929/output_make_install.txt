@@ -1,0 +1,745 @@
+make -C /home/odroid/Desktop/pdextended_sources/pd-extended/packages BUILDLAYOUT_DIR=/home/odroid/Desktop/pdextended_sources/pd-extended/packages cvs_root_dir=/home/odroid/Desktop/pdextended_sources/pd-extended DESTDIR=/home/odroid/Desktop/pdextended_sources/pd-extended/packages/linux_make/build/ prefix=/usr OPT_CFLAGS="-O3 -funroll-loops" UNAME=Linux STRIP=echo install
+make[1]: Entering directory '/home/odroid/Desktop/pdextended_sources/pd-extended/packages'
+cd /home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/ && \
+	sed 's|^\(#define PD_TEST_VERSION "\).*"|\1extended"|' m_pd.h > \
+		m_pd.h.tmp && mv m_pd.h.tmp m_pd.h
+cd /home/odroid/Desktop/pdextended_sources/pd-extended/pd \
+	&& ./autogen.sh \
+	&& ./configure --prefix=/usr --enable-jack --enable-alsa \
+	&& make BUILDLAYOUT_DIR=/home/odroid/Desktop/pdextended_sources/pd-extended/packages cvs_root_dir=/home/odroid/Desktop/pdextended_sources/pd-extended DESTDIR=/home/odroid/Desktop/pdextended_sources/pd-extended/packages/linux_make/build/ prefix=/usr libpddir=/usr/lib/pd-extended pkglibdir=/usr/lib/pd-extended OPT_CFLAGS="-O3 -funroll-loops" UNAME=Linux STRIP="echo"  CFLAGS="-O2 -g"
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4/generated -I m4
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'm4/config'.
+libtoolize: copying file 'm4/config/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4/generated'.
+libtoolize: copying file 'm4/generated/libtool.m4'
+libtoolize: copying file 'm4/generated/ltoptions.m4'
+libtoolize: copying file 'm4/generated/ltsugar.m4'
+libtoolize: copying file 'm4/generated/ltversion.m4'
+libtoolize: copying file 'm4/generated/lt~obsolete.m4'
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: configure.ac: not using Autoheader
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:70: installing 'm4/config/compile'
+configure.ac:5: installing 'm4/config/missing'
+configure.ac:102: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+asio/Makefile.am:19: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+asio/Makefile.am:23: warning: source file 'ASIOSDK2/common/asio.cpp' is in a subdirectory,
+asio/Makefile.am:23: but option 'subdir-objects' is disabled
+automake: warning: possible forward-incompatibility.
+automake: At least a source file is in a subdirectory, but the 'subdir-objects'
+automake: automake option hasn't been enabled.  For now, the corresponding output
+automake: object file(s) will be placed in the top-level directory.  However,
+automake: this behaviour will change in future Automake versions: they will
+automake: unconditionally cause object files to be placed in the same subdirectory
+automake: of the corresponding sources.
+automake: You are advised to start using 'subdir-objects' option throughout your
+automake: project, to avoid future incompatibilities.
+asio/Makefile.am:23: warning: source file 'ASIOSDK2/host/asiodrivers.cpp' is in a subdirectory,
+asio/Makefile.am:23: but option 'subdir-objects' is disabled
+asio/Makefile.am:23: warning: source file 'ASIOSDK2/host/pc/asiolist.cpp' is in a subdirectory,
+asio/Makefile.am:23: but option 'subdir-objects' is disabled
+asio/Makefile.am: installing 'm4/config/depcomp'
+configure.ac:102: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+configure.ac:102: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+portaudio/Makefile.am:5: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+portaudio/Makefile.am:9: warning: source file 'src/common/pa_allocation.c' is in a subdirectory,
+portaudio/Makefile.am:9: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:9: warning: source file 'src/common/pa_converters.c' is in a subdirectory,
+portaudio/Makefile.am:9: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:9: warning: source file 'src/common/pa_cpuload.c' is in a subdirectory,
+portaudio/Makefile.am:9: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:9: warning: source file 'src/common/pa_dither.c' is in a subdirectory,
+portaudio/Makefile.am:9: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:9: warning: source file 'src/common/pa_front.c' is in a subdirectory,
+portaudio/Makefile.am:9: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:9: warning: source file 'src/common/pa_process.c' is in a subdirectory,
+portaudio/Makefile.am:9: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:9: warning: source file 'src/common/pa_stream.c' is in a subdirectory,
+portaudio/Makefile.am:9: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:9: warning: source file 'src/common/pa_trace.c' is in a subdirectory,
+portaudio/Makefile.am:9: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:9: warning: source file 'src/common/pa_debugprint.c' is in a subdirectory,
+portaudio/Makefile.am:9: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:9: warning: source file 'src/common/pa_ringbuffer.c' is in a subdirectory,
+portaudio/Makefile.am:9: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:25: warning: source file 'src/hostapi/asio/pa_asio.cpp' is in a subdirectory,
+portaudio/Makefile.am:25: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:25: warning: source file 'src/hostapi/asio/iasiothiscallresolver.cpp' is in a subdirectory,
+portaudio/Makefile.am:25: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:33: warning: source file 'src/os/unix/pa_unix_util.c' is in a subdirectory,
+portaudio/Makefile.am:33: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:33: warning: source file 'src/os/mac_osx/pa_mac_hostapis.c' is in a subdirectory,
+portaudio/Makefile.am:33: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:33: warning: source file 'src/hostapi/coreaudio/pa_mac_core.c' is in a subdirectory,
+portaudio/Makefile.am:33: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:33: warning: source file 'src/hostapi/coreaudio/pa_mac_core_blocking.c' is in a subdirectory,
+portaudio/Makefile.am:33: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:33: warning: source file 'src/hostapi/coreaudio/pa_mac_core_utilities.c' is in a subdirectory,
+portaudio/Makefile.am:33: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:42: warning: source file 'src/os/unix/pa_unix_hostapis.c' is in a subdirectory,
+portaudio/Makefile.am:42: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:42: warning: source file 'src/os/unix/pa_unix_util.c' is in a subdirectory,
+portaudio/Makefile.am:42: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:49: warning: source file 'src/os/win/pa_win_hostapis.c' is in a subdirectory,
+portaudio/Makefile.am:49: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:49: warning: source file 'src/os/win/pa_win_util.c' is in a subdirectory,
+portaudio/Makefile.am:49: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:49: warning: source file 'src/os/win/pa_win_waveformat.c' is in a subdirectory,
+portaudio/Makefile.am:49: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:49: warning: source file 'src/os/win/pa_win_coinitialize.c' is in a subdirectory,
+portaudio/Makefile.am:49: but option 'subdir-objects' is disabled
+portaudio/Makefile.am:49: warning: source file 'src/hostapi/wmme/pa_win_wmme.c' is in a subdirectory,
+portaudio/Makefile.am:49: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:5: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+portmidi/Makefile.am:9: warning: source file 'pm_common/pmutil.c' is in a subdirectory,
+portmidi/Makefile.am:9: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:9: warning: source file 'pm_common/portmidi.c' is in a subdirectory,
+portmidi/Makefile.am:9: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:13: warning: source file 'porttime/ptlinux.c' is in a subdirectory,
+portmidi/Makefile.am:13: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:13: warning: source file 'pm_linux/pmlinux.c' is in a subdirectory,
+portmidi/Makefile.am:13: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:13: warning: source file 'pm_linux/pmlinuxalsa.c' is in a subdirectory,
+portmidi/Makefile.am:13: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:20: warning: source file 'porttime/ptmacosx_cf.c' is in a subdirectory,
+portmidi/Makefile.am:20: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:20: warning: source file 'pm_mac/pmmac.c' is in a subdirectory,
+portmidi/Makefile.am:20: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:20: warning: source file 'pm_mac/pmmacosxcm.c' is in a subdirectory,
+portmidi/Makefile.am:20: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:27: warning: source file 'porttime/porttime.c' is in a subdirectory,
+portmidi/Makefile.am:27: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:27: warning: source file 'porttime/ptwinmm.c' is in a subdirectory,
+portmidi/Makefile.am:27: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:27: warning: source file 'pm_win/pmwin.c' is in a subdirectory,
+portmidi/Makefile.am:27: but option 'subdir-objects' is disabled
+portmidi/Makefile.am:27: warning: source file 'pm_win/pmwinmm.c' is in a subdirectory,
+portmidi/Makefile.am:27: but option 'subdir-objects' is disabled
+src/Makefile.am:10: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+configure.ac:102: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+autoreconf: Leaving directory `.'
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking build system type... aarch64-unknown-linux-gnu
+checking host system type... aarch64-unknown-linux-gnu
+configure: iPhone SDK only available for arm-apple-darwin hosts, skipping tests
+configure: Android SDK only available for arm-linux hosts, skipping tests
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert aarch64-unknown-linux-gnu file names to aarch64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert aarch64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... dlltool
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... echo
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for shl_load... no
+checking for shl_load in -ldld... no
+checking for dlopen... no
+checking for dlopen in -ldl... yes
+checking whether a program can dlopen itself... yes
+checking whether a statically linked program can dlopen itself... no
+checking whether stripping libraries is possible... no
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether make sets $(MAKE)... (cached) yes
+checking whether ln -s works... yes
+checking for dlopen in -ldl... (cached) yes
+checking for cos in -lm... yes
+checking for pthread_create in -lpthread... yes
+checking for ANSI C header files... (cached) yes
+checking sys/soundcard.h usability... yes
+checking sys/soundcard.h presence... yes
+checking for sys/soundcard.h... yes
+checking CoreAudio/CoreAudio.h usability... no
+checking CoreAudio/CoreAudio.h presence... no
+checking for CoreAudio/CoreAudio.h... no
+checking for snd_pcm_info in -lasound... yes
+checking for shm_open in -lrt... yes
+checking for jack_set_xrun_callback in -ljack... yes
+checking for jack_set_error_function in -ljack... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for sys/soundcard.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking bstring.h usability... no
+checking bstring.h presence... no
+checking for bstring.h... no
+checking for msgfmt... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating asio/Makefile
+config.status: creating man/Makefile
+config.status: creating portaudio/Makefile
+config.status: creating portmidi/Makefile
+config.status: creating tcl/Makefile
+config.status: creating po/Makefile
+config.status: creating src/Makefile
+config.status: creating pdextended.pc
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make[2]: Entering directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd'
+make -C po all
+make[3]: Entering directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd/po'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd/po'
+make  all-recursive
+make[3]: Entering directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd'
+Making all in portaudio
+make[4]: Entering directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd/portaudio'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd/portaudio'
+Making all in src
+make[4]: Entering directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src'
+make[5]: Entering directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src'
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_canvas.o -MD -MP -MF .deps/pd-g_canvas.Tpo -c -o pd-g_canvas.o `test -f 'g_canvas.c' || echo './'`g_canvas.c
+mv -f .deps/pd-g_canvas.Tpo .deps/pd-g_canvas.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_graph.o -MD -MP -MF .deps/pd-g_graph.Tpo -c -o pd-g_graph.o `test -f 'g_graph.c' || echo './'`g_graph.c
+mv -f .deps/pd-g_graph.Tpo .deps/pd-g_graph.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_text.o -MD -MP -MF .deps/pd-g_text.Tpo -c -o pd-g_text.o `test -f 'g_text.c' || echo './'`g_text.c
+mv -f .deps/pd-g_text.Tpo .deps/pd-g_text.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_rtext.o -MD -MP -MF .deps/pd-g_rtext.Tpo -c -o pd-g_rtext.o `test -f 'g_rtext.c' || echo './'`g_rtext.c
+mv -f .deps/pd-g_rtext.Tpo .deps/pd-g_rtext.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_array.o -MD -MP -MF .deps/pd-g_array.Tpo -c -o pd-g_array.o `test -f 'g_array.c' || echo './'`g_array.c
+mv -f .deps/pd-g_array.Tpo .deps/pd-g_array.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_template.o -MD -MP -MF .deps/pd-g_template.Tpo -c -o pd-g_template.o `test -f 'g_template.c' || echo './'`g_template.c
+mv -f .deps/pd-g_template.Tpo .deps/pd-g_template.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_io.o -MD -MP -MF .deps/pd-g_io.Tpo -c -o pd-g_io.o `test -f 'g_io.c' || echo './'`g_io.c
+mv -f .deps/pd-g_io.Tpo .deps/pd-g_io.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_scalar.o -MD -MP -MF .deps/pd-g_scalar.Tpo -c -o pd-g_scalar.o `test -f 'g_scalar.c' || echo './'`g_scalar.c
+mv -f .deps/pd-g_scalar.Tpo .deps/pd-g_scalar.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_traversal.o -MD -MP -MF .deps/pd-g_traversal.Tpo -c -o pd-g_traversal.o `test -f 'g_traversal.c' || echo './'`g_traversal.c
+mv -f .deps/pd-g_traversal.Tpo .deps/pd-g_traversal.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_guiconnect.o -MD -MP -MF .deps/pd-g_guiconnect.Tpo -c -o pd-g_guiconnect.o `test -f 'g_guiconnect.c' || echo './'`g_guiconnect.c
+mv -f .deps/pd-g_guiconnect.Tpo .deps/pd-g_guiconnect.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_readwrite.o -MD -MP -MF .deps/pd-g_readwrite.Tpo -c -o pd-g_readwrite.o `test -f 'g_readwrite.c' || echo './'`g_readwrite.c
+mv -f .deps/pd-g_readwrite.Tpo .deps/pd-g_readwrite.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_editor.o -MD -MP -MF .deps/pd-g_editor.Tpo -c -o pd-g_editor.o `test -f 'g_editor.c' || echo './'`g_editor.c
+g_editor.c: In function ‘canvas_disconnect’:
+g_editor.c:499:17: warning: implicit declaration of function ‘magicGlass_unbind’ [-Wimplicit-function-declaration]
+                 magicGlass_unbind(x->gl_magic_glass);
+                 ^
+g_editor.c:500:17: warning: implicit declaration of function ‘magicGlass_hide’ [-Wimplicit-function-declaration]
+                 magicGlass_hide(x->gl_magic_glass);
+                 ^
+g_editor.c: In function ‘canvas_doclick’:
+g_editor.c:1539:32: warning: implicit declaration of function ‘magicGlass_isOn’ [-Wimplicit-function-declaration]
+             if (parseOutlet && magicGlass_isOn(x->gl_magic_glass))
+                                ^
+g_editor.c:1541:17: warning: implicit declaration of function ‘magicGlass_bind’ [-Wimplicit-function-declaration]
+                 magicGlass_bind(x->gl_magic_glass,
+                 ^
+g_editor.c:1544:17: warning: implicit declaration of function ‘magicGlass_setDsp’ [-Wimplicit-function-declaration]
+                 magicGlass_setDsp(x->gl_magic_glass,
+                 ^
+g_editor.c:1547:13: warning: implicit declaration of function ‘magicGlass_moveText’ [-Wimplicit-function-declaration]
+             magicGlass_moveText(x->gl_magic_glass, xpos, ypos);
+             ^
+g_editor.c:1549:17: warning: implicit declaration of function ‘magicGlass_show’ [-Wimplicit-function-declaration]
+                 magicGlass_show(x->gl_magic_glass);
+                 ^
+g_editor.c: In function ‘canvas_magicglass’:
+g_editor.c:2993:9: warning: implicit declaration of function ‘magicGlass_setOn’ [-Wimplicit-function-declaration]
+         magicGlass_setOn(x->gl_magic_glass, 1);
+         ^
+g_editor.c:2994:13: warning: implicit declaration of function ‘magicGlass_bound’ [-Wimplicit-function-declaration]
+         if (magicGlass_bound(x->gl_magic_glass))
+             ^
+mv -f .deps/pd-g_editor.Tpo .deps/pd-g_editor.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_all_guis.o -MD -MP -MF .deps/pd-g_all_guis.Tpo -c -o pd-g_all_guis.o `test -f 'g_all_guis.c' || echo './'`g_all_guis.c
+mv -f .deps/pd-g_all_guis.Tpo .deps/pd-g_all_guis.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-m_pd.o -MD -MP -MF .deps/pd-m_pd.Tpo -c -o pd-m_pd.o `test -f 'm_pd.c' || echo './'`m_pd.c
+mv -f .deps/pd-m_pd.Tpo .deps/pd-m_pd.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-m_class.o -MD -MP -MF .deps/pd-m_class.Tpo -c -o pd-m_class.o `test -f 'm_class.c' || echo './'`m_class.c
+mv -f .deps/pd-m_class.Tpo .deps/pd-m_class.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-m_obj.o -MD -MP -MF .deps/pd-m_obj.Tpo -c -o pd-m_obj.o `test -f 'm_obj.c' || echo './'`m_obj.c
+mv -f .deps/pd-m_obj.Tpo .deps/pd-m_obj.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-m_atom.o -MD -MP -MF .deps/pd-m_atom.Tpo -c -o pd-m_atom.o `test -f 'm_atom.c' || echo './'`m_atom.c
+mv -f .deps/pd-m_atom.Tpo .deps/pd-m_atom.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-m_memory.o -MD -MP -MF .deps/pd-m_memory.Tpo -c -o pd-m_memory.o `test -f 'm_memory.c' || echo './'`m_memory.c
+mv -f .deps/pd-m_memory.Tpo .deps/pd-m_memory.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-m_binbuf.o -MD -MP -MF .deps/pd-m_binbuf.Tpo -c -o pd-m_binbuf.o `test -f 'm_binbuf.c' || echo './'`m_binbuf.c
+mv -f .deps/pd-m_binbuf.Tpo .deps/pd-m_binbuf.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-m_conf_pdextended.o -MD -MP -MF .deps/pd-m_conf_pdextended.Tpo -c -o pd-m_conf_pdextended.o `test -f 'm_conf_pdextended.c' || echo './'`m_conf_pdextended.c
+m_conf_pdextended.c: In function ‘conf_init’:
+m_conf_pdextended.c:57:5: warning: implicit declaration of function ‘d_delay_setup’ [-Wimplicit-function-declaration]
+     d_delay_setup();
+     ^
+m_conf_pdextended.c:68:5: warning: implicit declaration of function ‘print_setup’ [-Wimplicit-function-declaration]
+     print_setup();
+     ^
+m_conf_pdextended.c:69:5: warning: implicit declaration of function ‘loadbang_setup’ [-Wimplicit-function-declaration]
+     loadbang_setup();
+     ^
+mv -f .deps/pd-m_conf_pdextended.Tpo .deps/pd-m_conf_pdextended.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-m_glob.o -MD -MP -MF .deps/pd-m_glob.Tpo -c -o pd-m_glob.o `test -f 'm_glob.c' || echo './'`m_glob.c
+mv -f .deps/pd-m_glob.Tpo .deps/pd-m_glob.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-m_sched.o -MD -MP -MF .deps/pd-m_sched.Tpo -c -o pd-m_sched.o `test -f 'm_sched.c' || echo './'`m_sched.c
+mv -f .deps/pd-m_sched.Tpo .deps/pd-m_sched.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_main.o -MD -MP -MF .deps/pd-s_main.Tpo -c -o pd-s_main.o `test -f 's_main.c' || echo './'`s_main.c
+s_main.c: In function ‘sys_findprogdir’:
+s_main.c:517:9: warning: ignoring return value of ‘getcwd’, declared with attribute warn_unused_result [-Wunused-result]
+         getcwd(buf, MAXPDSTRING-30);
+         ^
+mv -f .deps/pd-s_main.Tpo .deps/pd-s_main.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_inter.o -MD -MP -MF .deps/pd-s_inter.Tpo -c -o pd-s_inter.o `test -f 's_inter.c' || echo './'`s_inter.c
+s_inter.c: In function ‘socketreceiver_doread’:
+s_inter.c:445:17: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
+                 write(2,  messbuf, bp - messbuf);
+                 ^
+s_inter.c:446:17: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
+                 write(2, "\n", 1);
+                 ^
+s_inter.c: In function ‘sys_startgui’:
+s_inter.c:1096:13: warning: ignoring return value of ‘setuid’, declared with attribute warn_unused_result [-Wunused-result]
+             setuid(getuid());          /* lose setuid priveliges */
+             ^
+s_inter.c:1186:13: warning: ignoring return value of ‘setuid’, declared with attribute warn_unused_result [-Wunused-result]
+             setuid(getuid());      /* lose setuid priveliges */
+             ^
+s_inter.c:1193:13: warning: ignoring return value of ‘setuid’, declared with attribute warn_unused_result [-Wunused-result]
+             setuid(getuid());      /* lose setuid priveliges */
+             ^
+s_inter.c:1202:13: warning: ignoring return value of ‘setuid’, declared with attribute warn_unused_result [-Wunused-result]
+             setuid(getuid());      /* lose setuid priveliges */
+             ^
+s_inter.c:1218:13: warning: ignoring return value of ‘setuid’, declared with attribute warn_unused_result [-Wunused-result]
+             setuid(getuid());      /* lose setuid priveliges */
+             ^
+s_inter.c:1226:5: warning: ignoring return value of ‘setuid’, declared with attribute warn_unused_result [-Wunused-result]
+     setuid(getuid());          /* lose setuid priveliges */
+     ^
+mv -f .deps/pd-s_inter.Tpo .deps/pd-s_inter.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_file.o -MD -MP -MF .deps/pd-s_file.Tpo -c -o pd-s_file.o `test -f 's_file.c' || echo './'`s_file.c
+s_file.c: In function ‘sys_initsavepreferences’:
+s_file.c:142:21: warning: format not a string literal and no format arguments [-Wformat-security]
+         pd_error(0, errbuf);
+                     ^
+mv -f .deps/pd-s_file.Tpo .deps/pd-s_file.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_print.o -MD -MP -MF .deps/pd-s_print.Tpo -c -o pd-s_print.o `test -f 's_print.c' || echo './'`s_print.c
+mv -f .deps/pd-s_print.Tpo .deps/pd-s_print.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_loader.o -MD -MP -MF .deps/pd-s_loader.Tpo -c -o pd-s_loader.o `test -f 's_loader.c' || echo './'`s_loader.c
+mv -f .deps/pd-s_loader.Tpo .deps/pd-s_loader.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_path.o -MD -MP -MF .deps/pd-s_path.Tpo -c -o pd-s_path.o `test -f 's_path.c' || echo './'`s_path.c
+mv -f .deps/pd-s_path.Tpo .deps/pd-s_path.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_audio.o -MD -MP -MF .deps/pd-s_audio.Tpo -c -o pd-s_audio.o `test -f 's_audio.c' || echo './'`s_audio.c
+mv -f .deps/pd-s_audio.Tpo .deps/pd-s_audio.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_midi.o -MD -MP -MF .deps/pd-s_midi.Tpo -c -o pd-s_midi.o `test -f 's_midi.c' || echo './'`s_midi.c
+mv -f .deps/pd-s_midi.Tpo .deps/pd-s_midi.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_utf8.o -MD -MP -MF .deps/pd-s_utf8.Tpo -c -o pd-s_utf8.o `test -f 's_utf8.c' || echo './'`s_utf8.c
+mv -f .deps/pd-s_utf8.Tpo .deps/pd-s_utf8.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_ugen.o -MD -MP -MF .deps/pd-d_ugen.Tpo -c -o pd-d_ugen.o `test -f 'd_ugen.c' || echo './'`d_ugen.c
+mv -f .deps/pd-d_ugen.Tpo .deps/pd-d_ugen.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_ctl.o -MD -MP -MF .deps/pd-d_ctl.Tpo -c -o pd-d_ctl.o `test -f 'd_ctl.c' || echo './'`d_ctl.c
+mv -f .deps/pd-d_ctl.Tpo .deps/pd-d_ctl.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_arithmetic.o -MD -MP -MF .deps/pd-d_arithmetic.Tpo -c -o pd-d_arithmetic.o `test -f 'd_arithmetic.c' || echo './'`d_arithmetic.c
+mv -f .deps/pd-d_arithmetic.Tpo .deps/pd-d_arithmetic.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_osc.o -MD -MP -MF .deps/pd-d_osc.Tpo -c -o pd-d_osc.o `test -f 'd_osc.c' || echo './'`d_osc.c
+mv -f .deps/pd-d_osc.Tpo .deps/pd-d_osc.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_filter.o -MD -MP -MF .deps/pd-d_filter.Tpo -c -o pd-d_filter.o `test -f 'd_filter.c' || echo './'`d_filter.c
+mv -f .deps/pd-d_filter.Tpo .deps/pd-d_filter.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_math.o -MD -MP -MF .deps/pd-d_math.Tpo -c -o pd-d_math.o `test -f 'd_math.c' || echo './'`d_math.c
+mv -f .deps/pd-d_math.Tpo .deps/pd-d_math.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_array.o -MD -MP -MF .deps/pd-d_array.Tpo -c -o pd-d_array.o `test -f 'd_array.c' || echo './'`d_array.c
+mv -f .deps/pd-d_array.Tpo .deps/pd-d_array.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_global.o -MD -MP -MF .deps/pd-d_global.Tpo -c -o pd-d_global.o `test -f 'd_global.c' || echo './'`d_global.c
+mv -f .deps/pd-d_global.Tpo .deps/pd-d_global.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_delay.o -MD -MP -MF .deps/pd-d_delay.Tpo -c -o pd-d_delay.o `test -f 'd_delay.c' || echo './'`d_delay.c
+mv -f .deps/pd-d_delay.Tpo .deps/pd-d_delay.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_resample.o -MD -MP -MF .deps/pd-d_resample.Tpo -c -o pd-d_resample.o `test -f 'd_resample.c' || echo './'`d_resample.c
+mv -f .deps/pd-d_resample.Tpo .deps/pd-d_resample.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-x_arithmetic.o -MD -MP -MF .deps/pd-x_arithmetic.Tpo -c -o pd-x_arithmetic.o `test -f 'x_arithmetic.c' || echo './'`x_arithmetic.c
+mv -f .deps/pd-x_arithmetic.Tpo .deps/pd-x_arithmetic.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-x_connective.o -MD -MP -MF .deps/pd-x_connective.Tpo -c -o pd-x_connective.o `test -f 'x_connective.c' || echo './'`x_connective.c
+mv -f .deps/pd-x_connective.Tpo .deps/pd-x_connective.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-x_acoustics.o -MD -MP -MF .deps/pd-x_acoustics.Tpo -c -o pd-x_acoustics.o `test -f 'x_acoustics.c' || echo './'`x_acoustics.c
+mv -f .deps/pd-x_acoustics.Tpo .deps/pd-x_acoustics.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_soundfile.o -MD -MP -MF .deps/pd-d_soundfile.Tpo -c -o pd-d_soundfile.o `test -f 'd_soundfile.c' || echo './'`d_soundfile.c
+mv -f .deps/pd-d_soundfile.Tpo .deps/pd-d_soundfile.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-e_fft.o -MD -MP -MF .deps/pd-e_fft.Tpo -c -o pd-e_fft.o `test -f 'e_fft.c' || echo './'`e_fft.c
+mv -f .deps/pd-e_fft.Tpo .deps/pd-e_fft.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-e_gfxstub.o -MD -MP -MF .deps/pd-e_gfxstub.Tpo -c -o pd-e_gfxstub.o `test -f 'e_gfxstub.c' || echo './'`e_gfxstub.c
+mv -f .deps/pd-e_gfxstub.Tpo .deps/pd-e_gfxstub.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-e_dac.o -MD -MP -MF .deps/pd-e_dac.Tpo -c -o pd-e_dac.o `test -f 'e_dac.c' || echo './'`e_dac.c
+mv -f .deps/pd-e_dac.Tpo .deps/pd-e_dac.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-e_midi.o -MD -MP -MF .deps/pd-e_midi.Tpo -c -o pd-e_midi.o `test -f 'e_midi.c' || echo './'`e_midi.c
+mv -f .deps/pd-e_midi.Tpo .deps/pd-e_midi.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-g_magicglass.o -MD -MP -MF .deps/pd-g_magicglass.Tpo -c -o pd-g_magicglass.o `test -f 'g_magicglass.c' || echo './'`g_magicglass.c
+mv -f .deps/pd-g_magicglass.Tpo .deps/pd-g_magicglass.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-import.o -MD -MP -MF .deps/pd-import.Tpo -c -o pd-import.o `test -f 'import.c' || echo './'`import.c
+mv -f .deps/pd-import.Tpo .deps/pd-import.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-path.o -MD -MP -MF .deps/pd-path.Tpo -c -o pd-path.o `test -f 'path.c' || echo './'`path.c
+mv -f .deps/pd-path.Tpo .deps/pd-path.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-print.o -MD -MP -MF .deps/pd-print.Tpo -c -o pd-print.o `test -f 'print.c' || echo './'`print.c
+mv -f .deps/pd-print.Tpo .deps/pd-print.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-closebang.o -MD -MP -MF .deps/pd-closebang.Tpo -c -o pd-closebang.o `test -f 'closebang.c' || echo './'`closebang.c
+mv -f .deps/pd-closebang.Tpo .deps/pd-closebang.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-initbang.o -MD -MP -MF .deps/pd-initbang.Tpo -c -o pd-initbang.o `test -f 'initbang.c' || echo './'`initbang.c
+mv -f .deps/pd-initbang.Tpo .deps/pd-initbang.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-loadbang.o -MD -MP -MF .deps/pd-loadbang.Tpo -c -o pd-loadbang.o `test -f 'loadbang.c' || echo './'`loadbang.c
+mv -f .deps/pd-loadbang.Tpo .deps/pd-loadbang.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_audio_alsa.o -MD -MP -MF .deps/pd-s_audio_alsa.Tpo -c -o pd-s_audio_alsa.o `test -f 's_audio_alsa.c' || echo './'`s_audio_alsa.c
+mv -f .deps/pd-s_audio_alsa.Tpo .deps/pd-s_audio_alsa.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_audio_alsamm.o -MD -MP -MF .deps/pd-s_audio_alsamm.Tpo -c -o pd-s_audio_alsamm.o `test -f 's_audio_alsamm.c' || echo './'`s_audio_alsamm.c
+mv -f .deps/pd-s_audio_alsamm.Tpo .deps/pd-s_audio_alsamm.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_midi_alsa.o -MD -MP -MF .deps/pd-s_midi_alsa.Tpo -c -o pd-s_midi_alsa.o `test -f 's_midi_alsa.c' || echo './'`s_midi_alsa.c
+mv -f .deps/pd-s_midi_alsa.Tpo .deps/pd-s_midi_alsa.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_fft_mayer.o -MD -MP -MF .deps/pd-d_fft_mayer.Tpo -c -o pd-d_fft_mayer.o `test -f 'd_fft_mayer.c' || echo './'`d_fft_mayer.c
+mv -f .deps/pd-d_fft_mayer.Tpo .deps/pd-d_fft_mayer.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-d_fftroutine.o -MD -MP -MF .deps/pd-d_fftroutine.Tpo -c -o pd-d_fftroutine.o `test -f 'd_fftroutine.c' || echo './'`d_fftroutine.c
+mv -f .deps/pd-d_fftroutine.Tpo .deps/pd-d_fftroutine.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_audio_jack.o -MD -MP -MF .deps/pd-s_audio_jack.Tpo -c -o pd-s_audio_jack.o `test -f 's_audio_jack.c' || echo './'`s_audio_jack.c
+mv -f .deps/pd-s_audio_jack.Tpo .deps/pd-s_audio_jack.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_audio_oss.o -MD -MP -MF .deps/pd-s_audio_oss.Tpo -c -o pd-s_audio_oss.o `test -f 's_audio_oss.c' || echo './'`s_audio_oss.c
+s_audio_oss.c: In function ‘oss_open_audio’:
+s_audio_oss.c:465:9: warning: ignoring return value of ‘read’, declared with attribute warn_unused_result [-Wunused-result]
+         read(linux_adcs[0].d_fd, buf,
+         ^
+s_audio_oss.c:478:13: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
+             write(linux_dacs[i].d_fd, buf,
+             ^
+mv -f .deps/pd-s_audio_oss.Tpo .deps/pd-s_audio_oss.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_midi_oss.o -MD -MP -MF .deps/pd-s_midi_oss.Tpo -c -o pd-s_midi_oss.o `test -f 's_midi_oss.c' || echo './'`s_midi_oss.c
+mv -f .deps/pd-s_midi_oss.Tpo .deps/pd-s_midi_oss.Po
+gcc -DPACKAGE_NAME=\"pd\" -DPACKAGE_TARNAME=\"pd\" -DPACKAGE_VERSION=\"0.43.1\" -DPACKAGE_STRING=\"pd\ 0.43.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"pd\" -DVERSION=\"0.43.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_ALLOCA_H=1 -DHAVE_ALLOCA=1 -DHAVE_SYS_SOUNDCARD_H=1 -DHAVE_UNISTD_H=1 -I.    -DPD -DINSTALL_PREFIX=\"/usr\" -DUSEAPI_ALSA -DUSEAPI_JACK -DJACK_XRUN -DUSEAPI_OSS -DUSEAPI_PORTAUDIO  -I../portaudio/include    -O2 -g -MT pd-s_audio_pa.o -MD -MP -MF .deps/pd-s_audio_pa.Tpo -c -o pd-s_audio_pa.o `test -f 's_audio_pa.c' || echo './'`s_audio_pa.c
+mv -f .deps/pd-s_audio_pa.Tpo .deps/pd-s_audio_pa.Po
+/bin/bash ../libtool  --tag=CXX   --mode=link g++  -g -O2 -export-dynamic -lm  -o pd pd-g_canvas.o pd-g_graph.o pd-g_text.o pd-g_rtext.o pd-g_array.o pd-g_template.o pd-g_io.o pd-g_scalar.o pd-g_traversal.o pd-g_guiconnect.o pd-g_readwrite.o pd-g_editor.o pd-g_all_guis.o pd-m_pd.o pd-m_class.o pd-m_obj.o pd-m_atom.o pd-m_memory.o pd-m_binbuf.o pd-m_conf_pdextended.o pd-m_glob.o pd-m_sched.o pd-s_main.o pd-s_inter.o pd-s_file.o pd-s_print.o pd-s_loader.o pd-s_path.o pd-s_entry.o pd-s_audio.o pd-s_midi.o pd-s_utf8.o pd-d_ugen.o pd-d_ctl.o pd-d_arithmetic.o pd-d_osc.o pd-d_filter.o pd-d_math.o pd-d_array.o pd-d_global.o pd-d_delay.o pd-d_resample.o pd-x_arithmetic.o pd-x_connective.o pd-x_acoustics.o pd-d_soundfile.o pd-e_fft.o pd-e_gfxstub.o pd-e_dac.o pd-e_midi.o pd-g_magicglass.o pd-import.o pd-path.o pd-print.o pd-closebang.o pd-initbang.o pd-loadbang.o pd-s_audio_alsa.o pd-s_audio_alsamm.o pd-s_midi_alsa.o  pd-d_fft_mayer.o pd-d_fftroutine.o pd-s_audio_jack.o pd-s_audio_oss.o pd-s_midi_oss.o pd-s_audio_pa.o pd-s_audio_paring.o     ../portaudio/libportaudio.la     -ljack  
+libtool: link: g++ -g -O2 -o pd pd-g_canvas.o pd-g_graph.o pd-g_text.o pd-g_rtext.o pd-g_array.o pd-g_template.o pd-g_io.o pd-g_scalar.o pd-g_traversal.o pd-g_guiconnect.o pd-g_readwrite.o pd-g_editor.o pd-g_all_guis.o pd-m_pd.o pd-m_class.o pd-m_obj.o pd-m_atom.o pd-m_memory.o pd-m_binbuf.o pd-m_conf_pdextended.o pd-m_glob.o pd-m_sched.o pd-s_main.o pd-s_inter.o pd-s_file.o pd-s_print.o pd-s_loader.o pd-s_path.o pd-s_entry.o pd-s_audio.o pd-s_midi.o pd-s_utf8.o pd-d_ugen.o pd-d_ctl.o pd-d_arithmetic.o pd-d_osc.o pd-d_filter.o pd-d_math.o pd-d_array.o pd-d_global.o pd-d_delay.o pd-d_resample.o pd-x_arithmetic.o pd-x_connective.o pd-x_acoustics.o pd-d_soundfile.o pd-e_fft.o pd-e_gfxstub.o pd-e_dac.o pd-e_midi.o pd-g_magicglass.o pd-import.o pd-path.o pd-print.o pd-closebang.o pd-initbang.o pd-loadbang.o pd-s_audio_alsa.o pd-s_audio_alsamm.o pd-s_midi_alsa.o pd-d_fft_mayer.o pd-d_fftroutine.o pd-s_audio_jack.o pd-s_audio_oss.o pd-s_midi_oss.o pd-s_audio_pa.o pd-s_audio_paring.o -Wl,--export-dynamic  -lm ../portaudio/.libs/libportaudio.a -lpthread -ldl -lrt -ljack
+pd-s_audio_alsa.o: In function `check_error':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:72: undefined reference to `snd_strerror'
+pd-s_audio_alsa.o: In function `alsaio_setup':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:121: undefined reference to `snd_pcm_hw_params_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:121: undefined reference to `snd_pcm_hw_params_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:124: undefined reference to `snd_pcm_hw_params_any'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:128: undefined reference to `snd_pcm_hw_params_set_access'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:142: undefined reference to `snd_pcm_hw_params_set_format'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:163: undefined reference to `snd_pcm_hw_params_set_subformat'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:169: undefined reference to `snd_pcm_hw_params_set_channels_min'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:178: undefined reference to `snd_pcm_hw_params_set_rate_near'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:189: undefined reference to `snd_pcm_hw_params_set_period_size_near'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:195: undefined reference to `snd_pcm_hw_params_set_buffer_size_near'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:199: undefined reference to `snd_pcm_hw_params'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:163: undefined reference to `snd_pcm_hw_params_set_subformat'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:169: undefined reference to `snd_pcm_hw_params_set_channels_min'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:146: undefined reference to `snd_pcm_hw_params_set_format'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:195: undefined reference to `snd_pcm_hw_params_set_buffer_size_near'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:199: undefined reference to `snd_pcm_hw_params'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:150: undefined reference to `snd_pcm_hw_params_set_format'
+pd-s_audio_alsa.o: In function `alsaio_canmmap':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:85: undefined reference to `snd_pcm_hw_params_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:85: undefined reference to `snd_pcm_hw_params_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:87: undefined reference to `snd_pcm_hw_params_any'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:92: undefined reference to `snd_pcm_hw_params_set_access'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:96: undefined reference to `snd_pcm_hw_params_set_access'
+pd-s_audio_alsa.o: In function `alsa_numbertoname':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:821: undefined reference to `snd_card_next'
+pd-s_audio_alsa.o: In function `alsa_close_audio':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:381: undefined reference to `snd_pcm_close'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:386: undefined reference to `snd_pcm_close'
+pd-s_audio_alsa.o: In function `alsa_open_audio':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:255: undefined reference to `snd_pcm_open'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:261: undefined reference to `snd_pcm_nonblock'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:275: undefined reference to `snd_pcm_nonblock'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:269: undefined reference to `snd_pcm_open'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:317: undefined reference to `snd_pcm_prepare'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:319: undefined reference to `snd_pcm_prepare'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:327: undefined reference to `snd_pcm_link'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:349: undefined reference to `snd_pcm_writei'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:358: undefined reference to `snd_pcm_state'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:360: undefined reference to `snd_pcm_start'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:335: undefined reference to `snd_pcm_status_malloc'
+pd-s_audio_alsa.o: In function `alsa_printstate':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:620: undefined reference to `snd_pcm_delay'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:613: undefined reference to `snd_pcm_delay'
+pd-s_audio_alsa.o: In function `alsa_putzeros':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:638: undefined reference to `snd_pcm_writei'
+pd-s_audio_alsa.o: In function `alsa_checkiosync':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:687: undefined reference to `snd_pcm_start'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:690: undefined reference to `snd_pcm_delay'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:681: undefined reference to `snd_pcm_state'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:686: undefined reference to `snd_pcm_state'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:687: undefined reference to `snd_pcm_start'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:690: undefined reference to `snd_pcm_delay'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:693: undefined reference to `snd_pcm_prepare'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:694: undefined reference to `snd_pcm_delay'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:702: undefined reference to `snd_strerror'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:703: undefined reference to `snd_pcm_status'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:746: undefined reference to `snd_pcm_status_get_state'
+pd-s_audio_alsa.o: In function `alsa_send_dacs':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:425: undefined reference to `snd_pcm_status'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:426: undefined reference to `snd_pcm_status_get_avail'
+pd-s_audio_alsa.o: In function `alsa_checkiosync':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:726: undefined reference to `snd_pcm_start'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:729: undefined reference to `snd_pcm_delay'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:720: undefined reference to `snd_pcm_state'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:725: undefined reference to `snd_pcm_state'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:726: undefined reference to `snd_pcm_start'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:729: undefined reference to `snd_pcm_delay'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:732: undefined reference to `snd_pcm_prepare'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:733: undefined reference to `snd_pcm_delay'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:741: undefined reference to `snd_strerror'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:742: undefined reference to `snd_pcm_status'
+pd-s_audio_alsa.o: In function `alsa_send_dacs':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:431: undefined reference to `snd_pcm_status'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:432: undefined reference to `snd_pcm_status_get_avail'
+pd-s_audio_alsa.o: In function `alsa_checkiosync':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:763: undefined reference to `snd_pcm_delay'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:780: undefined reference to `snd_pcm_delay'
+pd-s_audio_alsa.o: In function `alsa_getzeros':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:653: undefined reference to `snd_pcm_readi'
+pd-s_audio_alsa.o: In function `alsa_send_dacs':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:500: undefined reference to `snd_pcm_writei'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:536: undefined reference to `snd_pcm_readi'
+pd-s_audio_alsa.o: In function `alsa_getzeros':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:653: undefined reference to `snd_pcm_readi'
+pd-s_audio_alsa.o: In function `alsa_getdevs':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:857: undefined reference to `snd_ctl_card_info_malloc'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:858: undefined reference to `snd_ctl_card_info'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:859: undefined reference to `snd_ctl_card_info_get_name'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:860: undefined reference to `snd_ctl_card_info_free'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:842: undefined reference to `snd_card_next'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsa.c:855: undefined reference to `snd_ctl_open'
+pd-s_audio_alsamm.o: In function `check_error':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:182: undefined reference to `snd_strerror'
+pd-s_audio_alsamm.o: In function `alsamm_get_channels':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:828: undefined reference to `snd_pcm_mmap_begin'
+pd-s_audio_alsamm.o: In function `set_hwparams':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:436: undefined reference to `snd_pcm_hw_params_any'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:443: undefined reference to `snd_pcm_hw_params_set_access'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:457: undefined reference to `snd_pcm_hw_params_set_format'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:480: undefined reference to `snd_pcm_hw_params_set_rate_near'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:498: undefined reference to `snd_pcm_hw_params_get_channels_max'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:503: undefined reference to `snd_pcm_hw_params_get_channels_min'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:528: undefined reference to `snd_pcm_hw_params_set_channels'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:535: undefined reference to `snd_pcm_hw_params_get_channels'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:572: undefined reference to `snd_pcm_hw_params_set_buffer_time_near'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:580: undefined reference to `snd_pcm_hw_params_get_buffer_time'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:593: undefined reference to `snd_pcm_hw_params_get_buffer_size'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:605: undefined reference to `snd_pcm_hw_params_get_period_size'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:619: undefined reference to `snd_pcm_hw_params_get_periods_min'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:624: undefined reference to `snd_pcm_hw_params_get_periods_min'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:636: undefined reference to `snd_pcm_hw_params_set_periods'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:643: undefined reference to `snd_pcm_hw_params_get_periods'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:656: undefined reference to `snd_pcm_hw_params'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:554: undefined reference to `snd_pcm_hw_params_set_buffer_size_near'
+pd-s_audio_alsamm.o: In function `set_swparams':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:673: undefined reference to `snd_pcm_sw_params_current'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:680: undefined reference to `snd_pcm_sw_params_get_start_threshold'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:682: undefined reference to `snd_pcm_sw_params_set_start_threshold'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:688: undefined reference to `snd_pcm_sw_params_get_start_threshold'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:697: undefined reference to `snd_pcm_sw_params_get_stop_threshold'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:699: undefined reference to `snd_pcm_sw_params_set_stop_threshold'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:705: undefined reference to `snd_pcm_sw_params_get_stop_threshold'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:714: undefined reference to `snd_pcm_sw_params_get_silence_threshold'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:715: undefined reference to `snd_pcm_sw_params_set_silence_threshold'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:719: undefined reference to `snd_pcm_sw_params_get_silence_threshold'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:725: undefined reference to `snd_pcm_sw_params_get_silence_size'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:726: undefined reference to `snd_pcm_sw_params_set_silence_size'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:730: undefined reference to `snd_pcm_sw_params_get_silence_size'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:738: undefined reference to `snd_pcm_sw_params_get_avail_min'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:740: undefined reference to `snd_pcm_sw_params_set_avail_min'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:746: undefined reference to `snd_pcm_sw_params_get_avail_min'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:754: undefined reference to `snd_pcm_sw_params'
+pd-s_audio_alsamm.o: In function `xrun_recovery':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:797: undefined reference to `snd_pcm_resume'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:800: undefined reference to `snd_pcm_prepare'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:804: undefined reference to `snd_pcm_start'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:787: undefined reference to `snd_pcm_prepare'
+pd-s_audio_alsamm.o: In function `alsamm_open_audio':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:203: undefined reference to `snd_pcm_hw_params_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:203: undefined reference to `snd_pcm_hw_params_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:204: undefined reference to `snd_pcm_sw_params_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:204: undefined reference to `snd_pcm_sw_params_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:225: undefined reference to `snd_output_stdio_attach'
+pd-s_audio_alsamm.o: In function `alsamm_start':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:865: undefined reference to `snd_pcm_prepare'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:871: undefined reference to `snd_pcm_avail_update'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:898: undefined reference to `snd_pcm_mmap_commit'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:900: undefined reference to `snd_pcm_avail_update'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:909: undefined reference to `snd_pcm_avail_update'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:917: undefined reference to `snd_pcm_start'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:938: undefined reference to `snd_pcm_avail_update'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:931: undefined reference to `snd_pcm_prepare'
+pd-s_audio_alsamm.o: In function `alsamm_open_audio':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:328: undefined reference to `snd_pcm_link'
+pd-s_audio_alsamm.o: In function `alsamm_start':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:959: undefined reference to `snd_pcm_mmap_commit'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:961: undefined reference to `snd_pcm_avail_update'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:974: undefined reference to `snd_pcm_start'
+pd-s_audio_alsamm.o: In function `alsamm_stop':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:998: undefined reference to `snd_pcm_drop'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1012: undefined reference to `snd_pcm_drop'
+pd-s_audio_alsamm.o: In function `alsamm_close_audio':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:395: undefined reference to `snd_pcm_close'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:407: undefined reference to `snd_pcm_close'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:390: undefined reference to `snd_pcm_unlink'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:395: undefined reference to `snd_pcm_close'
+pd-s_audio_alsamm.o: In function `alsamm_stop':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:998: undefined reference to `snd_pcm_drop'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1012: undefined reference to `snd_pcm_drop'
+pd-s_audio_alsamm.o: In function `alsamm_send_dacs':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1111: undefined reference to `snd_pcm_avail_update'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1133: undefined reference to `snd_pcm_state'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1216: undefined reference to `snd_pcm_mmap_commit'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1245: undefined reference to `snd_pcm_avail_update'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1256: undefined reference to `snd_pcm_state'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1321: undefined reference to `snd_pcm_mmap_commit'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1128: undefined reference to `snd_pcm_avail_update'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1133: undefined reference to `snd_pcm_state'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1148: undefined reference to `snd_pcm_avail_update'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1272: undefined reference to `snd_pcm_avail_update'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1253: undefined reference to `snd_pcm_avail_update'
+pd-s_audio_alsamm.o: In function `alsamm_showstat':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1359: undefined reference to `snd_pcm_status_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1359: undefined reference to `snd_pcm_status_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1360: undefined reference to `snd_pcm_status'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_audio_alsamm.c:1364: undefined reference to `snd_pcm_status_dump'
+pd-s_midi_alsa.o: In function `sys_alsa_do_open_midi':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:69: undefined reference to `snd_seq_open'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:83: undefined reference to `snd_seq_create_simple_port'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:67: undefined reference to `snd_seq_open'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:94: undefined reference to `snd_seq_create_simple_port'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:71: undefined reference to `snd_seq_open'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:101: undefined reference to `snd_seq_client_info_malloc'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:102: undefined reference to `snd_seq_get_client_info'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:103: undefined reference to `snd_seq_client_info_set_name'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:104: undefined reference to `snd_seq_client_info_get_client'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:105: undefined reference to `snd_seq_set_client_info'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:106: undefined reference to `snd_seq_client_info_free'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:109: undefined reference to `snd_midi_event_new'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:137: undefined reference to `snd_seq_port_subscribe_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:137: undefined reference to `snd_seq_port_subscribe_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:139: undefined reference to `snd_seq_client_info_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:139: undefined reference to `snd_seq_client_info_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:140: undefined reference to `snd_seq_port_info_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:140: undefined reference to `snd_seq_port_info_sizeof'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:141: undefined reference to `snd_seq_client_info_set_client'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:145: undefined reference to `snd_seq_client_info_get_client'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:142: undefined reference to `snd_seq_query_next_client'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:149: undefined reference to `snd_seq_port_info_set_client'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:150: undefined reference to `snd_seq_port_info_set_port'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:151: undefined reference to `snd_seq_query_next_port'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:154: undefined reference to `snd_seq_port_info_get_port'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:157: undefined reference to `snd_seq_port_subscribe_set_sender'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:158: undefined reference to `snd_seq_port_subscribe_set_dest'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:159: undefined reference to `snd_seq_subscribe_port'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:163: undefined reference to `snd_seq_port_subscribe_set_sender'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:164: undefined reference to `snd_seq_port_subscribe_set_dest'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:165: undefined reference to `snd_seq_subscribe_port'
+pd-s_midi_alsa.o: In function `sys_alsa_putmidimess':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:224: undefined reference to `snd_seq_event_output_direct'
+pd-s_midi_alsa.o: In function `sys_alsa_putmidibyte':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:242: undefined reference to `snd_seq_event_output_direct'
+pd-s_midi_alsa.o: In function `sys_alsa_poll_midi':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:257: undefined reference to `snd_midi_event_init'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:260: undefined reference to `snd_seq_event_input_pending'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:265: undefined reference to `snd_midi_event_decode'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:262: undefined reference to `snd_seq_event_input'
+pd-s_midi_alsa.o: In function `sys_alsa_close_midi':
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:278: undefined reference to `snd_seq_close'
+/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src/s_midi_alsa.c:281: undefined reference to `snd_midi_event_free'
+collect2: error: ld returned 1 exit status
+Makefile:722: recipe for target 'pd' failed
+make[5]: *** [pd] Error 1
+make[5]: Leaving directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src'
+Makefile:2038: recipe for target 'all-recursive' failed
+make[4]: *** [all-recursive] Error 1
+make[4]: Leaving directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd/src'
+Makefile:913: recipe for target 'all-recursive' failed
+make[3]: *** [all-recursive] Error 1
+make[3]: Leaving directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd'
+Makefile:813: recipe for target 'all' failed
+make[2]: *** [all] Error 2
+make[2]: Leaving directory '/home/odroid/Desktop/pdextended_sources/pd-extended/pd'
+Makefile:114: recipe for target 'pd' failed
+make[1]: *** [pd] Error 2
+make[1]: Leaving directory '/home/odroid/Desktop/pdextended_sources/pd-extended/packages'
+Makefile:84: recipe for target 'install' failed
+make: *** [install] Error 2

@@ -1,0 +1,76 @@
+#N canvas 174 258 970 469 8;
+#X obj 336 93 cnv 15 570 140 empty empty empty 5 12 0 16 -233017 -66577
+0;
+#X obj 177 93 cnv 15 150 140 empty empty empty 5 12 0 16 -233017 -66577
+0;
+#X obj 19 93 cnv 15 150 140 empty empty empty 5 12 0 16 -233017 -66577
+0;
+#X obj 498 68 print;
+#X obj 498 46 l2s;
+#X obj 19 42 cnv 15 130 50 empty empty 1 5 15 0 18 -195568 -66577 0
+;
+#X text 52 71 Fill the array:;
+#X obj 177 42 cnv 15 130 50 empty empty 2 5 15 0 18 -195568 -66577
+0;
+#X text 210 71 Connect UDP :;
+#X obj 336 42 cnv 15 130 50 empty empty 3 5 15 0 18 -195568 -66577
+0;
+#X text 370 71 Dump & send:;
+#X text 468 100 <- Outputs content of a table as a list;
+#X obj 20 292 cnv 15 450 140 empty empty empty 5 12 0 16 -233017 -66577
+0;
+#X obj 20 241 cnv 15 130 50 empty empty 4 5 15 0 18 -195568 -66577
+0;
+#X text 48 251 OSC is received;
+#X obj 49 266 dumpOSC 9990;
+#X obj 49 300 OSCroute /Test;
+#N canvas 0 0 450 300 FillArray 0;
+#X obj 10 14 inlet;
+#X msg 10 43 \; SendingArray sinesum 32 0.5 0.5 0.1;
+#X connect 0 0 1 0;
+#X restore 23 99 pd FillArray;
+#X obj 23 118 table SendingArray;
+#X obj 23 67 bng 22 250 50 0 empty empty empty 17 7 0 10 -260818 -1
+-1;
+#X obj 181 67 bng 22 250 50 0 empty empty empty 17 7 0 10 -260818 -1
+-1;
+#X obj 181 214 sendOSC;
+#X msg 198 118 disconnect;
+#X msg 181 99 connect localhost 9990;
+#X obj 340 67 bng 22 250 50 0 empty empty empty 17 7 0 10 -260818 -1
+-1;
+#X obj 340 99 tabdump SendingArray;
+#X obj 49 322 OSCroute /Symbol;
+#X obj 49 342 t a a;
+#X text 203 368 <- Prints exactly what I'd like to get!!;
+#X text 198 411 Check the table;
+#X text 182 390 <- Doesn't do anything & no error in console;
+#X msg 498 13 this is a list that that appears to be too long to be
+converted to a symbol without losing info;
+#X obj 340 152 list trim;
+#X text 411 153 <- Converts remove "list" selector from [list];
+#X msg 343 176 send /Test/Symbol \$1;
+#X text 486 176 <- not needed anymore;
+#X obj 340 125 list prepend send /Test/Symbol 0;
+#X text 548 127 <- Prepends "send ..." etc. and a "0" (table filling
+purpose);
+#X obj 49 367 list;
+#X obj 49 411 table ReceivingArray 35;
+#X obj 74 367 print FloatTransfer;
+#X obj 49 390 s ReceivingArray;
+#X connect 4 0 3 0;
+#X connect 15 0 16 0;
+#X connect 16 0 26 0;
+#X connect 19 0 17 0;
+#X connect 20 0 23 0;
+#X connect 22 0 21 0;
+#X connect 23 0 21 0;
+#X connect 24 0 25 0;
+#X connect 25 0 36 0;
+#X connect 26 0 27 0;
+#X connect 27 0 38 0;
+#X connect 27 1 40 0;
+#X connect 31 0 4 0;
+#X connect 32 0 21 0;
+#X connect 36 0 32 0;
+#X connect 38 0 41 0;

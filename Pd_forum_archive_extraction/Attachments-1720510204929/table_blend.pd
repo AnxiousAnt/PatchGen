@@ -1,0 +1,56 @@
+#N canvas 641 97 561 742 10;
+#X obj 129 191 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 91 412 *~;
+#X obj 192 412 *~;
+#X msg -1 441 1;
+#X msg -38 441 0;
+#X obj 207 391 - 1;
+#X obj -38 419 bang~;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array first 16 float 3;
+#A 0 -0.72857 -0.657141 -0.62857 -0.585713 -0.514285 -0.357142 -0.271428
+-0.2 0.271428 0.514285 0.62857 0.714284 0.742856 0.82857 0.82857 0.657141
+;
+#X coords 0 1 15 -1 200 140 1;
+#X restore -46 35 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array second 16 float 3;
+#A 0 0 0.828569 0.699998 0.0714289 -0.385712 -0.528569 -0.571426 -0.599997
+-0.628568 -0.685711 -0.714282 -0.714282 -0.757139 -0.757139 -0.771425
+-0.771425;
+#X coords 0 1 15 -1 200 140 1;
+#X restore 199 34 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array blended 16 float 3;
+#A 0 -0.166366 0.489312 0.396624 -0.0786271 -0.415071 -0.489424 -0.502923
+-0.508659 -0.423057 -0.411696 -0.407646 -0.388074 -0.41462 -0.395048
+-0.406072 -0.445217;
+#X coords 0 1 15 -1 200 140 1;
+#X restore 83 550 graph;
+#X obj 131 460 tabwrite~ blended;
+#X obj 90 439 -~;
+#X obj 92 370 tabplay~ second;
+#X obj 192 370 tabplay~ first;
+#X obj 92 325 t b b b;
+#X obj 75 254 t b b f f;
+#X obj -15 467 switch~ 16 1 16;
+#X msg 44 187 \; pd dsp 1;
+#X text -62 717 Martin Schied \, 2009;
+#X connect 0 0 15 0;
+#X connect 1 0 11 0;
+#X connect 2 0 11 1;
+#X connect 3 0 16 0;
+#X connect 4 0 16 0;
+#X connect 5 0 2 1;
+#X connect 6 0 4 0;
+#X connect 11 0 10 0;
+#X connect 12 0 1 0;
+#X connect 13 0 2 0;
+#X connect 14 0 12 0;
+#X connect 14 1 13 0;
+#X connect 14 2 10 0;
+#X connect 15 0 3 0;
+#X connect 15 1 14 0;
+#X connect 15 2 1 1;
+#X connect 15 3 5 0;

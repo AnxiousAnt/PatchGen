@@ -1,0 +1,13 @@
+#N canvas 72 231 450 300 10;
+#X obj 56 47 inlet;
+#X obj 56 96 route bang;
+#X obj 121 134 s \$1;
+#X obj 119 174 r \$1;
+#X obj 57 249 outlet;
+#X obj 56 208 symbol;
+#X text 44 9 like value (v) but works with symbols;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 2 0;
+#X connect 3 0 5 1;
+#X connect 5 0 4 0;

@@ -1,0 +1,2 @@
+#!/bin/sh
+xine -n --no-splash --no-logo -B -D dvd:// 2>&1 >/dev/null &

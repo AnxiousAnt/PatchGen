@@ -1,0 +1,27 @@
+#N canvas 0 0 815 436 12;
+#X obj 134 189 metro;
+#X obj 230 105 expr (60/$f1)*1000;
+#X floatatom 230 138 5 0 0 0 - - -;
+#X obj 221 316 bng 15 112 112 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 237 230 / 2;
+#X msg 235 252 flashtime \$1 \$1;
+#X obj 90 315 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 130 162 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 382 107 convert bpm to milliseconds;
+#X obj 129 117 loadbang;
+#X obj 231 81 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 266 256;
+#X text 301 226 changes dynamically intrrp and hold values;
+#X connect 0 0 3 0;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 0 0 1;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 7 0 0 0;
+#X connect 9 0 7 0;
+#X connect 10 0 1 0;

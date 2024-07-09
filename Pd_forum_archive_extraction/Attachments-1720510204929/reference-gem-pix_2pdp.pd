@@ -1,0 +1,110 @@
+#N canvas 498 278 645 548 10;
+#X text 480 483 (Gem rendering must be on \,;
+#X text 482 497 but you can cut the Gem;
+#X text 447 0 GEM object;
+#X obj 3 337 cnv 15 430 140 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 34 344 Inlets:;
+#X text 33 427 Outlets:;
+#X obj 3 298 cnv 15 430 30 empty empty empty 20 12 0 14 -195568 -66577
+0;
+#X text 12 297 Arguments:;
+#X obj 2 48 cnv 15 430 240 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 444 48 cnv 15 170 430 empty empty empty 20 12 0 14 -228992 -66577
+0;
+#X text 448 31 Example:;
+#X obj 515 417 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
+0;
+#N canvas 0 0 450 300 gemwin 0;
+#X obj 132 136 gemwin;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X obj 67 41 route create;
+#X msg 67 70 set destroy;
+#X msg 142 68 set create;
+#X msg 132 112 create \, 1;
+#X msg 198 112 destroy;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 3 1 5 0;
+#X connect 3 1 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X restore 520 456 pd gemwin;
+#X msg 520 437 create;
+#X text 516 416 Create window:;
+#X obj 445 164 cnv 15 160 80 empty empty empty 20 12 0 14 -24198 -66577
+0;
+#X text 66 23 Class: pix object;
+#X text 58 308 <none>;
+#X text 11 440 Outlet 1: gemlist;
+#X text 18 358 Inlet 1: gemlist;
+#X text 45 4 Synopsis: [pix_2pdp];
+#X text 24 51 Description: Convert Gem to pdp packet;
+#X text 8 89 pix_2pdp captures the contents of a Gem pix and transforms
+it to a PDP packet with almost no cpu power. So it's possible to convert
+from Gem to PDP to Gem to PDP to ... if you use the Gem pix objects!
+;
+#X text 5 141 [pix_buf] is only effective if it is storing a static
+image. If you are continually modifying the buffered pix \, then pix_buf
+is going to be spending a lot of time copying pixels.;
+#X text 8 196 So what can you do with it?;
+#X text 21 212 - use pix_video/pix_2pdp for firewire input in PDP;
+#X text 21 227 - use pix_2pdp/pdp_rec~ to record Gem pixes;
+#X text 21 241 - maybe switch between Gem and PDP all the time;
+#X text 11 453 Outlet 2: to pdp;
+#X text 17 374 Inlet 1: bang: copy of input-data to the output and
+force all subsequent [pix_]-objects and pdp to process;
+#X obj 449 56 gemhead;
+#X obj 449 368 pix_texture;
+#X obj 494 296 pdp_xv;
+#X msg 519 249 create;
+#X msg 519 273 destroy;
+#X obj 449 203 pix_2pdp;
+#X obj 449 132 pix_film;
+#X floatatom 524 118 5 0 1000 0 - - -;
+#X text 557 118 <- frame;
+#X text 504 226 pdp outlet;
+#X obj 449 347 spigot;
+#X obj 486 327 tgl 15 1 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X text 502 348 chain to save CPU;
+#X text 502 333 cut Gem render-;
+#X obj 449 171 t a b;
+#X text 451 227 Gemlist;
+#X text 484 171 <-- don't forget this !;
+#X text 483 510 render-chain after pix_2pdp);
+#X msg 464 96 auto \$1;
+#X obj 464 78 tgl 15 1 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 524 58 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 524 77 openpanel;
+#X msg 524 97 open \$1;
+#X obj 449 390 rectangle 4 3;
+#X text 10 499 Code source based on Gem2pdp - copyleft 2003-2005 by
+Yves Degoyon ans James Tittle;
+#X text 10 488 pix_2pdp - Georg Holzmann <grh@mur.at> \, 2005;
+#X connect 12 0 13 0;
+#X connect 13 0 12 0;
+#X connect 30 0 36 0;
+#X connect 31 0 53 0;
+#X connect 33 0 32 0;
+#X connect 34 0 32 0;
+#X connect 35 0 40 0;
+#X connect 35 1 32 0;
+#X connect 36 0 44 0;
+#X connect 37 0 36 1;
+#X connect 40 0 31 0;
+#X connect 41 0 40 1;
+#X connect 44 0 35 0;
+#X connect 44 1 35 0;
+#X connect 48 0 36 0;
+#X connect 49 0 48 0;
+#X connect 50 0 51 0;
+#X connect 51 0 52 0;
+#X connect 52 0 36 0;

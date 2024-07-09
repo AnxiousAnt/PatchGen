@@ -1,0 +1,20 @@
+#N canvas 0 0 648 359 10;
+#X obj 74 88 random 127;
+#X msg 74 65 bang;
+#X obj 74 113 makenote 80 1000;
+#X obj 74 148 pack 0 0;
+#X obj 74 178 poly 8;
+#X obj 74 227 s \$0-notes;
+#X obj 74 203 pack 0 0 0;
+#X obj 157 179 nqpoly4 9 polytest \$0;
+#X text 163 155 9 = 8 + 1! [poly] starts counting at 1 \, nqpoly doesn't!
+;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 1 3 1;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 6 1;
+#X connect 4 2 6 2;
+#X connect 6 0 5 0;

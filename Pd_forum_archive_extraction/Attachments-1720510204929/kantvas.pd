@@ -1,0 +1,28 @@
+#N canvas 0 0 99 59 10;
+#X obj 0 0 cnv 60 100 60 \$0-bor \$0-bor empty 20 12 0 14 -166441
+-66577 0;
+#X obj 138 23 loadbang;
+#X obj 4 4 cnv 52 92 52 \$0-cnv \$0-cnv empty 20 12 0 14 -233017
+-66577 0;
+#X obj 171 152 pack;
+#X obj 171 107 unpack;
+#X obj 211 128 - 8;
+#X obj 171 128 - 8;
+#X obj 138 42 pack \$1 \$2;
+#X obj 138 80 s \$0-bor;
+#X obj 171 190 s \$0-cnv;
+#X msg 171 171 vis_size \$1 \$2;
+#X msg 138 61 vis_size \$1 \$2;
+#X msg 214 20 100 60;
+#X connect 1 0 7 0;
+#X connect 3 0 10 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 3 1;
+#X connect 6 0 3 0;
+#X connect 7 0 11 0;
+#X connect 7 0 4 0;
+#X connect 10 0 9 0;
+#X connect 11 0 8 0;
+#X connect 12 0 7 0;
+#X coords 0 0 1 1 100 60 1;

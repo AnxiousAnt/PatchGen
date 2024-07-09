@@ -1,0 +1,15 @@
+#N canvas 258 404 951 396 10;
+#X obj 100 56 brown~;
+#X obj 100 144 output~;
+#X obj 158 56 brown~;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-brown-display 5000 float 0;
+#X coords 0 1 4999 -1 500 300 1 0 0;
+#X restore 360 43 graph;
+#X obj 180 162 tabwrite~ \$0-brown-display;
+#X obj 192 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 1 0;
+#X connect 2 0 1 1;
+#X connect 2 0 4 0;
+#X connect 5 0 4 0;

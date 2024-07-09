@@ -1,0 +1,855 @@
+
+This is a pre-release version of the X server from The X.Org Foundation.
+It is not supported in any way.
+Bugs may be filed in the bugzilla at http://bugs.freedesktop.org/.
+Select the "xorg" product for bugs you find in this release.
+Before reporting bugs in pre-release versions please check the
+latest version in the X.Org Foundation git repository.
+See http://wiki.x.org/wiki/GitPage for git access instructions.
+
+X.Org X Server 1.4.0.90
+Release Date: 5 September 2007
+X Protocol Version 11, Revision 0
+Build Operating System: Linux 2.6.23.9 i686 
+Current Operating System: Linux sugoi 2.6.23.9 #1 SMP PREEMPT Mon Dec 17 17:51:41 EST 2007 i686
+Build Date: 22 February 2008  11:47:02AM
+ 
+	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+Module Loader present
+Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+(==) Log file: "/var/log/Xorg.0.log", Time: Fri Feb 22 12:39:09 2008
+(==) Using config file: "/etc/X11/xorg.conf"
+(==) ServerLayout "Default Layout"
+(**) |-->Screen "aticonfig-Screen[0]" (0)
+(**) |   |-->Monitor "aticonfig-Monitor[0]"
+(**) |   |-->Device "aticonfig-Device[0]"
+(**) |-->Input Device "Keyboard0"
+(**) |-->Input Device "Synaptics"
+(**) |-->Input Device "Stylus"
+(**) |-->Input Device "Eraser"
+(**) Option "AIGLX" "Off"
+(==) Automatically adding devices
+(==) Automatically enabling devices
+(WW) The directory "/usr/share/fonts/TTF/" does not exist.
+	Entry deleted from font path.
+(WW) The directory "/usr/share/fonts/OTF" does not exist.
+	Entry deleted from font path.
+(==) FontPath set to:
+	/usr/share/fonts/misc/,
+	/usr/share/fonts/Type1/,
+	/usr/share/fonts/100dpi/,
+	/usr/share/fonts/75dpi/
+(==) RgbPath set to "/usr/share/X11/rgb"
+(==) ModulePath set to "/usr/lib/xorg/modules"
+(**) Extension "Composite" is disabled
+(II) No default mouse found, adding one
+(**) |-->Input Device "<default pointer>"
+(WW) Open ACPI failed (/var/run/acpid.socket) (No such file or directory)
+(II) No APM support in BIOS or kernel
+(II) Loader magic: 0x81c8b80
+(II) Module ABI versions:
+	X.Org ANSI C Emulation: 0.3
+	X.Org Video Driver: 2.0
+	X.Org XInput driver : 2.0
+	X.Org Server Extension : 0.3
+	X.Org Font Renderer : 0.5
+(II) Loader running on linux
+(II) LoadModule: "pcidata"
+(II) Loading /usr/lib/xorg/modules//libpcidata.so
+(II) Module pcidata: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.0.0
+	ABI class: X.Org Video Driver, version 2.0
+(--) using VT number 7
+
+(II) PCI: PCI scan (all values are in hex)
+(II) PCI: 00:00:0: chip 8086,27a0 card 103c,30ac rev 03 class 06,00,00 hdr 00
+(II) PCI: 00:01:0: chip 8086,27a1 card 0000,0000 rev 03 class 06,04,00 hdr 01
+(II) PCI: 00:1b:0: chip 8086,27d8 card 103c,30ac rev 01 class 04,03,00 hdr 00
+(II) PCI: 00:1c:0: chip 8086,27d0 card 0000,0000 rev 01 class 06,04,00 hdr 81
+(II) PCI: 00:1c:1: chip 8086,27d2 card 0000,0000 rev 01 class 06,04,00 hdr 81
+(II) PCI: 00:1d:0: chip 8086,27c8 card 103c,30ac rev 01 class 0c,03,00 hdr 80
+(II) PCI: 00:1d:1: chip 8086,27c9 card 103c,30ac rev 01 class 0c,03,00 hdr 00
+(II) PCI: 00:1d:2: chip 8086,27ca card 103c,30ac rev 01 class 0c,03,00 hdr 00
+(II) PCI: 00:1d:3: chip 8086,27cb card 103c,30ac rev 01 class 0c,03,00 hdr 00
+(II) PCI: 00:1d:7: chip 8086,27cc card 103c,30ac rev 01 class 0c,03,20 hdr 00
+(II) PCI: 00:1e:0: chip 8086,2448 card 0000,0000 rev e1 class 06,04,01 hdr 01
+(II) PCI: 00:1f:0: chip 8086,27b9 card 103c,30ac rev 01 class 06,01,00 hdr 80
+(II) PCI: 00:1f:2: chip 8086,27c4 card 103c,30ac rev 01 class 01,01,80 hdr 00
+(II) PCI: 01:00:0: chip 1002,714a card 103c,30ac rev 00 class 03,00,00 hdr 00
+(II) PCI: 02:06:0: chip 104c,8039 card 2000,0000 rev 00 class 06,07,00 hdr 82
+(II) PCI: 02:06:4: chip 104c,803d card 103c,30ac rev 00 class 07,80,00 hdr 80
+(II) PCI: 03:00:0: chip 104c,8024 card 1799,0513 rev 00 class 0c,00,10 hdr 00
+(II) PCI: 08:00:0: chip 14e4,16fd card 103c,30ac rev 21 class 02,00,00 hdr 00
+(II) PCI: 10:00:0: chip 8086,4222 card 103c,135d rev 02 class 02,80,00 hdr 00
+(II) PCI: End of PCI scan
+(II) Intel Bridge workaround enabled
+(II) Host-to-PCI bridge:
+(II) Bus 0: bridge is at (0:0:0), (0,0,16), BCTRL: 0x0008 (VGA_EN is set)
+(II) Bus 0 I/O range:
+	[0] -1	0	0x00000000 - 0x0000ffff (0x10000) IX[B]
+(II) Bus 0 non-prefetchable memory range:
+	[0] -1	0	0x00000000 - 0xffffffff (0x0) MX[B]
+(II) Bus 0 prefetchable memory range:
+	[0] -1	0	0x00000000 - 0xffffffff (0x0) MX[B]
+(II) PCI-to-PCI bridge:
+(II) Bus 1: bridge is at (0:1:0), (0,1,1), BCTRL: 0x001c (VGA_EN is set)
+(II) Bus 1 I/O range:
+	[0] -1	0	0x00004000 - 0x000040ff (0x100) IX[B]
+	[1] -1	0	0x00004400 - 0x000044ff (0x100) IX[B]
+	[2] -1	0	0x00004800 - 0x000048ff (0x100) IX[B]
+	[3] -1	0	0x00004c00 - 0x00004cff (0x100) IX[B]
+(II) Bus 1 non-prefetchable memory range:
+	[0] -1	0	0xe4600000 - 0xe46fffff (0x100000) MX[B]
+(II) Bus 1 prefetchable memory range:
+	[0] -1	0	0xd8000000 - 0xdfffffff (0x8000000) MX[B]
+(II) PCI-to-PCI bridge:
+(II) Bus 8: bridge is at (0:28:0), (0,8,8), BCTRL: 0x0004 (VGA_EN is cleared)
+(II) Bus 8 non-prefetchable memory range:
+	[0] -1	0	0xe4100000 - 0xe41fffff (0x100000) MX[B]
+(II) PCI-to-PCI bridge:
+(II) Bus 16: bridge is at (0:28:1), (0,16,16), BCTRL: 0x0004 (VGA_EN is cleared)
+(II) Bus 16 non-prefetchable memory range:
+	[0] -1	0	0xe4000000 - 0xe40fffff (0x100000) MX[B]
+(II) Subtractive PCI-to-PCI bridge:
+(II) Bus 2: bridge is at (0:30:0), (0,2,6), BCTRL: 0x0006 (VGA_EN is cleared)
+(II) Bus 2 I/O range:
+	[0] -1	0	0x00002000 - 0x000020ff (0x100) IX[B]
+	[1] -1	0	0x00002400 - 0x000024ff (0x100) IX[B]
+	[2] -1	0	0x00002800 - 0x000028ff (0x100) IX[B]
+	[3] -1	0	0x00002c00 - 0x00002cff (0x100) IX[B]
+(II) Bus 2 non-prefetchable memory range:
+	[0] -1	0	0xe4200000 - 0xe45fffff (0x400000) MX[B]
+(II) Bus 2 prefetchable memory range:
+	[0] -1	0	0x50000000 - 0x53ffffff (0x4000000) MX[B]
+(II) PCI-to-ISA bridge:
+(II) Bus -1: bridge is at (0:31:0), (0,-1,-1), BCTRL: 0x0008 (VGA_EN is set)
+(II) PCI-to-CardBus bridge:
+(II) Bus 3: bridge is at (2:6:0), (2,3,6), BCTRL: 0x0500 (VGA_EN is cleared)
+(II) Bus 3 I/O range:
+	[0] -1	0	0x00002000 - 0x000020ff (0x100) IX[B]
+	[1] -1	0	0x00002400 - 0x000024ff (0x100) IX[B]
+(II) Bus 3 prefetchable memory range:
+	[0] -1	0	0x50000000 - 0x53ffffff (0x4000000) MX[B]
+(--) PCI:*(1:0:0) ATI Technologies Inc M52 [Mobility Radeon X1300] rev 0, Mem @ 0xd8000000/27, 0xe4600000/16, I/O @ 0x4000/8
+(II) Addressable bus resource ranges are
+	[0] -1	0	0x00000000 - 0xffffffff (0x0) MX[B]
+	[1] -1	0	0x00000000 - 0x0000ffff (0x10000) IX[B]
+(II) OS-reported resource ranges:
+	[0] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[1] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[2] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[3] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[4] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[5] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+(II) Active PCI resource ranges:
+	[0] -1	0	0xe4000000 - 0xe4000fff (0x1000) MX[B]
+	[1] -1	0	0xe4100000 - 0xe410ffff (0x10000) MX[B]
+	[2] -1	0	0x54000000 - 0x54003fff (0x4000) MX[B]
+	[3] -1	0	0x54004000 - 0x540047ff (0x800) MX[B]
+	[4] -1	0	0xe4202000 - 0xe4202fff (0x1000) MX[B]
+	[5] -1	0	0xe4201000 - 0xe4201fff (0x1000) MX[B]
+	[6] -1	0	0xe4704000 - 0xe47043ff (0x400) MX[B]
+	[7] -1	0	0xe4700000 - 0xe4703fff (0x4000) MX[B]
+	[8] -1	0	0xe4600000 - 0xe460ffff (0x10000) MX[B](B)
+	[9] -1	0	0xd8000000 - 0xdfffffff (0x8000000) MX[B](B)
+	[10] -1	0	0x00005080 - 0x0000508f (0x10) IX[B]
+	[11] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[12] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[13] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[14] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[15] -1	0	0x00005060 - 0x0000507f (0x20) IX[B]
+	[16] -1	0	0x00005040 - 0x0000505f (0x20) IX[B]
+	[17] -1	0	0x00005020 - 0x0000503f (0x20) IX[B]
+	[18] -1	0	0x00005000 - 0x0000501f (0x20) IX[B]
+	[19] -1	0	0x00004000 - 0x000040ff (0x100) IX[B](B)
+(II) Active PCI resource ranges after removing overlaps:
+	[0] -1	0	0xe4000000 - 0xe4000fff (0x1000) MX[B]
+	[1] -1	0	0xe4100000 - 0xe410ffff (0x10000) MX[B]
+	[2] -1	0	0x54000000 - 0x54003fff (0x4000) MX[B]
+	[3] -1	0	0x54004000 - 0x540047ff (0x800) MX[B]
+	[4] -1	0	0xe4202000 - 0xe4202fff (0x1000) MX[B]
+	[5] -1	0	0xe4201000 - 0xe4201fff (0x1000) MX[B]
+	[6] -1	0	0xe4704000 - 0xe47043ff (0x400) MX[B]
+	[7] -1	0	0xe4700000 - 0xe4703fff (0x4000) MX[B]
+	[8] -1	0	0xe4600000 - 0xe460ffff (0x10000) MX[B](B)
+	[9] -1	0	0xd8000000 - 0xdfffffff (0x8000000) MX[B](B)
+	[10] -1	0	0x00005080 - 0x0000508f (0x10) IX[B]
+	[11] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[12] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[13] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[14] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[15] -1	0	0x00005060 - 0x0000507f (0x20) IX[B]
+	[16] -1	0	0x00005040 - 0x0000505f (0x20) IX[B]
+	[17] -1	0	0x00005020 - 0x0000503f (0x20) IX[B]
+	[18] -1	0	0x00005000 - 0x0000501f (0x20) IX[B]
+	[19] -1	0	0x00004000 - 0x000040ff (0x100) IX[B](B)
+(II) OS-reported resource ranges after removing overlaps with PCI:
+	[0] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[1] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[2] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[3] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[4] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[5] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+(II) All system resource ranges:
+	[0] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[1] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[2] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[3] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[4] -1	0	0xe4000000 - 0xe4000fff (0x1000) MX[B]
+	[5] -1	0	0xe4100000 - 0xe410ffff (0x10000) MX[B]
+	[6] -1	0	0x54000000 - 0x54003fff (0x4000) MX[B]
+	[7] -1	0	0x54004000 - 0x540047ff (0x800) MX[B]
+	[8] -1	0	0xe4202000 - 0xe4202fff (0x1000) MX[B]
+	[9] -1	0	0xe4201000 - 0xe4201fff (0x1000) MX[B]
+	[10] -1	0	0xe4704000 - 0xe47043ff (0x400) MX[B]
+	[11] -1	0	0xe4700000 - 0xe4703fff (0x4000) MX[B]
+	[12] -1	0	0xe4600000 - 0xe460ffff (0x10000) MX[B](B)
+	[13] -1	0	0xd8000000 - 0xdfffffff (0x8000000) MX[B](B)
+	[14] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[15] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+	[16] -1	0	0x00005080 - 0x0000508f (0x10) IX[B]
+	[17] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[18] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[19] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[20] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[21] -1	0	0x00005060 - 0x0000507f (0x20) IX[B]
+	[22] -1	0	0x00005040 - 0x0000505f (0x20) IX[B]
+	[23] -1	0	0x00005020 - 0x0000503f (0x20) IX[B]
+	[24] -1	0	0x00005000 - 0x0000501f (0x20) IX[B]
+	[25] -1	0	0x00004000 - 0x000040ff (0x100) IX[B](B)
+(II) "extmod" will be loaded. This was enabled by default and also specified in the config file.
+(II) "dbe" will be loaded. This was enabled by default and also specified in the config file.
+(II) "glx" will be loaded. This was enabled by default and also specified in the config file.
+(II) "freetype" will be loaded. This was enabled by default and also specified in the config file.
+(II) "type1" will be loaded. This was enabled by default and also specified in the config file.
+(II) "record" will be loaded by default.
+(II) "dri" will be loaded. This was enabled by default and also specified in the config file.
+(II) LoadModule: "dbe"
+(II) Loading /usr/lib/xorg/modules/extensions//libdbe.so
+(II) Module dbe: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.0.0
+	Module class: X.Org Server Extension
+	ABI class: X.Org Server Extension, version 0.3
+(II) Loading extension DOUBLE-BUFFER
+(II) LoadModule: "ddc"(II) Module "ddc" already built-in
+(II) LoadModule: "freetype"
+(II) Loading /usr/lib/xorg/modules/fonts//libfreetype.so
+(II) Module freetype: vendor="X.Org Foundation & the After X-TT Project"
+	compiled for 1.4.0.90, module version = 2.1.0
+	Module class: X.Org Font Renderer
+	ABI class: X.Org Font Renderer, version 0.5
+(II) Loading font FreeType
+(II) LoadModule: "int10"
+(II) Loading /usr/lib/xorg/modules//libint10.so
+(II) Module int10: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.0.0
+	ABI class: X.Org Video Driver, version 2.0
+(II) LoadModule: "type1"
+(II) Loading /usr/lib/xorg/modules/fonts//libtype1.so
+(II) Module type1: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.0.2
+	Module class: X.Org Font Renderer
+	ABI class: X.Org Font Renderer, version 0.5
+(II) Loading font Type1
+(II) LoadModule: "vbe"
+(II) Loading /usr/lib/xorg/modules//libvbe.so
+(II) Module vbe: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.1.0
+	ABI class: X.Org Video Driver, version 2.0
+(II) LoadModule: "glx"
+(II) Loading /usr/lib/xorg/modules/extensions//libglx.so
+(II) Module glx: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.0.0
+	ABI class: X.Org Server Extension, version 0.3
+(**) AIGLX disabled
+(II) Loading extension GLX
+(II) LoadModule: "extmod"
+(II) Loading /usr/lib/xorg/modules/extensions//libextmod.so
+(II) Module extmod: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.0.0
+	Module class: X.Org Server Extension
+	ABI class: X.Org Server Extension, version 0.3
+(II) Loading extension SHAPE
+(II) Loading extension MIT-SUNDRY-NONSTANDARD
+(II) Loading extension BIG-REQUESTS
+(II) Loading extension SYNC
+(II) Loading extension MIT-SCREEN-SAVER
+(II) Loading extension XC-MISC
+(II) Loading extension XFree86-VidModeExtension
+(II) Loading extension XFree86-Misc
+(II) Loading extension XFree86-DGA
+(II) Loading extension DPMS
+(II) Loading extension TOG-CUP
+(II) Loading extension Extended-Visual-Information
+(II) Loading extension XVideo
+(II) Loading extension XVideo-MotionCompensation
+(II) Loading extension X-Resource
+(II) LoadModule: "dri"
+(II) Loading /usr/lib/xorg/modules/extensions//libdri.so
+(II) Module dri: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.0.0
+	ABI class: X.Org Server Extension, version 0.3
+(II) Loading extension XFree86-DRI
+(II) LoadModule: "record"
+(II) Loading /usr/lib/xorg/modules/extensions//librecord.so
+(II) Module record: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.13.0
+	Module class: X.Org Server Extension
+	ABI class: X.Org Server Extension, version 0.3
+(II) Loading extension RECORD
+(II) LoadModule: "fglrx"
+(II) Loading /usr/lib/xorg/modules/drivers//fglrx_drv.so
+(II) Module fglrx: vendor="FireGL - ATI Technologies Inc."
+	compiled for 7.1.0, module version = 8.45.5
+	Module class: X.Org Video Driver
+(II) LoadModule: "kbd"
+(II) Loading /usr/lib/xorg/modules/input//kbd_drv.so
+(II) Module kbd: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.2.2
+	Module class: X.Org XInput Driver
+	ABI class: X.Org XInput driver, version 2.0
+(II) LoadModule: "synaptics"
+(II) Loading /usr/lib/xorg/modules/input//synaptics_drv.so
+(II) Module synaptics: vendor="X.Org Foundation"
+	compiled for 4.3.99.902, module version = 1.0.0
+	Module class: X.Org XInput Driver
+	ABI class: X.Org XInput driver, version 2.0
+(II) LoadModule: "wacom"
+(II) Loading /usr/lib/xorg/modules/input//wacom_drv.so
+(II) Module wacom: vendor="X.Org Foundation"
+	compiled for 4.3.99.902, module version = 1.0.0
+	Module class: X.Org XInput Driver
+	ABI class: X.Org XInput driver, version 0.7
+(EE) module ABI major version (0) doesn't match the server's version (2)
+(II) UnloadModule: "wacom"
+(II) Unloading /usr/lib/xorg/modules/input//wacom_drv.so
+(EE) Failed to load module "wacom" (module requirement mismatch, 0)
+(II) LoadModule: "mouse"
+(II) Loading /usr/lib/xorg/modules/input//mouse_drv.so
+(II) Module mouse: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.2.3
+	Module class: X.Org XInput Driver
+	ABI class: X.Org XInput driver, version 2.0
+(II) Primary Device is: PCI 01:00:0
+(II) ATI Proprietary Linux Driver Version Identifier:8.45.5
+(II) ATI Proprietary Linux Driver Release Identifier: UNSUPPORTED-8.455.2                  
+(II) ATI Proprietary Linux Driver Build Date: Feb  1 2008 10:11:22
+(--) Assigning device section with no busID to primary device
+(--) Chipset Supported AMD Graphics Processor (0x714A) found
+(II) AMD Video driver is running on a device belonging to a group targeted for this release
+(II) AMD Video driver is signed
+(II) resource ranges after xf86ClaimFixedResources() call:
+	[0] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[1] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[2] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[3] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[4] -1	0	0xe4000000 - 0xe4000fff (0x1000) MX[B]
+	[5] -1	0	0xe4100000 - 0xe410ffff (0x10000) MX[B]
+	[6] -1	0	0x54000000 - 0x54003fff (0x4000) MX[B]
+	[7] -1	0	0x54004000 - 0x540047ff (0x800) MX[B]
+	[8] -1	0	0xe4202000 - 0xe4202fff (0x1000) MX[B]
+	[9] -1	0	0xe4201000 - 0xe4201fff (0x1000) MX[B]
+	[10] -1	0	0xe4704000 - 0xe47043ff (0x400) MX[B]
+	[11] -1	0	0xe4700000 - 0xe4703fff (0x4000) MX[B]
+	[12] -1	0	0xe4600000 - 0xe460ffff (0x10000) MX[B](B)
+	[13] -1	0	0xd8000000 - 0xdfffffff (0x8000000) MX[B](B)
+	[14] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[15] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+	[16] -1	0	0x00005080 - 0x0000508f (0x10) IX[B]
+	[17] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[18] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[19] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[20] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[21] -1	0	0x00005060 - 0x0000507f (0x20) IX[B]
+	[22] -1	0	0x00005040 - 0x0000505f (0x20) IX[B]
+	[23] -1	0	0x00005020 - 0x0000503f (0x20) IX[B]
+	[24] -1	0	0x00005000 - 0x0000501f (0x20) IX[B]
+	[25] -1	0	0x00004000 - 0x000040ff (0x100) IX[B](B)
+(II) fglrx(0): pEnt->device->identifier=0x81fa250
+(II) resource ranges after probing:
+	[0] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[1] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[2] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[3] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[4] -1	0	0xe4000000 - 0xe4000fff (0x1000) MX[B]
+	[5] -1	0	0xe4100000 - 0xe410ffff (0x10000) MX[B]
+	[6] -1	0	0x54000000 - 0x54003fff (0x4000) MX[B]
+	[7] -1	0	0x54004000 - 0x540047ff (0x800) MX[B]
+	[8] -1	0	0xe4202000 - 0xe4202fff (0x1000) MX[B]
+	[9] -1	0	0xe4201000 - 0xe4201fff (0x1000) MX[B]
+	[10] -1	0	0xe4704000 - 0xe47043ff (0x400) MX[B]
+	[11] -1	0	0xe4700000 - 0xe4703fff (0x4000) MX[B]
+	[12] -1	0	0xe4600000 - 0xe460ffff (0x10000) MX[B](B)
+	[13] -1	0	0xd8000000 - 0xdfffffff (0x8000000) MX[B](B)
+	[14] 0	0	0x000a0000 - 0x000affff (0x10000) MS[B]
+	[15] 0	0	0x000b0000 - 0x000b7fff (0x8000) MS[B]
+	[16] 0	0	0x000b8000 - 0x000bffff (0x8000) MS[B]
+	[17] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[18] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+	[19] -1	0	0x00005080 - 0x0000508f (0x10) IX[B]
+	[20] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[21] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[22] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[23] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[24] -1	0	0x00005060 - 0x0000507f (0x20) IX[B]
+	[25] -1	0	0x00005040 - 0x0000505f (0x20) IX[B]
+	[26] -1	0	0x00005020 - 0x0000503f (0x20) IX[B]
+	[27] -1	0	0x00005000 - 0x0000501f (0x20) IX[B]
+	[28] -1	0	0x00004000 - 0x000040ff (0x100) IX[B](B)
+	[29] 0	0	0x000003b0 - 0x000003bb (0xc) IS[B]
+	[30] 0	0	0x000003c0 - 0x000003df (0x20) IS[B]
+(II) Setting vga for screen 0.
+(II) fglrx(0): === [atiddxPreInit] === begin
+(II) Loading sub module "vgahw"
+(II) LoadModule: "vgahw"
+(II) Loading /usr/lib/xorg/modules//libvgahw.so
+(II) Module vgahw: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 0.1.0
+	ABI class: X.Org Video Driver, version 2.0
+(II) fglrx(0): PCI bus 1 card 0 func 0
+(**) fglrx(0): Depth 24, (--) framebuffer bpp 32
+(II) fglrx(0): Pixel depth = 24 bits stored in 4 bytes (32 bpp pixmaps)
+(==) fglrx(0): Default visual is TrueColor
+(**) fglrx(0): Option "DPMS" "true"
+(II) fglrx(0): Loading PCS database from /etc/ati/amdpcsdb
+(==) fglrx(0): RGB weight 888
+(II) fglrx(0): Using 8 bits per RGB (8 bit DAC)
+(==) fglrx(0): Gamma Correction for I is 0x06419064
+(==) fglrx(0): Gamma Correction for II is 0x06419064
+(==) fglrx(0): Buffer Tiling is ON
+(--) fglrx(0): Chipset: "ATI Mobility Radeon X1300" (Chipset = 0x714a)
+(--) fglrx(0): (PciSubVendor = 0x103c, PciSubDevice = 0x30ac)
+(--) fglrx(0): board vendor info: third party graphics adapter - NOT original ATI
+(--) fglrx(0): Linear framebuffer (phys) at 0xd8000000
+(--) fglrx(0): MMIO registers at 0xe4600000
+(==) fglrx(0): ROM-BIOS at 0x000c0000
+(**) fglrx(0): Option "mtrr" "on"
+(II) Loading sub module "int10"
+(II) LoadModule: "int10"
+(II) Reloading /usr/lib/xorg/modules//libint10.so
+(II) fglrx(0): Primary V_BIOS segment is: 0xc000
+(II) Loading sub module "vbe"
+(II) LoadModule: "vbe"
+(II) Reloading /usr/lib/xorg/modules//libvbe.so
+(II) fglrx(0): VESA BIOS detected
+(II) fglrx(0): VESA VBE Version 3.0
+(II) fglrx(0): VESA VBE Total Mem: 16384 kB
+(II) fglrx(0): VESA VBE OEM: ATI ATOMBIOS
+(II) fglrx(0): VESA VBE OEM Software Rev: 9.12
+(II) fglrx(0): VESA VBE OEM Vendor: (C) 1988-2005, ATI Technologies Inc. 
+(II) fglrx(0): VESA VBE OEM Product: M52T
+(II) fglrx(0): VESA VBE OEM Product Rev: 01.00
+(WW) fglrx(0): GetVBEMode failed
+(II) fglrx(0): ATI Video BIOS revision 9 or later detected
+drmOpenDevice: node name is /dev/dri/card0
+drmOpenDevice: open result is 6, (OK)
+drmOpenDevice: node name is /dev/dri/card0
+drmOpenDevice: open result is 6, (OK)
+drmOpenDevice: node name is /dev/dri/card0
+drmOpenDevice: open result is 6, (OK)
+drmGetBusid returned ''
+(II) Loading sub module "fglrxdrm"
+(II) LoadModule: "fglrxdrm"
+(II) Loading /usr/lib/xorg/modules/linux//libfglrxdrm.so
+(II) Module fglrxdrm: vendor="FireGL - ATI Technologies Inc."
+	compiled for 7.1.0, module version = 8.45.5
+	ABI class: X.Org Server Extension, version 0.3
+(II) fglrx(0): Using adapter: 1:0.0.
+(--) fglrx(0): VideoRAM: 131072 kByte, Type: DDR1
+(II) fglrx(0): PCIE card detected
+(WW) fglrx(0): board is an unknown third party board, chipset is supported
+(II) Loading sub module "ddc"
+(II) LoadModule: "ddc"(II) Module "ddc" already built-in
+(II) fglrx(0): Connected Display1: LCD on internal LVDS [lvds]
+(II) fglrx(0): Display1 EDID data ---------------------------
+(II) fglrx(0): Manufacturer: LPL  Model: 8d00  Serial#: 0
+(II) fglrx(0): Year: 2005  Week: 0
+(II) fglrx(0): EDID Version: 1.3
+(II) fglrx(0): Digital Display Input
+(II) fglrx(0): Max H-Image Size [cm]: horiz.: 30  vert.: 19
+(II) fglrx(0): Gamma: 2.20
+(II) fglrx(0): No DPMS capabilities specified; RGB/Color Display
+(II) fglrx(0): First detailed timing is preferred mode
+(II) fglrx(0): redX: 0.581 redY: 0.344   greenX: 0.325 greenY: 0.547
+(II) fglrx(0): blueX: 0.157 blueY: 0.137   whiteX: 0.312 whiteY: 0.328
+(II) fglrx(0): Manufacturer's mask: 0
+(II) fglrx(0): Supported additional Video Mode:
+(II) fglrx(0): clock: 71.0 MHz   Image Size:  304 x 190 mm
+(II) fglrx(0): h_active: 1280  h_sync: 1328  h_sync_end 1360 h_blank_end 1440 h_border: 0
+(II) fglrx(0): v_active: 800  v_sync: 803  v_sync_end 809 v_blanking: 823 v_border: 0
+(II) fglrx(0):  LGPhilipsLCD
+(II) fglrx(0):  LP141WX1-TLA1
+(II) fglrx(0): EDID (in hex):
+(II) fglrx(0): 	00ffffffffffff00320c008d00000000
+(II) fglrx(0): 	000f0103801e13780ac4409458538c28
+(II) fglrx(0): 	23505400000001010101010101010101
+(II) fglrx(0): 	010101010101bc1b00a0502017303020
+(II) fglrx(0): 	360030be100000180000000000000000
+(II) fglrx(0): 	00000000000000000000000000fe004c
+(II) fglrx(0): 	475068696c6970734c43440a000000fe
+(II) fglrx(0): 	004c503134315758312d544c413100c7
+(II) fglrx(0): End of Display1 EDID data --------------------
+(WW) fglrx(0): Only one display is connnected,so single mode is enabled
+(II) fglrx(0): Primary Controller - LCD on internal LVDS
+(II) fglrx(0): Internal Desktop Setting: 0x00000001
+(II) fglrx(0): POWERplay version 3.  5 power states available:
+(II) fglrx(0):   1. 392/297MHz @ 60Hz [enable load balancing]
+(II) fglrx(0):   2. 128/135MHz @ 60Hz [low voltage, enable sleep]
+(II) fglrx(0):   3. 128/135MHz @ 60Hz [enable sleep, thermal diode mode]
+(II) fglrx(0):   4. 209/135MHz @ 60Hz [low voltage, enable sleep]
+(II) fglrx(0):   5. 324/135MHz @ 60Hz [low voltage, enable sleep]
+(==) fglrx(0): Qbs is not supported in this release. Disabled.
+(==) fglrx(0): FAST_SWAP disabled
+(==) fglrx(0):  PseudoColor visuals disabled
+(==) fglrx(0): Using gamma correction (1.0, 1.0, 1.0)
+(==) fglrx(0): Center Mode is disabled 
+(==) fglrx(0): TMDS coherent mode is enabled 
+(II) fglrx(0): Total of 11 modes found for primary display.
+(--) fglrx(0): Virtual size is 1280x800 (pitch 0)
+(**) fglrx(0): *Mode "1280x800": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "1280x800"x60.0   71.00  1280 1328 1360 1440  800 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0): *Mode "1280x768": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "1280x768"x60.0   71.00  1280 1328 1360 1440  768 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0): *Mode "1024x768": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "1024x768"x60.0   71.00  1024 1328 1360 1440  768 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0): *Mode "848x480": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "848x480"x60.0   71.00  848 1328 1360 1440  480 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0): *Mode "800x600": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "800x600"x60.0   71.00  800 1328 1360 1440  600 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0): *Mode "640x480": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "640x480"x60.0   71.00  640 1328 1360 1440  480 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0):  Default mode "640x400": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "640x400"x60.0   71.00  640 1328 1360 1440  400 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0):  Default mode "512x384": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "512x384"x60.0   71.00  512 1328 1360 1440  384 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0):  Default mode "400x300": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "400x300"x60.0   71.00  400 1328 1360 1440  300 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0):  Default mode "320x240": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "320x240"x60.0   71.00  320 1328 1360 1440  240 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0):  Default mode "320x200": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "320x200"x60.0   71.00  320 1328 1360 1440  200 803 809 823 +hsync +vsync (49.3 kHz)
+(--) fglrx(0): Display dimensions: (300, 190) mm
+(--) fglrx(0): DPI set to (108, 106)
+(--) fglrx(0): Virtual size is 1280x800 (pitch 1280)
+(**) fglrx(0): *Mode "1280x800": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "1280x800"x60.0   71.00  1280 1328 1360 1440  800 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0): *Mode "1280x768": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "1280x768"x60.0   71.00  1280 1328 1360 1440  768 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0): *Mode "1024x768": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "1024x768"x60.0   71.00  1024 1328 1360 1440  768 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0): *Mode "848x480": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "848x480"x60.0   71.00  848 1328 1360 1440  480 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0): *Mode "800x600": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "800x600"x60.0   71.00  800 1328 1360 1440  600 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0): *Mode "640x480": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "640x480"x60.0   71.00  640 1328 1360 1440  480 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0):  Default mode "640x400": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "640x400"x60.0   71.00  640 1328 1360 1440  400 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0):  Default mode "512x384": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "512x384"x60.0   71.00  512 1328 1360 1440  384 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0):  Default mode "400x300": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "400x300"x60.0   71.00  400 1328 1360 1440  300 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0):  Default mode "320x240": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "320x240"x60.0   71.00  320 1328 1360 1440  240 803 809 823 +hsync +vsync (49.3 kHz)
+(**) fglrx(0):  Default mode "320x200": 71.0 MHz (scaled from 0.0 MHz), 49.3 kHz, 60.0 Hz
+(II) fglrx(0): Modeline "320x200"x60.0   71.00  320 1328 1360 1440  200 803 809 823 +hsync +vsync (49.3 kHz)
+(II) Loading sub module "fb"
+(II) LoadModule: "fb"
+(II) Loading /usr/lib/xorg/modules//libfb.so
+(II) Module fb: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.0.0
+	ABI class: X.Org ANSI C Emulation, version 0.3
+(II) Loading sub module "ramdac"
+(II) LoadModule: "ramdac"(II) Module "ramdac" already built-in
+(==) fglrx(0): NoAccel = NO
+(II) Loading sub module "xaa"
+(II) LoadModule: "xaa"
+(II) Loading /usr/lib/xorg/modules//libxaa.so
+(II) Module xaa: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.2.0
+	ABI class: X.Org Video Driver, version 2.0
+(==) fglrx(0): NoDRI = NO
+(II) Loading sub module "fglrxdrm"
+(II) LoadModule: "fglrxdrm"
+(II) Reloading /usr/lib/xorg/modules/linux//libfglrxdrm.so
+(II) fglrx(0): Depth moves disabled by default
+(==) fglrx(0): Capabilities: 0x00000000
+(==) fglrx(0): CapabilitiesEx: 0x00000000
+(==) fglrx(0): cpuFlags: 0x8000001d
+(==) fglrx(0): OpenGL ClientDriverName: "fglrx_dri.so"
+(**) fglrx(0): ATI GART size: 256 MB
+(II) fglrx(0): [pcie] 258048 kB allocated
+(II) fglrx(0): [drm] DRM buffer queue setup: nbufs = 100 bufsize = 65536
+(==) fglrx(0): UseFastTLS=0
+(==) fglrx(0): BlockSignalsOnLock=1
+(--) Depth 24 pixmap format is 32 bpp
+(II) do I need RAC?  No, I don't.
+(II) resource ranges after preInit:
+	[0] 0	0	0xe4600000 - 0xe460ffff (0x10000) MX[B]
+	[1] 0	0	0xd8000000 - 0xdfffffff (0x8000000) MX[B]
+	[2] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[3] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[4] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[5] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[6] -1	0	0xe4000000 - 0xe4000fff (0x1000) MX[B]
+	[7] -1	0	0xe4100000 - 0xe410ffff (0x10000) MX[B]
+	[8] -1	0	0x54000000 - 0x54003fff (0x4000) MX[B]
+	[9] -1	0	0x54004000 - 0x540047ff (0x800) MX[B]
+	[10] -1	0	0xe4202000 - 0xe4202fff (0x1000) MX[B]
+	[11] -1	0	0xe4201000 - 0xe4201fff (0x1000) MX[B]
+	[12] -1	0	0xe4704000 - 0xe47043ff (0x400) MX[B]
+	[13] -1	0	0xe4700000 - 0xe4703fff (0x4000) MX[B]
+	[14] -1	0	0xe4600000 - 0xe460ffff (0x10000) MX[B](B)
+	[15] -1	0	0xd8000000 - 0xdfffffff (0x8000000) MX[B](B)
+	[16] 0	0	0x000a0000 - 0x000affff (0x10000) MS[B](OprU)
+	[17] 0	0	0x000b0000 - 0x000b7fff (0x8000) MS[B](OprU)
+	[18] 0	0	0x000b8000 - 0x000bffff (0x8000) MS[B](OprU)
+	[19] 0	0	0x00004000 - 0x000040ff (0x100) IX[B]
+	[20] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[21] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+	[22] -1	0	0x00005080 - 0x0000508f (0x10) IX[B]
+	[23] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[24] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[25] -1	0	0x000001f0 - 0x000001f0 (0x1) IX[B]
+	[26] -1	0	0x000001f0 - 0x000001f7 (0x8) IX[B]
+	[27] -1	0	0x00005060 - 0x0000507f (0x20) IX[B]
+	[28] -1	0	0x00005040 - 0x0000505f (0x20) IX[B]
+	[29] -1	0	0x00005020 - 0x0000503f (0x20) IX[B]
+	[30] -1	0	0x00005000 - 0x0000501f (0x20) IX[B]
+	[31] -1	0	0x00004000 - 0x000040ff (0x100) IX[B](B)
+	[32] 0	0	0x000003b0 - 0x000003bb (0xc) IS[B](OprU)
+	[33] 0	0	0x000003c0 - 0x000003df (0x20) IS[B](OprU)
+(II) fglrx(0): driver needs X.org 7.1.x.y with x.y >= 0.0
+(WW) fglrx(0): could not detect X server version (query_status=-3)
+(II) Loading extension ATIFGLRXDRI
+(II) fglrx(0): doing DRIScreenInit
+drmOpenDevice: node name is /dev/dri/card0
+drmOpenDevice: open result is 6, (OK)
+drmOpenDevice: node name is /dev/dri/card0
+drmOpenDevice: open result is 6, (OK)
+drmOpenByBusid: Searching for BusID PCI:1:0:0
+drmOpenDevice: node name is /dev/dri/card0
+drmOpenDevice: open result is 6, (OK)
+drmOpenByBusid: drmOpenMinor returns 6
+drmOpenByBusid: drmGetBusid reports 
+drmOpenDevice: node name is /dev/dri/card1
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card2
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card3
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card4
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card5
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card6
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card7
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card8
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card9
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card10
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card11
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card12
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card13
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card14
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: open result is -1, (No such device)
+drmOpenDevice: Open failed
+drmOpenByBusid: drmOpenMinor returns -19
+drmOpenDevice: node name is /dev/dri/card0
+drmOpenDevice: open result is 6, (OK)
+drmOpenDevice: node name is /dev/dri/card0
+drmOpenDevice: open result is 6, (OK)
+drmGetBusid returned ''
+(II) [drm] DRM interface version 1.0
+(II) [drm] DRM open master succeeded.
+(II) fglrx(0): [drm] Using the DRM lock SAREA also for drawables.
+(II) fglrx(0): [drm] framebuffer handle = 0xcc000
+(II) fglrx(0): [drm] added 1 reserved context for kernel
+(II) fglrx(0): X context handle = 0x1
+(II) fglrx(0): [drm] installed DRM signal handler
+(II) fglrx(0): DRIScreenInit done
+(II) fglrx(0): Kernel Module Version Information:
+(II) fglrx(0):     Name: fglrx
+(II) fglrx(0):     Version: 8.45.5
+(II) fglrx(0):     Date: Feb  1 2008
+(II) fglrx(0):     Desc: ATI FireGL DRM kernel module
+(II) fglrx(0): Kernel Module version matches driver.
+(II) fglrx(0): Kernel Module Build Time Information:
+(II) fglrx(0):     Build-Kernel UTS_RELEASE:        2.6.23.9
+(II) fglrx(0):     Build-Kernel MODVERSIONS:        no
+(II) fglrx(0):     Build-Kernel __SMP__:            yes
+(II) fglrx(0):     Build-Kernel PAGE_SIZE:          0x1000
+(II) fglrx(0): [drm] register handle = 0x000ce000
+(II) fglrx(0): Interrupt handler installed at IRQ 16.
+(II) fglrx(0): Exposed events to the /proc interface
+(II) fglrx(0): DRI initialization successfull!
+(II) fglrx(0): FBADPhys: 0xc0000000 FBMappedSize: 0x01004000
+(II) fglrx(0): FBMM initialized for area (0,0)-(1280,3280)
+(II) fglrx(0): FBMM auto alloc for area (0,0)-(1280,800) (front color buffer - assumption)
+(II) fglrx(0): Largest offscreen area available: 1280 x 2480
+(==) fglrx(0): Backing store disabled
+(II) Loading extension FGLRXEXTENSION
+(II) Loading extension ATITVOUT
+(**) fglrx(0): DPMS enabled
+(II) fglrx(0): Using XFree86 Acceleration Architecture (XAA)
+	Screen to screen bit blits
+	Solid filled rectangles
+	8x8 mono pattern filled rectangles
+	Solid Lines
+	Dashed Lines
+	Offscreen Pixmaps
+	Setting up tile and stipple cache:
+		32 128x128 slots
+		19 256x256 slots
+		5 512x512 slots
+(II) fglrx(0): Acceleration enabled
+(II) fglrx(0): [DRI] installation complete
+(II) fglrx(0): Direct rendering enabled
+[atiddx] ASYNCIO init succeed!
+Receive enable interrupt ret message
+...irqEnableMask: 10000000
+...dwIRQEnableId: 00000008
+(==) fglrx(0): Silken mouse enabled
+(==) fglrx(0): Using hardware cursor
+(==) RandR enabled
+(II) Initializing built-in extension MIT-SHM
+(II) Initializing built-in extension XInputExtension
+(II) Initializing built-in extension XTEST
+(II) Initializing built-in extension XKEYBOARD
+(II) Initializing built-in extension XC-APPGROUP
+(II) Initializing built-in extension XAccessControlExtension
+(II) Initializing built-in extension SECURITY
+(II) Initializing built-in extension XINERAMA
+(II) Initializing built-in extension XFIXES
+(II) Initializing built-in extension XFree86-Bigfont
+(II) Initializing built-in extension RENDER
+(II) Initializing built-in extension RANDR
+(II) Initializing built-in extension COMPOSITE
+(II) Initializing built-in extension DAMAGE
+(II) Initializing built-in extension XEVIE
+(II) Loading sub module "GLcore"
+(II) LoadModule: "GLcore"
+(II) Loading /usr/lib/xorg/modules/extensions//libGLcore.so
+(II) Module GLcore: vendor="X.Org Foundation"
+	compiled for 1.4.0.90, module version = 1.0.0
+	ABI class: X.Org Server Extension, version 0.3
+(II) GLX: Initialized MESA-PROXY GL provider for screen 0
+(**) Option "CoreKeyboard"
+(**) Keyboard0: always reports core events
+(**) Option "Protocol" "standard"
+(**) Keyboard0: Protocol: standard
+(**) Option "AutoRepeat" "500 30"
+(**) Option "XkbRules" "xorg"
+(**) Keyboard0: XkbRules: "xorg"
+(**) Option "XkbModel" "pc104"
+(**) Keyboard0: XkbModel: "pc104"
+(**) Option "XkbLayout" "us"
+(**) Keyboard0: XkbLayout: "us"
+(**) Option "CustomKeycodes" "off"
+(**) Keyboard0: CustomKeycodes disabled
+(II) Synaptics touchpad driver version 0.14.6 (1406)
+(--) Synaptics auto-dev sets device to /dev/input/event1
+(**) Option "Device" "/dev/input/event1"
+(**) Option "SHMConfig" "on"
+(--) Synaptics touchpad found
+(**) Option "SendCoreEvents"
+(**) Option "CorePointer"
+(**) Synaptics: always reports core events
+(EE) No Input driver matching `wacom'
+(EE) No Input driver matching `wacom'
+(WW) <default pointer>: No Device specified, looking for one...
+(II) <default pointer>: Setting Device option to "/dev/input/mice"
+(--) <default pointer>: Device: "/dev/input/mice"
+(==) <default pointer>: Protocol: "Auto"
+(**) Option "AlwaysCore"
+(**) <default pointer>: doesn't report core events
+(==) <default pointer>: Emulate3Buttons, Emulate3Timeout: 50
+(**) <default pointer>: ZAxisMapping: buttons 4 and 5
+(**) <default pointer>: Buttons: 9
+(**) <default pointer>: Sensitivity: 1
+(II) evaluating device (<default pointer>)
+(II) XINPUT: Adding extended input device "<default pointer>" (type: MOUSE)
+(II) evaluating device (Synaptics)
+(II) XINPUT: Adding extended input device "Synaptics" (type: MOUSE)
+(II) evaluating device (Keyboard0)
+(II) XINPUT: Adding extended input device "Keyboard0" (type: KEYBOARD)
+Synaptics DeviceInit called
+SynapticsCtrl called.
+(--) <default pointer>: PnP-detected protocol: "ExplorerPS/2"
+(II) <default pointer>: ps2EnableDataReporting: succeeded
+Synaptics DeviceOn called
+(--) Synaptics auto-dev sets device to /dev/input/event1
+(**) Option "Device" "/dev/input/event1"
+(--) Synaptics touchpad found
+SynapticsCtrl called.
+Warning: LookupDrawable()/SecurityLookupDrawable() are deprecated.  Please convert your driver/module to use dixLookupDrawable().
+
+Backtrace:
+0: X(xf86SigHandler+0x7e) [0x80c810e]
+1: [0xffffe420]
+2: /usr/lib/xorg/modules/extensions//libGLcore.so(_mesa_initialize_context+0x4e4) [0xb5e38115]
+3: /usr/lib/xorg/modules/extensions//libGLcore.so(XMesaCreateContext+0x79) [0xb5f3df75]
+4: /usr/lib/xorg/modules/extensions//libglx.so [0xb7bcbf42]
+5: /usr/lib/xorg/modules/extensions//libglx.so(DoCreateContext+0x10b) [0xb7bc9978]
+6: /usr/lib/xorg/modules/extensions//libglx.so [0xb7bc9b58]
+7: /usr/lib/xorg/modules/extensions//libglx.so [0xb7bcb80f]
+8: X [0x81415de]
+9: X(Dispatch+0x2ba) [0x80866c9]
+10: X(main+0x49e) [0x806ebc5]
+11: /lib/libc.so.6(__libc_start_main+0xd8) [0xb7ca3838]
+12: X(FontFileCompleteXLFD+0xc9) [0x806df21]
+
+Fatal server error:
+Caught signal 11.  Server aborting
+
+Synaptics DeviceOff called

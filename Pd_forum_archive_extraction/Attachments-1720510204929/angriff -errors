@@ -1,0 +1,186 @@
+ hp2~ 4000 0.707 10
+... couldn't create
+hip 0 0 7 0 (inlet->text) connection failed
+hip 5 0 7 1 (inlet->text) connection failed
+hip 6 0 7 2 (receive->text) connection failed
+hip 7 0 1 0 (text->outlet) connection failed
+ lp2~ 4000 0.707 20
+... couldn't create
+lop 0 0 7 0 (inlet->text) connection failed
+lop 3 0 7 1 (inlet->text) connection failed
+lop 6 0 7 2 (receive->text) connection failed
+lop 7 0 1 0 (text->outlet) connection failed
+ bpq2~ 400 0.707 20
+... couldn't create
+bap 0 0 6 0 (inlet->text) connection failed
+bap 3 0 6 1 (inlet->text) connection failed
+bap 5 0 6 2 (receive->text) connection failed
+bap 6 0 1 0 (text->outlet) connection failed
+ t3_bpe
+... couldn't create
+ t3_line~ 0
+... couldn't create
+ fade~ lin
+... couldn't create
+2lineseg~.pd 1 0 3 0 (text->text) connection failed
+2lineseg~.pd 1 1 3 1 (text->text) connection failed
+2lineseg~.pd 3 0 4 0 (text->text) connection failed
+2lineseg~.pd 4 0 0 0 (text->outlet) connection failed
+2lineseg~.pd 5 0 4 0 (message->text) connection failed
+2lineseg~.pd 6 0 4 0 (message->text) connection failed
+2lineseg~.pd 7 0 4 0 (message->text) connection failed
+2lineseg~.pd 8 0 4 0 (message->text) connection failed
+2lineseg~.pd 9 0 4 0 (message->text) connection failed
+2lineseg~.pd 10 0 4 0 (message->text) connection failed
+2lineseg~.pd 13 0 4 0 (message->text) connection failed
+2lineseg~.pd 15 0 1 0 (symbol->text) connection failed
+2lineseg~.pd 16 0 1 0 (message->text) connection failed
+2lineseg~.pd 19 0 1 0 (float->text) connection failed
+2lineseg~.pd 30 0 1 0 (message->text) connection failed
+ t3_bpe
+... couldn't create
+ t3_line~ 0
+... couldn't create
+ fade~ lin
+... couldn't create
+2lineseg~.pd 1 0 3 0 (text->text) connection failed
+2lineseg~.pd 1 1 3 1 (text->text) connection failed
+2lineseg~.pd 3 0 4 0 (text->text) connection failed
+2lineseg~.pd 4 0 0 0 (text->outlet) connection failed
+2lineseg~.pd 5 0 4 0 (message->text) connection failed
+2lineseg~.pd 6 0 4 0 (message->text) connection failed
+2lineseg~.pd 7 0 4 0 (message->text) connection failed
+2lineseg~.pd 8 0 4 0 (message->text) connection failed
+2lineseg~.pd 9 0 4 0 (message->text) connection failed
+2lineseg~.pd 10 0 4 0 (message->text) connection failed
+2lineseg~.pd 13 0 4 0 (message->text) connection failed
+2lineseg~.pd 15 0 1 0 (symbol->text) connection failed
+2lineseg~.pd 16 0 1 0 (message->text) connection failed
+2lineseg~.pd 19 0 1 0 (float->text) connection failed
+2lineseg~.pd 30 0 1 0 (message->text) connection failed
+ hp2~ 4000 0.707 10
+... couldn't create
+hip 0 0 7 0 (inlet->text) connection failed
+hip 5 0 7 1 (inlet->text) connection failed
+hip 6 0 7 2 (receive->text) connection failed
+hip 7 0 1 0 (text->outlet) connection failed
+ lp2~ 4000 0.707 20
+... couldn't create
+lop 0 0 7 0 (inlet->text) connection failed
+lop 3 0 7 1 (inlet->text) connection failed
+lop 6 0 7 2 (receive->text) connection failed
+lop 7 0 1 0 (text->outlet) connection failed
+ bpq2~ 400 0.707 20
+... couldn't create
+bap 0 0 6 0 (inlet->text) connection failed
+bap 3 0 6 1 (inlet->text) connection failed
+bap 5 0 6 2 (receive->text) connection failed
+bap 6 0 1 0 (text->outlet) connection failed
+ t3_bpe
+... couldn't create
+ t3_line~ 0
+... couldn't create
+ fade~ lin
+... couldn't create
+2lineseg~.pd 1 0 3 0 (text->text) connection failed
+2lineseg~.pd 1 1 3 1 (text->text) connection failed
+2lineseg~.pd 3 0 4 0 (text->text) connection failed
+2lineseg~.pd 4 0 0 0 (text->outlet) connection failed
+2lineseg~.pd 5 0 4 0 (message->text) connection failed
+2lineseg~.pd 6 0 4 0 (message->text) connection failed
+2lineseg~.pd 7 0 4 0 (message->text) connection failed
+2lineseg~.pd 8 0 4 0 (message->text) connection failed
+2lineseg~.pd 9 0 4 0 (message->text) connection failed
+2lineseg~.pd 10 0 4 0 (message->text) connection failed
+2lineseg~.pd 13 0 4 0 (message->text) connection failed
+2lineseg~.pd 15 0 1 0 (symbol->text) connection failed
+2lineseg~.pd 16 0 1 0 (message->text) connection failed
+2lineseg~.pd 19 0 1 0 (float->text) connection failed
+2lineseg~.pd 30 0 1 0 (message->text) connection failed
+ t3_bpe
+... couldn't create
+ t3_line~ 0
+... couldn't create
+ fade~ lin
+... couldn't create
+2lineseg~.pd 1 0 3 0 (text->text) connection failed
+2lineseg~.pd 1 1 3 1 (text->text) connection failed
+2lineseg~.pd 3 0 4 0 (text->text) connection failed
+2lineseg~.pd 4 0 0 0 (text->outlet) connection failed
+2lineseg~.pd 5 0 4 0 (message->text) connection failed
+2lineseg~.pd 6 0 4 0 (message->text) connection failed
+2lineseg~.pd 7 0 4 0 (message->text) connection failed
+2lineseg~.pd 8 0 4 0 (message->text) connection failed
+2lineseg~.pd 9 0 4 0 (message->text) connection failed
+2lineseg~.pd 10 0 4 0 (message->text) connection failed
+2lineseg~.pd 13 0 4 0 (message->text) connection failed
+2lineseg~.pd 15 0 1 0 (symbol->text) connection failed
+2lineseg~.pd 16 0 1 0 (message->text) connection failed
+2lineseg~.pd 19 0 1 0 (float->text) connection failed
+2lineseg~.pd 30 0 1 0 (message->text) connection failed
+ hp2~ 4000 0.707 10
+... couldn't create
+hip 0 0 7 0 (inlet->text) connection failed
+hip 5 0 7 1 (inlet->text) connection failed
+hip 6 0 7 2 (receive->text) connection failed
+hip 7 0 1 0 (text->outlet) connection failed
+ lp2~ 4000 0.707 20
+... couldn't create
+lop 0 0 7 0 (inlet->text) connection failed
+lop 3 0 7 1 (inlet->text) connection failed
+lop 6 0 7 2 (receive->text) connection failed
+lop 7 0 1 0 (text->outlet) connection failed
+ bpq2~ 400 0.707 20
+... couldn't create
+bap 0 0 6 0 (inlet->text) connection failed
+bap 3 0 6 1 (inlet->text) connection failed
+bap 5 0 6 2 (receive->text) connection failed
+bap 6 0 1 0 (text->outlet) connection failed
+ t3_bpe
+... couldn't create
+ t3_line~ 0
+... couldn't create
+ fade~ lin
+... couldn't create
+2lineseg~.pd 1 0 3 0 (text->text) connection failed
+2lineseg~.pd 1 1 3 1 (text->text) connection failed
+2lineseg~.pd 3 0 4 0 (text->text) connection failed
+2lineseg~.pd 4 0 0 0 (text->outlet) connection failed
+2lineseg~.pd 5 0 4 0 (message->text) connection failed
+2lineseg~.pd 6 0 4 0 (message->text) connection failed
+2lineseg~.pd 7 0 4 0 (message->text) connection failed
+2lineseg~.pd 8 0 4 0 (message->text) connection failed
+2lineseg~.pd 9 0 4 0 (message->text) connection failed
+2lineseg~.pd 10 0 4 0 (message->text) connection failed
+2lineseg~.pd 13 0 4 0 (message->text) connection failed
+2lineseg~.pd 15 0 1 0 (symbol->text) connection failed
+2lineseg~.pd 16 0 1 0 (message->text) connection failed
+2lineseg~.pd 19 0 1 0 (float->text) connection failed
+2lineseg~.pd 30 0 1 0 (message->text) connection failed
+ t3_bpe
+... couldn't create
+ t3_line~ 0
+... couldn't create
+ fade~ lin
+... couldn't create
+2lineseg~.pd 1 0 3 0 (text->text) connection failed
+2lineseg~.pd 1 1 3 1 (text->text) connection failed
+2lineseg~.pd 3 0 4 0 (text->text) connection failed
+2lineseg~.pd 4 0 0 0 (text->outlet) connection failed
+2lineseg~.pd 5 0 4 0 (message->text) connection failed
+2lineseg~.pd 6 0 4 0 (message->text) connection failed
+2lineseg~.pd 7 0 4 0 (message->text) connection failed
+2lineseg~.pd 8 0 4 0 (message->text) connection failed
+2lineseg~.pd 9 0 4 0 (message->text) connection failed
+2lineseg~.pd 10 0 4 0 (message->text) connection failed
+2lineseg~.pd 13 0 4 0 (message->text) connection failed
+2lineseg~.pd 15 0 1 0 (symbol->text) connection failed
+2lineseg~.pd 16 0 1 0 (message->text) connection failed
+2lineseg~.pd 19 0 1 0 (float->text) connection failed
+2lineseg~.pd 30 0 1 0 (message->text) connection failed
+ sseq seq-snare.txt
+... couldn't create
+ sseq seq-hh.txt
+... couldn't create
+ sseq seq-bass.txt
+... couldn't create

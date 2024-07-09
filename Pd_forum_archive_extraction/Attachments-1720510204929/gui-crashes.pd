@@ -1,0 +1,146 @@
+#N canvas 240 51 439 297 12;
+#X msg 64 35 abc1;
+#X msg 190 35 abc2;
+#X msg 316 35 abc3;
+#X msg 133 165 ab1;
+#X msg 267 165 ab2;
+#N canvas 0 0 523 344 abc1 0;
+#X obj 226 21 inlet;
+#X obj 226 62 symbol;
+#X msg 226 102 receive empty \, receive \$1 \; \$1 bang;
+#X obj 226 157 t a a a a;
+#X obj 26 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1
+-1;
+#X obj 156 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1 -1
+;
+#X obj 276 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1
+-1;
+#X obj 26 266 print one;
+#X obj 156 295 print two;
+#X obj 276 266 print three;
+#X msg 81 102 receive empty;
+#X obj 402 225 print abc1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 3 2 6 0;
+#X connect 3 3 11 0;
+#X connect 4 0 10 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 10 0 4 0;
+#X restore 64 90 pd abc1;
+#N canvas 0 0 523 344 abc2 0;
+#X obj 226 21 inlet;
+#X obj 226 62 symbol;
+#X msg 226 102 receive empty \, receive \$1 \; \$1 bang;
+#X obj 226 157 t a a a a;
+#X obj 26 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1
+-1;
+#X obj 156 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1 -1
+;
+#X obj 276 216 bng 30 250 50 0 empty epmty empty 20 8 64 8 -262144 -1
+-1;
+#X obj 26 266 print one;
+#X obj 156 295 print two;
+#X obj 276 266 print three;
+#X obj 402 225 print abc2;
+#X msg 81 102 receive empty;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 3 2 6 0;
+#X connect 3 3 10 0;
+#X connect 4 0 11 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 11 0 5 0;
+#X restore 190 90 pd abc2;
+#N canvas 0 0 523 344 abc3 0;
+#X obj 226 21 inlet;
+#X obj 226 62 symbol;
+#X msg 226 102 receive empty \, receive \$1 \; \$1 bang;
+#X obj 226 157 t a a a a;
+#X obj 26 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1
+-1;
+#X obj 156 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1 -1
+;
+#X obj 276 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1
+-1;
+#X obj 26 266 print one;
+#X obj 156 295 print two;
+#X obj 276 266 print three;
+#X msg 81 102 receive empty;
+#X obj 402 225 print abc3;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 3 2 6 0;
+#X connect 3 3 11 0;
+#X connect 4 0 10 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 10 0 6 0;
+#X restore 316 90 pd abc3;
+#N canvas 0 0 523 344 ab1 0;
+#X obj 226 21 inlet;
+#X obj 226 62 symbol;
+#X msg 226 102 receive empty \, receive \$1 \; \$1 bang;
+#X obj 26 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1
+-1;
+#X obj 156 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1 -1
+;
+#X obj 26 266 print one;
+#X obj 156 295 print two;
+#X msg 81 102 receive empty;
+#X obj 298 216 print ab1;
+#X obj 226 157 t a a a;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 9 0;
+#X connect 3 0 7 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 7 0 3 0;
+#X connect 9 0 3 0;
+#X connect 9 1 4 0;
+#X connect 9 2 8 0;
+#X restore 133 221 pd ab1;
+#N canvas 0 0 523 344 ab2 0;
+#X obj 226 21 inlet;
+#X obj 226 62 symbol;
+#X msg 226 102 receive empty \, receive \$1 \; \$1 bang;
+#X obj 26 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1
+-1;
+#X obj 156 216 bng 30 250 50 0 empty empty empty 20 8 64 8 -262144 -1 -1
+;
+#X obj 26 266 print one;
+#X obj 156 295 print two;
+#X msg 81 102 receive empty;
+#X obj 226 157 t a a a;
+#X obj 298 216 print ab2;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 8 0;
+#X connect 3 0 7 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 7 0 4 0;
+#X connect 8 0 3 0;
+#X connect 8 1 4 0;
+#X connect 8 2 9 0;
+#X restore 267 221 pd ab2;
+#X connect 0 0 5 0;
+#X connect 1 0 6 0;
+#X connect 2 0 7 0;
+#X connect 3 0 8 0;
+#X connect 4 0 9 0;

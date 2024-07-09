@@ -1,0 +1,80 @@
+Index: d_soundfile.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/d_soundfile.c,v
+retrieving revision 1.1.1.2.2.1
+diff -r1.1.1.2.2.1 d_soundfile.c
+20a21
+> #include "pthread.h"
+Index: m_sched.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/m_sched.c,v
+retrieving revision 1.1.1.2.2.7.2.1
+diff -r1.1.1.2.2.7.2.1 m_sched.c
+20c20
+< #include <pthread.h>
+---
+> #include "pthread.h"
+Index: s_entry.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/s_entry.c,v
+retrieving revision 1.1.1.2
+diff -r1.1.1.2 s_entry.c
+12,14d11
+< #ifdef MSW
+< #if 0
+< #incldue "winbase.h"
+16,46d12
+< LONG NTAPI VectoredExceptionHandler(void *PEXCEPTION_POINTERS)
+< {
+< 	fprintf(stderr, "caught exception\n");
+< 	return(EXCEPTION_CONTINUE_SEARCH);
+< }
+< 
+< 
+< int main(int argc, char **argv)
+< {
+<     printf("Pd entry point\n");
+<     AddVectoredExceptionHandler(
+<     ULONG FirstHandler,
+<     PVECTORED_EXCEPTION_HANDLER VectoredHandler );
+< 
+< 
+< #endif
+< 
+< #if 1
+< int main(int argc, char **argv)
+< {
+<     __try
+<     {
+<         sys_main(argc, argv);
+<     }
+<     __finally
+<     {
+<         printf("caught an exception; stopping\n");
+<     }
+< }
+< #endif
+< #else /* not MSW */
+51d16
+< #endif
+Index: s_inter.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/s_inter.c,v
+retrieving revision 1.1.1.3.2.9
+diff -r1.1.1.3.2.9 s_inter.c
+56c56
+< #define WISHAPP "wish83.exe"
+---
+> #define WISHAPP "wish85.exe"
+Index: t_tkcmd.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/t_tkcmd.c,v
+retrieving revision 1.1.1.4.4.4
+diff -r1.1.1.4.4.4 t_tkcmd.c
+37a38,43
+> int
+> main(int argc, char **argv)
+> {
+>     return 0;			/* Needed only to prevent compiler warning. */
+> }
+> 

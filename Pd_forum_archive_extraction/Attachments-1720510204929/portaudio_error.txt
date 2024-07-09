@@ -1,0 +1,141 @@
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int32':
+portaudio/src/os/win/pa_x86_plain_converters.c:171:10: error: expected '(' before '{' token
+     __asm{
+          ^
+portaudio/src/os/win/pa_x86_plain_converters.c:179:9: error: unknown type name 'mov'
+         mov     esi, sourceBuffer
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:181:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'mov'
+         mov     edx, 4                  // sizeof float32 and int32
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:232:13: error: invalid storage class for function 'Float32_To_Int32_Clip'
+ static void Float32_To_Int32_Clip(
+             ^
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int32_Clip':
+portaudio/src/os/win/pa_x86_plain_converters.c:258:10: error: expected '(' before '{' token
+     __asm{
+          ^
+portaudio/src/os/win/pa_x86_plain_converters.c:266:9: error: unknown type name 'mov'
+         mov     esi, sourceBuffer
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:268:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'mov'
+         mov     edx, 4                  // sizeof float32 and int32
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:331:13: error: invalid storage class for function 'Float32_To_Int32_DitherClip'
+ static void Float32_To_Int32_DitherClip(
+             ^
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int32_DitherClip':
+portaudio/src/os/win/pa_x86_plain_converters.c:366:10: error: expected '(' before '{' token
+     __asm{
+          ^
+portaudio/src/os/win/pa_x86_plain_converters.c:374:9: error: unknown type name 'mov'
+         mov     esi, sourceBuffer
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:376:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'mov'
+         mov     edx, 4                  // sizeof float32 and int32
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:485:13: error: invalid storage class for function 'Float32_To_Int24'
+ static void Float32_To_Int24(
+             ^
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int24':
+portaudio/src/os/win/pa_x86_plain_converters.c:518:10: error: expected '(' before '{' token
+     __asm{
+          ^
+portaudio/src/os/win/pa_x86_plain_converters.c:526:9: error: unknown type name 'mov'
+         mov     esi, sourceBuffer
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:528:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'mov'
+         mov     edx, 4                  // sizeof float32
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:581:13: error: invalid storage class for function 'Float32_To_Int24_Clip'
+ static void Float32_To_Int24_Clip(
+             ^
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int24_Clip':
+portaudio/src/os/win/pa_x86_plain_converters.c:615:10: error: expected '(' before '{' token
+     __asm{
+          ^
+portaudio/src/os/win/pa_x86_plain_converters.c:623:9: error: unknown type name 'mov'
+         mov     esi, sourceBuffer
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:625:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'mov'
+         mov     edx, 4                  // sizeof float32
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:695:13: error: invalid storage class for function 'Float32_To_Int24_DitherClip'
+ static void Float32_To_Int24_DitherClip(
+             ^
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int24_DitherClip':
+portaudio/src/os/win/pa_x86_plain_converters.c:739:10: error: expected '(' before '{' token
+     __asm{
+          ^
+portaudio/src/os/win/pa_x86_plain_converters.c:747:9: error: unknown type name 'mov'
+         mov     esi, sourceBuffer
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:749:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'mov'
+         mov     edx, 4                  // sizeof float32
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:865:13: error: invalid storage class for function 'Float32_To_Int16'
+ static void Float32_To_Int16(
+             ^
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int16':
+portaudio/src/os/win/pa_x86_plain_converters.c:890:10: error: expected '(' before '{' token
+     __asm{
+          ^
+portaudio/src/os/win/pa_x86_plain_converters.c:898:9: error: unknown type name 'mov'
+         mov     esi, sourceBuffer
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:900:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'mov'
+         mov     edx, 4                  // sizeof float32
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:946:13: error: invalid storage class for function 'Float32_To_Int16_Clip'
+ static void Float32_To_Int16_Clip(
+             ^
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int16_Clip':
+portaudio/src/os/win/pa_x86_plain_converters.c:971:10: error: expected '(' before '{' token
+     __asm{
+          ^
+portaudio/src/os/win/pa_x86_plain_converters.c:979:9: error: unknown type name 'mov'
+         mov     esi, sourceBuffer
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:981:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'mov'
+         mov     edx, 4                  // sizeof float32
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:1045:13: error: invalid storage class for function 'Float32_To_Int16_DitherClip'
+ static void Float32_To_Int16_DitherClip(
+             ^
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int16_DitherClip':
+portaudio/src/os/win/pa_x86_plain_converters.c:1081:10: error: expected '(' before '{' token
+     __asm{
+          ^
+portaudio/src/os/win/pa_x86_plain_converters.c:1089:9: error: unknown type name 'mov'
+         mov     esi, sourceBuffer
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:1091:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'mov'
+         mov     edx, 4                  // sizeof float32
+         ^
+portaudio/src/os/win/pa_x86_plain_converters.c:1214:1: error: expected declaration or statement at end of input
+ }
+ ^
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int16_Clip':
+portaudio/src/os/win/pa_x86_plain_converters.c:1214:1: error: expected declaration or statement at end of input
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int16':
+portaudio/src/os/win/pa_x86_plain_converters.c:1214:1: error: expected declaration or statement at end of input
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int24_DitherClip':
+portaudio/src/os/win/pa_x86_plain_converters.c:1214:1: error: expected declaration or statement at end of input
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int24_Clip':
+portaudio/src/os/win/pa_x86_plain_converters.c:1214:1: error: expected declaration or statement at end of input
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int24':
+portaudio/src/os/win/pa_x86_plain_converters.c:1214:1: error: expected declaration or statement at end of input
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int32_DitherClip':
+portaudio/src/os/win/pa_x86_plain_converters.c:1214:1: error: expected declaration or statement at end of input
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int32_Clip':
+portaudio/src/os/win/pa_x86_plain_converters.c:1214:1: error: expected declaration or statement at end of input
+portaudio/src/os/win/pa_x86_plain_converters.c: In function 'Float32_To_Int32':
+portaudio/src/os/win/pa_x86_plain_converters.c:1214:1: error: expected declaration or statement at end of input
+Makefile:760: die Regel für Ziel „portaudio/src/os/win/pa_x86_plain_converters.lo“ scheiterte
+make[2]: *** [portaudio/src/os/win/pa_x86_plain_converters.lo] Fehler 1
+make[2]: Verzeichnis „/c/pd_externals/pure-data/portaudio“ wird verlassen
+Makefile:494: die Regel für Ziel „all-recursive“ scheiterte
+make[1]: *** [all-recursive] Fehler 1
+make[1]: Verzeichnis „/c/pd_externals/pure-data“ wird verlassen
+Makefile:418: die Regel für Ziel „all“ scheiterte
+make: *** [all] Fehler 2

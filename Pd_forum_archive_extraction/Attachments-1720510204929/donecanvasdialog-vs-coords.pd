@@ -1,0 +1,18 @@
+#N canvas 82 227 490 300 10;
+#N canvas 0 50 450 300 foo 0;
+#X coords 0 0 1 1 100 100 0;
+#X restore 90 144 pd foo;
+#X msg 86 73 donecanvasdialog 1 1 \$1;
+#X obj 84 100 s pd-foo;
+#X obj 296 102 s pd-foo;
+#X obj 87 54 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 297 55 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X msg 297 79 coords 0 0 1 1 100 100 \$1;
+#X text 294 27 2 still 'works';
+#X text 85 30 2 doesn't 'work' anymore!;
+#X connect 1 0 2 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;

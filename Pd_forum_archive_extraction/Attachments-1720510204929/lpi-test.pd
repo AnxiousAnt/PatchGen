@@ -1,0 +1,20 @@
+#N canvas 270 262 895 300 10;
+#X obj 135 86 lpi;
+#X obj 125 112 print >>>;
+#X obj 135 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 135 159 15 0 0 0 - - -;
+#X msg 154 219 3.141592653589793115997963468544185161590576171875000000000000000000000000000000000000000000000000000
+;
+#X obj 154 191 prepend set;
+#X symbolatom 180 142 80 0 0 0 - - -;
+#X text 668 142 <-symbol;
+#X text 235 160 <-float;
+#X text 155 64 bang for pi;
+#X text 196 112 <- post;
+#X connect 0 0 1 0;
+#X connect 0 0 3 0;
+#X connect 0 1 5 0;
+#X connect 0 1 6 0;
+#X connect 2 0 0 0;
+#X connect 5 0 4 0;

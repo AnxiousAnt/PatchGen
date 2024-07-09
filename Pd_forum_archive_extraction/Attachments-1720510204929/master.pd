@@ -1,0 +1,9 @@
+#N canvas 40 134 450 300 10;
+#X msg 130 94 pd~ stop;
+#X obj 25 42 loadbang;
+#X msg 25 63 \; pd dsp 1;
+#X msg 130 67 pd~ start -nogui -lib Gem subprocess.pd;
+#X obj 101 126 pd~ -sr 44100 -ninsig 0 -noutsig 0 -fifo 20;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;

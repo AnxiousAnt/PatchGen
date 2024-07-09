@@ -1,0 +1,68 @@
+(gdb) run
+Starting program: /usr/local/bin/pd 
+[Thread debugging using libthread_db enabled]
+[New Thread -1211083072 (LWP 4163)]
+priority 6 scheduling enabled.
+memory locking enabled.
+priority 8 scheduling enabled.
+memory locking enabled.
+open: No such file or directory
+No such file or directory
+open: No such file or directory
+No such file or directory
+open: No such file or directory
+No such file or directory
+constructor
+fluid_init
+deleting
+
+Program received signal SIGSEGV, Segmentation fault.
+[Switching to Thread -1211083072 (LWP 4163)]
+0xb7ac3d54 in delete_fluid_synth (synth=0x1) at fluid_synth.c:605
+605       synth->state = FLUID_SYNTH_STOPPED;
+(gdb) watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+watchdog: signaling pd...
+
+(gdb) bt
+#0  0xb7ac3d54 in delete_fluid_synth (synth=0x1) at fluid_synth.c:605
+#1  0xb7aebca8 in fluid::fluid_init ()
+   from /usr/local/lib/pd/extra/fluid~.pd_linux
+#2  0xb7aec37f in fluid::__init__ ()
+   from /usr/local/lib/pd/extra/fluid~.pd_linux
+#3  0xb7c21ee6 in flext_obj_single::obj_new ()
+   from /usr/local/lib/pd/extra/xsample.pd_linux
+#4  0x080a7ce4 in pd_typedmess (x=0x8221834, s=0x823bb00, argc=1, 
+    argv=0x811b488) at m_class.c:664
+#5  0x080a8da6 in new_anything (dummy=0x1, s=0x823bb00, argc=1, argv=0x811b488)
+    at m_class.c:530
+#6  0x080a778c in pd_typedmess (x=0x8221834, s=0x823bb00, argc=1, 
+    argv=0x811b488) at m_class.c:749
+#7  0x080ac226 in binbuf_eval (x=0x1, target=0x8221834, argc=0, argv=0x0)
+    at m_binbuf.c:574
+#8  0x0805e183 in canvas_objtext (gl=0x8256340, xpix=375, ypix=146, 
+    selected=0, b=0x8256f40) at g_text.c:94
+#9  0x0805e34f in canvas_obj (gl=0x8256340, s=0x822b6a0, argc=4, 
+    argv=0x811b460) at g_text.c:145
+#10 0x080a7982 in pd_typedmess (x=0x8256340, s=0x822b6a0, argc=4, 
+    argv=0x811b460) at m_class.c:665
+#11 0x080ac226 in binbuf_eval (x=0x1, target=0x8256340, argc=0, argv=0x0)
+    at m_binbuf.c:574
+---Type <return> to continue, or q <return> to quit---
+#12 0x080b0f55 in binbuf_evalfile (name=0x823ca28, dir=0x823ca38)
+    at m_binbuf.c:1193
+#13 0x080b1031 in glob_evalfile (ignore=0x8221840, name=0x823ca28, 
+    dir=0x823ca38) at m_binbuf.c:1209
+#14 0x080a7b31 in pd_typedmess (x=0x8221840, s=0x82367e8, argc=0, 
+    argv=0x811b458) at m_class.c:732
+#15 0x080ac226 in binbuf_eval (x=0x1, target=0x8221840, argc=0, argv=0x0)
+    at m_binbuf.c:574
+#16 0x080b8d4c in socketreceiver_read (x=0x823cae0, fd=7) at s_inter.c:539
+#17 0x080b6a9f in sys_domicrosleep (microsec=<value optimized out>, 
+    pollem=<value optimized out>) at s_inter.c:180
+#18 0x080b3486 in m_scheduler () at m_sched.c:487
+#19 0x080b6765 in sys_main (argc=1, argv=0x0) at s_main.c:292
+#20 0xb7d1beb0 in __libc_start_main () from /lib/tls/libc.so.6
+#21 0x08055281 in _start () at ../sysdeps/i386/elf/start.S:119
+(gdb) 

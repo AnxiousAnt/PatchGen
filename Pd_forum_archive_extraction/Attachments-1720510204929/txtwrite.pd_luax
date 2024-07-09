@@ -1,0 +1,18 @@
+
+return function (self, sel, atoms)
+
+
+  self.inlets = 1
+  self.outlets = 0
+
+
+function self:in_1_write()
+  require ("io")
+  file = assert(io.open("example.txt", "w"))
+  file:write("test, test, test ")  
+  file:close()
+  -- end
+end
+
+  return true
+end

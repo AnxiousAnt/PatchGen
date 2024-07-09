@@ -1,0 +1,20 @@
+pd_darwin: tracker.pd_darwin
+tracker.pd_darwin: tracker.c tracker.h tracker.tk2c
+
+CFLAGS = -DPD -O2 -Wall -W -Wshadow -Wstrict-prototypes \
+    -Wno-unused -Wno-parentheses -Wno-switch
+
+INCLUDE = -I/Path/To/Your/pd/src
+
+DFLAGS = -bundle -undefined suppress -flat_namespace
+
+.SUFFIXES: .pd_darwin .tk .tk2c
+
+.tk.tk2c:
+	sh tk2c.bash < $*.tk > $*.tk2c
+
+.c.pd_darwin:
+	$(CC) $(CFLAGS) $(INCLUDE) $(DFLAGS) -o $*.pd_darwin $*.c
+
+clean:
+	rm -f *.o *.pd_* so_locations *.tk2c

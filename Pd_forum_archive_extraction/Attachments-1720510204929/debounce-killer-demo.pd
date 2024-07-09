@@ -1,0 +1,18 @@
+#N canvas 0 0 450 300 10;
+#X obj 40 139 print;
+#X text 43 67 debounce;
+#X text 43 54 simulated;
+#X obj 202 227 print;
+#X obj 202 188 f;
+#X msg 40 103 1 \, 1;
+#X obj 202 127 t b f;
+#X msg 202 106 0 \, 0;
+#X text 197 51 simulated debounce;
+#X obj 202 159 del 1;
+#X text 198 66 with singlifier;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 9 0;
+#X connect 6 1 4 1;
+#X connect 7 0 6 0;
+#X connect 9 0 4 0;

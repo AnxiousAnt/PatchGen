@@ -1,0 +1,60 @@
+From 205432d5159d801c6dc46024e131385695cdf49a Mon Sep 17 00:00:00 2001
+From: Hans-Christoph Steiner <hans@eds.org>
+Date: Sat, 5 Jan 2013 12:41:58 -0500
+Subject: [PATCH 1/1] allow unicode filenames via double-clicking, fix
+ multiple instances
+
+This allows pd-gui to receive full unicode filenames, and allows multiple
+instances while making the first instance always claim the double-clicked
+files.
+---
+ tcl/pd-gui.tcl |   25 ++++++++++---------------
+ 1 file changed, 10 insertions(+), 15 deletions(-)
+
+diff --git a/tcl/pd-gui.tcl b/tcl/pd-gui.tcl
+index 03b1543..6708063 100755
+--- a/tcl/pd-gui.tcl
++++ b/tcl/pd-gui.tcl
+@@ -608,6 +608,10 @@ proc receive_args {filelist} {
+     }
+ }
+ 
++proc dde_open_handler {cmd} {
++    open_file [file normalize $cmd]
++}
++
+ proc check_for_running_instances {argc argv} {
+     switch -- $::windowingsystem {
+         "aqua" {
+@@ -629,22 +633,13 @@ proc check_for_running_instances {argc argv} {
+                 selection own -command first_lost -selection PUREDATA .
+             }
+         } "win32" {
+-            ## http://wiki.tcl.tk/1558
+-            package require dde
+-            set topicName "Pure Data"
+-
+-            # if a service with our topic is already running, delegate to it
+-            set otherServices [dde services TclEval $topicName]
+-            if { [llength $otherServices] > 0 } {
+-                # when multiple files are double-clicked, Windows
+-                # sends them one at a time, so we only ever need to
+-                # handle the first file parsed from the args
+-                dde execute TclEval $topicName \
+-                    "open_file {[lindex $::filestoopen_list 0]}"
+-                exit
++            ## http://wiki.tcl.tk/8940
++            package require dde ;# 1.4 or later needed for full unicode support
++            set topic "Pure_Data_DDE_Open"
++            # if no DDE service is running, start one and claim the name
++            if { [dde services TclEval $topic] == {} } {
++                dde servername -handler dde_open_handler $topic
+             }
+-            # otherwise, start the server:
+-            dde servername $topicName
+         }
+     }
+ }
+-- 
+1.7.10.1
+

@@ -1,0 +1,45 @@
+#N canvas 93 82 1049 470 10;
+#X msg 76 182 583 54 909 223 4;
+#X obj 76 244 serial_parseInt;
+#X obj 76 376 comport 6 9600;
+#X obj 76 398 serial_println;
+#X obj 76 420 print;
+#X msg 100 205 7829 87 5672 981;
+#X msg 103 349 close;
+#X msg 103 273 devices;
+#X floatatom 103 303 5 0 0 0 - - -, f 5;
+#X msg 103 322 open \$1;
+#X text 218 181 send any number list to Arduino \, using the Serial.parseInt()
+function;
+#X obj 63 21 cnv 15 400 60 empty empty empty 20 12 0 14 -200075 -66577
+0;
+#X text 651 391 Made by Alexandros Drymonitis;
+#X text 634 57 [serial_parseInt];
+#X text 636 75 Arguments: none;
+#X text 636 91 Inlet: number list;
+#X text 636 107 Outlet: provided list encoded so that Arduino's Serial.parseInt()
+function can understand it;
+#X text 634 177 [serial_println];
+#X text 636 194 Arguments: none;
+#X text 636 208 Inlet: raw data received from Arduino (through [comport])
+\, using the Serial.println() function;
+#X text 74 28 [serial_parseInt] and [serial_println]: absrtactions
+to work with the Serial.parseInt() and Serial.println() functions of
+Arduino \, respectively*;
+#X text 74 85 *[serial_println] won't work with Serial.print() \, but
+only with Serial.println();
+#X text 74 125 This help patch is used with the parseInt_println.ino
+Arduino sketch;
+#X text 178 398 receive numbers from Arduino via the Serial.println()
+function;
+#X text 636 237 Outlet: data received from Arduino with the Serial.println()
+function \, assembled to numbers;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 1 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 2 0;

@@ -1,0 +1,21 @@
+#N canvas 515 93 707 683 12;
+#X obj 393 266 nbx 5 14 -1e+37 1e+37 0 0 empty empty no_space 60 8
+0 10 -262144 -1 -1 0 256;
+#X msg 393 209 label \$1;
+#X text 165 125 1 — click top message box -->;
+#X msg 393 124 symbol escaped\ space;
+#X text 82 263 2 — right-click and select properties -->;
+#X text 97 65 To produce unhandled error TCL message:;
+#X text 80 361 (Tcl) UNHANDLED ERROR: wrong # args: should be "pdtk_iemgui_dialog
+mytoplevel mainheader dim_header wdt min_wdt wdt_label hgt min_hgt
+hgt_label rng_header min_rng min_rng_label max_rng max_rng_label rng_sched
+lin0_log1 lilo0_label lilo1_label loadbang steady num_label num snd
+rcv gui_name gn_dx gn_dy gn_f gn_fs bcol fcol lcol" while executing
+"pdtk_iemgui_dialog .gfxstub558554bfed90 |nbx| -------dimensions(digits)(pix):-------
+5 1 width: 14 8 height: -----------output..." ("uplevel" body line
+1) invoked from within "uplevel #0 $docmds", f 66;
+#X text 83 605 Pd version 0.51.2 // Linux;
+#X msg 413 167 symbol no_space;
+#X connect 1 0 0 0;
+#X connect 3 0 1 0;
+#X connect 8 0 1 0;

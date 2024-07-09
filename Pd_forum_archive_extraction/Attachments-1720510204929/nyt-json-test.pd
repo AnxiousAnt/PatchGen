@@ -1,0 +1,20 @@
+#N canvas 694 316 438 388 10;
+#X declare -lib purest_json;
+#X obj 16 288 rest-json;
+#X obj 17 11 import purest_json;
+#X msg 16 49 GET http://api.nytimes.com/svc/news/v3/content/nyt/business/72?api-key=b9626b39589adfbb4cef5953ccb63549:11:65293286
+;
+#X msg 32 114 GET http://api.nytimes.com/svc/news/v3/content/section-list?api-key=b9626b39589adfbb4cef5953ccb63549:11:65293286
+;
+#X msg 51 186 GET http://api.nytimes.com/svc/news/v3/content/all/all.json?limit=15&offset=50?api-key=b9626b39589adfbb4cef5953ccb63549:11:65293286
+;
+#X text 15 31 WORKS;
+#X text 33 95 WORKS;
+#X text 50 168 DOESNT WORK;
+#X text 52 247 Is it the "&" in the message and how can PD deal with
+such requests?;
+#X obj 16 313 print NYT;
+#X connect 0 0 9 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;

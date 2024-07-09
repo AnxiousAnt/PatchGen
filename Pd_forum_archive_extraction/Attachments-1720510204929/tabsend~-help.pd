@@ -1,0 +1,72 @@
+#N canvas 397 32 564 619 10;
+#X obj 4 579 cnv 15 550 20 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 4 -17 cnv 15 550 40 empty \$0-pddp.cnv.header tabsend~ 3 12
+0 18 -204280 -1 0;
+#X obj 3 417 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 15 12 0 13
+-228856 -1 0;
+#N canvas 428 102 494 344 META 0;
+#X text 12 45 LICENSE GPL;
+#X text 12 65 TEMPLATE template-help.pd v0.1;
+#X text 12 85 PLATFORM windows macosx gnulinux;
+#X text 12 105 DATATYPE float list;
+#X text 12 5 GENRE storage;
+#X text 12 125 LIBRARY internal;
+#X text 12 145 WEBSITE http://crca.ucsd.edu/~msp/;
+#X text 12 185 RELEASE_VERSION 0.41.4;
+#X text 12 165 RELEASE_DATE 2009-06-12;
+#X text 12 25 KEYWORDS control list storage;
+#X restore 504 581 pd META;
+#X obj 3 457 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 15 12 0
+13 -228856 -1 0;
+#X obj 3 498 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 15 12
+0 13 -228856 -1 0;
+#X obj 3 548 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 15
+12 0 13 -228856 -1 0;
+#N canvas 408 513 431 109 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.header empty 3 12 0 14
+-204280 -1 0;
+#X obj 21 42 fft~;
+#X text 7 1 [fft~] Related Objects;
+#X restore 106 582 pd Related_objects;
+#X obj 82 432 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X obj 82 473 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X obj 453 581 help;
+#X obj 470 -14 tabsend~;
+#X obj 439 3 pddp/pddplink http://wiki.puredata.info/en/tabsend~ -text
+pdpedia: tabsend~;
+#X text 15 6 description: write one block of a signal continuously
+to an array;
+#X text 102 431 inactive;
+#X text 152 431 - the inlet to [tabsend~] is not used.;
+#X text 102 516 one;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array tabsend~-help-array 64 float 2;
+#X coords 0 1 64 -1 200 140 1;
+#X restore 219 84 graph;
+#X obj 37 157 phasor~;
+#X obj 37 207 tabsend~ tabsend~-help-array;
+#X obj 37 90 samplerate~;
+#X obj 37 68 loadbang;
+#X floatatom 48 135 7 0 0 0 - - -;
+#X obj 37 112 expr 1 / (64 / $f1);
+#X obj 470 50 pddp/dsp;
+#X text 464 72 (Green = On);
+#X text 457 28 Turn On Audio;
+#X floatatom 328 304 5 0 0 0 - - -;
+#X obj 328 279 tabread tabsend~-help-array;
+#X msg 328 253 0;
+#X text 102 472 (none);
+#X text 152 516 [tabsend~] takes one argument which is the name of
+an array to write to.;
+#X text 34 251 By default a block is 64 samples \; this can be reset
+using the [block~] object.;
+#X connect 18 0 19 0;
+#X connect 20 0 23 0;
+#X connect 21 0 20 0;
+#X connect 23 0 22 0;
+#X connect 23 0 18 0;
+#X connect 28 0 27 0;
+#X connect 29 0 28 0;

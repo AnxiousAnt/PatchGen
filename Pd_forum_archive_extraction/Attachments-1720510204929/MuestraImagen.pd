@@ -1,0 +1,15 @@
+#N canvas 169 122 466 389 12;
+#X msg 11 67 create;
+#X msg 78 108 destroy;
+#X obj 11 286 gemwin;
+#X msg 103 151 1;
+#X msg 125 181 0;
+#X obj 187 75 gemhead;
+#X obj 197 268 pix_draw;
+#X obj 178 189 pix_movie clock.avi;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 7 0;
+#X connect 7 0 6 0;

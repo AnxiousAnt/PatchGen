@@ -1,0 +1,15 @@
+#N canvas 607 112 450 287 10;
+#X obj 62 99 sys_gui_msg;
+#X obj 60 60 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#N canvas 376 388 450 300 this 0;
+#X text 179 81 hover mouse ove here;
+#N canvas 0 22 450 300 canvasname 0;
+#X obj 136 52 r getname;
+#X obj 136 94 s setname;
+#X obj 136 73 canvas_name 1;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 34 22 pd canvasname;
+#X restore 119 45 pd this;
+#X connect 1 0 0 0;

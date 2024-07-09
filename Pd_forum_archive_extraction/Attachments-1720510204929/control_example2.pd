@@ -1,0 +1,59 @@
+#N canvas 275 188 871 498 10;
+#X obj 35 29 hsl 128 20 -10 10 0 0 aa aa empty -2 -8 0 10 -1 -4034
+-4034 11366 1;
+#X obj 191 36 nbx 5 14 -10 10 0 0 aa aa empty 0 -8 0 14 -1 -4032 -4032
+7.9 256;
+#X obj 240 408 + 0.05;
+#X obj 43 410 float 0.9;
+#X obj 43 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 43 164 0.9;
+#X obj 60 196 s aa;
+#X obj 32 63 s to_float;
+#X obj 103 196 r to_float;
+#X obj 344 66 key;
+#X obj 344 100 sel 113 97;
+#X floatatom 388 84 5 0 0 0 - - -, f 5;
+#X msg 344 128 1;
+#X msg 377 128 -1;
+#X obj 372 238 *;
+#X obj 336 188 f 0.05;
+#X floatatom 413 268 5 0 0 0 - - -, f 5;
+#X obj 390 188 change;
+#X obj 347 267 t b b f;
+#X obj 344 159 t b b f;
+#X text 6 5 open properties to see send/recieve trick...;
+#X text 19 86 needed to explicitly set the value \; when mous is used
+;
+#X obj 43 464 s aa;
+#X obj 44 432 clip -10 10;
+#X text 136 436 In case you want this range (see also GUI objects'
+properits...);
+#X text 313 338 <- this bang (going into the [+ 0.05]) is needed for
+correct change of 'direction' (try without...);
+#X connect 0 0 7 0;
+#X connect 1 0 7 0;
+#X connect 2 0 3 1;
+#X connect 3 0 23 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 12 0;
+#X connect 10 1 13 0;
+#X connect 12 0 19 0;
+#X connect 13 0 19 0;
+#X connect 14 0 16 0;
+#X connect 14 0 18 0;
+#X connect 15 0 14 0;
+#X connect 17 0 14 1;
+#X connect 18 0 3 0;
+#X connect 18 1 2 0;
+#X connect 18 2 2 1;
+#X connect 19 1 15 0;
+#X connect 19 2 17 0;
+#X connect 23 0 22 0;
+#X connect 23 0 2 0;
+

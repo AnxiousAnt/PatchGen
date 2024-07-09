@@ -1,0 +1,12 @@
+#N canvas 353 701 450 300 10;
+#X declare -path /usr/lib/pd/extra/osc -stdpath /usr/lib/pd/extra/iemnet
+;
+#X obj 197 100 unpackOSC;
+#X floatatom 197 144 5 0 0 0 - - -, f 5;
+#X obj 197 79 udpreceive 9999;
+#X obj 41 20 declare -path /usr/lib/pd/extra/osc -stdpath /usr/lib/pd/extra/iemnet
+;
+#X obj 197 122 routeOSC /test/a;
+#X connect 0 0 4 0;
+#X connect 2 0 0 0;
+#X connect 4 0 1 0;

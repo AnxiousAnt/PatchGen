@@ -1,0 +1,28 @@
+#N canvas 241 112 450 288 10;
+#X obj 153 20 keyname;
+#X floatatom 25 184 5 0 0 0 - - -;
+#X obj 153 100 f;
+#X obj 153 40 t b f;
+#X msg 228 32 0;
+#X obj 153 156 print keyOnOff;
+#X msg 228 73 50;
+#X msg 228 53 5;
+#X obj 153 80 delay 50;
+#X text 259 33 oscillates between 0 and 1;
+#X text 259 55 repeats only 1;
+#X text 261 74 desired behavior;
+#X text 23 202 because the refresh rate of the gui components are slow
+;
+#X text 22 214 the problem can't be seen on the number box.;
+#X obj 142 252 keyup;
+#X text 24 252 this is same for;
+#X text 43 -1;
+#X connect 0 0 1 0;
+#X connect 0 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 8 0;
+#X connect 3 1 2 1;
+#X connect 4 0 8 1;
+#X connect 6 0 8 1;
+#X connect 7 0 8 1;
+#X connect 8 0 2 0;

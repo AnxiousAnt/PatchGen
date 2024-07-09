@@ -1,0 +1,18 @@
+#N canvas 501 417 450 300 10;
+#X obj 65 105 note2num;
+#X msg 78 48 C#;
+#X floatatom 75 138 5 0 0 0 - - -;
+#X msg 109 48 Bb;
+#X msg 65 22 c \, d \, e \, f \, g;
+#X obj 65 173 print RES;
+#X msg 185 71 jun#k note wrong stuff here;
+#X msg 141 48 symbol D#b#b;
+#X msg 142 69 d;
+#X connect 0 0 2 0;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;

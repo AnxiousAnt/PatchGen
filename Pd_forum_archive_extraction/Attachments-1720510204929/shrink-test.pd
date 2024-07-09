@@ -1,0 +1,51 @@
+#N canvas 121 187 450 300 10;
+#X obj 88 19 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 88 63 t b b;
+#X msg 88 147 \; pd-sub vis \$1;
+#N canvas 625 183 151 390 sub 1;
+#X obj 4 0 cnv 10 10 10 empty empty m.adc 0 5 0 14 -262144 -1 0;
+#X obj 4 20 cnv 10 10 10 empty empty m.adsr 0 5 0 14 -262144 -1 0;
+#X obj 4 40 cnv 10 10 10 empty empty m.dac 0 5 0 14 -262144 -1 0;
+#X obj 4 60 cnv 10 10 10 empty empty m.lfo 0 5 0 14 -262144 -1 0;
+#X obj 4 80 cnv 10 10 10 empty empty m.logic 0 5 0 14 -262144 -1 0
+;
+#X obj 4 100 cnv 10 10 10 empty empty m.matrix4x4 0 5 0 14 -262144
+-1 0;
+#X obj 4 120 cnv 10 10 10 empty empty m.mixer 0 5 0 14 -262144 -1 0
+;
+#X obj 4 140 cnv 10 10 10 empty empty m.multimode 0 5 0 14 -262144
+-1 0;
+#X obj 4 160 cnv 10 10 10 empty empty m.osc 0 5 0 14 -262144 -1 0;
+#X obj 4 180 cnv 10 10 10 empty empty m.polmixer 0 5 0 14 -262144 -1
+0;
+#X obj 4 200 cnv 10 10 10 empty empty m.ringmod 0 5 0 14 -262144 -1
+0;
+#X obj 4 220 cnv 10 10 10 empty empty m.sah 0 5 0 14 -262144 -1 0;
+#X obj 4 240 cnv 10 10 10 empty empty m.slew 0 5 0 14 -262144 -1 0
+;
+#X obj 4 260 cnv 10 10 10 empty empty m.stepseq16 0 5 0 14 -262144
+-1 0;
+#X obj 4 280 cnv 10 10 10 empty empty m.vca 0 5 0 14 -262144 -1 0;
+#X obj 4 300 cnv 10 10 10 empty empty m.bar 0 5 0 14 -262144 -196609
+0;
+#X obj 4 320 cnv 10 10 10 empty empty m.bazoo 0 5 0 14 -262144 -196609
+0;
+#X obj 4 340 cnv 10 10 10 empty empty m.baz 0 5 0 14 -262144 -196609
+0;
+#X obj 4 360 cnv 10 10 10 empty empty m.foo 0 5 0 14 -262144 -196609
+0;
+#X coords 85 60 100 100 0 0 0;
+#X restore 25 38 pd sub;
+#X msg 124 117 1;
+#X msg 91 114 0;
+#X text 110 19 click and watch!;
+#X obj 88 41 metro 500;
+#X obj 89 91 del 400;
+#X connect 0 0 7 0;
+#X connect 1 0 8 0;
+#X connect 1 1 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 7 0 1 0;
+#X connect 8 0 5 0;

@@ -1,0 +1,37 @@
+commit 1af73f8edbaecbfecf8806356ad1006637051629
+Author: Christof Ressi <christof.ressi@student.kug.ac.at>
+Date:   Thu Jul 27 04:37:41 2017 +0200
+
+    fixing makefile.mingw
+
+diff --git a/src/makefile.mingw b/src/makefile.mingw
+index 12d5fbd..54c91ed 100644
+--- a/src/makefile.mingw
++++ b/src/makefile.mingw
+@@ -11,7 +11,7 @@ CXX = g++
+ WINDRES = windres
+ 
+ cvs_root_dir = ../..
+-pd_src = $(cvs_root_dir)/pd
++pd_src = $(cvs_root_dir)/pure-data
+ DLL_DIR = $(pd_src)/src
+ 
+ BIN_DIR = ../bin
+@@ -45,7 +45,7 @@ DLLWRAP= dllwrap
+ MORECFLAGS = -O3 -funroll-loops -fomit-frame-pointer
+ 
+ PADIR = $(pd_src)/portaudio/portaudio
+-ASIODIR = $(pd_src)/lib/ASIOSDK2.3
++ASIODIR = $(pd_src)/asio/ASIOSDK2
+ ASIOINC = -I$(ASIODIR)/common -I$(ASIODIR)/host -I$(ASIODIR)/host/pc
+ INCPA = -I$(PADIR)/include -I$(PADIR)/src/common -I$(PADIR)/src/os/win \
+       $(ASIOINC)
+@@ -202,7 +202,7 @@ $(PDCOM): s_entry.o
+ 
+ $(PDDLL): $(OBJC)
+ 	$(CXX) -shared $(LDFLAGS) -o $(PDDLL) $(OBJC) $(LIBS) \
+-		-Wl,--export-all-symbols -Wl,--out-implib=pd.a; 
++		-Wl,--export-all-symbols -Wl,--output-def,pd.def,--out-implib,pd.a; 
+ 	$(STRIP) $(PDDLL)
+ 
+ pd.res: pd.rc

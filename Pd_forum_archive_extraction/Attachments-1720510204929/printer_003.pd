@@ -1,0 +1,5 @@
+#N canvas 399 271 354 132 10;
+#X obj 86 54 netreceive 3001 0 old;
+#X obj 61 33 s pd-printer.pd;
+#X msg 51 11 menuclose 0;
+#X connect 2 0 1 0;

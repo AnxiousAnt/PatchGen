@@ -1,0 +1,13 @@
+#N canvas 817 431 450 300 10;
+#X text 11 15 Choose your scene;
+#X obj 18 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 18 180 5 0 0 0 - - -, f 5;
+#X floatatom 53 180 5 0 0 0 - - -, f 5;
+#X floatatom 93 180 5 0 0 0 - - -, f 5;
+#X text 16 165 From;
+#X text 53 165 To;
+#X text 93 165 ms;
+#X obj 21 119 hsl 80 10 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X coords 0 -1 1 1 120 40 2 10 160;

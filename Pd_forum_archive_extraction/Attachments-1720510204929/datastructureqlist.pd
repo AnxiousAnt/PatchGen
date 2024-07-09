@@ -1,0 +1,58 @@
+#N struct qlist float x float y array list step;
+#N struct step float y float delay symbol receiver symbol message;
+#N canvas 364 206 796 551 12;
+#N canvas 0 0 450 300 qlist 0;
+#X obj 19 45 struct qlist float x float y array list step;
+#X msg 223 108 traverse pd-list \, bang;
+#X obj 223 133 pointer;
+#X obj 102 157 append qlist x;
+#X msg 102 119 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 1;
+#X connect 4 0 3 0;
+#X restore 20 97 pd qlist;
+#N canvas 0 0 534 281 step 1;
+#X obj 14 61 struct step float y float delay symbol receiver symbol
+message;
+#X restore 20 78 pd step;
+#N canvas 0 0 450 300 list 0;
+#X scalar qlist 0 0 \; 0 200 yohoho bottleofrum \; 0 300 yohoho bottleofrum
+\; 0 400 yohoho bottleofrum \; 0 500 yohoho bottleofrum \; 0 600 yohoho
+bottleofrum \; 0 0 symbol symbol \; 0 0 symbol symbol \; 0 0 symbol
+symbol \; 0 0 symbol symbol \; 0 0 symbol symbol \; 0 0 symbol symbol
+\; 0 0 symbol symbol \; 0 0 symbol symbol \; 0 0 symbol symbol \; 0
+0 symbol symbol \; \;;
+#X restore 20 59 pd list;
+#X msg 447 44 traverse pd-list \, next;
+#X obj 447 79 pointer qlist;
+#X obj 290 252 element qlist list;
+#X floatatom 290 224 5 0 0 0 - - -;
+#X obj 329 334 get step delay receiver message;
+#X obj 329 388 print delay;
+#X obj 466 364 print receiver;
+#X obj 543 436 print message;
+#X floatatom 150 311 5 0 0 0 - - -;
+#X msg 86 414 yohoho;
+#X msg 232 420 bottleofrum;
+#X obj 86 441 symbol;
+#X obj 232 445 symbol;
+#X obj 86 469 set -symbol step receiver message;
+#X obj 150 336 set step delay;
+#X obj 487 200 setsize qlist list;
+#X floatatom 487 173 5 0 0 0 - - -;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 4 0 18 1;
+#X connect 5 0 7 0;
+#X connect 5 0 16 2;
+#X connect 5 0 17 1;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 7 2 10 0;
+#X connect 11 0 17 0;
+#X connect 12 0 14 0;
+#X connect 13 0 15 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 1;
+#X connect 19 0 18 0;

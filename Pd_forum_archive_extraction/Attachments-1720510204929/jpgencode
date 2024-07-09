@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ "$4" != "" ]
+then
+	mencoder -flip -mf fps=$1:type=jpg -o $4 -nosound -ovc lavc -lavcopts vcodec=mjpeg -of lavf -lavfopts format=mov:i_certify_that_my_video_stream_does_not_use_b_frames -audiofile $3 -oac copy mf://$2
+
+#mencoder -mf fps= -ffourcc DX50 -ovc lavc -lavcopts
+#vcodec=mpeg4:vbitrate=9800:aspect=4/3:vhq:keyint=15 -audiofile
+#verspuckte_Schlucke.mp3 -oac copy -vf scale=640:480 -o
+#residuum-verspuckte_schlucke.avi mf://*.jpg
+
+else
+	echo Turn jpegs into mjpeg movie with .mov container format.
+	echo Usage:
+	echo $0 framerate inputfilenames mp3 outputmovie.mov
+	echo
+	echo framerate = song length / total frames recorded
+	echo inputfilenames = e.g. '*.jpg'
+	echo mp3 = mp3 file containing the audio
+	echo outputmovie.mov = movie file to write to
+fi
+

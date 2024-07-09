@@ -1,0 +1,26 @@
+#N canvas 400 50 487 384 10;
+#N canvas 601 509 450 300 INSIDE 0;
+#X obj 47 91 tcltk_error_B;
+#X floatatom 47 157 5 0 0 0 - - -;
+#X floatatom 125 157 5 0 0 0 - - -;
+#X text 54 12 ABSTRACTION;
+#X text 53 51 inside a GOP;
+#X text 42 35 "tcltk_error_B";
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X coords 0 -1 1 1 203 194 2 0 0;
+#X restore 36 166 pd INSIDE;
+#X obj 38 53 tcltk_error_B;
+#X text 37 15 abstraction "tcltk_error_B";
+#X floatatom 38 122 5 0 0 0 - - -;
+#X floatatom 116 121 5 0 0 0 - - -;
+#X text 142 71 Right-click / Open this abstraction \, change something
+and save it ---> Voila, f 36;
+#X text 142 48 TO TRIGGER TCL/TK ERROR:;
+#X text 263 195 Open this GOP \; Change something \; Close it again.
+;
+#X text 264 169 Also try this:;
+#X text 263 244 Doing this several times and then saving the main patch
+can also trigger the error (sometimes ...), f 28;
+#X connect 1 0 3 0;
+#X connect 1 1 4 0;

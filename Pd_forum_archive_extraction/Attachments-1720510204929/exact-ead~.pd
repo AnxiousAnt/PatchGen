@@ -1,0 +1,27 @@
+#N canvas 208 45 644 678 10;
+#N canvas 0 22 450 300 graph1 0;
+#X array scope 441 float 0;
+#X coords 0 1 440 -1 200 140 1;
+#X restore 126 504 graph;
+#X obj 153 456 tabwrite~ scope;
+#X obj 385 177 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 1550 1;
+#X obj 100 217 expr~ $v1 \; if ($v1 < ($f2) \, 1-pow(1-($v1/$f2) \,
+6) \, pow(1-($v1-$f2)/(1-$f2) \, 6));
+#X obj 308 369 metro 100;
+#X obj 317 342 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X floatatom 127 86 5 0 0 0 - - -;
+#X obj 385 112 loadbang;
+#X obj 319 314 loadbang;
+#X obj 384 137 0.5;
+#X obj 105 124 phasor~ 150;
+#X connect 2 0 3 1;
+#X connect 3 1 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 10 0;
+#X connect 7 0 9 0;
+#X connect 8 0 5 0;
+#X connect 9 0 2 0;
+#X connect 10 0 3 0;

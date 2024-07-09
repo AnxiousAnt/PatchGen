@@ -1,0 +1,217 @@
+#
+#
+#
+
+VPATH = ../obj:./
+OBJ_DIR = ../obj
+BIN_DIR = ../bin
+PDEXEC = $(BIN_DIR)/pd
+EXT= @EXT@
+GUINAME= @GUINAME@
+
+INSTALL_PREFIX = @prefix@
+GFLAGS = -DINSTALL_PREFIX=\"$(INSTALL_PREFIX)\"
+
+# ALSA compilation
+
+SOUND_ALSA = @alsa@
+
+# RME compilation
+
+SOUND_RME = @rme@
+
+DEFINES = @DEFINES@
+MORECFLAGS = @MORECFLAGS@
+
+INCLUDE = -I.
+GINCLUDE = $(INCLUDE) @GUIFLAGS@
+GLIB = @LIBS@
+
+LDFLAGS = @LDFLAGS@
+LIB =  @PDLIB@
+
+#select either the DBG and OPT compiler flags below:
+OPT_CFLAGS = @OPT_CFLAGS@
+WARN_CFLAGS = -Wall -W -Wstrict-prototypes  -Werror \
+    -Wno-unused -Wno-parentheses -Wno-switch
+ARCH_CFLAGS = -DPD -DUNIX 
+
+CFLAGS = $(ARCH_CFLAGS) $(WARN_CFLAGS) $(OPT_CFLAGS) $(DEFINES) $(MORECFLAGS)
+
+# you might want ALSA linked in non-shared because
+# many Linux machines don't have the ALSA shared library.  To link
+# ALSA non-shared, move the # sign below.
+
+ifeq (${SOUND_ALSA},yes)
+CFLAGS += -DALSA01
+#LIB += /usr/lib/libasound.a
+#LIB += -lasound
+endif
+
+ifeq (${SOUND_ALSA},old)
+CFLAGS += -DALSA99
+#LIB += /usr/lib/libasound.a
+#LIB += -lasound
+endif
+
+ifeq (${SOUND_RME},yes)
+CFLAGS += -DRME_HAMMERFALL
+endif
+
+
+# Which system
+
+SYSTEM = $(shell uname -m)
+
+ifeq (${SYSTEM},alpha)
+#LIB += -lffm -lm
+CFLAGS += -mieee -mcpu=ev56
+endif
+
+# Which compiler
+
+ifeq (${CC},ccc)
+CFLAGS += -g3 -D__COMPAQC__ -arch host
+endif
+
+# the sources
+
+SYSSRC = @SYSSRC@
+
+SRC = g_canvas.c g_graph.c g_text.c g_rtext.c g_array.c g_template.c g_io.c \
+    g_scalar.c g_traversal.c g_guiconnect.c \
+    g_7_guis.c \
+    m_pd.c m_class.c m_obj.c m_atom.c m_memory.c m_binbuf.c \
+    m_conf.c m_glob.c m_sched.c \
+    s_main.c s_inter.c s_unix.c s_file.c s_print.c \
+    s_loader.c s_path.c s_entry.c \
+    d_ugen.c d_ctl.c d_arithmetic.c d_osc.c d_filter.c d_dac.c d_misc.c \
+    d_math.c d_fft.c d_mayer_fft.c d_fftroutine.c d_array.c d_global.c \
+    d_delay.c d_resample.c \
+    x_arithmetic.c x_connective.c x_interface.c x_midi.c x_misc.c \
+    x_time.c x_acoustics.c x_net.c x_qlist.c x_gui.c d_soundfile.c\
+    $(SYSSRC)
+
+
+OBJ = $(SRC:.c=.o) 
+EXTERNS = ../extra/*/*.$(EXT)
+
+GSRC =  t_main.c t_tkcmd.c
+
+GOBJ = $(GSRC:.c=.o)
+
+#
+#  ------------------ targets ------------------------------------
+#
+
+.PHONY: pd gui externs
+
+all: $(PDEXEC) $(BIN_DIR)/pd-watchdog $(BIN_DIR)/$(GUINAME) $(BIN_DIR)/pdsend \
+    $(BIN_DIR)/pdreceive  $(BIN_DIR)/pd.tk externs
+
+bin: $(PDEXEC) $(BIN_DIR)/pd-watchdog $(BIN_DIR)/$(GUINAME) $(BIN_DIR)/pdsend \
+    $(BIN_DIR)/pdreceive  $(BIN_DIR)/pd.tk
+
+$(OBJ) : %.o : %.c
+	$(CC) $(CFLAGS) $(GFLAGS) $(INCLUDE) -c -o $(OBJ_DIR)/$*.o $*.c 
+
+$(GOBJ) : %.o : %.c
+	$(CC) $(CFLAGS) $(GFLAGS) $(GINCLUDE) -c -o $(OBJ_DIR)/$*.o $*.c 
+
+pd: $(PDEXEC)
+
+gui: $(BIN_DIR)/$(GUINAME)
+
+pd-watchdog: $(BIN_DIR)/pd-watchdog
+
+$(BIN_DIR)/pd-watchdog: s_watchdog.c
+	cc -O2 $(STRIPFLAG) -o $(BIN_DIR)/pd-watchdog s_watchdog.c
+
+$(BIN_DIR)/pdsend: u_pdsend.c
+	cc $(CFLAGS)  $(STRIPFLAG) -o $(BIN_DIR)/pdsend u_pdsend.c
+
+$(BIN_DIR)/pdreceive: u_pdreceive.c
+	cc $(CFLAGS)  $(STRIPFLAG) -o $(BIN_DIR)/pdreceive u_pdreceive.c
+
+$(PDEXEC): $(OBJ) 
+	cd ../obj;  $(CC) $(LDFLAGS) $(DBG_CFLAGS) -o $(PDEXEC) $(OBJ) \
+	$(LIB)
+
+$(BIN_DIR)/$(GUINAME): $(GOBJ) $(GSRC)
+	cd ../obj; $(CC) $(INCLUDE) -o $(BIN_DIR)/$(GUINAME) $(GOBJ) \
+	$(GLIB)
+
+$(BIN_DIR)/pd.tk: u_main.tk; cp u_main.tk $(BIN_DIR)/pd.tk
+
+externs: 
+	cd ../doc/6.externs;make $(EXT)
+#	cd ../doc/4.fft.examples;make $(EXT)
+	cd ../extra/bonk~;make
+	cd ../extra/choice;make
+	cd ../extra/expr~;make
+	cd ../extra/fiddle~;make
+	cd ../extra/loop~;make
+	cd ../extra/lrshift~;make
+	cd ../extra/paf~;make
+	cd ../extra/pique;make
+
+
+
+install: install-bin install-indep
+
+INSTDIR = $(DESTDIR)/$(INSTALL_PREFIX)
+install-bin: 
+	install -d $(INSTDIR)/lib/pd/bin
+	install $(BIN_DIR)/$(GUINAME) $(INSTDIR)/lib/pd/bin/$(GUINAME)
+	install $(BIN_DIR)/pd-watchdog $(INSTDIR)/lib/pd/bin/pd-watchdog
+	install -m644 $(BIN_DIR)/pd.tk $(INSTDIR)/lib/pd/bin/pd.tk
+	cp $(PDEXEC) $(INSTDIR)/bin/pd
+	install -m 755 $(BIN_DIR)/pdsend $(INSTDIR)/bin/pdsend
+	install -m 755 $(BIN_DIR)/pdreceive $(INSTDIR)/bin/pdreceive 
+	install -d $(INSTDIR)/lib/pd/extra
+	install -d $(INSTDIR)/lib/pd/externs
+	cp $(EXTERNS) $(INSTDIR)/lib/pd/extra
+
+install-indep:
+	install -d $(INSTDIR)/lib/pd/src
+	install -d $(INSTDIR)/include
+	install  -m644 *.tk $(INSTDIR)/lib/pd/src
+	cp -r ../doc $(INSTDIR)/lib/pd/
+	install -m644 m_pd.h $(INSTDIR)/include/m_pd.h
+
+local-clean:
+	-rm -f ../obj/* $(BIN_DIR)/pd $(BIN_DIR)/$(GUINAME) $(BIN_DIR)/pdsend \
+	    $(BIN_DIR)/pdreceive $(BIN_DIR)/pd-watchdog m_stamp.c
+	-rm -f *~
+	-rm -f $(BIN_DIR)/pdsend $(BIN_DIR)/pdreceive
+	-(cd ../doc/6.externs; rm -f *.pd_linux)
+	-rm -f tags
+	-rm -f makefile.dependencies
+	touch makefile.dependencies
+	chmod 666 makefile.dependencies
+
+extra-clean:
+	-rm -f `find ../extra/ -name "*.pd_*"`
+
+clean: extra-clean local-clean
+
+distclean: clean
+	-rm config.cache config.log config.status makefile tags
+	echo all: > makefile
+	echo -e  "\t./configure" >> makefile
+	echo -e "\tmake" >> makefile
+
+tags: $(SRC) $(GSRC); ctags *.[ch]
+
+depend: 
+	$(CC) $(INCLUDE) $(CFLAGS) -M $(SRC) > makefile.dependencies
+
+
+include makefile.dependencies
+
+
+
+
+
+
+

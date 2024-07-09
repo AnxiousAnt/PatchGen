@@ -1,0 +1,16 @@
+#N canvas 1047 398 454 212 10;
+#X obj 20 7 loadbang;
+#X msg 20 29 \; pd dsp 1;
+#X obj 57 164 dac~;
+#X obj 99 37 * 0.2;
+#X obj 66 136 *~ 0.2;
+#X obj 65 104 osc~ 440;
+#X obj 99 10 netreceive 4444 1;
+#X text 157 104 try to run this with or without GUI;
+#X text 158 67 PD 0.48.0;
+#X connect 0 0 1 0;
+#X connect 3 0 4 1;
+#X connect 4 0 2 0;
+#X connect 4 0 2 1;
+#X connect 5 0 4 0;
+#X connect 6 0 3 0;

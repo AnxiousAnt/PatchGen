@@ -1,0 +1,20 @@
+#N canvas 88 1 644 483 10;
+#X obj 55 77 tabwrite~ array1;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array1 16384 float 0;
+#X coords 0 1 16383 -1 200 140 1;
+#X restore 181 134 graph;
+#X obj 99 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 94 151 loadbang;
+#X obj 144 20 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 413 46 block~ 16384;
+#X text 171 22 bang to reset;
+#X obj 53 132 metro 400;
+#X obj 56 40 sdeq1~ 100 0.1;
+#X connect 2 0 7 0;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;

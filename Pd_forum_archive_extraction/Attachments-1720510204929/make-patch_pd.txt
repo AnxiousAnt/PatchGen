@@ -1,0 +1,146 @@
+ls: /home/jmmmp/pure-data/packages/patches/linux/*.patch: Datei oder Verzeichnis  nicht gefunden
+pd_src /home/jmmmp/pure-data/packages/../pd
+for patch in /home/jmmmp/pure-data/packages/patches/alsa_adddev_proto_with_alsa_ only-0.40-pre.patch /home/jmmmp/pure-data/packages/patches/bang_method_for_clip- 0.40.pre.patch /home/jmmmp/pure-data/packages/patches/build_vars_4_makefile.in.p atch /home/jmmmp/pure-data/packages/patches/complete_version_defines-0.39.2.patc h /home/jmmmp/pure-data/packages/patches/fftw_support-0.39-1.patch /home/jmmmp/p ure-data/packages/patches/help_browser-0.39.2.patch /home/jmmmp/pure-data/packag es/patches/libdir-0.38-4.patch /home/jmmmp/pure-data/packages/patches/loaderHEX- 0.39-1.patch /home/jmmmp/pure-data/packages/patches/mingw_fixes-0.39-2.patch /ho me/jmmmp/pure-data/packages/patches/put_version_into_aboutpd_page-0.40-pre.patch  /home/jmmmp/pure-data/packages/patches/remove_dotdot_from_guidir-0.39.2.patch / home/jmmmp/pure-data/packages/patches/special_character_support.patch /home/jmmm p/pure-data/packages/patches/windows_env_vars-0.40-pre.patch; do \
+        echo "Applying $patch"; \
+        cd /home/jmmmp/pure-data/packages/../pd/src/ && patch -p0 < $patch; \
+done
+Applying /home/jmmmp/pure-data/packages/patches/alsa_adddev_proto_with_alsa_only -0.40-pre.patch
+patching file s_main.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Applying /home/jmmmp/pure-data/packages/patches/bang_method_for_clip-0.40.pre.patch
+patching file x_arithmetic.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Hunk #1 succeeded at 666 (offset -6 lines).
+Hunk #2 succeeded at 690 (offset -6 lines).
+Applying /home/jmmmp/pure-data/packages/patches/build_vars_4_makefile.in.patch
+patching file makefile.in
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Hunk #2 FAILED at 112.
+Hunk #3 succeeded at 193 (offset 39 lines).
+Hunk #4 succeeded at 207 (offset 41 lines).
+1 out of 4 hunks FAILED -- saving rejects to file makefile.in.rej
+Applying /home/jmmmp/pure-data/packages/patches/complete_version_defines-0.39.2.patch
+patching file m_pd.h
+Hunk #1 FAILED at 10.
+1 out of 1 hunk FAILED -- saving rejects to file m_pd.h.rej
+patching file s_main.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Hunk #1 succeeded at 6 with fuzz 2 (offset 4 lines).
+Hunk #2 FAILED at 30.
+Hunk #3 FAILED at 258.
+2 out of 3 hunks FAILED -- saving rejects to file s_main.c.rej
+Applying /home/jmmmp/pure-data/packages/patches/fftw_support-0.39-1.patch
+patching file d_fft.c
+Hunk #1 succeeded at 1032 with fuzz 2 (offset 1028 lines).
+Hunk #2 succeeded at 1287 with fuzz 2 (offset 1037 lines).
+Hunk #3 FAILED at 1631.
+1 out of 3 hunks FAILED -- saving rejects to file d_fft.c.rej
+Applying /home/jmmmp/pure-data/packages/patches/help_browser-0.39.2.patch
+patching file u_main.tk
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Hunk #2 succeeded at 387 (offset -2 lines).
+Hunk #3 succeeded at 437 (offset -2 lines).
+Hunk #4 succeeded at 524 (offset -2 lines).
+Applying /home/jmmmp/pure-data/packages/patches/libdir-0.38-4.patch
+patching file s_loader.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Hunk #1 succeeded at 259 with fuzz 2 (offset 96 lines).
+patching file s_main.c
+Hunk #1 FAILED at 233.
+1 out of 1 hunk FAILED -- saving rejects to file s_main.c.rej
+patching file s_stuff.h
+Hunk #1 succeeded at 56 with fuzz 2 (offset 8 lines).
+Applying /home/jmmmp/pure-data/packages/patches/loaderHEX-0.39-1.patch
+patching file m_class.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Hunk #2 succeeded at 549 with fuzz 2 (offset 36 lines).
+Hunk #3 FAILED at 557.
+Hunk #4 succeeded at 571 (offset 36 lines).
+1 out of 4 hunks FAILED -- saving rejects to file m_class.c.rej
+patching file s_loader.c
+Hunk #1 FAILED at 46.
+Hunk #2 FAILED at 73.
+Hunk #3 FAILED at 113.
+Hunk #4 FAILED at 141.
+Hunk #5 FAILED at 153.
+Hunk #6 succeeded at 223 with fuzz 2 (offset 43 lines).
+Hunk #7 FAILED at 234.
+Hunk #8 FAILED at 244.
+7 out of 8 hunks FAILED -- saving rejects to file s_loader.c.rej
+patching file s_stuff.h
+Hunk #1 FAILED at 47.
+1 out of 1 hunk FAILED -- saving rejects to file s_stuff.h.rej
+Applying /home/jmmmp/pure-data/packages/patches/mingw_fixes-0.39-2.patch
+patching file configure.in
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+patching file d_mayer_fft.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+patching file m_pd.h
+Hunk #1 FAILED at 17.
+Hunk #2 FAILED at 34.
+2 out of 2 hunks FAILED -- saving rejects to file m_pd.h.rej
+patching file makefile.in
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Hunk #2 succeeded at 84 (offset 14 lines).
+Hunk #3 succeeded at 91 (offset 14 lines).
+Hunk #4 succeeded at 123 (offset 14 lines).
+Hunk #5 succeeded at 172 with fuzz 1 (offset 28 lines).
+patching file s_entry.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+patching file s_inter.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Hunk #3 succeeded at 99 (offset -1 lines).
+Hunk #4 succeeded at 128 (offset -1 lines).
+Hunk #5 succeeded at 164 (offset -1 lines).
+Hunk #6 succeeded at 186 (offset -1 lines).
+Hunk #7 succeeded at 334 (offset -1 lines).
+Hunk #8 succeeded at 345 (offset -1 lines).
+Hunk #9 succeeded at 548 (offset -1 lines).
+Hunk #10 succeeded at 855 (offset -1 lines).
+Hunk #11 succeeded at 883 (offset -1 lines).
+Hunk #12 succeeded at 893 (offset -1 lines).
+Hunk #13 succeeded at 943 (offset -1 lines).
+Hunk #14 succeeded at 970 (offset -1 lines).
+Hunk #15 succeeded at 985 (offset -1 lines).
+Hunk #16 succeeded at 1101 (offset -1 lines).
+Hunk #17 succeeded at 1125 (offset -1 lines).
+Hunk #18 FAILED at 1197.
+1 out of 18 hunks FAILED -- saving rejects to file s_inter.c.rej
+patching file s_watchdog.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+patching file t_tkcmd.c
+Hunk #1 FAILED at 30.
+1 out of 1 hunk FAILED -- saving rejects to file t_tkcmd.c.rej
+Applying /home/jmmmp/pure-data/packages/patches/put_version_into_aboutpd_page-0.40-pre.patch
+patching file makefile.in
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Hunk #1 succeeded at 52 (offset -10 lines).
+Hunk #2 succeeded at 120 (offset -10 lines).
+Hunk #3 succeeded at 139 (offset -10 lines).
+patching file s_inter.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+patching file u_main.tk
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Hunk #1 succeeded at 351 (offset -2 lines).
+Hunk #2 succeeded at 365 (offset -2 lines).
+Hunk #3 succeeded at 3227 (offset -2 lines).
+Applying /home/jmmmp/pure-data/packages/patches/remove_dotdot_from_guidir-0.39.2.patch
+patching file u_main.tk
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Applying /home/jmmmp/pure-data/packages/patches/special_character_support.patch
+patching file g_rtext.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+Hunk #1 succeeded at 439 (offset 7 lines).
+Applying /home/jmmmp/pure-data/packages/patches/windows_env_vars-0.40-pre.patch
+patching file s_file.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] y
+for patch in ; do \
+        echo "Applying $patch"; \
+        cd /home/jmmmp/pure-data/packages/../pd/src/ && patch -p0 < $patch; \
+done
+rm -f -- /home/jmmmp/pure-data/packages/../pd/src/configure  /home/jmmmp/pure-data/packages/../pd/src/makefile
+cd /home/jmmmp/pure-data/packages/../pd/src/ && \
+        sed 's|^\(#define PD_TEST_VERSION "\).*"|\1extended-test2"|' m_pd.h > \
+                m_pd.h.tmp && mv m_pd.h.tmp m_pd.h
+
+patching succeeded!

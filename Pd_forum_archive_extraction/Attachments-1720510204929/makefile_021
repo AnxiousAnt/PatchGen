@@ -1,0 +1,64 @@
+
+current: pd_linux
+
+# ----------------------- NT -----------------------
+
+pd_nt: downquantize~.dll
+
+.SUFFIXES: .dll
+
+PDNTCFLAGS = -DPD -O2 -funroll-loops -fomit-frame-pointer \
+    -Wall -W -Wshadow -Wstrict-prototypes -Werror \
+    -Wno-unused -Wno-parentheses -Wno-switch
+
+PDNTINCLUDE = -I/home/montgermont/pd/pd-0.40-0test05/src -I/usr/include/stk 
+
+.c.dll:
+	i586-mingw32msvc-cc $(PDNTCFLAGS) $(PDNTINCLUDE) -o $*.o -c $*.c
+	i586-mingw32msvc-ld -export_dynamic -L/usr/lib/ -shared -o $*.dll $*.o -lc -lm -lstk
+	strip --strip-unneeded $*.dll
+	rm $*.o
+
+# ----------------------- LINUX i386 -----------------------
+pd_linux: downquantize~.pd_linux 
+
+.SUFFIXES: .pd_linux
+
+LINUXCFLAGS = -DPD -O2 -funroll-loops -fomit-frame-pointer \
+    -Wall -W -Wshadow -Wstrict-prototypes -Werror \
+    -Wno-unused -Wno-parentheses -Wno-switch
+
+LINUXINCLUDE =  -I/home/montgermont/pd/pd-0.40-0test05/src -I/usr/include/stk
+
+.c.pd_linux:
+	cc $(LINUXCFLAGS) $(LINUXINCLUDE) -o $*.o -c $*.c
+	ld -export_dynamic  -shared -o $*.pd_linux $*.o -lc -lm -lstk
+	strip --strip-unneeded $*.pd_linux
+	rm $*.o
+
+# ----------------------- Mac OSX -----------------------
+
+d_ppc: $(NAME).d_ppc
+d_fat: $(NAME).d_fat
+
+.SUFFIXES: .d_ppc .d_fat
+
+DARWINCFLAGS = -DPD -O2 -Wall -W -Wshadow -Wstrict-prototypes \
+    -Wno-unused -Wno-parentheses -Wno-switch
+
+.c.d_ppc:
+	$(CC) $(DARWINCFLAGS) $(LINUXINCLUDE) -o $*.o -c $*.c
+	$(CC) -bundle -undefined suppress -flat_namespace -o $*.pd_darwin $*.o 
+	rm -f $*.o
+
+.c.d_fat:
+	$(CC) -arch i386 -arch ppc $(DARWINCFLAGS) $(LINUXINCLUDE) -o $*.o -c $*.c
+	$(CC) -arch i386 -arch ppc -bundle -undefined suppress -flat_namespace \
+	    -o $*.d_fat $*.o 
+	rm -f $*.o
+
+# ----------------------------------------------------------
+
+clean:
+	rm -f *.o *.pd_* so_locations
+

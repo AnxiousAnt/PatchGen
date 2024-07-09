@@ -1,0 +1,129 @@
+#N canvas 186 22 1067 727 10;
+#X obj 101 101 cnv 15 236 90 empty empty empty 20 12 0 14 -241201 -66577
+0;
+#X obj 107 120 hsl 225 15 0 1 0 0 \$0.start.s \$0.start.r start/end
+-2 -4 0 8 -262144 -1 -1057 0 1;
+#X obj 107 135 hsl 225 8 0 1 0 0 \$0.pos.s \$0.pos.r empty -2 -4 0
+8 -187840 -1 -1057 0 1;
+#X obj 107 143 hsl 225 15 0 1 0 0 \$0.end.s \$0.end.r empty -2 -4 0
+8 -262144 -1 -1057 0 1;
+#X obj 266 161 nbx 5 18 -60 60 0 0 \$0.pitch.s \$0.pitch.r pitch 0
+23 0 8 -262144 -1 -1 0 256;
+#X obj 316 161 tgl 18 0 \$0.pp.s \$0.pp.r ping 0 23 0 8 -262144 -1
+-1 0 1;
+#X obj 104 161 cnv 15 60 18 empty empty susloop 2 10 1 14 -134336 -262144
+0;
+#X obj 166 161 cnv 15 40 18 empty empty empty 2 10 1 14 -134336 -262144
+0;
+#X obj 208 161 cnv 15 15 18 empty empty empty 2 10 1 14 -134336 -262144
+0;
+#X obj 225 161 cnv 5 10 18 empty empty empty 2 10 1 14 -134336 -262144
+0;
+#X obj 237 161 cnv 5 7 18 empty empty empty 2 10 1 14 -134336 -262144
+0;
+#X obj 246 161 cnv 1 3 18 empty empty empty 2 10 1 14 -134336 -262144
+0;
+#X obj 251 161 cnv 1 1 18 empty empty empty 2 10 1 14 -134336 -262144
+0;
+#X obj 254 161 cnv 1 1 18 empty empty empty 2 10 1 14 -134336 -262144
+0;
+#X obj 257 161 cnv 1 1 18 empty empty empty 2 10 1 14 -134336 -262144
+0;
+#X obj 260 161 cnv 1 1 18 empty empty empty 2 10 1 14 -134336 -262144
+0;
+#X obj 263 161 cnv 1 1 18 empty empty empty 2 10 1 14 -134336 -262144
+0;
+#N canvas 549 230 890 640 guts 0;
+#X obj 8 123 soundfiler;
+#X obj 8 85 pack s s;
+#X msg 8 104 read -resize \$1 \$2;
+#X msg 8 66 \$1;
+#X obj 8 27 openpanel;
+#X obj 8 46 t a b;
+#X obj 403 183 *;
+#X obj 430 183 *;
+#X obj 287 35 sel 1 0;
+#X msg 259 57 type 1;
+#X msg 312 57 type 0;
+#X obj 171 219 /~;
+#X obj 159 239 snapshot~;
+#X obj 135 197 metro 200;
+#X obj 135 178 loadbang;
+#X obj 192 87 expr 44100 / 261.626 * $f1;
+#X obj 190 48 + 60;
+#X obj 239 163 susloop~ 4000 12000;
+#X obj 430 201 int;
+#X obj 403 201 int;
+#X obj 191 66 mtof;
+#X obj 244 557 outlet~;
+#X obj 42 66 symbol \$0-sampy;
+#X obj 239 188 tabread4~ \$0-sampy;
+#X obj 47 206 s \$0.total;
+#X obj 286 15 r \$0.pp.s;
+#X obj 409 120 r \$0.total;
+#X obj 427 146 r \$0.end.s;
+#X obj 403 164 r \$0.start.s;
+#X obj 159 258 s \$0.pos.r;
+#X obj 8 8 r \$0.testbang;
+#X obj 188 31 r \$0.pitch.s;
+#X obj 16 173 t b f;
+#X obj 18 239 s \$0.end.r;
+#X msg 15 212 1;
+#X msg 21 270 0;
+#X obj 28 295 s \$0.start.r;
+#X obj 110 127 r \$0-bangin;
+#X obj 373 299 loadbang;
+#X obj 385 346 s \$0.pitch.r;
+#X msg 399 325 0;
+#X connect 0 0 32 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 5 1 22 0;
+#X connect 6 0 19 0;
+#X connect 7 0 18 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 9 0 17 0;
+#X connect 10 0 17 0;
+#X connect 11 0 12 0;
+#X connect 12 0 29 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 17 0;
+#X connect 16 0 20 0;
+#X connect 17 0 11 0;
+#X connect 17 0 23 0;
+#X connect 18 0 17 2;
+#X connect 19 0 17 1;
+#X connect 20 0 15 0;
+#X connect 22 0 1 1;
+#X connect 23 0 21 0;
+#X connect 25 0 8 0;
+#X connect 26 0 6 1;
+#X connect 26 0 7 1;
+#X connect 26 0 11 1;
+#X connect 27 0 7 0;
+#X connect 28 0 6 0;
+#X connect 30 0 4 0;
+#X connect 31 0 16 0;
+#X connect 32 0 34 0;
+#X connect 32 0 35 0;
+#X connect 32 1 24 0;
+#X connect 34 0 33 0;
+#X connect 35 0 36 0;
+#X connect 37 0 17 0;
+#X connect 38 0 40 0;
+#X connect 40 0 39 0;
+#X restore 124 244 pd guts;
+#X obj 319 103 bng 15 250 50 0 \$0.testbang \$0.testebang_r load -22
+8 0 8 -80832 -262144 -1;
+#X obj 137 293 outlet~;
+#X obj 250 243 table \$0-sampy;
+#X text 206 418 note: requires susloop~ (bsaylor);
+#X obj 155 103 bng 15 250 50 0 \$0-bangin \$0-bangin_r hit 17 8 0 8
+-261391 -1 -1;
+#X connect 17 0 19 0;
+#X coords 0 -1 1 1 238 92 1 100 100;

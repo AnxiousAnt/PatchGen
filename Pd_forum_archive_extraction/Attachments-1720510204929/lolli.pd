@@ -1,0 +1,29 @@
+#N canvas 341 188 599 393 12;
+#X obj 51 108 hsl 100 15 0 127 0 0 a1 a2 empty -2 -6 0 8 -262144 -1
+-1 0 1;
+#X obj 208 109 hsl 100 15 0 127 0 0 b1 b2 empty -2 -6 0 8 -262144 -1
+-1 0 1;
+#X obj 364 112 hsl 200 15 0 127 0 0 c1 c2 empty -2 -6 0 8 -262144 -1
+-1 0 1;
+#X msg 48 180 set \$1;
+#X msg 209 183 set \$1;
+#X msg 360 191 set \$1;
+#X obj 48 153 r a1;
+#X obj 48 225 s b2;
+#X obj 101 225 s c2;
+#X obj 209 156 r b1;
+#X obj 209 228 s a2;
+#X obj 262 228 s c2;
+#X obj 360 164 r c1;
+#X obj 400 234 s b2;
+#X obj 360 234 s a2;
+#X text 83 40 Three sliders dancing N'Sync. But where's Justin?;
+#X connect 3 0 7 0;
+#X connect 3 0 8 0;
+#X connect 4 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 13 0;
+#X connect 5 0 14 0;
+#X connect 6 0 3 0;
+#X connect 9 0 4 0;
+#X connect 12 0 5 0;

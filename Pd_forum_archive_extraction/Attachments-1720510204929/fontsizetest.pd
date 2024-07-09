@@ -1,0 +1,26 @@
+#N canvas 446 165 488 477 10;
+#X obj 19 113 cnv 15 72 150 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 21 149 hsl 128 15 0 127 0 0 empty empty makefilename -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 3 211 tgl 15 0 empty empty makefilename 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 3 231 bng 15 250 50 0 empty empty makefilename 17 7 0 10 -262144
+-1 -1;
+#X obj 19 184 hradio 15 1 0 8 empty empty makefilename 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 19 8 cnv 15 72 100 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 18 25 makefilename;
+#X msg 18 60 makefilename;
+#X text 17 87 makefilename;
+#X obj 19 269 cnv 15 72 30 empty empty makefilename 0 12 0 10 -260097
+-1 0;
+#X obj 20 422 makefilename;
+#X obj 100 422 makefilename;
+#X text 17 312 Font size for objects in this patch is set to 10 pt.
+On Raspbian with LXDE or XFCE \, Pd's object boxes \, message boxes
+and comments are too large \, while characters in IEM guis (slider
+\, radiobutton \, toggle \, bang and canvas) still have correct size.
+How come?;
+#X text 17 398 These object boxes should not overlap:;

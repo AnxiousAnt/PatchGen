@@ -1,0 +1,38 @@
+#N canvas 412 271 397 225 10;
+#X obj 41 153 shell;
+#X msg 117 75 pause;
+#X obj 117 56 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 41 106 prepend xine-remote -c;
+#X msg 41 75 play;
+#X msg 79 75 stop;
+#X obj 87 179 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X text 107 179 error;
+#X obj 222 135 prepend event;
+#X msg 274 60 up;
+#X msg 272 111 down;
+#X msg 222 87 left;
+#X msg 319 87 right;
+#X msg 264 87 select;
+#X msg 48 130 halt;
+#X obj 86 130 loadbang;
+#X obj 41 178 print;
+#X msg 86 152 ./xinedvd;
+#X text 36 24 simple control panel for the xine dvd player;
+#X connect 0 0 16 0;
+#X connect 0 1 6 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
+#X connect 12 0 8 0;
+#X connect 13 0 8 0;
+#X connect 14 0 3 0;
+#X connect 15 0 17 0;
+#X connect 17 0 0 0;

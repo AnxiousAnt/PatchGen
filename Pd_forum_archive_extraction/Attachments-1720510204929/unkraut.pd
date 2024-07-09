@@ -1,0 +1,34 @@
+#N canvas 425 118 655 503 36;
+#X obj -3 -3 cnv 15 640 480 empty empty empty 20 12 0 14 -1 -66577
+0;
+#N canvas 392 73 1366 708 logic 0;
+#X obj -29 -13 text define unkraut;
+#X obj -317 163 text get unkraut;
+#X msg -29 -65 read -c unkraut.txt;
+#X obj -314 225 list split 1;
+#X obj -314 110 random 120;
+#X obj -309 -112 notein;
+#X obj -309 -42 spigot;
+#X msg -308 54 bang;
+#X obj -320 296 s name0;
+#X obj -146 298 s name1;
+#X obj -134 -184 loadbang;
+#X obj 101 101 cnv 15 340 100 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X symbolatom 104 105 15 0 0 0 - name0 dummy;
+#X symbolatom 104 150 15 0 0 0 - name1 dummy;
+#X obj -136 -122 t b b;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 8 0;
+#X connect 3 1 9 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 5 1 6 1;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 10 0 14 0;
+#X connect 14 0 7 0;
+#X connect 14 1 2 0;
+#X coords 0 -1 1 1 340 100 2 100 100;
+#X restore 135 169 pd logic;

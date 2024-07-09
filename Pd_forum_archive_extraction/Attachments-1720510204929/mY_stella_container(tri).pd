@@ -1,0 +1,76 @@
+#N canvas 593 293 650 496 10;
+#X obj 476 418 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
+0;
+#N canvas 132 514 450 300 gemwin 0;
+#X obj 132 136 gemwin;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X obj 67 41 route create;
+#X msg 67 70 set destroy;
+#X msg 142 68 set create;
+#X msg 198 112 destroy;
+#X msg 132 112 create \, 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 7 0;
+#X connect 3 1 5 0;
+#X connect 3 1 6 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X restore 481 457 pd gemwin;
+#X msg 481 438 create;
+#X text 477 417 Create window:;
+#X obj 43 51 gemhead;
+#X obj 43 129 rotateXYZ;
+#X floatatom 60 105 5 0 0 0 - - -;
+#X msg 60 318 0 3 0;
+#X obj 409 237 1.61803;
+#X msg 77 342 2 -3 0;
+#X text 462 235 <-- the golden ratio;
+#X obj 43 74 ortho;
+#X text 255 51 The distance between two consecutive points (e.g.: the
+two bottom points) should be the 2/3 of the star height. The y value
+of the left and right points is the positive golden ratio split point
+of the stars height. The x value of these same two points is the positive
+and negative of the half of the distance between two non-consecutive
+points (e.g.: the top point and the bottom right point);
+#X obj 43 286 polygon 3;
+#X obj 43 366 polygon 3;
+#X obj 43 446 polygon 3;
+#X msg 60 398 0 3 0;
+#X msg 77 422 -2 -3 0;
+#X msg 43 170 draw_aliased line;
+#X msg 43 192 draw_aliased fill;
+#X msg 60 243 -3.16227 0.7082 0;
+#X msg 77 264 3.16227 0.7082 0;
+#X msg 107 286 0 -1.64503 0;
+#X msg 110 366 0 -1.64503 0;
+#X msg 111 446 0 -1.64503 0;
+#X text 347 168 .. or something..;
+#X text 165 191 <-- :-D;
+#X text 206 324 click'em all!;
+#X connect 1 0 2 0;
+#X connect 2 0 1 0;
+#X connect 4 0 11 0;
+#X connect 5 0 13 0;
+#X connect 5 0 14 0;
+#X connect 5 0 15 0;
+#X connect 6 0 5 1;
+#X connect 7 0 14 1;
+#X connect 9 0 14 2;
+#X connect 11 0 5 0;
+#X connect 16 0 15 1;
+#X connect 17 0 15 2;
+#X connect 18 0 13 0;
+#X connect 18 0 14 0;
+#X connect 18 0 15 0;
+#X connect 19 0 13 0;
+#X connect 19 0 14 0;
+#X connect 19 0 15 0;
+#X connect 20 0 13 1;
+#X connect 21 0 13 2;
+#X connect 22 0 13 3;
+#X connect 23 0 14 3;
+#X connect 24 0 15 3;

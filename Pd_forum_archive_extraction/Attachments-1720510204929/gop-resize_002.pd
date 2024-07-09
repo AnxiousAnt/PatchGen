@@ -1,0 +1,21 @@
+#N canvas 525 254 645 592 10;
+#X obj 19 37 cnv 15 200 100 empty normal_canvas normal_canvas 20 12
+0 10 -233017 -66577 0;
+#N canvas 0 0 450 300 gop_canvas 0;
+#X floatatom 188 137 5 0 0 0 - - -;
+#X coords 0 -2 17 2 200 140 1;
+#X restore 283 43 pd gop_canvas;
+#X msg 20 233 \; normal_canvas vis_size 150 150;
+#X msg 20 271 \; normal_canvas vis_size 200 100;
+#X text 19 206 This works:;
+#X msg 284 232 \; pd-gop_canvas xticks 0 1 1;
+#X text 283 207 This is fun:;
+#X msg 284 457 \; pd-gop_canvas rename george;
+#X msg 282 533 \; pd-george rename gop_canvas;
+#X msg 284 496 \; pd-george yticks 0 0.1 5;
+#X msg 283 270 \; pd-gop_canvas yticks 0 1 10;
+#X text 285 428 This is not really fun:;
+#X msg 283 360 \; pd-gop_canvas bounds 0 -2 \$1 2;
+#X floatatom 283 340 5 1 300 0 - - -;
+#X msg 283 307 \; pd-gop_canvas ylabel 5.15 -1 0 1;
+#X connect 13 0 12 0;

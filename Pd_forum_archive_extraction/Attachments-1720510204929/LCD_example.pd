@@ -1,0 +1,32 @@
+#N canvas 931 290 454 304 10;
+#X obj 37 138 gemwin;
+#X msg 52 113 buffer 1 \, create \, 1;
+#X obj 292 51 gemhead;
+#X obj 292 118 translateXYZ;
+#X floatatom 323 89 5 0 0 0 - - -;
+#X obj 286 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 173 19 metro 50;
+#X obj 141 11 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 364 87 5 0 0 0 - - -;
+#X obj 293 200 square 0.1;
+#X obj 26 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 292 168 colorRGB 1 1 1 1;
+#X floatatom 321 141 5 0 0 0 - - -;
+#X floatatom 365 142 5 0 0 0 - - -;
+#X floatatom 406 142 5 0 0 0 - - -;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 11 0;
+#X connect 4 0 3 1;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 6 0;
+#X connect 8 0 3 2;
+#X connect 10 0 0 0;
+#X connect 11 0 9 0;
+#X connect 12 0 11 1;
+#X connect 13 0 11 2;
+#X connect 14 0 11 3;

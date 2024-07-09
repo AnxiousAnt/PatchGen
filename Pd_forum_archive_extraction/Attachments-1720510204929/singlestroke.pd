@@ -1,0 +1,32 @@
+#N canvas 227 53 661 414 12;
+#X obj 425 135 change;
+#X obj 425 103 keyname;
+#X obj 425 208 symbol;
+#X msg 425 169 bang;
+#X obj 56 96 key;
+#X obj 153 94 keyup;
+#X obj 56 180 change;
+#X obj 153 184 change;
+#X msg 65 148 set 99999;
+#X msg 169 149 set 99999;
+#X obj 56 248 outlet key;
+#X obj 153 289 outlet keyup;
+#X obj 425 250 outlet keyname;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 1 1 2 1;
+#X connect 2 0 12 0;
+#X connect 3 0 2 0;
+#X connect 4 0 6 0;
+#X connect 4 0 9 0;
+#X connect 5 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 10 0;
+#X connect 7 0 11 0;
+#X connect 8 0 6 0;
+#X connect 9 0 7 0;
+
+
+
+
+

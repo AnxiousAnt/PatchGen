@@ -1,0 +1,3500 @@
+1
+00:00:06,401 --> 00:00:12,400
+The purpose of this course is to show you how to
+
+2
+00:00:12,750 --> 00:00:14,150
+-- well, "show" I'm not sure is the right word --
+
+3
+00:00:14,400 --> 00:00:23,700
+is to enable you to make your own computer music applications, in the sense of designing electronic music instruments.
+
+4
+00:00:23,800 --> 00:00:26,850
+What that means, in a sense, is making your computer do what
+
+5
+00:00:26,950 --> 00:00:30,700
+a guitar or a drum set does when you do things to it,
+
+6
+00:00:30,800 --> 00:00:34,948
+so that the thing is running in real time.
+
+7
+00:00:35,048 --> 00:00:36,255
+It's making sound
+
+8
+00:00:36,355 --> 00:00:38,908
+ and you walk up to it and do things to it,
+
+9
+00:00:39,072 --> 00:00:40,786
+and that changes the sound that it makes.
+
+10
+00:00:40,886 --> 00:00:44,093
+For instance, it might be silent until you start doing something and then it starts making noise.
+
+11
+00:00:44,193 --> 00:00:49,524
+Then you've got an instrument that does something that responds to how you're trying to get it to do things.
+
+12
+00:00:49,624 --> 00:00:52,790
+So this is a particular..
+
+13
+00:00:52,912 --> 00:00:58,141
+This thing, this idea of using computers to make computer music instruments is,
+
+14
+00:00:58,301 --> 00:01:04,385
+in some sense, sort of the trunk of the whole field of computer music, at least the way I see it.
+
+15
+00:01:04,485 --> 00:01:08,100
+Computer music grew out of, or maybe it's a part of,
+
+16
+00:01:08,200 --> 00:01:13,326
+the field which could be called electronic music, which started, depending on how you think of it, maybe in 
+
+17
+00:01:13,426 --> 00:01:20,961
+the late 1800s -- maybe in 1948 when the first tape recorder music started getting made.
+
+18
+00:01:22,594 --> 00:01:25,819
+Well, you could put other kinds of dates on it.
+
+19
+00:01:25,919 --> 00:01:31,903
+And the whole field of electronic music is basically people inventing ways of making music with electronic gear
+
+20
+00:01:32,066 --> 00:01:35,985
+as opposed to acoustic instruments.
+
+21
+00:01:36,085 --> 00:01:42,926
+It wasn't obvious, at first, when computers showed up on the scene that computers would eventually, essentially,
+
+22
+00:01:43,026 --> 00:01:53,051
+supplant all of the other electronic musical instruments that exist, which means the tape recorder, the synthesizer, all that kind of good stuff.
+
+23
+00:01:53,151 --> 00:02:00,482
+But nowadays, everything that you could have found in an electronic music studio in the '50s, or '60s, or the '90s
+
+24
+00:02:00,605 --> 00:02:06,280
+is a piece of software on a screen on your computer with a couple of very important provisos.
+
+25
+00:02:06,484 --> 00:02:11,730
+Proviso number one is that a computer makes a rotten musical instrument in the sense that you can't strum it, 
+
+26
+00:02:11,995 --> 00:02:15,976
+or whap it, or any of those good things that you can do with acoustic instruments.
+
+27
+00:02:16,337 --> 00:02:21,269
+I'm not going to do a whole lot of talking about designing hardware interfaces 
+
+28
+00:02:21,587 --> 00:02:26,360
+for making computers that respond more naturally to musical impulses.
+
+29
+00:02:26,519 --> 00:02:29,382
+The reason I'm not going to talk about that is because it's its own subject.
+
+30
+00:02:29,860 --> 00:02:32,723
+And it's also a rather various subject.
+
+31
+00:02:33,360 --> 00:02:36,382
+Different people have completely different approaches to designing interfaces to computers.
+
+32
+00:02:37,178 --> 00:02:43,382
+It's such a wide, disorganized field that it's hard to figure out how to make a syllabus out of it in the first place.
+
+33
+00:02:43,859 --> 00:02:47,996
+So I'm just sort of going to ignore that and, to the extent that I need to actuate my computer
+
+34
+00:02:48,155 --> 00:02:52,768
+I'm going to be using keyboards, and a mouse, and the microphone.
+
+35
+00:02:55,473 --> 00:03:00,245
+So other than that aspect of just getting inputs into the computer, I think that 
+
+36
+00:03:00,723 --> 00:03:06,609
+everything that you do now in electronic music, you at least can do on your computer.
+
+37
+00:03:09,950 --> 00:03:11,382
+So a couple of things about that, OK.
+
+38
+00:03:11,482 --> 00:03:19,495
+First off, what does making music with computers split up into as a set of things that you can do?
+
+39
+00:03:19,972 --> 00:03:26,972
+And my own taxonomy of what you do with computers to make them into computer instruments are that there are three
+
+40
+00:03:27,072 --> 00:03:29,199
+basic things that you might want to know how to do.
+
+41
+00:03:29,523 --> 00:03:30,829
+One is synthesize sounds.
+
+42
+00:03:31,526 --> 00:03:37,271
+What that means, at least what that means to me, is that you write down an algebraic equation
+
+43
+00:03:37,793 --> 00:03:40,317
+and it has a variable in it for time.
+
+44
+00:03:40,417 --> 00:03:43,625
+As time passes you just plug different numbers into the time slot,
+
+45
+00:03:43,886 --> 00:03:49,544
+and out comes a sinusoid or whatever it is that you told the equation to make, and then you get to hear it, right?
+
+46
+00:03:49,893 --> 00:03:54,245
+And if you came up studying mathematics like I did, this is paradise, right?
+
+47
+00:03:54,345 --> 00:03:58,162
+Any equation you can think of, you can listen to.
+
+48
+00:03:58,510 --> 00:04:00,774
+So that is synthesis, synthesizing sound.
+
+49
+00:04:01,383 --> 00:04:06,954
+That comes out of a long tradition of making stuff, like oscillators and filters that have
+
+50
+00:04:07,054 --> 00:04:14,092
+ existed for at least 100 years for doing that, before computers really came on the computer music scene.
+
+51
+00:04:14,527 --> 00:04:21,491
+A second thing is what I think people usually call either processing or signal processing,
+
+52
+00:04:21,752 --> 00:04:28,194
+which is a misnomer because signal processing means many other things besides what it means to computer musicians.
+
+53
+00:04:28,455 --> 00:04:32,981
+But at least if you're in a room with computer musicians and when someone says signal processing,
+
+54
+00:04:33,504 --> 00:04:39,771
+what they tend to mean is something that takes a sound in and changes it into something else to go out.
+
+55
+00:04:40,119 --> 00:04:48,998
+The most ubiquitous example, I think, is sampling, where you take a microphone up to something and make a recording,
+
+56
+00:04:49,259 --> 00:04:52,132
+and then you have a button that you press that plays it back.
+
+57
+00:04:52,480 --> 00:04:56,516
+And the only transformation is that you heard it at a different time from when you recorded it.
+
+58
+00:04:56,832 --> 00:04:58,724
+That's a perfect transformation, right?
+
+59
+00:04:58,824 --> 00:05:07,713
+In chapter seven, I think it is, you will find all sorts of things to do with that particular kind of transformation.
+
+60
+00:05:07,974 --> 00:05:09,715
+OK. That's item number two.
+
+61
+00:05:10,064 --> 00:05:11,064
+One was synthesis.
+
+62
+00:05:12,510 --> 00:05:13,510
+Two is signal processing.
+
+63
+00:05:13,950 --> 00:05:19,198
+Three is analysis, the idea of taking a sound that goes in and boiling it down to a set of parameters 
+
+64
+00:05:19,298 --> 00:05:24,388
+that describes what that sound is, or some aspect of what that sound is.
+
+65
+00:05:24,850 --> 00:05:31,655
+A very simple example of that is an envelope follower, which will tell you whether someone started playing an instrument or not
+
+66
+00:05:31,885 --> 00:05:37,133
+or more generally, tell you whether there seems to be sound coming into a microphone right now or not.
+
+67
+00:05:37,364 --> 00:05:46,591
+And you would use that, for instance, if you wanted to find out if someone was walking into a room so you could turn the lights on automatically.
+
+68
+00:05:46,691 --> 00:05:54,203
+Put up a microphone, hook it into an envelope follower, and then have it turn the lights on when the amplitude of the sound reaches a certain level.
+
+69
+00:05:54,303 --> 00:05:55,303
+So that's analysis.
+
+70
+00:05:55,530 --> 00:06:01,758
+That doesn't sound as interesting as synthesis or processing because there's no sound output, there's just sound input.
+
+71
+00:06:02,450 --> 00:06:07,698
+I hope you'll find out that there's a whole world of cool stuff you can do with that as well.
+
+72
+00:06:07,798 --> 00:06:13,177
+In terms of mental block-diagrams, if you want to think about what this all means:
+
+73
+00:06:13,350 --> 00:06:16,291
+Synthesis is, you have a box and it has an output.
+
+74
+00:06:16,391 --> 00:06:20,039
+But the input was something that isn't sound; the output is sound.
+
+75
+00:06:20,139 --> 00:06:23,557
+Analysis is, you have a box that has a sound input but not an output, and then
+
+76
+00:06:23,657 --> 00:06:27,767
+Processing is a thing where you have both input and output.
+
+77
+00:06:29,728 --> 00:06:37,801
+What I'm going to do to start with is start with synthesis because it's the easiest thing to get your computers to do.
+
+78
+00:06:38,032 --> 00:06:44,664
+Why? Because it's much easier to deal with speakers than it is to deal with microphones for reasons that I don't really understand very well.
+
+79
+00:06:44,764 --> 00:06:52,334
+But I want to give you some time to get used to how to get your microphones and your computers to be friends.
+
+80
+00:06:52,449 --> 00:07:01,503
+That might make it more appropriate to wait a few weeks before, or however many weeks we can afford to wait, before we start doing that kind of stuff...
+
+81
+00:07:01,603 --> 00:07:06,982
+And just to make the gesture, I didn't bring a microphone today, although there will be microphones in the room later on.
+
+82
+00:07:09,289 --> 00:07:10,903
+What do I have to tell you?
+
+83
+00:07:11,019 --> 00:07:17,074
+I have to tell you some organizational things about the course that are boring but that you need to know.
+
+84
+00:07:17,247 --> 00:07:23,418
+There's a website, and the website tells you all the boring stuff that you need to know about the course.
+
+85
+00:07:23,706 --> 00:07:26,186
+The website will somewhat change in time.
+
+86
+00:07:29,646 --> 00:07:38,873
+What it does now is it tells you, week by week, what I believe the topics to be that this course will consist of.
+
+87
+00:07:39,161 --> 00:07:48,149
+Most of the time I'm actually able to do what I was planning to do, but sometimes it has to change for one reason or another.
+
+88
+00:07:48,249 --> 00:07:53,867
+So this is not a guarantee that this is what we're going to manage to do, but hopefully it's what we'll do.
+
+89
+00:07:54,444 --> 00:08:11,802
+What you'll find is that as the quarter drags on there are going to be a certain number of assignments, which are things that you have to do with a computer that demonstrate that you have mastered one or another technique that is the topic of the week.
+
+90
+00:08:11,975 --> 00:08:21,490
+The first one of these is due a week from Thursday, that's to say Thursday of week two, and that is a tight deadline.
+
+91
+00:08:21,721 --> 00:08:24,085
+The assignment itself is very simple, I hope.
+
+92
+00:08:24,489 --> 00:08:37,801
+What that requires you to do is get software loaded onto your computer and figure out how to deal with the mechanisms for turning homework in, which you probably know better than I do.
+
+93
+00:08:38,343 --> 00:08:40,333
+But leave time to figure all this stuff out.
+
+94
+00:08:40,433 --> 00:08:53,812
+What this means is that you should be doing this right now so that when things start going wrong you can ask for help and you can try to figure out what to do to get things to work for you.
+
+95
+00:08:53,912 --> 00:08:56,617
+To that end, there are office hours.
+
+96
+00:08:56,717 --> 00:09:04,125
+Both Joe, the teaching assistant, and I will have office hours on Tuesdays because the homework is going to be due on Thursdays.
+
+97
+00:09:04,306 --> 00:09:06,658
+I think that's the most effective way of running it.
+
+98
+00:09:06,758 --> 00:09:14,618
+Joe will be here but I'm not sure in what room yet.
+
+99
+00:09:14,718 --> 00:09:18,237
+The room number, I think, might be changing, but he will be here from 2:00 to 3:00 on Tuesdays.
+
+100
+00:09:18,337 --> 00:09:23,303
+I will be here after classes on Tuesdays, which will be when I find everyone most exhausted.
+
+101
+00:09:23,403 --> 00:09:26,740
+Anyway, that's another possible way to find out what's going on.
+
+102
+00:09:30,901 --> 00:09:35,696
+The course has a textbook, sort of.
+
+103
+00:09:37,867 --> 00:09:41,576
+Again, the textbook is -- where did I put it?
+
+104
+00:09:42,325 --> 00:09:54,288
+The textbook is online, and it doesn't look like a book, but here's a PDF version and a PostScript version, and then there's a nice HTML version.
+
+105
+00:09:54,492 --> 00:10:03,025
+You can even download a nice tarball with the HTML version, and you can download all the examples that are described in the book, which are patches in PD.
+
+106
+00:10:03,673 --> 00:10:15,137
+Or you can download -- don't do this -- download all the figures in the book, which are also patches in PD, if you really want to laugh at what Pd can do.
+
+107
+00:10:15,618 --> 00:10:16,915
+It would be hard to do it quick.
+
+108
+00:10:17,492 --> 00:10:20,375
+So that is textbook, and what I'm going to try to do, although I've been-- Yeah?
+
+109
+00:10:20,475 --> 00:10:22,826
+Student:  What's the website?
+
+110
+00:10:23,403 --> 00:10:24,412
+Oh. What's the website?
+
+111
+00:10:24,512 --> 00:10:25,512
+The URL is here.
+
+112
+00:10:34,502 --> 00:10:35,502
+That's the URL you want.
+
+113
+00:10:35,781 --> 00:10:42,865
+Although, you can get there very easily because you Google "Puckette" and then you see Courses, and then you see the first one is Music 171.
+
+114
+00:10:48,830 --> 00:10:54,702
+I didn't want to insult your intelligences by printing out the syllabus.
+
+115
+00:10:54,981 --> 00:11:01,272
+Well, actually, if you have trouble accessing the web, come see me and I'll print you out a copy.
+
+116
+00:11:01,372 --> 00:11:03,742
+But it won't help you so much because it's going to change.
+
+117
+00:11:06,119 --> 00:11:18,841
+On that subject, I want to not forget to say one thing, which is if you don't have easy access to a computer and/or the network, please come see me after class today so that we can figure out how to get that solved.
+
+118
+00:11:18,981 --> 00:11:22,336
+There are various things that we can do to try to get you to a computer.
+
+119
+00:11:22,523 --> 00:11:26,390
+I don't know what it's going to be yet because we'll just have to do it case by case.
+
+120
+00:11:26,623 --> 00:11:33,054
+The polls say that 99 percent of students now have computers, so I'm going to assume that you do until you tell me that you don't.
+
+121
+00:11:33,241 --> 00:11:41,023
+If you don't, do please come tell me because otherwise you will be in serious trouble, and it is fixable.
+
+122
+00:11:41,256 --> 00:11:47,920
+OK, so that's the course web page.
+
+123
+00:11:48,759 --> 00:11:52,487
+The next thing, this is what you know more about than I do.
+
+124
+00:11:52,860 --> 00:12:00,922
+The system for turning in assignments is WebCT, which probably all of you have suffered through.
+
+125
+00:12:01,295 --> 00:12:02,295
+Right?  Yeah.
+
+126
+00:12:02,879 --> 00:12:06,281
+I last touched this in 2004, and it was a real bear
+
+127
+00:12:06,468 --> 00:12:08,984
+I think they've made it a little better now.
+
+128
+00:12:09,124 --> 00:12:11,780
+It's actually better than anything else that I've seen.
+
+129
+00:12:12,246 --> 00:12:23,570
+The reason it has to exist at all, as opposed to just having everyone put homework up on a wiki, is because legally we're not allowed to let other people see your homework assignments.
+
+130
+00:12:23,943 --> 00:12:27,625
+The whole thing is basically just to protect confidentiality, as far as I can tell.
+
+131
+00:12:27,725 --> 00:12:29,628
+There's no other reason to have all this infrastructure.
+
+132
+00:12:29,908 --> 00:12:33,217
+In fact, I would love it if one of you could try this
+
+133
+00:12:33,496 --> 00:12:41,186
+If one of you who actually is online, if you could actually go to WebCT and see if you can log in to the course
+
+134
+00:12:43,935 --> 00:12:46,731
+So this is the WebCT login
+
+135
+00:12:46,831 --> 00:12:51,578
+Actually, I think you do webct.ucsd.edu.
+
+136
+00:12:51,811 --> 00:12:55,492
+It's not going to do this for you what it does for me.
+
+137
+00:12:55,958 --> 00:12:56,958
+Student:  It's not showing up.
+
+138
+00:12:57,058 --> 00:12:58,058
+It's not showing up?
+
+139
+00:12:58,242 --> 00:12:59,242
+In what sense?
+
+140
+00:12:59,593 --> 00:13:02,855
+Student:  : After you log in it tells you what classes you have on WebCT
+
+141
+00:13:02,955 --> 00:13:04,160
+It's not on that page.
+
+142
+00:13:04,260 --> 00:13:05,260
+And you don't have 171 as one of your classes?
+
+143
+00:13:05,360 --> 00:13:06,360
+Student:  Not yet.
+
+144
+00:13:06,770 --> 00:13:11,197
+OK. I was worried about that because I asked for the class roster and I got not a single student in it.
+
+145
+00:13:13,573 --> 00:13:22,521
+I have to call in to WebCT to ask them if there's something that I should have been doing that I haven't done yet, which is probably going to turn out to be the reason.
+
+146
+00:13:22,801 --> 00:13:23,801
+Sorry.
+
+147
+00:13:24,292 --> 00:13:33,612
+So this is not going to be an urgent issue until a week from Thursday when it's time to actually upload stuff because I'm not using WebCT to make stuff available to you.
+
+148
+00:13:33,798 --> 00:13:36,501
+I'm just using it to collect stuff.
+
+149
+00:13:36,641 --> 00:13:44,657
+So for this week, the thing that really is urgent is another thing that I hope some of you will try because maybe this will fail, too.
+
+150
+00:13:44,890 --> 00:13:50,668
+Which is see if you can download Pd and get it to run.
+
+151
+00:13:50,901 --> 00:14:03,017
+This is going to be a little bit less obvious because I'm going to have to show you some things before you can find out whether you're even successfully running PD.
+
+152
+00:14:03,903 --> 00:14:05,692
+So go back and say something I didn't say.
+
+153
+00:14:05,860 --> 00:14:13,503
+There is a software package that you will be using for the course which is Pure Data, or PD, and you get it from my website.
+
+154
+00:14:16,550 --> 00:14:21,285
+It will run on your computer, unless you have something really strange.
+
+155
+00:14:21,751 --> 00:14:28,555
+It will even run on your iPhone, but that version of it is not on my website for that one.
+
+156
+00:14:28,974 --> 00:14:29,974
+I'll tell you if you care.
+
+157
+00:14:29,400 --> 00:14:31,265
+You can run on Android, too.
+
+158
+00:14:31,637 --> 00:14:39,746
+So you can have a lot of fun with this, but right now we're just going to be using the standard one on the computer and making things easy.
+
+159
+00:14:39,932 --> 00:14:42,635
+So to do that, you do this.
+
+160
+00:14:42,775 --> 00:14:44,732
+Or there's several things you can do.
+
+161
+00:14:44,872 --> 00:14:48,833
+I'm going to show you what I normally do, but your mileage may vary.
+
+162
+00:14:49,066 --> 00:14:57,920
+The link is on the website, although you can also find this through my home page if you want to do that.
+
+163
+00:14:58,386 --> 00:15:03,280
+There's all this good stuff, and here is Pure Data.
+
+164
+00:15:04,072 --> 00:15:13,392
+You can be conservative and use version 42, which works, or you can have fun and use version 43, which sort of works.
+
+165
+00:15:16,561 --> 00:15:18,472
+But which does all sorts of new stuff.
+
+166
+00:15:22,945 --> 00:15:30,029
+There's one thing I know that doesn't work in 43 which you're not going to get for another week, so I will try to fix that by the time you get it.
+
+167
+00:15:30,495 --> 00:15:34,829
+Anyway, I'll tell you with this one I can, which is when I told you what the object is that doesn't work right.
+
+168
+00:15:35,714 --> 00:15:40,234
+Anyway, I'm going to be using 43. In fact let's just do this.
+
+169
+00:15:45,128 --> 00:15:53,749
+If you have a Macintosh that's more than six years old, you will want this funny version.
+
+170
+00:15:54,028 --> 00:15:57,990
+Otherwise, you will want one of these, Mac OSX.
+
+171
+00:15:58,456 --> 00:16:09,454
+Can I ask for a show of hands, this is just out of curiosity, well, actually it matters somewhat but mostly curiosity, how many of you have, as your primary computer, a Macintosh?  Wow.
+
+172
+00:16:14,253 --> 00:16:18,261
+OK, how many of you have the primary computer of a PC running Windows software?
+
+173
+00:16:21,383 --> 00:16:25,950
+OK, so maybe 80 to 20, something like that.
+
+174
+00:16:26,183 --> 00:16:27,581
+How many of you are running something else?
+
+175
+00:16:27,768 --> 00:16:31,216
+One, two, three.  Very good.
+
+176
+00:16:33,220 --> 00:16:45,616
+The reason I brought the Macintosh today -- actually there are two reasons -- the honest reason is that a Linux box doesn't have DVI out so I'm kind of stuck with it now on compatibility mode.
+
+177
+00:16:45,756 --> 00:16:53,726
+The other reason is that I want to look like you guys are looking today, but then by Thursday you're going to be watching me play with Linux instead of OSX.
+
+178
+00:16:54,360 --> 00:16:58,012
+All of the OSX lore, unless I decide really to punish you and bring the PC in.
+
+179
+00:16:58,204 --> 00:16:59,742
+We'll see.
+
+180
+00:17:00,319 --> 00:17:01,568
+No promises though.
+
+181
+00:17:03,683 --> 00:17:06,182
+We're going to be Macintosh today.
+
+182
+00:17:06,566 --> 00:17:12,237
+We're going to grab PD, the scary one, and I think...
+
+183
+00:17:13,006 --> 00:17:15,505
+I don't know what you do with these things.
+
+184
+00:17:15,986 --> 00:17:18,869
+Let's just tell it...  I know.
+
+185
+00:17:19,830 --> 00:17:29,634
+I usually save it, and then I get into a shell, and then I type TAR, space, XZF, space, blah, blah.
+
+186
+00:17:30,691 --> 00:17:35,593
+You probably don't want to know how to do that so I'm going to try to pretend I'm a regular computer user.
+
+187
+00:17:38,381 --> 00:17:42,610
+One of you is trying this, right, so that you can see if it's actually working?
+
+188
+00:17:43,763 --> 00:17:45,012
+What did it do?
+
+189
+00:17:46,166 --> 00:17:48,953
+Student:  I don't know.
+
+190
+00:17:49,049 --> 00:17:50,107
+I think I just...
+
+191
+00:17:50,491 --> 00:17:51,491
+I thought it opened?
+
+192
+00:17:51,837 --> 00:17:53,278
+Student:  No, your window just froze.
+
+193
+00:17:53,567 --> 00:17:56,162
+See I just did that.
+
+194
+00:17:56,450 --> 00:17:57,450
+It already did that to somebody already.
+
+195
+00:17:57,700 --> 00:17:58,700
+Student:  It's in the new Balance folder, I think.
+
+196
+00:17:58,853 --> 00:17:59,853
+What is that?
+
+197
+00:18:00,295 --> 00:18:01,295
+It probably threw it either on the desktop or in the home drive.
+
+198
+00:18:01,640 --> 00:18:02,794
+Oh, I'm running PD.
+
+199
+00:18:03,467 --> 00:18:05,677
+Oh, look.
+
+200
+00:18:06,446 --> 00:18:12,021
+It looks like I've got all this good stuff and now I don't know which of these is the one I just downloaded.
+
+201
+00:18:12,597 --> 00:18:14,135
+Student:  Right there.
+
+202
+00:18:14,520 --> 00:18:16,154
+Let's get maybe this one.
+
+203
+00:18:16,692 --> 00:18:17,692
+Student:  Left hand side, left hand side.
+
+204
+00:18:17,941 --> 00:18:18,941
+This must be it right here.
+
+205
+00:18:19,229 --> 00:18:20,671
+All right, this is the one that I had to start with today.
+
+206
+00:18:21,152 --> 00:18:25,093
+Sorry, I don't think it will hurt you to have more than one.
+
+207
+00:18:26,054 --> 00:18:27,688
+Then you just do this.
+
+208
+00:18:28,649 --> 00:18:32,301
+That's the easy part and then maybe this will happen, maybe not.
+
+209
+00:18:32,493 --> 00:18:39,702
+One thing that I've noticed, the first time you do this on any computer, sometimes it seems to take 30 seconds for Pd to start up.
+
+210
+00:18:40,567 --> 00:18:47,391
+So if you click it and it does nothing for 30 seconds, I don't know what that is, but that's Steve Jobs doing that for you.
+
+211
+00:18:47,776 --> 00:18:49,506
+Student:  Will Pd Extended work?
+
+212
+00:18:49,025 --> 00:18:50,563
+Yes.  Oh, thank you.
+
+213
+00:18:51,140 --> 00:18:59,694
+Another thing that you can do, which will be more fun, is go get Pd Extended as opposed to Pd PD.
+
+214
+00:18:59,790 --> 00:19:01,520
+In fact, it's so much fun I'm going to do this for you, too.
+
+215
+00:19:04,307 --> 00:19:06,999
+The problem is I've forgotten where the...
+
+216
+00:19:07,095 --> 00:19:08,248
+Oh, so we just do...
+
+217
+00:19:08,921 --> 00:19:10,555
+Get in the browser, and then we say, Pd Extended.
+
+218
+00:19:11,708 --> 00:19:24,780
+PD Extended, Pure Data downloads, Pd community site.
+
+219
+00:19:28,913 --> 00:19:32,469
+I don't know what the difference is between that and that.
+
+220
+00:19:32,854 --> 00:19:49,674
+This is the redoubtable Hans-Christoph Steiner, who is a person who aggregates-- well, does many, many things for Pd including actually spearheading PD's Release 43. But he's also making the so-called Pd Extended installers.
+
+221
+00:19:49,770 --> 00:19:56,883
+For those of you who know what's going on with Pd and/or Macs, they have various kinds of objects in them.
+
+222
+00:19:57,171 --> 00:20:02,842
+PD itself ships with a couple hundred objects, and Pd Extended ships maybe with a couple thousand objects in it.
+
+223
+00:20:03,611 --> 00:20:09,281
+So you have lots and lots and lots more stuff to play with in Pd Extended, if you can figure out where to find it.
+
+224
+00:20:12,069 --> 00:20:13,607
+Once in a while I actually reach...
+
+225
+00:20:14,376 --> 00:20:16,010
+You know, I don't want to make a Butterworth filter.
+
+226
+00:20:16,682 --> 00:20:18,220
+They've got Butterworth filters in it.
+
+227
+00:20:18,412 --> 00:20:25,044
+So there are things which you care about which you can get in Pd Extended that are sometimes really worth getting.
+
+228
+00:20:25,237 --> 00:20:38,981
+The other thing about that is when you want to make graphics, Pd has an extension called GEM, the Graphics Environment for Multimedia, which will allow you to make graphics and also to shoot video and analyze it.
+
+229
+00:20:39,365 --> 00:20:42,729
+Basically do with video the same things that Pd will do with audio.
+
+230
+00:20:42,729 --> 00:20:46,478
+It's not really part of this course, but Pd Extended has that.
+
+231
+00:20:46,478 --> 00:20:49,073
+You can go make movies or whatever you want to do with it.
+
+232
+00:20:49,746 --> 00:20:54,456
+I'll show you a little bit of that just as a teaser in week 10 when we're reaching out a little bit in the subject.
+
+233
+00:20:55,225 --> 00:20:57,051
+So, Pd Extended.
+
+234
+00:21:01,472 --> 00:21:05,797
+The last time I did this it was very easy, so I'm hoping this will still be here.
+
+235
+00:21:06,566 --> 00:21:12,237
+So download Pd 42. This is the one that works.
+
+236
+00:21:13,871 --> 00:21:16,082
+PD Extended 43 is up there somewhere, too.
+
+237
+00:21:17,812 --> 00:21:22,810
+So if you want Pd Extended in its natural state, you can do that.
+
+238
+00:21:22,906 --> 00:21:31,940
+But anyway, I think what I do is click this, and it says, "Go to virtual online application."
+
+239
+00:00:00,-40 --> 00:00:00,-40
+Oh, yes.
+
+240
+00:21:38,284 --> 00:21:39,341
+I want to open it with...
+
+241
+00:21:41,071 --> 00:21:42,071
+Oh, it's a disc.
+
+242
+00:21:46,838 --> 00:21:48,376
+I'll say something interesting for 38 seconds.
+
+243
+00:21:51,740 --> 00:21:55,489
+Actually I sort of know this is going to work because I already have one of these things.
+
+244
+00:21:55,489 --> 00:21:56,489
+It worked the first time.
+
+245
+00:21:59,814 --> 00:22:05,773
+Meanwhile, nothing will happen until... Now it's doing a clean-up. ...
+
+246
+00:22:07,215 --> 00:22:09,906
+All right, we're done.
+
+247
+00:22:18,076 --> 00:22:25,092
+So disc images are things you click on like anything else in that.
+
+248
+00:22:28,264 --> 00:22:31,051
+New? OK, I'll leave.
+
+249
+00:22:57,156 --> 00:22:58,156
+And ta-da, we have a disc that consists of, well, no one.
+
+250
+00:23:02,769 --> 00:23:04,019
+As it starts, you can ignore it.
+
+251
+00:23:06,710 --> 00:23:08,344
+It's quick when I do it directly.
+
+252
+00:23:09,113 --> 00:23:15,168
+So this is the Pd Extended application and I didn't do that, I just did this.
+
+253
+00:23:19,301 --> 00:23:24,684
+Why? Because you don't really want to throw stuff into your applications folder.
+
+254
+00:23:26,702 --> 00:23:32,565
+I won't explain all the reasons you shouldn't mess with your applications folder.
+
+255
+00:23:33,526 --> 00:23:34,968
+You'll have to guess.
+
+256
+00:23:39,101 --> 00:23:42,369
+Then it takes too long to do runs.
+
+257
+00:23:44,580 --> 00:23:48,905
+This is all the stuff that it either loaded or didn't load, and that's good.
+
+258
+00:23:49,539 --> 00:23:50,539
+But now we're running Pd Extended.
+
+259
+00:23:53,038 --> 00:23:56,017
+More about that later if you want to find out about that.
+
+260
+00:23:56,402 --> 00:24:01,400
+Let's get out of here now and get back to being vanilla.
+
+261
+00:24:02,072 --> 00:24:07,167
+Take that, get rid of it, take that, get rid of it.
+
+262
+00:24:07,647 --> 00:24:09,473
+Get rid of this.
+
+263
+00:24:15,857 --> 00:24:18,220
+It's all free so you can throw it away any time you want.
+
+264
+00:24:22,400 --> 00:24:23,400
+So, next step.
+
+265
+00:24:23,689 --> 00:24:24,938
+Now you've downloaded PD.
+
+266
+00:24:25,034 --> 00:24:26,380
+Has anyone actually done this?
+
+267
+00:24:28,494 --> 00:24:31,474
+So, next step is, see if it's working for you.
+
+268
+00:24:32,051 --> 00:24:38,779
+Of course, it should start when you click it and it should also make sound when you ask it to make sound.
+
+269
+00:24:38,875 --> 00:24:42,719
+Actually, that's the real step that means you're doing computer music.
+
+270
+00:24:42,911 --> 00:24:49,159
+To do that, to find out whether that's happening, there are two places that you should think about looking.
+
+271
+00:24:49,543 --> 00:24:52,619
+I always go to the impatient place first.
+
+272
+00:24:52,719 --> 00:25:01,846
+The impatient place is, go to Media and say "test audio and midi" and up comes a Pd patch.
+
+273
+00:25:04,153 --> 00:25:17,321
+This is a Pd document, first one you've seen so far I guess, and this has indicators that say whether sound was coming in to your computer.
+
+274
+00:25:17,705 --> 00:25:22,030
+These are numbers and decibels which you learned about in musical acoustics last quarter.
+
+275
+00:25:22,127 --> 00:25:25,491
+These are in decibels with 100 being full blast.
+
+276
+00:25:25,875 --> 00:25:32,219
+I don't have a microphone so this is the noise level on the audio input device in my computer.
+
+277
+00:25:32,603 --> 00:25:33,949
+There's nothing plugged in.
+
+278
+00:25:34,429 --> 00:25:39,235
+So, I have a signal-to-noise ratio of, compute that and it's...
+
+279
+00:25:44,714 --> 00:25:46,251
+Student:  Four minus.
+
+280
+00:25:47,789 --> 00:26:00,092
+So the loudest signal I could get would be 100 here and I'm looking at 28. So the signal-to-noise ratio is 100 minus 28, which is 72. Which, there's not audio hardware supplied.
+
+281
+00:26:00,669 --> 00:26:02,110
+That's bad.
+
+282
+00:26:02,207 --> 00:26:03,744
+Now the other thing that you want to know...
+
+283
+00:26:04,129 --> 00:26:05,378
+OK so, but sound is coming in.
+
+284
+00:26:05,571 --> 00:26:07,012
+I like to seeing that better than I like seeing zero.
+
+285
+00:26:07,205 --> 00:26:11,530
+What I really like seeing is one or two, which means I've got decent audio hardware.
+
+286
+00:26:11,630 --> 00:26:21,237
+Now I can make sound, which is to say I can ask the test tone to go on, and this is in decibels too, again, with 100 being full blast.
+
+287
+00:26:21,526 --> 00:26:24,313
+So a good place to start is 60.
+
+288
+00:26:24,890 --> 00:26:30,176
+Now you hear a nice A440. Or here's 80.
+
+289
+00:26:30,276 --> 00:26:34,790
+I always do 60 first because you never really know where the speakers are set.
+
+290
+00:26:35,078 --> 00:26:36,424
+While I was...
+
+291
+00:26:36,520 --> 00:26:37,673
+Yeah, there it was.
+
+292
+00:26:39,691 --> 00:26:49,784
+Now, what I didn't show you was, before most of you came in, I connected my computer to the audio system in this room along with the projector.
+
+293
+00:26:50,168 --> 00:26:55,454
+So what you're hearing now is the computer's line output... talking to my stereo.
+
+294
+00:26:55,554 --> 00:27:00,549
+And any of you who has a stereo can do the same thing, and that's a better way.
+
+295
+00:27:00,837 --> 00:27:05,643
+That or headphones would be a better way to operate than using the little speakers that are on the computer.  ... Yeah?
+
+296
+00:27:05,931 --> 00:27:07,949
+Student:  Did you say the lower the number the better?
+
+297
+00:27:08,622 --> 00:27:10,544
+Well here, yeah.
+
+298
+00:27:11,025 --> 00:27:13,140
+If there's nothing plugged in, the lower the number the better.
+
+299
+00:27:13,240 --> 00:27:17,945
+But if you have a laptop, your laptop might have a microphone.
+
+300
+00:27:18,138 --> 00:27:24,385
+So you might not just be looking at the electrical noise level on your equipment, but you might actually be looking at sound.
+
+301
+00:27:24,866 --> 00:27:27,749
+If that's the case, then when you say things that number goes, up.
+
+302
+00:27:27,749 --> 00:27:34,862
+Then you get really happy because you got audio and then you can start making cool processing actions.
+
+303
+00:27:35,438 --> 00:27:44,377
+I'll say that this will happen to you, the first audio process you actually make will suffer from horrible feedback if you're using the microphone with speakers on the...
+
+304
+00:27:44,762 --> 00:27:46,011
+Yeah, like that.
+
+305
+00:27:47,068 --> 00:27:50,144
+Because the mike is very close to the speaker, right?
+
+306
+00:27:50,048 --> 00:27:53,604
+And so the sound comes out of the speaker and back through, like that.
+
+307
+00:27:53,892 --> 00:27:57,737
+If you want to control that, plug in a pair of headphones, which usually will mute the microphones.
+
+308
+00:27:57,833 --> 00:28:03,312
+Then you can listen to what it's doing and the microphone will work properly, I think.
+
+309
+00:28:03,216 --> 00:28:06,291
+Depends on, you know, your mileage may vary.
+
+310
+00:28:08,502 --> 00:28:15,999
+The other thing, just telling you about this, I want to just tell you the basics about getting started.
+
+311
+00:28:16,633 --> 00:28:17,633
+When you do this... and that happens, it's great.
+
+312
+00:28:17,441 --> 00:28:20,612
+But it's possible to do this and not have the sound coming out.
+
+313
+00:28:20,805 --> 00:28:30,897
+Then there are things that you might want to do to figure out why, whether you have sound or not, and that all is here, under PD.
+
+314
+00:28:31,185 --> 00:28:35,703
+So this window popped up when I set the test audio and midi.
+
+315
+00:28:36,087 --> 00:28:40,028
+By the way, this will be possible to do but not useful.
+
+316
+00:28:40,124 --> 00:28:43,103
+I could have two of these up at once and they'll be fighting each other.
+
+317
+00:28:43,449 --> 00:28:44,449
+So don't do that.
+
+318
+00:28:44,737 --> 00:28:50,697
+So then in PD, that was in media, audio and midi.
+
+319
+00:28:50,600 --> 00:28:56,848
+In PD, you get preferences which have audio settings.
+
+320
+00:28:57,040 --> 00:28:59,155
+We're not going to talk about midi today.
+
+321
+00:28:59,635 --> 00:29:09,439
+And audio settings are what sample rate we're running at and a magical number, which I should tell you about, and what audio devices, and what number of channels.
+
+322
+00:29:09,439 --> 00:29:14,245
+Now I can do things that will cause everything to break.
+
+323
+00:29:14,245 --> 00:29:17,032
+Let's have eight channels about right here.
+
+324
+00:29:19,531 --> 00:29:22,415
+All of a sudden, nothing happens.
+
+325
+00:29:22,607 --> 00:29:25,683
+Maybe, I hope, I have an error message.
+
+326
+00:29:25,586 --> 00:29:27,509
+I have lots of error messages.
+
+327
+00:29:29,335 --> 00:29:32,699
+It didn't even give me the proper error message so I can't do it.
+
+328
+00:29:35,102 --> 00:29:38,274
+So this is the "can't do it" mode.
+
+329
+00:29:38,370 --> 00:29:40,965
+You don't see anything here and you don't hear anything coming out.
+
+330
+00:29:41,157 --> 00:29:43,464
+That just means that your audio device didn't get opened.
+
+331
+00:29:43,560 --> 00:29:47,885
+That could happen for all sorts of reasons, which are hard to disambiguate.
+
+332
+00:29:47,985 --> 00:29:51,441
+But in that case it was me asking for something impossible like that.
+
+333
+00:29:51,345 --> 00:29:58,362
+Also if I ask for megahertz out, I don't think it's going to agree.
+
+334
+00:30:00,476 --> 00:30:02,206
+Can't do that.
+
+335
+00:30:02,591 --> 00:30:04,801
+So you have to ask for something reasonable.
+
+336
+00:30:07,204 --> 00:30:11,433
+And the standard CD sample rate is 44K1.
+
+337
+00:30:15,663 --> 00:30:18,738
+Now we're back to being happy with the input now.
+
+338
+00:30:19,795 --> 00:30:24,505
+The other thing that can go wrong is you could...
+
+339
+00:30:25,658 --> 00:30:29,503
+You can't make it not be happy right now.
+
+340
+00:30:29,887 --> 00:30:33,732
+You can have this thing dialed in on a device that is no longer plugged into your computer.
+
+341
+00:30:34,309 --> 00:30:38,826
+You buy a USB audio device, you plug it in, you tell Pd to use it.
+
+342
+00:30:38,826 --> 00:30:43,824
+Then you unplug the device, it no longer exists, Pd starts up, you can't find it.
+
+343
+00:30:44,209 --> 00:30:47,861
+Then you see here it's just a little circle which has nothing in it.
+
+344
+00:30:47,765 --> 00:30:51,898
+You just have to click on that and select the thing that you really want.
+
+345
+00:30:55,550 --> 00:31:08,045
+The other thing that I want to tell you is this number here, the delay, this is the spooky setting that matters but which is hard to figure out how to deal with.
+
+346
+00:31:08,718 --> 00:31:14,869
+This is a number which is 80 milliseconds or up, if you're using Bill Gates' software.
+
+347
+00:31:14,773 --> 00:31:21,021
+Or it's 20 to 30 if you're using whatever his name is, Bill Jobs', Steven Jobs' thing.
+
+348
+00:31:22,078 --> 00:31:25,827
+Or you can get it down to about 10 on Linux.
+
+349
+00:31:26,211 --> 00:31:32,362
+This is the amount of time that passes between when sound comes in the machine and when it comes back out.
+
+350
+00:31:32,747 --> 00:31:42,743
+And if you try to make this too low, Pd shouldn't be showing you errors, which I'll see if I can find here.
+
+351
+00:31:42,843 --> 00:31:44,473
+Do you hear that?
+
+352
+00:31:49,183 --> 00:31:51,009
+Let's see here.
+
+353
+00:31:57,737 --> 00:32:01,197
+I'm running 43. On 42 you would see a red light saying digital IO errors.
+
+354
+00:32:05,042 --> 00:32:06,772
+I'm trying to resize the window.
+
+355
+00:32:08,213 --> 00:32:08,843
+It's too big for this stuff.
+
+356
+00:32:10,232 --> 00:32:13,500
+Can't do it. ... No, it's not there.
+
+357
+00:32:13,980 --> 00:32:14,980
+All right.  Never mind.
+
+358
+00:32:15,230 --> 00:32:17,056
+I don't know where you see the error.
+
+359
+00:32:17,248 --> 00:32:18,786
+You just hear the error.
+
+360
+00:32:18,978 --> 00:32:21,477
+Here it is.
+
+361
+00:32:21,958 --> 00:32:30,320
+And that's because I asked for a delay that is smaller than my hardware can provide.
+
+362
+00:32:30,416 --> 00:32:32,434
+Oh, I did a 15 and now it's cleaned.
+
+363
+00:32:32,434 --> 00:32:35,510
+But now let's see if we can do 15 to 1.
+
+364
+00:32:35,702 --> 00:32:42,142
+So the smaller that number is, the faster the tablet.
+
+365
+00:32:41,854 --> 00:32:48,774
+That matters because you don't want to do something to your computer and then wait a second before you hear the output.
+
+366
+00:32:48,966 --> 00:32:56,367
+You want it to happen as -- Well, you want to have it happen with a small enough delay that it sounds like it's happening at the same time.
+
+367
+00:32:56,467 --> 00:33:03,576
+Which, depending on your musical chops and which instrument you play, might vary between five and 30 milliseconds.
+
+368
+00:33:04,152 --> 00:33:18,089
+What this means is that Macintosh latency's 15 to 20 milliseconds, maybe, or 25, are barely acceptable and the Window's latencies that you get are basically unacceptable.
+
+369
+00:33:17,897 --> 00:33:24,241
+And I can tell you that that's only the built-in audio hardware on those devices.
+
+370
+00:33:24,241 --> 00:33:30,296
+I have seen Windows boxes get very little latency by professional audio hardware you put on it.
+
+371
+00:33:30,200 --> 00:33:35,390
+So if you're a real gear-head and want to buy the gear, you can gear your way out of the problem.
+
+372
+00:33:35,486 --> 00:33:46,828
+Although you can also just take this, plug it into your machine, and turn it into Linux, which is what I would do.
+
+373
+00:33:49,903 --> 00:33:58,554
+Sorry to belabor all this, but this is important because you have like eight days, nine days to get this all happening and be turning in homework.
+
+374
+00:33:58,457 --> 00:34:02,398
+So I want to make this as painless as humanly possible.
+
+375
+00:34:02,498 --> 00:34:04,128
+Questions about all this?
+
+376
+00:34:04,128 --> 00:34:05,474
+I know I've forgotten things.
+
+377
+00:34:05,574 --> 00:34:06,574
+... Yeah?
+
+378
+00:34:06,674 --> 00:34:09,703
+Student:  So what you're telling me is that the latency...
+
+379
+00:34:09,803 --> 00:34:12,298
+Which one's the latency?
+
+380
+00:34:12,398 --> 00:34:16,816
+Like between Windows and Mac, is it the hardware on there or the processing speed?
+
+381
+00:34:16,916 --> 00:34:22,679
+No, it's certainly not the hardware because you can fix the problems by loading Linux on the same hardware.
+
+382
+00:34:31,137 --> 00:34:39,114
+I can't even generalize and tell you something that's really true in every possible case, but in some sense the audio...
+
+383
+00:34:39,214 --> 00:34:47,009
+Well, audio systems consist of layers of stuff on top of stuff-- the driver and the API and the Pd itself --
+
+384
+00:34:47,109 --> 00:34:55,825
+and they all have various amounts of buffering they do, buffering meaning the amount of memory that they allocate in order to deal with being on time with everything.
+
+385
+00:34:55,925 --> 00:35:01,874
+So when you write something to a computer's audio output, you don't just write the next sample that has to go out.
+
+386
+00:35:01,974 --> 00:35:09,871
+You write several or many milliseconds in advance so that the audio hardware can be throwing them out while you're off thinking about email or something.
+
+387
+00:35:09,971 --> 00:35:15,305
+So that then, when you get back to writing a sample, you're still ahead of what it's doing.
+
+388
+00:35:15,407 --> 00:35:21,354
+So there is a first in/first out buffer sitting in your audio output driver.
+
+389
+00:35:21,559 --> 00:35:27,608
+It's throwing stuff out here, and you're preparing stuff for it to throw out, and you're staying ahead.
+
+390
+00:35:28,428 --> 00:35:34,067
+But you're stopping every once in a while because the OS is not treating you right and it is still reading.
+
+391
+00:35:34,167 --> 00:35:38,578
+If it reads something before you wrote it, then you will hear bad noise.
+
+392
+00:35:38,678 --> 00:35:40,218
+In fact you'll exactly this kind of bad sound now.
+
+393
+00:35:41,141 --> 00:35:44,114
+In general, you'll hear this sort of bad noise I'm just giving you.
+
+394
+00:35:48,522 --> 00:35:51,085
+This is a paradigmatic sound.
+
+395
+00:35:56,827 --> 00:36:09,129
+So why would one operating system or one audio application program interface require more buffering than another?
+
+396
+00:36:09,232 --> 00:36:19,382
+You have make enough buffering to deal with whatever your operating system can do for you, in terms of calling you back in short periods of time, and that is in OS.
+
+397
+00:36:19,482 --> 00:36:27,994
+But also, different writers of audio software are sometimes more or less conservative in the way they design these things.
+
+398
+00:36:28,096 --> 00:36:30,352
+So in truth, Windows is overdesigned.
+
+399
+00:36:30,557 --> 00:36:35,683
+It could be a great deal racier, maybe one time in a million, fail.
+
+400
+00:36:35,783 --> 00:36:40,091
+They can't fail one time in a million because they'll get phone calls.
+
+401
+00:36:40,191 --> 00:36:43,270
+So they just make the buffer real long so the phone doesn't ring.
+
+402
+00:36:45,320 --> 00:36:47,473
+So, there's that.
+
+403
+00:36:51,290 --> 00:36:53,033
+Now I can start doing stuff, I think.
+
+404
+00:36:53,648 --> 00:36:59,595
+Are there questions before I actually start doing stuff?
+
+405
+00:37:02,465 --> 00:37:10,360
+So do, please, before Thursday, get this downloaded and running so that you're not discovering that you can't do your homework next weekend or something.
+
+406
+00:37:10,460 --> 00:37:13,948
+So next thing is this, what is this thing good for?
+
+407
+00:37:20,099 --> 00:37:24,200
+So what I am going to do is make a patch that makes a sound.
+
+408
+00:37:24,303 --> 00:37:32,812
+Then I'm going to go back and do some theory, simply because I think it might be better to see the thing happen first and then make a theory out of it.
+
+409
+00:37:33,120 --> 00:37:40,091
+So what I am doing also is I'm simultaneously surreptitiously teaching you how to use pure data.
+
+410
+00:37:40,706 --> 00:37:44,090
+The real content, of course, isn't Pure Data.
+
+411
+00:37:44,397 --> 00:37:52,804
+It's the technique of audio synthesis processing and analysis, which in fact you could do in software packages other than PD.
+
+412
+00:37:53,317 --> 00:37:58,033
+If you want to know about lots of possible software packages, I know them all.
+
+413
+00:37:58,133 --> 00:38:03,056
+I can tell you all sorts of stuff you can do with a computer, in some other context.
+
+414
+00:38:05,414 --> 00:38:10,131
+I am going to just select a ridiculous font to start with.
+
+415
+00:38:13,001 --> 00:38:18,025
+The basic thing you do is you put stuff on the screen so there's this nice menu I can click.
+
+416
+00:38:20,383 --> 00:38:25,201
+What I am going to do today is going to be limited to two kinds of things that you can put down.
+
+417
+00:38:25,611 --> 00:38:27,047
+One is going to be objects.
+
+418
+00:38:27,047 --> 00:38:30,943
+Of course, that really means 200 different things because I have to type in what kind of objects they're going to be.
+
+419
+00:38:31,250 --> 00:38:33,916
+So that's going to be where I live most of the time.
+
+420
+00:38:34,223 --> 00:38:38,427
+The other thing is I'm going to need a button later on.
+
+421
+00:38:38,529 --> 00:38:40,682
+So first off, I'm going to make an object.
+
+422
+00:38:41,605 --> 00:38:43,758
+It shows up and I can...
+
+423
+00:38:43,861 --> 00:38:47,039
+Here's the thing.
+
+424
+00:38:47,139 --> 00:38:51,755
+This has a dotted outline that says that there's nobody in there right now.
+
+425
+00:38:51,652 --> 00:38:57,701
+In fact, if I tell it, let's be some object that doesn't exist, it'll still say, "Nah, there's nobody there."
+
+426
+00:38:58,111 --> 00:39:02,110
+In fact, it even got mad at me.
+
+427
+00:39:02,520 --> 00:39:05,288
+Now I'll just ask it to do something it knows how to do.
+
+428
+00:39:05,288 --> 00:39:10,414
+There's an oscillator, and oscillators take as an argument...
+
+429
+00:39:14,822 --> 00:39:16,565
+So I'm going to ask it to play A.
+
+430
+00:39:17,078 --> 00:39:22,614
+So you've had musical acoustics and you all know that 440 hertz is A above middle C, right?
+
+431
+00:39:22,717 --> 00:39:27,228
+That's one of those physical constants, like the speed of light, that people just don't touch.
+
+432
+00:39:27,740 --> 00:39:29,278
+You just have that.
+
+433
+00:39:29,688 --> 00:39:33,584
+Now we're going to say what amplitude we want.
+
+434
+00:39:34,443 --> 00:39:35,885
+So I'm going to put in another object.
+
+435
+00:39:36,000 --> 00:39:37,211
+I'm doing this in the slow way now.
+
+436
+00:39:37,326 --> 00:39:38,653
+I'll show you the fast way later.
+
+437
+00:39:38,710 --> 00:39:41,478
+Put another object and put it down here.
+
+438
+00:39:42,170 --> 00:39:52,839
+Then I'm going to type times tilde, I should say, and ask it, let's only be a tenth of a hold for the blast sine wave.
+
+439
+00:39:53,474 --> 00:39:58,837
+I'm going to crack the book in a moment and show you in waveforms what we're talking about here.
+
+440
+00:39:59,125 --> 00:40:06,622
+But for right now just talking over this, this is putting out a full blast 440 hertz sine wave.
+
+441
+00:40:07,006 --> 00:40:15,849
+By the way, you might know this intuitively, but these things are inputs up here and this is an output.
+
+442
+00:40:16,022 --> 00:40:20,693
+I'm going to hook the output of the oscillator to the input of times 0.1.
+
+443
+00:40:20,982 --> 00:40:29,459
+What that is going to do is it's going to take the amplitude of this and reduce it from full blast to a tenth of full blast.
+
+444
+00:40:29,728 --> 00:40:30,728
+What's full blast?
+
+445
+00:40:30,843 --> 00:40:43,876
+100. Then I'm going to say put another object and this one is going to be -- this is kind of not well named -- it's going to be the digital analogue convertor.
+
+446
+00:40:44,165 --> 00:40:50,451
+That's the person in your computer who takes those numbers and turns them into voltages.
+
+447
+00:40:51,489 --> 00:40:53,219
+Now I'm going to say...
+
+448
+00:40:54,833 --> 00:40:56,160
+Oh, wow, it just worked.
+
+449
+00:41:00,370 --> 00:41:03,253
+Take the output of this thing and put it into speakers.
+
+450
+00:41:03,484 --> 00:41:08,616
+That's to say make it available to the audio output of my computer, which by the way is connected to the speaker.
+
+451
+00:41:11,846 --> 00:41:13,345
+Now how do I make it shut up?
+
+452
+00:41:16,402 --> 00:41:22,457
+There's this control here which says whether you're computing DSP or not.
+
+453
+00:41:22,557 --> 00:41:29,204
+DSP, I don't know if that's a good name, is digital signal processing, and that turns the network on and off.
+
+454
+00:41:32,030 --> 00:41:36,413
+That's the fastest way to get silence if something's happening too loud.
+
+455
+00:41:36,586 --> 00:41:42,584
+That's important so there's a key accelerator: The slash turns it on and period turns it off.
+
+456
+00:41:42,814 --> 00:41:48,524
+Oh, command slash is on and command period is off, which you can think of as mute.
+
+457
+00:41:48,639 --> 00:41:52,387
+It's not really mute, but you can think of it that way for now.
+
+458
+00:41:54,290 --> 00:42:01,788
+Now the other thing that I should have mentioned is that when you start PD, this thing is turned off.
+
+459
+00:42:02,133 --> 00:42:15,167
+The reason it was on just now is not because I surreptitiously turned it on, but because the test tones, which I've already had out, automatically turns the DSP on so that it can make noise.
+
+460
+00:42:15,686 --> 00:42:21,222
+As a result, I was using the fact that DSP was still running, even though I'd closed the test tone.
+
+461
+00:42:21,510 --> 00:42:26,643
+So this thing stays on regardless of whether I have the patches open or shut.
+
+462
+00:42:26,758 --> 00:42:31,141
+I can close this patch and it won't change the status of whether DSP was running or not.
+
+463
+00:42:32,237 --> 00:42:35,178
+So this is more software.
+
+464
+00:42:35,351 --> 00:42:38,696
+No, this is half software and half theory now.
+
+465
+00:42:39,042 --> 00:42:55,535
+DSP running, what that means is every object whose name ends in a tilde, if DSP is running, is computing 44,100 numbers per second.
+
+466
+00:42:55,708 --> 00:42:59,687
+Or a number of numbers per second equal to the sample rate, I should say.
+
+467
+00:42:59,802 --> 00:43:01,533
+But 44K1 in and out.
+
+468
+00:43:02,052 --> 00:43:14,681
+What that means is that when this is turned on, this output contains a stream of numbers, one every 44,100th of a second.
+
+469
+00:43:14,681 --> 00:43:16,815
+Let's say one every 22 microseconds.
+
+470
+00:43:19,410 --> 00:43:22,063
+And furthermore, each of one these things is doing that.
+
+471
+00:43:22,063 --> 00:43:23,159
+It's using all of its inputs.
+
+472
+00:43:23,274 --> 00:43:26,100
+It's receiving inputs at the same rate.
+
+473
+00:43:26,273 --> 00:43:30,482
+If nothing is connected to one of these inputs, the input is...
+
+474
+00:43:35,846 --> 00:43:37,115
+All right, that's a complexity.
+
+475
+00:43:37,345 --> 00:43:41,613
+If nothing is coming to an input that expects audio, the input is zero.
+
+476
+00:43:41,843 --> 00:43:57,875
+I'm going to have to repeat in several different ways distinctions between these streams of audio and things which happen sporadically, which sometimes we call "control" or "not audio."
+
+477
+00:43:58,049 --> 00:44:04,796
+But what you're seeing right now is connections between the audio output of the oscillator and the audio input.
+
+478
+00:44:06,584 --> 00:44:12,004
+And what you have to know is this input expects audio and this input expects not audio.
+
+479
+00:44:12,639 --> 00:44:15,522
+It expects messages, which I will tell you about later.
+
+480
+00:44:17,195 --> 00:44:28,959
+So this network is -- I should say, these connections are like carrying numbers when it's turned on and they're not carrying numbers when it's turned off.
+
+481
+00:44:29,247 --> 00:44:32,708
+This input actually does expect an audio.
+
+482
+00:44:33,226 --> 00:44:35,418
+It expects this audio signal.
+
+483
+00:44:35,822 --> 00:44:40,608
+For instance, if I have this on I can break this.
+
+484
+00:44:41,473 --> 00:44:47,355
+To cut a connection, select the connection, which turns it blue, then hit command X.
+
+485
+00:44:50,470 --> 00:44:57,044
+So if you want to try the other output, do that, or both.
+
+486
+00:44:57,678 --> 00:44:59,639
+You can have fan out if you want.
+
+487
+00:45:00,389 --> 00:45:05,175
+While we're at it, you can have fan in.
+
+488
+00:45:07,367 --> 00:45:11,000
+What's the interval between this frequency and that frequency?
+
+489
+00:45:12,038 --> 00:45:13,480
+Any takers?
+
+490
+00:45:13,826 --> 00:45:16,824
+What's the ratio between those two numbers?
+
+491
+00:45:18,151 --> 00:45:19,420
+Three to two.
+
+492
+00:45:19,592 --> 00:45:22,245
+And that's what interval on the piano or musical scale?
+
+493
+00:45:22,880 --> 00:45:24,091
+Yes, a fifth.
+
+494
+00:45:27,378 --> 00:45:41,449
+Ta-da, mathematics turned into music! So the reason I did that was not to tell you what a fifth was, but just to show that you can hook two people into an audio input and it will just add them for you.
+
+495
+00:45:45,255 --> 00:45:50,503
+Over here, here's another thing you can do to demonstrate psychoacoustics effects.
+
+496
+00:45:55,463 --> 00:46:00,307
+All right, so I'm going to shut this up and talk a little bit more.
+
+497
+00:46:01,057 --> 00:46:04,459
+Is this all clear, what I've done so far?
+
+498
+00:46:05,843 --> 00:46:13,283
+To do this, basically you do what you do with a computer, which is you sort of flail with stuff and find out what it does.
+
+499
+00:46:13,398 --> 00:46:17,839
+But let me do a little bit of the flailing for you so that you can expect things to happen when they do.
+
+500
+00:46:20,664 --> 00:46:22,567
+The most confusing thing that will happen is this.
+
+501
+00:46:23,317 --> 00:46:29,545
+You will reach to move something, like this, and it will move.
+
+502
+00:46:29,949 --> 00:46:31,621
+And you will be happy.
+
+503
+00:46:32,198 --> 00:46:34,678
+Then you will release it and then you will click it again.
+
+504
+00:46:34,851 --> 00:46:38,023
+Then you won't be able to move it anymore.
+
+505
+00:46:41,829 --> 00:46:42,829
+It won't move.
+
+506
+00:46:43,040 --> 00:46:44,482
+Now I'm editing the text.
+
+507
+00:46:46,365 --> 00:46:47,365
+What do you do?
+
+508
+00:46:47,711 --> 00:46:54,170
+Well, if you're in this state, which is editing the text, and if you want to move the thing, deselect it and then move it.
+
+509
+00:46:56,246 --> 00:47:01,263
+This is second nature to me, but everyone has to do this the first time and it will confuse you for a second.
+
+510
+00:47:02,763 --> 00:47:12,682
+So you can immediately move something that's not selected, but when you select something, when you release the mouse, the text is selected for you to edit the text, which is more than likely what you're going to want to be doing.
+
+511
+00:47:12,970 --> 00:47:20,698
+But in case you really just wanted to move the thing, then you have to deselect it so that you can move it after you deselect it.
+
+512
+00:47:21,217 --> 00:47:32,808
+Also, you can select something by clicking on it, which selects the text, or you can select something as part of a region, and that doesn't select the text.
+
+513
+00:47:32,866 --> 00:47:34,192
+That just selects the objects.
+
+514
+00:47:34,827 --> 00:47:36,153
+Then you can move things.
+
+515
+00:47:38,460 --> 00:47:39,902
+Am I going too slow?
+
+516
+00:47:41,343 --> 00:47:42,900
+... Yeah.
+
+517
+00:47:47,168 --> 00:47:54,896
+So also, you can select a single thing as a group using the group selector thing, and again, it just selects the object.
+
+518
+00:47:58,010 --> 00:48:01,528
+Next thing is this.
+
+519
+00:48:02,911 --> 00:48:08,563
+I want to show you what this actually really is, and to do that I have to introduce two new objects.
+
+520
+00:48:10,178 --> 00:48:19,347
+While I'm at it, I'm going to tell you there is, of course, a key-accelerator for putting an object and it's "command-1", and then I can say "print."
+
+521
+00:48:19,447 --> 00:48:22,346
+This is object number four.
+
+522
+00:48:22,692 --> 00:48:26,960
+So I believe in the first week you're going to see about 10 kinds of objects.
+
+523
+00:48:27,306 --> 00:48:31,746
+What I try to do is limit it to five a day.
+
+524
+00:48:32,034 --> 00:48:34,976
+First day is going to be iffy because we're already up to four.
+
+525
+00:48:35,264 --> 00:48:42,300
+But theoretically, we will not be learning lots of objects all at once, but they will be coming out at a steady rate.
+
+526
+00:48:42,473 --> 00:48:50,431
+So right now, we've seen the oscillator, OSC tilde, we've seen the multiplier, we've seen the output, and now we've seen print tilde.
+
+527
+00:48:51,296 --> 00:48:56,659
+What I'm going to do is I'm going to show you what the oscillator is doing by hooking it up to the print.
+
+528
+00:48:57,005 --> 00:49:09,058
+Now logically, the first thing that you would expect this to do would be to print out 44,100 numbers a second, but it turns out that that would choke any computer in the world to try to print that stuff.
+
+529
+00:49:09,788 --> 00:49:10,788
+Plus you wouldn't want to see it.
+
+530
+00:49:10,904 --> 00:49:18,401
+So instead of doing that, what it does is it waits until you tell it to please print the next glob of data, and it prints it globs at a time.
+
+531
+00:49:18,747 --> 00:49:21,803
+So now what we're going to do is we're going to put the bang under it, which is a button.
+
+532
+00:49:22,495 --> 00:49:23,591
+Oh, let me do that slower.
+
+533
+00:49:26,128 --> 00:49:30,165
+So put, I've been putting objects, but I'm going to put this thing down now.
+
+534
+00:49:31,088 --> 00:49:34,433
+And it is a thing which...
+
+535
+00:49:34,836 --> 00:49:36,970
+And now I have to let out more of the truth.
+
+536
+00:49:37,547 --> 00:49:40,949
+I'm being very careful, trying to let out bits of truth very slowly.
+
+537
+00:49:41,122 --> 00:49:47,927
+So see now that this line that I connected is only one pixel wide, instead of two pixels wide, where this one is.
+
+538
+00:49:48,792 --> 00:49:54,559
+In other words, these are nice dark lines here, but this is a lighter line.
+
+539
+00:49:54,905 --> 00:50:00,384
+That is to tell you that this is not carrying an audio signal, but is for control.
+
+540
+00:50:00,614 --> 00:50:02,575
+It's for sending messages.
+
+541
+00:50:02,921 --> 00:50:11,283
+Messages are things which happen at specific times, as opposed to signals or audio signals, which are happening continuously.
+
+542
+00:50:13,128 --> 00:50:22,067
+The message that this thing sends out is:  Every time you click on it, out comes a message.
+
+543
+00:50:24,143 --> 00:50:27,142
+The message just tells it to do their thing.
+
+544
+00:50:27,257 --> 00:50:29,795
+In this case, it says do you print, please?
+
+545
+00:50:30,372 --> 00:50:32,044
+What has happened?
+
+546
+00:50:32,144 --> 00:50:32,851
+Oh, because I have this turned off.
+
+547
+00:50:33,178 --> 00:50:34,178
+Now I'm going to turn it on.
+
+548
+00:50:35,331 --> 00:50:36,773
+And now it prints out.
+
+549
+00:50:40,060 --> 00:50:44,500
+Every time I whack it, it prints out a new collection of data.
+
+550
+00:50:53,151 --> 00:50:58,976
+So print tilde's job is every time you ask it to, it will print you out the next block of data.
+
+551
+00:50:59,149 --> 00:51:08,722
+So there's built-in knowledge about what Pd is doing here, which is that Pd doesn't actually really just compute one audio sample at a time.
+
+552
+00:51:08,837 --> 00:51:12,240
+It computes them in batches of, by default, 64 samples.
+
+553
+00:51:12,874 --> 00:51:15,527
+And let's see if we can get this thing shut off.
+
+554
+00:51:21,063 --> 00:51:23,600
+It should make a nice space with these numbers printed out.
+
+555
+00:51:24,523 --> 00:51:37,152
+So this is 64 consecutive numbers of a sinusoid, which is to say, a sine wave, which is the thing coming out of OSC tilde.
+
+556
+00:51:38,306 --> 00:51:47,937
+This is basically the first and most truthful tool at your disposal for finding out what's going on inside of a patch that's doing audio.
+
+557
+00:51:48,398 --> 00:51:56,529
+It's clunky and stupid, because this amounts to about 1.45 milliseconds of sound.
+
+558
+00:51:57,625 --> 00:52:01,431
+So looking at this wouldn't actually tell you much about what really is coming down in there.
+
+559
+00:52:01,662 --> 00:52:04,545
+But if you tried to see it, it would be too much data.
+
+560
+00:52:05,353 --> 00:52:08,409
+Anyway, you can see that good things are true about this thing.
+
+561
+00:52:10,658 --> 00:52:13,196
+What's the maximum amplitude?
+
+562
+00:52:13,715 --> 00:52:15,157
+It's about one.
+
+563
+00:52:15,733 --> 00:52:17,982
+Here's an almost one right there.
+
+564
+00:52:18,790 --> 00:52:26,229
+So what you're looking at is just numbers, but if you graphed them you would see a rising and falling part of a sinusoid.
+
+565
+00:52:27,440 --> 00:52:33,149
+Now let me get you to the book and show you what this is in a picture.
+
+566
+00:52:33,149 --> 00:52:39,262
+You can make Pd make pictures, but I don't want to teach you how to do that yet because there's too much detail involved.
+
+567
+00:52:41,857 --> 00:52:44,741
+So I'm just going to provide data off of them .
+
+568
+00:52:45,606 --> 00:52:47,567
+Where was I?
+
+569
+00:52:48,028 --> 00:52:49,239
+Don't want to do that.
+
+570
+00:52:50,334 --> 00:52:52,007
+I want to do this. ... Yeah.
+
+571
+00:52:52,107 --> 00:52:52,987
+All right, good.
+
+572
+00:52:54,372 --> 00:52:55,986
+So I told you there's a textbook.
+
+573
+00:52:56,217 --> 00:52:57,255
+This is the textbook.
+
+574
+00:52:58,235 --> 00:53:03,137
+You can buy this if you want to spend, I think it's $79, and they did a good job of printing it.
+
+575
+00:53:03,137 --> 00:53:07,693
+But you don't need to buy it because you can just look at it on the web, which is more convenient.
+
+576
+00:53:07,793 --> 00:53:09,423
+But if you want to read it in a hammock, you can buy it.
+
+577
+00:53:09,769 --> 00:53:14,094
+You can spend $80 and buy the thing, or print it out.
+
+578
+00:53:14,194 --> 00:53:17,035
+But don't tell them I told you to print it out.
+
+579
+00:53:18,131 --> 00:53:29,838
+I'm skipping some stuff, which maybe I should go back to, but here's a picture of what a digitized audio sample looks like in graph language.
+
+580
+00:53:29,838 --> 00:53:37,047
+There are two pictures here because this is what you want, in some sense.
+
+581
+00:53:37,393 --> 00:53:40,045
+What you want to make the speaker cone do is to move like that.
+
+582
+00:53:40,276 --> 00:53:48,465
+The speaker cones live in continuous time wher time isn't split up into trenches of 22 microseconds a hit.
+
+583
+00:53:48,869 --> 00:53:57,289
+So the computer's representation of this, however, is split up into screen time and therefore if you graph it, it would look something like that.
+
+584
+00:53:57,346 --> 00:54:01,671
+This audio signal has a frequency and an amplitude.
+
+585
+00:54:01,671 --> 00:54:08,707
+This is in fact exactly what would come out if you gave the appropriate frequency to an OSC tilde object.
+
+586
+00:54:08,995 --> 00:54:12,283
+It varies between positive one and negative one.
+
+587
+00:54:12,917 --> 00:54:15,743
+That has no units.
+
+588
+00:54:15,858 --> 00:54:21,625
+That's an arbitrary scale.
+
+589
+00:54:21,798 --> 00:54:35,062
+But I should tell you that if you put something that's more than one or less than minus one at your audio output, that's to say if you feed something that's out of that range to DAC tilde, then your computer will not be able to play it correctly.
+
+590
+00:54:35,157 --> 00:54:36,157
+It will click.
+
+591
+00:54:36,446 --> 00:54:41,694
+So this is the full audio range of your computer's audio output.
+
+592
+00:54:42,386 --> 00:54:43,943
+How does Pd know that?
+
+593
+00:54:44,000 --> 00:54:48,326
+PD just asks the computer, what range do you want to feed your DAC in?
+
+594
+00:54:48,499 --> 00:54:50,402
+And it normalizes that to one.
+
+595
+00:54:53,343 --> 00:55:02,109
+The frequency that you would do this at is manifested in how many of these samples it takes for the thing to make an entire cycle.
+
+596
+00:55:02,339 --> 00:55:03,839
+This is all acoustics, right?
+
+597
+00:55:04,819 --> 00:55:13,527
+In fact, what this is if you give it an equation is one of these things.
+
+598
+00:55:15,545 --> 00:55:26,041
+It's an amplitude times the cosine -- you could use sine, but I'm using cosine here -- of the frequency times the sample number plus a phase.
+
+599
+00:55:26,387 --> 00:55:33,711
+So if you take one of these things and graph it, you will see something like what you saw graphed down there.
+
+600
+00:55:33,884 --> 00:55:46,399
+Furthermore, you can change the numbers a, which is the amplitude, or omega, which is the frequency, or phi, which is the initial phase, and you can change the way that it looks in one way or another.
+
+601
+00:55:48,532 --> 00:55:55,914
+n is the sample number, and that is the horizontal axis here.
+
+602
+00:55:58,105 --> 00:56:00,354
+I'm insulting your upper intelligence here.
+
+603
+00:56:00,758 --> 00:56:02,373
+This is all it is though.
+
+604
+00:56:02,776 --> 00:56:06,179
+All you do is you do this and say we'll change that equation and we get all confused.
+
+605
+00:56:06,525 --> 00:56:10,850
+I've done this for 30 years and it never gets old.
+
+606
+00:56:13,330 --> 00:56:15,464
+So what is omega here?
+
+607
+00:56:15,579 --> 00:56:21,404
+Well omega was enough so that after 20 samples the thing comes around and cycles.
+
+608
+00:56:21,504 --> 00:56:29,708
+So omega is two pi over 20. Omega is the frequency out there.
+
+609
+00:56:29,881 --> 00:56:41,818
+So N is the number of the sample and this is the thing which controls the frequency, but it's the physical frequency of the thing as an array of numbers.
+
+610
+00:56:42,395 --> 00:56:49,373
+It's not a heard frequency, and you can convert that to the frequency-frequency by a simple formula.
+
+611
+00:56:53,756 --> 00:57:00,042
+The frequency you hear is the omega, is the angular frequency is what that's called.
+
+612
+00:57:00,273 --> 00:57:05,002
+Time and sample rate divided by two pi, and that's how you make a sinusoid.
+
+613
+00:57:05,102 --> 00:57:11,460
+So if you want it to be louder, change A.
+
+614
+00:57:11,560 --> 00:57:24,955
+Or -- and here's why, for this I have to go back to the patch -- if someone gives you a sinusoid and if you want to change its amplitude, all you have to do is multiply it by the ratio of the two amplitudes.
+
+615
+00:57:25,128 --> 00:57:31,299
+That is, multiply it by the gain you want, gain meaning the difference between the two amplitudes.
+
+616
+00:57:31,241 --> 00:57:42,371
+So what that means is what is coming out of this equation, what's coming out of this oscillator right now.
+
+617
+00:57:42,371 --> 00:58:03,436
+Omega is two pi times 440 divided by 44,100, whatever that number is, and a is one.
+
+618
+00:58:03,536 --> 00:58:06,534
+The amplitude of the output of this thing is one.
+
+619
+00:58:06,765 --> 00:58:11,494
+So what this is really putting out is the cosine of omega times the n, and forget the phase for now.
+
+620
+00:58:11,840 --> 00:58:15,531
+Time is just passing and we don't know what the phase is right now.
+
+621
+00:58:15,631 --> 00:58:25,854
+But if we want to change this amplitude, if I gave you just cosine of omega, if you said, "No, I want 0.1 times the cosine of omega,"
+
+622
+00:58:25,954 --> 00:58:37,907
+ in other words, I want something with an amplitude of 0.1 instead of one, then the solution is to multiply the thing by 0.1. That multiplies it this way.
+
+623
+00:58:38,079 --> 00:58:39,809
+It changes the amplitude.
+
+624
+00:58:40,098 --> 00:58:41,367
+It doesn't do this.
+
+625
+00:58:41,635 --> 00:58:42,635
+That would be...
+
+626
+00:58:42,270 --> 00:58:43,270
+... Yeah?
+
+627
+00:58:43,443 --> 00:58:53,881
+Student:  So if you were in your print command, like your oscillators, then just having them separate, would that, instead of going all the way to one and down to negative one, would it just go up to 0.1 and down to negative 0.1?
+
+628
+00:58:53,630 --> 00:58:54,630
+Yeah.
+
+629
+00:58:55,534 --> 00:58:57,283
+Thank you, because I actually meant to do that but didn't.
+
+630
+00:58:57,514 --> 00:59:05,693
+So I think what you're asking is, "What if I just print the output of this?" Right?
+
+631
+00:59:05,326 --> 00:59:06,326
+Student:  Right.  Yeah.
+
+632
+00:59:06,273 --> 00:59:07,273
+OK, good.
+
+633
+00:59:07,337 --> 00:59:10,433
+So it'll do that, and I forgot to turn...
+
+634
+00:59:10,686 --> 00:59:12,646
+Oh, so nothing happened because the audio is turned off.
+
+635
+00:59:12,709 --> 00:59:15,553
+So I'll turn audio on and it will say, "Oh, I need to print something." ... Yeah, there.
+
+636
+00:59:15,742 --> 00:59:18,586
+Now what we see is kind of ugly.
+
+637
+00:59:18,713 --> 00:59:20,040
+I'm sorry the spaces aren't worked right.
+
+638
+00:59:20,166 --> 00:59:28,888
+But what you see is something that's going up to about 0.1. It is 0.9998, instead of one.
+
+639
+00:59:29,014 --> 00:59:42,286
+So these numbers are these numbers divided by 10. Except that I asked it a different time and so actually they are like them but they're not exactly the same as those divided by 10, some of the phase.
+
+640
+00:59:45,509 --> 00:59:46,583
+Is that all clear?
+
+641
+00:59:55,874 --> 01:00:11,231
+Now without anything besides those things, what have we got?
+
+642
+01:00:11,547 --> 01:00:14,581
+We'll do those two.
+
+643
+01:00:16,161 --> 01:00:23,112
+I'm going to raise the total count of objects to five, but not in a very interesting way.
+
+644
+01:00:23,428 --> 01:00:25,704
+I just need an adder.
+
+645
+01:00:28,105 --> 01:00:40,871
+Now what I'm going to do is I'm going to take the oscillator and have it be zero plus 440. Let me check if that gives us the same thing. ... Yeah.
+
+646
+01:00:41,251 --> 01:00:42,704
+So this is stupid.
+
+647
+01:00:42,894 --> 01:00:52,753
+There's zero coming in here and we're adding 440 to it, so it comes out here as 440 volts, if this were an analog synthesizer, 440 volt signal.
+
+648
+01:00:52,853 --> 01:00:58,567
+The oscillator then is giving us a signal that's plus or minus one volt, but it's changing 440 times a second.
+
+649
+01:00:58,693 --> 01:01:05,013
+The reason I did that is so that I can do this, take another oscillator, or get another oscillator.
+
+650
+01:01:05,266 --> 01:01:08,173
+Oh, I'm doing this without telling you what I'm doing.
+
+651
+01:01:08,300 --> 01:01:14,493
+I'm selecting this object without selecting the text and I'm hitting command D, which duplicates it.
+
+652
+01:01:15,505 --> 01:01:21,888
+It duplicates it and leaves it selected without the text selected, so that's very convenient for me to move it.
+
+653
+01:01:22,014 --> 01:01:25,048
+This one I'm going to say six.
+
+654
+01:01:26,501 --> 01:01:29,851
+And by the way, the machine did sample it, too.
+
+655
+01:01:33,579 --> 01:01:35,539
+Look at this from a different perspective.
+
+656
+01:01:36,360 --> 01:01:38,825
+Come on.
+
+657
+01:01:39,331 --> 01:01:42,554
+... Yeah, by the way, let's multiply that by something.
+
+658
+01:01:42,654 --> 01:01:43,565
+No, let's not yet.
+
+659
+01:01:45,535 --> 01:01:46,535
+Let's just leave it.
+
+660
+01:01:47,862 --> 01:01:50,454
+See what we get.
+
+661
+01:01:51,465 --> 01:01:53,677
+Anyone want to guess what this is going to sound like?
+
+662
+01:01:57,543 --> 01:01:58,543
+All right, I'll show you.
+
+663
+01:02:03,800 --> 01:02:04,800
+So it's the oscillator on that.
+
+664
+01:02:04,926 --> 01:02:07,391
+Oh, I can just connect it and show you.
+
+665
+01:02:08,528 --> 01:02:10,740
+There is the sinusoid and here is the sinusoid.
+
+666
+01:02:12,700 --> 01:02:15,607
+Its frequency is changing once a second.
+
+667
+01:02:16,555 --> 01:02:17,819
+It's going up to...
+
+668
+01:02:20,157 --> 01:02:27,362
+OK, so here's an oscillator and it's going at six cycles per second, and what's its amplitude?
+
+669
+01:02:27,551 --> 01:02:28,752
+Student:  One.
+
+670
+01:02:28,953 --> 01:02:29,953
+One, right.
+
+671
+01:02:30,311 --> 01:02:50,914
+So then when we add 440, out comes not the 440 volts, but a varying voltage which varies from 339 to 441. That variation repeats six times per second because this thing is happening at six cycles per second.
+
+672
+01:02:51,988 --> 01:03:01,468
+But in fact, to make this an easier thing to hear, I will say let's multiply that by five.
+
+673
+01:03:01,658 --> 01:03:04,628
+This can be ugly, but we're going to do it.
+
+674
+01:03:05,513 --> 01:03:08,041
+This will be quite audible.
+
+675
+01:03:10,379 --> 01:03:13,350
+Not quite as ugly as I want it to be.
+
+676
+01:03:14,740 --> 01:03:19,733
+So now we're varying between 435 and 445 hertz.
+
+677
+01:03:20,175 --> 01:03:25,294
+Now of course, since it's a computer, you can tell it to do anything you want.
+
+678
+01:03:31,614 --> 01:03:36,860
+It sounds like it's doing two pitches at once, to me anyway.
+
+679
+01:03:37,239 --> 01:03:41,600
+But I'm in a weird place because I'm getting an echo from the speaker sounding.
+
+680
+01:03:41,663 --> 01:03:43,938
+OK, let's do this.
+
+681
+01:03:44,823 --> 01:03:46,150
+Or, no...
+
+682
+01:03:50,131 --> 01:03:52,660
+OK, let's not do that.
+
+683
+01:03:54,176 --> 01:03:59,043
+So it's a computer, it'll do anything you tell it to, if it was a good idea or not.
+
+684
+01:03:59,169 --> 01:04:00,306
+It doesn't matter to it.
+
+685
+01:04:00,559 --> 01:04:05,489
+And furthermore, it won't hurt you because what comes out won't be more than outside the range of the DAC.
+
+686
+01:04:05,615 --> 01:04:13,073
+So as long as you don't crank your stereo or your headphones, you won't injure yourself doing this.
+
+687
+01:04:14,589 --> 01:04:21,352
+I think that what's going on here is it changes its speed to vibrato.
+
+688
+01:04:21,921 --> 01:04:25,081
+I need it more to make this obvious.
+
+689
+01:04:26,661 --> 01:04:29,062
+I'm sorry, this is ugly now.
+
+690
+01:04:29,252 --> 01:04:33,107
+So this is just how fast it's going, once per second, twice per second and so on.
+
+691
+01:04:34,244 --> 01:04:36,457
+You know what I didn't tell you?
+
+692
+01:04:37,215 --> 01:04:44,546
+When you start typing in an object like this, it doesn't immediately change it to the new object.
+
+693
+01:04:45,178 --> 01:04:51,118
+It only does that when you click off of it to deselect the text.
+
+694
+01:04:54,531 --> 01:05:00,915
+And furthermore, if you do something bad like this and then it would say, oh, I couldn't create that.
+
+695
+01:05:01,546 --> 01:05:05,781
+Then it prints the dotted line to tell me the object would be bad.
+
+696
+01:05:05,907 --> 01:05:10,394
+But it kept the connection so that I don't have to remake a connection when I fix the problem.
+
+697
+01:05:10,584 --> 01:05:18,989
+The problem here is that OSC tilde has a name that only works when there's no space in its interior.
+
+698
+01:05:19,495 --> 01:05:23,603
+For those of you who are computer scientists, space is "the delimiter."
+
+699
+01:05:23,982 --> 01:05:29,670
+That is essentially the only delimiter that you have to deal with.
+
+700
+01:05:30,807 --> 01:05:34,852
+So don't try to make an object if its name has a space in it.
+
+701
+01:05:38,834 --> 01:05:43,574
+Student:  So just a question about the setup. So the amplitude for the OSC tilde is one, right?
+
+702
+01:05:43,700 --> 01:05:44,700
+Right.
+
+703
+01:05:44,838 --> 01:05:46,607
+Student:  And we times it by 30?
+
+704
+01:05:46,797 --> 01:05:47,797
+Right.
+
+705
+01:05:48,314 --> 01:05:52,422
+Student:  So that makes the amplitude for the 440 between 410 and 470. Is that right?
+
+706
+01:05:52,548 --> 01:05:55,898
+Right, and that's changing three times a second.
+
+707
+01:05:56,277 --> 01:06:00,322
+Then that's becoming the frequency for the oscillator.
+
+708
+01:06:00,827 --> 01:06:03,418
+I didn't tell you something important.
+
+709
+01:06:03,545 --> 01:06:11,508
+Frequently, objects will give you the choice of specifying their input or connecting to their input to set it.
+
+710
+01:06:12,140 --> 01:06:18,902
+Here I've said "oscillator" which means we're just going to take a signal and specify what our frequency's going to be.
+
+711
+01:06:18,902 --> 01:06:22,378
+But here I'm saying "oscillator" but I know what the frequency is.
+
+712
+01:06:22,478 --> 01:06:25,032
+It's three, so I'm just going to keep it on.
+
+713
+01:06:25,132 --> 01:06:31,352
+There's another way in too, which is that you can change these in messages, but I'm not going to try to tell you that.
+
+714
+01:06:31,542 --> 01:06:34,576
+Student:  Is there a map of all the names of the outputs that we learned?
+
+715
+01:06:34,702 --> 01:06:38,431
+If you really want to see it, you say Help.
+
+716
+01:06:42,981 --> 01:06:55,305
+Right-click on it and you can get help and help within a patch, which tells you everything you want to know about it.
+
+717
+01:06:57,138 --> 01:07:00,108
+OK, so that was help.
+
+718
+01:07:00,677 --> 01:07:03,584
+So if you want to have multiplier help, you do that.
+
+719
+01:07:07,502 --> 01:07:20,837
+Then if you right-click on the canvas and say help -- the canvas meaning the document but not any of the objects in the document -- then you will get this lovely patch that someone else made.
+
+720
+01:07:21,659 --> 01:07:27,283
+It will tell you everything in this very carefully organized order.
+
+721
+01:07:27,473 --> 01:07:32,529
+But this will only be the first 200 objects, which are the ones that you get before you get Pd Extended.
+
+722
+01:07:34,299 --> 01:07:35,436
+More than one...
+
+723
+01:07:40,239 --> 01:07:41,239
+That's funny.
+
+724
+01:07:45,042 --> 01:07:50,225
+I didn't see any specific examples but I'm just about sure that there are two copies of this thing here.
+
+725
+01:07:57,619 --> 01:07:59,831
+Never mind, I'm sorry.
+
+726
+01:08:00,084 --> 01:08:02,675
+There really is this much stuff.
+
+727
+01:08:02,991 --> 01:08:04,824
+Well, sorry, it's just what it is.
+
+728
+01:08:05,266 --> 01:08:06,593
+Maybe there are more than 200 objects now.
+
+729
+01:08:10,701 --> 01:08:13,166
+So that will tell you everything that you might need to know.
+
+730
+01:08:14,177 --> 01:08:20,371
+If we're doing 10 a week, at the end of the 10 weeks you'll know 100 of those objects.
+
+731
+01:08:23,278 --> 01:08:25,490
+You don't need to know them all.
+
+732
+01:08:27,323 --> 01:08:30,040
+I know them all, but you're not me.
+
+733
+01:08:32,063 --> 01:08:36,107
+Basically, with about 100 of them, you can do a whole lot of stuff.
+
+734
+01:08:36,207 --> 01:08:42,238
+And then there will be an occasional thing that you can't do with those 100 that will require that you find another one out and thereabouts.
+
+735
+01:08:42,617 --> 01:08:46,409
+So what happens is that there will be a period of intense learning objects, like 10 a week.
+
+736
+01:08:46,409 --> 01:08:51,022
+After a while, you won't need 10 new objects, there won't be any more and things will calm down.
+
+737
+01:08:53,234 --> 01:08:55,320
+Other questions?   ... Yeah?
+
+738
+01:08:56,015 --> 01:08:58,606
+Student:  How do you get the print thing to work again?
+
+739
+01:09:00,692 --> 01:09:07,580
+So oh, yeah, there's a thing I didn't tell you, which is fundamental.
+
+740
+01:09:07,770 --> 01:09:10,614
+The patch can be in two different...
+
+741
+01:09:10,740 --> 01:09:17,187
+The interface of the patch can be in two different states, which are sometimes called run mode or edit mode.
+
+742
+01:09:17,629 --> 01:09:25,213
+If I try to click this thing now, I'm just editing the patch, and that doesn't click on it.
+
+743
+01:09:25,313 --> 01:09:26,983
+It just moved it, right?
+
+744
+01:09:26,983 --> 01:09:32,354
+So what I have to do is put myself into run mode, which I do here.
+
+745
+01:09:32,670 --> 01:09:34,566
+Let's get out of edit mode.
+
+746
+01:09:35,261 --> 01:09:39,938
+Now edit mode is no longer... Whoops! It is still on.
+
+747
+01:09:42,656 --> 01:09:46,069
+Well, this is version 43. You tend to get what you pay for.
+
+748
+01:09:46,321 --> 01:09:49,734
+Anyway, the indication is what the cursor looks like.
+
+749
+01:09:49,861 --> 01:09:52,072
+So right now what you see is an arrow.
+
+750
+01:09:52,199 --> 01:09:57,065
+And if I do that again, you will see an arrow again.
+
+751
+01:09:57,255 --> 01:09:58,266
+Like now.
+
+752
+01:09:58,456 --> 01:10:01,679
+Now it's just being happy.
+
+753
+01:10:03,196 --> 01:10:04,902
+You cannot get out of edit mode.
+
+754
+01:10:06,924 --> 01:10:08,504
+That's cool.
+
+755
+01:10:09,199 --> 01:10:13,181
+OK, well, I'm expecting to see stuff like this because we're in pre-release.
+
+756
+01:10:13,371 --> 01:10:15,203
+Student:  Does the shortcut work, Apple-E?
+
+757
+01:10:15,393 --> 01:10:16,404
+Oh, the shortcut works great.
+
+758
+01:10:16,594 --> 01:10:21,460
+So the shortcut, you just hit DSP, command E, or Apple E.
+
+759
+01:10:21,587 --> 01:10:30,624
+And then it goes back and forth between modes, except that this is a thing that Hans has driven, and just torn hair out of his head over it.
+
+760
+01:10:31,003 --> 01:10:34,353
+You don't actually see the new state until you move the cursor.
+
+761
+01:10:34,669 --> 01:10:42,821
+Because some smart person at Apple thought you would never have the cursor change unless you reached it, unless you changed wherever the cursor is.
+
+762
+01:10:43,011 --> 01:10:48,825
+So what you have to do is change the mode, but then you have to jiggle the cursor to see that you are in the other mode.
+
+763
+01:10:49,078 --> 01:10:50,078
+Isn't that horrible?
+
+764
+01:10:50,089 --> 01:10:55,524
+That's only on Macintosh, so only 80 percent of you are going to have this trouble like we're having today.
+
+765
+01:10:55,624 --> 01:10:56,624
+Student:  90 percent.
+
+766
+01:10:57,294 --> 01:11:02,097
+So anyway, we're just moving to make sure this is what you think it is.
+
+767
+01:11:03,487 --> 01:11:09,997
+When you're in the run mode, which is not edit mode, you can click this thing and get it to do its thing.
+
+768
+01:11:10,187 --> 01:11:14,295
+And of course, sorry, we also have to turn on audio.
+
+769
+01:11:14,547 --> 01:11:17,897
+Of course, there's a reason why I'm not on audio.
+
+770
+01:11:18,087 --> 01:11:19,414
+Let's see.
+
+771
+01:11:20,362 --> 01:11:21,942
+Let's just do this.
+
+772
+01:11:22,384 --> 01:11:26,365
+So now we can turn the thing on but not hear it.
+
+773
+01:11:26,365 --> 01:11:29,020
+Now we're running so I can do this.
+
+774
+01:11:29,525 --> 01:11:34,518
+But if I can get back into edit mode, like this, then I can click it all I want.
+
+775
+01:11:34,771 --> 01:11:42,039
+Although, sometimes you can hold the command key down and click it.
+
+776
+01:11:42,165 --> 01:11:45,704
+And it will say, it's as if you were in run mode.
+
+777
+01:11:47,727 --> 01:11:53,604
+So the command key operates as a sort of shift into run mode thing, if you can remember that.
+
+778
+01:11:53,731 --> 01:11:57,270
+I never remember it, so I just toggle the mode.
+
+779
+01:11:57,649 --> 01:11:58,787
+Other questions?
+
+780
+01:11:58,976 --> 01:12:00,114
+Did that answer yours?
+
+781
+01:12:00,556 --> 01:12:01,556
+Student:  Yes.
+
+782
+01:12:02,653 --> 01:12:03,653
+... Yeah?
+
+783
+01:12:03,653 --> 01:12:09,278
+Student:  I just want to make sure I understand print and DAC tilde.
+
+784
+01:12:09,341 --> 01:12:16,609
+Print within run mode, when you click it, it creates a graphical mathematical representation of that patch, is that right?
+
+785
+01:12:16,709 --> 01:12:18,125
+Well, not even graphical.
+
+786
+01:12:18,225 --> 01:12:19,895
+It just prints the numbers out.
+
+787
+01:12:21,665 --> 01:12:23,687
+Student:  All right.  And then the DAC tilde, then the time is...?
+
+788
+01:12:23,750 --> 01:12:28,111
+OK, so the dac~, that takes whatever the signal is...  and puts it there.
+
+789
+01:12:28,301 --> 01:12:32,472
+So it causes it to appear as an audio output.
+
+790
+01:12:32,572 --> 01:12:38,097
+So this is, print the values out so I can see them, and this is, play them so I can hear them.
+
+791
+01:12:38,223 --> 01:12:39,992
+Student:  Is that abbreviated for something?
+
+792
+01:12:40,308 --> 01:12:46,628
+DAC?  It's digital-to-analog converter, and that used to be what people called it.
+
+793
+01:12:46,818 --> 01:12:51,495
+There actually is a DAC in your machine, but people never seem to use that term anymore.
+
+794
+01:12:52,190 --> 01:12:53,201
+So, yeah.
+
+795
+01:12:53,517 --> 01:12:54,517
+... Yeah?
+
+796
+01:12:54,617 --> 01:12:55,855
+Student:  It only prints the first 64 though, right?
+
+797
+01:12:56,045 --> 01:12:58,889
+It only prints the next 64, until you whack it.
+
+798
+01:12:59,142 --> 01:13:02,744
+Of course, if you really wanted to...
+
+799
+01:13:03,250 --> 01:13:08,811
+No, never mind. ...  I could ask it to print more.
+
+800
+01:13:08,911 --> 01:13:09,696
+... Yeah?
+
+801
+01:13:09,822 --> 01:13:11,782
+Student:  Do you have a limit in the inputs and outputs?
+
+802
+01:13:11,971 --> 01:13:16,079
+You mean as to amplitude or the number of includes or....?
+
+803
+01:13:16,206 --> 01:13:17,722
+Student:  Just how many things you can enter.
+
+804
+01:13:17,734 --> 01:13:18,734
+Oh, no.
+
+805
+01:13:18,923 --> 01:13:20,756
+Student:  You can have more inputs than objects?
+
+806
+01:13:21,198 --> 01:13:23,852
+Yeah. Oh, wait.  Add more than just an object, meaning...
+
+807
+01:13:24,295 --> 01:13:27,455
+I think what your question was, was how many other things could I run into this...
+
+808
+01:13:27,555 --> 01:13:27,935
+Student:  Right.
+
+809
+01:13:28,035 --> 01:13:29,035
+...into these fixed objects.
+
+810
+01:13:29,161 --> 01:13:32,764
+But I can do that and you'd never have to stop.
+
+811
+01:13:33,269 --> 01:13:37,061
+But could I make the object itself have more inputs?
+
+812
+01:13:37,161 --> 01:13:40,411
+Each object has its own schematics about what its inputs and outputs mean.
+
+813
+01:13:40,411 --> 01:13:45,340
+Some of them actually do have variable numbers, but you won't see those for a couple of weeks.
+
+814
+01:13:48,311 --> 01:13:49,638
+Other questions?
+
+815
+01:13:50,396 --> 01:13:52,292
+These are good questions, by the way.
+
+816
+01:13:52,392 --> 01:13:52,545
+... Yeah?
+
+817
+01:13:52,671 --> 01:13:56,021
+Student:  You said that the right input was an input for messages?
+
+818
+01:13:56,084 --> 01:13:59,054
+So if you try to put an input, like with an audio, to that, it won't work?
+
+819
+01:13:59,154 --> 01:13:59,813
+Yeah.
+
+820
+01:13:59,939 --> 01:14:01,456
+Student:  You have to keep it to the left.
+
+821
+01:14:01,583 --> 01:14:10,241
+Yeah. So for these particular objects, the right input is... Yeah, OK.
+
+822
+01:14:10,051 --> 01:14:14,033
+So we'll get there, because there'll be other things where there will be more than one audio input.
+
+823
+01:14:14,159 --> 01:14:17,446
+Sometimes you'll want to multiply two audio signals or something like that.
+
+824
+01:14:17,635 --> 01:14:20,542
+And I'd be scared to tell you that right now.
+
+825
+01:14:20,795 --> 01:14:22,375
+I'll tell you about that on Thursday.
+
+826
+01:14:24,271 --> 01:14:27,684
+Student:  Is this only one channel right now? Like, left only?
+
+827
+01:14:27,784 --> 01:14:29,011
+I've only been using the left side, mostly.
+
+828
+01:14:29,137 --> 01:14:32,613
+When I'm working at home, I use both sides...
+
+829
+01:14:32,866 --> 01:14:36,532
+because it irritates me to hear every sound out of just one side of the thing.
+
+830
+01:14:38,238 --> 01:14:40,639
+You know, it's just what you like.
+
+831
+01:14:41,156 --> 01:14:42,156
+... Yeah?
+
+832
+01:14:42,409 --> 01:14:46,138
+Student:  So there's no spaces unless you put a number in there? You just have the space to put the number?
+
+833
+01:14:46,238 --> 01:14:46,643
+Right.
+
+834
+01:14:47,086 --> 01:14:49,550
+Student:  Because otherwise you just get the domino effect.
+
+835
+01:14:49,803 --> 01:14:51,130
+Right. ... Yeah.
+
+836
+01:14:51,067 --> 01:14:56,692
+One way I can have it fail is to add a space right in one.
+
+837
+01:14:56,818 --> 01:14:59,726
+So I'd be looking for an object named OSC and I didn't see one.
+
+838
+01:14:59,726 --> 01:15:06,678
+The other thing I could do wrong would be to not put a space there and so it would look for an object named "osc~3" which doesn't exist.
+
+839
+01:15:07,941 --> 01:15:10,090
+Student:  Are there any defaults if you don't put a number in there?
+
+840
+01:15:10,190 --> 01:15:11,986
+Yeah, zero.
+
+841
+01:15:15,968 --> 01:15:19,760
+You can add zero to something, you could multiply by zero.
+
+842
+01:15:25,574 --> 01:15:30,061
+But if you don't fill that number in, then the other inlet becomes an audio inlet.
+
+843
+01:15:30,161 --> 01:15:34,738
+Then you can run an audio signal in there instead.
+
+844
+01:15:35,686 --> 01:15:37,266
+I wasn't going to tell you that.
+
+845
+01:15:37,961 --> 01:15:46,430
+If I just want to just multiply by something else, then I just don't say what multiplies by this thing and then it becomes an audio input.
+
+846
+01:15:46,493 --> 01:15:51,486
+Then you can be multiplying two of the audio signals.
+
+847
+01:15:53,788 --> 01:15:57,423
+That's really for next time, but that's the thing you would do.
+
+848
+01:15:59,939 --> 01:16:01,896
+... Yeah?
+
+849
+01:16:03,294 --> 01:16:08,327
+Student:  Why does the print object not have two inlets?  Why don't you have a data inlet on the right?
+
+850
+01:16:08,607 --> 01:16:10,424
+... Yeah, isn't that stupid?
+
+851
+01:16:16,296 --> 01:16:23,566
+Inputs to objects can have various functionalities, and one of the particular things that you can send an input is an audio signal.
+
+852
+01:16:23,566 --> 01:16:27,620
+But there are other things you can send as an audio signal input as well.
+
+853
+01:16:29,717 --> 01:16:34,331
+Of course if a thing had two different audio signal inputs, then we'd have to have two different inlets in order to be able to disambiguate them.
+
+854
+01:16:34,470 --> 01:16:43,977
+But if it takes two things that are different, like the message in an audio signal, then you get away with these in the same inlet.
+
+855
+01:16:44,257 --> 01:16:47,193
+If there was less clutter on the screen, you'd just combine them.
+
+856
+01:16:47,311 --> 01:16:48,311
+That's the simple answer.
+
+857
+01:16:52,086 --> 01:16:54,602
+Other questions?
+
+858
+01:16:56,979 --> 01:16:59,216
+Go look at the homework assignment.
+
+859
+01:16:59,316 --> 01:17:01,173
+I don't know if my machine is going to be able to play it.
+
+860
+01:17:01,453 --> 01:17:03,969
+But it's going to be to do this.
+
+861
+01:17:04,249 --> 01:17:06,206
+Firefox...
+
+862
+01:17:08,024 --> 01:17:10,820
+I don't know if I bookmarked it.
+
+863
+01:17:10,920 --> 01:17:13,756
+And somewhere down here...
+
+864
+01:17:14,455 --> 01:17:20,466
+You get your assignment here, which is to do this.
+
+865
+01:17:20,746 --> 01:17:23,681
+Now I don't know if this is going to play correctly, so...
+
+866
+01:17:27,177 --> 01:17:29,134
+It's lame.
+
+867
+01:17:30,811 --> 01:17:33,188
+All it is, is just a musical fourth that gets louder and softer.
+
+868
+01:17:34,027 --> 01:17:39,060
+It's checking whether you can control amplitudes and frequencies, and understand the difference between them.
+
+869
+01:17:39,200 --> 01:17:44,372
+And it's checking whether you can actually get around the oscillator, and the multiplier, and the adder.
+
+870
+01:17:49,545 --> 01:17:58,073
+Basically what this amounts to is understanding oscillators, frequencies and amplitudes -- and being able to kick Pd on -- which is probably going to be the hard part.
+
+871
+01:18:00,310 --> 01:18:03,805
+Student:  When we turn in homework we'll be turning in all of this?
+
+872
+01:18:03,905 --> 01:18:07,400
+Oh. To turn the homework in, just upload the patch you made.
+
+873
+01:18:07,400 --> 01:18:15,535
+And I will give you more details about how the patch should act in order to conserve the TA's sanity.
+
+874
+01:18:15,635 --> 01:18:19,752
+There should be a clear way to turn it on, that sort of thing.
+
+875
+01:18:22,175 --> 01:18:24,762
+But more about that next time.
+

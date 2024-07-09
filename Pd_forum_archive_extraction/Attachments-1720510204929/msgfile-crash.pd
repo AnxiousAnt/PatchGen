@@ -1,0 +1,13 @@
+#N canvas 0 0 454 304 10;
+#X obj 128 127 msgfile;
+#X msg 183 88 goto 12;
+#X msg 83 88 replace crash;
+#X obj 132 60 t b b;
+#X obj 132 27 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
+-1;
+#X text 153 25 bang to crash PD;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 3 1 1 0;
+#X connect 4 0 3 0;

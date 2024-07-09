@@ -1,0 +1,26 @@
+#N canvas 621 150 647 396 10;
+#X obj 19 138 gemwin;
+#X obj 50 113 rec_img;
+#X obj 50 93 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 33 46 destroy;
+#X msg 42 71 dim 500 500;
+#X msg 19 24 lighting 1 \, create \, 1;
+#X obj 22 197 gemhead 1;
+#X obj 22 222 rotate 20 20 20;
+#X obj 22 247 world_light;
+#X obj 25 289 gemhead;
+#X obj 25 314 sphere 3 66;
+#X text 74 94 <- click to snap 20x20 sample of the frame;
+#X text 156 143 add this 400 pict together with imagemagick :;
+#X text 156 162 montage -tile 20x20 -geometry 500x500+0+0 *.jpg montage.jpg
+;
+#X text 261 346 ch 2007;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;

@@ -1,0 +1,50 @@
+#N canvas 432 371 493 449 12;
+#X obj 78 238 pong 0 0 0 0;
+#X obj 78 108 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 293 292 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 8875 1;
+#X obj 99 132 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 39 300 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 181 97 5 0 0 0 - - -;
+#X floatatom 181 121 5 0 0 0 - - -;
+#X floatatom 181 146 5 0 0 0 - - -;
+#X obj 113 57 loadbang;
+#X msg 124 82 100;
+#X msg 125 118 1;
+#X floatatom 236 185 5 0 0 0 - - -;
+#X floatatom 236 210 5 0 0 0 - - -;
+#X text 228 94 initial height;
+#X text 230 120 initial velocity;
+#X text 230 146 damping (1 = none);
+#X floatatom 138 287 5 0 0 0 - - -;
+#X obj 108 322 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X msg 28 148 reset;
+#X text 61 298 bouce;
+#X text 130 320 above hand height;
+#X text 193 285 velocity;
+#X text 289 185 hand force (1 = none);
+#X text 291 211 hand height;
+#X text 37 26 pong :: a bouncing ball model;
+#X connect 0 0 4 0;
+#X connect 0 1 17 0;
+#X connect 0 2 16 0;
+#X connect 0 3 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X connect 5 0 0 1;
+#X connect 6 0 0 2;
+#X connect 7 0 0 3;
+#X connect 8 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 5 0;
+#X connect 9 0 12 0;
+#X connect 10 0 7 0;
+#X connect 10 0 11 0;
+#X connect 11 0 0 4;
+#X connect 12 0 0 5;
+#X connect 18 0 0 0;
+

@@ -1,0 +1,146 @@
+void linux_open_midi(int nmidiin, 
+                     int *midiinvec, 
+                     int nmidiout, 
+                     int *midioutvec)
+{
+    /* Joe's code, to open with 0_RDRW flag */
+    if (nmidiin == 1 && nmidiout == 1 && midiinvec[0] == midioutvec[0])
+    {  
+        int fd = -1;
+	char namebuf[80];
+        int devno = midiinvec[0];
+        if (devno == 1)
+	{
+      	    sys_setalarm(500000);
+	    fd = open("/dev/midi", O_RDWR | O_NDELAY);
+            if (sys_verbose)
+        	fprintf(stderr, 
+			"device 1: tried /dev/midi; returned %d\n", 
+			fd);
+        }
+    	if (fd < 0)
+    	{
+            sys_setalarm(500000);
+    	    sprintf(namebuf, "/dev/midi%2.2d", devno-1);
+    	    fd = open(namebuf, O_RDWR);
+    	    if (sys_verbose)
+    	    	fprintf(stderr, 
+			"device %d: tried %s; returned %d\n",
+			devno,
+			namebuf,
+			fd);
+    	}
+        if (fd < 0)
+    	{
+            sys_setalarm(500000);
+    	    sprintf(namebuf, "/dev/midi%d", devno-1);
+    	    fd = open(namebuf, O_RDWR);
+    	    if (sys_verbose)
+    	    	fprintf(stderr, 
+			"device %d: tried %s; returned %d\n",
+			devno, 
+			namebuf, 
+                        fd);
+    	}
+    	if (fd >= 0)
+    	{
+    	    oss_midiinfd[oss_nmidiin++] = fd;	    
+    	    oss_midioutfd[oss_nmidiout++] = fd;
+    	}
+        else post("couldn't open MIDI device %d", devno);
+    }   
+/* End Joe's code */
+    
+    else
+    {
+        int i;
+        for (i = 0, oss_nmidiin = 0; i < nmidiin; i++)
+        {
+            int fd = -1;
+    	    char namebuf[80];
+    	    int devno = midiinvec[i];
+    	    if (devno == 1)
+	    {
+		sys_setalarm(1000000);
+		fd = open("/dev/midi", O_RDONLY);
+		if (sys_verbose)
+		    fprintf(stderr,
+			    "device 1: tried /dev/midi; returned %d\n",
+			    fd);
+	    }
+	    if (fd < 0)
+	    {
+		sys_setalarm(1000000);
+		sprintf(namebuf, "/dev/midi%2.2d", devno-1);
+		fd = open(namebuf, O_RDONLY);
+		if (sys_verbose)
+		    fprintf(stderr,
+			    "device %d: tried %s; returned %d\n",
+			    devno,
+			    namebuf,
+			    fd);
+	    }
+	    if (fd < 0)
+	    {
+		sys_setalarm(1000000);
+		sprintf(namebuf, "/dev/midi%d", devno-1);
+		fd = open(namebuf, O_RDONLY);
+		if (sys_verbose)
+		    fprintf(stderr,
+			    "device %d: tried %s; returned %d\n",
+			    devno,
+			    namebuf,
+			    fd);
+	    }
+	    if (fd >= 0)
+		oss_midiinfd[oss_nmidiin++] = fd;	    
+	    else post("couldn't open MIDI input device %d", devno);
+        }
+        for (i = 0, oss_nmidiout = 0; i < nmidiout; i++)
+        {
+            int fd = -1;
+    	    char namebuf[80];
+    	    int devno = midioutvec[i];
+    	if (devno == 1)
+    	{
+            sys_setalarm(1000000);
+    	    fd = open("/dev/midi", O_WRONLY);
+    	    if (sys_verbose)
+    	    	fprintf(stderr,
+			"device 1: tried /dev/midi; returned %d\n",
+			fd);
+    	}
+        if (fd < 0)
+    	{
+            sys_setalarm(1000000);
+    	    sprintf(namebuf, "/dev/midi%2.2d", devno-1);
+    	    fd = open(namebuf, O_WRONLY);
+    	    if (sys_verbose)
+    	    	fprintf(stderr,
+			"device %d: tried %s; returned %d\n",
+			devno,
+			namebuf,
+			fd);
+    	}
+        if (fd < 0)
+    	{
+            sys_setalarm(1000000);
+    	    sprintf(namebuf, "/dev/midi%d", devno-1);
+    	    fd = open(namebuf, O_WRONLY);
+    	    if (sys_verbose)
+    	    	fprintf(stderr,
+			"device %d: tried %s; returned %d\n",
+			devno,
+			namebuf,
+			fd);
+    	}
+    	if (fd >= 0)
+    	    oss_midioutfd[oss_nmidiout++] = fd;	    
+    	else post("couldn't open MIDI output device %d", devno);
+        }
+    }
+    if (oss_nmidiin < nmidiin || oss_nmidiout < nmidiout || sys_verbose)
+    	post("opened %d MIDI input device(s) and %d MIDI output device(s).",
+	     oss_nmidiin,
+	     oss_nmidiout);
+}

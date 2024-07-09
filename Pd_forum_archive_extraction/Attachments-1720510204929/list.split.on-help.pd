@@ -1,0 +1,12 @@
+#N canvas 649 133 450 300 10;
+#X msg 22 23 4 23 5 6;
+#X msg 221 88 5;
+#X msg 79 53 78 32 67 5 987 32 43;
+#X obj 67 185 print A;
+#X obj 173 185 print B;
+#X obj 75 123 list.split.on;
+#X connect 0 0 5 0;
+#X connect 1 0 5 1;
+#X connect 2 0 5 0;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;

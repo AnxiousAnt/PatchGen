@@ -1,0 +1,150 @@
+Index: m_pd.c
+===================================================================
+--- m_pd.c	(revision 10779)
++++ m_pd.c	(working copy)
+@@ -295,6 +295,18 @@
+ void glob_init(void);
+ void garray_init(void);
+ 
++/*--BEGIN moo--*/
++#include <locale.h>
++void locale_init(void) {
++  setlocale(LC_ALL,"");
++  setlocale(LC_NUMERIC,"C");
++  setlocale(LC_CTYPE,"en_US.UTF-8");
++  /*
++  printf("moo: locale=%s\n", setlocale(LC_ALL,NULL));
++  printf("moo: LC_CTYPE=%s\n", setlocale(LC_CTYPE,NULL));
++  */
++}
++
+ void pd_init(void)
+ {
+     mess_init();
+@@ -302,5 +314,5 @@
+     conf_init();
+     glob_init();
+     garray_init();
++    locale_init(); /*-- moo --*/
+ }
+-
+Index: g_editor.c
+===================================================================
+--- g_editor.c	(revision 10779)
++++ g_editor.c	(working copy)
+@@ -1468,9 +1468,16 @@
+         gotkeysym = av[1].a_w.w_symbol;
+     else if (av[1].a_type == A_FLOAT)
+     {
++	/*-- moo: old
+         char buf[3];
+-        sprintf(buf, "%c", (int)(av[1].a_w.w_float));
++	sprintf(buf, "%c", (int)(av[1].a_w.w_float));
+         gotkeysym = gensym(buf);
++	--*/
++        char buf[8];
++	sprintf(buf, "%C", (int)(av[1].a_w.w_float));
++	/*printf("moo: charcode %%d=%d, %%c=%c, %%C=%C\n", (int)(av[1].a_w.w_float), (int)(av[1].a_w.w_float), (int)(av[1].a_w.w_float));*/
++	/*printf("moo: buf='%s'\n", buf);*/
++        gotkeysym = gensym(buf);
+     }
+     else gotkeysym = gensym("?");
+     fflag = (av[0].a_type == A_FLOAT ? av[0].a_w.w_float : 0);
+Index: pd_connect.tcl
+===================================================================
+--- pd_connect.tcl	(revision 10779)
++++ pd_connect.tcl	(working copy)
+@@ -11,6 +11,10 @@
+ 
+ proc ::pd_connect::configure_socket {sock} {
+ 	fconfigure $sock -blocking 0 -buffering line 
++##--moo
++    fconfigure $sock -encoding utf-8
++#    puts "moo: fconfigure socket -encoding = [fconfigure $sock -encoding]"
++##--/moo
+ 	fileevent $sock readable {::pd_connect::pd_readsocket ""}
+ }
+ 
+@@ -50,6 +54,11 @@
+ proc ::pd_connect::pdsend {message} {
+ 	variable pd_socket
+ 	append message \;
++##--moo
++#    if {[lindex $message 1] != {motion}} {
++#      puts "moo: pdsend enc={[fconfigure $pd_socket -encoding]} msg={$message}"
++#    }
++##--/moo
+ 	if {[catch {puts $pd_socket $message} errorname]} {
+ 		puts stderr "pdsend errorname: >>$errorname<<"
+ 		error "Not connected to 'pd' process"
+@@ -64,6 +73,9 @@
+ 		exit
+ 	} 
+ 	append cmd_from_pd [read $pd_socket]
++##--moo
++#    puts "moo: pd_readsocket enc={[fconfigure $pd_socket -encoding]} cmd_from_pd={$cmd_from_pd}"
++##--/moo
+ 	if {[catch {uplevel #0 $cmd_from_pd} errorname]} {
+ 		global errorInfo
+ 		puts stderr "errorname: >>$errorname<<"
+Index: pd.tk
+===================================================================
+--- pd.tk	(revision 10779)
++++ pd.tk	(working copy)
+@@ -152,6 +152,15 @@
+ 	#		[string range \
+ 	#		[registry get {HKEY_CURRENT_USER\Control Panel\International} sLanguage] 0 1] ]
+ 	#}
++
++##--moo
++    encoding system utf-8
++    fconfigure stderr -encoding utf-8
++    fconfigure stdout -encoding utf-8
++    puts "moo: encoding system = [encoding system]"
++    puts "moo: encoding stderr = [fconfigure stderr -encoding]"
++    puts "moo: encoding stdout = [fconfigure stdout -encoding]"
++##--/moo
+ }
+ 
+ # ------------------------------------------------------------------------------
+Index: g_rtext.c
+===================================================================
+--- g_rtext.c	(revision 10779)
++++ g_rtext.c	(working copy)
+@@ -447,8 +447,13 @@
+ 
+ /* at Guenter's suggestion, use 'n>31' to test wither a character might
+ be printable in whatever 8-bit character set we find ourselves. */
++/*-- moo: ... but test with "<" rather than "!=" in order to accomodate unicode codepoints for n
++     (which we get since Tk is sending the "%A" substitution for bind <Key>",
++     effectively reducing the coverage of this clause to 7 bits; case n>127
++     is covered by the next clause.
++  --*/
+ 
+-        if (n == '\n' || (n > 31 && n != 127))
++        if (n == '\n' || (n > 31 /*&& n != 127*/ && n < 127)) /*-- moo --*/
+         {
+             newsize = x->x_bufsize+1;
+             x->x_buf = resizebytes(x->x_buf, x->x_bufsize, newsize);
+@@ -457,7 +462,21 @@
+             x->x_buf[x->x_selstart] = n;
+             x->x_bufsize = newsize;
+             x->x_selstart = x->x_selstart + 1;
++	}
++	/*--moo: check for 8-bit or unicode codepoints, assuming "keysym" is a correctly encoded (UTF-8) string--*/
++	else if (n > 127) {
++	  int clen = strlen(keysym->s_name);
++	  newsize = x->x_bufsize + clen;
++	  x->x_buf = resizebytes(x->x_buf, x->x_bufsize, newsize);
++	  for (i = x->x_bufsize; i > x->x_selstart; i--)
++	    x->x_buf[i] = x->x_buf[i-1];
++	  x->x_bufsize = newsize;
++	  /*-- insert keysym->s_name, rather than decoding the unicode value here --*/
++	  //strncpy(x->x_buf+x->x_selstart, keysym->s_name, clen);
++	  strcpy(x->x_buf+x->x_selstart, keysym->s_name);
++	  x->x_selstart = x->x_selstart + clen;
+         }
++	/*--/moo--*/
+         x->x_selend = x->x_selstart;
+         x->x_glist->gl_editor->e_textdirty = 1;
+     }

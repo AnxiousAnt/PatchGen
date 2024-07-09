@@ -1,0 +1,44 @@
+
+current: opanel.pd_linux helloworld.pd_linux
+
+# not sure these ever get used -msp
+install: linux_install
+
+clean: linux_clean
+
+clobber: linux_clobber
+
+PDEXTERN=/usr/local/lib/pd/externs
+
+# ----------------------- LINUX i386 -----------------------
+
+LINUXOBJ = 
+PD_LINUX =  opanel.pd_linux.o helloworld.pd_linux.o
+
+.SUFFIXES: .pd_linux_o .pd_linux
+
+LINUXCFLAGS = -DPD -O2 -funroll-loops -fomit-frame-pointer \
+    -Wall -W -Wshadow -Wstrict-prototypes -Werror \
+    -Wno-unused -Wno-parentheses -Wno-switch
+
+LINUXINCLUDE =  -I.
+
+.c.pd_linux_o:
+	cc -g $(LINUXCFLAGS) $(LINUXINCLUDE) -o $*.pd_linux_o -c $*.c
+
+.pd_linux_o.pd_linux:
+	ld -export_dynamic  -shared -o $*.pd_linux $*.pd_linux_o -lc -lm
+	strip --strip-unneeded $*.pd_linux
+	rm -f ../$*.pd_linux
+	ln -s src/$*.pd_linux ..
+
+install_linux:
+	for i in *.pd_linux do
+		install $i $(PDEXTERN)
+	done
+
+linux_clean:
+	rm -f *.pd_linux_o *.o 
+
+linux_clobber: clean
+	rm -f $(PD_LINUX)

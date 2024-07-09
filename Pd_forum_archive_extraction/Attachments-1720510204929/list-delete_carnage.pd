@@ -1,0 +1,47 @@
+#N canvas 271 0 730 706 10;
+#X obj 182 224 until;
+#X msg 182 285 add2 \$1;
+#X msg 179 348 104 106 108 110 112 114 116 118 120 132 134 136 138
+140 141 142 143 144 145 146 147 148 149 150 151 152 167 148 152 158
+164 164 164 164 164 164 164 164 164 164 164 164 164 164 164 164 164
+164 164 164 164 164 164 164 164 164 164 164 164 164 164 164 164 164
+164;
+#X obj 221 247 + 1;
+#X msg 228 198 0;
+#X msg 357 274 set;
+#X obj 343 561 list trim;
+#X obj 343 536 list prepend add2;
+#X obj 343 589 s list;
+#X obj 100 298 r list;
+#X floatatom 564 383 5 0 0 0 - - -;
+#X msg 182 198 180;
+#X obj 79 216 t b f b;
+#X msg 436 488 1;
+#X obj 181 248 f 0;
+#X obj 488 254 - 1;
+#X text 164 175 start here to get range;
+#X floatatom 81 173 5 0 0 0 - - -;
+#X text 18 149 add numbers to delete here;
+#X obj 343 511 list-delete;
+#X text 353 256 clear;
+#X connect 0 0 14 0;
+#X connect 1 0 2 0;
+#X connect 2 0 19 0;
+#X connect 3 0 14 1;
+#X connect 4 0 14 1;
+#X connect 5 0 2 0;
+#X connect 5 0 7 1;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 9 0 2 0;
+#X connect 10 0 19 1;
+#X connect 11 0 0 0;
+#X connect 12 0 2 0;
+#X connect 12 1 15 0;
+#X connect 12 2 13 0;
+#X connect 13 0 19 2;
+#X connect 14 0 1 0;
+#X connect 14 0 3 0;
+#X connect 15 0 10 0;
+#X connect 17 0 12 0;
+#X connect 19 0 7 0;

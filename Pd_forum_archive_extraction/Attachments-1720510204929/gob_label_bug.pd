@@ -1,0 +1,46 @@
+#N canvas 156 492 824 407 10;
+#N canvas 0 0 202 203 thing 0;
+#X obj 1 16 cnv 15 200 185 empty empty empty 20 12 0 14 -44926 -66577
+0;
+#X obj 33 108 hsl 128 15 0 127 0 0 empty empty label 4 9 0 8 -262144
+-1 -1 0 1;
+#X msg 232 148 label_pos \$1 \$2;
+#X obj 270 105 pack f f;
+#X floatatom 36 75 5 0 0 0 - - -;
+#X floatatom 106 74 5 0 0 0 - - -;
+#X obj 305 83 t b f;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 6 1 3 1;
+#X coords 0 0 1 1 202 202 1;
+#X restore 127 68 pd thing;
+#N canvas 0 0 450 300 patch 0;
+#X msg 234 132 label_pos \$1 \$2;
+#X obj 272 89 pack f f;
+#X floatatom 38 59 5 0 0 0 - - -;
+#X floatatom 108 58 5 0 0 0 - - -;
+#X obj 307 67 t b f;
+#X text 40 20 move the numbers;
+#X text 10 115 open the subpatch to see;
+#X text 7 137 the dif in label position;
+#X obj 50 92 bng 15 250 50 0 empty empty label 3 6 0 8 -262144 -1 -1
+;
+#X connect 0 0 8 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 1 1;
+#X coords 0 0 1 1 200 140 1;
+#X restore 533 157 pd patch;
+#X text 370 51 even try (0 \, 0) which should be right at the slider
+;
+#X text 366 72 open the subpatches to see the difference in label position
+;
+#X text 377 28 move the numbers in the subpatches;
+#X text 248 319 This only seems to happen when you give the GUIs the
+label_pos message \, not when the position is set in the settings dialogue
+box.;

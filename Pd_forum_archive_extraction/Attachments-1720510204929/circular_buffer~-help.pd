@@ -1,0 +1,80 @@
+#N canvas 129 155 602 415 10;
+#X text 211 281 array size has to be an integer multiple of 64 or block
+size.;
+#X obj 6 67 cnv 15 55 30 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X msg 9 64 \; pd dsp 1;
+#X obj 210 242 cnv 15 123 16 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X obj 213 238 table array-foo 1024;
+#X text 11 336 second: (optional) internal block size (64 by default)
+;
+#N canvas 0 0 450 300 init 0;
+#X obj 204 97 samplerate~;
+#X obj 146 117 /;
+#X obj 146 74 t b b;
+#X obj 146 53 loadbang;
+#X msg 146 96 1.024e+06;
+#X obj 146 150 - 0.1;
+#X msg 145 174 set 0 \$1 0.1;
+#X obj 147 209 outlet;
+#X obj 135 47 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 1 1;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 2 1 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 2 0;
+#X restore 9 162 pd init;
+#X obj 8 250 *~;
+#X obj 9 222 vline~;
+#X obj 180 191 delay;
+#X obj 273 144 samplerate~;
+#X obj 207 165 /;
+#X floatatom 237 166 6 0 0 0 - - -;
+#X obj 207 122 t b b;
+#X obj 207 101 loadbang;
+#X obj 9 140 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 262 101 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 207 144 1.024e+06;
+#X obj 9 288 circular_buffer~ array-foo 64;
+#X obj 9 162 t b b b;
+#X obj 57 223 osc~ 300.1;
+#X msg 102 196 1 0.1;
+#X text 218 191 starts recording delayed \, after the signal is "gone"
+;
+#X msg 9 195 0 21.2333 0.1;
+#X text 278 165 delay for 1024 samples.;
+#X text 10 320 ^ first creation argument: name of an array.;
+#X text 211 257 ^ array (table) has to be created before the object
+is created.;
+#X text 7 -5 circular_buffer~ writes incoming signals into a buffer-array
+and overwrites it circular with new signal blocks. bang will output
+the whole content of the buffer to an array given as creation argument.
+(buggy with some array sizes \, try before using!);
+#X connect 6 0 23 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 0;
+#X connect 9 0 18 1;
+#X connect 10 0 11 1;
+#X connect 11 0 9 1;
+#X connect 11 0 12 0;
+#X connect 12 0 9 1;
+#X connect 13 0 17 0;
+#X connect 13 1 10 0;
+#X connect 14 0 13 0;
+#X connect 15 0 19 0;
+#X connect 16 0 13 0;
+#X connect 17 0 11 0;
+#X connect 19 0 23 0;
+#X connect 19 1 21 0;
+#X connect 19 2 9 0;
+#X connect 20 0 7 1;
+#X connect 21 0 8 0;
+#X connect 23 0 8 0;

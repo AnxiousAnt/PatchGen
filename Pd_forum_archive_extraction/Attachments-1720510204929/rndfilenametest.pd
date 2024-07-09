@@ -1,0 +1,7 @@
+#N canvas 0 22 462 312 10;
+#X obj 117 91 rndfilename /Users/yamadaichiro/Desktop;
+#X symbolatom 117 160 0 0 0 0 - - -;
+#X msg 117 61 bang;
+#X text 219 72 ***your path here***;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;

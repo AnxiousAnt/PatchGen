@@ -1,0 +1,138 @@
+#N canvas 138 2 793 684 12;
+#X obj 87 548 tabread4~ hanning;
+#X obj 87 528 *~ 64;
+#N canvas 0 0 450 300 graph2 0;
+#X array loop 65881 float 0;
+#X coords 0 1 65880 -1 200 40 1;
+#X restore 569 68 graph;
+#X obj 72 473 tabread4~ loop;
+#X obj 87 507 r~ v1;
+#X obj 566 625 s~ v1;
+#X obj 605 589 wrap~;
+#X obj 605 625 s~ v2;
+#X obj 73 583 *~;
+#X obj 71 451 *~ 64467;
+#X obj 83 353 samphold~;
+#X obj 132 335 r~ v1;
+#X text 32 470 loop;
+#X obj 70 377 +~;
+#X text 93 379 start point;
+#X obj 70 261 r~ v1;
+#X obj 567 473 s~ c;
+#X obj 81 289 r~ c;
+#X obj 70 397 *~ 1;
+#X obj 69 313 /~;
+#X obj 307 548 tabread4~ hanning;
+#X obj 307 528 *~ 64;
+#X obj 292 473 tabread4~ loop;
+#X obj 293 583 *~;
+#X obj 291 451 *~ 64467;
+#X obj 303 353 samphold~;
+#X text 252 473 loop;
+#X obj 290 377 +~;
+#X text 313 379 start point;
+#X obj 301 289 r~ c;
+#X obj 289 313 /~;
+#X obj 290 261 r~ v2;
+#X obj 352 335 r~ v2;
+#X obj 307 507 r~ v2;
+#X obj 70 422 wrap~;
+#X obj 291 424 wrap~;
+#X obj 302 334 r~ s;
+#X obj 82 334 r~ s;
+#X obj 568 403 s~ s;
+#X obj 203 655 dac~;
+#X obj 568 452 sig~;
+#X text 468 14 cause i'm flat out addicted to the granular efects;
+#X obj 569 254 openpanel;
+#X obj 569 306 soundfiler;
+#X msg 569 280 read -resize \$1 loop;
+#X obj 334 433 r fs;
+#X obj 116 431 r fs;
+#X obj 569 331 s fs;
+#X obj 605 569 +~ 0.5;
+#X text 374 14 audionerd.com::;
+#X obj 210 631 /~ 2;
+#X obj 290 397 +~ 64;
+#N canvas 0 0 450 300 graph7 0;
+#X array hanning 64 float 1;
+#A 0 0 0.00240764 0.00960736 0.0215298 0.0380602 0.0590394 0.0842652
+0.113495 0.146447 0.182803 0.222215 0.264302 0.308658 0.354858 0.402455
+0.450991 0.5 0.549009 0.597545 0.645142 0.691342 0.735698 0.777785
+0.817197 0.853553 0.886505 0.915735 0.940961 0.96194 0.97847 0.990393
+0.997592 1 0.997592 0.990393 0.97847 0.96194 0.940961 0.915735 0.886505
+0.853553 0.817197 0.777785 0.735698 0.691342 0.645142 0.597545 0.549009
+0.5 0.450991 0.402455 0.354858 0.308658 0.264302 0.222215 0.182803
+0.146447 0.113495 0.0842652 0.0590394 0.0380602 0.0215298 0.00960736
+0.00240764;
+#X coords 0 1 63 -1 64 20 1;
+#X restore 569 116 graph;
+#X obj 568 360 r param.speed;
+#X obj 25 64 nbx 5 14 -1e+037 1e+037 0 1 param.speed empty empty 0
+-6 129 10 -261681 -1 -1 0.41 256;
+#X obj 568 381 phasor~;
+#X obj 568 431 r param.chunk_size;
+#X obj 567 511 r param.chunk_freq;
+#X obj 567 535 phasor~;
+#X obj 25 84 nbx 5 14 -1e+037 1e+037 0 1 param.chunk_size empty empty
+0 -6 129 10 -261681 -1 -1 10 256;
+#X obj 26 104 nbx 5 14 -1e+037 1e+037 0 1 param.chunk_freq empty empty
+0 -6 129 10 -261681 -1 -1 7 256;
+#X text 551 344 ___________________________________;
+#X text 551 414 ___________________________________;
+#X text 551 484 ___________________________________;
+#X text 551 644 ___________________________________;
+#X obj 25 37 bng 15 250 50 0 param.load empty load_a_file 20 8 129
+8 -262131 -1 -1;
+#X obj 569 230 r param.load;
+#X text 80 62 speed;
+#X text 80 84 chunk size;
+#X text 80 104 chunk freq;
+#X text 72 226;
+#X connect 0 0 8 1;
+#X connect 1 0 0 0;
+#X connect 3 0 8 0;
+#X connect 4 0 1 0;
+#X connect 6 0 7 0;
+#X connect 8 0 50 0;
+#X connect 9 0 3 0;
+#X connect 10 0 13 1;
+#X connect 11 0 10 1;
+#X connect 13 0 18 0;
+#X connect 15 0 19 0;
+#X connect 17 0 19 1;
+#X connect 18 0 34 0;
+#X connect 19 0 13 0;
+#X connect 20 0 23 1;
+#X connect 21 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 50 0;
+#X connect 24 0 22 0;
+#X connect 25 0 27 1;
+#X connect 27 0 51 0;
+#X connect 29 0 30 1;
+#X connect 30 0 27 0;
+#X connect 31 0 30 0;
+#X connect 32 0 25 1;
+#X connect 33 0 21 0;
+#X connect 34 0 9 0;
+#X connect 35 0 24 0;
+#X connect 36 0 25 0;
+#X connect 37 0 10 0;
+#X connect 40 0 16 0;
+#X connect 42 0 44 0;
+#X connect 43 0 47 0;
+#X connect 44 0 43 0;
+#X connect 45 0 24 1;
+#X connect 46 0 9 1;
+#X connect 48 0 6 0;
+#X connect 50 0 39 0;
+#X connect 50 0 39 1;
+#X connect 51 0 35 0;
+#X connect 53 0 55 0;
+#X connect 55 0 38 0;
+#X connect 56 0 40 0;
+#X connect 57 0 58 0;
+#X connect 58 0 5 0;
+#X connect 58 0 48 0;
+#X connect 66 0 42 0;

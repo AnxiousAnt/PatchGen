@@ -1,0 +1,4613 @@
+#N canvas 920 256 408 692 10;
+#X obj 38 48 gemhead;
+#X obj 48 168 pix_draw;
+#X obj 38 148 pix_image;
+#X obj 48 68 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 48 88 openpanel;
+#X obj 48 108 list prepend open;
+#N canvas 460 500 450 300 gemwin 0;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X obj 67 41 route create;
+#X msg 67 70 set destroy;
+#X msg 142 68 set create;
+#X msg 198 132 destroy;
+#X obj 132 156 gemwin 5;
+#X msg 132 112 dimen 100 100 \, create \, 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 7 0;
+#X connect 2 1 4 0;
+#X connect 2 1 5 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 7 0 6 0;
+#X restore 204 243 pd gemwin;
+#X msg 204 223 destroy;
+#X text 38 24 Load image;
+#X obj 48 128 list trim;
+#X obj 149 148 route load;
+#X obj 149 168 route success;
+#X floatatom 51 228 4 0 0 1 width - -;
+#X floatatom 64 208 4 0 0 1 height - -;
+#X obj 38 188 pix_info . . . .;
+#X obj 100 453 pix_data;
+#X floatatom 173 459 5 0 0 0 - - -;
+#X text 211 458 gray-value;
+#X obj 149 188 bang;
+#X obj 53 335 f+ 0;
+#X obj 53 375 /;
+#X obj 53 315 until;
+#X obj 91 335 - 1;
+#X obj 36 275 f;
+#X obj 142 253 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 152 307 f+ 0;
+#X obj 152 367 /;
+#X obj 190 307 - 1;
+#X obj 152 347 moses;
+#X obj 152 391 t b f;
+#X obj 36 295 t b f b f;
+#X obj 53 395 t b f;
+#N canvas 735 529 254 276 RGB 0;
+#X obj 49 214 outlet;
+#X obj 78 26 inlet;
+#X obj 78 46 unpack f f f f;
+#X obj 45 76 * 255;
+#X obj 105 76 * 255;
+#X obj 155 76 * 255;
+#X obj 106 108 * 256;
+#X obj 50 191 * -1;
+#X obj 50 137 expr $f1 + $f2 + $f3;
+#X obj 50 165 + 1;
+#X obj 51 111 * 65536;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 2 2 5 0;
+#X connect 3 0 10 0;
+#X connect 4 0 6 0;
+#X connect 5 0 8 2;
+#X connect 6 0 8 1;
+#X connect 7 0 0 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 10 0 8 0;
+#X restore 124 503 pd RGB;
+#N canvas 736 205 358 194 pixx 1;
+#X obj 50 50 cnv 1 1 1 50x50 50x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 50 cnv 1 1 1 51x50 51x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 52 50 cnv 1 1 1 52x50 52x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 53 50 cnv 1 1 1 53x50 53x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 50 cnv 1 1 1 54x50 54x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 50 cnv 1 1 1 55x50 55x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 50 cnv 1 1 1 56x50 56x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 57 50 cnv 1 1 1 57x50 57x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 58 50 cnv 1 1 1 58x50 58x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 59 50 cnv 1 1 1 59x50 59x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 60 50 cnv 1 1 1 60x50 60x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 61 50 cnv 1 1 1 61x50 61x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 62 50 cnv 1 1 1 62x50 62x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 63 50 cnv 1 1 1 63x50 63x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 64 50 cnv 1 1 1 64x50 64x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 65 50 cnv 1 1 1 65x50 65x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 66 50 cnv 1 1 1 66x50 66x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 50 cnv 1 1 1 67x50 67x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 68 50 cnv 1 1 1 68x50 68x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 69 50 cnv 1 1 1 69x50 69x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 70 50 cnv 1 1 1 70x50 70x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 71 50 cnv 1 1 1 71x50 71x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 72 50 cnv 1 1 1 72x50 72x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 73 50 cnv 1 1 1 73x50 73x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 74 50 cnv 1 1 1 74x50 74x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 50 cnv 1 1 1 75x50 75x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 50 cnv 1 1 1 76x50 76x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 50 cnv 1 1 1 77x50 77x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 78 50 cnv 1 1 1 78x50 78x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 79 50 cnv 1 1 1 79x50 79x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 80 50 cnv 1 1 1 80x50 80x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 81 50 cnv 1 1 1 81x50 81x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 82 50 cnv 1 1 1 82x50 82x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 50 cnv 1 1 1 83x50 83x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 50 cnv 1 1 1 84x50 84x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 50 cnv 1 1 1 85x50 85x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 86 50 cnv 1 1 1 86x50 86x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 87 50 cnv 1 1 1 87x50 87x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 88 50 cnv 1 1 1 88x50 88x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 50 cnv 1 1 1 89x50 89x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 50 cnv 1 1 1 90x50 90x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 50 cnv 1 1 1 91x50 91x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 50 cnv 1 1 1 92x50 92x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 93 50 cnv 1 1 1 93x50 93x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 94 50 cnv 1 1 1 94x50 94x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 95 50 cnv 1 1 1 95x50 95x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 50 cnv 1 1 1 96x50 96x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 50 cnv 1 1 1 97x50 97x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 50 cnv 1 1 1 98x50 98x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 99 50 cnv 1 1 1 99x50 99x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 100 50 cnv 1 1 1 100x50 100x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 50 cnv 1 1 1 101x50 101x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 50 cnv 1 1 1 102x50 102x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 50 cnv 1 1 1 103x50 103x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 104 50 cnv 1 1 1 104x50 104x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 105 50 cnv 1 1 1 105x50 105x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 106 50 cnv 1 1 1 106x50 106x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 50 cnv 1 1 1 107x50 107x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 108 50 cnv 1 1 1 108x50 108x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 50 cnv 1 1 1 109x50 109x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 110 50 cnv 1 1 1 110x50 110x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 111 50 cnv 1 1 1 111x50 111x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 112 50 cnv 1 1 1 112x50 112x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 113 50 cnv 1 1 1 113x50 113x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 50 cnv 1 1 1 114x50 114x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 50 cnv 1 1 1 115x50 115x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 50 cnv 1 1 1 116x50 116x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 117 50 cnv 1 1 1 117x50 117x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 118 50 cnv 1 1 1 118x50 118x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 50 cnv 1 1 1 119x50 119x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 50 cnv 1 1 1 120x50 120x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 50 cnv 1 1 1 121x50 121x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 122 50 cnv 1 1 1 122x50 122x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 123 50 cnv 1 1 1 123x50 123x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 124 50 cnv 1 1 1 124x50 124x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 125 50 cnv 1 1 1 125x50 125x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 126 50 cnv 1 1 1 126x50 126x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 50 cnv 1 1 1 127x50 127x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 128 50 cnv 1 1 1 128x50 128x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 129 50 cnv 1 1 1 129x50 129x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 130 50 cnv 1 1 1 130x50 130x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 131 50 cnv 1 1 1 131x50 131x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 50 cnv 1 1 1 132x50 132x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 50 cnv 1 1 1 133x50 133x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 50 cnv 1 1 1 134x50 134x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 135 50 cnv 1 1 1 135x50 135x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 136 50 cnv 1 1 1 136x50 136x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 137 50 cnv 1 1 1 137x50 137x50-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 49 cnv 1 1 1 50x49 50x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 49 cnv 1 1 1 51x49 51x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 52 49 cnv 1 1 1 52x49 52x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 53 49 cnv 1 1 1 53x49 53x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 49 cnv 1 1 1 54x49 54x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 49 cnv 1 1 1 55x49 55x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 49 cnv 1 1 1 56x49 56x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 57 49 cnv 1 1 1 57x49 57x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 58 49 cnv 1 1 1 58x49 58x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 59 49 cnv 1 1 1 59x49 59x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 60 49 cnv 1 1 1 60x49 60x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 61 49 cnv 1 1 1 61x49 61x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 62 49 cnv 1 1 1 62x49 62x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 63 49 cnv 1 1 1 63x49 63x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 64 49 cnv 1 1 1 64x49 64x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 65 49 cnv 1 1 1 65x49 65x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 66 49 cnv 1 1 1 66x49 66x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 49 cnv 1 1 1 67x49 67x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 68 49 cnv 1 1 1 68x49 68x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 69 49 cnv 1 1 1 69x49 69x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 70 49 cnv 1 1 1 70x49 70x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 71 49 cnv 1 1 1 71x49 71x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 72 49 cnv 1 1 1 72x49 72x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 73 49 cnv 1 1 1 73x49 73x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 74 49 cnv 1 1 1 74x49 74x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 49 cnv 1 1 1 75x49 75x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 49 cnv 1 1 1 76x49 76x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 49 cnv 1 1 1 77x49 77x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 78 49 cnv 1 1 1 78x49 78x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 79 49 cnv 1 1 1 79x49 79x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 80 49 cnv 1 1 1 80x49 80x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 81 49 cnv 1 1 1 81x49 81x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 82 49 cnv 1 1 1 82x49 82x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 49 cnv 1 1 1 83x49 83x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 49 cnv 1 1 1 84x49 84x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 49 cnv 1 1 1 85x49 85x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 86 49 cnv 1 1 1 86x49 86x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 87 49 cnv 1 1 1 87x49 87x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 88 49 cnv 1 1 1 88x49 88x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 49 cnv 1 1 1 89x49 89x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 49 cnv 1 1 1 90x49 90x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 49 cnv 1 1 1 91x49 91x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 49 cnv 1 1 1 92x49 92x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 93 49 cnv 1 1 1 93x49 93x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 94 49 cnv 1 1 1 94x49 94x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 95 49 cnv 1 1 1 95x49 95x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 49 cnv 1 1 1 96x49 96x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 49 cnv 1 1 1 97x49 97x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 49 cnv 1 1 1 98x49 98x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 99 49 cnv 1 1 1 99x49 99x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 100 49 cnv 1 1 1 100x49 100x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 49 cnv 1 1 1 101x49 101x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 49 cnv 1 1 1 102x49 102x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 49 cnv 1 1 1 103x49 103x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 104 49 cnv 1 1 1 104x49 104x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 105 49 cnv 1 1 1 105x49 105x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 106 49 cnv 1 1 1 106x49 106x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 49 cnv 1 1 1 107x49 107x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 108 49 cnv 1 1 1 108x49 108x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 49 cnv 1 1 1 109x49 109x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 110 49 cnv 1 1 1 110x49 110x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 111 49 cnv 1 1 1 111x49 111x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 112 49 cnv 1 1 1 112x49 112x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 113 49 cnv 1 1 1 113x49 113x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 49 cnv 1 1 1 114x49 114x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 49 cnv 1 1 1 115x49 115x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 49 cnv 1 1 1 116x49 116x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 117 49 cnv 1 1 1 117x49 117x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 118 49 cnv 1 1 1 118x49 118x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 49 cnv 1 1 1 119x49 119x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 49 cnv 1 1 1 120x49 120x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 49 cnv 1 1 1 121x49 121x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 122 49 cnv 1 1 1 122x49 122x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 123 49 cnv 1 1 1 123x49 123x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 124 49 cnv 1 1 1 124x49 124x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 125 49 cnv 1 1 1 125x49 125x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 126 49 cnv 1 1 1 126x49 126x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 49 cnv 1 1 1 127x49 127x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 128 49 cnv 1 1 1 128x49 128x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 129 49 cnv 1 1 1 129x49 129x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 130 49 cnv 1 1 1 130x49 130x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 131 49 cnv 1 1 1 131x49 131x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 49 cnv 1 1 1 132x49 132x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 49 cnv 1 1 1 133x49 133x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 49 cnv 1 1 1 134x49 134x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 135 49 cnv 1 1 1 135x49 135x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 136 49 cnv 1 1 1 136x49 136x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 137 49 cnv 1 1 1 137x49 137x49-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 48 cnv 1 1 1 50x48 50x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 48 cnv 1 1 1 51x48 51x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 52 48 cnv 1 1 1 52x48 52x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 53 48 cnv 1 1 1 53x48 53x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 48 cnv 1 1 1 54x48 54x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 48 cnv 1 1 1 55x48 55x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 48 cnv 1 1 1 56x48 56x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 57 48 cnv 1 1 1 57x48 57x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 58 48 cnv 1 1 1 58x48 58x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 59 48 cnv 1 1 1 59x48 59x48-i empty 0 0 0 10 -147263 -147263
+0;
+#X obj 60 48 cnv 1 1 1 60x48 60x48-i empty 0 0 0 10 -101514 -101514
+0;
+#X obj 61 48 cnv 1 1 1 61x48 61x48-i empty 0 0 0 10 -49341 -49341 0
+;
+#X obj 62 48 cnv 1 1 1 62x48 62x48-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 63 48 cnv 1 1 1 63x48 63x48-i empty 0 0 0 10 -53196 -53196 0
+;
+#X obj 64 48 cnv 1 1 1 64x48 64x48-i empty 0 0 0 10 -53452 -53452 0
+;
+#X obj 65 48 cnv 1 1 1 65x48 65x48-i empty 0 0 0 10 -53452 -53452 0
+;
+#X obj 66 48 cnv 1 1 1 66x48 66x48-i empty 0 0 0 10 -53196 -53196 0
+;
+#X obj 67 48 cnv 1 1 1 67x48 67x48-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 68 48 cnv 1 1 1 68x48 68x48-i empty 0 0 0 10 -49341 -49341 0
+;
+#X obj 69 48 cnv 1 1 1 69x48 69x48-i empty 0 0 0 10 -101514 -101514
+0;
+#X obj 70 48 cnv 1 1 1 70x48 70x48-i empty 0 0 0 10 -147263 -147263
+0;
+#X obj 71 48 cnv 1 1 1 71x48 71x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 72 48 cnv 1 1 1 72x48 72x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 73 48 cnv 1 1 1 73x48 73x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 74 48 cnv 1 1 1 74x48 74x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 48 cnv 1 1 1 75x48 75x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 48 cnv 1 1 1 76x48 76x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 48 cnv 1 1 1 77x48 77x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 78 48 cnv 1 1 1 78x48 78x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 79 48 cnv 1 1 1 79x48 79x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 80 48 cnv 1 1 1 80x48 80x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 81 48 cnv 1 1 1 81x48 81x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 82 48 cnv 1 1 1 82x48 82x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 48 cnv 1 1 1 83x48 83x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 48 cnv 1 1 1 84x48 84x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 48 cnv 1 1 1 85x48 85x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 48 cnv 1 1 1 86x48 86x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 48 cnv 1 1 1 87x48 87x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 48 cnv 1 1 1 88x48 88x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 48 cnv 1 1 1 89x48 89x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 48 cnv 1 1 1 90x48 90x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 48 cnv 1 1 1 91x48 91x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 48 cnv 1 1 1 92x48 92x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 48 cnv 1 1 1 93x48 93x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 94 48 cnv 1 1 1 94x48 94x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 95 48 cnv 1 1 1 95x48 95x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 48 cnv 1 1 1 96x48 96x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 48 cnv 1 1 1 97x48 97x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 48 cnv 1 1 1 98x48 98x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 99 48 cnv 1 1 1 99x48 99x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 100 48 cnv 1 1 1 100x48 100x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 48 cnv 1 1 1 101x48 101x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 48 cnv 1 1 1 102x48 102x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 48 cnv 1 1 1 103x48 103x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 104 48 cnv 1 1 1 104x48 104x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 105 48 cnv 1 1 1 105x48 105x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 106 48 cnv 1 1 1 106x48 106x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 48 cnv 1 1 1 107x48 107x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 108 48 cnv 1 1 1 108x48 108x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 48 cnv 1 1 1 109x48 109x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 110 48 cnv 1 1 1 110x48 110x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 111 48 cnv 1 1 1 111x48 111x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 112 48 cnv 1 1 1 112x48 112x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 113 48 cnv 1 1 1 113x48 113x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 48 cnv 1 1 1 114x48 114x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 48 cnv 1 1 1 115x48 115x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 48 cnv 1 1 1 116x48 116x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 117 48 cnv 1 1 1 117x48 117x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 118 48 cnv 1 1 1 118x48 118x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 48 cnv 1 1 1 119x48 119x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 48 cnv 1 1 1 120x48 120x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 48 cnv 1 1 1 121x48 121x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 48 cnv 1 1 1 122x48 122x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 123 48 cnv 1 1 1 123x48 123x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 124 48 cnv 1 1 1 124x48 124x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 125 48 cnv 1 1 1 125x48 125x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 48 cnv 1 1 1 126x48 126x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 48 cnv 1 1 1 127x48 127x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 48 cnv 1 1 1 128x48 128x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 129 48 cnv 1 1 1 129x48 129x48-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 48 cnv 1 1 1 130x48 130x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 131 48 cnv 1 1 1 131x48 131x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 48 cnv 1 1 1 132x48 132x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 48 cnv 1 1 1 133x48 133x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 48 cnv 1 1 1 134x48 134x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 135 48 cnv 1 1 1 135x48 135x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 136 48 cnv 1 1 1 136x48 136x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 137 48 cnv 1 1 1 137x48 137x48-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 47 cnv 1 1 1 50x47 50x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 47 cnv 1 1 1 51x47 51x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 52 47 cnv 1 1 1 52x47 52x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 53 47 cnv 1 1 1 53x47 53x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 47 cnv 1 1 1 54x47 54x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 47 cnv 1 1 1 55x47 55x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 47 cnv 1 1 1 56x47 56x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 57 47 cnv 1 1 1 57x47 57x47-i empty 0 0 0 10 -144178 -144178
+0;
+#X obj 58 47 cnv 1 1 1 58x47 58x47-i empty 0 0 0 10 -242352 -242352
+0;
+#X obj 59 47 cnv 1 1 1 59x47 59x47-i empty 0 0 0 10 -249803 -249803
+0;
+#X obj 60 47 cnv 1 1 1 60x47 60x47-i empty 0 0 0 10 -119246 -119246
+0;
+#X obj 61 47 cnv 1 1 1 61x47 61x47-i empty 0 0 0 10 -250832 -250832
+0;
+#X obj 62 47 cnv 1 1 1 62x47 62x47-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 63 47 cnv 1 1 1 63x47 63x47-i empty 0 0 0 10 -185810 -185810
+0;
+#X obj 64 47 cnv 1 1 1 64x47 64x47-i empty 0 0 0 10 -251603 -251603
+0;
+#X obj 65 47 cnv 1 1 1 65x47 65x47-i empty 0 0 0 10 -251603 -251603
+0;
+#X obj 66 47 cnv 1 1 1 66x47 66x47-i empty 0 0 0 10 -185810 -185810
+0;
+#X obj 67 47 cnv 1 1 1 67x47 67x47-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 68 47 cnv 1 1 1 68x47 68x47-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 69 47 cnv 1 1 1 69x47 69x47-i empty 0 0 0 10 -184782 -184782
+0;
+#X obj 70 47 cnv 1 1 1 70x47 70x47-i empty 0 0 0 10 -249804 -249804
+0;
+#X obj 71 47 cnv 1 1 1 71x47 71x47-i empty 0 0 0 10 -46000 -46000 0
+;
+#X obj 72 47 cnv 1 1 1 72x47 72x47-i empty 0 0 0 10 -147263 -147263
+0;
+#X obj 73 47 cnv 1 1 1 73x47 73x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 74 47 cnv 1 1 1 74x47 74x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 47 cnv 1 1 1 75x47 75x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 47 cnv 1 1 1 76x47 76x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 47 cnv 1 1 1 77x47 77x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 78 47 cnv 1 1 1 78x47 78x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 79 47 cnv 1 1 1 79x47 79x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 80 47 cnv 1 1 1 80x47 80x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 81 47 cnv 1 1 1 81x47 81x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 82 47 cnv 1 1 1 82x47 82x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 47 cnv 1 1 1 83x47 83x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 47 cnv 1 1 1 84x47 84x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 47 cnv 1 1 1 85x47 85x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 47 cnv 1 1 1 86x47 86x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 87 47 cnv 1 1 1 87x47 87x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 88 47 cnv 1 1 1 88x47 88x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 89 47 cnv 1 1 1 89x47 89x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 47 cnv 1 1 1 90x47 90x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 47 cnv 1 1 1 91x47 91x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 47 cnv 1 1 1 92x47 92x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 47 cnv 1 1 1 93x47 93x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 94 47 cnv 1 1 1 94x47 94x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 95 47 cnv 1 1 1 95x47 95x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 47 cnv 1 1 1 96x47 96x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 47 cnv 1 1 1 97x47 97x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 47 cnv 1 1 1 98x47 98x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 99 47 cnv 1 1 1 99x47 99x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 100 47 cnv 1 1 1 100x47 100x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 47 cnv 1 1 1 101x47 101x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 47 cnv 1 1 1 102x47 102x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 47 cnv 1 1 1 103x47 103x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 104 47 cnv 1 1 1 104x47 104x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 105 47 cnv 1 1 1 105x47 105x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 106 47 cnv 1 1 1 106x47 106x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 107 47 cnv 1 1 1 107x47 107x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 108 47 cnv 1 1 1 108x47 108x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 47 cnv 1 1 1 109x47 109x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 110 47 cnv 1 1 1 110x47 110x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 111 47 cnv 1 1 1 111x47 111x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 112 47 cnv 1 1 1 112x47 112x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 113 47 cnv 1 1 1 113x47 113x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 47 cnv 1 1 1 114x47 114x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 47 cnv 1 1 1 115x47 115x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 47 cnv 1 1 1 116x47 116x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 117 47 cnv 1 1 1 117x47 117x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 118 47 cnv 1 1 1 118x47 118x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 47 cnv 1 1 1 119x47 119x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 47 cnv 1 1 1 120x47 120x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 47 cnv 1 1 1 121x47 121x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 47 cnv 1 1 1 122x47 122x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 123 47 cnv 1 1 1 123x47 123x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 124 47 cnv 1 1 1 124x47 124x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 125 47 cnv 1 1 1 125x47 125x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 47 cnv 1 1 1 126x47 126x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 47 cnv 1 1 1 127x47 127x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 47 cnv 1 1 1 128x47 128x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 129 47 cnv 1 1 1 129x47 129x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 130 47 cnv 1 1 1 130x47 130x47-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 131 47 cnv 1 1 1 131x47 131x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 47 cnv 1 1 1 132x47 132x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 47 cnv 1 1 1 133x47 133x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 47 cnv 1 1 1 134x47 134x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 135 47 cnv 1 1 1 135x47 135x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 136 47 cnv 1 1 1 136x47 136x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 137 47 cnv 1 1 1 137x47 137x47-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 46 cnv 1 1 1 50x46 50x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 46 cnv 1 1 1 51x46 51x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 52 46 cnv 1 1 1 52x46 52x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 53 46 cnv 1 1 1 53x46 53x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 46 cnv 1 1 1 54x46 54x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 46 cnv 1 1 1 55x46 55x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 46 cnv 1 1 1 56x46 56x46-i empty 0 0 0 10 -29296 -29296 0
+;
+#X obj 57 46 cnv 1 1 1 57x46 57x46-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 58 46 cnv 1 1 1 58x46 58x46-i empty 0 0 0 10 -184782 -184782
+0;
+#X obj 59 46 cnv 1 1 1 59x46 59x46-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 60 46 cnv 1 1 1 60x46 60x46-i empty 0 0 0 10 -103314 -103314
+0;
+#X obj 61 46 cnv 1 1 1 61x46 61x46-i empty 0 0 0 10 -214084 -214084
+0;
+#X obj 62 46 cnv 1 1 1 62x46 62x46-i empty 0 0 0 10 -69134 -69134 0
+;
+#X obj 63 46 cnv 1 1 1 63x46 63x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 64 46 cnv 1 1 1 64x46 64x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 65 46 cnv 1 1 1 65x46 65x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 66 46 cnv 1 1 1 66x46 66x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 46 cnv 1 1 1 67x46 67x46-i empty 0 0 0 10 -69134 -69134 0
+;
+#X obj 68 46 cnv 1 1 1 68x46 68x46-i empty 0 0 0 10 -214084 -214084
+0;
+#X obj 69 46 cnv 1 1 1 69x46 69x46-i empty 0 0 0 10 -103570 -103570
+0;
+#X obj 70 46 cnv 1 1 1 70x46 70x46-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 71 46 cnv 1 1 1 71x46 71x46-i empty 0 0 0 10 -184782 -184782
+0;
+#X obj 72 46 cnv 1 1 1 72x46 72x46-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 73 46 cnv 1 1 1 73x46 73x46-i empty 0 0 0 10 -32637 -32637 0
+;
+#X obj 74 46 cnv 1 1 1 74x46 74x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 46 cnv 1 1 1 75x46 75x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 46 cnv 1 1 1 76x46 76x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 46 cnv 1 1 1 77x46 77x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 78 46 cnv 1 1 1 78x46 78x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 79 46 cnv 1 1 1 79x46 79x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 80 46 cnv 1 1 1 80x46 80x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 81 46 cnv 1 1 1 81x46 81x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 82 46 cnv 1 1 1 82x46 82x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 46 cnv 1 1 1 83x46 83x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 46 cnv 1 1 1 84x46 84x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 46 cnv 1 1 1 85x46 85x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 46 cnv 1 1 1 86x46 86x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 46 cnv 1 1 1 87x46 87x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 46 cnv 1 1 1 88x46 88x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 46 cnv 1 1 1 89x46 89x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 46 cnv 1 1 1 90x46 90x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 46 cnv 1 1 1 91x46 91x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 46 cnv 1 1 1 92x46 92x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 46 cnv 1 1 1 93x46 93x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 94 46 cnv 1 1 1 94x46 94x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 95 46 cnv 1 1 1 95x46 95x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 46 cnv 1 1 1 96x46 96x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 46 cnv 1 1 1 97x46 97x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 46 cnv 1 1 1 98x46 98x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 99 46 cnv 1 1 1 99x46 99x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 100 46 cnv 1 1 1 100x46 100x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 46 cnv 1 1 1 101x46 101x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 46 cnv 1 1 1 102x46 102x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 46 cnv 1 1 1 103x46 103x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 104 46 cnv 1 1 1 104x46 104x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 105 46 cnv 1 1 1 105x46 105x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 106 46 cnv 1 1 1 106x46 106x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 46 cnv 1 1 1 107x46 107x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 108 46 cnv 1 1 1 108x46 108x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 46 cnv 1 1 1 109x46 109x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 110 46 cnv 1 1 1 110x46 110x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 111 46 cnv 1 1 1 111x46 111x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 112 46 cnv 1 1 1 112x46 112x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 113 46 cnv 1 1 1 113x46 113x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 46 cnv 1 1 1 114x46 114x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 46 cnv 1 1 1 115x46 115x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 46 cnv 1 1 1 116x46 116x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 117 46 cnv 1 1 1 117x46 117x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 118 46 cnv 1 1 1 118x46 118x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 46 cnv 1 1 1 119x46 119x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 46 cnv 1 1 1 120x46 120x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 46 cnv 1 1 1 121x46 121x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 46 cnv 1 1 1 122x46 122x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 123 46 cnv 1 1 1 123x46 123x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 124 46 cnv 1 1 1 124x46 124x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 125 46 cnv 1 1 1 125x46 125x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 46 cnv 1 1 1 126x46 126x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 46 cnv 1 1 1 127x46 127x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 46 cnv 1 1 1 128x46 128x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 129 46 cnv 1 1 1 129x46 129x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 130 46 cnv 1 1 1 130x46 130x46-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 131 46 cnv 1 1 1 131x46 131x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 46 cnv 1 1 1 132x46 132x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 46 cnv 1 1 1 133x46 133x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 46 cnv 1 1 1 134x46 134x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 135 46 cnv 1 1 1 135x46 135x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 136 46 cnv 1 1 1 136x46 136x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 137 46 cnv 1 1 1 137x46 137x46-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 45 cnv 1 1 1 50x45 50x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 45 cnv 1 1 1 51x45 51x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 52 45 cnv 1 1 1 52x45 52x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 53 45 cnv 1 1 1 53x45 53x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 45 cnv 1 1 1 54x45 54x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 45 cnv 1 1 1 55x45 55x45-i empty 0 0 0 10 -98173 -98173 0
+;
+#X obj 56 45 cnv 1 1 1 56x45 56x45-i empty 0 0 0 10 -53196 -53196 0
+;
+#X obj 57 45 cnv 1 1 1 57x45 57x45-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 58 45 cnv 1 1 1 58x45 58x45-i empty 0 0 0 10 -172190 -172190
+0;
+#X obj 59 45 cnv 1 1 1 59x45 59x45-i empty 0 0 0 10 -203548 -203548
+0;
+#X obj 60 45 cnv 1 1 1 60x45 60x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 61 45 cnv 1 1 1 61x45 61x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 62 45 cnv 1 1 1 62x45 62x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 63 45 cnv 1 1 1 63x45 63x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 64 45 cnv 1 1 1 64x45 64x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 65 45 cnv 1 1 1 65x45 65x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 66 45 cnv 1 1 1 66x45 66x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 45 cnv 1 1 1 67x45 67x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 68 45 cnv 1 1 1 68x45 68x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 69 45 cnv 1 1 1 69x45 69x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 70 45 cnv 1 1 1 70x45 70x45-i empty 0 0 0 10 -203548 -203548
+0;
+#X obj 71 45 cnv 1 1 1 71x45 71x45-i empty 0 0 0 10 -103314 -103314
+0;
+#X obj 72 45 cnv 1 1 1 72x45 72x45-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 73 45 cnv 1 1 1 73x45 73x45-i empty 0 0 0 10 -53452 -53452 0
+;
+#X obj 74 45 cnv 1 1 1 74x45 74x45-i empty 0 0 0 10 -170391 -170391
+0;
+#X obj 75 45 cnv 1 1 1 75x45 75x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 45 cnv 1 1 1 76x45 76x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 45 cnv 1 1 1 77x45 77x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 78 45 cnv 1 1 1 78x45 78x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 79 45 cnv 1 1 1 79x45 79x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 80 45 cnv 1 1 1 80x45 80x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 81 45 cnv 1 1 1 81x45 81x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 82 45 cnv 1 1 1 82x45 82x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 45 cnv 1 1 1 83x45 83x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 45 cnv 1 1 1 84x45 84x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 45 cnv 1 1 1 85x45 85x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 45 cnv 1 1 1 86x45 86x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 87 45 cnv 1 1 1 87x45 87x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 88 45 cnv 1 1 1 88x45 88x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 89 45 cnv 1 1 1 89x45 89x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 45 cnv 1 1 1 90x45 90x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 45 cnv 1 1 1 91x45 91x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 92 45 cnv 1 1 1 92x45 92x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 93 45 cnv 1 1 1 93x45 93x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 94 45 cnv 1 1 1 94x45 94x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 95 45 cnv 1 1 1 95x45 95x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 45 cnv 1 1 1 96x45 96x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 45 cnv 1 1 1 97x45 97x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 45 cnv 1 1 1 98x45 98x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 99 45 cnv 1 1 1 99x45 99x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 100 45 cnv 1 1 1 100x45 100x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 45 cnv 1 1 1 101x45 101x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 45 cnv 1 1 1 102x45 102x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 45 cnv 1 1 1 103x45 103x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 104 45 cnv 1 1 1 104x45 104x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 105 45 cnv 1 1 1 105x45 105x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 106 45 cnv 1 1 1 106x45 106x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 45 cnv 1 1 1 107x45 107x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 108 45 cnv 1 1 1 108x45 108x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 45 cnv 1 1 1 109x45 109x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 110 45 cnv 1 1 1 110x45 110x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 111 45 cnv 1 1 1 111x45 111x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 112 45 cnv 1 1 1 112x45 112x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 113 45 cnv 1 1 1 113x45 113x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 45 cnv 1 1 1 114x45 114x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 45 cnv 1 1 1 115x45 115x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 45 cnv 1 1 1 116x45 116x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 117 45 cnv 1 1 1 117x45 117x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 118 45 cnv 1 1 1 118x45 118x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 45 cnv 1 1 1 119x45 119x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 45 cnv 1 1 1 120x45 120x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 45 cnv 1 1 1 121x45 121x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 45 cnv 1 1 1 122x45 122x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 123 45 cnv 1 1 1 123x45 123x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 124 45 cnv 1 1 1 124x45 124x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 125 45 cnv 1 1 1 125x45 125x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 45 cnv 1 1 1 126x45 126x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 45 cnv 1 1 1 127x45 127x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 45 cnv 1 1 1 128x45 128x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 129 45 cnv 1 1 1 129x45 129x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 130 45 cnv 1 1 1 130x45 130x45-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 131 45 cnv 1 1 1 131x45 131x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 45 cnv 1 1 1 132x45 132x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 45 cnv 1 1 1 133x45 133x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 45 cnv 1 1 1 134x45 134x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 135 45 cnv 1 1 1 135x45 135x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 136 45 cnv 1 1 1 136x45 136x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 137 45 cnv 1 1 1 137x45 137x45-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 44 cnv 1 1 1 50x44 50x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 44 cnv 1 1 1 51x44 51x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 52 44 cnv 1 1 1 52x44 52x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 53 44 cnv 1 1 1 53x44 53x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 44 cnv 1 1 1 54x44 54x44-i empty 0 0 0 10 -98173 -98173 0
+;
+#X obj 55 44 cnv 1 1 1 55x44 55x44-i empty 0 0 0 10 -53453 -53453 0
+;
+#X obj 56 44 cnv 1 1 1 56x44 56x44-i empty 0 0 0 10 -54481 -54481 0
+;
+#X obj 57 44 cnv 1 1 1 57x44 57x44-i empty 0 0 0 10 -89694 -89694 0
+;
+#X obj 58 44 cnv 1 1 1 58x44 58x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 59 44 cnv 1 1 1 59x44 59x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 60 44 cnv 1 1 1 60x44 60x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 61 44 cnv 1 1 1 61x44 61x44-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 62 44 cnv 1 1 1 62x44 62x44-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 63 44 cnv 1 1 1 63x44 63x44-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 64 44 cnv 1 1 1 64x44 64x44-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 65 44 cnv 1 1 1 65x44 65x44-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 66 44 cnv 1 1 1 66x44 66x44-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 67 44 cnv 1 1 1 67x44 67x44-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 68 44 cnv 1 1 1 68x44 68x44-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 69 44 cnv 1 1 1 69x44 69x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 70 44 cnv 1 1 1 70x44 70x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 71 44 cnv 1 1 1 71x44 71x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 72 44 cnv 1 1 1 72x44 72x44-i empty 0 0 0 10 -20817 -20817 0
+;
+#X obj 73 44 cnv 1 1 1 73x44 73x44-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 74 44 cnv 1 1 1 74x44 74x44-i empty 0 0 0 10 -118989 -118989
+0;
+#X obj 75 44 cnv 1 1 1 75x44 75x44-i empty 0 0 0 10 -170391 -170391
+0;
+#X obj 76 44 cnv 1 1 1 76x44 76x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 44 cnv 1 1 1 77x44 77x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 78 44 cnv 1 1 1 78x44 78x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 79 44 cnv 1 1 1 79x44 79x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 80 44 cnv 1 1 1 80x44 80x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 81 44 cnv 1 1 1 81x44 81x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 82 44 cnv 1 1 1 82x44 82x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 44 cnv 1 1 1 83x44 83x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 44 cnv 1 1 1 84x44 84x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 44 cnv 1 1 1 85x44 85x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 44 cnv 1 1 1 86x44 86x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 44 cnv 1 1 1 87x44 87x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 44 cnv 1 1 1 88x44 88x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 44 cnv 1 1 1 89x44 89x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 44 cnv 1 1 1 90x44 90x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 91 44 cnv 1 1 1 91x44 91x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 44 cnv 1 1 1 92x44 92x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 93 44 cnv 1 1 1 93x44 93x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 94 44 cnv 1 1 1 94x44 94x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 95 44 cnv 1 1 1 95x44 95x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 44 cnv 1 1 1 96x44 96x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 44 cnv 1 1 1 97x44 97x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 44 cnv 1 1 1 98x44 98x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 99 44 cnv 1 1 1 99x44 99x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 100 44 cnv 1 1 1 100x44 100x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 44 cnv 1 1 1 101x44 101x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 44 cnv 1 1 1 102x44 102x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 44 cnv 1 1 1 103x44 103x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 104 44 cnv 1 1 1 104x44 104x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 105 44 cnv 1 1 1 105x44 105x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 106 44 cnv 1 1 1 106x44 106x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 44 cnv 1 1 1 107x44 107x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 108 44 cnv 1 1 1 108x44 108x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 44 cnv 1 1 1 109x44 109x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 110 44 cnv 1 1 1 110x44 110x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 111 44 cnv 1 1 1 111x44 111x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 112 44 cnv 1 1 1 112x44 112x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 113 44 cnv 1 1 1 113x44 113x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 44 cnv 1 1 1 114x44 114x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 44 cnv 1 1 1 115x44 115x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 44 cnv 1 1 1 116x44 116x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 117 44 cnv 1 1 1 117x44 117x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 118 44 cnv 1 1 1 118x44 118x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 44 cnv 1 1 1 119x44 119x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 44 cnv 1 1 1 120x44 120x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 44 cnv 1 1 1 121x44 121x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 44 cnv 1 1 1 122x44 122x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 123 44 cnv 1 1 1 123x44 123x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 124 44 cnv 1 1 1 124x44 124x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 125 44 cnv 1 1 1 125x44 125x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 44 cnv 1 1 1 126x44 126x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 44 cnv 1 1 1 127x44 127x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 44 cnv 1 1 1 128x44 128x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 129 44 cnv 1 1 1 129x44 129x44-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 44 cnv 1 1 1 130x44 130x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 131 44 cnv 1 1 1 131x44 131x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 44 cnv 1 1 1 132x44 132x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 44 cnv 1 1 1 133x44 133x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 44 cnv 1 1 1 134x44 134x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 135 44 cnv 1 1 1 135x44 135x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 136 44 cnv 1 1 1 136x44 136x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 137 44 cnv 1 1 1 137x44 137x44-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 43 cnv 1 1 1 50x43 50x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 43 cnv 1 1 1 51x43 51x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 52 43 cnv 1 1 1 52x43 52x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 53 43 cnv 1 1 1 53x43 53x43-i empty 0 0 0 10 -29296 -29296 0
+;
+#X obj 54 43 cnv 1 1 1 54x43 54x43-i empty 0 0 0 10 -53196 -53196 0
+;
+#X obj 55 43 cnv 1 1 1 55x43 55x43-i empty 0 0 0 10 -54481 -54481 0
+;
+#X obj 56 43 cnv 1 1 1 56x43 56x43-i empty 0 0 0 10 -20817 -20817 0
+;
+#X obj 57 43 cnv 1 1 1 57x43 57x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 58 43 cnv 1 1 1 58x43 58x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 59 43 cnv 1 1 1 59x43 59x43-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 60 43 cnv 1 1 1 60x43 60x43-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 61 43 cnv 1 1 1 61x43 61x43-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 62 43 cnv 1 1 1 62x43 62x43-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 43 cnv 1 1 1 63x43 63x43-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 43 cnv 1 1 1 64x43 64x43-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 43 cnv 1 1 1 65x43 65x43-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 43 cnv 1 1 1 66x43 66x43-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 67 43 cnv 1 1 1 67x43 67x43-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 68 43 cnv 1 1 1 68x43 68x43-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 69 43 cnv 1 1 1 69x43 69x43-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 70 43 cnv 1 1 1 70x43 70x43-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 71 43 cnv 1 1 1 71x43 71x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 72 43 cnv 1 1 1 72x43 72x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 73 43 cnv 1 1 1 73x43 73x43-i empty 0 0 0 10 -79414 -79414 0
+;
+#X obj 74 43 cnv 1 1 1 74x43 74x43-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 75 43 cnv 1 1 1 75x43 75x43-i empty 0 0 0 10 -53452 -53452 0
+;
+#X obj 76 43 cnv 1 1 1 76x43 76x43-i empty 0 0 0 10 -32637 -32637 0
+;
+#X obj 77 43 cnv 1 1 1 77x43 77x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 78 43 cnv 1 1 1 78x43 78x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 79 43 cnv 1 1 1 79x43 79x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 80 43 cnv 1 1 1 80x43 80x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 81 43 cnv 1 1 1 81x43 81x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 82 43 cnv 1 1 1 82x43 82x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 43 cnv 1 1 1 83x43 83x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 43 cnv 1 1 1 84x43 84x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 43 cnv 1 1 1 85x43 85x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 86 43 cnv 1 1 1 86x43 86x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 87 43 cnv 1 1 1 87x43 87x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 88 43 cnv 1 1 1 88x43 88x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 43 cnv 1 1 1 89x43 89x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 43 cnv 1 1 1 90x43 90x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 43 cnv 1 1 1 91x43 91x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 43 cnv 1 1 1 92x43 92x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 93 43 cnv 1 1 1 93x43 93x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 94 43 cnv 1 1 1 94x43 94x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 95 43 cnv 1 1 1 95x43 95x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 43 cnv 1 1 1 96x43 96x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 43 cnv 1 1 1 97x43 97x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 43 cnv 1 1 1 98x43 98x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 99 43 cnv 1 1 1 99x43 99x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 100 43 cnv 1 1 1 100x43 100x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 43 cnv 1 1 1 101x43 101x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 43 cnv 1 1 1 102x43 102x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 43 cnv 1 1 1 103x43 103x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 104 43 cnv 1 1 1 104x43 104x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 105 43 cnv 1 1 1 105x43 105x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 106 43 cnv 1 1 1 106x43 106x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 43 cnv 1 1 1 107x43 107x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 108 43 cnv 1 1 1 108x43 108x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 43 cnv 1 1 1 109x43 109x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 110 43 cnv 1 1 1 110x43 110x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 111 43 cnv 1 1 1 111x43 111x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 112 43 cnv 1 1 1 112x43 112x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 113 43 cnv 1 1 1 113x43 113x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 43 cnv 1 1 1 114x43 114x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 43 cnv 1 1 1 115x43 115x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 43 cnv 1 1 1 116x43 116x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 117 43 cnv 1 1 1 117x43 117x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 118 43 cnv 1 1 1 118x43 118x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 43 cnv 1 1 1 119x43 119x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 43 cnv 1 1 1 120x43 120x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 43 cnv 1 1 1 121x43 121x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 122 43 cnv 1 1 1 122x43 122x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 123 43 cnv 1 1 1 123x43 123x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 124 43 cnv 1 1 1 124x43 124x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 125 43 cnv 1 1 1 125x43 125x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 126 43 cnv 1 1 1 126x43 126x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 43 cnv 1 1 1 127x43 127x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 128 43 cnv 1 1 1 128x43 128x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 129 43 cnv 1 1 1 129x43 129x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 130 43 cnv 1 1 1 130x43 130x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 131 43 cnv 1 1 1 131x43 131x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 43 cnv 1 1 1 132x43 132x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 43 cnv 1 1 1 133x43 133x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 43 cnv 1 1 1 134x43 134x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 135 43 cnv 1 1 1 135x43 135x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 136 43 cnv 1 1 1 136x43 136x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 137 43 cnv 1 1 1 137x43 137x43-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 42 cnv 1 1 1 50x42 50x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 42 cnv 1 1 1 51x42 51x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 52 42 cnv 1 1 1 52x42 52x42-i empty 0 0 0 10 -32637 -32637 0
+;
+#X obj 53 42 cnv 1 1 1 53x42 53x42-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 54 42 cnv 1 1 1 54x42 54x42-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 55 42 cnv 1 1 1 55x42 55x42-i empty 0 0 0 10 -89694 -89694 0
+;
+#X obj 56 42 cnv 1 1 1 56x42 56x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 57 42 cnv 1 1 1 57x42 57x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 58 42 cnv 1 1 1 58x42 58x42-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 59 42 cnv 1 1 1 59x42 59x42-i empty 0 0 0 10 -249808 -249808
+0;
+#X obj 60 42 cnv 1 1 1 60x42 60x42-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 61 42 cnv 1 1 1 61x42 61x42-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 62 42 cnv 1 1 1 62x42 62x42-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 42 cnv 1 1 1 63x42 63x42-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 42 cnv 1 1 1 64x42 64x42-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 42 cnv 1 1 1 65x42 65x42-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 42 cnv 1 1 1 66x42 66x42-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 67 42 cnv 1 1 1 67x42 67x42-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 68 42 cnv 1 1 1 68x42 68x42-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 69 42 cnv 1 1 1 69x42 69x42-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 70 42 cnv 1 1 1 70x42 70x42-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 71 42 cnv 1 1 1 71x42 71x42-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 72 42 cnv 1 1 1 72x42 72x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 73 42 cnv 1 1 1 73x42 73x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 74 42 cnv 1 1 1 74x42 74x42-i empty 0 0 0 10 -20817 -20817 0
+;
+#X obj 75 42 cnv 1 1 1 75x42 75x42-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 76 42 cnv 1 1 1 76x42 76x42-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 77 42 cnv 1 1 1 77x42 77x42-i empty 0 0 0 10 -165251 -165251
+0;
+#X obj 78 42 cnv 1 1 1 78x42 78x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 79 42 cnv 1 1 1 79x42 79x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 80 42 cnv 1 1 1 80x42 80x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 81 42 cnv 1 1 1 81x42 81x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 82 42 cnv 1 1 1 82x42 82x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 42 cnv 1 1 1 83x42 83x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 42 cnv 1 1 1 84x42 84x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 42 cnv 1 1 1 85x42 85x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 86 42 cnv 1 1 1 86x42 86x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 87 42 cnv 1 1 1 87x42 87x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 88 42 cnv 1 1 1 88x42 88x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 42 cnv 1 1 1 89x42 89x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 42 cnv 1 1 1 90x42 90x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 42 cnv 1 1 1 91x42 91x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 42 cnv 1 1 1 92x42 92x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 93 42 cnv 1 1 1 93x42 93x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 94 42 cnv 1 1 1 94x42 94x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 95 42 cnv 1 1 1 95x42 95x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 42 cnv 1 1 1 96x42 96x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 42 cnv 1 1 1 97x42 97x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 42 cnv 1 1 1 98x42 98x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 99 42 cnv 1 1 1 99x42 99x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 100 42 cnv 1 1 1 100x42 100x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 42 cnv 1 1 1 101x42 101x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 42 cnv 1 1 1 102x42 102x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 42 cnv 1 1 1 103x42 103x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 104 42 cnv 1 1 1 104x42 104x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 105 42 cnv 1 1 1 105x42 105x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 106 42 cnv 1 1 1 106x42 106x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 42 cnv 1 1 1 107x42 107x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 108 42 cnv 1 1 1 108x42 108x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 42 cnv 1 1 1 109x42 109x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 110 42 cnv 1 1 1 110x42 110x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 111 42 cnv 1 1 1 111x42 111x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 112 42 cnv 1 1 1 112x42 112x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 113 42 cnv 1 1 1 113x42 113x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 42 cnv 1 1 1 114x42 114x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 42 cnv 1 1 1 115x42 115x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 42 cnv 1 1 1 116x42 116x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 117 42 cnv 1 1 1 117x42 117x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 118 42 cnv 1 1 1 118x42 118x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 42 cnv 1 1 1 119x42 119x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 42 cnv 1 1 1 120x42 120x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 42 cnv 1 1 1 121x42 121x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 122 42 cnv 1 1 1 122x42 122x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 123 42 cnv 1 1 1 123x42 123x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 124 42 cnv 1 1 1 124x42 124x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 125 42 cnv 1 1 1 125x42 125x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 126 42 cnv 1 1 1 126x42 126x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 42 cnv 1 1 1 127x42 127x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 128 42 cnv 1 1 1 128x42 128x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 129 42 cnv 1 1 1 129x42 129x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 130 42 cnv 1 1 1 130x42 130x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 131 42 cnv 1 1 1 131x42 131x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 42 cnv 1 1 1 132x42 132x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 42 cnv 1 1 1 133x42 133x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 42 cnv 1 1 1 134x42 134x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 135 42 cnv 1 1 1 135x42 135x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 136 42 cnv 1 1 1 136x42 136x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 137 42 cnv 1 1 1 137x42 137x42-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 41 cnv 1 1 1 50x41 50x41-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 41 cnv 1 1 1 51x41 51x41-i empty 0 0 0 10 -248004 -248004
+0;
+#X obj 52 41 cnv 1 1 1 52x41 52x41-i empty 0 0 0 10 -52425 -52425 0
+;
+#X obj 53 41 cnv 1 1 1 53x41 53x41-i empty 0 0 0 10 -184782 -184782
+0;
+#X obj 54 41 cnv 1 1 1 54x41 54x41-i empty 0 0 0 10 -172190 -172190
+0;
+#X obj 55 41 cnv 1 1 1 55x41 55x41-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 41 cnv 1 1 1 56x41 56x41-i empty 0 0 0 10 -1 -1 0;
+#X obj 57 41 cnv 1 1 1 57x41 57x41-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 58 41 cnv 1 1 1 58x41 58x41-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 59 41 cnv 1 1 1 59x41 59x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 60 41 cnv 1 1 1 60x41 60x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 61 41 cnv 1 1 1 61x41 61x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 62 41 cnv 1 1 1 62x41 62x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 41 cnv 1 1 1 63x41 63x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 41 cnv 1 1 1 64x41 64x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 41 cnv 1 1 1 65x41 65x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 41 cnv 1 1 1 66x41 66x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 67 41 cnv 1 1 1 67x41 67x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 68 41 cnv 1 1 1 68x41 68x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 69 41 cnv 1 1 1 69x41 69x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 70 41 cnv 1 1 1 70x41 70x41-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 71 41 cnv 1 1 1 71x41 71x41-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 72 41 cnv 1 1 1 72x41 72x41-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 73 41 cnv 1 1 1 73x41 73x41-i empty 0 0 0 10 -1 -1 0;
+#X obj 74 41 cnv 1 1 1 74x41 74x41-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 41 cnv 1 1 1 75x41 75x41-i empty 0 0 0 10 -103314 -103314
+0;
+#X obj 76 41 cnv 1 1 1 76x41 76x41-i empty 0 0 0 10 -184782 -184782
+0;
+#X obj 77 41 cnv 1 1 1 77x41 77x41-i empty 0 0 0 10 -118217 -118217
+0;
+#X obj 78 41 cnv 1 1 1 78x41 78x41-i empty 0 0 0 10 -248004 -248004
+0;
+#X obj 79 41 cnv 1 1 1 79x41 79x41-i empty 0 0 0 10 -246719 -246719
+0;
+#X obj 80 41 cnv 1 1 1 80x41 80x41-i empty 0 0 0 10 -245947 -245947
+0;
+#X obj 81 41 cnv 1 1 1 81x41 81x41-i empty 0 0 0 10 -244919 -244919
+0;
+#X obj 82 41 cnv 1 1 1 82x41 82x41-i empty 0 0 0 10 -47540 -47540 0
+;
+#X obj 83 41 cnv 1 1 1 83x41 83x41-i empty 0 0 0 10 -178098 -178098
+0;
+#X obj 84 41 cnv 1 1 1 84x41 84x41-i empty 0 0 0 10 -243119 -243119
+0;
+#X obj 85 41 cnv 1 1 1 85x41 85x41-i empty 0 0 0 10 -177070 -177070
+0;
+#X obj 86 41 cnv 1 1 1 86x41 86x41-i empty 0 0 0 10 -45740 -45740 0
+;
+#X obj 87 41 cnv 1 1 1 87x41 87x41-i empty 0 0 0 10 -45740 -45740 0
+;
+#X obj 88 41 cnv 1 1 1 88x41 88x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 89 41 cnv 1 1 1 89x41 89x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 90 41 cnv 1 1 1 90x41 90x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 91 41 cnv 1 1 1 91x41 91x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 92 41 cnv 1 1 1 92x41 92x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 93 41 cnv 1 1 1 93x41 93x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 94 41 cnv 1 1 1 94x41 94x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 95 41 cnv 1 1 1 95x41 95x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 96 41 cnv 1 1 1 96x41 96x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 97 41 cnv 1 1 1 97x41 97x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 41 cnv 1 1 1 98x41 98x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 41 cnv 1 1 1 99x41 99x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 41 cnv 1 1 1 100x41 100x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 41 cnv 1 1 1 101x41 101x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 102 41 cnv 1 1 1 102x41 102x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 103 41 cnv 1 1 1 103x41 103x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 104 41 cnv 1 1 1 104x41 104x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 105 41 cnv 1 1 1 105x41 105x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 106 41 cnv 1 1 1 106x41 106x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 107 41 cnv 1 1 1 107x41 107x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 108 41 cnv 1 1 1 108x41 108x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 109 41 cnv 1 1 1 109x41 109x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 110 41 cnv 1 1 1 110x41 110x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 111 41 cnv 1 1 1 111x41 111x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 112 41 cnv 1 1 1 112x41 112x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 113 41 cnv 1 1 1 113x41 113x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 114 41 cnv 1 1 1 114x41 114x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 115 41 cnv 1 1 1 115x41 115x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 41 cnv 1 1 1 116x41 116x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 41 cnv 1 1 1 117x41 117x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 41 cnv 1 1 1 118x41 118x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 41 cnv 1 1 1 119x41 119x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 120 41 cnv 1 1 1 120x41 120x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 121 41 cnv 1 1 1 121x41 121x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 122 41 cnv 1 1 1 122x41 122x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 123 41 cnv 1 1 1 123x41 123x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 124 41 cnv 1 1 1 124x41 124x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 125 41 cnv 1 1 1 125x41 125x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 126 41 cnv 1 1 1 126x41 126x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 127 41 cnv 1 1 1 127x41 127x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 128 41 cnv 1 1 1 128x41 128x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 129 41 cnv 1 1 1 129x41 129x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 130 41 cnv 1 1 1 130x41 130x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 131 41 cnv 1 1 1 131x41 131x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 132 41 cnv 1 1 1 132x41 132x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 133 41 cnv 1 1 1 133x41 133x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 41 cnv 1 1 1 134x41 134x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 41 cnv 1 1 1 135x41 135x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 41 cnv 1 1 1 136x41 136x41-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 41 cnv 1 1 1 137x41 137x41-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 40 cnv 1 1 1 50x40 50x40-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 40 cnv 1 1 1 51x40 51x40-i empty 0 0 0 10 -117190 -117190
+0;
+#X obj 52 40 cnv 1 1 1 52x40 52x40-i empty 0 0 0 10 -249803 -249803
+0;
+#X obj 53 40 cnv 1 1 1 53x40 53x40-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 54 40 cnv 1 1 1 54x40 54x40-i empty 0 0 0 10 -203548 -203548
+0;
+#X obj 55 40 cnv 1 1 1 55x40 55x40-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 40 cnv 1 1 1 56x40 56x40-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 57 40 cnv 1 1 1 57x40 57x40-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 58 40 cnv 1 1 1 58x40 58x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 59 40 cnv 1 1 1 59x40 59x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 60 40 cnv 1 1 1 60x40 60x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 61 40 cnv 1 1 1 61x40 61x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 62 40 cnv 1 1 1 62x40 62x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 40 cnv 1 1 1 63x40 63x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 40 cnv 1 1 1 64x40 64x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 40 cnv 1 1 1 65x40 65x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 40 cnv 1 1 1 66x40 66x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 67 40 cnv 1 1 1 67x40 67x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 68 40 cnv 1 1 1 68x40 68x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 69 40 cnv 1 1 1 69x40 69x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 70 40 cnv 1 1 1 70x40 70x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 71 40 cnv 1 1 1 71x40 71x40-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 72 40 cnv 1 1 1 72x40 72x40-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 73 40 cnv 1 1 1 73x40 73x40-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 74 40 cnv 1 1 1 74x40 74x40-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 40 cnv 1 1 1 75x40 75x40-i empty 0 0 0 10 -203548 -203548
+0;
+#X obj 76 40 cnv 1 1 1 76x40 76x40-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 77 40 cnv 1 1 1 77x40 77x40-i empty 0 0 0 10 -249804 -249804
+0;
+#X obj 78 40 cnv 1 1 1 78x40 78x40-i empty 0 0 0 10 -182982 -182982
+0;
+#X obj 79 40 cnv 1 1 1 79x40 79x40-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 80 40 cnv 1 1 1 80x40 80x40-i empty 0 0 0 10 -49597 -49597 0
+;
+#X obj 81 40 cnv 1 1 1 81x40 81x40-i empty 0 0 0 10 -114361 -114361
+0;
+#X obj 82 40 cnv 1 1 1 82x40 82x40-i empty 0 0 0 10 -113333 -113333
+0;
+#X obj 83 40 cnv 1 1 1 83x40 83x40-i empty 0 0 0 10 -178354 -178354
+0;
+#X obj 84 40 cnv 1 1 1 84x40 84x40-i empty 0 0 0 10 -46768 -46768 0
+;
+#X obj 85 40 cnv 1 1 1 85x40 85x40-i empty 0 0 0 10 -177326 -177326
+0;
+#X obj 86 40 cnv 1 1 1 86x40 86x40-i empty 0 0 0 10 -111533 -111533
+0;
+#X obj 87 40 cnv 1 1 1 87x40 87x40-i empty 0 0 0 10 -45740 -45740 0
+;
+#X obj 88 40 cnv 1 1 1 88x40 88x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 89 40 cnv 1 1 1 89x40 89x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 90 40 cnv 1 1 1 90x40 90x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 91 40 cnv 1 1 1 91x40 91x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 92 40 cnv 1 1 1 92x40 92x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 93 40 cnv 1 1 1 93x40 93x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 94 40 cnv 1 1 1 94x40 94x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 95 40 cnv 1 1 1 95x40 95x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 96 40 cnv 1 1 1 96x40 96x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 97 40 cnv 1 1 1 97x40 97x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 40 cnv 1 1 1 98x40 98x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 40 cnv 1 1 1 99x40 99x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 40 cnv 1 1 1 100x40 100x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 40 cnv 1 1 1 101x40 101x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 102 40 cnv 1 1 1 102x40 102x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 103 40 cnv 1 1 1 103x40 103x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 104 40 cnv 1 1 1 104x40 104x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 105 40 cnv 1 1 1 105x40 105x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 106 40 cnv 1 1 1 106x40 106x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 107 40 cnv 1 1 1 107x40 107x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 108 40 cnv 1 1 1 108x40 108x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 109 40 cnv 1 1 1 109x40 109x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 110 40 cnv 1 1 1 110x40 110x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 111 40 cnv 1 1 1 111x40 111x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 112 40 cnv 1 1 1 112x40 112x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 113 40 cnv 1 1 1 113x40 113x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 114 40 cnv 1 1 1 114x40 114x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 115 40 cnv 1 1 1 115x40 115x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 40 cnv 1 1 1 116x40 116x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 40 cnv 1 1 1 117x40 117x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 40 cnv 1 1 1 118x40 118x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 40 cnv 1 1 1 119x40 119x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 120 40 cnv 1 1 1 120x40 120x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 121 40 cnv 1 1 1 121x40 121x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 122 40 cnv 1 1 1 122x40 122x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 123 40 cnv 1 1 1 123x40 123x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 124 40 cnv 1 1 1 124x40 124x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 125 40 cnv 1 1 1 125x40 125x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 126 40 cnv 1 1 1 126x40 126x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 127 40 cnv 1 1 1 127x40 127x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 128 40 cnv 1 1 1 128x40 128x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 129 40 cnv 1 1 1 129x40 129x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 130 40 cnv 1 1 1 130x40 130x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 131 40 cnv 1 1 1 131x40 131x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 132 40 cnv 1 1 1 132x40 132x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 133 40 cnv 1 1 1 133x40 133x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 40 cnv 1 1 1 134x40 134x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 40 cnv 1 1 1 135x40 135x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 40 cnv 1 1 1 136x40 136x40-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 40 cnv 1 1 1 137x40 137x40-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 39 cnv 1 1 1 50x39 50x39-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 39 cnv 1 1 1 51x39 51x39-i empty 0 0 0 10 -52424 -52424 0
+;
+#X obj 52 39 cnv 1 1 1 52x39 52x39-i empty 0 0 0 10 -119246 -119246
+0;
+#X obj 53 39 cnv 1 1 1 53x39 53x39-i empty 0 0 0 10 -103314 -103314
+0;
+#X obj 54 39 cnv 1 1 1 54x39 54x39-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 39 cnv 1 1 1 55x39 55x39-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 39 cnv 1 1 1 56x39 56x39-i empty 0 0 0 10 -233360 -233360
+0;
+#X obj 57 39 cnv 1 1 1 57x39 57x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 58 39 cnv 1 1 1 58x39 58x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 59 39 cnv 1 1 1 59x39 59x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 60 39 cnv 1 1 1 60x39 60x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 61 39 cnv 1 1 1 61x39 61x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 62 39 cnv 1 1 1 62x39 62x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 39 cnv 1 1 1 63x39 63x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 39 cnv 1 1 1 64x39 64x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 39 cnv 1 1 1 65x39 65x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 39 cnv 1 1 1 66x39 66x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 67 39 cnv 1 1 1 67x39 67x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 68 39 cnv 1 1 1 68x39 68x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 69 39 cnv 1 1 1 69x39 69x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 70 39 cnv 1 1 1 70x39 70x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 71 39 cnv 1 1 1 71x39 71x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 72 39 cnv 1 1 1 72x39 72x39-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 73 39 cnv 1 1 1 73x39 73x39-i empty 0 0 0 10 -237472 -237472
+0;
+#X obj 74 39 cnv 1 1 1 74x39 74x39-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 39 cnv 1 1 1 75x39 75x39-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 39 cnv 1 1 1 76x39 76x39-i empty 0 0 0 10 -34437 -34437 0
+;
+#X obj 77 39 cnv 1 1 1 77x39 77x39-i empty 0 0 0 10 -184782 -184782
+0;
+#X obj 78 39 cnv 1 1 1 78x39 78x39-i empty 0 0 0 10 -52424 -52424 0
+;
+#X obj 79 39 cnv 1 1 1 79x39 79x39-i empty 0 0 0 10 -182211 -182211
+0;
+#X obj 80 39 cnv 1 1 1 80x39 80x39-i empty 0 0 0 10 -180926 -180926
+0;
+#X obj 81 39 cnv 1 1 1 81x39 81x39-i empty 0 0 0 10 -114362 -114362
+0;
+#X obj 82 39 cnv 1 1 1 82x39 82x39-i empty 0 0 0 10 -179126 -179126
+0;
+#X obj 83 39 cnv 1 1 1 83x39 83x39-i empty 0 0 0 10 -243891 -243891
+0;
+#X obj 84 39 cnv 1 1 1 84x39 84x39-i empty 0 0 0 10 -46768 -46768 0
+;
+#X obj 85 39 cnv 1 1 1 85x39 85x39-i empty 0 0 0 10 -177326 -177326
+0;
+#X obj 86 39 cnv 1 1 1 86x39 86x39-i empty 0 0 0 10 -111533 -111533
+0;
+#X obj 87 39 cnv 1 1 1 87x39 87x39-i empty 0 0 0 10 -45740 -45740 0
+;
+#X obj 88 39 cnv 1 1 1 88x39 88x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 89 39 cnv 1 1 1 89x39 89x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 90 39 cnv 1 1 1 90x39 90x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 91 39 cnv 1 1 1 91x39 91x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 92 39 cnv 1 1 1 92x39 92x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 93 39 cnv 1 1 1 93x39 93x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 94 39 cnv 1 1 1 94x39 94x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 95 39 cnv 1 1 1 95x39 95x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 96 39 cnv 1 1 1 96x39 96x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 97 39 cnv 1 1 1 97x39 97x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 39 cnv 1 1 1 98x39 98x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 39 cnv 1 1 1 99x39 99x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 39 cnv 1 1 1 100x39 100x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 39 cnv 1 1 1 101x39 101x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 102 39 cnv 1 1 1 102x39 102x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 103 39 cnv 1 1 1 103x39 103x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 104 39 cnv 1 1 1 104x39 104x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 105 39 cnv 1 1 1 105x39 105x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 106 39 cnv 1 1 1 106x39 106x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 107 39 cnv 1 1 1 107x39 107x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 108 39 cnv 1 1 1 108x39 108x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 109 39 cnv 1 1 1 109x39 109x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 110 39 cnv 1 1 1 110x39 110x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 111 39 cnv 1 1 1 111x39 111x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 112 39 cnv 1 1 1 112x39 112x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 113 39 cnv 1 1 1 113x39 113x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 114 39 cnv 1 1 1 114x39 114x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 115 39 cnv 1 1 1 115x39 115x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 39 cnv 1 1 1 116x39 116x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 39 cnv 1 1 1 117x39 117x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 39 cnv 1 1 1 118x39 118x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 39 cnv 1 1 1 119x39 119x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 120 39 cnv 1 1 1 120x39 120x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 121 39 cnv 1 1 1 121x39 121x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 122 39 cnv 1 1 1 122x39 122x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 123 39 cnv 1 1 1 123x39 123x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 124 39 cnv 1 1 1 124x39 124x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 125 39 cnv 1 1 1 125x39 125x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 126 39 cnv 1 1 1 126x39 126x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 127 39 cnv 1 1 1 127x39 127x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 128 39 cnv 1 1 1 128x39 128x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 129 39 cnv 1 1 1 129x39 129x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 130 39 cnv 1 1 1 130x39 130x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 131 39 cnv 1 1 1 131x39 131x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 132 39 cnv 1 1 1 132x39 132x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 133 39 cnv 1 1 1 133x39 133x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 39 cnv 1 1 1 134x39 134x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 39 cnv 1 1 1 135x39 135x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 39 cnv 1 1 1 136x39 136x39-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 39 cnv 1 1 1 137x39 137x39-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 38 cnv 1 1 1 50x38 50x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 38 cnv 1 1 1 51x38 51x38-i empty 0 0 0 10 -118218 -118218
+0;
+#X obj 52 38 cnv 1 1 1 52x38 52x38-i empty 0 0 0 10 -250832 -250832
+0;
+#X obj 53 38 cnv 1 1 1 53x38 53x38-i empty 0 0 0 10 -20817 -20817 0
+;
+#X obj 54 38 cnv 1 1 1 54x38 54x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 38 cnv 1 1 1 55x38 55x38-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 56 38 cnv 1 1 1 56x38 56x38-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 57 38 cnv 1 1 1 57x38 57x38-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 58 38 cnv 1 1 1 58x38 58x38-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 59 38 cnv 1 1 1 59x38 59x38-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 60 38 cnv 1 1 1 60x38 60x38-i empty 0 0 0 10 -20561 -20561 0
+;
+#X obj 61 38 cnv 1 1 1 61x38 61x38-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 62 38 cnv 1 1 1 62x38 62x38-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 63 38 cnv 1 1 1 63x38 63x38-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 64 38 cnv 1 1 1 64x38 64x38-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 38 cnv 1 1 1 65x38 65x38-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 38 cnv 1 1 1 66x38 66x38-i empty 0 0 0 10 -241584 -241584
+0;
+#X obj 67 38 cnv 1 1 1 67x38 67x38-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 68 38 cnv 1 1 1 68x38 68x38-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 69 38 cnv 1 1 1 69x38 69x38-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 70 38 cnv 1 1 1 70x38 70x38-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 71 38 cnv 1 1 1 71x38 71x38-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 72 38 cnv 1 1 1 72x38 72x38-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 73 38 cnv 1 1 1 73x38 73x38-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 74 38 cnv 1 1 1 74x38 74x38-i empty 0 0 0 10 -8225 -8225 0;
+#X obj 75 38 cnv 1 1 1 75x38 75x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 38 cnv 1 1 1 76x38 76x38-i empty 0 0 0 10 -214084 -214084
+0;
+#X obj 77 38 cnv 1 1 1 77x38 77x38-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 78 38 cnv 1 1 1 78x38 78x38-i empty 0 0 0 10 -118218 -118218
+0;
+#X obj 79 38 cnv 1 1 1 79x38 79x38-i empty 0 0 0 10 -51396 -51396 0
+;
+#X obj 80 38 cnv 1 1 1 80x38 80x38-i empty 0 0 0 10 -246975 -246975
+0;
+#X obj 81 38 cnv 1 1 1 81x38 81x38-i empty 0 0 0 10 -180155 -180155
+0;
+#X obj 82 38 cnv 1 1 1 82x38 82x38-i empty 0 0 0 10 -244919 -244919
+0;
+#X obj 83 38 cnv 1 1 1 83x38 83x38-i empty 0 0 0 10 -47540 -47540 0
+;
+#X obj 84 38 cnv 1 1 1 84x38 84x38-i empty 0 0 0 10 -112561 -112561
+0;
+#X obj 85 38 cnv 1 1 1 85x38 85x38-i empty 0 0 0 10 -242863 -242863
+0;
+#X obj 86 38 cnv 1 1 1 86x38 86x38-i empty 0 0 0 10 -163194 -163194
+0;
+#X obj 87 38 cnv 1 1 1 87x38 87x38-i empty 0 0 0 10 -76074 -76074 0
+;
+#X obj 88 38 cnv 1 1 1 88x38 88x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 38 cnv 1 1 1 89x38 89x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 38 cnv 1 1 1 90x38 90x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 38 cnv 1 1 1 91x38 91x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 38 cnv 1 1 1 92x38 92x38-i empty 0 0 0 10 -76074 -76074 0
+;
+#X obj 93 38 cnv 1 1 1 93x38 93x38-i empty 0 0 0 10 -97402 -97402 0
+;
+#X obj 94 38 cnv 1 1 1 94x38 94x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 95 38 cnv 1 1 1 95x38 95x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 96 38 cnv 1 1 1 96x38 96x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 97 38 cnv 1 1 1 97x38 97x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 38 cnv 1 1 1 98x38 98x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 38 cnv 1 1 1 99x38 99x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 38 cnv 1 1 1 100x38 100x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 38 cnv 1 1 1 101x38 101x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 102 38 cnv 1 1 1 102x38 102x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 103 38 cnv 1 1 1 103x38 103x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 104 38 cnv 1 1 1 104x38 104x38-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 105 38 cnv 1 1 1 105x38 105x38-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 106 38 cnv 1 1 1 106x38 106x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 38 cnv 1 1 1 107x38 107x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 108 38 cnv 1 1 1 108x38 108x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 38 cnv 1 1 1 109x38 109x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 110 38 cnv 1 1 1 110x38 110x38-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 111 38 cnv 1 1 1 111x38 111x38-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 112 38 cnv 1 1 1 112x38 112x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 113 38 cnv 1 1 1 113x38 113x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 114 38 cnv 1 1 1 114x38 114x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 115 38 cnv 1 1 1 115x38 115x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 38 cnv 1 1 1 116x38 116x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 38 cnv 1 1 1 117x38 117x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 38 cnv 1 1 1 118x38 118x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 38 cnv 1 1 1 119x38 119x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 120 38 cnv 1 1 1 120x38 120x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 121 38 cnv 1 1 1 121x38 121x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 122 38 cnv 1 1 1 122x38 122x38-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 123 38 cnv 1 1 1 123x38 123x38-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 124 38 cnv 1 1 1 124x38 124x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 125 38 cnv 1 1 1 125x38 125x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 126 38 cnv 1 1 1 126x38 126x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 38 cnv 1 1 1 127x38 127x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 128 38 cnv 1 1 1 128x38 128x38-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 129 38 cnv 1 1 1 129x38 129x38-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 130 38 cnv 1 1 1 130x38 130x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 131 38 cnv 1 1 1 131x38 131x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 132 38 cnv 1 1 1 132x38 132x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 133 38 cnv 1 1 1 133x38 133x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 38 cnv 1 1 1 134x38 134x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 38 cnv 1 1 1 135x38 135x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 38 cnv 1 1 1 136x38 136x38-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 38 cnv 1 1 1 137x38 137x38-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 37 cnv 1 1 1 50x37 50x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 37 cnv 1 1 1 51x37 51x37-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 52 37 cnv 1 1 1 52x37 52x37-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 53 37 cnv 1 1 1 53x37 53x37-i empty 0 0 0 10 -69134 -69134 0
+;
+#X obj 54 37 cnv 1 1 1 54x37 54x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 37 cnv 1 1 1 55x37 55x37-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 56 37 cnv 1 1 1 56x37 56x37-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 57 37 cnv 1 1 1 57x37 57x37-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 58 37 cnv 1 1 1 58x37 58x37-i empty 0 0 0 10 -241584 -241584
+0;
+#X obj 59 37 cnv 1 1 1 59x37 59x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 60 37 cnv 1 1 1 60x37 60x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 61 37 cnv 1 1 1 61x37 61x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 62 37 cnv 1 1 1 62x37 62x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 63 37 cnv 1 1 1 63x37 63x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 64 37 cnv 1 1 1 64x37 64x37-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 65 37 cnv 1 1 1 65x37 65x37-i empty 0 0 0 10 -241584 -241584
+0;
+#X obj 66 37 cnv 1 1 1 66x37 66x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 37 cnv 1 1 1 67x37 67x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 68 37 cnv 1 1 1 68x37 68x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 69 37 cnv 1 1 1 69x37 69x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 70 37 cnv 1 1 1 70x37 70x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 71 37 cnv 1 1 1 71x37 71x37-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 72 37 cnv 1 1 1 72x37 72x37-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 73 37 cnv 1 1 1 73x37 73x37-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 74 37 cnv 1 1 1 74x37 74x37-i empty 0 0 0 10 -28785 -28785 0
+;
+#X obj 75 37 cnv 1 1 1 75x37 75x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 37 cnv 1 1 1 76x37 76x37-i empty 0 0 0 10 -69134 -69134 0
+;
+#X obj 77 37 cnv 1 1 1 77x37 77x37-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 78 37 cnv 1 1 1 78x37 78x37-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 79 37 cnv 1 1 1 79x37 79x37-i empty 0 0 0 10 -117189 -117189
+0;
+#X obj 80 37 cnv 1 1 1 80x37 80x37-i empty 0 0 0 10 -50624 -50624 0
+;
+#X obj 81 37 cnv 1 1 1 81x37 81x37-i empty 0 0 0 10 -245948 -245948
+0;
+#X obj 82 37 cnv 1 1 1 82x37 82x37-i empty 0 0 0 10 -48568 -48568 0
+;
+#X obj 83 37 cnv 1 1 1 83x37 83x37-i empty 0 0 0 10 -47796 -47796 0
+;
+#X obj 84 37 cnv 1 1 1 84x37 84x37-i empty 0 0 0 10 -239780 -239780
+0;
+#X obj 85 37 cnv 1 1 1 85x37 85x37-i empty 0 0 0 10 -76074 -76074 0
+;
+#X obj 86 37 cnv 1 1 1 86x37 86x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 87 37 cnv 1 1 1 87x37 87x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 88 37 cnv 1 1 1 88x37 88x37-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 89 37 cnv 1 1 1 89x37 89x37-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 90 37 cnv 1 1 1 90x37 90x37-i empty 0 0 0 10 -28785 -28785 0
+;
+#X obj 91 37 cnv 1 1 1 91x37 91x37-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 92 37 cnv 1 1 1 92x37 92x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 93 37 cnv 1 1 1 93x37 93x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 94 37 cnv 1 1 1 94x37 94x37-i empty 0 0 0 10 -10537 -10537 0
+;
+#X obj 95 37 cnv 1 1 1 95x37 95x37-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 96 37 cnv 1 1 1 96x37 96x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 97 37 cnv 1 1 1 97x37 97x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 37 cnv 1 1 1 98x37 98x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 37 cnv 1 1 1 99x37 99x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 37 cnv 1 1 1 100x37 100x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 37 cnv 1 1 1 101x37 101x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 102 37 cnv 1 1 1 102x37 102x37-i empty 0 0 0 10 -238495 -238495
+0;
+#X obj 103 37 cnv 1 1 1 103x37 103x37-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 104 37 cnv 1 1 1 104x37 104x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 105 37 cnv 1 1 1 105x37 105x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 106 37 cnv 1 1 1 106x37 106x37-i empty 0 0 0 10 -12337 -12337
+0;
+#X obj 107 37 cnv 1 1 1 107x37 107x37-i empty 0 0 0 10 -24673 -24673
+0;
+#X obj 108 37 cnv 1 1 1 108x37 108x37-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 109 37 cnv 1 1 1 109x37 109x37-i empty 0 0 0 10 -12337 -12337
+0;
+#X obj 110 37 cnv 1 1 1 110x37 110x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 111 37 cnv 1 1 1 111x37 111x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 112 37 cnv 1 1 1 112x37 112x37-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 113 37 cnv 1 1 1 113x37 113x37-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 114 37 cnv 1 1 1 114x37 114x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 115 37 cnv 1 1 1 115x37 115x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 37 cnv 1 1 1 116x37 116x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 37 cnv 1 1 1 117x37 117x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 37 cnv 1 1 1 118x37 118x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 37 cnv 1 1 1 119x37 119x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 120 37 cnv 1 1 1 120x37 120x37-i empty 0 0 0 10 -238495 -238495
+0;
+#X obj 121 37 cnv 1 1 1 121x37 121x37-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 122 37 cnv 1 1 1 122x37 122x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 123 37 cnv 1 1 1 123x37 123x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 124 37 cnv 1 1 1 124x37 124x37-i empty 0 0 0 10 -12337 -12337
+0;
+#X obj 125 37 cnv 1 1 1 125x37 125x37-i empty 0 0 0 10 -24673 -24673
+0;
+#X obj 126 37 cnv 1 1 1 126x37 126x37-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 127 37 cnv 1 1 1 127x37 127x37-i empty 0 0 0 10 -12337 -12337
+0;
+#X obj 128 37 cnv 1 1 1 128x37 128x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 129 37 cnv 1 1 1 129x37 129x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 130 37 cnv 1 1 1 130x37 130x37-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 131 37 cnv 1 1 1 131x37 131x37-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 132 37 cnv 1 1 1 132x37 132x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 133 37 cnv 1 1 1 133x37 133x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 37 cnv 1 1 1 134x37 134x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 37 cnv 1 1 1 135x37 135x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 37 cnv 1 1 1 136x37 136x37-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 37 cnv 1 1 1 137x37 137x37-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 36 cnv 1 1 1 50x36 50x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 36 cnv 1 1 1 51x36 51x36-i empty 0 0 0 10 -53196 -53196 0
+;
+#X obj 52 36 cnv 1 1 1 52x36 52x36-i empty 0 0 0 10 -185810 -185810
+0;
+#X obj 53 36 cnv 1 1 1 53x36 53x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 36 cnv 1 1 1 54x36 54x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 36 cnv 1 1 1 55x36 55x36-i empty 0 0 0 10 -233360 -233360
+0;
+#X obj 56 36 cnv 1 1 1 56x36 56x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 57 36 cnv 1 1 1 57x36 57x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 58 36 cnv 1 1 1 58x36 58x36-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 59 36 cnv 1 1 1 59x36 59x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 60 36 cnv 1 1 1 60x36 60x36-i empty 0 0 0 10 -8225 -8225 0;
+#X obj 61 36 cnv 1 1 1 61x36 61x36-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 62 36 cnv 1 1 1 62x36 62x36-i empty 0 0 0 10 -249808 -249808
+0;
+#X obj 63 36 cnv 1 1 1 63x36 63x36-i empty 0 0 0 10 -8225 -8225 0;
+#X obj 64 36 cnv 1 1 1 64x36 64x36-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 65 36 cnv 1 1 1 65x36 65x36-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 66 36 cnv 1 1 1 66x36 66x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 36 cnv 1 1 1 67x36 67x36-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 68 36 cnv 1 1 1 68x36 68x36-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 69 36 cnv 1 1 1 69x36 69x36-i empty 0 0 0 10 -249808 -249808
+0;
+#X obj 70 36 cnv 1 1 1 70x36 70x36-i empty 0 0 0 10 -8225 -8225 0;
+#X obj 71 36 cnv 1 1 1 71x36 71x36-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 72 36 cnv 1 1 1 72x36 72x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 73 36 cnv 1 1 1 73x36 73x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 74 36 cnv 1 1 1 74x36 74x36-i empty 0 0 0 10 -237472 -237472
+0;
+#X obj 75 36 cnv 1 1 1 75x36 75x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 36 cnv 1 1 1 76x36 76x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 36 cnv 1 1 1 77x36 77x36-i empty 0 0 0 10 -185811 -185811
+0;
+#X obj 78 36 cnv 1 1 1 78x36 78x36-i empty 0 0 0 10 -53196 -53196 0
+;
+#X obj 79 36 cnv 1 1 1 79x36 79x36-i empty 0 0 0 10 -182982 -182982
+0;
+#X obj 80 36 cnv 1 1 1 80x36 80x36-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 81 36 cnv 1 1 1 81x36 81x36-i empty 0 0 0 10 -49596 -49596 0
+;
+#X obj 82 36 cnv 1 1 1 82x36 82x36-i empty 0 0 0 10 -48568 -48568 0
+;
+#X obj 83 36 cnv 1 1 1 83x36 83x36-i empty 0 0 0 10 -174759 -174759
+0;
+#X obj 84 36 cnv 1 1 1 84x36 84x36-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 85 36 cnv 1 1 1 85x36 85x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 86 36 cnv 1 1 1 86x36 86x36-i empty 0 0 0 10 -20561 -20561 0
+;
+#X obj 87 36 cnv 1 1 1 87x36 87x36-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 88 36 cnv 1 1 1 88x36 88x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 89 36 cnv 1 1 1 89x36 89x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 90 36 cnv 1 1 1 90x36 90x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 91 36 cnv 1 1 1 91x36 91x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 92 36 cnv 1 1 1 92x36 92x36-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 93 36 cnv 1 1 1 93x36 93x36-i empty 0 0 0 10 -20561 -20561 0
+;
+#X obj 94 36 cnv 1 1 1 94x36 94x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 95 36 cnv 1 1 1 95x36 95x36-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 96 36 cnv 1 1 1 96x36 96x36-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 97 36 cnv 1 1 1 97x36 97x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 36 cnv 1 1 1 98x36 98x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 36 cnv 1 1 1 99x36 99x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 36 cnv 1 1 1 100x36 100x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 36 cnv 1 1 1 101x36 101x36-i empty 0 0 0 10 -238495 -238495
+0;
+#X obj 102 36 cnv 1 1 1 102x36 102x36-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 103 36 cnv 1 1 1 103x36 103x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 104 36 cnv 1 1 1 104x36 104x36-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 105 36 cnv 1 1 1 105x36 105x36-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 106 36 cnv 1 1 1 106x36 106x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 107 36 cnv 1 1 1 107x36 107x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 108 36 cnv 1 1 1 108x36 108x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 109 36 cnv 1 1 1 109x36 109x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 110 36 cnv 1 1 1 110x36 110x36-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 111 36 cnv 1 1 1 111x36 111x36-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 112 36 cnv 1 1 1 112x36 112x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 113 36 cnv 1 1 1 113x36 113x36-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 114 36 cnv 1 1 1 114x36 114x36-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 115 36 cnv 1 1 1 115x36 115x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 36 cnv 1 1 1 116x36 116x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 36 cnv 1 1 1 117x36 117x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 36 cnv 1 1 1 118x36 118x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 36 cnv 1 1 1 119x36 119x36-i empty 0 0 0 10 -238495 -238495
+0;
+#X obj 120 36 cnv 1 1 1 120x36 120x36-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 121 36 cnv 1 1 1 121x36 121x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 122 36 cnv 1 1 1 122x36 122x36-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 123 36 cnv 1 1 1 123x36 123x36-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 124 36 cnv 1 1 1 124x36 124x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 125 36 cnv 1 1 1 125x36 125x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 36 cnv 1 1 1 126x36 126x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 127 36 cnv 1 1 1 127x36 127x36-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 36 cnv 1 1 1 128x36 128x36-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 129 36 cnv 1 1 1 129x36 129x36-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 130 36 cnv 1 1 1 130x36 130x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 131 36 cnv 1 1 1 131x36 131x36-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 132 36 cnv 1 1 1 132x36 132x36-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 133 36 cnv 1 1 1 133x36 133x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 36 cnv 1 1 1 134x36 134x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 36 cnv 1 1 1 135x36 135x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 36 cnv 1 1 1 136x36 136x36-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 36 cnv 1 1 1 137x36 137x36-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 35 cnv 1 1 1 50x35 50x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 35 cnv 1 1 1 51x35 51x35-i empty 0 0 0 10 -53452 -53452 0
+;
+#X obj 52 35 cnv 1 1 1 52x35 52x35-i empty 0 0 0 10 -251603 -251603
+0;
+#X obj 53 35 cnv 1 1 1 53x35 53x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 35 cnv 1 1 1 54x35 54x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 35 cnv 1 1 1 55x35 55x35-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 56 35 cnv 1 1 1 56x35 56x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 57 35 cnv 1 1 1 57x35 57x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 58 35 cnv 1 1 1 58x35 58x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 59 35 cnv 1 1 1 59x35 59x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 60 35 cnv 1 1 1 60x35 60x35-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 61 35 cnv 1 1 1 61x35 61x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 62 35 cnv 1 1 1 62x35 62x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 35 cnv 1 1 1 63x35 63x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 35 cnv 1 1 1 64x35 64x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 35 cnv 1 1 1 65x35 65x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 66 35 cnv 1 1 1 66x35 66x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 35 cnv 1 1 1 67x35 67x35-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 68 35 cnv 1 1 1 68x35 68x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 69 35 cnv 1 1 1 69x35 69x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 70 35 cnv 1 1 1 70x35 70x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 71 35 cnv 1 1 1 71x35 71x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 72 35 cnv 1 1 1 72x35 72x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 73 35 cnv 1 1 1 73x35 73x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 74 35 cnv 1 1 1 74x35 74x35-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 75 35 cnv 1 1 1 75x35 75x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 35 cnv 1 1 1 76x35 76x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 35 cnv 1 1 1 77x35 77x35-i empty 0 0 0 10 -251603 -251603
+0;
+#X obj 78 35 cnv 1 1 1 78x35 78x35-i empty 0 0 0 10 -53453 -53453 0
+;
+#X obj 79 35 cnv 1 1 1 79x35 79x35-i empty 0 0 0 10 -182983 -182983
+0;
+#X obj 80 35 cnv 1 1 1 80x35 80x35-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 81 35 cnv 1 1 1 81x35 81x35-i empty 0 0 0 10 -49596 -49596 0
+;
+#X obj 82 35 cnv 1 1 1 82x35 82x35-i empty 0 0 0 10 -48568 -48568 0
+;
+#X obj 83 35 cnv 1 1 1 83x35 83x35-i empty 0 0 0 10 -76330 -76330 0
+;
+#X obj 84 35 cnv 1 1 1 84x35 84x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 35 cnv 1 1 1 85x35 85x35-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 86 35 cnv 1 1 1 86x35 86x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 35 cnv 1 1 1 87x35 87x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 35 cnv 1 1 1 88x35 88x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 89 35 cnv 1 1 1 89x35 89x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 35 cnv 1 1 1 90x35 90x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 35 cnv 1 1 1 91x35 91x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 92 35 cnv 1 1 1 92x35 92x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 35 cnv 1 1 1 93x35 93x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 94 35 cnv 1 1 1 94x35 94x35-i empty 0 0 0 10 -28785 -28785 0
+;
+#X obj 95 35 cnv 1 1 1 95x35 95x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 35 cnv 1 1 1 96x35 96x35-i empty 0 0 0 10 -10537 -10537 0
+;
+#X obj 97 35 cnv 1 1 1 97x35 97x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 35 cnv 1 1 1 98x35 98x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 35 cnv 1 1 1 99x35 99x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 35 cnv 1 1 1 100x35 100x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 35 cnv 1 1 1 101x35 101x35-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 102 35 cnv 1 1 1 102x35 102x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 35 cnv 1 1 1 103x35 103x35-i empty 0 0 0 10 -24673 -24673
+0;
+#X obj 104 35 cnv 1 1 1 104x35 104x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 105 35 cnv 1 1 1 105x35 105x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 106 35 cnv 1 1 1 106x35 106x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 107 35 cnv 1 1 1 107x35 107x35-i empty 0 0 0 10 -35468 -35468
+0;
+#X obj 108 35 cnv 1 1 1 108x35 108x35-i empty 0 0 0 10 -153433 -153433
+0;
+#X obj 109 35 cnv 1 1 1 109x35 109x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 110 35 cnv 1 1 1 110x35 110x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 111 35 cnv 1 1 1 111x35 111x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 112 35 cnv 1 1 1 112x35 112x35-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 113 35 cnv 1 1 1 113x35 113x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 35 cnv 1 1 1 114x35 114x35-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 115 35 cnv 1 1 1 115x35 115x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 35 cnv 1 1 1 116x35 116x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 35 cnv 1 1 1 117x35 117x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 35 cnv 1 1 1 118x35 118x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 35 cnv 1 1 1 119x35 119x35-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 120 35 cnv 1 1 1 120x35 120x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 35 cnv 1 1 1 121x35 121x35-i empty 0 0 0 10 -24673 -24673
+0;
+#X obj 122 35 cnv 1 1 1 122x35 122x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 123 35 cnv 1 1 1 123x35 123x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 124 35 cnv 1 1 1 124x35 124x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 125 35 cnv 1 1 1 125x35 125x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 35 cnv 1 1 1 126x35 126x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 127 35 cnv 1 1 1 127x35 127x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 35 cnv 1 1 1 128x35 128x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 129 35 cnv 1 1 1 129x35 129x35-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 35 cnv 1 1 1 130x35 130x35-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 131 35 cnv 1 1 1 131x35 131x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 35 cnv 1 1 1 132x35 132x35-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 133 35 cnv 1 1 1 133x35 133x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 35 cnv 1 1 1 134x35 134x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 35 cnv 1 1 1 135x35 135x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 35 cnv 1 1 1 136x35 136x35-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 35 cnv 1 1 1 137x35 137x35-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 34 cnv 1 1 1 50x34 50x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 34 cnv 1 1 1 51x34 51x34-i empty 0 0 0 10 -53452 -53452 0
+;
+#X obj 52 34 cnv 1 1 1 52x34 52x34-i empty 0 0 0 10 -251603 -251603
+0;
+#X obj 53 34 cnv 1 1 1 53x34 53x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 34 cnv 1 1 1 54x34 54x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 34 cnv 1 1 1 55x34 55x34-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 56 34 cnv 1 1 1 56x34 56x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 57 34 cnv 1 1 1 57x34 57x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 58 34 cnv 1 1 1 58x34 58x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 59 34 cnv 1 1 1 59x34 59x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 60 34 cnv 1 1 1 60x34 60x34-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 61 34 cnv 1 1 1 61x34 61x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 62 34 cnv 1 1 1 62x34 62x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 34 cnv 1 1 1 63x34 63x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 34 cnv 1 1 1 64x34 64x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 34 cnv 1 1 1 65x34 65x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 66 34 cnv 1 1 1 66x34 66x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 34 cnv 1 1 1 67x34 67x34-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 68 34 cnv 1 1 1 68x34 68x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 69 34 cnv 1 1 1 69x34 69x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 70 34 cnv 1 1 1 70x34 70x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 71 34 cnv 1 1 1 71x34 71x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 72 34 cnv 1 1 1 72x34 72x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 73 34 cnv 1 1 1 73x34 73x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 74 34 cnv 1 1 1 74x34 74x34-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 75 34 cnv 1 1 1 75x34 75x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 34 cnv 1 1 1 76x34 76x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 34 cnv 1 1 1 77x34 77x34-i empty 0 0 0 10 -251603 -251603
+0;
+#X obj 78 34 cnv 1 1 1 78x34 78x34-i empty 0 0 0 10 -53453 -53453 0
+;
+#X obj 79 34 cnv 1 1 1 79x34 79x34-i empty 0 0 0 10 -182983 -182983
+0;
+#X obj 80 34 cnv 1 1 1 80x34 80x34-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 81 34 cnv 1 1 1 81x34 81x34-i empty 0 0 0 10 -49596 -49596 0
+;
+#X obj 82 34 cnv 1 1 1 82x34 82x34-i empty 0 0 0 10 -229759 -229759
+0;
+#X obj 83 34 cnv 1 1 1 83x34 83x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 34 cnv 1 1 1 84x34 84x34-i empty 0 0 0 10 -20561 -20561 0
+;
+#X obj 85 34 cnv 1 1 1 85x34 85x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 34 cnv 1 1 1 86x34 86x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 34 cnv 1 1 1 87x34 87x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 34 cnv 1 1 1 88x34 88x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 89 34 cnv 1 1 1 89x34 89x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 34 cnv 1 1 1 90x34 90x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 34 cnv 1 1 1 91x34 91x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 92 34 cnv 1 1 1 92x34 92x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 34 cnv 1 1 1 93x34 93x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 94 34 cnv 1 1 1 94x34 94x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 95 34 cnv 1 1 1 95x34 95x34-i empty 0 0 0 10 -20561 -20561 0
+;
+#X obj 96 34 cnv 1 1 1 96x34 96x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 34 cnv 1 1 1 97x34 97x34-i empty 0 0 0 10 -97402 -97402 0
+;
+#X obj 98 34 cnv 1 1 1 98x34 98x34-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 34 cnv 1 1 1 99x34 99x34-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 34 cnv 1 1 1 100x34 100x34-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 101 34 cnv 1 1 1 101x34 101x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 34 cnv 1 1 1 102x34 102x34-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 103 34 cnv 1 1 1 103x34 103x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 104 34 cnv 1 1 1 104x34 104x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 105 34 cnv 1 1 1 105x34 105x34-i empty 0 0 0 10 -254948 -254948
+0;
+#X obj 106 34 cnv 1 1 1 106x34 106x34-i empty 0 0 0 10 -33155 -33155
+0;
+#X obj 107 34 cnv 1 1 1 107x34 107x34-i empty 0 0 0 10 -71962 -71962
+0;
+#X obj 108 34 cnv 1 1 1 108x34 108x34-i empty 0 0 0 10 -68622 -68622
+0;
+#X obj 109 34 cnv 1 1 1 109x34 109x34-i empty 0 0 0 10 -102288 -102288
+0;
+#X obj 110 34 cnv 1 1 1 110x34 110x34-i empty 0 0 0 10 -127474 -127474
+0;
+#X obj 111 34 cnv 1 1 1 111x34 111x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 112 34 cnv 1 1 1 112x34 112x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 113 34 cnv 1 1 1 113x34 113x34-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 114 34 cnv 1 1 1 114x34 114x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 34 cnv 1 1 1 115x34 115x34-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 116 34 cnv 1 1 1 116x34 116x34-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 34 cnv 1 1 1 117x34 117x34-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 34 cnv 1 1 1 118x34 118x34-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 119 34 cnv 1 1 1 119x34 119x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 34 cnv 1 1 1 120x34 120x34-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 121 34 cnv 1 1 1 121x34 121x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 34 cnv 1 1 1 122x34 122x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 123 34 cnv 1 1 1 123x34 123x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 124 34 cnv 1 1 1 124x34 124x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 125 34 cnv 1 1 1 125x34 125x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 34 cnv 1 1 1 126x34 126x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 127 34 cnv 1 1 1 127x34 127x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 34 cnv 1 1 1 128x34 128x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 129 34 cnv 1 1 1 129x34 129x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 34 cnv 1 1 1 130x34 130x34-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 131 34 cnv 1 1 1 131x34 131x34-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 132 34 cnv 1 1 1 132x34 132x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 34 cnv 1 1 1 133x34 133x34-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 134 34 cnv 1 1 1 134x34 134x34-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 34 cnv 1 1 1 135x34 135x34-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 34 cnv 1 1 1 136x34 136x34-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 34 cnv 1 1 1 137x34 137x34-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 33 cnv 1 1 1 50x33 50x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 33 cnv 1 1 1 51x33 51x33-i empty 0 0 0 10 -53196 -53196 0
+;
+#X obj 52 33 cnv 1 1 1 52x33 52x33-i empty 0 0 0 10 -185810 -185810
+0;
+#X obj 53 33 cnv 1 1 1 53x33 53x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 33 cnv 1 1 1 54x33 54x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 33 cnv 1 1 1 55x33 55x33-i empty 0 0 0 10 -233360 -233360
+0;
+#X obj 56 33 cnv 1 1 1 56x33 56x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 57 33 cnv 1 1 1 57x33 57x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 58 33 cnv 1 1 1 58x33 58x33-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 59 33 cnv 1 1 1 59x33 59x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 60 33 cnv 1 1 1 60x33 60x33-i empty 0 0 0 10 -8225 -8225 0;
+#X obj 61 33 cnv 1 1 1 61x33 61x33-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 62 33 cnv 1 1 1 62x33 62x33-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 63 33 cnv 1 1 1 63x33 63x33-i empty 0 0 0 10 -8225 -8225 0;
+#X obj 64 33 cnv 1 1 1 64x33 64x33-i empty 0 0 0 10 -237472 -237472
+0;
+#X obj 65 33 cnv 1 1 1 65x33 65x33-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 66 33 cnv 1 1 1 66x33 66x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 33 cnv 1 1 1 67x33 67x33-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 68 33 cnv 1 1 1 68x33 68x33-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 69 33 cnv 1 1 1 69x33 69x33-i empty 0 0 0 10 -241584 -241584
+0;
+#X obj 70 33 cnv 1 1 1 70x33 70x33-i empty 0 0 0 10 -8225 -8225 0;
+#X obj 71 33 cnv 1 1 1 71x33 71x33-i empty 0 0 0 10 -237472 -237472
+0;
+#X obj 72 33 cnv 1 1 1 72x33 72x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 73 33 cnv 1 1 1 73x33 73x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 74 33 cnv 1 1 1 74x33 74x33-i empty 0 0 0 10 -237472 -237472
+0;
+#X obj 75 33 cnv 1 1 1 75x33 75x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 33 cnv 1 1 1 76x33 76x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 33 cnv 1 1 1 77x33 77x33-i empty 0 0 0 10 -185811 -185811
+0;
+#X obj 78 33 cnv 1 1 1 78x33 78x33-i empty 0 0 0 10 -53196 -53196 0
+;
+#X obj 79 33 cnv 1 1 1 79x33 79x33-i empty 0 0 0 10 -182982 -182982
+0;
+#X obj 80 33 cnv 1 1 1 80x33 80x33-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 81 33 cnv 1 1 1 81x33 81x33-i empty 0 0 0 10 -49596 -49596 0
+;
+#X obj 82 33 cnv 1 1 1 82x33 82x33-i empty 0 0 0 10 -141867 -141867
+0;
+#X obj 83 33 cnv 1 1 1 83x33 83x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 33 cnv 1 1 1 84x33 84x33-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 85 33 cnv 1 1 1 85x33 85x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 33 cnv 1 1 1 86x33 86x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 33 cnv 1 1 1 87x33 87x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 33 cnv 1 1 1 88x33 88x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 89 33 cnv 1 1 1 89x33 89x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 33 cnv 1 1 1 90x33 90x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 33 cnv 1 1 1 91x33 91x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 92 33 cnv 1 1 1 92x33 92x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 33 cnv 1 1 1 93x33 93x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 94 33 cnv 1 1 1 94x33 94x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 95 33 cnv 1 1 1 95x33 95x33-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 96 33 cnv 1 1 1 96x33 96x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 33 cnv 1 1 1 97x33 97x33-i empty 0 0 0 10 -76074 -76074 0
+;
+#X obj 98 33 cnv 1 1 1 98x33 98x33-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 33 cnv 1 1 1 99x33 99x33-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 33 cnv 1 1 1 100x33 100x33-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 101 33 cnv 1 1 1 101x33 101x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 33 cnv 1 1 1 102x33 102x33-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 103 33 cnv 1 1 1 103x33 103x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 104 33 cnv 1 1 1 104x33 104x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 105 33 cnv 1 1 1 105x33 105x33-i empty 0 0 0 10 -153433 -153433
+0;
+#X obj 106 33 cnv 1 1 1 106x33 106x33-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 107 33 cnv 1 1 1 107x33 107x33-i empty 0 0 0 10 -77103 -77103
+0;
+#X obj 108 33 cnv 1 1 1 108x33 108x33-i empty 0 0 0 10 -77103 -77103
+0;
+#X obj 109 33 cnv 1 1 1 109x33 109x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 110 33 cnv 1 1 1 110x33 110x33-i empty 0 0 0 10 -160629 -160629
+0;
+#X obj 111 33 cnv 1 1 1 111x33 111x33-i empty 0 0 0 10 -43948 -43948
+0;
+#X obj 112 33 cnv 1 1 1 112x33 112x33-i empty 0 0 0 10 -162685 -162685
+0;
+#X obj 113 33 cnv 1 1 1 113x33 113x33-i empty 0 0 0 10 -203549 -203549
+0;
+#X obj 114 33 cnv 1 1 1 114x33 114x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 33 cnv 1 1 1 115x33 115x33-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 116 33 cnv 1 1 1 116x33 116x33-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 33 cnv 1 1 1 117x33 117x33-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 33 cnv 1 1 1 118x33 118x33-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 119 33 cnv 1 1 1 119x33 119x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 33 cnv 1 1 1 120x33 120x33-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 121 33 cnv 1 1 1 121x33 121x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 33 cnv 1 1 1 122x33 122x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 123 33 cnv 1 1 1 123x33 123x33-i empty 0 0 0 10 -156773 -156773
+0;
+#X obj 124 33 cnv 1 1 1 124x33 124x33-i empty 0 0 0 10 -156773 -156773
+0;
+#X obj 125 33 cnv 1 1 1 125x33 125x33-i empty 0 0 0 10 -156773 -156773
+0;
+#X obj 126 33 cnv 1 1 1 126x33 126x33-i empty 0 0 0 10 -156773 -156773
+0;
+#X obj 127 33 cnv 1 1 1 127x33 127x33-i empty 0 0 0 10 -156773 -156773
+0;
+#X obj 128 33 cnv 1 1 1 128x33 128x33-i empty 0 0 0 10 -156773 -156773
+0;
+#X obj 129 33 cnv 1 1 1 129x33 129x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 33 cnv 1 1 1 130x33 130x33-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 131 33 cnv 1 1 1 131x33 131x33-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 132 33 cnv 1 1 1 132x33 132x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 33 cnv 1 1 1 133x33 133x33-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 134 33 cnv 1 1 1 134x33 134x33-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 33 cnv 1 1 1 135x33 135x33-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 33 cnv 1 1 1 136x33 136x33-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 33 cnv 1 1 1 137x33 137x33-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 32 cnv 1 1 1 50x32 50x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 32 cnv 1 1 1 51x32 51x32-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 52 32 cnv 1 1 1 52x32 52x32-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 53 32 cnv 1 1 1 53x32 53x32-i empty 0 0 0 10 -69134 -69134 0
+;
+#X obj 54 32 cnv 1 1 1 54x32 54x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 32 cnv 1 1 1 55x32 55x32-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 56 32 cnv 1 1 1 56x32 56x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 57 32 cnv 1 1 1 57x32 57x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 58 32 cnv 1 1 1 58x32 58x32-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 59 32 cnv 1 1 1 59x32 59x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 60 32 cnv 1 1 1 60x32 60x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 61 32 cnv 1 1 1 61x32 61x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 62 32 cnv 1 1 1 62x32 62x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 63 32 cnv 1 1 1 63x32 63x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 64 32 cnv 1 1 1 64x32 64x32-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 65 32 cnv 1 1 1 65x32 65x32-i empty 0 0 0 10 -241584 -241584
+0;
+#X obj 66 32 cnv 1 1 1 66x32 66x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 32 cnv 1 1 1 67x32 67x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 68 32 cnv 1 1 1 68x32 68x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 69 32 cnv 1 1 1 69x32 69x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 70 32 cnv 1 1 1 70x32 70x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 71 32 cnv 1 1 1 71x32 71x32-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 72 32 cnv 1 1 1 72x32 72x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 73 32 cnv 1 1 1 73x32 73x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 74 32 cnv 1 1 1 74x32 74x32-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 75 32 cnv 1 1 1 75x32 75x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 32 cnv 1 1 1 76x32 76x32-i empty 0 0 0 10 -69134 -69134 0
+;
+#X obj 77 32 cnv 1 1 1 77x32 77x32-i empty 0 0 0 10 -120018 -120018
+0;
+#X obj 78 32 cnv 1 1 1 78x32 78x32-i empty 0 0 0 10 -249803 -249803
+0;
+#X obj 79 32 cnv 1 1 1 79x32 79x32-i empty 0 0 0 10 -117189 -117189
+0;
+#X obj 80 32 cnv 1 1 1 80x32 80x32-i empty 0 0 0 10 -50624 -50624 0
+;
+#X obj 81 32 cnv 1 1 1 81x32 81x32-i empty 0 0 0 10 -245948 -245948
+0;
+#X obj 82 32 cnv 1 1 1 82x32 82x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 32 cnv 1 1 1 83x32 83x32-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 84 32 cnv 1 1 1 84x32 84x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 85 32 cnv 1 1 1 85x32 85x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 32 cnv 1 1 1 86x32 86x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 32 cnv 1 1 1 87x32 87x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 32 cnv 1 1 1 88x32 88x32-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 89 32 cnv 1 1 1 89x32 89x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 32 cnv 1 1 1 90x32 90x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 32 cnv 1 1 1 91x32 91x32-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 92 32 cnv 1 1 1 92x32 92x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 32 cnv 1 1 1 93x32 93x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 94 32 cnv 1 1 1 94x32 94x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 95 32 cnv 1 1 1 95x32 95x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 96 32 cnv 1 1 1 96x32 96x32-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 97 32 cnv 1 1 1 97x32 97x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 32 cnv 1 1 1 98x32 98x32-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 32 cnv 1 1 1 99x32 99x32-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 32 cnv 1 1 1 100x32 100x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 32 cnv 1 1 1 101x32 101x32-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 102 32 cnv 1 1 1 102x32 102x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 103 32 cnv 1 1 1 103x32 103x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 104 32 cnv 1 1 1 104x32 104x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 105 32 cnv 1 1 1 105x32 105x32-i empty 0 0 0 10 -127474 -127474
+0;
+#X obj 106 32 cnv 1 1 1 106x32 106x32-i empty 0 0 0 10 -171422 -171422
+0;
+#X obj 107 32 cnv 1 1 1 107x32 107x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 108 32 cnv 1 1 1 108x32 108x32-i empty 0 0 0 10 -185814 -185814
+0;
+#X obj 109 32 cnv 1 1 1 109x32 109x32-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 110 32 cnv 1 1 1 110x32 110x32-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 111 32 cnv 1 1 1 111x32 111x32-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 112 32 cnv 1 1 1 112x32 112x32-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 113 32 cnv 1 1 1 113x32 113x32-i empty 0 0 0 10 -211773 -211773
+0;
+#X obj 114 32 cnv 1 1 1 114x32 114x32-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 115 32 cnv 1 1 1 115x32 115x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 32 cnv 1 1 1 116x32 116x32-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 32 cnv 1 1 1 117x32 117x32-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 32 cnv 1 1 1 118x32 118x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 32 cnv 1 1 1 119x32 119x32-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 120 32 cnv 1 1 1 120x32 120x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 121 32 cnv 1 1 1 121x32 121x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 32 cnv 1 1 1 122x32 122x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 123 32 cnv 1 1 1 123x32 123x32-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 124 32 cnv 1 1 1 124x32 124x32-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 125 32 cnv 1 1 1 125x32 125x32-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 126 32 cnv 1 1 1 126x32 126x32-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 127 32 cnv 1 1 1 127x32 127x32-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 128 32 cnv 1 1 1 128x32 128x32-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 129 32 cnv 1 1 1 129x32 129x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 32 cnv 1 1 1 130x32 130x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 131 32 cnv 1 1 1 131x32 131x32-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 132 32 cnv 1 1 1 132x32 132x32-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 133 32 cnv 1 1 1 133x32 133x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 32 cnv 1 1 1 134x32 134x32-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 32 cnv 1 1 1 135x32 135x32-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 32 cnv 1 1 1 136x32 136x32-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 32 cnv 1 1 1 137x32 137x32-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 31 cnv 1 1 1 50x31 50x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 31 cnv 1 1 1 51x31 51x31-i empty 0 0 0 10 -118218 -118218
+0;
+#X obj 52 31 cnv 1 1 1 52x31 52x31-i empty 0 0 0 10 -250832 -250832
+0;
+#X obj 53 31 cnv 1 1 1 53x31 53x31-i empty 0 0 0 10 -214084 -214084
+0;
+#X obj 54 31 cnv 1 1 1 54x31 54x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 31 cnv 1 1 1 55x31 55x31-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 56 31 cnv 1 1 1 56x31 56x31-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 57 31 cnv 1 1 1 57x31 57x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 58 31 cnv 1 1 1 58x31 58x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 59 31 cnv 1 1 1 59x31 59x31-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 60 31 cnv 1 1 1 60x31 60x31-i empty 0 0 0 10 -20561 -20561 0
+;
+#X obj 61 31 cnv 1 1 1 61x31 61x31-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 62 31 cnv 1 1 1 62x31 62x31-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 63 31 cnv 1 1 1 63x31 63x31-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 64 31 cnv 1 1 1 64x31 64x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 31 cnv 1 1 1 65x31 65x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 31 cnv 1 1 1 66x31 66x31-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 67 31 cnv 1 1 1 67x31 67x31-i empty 0 0 0 10 -20561 -20561 0
+;
+#X obj 68 31 cnv 1 1 1 68x31 68x31-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 69 31 cnv 1 1 1 69x31 69x31-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 70 31 cnv 1 1 1 70x31 70x31-i empty 0 0 0 10 -233360 -233360
+0;
+#X obj 71 31 cnv 1 1 1 71x31 71x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 72 31 cnv 1 1 1 72x31 72x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 73 31 cnv 1 1 1 73x31 73x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 74 31 cnv 1 1 1 74x31 74x31-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 75 31 cnv 1 1 1 75x31 75x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 31 cnv 1 1 1 76x31 76x31-i empty 0 0 0 10 -214084 -214084
+0;
+#X obj 77 31 cnv 1 1 1 77x31 77x31-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 78 31 cnv 1 1 1 78x31 78x31-i empty 0 0 0 10 -183754 -183754
+0;
+#X obj 79 31 cnv 1 1 1 79x31 79x31-i empty 0 0 0 10 -51396 -51396 0
+;
+#X obj 80 31 cnv 1 1 1 80x31 80x31-i empty 0 0 0 10 -246975 -246975
+0;
+#X obj 81 31 cnv 1 1 1 81x31 81x31-i empty 0 0 0 10 -245947 -245947
+0;
+#X obj 82 31 cnv 1 1 1 82x31 82x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 31 cnv 1 1 1 83x31 83x31-i empty 0 0 0 10 -28785 -28785 0
+;
+#X obj 84 31 cnv 1 1 1 84x31 84x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 85 31 cnv 1 1 1 85x31 85x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 31 cnv 1 1 1 86x31 86x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 31 cnv 1 1 1 87x31 87x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 31 cnv 1 1 1 88x31 88x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 31 cnv 1 1 1 89x31 89x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 31 cnv 1 1 1 90x31 90x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 31 cnv 1 1 1 91x31 91x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 31 cnv 1 1 1 92x31 92x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 31 cnv 1 1 1 93x31 93x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 94 31 cnv 1 1 1 94x31 94x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 95 31 cnv 1 1 1 95x31 95x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 96 31 cnv 1 1 1 96x31 96x31-i empty 0 0 0 10 -28785 -28785 0
+;
+#X obj 97 31 cnv 1 1 1 97x31 97x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 31 cnv 1 1 1 98x31 98x31-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 31 cnv 1 1 1 99x31 99x31-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 31 cnv 1 1 1 100x31 100x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 31 cnv 1 1 1 101x31 101x31-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 102 31 cnv 1 1 1 102x31 102x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 103 31 cnv 1 1 1 103x31 103x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 104 31 cnv 1 1 1 104x31 104x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 105 31 cnv 1 1 1 105x31 105x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 106 31 cnv 1 1 1 106x31 106x31-i empty 0 0 0 10 -254948 -254948
+0;
+#X obj 107 31 cnv 1 1 1 107x31 107x31-i empty 0 0 0 10 -160629 -160629
+0;
+#X obj 108 31 cnv 1 1 1 108x31 108x31-i empty 0 0 0 10 -77103 -77103
+0;
+#X obj 109 31 cnv 1 1 1 109x31 109x31-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 110 31 cnv 1 1 1 110x31 110x31-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 111 31 cnv 1 1 1 111x31 111x31-i empty 0 0 0 10 -153433 -153433
+0;
+#X obj 112 31 cnv 1 1 1 112x31 112x31-i empty 0 0 0 10 -178618 -178618
+0;
+#X obj 113 31 cnv 1 1 1 113x31 113x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 114 31 cnv 1 1 1 114x31 114x31-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 115 31 cnv 1 1 1 115x31 115x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 31 cnv 1 1 1 116x31 116x31-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 31 cnv 1 1 1 117x31 117x31-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 31 cnv 1 1 1 118x31 118x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 31 cnv 1 1 1 119x31 119x31-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 120 31 cnv 1 1 1 120x31 120x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 121 31 cnv 1 1 1 121x31 121x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 31 cnv 1 1 1 122x31 122x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 123 31 cnv 1 1 1 123x31 123x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 124 31 cnv 1 1 1 124x31 124x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 125 31 cnv 1 1 1 125x31 125x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 31 cnv 1 1 1 126x31 126x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 127 31 cnv 1 1 1 127x31 127x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 31 cnv 1 1 1 128x31 128x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 129 31 cnv 1 1 1 129x31 129x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 31 cnv 1 1 1 130x31 130x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 131 31 cnv 1 1 1 131x31 131x31-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 132 31 cnv 1 1 1 132x31 132x31-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 133 31 cnv 1 1 1 133x31 133x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 31 cnv 1 1 1 134x31 134x31-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 31 cnv 1 1 1 135x31 135x31-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 31 cnv 1 1 1 136x31 136x31-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 31 cnv 1 1 1 137x31 137x31-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 30 cnv 1 1 1 50x30 50x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 30 cnv 1 1 1 51x30 51x30-i empty 0 0 0 10 -52424 -52424 0
+;
+#X obj 52 30 cnv 1 1 1 52x30 52x30-i empty 0 0 0 10 -119246 -119246
+0;
+#X obj 53 30 cnv 1 1 1 53x30 53x30-i empty 0 0 0 10 -34181 -34181 0
+;
+#X obj 54 30 cnv 1 1 1 54x30 54x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 30 cnv 1 1 1 55x30 55x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 30 cnv 1 1 1 56x30 56x30-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 57 30 cnv 1 1 1 57x30 57x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 58 30 cnv 1 1 1 58x30 58x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 59 30 cnv 1 1 1 59x30 59x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 60 30 cnv 1 1 1 60x30 60x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 61 30 cnv 1 1 1 61x30 61x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 62 30 cnv 1 1 1 62x30 62x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 30 cnv 1 1 1 63x30 63x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 30 cnv 1 1 1 64x30 64x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 30 cnv 1 1 1 65x30 65x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 30 cnv 1 1 1 66x30 66x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 67 30 cnv 1 1 1 67x30 67x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 68 30 cnv 1 1 1 68x30 68x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 69 30 cnv 1 1 1 69x30 69x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 70 30 cnv 1 1 1 70x30 70x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 71 30 cnv 1 1 1 71x30 71x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 72 30 cnv 1 1 1 72x30 72x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 73 30 cnv 1 1 1 73x30 73x30-i empty 0 0 0 10 -237472 -237472
+0;
+#X obj 74 30 cnv 1 1 1 74x30 74x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 30 cnv 1 1 1 75x30 75x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 30 cnv 1 1 1 76x30 76x30-i empty 0 0 0 10 -34437 -34437 0
+;
+#X obj 77 30 cnv 1 1 1 77x30 77x30-i empty 0 0 0 10 -184782 -184782
+0;
+#X obj 78 30 cnv 1 1 1 78x30 78x30-i empty 0 0 0 10 -52424 -52424 0
+;
+#X obj 79 30 cnv 1 1 1 79x30 79x30-i empty 0 0 0 10 -247747 -247747
+0;
+#X obj 80 30 cnv 1 1 1 80x30 80x30-i empty 0 0 0 10 -180926 -180926
+0;
+#X obj 81 30 cnv 1 1 1 81x30 81x30-i empty 0 0 0 10 -180154 -180154
+0;
+#X obj 82 30 cnv 1 1 1 82x30 82x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 30 cnv 1 1 1 83x30 83x30-i empty 0 0 0 10 -28785 -28785 0
+;
+#X obj 84 30 cnv 1 1 1 84x30 84x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 85 30 cnv 1 1 1 85x30 85x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 30 cnv 1 1 1 86x30 86x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 30 cnv 1 1 1 87x30 87x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 30 cnv 1 1 1 88x30 88x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 30 cnv 1 1 1 89x30 89x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 30 cnv 1 1 1 90x30 90x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 30 cnv 1 1 1 91x30 91x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 30 cnv 1 1 1 92x30 92x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 30 cnv 1 1 1 93x30 93x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 94 30 cnv 1 1 1 94x30 94x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 95 30 cnv 1 1 1 95x30 95x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 96 30 cnv 1 1 1 96x30 96x30-i empty 0 0 0 10 -28785 -28785 0
+;
+#X obj 97 30 cnv 1 1 1 97x30 97x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 30 cnv 1 1 1 98x30 98x30-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 30 cnv 1 1 1 99x30 99x30-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 30 cnv 1 1 1 100x30 100x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 30 cnv 1 1 1 101x30 101x30-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 102 30 cnv 1 1 1 102x30 102x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 103 30 cnv 1 1 1 103x30 103x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 104 30 cnv 1 1 1 104x30 104x30-i empty 0 0 0 10 -51144 -51144
+0;
+#X obj 105 30 cnv 1 1 1 105x30 105x30-i empty 0 0 0 10 -160629 -160629
+0;
+#X obj 106 30 cnv 1 1 1 106x30 106x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 30 cnv 1 1 1 107x30 107x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 108 30 cnv 1 1 1 108x30 108x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 30 cnv 1 1 1 109x30 109x30-i empty 0 0 0 10 -160629 -160629
+0;
+#X obj 110 30 cnv 1 1 1 110x30 110x30-i empty 0 0 0 10 -185814 -185814
+0;
+#X obj 111 30 cnv 1 1 1 111x30 111x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 112 30 cnv 1 1 1 112x30 112x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 113 30 cnv 1 1 1 113x30 113x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 114 30 cnv 1 1 1 114x30 114x30-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 115 30 cnv 1 1 1 115x30 115x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 30 cnv 1 1 1 116x30 116x30-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 30 cnv 1 1 1 117x30 117x30-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 30 cnv 1 1 1 118x30 118x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 30 cnv 1 1 1 119x30 119x30-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 120 30 cnv 1 1 1 120x30 120x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 121 30 cnv 1 1 1 121x30 121x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 30 cnv 1 1 1 122x30 122x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 123 30 cnv 1 1 1 123x30 123x30-i empty 0 0 0 10 -26473 -26473
+0;
+#X obj 124 30 cnv 1 1 1 124x30 124x30-i empty 0 0 0 10 -26473 -26473
+0;
+#X obj 125 30 cnv 1 1 1 125x30 125x30-i empty 0 0 0 10 -26473 -26473
+0;
+#X obj 126 30 cnv 1 1 1 126x30 126x30-i empty 0 0 0 10 -26473 -26473
+0;
+#X obj 127 30 cnv 1 1 1 127x30 127x30-i empty 0 0 0 10 -26473 -26473
+0;
+#X obj 128 30 cnv 1 1 1 128x30 128x30-i empty 0 0 0 10 -26473 -26473
+0;
+#X obj 129 30 cnv 1 1 1 129x30 129x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 30 cnv 1 1 1 130x30 130x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 131 30 cnv 1 1 1 131x30 131x30-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 132 30 cnv 1 1 1 132x30 132x30-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 133 30 cnv 1 1 1 133x30 133x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 30 cnv 1 1 1 134x30 134x30-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 30 cnv 1 1 1 135x30 135x30-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 30 cnv 1 1 1 136x30 136x30-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 30 cnv 1 1 1 137x30 137x30-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 29 cnv 1 1 1 50x29 50x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 29 cnv 1 1 1 51x29 51x29-i empty 0 0 0 10 -182982 -182982
+0;
+#X obj 52 29 cnv 1 1 1 52x29 52x29-i empty 0 0 0 10 -249803 -249803
+0;
+#X obj 53 29 cnv 1 1 1 53x29 53x29-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 54 29 cnv 1 1 1 54x29 54x29-i empty 0 0 0 10 -203548 -203548
+0;
+#X obj 55 29 cnv 1 1 1 55x29 55x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 29 cnv 1 1 1 56x29 56x29-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 57 29 cnv 1 1 1 57x29 57x29-i empty 0 0 0 10 -249808 -249808
+0;
+#X obj 58 29 cnv 1 1 1 58x29 58x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 59 29 cnv 1 1 1 59x29 59x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 60 29 cnv 1 1 1 60x29 60x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 61 29 cnv 1 1 1 61x29 61x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 62 29 cnv 1 1 1 62x29 62x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 29 cnv 1 1 1 63x29 63x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 29 cnv 1 1 1 64x29 64x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 29 cnv 1 1 1 65x29 65x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 29 cnv 1 1 1 66x29 66x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 67 29 cnv 1 1 1 67x29 67x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 68 29 cnv 1 1 1 68x29 68x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 69 29 cnv 1 1 1 69x29 69x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 70 29 cnv 1 1 1 70x29 70x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 71 29 cnv 1 1 1 71x29 71x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 72 29 cnv 1 1 1 72x29 72x29-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 73 29 cnv 1 1 1 73x29 73x29-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 74 29 cnv 1 1 1 74x29 74x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 29 cnv 1 1 1 75x29 75x29-i empty 0 0 0 10 -203548 -203548
+0;
+#X obj 76 29 cnv 1 1 1 76x29 76x29-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 77 29 cnv 1 1 1 77x29 77x29-i empty 0 0 0 10 -249804 -249804
+0;
+#X obj 78 29 cnv 1 1 1 78x29 78x29-i empty 0 0 0 10 -182982 -182982
+0;
+#X obj 79 29 cnv 1 1 1 79x29 79x29-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 80 29 cnv 1 1 1 80x29 80x29-i empty 0 0 0 10 -49597 -49597 0
+;
+#X obj 81 29 cnv 1 1 1 81x29 81x29-i empty 0 0 0 10 -114361 -114361
+0;
+#X obj 82 29 cnv 1 1 1 82x29 82x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 29 cnv 1 1 1 83x29 83x29-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 84 29 cnv 1 1 1 84x29 84x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 85 29 cnv 1 1 1 85x29 85x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 29 cnv 1 1 1 86x29 86x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 29 cnv 1 1 1 87x29 87x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 29 cnv 1 1 1 88x29 88x29-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 89 29 cnv 1 1 1 89x29 89x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 29 cnv 1 1 1 90x29 90x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 29 cnv 1 1 1 91x29 91x29-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 92 29 cnv 1 1 1 92x29 92x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 29 cnv 1 1 1 93x29 93x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 94 29 cnv 1 1 1 94x29 94x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 95 29 cnv 1 1 1 95x29 95x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 96 29 cnv 1 1 1 96x29 96x29-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 97 29 cnv 1 1 1 97x29 97x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 29 cnv 1 1 1 98x29 98x29-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 29 cnv 1 1 1 99x29 99x29-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 29 cnv 1 1 1 100x29 100x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 29 cnv 1 1 1 101x29 101x29-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 102 29 cnv 1 1 1 102x29 102x29-i empty 0 0 0 10 -94836 -94836
+0;
+#X obj 103 29 cnv 1 1 1 103x29 103x29-i empty 0 0 0 10 -30071 -30071
+0;
+#X obj 104 29 cnv 1 1 1 104x29 104x29-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 105 29 cnv 1 1 1 105x29 105x29-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 106 29 cnv 1 1 1 106x29 106x29-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 107 29 cnv 1 1 1 107x29 107x29-i empty 0 0 0 10 -160629 -160629
+0;
+#X obj 108 29 cnv 1 1 1 108x29 108x29-i empty 0 0 0 10 -254948 -254948
+0;
+#X obj 109 29 cnv 1 1 1 109x29 109x29-i empty 0 0 0 10 -185814 -185814
+0;
+#X obj 110 29 cnv 1 1 1 110x29 110x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 111 29 cnv 1 1 1 111x29 111x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 112 29 cnv 1 1 1 112x29 112x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 113 29 cnv 1 1 1 113x29 113x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 114 29 cnv 1 1 1 114x29 114x29-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 115 29 cnv 1 1 1 115x29 115x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 29 cnv 1 1 1 116x29 116x29-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 29 cnv 1 1 1 117x29 117x29-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 29 cnv 1 1 1 118x29 118x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 29 cnv 1 1 1 119x29 119x29-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 120 29 cnv 1 1 1 120x29 120x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 121 29 cnv 1 1 1 121x29 121x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 29 cnv 1 1 1 122x29 122x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 123 29 cnv 1 1 1 123x29 123x29-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 124 29 cnv 1 1 1 124x29 124x29-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 125 29 cnv 1 1 1 125x29 125x29-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 126 29 cnv 1 1 1 126x29 126x29-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 127 29 cnv 1 1 1 127x29 127x29-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 128 29 cnv 1 1 1 128x29 128x29-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 129 29 cnv 1 1 1 129x29 129x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 29 cnv 1 1 1 130x29 130x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 131 29 cnv 1 1 1 131x29 131x29-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 132 29 cnv 1 1 1 132x29 132x29-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 133 29 cnv 1 1 1 133x29 133x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 29 cnv 1 1 1 134x29 134x29-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 29 cnv 1 1 1 135x29 135x29-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 29 cnv 1 1 1 136x29 136x29-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 29 cnv 1 1 1 137x29 137x29-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 28 cnv 1 1 1 50x28 50x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 28 cnv 1 1 1 51x28 51x28-i empty 0 0 0 10 -248004 -248004
+0;
+#X obj 52 28 cnv 1 1 1 52x28 52x28-i empty 0 0 0 10 -52425 -52425 0
+;
+#X obj 53 28 cnv 1 1 1 53x28 53x28-i empty 0 0 0 10 -184782 -184782
+0;
+#X obj 54 28 cnv 1 1 1 54x28 54x28-i empty 0 0 0 10 -103314 -103314
+0;
+#X obj 55 28 cnv 1 1 1 55x28 55x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 28 cnv 1 1 1 56x28 56x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 57 28 cnv 1 1 1 57x28 57x28-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 58 28 cnv 1 1 1 58x28 58x28-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 59 28 cnv 1 1 1 59x28 59x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 60 28 cnv 1 1 1 60x28 60x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 61 28 cnv 1 1 1 61x28 61x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 62 28 cnv 1 1 1 62x28 62x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 28 cnv 1 1 1 63x28 63x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 28 cnv 1 1 1 64x28 64x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 28 cnv 1 1 1 65x28 65x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 28 cnv 1 1 1 66x28 66x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 67 28 cnv 1 1 1 67x28 67x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 68 28 cnv 1 1 1 68x28 68x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 69 28 cnv 1 1 1 69x28 69x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 70 28 cnv 1 1 1 70x28 70x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 71 28 cnv 1 1 1 71x28 71x28-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 72 28 cnv 1 1 1 72x28 72x28-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 73 28 cnv 1 1 1 73x28 73x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 74 28 cnv 1 1 1 74x28 74x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 28 cnv 1 1 1 75x28 75x28-i empty 0 0 0 10 -103570 -103570
+0;
+#X obj 76 28 cnv 1 1 1 76x28 76x28-i empty 0 0 0 10 -185039 -185039
+0;
+#X obj 77 28 cnv 1 1 1 77x28 77x28-i empty 0 0 0 10 -118217 -118217
+0;
+#X obj 78 28 cnv 1 1 1 78x28 78x28-i empty 0 0 0 10 -51396 -51396 0
+;
+#X obj 79 28 cnv 1 1 1 79x28 79x28-i empty 0 0 0 10 -246975 -246975
+0;
+#X obj 80 28 cnv 1 1 1 80x28 80x28-i empty 0 0 0 10 -245947 -245947
+0;
+#X obj 81 28 cnv 1 1 1 81x28 81x28-i empty 0 0 0 10 -244919 -244919
+0;
+#X obj 82 28 cnv 1 1 1 82x28 82x28-i empty 0 0 0 10 -76330 -76330 0
+;
+#X obj 83 28 cnv 1 1 1 83x28 83x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 28 cnv 1 1 1 84x28 84x28-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 85 28 cnv 1 1 1 85x28 85x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 86 28 cnv 1 1 1 86x28 86x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 28 cnv 1 1 1 87x28 87x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 28 cnv 1 1 1 88x28 88x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 89 28 cnv 1 1 1 89x28 89x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 90 28 cnv 1 1 1 90x28 90x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 91 28 cnv 1 1 1 91x28 91x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 92 28 cnv 1 1 1 92x28 92x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 28 cnv 1 1 1 93x28 93x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 94 28 cnv 1 1 1 94x28 94x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 95 28 cnv 1 1 1 95x28 95x28-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 96 28 cnv 1 1 1 96x28 96x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 28 cnv 1 1 1 97x28 97x28-i empty 0 0 0 10 -76074 -76074 0
+;
+#X obj 98 28 cnv 1 1 1 98x28 98x28-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 28 cnv 1 1 1 99x28 99x28-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 28 cnv 1 1 1 100x28 100x28-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 101 28 cnv 1 1 1 101x28 101x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 28 cnv 1 1 1 102x28 102x28-i empty 0 0 0 10 -9511 -9511
+0;
+#X obj 103 28 cnv 1 1 1 103x28 103x28-i empty 0 0 0 10 -204577 -204577
+0;
+#X obj 104 28 cnv 1 1 1 104x28 104x28-i empty 0 0 0 10 -211773 -211773
+0;
+#X obj 105 28 cnv 1 1 1 105x28 105x28-i empty 0 0 0 10 -25959 -25959
+0;
+#X obj 106 28 cnv 1 1 1 106x28 106x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 28 cnv 1 1 1 107x28 107x28-i empty 0 0 0 10 -32897 -32897
+0;
+#X obj 108 28 cnv 1 1 1 108x28 108x28-i empty 0 0 0 10 -231048 -231048
+0;
+#X obj 109 28 cnv 1 1 1 109x28 109x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 110 28 cnv 1 1 1 110x28 110x28-i empty 0 0 0 10 -43948 -43948
+0;
+#X obj 111 28 cnv 1 1 1 111x28 111x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 112 28 cnv 1 1 1 112x28 112x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 113 28 cnv 1 1 1 113x28 113x28-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 114 28 cnv 1 1 1 114x28 114x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 28 cnv 1 1 1 115x28 115x28-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 116 28 cnv 1 1 1 116x28 116x28-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 28 cnv 1 1 1 117x28 117x28-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 28 cnv 1 1 1 118x28 118x28-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 119 28 cnv 1 1 1 119x28 119x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 28 cnv 1 1 1 120x28 120x28-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 121 28 cnv 1 1 1 121x28 121x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 122 28 cnv 1 1 1 122x28 122x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 123 28 cnv 1 1 1 123x28 123x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 124 28 cnv 1 1 1 124x28 124x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 125 28 cnv 1 1 1 125x28 125x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 28 cnv 1 1 1 126x28 126x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 127 28 cnv 1 1 1 127x28 127x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 28 cnv 1 1 1 128x28 128x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 129 28 cnv 1 1 1 129x28 129x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 28 cnv 1 1 1 130x28 130x28-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 131 28 cnv 1 1 1 131x28 131x28-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 132 28 cnv 1 1 1 132x28 132x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 28 cnv 1 1 1 133x28 133x28-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 134 28 cnv 1 1 1 134x28 134x28-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 28 cnv 1 1 1 135x28 135x28-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 28 cnv 1 1 1 136x28 136x28-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 28 cnv 1 1 1 137x28 137x28-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 27 cnv 1 1 1 50x27 50x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 27 cnv 1 1 1 51x27 51x27-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 52 27 cnv 1 1 1 52x27 52x27-i empty 0 0 0 10 -182982 -182982
+0;
+#X obj 53 27 cnv 1 1 1 53x27 53x27-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 54 27 cnv 1 1 1 54x27 54x27-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 55 27 cnv 1 1 1 55x27 55x27-i empty 0 0 0 10 -20817 -20817 0
+;
+#X obj 56 27 cnv 1 1 1 56x27 56x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 57 27 cnv 1 1 1 57x27 57x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 58 27 cnv 1 1 1 58x27 58x27-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 59 27 cnv 1 1 1 59x27 59x27-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 60 27 cnv 1 1 1 60x27 60x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 61 27 cnv 1 1 1 61x27 61x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 62 27 cnv 1 1 1 62x27 62x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 27 cnv 1 1 1 63x27 63x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 27 cnv 1 1 1 64x27 64x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 27 cnv 1 1 1 65x27 65x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 27 cnv 1 1 1 66x27 66x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 67 27 cnv 1 1 1 67x27 67x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 68 27 cnv 1 1 1 68x27 68x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 69 27 cnv 1 1 1 69x27 69x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 70 27 cnv 1 1 1 70x27 70x27-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 71 27 cnv 1 1 1 71x27 71x27-i empty 0 0 0 10 -12337 -12337 0
+;
+#X obj 72 27 cnv 1 1 1 72x27 72x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 73 27 cnv 1 1 1 73x27 73x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 74 27 cnv 1 1 1 74x27 74x27-i empty 0 0 0 10 -20817 -20817 0
+;
+#X obj 75 27 cnv 1 1 1 75x27 75x27-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 76 27 cnv 1 1 1 76x27 76x27-i empty 0 0 0 10 -249803 -249803
+0;
+#X obj 77 27 cnv 1 1 1 77x27 77x27-i empty 0 0 0 10 -182982 -182982
+0;
+#X obj 78 27 cnv 1 1 1 78x27 78x27-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 79 27 cnv 1 1 1 79x27 79x27-i empty 0 0 0 10 -115389 -115389
+0;
+#X obj 80 27 cnv 1 1 1 80x27 80x27-i empty 0 0 0 10 -114361 -114361
+0;
+#X obj 81 27 cnv 1 1 1 81x27 81x27-i empty 0 0 0 10 -179126 -179126
+0;
+#X obj 82 27 cnv 1 1 1 82x27 82x27-i empty 0 0 0 10 -98173 -98173 0
+;
+#X obj 83 27 cnv 1 1 1 83x27 83x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 27 cnv 1 1 1 84x27 84x27-i empty 0 0 0 10 -20561 -20561 0
+;
+#X obj 85 27 cnv 1 1 1 85x27 85x27-i empty 0 0 0 10 -185814 -185814
+0;
+#X obj 86 27 cnv 1 1 1 86x27 86x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 27 cnv 1 1 1 87x27 87x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 27 cnv 1 1 1 88x27 88x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 89 27 cnv 1 1 1 89x27 89x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 27 cnv 1 1 1 90x27 90x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 27 cnv 1 1 1 91x27 91x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 92 27 cnv 1 1 1 92x27 92x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 27 cnv 1 1 1 93x27 93x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 94 27 cnv 1 1 1 94x27 94x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 95 27 cnv 1 1 1 95x27 95x27-i empty 0 0 0 10 -20561 -20561 0
+;
+#X obj 96 27 cnv 1 1 1 96x27 96x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 27 cnv 1 1 1 97x27 97x27-i empty 0 0 0 10 -97402 -97402 0
+;
+#X obj 98 27 cnv 1 1 1 98x27 98x27-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 27 cnv 1 1 1 99x27 99x27-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 27 cnv 1 1 1 100x27 100x27-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 101 27 cnv 1 1 1 101x27 101x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 27 cnv 1 1 1 102x27 102x27-i empty 0 0 0 10 -143666 -143666
+0;
+#X obj 103 27 cnv 1 1 1 103x27 103x27-i empty 0 0 0 10 -170138 -170138
+0;
+#X obj 104 27 cnv 1 1 1 104x27 104x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 105 27 cnv 1 1 1 105x27 105x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 106 27 cnv 1 1 1 106x27 106x27-i empty 0 0 0 10 -102288 -102288
+0;
+#X obj 107 27 cnv 1 1 1 107x27 107x27-i empty 0 0 0 10 -71962 -71962
+0;
+#X obj 108 27 cnv 1 1 1 108x27 108x27-i empty 0 0 0 10 -68622 -68622
+0;
+#X obj 109 27 cnv 1 1 1 109x27 109x27-i empty 0 0 0 10 -160629 -160629
+0;
+#X obj 110 27 cnv 1 1 1 110x27 110x27-i empty 0 0 0 10 -254948 -254948
+0;
+#X obj 111 27 cnv 1 1 1 111x27 111x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 112 27 cnv 1 1 1 112x27 112x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 113 27 cnv 1 1 1 113x27 113x27-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 114 27 cnv 1 1 1 114x27 114x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 27 cnv 1 1 1 115x27 115x27-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 116 27 cnv 1 1 1 116x27 116x27-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 27 cnv 1 1 1 117x27 117x27-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 27 cnv 1 1 1 118x27 118x27-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 119 27 cnv 1 1 1 119x27 119x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 27 cnv 1 1 1 120x27 120x27-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 121 27 cnv 1 1 1 121x27 121x27-i empty 0 0 0 10 -185814 -185814
+0;
+#X obj 122 27 cnv 1 1 1 122x27 122x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 123 27 cnv 1 1 1 123x27 123x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 124 27 cnv 1 1 1 124x27 124x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 125 27 cnv 1 1 1 125x27 125x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 27 cnv 1 1 1 126x27 126x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 127 27 cnv 1 1 1 127x27 127x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 27 cnv 1 1 1 128x27 128x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 129 27 cnv 1 1 1 129x27 129x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 27 cnv 1 1 1 130x27 130x27-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 131 27 cnv 1 1 1 131x27 131x27-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 132 27 cnv 1 1 1 132x27 132x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 27 cnv 1 1 1 133x27 133x27-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 134 27 cnv 1 1 1 134x27 134x27-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 27 cnv 1 1 1 135x27 135x27-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 27 cnv 1 1 1 136x27 136x27-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 27 cnv 1 1 1 137x27 137x27-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 26 cnv 1 1 1 50x26 50x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 26 cnv 1 1 1 51x26 51x26-i empty 0 0 0 10 -181183 -181183
+0;
+#X obj 52 26 cnv 1 1 1 52x26 52x26-i empty 0 0 0 10 -247747 -247747
+0;
+#X obj 53 26 cnv 1 1 1 53x26 53x26-i empty 0 0 0 10 -248776 -248776
+0;
+#X obj 54 26 cnv 1 1 1 54x26 54x26-i empty 0 0 0 10 -53452 -53452 0
+;
+#X obj 55 26 cnv 1 1 1 55x26 55x26-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 56 26 cnv 1 1 1 56x26 56x26-i empty 0 0 0 10 -20817 -20817 0
+;
+#X obj 57 26 cnv 1 1 1 57x26 57x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 58 26 cnv 1 1 1 58x26 58x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 59 26 cnv 1 1 1 59x26 59x26-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 60 26 cnv 1 1 1 60x26 60x26-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 61 26 cnv 1 1 1 61x26 61x26-i empty 0 0 0 10 -258032 -258032
+0;
+#X obj 62 26 cnv 1 1 1 62x26 62x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 63 26 cnv 1 1 1 63x26 63x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 64 26 cnv 1 1 1 64x26 64x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 65 26 cnv 1 1 1 65x26 65x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 66 26 cnv 1 1 1 66x26 66x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 67 26 cnv 1 1 1 67x26 67x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 68 26 cnv 1 1 1 68x26 68x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 69 26 cnv 1 1 1 69x26 69x26-i empty 0 0 0 10 -237472 -237472
+0;
+#X obj 70 26 cnv 1 1 1 70x26 70x26-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 71 26 cnv 1 1 1 71x26 71x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 72 26 cnv 1 1 1 72x26 72x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 73 26 cnv 1 1 1 73x26 73x26-i empty 0 0 0 10 -10537 -10537 0
+;
+#X obj 74 26 cnv 1 1 1 74x26 74x26-i empty 0 0 0 10 -51140 -51140 0
+;
+#X obj 75 26 cnv 1 1 1 75x26 75x26-i empty 0 0 0 10 -53453 -53453 0
+;
+#X obj 76 26 cnv 1 1 1 76x26 76x26-i empty 0 0 0 10 -52424 -52424 0
+;
+#X obj 77 26 cnv 1 1 1 77x26 77x26-i empty 0 0 0 10 -247747 -247747
+0;
+#X obj 78 26 cnv 1 1 1 78x26 78x26-i empty 0 0 0 10 -246719 -246719
+0;
+#X obj 79 26 cnv 1 1 1 79x26 79x26-i empty 0 0 0 10 -245947 -245947
+0;
+#X obj 80 26 cnv 1 1 1 80x26 80x26-i empty 0 0 0 10 -48568 -48568 0
+;
+#X obj 81 26 cnv 1 1 1 81x26 81x26-i empty 0 0 0 10 -113333 -113333
+0;
+#X obj 82 26 cnv 1 1 1 82x26 82x26-i empty 0 0 0 10 -178098 -178098
+0;
+#X obj 83 26 cnv 1 1 1 83x26 83x26-i empty 0 0 0 10 -76074 -76074 0
+;
+#X obj 84 26 cnv 1 1 1 84x26 84x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 26 cnv 1 1 1 85x26 85x26-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 86 26 cnv 1 1 1 86x26 86x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 87 26 cnv 1 1 1 87x26 87x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 88 26 cnv 1 1 1 88x26 88x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 89 26 cnv 1 1 1 89x26 89x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 26 cnv 1 1 1 90x26 90x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 26 cnv 1 1 1 91x26 91x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 92 26 cnv 1 1 1 92x26 92x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 93 26 cnv 1 1 1 93x26 93x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 94 26 cnv 1 1 1 94x26 94x26-i empty 0 0 0 10 -237472 -237472
+0;
+#X obj 95 26 cnv 1 1 1 95x26 95x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 26 cnv 1 1 1 96x26 96x26-i empty 0 0 0 10 -10537 -10537 0
+;
+#X obj 97 26 cnv 1 1 1 97x26 97x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 26 cnv 1 1 1 98x26 98x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 26 cnv 1 1 1 99x26 99x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 26 cnv 1 1 1 100x26 100x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 26 cnv 1 1 1 101x26 101x26-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 102 26 cnv 1 1 1 102x26 102x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 26 cnv 1 1 1 103x26 103x26-i empty 0 0 0 10 -24673 -24673
+0;
+#X obj 104 26 cnv 1 1 1 104x26 104x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 105 26 cnv 1 1 1 105x26 105x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 106 26 cnv 1 1 1 106x26 106x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 107 26 cnv 1 1 1 107x26 107x26-i empty 0 0 0 10 -102288 -102288
+0;
+#X obj 108 26 cnv 1 1 1 108x26 108x26-i empty 0 0 0 10 -153433 -153433
+0;
+#X obj 109 26 cnv 1 1 1 109x26 109x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 110 26 cnv 1 1 1 110x26 110x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 111 26 cnv 1 1 1 111x26 111x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 112 26 cnv 1 1 1 112x26 112x26-i empty 0 0 0 10 -237472 -237472
+0;
+#X obj 113 26 cnv 1 1 1 113x26 113x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 26 cnv 1 1 1 114x26 114x26-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 115 26 cnv 1 1 1 115x26 115x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 26 cnv 1 1 1 116x26 116x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 26 cnv 1 1 1 117x26 117x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 26 cnv 1 1 1 118x26 118x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 26 cnv 1 1 1 119x26 119x26-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 120 26 cnv 1 1 1 120x26 120x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 26 cnv 1 1 1 121x26 121x26-i empty 0 0 0 10 -24673 -24673
+0;
+#X obj 122 26 cnv 1 1 1 122x26 122x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 123 26 cnv 1 1 1 123x26 123x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 124 26 cnv 1 1 1 124x26 124x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 125 26 cnv 1 1 1 125x26 125x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 26 cnv 1 1 1 126x26 126x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 127 26 cnv 1 1 1 127x26 127x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 26 cnv 1 1 1 128x26 128x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 129 26 cnv 1 1 1 129x26 129x26-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 130 26 cnv 1 1 1 130x26 130x26-i empty 0 0 0 10 -237472 -237472
+0;
+#X obj 131 26 cnv 1 1 1 131x26 131x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 26 cnv 1 1 1 132x26 132x26-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 133 26 cnv 1 1 1 133x26 133x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 26 cnv 1 1 1 134x26 134x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 26 cnv 1 1 1 135x26 135x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 26 cnv 1 1 1 136x26 136x26-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 26 cnv 1 1 1 137x26 137x26-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 25 cnv 1 1 1 50x25 50x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 25 cnv 1 1 1 51x25 51x25-i empty 0 0 0 10 -49596 -49596 0
+;
+#X obj 52 25 cnv 1 1 1 52x25 52x25-i empty 0 0 0 10 -50368 -50368 0
+;
+#X obj 53 25 cnv 1 1 1 53x25 53x25-i empty 0 0 0 10 -51396 -51396 0
+;
+#X obj 54 25 cnv 1 1 1 54x25 54x25-i empty 0 0 0 10 -52424 -52424 0
+;
+#X obj 55 25 cnv 1 1 1 55x25 55x25-i empty 0 0 0 10 -53453 -53453 0
+;
+#X obj 56 25 cnv 1 1 1 56x25 56x25-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 57 25 cnv 1 1 1 57x25 57x25-i empty 0 0 0 10 -20817 -20817 0
+;
+#X obj 58 25 cnv 1 1 1 58x25 58x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 59 25 cnv 1 1 1 59x25 59x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 60 25 cnv 1 1 1 60x25 60x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 61 25 cnv 1 1 1 61x25 61x25-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 62 25 cnv 1 1 1 62x25 62x25-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 63 25 cnv 1 1 1 63x25 63x25-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 64 25 cnv 1 1 1 64x25 64x25-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 65 25 cnv 1 1 1 65x25 65x25-i empty 0 0 0 10 -245696 -245696
+0;
+#X obj 66 25 cnv 1 1 1 66x25 66x25-i empty 0 0 0 10 -32897 -32897 0
+;
+#X obj 67 25 cnv 1 1 1 67x25 67x25-i empty 0 0 0 10 -24673 -24673 0
+;
+#X obj 68 25 cnv 1 1 1 68x25 68x25-i empty 0 0 0 10 -4113 -4113 0;
+#X obj 69 25 cnv 1 1 1 69x25 69x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 70 25 cnv 1 1 1 70x25 70x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 71 25 cnv 1 1 1 71x25 71x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 72 25 cnv 1 1 1 72x25 72x25-i empty 0 0 0 10 -20817 -20817 0
+;
+#X obj 73 25 cnv 1 1 1 73x25 73x25-i empty 0 0 0 10 -51140 -51140 0
+;
+#X obj 74 25 cnv 1 1 1 74x25 74x25-i empty 0 0 0 10 -119245 -119245
+0;
+#X obj 75 25 cnv 1 1 1 75x25 75x25-i empty 0 0 0 10 -118217 -118217
+0;
+#X obj 76 25 cnv 1 1 1 76x25 76x25-i empty 0 0 0 10 -51653 -51653 0
+;
+#X obj 77 25 cnv 1 1 1 77x25 77x25-i empty 0 0 0 10 -50624 -50624 0
+;
+#X obj 78 25 cnv 1 1 1 78x25 78x25-i empty 0 0 0 10 -49596 -49596 0
+;
+#X obj 79 25 cnv 1 1 1 79x25 79x25-i empty 0 0 0 10 -114361 -114361
+0;
+#X obj 80 25 cnv 1 1 1 80x25 80x25-i empty 0 0 0 10 -179126 -179126
+0;
+#X obj 81 25 cnv 1 1 1 81x25 81x25-i empty 0 0 0 10 -243891 -243891
+0;
+#X obj 82 25 cnv 1 1 1 82x25 82x25-i empty 0 0 0 10 -112561 -112561
+0;
+#X obj 83 25 cnv 1 1 1 83x25 83x25-i empty 0 0 0 10 -173730 -173730
+0;
+#X obj 84 25 cnv 1 1 1 84x25 84x25-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 85 25 cnv 1 1 1 85x25 85x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 86 25 cnv 1 1 1 86x25 86x25-i empty 0 0 0 10 -20561 -20561 0
+;
+#X obj 87 25 cnv 1 1 1 87x25 87x25-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 88 25 cnv 1 1 1 88x25 88x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 89 25 cnv 1 1 1 89x25 89x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 90 25 cnv 1 1 1 90x25 90x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 91 25 cnv 1 1 1 91x25 91x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 92 25 cnv 1 1 1 92x25 92x25-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 93 25 cnv 1 1 1 93x25 93x25-i empty 0 0 0 10 -20561 -20561 0
+;
+#X obj 94 25 cnv 1 1 1 94x25 94x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 95 25 cnv 1 1 1 95x25 95x25-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 96 25 cnv 1 1 1 96x25 96x25-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 97 25 cnv 1 1 1 97x25 97x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 25 cnv 1 1 1 98x25 98x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 25 cnv 1 1 1 99x25 99x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 25 cnv 1 1 1 100x25 100x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 25 cnv 1 1 1 101x25 101x25-i empty 0 0 0 10 -238495 -238495
+0;
+#X obj 102 25 cnv 1 1 1 102x25 102x25-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 103 25 cnv 1 1 1 103x25 103x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 104 25 cnv 1 1 1 104x25 104x25-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 105 25 cnv 1 1 1 105x25 105x25-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 106 25 cnv 1 1 1 106x25 106x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 107 25 cnv 1 1 1 107x25 107x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 108 25 cnv 1 1 1 108x25 108x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 109 25 cnv 1 1 1 109x25 109x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 110 25 cnv 1 1 1 110x25 110x25-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 111 25 cnv 1 1 1 111x25 111x25-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 112 25 cnv 1 1 1 112x25 112x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 113 25 cnv 1 1 1 113x25 113x25-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 114 25 cnv 1 1 1 114x25 114x25-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 115 25 cnv 1 1 1 115x25 115x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 25 cnv 1 1 1 116x25 116x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 25 cnv 1 1 1 117x25 117x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 25 cnv 1 1 1 118x25 118x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 25 cnv 1 1 1 119x25 119x25-i empty 0 0 0 10 -238495 -238495
+0;
+#X obj 120 25 cnv 1 1 1 120x25 120x25-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 121 25 cnv 1 1 1 121x25 121x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 122 25 cnv 1 1 1 122x25 122x25-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 123 25 cnv 1 1 1 123x25 123x25-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 124 25 cnv 1 1 1 124x25 124x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 125 25 cnv 1 1 1 125x25 125x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 126 25 cnv 1 1 1 126x25 126x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 127 25 cnv 1 1 1 127x25 127x25-i empty 0 0 0 10 -262144 -262144
+0;
+#X obj 128 25 cnv 1 1 1 128x25 128x25-i empty 0 0 0 10 -253920 -253920
+0;
+#X obj 129 25 cnv 1 1 1 129x25 129x25-i empty 0 0 0 10 -20561 -20561
+0;
+#X obj 130 25 cnv 1 1 1 130x25 130x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 131 25 cnv 1 1 1 131x25 131x25-i empty 0 0 0 10 -134671 -134671
+0;
+#X obj 132 25 cnv 1 1 1 132x25 132x25-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 133 25 cnv 1 1 1 133x25 133x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 25 cnv 1 1 1 134x25 134x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 25 cnv 1 1 1 135x25 135x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 25 cnv 1 1 1 136x25 136x25-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 25 cnv 1 1 1 137x25 137x25-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 24 cnv 1 1 1 50x24 50x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 24 cnv 1 1 1 51x24 51x24-i empty 0 0 0 10 -114361 -114361
+0;
+#X obj 52 24 cnv 1 1 1 52x24 52x24-i empty 0 0 0 10 -115389 -115389
+0;
+#X obj 53 24 cnv 1 1 1 53x24 53x24-i empty 0 0 0 10 -50625 -50625 0
+;
+#X obj 54 24 cnv 1 1 1 54x24 54x24-i empty 0 0 0 10 -51396 -51396 0
+;
+#X obj 55 24 cnv 1 1 1 55x24 55x24-i empty 0 0 0 10 -52424 -52424 0
+;
+#X obj 56 24 cnv 1 1 1 56x24 56x24-i empty 0 0 0 10 -53452 -53452 0
+;
+#X obj 57 24 cnv 1 1 1 57x24 57x24-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 58 24 cnv 1 1 1 58x24 58x24-i empty 0 0 0 10 -103314 -103314
+0;
+#X obj 59 24 cnv 1 1 1 59x24 59x24-i empty 0 0 0 10 -203548 -203548
+0;
+#X obj 60 24 cnv 1 1 1 60x24 60x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 61 24 cnv 1 1 1 61x24 61x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 62 24 cnv 1 1 1 62x24 62x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 63 24 cnv 1 1 1 63x24 63x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 64 24 cnv 1 1 1 64x24 64x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 65 24 cnv 1 1 1 65x24 65x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 66 24 cnv 1 1 1 66x24 66x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 24 cnv 1 1 1 67x24 67x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 68 24 cnv 1 1 1 68x24 68x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 69 24 cnv 1 1 1 69x24 69x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 70 24 cnv 1 1 1 70x24 70x24-i empty 0 0 0 10 -203548 -203548
+0;
+#X obj 71 24 cnv 1 1 1 71x24 71x24-i empty 0 0 0 10 -103570 -103570
+0;
+#X obj 72 24 cnv 1 1 1 72x24 72x24-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 73 24 cnv 1 1 1 73x24 73x24-i empty 0 0 0 10 -53453 -53453 0
+;
+#X obj 74 24 cnv 1 1 1 74x24 74x24-i empty 0 0 0 10 -118217 -118217
+0;
+#X obj 75 24 cnv 1 1 1 75x24 75x24-i empty 0 0 0 10 -117189 -117189
+0;
+#X obj 76 24 cnv 1 1 1 76x24 76x24-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 77 24 cnv 1 1 1 77x24 77x24-i empty 0 0 0 10 -115389 -115389
+0;
+#X obj 78 24 cnv 1 1 1 78x24 78x24-i empty 0 0 0 10 -114362 -114362
+0;
+#X obj 79 24 cnv 1 1 1 79x24 79x24-i empty 0 0 0 10 -244919 -244919
+0;
+#X obj 80 24 cnv 1 1 1 80x24 80x24-i empty 0 0 0 10 -47540 -47540 0
+;
+#X obj 81 24 cnv 1 1 1 81x24 81x24-i empty 0 0 0 10 -178098 -178098
+0;
+#X obj 82 24 cnv 1 1 1 82x24 82x24-i empty 0 0 0 10 -46768 -46768 0
+;
+#X obj 83 24 cnv 1 1 1 83x24 83x24-i empty 0 0 0 10 -177326 -177326
+0;
+#X obj 84 24 cnv 1 1 1 84x24 84x24-i empty 0 0 0 10 -104853 -104853
+0;
+#X obj 85 24 cnv 1 1 1 85x24 85x24-i empty 0 0 0 10 -10537 -10537 0
+;
+#X obj 86 24 cnv 1 1 1 86x24 86x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 87 24 cnv 1 1 1 87x24 87x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 88 24 cnv 1 1 1 88x24 88x24-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 89 24 cnv 1 1 1 89x24 89x24-i empty 0 0 0 10 -28785 -28785 0
+;
+#X obj 90 24 cnv 1 1 1 90x24 90x24-i empty 0 0 0 10 -28785 -28785 0
+;
+#X obj 91 24 cnv 1 1 1 91x24 91x24-i empty 0 0 0 10 -16449 -16449 0
+;
+#X obj 92 24 cnv 1 1 1 92x24 92x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 93 24 cnv 1 1 1 93x24 93x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 94 24 cnv 1 1 1 94x24 94x24-i empty 0 0 0 10 -10537 -10537 0
+;
+#X obj 95 24 cnv 1 1 1 95x24 95x24-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 96 24 cnv 1 1 1 96x24 96x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 97 24 cnv 1 1 1 97x24 97x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 24 cnv 1 1 1 98x24 98x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 24 cnv 1 1 1 99x24 99x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 24 cnv 1 1 1 100x24 100x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 24 cnv 1 1 1 101x24 101x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 102 24 cnv 1 1 1 102x24 102x24-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 103 24 cnv 1 1 1 103x24 103x24-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 104 24 cnv 1 1 1 104x24 104x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 105 24 cnv 1 1 1 105x24 105x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 106 24 cnv 1 1 1 106x24 106x24-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 107 24 cnv 1 1 1 107x24 107x24-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 108 24 cnv 1 1 1 108x24 108x24-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 109 24 cnv 1 1 1 109x24 109x24-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 110 24 cnv 1 1 1 110x24 110x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 111 24 cnv 1 1 1 111x24 111x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 112 24 cnv 1 1 1 112x24 112x24-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 113 24 cnv 1 1 1 113x24 113x24-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 114 24 cnv 1 1 1 114x24 114x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 115 24 cnv 1 1 1 115x24 115x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 24 cnv 1 1 1 116x24 116x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 24 cnv 1 1 1 117x24 117x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 24 cnv 1 1 1 118x24 118x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 24 cnv 1 1 1 119x24 119x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 120 24 cnv 1 1 1 120x24 120x24-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 121 24 cnv 1 1 1 121x24 121x24-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 122 24 cnv 1 1 1 122x24 122x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 123 24 cnv 1 1 1 123x24 123x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 124 24 cnv 1 1 1 124x24 124x24-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 125 24 cnv 1 1 1 125x24 125x24-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 126 24 cnv 1 1 1 126x24 126x24-i empty 0 0 0 10 -28785 -28785
+0;
+#X obj 127 24 cnv 1 1 1 127x24 127x24-i empty 0 0 0 10 -16449 -16449
+0;
+#X obj 128 24 cnv 1 1 1 128x24 128x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 129 24 cnv 1 1 1 129x24 129x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 130 24 cnv 1 1 1 130x24 130x24-i empty 0 0 0 10 -10537 -10537
+0;
+#X obj 131 24 cnv 1 1 1 131x24 131x24-i empty 0 0 0 10 -235668 -235668
+0;
+#X obj 132 24 cnv 1 1 1 132x24 132x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 133 24 cnv 1 1 1 133x24 133x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 24 cnv 1 1 1 134x24 134x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 24 cnv 1 1 1 135x24 135x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 24 cnv 1 1 1 136x24 136x24-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 24 cnv 1 1 1 137x24 137x24-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 23 cnv 1 1 1 50x23 50x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 23 cnv 1 1 1 51x23 51x23-i empty 0 0 0 10 -244919 -244919
+0;
+#X obj 52 23 cnv 1 1 1 52x23 52x23-i empty 0 0 0 10 -180154 -180154
+0;
+#X obj 53 23 cnv 1 1 1 53x23 53x23-i empty 0 0 0 10 -115389 -115389
+0;
+#X obj 54 23 cnv 1 1 1 54x23 54x23-i empty 0 0 0 10 -50625 -50625 0
+;
+#X obj 55 23 cnv 1 1 1 55x23 55x23-i empty 0 0 0 10 -51396 -51396 0
+;
+#X obj 56 23 cnv 1 1 1 56x23 56x23-i empty 0 0 0 10 -248776 -248776
+0;
+#X obj 57 23 cnv 1 1 1 57x23 57x23-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 58 23 cnv 1 1 1 58x23 58x23-i empty 0 0 0 10 -184782 -184782
+0;
+#X obj 59 23 cnv 1 1 1 59x23 59x23-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 60 23 cnv 1 1 1 60x23 60x23-i empty 0 0 0 10 -34181 -34181 0
+;
+#X obj 61 23 cnv 1 1 1 61x23 61x23-i empty 0 0 0 10 -214084 -214084
+0;
+#X obj 62 23 cnv 1 1 1 62x23 62x23-i empty 0 0 0 10 -69134 -69134 0
+;
+#X obj 63 23 cnv 1 1 1 63x23 63x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 64 23 cnv 1 1 1 64x23 64x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 65 23 cnv 1 1 1 65x23 65x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 66 23 cnv 1 1 1 66x23 66x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 23 cnv 1 1 1 67x23 67x23-i empty 0 0 0 10 -69134 -69134 0
+;
+#X obj 68 23 cnv 1 1 1 68x23 68x23-i empty 0 0 0 10 -214084 -214084
+0;
+#X obj 69 23 cnv 1 1 1 69x23 69x23-i empty 0 0 0 10 -34437 -34437 0
+;
+#X obj 70 23 cnv 1 1 1 70x23 70x23-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 71 23 cnv 1 1 1 71x23 71x23-i empty 0 0 0 10 -185039 -185039
+0;
+#X obj 72 23 cnv 1 1 1 72x23 72x23-i empty 0 0 0 10 -249803 -249803
+0;
+#X obj 73 23 cnv 1 1 1 73x23 73x23-i empty 0 0 0 10 -52424 -52424 0
+;
+#X obj 74 23 cnv 1 1 1 74x23 74x23-i empty 0 0 0 10 -51653 -51653 0
+;
+#X obj 75 23 cnv 1 1 1 75x23 75x23-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 76 23 cnv 1 1 1 76x23 76x23-i empty 0 0 0 10 -115390 -115390
+0;
+#X obj 77 23 cnv 1 1 1 77x23 77x23-i empty 0 0 0 10 -180154 -180154
+0;
+#X obj 78 23 cnv 1 1 1 78x23 78x23-i empty 0 0 0 10 -244919 -244919
+0;
+#X obj 79 23 cnv 1 1 1 79x23 79x23-i empty 0 0 0 10 -113333 -113333
+0;
+#X obj 80 23 cnv 1 1 1 80x23 80x23-i empty 0 0 0 10 -178354 -178354
+0;
+#X obj 81 23 cnv 1 1 1 81x23 81x23-i empty 0 0 0 10 -46768 -46768 0
+;
+#X obj 82 23 cnv 1 1 1 82x23 82x23-i empty 0 0 0 10 -243119 -243119
+0;
+#X obj 83 23 cnv 1 1 1 83x23 83x23-i empty 0 0 0 10 -177070 -177070
+0;
+#X obj 84 23 cnv 1 1 1 84x23 84x23-i empty 0 0 0 10 -111533 -111533
+0;
+#X obj 85 23 cnv 1 1 1 85x23 85x23-i empty 0 0 0 10 -45740 -45740 0
+;
+#X obj 86 23 cnv 1 1 1 86x23 86x23-i empty 0 0 0 10 -97402 -97402 0
+;
+#X obj 87 23 cnv 1 1 1 87x23 87x23-i empty 0 0 0 10 -76074 -76074 0
+;
+#X obj 88 23 cnv 1 1 1 88x23 88x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 23 cnv 1 1 1 89x23 89x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 23 cnv 1 1 1 90x23 90x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 23 cnv 1 1 1 91x23 91x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 23 cnv 1 1 1 92x23 92x23-i empty 0 0 0 10 -76074 -76074 0
+;
+#X obj 93 23 cnv 1 1 1 93x23 93x23-i empty 0 0 0 10 -97402 -97402 0
+;
+#X obj 94 23 cnv 1 1 1 94x23 94x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 95 23 cnv 1 1 1 95x23 95x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 96 23 cnv 1 1 1 96x23 96x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 97 23 cnv 1 1 1 97x23 97x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 23 cnv 1 1 1 98x23 98x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 23 cnv 1 1 1 99x23 99x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 23 cnv 1 1 1 100x23 100x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 23 cnv 1 1 1 101x23 101x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 102 23 cnv 1 1 1 102x23 102x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 103 23 cnv 1 1 1 103x23 103x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 104 23 cnv 1 1 1 104x23 104x23-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 105 23 cnv 1 1 1 105x23 105x23-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 106 23 cnv 1 1 1 106x23 106x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 23 cnv 1 1 1 107x23 107x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 108 23 cnv 1 1 1 108x23 108x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 23 cnv 1 1 1 109x23 109x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 110 23 cnv 1 1 1 110x23 110x23-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 111 23 cnv 1 1 1 111x23 111x23-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 112 23 cnv 1 1 1 112x23 112x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 113 23 cnv 1 1 1 113x23 113x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 114 23 cnv 1 1 1 114x23 114x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 115 23 cnv 1 1 1 115x23 115x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 23 cnv 1 1 1 116x23 116x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 23 cnv 1 1 1 117x23 117x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 23 cnv 1 1 1 118x23 118x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 23 cnv 1 1 1 119x23 119x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 120 23 cnv 1 1 1 120x23 120x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 121 23 cnv 1 1 1 121x23 121x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 122 23 cnv 1 1 1 122x23 122x23-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 123 23 cnv 1 1 1 123x23 123x23-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 124 23 cnv 1 1 1 124x23 124x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 125 23 cnv 1 1 1 125x23 125x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 126 23 cnv 1 1 1 126x23 126x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 23 cnv 1 1 1 127x23 127x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 128 23 cnv 1 1 1 128x23 128x23-i empty 0 0 0 10 -76074 -76074
+0;
+#X obj 129 23 cnv 1 1 1 129x23 129x23-i empty 0 0 0 10 -97402 -97402
+0;
+#X obj 130 23 cnv 1 1 1 130x23 130x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 131 23 cnv 1 1 1 131x23 131x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 132 23 cnv 1 1 1 132x23 132x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 133 23 cnv 1 1 1 133x23 133x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 23 cnv 1 1 1 134x23 134x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 23 cnv 1 1 1 135x23 135x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 23 cnv 1 1 1 136x23 136x23-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 23 cnv 1 1 1 137x23 137x23-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 22 cnv 1 1 1 50x22 50x22-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 22 cnv 1 1 1 51x22 51x22-i empty 0 0 0 10 -113333 -113333
+0;
+#X obj 52 22 cnv 1 1 1 52x22 52x22-i empty 0 0 0 10 -244919 -244919
+0;
+#X obj 53 22 cnv 1 1 1 53x22 53x22-i empty 0 0 0 10 -180154 -180154
+0;
+#X obj 54 22 cnv 1 1 1 54x22 54x22-i empty 0 0 0 10 -115389 -115389
+0;
+#X obj 55 22 cnv 1 1 1 55x22 55x22-i empty 0 0 0 10 -50368 -50368 0
+;
+#X obj 56 22 cnv 1 1 1 56x22 56x22-i empty 0 0 0 10 -247747 -247747
+0;
+#X obj 57 22 cnv 1 1 1 57x22 57x22-i empty 0 0 0 10 -182982 -182982
+0;
+#X obj 58 22 cnv 1 1 1 58x22 58x22-i empty 0 0 0 10 -118217 -118217
+0;
+#X obj 59 22 cnv 1 1 1 59x22 59x22-i empty 0 0 0 10 -249803 -249803
+0;
+#X obj 60 22 cnv 1 1 1 60x22 60x22-i empty 0 0 0 10 -184782 -184782
+0;
+#X obj 61 22 cnv 1 1 1 61x22 61x22-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 62 22 cnv 1 1 1 62x22 62x22-i empty 0 0 0 10 -120017 -120017
+0;
+#X obj 63 22 cnv 1 1 1 63x22 63x22-i empty 0 0 0 10 -185811 -185811
+0;
+#X obj 64 22 cnv 1 1 1 64x22 64x22-i empty 0 0 0 10 -251603 -251603
+0;
+#X obj 65 22 cnv 1 1 1 65x22 65x22-i empty 0 0 0 10 -251603 -251603
+0;
+#X obj 66 22 cnv 1 1 1 66x22 66x22-i empty 0 0 0 10 -185811 -185811
+0;
+#X obj 67 22 cnv 1 1 1 67x22 67x22-i empty 0 0 0 10 -120018 -120018
+0;
+#X obj 68 22 cnv 1 1 1 68x22 68x22-i empty 0 0 0 10 -54224 -54224 0
+;
+#X obj 69 22 cnv 1 1 1 69x22 69x22-i empty 0 0 0 10 -184782 -184782
+0;
+#X obj 70 22 cnv 1 1 1 70x22 70x22-i empty 0 0 0 10 -249804 -249804
+0;
+#X obj 71 22 cnv 1 1 1 71x22 71x22-i empty 0 0 0 10 -118217 -118217
+0;
+#X obj 72 22 cnv 1 1 1 72x22 72x22-i empty 0 0 0 10 -182982 -182982
+0;
+#X obj 73 22 cnv 1 1 1 73x22 73x22-i empty 0 0 0 10 -247747 -247747
+0;
+#X obj 74 22 cnv 1 1 1 74x22 74x22-i empty 0 0 0 10 -50624 -50624 0
+;
+#X obj 75 22 cnv 1 1 1 75x22 75x22-i empty 0 0 0 10 -115389 -115389
+0;
+#X obj 76 22 cnv 1 1 1 76x22 76x22-i empty 0 0 0 10 -180154 -180154
+0;
+#X obj 77 22 cnv 1 1 1 77x22 77x22-i empty 0 0 0 10 -244919 -244919
+0;
+#X obj 78 22 cnv 1 1 1 78x22 78x22-i empty 0 0 0 10 -113333 -113333
+0;
+#X obj 79 22 cnv 1 1 1 79x22 79x22-i empty 0 0 0 10 -243891 -243891
+0;
+#X obj 80 22 cnv 1 1 1 80x22 80x22-i empty 0 0 0 10 -112561 -112561
+0;
+#X obj 81 22 cnv 1 1 1 81x22 81x22-i empty 0 0 0 10 -243119 -243119
+0;
+#X obj 82 22 cnv 1 1 1 82x22 82x22-i empty 0 0 0 10 -177326 -177326
+0;
+#X obj 83 22 cnv 1 1 1 83x22 83x22-i empty 0 0 0 10 -111533 -111533
+0;
+#X obj 84 22 cnv 1 1 1 84x22 84x22-i empty 0 0 0 10 -45740 -45740 0
+;
+#X obj 85 22 cnv 1 1 1 85x22 85x22-i empty 0 0 0 10 -45740 -45740 0
+;
+#X obj 86 22 cnv 1 1 1 86x22 86x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 87 22 cnv 1 1 1 87x22 87x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 88 22 cnv 1 1 1 88x22 88x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 89 22 cnv 1 1 1 89x22 89x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 90 22 cnv 1 1 1 90x22 90x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 91 22 cnv 1 1 1 91x22 91x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 92 22 cnv 1 1 1 92x22 92x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 93 22 cnv 1 1 1 93x22 93x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 94 22 cnv 1 1 1 94x22 94x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 95 22 cnv 1 1 1 95x22 95x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 96 22 cnv 1 1 1 96x22 96x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 97 22 cnv 1 1 1 97x22 97x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 22 cnv 1 1 1 98x22 98x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 22 cnv 1 1 1 99x22 99x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 22 cnv 1 1 1 100x22 100x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 22 cnv 1 1 1 101x22 101x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 102 22 cnv 1 1 1 102x22 102x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 103 22 cnv 1 1 1 103x22 103x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 104 22 cnv 1 1 1 104x22 104x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 105 22 cnv 1 1 1 105x22 105x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 106 22 cnv 1 1 1 106x22 106x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 107 22 cnv 1 1 1 107x22 107x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 108 22 cnv 1 1 1 108x22 108x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 109 22 cnv 1 1 1 109x22 109x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 110 22 cnv 1 1 1 110x22 110x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 111 22 cnv 1 1 1 111x22 111x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 112 22 cnv 1 1 1 112x22 112x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 113 22 cnv 1 1 1 113x22 113x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 114 22 cnv 1 1 1 114x22 114x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 115 22 cnv 1 1 1 115x22 115x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 22 cnv 1 1 1 116x22 116x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 22 cnv 1 1 1 117x22 117x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 22 cnv 1 1 1 118x22 118x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 22 cnv 1 1 1 119x22 119x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 120 22 cnv 1 1 1 120x22 120x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 121 22 cnv 1 1 1 121x22 121x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 122 22 cnv 1 1 1 122x22 122x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 123 22 cnv 1 1 1 123x22 123x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 124 22 cnv 1 1 1 124x22 124x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 125 22 cnv 1 1 1 125x22 125x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 126 22 cnv 1 1 1 126x22 126x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 127 22 cnv 1 1 1 127x22 127x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 128 22 cnv 1 1 1 128x22 128x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 129 22 cnv 1 1 1 129x22 129x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 130 22 cnv 1 1 1 130x22 130x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 131 22 cnv 1 1 1 131x22 131x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 132 22 cnv 1 1 1 132x22 132x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 133 22 cnv 1 1 1 133x22 133x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 22 cnv 1 1 1 134x22 134x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 22 cnv 1 1 1 135x22 135x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 22 cnv 1 1 1 136x22 136x22-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 137 22 cnv 1 1 1 137x22 137x22-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 21 cnv 1 1 1 50x21 50x21-i empty 0 0 0 10 -1 -1 0;
+#X obj 51 21 cnv 1 1 1 51x21 51x21-i empty 0 0 0 10 -1 -1 0;
+#X obj 52 21 cnv 1 1 1 52x21 52x21-i empty 0 0 0 10 -113333 -113333
+0;
+#X obj 53 21 cnv 1 1 1 53x21 53x21-i empty 0 0 0 10 -244919 -244919
+0;
+#X obj 54 21 cnv 1 1 1 54x21 54x21-i empty 0 0 0 10 -114361 -114361
+0;
+#X obj 55 21 cnv 1 1 1 55x21 55x21-i empty 0 0 0 10 -49596 -49596 0
+;
+#X obj 56 21 cnv 1 1 1 56x21 56x21-i empty 0 0 0 10 -181183 -181183
+0;
+#X obj 57 21 cnv 1 1 1 57x21 57x21-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 58 21 cnv 1 1 1 58x21 58x21-i empty 0 0 0 10 -248004 -248004
+0;
+#X obj 59 21 cnv 1 1 1 59x21 59x21-i empty 0 0 0 10 -182982 -182982
+0;
+#X obj 60 21 cnv 1 1 1 60x21 60x21-i empty 0 0 0 10 -52424 -52424 0
+;
+#X obj 61 21 cnv 1 1 1 61x21 61x21-i empty 0 0 0 10 -118218 -118218
+0;
+#X obj 62 21 cnv 1 1 1 62x21 62x21-i empty 0 0 0 10 -249547 -249547
+0;
+#X obj 63 21 cnv 1 1 1 63x21 63x21-i empty 0 0 0 10 -53196 -53196 0
+;
+#X obj 64 21 cnv 1 1 1 64x21 64x21-i empty 0 0 0 10 -53453 -53453 0
+;
+#X obj 65 21 cnv 1 1 1 65x21 65x21-i empty 0 0 0 10 -53453 -53453 0
+;
+#X obj 66 21 cnv 1 1 1 66x21 66x21-i empty 0 0 0 10 -53196 -53196 0
+;
+#X obj 67 21 cnv 1 1 1 67x21 67x21-i empty 0 0 0 10 -249803 -249803
+0;
+#X obj 68 21 cnv 1 1 1 68x21 68x21-i empty 0 0 0 10 -183754 -183754
+0;
+#X obj 69 21 cnv 1 1 1 69x21 69x21-i empty 0 0 0 10 -52424 -52424 0
+;
+#X obj 70 21 cnv 1 1 1 70x21 70x21-i empty 0 0 0 10 -182982 -182982
+0;
+#X obj 71 21 cnv 1 1 1 71x21 71x21-i empty 0 0 0 10 -51396 -51396 0
+;
+#X obj 72 21 cnv 1 1 1 72x21 72x21-i empty 0 0 0 10 -116161 -116161
+0;
+#X obj 73 21 cnv 1 1 1 73x21 73x21-i empty 0 0 0 10 -246719 -246719
+0;
+#X obj 74 21 cnv 1 1 1 74x21 74x21-i empty 0 0 0 10 -49596 -49596 0
+;
+#X obj 75 21 cnv 1 1 1 75x21 75x21-i empty 0 0 0 10 -114362 -114362
+0;
+#X obj 76 21 cnv 1 1 1 76x21 76x21-i empty 0 0 0 10 -244919 -244919
+0;
+#X obj 77 21 cnv 1 1 1 77x21 77x21-i empty 0 0 0 10 -113333 -113333
+0;
+#X obj 78 21 cnv 1 1 1 78x21 78x21-i empty 0 0 0 10 -243891 -243891
+0;
+#X obj 79 21 cnv 1 1 1 79x21 79x21-i empty 0 0 0 10 -112561 -112561
+0;
+#X obj 80 21 cnv 1 1 1 80x21 80x21-i empty 0 0 0 10 -46512 -46512 0
+;
+#X obj 81 21 cnv 1 1 1 81x21 81x21-i empty 0 0 0 10 -177326 -177326
+0;
+#X obj 82 21 cnv 1 1 1 82x21 82x21-i empty 0 0 0 10 -111533 -111533
+0;
+#X obj 83 21 cnv 1 1 1 83x21 83x21-i empty 0 0 0 10 -111533 -111533
+0;
+#X obj 84 21 cnv 1 1 1 84x21 84x21-i empty 0 0 0 10 -45740 -45740 0
+;
+#X obj 85 21 cnv 1 1 1 85x21 85x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 86 21 cnv 1 1 1 86x21 86x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 87 21 cnv 1 1 1 87x21 87x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 88 21 cnv 1 1 1 88x21 88x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 89 21 cnv 1 1 1 89x21 89x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 90 21 cnv 1 1 1 90x21 90x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 91 21 cnv 1 1 1 91x21 91x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 92 21 cnv 1 1 1 92x21 92x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 93 21 cnv 1 1 1 93x21 93x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 94 21 cnv 1 1 1 94x21 94x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 95 21 cnv 1 1 1 95x21 95x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 96 21 cnv 1 1 1 96x21 96x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 97 21 cnv 1 1 1 97x21 97x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 98 21 cnv 1 1 1 98x21 98x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 99 21 cnv 1 1 1 99x21 99x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 100 21 cnv 1 1 1 100x21 100x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 101 21 cnv 1 1 1 101x21 101x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 102 21 cnv 1 1 1 102x21 102x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 103 21 cnv 1 1 1 103x21 103x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 104 21 cnv 1 1 1 104x21 104x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 105 21 cnv 1 1 1 105x21 105x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 106 21 cnv 1 1 1 106x21 106x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 107 21 cnv 1 1 1 107x21 107x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 108 21 cnv 1 1 1 108x21 108x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 109 21 cnv 1 1 1 109x21 109x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 110 21 cnv 1 1 1 110x21 110x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 111 21 cnv 1 1 1 111x21 111x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 112 21 cnv 1 1 1 112x21 112x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 113 21 cnv 1 1 1 113x21 113x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 114 21 cnv 1 1 1 114x21 114x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 115 21 cnv 1 1 1 115x21 115x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 116 21 cnv 1 1 1 116x21 116x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 117 21 cnv 1 1 1 117x21 117x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 118 21 cnv 1 1 1 118x21 118x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 119 21 cnv 1 1 1 119x21 119x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 120 21 cnv 1 1 1 120x21 120x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 121 21 cnv 1 1 1 121x21 121x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 122 21 cnv 1 1 1 122x21 122x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 123 21 cnv 1 1 1 123x21 123x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 124 21 cnv 1 1 1 124x21 124x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 125 21 cnv 1 1 1 125x21 125x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 126 21 cnv 1 1 1 126x21 126x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 127 21 cnv 1 1 1 127x21 127x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 128 21 cnv 1 1 1 128x21 128x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 129 21 cnv 1 1 1 129x21 129x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 130 21 cnv 1 1 1 130x21 130x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 131 21 cnv 1 1 1 131x21 131x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 132 21 cnv 1 1 1 132x21 132x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 133 21 cnv 1 1 1 133x21 133x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 134 21 cnv 1 1 1 134x21 134x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 135 21 cnv 1 1 1 135x21 135x21-i empty 0 0 0 10 -242091 -242091
+0;
+#X obj 136 21 cnv 1 1 1 136x21 136x21-i empty 0 0 0 10 -1 -1 0;
+#X obj 137 21 cnv 1 1 1 137x21 137x21-i empty 0 0 0 10 -1 -1 0;
+#X obj 50 20 cnv 1 1 1 50x20 50x20-i empty 0 0 0 10 -217 -217 0;
+#X obj 51 20 cnv 1 1 1 51x20 51x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 52 20 cnv 1 1 1 52x20 52x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 53 20 cnv 1 1 1 53x20 53x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 54 20 cnv 1 1 1 54x20 54x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 55 20 cnv 1 1 1 55x20 55x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 56 20 cnv 1 1 1 56x20 56x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 57 20 cnv 1 1 1 57x20 57x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 58 20 cnv 1 1 1 58x20 58x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 59 20 cnv 1 1 1 59x20 59x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 60 20 cnv 1 1 1 60x20 60x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 61 20 cnv 1 1 1 61x20 61x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 62 20 cnv 1 1 1 62x20 62x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 63 20 cnv 1 1 1 63x20 63x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 64 20 cnv 1 1 1 64x20 64x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 65 20 cnv 1 1 1 65x20 65x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 66 20 cnv 1 1 1 66x20 66x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 67 20 cnv 1 1 1 67x20 67x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 68 20 cnv 1 1 1 68x20 68x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 69 20 cnv 1 1 1 69x20 69x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 70 20 cnv 1 1 1 70x20 70x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 71 20 cnv 1 1 1 71x20 71x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 72 20 cnv 1 1 1 72x20 72x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 73 20 cnv 1 1 1 73x20 73x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 74 20 cnv 1 1 1 74x20 74x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 75 20 cnv 1 1 1 75x20 75x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 76 20 cnv 1 1 1 76x20 76x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 77 20 cnv 1 1 1 77x20 77x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 78 20 cnv 1 1 1 78x20 78x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 79 20 cnv 1 1 1 79x20 79x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 80 20 cnv 1 1 1 80x20 80x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 81 20 cnv 1 1 1 81x20 81x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 82 20 cnv 1 1 1 82x20 82x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 83 20 cnv 1 1 1 83x20 83x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 84 20 cnv 1 1 1 84x20 84x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 85 20 cnv 1 1 1 85x20 85x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 86 20 cnv 1 1 1 86x20 86x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 87 20 cnv 1 1 1 87x20 87x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 88 20 cnv 1 1 1 88x20 88x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 89 20 cnv 1 1 1 89x20 89x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 90 20 cnv 1 1 1 90x20 90x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 91 20 cnv 1 1 1 91x20 91x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 92 20 cnv 1 1 1 92x20 92x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 93 20 cnv 1 1 1 93x20 93x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 94 20 cnv 1 1 1 94x20 94x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 95 20 cnv 1 1 1 95x20 95x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 96 20 cnv 1 1 1 96x20 96x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 97 20 cnv 1 1 1 97x20 97x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 98 20 cnv 1 1 1 98x20 98x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 99 20 cnv 1 1 1 99x20 99x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 100 20 cnv 1 1 1 100x20 100x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 101 20 cnv 1 1 1 101x20 101x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 102 20 cnv 1 1 1 102x20 102x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 103 20 cnv 1 1 1 103x20 103x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 104 20 cnv 1 1 1 104x20 104x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 105 20 cnv 1 1 1 105x20 105x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 106 20 cnv 1 1 1 106x20 106x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 107 20 cnv 1 1 1 107x20 107x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 108 20 cnv 1 1 1 108x20 108x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 109 20 cnv 1 1 1 109x20 109x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 110 20 cnv 1 1 1 110x20 110x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 111 20 cnv 1 1 1 111x20 111x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 112 20 cnv 1 1 1 112x20 112x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 113 20 cnv 1 1 1 113x20 113x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 114 20 cnv 1 1 1 114x20 114x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 115 20 cnv 1 1 1 115x20 115x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 116 20 cnv 1 1 1 116x20 116x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 117 20 cnv 1 1 1 117x20 117x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 118 20 cnv 1 1 1 118x20 118x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 119 20 cnv 1 1 1 119x20 119x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 120 20 cnv 1 1 1 120x20 120x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 121 20 cnv 1 1 1 121x20 121x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 122 20 cnv 1 1 1 122x20 122x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 123 20 cnv 1 1 1 123x20 123x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 124 20 cnv 1 1 1 124x20 124x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 125 20 cnv 1 1 1 125x20 125x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 126 20 cnv 1 1 1 126x20 126x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 127 20 cnv 1 1 1 127x20 127x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 128 20 cnv 1 1 1 128x20 128x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 129 20 cnv 1 1 1 129x20 129x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 130 20 cnv 1 1 1 130x20 130x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 131 20 cnv 1 1 1 131x20 131x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 132 20 cnv 1 1 1 132x20 132x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 133 20 cnv 1 1 1 133x20 133x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 134 20 cnv 1 1 1 134x20 134x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 135 20 cnv 1 1 1 135x20 135x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 136 20 cnv 1 1 1 136x20 136x20-i empty 0 0 0 10 -1 -1 0;
+#X obj 137 20 cnv 1 1 1 137x20 137x20-i empty 0 0 0 10 -1 -1 0;
+#X restore 307 208 pd pixx;
+#X obj 20 625 s pd-pixx;
+#X obj 125 535 pack f f f;
+#X obj 152 327 t f f;
+#X obj 53 355 t f f;
+#X obj 95 381 + 50;
+#X obj 220 413 expr 50 - $f1;
+#X msg 249 306 vis 0 \, clear;
+#X obj 142 273 t b b b;
+#X msg 191 199 create;
+#X msg 20 583 obj \$2 \$3 cnv 1 1 1 \$2x\$3 \$2x\$3-i empty 0 0 0 10
+\$1 \$1 0 \;;
+#N canvas 735 529 292 276 RGB 0;
+#X obj 85 244 outlet;
+#X obj 135 114 t b f;
+#X obj 85 154 +;
+#X obj 85 174 t b f;
+#X obj 85 204 +;
+#X obj 25 94 * -65536;
+#X obj 85 94 * -256;
+#X obj 135 94 * -1;
+#X obj 85 224 - 1;
+#X obj 58 24 inlet;
+#X obj 58 44 unpack f f f f;
+#X obj 25 74 * 255;
+#X obj 85 74 * 255;
+#X obj 135 74 * 255;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 0;
+#X connect 7 0 1 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 10 1 12 0;
+#X connect 10 2 13 0;
+#X connect 11 0 5 0;
+#X connect 12 0 6 0;
+#X connect 13 0 7 0;
+#X restore 184 502 pd RGB;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 14 0;
+#X connect 2 0 15 1;
+#X connect 2 1 10 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 6 0;
+#X connect 9 0 2 0;
+#X connect 10 0 11 0;
+#X connect 11 0 18 0;
+#X connect 14 1 12 0;
+#X connect 14 1 23 1;
+#X connect 14 2 13 0;
+#X connect 14 2 27 0;
+#X connect 14 2 28 1;
+#X connect 15 1 32 0;
+#X connect 15 2 16 0;
+#X connect 18 0 42 0;
+#X connect 19 0 37 0;
+#X connect 20 0 31 0;
+#X connect 21 0 19 0;
+#X connect 22 0 20 1;
+#X connect 23 0 30 0;
+#X connect 24 0 41 0;
+#X connect 25 0 36 0;
+#X connect 26 0 29 0;
+#X connect 27 0 26 1;
+#X connect 28 0 26 0;
+#X connect 29 0 23 0;
+#X connect 29 1 15 3;
+#X connect 30 0 25 0;
+#X connect 30 1 21 0;
+#X connect 30 2 19 1;
+#X connect 30 3 22 0;
+#X connect 31 0 15 0;
+#X connect 31 1 15 2;
+#X connect 32 0 35 0;
+#X connect 35 0 43 0;
+#X connect 36 0 28 0;
+#X connect 36 1 39 0;
+#X connect 37 0 20 0;
+#X connect 37 1 38 0;
+#X connect 38 0 35 1;
+#X connect 39 0 35 2;
+#X connect 40 0 34 0;
+#X connect 41 0 25 0;
+#X connect 41 1 25 1;
+#X connect 41 2 40 0;
+#X connect 42 0 6 0;
+#X connect 43 0 34 0;
+#X connect 44 0 35 0;

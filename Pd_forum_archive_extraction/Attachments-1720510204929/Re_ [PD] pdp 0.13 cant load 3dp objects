@@ -1,0 +1,35 @@
+Message-ID: <41A13C0F.6060502@free.fr>
+Date: Mon, 22 Nov 2004 02:08:31 +0100
+From: Yves Degoyon <ydegoyon@free.fr>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.3) Gecko/20041027
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Matthew Allen <mtallen@gmail.com>
+Subject: Re: [PD] pdp 0.13 cant load 3dp objects
+References: <Pine.LNX.4.21.0411201414590.2429-100000@mondrian.artengine.ca>	 <1100985542.23447.209113755@webmail.messagingengine.com> <3ff8daf40411211659420b62f0@mail.gmail.com>
+In-Reply-To: <3ff8daf40411211659420b62f0@mail.gmail.com>
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+
+
+>
+>the last problem (pdp_xv) not working is bad. And I have no answers at
+>all as to why that is borked.
+>
+>  
+>
+
+bueno, only a driver problem.
+'xvinfo' can tell you if you can do xvideo or not,
+just :
+
+
+xvinfo | grep ports
+
+if you're (unlucky) number is 0, you can't.
+
+then, change your drivers or your XF86Config-4.
+
+y, suerte,
+sevy
+

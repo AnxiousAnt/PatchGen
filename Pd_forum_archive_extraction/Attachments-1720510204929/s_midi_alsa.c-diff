@@ -1,0 +1,21 @@
+21,25d20
+< //the maximum length of input messages
+< #ifndef ALSA_MAX_EVENT_SIZE
+< #define ALSA_MAX_EVENT_SIZE 512
+< #endif
+< 
+118,119c113
+<     //XXX was: snd_midi_event_new(20,&midiev);
+<     snd_midi_event_new(ALSA_MAX_EVENT_SIZE,&midiev);
+---
+>     snd_midi_event_new(20,&midiev);
+260,261c254
+<    //XXX was unsigned char buf[20];
+<    unsigned char buf[ALSA_MAX_EVENT_SIZE];
+---
+>    unsigned char buf[20];
+276,277c269
+<        //XXX was count = snd_midi_event_decode(midiev,buf,20,midievent);
+<        count = snd_midi_event_decode(midiev,buf,sizeof(buf),midievent);
+---
+>        count = snd_midi_event_decode(midiev,buf,20,midievent);

@@ -1,0 +1,32 @@
+GemMan.cpp:54: warning: deprecated conversion from string constant to 'char*'
+GemMan.cpp: In static member function 'static void GemMan::resetState()':
+GemMan.cpp:691: warning: deprecated conversion from string constant to 'char*'
+GemGluObj.cpp: In constructor 'GemGluObj::GemGluObj(t_floatarg, t_floatarg, t_floatarg)':
+GemGluObj.cpp:38: warning: deprecated conversion from string constant to 'char*'
+GemGluObj.cpp:38: warning: deprecated conversion from string constant to 'char*'
+GemGluObj.cpp: In static member function 'static void GemGluObj::obj_setupCallback(_class*)':
+GemGluObj.cpp:102: warning: deprecated conversion from string constant to 'char*'
+g++ -c -g -O2 -fPIC -freg-struct-return -O3 -falign-loops=32 -falign-functions=32 -falign-jumps=32 -funroll-loops -ffast-math -mmmx  -I/usr/include/lqt -fopenmp -I/usr/include/ImageMagick   -I/usr/include/lqt   -I/usr/include/avifile-0.7   -I..  -I/home/mbutu/sources/Pd-0.39.3-extended/pd/src  GemPathBase.cpp -o GemPathBase.o
+GemPBuffer.cpp: In constructor 'PBuffer::PBuffer(int, int, int)':
+GemPBuffer.cpp:158: error: 'stderr' was not declared in this scope
+GemPBuffer.cpp:158: error: 'fprintf' was not declared in this scope
+GemPBuffer.cpp: In member function 'void PBuffer::enable()':
+GemPBuffer.cpp:188: error: 'stderr' was not declared in this scope
+GemPBuffer.cpp:188: error: 'fprintf' was not declared in this scope
+GemPBuffer.cpp: In member function 'void PBuffer::disable()':
+GemPBuffer.cpp:196: error: 'stderr' was not declared in this scope
+GemPBuffer.cpp:196: error: 'fprintf' was not declared in this scope
+GemPathBase.cpp: In static member function 'static void GemPathBase::obj_setupCallback(_class*)':
+GemPathBase.cpp:76: warning: deprecated conversion from string constant to 'char*'
+make[3]: *** [GemPBuffer.o] Error 1
+make[3]: *** Waiting for unfinished jobs....
+make[3]: Leaving directory `/home/mbutu/sources/Pd-0.39.3-extended/Gem/src/Base'
+make[2]: *** [Base] Error 2
+make[2]: Leaving directory `/home/mbutu/sources/Pd-0.39.3-extended/Gem/src'
+make[1]: *** [/home/mbutu/sources/Pd-0.39.3-extended/Gem/src/Gem.pd_linux] Error 2
+make[1]: Leaving directory `/home/mbutu/sources/Pd-0.39.3-extended/packages'
+make: *** [install] Error 2
+upload specs linux_make build tar.bz2
+Uploading /home/mbutu/sources/Pd-0.39.3-extended/packages/linux_make/build/Pd*.tar.bz2
+ls: cannot access /home/mbutu/sources/Pd-0.39.3-extended/packages/linux_make/build/Pd*.tar.bz2: No such file or directory
+

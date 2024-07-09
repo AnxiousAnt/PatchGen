@@ -1,0 +1,28 @@
+#N canvas 0 0 450 300 10;
+#X obj 0 15 cnv 15 85 45 empty empty empty 20 12 0 14 -66577 -66577
+0;
+#X obj 1 16 cnv 15 83 43 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 2 17 cnv 15 82 42 empty empty empty 20 12 0 14 -195568 -66577
+0;
+#X obj 2 17 cnv 15 81 41 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 7 24 tgl 8 0 pants pants empty 0 -6 0 8 -260818 -1 -1 0 1;
+#X obj 18 24 tgl 8 0 pants2 pants2 empty 0 -6 0 8 -260818 -1 -1 0 1
+;
+#X obj 29 24 tgl 8 0 pants3 pants3 empty 0 -6 0 8 -260818 -1 -1 0 1
+;
+#X obj 40 24 tgl 8 0 pants4 pants4 empty 0 -6 0 8 -260818 -1 -1 0 1
+;
+#X obj 51 24 tgl 8 0 pants5 pants5 empty 0 -6 0 8 -260818 -1 -1 0 1
+;
+#X obj 62 24 tgl 8 0 pants6 pants6 empty 0 -6 0 8 -260818 -1 -1 0 1
+;
+#X obj 10 36 hsl 64 8 0 127 0 0 dddd dddd empty -2 -6 0 8 -260818 -1
+-1 0 1;
+#X obj 10 47 hsl 64 8 0 127 0 0 aaaa aaaa empty -2 -6 0 8 -260818 -1
+-1 0 1;
+#X obj 122 13 inlet;
+#X obj 122 174 outlet;
+#X connect 12 0 13 0;
+#X coords 0 -1 1 1 85 60 1 0 0;

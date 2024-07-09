@@ -1,0 +1,64 @@
+#N canvas 410 334 666 475 10;
+#X obj 89 361 qlist;
+#X obj 89 29 notein;
+#X obj 89 280 list trim;
+#X obj 89 258 list prepend add;
+#X obj 89 113 t a b;
+#X obj 89 217 list prepend 0;
+#X obj 89 86 list prepend NOTEIN;
+#X obj 362 335 r NOTEIN;
+#X obj 362 364 print qlist_playback;
+#X msg 362 205 write \$1;
+#X obj 362 148 bng 15 250 50 0 empty empty save 17 7 0 10 -225271 -1
+-1;
+#X obj 452 148 bng 15 250 50 0 empty empty load 17 7 0 10 -262131 -1
+-1;
+#X obj 362 184 savepanel;
+#X obj 452 184 openpanel;
+#X msg 452 205 read \$1;
+#X obj 540 150 bng 15 250 50 0 empty empty play 17 7 0 10 -1 -262144
+-1;
+#X msg 540 203 rewind \, bang;
+#X obj 290 149 bng 15 250 50 0 empty empty rec 17 7 0 10 -258699 -1
+-1;
+#X msg 254 344 print;
+#X msg 290 203 clear;
+#X obj 182 172 t b b;
+#X obj 182 195 timer;
+#X text 136 183 IOI:;
+#X obj 89 59 pack 0 0;
+#X msg 220 62 30 0;
+#X msg 219 40 30 100;
+#X text 210 19 Test "notes";
+#X obj 119 383 bng 15 250 50 0 empty empty FIN 17 7 1 10 -262144 -1
+-1;
+#X msg 187 344 rewind;
+#X connect 0 1 27 0;
+#X connect 1 0 23 0;
+#X connect 1 1 23 1;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 4 1 20 0;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X connect 7 0 8 0;
+#X connect 9 0 0 0;
+#X connect 10 0 12 0;
+#X connect 11 0 13 0;
+#X connect 12 0 9 0;
+#X connect 13 0 14 0;
+#X connect 14 0 0 0;
+#X connect 15 0 16 0;
+#X connect 16 0 0 0;
+#X connect 17 0 19 0;
+#X connect 17 0 21 0;
+#X connect 18 0 0 0;
+#X connect 19 0 0 0;
+#X connect 20 0 21 0;
+#X connect 20 1 21 1;
+#X connect 21 0 5 1;
+#X connect 23 0 6 0;
+#X connect 24 0 6 0;
+#X connect 25 0 6 0;
+#X connect 28 0 0 0;

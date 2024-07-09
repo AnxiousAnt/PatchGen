@@ -1,0 +1,25 @@
+#N canvas 726 515 567 358 10;
+#X symbolatom 97 90 10 0 0 0 - - -, f 10;
+#X obj 97 309 print float;
+#X obj 202 269 print symbol;
+#X obj 97 237 array-symbol2float;
+#X floatatom 182 90 5 0 0 0 - - -, f 5;
+#X obj 182 109 makefilename %f;
+#X symbolatom 182 142 10 0 0 0 - - -, f 10;
+#X msg 332 133 symbol not_number;
+#X msg 332 154 symbol 12/56;
+#X text 284 269 output as symbol if not a number;
+#X text 173 310 output as float if it looks like number;
+#X msg 332 180 symbol;
+#X text 330 111 not a number :;
+#X text 94 35 [array-symbol2float] : convert a symbol to float if it
+looks like a float. it works if the symbol is like _1.75e2_;
+#X connect 0 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 5 0 6 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 11 0 3 0;

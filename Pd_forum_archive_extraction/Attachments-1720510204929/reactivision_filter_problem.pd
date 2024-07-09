@@ -1,0 +1,49 @@
+#N canvas 303 25 1060 766 10;
+#X obj 95 108 route updateObject;
+#X floatatom 362 172 5 0 0 3 y-pos - y-pos;
+#X floatatom 273 172 5 0 0 3 x-pos - x-pos;
+#X floatatom 184 172 5 0 0 3 fid-id - fid-id;
+#X obj 95 138 unpack \$1-session_id \$1-fiducial-id \$1-xpos \$1-ypos
+\$1-angle;
+#X floatatom 452 172 5 0 0 0 - - -;
+#X obj 452 196 / 6.28;
+#X obj 452 220 * 360;
+#X floatatom 452 244 5 0 0 3 angle - angle;
+#X obj 94 63 TuioClient;
+#X obj 196 81 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 178 337 5 0 0 0 - - -;
+#X obj 178 300 * 100;
+#X obj 358 366 < 50;
+#X obj 357 409 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 362 305 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3600 1;
+#X obj 180 382 int;
+#X floatatom 517 329 5 0 0 0 - - -;
+#X text 318 477 How to make tuio send a bang when the coordinate is
+less than 50 ?? just works when change the number on the slider. when
+receives number from tuio \, doesn't changes output from comparison.
+any ideas ?!? thanx a lot \, ferkrum@gmail.com;
+#X obj 430 399 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 4 0;
+#X connect 4 1 3 0;
+#X connect 4 2 2 0;
+#X connect 4 2 12 0;
+#X connect 4 2 13 0;
+#X connect 4 3 1 0;
+#X connect 4 4 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 0 0;
+#X connect 9 1 10 0;
+#X connect 11 0 16 1;
+#X connect 11 0 16 0;
+#X connect 12 0 11 0;
+#X connect 13 0 14 0;
+#X connect 13 0 19 0;
+#X connect 15 0 13 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;

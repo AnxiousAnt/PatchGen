@@ -1,0 +1,14 @@
+#N canvas 192 171 386 238 10;
+#X obj 37 19 ctlin;
+#X floatatom 15 45 5 0 0 0 - - -;
+#X floatatom 50 45 5 0 0 0 - - -;
+#X floatatom 85 45 5 0 0 0 - - -;
+#X floatatom 169 105 5 0 0 0 - - -;
+#X msg 212 60;
+#X obj 169 29 raf_ctlin 7 333;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 2 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 6 1 5 0;

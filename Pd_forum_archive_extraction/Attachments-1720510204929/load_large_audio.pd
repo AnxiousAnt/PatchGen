@@ -1,0 +1,37 @@
+#N canvas 177 78 618 478 10;
+#X obj 39 280 soundfiler;
+#X obj 146 10 table my_sound_file;
+#X obj 39 229 openpanel;
+#X obj 39 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 39 13 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 53 426 print;
+#X obj 53 401 r print_this;
+#X msg 39 307 \; my_sound_file resize \$1 \; print_this DONE LOADING
+FILE \;;
+#X text 40 377 for status updates;
+#X msg 39 35 \; my_sound_file resize 1 \; my_sound_file resize 1.5876e+08
+\; print_this TABLE RESIZE COMPLETE \;;
+#X msg 39 254 read \$1 my_sound_file;
+#X text 275 8 <-- here is your table;
+#X text 252 47 <-- resize to clear stored data;
+#X text 252 61 <-- resize to max 1hr (total seconds * 44100 samples/sec)
+;
+#X text 254 75 <-- sends message to print object (below) when finished
+;
+#X text 180 255 <-- no "resize" or "maxsize" args;
+#X text 224 319 <-- crop table to fit loaded file;
+#X text 201 270 "maxsize" is replaced by the second resize message
+above;
+#X text 36 124 message boxes with multiple messages (separated by semi-colons)
+will wait for each task to complete before moving on to the next. this
+is why the above "TABLE RESIZE COMPLETE" message works.;
+#X text 60 11 <-- 1) reset;
+#X text 62 206 <-- 2) load file;
+#X connect 0 0 7 0;
+#X connect 2 0 10 0;
+#X connect 3 0 2 0;
+#X connect 4 0 9 0;
+#X connect 6 0 5 0;
+#X connect 10 0 0 0;

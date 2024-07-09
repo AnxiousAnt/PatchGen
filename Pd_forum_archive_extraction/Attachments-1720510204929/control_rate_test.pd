@@ -1,0 +1,29 @@
+#N canvas 522 319 448 274 10;
+#X obj 89 167 t b b b;
+#X obj 89 142 delay 0.5;
+#X obj 89 191 timer;
+#X floatatom 173 107 0 0 0 0 - - -;
+#X obj 148 188 spigot;
+#X obj 173 162 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 129 76 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 189 78 1e-06;
+#X obj 89 116 b;
+#X floatatom 89 220 0 0 0 0 - - -;
+#X text 230 77 faster than audio rate;
+#X msg 173 51 0.0226757;
+#X text 242 50 audio rate at 44.1 Khz;
+#X connect 0 0 2 0;
+#X connect 0 1 2 1;
+#X connect 0 2 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 9 0;
+#X connect 3 0 1 1;
+#X connect 4 0 1 0;
+#X connect 5 0 4 1;
+#X connect 6 0 5 0;
+#X connect 6 0 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 1 0;
+#X connect 11 0 3 0;

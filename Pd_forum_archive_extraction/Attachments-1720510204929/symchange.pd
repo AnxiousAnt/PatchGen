@@ -1,0 +1,11 @@
+#N canvas 458 555 315 250 12;
+#X obj 38 94 t s s;
+#X obj 38 145 select banana;
+#X msg 38 21 symbol apple;
+#X msg 68 56 symbol orange;
+#X obj 150 187 print;
+#X connect 0 0 1 1;
+#X connect 0 1 1 0;
+#X connect 1 1 4 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;

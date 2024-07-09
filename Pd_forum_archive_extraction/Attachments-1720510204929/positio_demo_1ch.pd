@@ -1,0 +1,47 @@
+#N canvas 573 22 571 483 10;
+#X obj 382 68 hsl 128 15 8 99 0 0 empty empty empty -2 -6 0 8 -261681
+-1 -1 5200 1;
+#X floatatom 400 86 5 0 0 0 - - -;
+#X obj 201 326 *~;
+#X floatatom 261 330 5 0 0 3 free_distance_in_meters - -;
+#X obj 308 186 cnv 15 150 140 empty empty Distance_to_microphones 20
+12 0 10 -233017 -66577 0;
+#X msg 148 32 about;
+#X msg 131 61 help;
+#X obj 20 16 tgl 15 0 empty empty dsp_on/off 20 6 0 12 -262144 -1 -1
+0 1;
+#X msg 19 51 \; pd dsp \$1;
+#X obj 217 188 vsl 15 128 0.01 1 1 0 empty empty volume 20 8 0 12 -233017
+-1 -1 0 1;
+#X obj 48 341 vd~ out1;
+#X floatatom 47 288 0 0 0 2 calibration_latency - -;
+#X obj 48 313 sig~;
+#X obj 202 89 adc~;
+#X obj 48 375 dac~ 1 2;
+#X obj 201 368 delwrite~ out1 500;
+#X obj 319 281 nbx 5 20 -1e+37 1e+37 0 0 empty empty left 0 -6 0 14
+-262144 -1 -1 1.94053 256;
+#X obj 378 239 nbx 5 20 -1e+37 1e+37 0 0 empty empty right 0 -6 0 14
+-262144 -1 -1 1.76955 256;
+#X obj 201 123 dist_hp~ 1 . . . . . . . .;
+#X obj 378 161 median_7;
+#X obj 319 159 mean 7;
+#X text 378 51 Impulse interval (min 8);
+#X connect 0 0 1 0;
+#X connect 0 0 18 3;
+#X connect 2 0 15 0;
+#X connect 5 0 18 0;
+#X connect 6 0 18 0;
+#X connect 7 0 8 0;
+#X connect 9 0 2 1;
+#X connect 10 0 14 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 13 0 18 0;
+#X connect 13 1 18 1;
+#X connect 18 0 2 0;
+#X connect 18 1 3 0;
+#X connect 18 2 20 0;
+#X connect 18 3 19 0;
+#X connect 19 0 17 0;
+#X connect 20 0 16 0;

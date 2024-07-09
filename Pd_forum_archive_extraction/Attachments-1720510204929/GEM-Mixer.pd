@@ -1,0 +1,55 @@
+#N canvas 500 286 699 335 10;
+#X obj 15 136 gemwin;
+#X msg 27 79 create;
+#X obj 243 47 pix_film;
+#X obj 243 -11 gemhead 2;
+#X obj 340 194 rectangle;
+#X msg 307 22 open \$1;
+#X obj 307 -3 openpanel;
+#X obj 307 -24 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 322 129 pix_mix 0;
+#X obj 171 -10 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 322 159 pix_texture;
+#X obj 355 99 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 20 54 destroy;
+#X msg 6 28 dimen 360 240;
+#X obj 37 104 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 171 12 auto \$1;
+#X floatatom 408 156 5 0 0 0 - - -;
+#X floatatom 444 156 5 0 0 0 - - -;
+#X obj 466 48 pix_film;
+#X obj 466 -10 gemhead 2;
+#X msg 530 23 open \$1;
+#X obj 530 -2 openpanel;
+#X obj 530 -24 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 394 13 auto \$1;
+#X obj 394 -9 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 1 0 0 0;
+#X connect 2 0 8 0;
+#X connect 3 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 10 0;
+#X connect 9 0 15 0;
+#X connect 10 0 4 0;
+#X connect 11 0 8 2;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 2 0;
+#X connect 16 0 4 1;
+#X connect 17 0 4 2;
+#X connect 18 0 8 1;
+#X connect 19 0 18 0;
+#X connect 20 0 18 0;
+#X connect 21 0 20 0;
+#X connect 22 0 21 0;
+#X connect 23 0 18 0;
+#X connect 24 0 23 0;

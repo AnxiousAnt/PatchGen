@@ -1,0 +1,152 @@
+#N canvas 766 80 350 322 10;
+#N canvas 612 50 447 329 Divide_by_zero 0;
+#X text 38 219 maybe make it so that at least in this case the warning
+isn't printed?;
+#X text 32 52 this bug report http://sourceforge.net/p/pure-data/bugs/360/
+mentions something I really find annoying about "Divide by Zero". That
+it complains too much about it and all the time. Even in a situation
+like this \, where it was supposed to prevent the warning...;
+#X msg 122 139 0;
+#X floatatom 122 193 5 0 0 0 - - -, f 5;
+#X obj 122 166 expr if($f1 == 0 \, 1 \, 1/$f1);
+#X text 35 265 and the warning is kinda pointless because it only prints
+once... so if you do it again \, it doesn't care...;
+#X text 34 16 Also reported and mentioned by me a couple of years ago...
+;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X restore 57 218 pd Divide_by_zero;
+#N canvas 485 291 490 309 popular_already... 0;
+#X text 64 74 "The following are done but not popular enough in math
+libss \; * to be included yet \; * hypoth - Euclidean distance function
+\; * trunc \; * round \; * nearbyint \;;
+#X text 62 178 but trunc/round/nearbyint have been included already.
+So this can be commented out.;
+#X text 64 223 Now \, a question \, hypoth is not really popular yet?
+Could it be added?;
+#X text 66 41 the current code now says:;
+#X restore 57 249 pd popular_already...;
+#N canvas 637 105 489 293 too 0;
+#N canvas 416 192 913 193 Too_Many_inlets(not_creating) 0;
+#X obj 36 44 expr~ $v1 + $v2 + $v3 + $v4 + $v5 + $v6 + $v7 + $v8 +
+$v9 + $v10;
+#X obj 50 119 expr $f1 + $f2 + $f3 + $f4 + $f5 + $f6 + $f7 + $f8 +
+$f9 + $f10;
+#X text 421 51 expr won't load with more than 9 inlets.;
+#X text 449 107 since the new vanilla can stretch objects \, it's nice
+if we could have as many inlets as we can manage.;
+#X restore 104 174 pd Too_Many_inlets(not_creating);
+#X text 48 38 This is something I had reported a couple of years ago.
+The [expr] object cannot accept more than 9 inlets or expressions (which
+reflect on the number of outlets)., f 62;
+#X text 51 93 The resonse was (and I quote) "I will look into allowing
+more input outputs later". So maybe we could enjoy this ioportunity
+and see if we can do it.;
+#N canvas 156 228 978 410 Too_Many_Expressions(not_creating) 0;
+#X obj 131 61 expr 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 +
+1 + 1 \; 2 \; 3 \; 4 \; 5 \; 6 \; 7 \; 8 \; 9;
+#X text 529 110 Up to 9 expressions in an object is fine.;
+#X obj 130 211 expr 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 +
+1 + 1 \; 2 \; 3 \; 4 \; 5 \; 6 \; 7 \; 8 \; 9 \; 10;
+#X text 531 229 More than 9 objects is a problem. It won't load the
+object.;
+#X restore 104 206 pd Too_Many_Expressions(not_creating);
+#X restore 57 192 pd too many inlets/expressions;
+#N canvas 439 23 910 566 avg/Avg/store 0;
+#X floatatom 82 504 0 0 0 0 - - -;
+#X msg 82 440 3 9;
+#X floatatom 516 166 0 0 0 0 - - -;
+#X msg 516 104 3 9;
+#X text 36 30 'avg' / 'Avg' and 'store' were deleted from v0.5 but
+I'd like to make a cssse to include it. These were supposedly available
+\, but not working at least in version 0.4 \, but I assume they were
+working at some point. Thus \, they're important for backwards compatibility.
+;
+#X text 38 107 It has been mentioned how these can be achieved in other
+ways \, but this reasoning does not actually stop 'expr' to have many
+fucntions that achieve the same result.;
+#X text 41 161 Such as:;
+#X obj 78 233 expr nearbyint($f1);
+#X floatatom 216 186 5 0 0 0 - - -, f 5;
+#X floatatom 78 266 5 0 0 0 - - -, f 5;
+#X obj 216 233 expr rint($f1);
+#X floatatom 216 264 5 0 0 0 - - -, f 5;
+#X floatatom 323 263 5 0 0 0 - - -, f 5;
+#X obj 323 232 expr round($f1);
+#X text 53 298 all three are the same \, and two of them were dded
+in v0.5 (nearbyint and round).;
+#X obj 82 470 expr Sum("array2" \, $f1 \, $f2) / ($f2 - $f1 + 1);
+#X obj 516 132 expr Avg("array2" \, $f1 \, $f2);
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array array2 10 float 3;
+#A 0 -0.885712 -0.514285 -0.271428 0.0714284 -0.485713 -0.185714 0.285714
+0.485713 0.571427 0.757141;
+#X coords 0 1 10 -1 100 100 1 0 0;
+#X restore 561 227 graph;
+#X text 30 358 for 'avg' and 'Avg' there isn't really any other function
+that covers them. It's just that youy can get there somehow. But specially
+for Avg \, this would be much more convenient if it were just simply
+available. For instance \, this is how you need to do Avg.;
+#X text 494 48 but it'd be much more convenient if we could just do
+this:;
+#X text 493 367 Moreover \, the [expr] object has been long incorporated
+into the Max family of objects \, though it reflects an earlier version
+than available in Pd roight now. One way or another \, people might
+expect them to be related \, and the Max version does have working
+'avg' / 'Avg' / 'store' functions.;
+#X text 499 483 So please consider having them working in Pd please.
+;
+#X connect 1 0 15 0;
+#X connect 3 0 16 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 8 0 10 0;
+#X connect 8 0 13 0;
+#X connect 10 0 11 0;
+#X connect 13 0 12 0;
+#X connect 15 0 0 0;
+#X connect 16 0 2 0;
+#X restore 57 137 pd avg/Avg/store;
+#N canvas 134 23 421 273 hyperbolic 0;
+#X obj 172 105 expr atanh($f1);
+#X obj 172 133 expr asinh($f1);
+#X obj 173 161 expr acosh($f1);
+#X text 86 70 none of these are loading in windows:;
+#X restore 56 65 pd hyperbolic functions in windows;
+#N canvas 664 66 494 429 '=' 0;
+#X obj 251 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 251 183 expr array[4] = 0.5;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array array 10 float 0;
+#X coords 0 1 9 -1 200 140 1 0 0;
+#X restore 127 257 graph;
+#X obj 92 195 tabwrite array;
+#X msg 92 165 0.5;
+#X msg 173 163 1;
+#X obj 92 137 t b b;
+#X obj 92 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 114 110 updates the array;
+#X text 276 154 doesn't update the array;
+#X text 57 31 using '=' to store a value to an array index works \,
+but it does not update the array view to reflect the new value like
+in other Pd objects (like tabwrite).;
+#X connect 0 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 4 0;
+#X connect 6 1 5 0;
+#X connect 7 0 6 0;
+#X restore 56 92 pd '=' not updating array view;
+#N canvas 439 23 423 317 += 0;
+#X obj 119 130 expr x += 1;
+#X obj 263 132 v x;
+#X text 21 54 Now that we have the '=' syntax to update variables and
+store values to tables \, I think it is a good idea to add the "+="
+functionality \,;
+#X text 49 132 so this:;
+#X text 50 202 would be the same as this:;
+#X obj 228 202 expr x = x + 1;
+#X restore 58 164 pd +=;
+#X text 46 35 bugs/issues/requests:;

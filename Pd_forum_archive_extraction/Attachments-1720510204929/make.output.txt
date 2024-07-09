@@ -1,0 +1,117 @@
+cd /home/install/pd/CVS/externals/ggee/
+make
+Simple mixer control 'PCM',0
+  Capabilities: pvolume pswitch pswitch-joined
+  Playback channels: Front Left - Front Right 
+  Limits: Playback 0 - 31 
+  Front Left: Playback 31 [100%] [on] 
+  Front Right: Playback 31 [100%] [on] 
+ls: /src/: No such file or directory
+gcc -c -o control/serialctl.o -g -O2 -DHAVE_LIBM=1 -DHAVE_LIBPTHREAD=1 -DSTDC_HEADERS=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_UNISTD_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_STRERROR=1  -DPD_VERSION_MINOR=32 -I./include  -DVERSION=\"0.25\" -DPD control/serialctl.c
+control/serialctl.c:174:10: warning: pasting "|=" and "ISIG" does not give a valid preprocessing token
+control/serialctl.c:174:10: warning: pasting "~" and "ISIG" does not give a valid preprocessing token
+control/serialctl.c:175:10: warning: pasting "|=" and "ICANON" does not give a valid preprocessing token
+control/serialctl.c:175:10: warning: pasting "~" and "ICANON" does not give a valid preprocessing token
+control/serialctl.c:176:10: warning: pasting "|=" and "ECHO" does not give a valid preprocessing token
+control/serialctl.c:176:10: warning: pasting "~" and "ECHO" does not give a valid preprocessing token
+control/serialctl.c:177:10: warning: pasting "|=" and "ECHOE" does not give a valid preprocessing token
+control/serialctl.c:177:10: warning: pasting "~" and "ECHOE" does not give a valid preprocessing token
+control/serialctl.c:178:10: warning: pasting "|=" and "ECHOK" does not give a valid preprocessing token
+control/serialctl.c:178:10: warning: pasting "~" and "ECHOK" does not give a valid preprocessing token
+control/serialctl.c:179:10: warning: pasting "|=" and "ECHONL" does not give a valid preprocessing token
+control/serialctl.c:179:10: warning: pasting "~" and "ECHONL" does not give a valid preprocessing token
+control/serialctl.c:180:10: warning: pasting "|=" and "NOFLSH" does not give a valid preprocessing token
+control/serialctl.c:180:10: warning: pasting "~" and "NOFLSH" does not give a valid preprocessing token
+control/serialctl.c:181:10: warning: pasting "|=" and "TOSTOP" does not give a valid preprocessing token
+control/serialctl.c:181:10: warning: pasting "~" and "TOSTOP" does not give a valid preprocessing token
+control/serialctl.c:182:10: warning: pasting "|=" and "IEXTEN" does not give a valid preprocessing token
+control/serialctl.c:182:10: warning: pasting "~" and "IEXTEN" does not give a valid preprocessing token
+control/serialctl.c:212:10: warning: pasting "|=" and "PARENB" does not give a valid preprocessing token
+control/serialctl.c:212:10: warning: pasting "~" and "PARENB" does not give a valid preprocessing token
+control/serialctl.c:213:10: warning: pasting "|=" and "PARODD" does not give a valid preprocessing token
+control/serialctl.c:213:10: warning: pasting "~" and "PARODD" does not give a valid preprocessing token
+control/serialctl.c:214:10: warning: pasting "|=" and "CS5" does not give a valid preprocessing token
+control/serialctl.c:214:10: warning: pasting "~" and "CS5" does not give a valid preprocessing token
+control/serialctl.c:215:10: warning: pasting "|=" and "CS6" does not give a valid preprocessing token
+control/serialctl.c:215:10: warning: pasting "~" and "CS6" does not give a valid preprocessing token
+control/serialctl.c:216:10: warning: pasting "|=" and "CS7" does not give a valid preprocessing token
+control/serialctl.c:216:10: warning: pasting "~" and "CS7" does not give a valid preprocessing token
+control/serialctl.c:217:10: warning: pasting "|=" and "CS8" does not give a valid preprocessing token
+control/serialctl.c:217:10: warning: pasting "~" and "CS8" does not give a valid preprocessing token
+control/serialctl.c:218:10: warning: pasting "|=" and "CLOCAL" does not give a valid preprocessing token
+control/serialctl.c:218:10: warning: pasting "~" and "CLOCAL" does not give a valid preprocessing token
+control/serialctl.c:219:10: warning: pasting "|=" and "CREAD" does not give a valid preprocessing token
+control/serialctl.c:219:10: warning: pasting "~" and "CREAD" does not give a valid preprocessing token
+control/serialctl.c:220:10: warning: pasting "|=" and "CSTOPB" does not give a valid preprocessing token
+control/serialctl.c:220:10: warning: pasting "~" and "CSTOPB" does not give a valid preprocessing token
+control/serialctl.c:221:10: warning: pasting "|=" and "CRTSCTS" does not give a valid preprocessing token
+control/serialctl.c:221:10: warning: pasting "~" and "CRTSCTS" does not give a valid preprocessing token
+control/serialctl.c:252:10: warning: pasting "|=" and "IGNBRK" does not give a valid preprocessing token
+control/serialctl.c:252:10: warning: pasting "~" and "IGNBRK" does not give a valid preprocessing token
+control/serialctl.c:253:10: warning: pasting "|=" and "BRKINT" does not give a valid preprocessing token
+control/serialctl.c:253:10: warning: pasting "~" and "BRKINT" does not give a valid preprocessing token
+control/serialctl.c:254:10: warning: pasting "|=" and "IGNPAR" does not give a valid preprocessing token
+control/serialctl.c:254:10: warning: pasting "~" and "IGNPAR" does not give a valid preprocessing token
+control/serialctl.c:255:10: warning: pasting "|=" and "PARMRK" does not give a valid preprocessing token
+control/serialctl.c:255:10: warning: pasting "~" and "PARMRK" does not give a valid preprocessing token
+control/serialctl.c:256:10: warning: pasting "|=" and "INPCK" does not give a valid preprocessing token
+control/serialctl.c:256:10: warning: pasting "~" and "INPCK" does not give a valid preprocessing token
+control/serialctl.c:257:10: warning: pasting "|=" and "ISTRIP" does not give a valid preprocessing token
+control/serialctl.c:257:10: warning: pasting "~" and "ISTRIP" does not give a valid preprocessing token
+control/serialctl.c:258:10: warning: pasting "|=" and "INLCR" does not give a valid preprocessing token
+control/serialctl.c:258:10: warning: pasting "~" and "INLCR" does not give a valid preprocessing token
+control/serialctl.c:259:10: warning: pasting "|=" and "IGNCR" does not give a valid preprocessing token
+control/serialctl.c:259:10: warning: pasting "~" and "IGNCR" does not give a valid preprocessing token
+control/serialctl.c:260:10: warning: pasting "|=" and "ICRNL" does not give a valid preprocessing token
+control/serialctl.c:260:10: warning: pasting "~" and "ICRNL" does not give a valid preprocessing token
+control/serialctl.c:261:10: warning: pasting "|=" and "IUCLC" does not give a valid preprocessing token
+control/serialctl.c:261:10: warning: pasting "~" and "IUCLC" does not give a valid preprocessing token
+control/serialctl.c:262:10: warning: pasting "|=" and "IXON" does not give a valid preprocessing token
+control/serialctl.c:262:10: warning: pasting "~" and "IXON" does not give a valid preprocessing token
+control/serialctl.c:263:10: warning: pasting "|=" and "IXANY" does not give a valid preprocessing token
+control/serialctl.c:263:10: warning: pasting "~" and "IXANY" does not give a valid preprocessing token
+control/serialctl.c:264:10: warning: pasting "|=" and "IXOFF" does not give a valid preprocessing token
+control/serialctl.c:264:10: warning: pasting "~" and "IXOFF" does not give a valid preprocessing token
+control/serialctl.c:265:10: warning: pasting "|=" and "IMAXBEL" does not give a valid preprocessing token
+control/serialctl.c:265:10: warning: pasting "~" and "IMAXBEL" does not give a valid preprocessing token
+control/serialctl.c: In function `serialctl_setlocal':
+control/serialctl.c:174: `ISIG' undeclared (first use in this function)
+control/serialctl.c:174: (Each undeclared identifier is reported only once
+control/serialctl.c:174: for each function it appears in.)
+control/serialctl.c:175: `ICANON' undeclared (first use in this function)
+control/serialctl.c:176: `ECHO' undeclared (first use in this function)
+control/serialctl.c:177: `ECHOE' undeclared (first use in this function)
+control/serialctl.c:178: `ECHOK' undeclared (first use in this function)
+control/serialctl.c:179: `ECHONL' undeclared (first use in this function)
+control/serialctl.c:180: `NOFLSH' undeclared (first use in this function)
+control/serialctl.c:181: `TOSTOP' undeclared (first use in this function)
+control/serialctl.c:182: `IEXTEN' undeclared (first use in this function)
+control/serialctl.c: In function `serialctl_setcontrol':
+control/serialctl.c:212: `PARENB' undeclared (first use in this function)
+control/serialctl.c:213: `PARODD' undeclared (first use in this function)
+control/serialctl.c:214: `CS5' undeclared (first use in this function)
+control/serialctl.c:215: `CS6' undeclared (first use in this function)
+control/serialctl.c:216: `CS7' undeclared (first use in this function)
+control/serialctl.c:217: `CS8' undeclared (first use in this function)
+control/serialctl.c:218: `CLOCAL' undeclared (first use in this function)
+control/serialctl.c:219: `CREAD' undeclared (first use in this function)
+control/serialctl.c:220: `CSTOPB' undeclared (first use in this function)
+control/serialctl.c:221: `CRTSCTS' undeclared (first use in this function)
+control/serialctl.c: In function `serialctl_setinput':
+control/serialctl.c:252: `IGNBRK' undeclared (first use in this function)
+control/serialctl.c:253: `BRKINT' undeclared (first use in this function)
+control/serialctl.c:254: `IGNPAR' undeclared (first use in this function)
+control/serialctl.c:255: `PARMRK' undeclared (first use in this function)
+control/serialctl.c:256: `INPCK' undeclared (first use in this function)
+control/serialctl.c:257: `ISTRIP' undeclared (first use in this function)
+control/serialctl.c:258: `INLCR' undeclared (first use in this function)
+control/serialctl.c:259: `IGNCR' undeclared (first use in this function)
+control/serialctl.c:260: `ICRNL' undeclared (first use in this function)
+control/serialctl.c:261: `IUCLC' undeclared (first use in this function)
+control/serialctl.c:262: `IXON' undeclared (first use in this function)
+control/serialctl.c:263: `IXANY' undeclared (first use in this function)
+control/serialctl.c:264: `IXOFF' undeclared (first use in this function)
+control/serialctl.c:265: `IMAXBEL' undeclared (first use in this function)
+make: *** [control/serialctl.o] Error 1
+
+Compilation exited abnormally with code 2 at Fri Feb  7 02:19:57

@@ -1,0 +1,66 @@
+#N canvas 123 72 516 603 10;
+#X obj 19 398 print peak;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array test 155944 float 2;
+#X coords 0 1 155944 -1 200 140 1 0 0;
+#X restore 73 446 graph;
+#X obj 304 533 phasor~;
+#X obj 304 445 loadbang;
+#X obj 304 481 440;
+#X floatatom 303 508 5 0 0 0 - - -;
+#X obj 280 536 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 350 481 \; pd dsp 1;
+#X obj 19 259 until;
+#X obj 20 238 20;
+#X obj 20 217 t b b;
+#X obj 20 196 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 313 325 soundfiler;
+#X obj 313 285 openpanel;
+#X obj 313 258 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 19 326 t f f;
+#X obj 76 316 + 204.8;
+#X obj 38 286 0;
+#X obj 19 306 f;
+#X obj 295 564 tabwrite~ test;
+#X msg 19 346 list test 2048 \$1 44100 0;
+#X msg 313 305 read -resize \$1 test;
+#X text 44 194 analyse;
+#X obj 19 372 sigmund~ -t -npts 2048 -npeak 100 tracks;
+#X text 243 235 (try it with non-regular signals as well);
+#X text 23 12 Sigmund~ track analysis bug;
+#X text 19 34 1 - do one analysis by clicking the green bang. Save
+the results in a spreadsheet or similar \; 2 - do another analysis
+\, and compare the results with the first one. There will be lots of
+differences \; 3 - any further analysis results will match the 2nd
+analysis (with very few deviations). These results won't be correct
+\, as after the 1st analysis many lower frequencies will be ignored
+- this is noticed in a patch such as doc4.data.structures14.partialtracer.pd
+;
+#X text 19 144 The only way to get another correct analysis is to reset
+sigmund~ by editing it. The results of different analysis will match
+100% \, and will have all frequencies.;
+#X connect 2 0 19 0;
+#X connect 3 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 19 0;
+#X connect 8 0 18 0;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
+#X connect 10 1 17 0;
+#X connect 11 0 10 0;
+#X connect 13 0 21 0;
+#X connect 14 0 13 0;
+#X connect 15 0 20 0;
+#X connect 15 1 16 0;
+#X connect 16 0 18 1;
+#X connect 17 0 18 1;
+#X connect 18 0 15 0;
+#X connect 20 0 23 0;
+#X connect 21 0 12 0;
+#X connect 23 0 0 0;

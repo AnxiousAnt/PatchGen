@@ -1,0 +1,34 @@
+#N canvas 239 137 519 419 10;
+#X obj 92 133 until;
+#X msg 204 155 set;
+#X msg 70 78 10;
+#X msg 92 177 add2 \$1;
+#X obj 70 105 t b f b;
+#X msg 93 201 68 85 96 0 43 46 24 71 63 84;
+#X obj 93 276 list-sort;
+#X obj 93 321 list prepend set;
+#X obj 93 346 list trim;
+#X msg 92 370 96 85 84 71 68 63 46 43 24 0;
+#X obj 92 155 random 100;
+#X text 65 40 Sort an incoming list of values in ascending order. Works
+with ints and floats alike.;
+#X obj 153 234 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X msg 197 234 asc;
+#X msg 235 234 desc;
+#X obj 35 11 list-sort;
+#X connect 0 0 10 0;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
+#X connect 4 1 0 0;
+#X connect 4 2 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 3 0;
+#X connect 12 0 6 1;
+#X connect 13 0 6 1;
+#X connect 14 0 6 1;

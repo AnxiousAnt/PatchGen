@@ -1,0 +1,21 @@
+#N canvas 5 22 448 257 10;
+#X obj 137 113 mtonote;
+#X floatatom 137 55 5 0 127 0 - - -;
+#X msg 229 54 69;
+#X msg 192 54 60;
+#X floatatom 266 143 5 0 0 0 - - -;
+#X symbolatom 156 143 10 0 0 0 - - -;
+#X symbolatom 62 143 10 0 0 0 - - -;
+#X text 156 161 outlet 2 \; Note name only;
+#X text 266 161 outlet 3 \; octave only (float);
+#X text 75 54 scroll ->;
+#X text 73 69 0 ~ 127;
+#X text 12 3 mtonote - Convert MIDI note numbers to note name and octave
+;
+#X text 304 235 Lorenzo Sutton 2009;
+#X connect 0 0 6 0;
+#X connect 0 1 5 0;
+#X connect 0 2 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;

@@ -1,0 +1,22 @@
+#N canvas 593 237 683 375 10;
+#X obj 108 118 print;
+#X text 202 91 argument 1 : the character to split the symbol;
+#X text 105 157 Example to get filename in a path :;
+#X msg 107 180 symbol C:/my_dir1/my_dir2/my_dir3/my_dir4/1.wav;
+#X obj 107 318 print;
+#X obj 107 290 symbol;
+#X obj 107 232 t b s;
+#X msg 117 205 symbol /my_dir1/my_dir2/my_dir3/my_dir4/1.wav;
+#X msg 108 61 symbol A:B:C:D:E:F;
+#X text 106 18 [array-split] : split a symbol into new symbols at a
+specific character;
+#X obj 134 261 array-split /;
+#X obj 108 90 array-split :;
+#X connect 3 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 6 1 10 0;
+#X connect 7 0 6 0;
+#X connect 8 0 11 0;
+#X connect 10 0 5 1;
+#X connect 11 0 0 0;

@@ -1,0 +1,24 @@
+#N canvas 0 0 458 308 10;
+#X obj 98 63 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 10500 1;
+#X obj 98 212 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 10500 1;
+#X obj 105 148 spigot;
+#X obj 167 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 95 26 ctlin 7 1;
+#X obj 95 245 ctlout 7 1;
+#X text 236 62 <<-- this is working fine;
+#X text 236 212 <<-- this is working fine;
+#X text 160 26 <<-- this fucks up midi to endless looping;
+#X text 168 246 <<-- this fucks up midi to endless looping;
+#X obj 104 123 t b f b;
+#X connect 0 0 10 0;
+#X connect 1 0 0 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 0 0;
+#X connect 10 0 3 0;
+#X connect 10 1 2 0;
+#X connect 10 2 3 0;

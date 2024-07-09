@@ -1,0 +1,12 @@
+#N canvas 261 305 450 300 10;
+#X obj 116 118 inlet;
+#X obj 116 152 route float;
+#X obj 188 174 select \$1;
+#X obj 188 200 f \$2;
+#X obj 116 233 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 4 0;

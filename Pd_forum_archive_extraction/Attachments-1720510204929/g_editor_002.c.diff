@@ -1,0 +1,30 @@
+--- g_editor.c~	Sun Feb 17 23:11:14 2002
++++ g_editor.c	Thu Mar  7 12:23:57 2002
+@@ -453,17 +453,23 @@
+ 
+     if (runmode && !rightclick)
+     {
++	t_gobj *z = 0;
+     	for (y = x->gl_list; y; y = y->g_next)
+ 	{
+ 	    	/* check if the object wants to be clicked */
+     	    if (canvas_hitbox(x, y, xpos, ypos, &x1, &y1, &x2, &y2)
+ 	    	&& (clickreturned = gobj_click(y, x, xpos, ypos,
+-		    shiftmod, altmod, 0, doit)))
+-    	    	    	break;
++		    shiftmod, altmod, 0, 0)))
++    	    	    	z = y;
+ 	}
+-	if (!doit)
++	if (doit)
+ 	{
+-	    if (y)
++	    if (z)
++		gobj_click(z, x, xpos, ypos, shiftmod, altmod, 0, doit);
++	}
++	else
++	{
++	    if (z)
+ 	    	canvas_setcursor(x, clickreturned);
+ 	    else canvas_setcursor(x, CURSOR_RUNMODE_NOTHING);
+ 	}

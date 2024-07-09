@@ -1,0 +1,22 @@
+#N canvas 1171 462 370 418 10;
+#X obj 78 94 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 78 176 f;
+#X obj 78 198 + 1;
+#X obj 78 220 % 6;
+#X msg 120 138 1.67772e+07;
+#X floatatom 78 242 5 0 0 0 - - -, f 5;
+#X obj 120 114 loadbang;
+#X obj 78 261 print problem;
+#X text 77 298 respected result: 0 \, 1 \, 2 \, 3 \, 4 \, 5 (repeat)
+;
+#X text 78 318 result: 4 \, 4 \, 4 \, 4... (always 4);
+#X text 72 36 problem float number on 32bit;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 1 1;
+#X connect 3 0 5 0;
+#X connect 4 0 1 1;
+#X connect 5 0 7 0;
+#X connect 6 0 4 0;

@@ -1,0 +1,68 @@
+#! /usr/bin/env wish
+
+
+proc makeGUI {} {
+    listbox .l -listvar ItemList -yscroll ".s set" -selectmode extended
+    scrollbar .s -command ".l yview"
+    entry .e -textvar Item
+    bind .e <Return> addItem
+    button .a -text "+" -command addItem
+    button .d -text "-" -command delItems
+    button .p -text Ok -command doSomething
+    button .q -text Cancel -command {exit}
+
+    grid .l - - .s -padx 0 -pady 2 -sticky news
+    grid .e - .a  - -padx 2 -pady 2 -sticky news
+    grid .d - - - -padx 7 -pady 5 -sticky ne
+    grid .q - .p  - -padx 0 -pady 5 -sticky news
+
+
+    grid columnconfigure . 1 -weight 99
+    grid rowconfigure . 1 -weight 99
+}
+
+proc loadItems {} {
+    global ItemList
+
+    # This is to emulate the list of paths/libs
+    # which will be read into vars of that form
+    set var0 "aaa"
+    set var1 "bbb"
+    set var2 "ccc"
+    set var3 "ddd"
+    set var4 "eee"
+
+    # Todo: get the length of a list dynamycally
+    set ListLength 5    
+    for {set x 0} {$x < $ListLength} {incr x} {
+	set v [eval subst {\$var$x}]
+	lappend ItemList $v
+    }
+}
+
+proc addItem {} {
+    global Item ItemList
+
+    set v [string trim $Item]
+    if {$v ne ""} {
+	lappend ItemList $v
+	set Item ""
+    }
+}
+
+proc delItems {} {
+    global ItemList
+    foreach idx [lsort -int -dec [.l curselection]] {
+        set ItemList [lreplace $ItemList $idx $idx]
+    }
+}
+
+proc doSomething {} {
+    global ItemList
+
+    puts "Current List for processing is:"
+    puts "\t[join $ItemList "\n\t"]"
+}
+
+loadItems
+makeGUI 

@@ -1,0 +1,24 @@
+#N canvas 937 170 907 300 10;
+#X msg 139 127 0 \$1;
+#X obj 139 175 print;
+#X floatatom 111 74 5 0 0 0 - - -, f 5;
+#X obj 181 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 117 48 1;
+#X text 183 52 2;
+#X text 216 112 Why message is not saving data in \$1 ?;
+#X obj 530 158 print;
+#X floatatom 502 57 5 0 0 0 - - -, f 5;
+#X obj 572 56 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 508 31 1;
+#X text 574 35 2;
+#X msg 502 90 set 0 \$1;
+#X msg 530 123;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 8 0 12 0;
+#X connect 9 0 13 0;
+#X connect 12 0 13 0;
+#X connect 13 0 7 0;

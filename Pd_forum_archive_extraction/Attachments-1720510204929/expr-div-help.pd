@@ -1,0 +1,12 @@
+#N canvas 222 278 450 300 10;
+#X obj 269 156 expr \$1/\$2;
+#X msg 165 134 bang;
+#X floatatom 165 179 5 0 0 0 - - -;
+#X msg 83 136 bang;
+#X floatatom 83 181 5 0 0 0 - - -;
+#X obj 165 157 expr-div 1 2;
+#X obj 83 159 expr 1/2.;
+#X connect 1 0 5 0;
+#X connect 3 0 6 0;
+#X connect 5 0 2 0;
+#X connect 6 0 4 0;

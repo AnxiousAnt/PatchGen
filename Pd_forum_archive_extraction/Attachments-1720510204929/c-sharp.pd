@@ -1,0 +1,23 @@
+#N canvas 755 238 729 257 12;
+#X msg 196 38 35;
+#X obj 196 65 makefilename C%c;
+#X symbolatom 197 166 10 0 0 0 - - -;
+#X obj 85 166 print C-sharp;
+#X obj 288 168 hradio 15 1 0 8 empty empty C$ 0 40 0 50 -262144 -1
+-258113 0;
+#X msg 288 134 label \$1;
+#X text 238 38 ASCII;
+#X obj 460 62 list tosymbol;
+#X symbolatom 460 89 10 0 0 0 - - -;
+#X msg 460 34 226 140 151;
+#X text 549 35 utf-8 code sequence;
+#X obj 460 115 makefilename C%s;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 1 0 5 0;
+#X connect 5 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 11 0;
+#X connect 9 0 7 0;
+#X connect 11 0 5 0;

@@ -1,0 +1,364 @@
+/usr/lib/ladspa/sc4m_1916.so:
+	SC4 mono (1916/sc4m)
+/usr/lib/ladspa/sinus_wavewrapper_1198.so:
+	Sinus wavewrapper (1198/sinusWavewrapper)
+/usr/lib/ladspa/lowpass_iir_1891.so:
+	Glame Lowpass Filter (1891/lowpass_iir)
+/usr/lib/ladspa/decimator_1202.so:
+	Decimator (1202/decimator)
+/usr/lib/ladspa/crossover_dist_1404.so:
+	Crossover distortion (1404/crossoverDist)
+/usr/lib/ladspa/delay_1898.so:
+	Simple delay line, noninterpolating (1898/delay_n)
+	Simple delay line, linear interpolation (1899/delay_l)
+	Simple delay line, cubic spline interpolation (1900/delay_c)
+/usr/lib/ladspa/tap_limiter.so:
+	TAP Scaling Limiter (2145/tap_limiter)
+/usr/lib/ladspa/tap_vibrato.so:
+	TAP Vibrato (2148/tap_vibrato)
+/usr/lib/ladspa/hermes_filter_1200.so:
+	Hermes Filter (1200/hermesFilter)
+/usr/lib/ladspa/svf_1214.so:
+	State Variable Filter (1214/svf)
+/usr/lib/ladspa/tap_tremolo.so:
+	TAP Tremolo (2144/tap_tremolo)
+/usr/lib/ladspa/fm_osc_1415.so:
+	FM Oscillator (1415/fmOsc)
+/usr/lib/ladspa/tap_eqbw.so:
+	TAP Equalizer/BW (2151/tap_equalizer_bw)
+/usr/lib/ladspa/comb_splitter_1411.so:
+	Comb Splitter (1411/combSplitter)
+/usr/lib/ladspa/sine.so:
+	Sine Oscillator (Freq:audio, Amp:audio) (1044/sine_faaa)
+	Sine Oscillator (Freq:audio, Amp:control) (1045/sine_faac)
+	Sine Oscillator (Freq:control, Amp:audio) (1046/sine_fcaa)
+	Sine Oscillator (Freq:control, Amp:control) (1047/sine_fcac)
+/usr/lib/ladspa/caps.so:
+	C* Eq - 10-band equalizer (1773/Eq)
+	C* Eq2x2 - stereo 10-band equalizer (2594/Eq2x2)
+	C* Compress - Mono compressor (1772/Compress)
+	C* Pan - Pan and width (1788/Pan)
+	C* PreampIII - Tube preamp emulation (1776/PreampIII)
+	C* PreampIV - Tube preamp emulation + tone controls (1777/PreampIV)
+	C* ToneStack - Tone stack emulation (2589/ToneStack)
+	C* ToneStackLT - Tone stack emulation, lattice filter 44.1 (2590/ToneStackLT)
+	C* AmpIII - Tube amp (1786/AmpIII)
+	C* AmpIV - Tube amp + tone controls (1794/AmpIV)
+	C* AmpV - Tube amp (2587/AmpV)
+	C* AmpVTS - Tube amp + Tone stack (2592/AmpVTS)
+	C* CabinetI - Loudspeaker cabinet emulation (1766/CabinetI)
+	C* CabinetII - Refined loudspeaker cabinet emulation (2581/CabinetII)
+	C* Clip - Hard clipper, 8x oversampled (1771/Clip)
+	C* ChorusI - Mono chorus/flanger (1767/ChorusI)
+	C* StereoChorusI - Stereo chorus/flanger (1768/StereoChorusI)
+	C* ChorusII - Mono chorus/flanger modulated by a fractal (2583/ChorusII)
+	C* StereoChorusII - Stereo chorus/flanger modulated by a fractal (2584/StereoChorusII)
+	C* PhaserI - Mono phaser (1775/PhaserI)
+	C* PhaserII - Mono phaser modulated by a Lorenz fractal (2586/PhaserII)
+	C* SweepVFI - Resonant filter swept by a Lorenz fractal (1782/SweepVFI)
+	C* SweepVFII - Resonant filter, f and Q swept by a Lorenz fractal (2582/SweepVFII)
+	C* AutoWah - Resonant envelope-following filter (2593/AutoWah)
+	C* Scape - Stereo delay + Filters (2588/Scape)
+	C* VCOs - Virtual 'analogue' oscillator (1783/VCOs)
+	C* VCOd - Double VCO with detune and hard sync options (1784/VCOd)
+	C* CEO - Chief Executive Oscillator (1770/CEO)
+	C* Sin - Sine wave generator (1781/Sin)
+	C* White - White noise generator (1785/White)
+	C* Lorenz - The sound of a Lorenz attractor (1774/Lorenz)
+	C* Roessler - The sound of a Roessler attractor (1780/Roessler)
+	C* JVRev - Stanford-style reverb from STK (1778/JVRev)
+	C* Plate - Versatile plate reverb (1779/Plate)
+	C* Plate2x2 - Versatile plate reverb, stereo inputs (1795/Plate2x2)
+	C* Click - Metronome (1769/Click)
+	C* Dirac - One-sample impulse generator (2585/Dirac)
+	C* HRTF - Head-related transfer function at elevation 0 (1787/HRTF)
+/usr/lib/ladspa/karaoke_1409.so:
+	Karaoke (1409/karaoke)
+/usr/lib/ladspa/imp_1199.so:
+	Impulse convolver (1199/imp)
+/usr/lib/ladspa/gsm_1215.so:
+	GSM simulator (1215/gsm)
+/usr/lib/ladspa/tap_reflector.so:
+	TAP Reflector (2154/tap_reflector)
+/usr/lib/ladspa/xfade_1915.so:
+	Crossfade (1915/xfade)
+	Crossfade (4 outs) (1917/xfade4)
+/usr/lib/ladspa/valve_1209.so:
+	Valve saturation (1209/valve)
+/usr/lib/ladspa/comb_1887.so:
+	Comb delay line, noninterpolating (1889/comb_n)
+	Comb delay line, linear interpolation (1887/comb_l)
+	Comb delay line, cubic spline interpolation (1888/comb_c)
+/usr/lib/ladspa/fast_lookahead_limiter_1913.so:
+	Fast Lookahead limiter (1913/fastLookaheadLimiter)
+/usr/lib/ladspa/dc_remove_1207.so:
+	DC Offset Remover (1207/dcRemove)
+/usr/lib/ladspa/ringmod_1188.so:
+	Ringmod with two inputs (1188/ringmod_2i1o)
+	Ringmod with LFO (1189/ringmod_1i1o1l)
+/usr/lib/ladspa/sifter_1210.so:
+	Signal sifter (1210/sifter)
+/usr/lib/ladspa/plate_1423.so:
+	Plate reverb (1423/plate)
+/usr/lib/ladspa/pitch_scale_1194.so:
+	Higher Quality Pitch Scaler (1194/pitchScaleHQ)
+/usr/lib/ladspa/tap_pinknoise.so:
+	TAP Pink/Fractal Noise (2155/tap_pinknoise)
+/usr/lib/ladspa/wave_terrain_1412.so:
+	Wave Terrain Oscillator (1412/waveTerrain)
+/usr/lib/ladspa/freq_tracker_1418.so:
+	Frequency tracker (1418/freqTracker)
+/usr/lib/ladspa/single_para_1203.so:
+	Single band parametric (1203/singlePara)
+/usr/lib/ladspa/dj_eq_1901.so:
+	DJ EQ (mono) (1907/dj_eq_mono)
+	DJ EQ (1901/dj_eq)
+/usr/lib/ladspa/giant_flange_1437.so:
+	Giant flange (1437/giantFlange)
+/usr/lib/ladspa/noise.so:
+	White Noise Source (1050/noise_white)
+/usr/lib/ladspa/dyson_compress_1403.so:
+	Dyson compressor (1403/dysonCompress)
+/usr/lib/ladspa/smooth_decimate_1414.so:
+	Smooth Decimator (1414/smoothDecimate)
+/usr/lib/ladspa/butterworth_1902.so:
+	Glame Butterworth X-over Filter (1902/bwxover_iir)
+	GLAME Butterworth Lowpass (1903/buttlow_iir)
+	GLAME Butterworth Highpass (1904/butthigh_iir)
+/usr/lib/ladspa/cmt.so:
+	Ambisonic Decoder (B-Format to Cube) (1092/bf2cube)
+	Ambisonic Decoder (B-Format to Quad) (1091/bf2quad)
+	Ambisonic Decoder (B-Format to Stereo) (1090/bf2stereo)
+	Ambisonic Decoder (FMH-Format to Octagon) (1093/fmh2oct)
+	Ambisonic Encoder (B-Format) (1087/encode_bformat)
+	Ambisonic Encoder (FMH-Format) (1088/encode_fmh)
+	Ambisonic Rotation (B-Format, Horizontal) (1094/bf_rotate_z)
+	Ambisonic Rotation (FMH-Format, Horizontal) (1095/fmh_rotate_z)
+	Amplifier (Mono) (1067/amp_mono)
+	Amplifier (Stereo) (1068/amp_stereo)
+	Amplitude Modulator (1070/am)
+	Analogue Voice (1221/analogue)
+	Canyon Delay (1225/canyon_delay)
+	Disintegrator (1846/disintegrator)
+	Dynamic Sledgehammer (1848/sledgehammer)
+	Echo Delay Line (Maximum Delay 0,01s) (1053/delay_0,01s)
+	Echo Delay Line (Maximum Delay 0,1s) (1054/delay_0,1s)
+	Echo Delay Line (Maximum Delay 1s) (1055/delay_1s)
+	Echo Delay Line (Maximum Delay 5s) (1056/delay_5s)
+	Echo Delay Line (Maximum Delay 60s) (1057/delay_60s)
+	Envelope Tracker (Maximum Peak) (1080/track_max_peak)
+	Envelope Tracker (Maximum RMS) (1081/track_max_rms)
+	Envelope Tracker (Peak) (1078/track_peak)
+	Envelope Tracker (RMS) (1079/track_rms)
+	FMH-Format to B-Format (Discards RSTUV Channels) (1089/fmh2bf)
+	Feedback Delay Line (Maximum Delay 0,01s) (1058/fbdelay_0,01s)
+	Feedback Delay Line (Maximum Delay 0,1s) (1059/fbdelay_0,1s)
+	Feedback Delay Line (Maximum Delay 1s) (1060/fbdelay_1s)
+	Feedback Delay Line (Maximum Delay 5s) (1061/fbdelay_5s)
+	Feedback Delay Line (Maximum Delay 60s) (1062/fbdelay_60s)
+	Freeverb (Version 3) (1123/freeverb3)
+	Granular Scatter Processor (1096/grain_scatter)
+	Hard Gate (1845/hard_gate)
+	High Pass Filter (One Pole) (1052/hpf)
+	Identity (Audio) (1098/identity_audio)
+	Identity (Control) (1099/identity_control)
+	Lo Fi (1227/lofi)
+	Logistic Map Control Generator (1849/logistic)
+	Low Pass Filter (One Pole) (1051/lpf)
+	Mixer (Stereo to Mono) (1071/mixer)
+	Noise Source (White) (1069/noise_source_white)
+	Null (Audio Input) (1084/null_ai)
+	Null (Audio Output) (1086/null_ao)
+	Null (Control Input) (1083/null_ci)
+	Null (Control Output) (1085/null_co)
+	Organ (1222/organ)
+	Peak Monitor (1082/peak)
+	Phase Modulated Voice (1226/phasemod)
+	Pink Noise (Interpolated) (1841/pink_interpolated_audio)
+	Pink Noise (full frequency range) (1844/pink_full_frequency)
+	Pink Noise (sample and hold) (1843/pink_sh)
+	Simple Compressor (Peak Envelope Tracking) (1072/compress_peak)
+	Simple Compressor (RMS Envelope Tracking) (1073/compress_rms)
+	Simple Expander (Peak Envelope Tracking) (1074/expand_peak)
+	Simple Expander (RMS Envelope Tracking) (1075/expand_rms)
+	Simple Limiter (Peak Envelope Tracking) (1076/limit_peak)
+	Simple Limiter (RMS Envelope Tracking) (1077/limit_rms)
+	Sine Oscillator (Freq:audio, Amp:audio) (1063/sine_faaa)
+	Sine Oscillator (Freq:audio, Amp:control) (1064/sine_faac)
+	Sine Oscillator (Freq:control, Amp:audio) (1065/sine_fcaa)
+	Sine Oscillator (Freq:control, Amp:control) (1066/sine_fcac)
+	Syn Drum (1223/syndrum)
+	VCF 303 (1224/vcf303)
+	Wave Shaper (Sine-Based) (1097/wshape_sine)
+/usr/lib/ladspa/impulse_1885.so:
+	Nonbandlimited single-sample impulses (Frequency: Control) (1885/impulse_fc)
+/usr/lib/ladspa/tap_sigmoid.so:
+	TAP Sigmoid Booster (2157/tap_sigmoid)
+/usr/lib/ladspa/surround_encoder_1401.so:
+	Surround matrix encoder (1401/surroundEncoder)
+/usr/lib/ladspa/gate_1410.so:
+	Gate (1410/gate)
+/usr/lib/ladspa/bandpass_iir_1892.so:
+	Glame Bandpass Filter (1892/bandpass_iir)
+/usr/lib/ladspa/phasers_1217.so:
+	LFO Phaser (1217/lfoPhaser)
+	4 x 4 pole allpass (1218/fourByFourPole)
+	Auto phaser (1219/autoPhaser)
+/usr/lib/ladspa/pointer_cast_1910.so:
+	Pointer cast distortion (1910/pointerCastDistortion)
+/usr/lib/ladspa/tap_echo.so:
+	TAP Stereo Echo (2143/tap_stereo_echo)
+/usr/lib/ladspa/allpass_1895.so:
+	Allpass delay line, noninterpolating (1895/allpass_n)
+	Allpass delay line, linear interpolation (1896/allpass_l)
+	Allpass delay line, cubic spline interpolation (1897/allpass_c)
+/usr/lib/ladspa/multivoice_chorus_1201.so:
+	Multivoice Chorus (1201/multivoiceChorus)
+/usr/lib/ladspa/satan_maximiser_1408.so:
+	Barry's Satan Maximiser (1408/satanMaximiser)
+/usr/lib/ladspa/shaper_1187.so:
+	Wave shaper (1187/shaper)
+/usr/lib/ladspa/se4_1883.so:
+	SE4 (1883/se4)
+/usr/lib/ladspa/tap_doubler.so:
+	TAP Fractal Doubler (2156/tap_doubler)
+/usr/lib/ladspa/split_1406.so:
+	Mono to Stereo splitter (1406/split)
+/usr/lib/ladspa/gong_beater_1439.so:
+	Gong beater (1439/gongBeater)
+/usr/lib/ladspa/alias_1407.so:
+	Aliasing (1407/alias)
+/usr/lib/ladspa/gong_1424.so:
+	Gong model (1424/gong)
+/usr/lib/ladspa/latency_1914.so:
+	Artificial latency (1914/artificialLatency)
+/usr/lib/ladspa/tap_chorusflanger.so:
+	TAP Chorus/Flanger (2159/tap_chorusflanger)
+/usr/lib/ladspa/tap_reverb.so:
+	TAP Reverberator (2142/tap_reverb)
+/usr/lib/ladspa/foverdrive_1196.so:
+	Fast overdrive (1196/foverdrive)
+/usr/lib/ladspa/matrix_ms_st_1421.so:
+	Matrix: MS to Stereo (1421/matrixMSSt)
+/usr/lib/ladspa/amp.so:
+	Mono Amplifier (1048/amp_mono)
+	Stereo Amplifier (1049/amp_stereo)
+/usr/lib/ladspa/matrix_st_ms_1420.so:
+	Matrix: Stereo to MS (1420/matrixStMS)
+/usr/lib/ladspa/delay.so:
+	Simple Delay Line (1043/delay_5s)
+/usr/lib/ladspa/mbeq_1197.so:
+	Multiband EQ (1197/mbeq)
+/usr/lib/ladspa/pitch_scale_1193.so:
+	Pitch Scaler (1193/pitchScale)
+/usr/lib/ladspa/tap_eq.so:
+	TAP Equalizer (2141/tap_equalizer)
+/usr/lib/ladspa/lcr_delay_1436.so:
+	L/C/R Delay (1436/lcrDelay)
+/usr/lib/ladspa/ladspa-rubberband.so:
+	Rubber Band Mono Pitch Shifter (2979/rubberband-pitchshifter-mono)
+	Rubber Band Stereo Pitch Shifter (9792/rubberband-pitchshifter-stereo)
+/usr/lib/ladspa/tap_tubewarmth.so:
+	TAP TubeWarmth (2158/tap_tubewarmth)
+/usr/lib/ladspa/tap_autopan.so:
+	TAP AutoPanner (2146/tap_autopan)
+/usr/lib/ladspa/vynil_1905.so:
+	VyNil (Vinyl Effect) (1905/vynil)
+/usr/lib/ladspa/retro_flange_1208.so:
+	Retro Flanger (1208/retroFlange)
+/usr/lib/ladspa/bandpass_a_iir_1893.so:
+	Glame Bandpass Analog Filter (1893/bandpass_a_iir)
+/usr/lib/ladspa/amp_1181.so:
+	Simple amplifier (1181/amp)
+/usr/lib/ladspa/harmonic_gen_1220.so:
+	Harmonic generator (1220/harmonicGen)
+/usr/lib/ladspa/gverb_1216.so:
+	GVerb (1216/gverb)
+/usr/lib/ladspa/divider_1186.so:
+	Audio Divider (Suboctave Generator) (1186/divider)
+/usr/lib/ladspa/tap_pitch.so:
+	TAP Pitch Shifter (2150/tap_pitch)
+/usr/lib/ladspa/tap_rotspeak.so:
+	TAP Rotary Speaker (2149/tap_rotspeak)
+/usr/lib/ladspa/comb_1190.so:
+	Comb Filter (1190/comb)
+/usr/lib/ladspa/revdelay_1605.so:
+	Reverse Delay (5s max) (1605/revdelay)
+/usr/lib/ladspa/hard_limiter_1413.so:
+	Hard Limiter (1413/hardLimiter)
+/usr/lib/ladspa/sin_cos_1881.so:
+	Sine + cosine oscillator (1881/sinCos)
+/usr/lib/ladspa/fad_delay_1192.so:
+	Fractionally Addressed Delay Line (1192/fadDelay)
+/usr/lib/ladspa/triple_para_1204.so:
+	Triple band parametric with shelves (1204/triplePara)
+/usr/lib/ladspa/transient_1206.so:
+	Transient mangler (1206/transient)
+/usr/lib/ladspa/flanger_1191.so:
+	Flanger (1191/flanger)
+/usr/lib/ladspa/valve_rect_1405.so:
+	Valve rectifier (1405/valveRect)
+/usr/lib/ladspa/rate_shifter_1417.so:
+	Rate shifter (1417/rateShifter)
+/usr/lib/ladspa/chebstortion_1430.so:
+	Chebyshev distortion (1430/chebstortion)
+/usr/lib/ladspa/am_pitchshift_1433.so:
+	AM pitchshifter (1433/amPitchshift)
+/usr/lib/ladspa/analogue_osc_1416.so:
+	Analogue Oscillator (1416/analogueOsc)
+/usr/lib/ladspa/ls_filter_1908.so:
+	LS Filter (1908/lsFilter)
+/usr/lib/ladspa/hilbert_1440.so:
+	Hilbert transformer (1440/hilbert)
+/usr/lib/ladspa/sc3_1427.so:
+	SC3 (1427/sc3)
+/usr/lib/ladspa/zm1_1428.so:
+	z-1 (1428/zm1)
+/usr/lib/ladspa/tap_deesser.so:
+	TAP DeEsser (2147/tap_deesser)
+/usr/lib/ladspa/mod_delay_1419.so:
+	Modulatable delay (1419/modDelay)
+/usr/lib/ladspa/foldover_1213.so:
+	Foldover distortion (1213/foldover)
+/usr/lib/ladspa/highpass_iir_1890.so:
+	Glame Highpass Filter (1890/highpass_iir)
+/usr/lib/ladspa/bode_shifter_1431.so:
+	Bode frequency shifter (1431/bodeShifter)
+/usr/lib/ladspa/bode_shifter_cv_1432.so:
+	Bode frequency shifter (CV) (1432/bodeShifterCV)
+/usr/lib/ladspa/tap_dynamics_m.so:
+	TAP Dynamics (M) (2152/tap_dynamics_m)
+/usr/lib/ladspa/inv_1429.so:
+	Inverter (1429/inv)
+/usr/lib/ladspa/sc2_1426.so:
+	SC2 (1426/sc2)
+/usr/lib/ladspa/tap_dynamics_st.so:
+	TAP Dynamics (St) (2153/tap_dynamics_st)
+/usr/lib/ladspa/delayorama_1402.so:
+	Delayorama (1402/delayorama)
+/usr/lib/ladspa/filter.so:
+	Simple Low Pass Filter (1041/lpf)
+	Simple High Pass Filter (1042/hpf)
+/usr/lib/ladspa/const_1909.so:
+	Constant Signal Generator (1909/const)
+/usr/lib/ladspa/step_muxer_1212.so:
+	Step Demuxer (1212/stepMuxer)
+/usr/lib/ladspa/notch_iir_1894.so:
+	Mag's Notch Filter (1894/notch_iir)
+/usr/lib/ladspa/matrix_spatialiser_1422.so:
+	Matrix Spatialiser (1422/matrixSpatialiser)
+/usr/lib/ladspa/sc1_1425.so:
+	SC1 (1425/sc1)
+/usr/lib/ladspa/declip_1195.so:
+	Declipper (1195/declip)
+/usr/lib/ladspa/sc4_1882.so:
+	SC4 (1882/sc4)
+/usr/lib/ladspa/tape_delay_1211.so:
+	Tape Delay Simulation (1211/tapeDelay)
+/usr/lib/ladspa/dj_flanger_1438.so:
+	DJ flanger (1438/djFlanger)
+/usr/lib/ladspa/diode_1185.so:
+	Diode Processor (1185/diode)
+/usr/lib/ladspa/decay_1886.so:
+	Exponential signal decay (1886/decay)
+

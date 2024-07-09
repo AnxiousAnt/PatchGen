@@ -1,0 +1,15 @@
+#N canvas 0 0 648 355 10;
+#X msg 101 113 bang;
+#X obj 101 138 xlets;
+#X msg 104 192 bang;
+#X msg 173 114 bang;
+#X obj 173 139 xlets 10 -----------;
+#X floatatom 104 239 5 0 0 0 - - -;
+#X floatatom 148 191 5 0 0 0 - - -;
+#X obj 104 217 xlets 1;
+#X text 211 199 <= the numbers should be connected \, but aren't.;
+#X connect 0 0 1 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 6 0 7 1;
+#X connect 7 0 5 0;

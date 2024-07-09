@@ -1,0 +1,286 @@
+#N canvas 242 286 334 176 10;
+#N canvas 278 0 734 704 data 0;
+#X obj 58 9 adc~;
+#X obj 91 9 s~ adcr;
+#X obj 11 9 s~ adcl;
+#X obj 634 17 r dsptgl-s;
+#X msg 635 48 \; pd dsp \$1;
+#X obj 606 173 s dsptgl-r;
+#X obj 596 85 select 0 1;
+#X obj 22 65 r~ adcl;
+#X obj 22 117 envrms~;
+#X obj 22 195 s rmsllvl-r;
+#X obj 22 143 average 1;
+#X obj 205 117 envrms~;
+#X obj 205 143 average 1;
+#X obj 200 65 r~ adcr;
+#X obj 205 195 s rmsrlvl-r;
+#X obj 26 275 r~ adcl;
+#X obj 26 327 snapshot~;
+#X obj 410 176 metro 50;
+#X obj 26 405 s snpllvl-r;
+#X obj 26 353 average 1;
+#X obj 208 327 snapshot~;
+#X obj 208 353 average 1;
+#X obj 208 275 r~ adcr;
+#X obj 208 405 s snprlvl-r;
+#X obj 22 91 spigot~;
+#X obj 75 65 r rmsltgl-s;
+#X obj 205 91 spigot~;
+#X obj 255 65 r rmsrtgl-s;
+#X obj 26 301 spigot~;
+#X obj 81 275 r snpltgl-s;
+#X obj 208 301 spigot~;
+#X obj 261 275 r snprtgl-s;
+#X obj 82 117 r rmslave-s;
+#X obj 24 481 r~ adcl;
+#X obj 24 507 spigot~;
+#X obj 24 533 dfreq~;
+#X obj 24 637 s dfreqllvl-r;
+#X obj 24 559 envrms~;
+#X obj 24 585 average 1;
+#X obj 80 559 r dfreqlave-s;
+#X obj 88 327 r snplave-s;
+#X obj 74 481 r dfreqltgl-s;
+#X obj 260 117 r rmsrave-s;
+#X obj 270 327 r snprave-s;
+#X obj 210 507 spigot~;
+#X obj 210 533 dfreq~;
+#X obj 210 559 envrms~;
+#X obj 210 585 average 1;
+#X obj 210 481 r~ adcr;
+#X obj 260 481 r dfreqrtgl-s;
+#X obj 268 559 r dfreqrave-s;
+#X obj 210 637 s dfreqrlvl-r;
+#X obj 89 153 r rmslhide-s;
+#X obj 22 169 spigot;
+#X obj 205 169 spigot;
+#X obj 269 149 r rmsrhide-s;
+#X obj 26 379 spigot;
+#X obj 83 373 r snplhide-s;
+#X obj 208 379 spigot;
+#X obj 270 353 r snprhide-s;
+#X obj 24 611 spigot;
+#X obj 93 585 r dfreqlhide-s;
+#X obj 210 611 spigot;
+#X obj 279 585 r dfreqrhide-s;
+#X obj 411 301 r allhide-s;
+#X obj 451 373 s rmslhide-r;
+#X obj 451 399 s rmsrhide-r;
+#X obj 451 347 s snplhide-r;
+#X obj 439 327 s dfreqlhide-r;
+#X msg 400 374 0;
+#X obj 435 419 s snprhide-r;
+#X obj 421 443 s dfreqrhide-r;
+#X obj 449 555 s rmslhide-r;
+#X obj 449 581 s rmsrhide-r;
+#X obj 449 529 s snplhide-r;
+#X obj 437 507 s dfreqlhide-r;
+#X obj 433 601 s snprhide-r;
+#X obj 419 625 s dfreqrhide-r;
+#X msg 398 552 1;
+#X obj 409 487 r allshow-s;
+#X obj 435 150 r met1-s;
+#X obj 395 121 loadbang;
+#X obj 488 176 metro 50;
+#X obj 488 202 s snapmetr2;
+#X obj 410 202 s snapmetr1;
+#X obj 503 150 r met2-s;
+#X obj 81 301 r snapmetr1;
+#X obj 261 301 r snapmetr2;
+#X msg 562 374 0;
+#X obj 573 307 r allmute-s;
+#X obj 601 327 s dfreqltgl-r;
+#X obj 613 353 s snpltgl-r;
+#X obj 613 379 s rmsltgl-r;
+#X obj 613 405 s rmsrtgl-r;
+#X obj 597 419 s snprtgl-r;
+#X obj 583 443 s dfreqrtgl-r;
+#X obj 605 503 s dfreqltgl-r;
+#X obj 617 529 s snpltgl-r;
+#X obj 617 555 s rmsltgl-r;
+#X obj 617 581 s rmsrtgl-r;
+#X obj 601 597 s snprtgl-r;
+#X obj 587 621 s dfreqrtgl-r;
+#X obj 577 483 r allopen-s;
+#X msg 566 552 1;
+#X text 64 45 rms1;
+#X text 240 47 rms2;
+#X text 58 253 snap1;
+#X text 238 255 snap2;
+#X text 58 457 dfreq1;
+#X text 238 457 dfreq2;
+#X msg 596 111 color 23 23 23;
+#X msg 615 137 color 16 16 16;
+#X connect 0 0 2 0;
+#X connect 0 1 1 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 6 0 110 0;
+#X connect 6 1 111 0;
+#X connect 7 0 24 0;
+#X connect 8 0 10 0;
+#X connect 10 0 53 0;
+#X connect 11 0 12 0;
+#X connect 12 0 54 0;
+#X connect 13 0 26 0;
+#X connect 15 0 28 0;
+#X connect 16 0 19 0;
+#X connect 17 0 84 0;
+#X connect 19 0 56 0;
+#X connect 20 0 21 0;
+#X connect 21 0 58 0;
+#X connect 22 0 30 0;
+#X connect 24 0 8 0;
+#X connect 25 0 24 1;
+#X connect 26 0 11 0;
+#X connect 27 0 26 1;
+#X connect 28 0 16 0;
+#X connect 29 0 28 1;
+#X connect 30 0 20 0;
+#X connect 31 0 30 1;
+#X connect 32 0 10 1;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
+#X connect 35 0 37 0;
+#X connect 37 0 38 0;
+#X connect 38 0 60 0;
+#X connect 39 0 38 1;
+#X connect 40 0 19 1;
+#X connect 41 0 34 1;
+#X connect 42 0 12 1;
+#X connect 43 0 21 1;
+#X connect 44 0 45 0;
+#X connect 45 0 46 0;
+#X connect 46 0 47 0;
+#X connect 47 0 62 0;
+#X connect 48 0 44 0;
+#X connect 49 0 44 1;
+#X connect 50 0 47 1;
+#X connect 52 0 53 1;
+#X connect 53 0 9 0;
+#X connect 54 0 14 0;
+#X connect 55 0 54 1;
+#X connect 56 0 18 0;
+#X connect 57 0 56 1;
+#X connect 58 0 23 0;
+#X connect 59 0 58 1;
+#X connect 60 0 36 0;
+#X connect 61 0 60 1;
+#X connect 62 0 51 0;
+#X connect 63 0 62 1;
+#X connect 64 0 69 0;
+#X connect 69 0 65 0;
+#X connect 69 0 67 0;
+#X connect 69 0 68 0;
+#X connect 69 0 66 0;
+#X connect 69 0 70 0;
+#X connect 69 0 71 0;
+#X connect 78 0 72 0;
+#X connect 78 0 74 0;
+#X connect 78 0 75 0;
+#X connect 78 0 73 0;
+#X connect 78 0 76 0;
+#X connect 78 0 77 0;
+#X connect 79 0 78 0;
+#X connect 80 0 17 1;
+#X connect 81 0 17 0;
+#X connect 81 0 82 0;
+#X connect 82 0 83 0;
+#X connect 85 0 82 1;
+#X connect 86 0 16 0;
+#X connect 87 0 20 0;
+#X connect 88 0 90 0;
+#X connect 88 0 91 0;
+#X connect 88 0 92 0;
+#X connect 88 0 93 0;
+#X connect 88 0 94 0;
+#X connect 88 0 95 0;
+#X connect 89 0 88 0;
+#X connect 102 0 103 0;
+#X connect 103 0 96 0;
+#X connect 103 0 97 0;
+#X connect 103 0 98 0;
+#X connect 103 0 99 0;
+#X connect 103 0 100 0;
+#X connect 103 0 101 0;
+#X connect 110 0 5 0;
+#X connect 111 0 5 0;
+#X restore 208 239 pd data;
+#X obj -37 -32 cnv 15 400 250 empty empty empty 5 10 1 10 -1109 -66577
+0;
+#X obj 6 6 cnv 14 40 162 empty empty rms1 5 5 1 7 -128992 -33289 0
+;
+#X obj 11 22 vsl 15 80 0 0.7 0 0 rmsllvl-s rmsllvl-r empty 0 -8 192
+8 -99865 -241291 -1 1818 1;
+#X obj 16 139 tgl 20 1 rmsltgl-s rmsltgl-r empty 0 -6 192 8 -166441
+-33289 -1 1 1;
+#X obj 26 22 vsl 15 80 1 30 0 1 rmslave-s rmslave-r empty 0 -8 192
+8 -128992 -33289 -262144 400 1;
+#X obj 16 112 tgl 20 1 rmslhide-s rmslhide-r empty 0 -6 193 7 -166441
+-33289 -66577 1 1;
+#X obj 50 6 cnv 14 40 162 empty empty snap1 5 5 1 7 -128992 -33289
+0;
+#X obj 55 22 vsl 15 80 -0.7 0.7 0 0 snpllvl-s snpllvl-r empty 0 -8
+192 8 -99865 -24198 -1 2923 1;
+#X obj 60 139 tgl 20 1 snpltgl-s snpltgl-r empty 0 -6 192 8 -166441
+-33289 -1 1 1;
+#X obj 70 22 vsl 15 80 1 30 0 1 snplave-s snplave-r empty 0 -8 192
+8 -128992 -33289 -262144 1000 1;
+#X obj 60 112 tgl 20 1 snplhide-s snplhide-r empty 0 -6 193 8 -166441
+-33289 -66577 1 1;
+#X obj 94 6 cnv 14 40 162 empty empty dfreq1 5 5 1 7 -128992 -33289
+0;
+#X obj 99 22 vsl 15 80 0 11050 0 0 dfreqllvl-s dfreqllvl-r empty 0
+-8 192 8 -99865 -44926 -1 4075 1;
+#X obj 114 22 vsl 15 80 1 30 0 1 dfreqlave-s dfreqlave-r empty 0 -8
+192 8 -128992 -33289 -262144 1400 1;
+#X obj 104 139 tgl 20 1 dfreqltgl-s dfreqltgl-r empty 0 -6 192 8 -166441
+-33289 -1 1 1;
+#X obj 104 112 tgl 20 1 dfreqlhide-s dfreqlhide-r empty 0 -6 193 8
+-166441 -33289 -66577 1 1;
+#X obj 138 6 cnv 14 40 162 empty empty rms2 5 5 1 7 -128992 -33289
+0;
+#X obj 182 6 cnv 14 40 162 empty empty snap2 5 5 1 7 -128992 -33289
+0;
+#X obj 226 6 cnv 14 40 162 empty empty dfreq2 5 5 1 7 -128992 -33289
+0;
+#X obj 143 22 vsl 15 80 0 0.7 0 0 rmsrlvl-s rmsrlvl-r empty 0 -8 192
+8 -99865 -241291 -1 2648 1;
+#X obj 187 22 vsl 15 80 -0.6 0.6 0 0 snprlvl-s snprlvl-r empty 0 -8
+192 8 -99865 -24198 -1 2188 1;
+#X obj 148 139 tgl 20 1 rmsrtgl-s rmsrtgl-r empty 0 -6 192 8 -166441
+-33289 -1 1 1;
+#X obj 192 139 tgl 20 1 snprtgl-s snprtgl-r empty 0 -6 192 8 -166441
+-33289 -1 1 1;
+#X obj 158 22 vsl 15 80 1 30 0 1 rmsrave-s rmsrave-r empty 0 -8 192
+8 -128992 -1 -262144 2000 1;
+#X obj 202 22 vsl 15 80 1 30 0 1 snprave-s snprave-r empty 0 -8 192
+8 -128992 -1 -262144 0 1;
+#X obj 231 22 vsl 15 80 0 11050 0 0 dfreqrlvl-s dfreqrlvl-r empty 0
+-8 192 8 -99865 -44926 -1 3228 1;
+#X obj 246 22 vsl 15 80 1 30 0 1 dfreqrave-s dfreqrave-r empty 0 -8
+192 8 -128992 -1 -262144 3600 1;
+#X obj 236 139 tgl 20 1 dfreqrtgl-s dfreqrtgl-r empty 0 -6 192 8 -166441
+-33289 -1 1 1;
+#X obj 148 112 tgl 20 1 rmsrhide-s rmsrhide-r empty 0 -6 193 8 -166441
+-33289 -66577 1 1;
+#X obj 192 112 tgl 20 1 snprhide-s snprhide-r empty 0 -6 193 8 -166441
+-33289 -66577 1 1;
+#X obj 236 112 tgl 20 1 dfreqrhide-s dfreqrhide-r empty 0 -6 193 8
+-166441 -33289 -66577 1 1;
+#X obj 270 6 cnv 14 55 162 empty empty empty 5 5 1 7 -128992 -1 0;
+#X obj 300 112 bng 20 125 50 0 allhide-s allhide-r empty 0 -6 193 7
+-143491 -258699 -258699;
+#X obj 274 112 bng 20 125 50 0 allshow-s allshow-r empty 0 -6 193 7
+-42246 -24198 -24198;
+#X obj 287 20 tgl 20 0 dsptgl-s dsptgl-r empty 0 -6 193 8 -143491 -143491
+-143491 0 1;
+#X obj 274 139 bng 20 125 50 0 allopen-s allopen-r empty 0 -6 193 7
+-42246 -24198 -24198;
+#X obj 300 139 bng 20 125 50 0 allmute-s allmute-r empty 0 -6 193 7
+-143491 -258699 -258699;
+#X obj 281 53 nbx 3 14 0 600 0 1 met1-s met1-r empty 0 -6 193 10 -166441
+-33289 -1 100 256;
+#X obj 281 80 nbx 3 14 0 600 0 1 met2-s met2-r empty 0 -6 193 10 -166441
+-33289 -1 200 256;

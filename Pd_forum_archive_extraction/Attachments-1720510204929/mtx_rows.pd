@@ -1,0 +1,27 @@
+#N canvas 0 0 552 353 10;
+#X obj 153 163 mtx;
+#X msg 153 143 col;
+#X obj 153 123 t b a b;
+#X obj 153 208 list prepend;
+#X obj 153 184 t a b;
+#X obj 196 185 i;
+#X obj 225 187 + 1;
+#X msg 214 165 0;
+#X obj 153 97 inlet;
+#X obj 153 236 outlet;
+#X text 72 48 output thw rows of a matrix \, prepended with a (zero-based)
+index;
+#X text 50 265 depends on [iemmatrix];
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 1 0 1;
+#X connect 2 2 7 0;
+#X connect 3 0 9 0;
+#X connect 4 0 3 0;
+#X connect 4 1 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 3 1;
+#X connect 6 0 5 1;
+#X connect 7 0 5 1;
+#X connect 8 0 2 0;

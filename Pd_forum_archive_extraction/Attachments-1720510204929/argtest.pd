@@ -1,0 +1,7 @@
+#N canvas 168 22 854 412 10;
+#X obj 283 133 checkarg 12;
+#X obj 284 159 print arg;
+#X obj 365 132 checkarg;
+#X obj 366 158 print noarg;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;

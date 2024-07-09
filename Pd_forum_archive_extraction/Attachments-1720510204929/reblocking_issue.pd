@@ -1,0 +1,42 @@
+#N canvas 346 195 450 300 10;
+#N canvas 676 544 625 300 sub1 1;
+#N canvas 136 518 868 434 sub2 1;
+#X obj 91 109 bang~;
+#X obj 91 131 t b b;
+#X obj 91 153 timer;
+#X floatatom 91 175 5 0 0 0 - - -, f 5;
+#X obj 92 257 print~;
+#X obj 87 223 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 149 262 works! (64 samples);
+#X text 140 174 doesn't work! (same duration as in sub2);
+#X obj 86 69 block~ 256 0 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;
+#X connect 5 0 4 0;
+#X restore 33 122 pd sub2;
+#X obj 164 69 bang~;
+#X obj 161 139 timer;
+#X obj 164 91 t b b;
+#X floatatom 161 161 5 0 0 0 - - -, f 5;
+#X obj 30 65 block~ 1024 0 1;
+#X obj 42 189 print~;
+#X obj 42 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 30 35 set \$1 0 1;
+#X floatatom 31 9 5 0 0 0 - - -, f 5;
+#X text 27 100 click me:;
+#X text 114 3 [block~] in sub1 will also affect [bang~] in sub2 - even
+though it is reblocked - but only if the block size in sub2 is smaller
+than the one in sub1;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 3 1 2 1;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 9 0 8 0;
+#X restore 60 101 pd sub1;
+#X text 57 76 click me:;

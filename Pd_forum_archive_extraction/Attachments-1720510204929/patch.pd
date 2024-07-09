@@ -1,0 +1,6 @@
+#N canvas 366 193 432 94 12;
+#X obj 12 58 print from-patch;
+#X text 141 13 <-- Change the arg;
+#X text 151 58 <-- Doesn't print when arg changes;
+#X obj 12 14 abstraction 23;
+#X connect 3 0 0 0;

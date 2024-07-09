@@ -1,0 +1,178 @@
+#N canvas 64 24 1294 707 10;
+#X obj 255 415 v a0;
+#X obj 305 415 v a1;
+#X obj 134 415 v b1;
+#X obj 171 415 v b2;
+#X obj 343 415 v a2;
+#X obj 37 335 cnv 15 380 40 empty empty empty 5 12 0 14 -233017 -66577
+0;
+#X text 31 408 [fexpr~]:;
+#X obj 40 526 cnv 15 240 50 empty empty empty 5 12 0 14 -232693 -66577
+0;
+#X text 47 541 H(z) = ------------------------------;
+#X text 100 530 a0 + a1 * z^-1 + a2 * z^-2;
+#X text 43 16 Vejamos mais uma vez o sistema de segunda ordem (também
+conhecido como "biquad"). Analisemos esse sistema agora a partir de
+todas os detalhes já apresentados (diagrama \, equação de diferença
+\, implementação em [fexpr~] \, função de transferência) e vejamos
+também o que são seus polos e zeros:;
+#X text 23 308 Equação de diferença:;
+#X text 287 527 <== Zeros (numerador);
+#X text 287 553 <== Polos (denominador);
+#X text 147 391 Polos;
+#X text 319 394 Zeros;
+#X text 477 157 O número de Polos e Zeros depende da ordem do sistema.
+Como o biquad é um sistema de segunda ordem \, podemos dizer que ele
+é um filtro de dois polos e dois zeros!;
+#X obj 575 452 rpole~;
+#X obj 545 427 noise~;
+#X obj 575 481 output~;
+#X obj 608 428 sig~ 0.1;
+#X text 474 313 ============================================================
+;
+#X text 670 437 a = coeficiente;
+#X text 483 341 Vejamos então o que seria um filtro de apenas um Polo.
+O Pd traz \, inclusive \, objetos de áudio que são filtros de um polo
+ou um zero. O filtro de um polo é o [rpole~] \, de "real pole" \, que
+filtra um sinal de áudio real a partir de um coeficiente "a".;
+#X obj 947 302 output~;
+#X obj 956 247 noise~;
+#X obj 991 615 biquad~;
+#X obj 974 646 output~;
+#X obj 953 579 noise~;
+#X text 895 454 ============================================================
+;
+#X text 1100 581 b1 \, b2 \, a0 \, a1 \, a2;
+#X msg 1020 582 0.1 0 1 0 0;
+#X obj 1020 559 loadbang;
+#X obj 968 392 cnv 15 200 50 empty empty empty 5 12 0 14 -233017 -66577
+0;
+#X text 1073 402 _____________;
+#X text 1106 395 1;
+#X text 972 405 H(z) =;
+#X text 1021 394 Y(z);
+#X text 1022 417 X(z);
+#X text 1013 402 _______;
+#X text 1060 405 =;
+#X text 1077 419 1 - a * z^-1;
+#X text 1020 369 função de transferência:;
+#X text 1179 417 <== Polo;
+#X text 46 342 y(n) = a0 * x(n) + a1 * x(n-1) + a2 * x(n-2) + b1 *
+y(n-1) + b2 * y(n-2);
+#X text 253 394 ganho;
+#X text 106 551 1 - b1 * z^-1 - b2 * z^-2;
+#N canvas 259 23 542 684 cálculo 0;
+#X obj 82 64 cnv 15 380 40 empty empty empty 5 12 0 14 -233017 -66577
+0;
+#X obj 121 593 cnv 15 240 50 empty empty empty 5 12 0 14 -232693 -66577
+0;
+#X text 121 560 Função de Transferência:;
+#X text 68 37 Equação de diferença:;
+#X text 91 71 y(n) = a0 * x(n) + a1 * x(n-1) + a2 * x(n-2) + b1 * y(n-1)
++ b2 * y(n-2);
+#X text 90 137 Notação da função de transferência:;
+#X text 186 599 a0 + a1*z^-1 + a2*z^-2;
+#X text 133 610 H(z) = --------------------------;
+#X text 86 213 Isolamos o X(z):;
+#X text 196 362 a0 + a1*z^-1 + a2*z^-2;
+#X text 127 346 X(z) = -----------------------------------;
+#X text 74 419 H(z) =;
+#X text 259 408 Y(z);
+#X text 115 416 ____________________________________________________________
+;
+#X text 152 499 H(z) =;
+#X text 205 489 Y(z) * a0 + a1*z^-1 + a2*z^-2;
+#X text 193 496 ___________________________________;
+#X text 191 620 1 - b1*z^-1 - b2*z^-2;
+#X text 104 171 Y(z) = a0 * X(z) + a1 * X(z)z^-1 + a2 * X(z)z^-2 +
+b1 * Y(z)z^-1 + b2 * Y(z)z^-2;
+#X text 103 243 Y(z) - b1*Y(z)z^-1 - b2*Y(z)z^-2 = a0*X(z) + a1*X(z)z^-1
++ a2*X(z)z^-2;
+#X text 105 286 Y(z) - b1*Y(z)z^-1 - b2*Y(z)z^-2 = X(z) * (a0 + a1*z^-1
++ a2*z^-2);
+#X text 176 333 Y(z) - b1*Y(z)z^-1 - b2*Y(z)z^-2;
+#X text 116 433 (Y(z) - b1*Y(z)z^-1 - b2*Y(z)z^-2 / a0 + a1*z^-1 +
+a2*z^-2);
+#X text 198 514 Y(z) - b1*Y(z)z^-1 - b2*Y(z)z^-2;
+#X restore 168 577 pd cálculo de H(z);
+#X text 25 496 Função de Transferência do [biquad~]:;
+#X obj 1121 247 sig~ 0.1;
+#X text 1058 246 $x2 = a =;
+#X text 474 9 No biquad \, os zeros são os coeficientes a1 e a2 \,
+que são coeficientes de feedforward que se encontram na parte de cima
+(numeradores) da função de transferência em função de "z". Como a0
+não é em função de "z" \, e se trata apenas de um coeficiente de ganho
+do sinal de entrada \, ele não é considerado como um "zero"!;
+#X text 475 100 Já os polos são coeficientes b1 e b2 \, de feedback
+\, que se encontram na parte de baixo (denominador) da função de transferência
+em função de "z".;
+#X text 477 211 Ser um sistema de dois polos e dois zeros não implica
+que ele apenas pode se configurar como sendo de dois polos e dois zeros.
+Basta que alguns coeficientes sejam zerados que o sistema pode se configurar
+como um filtro de primeira ordem \, por exemplo \, com apenas um polo
+e um zero. Ou ainda apenas com um polo. Em suma \, é capaz de se apresentar
+em diferentes combinações!;
+#X obj 547 568 cnv 15 180 130 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X text 664 613 |;
+#X text 664 625 |;
+#X text 664 635 |;
+#X text 645 651 |;
+#X text 687 651 |;
+#X text 687 671 |;
+#X text 645 671 |;
+#X text 648 641 _______;
+#X text 648 671 _______;
+#X text 664 638 v;
+#X text 606 639 |;
+#X text 606 653 |;
+#X text 606 615 |;
+#X text 606 627 |;
+#X text 606 612 ^;
+#X text 682 600 >;
+#X text 645 661 | z^-1 |;
+#X text 552 601 x(n) ---(+)----------- y(n);
+#X text 910 484 E como dito aqui \, o [biquad~] é capaz de operar como
+um filtro de um polo \, basta que seus outros coeficientes (b2 \, a1
+\, a2) estejam zerados. Portanto o coeficiente de ganho deve ser igual
+a 1!;
+#X text 1048 614 biquad como filtro de um polo;
+#X text 37 616 Perceba que o número de Polos e Zeros de um filtro é
+apenas outra maneira de informar a ordem do filtro! No caso do [biquad~]
+\, temos um filtro de dois Polos e dois Zeros \, isso é o mesmo que
+dizer que se trata de um filtro de segunda ordem!;
+#X text 608 659 -(*a)-;
+#X text 561 575 y[n] = x[n] + a * y[n-1];
+#X text 505 541 A equação de diferença e diagrama são:;
+#X text 883 19 Se você está prestando bastante atenção \, pode perceber
+que já apresentamos esse filtro de um polo aqui algumas vezes \, pois
+esse foi nosso exemplo de filtro IIR.;
+#X text 882 75 Vamos lembrar também o que já foi dito sobre filtros
+IIR \, que o coeficiente de feedback não pode exceder o valor de 1
+\, senão o filtro sempre terá um acréscimo de amplitude e acabará explodindo.
+;
+#X text 883 138 Isso significa que nenhum Polo deve ser maior que 1!!!
+;
+#X text 883 178 Vejamos abaixo agora uma versão em [fexpr~] e a Função
+de Transferência.;
+#X obj 212 196 image ../files/SOS.gif;
+#X text 318 157 <== Polo 1;
+#X text 318 228 <== Polo 2;
+#X text 36 160 Zero 1 ==>;
+#X text 39 227 Zero 2 ==>;
+#X obj 956 271 fexpr~ $x1[0] + $x2 * $y[-1];
+#X obj 54 445 fexpr~ (a0 * $x1[0]) + (a1 * $x1[-1]) + (a2 * $x1[-2])
++ (b1 * $y1[-1]) + (b2 * $y1[-2]);
+#X connect 17 0 19 0;
+#X connect 17 0 19 1;
+#X connect 18 0 17 0;
+#X connect 20 0 17 1;
+#X connect 25 0 88 0;
+#X connect 26 0 27 1;
+#X connect 26 0 27 0;
+#X connect 28 0 26 0;
+#X connect 31 0 26 0;
+#X connect 32 0 31 0;
+#X connect 49 0 88 1;
+#X connect 88 0 24 0;
+#X connect 88 0 24 1;

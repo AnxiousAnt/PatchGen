@@ -1,0 +1,10 @@
+#N canvas 315 119 311 230 12;
+#X floatatom 166 119 5 0 0 0 - - -;
+#X obj 124 76 route 1;
+#X obj 38 154 print from-route;
+#X obj 166 155 print from-nbx;
+#X msg 124 45 1;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 1 0 0 0;
+#X connect 4 0 1 0;

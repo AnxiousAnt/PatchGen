@@ -1,0 +1,16 @@
+#N canvas 409 257 454 304 10;
+#X obj 65 151 timer;
+#X floatatom 65 185 5 0 0 0 - - -;
+#X obj 67 43 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 57 114 t b b;
+#X floatatom 161 44 5 0 0 0 - - -;
+#X obj 105 113 delay 1.7;
+#X obj 67 77 metro 100;
+#X connect 0 0 1 0;
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
+#X connect 3 1 0 0;
+#X connect 4 0 5 1;
+#X connect 5 0 0 1;
+#X connect 6 0 3 0;

@@ -1,0 +1,54 @@
+#N canvas 510 121 725 780 10;
+#X msg 118 -275 destroy;
+#X msg 139 -249 1;
+#X msg 159 -221 0;
+#X msg 104 -298 create;
+#X text 172 -296 oeffnet das Bildfenster;
+#X text 184 -274 schliesst das Bildfenster;
+#X text 179 -249 startet das Rendering;
+#X text 192 -221 stoppt das Rendering;
+#X text 94 -324 Minimalparameter:;
+#X msg 167 -90 offset 0 20;
+#X msg 166 -123 dimen 600 600;
+#X text 268 -124 Groesse des Festers;
+#X text 266 -96 Position des Fensters;
+#X text 263 -85 (Versatz der linken oberen Ecke);
+#X obj 87 81 gemwin 20;
+#X text 161 81 die Zahl gibt die Bilder pro Sekunde an;
+#X obj 37 -374 cnv 15 400 40 empty empty Gem-oder_das_Bild_kommt_dazu
+20 20 0 16 -233017 -66577 0;
+#X text 51 212 Mit [gemwin] steuert man das Bildfenster.;
+#X text 49 237 Es ist wichtig die Reihenfolge einzuhalten: 1 Patch
+bauen \, 2 Gemwin oeffnen \, 3 Rendervorgang starten. Und andersherum
+zurueck.;
+#X obj 39 295 cnv 15 400 20 empty empty (CC)_2004_Max_Neupert_HKD_Kunst_und_Medien
+5 9 0 9 -103962 -262144 0;
+#X text 165 -150 weitere Parameter: (nur wirksam VOR create);
+#X msg 212 41 reset;
+#X msg 185 -52 title GEM_Fenster;
+#X text 324 -51 gibt dem Fenster einen Titel;
+#X msg 199 -26 border 0;
+#X msg 273 -26 border 1;
+#X text 345 -26 schaltet den Rahmen ein/aus;
+#X text 266 42 zurueck zu den Standardwerten;
+#X text 162 93 Default ist 20 \, je hoeher desto fluessiger sind Animationen
+\, Achtung: Prozessorleistung. Ratsam ist eine Fraquenz die der des
+Ausgabegeraets entspricht.;
+#X text 162 132 (PAL 25 \, NTSC 30 \, Monitor z.B. 60);
+#X text 497 -130 Unter Linux/Win laesst;
+#X text 497 -119 sich das Fenster frei bewegen;
+#X text 498 -96 halten und die Titelleiste;
+#X text 581 -86 ziehen.;
+#X text 498 -108 unter OS X dazu Apfel gedueckt;
+#X text 48 171 "Gem" (Graphics Environment for Multimedia) nennt sich
+eine Bibliothek die PD 3D- \, Bild- und Videotauglich macht.;
+#X connect 0 0 14 0;
+#X connect 1 0 14 0;
+#X connect 2 0 14 0;
+#X connect 3 0 14 0;
+#X connect 9 0 14 0;
+#X connect 10 0 14 0;
+#X connect 21 0 14 0;
+#X connect 22 0 14 0;
+#X connect 24 0 14 0;
+#X connect 25 0 14 0;

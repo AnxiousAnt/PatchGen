@@ -1,0 +1,132 @@
+[david@congo ~]$ cd Desktop/pdstuff/zexy-2.1/
+[david@congo zexy-2.1]$ autoconf
+autoconf: no input file
+[david@congo zexy-2.1]$ cd src
+[david@congo src]$ pwd
+/home/david/Desktop/pdstuff/zexy-2.1/src
+[david@congo src]$ autoconf
+[david@congo src]$ ./configure
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables...
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ANSI C... none needed
+checking for main in -lc... yes
+checking for fclose in -lcrtdll... no
+checking for lseek in -lcoldname... no
+checking for main in -lkernel32... no
+checking for main in -lm... yes
+checking for nullfn in -lpd... no
+checking how to run the C preprocessor... gcc -E
+checking for egrep... grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for stdlib.h... (cached) yes
+checking stdio.h usability... yes
+checking stdio.h presence... yes
+checking for stdio.h... yes
+checking for string.h... (cached) yes
+checking math.h usability... yes
+checking math.h presence... yes
+checking for math.h... yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking for select... yes
+checking for socket... yes
+checking for strerror... yes
+checking "ms-bitfields"... yes
+checking "pd\>=0.37"... yes
+checking "zexy-version"... 2.1
+checking "parallel-port"... yes
+configure: creating ./config.status
+config.status: creating Makefile
+[david@congo src]$ make
+gcc -c -o a2l.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD a2l.c
+gcc -c -o atoi.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD atoi.c
+gcc -c -o avg~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD avg~.c
+gcc -c -o blockmirror~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD blockmirror~.c
+gcc -c -o blockswap~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD blockswap~.c
+gcc -c -o date.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD date.c
+gcc -c -o demultiplex.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD demultiplex.c
+gcc -c -o demultiplex~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD demultiplex~.c
+gcc -c -o dfreq~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD dfreq~.c
+gcc -c -o dirac~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD dirac~.c
+gcc -c -o dot.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD dot.c
+gcc -c -o drip.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD drip.c
+gcc -c -o envrms~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD envrms~.c
+gcc -c -o fifop.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD fifop.c
+gcc -c -o glue.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD glue.c
+gcc -c -o index.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD index.c
+gcc -c -o length.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD length.c
+gcc -c -o lifop.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD lifop.c
+gcc -c -o limiter~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD limiter~.c
+gcc -c -o list2int.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD list2int.c
+gcc -c -o list2symbol.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD list2symbol.c
+gcc -c -o lister.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD lister.c
+gcc -c -o lpt.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD lpt.c
+gcc -c -o makesymbol.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD makesymbol.c
+gcc -c -o mavg.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD mavg.c
+gcc -c -o minmax.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD minmax.c
+gcc -c -o msgfile.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD msgfile.c
+gcc -c -o multiline~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD multiline~.c
+gcc -c -o multiplex.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD multiplex.c
+gcc -c -o multiplex~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD multiplex~.c
+gcc -c -o niagara.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD niagara.c
+gcc -c -o noish~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD noish~.c
+gcc -c -o noisi~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD noisi~.c
+gcc -c -o operating_system.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD operating_system.c
+gcc -c -o packel.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD packel.c
+gcc -c -o pack~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD pack~.c
+gcc -c -o pdf~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD pdf~.c
+gcc -c -o prime.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD prime.c
+gcc -c -o quantize~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD quantize~.c
+gcc -c -o repack.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD repack.c
+gcc -c -o repeat.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD repeat.c
+gcc -c -o sfplay.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD sfplay.c
+gcc -c -o sfrecord.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD sfrecord.c
+gcc -c -o sigzero~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD sigzero~.c
+gcc -c -o sort.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD sort.c
+gcc -c -o step~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD step~.c
+gcc -c -o strcmp.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD strcmp.c
+gcc -c -o sum.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD sum.c
+gcc -c -o swap~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD swap~.c
+gcc -c -o symbol2list.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD symbol2list.c
+gcc -c -o tabdump.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD tabdump.c
+gcc -c -o tabminmax.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD tabminmax.c
+gcc -c -o tabset.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD tabset.c
+gcc -c -o tavg~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD tavg~.c
+gcc -c -o time.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD time.c
+gcc -c -o unpack~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD unpack~.c
+gcc -c -o urn.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD urn.c
+gcc -c -o winNT_portio.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD winNT_portio.c
+gcc -c -o wrap.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD wrap.c
+gcc -c -o z_sigbin.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD z_sigbin.c
+gcc -c -o z~.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD z~.cgcc -c -o zexy.o -DZEXY_LIBRARY -DZ_WANT_LPT -I.   -g -O2 -mms-bitfields -DPD zexy.c
+gcc -export_dynamic -shared -o zexy.pd_linux  *.o -lm -lc
+/usr/bin/ld: a2l.o: relocation R_X86_64_32 against `a local symbol' can not be used when making a shared object; recompile with -fPIC
+a2l.o: could not read symbols: Bad value
+collect2: ld returned 1 exit status
+make: *** [zexy] Error 1
+[david@congo src]$
+

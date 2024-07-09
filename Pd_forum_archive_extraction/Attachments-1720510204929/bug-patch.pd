@@ -1,0 +1,7 @@
+#N canvas 548 166 460 310 10;
+#X msg 163 56 \; pd-bug-patch.pd obj 10 10 bug-patch;
+#X obj 46 163 noise~;
+#X obj 47 185 env~;
+#X floatatom 47 207 5 0 0 0 - - -;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;

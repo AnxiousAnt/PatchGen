@@ -1,0 +1,25 @@
+#N canvas 422 152 450 300 10;
+#X obj 195 191 textfile;
+#X msg 195 148 read ./text-float.txt;
+#X text 101 43 Big problem with a libe begining by float;
+#X obj 244 224 print what;
+#X msg 160 227 mes \$1;
+#X obj 211 254 route float;
+#X obj 145 263 sel float;
+#X msg 175 171 rewind;
+#X msg 135 174 bang;
+#X text 117 97 Click here and see the pd console;
+#X obj 135 132 t b b b;
+#X obj 135 113 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 4 0;
+#X connect 0 0 3 0;
+#X connect 0 0 5 0;
+#X connect 0 0 6 1;
+#X connect 1 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 10 0 8 0;
+#X connect 10 1 7 0;
+#X connect 10 2 1 0;
+#X connect 11 0 10 0;

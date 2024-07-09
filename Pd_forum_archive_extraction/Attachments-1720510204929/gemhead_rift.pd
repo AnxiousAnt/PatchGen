@@ -1,0 +1,10 @@
+#N canvas 194 586 450 300 10;
+#X obj 251 48 gemreceive oculus_right \$1;
+#X obj 62 48 gemreceive oculus_left \$1;
+#X obj 62 90 separator;
+#X obj 251 90 separator;
+#X obj 62 134 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;

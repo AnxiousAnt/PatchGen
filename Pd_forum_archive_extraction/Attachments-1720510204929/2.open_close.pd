@@ -1,0 +1,10 @@
+#N canvas 485 101 502 281 10;
+#X text 10 4 open and close an abstraction;
+#X text 23 85 (you have to put a corect name & valid path);
+#X text 25 114 close;
+#X text 26 30 open;
+#X msg 26 135 \; pd pd-your_abs.pd menuclose \;;
+#X text 23 171 (you have to put a corect name & valid path);
+#X text 64 197 Those last 2 tricks came from Miller \, but i didn't
+succed to make them work. hope somebody will be more lucky.;
+#X msg 25 50 \; pd open abstraction.pd .;

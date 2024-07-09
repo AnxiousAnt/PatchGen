@@ -1,0 +1,26 @@
+#N canvas 296 225 794 416 10;
+#X msg 184 94 123;
+#X obj 184 235 + 1;
+#X floatatom 184 262 5 0 0 0 - - -;
+#X msg 184 155 set \$1 \, bang;
+#X symbolatom 281 152 10 0 0 0 - - -;
+#X symbolatom 239 221 10 0 0 0 - - -;
+#X text 156 66 click me;
+#X obj 184 127 makefilename %d;
+#X text 227 196 after save and reload this will be a real "float 123"
+again;
+#X text 303 124 this generates a messagebox with a symbol inside below.
+;
+#X text 97 198 click me;
+#X obj 242 244 symbol;
+#X symbolatom 242 269 10 0 0 0 - - -;
+#X msg 184 196 123;
+#X connect 0 0 7 0;
+#X connect 1 0 2 0;
+#X connect 3 0 13 0;
+#X connect 7 0 3 0;
+#X connect 7 0 4 0;
+#X connect 11 0 12 0;
+#X connect 13 0 1 0;
+#X connect 13 0 5 0;
+#X connect 13 0 11 0;

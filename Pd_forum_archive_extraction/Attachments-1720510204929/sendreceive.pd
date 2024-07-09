@@ -1,0 +1,42 @@
+#N canvas 0 0 709 300 10;
+#N canvas 0 0 450 300 send~ 0;
+#X obj 173 34 osc~ 123;
+#X obj 174 122 send~ a;
+#X obj 325 35 inlet;
+#X obj 325 92 switch~;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X restore 48 96 pd send~;
+#X obj 48 65 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 47 137 receive~ a;
+#X obj 47 258 dac~;
+#X obj 168 68 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 168 260 dac~;
+#N canvas 0 0 450 300 throw~ 0;
+#X obj 173 34 osc~ 123;
+#X obj 325 35 inlet;
+#X obj 325 92 switch~;
+#X obj 174 122 throw~ a;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X restore 168 99 pd throw~;
+#X obj 167 140 catch~ a;
+#X obj 48 203 *~;
+#X obj 64 182 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 0.3
+;
+#X obj 168 202 *~;
+#X obj 184 181 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+0.3;
+#X text 250 192 1 turn on the volume;
+#X text 248 72 2 then use the toggles to switch the send~/throw~ on
+and off;
+#X connect 1 0 0 0;
+#X connect 2 0 8 0;
+#X connect 4 0 6 0;
+#X connect 7 0 10 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 1;
+#X connect 10 0 5 0;
+#X connect 11 0 10 1;

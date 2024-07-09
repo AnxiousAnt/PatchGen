@@ -1,0 +1,34 @@
+#N canvas 329 25 344 853 12;
+#X text -19 -1 Pythagorean Tone Generator;
+#X obj 134 19 cnv 15 180 200 empty empty empty 20 12 0 14 -261681 -66577
+0;
+#X obj -18 19 cnv 15 150 200 empty empty empty 0 0 0 14 -228992 -66577
+0;
+#X floatatom -8 53 0 0 0 2 frequency #0-freq -;
+#X obj 216 104 *;
+#X floatatom 281 83 0 0.25 2 0 - - -;
+#X obj -19 222 cnv 15 333 625 empty empty empty 20 12 0 14 -261689
+-66577 0;
+#X obj -4 226 noteSelector D-natural 1 1 \$0;
+#X text -15 826 Copyright 2006 David F. Place;
+#X symbolatom -6 150 0 0 0 2 Note #0-note -;
+#X symbolatom -5 189 0 0 0 2 Syntonic_Comma #0-comma -;
+#X obj 168 27 octave;
+#X obj 137 133 toneGenerator;
+#X floatatom 15 114 0 0 0 0 a= apitch -;
+#X obj -4 274 noteSelector E-flat 256 243 \$0;
+#X obj -4 322 noteSelector E-natural 9 8 \$0;
+#X obj -4 372 noteSelector F-natural 32 27 \$0;
+#X obj -4 420 noteSelector F-sharp 81 64 \$0;
+#X obj -4 469 noteSelector G-natural 4 3 \$0;
+#X obj -5 518 noteSelector G-sharp 729 512 \$0;
+#X obj -4 568 noteSelector A-natural 3 2 \$0;
+#X obj -3 618 noteSelector B-flat 128 81 \$0;
+#X obj -3 667 noteSelector B-natural 27 16 \$0;
+#X obj -3 717 noteSelector C-natural 16 9 \$0;
+#X obj -3 768 noteSelector C-sharp 243 128 \$0;
+#X connect 3 0 4 0;
+#X connect 4 0 12 0;
+#X connect 5 0 4 1;
+#X connect 11 0 4 0;
+#X connect 11 1 5 0;

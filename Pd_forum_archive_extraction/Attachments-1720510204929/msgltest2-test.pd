@@ -1,0 +1,13 @@
+#N canvas 596 356 620 317 10;
+#X obj 314 59 gemwin;
+#X msg 315 34 create \, 1;
+#X obj 102 60 gemhead;
+#X msg 394 33 0;
+#X floatatom 160 57 5 0 0 0 - - -;
+#X obj 104 84 msgltest2;
+#X floatatom 208 56 5 0 0 0 - - -;
+#X connect 1 0 0 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 1;
+#X connect 6 0 5 2;

@@ -1,0 +1,15 @@
+#N canvas 281 228 346 158 10;
+#X obj 45 82 splitfilename .;
+#X obj 45 63 symbol;
+#X obj 45 43 openpanel;
+#X obj 45 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X symbolatom 45 122 30 0 0 0 - - -;
+#X symbolatom 145 104 10 0 0 0 - - -;
+#X text 257 122 filename;
+#X text 218 103 extension;
+#X connect 0 0 4 0;
+#X connect 0 1 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;

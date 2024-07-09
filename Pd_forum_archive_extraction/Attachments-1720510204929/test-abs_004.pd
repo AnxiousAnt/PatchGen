@@ -1,0 +1,15 @@
+#N canvas 284 262 353 193 12;
+#X obj 26 88 *~ 0.1;
+#X obj 26 122 dac~;
+#X obj 26 57 oscbank~ 100;
+#X obj 144 17 loadbang;
+#X obj 144 137 realtime;
+#X floatatom 144 162 8 0 0 0 - - -;
+#X text 155 57 <- dynamically;
+#X text 179 77 instantiating many;
+#X text 179 97 abstractions;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 2 1 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;

@@ -1,0 +1,38 @@
+#N canvas 888 76 449 644 10;
+#X obj 149 172 timer;
+#X obj 200 171 samplerate~;
+#X obj 200 231 /;
+#X msg 200 208 1 \$1;
+#X obj 149 263 /;
+#X obj 149 209 / 1000;
+#X text 44 21 Get the blocksize of the parent patch;
+#X obj 148 54 bang~;
+#X obj 149 389 outlet;
+#X obj 149 106 t b b b;
+#X obj 149 290 t a a;
+#X obj 149 359 spigot;
+#X obj 176 334 a_pow2?;
+#X obj 176 313 int;
+#X text -7 435 Bugs!;
+#X text -2 455 1 Only works for blocksizes >= 64 I think this is to
+do with a limitation on message scheduling.;
+#X text -1 490 2 If audio is stopped and then restarted \, the timer
+will measure the gap and the next blocksize output will be incorrect
+;
+#X text 1 538 To counteract 2 we only allow through power-of-two blocksizes
+\, which should cover most situations!;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 1;
+#X connect 3 0 2 0;
+#X connect 4 0 10 0;
+#X connect 5 0 4 0;
+#X connect 7 0 9 0;
+#X connect 9 0 0 0;
+#X connect 9 1 0 1;
+#X connect 9 2 1 0;
+#X connect 10 0 11 0;
+#X connect 10 1 13 0;
+#X connect 11 0 8 0;
+#X connect 12 0 11 1;
+#X connect 13 0 12 0;

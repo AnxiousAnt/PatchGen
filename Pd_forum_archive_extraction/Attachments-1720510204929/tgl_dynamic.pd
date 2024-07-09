@@ -1,0 +1,6 @@
+#N canvas 138 301 1263 703 10;
+#X obj 8 7 namecanvas seq;
+#X obj 101 9 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 101 29 \; seq obj 50 100 tgl 5;
+#X connect 1 0 2 0;

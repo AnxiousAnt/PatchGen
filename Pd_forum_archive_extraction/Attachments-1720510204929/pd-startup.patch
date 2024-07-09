@@ -1,0 +1,12 @@
+diff --git a/src/s_main.c b/src/s_main.c
+index 87e13c8..b95d2c3 100644
+--- a/src/s_main.c
++++ b/src/s_main.c
+@@ -1038,6 +1038,7 @@ static void sys_afterargparse(void)
+         callback = sys_main_callback;
+     if (sys_main_blocksize)
+         blocksize = sys_main_blocksize;
++    sys_dacsr = rate; // CC Hack to fix startup rate
+     sys_set_audio_settings(naudioindev, audioindev, nchindev, chindev,
+         naudiooutdev, audiooutdev, nchoutdev, choutdev, rate, advance, 
+         callback, blocksize);

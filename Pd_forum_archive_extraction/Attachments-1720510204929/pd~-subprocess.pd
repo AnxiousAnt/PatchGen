@@ -1,0 +1,17 @@
+#N canvas 148 361 450 300 12;
+#X obj 144 46 loadbang;
+#X obj 148 100 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 186 103 stdout;
+#X msg 327 116 dsp \$1;
+#X obj 327 146 s pd;
+#X obj 328 49 r pd~_dsp;
+#X obj 339 80 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 145 69 metro 300;
+#X connect 0 0 7 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 5 0 6 0;
+#X connect 7 0 1 0;
+#X connect 7 0 2 0;

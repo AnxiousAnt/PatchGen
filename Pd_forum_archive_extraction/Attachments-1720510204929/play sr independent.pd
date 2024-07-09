@@ -1,0 +1,74 @@
+#N canvas 92 93 691 480 10;
+#X obj 62 34 soundfiler;
+#X obj -74 400 tabread4~ array1;
+#X obj -158 290 f;
+#X obj -74 374 line~;
+#X obj -84 455 dac~;
+#X obj 47 284 f;
+#X floatatom 185 62 10 0 0 0 - - -;
+#X text 177 40 total samples;
+#X obj -143 156 /;
+#X obj -143 101 t f b;
+#X text -255 143 length in seconds;
+#X text -253 131 needed;
+#X obj -74 311 pack f f;
+#X obj -246 256 t b b;
+#X obj -246 231 bng 20 250 50 0 empty empty empty 17 7 0 10 -261682
+-1 -1;
+#X msg 62 8 read -resize ./test.wav array1;
+#X msg -113 27 22050;
+#X msg -70 27 44100;
+#X msg -23 27 48000;
+#X msg -244 398 \; pd dsp \$1;
+#X obj -244 366 tgl 20 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X msg -74 341 0 \, \$2 \$1;
+#X obj 113 181 table array1;
+#X obj -143 188 * 1000;
+#X floatatom -126 214 10 0 0 0 - - -;
+#X text 188 181 <- click to see array;
+#X obj -128 125 f;
+#X obj -70 5 loadbang;
+#X obj -260 85 wavinfo;
+#X text -295 83 with;
+#X text -295 46 (*) you could also get;
+#X text -296 63 this automatically;
+#X obj 259 7 cnv 15 120 20 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X obj -288 3 cnv 15 120 20 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X obj -285 207 cnv 15 120 20 empty empty empty 20 12 0 14 -257985
+-66577 0;
+#X text -281 207 play entire array;
+#X text -287 4 chose files's sample rate first (*);
+#X text 259 7 <- then read file;
+#X obj -223 366 cnv 15 120 20 empty empty empty 20 12 0 14 -257985
+-66577 0;
+#X text -220 368 dsp on/off;
+#X text -93 179 you need milliseconds;
+#X text -94 194 for [line~];
+#X connect 0 0 6 0;
+#X connect 0 0 5 1;
+#X connect 0 0 9 0;
+#X connect 1 0 4 0;
+#X connect 1 0 4 1;
+#X connect 2 0 12 0;
+#X connect 3 0 1 0;
+#X connect 5 0 12 1;
+#X connect 8 0 23 0;
+#X connect 9 0 8 0;
+#X connect 9 1 26 0;
+#X connect 12 0 21 0;
+#X connect 13 0 2 0;
+#X connect 13 1 5 0;
+#X connect 14 0 13 0;
+#X connect 15 0 0 0;
+#X connect 16 0 26 1;
+#X connect 17 0 26 1;
+#X connect 18 0 26 1;
+#X connect 20 0 19 0;
+#X connect 21 0 3 0;
+#X connect 23 0 24 0;
+#X connect 23 0 2 1;
+#X connect 26 0 8 1;
+#X connect 27 0 17 0;

@@ -1,0 +1,74 @@
+Received: from [201.221.39.44] by web37206.mail.mud.yahoo.com via HTTP; Wed, 30 May 2007 02:07:18 PDT
+Date: Wed, 30 May 2007 02:07:18 -0700 (PDT)
+From: Diego Azar <dazar_uy@yahoo.com>
+Subject: Re: [PD] hid compiling problem.
+To: Hans-Christoph Steiner <hans@eds.org>
+In-Reply-To: <1E0A02A0-B3E1-46A7-BDA7-5F77FA715DBE@eds.org>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="0-1269397440-1180516038=:98203"
+Content-Transfer-Encoding: 8bit
+Content-Length: 1277
+
+--0-1269397440-1180516038=:98203
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+i mean, in the .c file you sent me, everything is defined under ev_syn but in the one i had only "syn_report","syn_config" are defined under this char *, and the everything else is defined under *ev_key.
+
+Diego.
+Well, here's perhaps an easier way:  I just attached the two files:
+
+￼
+.hc
+
+On May 28, 2007, at 11:55 PM, Diego Azar wrote:
+
+> Hi, I`m having some problems compiling [hid] on a 64.studio (linux,  
+> debian based). Is there anything like a "how to" or something with  
+> this issue.
+>
+> When I do the make it sais: "input_arrays.h:5: *** missing  
+> separator. stop."
+>
+> I did the make like the one in the README with the corresponding  
+> directories of my pc.
+>
+> make INCLUDE=/usr/lib/pd/src PDEXECUTABLE=/usr/lib/pd test -f  
+> input_arrays.h || ./make-arrays-from-input.h.pl
+>
+> Thanks.
+>
+> Get the free Yahoo! toolbar and rest assured with the added  
+> security of spyware protection.
+> _______________________________________________
+> PD-list@iem.at mailing list
+> UNSUBSCRIBE and account-management -> http://lists.puredata.info/ 
+> listinfo/pd-list
+
+
+
+
+------------------------------------------------------------------------ 
+----
+
+All mankind is of one author, and is one volume; when one man dies,  
+one chapter is not torn out of the book, but translated into a better  
+language; and every chapter must be so translated.... -John Donne
+
+
+
+
+       
+---------------------------------
+Yahoo! oneSearch: Finally,  mobile search that gives answers, not web links. 
+--0-1269397440-1180516038=:98203
+Content-Type: text/html; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+i mean, in the .c file you sent me, everything is defined under ev_syn but in the one i had only "syn_report","syn_config" are defined under this char *, and the everything else is defined under *ev_key.<br><br>Diego.<blockquote class="replbq" style="border-left: 2px solid rgb(16, 16, 255); margin-left: 5px; padding-left: 5px;"><br>Well, here's perhaps an easier way:  I just attached the two files:<br><br>￼<br>.hc<br><br>On May 28, 2007, at 11:55 PM, Diego Azar wrote:<br><br>&gt; Hi, I`m having some problems compiling [hid] on a 64.studio (linux,  <br>&gt; debian based). Is there anything like a "how to" or something with  <br>&gt; this issue.<br>&gt;<br>&gt; When I do the make it sais: "input_arrays.h:5: *** missing  <br>&gt; separator. stop."<br>&gt;<br>&gt; I did the make like the one in the README with the corresponding  <br>&gt; directories of my pc.<br>&gt;<br>&gt; make INCLUDE=/usr/lib/pd/src PDEXECUTABLE=/usr/lib/pd test -f  <br>&gt; input_arrays.h ||
+ ./make-arrays-from-input.h.pl<br>&gt;<br>&gt; Thanks.<br>&gt;<br>&gt; Get the free Yahoo! toolbar and rest assured with the added  <br>&gt; security of spyware protection.<br>&gt; _______________________________________________<br>&gt; PD-list@iem.at mailing list<br>&gt; UNSUBSCRIBE and account-management -&gt; http://lists.puredata.info/ <br>&gt; listinfo/pd-list<br><br><br><br><br>------------------------------------------------------------------------ <br>----<br><br>All mankind is of one author, and is one volume; when one man dies,  <br>one chapter is not torn out of the book, but translated into a better  <br>language; and every chapter must be so translated.... -John Donne<br><br><br></blockquote><br><p>&#32;
+      <hr size=1>Yahoo! oneSearch: Finally, <a href="http://us.rd.yahoo.com/evt=48252/*http://mobile.yahoo.com/mobileweb/onesearch?refer=1ONXIC"> mobile search 
+that gives answers</a>, not web links. 
+
+
+--0-1269397440-1180516038=:98203--

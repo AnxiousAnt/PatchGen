@@ -1,0 +1,477 @@
+(gdb) backtrace full
+#0  0xb7b6c2eb in handle_braces (ac=1, av=0xbf9dff48) at gridflow.c.fcs:766
+	s = <value optimized out>
+	se = <value optimized out>
+	close = 0
+	i = 0
+	stack = {16, -1208565256, -1208685778, -1208679000, -1208691506, 
+  -1208691686, 1, 152706576, -1274452507, -1208565384, 136, -1208569868, 0, 
+  153041664, -1080165532, -1209536346}
+	stackn = 0
+	j = 0
+	buf = (struct _binbuf *) 0x91a6e68
+	__PRETTY_FUNCTION__ = "int handle_braces(int, t_atom*)"
+#1  0xb7b6c7cc in BFObject_anything (bself=0x91b5468, winlet=0, 
+    selector=0x91b09d0, ac=1, at=0xbf9e0314) at gridflow.c.fcs:536
+	argc = 1
+	buf = "\230\004\236��1\v\bhn\032\t\b\000\000\000�\017��\027ƶ�hn\032\t�\t\033\tx:\037\tx:\037\t\204\231��h�ٷ�*\004��\004\236��\004\236�\001\000\000\000hn\032\t\001\000\000\000\n\000\000\000\a\020\a�;��������0\004�\002\000\000\000\000\000\000\000rw��|\000\236�D�\021\b�\001\236��0\004�\000\000\000\000\034\001\236�Z�\002\000\001\200���0\004��0\004��0\004��0\004��0\004�\a\020\a��0\004�\a\020\a�colorspace\000\000\000\000\000\000\000\000\000\000\f�\033\t\004\000\000\000����"...
+	m = <value optimized out>
+---Type <return> to continue, or q <return> to quit---
+#2  0x080ae41b in pd_typedmess (x=0x91b5468, s=0x91b09d0, argc=1, 
+    argv=0xbf9e0314) at m_class.c:765
+	c = (struct _class *) 0x8eeece0
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {2, -1080163932, -1080162628, -1224462163, 188251, -1080162316}
+	ap = <value optimized out>
+	ad = {4.39169465e-34, -2.72804682e-05, 1.42575122e-33, 1.01412084e+31, 
+  2.92727045e-40, -7.87914632e-06}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#3  0x080b0ebf in outlet_anything (x=0x91b4238, s=0x91b09d0, argc=1, 
+    argv=0xbf9e0314) at m_obj.c:390
+	oc = (struct _outconnect *) 0x91b5868
+#4  0x080ae41b in pd_typedmess (x=0x91b4210, s=0x91b09d0, argc=1, 
+    argv=0xbf9e0314) at m_class.c:765
+	c = (struct _class *) 0x8ed1f58
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+---Type <return> to continue, or q <return> to quit---
+	i = 0
+	ai = {0, 32, -1080163808, 2, -1209542063, 1931426920}
+	ap = <value optimized out>
+	ad = {0, 0, 0, 0, 0, 0}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#5  0x080ae41b in pd_typedmess (x=0x91b4470, s=0x91b09d0, argc=1, 
+    argv=0xbf9e0314) at m_class.c:765
+	c = (struct _class *) 0x8ed2660
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {-1210458990, -1208977836, -1080163664, -1210458996, 149749832, 
+  -1080163224}
+	ap = <value optimized out>
+	ad = {4.17960011e-34, 1.86832044e-33, 1.42575122e-33, 4.20389539e-45, 
+  -1.23448658, 3.58732407e-43}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#6  0x080b0ebf in outlet_anything (x=0x91f2e30, s=0x91b09d0, argc=1, 
+---Type <return> to continue, or q <return> to quit---
+    argv=0xbf9e0314) at m_obj.c:390
+	oc = (struct _outconnect *) 0x91fafb0
+#7  0xb7d64c9d in FormatVideoDev::___get (this=0x91f3750, argc=1, 
+    argv=0xbf9e03bc, s=0x91b09d0) at format/videodev.c.fcs:789
+	a = {{a_type = A_SYMBOL, a_w = {w_float = 0, w_symbol = 0x0, 
+      w_gpointer = 0x0, w_array = 0x0, w_list = 0x0, w_index = 0}}}
+	__PRETTY_FUNCTION__ = "void FormatVideoDev::___get(int, t_atom2*, t_symbol*)"
+#8  0xb7d666a0 in FormatVideoDev::___get_wrap (self=0x91f3750, argc=1, 
+    argv=0xbf9e03bc) at format/videodev.c.fcs:789
+	methodspec = 0xb7dbab88 "FormatVideoDev::___get(t_symbol * s)"
+	__PRETTY_FUNCTION__ = "static void FormatVideoDev::___get_wrap(FormatVideoDev*, int, t_atom2*)"
+#9  0xb7b6bc4d in FObject::_0_get (this=0x91f3750, argc=1, argv=0xbf9e04b8, 
+    s=0x91b09d0) at gridflow.c.fcs:820
+	m = (FMethod) 0x3
+	a = {{<_atom> = {a_type = A_SYMBOL, a_w = {w_float = 1.86620602e-33, 
+        w_symbol = 0x91b09d0, w_gpointer = 0x91b09d0, w_array = 0x91b09d0, 
+        w_list = 0x91b09d0, w_index = 152766928}}, <No data fields>}}
+	fc = <value optimized out>
+#10 0xb7d6546e in FormatVideoDev::_0_get (this=0x91f3750, argc=1, 
+    argv=0xbf9e04b8, s=0x91b09d0) at format/videodev.c.fcs:292
+No locals.
+---Type <return> to continue, or q <return> to quit---
+#11 0xb7d6679a in FormatVideoDev::_0_get_wrap (self=0x91f3750, argc=1, 
+    argv=0xbf9e04b8) at format/videodev.c.fcs:283
+	methodspec = 0xb7dbb054 "FormatVideoDev::_0_get(t_symbol * s)"
+	__PRETTY_FUNCTION__ = "static void FormatVideoDev::_0_get_wrap(FormatVideoDev*, int, t_atom2*)"
+#12 0xb7b6ca56 in BFObject_anything (bself=0x91b45f8, winlet=0, 
+    selector=0x8ed0038, ac=1, at=0xbf9e0764) at gridflow.c.fcs:545
+	argc = 1
+	buf = "_0_get\000\b���\b�\006\236�\003\000\000\000\033�\n\b���\b\003\000\000\000�\006\236��\006\236�]/\004�\004\000\000\000�\005\236��#\f\b]/\004���\002\000\001\000\000\000����D�\021\b���\b\000\000\000\000([\033\t���\000\004\000\000\000�\231\032\tT^\n\bD�\021\b�\231\032\t([\033\t\003\000\000\000���\000���\000���\000�!\032\t�\006\236�\003\000\000\000���\b�\016\v\b`\030\032\t���\b\003\000\000\000�\006\236�([\033\t�\231\032\t\005\000\000\000X\037�\b���\b�\006\236�\003\000\000\000\033�\n\b"...
+	m = (FMethod) 0
+#13 0x080ae41b in pd_typedmess (x=0x91b45f8, s=0x8ed0038, argc=1, 
+    argv=0xbf9e0764) at m_class.c:765
+	c = (struct _class *) 0x8ef23a0
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+---Type <return> to continue, or q <return> to quit---
+	ai = {2, 149742784, 134935360, 149749832, -1210458796, 1101004800}
+	ap = <value optimized out>
+	ad = {-1.23458433, -1.23458338, 1.85447458e-33, 5.60519386e-45, 
+  5.60519386e-45, 0}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#14 0xb7b6bcf8 in FObject::_0_get (this=0x91f3750, argc=0, argv=0xbf9e0858, 
+    s=0x0) at gridflow.c.fcs:812
+	a = {{a_type = A_SYMBOL, a_w = {w_float = 1.86620602e-33, 
+      w_symbol = 0x91b09d0, w_gpointer = 0x91b09d0, w_array = 0x91b09d0, 
+      w_list = 0x91b09d0, w_index = 152766928}}}
+	fc = <value optimized out>
+#15 0xb7d6546e in FormatVideoDev::_0_get (this=0x91f3750, argc=0, 
+    argv=0xbf9e0858, s=0x0) at format/videodev.c.fcs:292
+No locals.
+#16 0xb7d6679a in FormatVideoDev::_0_get_wrap (self=0x91f3750, argc=0, 
+    argv=0xbf9e0858) at format/videodev.c.fcs:283
+	methodspec = 0xb7dbb054 "FormatVideoDev::_0_get(t_symbol * s)"
+	__PRETTY_FUNCTION__ = "static void FormatVideoDev::_0_get_wrap(FormatVideoDev*, int, t_atom2*)"
+#17 0xb7b6ca56 in BFObject_anything (bself=0x91b45f8, winlet=0, 
+    selector=0x8ed0038, ac=0, at=0xbf9e114c) at gridflow.c.fcs:545
+---Type <return> to continue, or q <return> to quit---
+	argc = 0
+	buf = "_0_get\000\000\000\000\000\000l\t\236�\000\000\000\000@�\n\b�\213\032\tG\t\236����\b\220\213\032\t�\213\032\t\220\213\032\t\000\000\000\000�\032\t\bG\t\236�\v\000\000Unknown_camera\000\236�t�緸r\033\tL\n\236�\004\000\000\000���\b�\016\v\b�e\033\t���\b\004\000\000\000L\n\236�\000\000\000\000\000\000\000\000 \000\000\000(\027�\b���\bL\n\236�\004\000\000\000\033�\n\b�I\033\t���\b\004\000\000\000L\n\236�@���\024\000\000\000�e\t��s\033\t�\n\033\t\200\v\236�8L\033\t��\n\b"...
+	m = (FMethod) 0
+#18 0x080ae41b in pd_typedmess (x=0x91b45f8, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_class.c:765
+	c = (struct _class *) 0x8ef23a0
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {152790632, 152790536, 134616553, 152783376, 152783332, 0}
+	ap = <value optimized out>
+	ad = {1.40129846e-45, 1, 1.40129846e-45, 4.65661287e-10, 
+  1.8712048e-33, 0}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+---Type <return> to continue, or q <return> to quit---
+#19 0x080b0ebf in outlet_anything (x=0x91b2f10, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_obj.c:390
+	oc = (struct _outconnect *) 0x91b4d20
+#20 0x080ae41b in pd_typedmess (x=0x91b4698, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_class.c:765
+	c = (struct _class *) 0x8ed1f58
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {-1080160913, -1080160665, -1080160920, -1080160665, 0, 0}
+	ap = <value optimized out>
+	ad = {0, -1.80172717e+36, -1.23478413, -1.23478413, -1.23478413, 
+  -1.23478413}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#21 0x080ae41b in pd_typedmess (x=0x91b41a0, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_class.c:765
+	c = (struct _class *) 0x8ed2660
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+---Type <return> to continue, or q <return> to quit---
+	i = 0
+	ai = {-1208570624, 152727832, -1210052620, 22, -1210035600, 
+  -1080161304}
+	ap = <value optimized out>
+	ad = {-2.2012995e-05, 1.85902521e-33, 1.86045197e-33, 0, 0, 0}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#22 0x080b0ebf in outlet_anything (x=0x91b42d0, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_obj.c:390
+	oc = (struct _outconnect *) 0x91b5888
+#23 0x080ae41b in pd_typedmess (x=0x91b4278, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_class.c:765
+	c = (struct _class *) 0x8ed20f8
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {152735304, 2, 152735336, 2, 152735368, 2}
+	ap = <value optimized out>
+	ad = {1.86037997e-33, 2.80259693e-45, 1.86038585e-33, 2.80259693e-45, 
+  1.86039173e-33, 2.80259693e-45}
+	dp = <value optimized out>
+---Type <return> to continue, or q <return> to quit---
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#24 0x080b0ebf in outlet_anything (x=0x91b55a0, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_obj.c:390
+	oc = (struct _outconnect *) 0x91b5988
+#25 0x080ae41b in pd_typedmess (x=0x91b54a8, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_class.c:765
+	c = (struct _class *) 0x8ed20f8
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {135416272, 0, 152727696, -1080161072, 22, 2}
+	ap = <value optimized out>
+	ad = {-1.23478413, -1.23474216, 6.40969056e-10, -1.23584557, 
+  2.92727045e-40, -1.23474121}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#26 0x080b0ebf in outlet_anything (x=0x91b2ac8, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_obj.c:390
+	oc = (struct _outconnect *) 0x91b5818
+#27 0x080ae41b in pd_typedmess (x=0x91b2a40, s=0x8ed0038, argc=0, 
+---Type <return> to continue, or q <return> to quit---
+    argv=0xbf9e114c) at m_class.c:765
+	c = (struct _class *) 0x8ed0428
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {149747472, -1080160836, -1208724736, 8, 3, 0}
+	ap = <value optimized out>
+	ad = {-1.23483133, -1.23483467, 0, 3.8828125, 4.01421035e-34, 
+  -1.23497438}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#28 0x080ae41b in pd_typedmess (x=0x91b2aa8, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_class.c:765
+	c = (struct _class *) 0x8ecd128
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {-1209542063, -1209721235, -1208688677, -1080160720, 2, 10}
+	ap = <value optimized out>
+	ad = {0, 0, -1.23481083, -2.94074198e-05, -1.23487616, -1.2348299}
+---Type <return> to continue, or q <return> to quit---
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#29 0x080b0ebf in outlet_anything (x=0x91aa888, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_obj.c:390
+	oc = (struct _outconnect *) 0x91c7ed0
+#30 0x080ae41b in pd_typedmess (x=0x91aa818, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_class.c:765
+	c = (struct _class *) 0x8ecfed0
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {149755688, 153041480, -1209534460, 153041480, 0, 188}
+	ap = <value optimized out>
+	ad = {1.91666705e-33, 2.24207754e-44, 0, -1.23487616, -2.94074198e-05, 
+  -2.94154743e-05}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#31 0x080ae41b in pd_typedmess (x=0x91aa8a0, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_class.c:765
+	c = (struct _class *) 0x8ecd128
+---Type <return> to continue, or q <return> to quit---
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {0, -1210458990, -1080158828, -1209745629, -1080158800, 
+  -1210458990}
+	ap = <value optimized out>
+	ad = {-1.23488283, 5.60519386e-45, 2.80259693e-45, 1.42573579e-33, 
+  2.80259693e-45, 1.86026977e-33}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#32 0x080b0ebf in outlet_anything (x=0x91a7378, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_obj.c:390
+	oc = (struct _outconnect *) 0x91a1f10
+#33 0x080f2d47 in trigger_anything (x=0x91a7310, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at x_connective.c:1004
+	u = (t_triggerout *) 0x3
+	i = <value optimized out>
+#34 0x080ae41b in pd_typedmess (x=0x91a7310, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_class.c:765
+	c = (struct _class *) 0x8ed2278
+	m = <value optimized out>
+---Type <return> to continue, or q <return> to quit---
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {0, 0, 0, 0, 0, 822083584}
+	ap = <value optimized out>
+	ad = {0, 0, 1.40129846e-44, -1.23501718, 0, 0}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#35 0x080b0ebf in outlet_anything (x=0x91aa1e0, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_obj.c:390
+	oc = (struct _outconnect *) 0x91a1c30
+#36 0x080ae41b in pd_typedmess (x=0x91aa1cc, s=0x8ed0038, argc=0, 
+    argv=0xbf9e114c) at m_class.c:765
+	c = (struct _class *) 0x8ed1728
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {-1080159772, 16, 0, -72515583, -1080159752, 153040024}
+	ap = <value optimized out>
+	ad = {-1.2348938, 1.40129846e-42, -1.2349143, -2.86653303e-05, 
+  -1.2348938, 1.86615459e-33}
+---Type <return> to continue, or q <return> to quit---
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#37 0x080b3f31 in binbuf_eval (x=0x91a9c48, target=0x91aa1cc, argc=1, 
+    argv=0xbf9e11a4) at m_binbuf.c:722
+	nexttarget = (t_pd *) 0x91aa1cc
+	smallstack = {{a_type = A_SYMBOL, a_w = {w_float = 1.42639701e-33, 
+      w_symbol = 0x8ed0038, w_gpointer = 0x8ed0038, w_array = 0x8ed0038, 
+      w_list = 0x8ed0038, w_index = 149749816}}, {a_type = A_SYMBOL, a_w = {
+      w_float = 1.86624422e-33, w_symbol = 0x91b0aa0, w_gpointer = 0x91b0aa0, 
+      w_array = 0x91b0aa0, w_list = 0x91b0aa0, w_index = 152767136}}, {
+    a_type = A_SYMBOL, a_w = {w_float = 1.86876272e-33, w_symbol = 0x91b4030, 
+      w_gpointer = 0x91b4030, w_array = 0x91b4030, w_list = 0x91b4030, 
+      w_index = 152780848}}, {a_type = 3086397428, a_w = {
+      w_float = -2.94154743e-05, w_symbol = 0xb7f6c140, 
+      w_gpointer = 0xb7f6c140, w_array = 0xb7f6c140, w_list = 0xb7f6c140, 
+      w_index = -1208565440}}, {a_type = 149883464, a_w = {
+      w_float = -1.23491192, w_symbol = 0xbf9e1198, w_gpointer = 0xbf9e1198, 
+      w_array = 0xbf9e1198, w_list = 0xbf9e1198, w_index = -1080159848}}}
+	mstack = (t_atom *) 0xbf9e1144
+	msp = <value optimized out>
+	at = (t_atom *) 0x91aa9c0
+	ac = 0
+---Type <return> to continue, or q <return> to quit---
+	nargs = <value optimized out>
+	maxnargs = 0
+#38 0x080615b9 in message_symbol (x=0x91aa1b0, s=0x91b4030) at g_text.c:356
+	at = {a_type = A_SYMBOL, a_w = {w_float = 1.86876272e-33, 
+    w_symbol = 0x91b4030, w_gpointer = 0x91b4030, w_array = 0x91b4030, 
+    w_list = 0x91b4030, w_index = 152780848}}
+#39 0x080b1127 in outlet_symbol (x=0x91a62d8, s=0x91b4030) at m_obj.c:368
+	oc = (struct _outconnect *) 0x91a1d90
+#40 0x080f57a5 in makefilename_float (x=0x91a64f0, f=1) at x_connective.c:1270
+	buf = "/dev/video1\000\000\000\000\000�\017��R¶�����h�ٷ\000\000\000\000�\026\236�����\001\000\000\0000@\033\t\001\000\000\000\036�\021\b\a�\021\b\000\000\000\0000\027\236�\004\031\236�\002\000\000\000\000\000\000\000����\036�\021\b\a�\021\b\000\000\000\000P\027\236�$\031\236�\001\000\000\000\v", '\0' <repeats 15 times>, "\020\000\000\000I\027\236�", '\0' <repeats 44 times>, " \030\236�\000\000\000\000\000\000\000\000 �\021\b\f\000\000s\000\000\000\000\000\000\000\000\004�\021\bP\031\236��\030\236�\b\000\000\000\v\000\000\000\000\000\000\000\"\000\000\000���"...
+#41 0x080b1197 in outlet_float (x=0x91a1a50, f=1) at m_obj.c:357
+	oc = (struct _outconnect *) 0x91a2260
+#42 0xb7b7f6bf in Range::_0_float (this=0x91a1a68, argc=1, argv=0xbf9e16a8, 
+    f=1) at base/flow_objects.c.fcs:2473
+	i = <value optimized out>
+#43 0xb7b7f748 in Range::_0_list (this=0x91a1a68, argc=1, argv=0xbf9e16a8, f=1)
+---Type <return> to continue, or q <return> to quit---
+    at base/flow_objects.c.fcs:2470
+No locals.
+#44 0xb7bb9940 in Range::_0_list_wrap (self=0x91a1a68, argc=1, argv=0xbf9e16a8)
+    at base/flow_objects.c.fcs:2470
+	methodspec = 0xb7d9fe84 "Range::_0_list(float f)"
+	__PRETTY_FUNCTION__ = "static void Range::_0_list_wrap(Range*, int, t_atom2*)"
+#45 0xb7b6ca56 in BFObject_anything (bself=0x91a19c8, winlet=0, 
+    selector=0x81249d0, ac=1, at=0xbf9e18f4) at gridflow.c.fcs:545
+	argc = 1
+	buf = "_0_list\000\b\202\032\t\000\000\000\000\002\000\000\000 !\032\t4\030\236�\002\000\000\000\000\000\000\000\017\020\v\b�\201\032\t�I\022\b\002\000\000\0004\030\236�\000\000\000\000@\030\236�H+\032\t\000!\032\t4\030\236�\002\000\000\000�I\022\b\017\020\v\b�\204\032\t\000\000\000\000\002\000\000\0004\030\236�\000\000\000\000\000\000\000\000\t\000\000\000@!\032\t4\030\236�\002\000\000\000�I\022\b\017\020\v\b�\202\032\t�I\022\b\002\000\000\0004\030\236� \000\000\000@\030\236�\a\000\000\000T\205\032\t�\205\032\t\000\000\000\000\002\000\000\000_?\v\bh\205\032\t�I\022\b\002\000\000\0004\030\236�"...
+	m = (FMethod) 0
+#46 0x080b100f in outlet_list (x=0x91a8680, s=0x81249d0, argc=1, 
+    argv=0xbf9e18f4) at m_obj.c:379
+	oc = (struct _outconnect *) 0x91a2150
+#47 0x080f4e93 in trigger_list (x=0x91a8640, s=0x0, argc=1, argv=0xbf9e18f4)
+---Type <return> to continue, or q <return> to quit---
+    at x_connective.c:991
+	u = (t_triggerout *) 0x91a8668
+	i = 0
+#48 0x080f53a7 in trigger_float (x=0x91a8640, f=1) at x_connective.c:1026
+	at = {a_type = A_FLOAT, a_w = {w_float = 1, w_symbol = 0x3f800000, 
+    w_gpointer = 0x3f800000, w_array = 0x3f800000, w_list = 0x3f800000, 
+    w_index = 1065353216}}
+#49 0x080b1197 in outlet_float (x=0x91a7660, f=1) at m_obj.c:357
+	oc = (struct _outconnect *) 0x91a1f80
+#50 0x080a4e10 in vradio_fout (x=0x91a3148, f=1) at g_vdial.c:409
+	i = <value optimized out>
+#51 0x080a6dce in vradio_newclick (z=0x91a3148, glist=0x91a99e0, xpix=22, 
+    ypix=70, shift=0, alt=0, dbl=0, doit=1) at g_vdial.c:469
+No locals.
+#52 0x0808bf6b in canvas_doclick (x=0x91a99e0, xpos=22, ypos=70, which=1, 
+    mod=0, doit=1) at g_editor.c:108
+	y = (t_gobj *) 0x91a3148
+	shiftmod = 0
+	runmode = <value optimized out>
+	altmod = 0
+	doublemod = 0
+	rightclick = <value optimized out>
+	x1 = 11
+---Type <return> to continue, or q <return> to quit---
+	y1 = 50
+	x2 = 26
+	y2 = 215
+	clickreturned = <value optimized out>
+#53 0x0808c617 in canvas_mousedown (x=0x91a99e0, xpos=22, ypos=70, which=1, 
+    mod=0) at g_editor.c:1427
+No locals.
+#54 0x080ae84a in pd_typedmess (x=0x91a99e0, s=0x8ecde20, argc=4, 
+    argv=0xbf9e1bac) at m_class.c:744
+	c = (struct _class *) 0x8ecd588
+	m = (t_methodentry *) 0x8ef7b48
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = <value optimized out>
+	ai = {152738272, 153039952, 153039984, 0, 0, 0}
+	ap = <value optimized out>
+	ad = {22, 70, 1, 0, 0, 0}
+	dp = (t_floatarg *) 0xbf9e1acc
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#55 0x080ae41b in pd_typedmess (x=0x91f3330, s=0x8ecde20, argc=4, 
+    argv=0xbf9e1bac) at m_class.c:765
+	c = (struct _class *) 0x8ece200
+---Type <return> to continue, or q <return> to quit---
+	m = <value optimized out>
+	wp = <value optimized out>
+	wanttype = <value optimized out>
+	i = 0
+	ai = {135430372, 153014944, 153019084, -1208522290, 153014936, 
+  -1080157192}
+	ap = <value optimized out>
+	ad = {-nan(0x7fffff), 0, 0, 0, 0, 1.91174834e-33}
+	dp = <value optimized out>
+	narg = <value optimized out>
+	bonzo = <value optimized out>
+#56 0x080b3f31 in binbuf_eval (x=0x8eda450, target=0x91f3330, argc=0, argv=0x0)
+    at m_binbuf.c:722
+	nexttarget = (t_pd *) 0x0
+	smallstack = {{a_type = A_SYMBOL, a_w = {w_float = 1.42559547e-33, 
+      w_symbol = 0x8ecde20, w_gpointer = 0x8ecde20, w_array = 0x8ecde20, 
+      w_list = 0x8ecde20, w_index = 149741088}}, {a_type = A_FLOAT, a_w = {
+      w_float = 22, w_symbol = 0x41b00000, w_gpointer = 0x41b00000, 
+      w_array = 0x41b00000, w_list = 0x41b00000, w_index = 1102053376}}, {
+    a_type = A_FLOAT, a_w = {w_float = 70, w_symbol = 0x428c0000, 
+      w_gpointer = 0x428c0000, w_array = 0x428c0000, w_list = 0x428c0000, 
+      w_index = 1116471296}}, {a_type = A_FLOAT, a_w = {w_float = 1, 
+      w_symbol = 0x3f800000, w_gpointer = 0x3f800000, w_array = 0x3f800000, 
+---Type <return> to continue, or q <return> to quit---
+      w_list = 0x3f800000, w_index = 1065353216}}, {a_type = A_FLOAT, a_w = {
+      w_float = 0, w_symbol = 0x0, w_gpointer = 0x0, w_array = 0x0, 
+      w_list = 0x0, w_index = 0}}}
+	mstack = (t_atom *) 0xbf9e1ba4
+	msp = <value optimized out>
+	at = (t_atom *) 0x91f4650
+	ac = 1
+	nargs = <value optimized out>
+	maxnargs = 5
+#57 0x080c2280 in socketreceiver_read (x=0x8eda470, fd=7) at s_inter.c:546
+	readto = <value optimized out>
+	ret = <value optimized out>
+#58 0x080c0ec7 in sys_domicrosleep (microsec=<value optimized out>, 
+    pollem=<value optimized out>) at s_inter.c:184
+	readset = {__fds_bits = {128, 0 <repeats 31 times>}}
+	writeset = {__fds_bits = {0 <repeats 32 times>}}
+	exceptset = {__fds_bits = {0 <repeats 32 times>}}
+	timout = {tv_sec = 0, tv_usec = 0}
+	i = 1
+	didsomething = 1
+	fp = <value optimized out>
+#59 0x080c26e7 in sys_pollgui () at s_inter.c:833
+No locals.
+---Type <return> to continue, or q <return> to quit---
+#60 0x080bcfbc in m_mainloop () at m_sched.c:488
+No locals.
+#61 0x080c06f5 in sys_main (argc=1, argv=0xbf9e1f94) at s_main.c:313
+	noprefs = <value optimized out>
+#62 0x080cc26f in main (argc=1932144165, argv=0x6f6f7400) at s_entry.c:32
+No locals.
+(gdb) 
+
+

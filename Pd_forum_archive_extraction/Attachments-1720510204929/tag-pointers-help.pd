@@ -1,0 +1,15 @@
+#N canvas 125 191 799 428 10;
+#X obj 169 54 pointer;
+#X msg 233 54 clear;
+#X msg 177 194 rewind;
+#X msg 196 217 next;
+#X msg 209 238 5;
+#N canvas 194 123 670 477 NAME.tag-pointers-data 0;
+#X restore 449 118 pd NAME.tag-pointers-data;
+#X obj 169 100 add-tag-pointer NAME;
+#X obj 196 271 get-tag-pointer NAME;
+#X connect 0 0 6 0;
+#X connect 1 0 6 0;
+#X connect 2 0 7 0;
+#X connect 3 0 7 0;
+#X connect 4 0 7 0;

@@ -1,0 +1,24 @@
+#N canvas 641 196 486 364 10;
+#X obj 297 251 +;
+#X floatatom 225 155 5 0 0 0 - - -;
+#X floatatom 289 155 5 0 0 0 - - -;
+#X obj 303 309 print;
+#X obj 291 199 trigger bang float;
+#X obj 63 235 +;
+#X obj 63 279 print;
+#X floatatom 47 203 5 0 0 0 - - -;
+#X floatatom 89 203 5 0 0 0 - - -;
+#X text 38 178 does not work;
+#X text 218 122 this works! is this the right way?;
+#X text 45 18 i'm about to learn puredata i understand the problem
+with 2 or more inlets \, and i read about a solution with triggers
+\; but i did'nt find an example anyhwere. Is this the "right" way (by
+any means) to solve \, what's not working on the left side?;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 4 0 0 0;
+#X connect 4 1 0 1;
+#X connect 5 0 6 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 1;

@@ -1,0 +1,23 @@
+Package: *
+Pin: release a=testing
+Pin-Priority: 600
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 5
+
+Package: *
+Pin: release a=experimental
+Pin-Priority: 1
+
+#----------------------------------------
+# I need the latest version of Pd
+Package: puredata
+Pin: release a=experimental
+Pin-Priority: 601
+
+Package: pd-*
+Pin: release a=experimental
+Pin-Priority: 601
+
+

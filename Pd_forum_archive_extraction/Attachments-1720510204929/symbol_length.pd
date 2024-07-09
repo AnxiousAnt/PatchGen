@@ -1,0 +1,8 @@
+#N canvas 0 89 450 300 10;
+#X obj 149 107 list fromsymbol;
+#X obj 149 133 list length;
+#X obj 149 77 inlet;
+#X obj 149 163 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;

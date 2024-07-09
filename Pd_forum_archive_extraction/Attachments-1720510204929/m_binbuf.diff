@@ -1,0 +1,27 @@
+--- m_binbuf.c~	Thu Aug 30 00:28:18 2001
++++ m_binbuf.c	Thu Aug 30 16:50:17 2001
+@@ -420,13 +420,14 @@
+ 
+ }
+ 
+-void binbuf_eval(t_binbuf *x, t_pd *target, int argc, t_atom *argv)
++void binbuf_eval(t_binbuf *x, t_pd *firsttarget, int argc, t_atom *argv)
+ {
+     static t_atom mstack[MSTACKSIZE], *msp = mstack, *ems = mstack+MSTACKSIZE;
+     t_atom *stackwas = msp;
+     t_atom *at = x->b_vec;
+     int ac = x->b_n;
+     int nargs;
++    t_pd *target = firsttarget;
+     
+     while (1)
+     {
+@@ -496,7 +497,7 @@
+ 	    case A_SEMI:
+ 	    	    /* semis and commas in new message just get bashed to
+ 		    a symbol.  This is needed so you can pass them to "expr." */
+-	    	if (target == s__N.s_thing)
++	    	if (firsttarget == s__N.s_thing)
+ 		{
+ 		    SETSYMBOL(msp, gensym(";"));
+ 		    break;

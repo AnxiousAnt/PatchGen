@@ -1,0 +1,48 @@
+#N canvas 153 94 837 655 10;
+#X text 325 349 If instead you just want that two consecutive numbers
+never be the same \; then you always keep the previous number (P) \,
+and you use 4 as the range \, you pick a single random number (R) \,
+and you compute R+(R>=P). The trick is that >= is an indicatrix \,
+which means it's worth 1 if the condition is true \, and 0 if it's
+false \; and adding that indicatrix to the number itself will cause
+the previous number to be skipped as a possibility. e.g. P=2 \, R's
+might be 0 \, 1 \, 2 \, 3 \, then R>=P might be 0 \, 0 \, 1 \, 1 \,
+then R+(R>=P) might be 0 \, 1 \, 3 \, 4 \, and there you go \, 2 is
+skipped. You will also need the [t] object to route R into >= before
++.;
+#X obj 52 76 inlet;
+#X obj 95 531 outlet;
+#X obj 136 73 inlet;
+#X obj 129 198 random;
+#X obj 179 140 f \$1;
+#X obj 179 171 - 1;
+#X obj 179 98 loadbang;
+#X msg 247 99 bang;
+#X obj 111 408 >=;
+#X obj 127 339 r \$0-prev;
+#X obj 117 484 s \$0-prev;
+#X msg 52 115 bang;
+#X text 135 44 set range;
+#X text 50 47 bang;
+#X obj 95 458 +;
+#X obj 129 225 s \$0-rand;
+#X obj 37 340 r \$0-rand;
+#X text 131 246 create random number in range (0 \, max-1);
+#X text 58 310 compute R + (R >= P);
+#X obj 37 368 t f f;
+#X text 108 505 remember previous number;
+#X connect 1 0 12 0;
+#X connect 3 0 5 0;
+#X connect 4 0 16 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 1;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 15 1;
+#X connect 10 0 9 1;
+#X connect 12 0 4 0;
+#X connect 15 0 11 0;
+#X connect 15 0 2 0;
+#X connect 17 0 20 0;
+#X connect 20 0 15 0;
+#X connect 20 1 9 0;

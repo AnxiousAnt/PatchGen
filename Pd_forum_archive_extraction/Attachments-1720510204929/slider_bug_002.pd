@@ -1,0 +1,20 @@
+#N canvas 48 250 454 422 12;
+#X obj 83 90 vsl 15 128 -127 0 0 0 empty empty empty 20 8 0 8 -262144
+-1 -1 0 1;
+#X floatatom 135 20 5 0 0;
+#X floatatom 82 236 5 0 0;
+#X obj 206 89 vsl 15 128 0 127 0 0 empty empty empty 20 8 0 8 -262144
+-1 -1 12700 1;
+#X floatatom 204 321 5 0 0;
+#X obj 83 56 * -1;
+#X floatatom 84 323 5 0 0;
+#X text 11 100 -127->0;
+#X text 236 98 0->127;
+#X obj 83 278 + 127;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 9 0;
+#X connect 3 0 4 0;
+#X connect 5 0 0 0;
+#X connect 9 0 6 0;

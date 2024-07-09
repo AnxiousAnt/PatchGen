@@ -1,0 +1,12 @@
+#N canvas 663 156 450 404 10;
+#X obj 95 66 udpreceive 9997;
+#X obj 95 171 unpackOSC;
+#X obj 95 226 routeOSC /test;
+#X obj 219 203 print unpacked;
+#X obj 153 115 print raw;
+#X obj 95 300 print routed;
+#X connect 0 0 1 0;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;

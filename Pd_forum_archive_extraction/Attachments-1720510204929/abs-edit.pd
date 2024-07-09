@@ -1,0 +1,7 @@
+#N canvas 0 0 197 139 12;
+#X obj 73 23 bng 15 250 50 0 empty empty hi...I.am.an.abstraction 0
+-6 0 8 -262144 -1 -1;
+#X msg 21 58 editmode 1 \, mouse 15 15 0 0 \, cut \, editmode 0;
+#X obj 3 100 s pd-abs-edit.pd;
+#X connect 1 0 2 0;
+#X coords 0 0 1 1 200 140 1;

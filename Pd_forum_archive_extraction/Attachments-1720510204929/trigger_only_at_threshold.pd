@@ -1,0 +1,30 @@
+#N canvas 223 173 523 356 12;
+#X obj 40 33 osc~ 1;
+#X obj 40 63 expr~ ($v1 + 1) / 2;
+#X obj 41 232 > 75;
+#X obj 41 260 change;
+#X obj 228 266 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 41 142 * 127;
+#X obj 228 282 hsl 128 8 0 127 0 1 empty empty empty -2 -6 0 8 -233017
+-1 -1 7500 1;
+#X obj 41 290 sel 1;
+#X obj 296 305 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 41 120 snapshot~;
+#X obj 52 83 loadbang;
+#X obj 51 101 metro 20;
+#X text 141 98 // this creates a value that oscillates between 0 and
+127;
+#X text 86 231 // check threshold only when changed;
+#X text 86 291 // trigger;
+#X connect 0 0 1 0;
+#X connect 1 0 9 0;
+#X connect 2 0 3 0;
+#X connect 3 0 7 0;
+#X connect 5 0 2 0;
+#X connect 5 0 4 0;
+#X connect 7 0 8 0;
+#X connect 9 0 5 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;

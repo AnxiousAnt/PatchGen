@@ -1,0 +1,66 @@
+#N canvas 95 23 1075 825 16;
+#X obj 103 14 loadbang;
+#X obj 103 696 *~;
+#X obj 103 745 dac~;
+#X floatatom 179 655 5 0 100 1 dB - -, f 5;
+#X obj 179 681 dbtorms;
+#X obj 179 710 pack f 40;
+#X obj 179 739 line~;
+#X obj 103 44 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 103 606 catch~ sum-bus;
+#X obj 765 543 table wave;
+#X obj 408 653 loadbang;
+#X obj 408 503 synth-abs 1;
+#X obj 103 311 poly 8;
+#X obj 103 370 pack f f f;
+#X msg 103 419 \; \$1-note-command \$2 \$3 \;;
+#X text 208 312 [poly] assigns voice ID numbers from 1 to N \, where
+N is the number of voices in your bank of synth abstractions.;
+#X text 235 64 This generates some fast MIDI note input to get overlapping
+sounds from the polyphonic bank of synth abstractions.;
+#X obj 103 252 makenote 127 150;
+#X text 68 486 \$1 is the voice ID \; \$2 is the MIDI pitch \; \$3
+is the MIDI velocity \;;
+#X obj 103 162 t f b;
+#X obj 236 167 random 500;
+#X obj 236 197 + 150;
+#X text 356 171 << choose a random duration per note;
+#X text 406 396 8 instances of the same abstraction. The single creation
+argument can be used as a unique voice ID so that we can send MIDI
+pitch/velocity lists to the "\$1-note-command" send name.;
+#X obj 103 64 metro 125;
+#X obj 103 104 random 36;
+#X msg 408 682 \; wave sinesum 512 1 0.5 0.333333 0.25 \; wave normalize
+\; pd dsp 1 \;;
+#X obj 408 533 synth-abs 2;
+#X obj 408 563 synth-abs 3;
+#X obj 408 593 synth-abs 4;
+#X obj 598 503 synth-abs 5;
+#X obj 598 533 synth-abs 6;
+#X obj 598 563 synth-abs 7;
+#X obj 598 593 synth-abs 8;
+#X obj 103 133 + 48;
+#X connect 0 0 7 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 1;
+#X connect 7 0 24 0;
+#X connect 8 0 1 0;
+#X connect 10 0 26 0;
+#X connect 12 0 13 0;
+#X connect 12 1 13 1;
+#X connect 12 2 13 2;
+#X connect 13 0 14 0;
+#X connect 17 0 12 0;
+#X connect 17 1 12 1;
+#X connect 19 0 17 0;
+#X connect 19 1 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 17 2;
+#X connect 24 0 25 0;
+#X connect 25 0 34 0;
+#X connect 34 0 19 0;

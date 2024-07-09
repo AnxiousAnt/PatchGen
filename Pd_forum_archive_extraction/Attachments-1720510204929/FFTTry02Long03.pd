@@ -1,0 +1,107 @@
+#N canvas 62 50 1343 654 10;
+#X declare -lib iem_tab;
+#X declare -lib iem_tab;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-x 41473 float 2;
+#X coords 0 1 41473 -1 200 140 1 0 0;
+#X restore 452 22 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-h 50504 float 2;
+#X coords 0 1 50504 -1 200 140 1 0 0;
+#X restore 662 22 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-y-tab-conv 91976 float 2;
+#X coords 0 1 91976 -1 200 140 1 0 0;
+#X restore 902 22 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-y-fft-conv 91976 float 2;
+#X coords 0 1 91976 -1 200 140 1 0 0;
+#X restore 1112 22 graph;
+#X obj 5 257 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 5 304 jTabConv \$0-x \$0-h \$0-y-fft-conv;
+#X obj 5 358 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 5 424 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 5 405 tab_conv \$0-x \$0-h \$0-y-tab-conv;
+#X obj 12 141 soundfiler;
+#X obj 12 46 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 12 66 openpanel;
+#X msg 12 108 read -resize \$1 \$2-x;
+#X obj 12 88 pack s \$0;
+#X floatatom 12 163 15 0 0 0 - - -;
+#X obj 142 46 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 142 66 openpanel;
+#X obj 142 88 pack s \$0;
+#X msg 142 108 read -resize \$1 \$2-h;
+#X text 356 224 check error in method against iem_tab [tab_conv];
+#X obj 359 297 tab_sum \$0-y-tab-conv;
+#X obj 359 257 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 359 277 t b b;
+#X obj 469 349 -;
+#X floatatom 469 371 15 0 0 0 total_error - -;
+#X obj 369 317 tab_sum \$0-y-fft-conv;
+#X obj 5 323 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 359 469 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 359 512 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-y-diff 91976 float 2;
+#X coords 0 0.001 91976 -0.001 200 140 1 0 0;
+#X restore 666 477 graph;
+#X text 52 333 instant-ish!;
+#X text 67 431 13seconds;
+#X obj 359 489 tab_sub \$0-y-tab-conv \$0-y-fft-conv \$0-y-diff;
+#X text 354 436 show error as difference between tables;
+#X obj 359 543 loadbang;
+#X obj 359 565 pack \$0;
+#X msg 359 587 \; \$1-y-diff ylabel 5.15 -0.001 0 0.001;
+#X text 9 11 load samples or draw on tables;
+#X text 4 224 convolve tables using either method;
+#X obj 344 31 loadbang;
+#X msg 344 53 \; pd dsp 1;
+#X obj 215 304 realtime;
+#X obj 215 405 realtime;
+#X obj 215 326 print time-fft;
+#X obj 215 427 print time-tab-conv;
+#X obj 5 277 t b b;
+#X obj 5 378 t b b;
+#X obj 65 555 import iem_tab;
+#X connect 4 0 45 0;
+#X connect 5 0 26 0;
+#X connect 5 0 41 1;
+#X connect 6 0 46 0;
+#X connect 8 0 7 0;
+#X connect 8 0 42 1;
+#X connect 9 0 14 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 12 0 9 0;
+#X connect 13 0 12 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 9 0;
+#X connect 20 1 23 0;
+#X connect 21 0 22 0;
+#X connect 22 0 20 0;
+#X connect 22 1 25 0;
+#X connect 23 0 24 0;
+#X connect 25 1 23 1;
+#X connect 27 0 32 0;
+#X connect 32 0 28 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 39 0 40 0;
+#X connect 41 0 43 0;
+#X connect 42 0 44 0;
+#X connect 45 0 5 0;
+#X connect 45 1 41 0;
+#X connect 46 0 8 0;
+#X connect 46 1 42 0;

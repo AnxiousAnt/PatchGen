@@ -1,0 +1,133 @@
+#N canvas 349 64 1026 716 10;
+#X floatatom 344 299 5 0 0 0 - - -;
+#X floatatom 264 298 5 0 0 0 - - -;
+#X floatatom 305 299 5 0 0 0 - - -;
+#X floatatom 419 300 5 0 0 0 - - -;
+#X floatatom 459 300 5 0 0 0 - - -;
+#X floatatom 499 300 5 0 0 0 - - -;
+#X floatatom 381 299 5 0 0 0 - - -;
+#X floatatom 538 300 5 0 0 0 - - -;
+#X obj 264 269 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 305 270 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 344 270 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 381 269 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 419 268 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 459 269 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 499 269 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 538 268 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 400 200 route 0 1 2 3 4 5 6 7;
+#X obj 397 15 metro 200;
+#X msg 397 -64 bang;
+#X msg 397 -39 stop;
+#X obj 397 60 f;
+#X obj 425 60 + 1;
+#X obj 399 88 moses 8;
+#X obj 452 88 - 8;
+#X obj 399 109 moses 0;
+#X obj 400 150 i;
+#X floatatom 528 -1 5 0 0 1 tempo_(ms) - -;
+#X floatatom 528 44 5 0 0 1 +_X_step(s) - -;
+#X msg 396 -17 0;
+#X obj 373 108 + 8;
+#X floatatom 222 28 5 0 0 0 - - -;
+#X msg 222 -2 bang;
+#X obj 264 147 pack f f;
+#X msg 264 173 \$2 \$1;
+#X floatatom 186 29 5 0 0 0 - - -;
+#X obj 264 201 route 0 1 2 3 4 5 6 7;
+#X obj 264 79 *;
+#X obj 264 -30 loadbang;
+#X obj 264 -5 timer;
+#X msg 264 20 seed \$1;
+#X obj 405 449 line;
+#X obj 405 399 pack f f;
+#X msg 405 426 \$1 \$2;
+#X floatatom 681 383 5 0 0 3 slide_time_(ms) - -;
+#X floatatom 405 478 5 0 0 0 - - -;
+#X obj 528 146 route 8 9 10;
+#X text 12 103 Here you can send a message to set a value to one step.
+I put a little example \, this sets a random value to the actual step.
+;
+#X obj 264 44 random 1000;
+#X text 653 0 The main feature here is that you can set how many steps
+forward the sequence will continue. A normal sequence would go: +1
+This means step 0 \, step 1 \, step 2 \, etc... Changing this operator
+allowds a lot of different combinations with the same 8 values. (A
+little tip: try negatives and floats);
+#X text 707 425 A 'transition' time between values of each step.;
+#X connect 0 0 41 0;
+#X connect 1 0 41 0;
+#X connect 2 0 41 0;
+#X connect 3 0 41 0;
+#X connect 4 0 41 0;
+#X connect 5 0 41 0;
+#X connect 6 0 41 0;
+#X connect 7 0 41 0;
+#X connect 8 0 1 0;
+#X connect 9 0 2 0;
+#X connect 10 0 0 0;
+#X connect 11 0 6 0;
+#X connect 12 0 3 0;
+#X connect 13 0 4 0;
+#X connect 14 0 5 0;
+#X connect 15 0 7 0;
+#X connect 16 0 8 0;
+#X connect 16 1 9 0;
+#X connect 16 2 10 0;
+#X connect 16 3 11 0;
+#X connect 16 4 12 0;
+#X connect 16 5 13 0;
+#X connect 16 6 14 0;
+#X connect 16 7 15 0;
+#X connect 17 0 20 0;
+#X connect 18 0 17 0;
+#X connect 19 0 17 0;
+#X connect 20 0 21 0;
+#X connect 20 0 22 0;
+#X connect 21 0 20 1;
+#X connect 22 0 24 0;
+#X connect 22 1 23 0;
+#X connect 23 0 20 0;
+#X connect 24 0 29 0;
+#X connect 24 1 25 0;
+#X connect 25 0 16 0;
+#X connect 25 0 32 1;
+#X connect 26 0 17 1;
+#X connect 27 0 21 1;
+#X connect 28 0 20 0;
+#X connect 29 0 20 0;
+#X connect 30 0 47 1;
+#X connect 31 0 30 0;
+#X connect 31 0 47 0;
+#X connect 32 0 33 0;
+#X connect 33 0 35 0;
+#X connect 34 0 36 1;
+#X connect 35 0 1 0;
+#X connect 35 1 2 0;
+#X connect 35 2 0 0;
+#X connect 35 3 6 0;
+#X connect 35 4 3 0;
+#X connect 35 5 4 0;
+#X connect 35 6 5 0;
+#X connect 35 7 7 0;
+#X connect 35 8 45 0;
+#X connect 36 0 32 0;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
+#X connect 39 0 47 0;
+#X connect 40 0 44 0;
+#X connect 41 0 42 0;
+#X connect 42 0 40 0;
+#X connect 43 0 41 1;
+#X connect 45 0 26 0;
+#X connect 45 1 27 0;
+#X connect 45 2 43 0;
+#X connect 47 0 36 0;

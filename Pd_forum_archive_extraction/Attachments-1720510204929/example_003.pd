@@ -1,0 +1,9 @@
+#N canvas 355 476 450 300 10;
+#N canvas 0 23 450 300 sub 0;
+#X coords 0 -1 1 1 85 60 1 100 100;
+#X restore 134 112 pd sub;
+#X obj 119 82 s pd-sub;
+#X msg 119 61 donecanvasdialog 1 -1 1 0 -1 1 1 85 60 100 100;
+#X obj 120 40 loadbang;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;

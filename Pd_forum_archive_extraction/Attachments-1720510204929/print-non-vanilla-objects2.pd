@@ -1,0 +1,166 @@
+#N canvas 599 172 599 101 12;
+#X obj 118 144 openpanel;
+#X obj 116 240 textfile;
+#X msg 116 208 read \$1 \, rewind \, bang;
+#X obj 116 269 route #X;
+#X obj 179 297 t b;
+#X obj 179 324 s \$0-next;
+#X obj 33 144 r \$0-next;
+#X obj 33 173 del 4;
+#X obj 194 376 t b;
+#X obj 194 403 s \$0-next;
+#X obj 118 425 list split 2;
+#X obj 101 505 s \$0-next;
+#X obj 47 28 bng 15 250 50 0 \$0-start empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 119 348 route obj;
+#X obj 553 1555 print;
+#X obj 248 488 list split 1;
+#X obj 173 776 select bang float symbol int send receive select route
+pack unpack trigger spigot moses until print makefilename change swap
+value delay metro line timer cputime realtime pipe;
+#X text 30 762 glue and time objects;
+#X obj 179 919 select notein ctlin pgmin bendin touchin polytouchin
+midiin sysexin noteout ctlout pgmout bendout touchout polytouchout
+midiout makenote stripnote;
+#X text 61 864 math objects;
+#X obj 180 987 select tabread tabread4 tabwrite soundfiler;
+#X text 64 946 midi objects;
+#X text 53 993 tables objects;
+#X obj 173 1017 select loadbang serial netsend netreceive qlist textfile
+openpanel savepanel bag poly key keyup keyname declare;
+#X text 81 1034 misc;
+#X text 49 1081 audio math;
+#X obj 172 1142 select dac~ adc~ sig~ line~ vline~ threshold~ snapshot~
+vsnapshot~ bang~ samplerate~ send~ receive~ throw~ catch~ block~ switch~
+readsf~ writesf~;
+#X text 58 1156 audio glue;
+#X text 66 1469 GUI;
+#X text 35 1599 extra folder in vanilla;
+#X text 49 1421 abbrevations;
+#X obj 46 65 tgl 15 0 \$0-extra \$0-rextra empty 17 7 0 10 -262144
+-1 -1 1 1;
+#X text 70 64 include standard extra folder in pd-vanilla;
+#X text 47 1219 audio osc;
+#X obj 176 1208 select phasor~ cos~ osc~ tabwrite~ tabplay~ tabread~
+tabread4~ tabosc4~ tabsend~ tabreceive~;
+#X obj 173 1257 select vcf~ noise~ env~ hip~ lop~ bp~ biquad~ samphold~
+print~ rpole~ rzero~ rzero_rev~ cpole~ czero~ czero_rev~;
+#X obj 167 1314 select delwrite~ delread~ vd~ pd table inlet outlet
+inlet~ outlet~;
+#X text 41 1320 audio delay;
+#X text 42 1333 subwindows;
+#X text 41 1273 audio filters;
+#X text 38 1370 data templates;
+#X text 37 1387 accesing data;
+#X text 53 1405 obsolete;
+#X obj 187 1467 select bng tgl nbx vsl hsl vradio hradio vu cnv;
+#X msg 557 1530 \$1;
+#X obj 286 321 print;
+#X obj 324 233 print;
+#X obj 135 171 t s s;
+#X msg 322 206 -------start-searching-\$1;
+#X msg 287 295 -------end-searching------;
+#X obj 227 1579 select expr expr~ fexpr~ rev3~ rev2~ rev1~ hilbert~
+complex-mod~ sigmund~ pique lrshift~ loop~ fiddle~ choice bonk~;
+#X obj 638 1437 r \$0-extra;
+#X obj 489 1504 spigot;
+#X obj 555 1505 spigot;
+#X obj 642 1671 print;
+#X msg 646 1645 \$1;
+#X obj 633 1466 == 0;
+#X obj 408 380 loadbang;
+#X msg 408 407 1;
+#X obj 410 434 s \$0-rextra;
+#X text 74 26 open pd-file;
+#X obj 125 115 r \$0-start;
+#X obj 165 1071 select +~ -~ *~ /~ max~ min~ clip~ q8_rsqrt~ q8_sqrt~
+wrap~ fft~ ifft~ rfft~ rifft~ framp~ mtof~ ftom~ rmstodb~ dbtorms~
+rmstopow~ powtorms~ sqrt~ rsqrt~;
+#X obj 172 848 select + - * / pow == != > < >= <= >> << & && | || %
+mtof powtodb rmstodb ftom dbtopow dbtorms mod div sin cos tan atan
+atan2 sqrt log exp abs random max min clip;
+#X symbolatom 25 463 10 0 0 0 - - -;
+#X obj 29 398 print one;
+#X text 18 446 controle test;
+#X obj 248 523 select list;
+#X msg 247 550 1;
+#X msg 293 553 0;
+#X obj 248 624 spigot;
+#X obj 203 590 == 0;
+#X obj 159 620 spigot;
+#X obj 200 454 t b a a;
+#X obj 171 654 list split 1;
+#X obj 301 649 list split 2;
+#X obj 333 675 list split 1;
+#X obj 689 763 print;
+#X obj 380 706 select split append prepend trim length;
+#X msg 693 737 list \$1;
+#X text 265 146 !!objects like [\$1 \$2] or [2];
+#X text 363 508 filter out the list objects (2 words!);
+#X obj 176 1367 select struct drawcurve filledcurve drawpolygon filledpolygon
+plot drawnumber pointer get set element getsize setsize sublist namecanvas
+template;
+#X obj 181 1424 select b f i s r t sel del v r~ s~;
+#X connect 0 0 47 0;
+#X connect 1 0 3 0;
+#X connect 1 1 49 0;
+#X connect 2 0 1 0;
+#X connect 3 0 13 0;
+#X connect 3 1 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
+#X connect 8 0 9 0;
+#X connect 10 1 73 0;
+#X connect 13 0 10 0;
+#X connect 13 1 8 0;
+#X connect 15 0 67 0;
+#X connect 16 26 63 0;
+#X connect 18 17 20 0;
+#X connect 20 4 23 0;
+#X connect 23 14 62 0;
+#X connect 26 18 34 0;
+#X connect 34 10 35 0;
+#X connect 35 15 36 0;
+#X connect 36 9 82 0;
+#X connect 43 9 52 0;
+#X connect 43 9 53 0;
+#X connect 44 0 14 0;
+#X connect 47 0 2 0;
+#X connect 47 1 48 0;
+#X connect 48 0 46 0;
+#X connect 49 0 45 0;
+#X connect 50 15 55 0;
+#X connect 51 0 56 0;
+#X connect 51 0 52 1;
+#X connect 52 0 50 0;
+#X connect 53 0 44 0;
+#X connect 55 0 54 0;
+#X connect 56 0 53 1;
+#X connect 57 0 58 0;
+#X connect 58 0 59 0;
+#X connect 61 0 0 0;
+#X connect 62 23 26 0;
+#X connect 63 39 18 0;
+#X connect 64 0 73 0;
+#X connect 67 0 68 0;
+#X connect 67 1 69 0;
+#X connect 68 0 70 1;
+#X connect 68 0 71 0;
+#X connect 69 0 70 1;
+#X connect 69 0 71 0;
+#X connect 70 0 75 0;
+#X connect 71 0 72 1;
+#X connect 72 0 74 0;
+#X connect 73 0 11 0;
+#X connect 73 1 70 0;
+#X connect 73 1 72 0;
+#X connect 73 2 15 0;
+#X connect 74 0 16 0;
+#X connect 75 0 76 0;
+#X connect 76 1 78 0;
+#X connect 78 5 79 0;
+#X connect 79 0 77 0;
+#X connect 82 16 83 0;
+#X connect 83 11 43 0;

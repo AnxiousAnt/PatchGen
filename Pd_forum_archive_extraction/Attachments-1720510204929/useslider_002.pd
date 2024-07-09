@@ -1,0 +1,41 @@
+#N struct 1001-slider float x float y float color float cline float
+h float tag;
+#N struct 1002-slider float x float y float color float cline float
+h float tag;
+#N canvas 53 246 939 533 10;
+#X obj 21 56 slidertest;
+#X floatatom 19 377 5 0 0 0 - - -;
+#X floatatom 61 377 5 0 0 0 - - -;
+#X floatatom 102 377 5 0 0 0 - - -;
+#X floatatom 152 377 5 0 0 0 - - -;
+#X floatatom 196 377 5 0 0 0 - - -;
+#X obj 488 56 slidertest;
+#X obj 121 347 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14;
+#X floatatom 242 377 5 0 0 0 - - -;
+#X floatatom 284 377 5 0 0 0 - - -;
+#X floatatom 325 377 5 0 0 0 - - -;
+#X floatatom 373 377 5 0 0 0 - - -;
+#X floatatom 420 377 5 0 0 0 - - -;
+#X floatatom 466 377 5 0 0 0 - - -;
+#X floatatom 508 377 5 0 0 0 - - -;
+#X floatatom 549 377 5 0 0 0 - - -;
+#X floatatom 594 377 5 0 0 0 - - -;
+#X floatatom 641 377 5 0 0 0 - - -;
+#X text 109 407 turn on "auto-get" to automatically receive current
+slider state.;
+#X connect 0 0 7 0;
+#X connect 7 0 1 0;
+#X connect 7 1 2 0;
+#X connect 7 2 3 0;
+#X connect 7 3 4 0;
+#X connect 7 4 5 0;
+#X connect 7 5 8 0;
+#X connect 7 6 9 0;
+#X connect 7 7 10 0;
+#X connect 7 8 11 0;
+#X connect 7 9 12 0;
+#X connect 7 10 13 0;
+#X connect 7 11 14 0;
+#X connect 7 12 15 0;
+#X connect 7 13 16 0;
+#X connect 7 14 17 0;

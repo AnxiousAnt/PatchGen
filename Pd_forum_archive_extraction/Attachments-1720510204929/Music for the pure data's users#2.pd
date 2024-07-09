@@ -1,0 +1,229 @@
+#N canvas 278 74 697 697 10;
+#X obj 171 99 cnv 15 340 480 empty empty ~~John~~Cage~~ 15 28 0 37
+-228856 -79454 0;
+#X obj 171 160 bng 340 250 100 0 Silence Tad 0:00 102 165 0 57 -79454
+-258113 -228856;
+#X obj 311 480 cnv 10 1 10 empty empty タド 15 5 2 15 -79454 -191407
+0;
+#N canvas 468 23 1099 663 Silentio 0;
+#X obj 80 347 dac~;
+#X obj 756 401 print;
+#X obj 693 401 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 778 329 \; Tad label \$1;
+#X obj 50 276 adc~;
+#X obj 475 121 metro 1000;
+#X obj 408 106 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 475 153 counter 0 273;
+#X floatatom 475 174 5 0 0 0 - - -;
+#X obj 557 138 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 722 121 loadbang;
+#X obj 147 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 163 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 179 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 204 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 730 187 mod 60;
+#X obj 679 312 makesymbol %s:%s;
+#X obj 715 225 < 10;
+#X obj 758 261 0;
+#X obj 735 261 0;
+#X obj 649 278 makefilename 0%d;
+#X obj 699 243 sel 1 0;
+#X obj 622 295 pack 0 s;
+#X obj 756 278 makesymbol %s;
+#X obj 684 200 div 60;
+#X obj 684 170 t f f;
+#X obj 730 207 t f f f;
+#X msg 722 153 0;
+#X obj 62 312 *~;
+#X obj 90 239 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 89 291 line~;
+#X msg 693 417 John Cage 4'33" Tad's original transcription for Pure
+data October 2011;
+#X obj 62 330 *~ 0.334;
+#X obj 693 349 del 4033;
+#X msg 497 469 \; Bruit label \$1;
+#X symbolatom 427 474 0 0 0 0 - - -;
+#X obj 427 452 list2symbol;
+#X msg 427 427 SILENCE;
+#X obj 147 401 list2symbol;
+#X msg 427 552 ADJUST;
+#X msg 427 502 WELCOME;
+#X obj 81 446 loadbang;
+#X obj 80 487 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 40 113 bng 25 250 50 0 empty Silenceaddict reset 0 -5 2 13 -262144
+-1 -1;
+#X obj 94 570 del 8000;
+#X obj 94 502 del 2000;
+#X obj 40 487 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 147 502 ...;
+#X obj 693 384 del 4000;
+#X msg 509 384 end of SILENCE;
+#X obj 586 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 641 544 Copyright 2011 by Tad (tadbisaha@gmail.com) with the
+discreet complicity of the Pure data community;
+#X obj 408 222 t b b b;
+#X obj 408 161 r Silence;
+#X msg 427 587 READY ?;
+#X msg 458 401 ........reset..............here...>>>;
+#X msg 90 268 \$1 50;
+#X msg 817 138 \; pd dsp 1;
+#X obj 94 535 del 5000;
+#X msg 147 519 .........TO EAR THIS OPUS. First...;
+#X msg 147 552 Set the sound level ~30 %;
+#X obj 40 570 del 1000;
+#X msg 215 418 \; Words label \$1;
+#X obj 10 10 cnv 15 130 18 empty empty tadbisaha@gmail.com 10 10 2
+12 -262144 -79454 0;
+#X obj 693 367 del 4000;
+#X msg 609 384 Silentio;
+#X msg 147 587 CLICK on the "kronos" and ENJOY!;
+#X msg 427 281 I TACET;
+#X msg 427 306 II TACET;
+#X msg 427 356 III TACET;
+#X msg 163 384 4'33" movement I;
+#X msg 273 384 4'33" movement II;
+#X msg 390 384 4'33" movement III;
+#X obj 273 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 147 260 For 4'33" movement III Click "Kronos";
+#X msg 147 239 For 4'33" movement II Click "Kronos";
+#X obj 457 190 select 0 1 33 34 193 194 273;
+#X obj 390 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 81 466 del 200;
+#X connect 2 0 33 0;
+#X connect 2 0 48 0;
+#X connect 4 0 28 0;
+#X connect 4 1 28 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 7 0 25 0;
+#X connect 8 0 76 0;
+#X connect 9 0 7 0;
+#X connect 9 0 7 3;
+#X connect 9 0 7 2;
+#X connect 10 0 9 0;
+#X connect 10 0 27 0;
+#X connect 10 0 57 0;
+#X connect 11 0 47 0;
+#X connect 12 0 70 0;
+#X connect 13 0 52 0;
+#X connect 13 0 75 0;
+#X connect 14 0 52 0;
+#X connect 14 0 74 0;
+#X connect 15 0 26 0;
+#X connect 16 0 3 0;
+#X connect 17 0 21 0;
+#X connect 18 0 23 0;
+#X connect 19 0 20 0;
+#X connect 20 0 22 1;
+#X connect 21 0 19 0;
+#X connect 21 1 18 0;
+#X connect 22 0 16 0;
+#X connect 23 0 22 1;
+#X connect 24 0 22 0;
+#X connect 25 0 24 0;
+#X connect 25 1 15 0;
+#X connect 26 0 17 0;
+#X connect 26 1 19 1;
+#X connect 26 2 18 1;
+#X connect 27 0 25 0;
+#X connect 28 0 32 0;
+#X connect 29 0 56 0;
+#X connect 30 0 28 1;
+#X connect 31 0 1 0;
+#X connect 32 0 0 0;
+#X connect 32 0 0 1;
+#X connect 33 0 31 0;
+#X connect 36 0 35 0;
+#X connect 36 0 34 0;
+#X connect 37 0 36 0;
+#X connect 38 0 62 0;
+#X connect 39 0 36 0;
+#X connect 40 0 36 0;
+#X connect 41 0 78 0;
+#X connect 42 0 40 0;
+#X connect 42 0 45 0;
+#X connect 42 0 47 0;
+#X connect 43 0 9 0;
+#X connect 43 0 46 0;
+#X connect 44 0 66 0;
+#X connect 44 0 54 0;
+#X connect 45 0 59 0;
+#X connect 45 0 58 0;
+#X connect 46 0 40 0;
+#X connect 46 0 47 0;
+#X connect 46 0 61 0;
+#X connect 47 0 38 0;
+#X connect 48 0 55 0;
+#X connect 48 0 64 0;
+#X connect 49 0 2 0;
+#X connect 49 0 1 0;
+#X connect 49 0 38 0;
+#X connect 50 0 49 0;
+#X connect 50 0 52 0;
+#X connect 52 0 6 0;
+#X connect 52 1 37 0;
+#X connect 52 2 29 0;
+#X connect 53 0 52 0;
+#X connect 54 0 36 0;
+#X connect 55 0 38 0;
+#X connect 56 0 30 0;
+#X connect 58 0 39 0;
+#X connect 58 0 60 0;
+#X connect 58 0 44 0;
+#X connect 59 0 38 0;
+#X connect 60 0 38 0;
+#X connect 61 0 54 0;
+#X connect 61 0 66 0;
+#X connect 64 0 65 0;
+#X connect 65 0 38 0;
+#X connect 66 0 38 0;
+#X connect 67 0 36 0;
+#X connect 68 0 36 0;
+#X connect 69 0 36 0;
+#X connect 70 0 38 0;
+#X connect 71 0 38 0;
+#X connect 72 0 38 0;
+#X connect 73 0 71 0;
+#X connect 74 0 38 0;
+#X connect 75 0 38 0;
+#X connect 76 0 11 0;
+#X connect 76 1 12 0;
+#X connect 76 1 67 0;
+#X connect 76 2 13 0;
+#X connect 76 3 73 0;
+#X connect 76 3 68 0;
+#X connect 76 4 14 0;
+#X connect 76 5 77 0;
+#X connect 76 5 69 0;
+#X connect 76 6 50 0;
+#X connect 77 0 72 0;
+#X connect 78 0 42 0;
+#X coords 0 -1 1 1 130 18 2 10 10;
+#X restore 264 673 pd Silentio in Silentia;
+#N canvas 663 79 516 228 Tad 0;
+#X obj 100 100 cnv 15 310 60 empty Bruit SILENCE 70 22 0 45 -228856
+-79454 0;
+#X coords 0 -1 1 1 310 60 1 100 100;
+#X restore 172 519 pd Tad;
+#N canvas 1052 166 368 51 déjà 0;
+#X obj 1 1 cnv 15 340 20 empty Words Silentio 5 10 0 14 -233017 -79454
+0;
+#X coords 0 -1 1 1 340 20 1 1 1;
+#X restore 171 581 pd déjà vu;
+#X obj 490 558 bng 18 250 50 0 Silenceaddict empty RESET -8 25 2 10
+-91872 -258113 -79454;
+#X coords 0 -1 1 1 692 692 1 0 0;

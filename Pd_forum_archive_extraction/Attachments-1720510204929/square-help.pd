@@ -1,0 +1,37 @@
+#N canvas 281 247 669 318 10;
+#X obj 49 166 tabwrite~ snd;
+#N canvas 0 0 450 300 graph1 0;
+#X array snd 1000 float 0;
+#X coords 0 1 999 -1 200 140 1;
+#X restore 435 20 graph;
+#X msg 50 59 \; pd dsp \$1;
+#X obj 50 31 tgl 24 0 empty empty Click_here! 0 -6 0 8 -262144 -1 -1
+0 1;
+#X floatatom 179 61 5 0 0 0 - - -;
+#X obj 179 120 squareosc~ 440;
+#X obj 49 121 metro 500;
+#X obj 225 45 vsl 15 64 0 1 0 0 empty empty PulseMod_0-1 0 -8 0 8 -262144
+-1 -1 0 1;
+#X msg 309 26 0.5;
+#X obj 174 274 dac~;
+#X obj 202 173 vsl 15 64 0 1 0 0 empty empty Volume 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 179 245 *~ 0;
+#X obj 179 89 mtof;
+#X msg 388 201 1000;
+#X msg 425 201 100;
+#X msg 388 227 \; snd resize \$1;
+#X connect 3 0 2 0;
+#X connect 3 0 6 0;
+#X connect 4 0 12 0;
+#X connect 5 0 0 0;
+#X connect 5 0 11 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 1;
+#X connect 8 0 7 0;
+#X connect 10 0 11 1;
+#X connect 11 0 9 0;
+#X connect 11 0 9 1;
+#X connect 12 0 5 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;

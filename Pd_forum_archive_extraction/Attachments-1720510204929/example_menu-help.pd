@@ -1,0 +1,234 @@
+#N canvas 10 40 600 440 10;
+#X obj 0 419 cnv 15 600 20 empty empty empty 20 12 0 14 -200249 -66577
+0;
+#N canvas 0 22 474 324 META 0;
+#X text 12 15 KEYWORDS: control number float store;
+#X text 12 5 CATEGORY: control;
+#X restore 234 421 pd META;
+#X obj 355 190 cnv 10 50 16 empty empty empty 20 12 0 14 -262126 -66577
+0;
+#X obj 111 196 cnv 10 23 16 empty empty empty 20 12 0 14 -262126 -66577
+0;
+#X floatatom 138 175 5 0 0 0 - - -;
+#X floatatom 111 222 5 0 0 0 - - -;
+#X obj 138 152 bng 15 250 50 0 empty empty click_to_output 20 7 0 12
+-118429 -1 -1;
+#X floatatom 354 215 5 0 0 0 - - -;
+#X msg 354 166 bang;
+#X obj 354 190 float 7;
+#X text 411 190 creation argument;
+#X text 5 422 PDDP Project 2005;
+#X text 179 174 LINK: number tip;
+#N canvas 540 181 390 219 PAGES 0;
+#N canvas 10 40 600 440 example-help-inlets 0;
+#X obj 3 163 cnv 15 550 15 empty empty Inlets(2) 3 10 0 13 -200249
+-1 0;
+#X obj 113 318 cnv 15 60 45 empty empty Inlet_1 3 9 0 12 -233017 -1
+0;
+#X obj 113 184 cnv 15 60 125 empty empty Inlet_0 3 9 0 12 -233017 -1
+0;
+#X text 190 183 FLOAT - A float at the left inlet will update the stored
+value of the object and will send the number immediately to the outlet.
+;
+#X text 190 226 BANG - A bang at the left inlet will force [float]
+to send its value to the outlet.;
+#X text 190 256 LIST - A list at the left inlet will be truncated to
+include only the first element. The first element in the list will
+update the stored value of the object and will send the number immediately
+to the outlet.;
+#X text 191 320 FLOAT - A float at the right inlet is stored for later
+use. It will be sent to the left outlet when a float or bang is received
+in the left inlet.;
+#X obj 0 419 cnv 15 600 20 empty empty empty 20 12 0 14 -200249 -66577
+0;
+#X text 5 422 PDDP Project 2005;
+#X obj 0 -1 cnv 15 600 36 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 5 2 float;
+#X obj 75 2 f;
+#X text 49 3 or;
+#X text 512 15 LINK:Glossary;
+#X text 512 3 LINK:Contents;
+#X text 5 21 Float object stores a floating point number.;
+#N canvas 0 22 589 276 my_menu 0;
+#X obj 10 100 pddp/menubar;
+#X obj 21 15 loadbang;
+#X obj 119 166 makefilename pd-example-help-%s;
+#X msg 119 213 \; \$1 vis 1;
+#X obj 12 138 select examples;
+#X obj 12 187 symbol pd-example_menu-help.pd;
+#X msg 17 44 list examples inlets outlets arguments more_info more_info
+;
+#X connect 0 0 4 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 4 1 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X coords 0 -1 1 1 552 17 1 10 100;
+#X restore 0 36 pd my_menu;
+#X obj 472 421 cnv 15 50 15 empty empty inlets 3 10 0 13 -200249 -1
+0;
+#X text 558 37 [WIKI];
+#X restore 15 60 pd example-help-inlets;
+#N canvas 10 40 600 440 example-help-outlets 0;
+#X text 103 244 Outlets;
+#X obj 3 184 cnv 15 550 15 empty empty Outlets(1) 3 10 0 13 -200249
+-1 0;
+#X obj 113 204 cnv 15 60 24 empty empty Outlet_0 3 9 0 12 -233017 -1
+0;
+#X text 190 204 FLOAT - outputs the stored floating point value of
+the object.;
+#X obj 0 419 cnv 15 600 20 empty empty empty 20 12 0 14 -200249 -66577
+0;
+#X text 5 422 PDDP Project 2005;
+#X obj 0 -1 cnv 15 600 36 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 5 2 float;
+#X obj 75 2 f;
+#X text 49 3 or;
+#X text 512 15 LINK:Glossary;
+#X text 512 3 LINK:Contents;
+#X text 5 21 Float object stores a floating point number.;
+#N canvas 0 22 589 276 my_menu 0;
+#X obj 10 100 pddp/menubar;
+#X obj 21 15 loadbang;
+#X obj 119 166 makefilename pd-example-help-%s;
+#X msg 119 213 \; \$1 vis 1;
+#X obj 12 138 select examples;
+#X obj 12 187 symbol pd-example_menu-help.pd;
+#X msg 17 44 list examples inlets outlets arguments more_info more_info
+;
+#X connect 0 0 4 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 4 1 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X coords 0 -1 1 1 552 17 1 10 100;
+#X restore 0 36 pd my_menu;
+#X obj 472 421 cnv 15 50 15 empty empty outlets 3 10 0 13 -200249 -1
+0;
+#X text 558 37 [WIKI];
+#X restore 15 81 pd example-help-outlets;
+#N canvas 10 40 600 440 example-help-more_info 0;
+#X text 191 174 LINK: doc/2.control.examples/sendnumber.pd;
+#X text 191 186 LINK: PDDP:all_about_data-types.pd;
+#X text 191 198 LINK: PDDP:all_about_gui-objects.pd;
+#X obj 3 154 cnv 15 550 15 empty empty More_Info 3 10 0 13 -200249
+-1 0;
+#X text 191 211 LINK: Tutorial: Intro to Pure-Data Control;
+#X obj 0 419 cnv 15 600 20 empty empty empty 20 12 0 14 -200249 -66577
+0;
+#X text 5 422 PDDP Project 2005;
+#X obj 0 -1 cnv 15 600 36 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 5 2 float;
+#X obj 75 2 f;
+#X text 49 3 or;
+#X text 512 15 LINK:Glossary;
+#X text 512 3 LINK:Contents;
+#X text 5 21 Float object stores a floating point number.;
+#N canvas 0 22 589 276 my_menu 0;
+#X obj 10 100 pddp/menubar;
+#X obj 21 15 loadbang;
+#X obj 119 166 makefilename pd-example-help-%s;
+#X msg 119 213 \; \$1 vis 1;
+#X obj 12 138 select examples;
+#X obj 12 187 symbol pd-example_menu-help.pd;
+#X msg 17 44 list examples inlets outlets arguments more_info more_info
+;
+#X connect 0 0 4 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 4 1 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X coords 0 -1 1 1 552 17 1 10 100;
+#X restore 0 36 pd my_menu;
+#X obj 472 421 cnv 15 50 15 empty empty more_info 3 10 0 13 -200249
+-1 0;
+#X text 558 37 [WIKI];
+#X restore 15 131 pd example-help-more_info;
+#N canvas 10 40 600 440 example-help-arguments 0;
+#X obj 3 154 cnv 15 550 15 empty empty Arguments(1) 3 10 0 13 -200249
+-1 0;
+#X text 191 178 [float] accepts a single float as a creation argument
+which initializes the first value to be sent out the left outlet.;
+#X obj 0 419 cnv 15 600 20 empty empty empty 20 12 0 14 -200249 -66577
+0;
+#X text 5 422 PDDP Project 2005;
+#X obj 0 -1 cnv 15 600 36 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 5 2 float;
+#X obj 75 2 f;
+#X text 49 3 or;
+#X text 512 15 LINK:Glossary;
+#X text 512 3 LINK:Contents;
+#X text 5 21 Float object stores a floating point number.;
+#N canvas 0 22 589 276 my_menu 0;
+#X obj 10 100 pddp/menubar;
+#X obj 21 15 loadbang;
+#X obj 119 166 makefilename pd-example-help-%s;
+#X msg 119 213 \; \$1 vis 1;
+#X obj 12 138 select examples;
+#X obj 12 187 symbol pd-example_menu-help.pd;
+#X msg 17 44 list examples inlets outlets arguments more_info more_info
+;
+#X connect 0 0 4 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 4 1 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X coords 0 -1 1 1 552 17 1 10 100;
+#X restore 0 36 pd my_menu;
+#X obj 472 421 cnv 15 50 15 empty empty arguments 3 10 0 13 -200249
+-1 0;
+#X text 558 37 [WIKI];
+#X restore 15 106 pd example-help-arguments;
+#X coords 0 0 1.01598e-05 1.58148e-05 96 15 0;
+#X restore 289 421 pd PAGES;
+#X msg 57 154 7;
+#X floatatom 89 155 5 0 0 0 - - -;
+#X obj 111 196 float;
+#X obj 0 -1 cnv 15 600 36 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 5 2 float;
+#X obj 75 2 f;
+#X text 49 3 or;
+#X text 512 15 LINK:Glossary;
+#X text 512 3 LINK:Contents;
+#X text 5 21 Float object stores a floating point number.;
+#N canvas 0 22 589 276 my_menu 0;
+#X obj 10 100 pddp/menubar;
+#X obj 21 15 loadbang;
+#X obj 119 166 makefilename pd-example-help-%s;
+#X msg 119 213 \; \$1 vis 1;
+#X obj 12 138 select examples;
+#X obj 12 187 symbol pd-example_menu-help.pd;
+#X msg 17 44 list examples inlets outlets arguments more_info more_info
+;
+#X connect 0 0 4 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 4 1 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X coords 0 -1 1 1 552 17 1 10 100;
+#X restore 0 36 pd my_menu;
+#X obj 472 421 cnv 15 50 15 empty empty examples 3 10 0 13 -200249
+-1 0;
+#X text 558 37 [WIKI];
+#X connect 4 0 16 1;
+#X connect 6 0 16 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X connect 16 0 5 0;

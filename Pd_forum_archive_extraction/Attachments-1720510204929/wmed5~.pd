@@ -1,0 +1,85 @@
+#N canvas 0 0 765 642 10;
+#X obj 150 132 t b b;
+#X obj 189 132 loadbang;
+#X obj 452 188 expr $f1+$f2+$f3+$f4+$f5;
+#X obj 455 225 expr int(($f1+1)/2);
+#X text 591 227 median index;
+#X obj 11 33 inlet~;
+#X obj 62 230 fexpr~ $f3*($x1>$x1[-1]) + $f4*($x1>$x1[-2]) + $f5*($x1>$x1[-3])
++ $f6*($x1>$x1[-4]) \; $f2*($x1<=$x1[-1]) + $f4*($x1[-1]>$x1[-2]) +
+$f5*($x1[-1]>$x1[-3]) + $f6*($x1[-1]>$x1[-4]) \; $f2*($x1<=$x1[-2])
++ $f3*($x1[-1]<=$x1[-2]) + $f5*($x1[-2]>$x1[-3]) + $f6*($x1[-2]>$x1[-4])
+\; $f2*($x1<=$x1[-3]) + $f3*($x1[-1]<=$x1[-3]) + $f4*($x1[-2]<=$x1[-3])
++ $f6*($x1[-3]>$x1[-4]) \; $f2*($x1<=$x1[-4]) + $f3*($x1[-1]<=$x1[-4])
++ $f4*($x1[-2]<=$x1[-4]) + $f5*($x1[-3]<=$x1[-4]);
+#X obj 19 449 fexpr~ $x1*(($x2+$f3) >= $f4)*($x2 < $f4);
+#X obj 62 475 fexpr~ $x1[-1]*(($x2+$f3) >= $f4)*($x2 < $f4);
+#X obj 102 501 fexpr~ $x1[-2]*(($x2+$f3) >= $f4)*($x2 < $f4);
+#X obj 143 527 fexpr~ $x1[-3]*(($x2+$f3) >= $f4)*($x2 < $f4);
+#X obj 179 552 fexpr~ $x1[-4]*(($x2+$f3) >= $f4)*($x2 < $f4);
+#X obj 27 594 expr~ $v1+$v2+$v3+$v4+$v5;
+#X obj 27 625 outlet~;
+#X obj 78 31 inlet;
+#X obj 78 54 unpack f f f f f;
+#X obj 85 163 \$2;
+#X obj 125 165 \$3;
+#X obj 152 165 \$4;
+#X obj 181 165 \$5;
+#X obj 210 165 \$6;
+#X text 253 44 1-D weighted median filter using expr \, expr~ \, fexpr~
+;
+#X text 351 88 uses 5 integer arguments \, representing the weights
+of choosing a median from a weighted set of samples as x[0] \, x[-1]
+\, x[-2] \, x[-3] \, x[-4];
+#X text 348 129 the weighted set includes a number of duplications
+of x \, equal to the argument;
+#X connect 0 0 16 0;
+#X connect 0 1 17 0;
+#X connect 0 1 18 0;
+#X connect 0 1 19 0;
+#X connect 0 1 20 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 7 3;
+#X connect 3 0 8 3;
+#X connect 3 0 9 3;
+#X connect 3 0 10 3;
+#X connect 3 0 11 3;
+#X connect 5 0 6 0;
+#X connect 5 0 7 0;
+#X connect 5 0 8 0;
+#X connect 5 0 9 0;
+#X connect 5 0 10 0;
+#X connect 5 0 11 0;
+#X connect 6 0 7 1;
+#X connect 6 1 8 1;
+#X connect 6 2 9 1;
+#X connect 6 3 10 1;
+#X connect 6 4 11 1;
+#X connect 7 0 12 0;
+#X connect 8 0 12 1;
+#X connect 9 0 12 2;
+#X connect 10 0 12 3;
+#X connect 11 0 12 4;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 15 1 17 0;
+#X connect 15 2 18 0;
+#X connect 15 3 19 0;
+#X connect 15 4 20 0;
+#X connect 16 0 2 0;
+#X connect 16 0 6 1;
+#X connect 16 0 7 2;
+#X connect 17 0 2 1;
+#X connect 17 0 6 2;
+#X connect 17 0 8 2;
+#X connect 18 0 2 2;
+#X connect 18 0 6 3;
+#X connect 18 0 9 2;
+#X connect 19 0 2 3;
+#X connect 19 0 6 4;
+#X connect 19 0 10 2;
+#X connect 20 0 2 4;
+#X connect 20 0 6 5;
+#X connect 20 0 11 2;

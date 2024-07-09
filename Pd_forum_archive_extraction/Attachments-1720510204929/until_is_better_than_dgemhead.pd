@@ -1,0 +1,29 @@
+#N canvas 366 83 738 436 10;
+#X obj 118 73 gemwin;
+#X msg 118 47 create \, 1;
+#X msg 121 154 -2.72 1.52 \, -1.12 0.56 \, 3.04 -1.68 \, -2.8 3.92
+\, -2.48 3.28 \, -0.4 -0.72 \, -3.92 -2.64 \, 1.2 -3.28 \, -1.04 -2.16
+\, 1.76 -0.24 \, 0.8 -1.68 \, 3.36 -2.88 \, 0.88 -3.52 \, 0.72 2.64
+\, -3.28 -1.68 \, 2.72 -1.04 \, 1.92 -2.56 \, -1.68 2 \, 0.32 3.52
+\,;
+#X text 256 126 do something here:;
+#X obj 121 107 gemhead;
+#X obj 121 237 gemlist;
+#X obj 121 131 t b a;
+#X obj 121 259 separator;
+#X obj 121 216 t b l;
+#X obj 121 309 translateXYZ;
+#X obj 148 284 unpack 0 0;
+#X obj 122 331 square 0.1;
+#X connect 1 0 0 0;
+#X connect 2 0 8 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 2 0;
+#X connect 6 1 5 1;
+#X connect 7 0 9 0;
+#X connect 8 0 5 0;
+#X connect 8 1 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 1;
+#X connect 10 1 9 2;

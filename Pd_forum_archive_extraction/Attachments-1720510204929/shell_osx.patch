@@ -1,0 +1,17 @@
+--- shell.c.old	2005-11-11 16:47:30.000000000 +0100
++++ shell.c	2005-11-11 16:48:20.000000000 +0100
+@@ -76,12 +76,9 @@
+ 	int ret;
+ 	int status;
+ 	ret = waitpid(x->pid,&status,WNOHANG);
+-	if (ret == x->pid) {
++	if (ret == x->pid && WIFEXITED(status)) {
+ 	     shell_cleanup(x);
+-	     if (WIFEXITED(status)) {
+-		  outlet_float(x->x_done,WEXITSTATUS(status));
+-	     }
+-	     else outlet_float(x->x_done,0);
++	     outlet_float(x->x_done,WEXITSTATUS(status));
+ 	}
+ 	else {
+ 	     if (x->x_del < 100) x->x_del+=2; /* increment poll times */

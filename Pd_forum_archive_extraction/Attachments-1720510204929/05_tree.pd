@@ -1,0 +1,310 @@
+#N canvas 690 233 571 618 10;
+#X obj 31 74 gemhead;
+#N canvas 0 0 574 424 + 0;
+#X obj 29 20 inlet;
+#X obj 120 19 inlet;
+#X obj 29 46 rotateXYZ 50 0 0;
+#X connect 0 0 2 0;
+#X connect 1 0 2 3;
+#X restore 78 467 pd +;
+#N canvas 0 0 566 416 - 0;
+#X obj 29 20 inlet;
+#X obj 126 18 inlet;
+#X obj 29 46 rotateXYZ -30 0 0;
+#X connect 0 0 2 0;
+#X connect 1 0 2 3;
+#X restore 101 489 pd -;
+#X obj 43 414 any;
+#X obj 78 414 any;
+#X obj 101 414 any;
+#X obj 124 511 GEMglPushMatrix;
+#X obj 147 532 GEMglPopMatrix;
+#X obj 124 414 any;
+#X obj 147 414 any;
+#N canvas 76 16 590 790 F 0;
+#X obj 30 20 inlet;
+#X obj 30 45 t a b;
+#X obj 175 18 inlet;
+#X obj 30 278 translateXYZ 0 0 0;
+#X msg 465 109 0.1;
+#X obj 30 220 rotateXYZ;
+#X obj 30 305 rotateXYZ;
+#X obj 216 182 * 0.03;
+#X text 263 19 size \, order \, random \, random;
+#X floatatom 367 133 5 0 0 0 - - -;
+#X floatatom 234 79 5 0 0 0 - - -;
+#X obj 175 97 + 1;
+#X obj 30 195 color 0.5 0.3 0.12;
+#X obj 175 132 / 100;
+#X obj 213 159 / 100;
+#X obj 30 331 spigot;
+#X msg 191 293 1;
+#X msg 232 295 0;
+#X obj 30 694 color 0 1 0;
+#X obj 191 270 sel 1;
+#X obj 214 132 + 0;
+#X obj 175 47 unpack f f f f;
+#X obj 393 58 inlet;
+#X obj 314 125 *;
+#X obj 313 103 + 1;
+#X floatatom 327 50 5 0 0 0 - - -;
+#X obj 30 625 rotateXYZ;
+#X obj 30 600 GEMglPushMatrix;
+#X obj 30 742 GEMglPopMatrix;
+#X obj 30 432 t a b;
+#X obj 30 378 t a b;
+#X obj 30 648 translateXYZ;
+#X obj 444 510 random 100;
+#X obj 444 537 - 50;
+#X obj 444 563 / 100;
+#X msg 139 433 seed 23;
+#X msg 163 463 seed 34;
+#X msg 192 486 seed 43;
+#X msg 281 450 seed 65;
+#X msg 305 472 seed 2;
+#X msg 324 498 seed 53;
+#X obj 30 717 square 0.04;
+#X obj 30 671 rotateXYZ;
+#X obj 140 508 random 150;
+#X obj 163 532 random 150;
+#X obj 191 558 random 150;
+#X obj 277 520 random 110;
+#X obj 304 545 random 110;
+#X obj 325 571 random 110;
+#X obj 309 72 * 20;
+#X obj 30 406 repeat 30;
+#X msg 444 484 seed 8;
+#X obj 30 251 tube 0.02 0.02 1 10;
+#X obj 465 82 loadbang;
+#X connect 0 0 1 0;
+#X connect 1 0 12 0;
+#X connect 2 0 21 0;
+#X connect 3 0 6 0;
+#X connect 4 0 3 3;
+#X connect 4 0 52 3;
+#X connect 5 0 52 0;
+#X connect 6 0 15 0;
+#X connect 7 0 6 2;
+#X connect 7 0 52 9;
+#X connect 9 0 7 1;
+#X connect 10 0 13 1;
+#X connect 10 0 14 1;
+#X connect 11 0 13 0;
+#X connect 12 0 5 0;
+#X connect 13 0 52 1;
+#X connect 14 0 52 2;
+#X connect 15 0 30 0;
+#X connect 16 0 15 1;
+#X connect 17 0 15 1;
+#X connect 18 0 41 0;
+#X connect 19 0 16 0;
+#X connect 19 1 17 0;
+#X connect 20 0 14 0;
+#X connect 21 0 11 0;
+#X connect 21 0 19 0;
+#X connect 21 0 20 0;
+#X connect 21 2 5 3;
+#X connect 21 2 7 0;
+#X connect 21 3 49 0;
+#X connect 22 0 23 1;
+#X connect 23 0 3 3;
+#X connect 23 0 52 3;
+#X connect 24 0 23 0;
+#X connect 25 0 49 1;
+#X connect 26 0 31 0;
+#X connect 27 0 26 0;
+#X connect 29 0 27 0;
+#X connect 29 1 32 0;
+#X connect 29 1 43 0;
+#X connect 29 1 44 0;
+#X connect 29 1 45 0;
+#X connect 29 1 46 0;
+#X connect 29 1 47 0;
+#X connect 29 1 48 0;
+#X connect 30 0 50 0;
+#X connect 30 1 35 0;
+#X connect 30 1 36 0;
+#X connect 30 1 37 0;
+#X connect 30 1 38 0;
+#X connect 30 1 39 0;
+#X connect 30 1 40 0;
+#X connect 30 1 51 0;
+#X connect 31 0 42 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 31 3;
+#X connect 35 0 43 0;
+#X connect 36 0 44 0;
+#X connect 37 0 45 0;
+#X connect 38 0 46 0;
+#X connect 39 0 47 0;
+#X connect 40 0 48 0;
+#X connect 41 0 28 0;
+#X connect 42 0 18 0;
+#X connect 43 0 26 1;
+#X connect 44 0 26 2;
+#X connect 45 0 26 3;
+#X connect 46 0 42 1;
+#X connect 47 0 42 2;
+#X connect 48 0 42 3;
+#X connect 49 0 24 0;
+#X connect 50 0 29 0;
+#X connect 51 0 32 0;
+#X connect 52 0 3 0;
+#X connect 53 0 4 0;
+#X restore 43 446 pd F ---------;
+#X obj 43 362 route F + - [ ];
+#X obj 78 391 t b;
+#X obj 101 391 t b;
+#X obj 124 391 t b;
+#X obj 147 391 t b;
+#X obj 43 391 t b l;
+#N canvas 26 154 526 376 L_system 0;
+#X obj 24 11 inlet;
+#X msg 26 41 \; 1000-Ls F 8 0 309 -0.0012 \; 1000-Ls [ \; 1000-Ls -
+\; 1000-Ls F 1 3 250 -0.008 \; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls +
+\; 1000-Ls F 1 3 245 -0.0046 \; 1000-Ls ] \; 1000-Ls F 7 0 254 0.005
+\; 1000-Ls [ \; 1000-Ls - \; 1000-Ls F 2 2 211 0.0066 \; 1000-Ls [
+\; 1000-Ls - \; 1000-Ls F 1 3 154 -0.0078 \; 1000-Ls ] \; 1000-Ls [
+\; 1000-Ls + \; 1000-Ls F 1 3 318 0.0078 \; 1000-Ls ] \; 1000-Ls F
+1 2 204 -0.0054 \; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F
+2 2 124 -0.0058 \; 1000-Ls [ \; 1000-Ls - \; 1000-Ls F 1 3 328 -0.0098
+\; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F 1 3 175 -0.0046
+\; 1000-Ls ] \; 1000-Ls F 1 2 51 0 \; 1000-Ls ] \; 1000-Ls F 6 0 276
+-0.007 \; 1000-Ls [ \; 1000-Ls - \; 1000-Ls F 1 3 98 -0.0062 \; 1000-Ls
+] \; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F 1 3 60 -0.0096 \; 1000-Ls
+] \; 1000-Ls F 5 0 88 0.0022 \; 1000-Ls [ \; 1000-Ls - \; 1000-Ls F
+4 1 233 0.0064 \; 1000-Ls [ \; 1000-Ls - \; 1000-Ls F 1 3 50 0.0082
+\; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F 1 3 4 -0.0004 \;
+1000-Ls ] \; 1000-Ls F 3 1 201 0.0046 \; 1000-Ls [ \; 1000-Ls - \;
+1000-Ls F 2 2 240 -0.0008 \; 1000-Ls [ \; 1000-Ls - \; 1000-Ls F 1
+3 223 -0.0092 \; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F 1
+3 267 0.0038 \; 1000-Ls ] \; 1000-Ls F 1 2 40 -0.0028 \; 1000-Ls ]
+\; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F 2 2 49 0.008 \; 1000-Ls [ \;
+1000-Ls - \; 1000-Ls F 1 3 103 0.0062 \; 1000-Ls ] \; 1000-Ls [ \;
+1000-Ls + \; 1000-Ls F 1 3 338 -0.0026 \; 1000-Ls ] \; 1000-Ls F 1
+2 279 0.0024 \; 1000-Ls ] \; 1000-Ls F 2 1 264 -0.0098 \; 1000-Ls [
+\; 1000-Ls - \; 1000-Ls F 1 3 61 0 \; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls
++ \; 1000-Ls F 1 3 109 0.0084 \; 1000-Ls ] \; 1000-Ls F 1 1 262 -0.0016
+\; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F 4 1 81 -0.0058
+\; 1000-Ls [ \; 1000-Ls - \; 1000-Ls F 1 3 263 -0.0052 \; 1000-Ls ]
+\; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F 1 3 310 -0.0024 \; 1000-Ls ]
+\; 1000-Ls F 3 1 346 0.0054 \; 1000-Ls [ \; 1000-Ls - \; 1000-Ls F
+2 2 77 0.0084 \; 1000-Ls [ \; 1000-Ls - \; 1000-Ls F 1 3 307 0.0038
+\; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F 1 3 77 -0.001 \;
+1000-Ls ] \; 1000-Ls F 1 2 269 0.0084 \; 1000-Ls ] \; 1000-Ls [ \;
+1000-Ls + \; 1000-Ls F 2 2 309 -0.0082 \; 1000-Ls [ \; 1000-Ls - \;
+1000-Ls F 1 3 296 0.0058 \; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \;
+1000-Ls F 1 3 278 -0.0014 \; 1000-Ls ] \; 1000-Ls F 1 2 48 0.0036 \;
+1000-Ls ] \; 1000-Ls F 2 1 225 0.003 \; 1000-Ls [ \; 1000-Ls - \; 1000-Ls
+F 1 3 115 0 \; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F 1 3
+355 -0.005 \; 1000-Ls ] \; 1000-Ls F 1 1 152 0.0022 \; 1000-Ls ] \;
+1000-Ls F 4 0 5 -0.01 \; 1000-Ls [ \; 1000-Ls - \; 1000-Ls F 1 3 140
+0.001 \; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F 1 3 210 -0.0018
+\; 1000-Ls ] \; 1000-Ls F 3 0 236 -0.0048 \; 1000-Ls [ \; 1000-Ls -
+\; 1000-Ls F 2 2 102 0 \; 1000-Ls [ \; 1000-Ls - \; 1000-Ls F 1 3 158
+-0.0074 \; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \; 1000-Ls F 1 3 288
+-0.0098 \; 1000-Ls ] \; 1000-Ls F 1 2 37 -0.0014 \; 1000-Ls ] \; 1000-Ls
+[ \; 1000-Ls + \; 1000-Ls F 2 2 74 0.0092 \; 1000-Ls [ \; 1000-Ls -
+\; 1000-Ls F 1 3 79 0.0034 \; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \;
+1000-Ls F 1 3 222 0.0038 \; 1000-Ls ] \; 1000-Ls F 1 2 266 -0.003 \;
+1000-Ls ] \; 1000-Ls F 2 0 280 -0.0076 \; 1000-Ls [ \; 1000-Ls - \;
+1000-Ls F 1 3 291 0.001 \; 1000-Ls ] \; 1000-Ls [ \; 1000-Ls + \; 1000-Ls
+F 1 3 358 0.0028 \; 1000-Ls ] \; 1000-Ls F 1 0 265 0.0094 \;;
+#X connect 0 0 1 0;
+#X restore 31 251 pd L_system;
+#X obj 31 151 t b a;
+#X obj 31 125 rotateXYZ -90 0 90;
+#X floatatom 199 414 5 0 0 0 - - -;
+#X msg 199 389 0.7;
+#X obj 168 46 t b b;
+#X obj 168 23 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 193 208 set \, add \,;
+#N canvas 0 0 526 376 random 0;
+#X obj 41 17 inlet;
+#X obj 40 262 outlet;
+#X obj 41 43 route F;
+#X obj 41 92 unpack f f;
+#X obj 41 66 t a b;
+#X obj 80 127 random 360;
+#X obj 157 129 random 100;
+#X obj 157 152 - 50;
+#X obj 41 206 pack f f f f;
+#X msg 41 233 F \$1 \$2 \$3 \$4;
+#X obj 157 179 / 5000;
+#X connect 0 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 1 0;
+#X connect 3 0 8 0;
+#X connect 3 1 8 1;
+#X connect 4 0 3 0;
+#X connect 4 1 5 0;
+#X connect 4 1 6 0;
+#X connect 5 0 8 2;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
+#X connect 10 0 8 3;
+#X restore 168 161 pd random;
+#X msg 168 69 F 1 0;
+#X obj 168 91 rule2 1;
+#X obj 31 102 translateXYZ 0 -3 0;
+#X obj 168 114 rule2 2;
+#X obj 168 138 rule2 3;
+#X obj 342 111 gemhead;
+#X obj 342 136 world_light;
+#X obj 188 21 loadbang;
+#X text 132 251 <- in this exemple \, the Lsystem is geneated once
+\, and store in this sub-patch;
+#X obj 199 363 loadbang;
+#X msg 342 181 create \, 1 \, lighting 1;
+#X obj 342 206 gemwin;
+#X text 254 18 <- create new tree;
+#X obj 43 335 r \$0-Ls;
+#X obj 168 183 prepend add \$0-Ls;
+#X text 59 578 This patch nead a good graphic card;
+#X connect 0 0 28 0;
+#X connect 3 0 10 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 8 0 6 0;
+#X connect 9 0 7 0;
+#X connect 11 0 16 0;
+#X connect 11 1 12 0;
+#X connect 11 2 13 0;
+#X connect 11 3 14 0;
+#X connect 11 4 15 0;
+#X connect 12 0 4 0;
+#X connect 13 0 5 0;
+#X connect 14 0 8 0;
+#X connect 15 0 9 0;
+#X connect 16 0 3 0;
+#X connect 16 1 10 1;
+#X connect 18 0 17 0;
+#X connect 18 1 3 1;
+#X connect 18 1 4 1;
+#X connect 18 1 5 1;
+#X connect 18 1 8 1;
+#X connect 18 1 9 1;
+#X connect 19 0 18 0;
+#X connect 20 0 10 2;
+#X connect 21 0 20 0;
+#X connect 22 0 26 0;
+#X connect 22 1 24 0;
+#X connect 23 0 22 0;
+#X connect 24 0 17 0;
+#X connect 25 0 40 0;
+#X connect 26 0 27 0;
+#X connect 27 0 29 0;
+#X connect 28 0 19 0;
+#X connect 29 0 30 0;
+#X connect 30 0 25 0;
+#X connect 31 0 32 0;
+#X connect 33 0 22 0;
+#X connect 35 0 21 0;
+#X connect 36 0 37 0;
+#X connect 39 0 11 0;
+#X connect 40 0 17 0;
+

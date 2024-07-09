@@ -1,0 +1,69 @@
+#N canvas 340 23 909 682 10;
+#X obj 75 71 square~ 2;
+#X obj 88 156 Scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X obj 261 70 square~ 2;
+#X obj 274 155 Scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X obj 430 71 square~ 2;
+#X obj 443 156 Scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X obj 610 73 square~ 2;
+#X obj 623 158 Scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X obj 88 113 slide~ 0 10000;
+#X obj 274 112 slide~ 1 10000;
+#X obj 443 113 slide~ 2 10000;
+#X obj 623 115 slide~ 3 10000;
+#X obj 100 351 square~ 2;
+#X obj 113 436 Scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X obj 113 393 slide~ 10000 0;
+#X text 299 11 will work only when slide up value is small;
+#X text 307 495 Works fine;
+#X obj 487 517 Scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X obj 478 410 square~ 2;
+#N canvas 228 108 770 335 slide 0;
+#X obj 381 129 fexpr~ if($x1[0] - $x1[-1] > 0 \, 1 \, if($x1[0] - $x1[-1]
+< 0 \, -1 \, 0));
+#X obj 381 175 fexpr~ if($x1[0] == 0 \, $y1[-1] \, $x1[0]);
+#X obj 60 59 inlet~;
+#X obj 60 273 outlet~;
+#X obj 167 59 inlet~;
+#X obj 274 59 inlet~;
+#X obj 60 212 fexpr~ if($x4[0] > 0 \, $y[-1] + (($x[0] - $y[-1])/$x2)
+\, $y[-1] + (($x[0] - $y[-1])/$x3));
+#X connect 0 0 1 0;
+#X connect 1 0 6 3;
+#X connect 2 0 0 0;
+#X connect 2 0 6 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 2;
+#X connect 6 0 3 0;
+#X restore 479 465 pd slide;
+#X obj 546 432 max~ 1;
+#X obj 596 434 max~ 1;
+#X floatatom 564 402 5 0 0 0 - - -;
+#X floatatom 610 402 5 0 0 0 - - -;
+#X obj 614 344 loadbang;
+#X msg 616 369 10000;
+#X text 647 469 Vanilla implementation;
+#X connect 0 0 8 0;
+#X connect 2 0 9 0;
+#X connect 4 0 10 0;
+#X connect 6 0 11 0;
+#X connect 8 0 1 0;
+#X connect 9 0 3 0;
+#X connect 10 0 5 0;
+#X connect 11 0 7 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;
+#X connect 20 0 19 1;
+#X connect 21 0 19 2;
+#X connect 22 0 20 0;
+#X connect 23 0 21 0;
+#X connect 24 0 25 0;
+#X connect 25 0 23 0;

@@ -1,0 +1,32 @@
+#N canvas 71 133 708 451 10;
+#X floatatom 37 394 5 0 0 0 - - -;
+#X floatatom 347 395 5 0 0 0 - - -;
+#X obj 18 9 cnv 15 500 160 empty empty Saving/Loading 20 12 0 14 -233017
+-66577 0;
+#X obj 251 37 bng 15 250 50 0 empty empty empty 0 -6 0 8 -258699 -1
+-1;
+#X obj 56 41 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1 -1
+;
+#X msg 56 85 save storage.dat;
+#X msg 281 85 load storage.dat;
+#X obj 251 58 t b b;
+#X obj 187 84 send restore;
+#X obj 37 199 r restore;
+#X obj 127 117 pool \$0-storage;
+#X obj 347 240 pool-abs \$0-storage 2;
+#X obj 37 240 pool-abs \$0-storage 1;
+#X text 254 189 Patch argument 1: Name of storage;
+#X text 243 117 Storage name is the same as below!;
+#X text 253 202 Patch argument 2: Arbitrary value (number here \, but
+symbol is possible \, too) as unique key;
+#X text 69 146 Save/load could go into an abstraction as well.;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 10 0;
+#X connect 6 0 10 0;
+#X connect 7 0 8 0;
+#X connect 7 1 6 0;
+#X connect 9 0 11 0;
+#X connect 9 0 12 0;
+#X connect 11 0 1 0;
+#X connect 12 0 0 0;

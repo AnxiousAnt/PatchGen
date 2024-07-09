@@ -1,0 +1,27 @@
+#N canvas 431 0 685 650 8;
+#X obj 21 359 tot .;
+#X obj 164 77 tosymbol;
+#X msg 50 77 123456;
+#X msg 21 124 query set lst [list] .: foreach el [split " \$1 " ""]
+.(set lst [linsert $lst 0 $el].) .: concat set [join $lst ""];
+#X msg 164 40 One Two Three;
+#X msg 21 40 symbol abcdef;
+#X msg 21 541 eerhT owT enO;
+#X msg 175 209 symbol asdfsad-adsfasd;
+#X obj 71 386 print a;
+#X obj 85 408 print b;
+#X obj 97 430 print c;
+#X obj 111 452 print d;
+#X msg 79 235 query lsearch [split " \$1 " ""] "-";
+#X connect 0 0 6 0;
+#X connect 0 0 8 0;
+#X connect 0 1 9 0;
+#X connect 0 2 10 0;
+#X connect 0 3 11 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 3 0;
+#X connect 7 0 12 0;
+#X connect 12 0 0 0;

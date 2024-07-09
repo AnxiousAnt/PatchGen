@@ -1,0 +1,25 @@
+#N canvas 197 258 516 327 10;
+#X obj 97 209 cnv 15 100 60 empty canvas_test Bb4 20 40 2 50 -142683
+-1109 0;
+#X obj 81 76 random 127;
+#X msg 81 149 \; canvas_test label \$1;
+#X obj 81 98 pitch 0;
+#X obj 78 34 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 77 14 loadbang;
+#X symbolatom 96 123 10 0 0 0 - - -;
+#X obj 78 53 metro 500;
+#X text 213 62 In my computer (wich uses pt_BR);
+#X text 212 77 the # is changed for $ in the canvas.;
+#X text 270 125 Is this happening with you?;
+#X text 285 175 thanks.;
+#X text 289 212 organismo@gmail.com;
+#X text 280 141 Do you know why?;
+#X text 233 42 Linux kernel 2.6.20-16-generic;
+#X text 233 26 Ubuntu Feisty - Gnome Desktop;
+#X connect 1 0 3 0;
+#X connect 3 1 6 0;
+#X connect 4 0 7 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 0;
+#X connect 7 0 1 0;

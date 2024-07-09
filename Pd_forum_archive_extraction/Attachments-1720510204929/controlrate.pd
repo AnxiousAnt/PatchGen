@@ -1,0 +1,32 @@
+#N canvas 150 108 564 520 12;
+#N canvas 604 101 317 206 blocktest 0;
+#X obj 5 125 print;
+#X obj 5 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 151 88 osc~;
+#X obj 150 134 outlet~;
+#X floatatom 238 42 5 0 0 0 - - -;
+#X obj 151 43 inlet;
+#X obj 11 58 block~ 8192;
+#X msg 2 11 set 64;
+#X msg 66 14 set 8192;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X restore 237 197 pd blocktest;
+#X obj 266 384 dac~;
+#X floatatom 376 283 5 0 0 0 - - -;
+#X obj 274 330 *~;
+#X obj 376 307 / 100;
+#X floatatom 200 129 5 0 0 0 - - -;
+#X text 147 106 Scrub for staircase;
+#X connect 0 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 1;
+#X connect 3 0 1 0;
+#X connect 4 0 3 1;
+#X connect 5 0 0 0;
+

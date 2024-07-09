@@ -1,0 +1,54 @@
+#N canvas 165 75 931 573 10;
+#X obj 82 277 looper /testxx a s;
+#X obj 82 160 adc~;
+#X obj 280 212 hsl 128 15 0 127 0 0 empty empty Pitch_Transposition
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 421 213 hsl 128 15 0 127 0 0 empty empty Master_Gain -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 179 163 tgl 25 0 empty empty Footswitch_control_to_record 30
+7 0 10 -262144 -1 -1 127 127;
+#X text 228 175 Values = 0/127 (see properties);
+#X obj 179 29 key;
+#X obj 179 57 select 32;
+#X obj 179 83 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 179 103 select 1;
+#X msg 224 128 127;
+#X text 216 27 Use spacebar to start/stop recording;
+#X obj 168 487 dac~;
+#X text 585 510 derek@umatic.nl;
+#X text 400 275 These three black fields are XY tables to control properties
+of granulator.;
+#X text 482 366 Middle: envelope stepness slider;
+#X text 395 353 Left: radio buttons to set grain length range;
+#X text 523 380 Right: Loop length in seconds/pitch transposition in
+halftones;
+#X text 398 409 Left: first keyname or this toggle turns on/off the
+loop player;
+#X text 482 437 Middle: slider for master gain;
+#X text 537 461 Right: second keyname or this toggle turns on/off granulator
+;
+#X text 589 11 INLETS:;
+#X text 588 35 1 audio signal;
+#X text 588 52 2 footswitch ctrl [0 \, 127];
+#X text 588 68 3 pitch transposition ctrl [0-127];
+#X text 588 111 ABSTRACTIONS:;
+#X text 590 132 1) loopreader.pd;
+#X text 590 145 1) random_range.pd;
+#X text 591 172 USAGE;
+#X text 588 85 4 master gain ctrl [0-127];
+#X text 589 191 [looper /name keyname1 keyname2];
+#X text 592 211 keyname1=toggle for looper on/off;
+#X text 592 226 keyname2=toggle for grainer on/off;
+#X connect 0 0 12 0;
+#X connect 0 1 12 1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 2;
+#X connect 3 0 0 3;
+#X connect 4 0 0 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 0;
+#X connect 9 1 10 0;
+#X connect 10 0 4 0;

@@ -1,0 +1,15 @@
+#N canvas 0 0 450 300 10;
+#X obj 21 101 dac~;
+#X msg 20 17 0;
+#X msg 58 17 440;
+#N canvas 328 60 196 123 osc 1;
+#X obj 73 81 outlet~;
+#X obj 73 15 inlet~ fr;
+#X obj 72 48 osc~;
+#X obj 7 13 inlet;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X restore 21 71 pd osc;
+#X connect 1 0 3 1;
+#X connect 2 0 3 1;
+#X connect 3 0 0 0;

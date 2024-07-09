@@ -1,0 +1,12 @@
+#N canvas 12 39 763 433 10;
+#X obj 78 35 dumpOSC 3001;
+#X obj 78 145 OSCroute /var1 /var2;
+#X obj 81 178 repack 1;
+#X symbolatom 82 216 20 0 0 0 - - -;
+#X obj 217 181 repack 1;
+#X symbolatom 217 212 20 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 4 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;

@@ -1,0 +1,25 @@
+#N canvas 751 323 706 461 10;
+#X obj 58 124 list tosymbol;
+#X obj 58 146 print;
+#X msg 59 90 123;
+#X msg 94 90 92;
+#X msg 130 91 125;
+#X obj 265 145 list tosymbol;
+#X msg 266 111 123;
+#X msg 301 111 92;
+#X msg 337 112 125;
+#X msg 264 175 set \$1;
+#X msg 264 199 ;
+#X text 266 40 92 will work fine \, but 123 and 125 will give me error
+messages or crash pd..., f 24;
+#X text 54 35 why will clicking 92 print four backslashes instead of
+only two?, f 23;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 9 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 10 0;

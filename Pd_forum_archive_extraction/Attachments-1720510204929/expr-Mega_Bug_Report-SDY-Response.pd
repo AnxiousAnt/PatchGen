@@ -1,0 +1,550 @@
+#N canvas 94 22 1299 686 10;
+#N canvas 92 23 450 300 table_functions 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array tabela 100 float 3;
+#A 0 0.807134 0.807134 0.811896 0.816658 0.82142 0.835706 0.849991
+0.852848 0.855705 0.858562 0.86142 0.864277 0.864277 0.864277 0.864277
+0.871419 0.878562 0.878562 0.878562 0.878562 0.878562 0.878562 0.878562
+0.878562 0.878562 0.878562 0.878562 0.878562 0.878562 0.878562 0.878562
+0.878562 0.878562 0.878562 0.878562 0.878562 0.878562 0.878562 0.878562
+0.878562 0.878562 0.878562 0.878562 0.878562 0.878562 0.878562 0.878562
+0.878562 0.864277 0.864277 0.864277 0.864277 0.864277 0.849991 0.849991
+0.849991 0.849991 0.849991 0.849991 0.849991 0.849991 0.849991 0.849991
+0.849991 0.849991 0.849991 0.849991 0.849991 0.849991 0.849991 0.849991
+0.849991 0.849991 0.849991 0.849991 0.849991 0.849991 0.849991 0.849991
+0.849991 0.849991 0.849991 0.849991 0.835706 0.835706 0.835706 0.835706
+0.835706 0.835706 0.835706 0.835706 0.835706 0.835706 0.849991 0.864277
+0.864277 0.864277 0.864277 0.864277 0.864277;
+#X coords 0 1 99 -1 100 70 1;
+#X restore 239 79 graph;
+#X obj 56 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 58 147 0 0 0 0 - - -;
+#X floatatom 101 148 0 0 0 0 - - -;
+#X obj 56 82 expr Sum("tabela" \, 3 \, 9) \; Avg("tabela" \, 3 \, 9)
+\; avg("tabela") \; store("tabela" \, 3 \, 9);
+#X floatatom 153 148 0 0 0 0 - - -;
+#X floatatom 200 149 0 0 0 0 - - -;
+#X text 27 191 None of the above work. "Avg" / "avg" and "store" load
+without errors but are not mentioned in the documentation;
+#X connect 1 0 4 0;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 4 2 5 0;
+#X connect 4 3 6 0;
+#X restore 17 124 pd table_functions;
+#N canvas 75 22 945 446 functions_not_loading 0;
+#X floatatom 100 62 5 0 0 0 - - -, f 5;
+#X floatatom 100 143 5 0 0 0 - - -, f 5;
+#X text 222 102 nope;
+#X obj 98 100 expr imodf($f1);
+#X text 303 362 nope;
+#X floatatom 117 253 5 0 0 0 - - -, f 5;
+#X floatatom 117 334 5 0 0 0 - - -, f 5;
+#X obj 115 291 expr modf($f1) \; imodf($i1);
+#X obj 457 170 expr modf($f1) \; imodf($f1) \;;
+#X text 221 302 SDY - this one is not loading because $f1 and $i1 are
+in contradiction;
+#X obj 199 361 expr ldexp($f1);
+#X obj 297 102 expr ldexp($f1 \, $i2);
+#X floatatom 296 58 5 0 0 0 - - -, f 5;
+#X floatatom 413 57 5 0 0 0 - - -, f 5;
+#X floatatom 294 153 5 0 0 0 - - -, f 5;
+#X text 81 26 SDY- fixed \, loads now;
+#X text 359 22 SDY - fixed \, ldexp takes two arguments;
+#X connect 0 0 3 0;
+#X connect 3 0 1 0;
+#X connect 5 0 7 0;
+#X connect 7 0 6 0;
+#X connect 11 0 14 0;
+#X connect 12 0 11 0;
+#X connect 13 0 11 1;
+#X restore 820 269 pd functions_not_loading;
+#N canvas 154 22 843 742 functions_with_issues 0;
+#X floatatom 265 105 5 0 0 0 - - -, f 5;
+#X floatatom 265 162 0 0 0 0 - - -;
+#X obj 265 133 expr drem($f1);
+#X obj 265 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 394 147 error: expr: FUNC_EVAL(1291): bad right type 0 \; expr:
+bang: unrecognized result 0 \; error: expr: FUNC_EVAL(1291): bad right
+type 3;
+#X obj 297 379 expr $f1 ~ 1;
+#X floatatom 342 326 5 0 0 0 - - -, f 5;
+#X floatatom 301 409 5 0 0 0 - - -, f 5;
+#X floatatom 394 411 5 0 0 0 - - -, f 5;
+#X obj 390 381 expr $f1 ~ 20;
+#X text 408 358 second argument doesn't seem to matter!;
+#X text 373 86 says it takes 2 arguments in the documentation \, but
+it seems is just one;
+#X text 373 116 not sure if it works though \, sends lots of errors
+such as:;
+#X obj 248 515 expr floor($f1 \, 10);
+#X obj 244 547 expr ceil($f1 \, 10);
+#X text 399 494 documentation says it's only one argument \, but it'll
+load with two arguments.;
+#X text 397 524 Not sure if they work \, cause it always just outputs
+1st argument.;
+#X floatatom 235 489 5 0 0 0 - - -, f 5;
+#X floatatom 244 579 5 0 0 0 - - -, f 5;
+#X floatatom 288 579 5 0 0 0 - - -, f 5;
+#X obj 244 659 expr copysig($f1);
+#X text 367 644 in the documentation it is "copysign" instead of "copysig"
+- in expr only takes one argument \, whereas the c math function takes
+two arguments: float copysignf(float x \, float y) \;;
+#X text 400 562 This bug report talks more about floor and ceil: http://sourceforge.net/p/pure-data/bugs/53/
+;
+#X floatatom 257 212 5 0 0 0 - - -, f 5;
+#X floatatom 257 269 0 0 0 0 - - -;
+#X obj 257 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 257 240 expr remainder($f1 \, 1.2);
+#X floatatom 46 487 5 0 0 0 - - -, f 5;
+#X floatatom 3 551 5 0 0 0 - - -, f 5;
+#X floatatom 97 553 5 0 0 0 - - -, f 5;
+#X obj 98 517 expr floor($f1);
+#X obj 3 517 expr ceil($f1);
+#X obj 55 663 expr copysign($f1 \, $f2);
+#X floatatom 50 634 5 0 0 0 - - -, f 5;
+#X floatatom 196 629 5 0 0 0 - - -, f 5;
+#X floatatom 56 690 5 0 0 0 - - -, f 5;
+#X text 53 333 SDY - These are syntax errors and fixed now \; syntax
+errors are reported;
+#X text 21 447 SDY - fixed floor() and ceil() should only be one argument
+;
+#X text 43 53 this was a bug but drem() is not obsolete in C library
+;
+#X text 41 23 SDY - added remainder and dropped drem();
+#X text 10 609 SDY - added copysign(x \, y) and dropped copysig();
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 6 0 9 0;
+#X connect 9 0 8 0;
+#X connect 13 0 19 0;
+#X connect 14 0 18 0;
+#X connect 17 0 14 0;
+#X connect 17 0 13 0;
+#X connect 23 0 26 0;
+#X connect 25 0 23 0;
+#X connect 26 0 24 0;
+#X connect 27 0 30 0;
+#X connect 27 0 31 0;
+#X connect 30 0 29 0;
+#X connect 31 0 28 0;
+#X connect 32 0 35 0;
+#X connect 33 0 32 0;
+#X connect 34 0 32 1;
+#X restore 822 162 pd functions_with_issues;
+#N canvas 356 22 762 504 random_bug 0;
+#X obj 83 100 expr random(1000 \, 100001);
+#X obj 83 75 until;
+#X obj 216 159 f;
+#X floatatom 83 155 0 0 0 0 - - -;
+#X obj 88 49 t f b;
+#X msg 136 69 0;
+#X obj 81 -8 loadbang;
+#X text 297 44 random is not mentioned in the documentation. It works
+fine \, but the left patch will eventually send negative values.;
+#X text 298 101 Somehow \, this seems to be fixed in vanilla 0.46-6
+;
+#X floatatom 10 136 10 0 0 0 - - -, f 10;
+#X obj 17 9 metro 100;
+#X obj 18 -11 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 51 167 0;
+#X obj 386 260 until;
+#X obj 524 353 f;
+#X floatatom 386 340 0 0 0 0 - - -;
+#X msg 386 206 10000;
+#X obj 391 234 t f b;
+#X msg 439 254 0;
+#X obj 384 177 loadbang;
+#X floatatom 313 321 10 0 0 0 - - -, f 10;
+#X obj 320 194 metro 100;
+#X obj 321 174 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 354 352 0;
+#X obj 386 314 moses 0;
+#X obj 83 129 moses 0;
+#X obj 386 285 expr random(1 \, 4);
+#X msg 83 21 10000;
+#X connect 0 0 9 0;
+#X connect 0 0 25 0;
+#X connect 1 0 0 0;
+#X connect 4 0 1 0;
+#X connect 4 1 5 0;
+#X connect 5 0 25 1;
+#X connect 6 0 27 0;
+#X connect 10 0 27 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 26 0;
+#X connect 16 0 17 0;
+#X connect 17 0 13 0;
+#X connect 17 1 18 0;
+#X connect 18 0 24 1;
+#X connect 19 0 16 0;
+#X connect 21 0 16 0;
+#X connect 22 0 21 0;
+#X connect 23 0 22 0;
+#X connect 24 0 14 0;
+#X connect 24 0 15 0;
+#X connect 24 0 23 0;
+#X connect 25 0 3 0;
+#X connect 25 0 12 0;
+#X connect 26 0 20 0;
+#X connect 26 0 24 0;
+#X connect 27 0 4 0;
+#X restore 824 199 pd random_bug;
+#N canvas 230 22 668 409 float_bug 0;
+#X floatatom 364 133 5 0 0 0 - - -, f 5;
+#X obj 364 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 270 261 shouldn't it send a float?;
+#X floatatom 25 132 5 0 0 0 - - -, f 5;
+#X obj 23 100 expr 5 / 4;
+#X obj 23 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 94 102 doesn't work;
+#X text 398 78 it converts integers to floats so it works;
+#X obj 149 248 cnv 15 110 40 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X floatatom 160 301 5 0 0 0 - - -, f 5;
+#X obj 160 223 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 364 105 expr float(5) / 4;
+#X obj 160 258 expr float(1.4);
+#X text 15 47 if both numbers are int the output is int too;
+#X text 15 34 SDY - This is correct and how C language typing behaves
+;
+#X text 144 187 SDY - fixed;
+#X connect 1 0 11 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 10 0 12 0;
+#X connect 11 0 0 0;
+#X connect 12 0 9 0;
+#X restore 825 232 pd float_bug;
+#N canvas 609 23 596 472 documentation 0;
+#X floatatom 76 232 5 0 0 0 - - -, f 5;
+#X floatatom 79 286 5 0 0 0 - - -, f 5;
+#X obj 70 260 expr atanh($f1);
+#X obj 79 135 expr fmod($f1 \, 3);
+#X floatatom 85 107 5 0 0 0 - - -, f 5;
+#X floatatom 88 161 5 0 0 0 - - -, f 5;
+#X text 199 134 wrong number of arguments in the documentation - it
+says it takes one \, but it takes two.;
+#X text 182 253 - In the documentation \, you have " atan() 1 inverse
+hyperbolic tangent" but I belive it should be "atanh";
+#X text 117 363 if function mentioned twice in the documentation link
+;
+#X text 134 47 issues in http://yadegari.org/expr/expr.html;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X restore 19 263 pd documentation;
+#X text 416 173 - the help file of [expr] gives the wrong link to expr
+documentation \, it points to http://www.crca.ucsd.edu/~yadegari/expr.html
+where it should point to the new link http://yadegari.org/expr/expr.html
+;
+#N canvas 97 24 630 567 issues_with_exponentials 0;
+#X obj 195 170 expr 1e-05;
+#X text 276 171 nope;
+#X obj 137 249 expr pow(10 \, -5);
+#X obj 249 248 expr (0.00001);
+#X text 346 246 workaround;
+#X text 156 75 This had also been reported here: http://sourceforge.net/p/pure-data/bugs/352/
+;
+#X text 130 373 ISSUE 3 - Problems with exponential numbers \; \; Pd
+will automatically convert "0.00001" to "1e-05". This will work in
+every object in Pd \, but not expr! Because of this \, we need workarounds
+such as putting it in parenthesis \, like [expr (0.00001)] \, or use
+the pow function in expr \, like [expr pow(10 \, -5)]. But since the
+behaviour in expr is different than everything else \, I consider it
+a bug that may be worked out.;
+#X text 94 337 By email I mentioned:;
+#X restore 20 361 pd issues_with_exponentials;
+#N canvas 159 23 968 483 Too_Many_Expressions(not_creating/crashing)
+0;
+#X obj 130 211 expr 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 +
+1 + 1 \; 2 \; 3 \; 4 \; 5 \; 6 \; 7 \; 8 \; 9 \; 10;
+#X obj 131 61 expr 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 +
+1 + 1 \; 2 \; 3 \; 4 \; 5 \; 6 \; 7 \; 8 \; 9;
+#X text 529 110 Up to 9 expressions in an object is fine.;
+#X text 531 229 More than 9 objects is a problem. It won't load the
+object in Vanilla 0.46-6 (64 bit) \, but it'll load in Extended (42
+at least). Nonetheless \, if you delete an [expr] object with more
+than 9 expressions in Pd \, Pd will crash/quit!!!;
+#X text 533 295 Not only that \, but merely closing this patch in extended
+42 will crash Pd!!!;
+#X text 459 392 There's a bug report for it in: http://sourceforge.net/p/pure-data/bugs/1136/
+;
+#X restore 828 368 pd Too_Many_Expressions(not_creating/crashing);
+#N canvas 88 32 1133 336 Too_Many_inlets(not_creating) 0;
+#X obj 30 127 expr~ $v1 + $v2 + $v3 + $v4 + $v5 + $v6 + $v7 + $v8 +
+$v9 + $v10;
+#X obj 44 202 expr $f1 + $f2 + $f3 + $f4 + $f5 + $f6 + $f7 + $f8 +
+$f9 + $f10;
+#X text 477 178 expr won't load with more than 9 inlets.;
+#X text 478 212 since the new vanilla can stretch objects \, it's nice
+if we could have as many inlets as we can manage.;
+#X restore 828 391 pd Too_Many_inlets(not_creating);
+#N canvas 201 145 939 395 Other_Reports 0;
+#X text 538 114 For [expr $f1 % $f2] \, if $f2 > 0 and < 1 \, Pd will
+crash. Otherwise expr seems to just silently convert $f2 to an int.
+;
+#X floatatom 638 207 5 0 0 0 - - -, f 5;
+#X floatatom 557 208 5 0 0 0 - - -, f 5;
+#X floatatom 557 269 5 0 0 0 - - -, f 5;
+#X text 536 79 According to report in: http://sourceforge.net/p/pure-data/bugs/598/
+;
+#X text 676 235 works for me though...;
+#X obj 180 237 expr fact(0);
+#X obj 180 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 180 264 5 0 0 0 - - -, f 5;
+#X obj 180 288 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 180 187 loadbang;
+#X text 59 85 This report mentions a few things \, including this behaviour
+of fact(): http://sourceforge.net/p/pure-data/bugs/497/;
+#X text 90 128 "fact (0) produces 0 instead of 1 as definined";
+#X obj 557 235 expr $f1 % $f2;
+#X connect 1 0 13 1;
+#X connect 2 0 13 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 10 0 7 0;
+#X connect 13 0 3 0;
+#X restore 19 533 pd Other_Reports;
+#N canvas 229 71 1119 633 issues_with_arguments_(\$1) 0;
+#X obj 150 72 expr \$1+1;
+#X obj 140 105 expr \$1 + 1;
+#X text 214 65 nope (unless it actually receives the value from an
+argument);
+#X text 213 105 fine either way (with/out argument value);
+#X text 225 28 Arguments:;
+#X text 195 168 this has also been reported in: http://sourceforge.net/p/pure-data/bugs/543/
+;
+#X text 125 276 ISSUE 1 - Problems with "\$1" \, "\$2" \, etc... \;
+\; You can load arguments in expr with no problems IF it is actually
+being loaded into an abstraction that is receiving arguments. But when
+it is not receiving arguments you need to be careful on where it is
+placed \, it needs to be placed by itself with spaces before and after
+\; \; For example \, if you have [expr \$1+1] in an abstraction that
+is receiving one argument it's ok. But if that's not the case \, it
+won't load the object. The only way you can load the object with no
+argument being passed to it is like [expr \$1 + 1] \, then \$1 will
+receive a value of "0" like it should \, and everything is fine \;
+\; Another example \, if you have an "if" expression \, such as [expr
+if(\$1 == 1 \, x \, y)] - there's no deal if it's not getting an argument.
+But if you have it as [expr if( \$1 == 1 \, x \, y)] is fine! \; \;
+I can't think of any good reason why it works when arguments are passed
+\, but if fails when there are no arguments and they're getting values
+of "0". If it works one way it also should work the other way. So it's
+a bug for me...;
+#X text 65 239 I've given detailed information by email:;
+#X text 713 216 MOREOVER...;
+#X obj 727 276 expr \$2 [ \$1 ];
+#X text 618 339 Expr can't load argument as symbol \, object doesn't
+create.;
+#X obj 741 424 loadbang;
+#X obj 742 454 symbol \$2;
+#X obj 714 497 expr $s1 [ \$1 ];
+#X text 836 469 workaround;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X restore 18 292 pd issues_with_arguments_(\$1);
+#N canvas 97 24 989 651 issues_with_\$0 0;
+#X obj 127 114 expr \$0x;
+#X text 184 114 nope;
+#X obj 125 146 expr \$0-x;
+#X text 189 146 same as "\$0 - x" \, so not really;
+#X text 195 179 fine;
+#X obj 127 177 expr v_\$0;
+#X obj 243 179 value v_\$0;
+#X obj 110 219 expr x_\$0[2];
+#X obj 244 220 table x_\$0;
+#X text 195 220 fine;
+#X obj 115 283 expr y_\$0[2];
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array y_0 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 99 -1 50 50 1;
+#X restore 223 273 graph;
+#X text 301 301 not fine for arrays;
+#X text 316 219 in the case of table objects;
+#X obj 124 419 expr $s2[$f1];
+#X obj 199 392 symbol \$0-x;
+#X floatatom 124 393 5 0 99 0 - - -, f 5;
+#X floatatom 124 447 5 0 0 0 - - -, f 5;
+#X obj 199 369 loadbang;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-x 100 float 1;
+#A 0 -0.720016 -0.706683 -0.693349 -0.680016 -0.666682 -0.653348 -0.640015
+-0.625014 -0.610014 -0.595014 -0.580013 -0.565013 -0.550013 -0.535012
+-0.520012 -0.505012 -0.490011 -0.475011 -0.460011 -0.44501 -0.43001
+-0.415009 -0.400009 -0.385009 -0.370008 -0.355008 -0.340008 -0.325007
+-0.310007 -0.295007 -0.280006 -0.264006 -0.248006 -0.232005 -0.216005
+-0.200005 -0.184004 -0.168004 -0.152003 -0.136003 -0.120003 -0.106669
+-0.0933355 -0.0800018 -0.0666682 -0.0533346 -0.0400009 -0.0266673 -0.0133336
+-3.10441e-10 0.0133336 0.0266673 0.0400009 0.0533346 0.0666682 0.0800018
+0.0933355 0.106669 0.120003 0.133336 0.14667 0.160004 0.173337 0.186671
+0.200005 0.213338 0.226672 0.240005 0.253339 0.266673 0.280006 0.29715
+0.314293 0.331436 0.348579 0.365723 0.382866 0.400009 0.413343 0.426676
+0.44001 0.453344 0.466677 0.480011 0.500011 0.520012 0.540012 0.560013
+0.570013 0.580013 0.590014 0.600014 0.620014 0.640015 0.660015 0.680016
+0.680016 0.720016 0.720016 0.720016;
+#X coords 0 1 99 -1 50 50 1;
+#X restore 295 387 graph;
+#X text 362 401 workaround;
+#X obj 642 201 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 650 385 expr $f1 + $s1;
+#X text 573 307 perhaps we could load symbols into expressions not
+only for table names \, but also for variable names. This should open
+the doors for workarounds if fixing all this turns out to be too complicated.
+;
+#X text 572 429 Also \, maybe a "symbol" function that transforms things
+like \$0-x into a symbol could help - it'd be similar to the "float"
+function.;
+#X text 661 221 PROPOSALS;
+#X text 568 85 I've given detailed information by email:;
+#N canvas 174 23 556 544 email 0;
+#X text 118 51 ISSUE 2 - Problems with \$0 \; \; I'm used to create
+local variables such as "\$0-x". But in expr this won't load as a symbol
+\, \$0 will become the patch code number "-" will define subtraction
+and "x" will be considered the variable. I guess it'd make sense if
+if it worked considering "\$0-x" as a symbol \, but I understand expr
+is actually doing what makes sense to it. I also think it may be a
+pain trying to make this work. I'm actually fine with it if it turns
+out to be too troublesome \, but it'd be nice to mention this in the
+documentation or help file \; \; But if we need to do this in some
+other way \, we also have a hard time dealing with it. If you try "\$0x"
+\, "\$0.x" or "\$0_x" it won't load! Now \, I assume this problem might
+be closely related to the first issue I mentioned here with "\$1".
+So it might be fixable in a similar fashion \; \; Continuing \, the
+only way it works is if you put "\$0" after a symbol \, such as "x\$0"
+or "x_\$0". I can't think of a reason why this works and not the other
+\, so looks like a bug for me too \; \; All is fine in the case of
+[value] \, it'll load [v x\$0] or whatever. All is also fine if you
+are using a table object \, such as [table x\$0] or [table x_\$0].
+The problem emerges when you are using an array not loaded as an object.
+So \, if you're using a table that you need for display \, you need
+a workaround \; \; I know arrays are not making it easy \, and maybe
+they could collaborate - but it'd be just fine if expr allowed something
+like "\$0_x" like all other objects do! That'd be great.;
+#X restore 618 127 pd email;
+#X connect 14 0 17 0;
+#X connect 15 0 14 1;
+#X connect 16 0 14 0;
+#X connect 18 0 15 0;
+#X restore 21 326 pd issues_with_\$0;
+#X text 65 15 many of these issues have already been reported here:
+http://sourceforge.net/p/pure-data/bugs/425/;
+#N canvas 508 32 550 247 Divide_by_zero 0;
+#X obj 151 177 expr~ if($v1 == 0 \, 1 \, sin($v1)/$v1);
+#X obj 151 144 sig~ 0;
+#X text 106 49 this bug report http://sourceforge.net/p/pure-data/bugs/360/
+mentions something I really find annoying about "Divide by Zero". That
+it complains too much about it and all the time (maybe an option to
+disable it?). Even in a situation like this \, where it was supposed
+to prevent the warning...;
+#X connect 1 0 0 0;
+#X restore 18 497 pd Divide_by_zero;
+#X obj 538 469 loadbang;
+#X msg 538 497 \; pd dsp 1;
+#X text 42 89 ============================================================
+;
+#N canvas 315 72 551 335 are_these_popular_already? 0;
+#X text 95 102 - Code says \; * The following are done but not popular
+enough in math libss \; * to be included yet \; * hypoth - Euclidean
+distance function \; * trunc \; * round \; * nearbyint \; - So \, maybe
+they are popular enough nowadays? Maybe they're ready to be included?
+;
+#X text 121 51 Not a bug really \, just a question/suggestion:;
+#X restore 18 461 pd are_these_popular_already?;
+#X text 394 140 Issues with help file:;
+#X text 414 251 Moreover \, I guess it'd be good to make a more detailed
+and extensive help file for expr. It'd make cristal clear how to use
+all the functions with the correct syntax and there'd be no need for
+checking the documentation website. For instance \, it isn't clear
+anywhere in the documentation or help file what is the syntax for "sum"/"size"
+\, for instance \; \; The help file could also show possible issues
+and workarounds like I'm raising up here \; \; I'd be glad if I could
+help.;
+#X text 415 89 ============================================================
+;
+#X text 818 88 Fixed;
+#N canvas 889 314 450 300 $x 0;
+#X obj 87 80 count~;
+#X obj 87 51 bang~;
+#X obj 87 166 print~;
+#X obj 115 142 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 87 108 fexpr~ ($x + $x[-1] + $x[-2] + $x[-3]) * 0.25;
+#X obj 92 258 count~;
+#X obj 92 229 bang~;
+#X obj 92 344 print~;
+#X obj 120 320 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 92 286 fexpr~ ($x1 + $x1[-1] + $x1[-2] + $x1[-3]) * 0.25;
+#X text 147 319 Works for previous samples from previous block;
+#X obj 266 192 loadbang;
+#X msg 266 216 \; pd dsp 1;
+#X text 134 79 sample values from 0-63;
+#X obj 112 399 count~;
+#X obj 112 370 bang~;
+#X obj 112 485 print~;
+#X obj 140 461 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 117 577 count~;
+#X obj 117 548 bang~;
+#X obj 117 663 print~;
+#X obj 145 639 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 172 638 Works for previous samples from previous block;
+#X obj 291 511 loadbang;
+#X msg 291 535 \; pd dsp 1;
+#X text 159 398 sample values from 0-63;
+#X obj 112 427 fexpr~ ($x1 + $y + $x[-1] + $x[-2] + $x[-3]) * 0.25
+;
+#X obj 117 605 fexpr~ ($x1 + $y1 + $x1[-1] + $x1[-2] + $x1[-3]) * 0.25
+;
+#X obj 30 156 print~;
+#X obj 58 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 4 0;
+#X connect 0 0 28 0;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 9 0;
+#X connect 6 0 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;
+#X connect 11 0 12 0;
+#X connect 14 0 26 0;
+#X connect 15 0 14 0;
+#X connect 17 0 16 0;
+#X connect 18 0 27 0;
+#X connect 19 0 18 0;
+#X connect 21 0 20 0;
+#X connect 23 0 24 0;
+#X connect 26 0 16 0;
+#X connect 27 0 20 0;
+#X connect 29 0 28 0;
+#X restore 821 125 pd $x not accessing the last sample;
+#X text 823 307 SDY - Could not replicate this. Some parameter in older
+Pd-extended must have been changed \, for now no more than 9 input
+or output are allowed \; I will look into allowing more input outputs
+later;
+#X connect 15 0 16 0;

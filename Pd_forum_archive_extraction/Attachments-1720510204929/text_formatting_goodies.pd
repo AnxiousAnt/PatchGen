@@ -1,0 +1,11 @@
+#N canvas 0 50 450 300 10;
+#X floatatom 61 88 5 0 0 0 - - -, f 5;
+#X symbolatom 61 138 10 0 0 0 - - -, f 10;
+#X obj 61 111 makefilename %05d;
+#X msg 203 80 list $ 0 sendname;
+#X msg 203 110 \$1\$2-\$3-r;
+#X obj 203 140 print BETTER THAN MAKEFILENAME;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;

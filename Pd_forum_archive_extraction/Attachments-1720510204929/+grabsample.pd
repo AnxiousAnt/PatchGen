@@ -1,0 +1,249 @@
+#N canvas 848 518 554 512 12;
+#X obj 4 15 cnv 15 163 65 empty empty +grabsample 20 12 0 14 -123526
+-241291 0;
+#N canvas 22 -1 958 1092 Translator 0;
+#X obj 330 22 inlet~;
+#X text 328 1 sound in;
+#X obj 114 465 soundfiler;
+#X obj 114 391 openpanel;
+#X obj 114 352 bng 20 250 50 0 empty empty empty 0 40 2 4 -261878 -261878
+-171257;
+#X obj 114 495 s \$0-ToSamps;
+#X obj 142 354 bng 25 250 50 0 empty \$0-NewSample NEW 1 13 577 8 -202437
+-261878 -261681;
+#X text 10 52 -------- 44103 samples ------;
+#X obj 744 945 soundfiler;
+#X obj 744 837 bng 15 250 50 0 empty \$0-save empty 0 -6 576 8 -250685
+-1 -1;
+#X obj 744 860 savepanel;
+#X msg 106 183 resize \$1;
+#X obj 106 125 * 44.103;
+#X text 89 79 miliseconds;
+#X obj 106 99 nbx 5 14 -1e+037 1e+037 0 0 empty \$0-tablesize empty
+0 -6 576 10 -90881 -24198 -1 1000 256;
+#X text 32 166 changes the array size;
+#X text 76 333 to open file;
+#X obj 264 113 bng 15 250 50 0 empty \$0-rec empty 0 -6 576 8 -62784
+-1 -1;
+#X text 215 91 record sample;
+#X floatatom 142 238 7 0 0 0 - - -;
+#X obj 142 264 s \$0-ToSamps;
+#X msg 114 435 read -resize \$1 grabsample;
+#X obj 330 128 tabwrite~ grabsample;
+#X text 56 39 initial table size;
+#X obj 106 297 s grabsample;
+#X text 721 801 to save current sample;
+#N canvas 845 108 682 338 inletrouter 0;
+#X obj 41 39 inlet;
+#X obj 396 131 loadbang;
+#X msg 396 160 1;
+#X obj 396 187 s \$0-switch;
+#X obj 492 182 s \$0-tablesize;
+#X msg 492 152 1000;
+#X obj 41 155 s \$0-rec;
+#X obj 111 155 s \$0-file;
+#X obj 190 155 s \$0-tablesize;
+#X obj 41 91 route record file size;
+#X connect 0 0 9 0;
+#X connect 1 0 2 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 5 0 4 0;
+#X connect 9 0 6 0;
+#X connect 9 1 7 0;
+#X connect 9 2 8 0;
+#X restore 807 50 pd inletrouter;
+#X obj 807 23 inlet;
+#X obj 506 981 r \$0-ToSamps;
+#X obj 468 1041 outlet;
+#N canvas 0 0 401 259 sample 0;
+#N canvas 0 0 456 306 graph1 0;
+#X array grabsample 44103 float 0;
+#X coords 0 1 44102 -1 200 150 1;
+#X restore 38 32 graph;
+#X restore 764 149 pd sample;
+#X obj 607 148 makefilename pd-%s;
+#X msg 607 89 sample;
+#X obj 607 118 symbol;
+#X obj 607 30 tgl 15 0 empty \$0-opensample empty 0 -6 576 8 -262144
+-1 -1 0 1;
+#X obj 607 55 t b f;
+#X obj 607 178 pack s 1;
+#X msg 607 205 \; \$1 vis \$2;
+#X msg 608 494 \; \$1 vis 1;
+#X obj 608 465 makefilename pd-%d-variables;
+#X obj 608 409 r \$0-help;
+#X obj 608 438 f \$0;
+#N canvas 0 0 539 154 1013-variables 0;
+#X msg 16 25 size \$1;
+#X msg 14 50 table set grabsample;
+#X msg 15 76 record bang;
+#X msg 14 101 file \$1;
+#X restore 699 409 pd \$0-variables;
+#X obj 744 888 symbol;
+#X msg 744 916 write \$1 grabsample;
+#X obj 233 224 bng 15 250 50 0 \$0-light empty empty 0 -6 1152 8 -90881
+-241291 -262144;
+#X obj 233 192 delay;
+#X obj 743 1039 outlet;
+#X obj 204 352 r \$0-file;
+#X obj 204 378 symbol;
+#X msg 506 1008 size \$1;
+#X msg 505 958 table set grabsample;
+#X obj 470 14 r \$0-load;
+#X obj 470 46 t b b;
+#X msg 743 1000 file \$1;
+#X msg 337 220 color 13;
+#X obj 337 245 s \$0-light;
+#X msg 256 225 color 24;
+#X obj 124 988 soundfiler;
+#X obj 231 641 delay 1001;
+#X obj 144 699 savepanel;
+#X obj 306 615 nbx 5 14 -1e+037 1e+037 0 0 empty \$0-tablesize empty
+0 -6 576 10 -90881 -24198 -1 1000 256;
+#X floatatom 231 769 5 0 0 0 - - -;
+#X obj 231 707 f;
+#X obj 231 583 bng 15 250 50 0 empty \$0-rec empty 0 -6 576 8 -62784
+-1 -1;
+#X msg 124 960 write -wave \$1 grabsample;
+#X msg 238 857 D:/testcaptuer/tcap 11;
+#X obj 144 734 symbol;
+#X obj 124 863 list2symbol;
+#X obj 124 891 symbol;
+#X obj 67 623 s \$0-rec;
+#X msg 171 591 1;
+#X obj 231 611 spigot;
+#X msg 124 833 \$2 \$1;
+#X obj 124 806 pack 1 s;
+#X msg 238 826 set \$2 \$1;
+#X obj 326 501 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 326 526 select 1 0;
+#X obj 120 546 t b b b;
+#X msg 397 591 0;
+#X obj 403 486 tgl 15 0 empty \$0-auto auto 0 -6 577 8 -258699 -1 -1
+0 1;
+#X obj 67 786 t b f;
+#X obj 231 678 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 231 736 + 1;
+#X obj 124 923 spigot;
+#X obj 230 908 tgl 15 0 empty \$0-autosaver empty 0 -6 576 8 -260818
+-1 -1 0 1;
+#X obj 334 695 select 99;
+#X msg 336 665 0;
+#X obj 353 943 print Sample:;
+#X text 807 3 Data;
+#X connect 0 0 22 0;
+#X connect 2 0 5 0;
+#X connect 3 0 21 0;
+#X connect 3 0 54 0;
+#X connect 4 0 3 0;
+#X connect 6 0 4 0;
+#X connect 9 0 10 0;
+#X connect 10 0 43 0;
+#X connect 10 0 54 0;
+#X connect 11 0 24 0;
+#X connect 12 0 11 0;
+#X connect 12 0 19 0;
+#X connect 14 0 12 0;
+#X connect 14 0 46 1;
+#X connect 17 0 22 0;
+#X connect 17 0 46 0;
+#X connect 17 0 55 0;
+#X connect 19 0 20 0;
+#X connect 21 0 2 0;
+#X connect 27 0 26 0;
+#X connect 28 0 50 0;
+#X connect 31 0 36 0;
+#X connect 32 0 33 0;
+#X connect 33 0 31 0;
+#X connect 34 0 35 0;
+#X connect 35 0 32 0;
+#X connect 35 1 36 1;
+#X connect 36 0 37 0;
+#X connect 39 0 38 0;
+#X connect 40 0 41 0;
+#X connect 41 0 39 0;
+#X connect 43 0 44 0;
+#X connect 44 0 8 0;
+#X connect 46 0 45 0;
+#X connect 46 0 57 0;
+#X connect 48 0 49 0;
+#X connect 49 0 21 0;
+#X connect 50 0 29 0;
+#X connect 51 0 29 0;
+#X connect 52 0 53 0;
+#X connect 53 0 19 0;
+#X connect 53 1 51 0;
+#X connect 54 0 47 0;
+#X connect 55 0 56 0;
+#X connect 57 0 56 0;
+#X connect 59 0 82 0;
+#X connect 60 0 67 0;
+#X connect 61 0 59 1;
+#X connect 62 0 81 0;
+#X connect 63 0 83 0;
+#X connect 64 0 72 0;
+#X connect 65 0 58 0;
+#X connect 67 0 74 1;
+#X connect 68 0 69 0;
+#X connect 69 0 84 0;
+#X connect 71 0 63 1;
+#X connect 71 0 72 1;
+#X connect 72 0 59 0;
+#X connect 73 0 68 0;
+#X connect 74 0 75 0;
+#X connect 74 0 73 0;
+#X connect 75 0 66 0;
+#X connect 76 0 77 0;
+#X connect 77 0 78 0;
+#X connect 77 1 79 0;
+#X connect 78 0 70 0;
+#X connect 78 1 60 0;
+#X connect 78 2 71 0;
+#X connect 79 0 72 1;
+#X connect 80 0 76 0;
+#X connect 81 0 70 0;
+#X connect 81 1 74 0;
+#X connect 82 0 63 0;
+#X connect 83 0 62 0;
+#X connect 83 0 63 1;
+#X connect 84 0 65 0;
+#X connect 84 0 88 0;
+#X connect 85 0 84 1;
+#X connect 86 0 87 0;
+#X restore 249 66 pd Translator;
+#X obj 437 183 bng 10 250 50 0 \$0-NewSample \$0-NewSample empty 17
+8 1729 8 -24198 -261878 -261681;
+#X obj 348 36 inlet;
+#X obj 250 37 inlet~;
+#X obj 13 178 bng 15 250 50 0 \$0-rec \$0-rec REC 18 8 1729 8 -62784
+-44926 -44926;
+#X obj 489 183 bng 10 250 50 0 \$0-save \$0-save empty 17 8 1729 8
+-258699 -1 -257472;
+#X obj 358 358 switch~;
+#X obj 426 348 tgl 10 0 empty \$0-switch empty 0 -6 576 8 -262144 -1
+-1 1 1;
+#X obj 24 320 nbx 5 14 -1e+037 1e+037 0 0 \$0-tablesize \$0-tablesize
+Size 50 8 1729 10 -90881 -24198 -24198 1000 256;
+#X obj 249 93 outlet;
+#X obj 360 321 tgl 15 0 \$0-opensample \$0-opensample empty 0 -6 1728
+8 -241291 -1 -1 0 1;
+#X obj 15 31 bng 12 250 50 0 \$0-help empty empty 0 -6 1152 8 -195568
+-1 -1;
+#X obj 295 321 bng 15 250 50 0 \$0-light \$0-light empty 0 -6 1728
+8 -90881 -241291 -262144;
+#X obj 348 94 outlet;
+#X obj 492 56 bng 10 250 50 0 \$0-load \$0-load empty -1 -6 1729 8
+-262144 -1 -1;
+#X obj 149 180 tgl 15 0 \$0-auto \$0-auto auto 18 8 1729 8 -258699
+-1 -261689 0 1;
+#X obj 292 190 tgl 10 0 \$0-autosaver \$0-autosaver Save 12 5 1729
+8 -260818 -1 -228992 0 1;
+#X connect 1 0 10 0;
+#X connect 1 1 14 0;
+#X connect 3 0 1 1;
+#X connect 4 0 1 0;
+#X connect 8 0 7 0;
+#X coords 0 0 1 1 165 69 1;

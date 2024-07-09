@@ -1,0 +1,24 @@
+#N canvas 348 318 358 300 10;
+#X obj 131 74 vsl 15 128 0 127 0 0 slider empty empty 0 -8 128 8 -1
+-1 -1 6600 1;
+#X obj 132 73 cnv 1 13 62 empty can empty 20 12 64 14 -262144 -66577
+0;
+#N canvas 0 0 450 300 solution 0;
+#N canvas 335 246 450 300 the-real-solution 0;
+#X obj 151 202 s can;
+#X obj 226 92 * -1;
+#X msg 151 90 size \$1;
+#X floatatom 151 66 5 0 0 0 - - -;
+#X msg 226 153 vis_size 13 \$1;
+#X obj 226 68 r slider;
+#X obj 226 118 + 128;
+#X connect 1 0 6 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
+#X connect 6 0 4 0;
+#X restore 150 149 pd the-real-solution;
+#X text 151 109 First take a guess!!!;
+#X restore 221 122 pd solution;
+#X text 208 54 How is this done?;

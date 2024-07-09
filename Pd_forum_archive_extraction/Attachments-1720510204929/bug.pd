@@ -1,0 +1,20 @@
+#N canvas 445 383 432 368 10;
+#X obj 115 76 s test;
+#X floatatom 115 53 5 0 0 0 - - -;
+#N canvas 16 267 440 290 tester-parent 0;
+#N canvas 5 125 450 300 tester-child 0;
+#X obj 113 29 r test;
+#X floatatom 124 117 5 0 0 0 - - -;
+#X msg 130 60 set \$1;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X coords 0 -1 1 1 85 60 1 100 100;
+#X restore 132 112 pd tester-child;
+#X coords 0 -1 1 1 150 90 1 100 100;
+#X restore 71 135 pd tester-parent;
+#X text 23 12 right-click on the [pd tester-parent] part of the object
+\, select Properties \, and turn off Graph-on-Parent.;
+#X text 24 232 notice extra cruft lying there;
+#X text 24 272 also notice you can no longer open the [pd tester-parent]
+subpatch;
+#X connect 1 0 0 0;

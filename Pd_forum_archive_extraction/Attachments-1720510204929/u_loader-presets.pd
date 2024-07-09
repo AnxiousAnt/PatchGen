@@ -1,0 +1,138 @@
+#N canvas 123 42 1120 701 10;
+#X text 97 219 arg1: <name-of-abstraction>-\$1;
+#X text 97 239 arg2: \$0;
+#X text 46 178 Inside of each abstraction you should create *EXACTLY*
+one [u_loader] object that gets the following arguments:;
+#X text 46 272 Don't create more than one [u_loader] with the same
+second \$0-argument!;
+#X obj 918 77 r \$0-one;
+#X floatatom 918 100 5 0 0 0 - - -;
+#X obj 479 341 u_loader SOMETAG \$0;
+#X msg 730 46 one \$1;
+#X floatatom 730 28 5 0 0 0 - - -;
+#X text 871 76 ==>;
+#X obj 730 77 u_dispatch \$0 one;
+#X obj 51 477 s RJ_SCENE_LOAD;
+#X obj 57 615 s RJ_SCENE_SAVE;
+#X obj 608 277 r RJ_SCENE;
+#X msg 57 589 save;
+#X msg 603 465 SOMETAG two 55 \, SOMETAG one 41 \,;
+#X msg 671 315 clear;
+#X obj 604 535 s RJ_SCENE_LOAD;
+#X text 48 528 Send "save" to RJ_SCENE_SAVE to initialize global saving.
+;
+#X msg 51 451 SOMETAG one \$1;
+#X floatatom 51 430 5 0 0 0 - - -;
+#X obj 54 409 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5500 1;
+#X obj 921 124 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4100 1;
+#X obj 57 546 bng 32 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X text 183 585 This will send all settings to;
+#X obj 406 584 r RJ_SCENE;
+#X floatatom 918 189 5 0 0 0 - - -;
+#X text 871 165 ==>;
+#X obj 921 213 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5500 1;
+#X obj 730 166 u_dispatch \$0 two;
+#X obj 918 166 r \$0-two;
+#X floatatom 792 27 5 0 0 0 - - -;
+#X msg 792 45 two \$1;
+#N canvas 0 22 799 406 write2textfile 0;
+#X obj 85 115 r RJ_SCENE;
+#X text 81 91 receive messages for saving on RJ_SCENE;
+#X msg 20 137 clear;
+#X obj 426 244 s RJ_SCENE_LOAD;
+#X obj 85 214 textfile;
+#X obj 85 143 list prepend add;
+#X obj 85 165 list trim;
+#X msg 22 166 print;
+#X msg 115 187 write settings.txt;
+#X obj 426 218 textfile;
+#X obj 426 185 until;
+#X text 419 81 Restore from textfile:;
+#X msg 471 190 read \$1 \, rewind;
+#X obj 426 145 t b a;
+#X msg 426 117 symbol settings.txt;
+#X connect 0 0 5 0;
+#X connect 2 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 3 0;
+#X connect 9 1 10 1;
+#X connect 10 0 9 0;
+#X connect 12 0 9 0;
+#X connect 13 0 10 0;
+#X connect 13 1 12 0;
+#X connect 14 0 13 0;
+#X restore 605 638 pd write2textfile;
+#X text 181 608 You can either store them by writing it into a message
+as illustrated on the right or into a textfile (see subpatch);
+#X text 20 26 u_loader - connect local state variables to global senders
+;
+#X text 46 58 u_loader and u_dispatch are objects used in many rjlib
+abstractions to make preset handling and inlet method dispatching consistent.
+;
+#X text 45 117 If you write an abstraction for the rjlib \, you should
+reserve the rightmost inlet for dispatching methods using [u_dispatch]
+as shown on the right with dispatchers for "one" and "two" messages.
+;
+#X text 45 312 By doing that \, [u_loader] will connect the local state
+variables to a group of global senders called RJ_SCENE \, RJ_SCENE_LOAD
+and RJ_SCENE_SAVE.;
+#X text 47 387 Send messages to RJ_SCENE_LOAD to remote-control settings
+;
+#X text 164 447 This is global. The message is composed of the first
+[u_loader]-argument and the second [u_dispatch] argument.;
+#X msg 479 319 save;
+#X obj 479 366 print LOADER;
+#X obj 608 342 u_cocollect;
+#X text 532 319 save to outlet;
+#X obj 608 373 demux 0 1 2;
+#X msg 480 80 save \$1;
+#X obj 480 51 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 1;
+#X obj 479 281 t b b f;
+#X obj 480 195 route save load;
+#X obj 490 117 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X msg 490 146 load \$1;
+#X obj 783 306 sel 0 1;
+#X msg 654 492 SOMETAG two 55 \, SOMETAG one 41 \,;
+#X connect 4 0 5 0;
+#X connect 5 0 22 0;
+#X connect 6 0 42 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 10 0 29 0;
+#X connect 13 0 43 0;
+#X connect 14 0 12 0;
+#X connect 15 0 17 0;
+#X connect 16 0 43 1;
+#X connect 19 0 11 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 23 0 14 0;
+#X connect 26 0 28 0;
+#X connect 30 0 26 0;
+#X connect 31 0 32 0;
+#X connect 32 0 10 0;
+#X connect 41 0 6 0;
+#X connect 43 0 45 0;
+#X connect 45 0 15 0;
+#X connect 45 1 53 0;
+#X connect 46 0 49 0;
+#X connect 47 0 46 0;
+#X connect 48 0 41 0;
+#X connect 48 1 16 0;
+#X connect 48 2 45 1;
+#X connect 49 0 48 0;
+#X connect 49 1 52 0;
+#X connect 50 0 51 0;
+#X connect 51 0 49 0;
+#X connect 52 0 15 0;
+#X connect 52 1 53 0;
+#X connect 53 0 17 0;

@@ -1,0 +1,29 @@
+#N canvas 744 258 450 283 10;
+#X obj 35 213 print;
+#X msg 35 175 name \$1 \$2;
+#X obj 35 148 pack f s;
+#X floatatom 35 107 5 0 0 0 - - -;
+#X msg 80 102 symbol cat;
+#X msg 94 127 symbol dog;
+#X msg 206 135 set name \$1 \$2;
+#X msg 206 167 name 26 52;
+#X obj 206 206 print;
+#X obj 206 90 pack f f;
+#X obj 227 43 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5200 1;
+#X obj 209 22 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2600 1;
+#X obj 224 65 t b f;
+#X text 280 166 <- press to send;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 1;
+#X connect 5 0 2 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 6 0;
+#X connect 10 0 12 0;
+#X connect 11 0 9 0;
+#X connect 12 0 9 0;
+#X connect 12 1 9 1;

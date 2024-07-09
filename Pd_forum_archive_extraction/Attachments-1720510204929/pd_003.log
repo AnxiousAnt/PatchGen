@@ -1,0 +1,9582 @@
+tk scaling is 1.3348876577408433
+ a2l
+... couldn't create
+ link $0-link 0 1 0 200
+... couldn't create
+ link $0-link 0 1 0 200
+... couldn't create
+ link $0-link 0 1 0 200
+... couldn't create
+ link $0-link 0 1 0 200
+... couldn't create
+ prepend send
+... couldn't create
+ mass $0-mass 1000 0
+... couldn't create
+ mass $0-mass 1000 0
+... couldn't create
+ mass $0-mass 1000 0
+... couldn't create
+ mass $0-mass 1000 0
+... couldn't create
+ splitfilename _
+... couldn't create
+ makesymbol %sScaler
+... couldn't create
+ tosymbol
+... couldn't create
+ prepend send
+... couldn't create
+ prepend
+... couldn't create
+ makesymbol %sbang
+... couldn't create
+ prepend send iphone acc
+... couldn't create
+ prepend rb
+... couldn't create
+ gate 3
+... couldn't create
+ counter
+... couldn't create
+ gate
+... couldn't create
+ prepend XYZ
+... couldn't create
+ counter
+... couldn't create
+ gate
+... couldn't create
+ prepend send iphone ROT
+... couldn't create
+ counter
+... couldn't create
+ gate
+... couldn't create
+ prepend send iphone SCA
+... couldn't create
+ counter
+... couldn't create
+ prepend send iphone rbII
+... couldn't create
+expr, expr~, fexpr~ version 0.4 under GNU General Public License 
+ counter
+... couldn't create
+ once
+... couldn't create
+ prepend adr
+... couldn't create
+ prepend editP
+... couldn't create
+ counter
+... couldn't create
+ gate
+... couldn't create
+ prepend send iphone 3slid
+... couldn't create
+ counter
+... couldn't create
+ gate
+... couldn't create
+ prepend Yslid
+... couldn't create
+ counter
+... couldn't create
+ prepend Multi
+... couldn't create
+ prepend Mvpad
+... couldn't create
+ prepend
+... couldn't create
+ prepend add
+... couldn't create
+ prepend rn/mv
+... couldn't create
+ gate 3
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ divmod 8 8
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ splitfilename _
+... couldn't create
+ divmod 8 8
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ makesymbol %sMover
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ divmod 8 8
+... couldn't create
+ splitfilename _
+... couldn't create
+ once
+... couldn't create
+ prepend set
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend set
+... couldn't create
+ splitfilename _
+... couldn't create
+ makesymbol SCL$6
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename -
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ makesymbol %s-%s
+... couldn't create
+ makesymbol
+... couldn't create
+ prepend set
+... couldn't create
+ splitfilename -
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename -
+... couldn't create
+ s2f
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename -
+... couldn't create
+ prepend add
+... couldn't create
+ prepend set
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ splitfilename /
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ prepend set add
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ prepend set add
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ prepend set add
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ prepend set add
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ prepend set add
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ prepend set add
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ prepend set add
+... couldn't create
+ gemhead
+... couldn't create
+ translateXYZ
+... couldn't create
+ gemhead
+... couldn't create
+ translateXYZ
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ color 1 0 0
+... couldn't create
+ sphere 0.1
+... couldn't create
+ sphere 0.1
+... couldn't create
+ gemmouse
+... couldn't create
+ gemmouse
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+error: 7303/7531/7303: no such object
+ presetter viewcp
+... couldn't create
+ switch 3
+... couldn't create
+ nop
+... couldn't create
+ tripleline
+... couldn't create
+ tripleRand 100 100 100
+... couldn't create
+ prepend set
+... couldn't create
+ translateXYZ
+... couldn't create
+ color
+... couldn't create
+ gemhead
+... couldn't create
+ colorRGB
+... couldn't create
+ rectangle
+... couldn't create
+ nop
+... couldn't create
+ rotateXYZ 0 0 0
+... couldn't create
+ rotateXYZ 0 0 0
+... couldn't create
+ gemhead
+... couldn't create
+ translateXYZ
+... couldn't create
+ sphere 0.01
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ gemhead
+... couldn't create
+ translateXYZ
+... couldn't create
+ sphere 0.01
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ nop
+... couldn't create
+ gemhead
+... couldn't create
+ translateXYZ
+... couldn't create
+ sphere 0.01
+... couldn't create
+ gemhead 1
+... couldn't create
+ scale 1
+... couldn't create
+ gemhead
+... couldn't create
+ multimodel
+... couldn't create
+ pix_image E:/pd/mond/ant_c.jpg
+... couldn't create
+ pix_texture
+... couldn't create
+ translateXYZ
+... couldn't create
+ color
+... couldn't create
+ tripleLine
+... couldn't create
+ prepend set
+... couldn't create
+ teapot
+... couldn't create
+ gemhead
+... couldn't create
+ gate 4
+... couldn't create
+ cube 2
+... couldn't create
+ cylinder 3
+... couldn't create
+ sphere 4
+... couldn't create
+ counter
+... couldn't create
+ nop
+... couldn't create
+ translateXYZ
+... couldn't create
+ color
+... couldn't create
+ tripleLine
+... couldn't create
+ gemhead
+... couldn't create
+ translateXYZ
+... couldn't create
+ color
+... couldn't create
+ tripleLine
+... couldn't create
+ gemhead
+... couldn't create
+ sphere 4
+... couldn't create
+ cube 2
+... couldn't create
+ translate
+... couldn't create
+ rotate
+... couldn't create
+ specular 0 0 0.9
+... couldn't create
+ diffuse 0.2 0 0
+... couldn't create
+ ambient 0 0 0
+... couldn't create
+ prepend add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ nop
+... couldn't create
+ gemmouse
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ prepend set
+... couldn't create
+ gemwin
+... couldn't create
+ translateXYZ
+... couldn't create
+ gemhead
+... couldn't create
+ sphere 0.01
+... couldn't create
+ translateXYZ
+... couldn't create
+ gemhead
+... couldn't create
+ sphere 0.01
+... couldn't create
+ switch 3
+... couldn't create
+ link vcm-link 0 1 0 200
+... couldn't create
+ link vcm-link 0 1 0 200
+... couldn't create
+ link vcm-link 0 1 0 200
+... couldn't create
+ link vcm-link 0 1 0 200
+... couldn't create
+ link vcm-link 0 1 0 200
+... couldn't create
+ link vcm-link 0 1 0 200
+... couldn't create
+ mass vcm-mass 10000 0
+... couldn't create
+ mass vcm-mass 10000 0
+... couldn't create
+ mass vcm-mass 10000 0
+... couldn't create
+ mass vcm-mass 10000 0
+... couldn't create
+ mass vcm-mass 10000 0
+... couldn't create
+ mass vcm-mass 10000 0
+... couldn't create
+ nop
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ gemhead
+... couldn't create
+ text3d
+... couldn't create
+ prepend set add
+... couldn't create
+ TripleLine
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ nop
+... couldn't create
+ gate 11
+... couldn't create
+ gemhead
+... couldn't create
+ rotateXYZ
+... couldn't create
+ translateXYZ -58 26 18
+... couldn't create
+ scale 135
+... couldn't create
+ pix_texture
+... couldn't create
+ ambient 1 1 1
+... couldn't create
+ pix_image
+... couldn't create
+ model
+... couldn't create
+ cube 1
+... couldn't create
+ translateXYZ -100 0 0
+... couldn't create
+ cube 1
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ cube 1
+... couldn't create
+ translateXYZ 0 100 0
+... couldn't create
+ cube 1
+... couldn't create
+ translateXYZ 0 0 100
+... couldn't create
+ separator
+... couldn't create
+ separator
+... couldn't create
+ separator
+... couldn't create
+ separator
+... couldn't create
+ text3d TOP
+... couldn't create
+ separator
+... couldn't create
+ separator
+... couldn't create
+ rotate -90 1 0 0
+... couldn't create
+ separator
+... couldn't create
+ scale 2
+... couldn't create
+ text3d LEFT
+... couldn't create
+ rotate -90 0 1 0
+... couldn't create
+ nop
+... couldn't create
+ gemhead
+... couldn't create
+ alpha 1
+... couldn't create
+ color 0.2 1 0.2
+... couldn't create
+ color 0.2 0.4 1
+... couldn't create
+ color 1 0.3 0.1
+... couldn't create
+ scale 2
+... couldn't create
+ curve 2
+... couldn't create
+ separator
+... couldn't create
+ curve 2
+... couldn't create
+ separator
+... couldn't create
+ curve 2
+... couldn't create
+ separator
+... couldn't create
+ text3d FRONT
+... couldn't create
+ nop
+... couldn't create
+ gemhead
+... couldn't create
+ color 0.4 0.4 0.4
+... couldn't create
+ scale 0.5
+... couldn't create
+ separator
+... couldn't create
+ cube 100
+... couldn't create
+ color 1 0 0
+... couldn't create
+ color 0 1 0
+... couldn't create
+ color 0 0 1
+... couldn't create
+ color 0.4 0.4 0.4
+... couldn't create
+ text3d 100y
+... couldn't create
+ text3d -100x
+... couldn't create
+ text3d 100z
+... couldn't create
+ gemhead
+... couldn't create
+ translateXYZ
+... couldn't create
+ separator
+... couldn't create
+ text3d target
+... couldn't create
+ separator
+... couldn't create
+ rotateXYZ 0 180 0
+... couldn't create
+ color 1 0 0
+... couldn't create
+ color 1 1 1
+... couldn't create
+ sphere 1 24
+... couldn't create
+ depth 2
+... couldn't create
+ scale 0.1
+... couldn't create
+ pix_buffer_write ubahn
+... couldn't create
+ pix_image
+... couldn't create
+ pix_texture
+... couldn't create
+ pix_buffer ubahn 10
+... couldn't create
+error: trigger: i: bad type
+... you might be able to track this down from the Find menu.
+error: trigger: i: bad type
+ gemhead -1
+... couldn't create
+ rectangle 0.1 0.1
+... couldn't create
+ gemhead -1
+... couldn't create
+ text3d loading
+... couldn't create
+ pix_texture
+... couldn't create
+error: trigger: i: bad type
+error: trigger: i: bad type
+ gemhead -1
+... couldn't create
+ rectangle 0.1 0.1
+... couldn't create
+ pix_multiimage
+... couldn't create
+ pix_buffer_write psys
+... couldn't create
+ pix_buffer psys 8
+... couldn't create
+ gemhead 1
+... couldn't create
+ rotate
+... couldn't create
+ cube
+... couldn't create
+error: [import]: can't load library in 'moonlib'
+ splitfilename _
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename -
+... couldn't create
+ splitfilename -
+... couldn't create
+ s2f
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename -
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ prepend add
+... couldn't create
+ splitfilename _
+... couldn't create
+ splitfilename _
+... couldn't create
+ prepend add
+... couldn't create
+ makesymbol $1_Name
+... couldn't create
+ prepend add
+... couldn't create
+ translateXYZ
+... couldn't create
+ text3d
+... couldn't create
+ separator
+... couldn't create
+ circle
+... couldn't create
+ translateXYZ
+... couldn't create
+ text3d hello_world
+... couldn't create
+ translateXYZ
+... couldn't create
+ text3d
+... couldn't create
+ separator
+... couldn't create
+ circle
+... couldn't create
+ translateXYZ
+... couldn't create
+ text3d
+... couldn't create
+ separator
+... couldn't create
+ circle
+... couldn't create
+ translateXYZ
+... couldn't create
+ text3d
+... couldn't create
+ separator
+... couldn't create
+ circle
+... couldn't create
+ translateXYZ
+... couldn't create
+ text3d
+... couldn't create
+ separator
+... couldn't create
+ circle
+... couldn't create
+ translateXYZ
+... couldn't create
+ text3d
+... couldn't create
+ separator
+... couldn't create
+ circle
+... couldn't create
+ translateXYZ
+... couldn't create
+ text3d
+... couldn't create
+ separator
+... couldn't create
+ circle
+... couldn't create
+ translateXYZ
+... couldn't create
+ text3d
+... couldn't create
+ separator
+... couldn't create
+ circle
+... couldn't create
+ translateXYZ
+... couldn't create
+ text3d
+... couldn't create
+ separator
+... couldn't create
+ circle
+... couldn't create
+ rotateXYZ 0 -78 0
+... couldn't create
+ nop
+... couldn't create
+ pix_texture
+... couldn't create
+ separator
+... couldn't create
+ model
+... couldn't create
+ scale 10
+... couldn't create
+ rotateXYZ 0 0 0
+... couldn't create
+ ambient 1 1 1
+... couldn't create
+ alpha 1
+... couldn't create
+ nop
+... couldn't create
+ scale 200
+... couldn't create
+ pix_texture
+... couldn't create
+ separator
+... couldn't create
+ rotateXYZ 0 0 0
+... couldn't create
+ ambient 1 1 1
+... couldn't create
+ alpha 1
+... couldn't create
+ nop
+... couldn't create
+ scale 200
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ rotateXYZ
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ translateXYZ
+... couldn't create
+ rotateXYZ
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ rotateXYZ 0 0 0
+... couldn't create
+ link $0-link 0 1 0 200
+... couldn't create
+ link $0-link 0 1 0 200
+... couldn't create
+ link $0-link 0 1 0 200
+... couldn't create
+ link $0-link 0 1 0 200
+... couldn't create
+ mass $0-mass 1e+006 0
+... couldn't create
+ mass $0-mass 1e+006 0
+... couldn't create
+ mass $0-mass 1e+006 0
+... couldn't create
+ mass $0-mass 1e+006 0
+... couldn't create
+ scale 200
+... couldn't create
+ model
+... couldn't create
+ alpha 1
+... couldn't create
+ scale 200
+... couldn't create
+ translateXYZ
+... couldn't create
+ separator
+... couldn't create
+ rotateXYZ 0 180 0
+... couldn't create
+ pix_texture
+... couldn't create
+ pix_film
+... couldn't create
+ pix_texture
+... couldn't create
+ pix_film
+... couldn't create
+ color
+... couldn't create
+ color
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ prepend set add
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass2 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ primTri
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.005 0.005 0.005
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 3
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0.3 0.3
+... couldn't create
+ pix_texture
+... couldn't create
+ gemhead 21
+... couldn't create
+ alpha 1
+... couldn't create
+ translateXYZ
+... couldn't create
+ mass3D mass 1 0 3
+... couldn't create
+ rotateXYZ
+... couldn't create
+ cube 0.1
+... couldn't create
+ separator
+... couldn't create
+ translateXYZ 0 0 0
+... couldn't create
+ scaleXYZ 0.3 0

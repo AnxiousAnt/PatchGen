@@ -1,0 +1,159 @@
+#N canvas 0 0 815 565 10;
+#X obj 59 419 dac~;
+#X obj 100 232 delwrite~ chorus 300;
+#X obj 58 17 phasor~ 55;
+#X obj 58 181 clip~ -0.5 0.5;
+#X obj 59 350 +~;
+#X obj 88 350 +~;
+#X obj 78 -79 loadbang;
+#X msg 78 -58 1;
+#X obj 77 92 line~;
+#X obj 57 131 *~;
+#X obj 78 -34 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 99 210 catch~ feedb;
+#X obj 108 319 catch~ choruslineR;
+#X obj 77 287 catch~ choruslineL;
+#X floatatom 200 366 5 0 0 0 - - -;
+#N canvas 0 0 642 516 choruserL 0;
+#X obj 22 349 vd~ chorus;
+#X obj 21 376 *~;
+#X obj 21 247 osc~ 1.2;
+#X obj 22 286 *~ 2;
+#X obj 114 149 vsl 15 128 0 300 0 0 empty empty delay 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 20 409 throw~ feedb;
+#X obj 159 149 vsl 15 128 0 0.5 0 0 empty empty feedback 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 213 149 vsl 15 128 0 5 0 0 empty empty modulation 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 268 149 vsl 15 128 0 5 0 0 empty empty speed 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 172 387 throw~ choruslineL;
+#X obj 22 321 +~ 30;
+#X connect 0 0 1 0;
+#X connect 0 0 9 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 10 0;
+#X connect 4 0 10 1;
+#X connect 6 0 1 1;
+#X connect 7 0 3 1;
+#X connect 8 0 2 0;
+#X connect 10 0 0 0;
+#X coords 0 -1 1 1 200 200 1 100 100;
+#X restore 272 -24 pd choruserL;
+#N canvas 0 0 642 516 choruserR 0;
+#X obj 22 349 vd~ chorus;
+#X obj 21 376 *~;
+#X obj 21 247 osc~ 1.2;
+#X obj 22 286 *~ 2;
+#X obj 114 149 vsl 15 128 0 300 0 0 empty empty delay 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 20 409 throw~ feedb;
+#X obj 159 149 vsl 15 128 0 0.5 0 0 empty empty feedback 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 213 149 vsl 15 128 0 5 0 0 empty empty modulation 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 268 149 vsl 15 128 0 5 0 0 empty empty speed 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 172 387 throw~ choruslineR;
+#X obj 22 321 +~ 80;
+#X connect 0 0 1 0;
+#X connect 0 0 9 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 10 0;
+#X connect 4 0 10 1;
+#X connect 6 0 1 1;
+#X connect 7 0 3 1;
+#X connect 8 0 2 0;
+#X connect 10 0 0 0;
+#X coords 0 -1 1 1 200 200 1 100 100;
+#X restore 474 -24 pd choruserR;
+#N canvas 0 0 642 516 choruserL 0;
+#X obj 22 349 vd~ chorus;
+#X obj 21 376 *~;
+#X obj 114 149 vsl 15 128 0 300 0 0 empty empty delay 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 20 409 throw~ feedb;
+#X obj 159 149 vsl 15 128 0 0.5 0 0 empty empty feedback 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 213 149 vsl 15 128 0 5 0 0 empty empty modulation 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 268 149 vsl 15 128 0 5 0 0 empty empty speed 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 172 387 throw~ choruslineL;
+#X obj 21 286 *~ 2;
+#X obj 21 247 osc~ 1.8;
+#X obj 23 319 +~ 23;
+#X connect 0 0 1 0;
+#X connect 0 0 7 0;
+#X connect 1 0 3 0;
+#X connect 2 0 10 1;
+#X connect 4 0 1 1;
+#X connect 5 0 8 1;
+#X connect 6 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 0;
+#X connect 10 0 0 0;
+#X coords 0 -1 1 1 200 200 1 100 100;
+#X restore 272 186 pd choruserL;
+#N canvas 0 0 642 516 choruserR 0;
+#X obj 22 349 vd~ chorus;
+#X obj 21 376 *~;
+#X obj 22 286 *~ 2;
+#X obj 114 149 vsl 15 128 0 300 0 0 empty empty delay 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 20 409 throw~ feedb;
+#X obj 159 149 vsl 15 128 0 0.5 0 0 empty empty feedback 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 213 149 vsl 15 128 0 5 0 0 empty empty modulation 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 268 149 vsl 15 128 0 5 0 0 empty empty speed 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 172 387 throw~ choruslineR;
+#X obj 21 247 osc~ 0.7;
+#X obj 22 321 +~ 42;
+#X connect 0 0 1 0;
+#X connect 0 0 8 0;
+#X connect 1 0 4 0;
+#X connect 2 0 10 0;
+#X connect 3 0 10 1;
+#X connect 5 0 1 1;
+#X connect 6 0 2 1;
+#X connect 7 0 9 0;
+#X connect 9 0 2 0;
+#X connect 10 0 0 0;
+#X coords 0 -1 1 1 200 200 1 100 100;
+#X restore 474 186 pd choruserR;
+#X text 198 -78 example using [vd~] to make a chorus;
+#X obj 60 388 *~ 0.5;
+#X obj 119 391 *~ 0.5;
+#X obj 77 -13 metro 300;
+#X msg 77 38 1 50;
+#X obj 122 40 del 50;
+#X msg 122 63 0 180;
+#X connect 2 0 9 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 3 0 1 0;
+#X connect 4 0 20 0;
+#X connect 5 0 21 0;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 1;
+#X connect 9 0 3 0;
+#X connect 10 0 22 0;
+#X connect 11 0 1 0;
+#X connect 12 0 5 1;
+#X connect 13 0 4 1;
+#X connect 14 0 20 1;
+#X connect 14 0 21 1;
+#X connect 20 0 0 0;
+#X connect 21 0 0 1;
+#X connect 22 0 23 0;
+#X connect 22 0 24 0;
+#X connect 23 0 8 0;
+#X connect 24 0 25 0;
+#X connect 25 0 8 0;

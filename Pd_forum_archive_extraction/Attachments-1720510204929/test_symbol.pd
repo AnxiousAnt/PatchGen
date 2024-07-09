@@ -1,0 +1,20 @@
+#N canvas 543 400 559 461 12;
+#X msg 63 62 1;
+#X msg 147 48 hello;
+#X obj 85 141 segregate;
+#X obj 152 225 select hello;
+#X obj 46 193 select 1;
+#X obj 153 257 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 45 222 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 164 195 symbol;
+#X text 181 257 got hello;
+#X text 69 221 got 1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 2 1 4 0;
+#X connect 2 5 7 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 7 0 3 0;

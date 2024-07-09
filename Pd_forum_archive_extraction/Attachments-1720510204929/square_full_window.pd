@@ -1,0 +1,17 @@
+#N canvas 940 332 574 281 10;
+#X obj 84 92 gemwin;
+#X obj 51 124 gemhead;
+#X msg 96 19 destroy;
+#X msg 102 50 reset \, create \, 1 \,;
+#X obj 291 74 r __gem;
+#X obj 287 102 route dimen;
+#X obj 290 130 /;
+#X obj 293 159 * 3.5;
+#X obj 51 205 rectangle 3.5 3.5;
+#X connect 1 0 8 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 1;

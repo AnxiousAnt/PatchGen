@@ -1,0 +1,23 @@
+#N canvas 43 58 487 389 10;
+#X symbolatom 85 193 10 0 0 0 - - -;
+#X obj 42 282 list trim;
+#X msg 42 301 24 23 22 21 20;
+#X text 81 173 symbols;
+#X floatatom 42 192 5 0 0 0 - - -;
+#X text 39 175 floats;
+#X text 58 66 Argument: desired number of elements in the group;
+#X text 60 94 Inlet 1: int \, float or symbol to be grouped;
+#X text 60 108 Inlet 2: int - change number of elements;
+#X text 60 128 Outlet: list;
+#X obj 42 242 list-group 5;
+#X floatatom 157 192 5 0 0 0 - - -;
+#X obj 42 263 list prepend set;
+#X text 60 40 [list-group] will group incoming stream of atoms into
+lists of N elements.;
+#X obj 38 13 list-group;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 4 0 10 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 1;
+#X connect 12 0 1 0;

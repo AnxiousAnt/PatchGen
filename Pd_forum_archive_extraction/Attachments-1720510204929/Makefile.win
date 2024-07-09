@@ -1,0 +1,38 @@
+NAME = helloworld
+CSYM = helloworld
+
+current: pd_win
+
+DEST = "c:/Programmi/pd039ext4/extra"
+
+PDPATH = "c:/Programmi/pd039ext4"
+LDFLAGS = --export-dynamic -shared
+
+# ----------------------- WIN i386 -----------------------
+
+pd_win: $(NAME).dll
+
+.SUFFIXES: .dll
+
+#LINUXCFLAGS = -DPD -O2 -funroll-loops -fomit-frame-pointer \
+#    -Wall -W -Wshadow -Wstrict-prototypes -Werror \
+#    -Wno-unused -Wno-parentheses -Wno-switch
+WINCFLAGS = -DPD -DNT -W3 -WX -Werror -Wno-unused -mms-bitfields\
+	-Wno-parentheses -Wno-switch -O6 -funroll-loops -fomit-frame-pointer
+
+#WININCLUDE =  -I../include
+WININCLUDE =  -I.
+
+
+.c.dll:
+	gcc $(WINCFLAGS) $(WININCLUDE) -c -o $*.o $*.c
+	gcc $(LDFLAGS) -o $*.dll $*.o $(PDPATH)/bin/pd.dll 	
+	strip --strip-unneeded $*.dll
+	rm -f $*.o ../$*.dll
+	cp $*.dll $(DEST)
+
+clean:
+	rm -f $*.o $(NAME).dll
+
+install: 
+	cp $(NAME).dll $(DEST)	 

@@ -1,0 +1,21 @@
+#N canvas 0 0 685 418 10;
+#X msg 136 161 1 2 3 4 5 6;
+#X floatatom 136 240 5 0 0 0 - - -;
+#X floatatom 203 192 5 0 0 1 n - -;
+#X text 139 98 Arguments: <n>;
+#X text 140 116 Inlets: 1) list to look up in;
+#X text 134 38 look up the nth element in a list. n has to be positive
+and is zero-based!;
+#X obj 318 297 list-idx;
+#X text 196 138 2) n poosition to filter. Zero-based;
+#X text 315 276 Also see:;
+#X obj 136 217 list-nth 4;
+#X obj 136 260 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 203 246 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 56 38 list-nth;
+#X connect 0 0 9 0;
+#X connect 1 0 10 0;
+#X connect 2 0 9 1;
+#X connect 9 0 1 0;

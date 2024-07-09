@@ -1,0 +1,50 @@
+#N canvas 74 135 590 300 10;
+#X obj 420 134 makefilename %c;
+#X symbolatom 190 21 40 0 0 0 - - -;
+#X obj 420 94 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X symbolatom 190 41 40 0 0 0 - - -;
+#X obj 99 374 text3d;
+#X obj 189 337 openpanel;
+#X obj 189 319 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 189 357 font \$1;
+#X obj 438 272 gemwin;
+#X msg 438 252 create \, 1;
+#X obj 99 24 gemhead;
+#X msg 149 294 text \$1;
+#X symbolatom 149 245 40 0 0 0 - - -;
+#X msg 190 181 list Thank 
+ You 
+ Everyone;
+#X msg 190 151 add2 \$1;
+#X obj 149 214 l2s;
+#X msg 229 121 set list;
+#X text 210 316 open font file;
+#X obj 210 91 t s b;
+#X text 378 180 click to send to screen;
+#X text 438 92 click for line break;
+#X text 438 19 first text line;
+#X text 438 39 second text line;
+#X msg 420 112 10;
+#X symbolatom 190 61 40 0 0 0 - - -;
+#X text 438 59 third text line;
+#X connect 0 0 14 0;
+#X connect 1 0 18 0;
+#X connect 2 0 23 0;
+#X connect 3 0 14 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 9 0 8 0;
+#X connect 10 0 4 0;
+#X connect 11 0 4 0;
+#X connect 12 0 11 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 15 0 12 0;
+#X connect 16 0 13 0;
+#X connect 18 0 14 0;
+#X connect 18 1 16 0;
+#X connect 23 0 0 0;
+#X connect 24 0 14 0;

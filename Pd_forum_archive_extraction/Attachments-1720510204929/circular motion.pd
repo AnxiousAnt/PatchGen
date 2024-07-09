@@ -1,0 +1,30 @@
+#N canvas 1279 1 763 870 12;
+#X obj 18 9 gemwin;
+#X msg 18 -50 create \, 1;
+#X floatatom 57 720 5 0 0 0 - - -;
+#X obj 246 374 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X obj 18 757 square;
+#X obj 246 335 metro 2000;
+#X obj 246 300 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 18 38 gemhead;
+#X obj 18 451 rotateXYZ;
+#X msg 246 410 0 \, 360 2000;
+#X obj 247 440 line;
+#X obj 18 564 translateXYZ 2 0 0;
+#X obj 14 653 rotateXYZ;
+#X obj 135 614 * -1;
+#X connect 1 0 0 0;
+#X connect 2 0 4 1;
+#X connect 3 0 9 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 11 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 3;
+#X connect 10 0 13 0;
+#X connect 11 0 12 0;
+#X connect 12 0 4 0;
+#X connect 13 0 12 3;

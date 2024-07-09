@@ -1,0 +1,60 @@
+#N canvas 241 224 223 53 10;
+#X obj 0 0 cnv 15 220 50 empty empty empty 20 12 0 14 -224761 -233017
+0;
+#X obj 10 20 bng 18 250 50 0 \$0-s \$0-s SAVE 0 -6 0 10 -258699 -262144
+-1;
+#X obj 47 20 bng 18 250 50 0 \$0-r \$0-r LOAD 0 -6 0 10 -85317 -1 -1
+;
+#X obj 123 67 inlet;
+#N canvas 497 329 460 406 guts 0;
+#X obj 82 -23 inlet;
+#X obj 189 -24 inlet;
+#X msg 82 95 save RRADICAL;
+#X msg 189 94 load RRADICAL;
+#X obj 189 135 t b a;
+#X obj 171 191 caretaker \$1;
+#X obj 125 226 outlet;
+#X text 124 246 bang after restore;
+#X obj 321 95 inlet;
+#X obj 189 2 openpanel;
+#X msg 189 23 file \$1;
+#X obj 189 45 t b;
+#X obj 82 4 savepanel;
+#X msg 82 24 file \$1;
+#X obj 82 46 t b;
+#X obj 82 67 del 100;
+#X obj 189 66 del 100;
+#X connect 0 0 12 0;
+#X connect 1 0 9 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 10 0;
+#X connect 10 0 5 0;
+#X connect 10 0 11 0;
+#X connect 11 0 16 0;
+#X connect 12 0 13 0;
+#X connect 13 0 5 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 2 0;
+#X connect 16 0 3 0;
+#X restore 79 92 pd guts;
+#X obj 79 118 outlet;
+#X obj 147 23 bng 15 250 50 0 \$0-reset \$0-reset reset 0 -6 0 9 -262144
+-1 -1;
+#X msg 168 67 reset;
+#X obj 181 23 bng 15 250 50 0 \$0-p \$0-p print 0 -6 0 8 -262144 -1
+-1;
+#X msg 216 67 print;
+#X connect 1 0 4 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 2;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 2;
+#X connect 8 0 9 0;
+#X connect 9 0 4 2;
+#X coords 0 0 1 1 220 50 1;

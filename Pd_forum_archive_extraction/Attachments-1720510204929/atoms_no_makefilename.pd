@@ -1,0 +1,31 @@
+#N canvas 601 150 479 319 12;
+#X obj 31 53 hsl 128 15 1 4 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 0;
+#X obj 178 53 hsl 128 15 1 4 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 0;
+#X obj 175 76 t b f;
+#X obj 349 54 loadbang;
+#X msg 349 81 1;
+#X text 345 28 initialize it;
+#X obj 28 73 int;
+#X floatatom 46 106 5 0 0 0 - - -;
+#X text 27 23 VANILLA:;
+#X obj 207 100 int;
+#X obj 28 140 pack f f;
+#X msg 28 167 symbol \$1\$2;
+#X obj 28 193 float;
+#X obj 28 217 change;
+#X obj 28 244 print NO REPEATS;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 2 1 9 0;
+#X connect 3 0 4 0;
+#X connect 4 0 9 0;
+#X connect 6 0 7 0;
+#X connect 6 0 10 0;
+#X connect 9 0 10 1;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;

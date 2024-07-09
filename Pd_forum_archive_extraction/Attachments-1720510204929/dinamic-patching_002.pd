@@ -1,0 +1,53 @@
+#N canvas 181 28 1107 643 10;
+#X msg 20 147 msg 10 10 bang;
+#X msg 80 245 obj 10 40 metro 500;
+#X msg 40 197 floatatom 100 10 7 50 5000;
+#X msg 108 294 connect 0 0 2 0;
+#X msg 108 318 connect 1 0 2 1;
+#X text 11 10 DINAMIC PATCHING WITH MESSAGES;
+#X text 10 26 ============================================================
+;
+#X text 126 146 msg <xpos> <ypos> <msg-text>;
+#X text 18 124 Messages;
+#X obj 20 587 s pd-my-dinamic-patch;
+#X obj 20 93 s pd-dinamic-patching.pd;
+#X text 18 48 Create a subpatch;
+#X text 220 69 obj <xpos> <ypos> pd <subpatch-name>;
+#X msg 20 70 obj 500 80 pd my-dinamic-patch;
+#X text 40 176 Number;
+#X text 216 197 floatatom <xpos> <ypos> <width> <min> <max>;
+#X text 81 226 Object;
+#X text 208 244 obj <xpos> <ypos> <object-name> <arg1> ...;
+#X text 110 275 Connect;
+#X text 213 293 connect <atom-from-number> <outlet-from-number>;
+#X text 500 293 <atom-to-number> <inlet-to-number>;
+#X text 188 419 Comment;
+#X text 146 350 Canvas;
+#X text 367 439 text <xpos> <ypos> <comment>;
+#X text 143 392 obj <xpos> <ypos> cnv <sel-size> <width> <height> <send>
+;
+#X text 840 392 <font-size> <color-back> <color-label>;
+#X msg 185 439 text 20 100 Dinamic Patchin'!;
+#X text 484 392 <receive> <label> <text-xoffset> <text-yoffset> <font-type>
+;
+#X msg 212 489 label name;
+#N canvas 0 0 470 320 my-dinamic-patch 0;
+#X obj 10 80 cnv 15 100 60 '$0-canvas-receive-symbol' empty empty 20
+12 0 14 -233017 -66577 0;
+#X obj 10 80 cnv 15 100 60 canvas-receive-symbol empty empty 20 12
+0 14 -233017 -66577 0;
+#X text 20 100 Dinamic Patchin'!;
+#X restore 500 80 pd my-dinamic-patch;
+#X obj 212 515 s canvas-receive-symbol;
+#X msg 139 369 obj 10 80 cnv 15 200 40 canvas-receive-symbol;
+#X text 431 368 <-- change size ... Doesn't work!;
+#X text 282 489 <-- Change canvas label ... Doesn't work!!!;
+#X connect 0 0 9 0;
+#X connect 1 0 9 0;
+#X connect 2 0 9 0;
+#X connect 3 0 9 0;
+#X connect 4 0 9 0;
+#X connect 13 0 10 0;
+#X connect 26 0 9 0;
+#X connect 28 0 30 0;
+#X connect 31 0 9 0;

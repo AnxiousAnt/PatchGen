@@ -1,0 +1,42 @@
+#N canvas 0 0 552 449 10;
+#X obj 237 340 hips~;
+#X obj 85 264 env~;
+#X floatatom 85 284 0 0 0 0 - - -;
+#X obj 27 262 env~;
+#X floatatom 27 281 0 0 0 0 - - -;
+#X floatatom 27 123 0 0 0 0 - - -;
+#X text 24 84 The left inlet is the incoming audio signal. The right
+inlet is the cutoff frequency in Hz.;
+#X obj 27 146 osc~ 100;
+#X text 72 121 <-- scroll to change input frequency;
+#X text 27 302 Compare the strength of the original signal on the left
+with that of the filtered signal on the right.;
+#X text 119 264 env~ gives the amplitude of the signal in dB.;
+#X text 23 341 see also:;
+#X obj 137 340 hip~;
+#X obj 172 340 bp~;
+#X obj 199 340 vcf~;
+#X obj 26 22 lops~;
+#X text 78 16 - one-pole low pass filter with signal inlet for center
+frequency;
+#X obj 85 242 lops~;
+#X text 136 245 The lops~ filter cannot be initialized by arguments!
+;
+#X floatatom 121 185 5 0 0 1 cutoff-frequency - -;
+#X obj 121 214 vline~;
+#X text 178 212 cf can be set as signal;
+#X obj 121 141 loadbang;
+#X msg 121 162 5;
+#X obj 100 340 lop~;
+#X text 23 51 lops~ is a one-pole low pass filter with a specified
+rolloff frequency. It's similar to lop~.;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 5 0 7 0;
+#X connect 7 0 3 0;
+#X connect 7 0 17 0;
+#X connect 17 0 1 0;
+#X connect 19 0 20 0;
+#X connect 20 0 17 1;
+#X connect 22 0 23 0;
+#X connect 23 0 19 0;

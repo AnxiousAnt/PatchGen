@@ -1,0 +1,19 @@
+#N canvas 590 242 683 363 10;
+#X obj 107 138 print;
+#X text 106 18 [array-pop_index] : pop a value from an array;
+#X floatatom 107 70 5 0 0 0 - - -, f 5;
+#X text 106 188 Example : pop last value of an array :;
+#X obj 109 219 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 109 239 array size myarray;
+#X obj 109 308 print;
+#X obj 109 261 - 1;
+#X obj 107 101 array-pop_index myarray;
+#X obj 109 286 array-pop_index myarray;
+#X obj 291 102 array define myarray 10;
+#X connect 2 0 8 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 7 0 9 0;
+#X connect 8 0 0 0;
+#X connect 9 0 6 0;

@@ -1,0 +1,51 @@
+#N canvas 509 202 668 614 12;
+#X obj 88 193 soundfiler;
+#X obj 392 20 r readfile;
+#X obj 361 -5 openpanel;
+#X obj 361 -35 bng 15 250 50 0 empty empty load 0 -6 0 8 -262144 -1
+-1;
+#X msg 88 163 read -resize \$1 \$2;
+#N canvas 0 0 450 300 graph1 0;
+#X array \$1 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 24 -134 graph;
+#X obj 361 51 symbol;
+#X obj 60 71 pack s s;
+#X obj 35 223 print soundfiler;
+#X obj 119 40 t \$1;
+#X obj 60 101 print pack;
+#X obj 119 13 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 221 234 \$2;
+#X msg 308 194 \$2;
+#X obj 308 222 print msg_dollar2;
+#X obj 221 264 print obj_dollar2;
+#X obj 361 108 t b a;
+#X obj 377 142 \$2;
+#X obj 377 188 print obj_trigger;
+#X msg 488 128 \$2;
+#X obj 488 152 print msg_trigger;
+#X connect 1 0 6 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X connect 4 0 8 0;
+#X connect 6 0 4 0;
+#X connect 6 0 7 0;
+#X connect 6 0 12 0;
+#X connect 6 0 13 0;
+#X connect 6 0 16 0;
+#X connect 7 0 10 0;
+#X connect 9 0 7 1;
+#X connect 11 0 9 0;
+#X connect 12 0 15 0;
+#X connect 13 0 14 0;
+#X connect 16 0 17 0;
+#X connect 16 1 17 1;
+#X connect 16 1 19 0;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;

@@ -1,0 +1,15 @@
+#N canvas 465 334 202 202 10;
+#X obj 1 169 noise~;
+#X obj 0 201 dac~;
+#X msg 135 5 \; pd dsp 1;
+#X obj 0 184 *~;
+#X obj 18 172 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj -1 0 bng 200 250 20 0 empty empty Silence 15 95 0 40 -79454
+-258113 -228856;
+#X connect 0 0 3 0;
+#X connect 3 0 1 1;
+#X connect 3 0 1 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 0;
+#X coords 0 -1 1 1 200 200 1 0 0;

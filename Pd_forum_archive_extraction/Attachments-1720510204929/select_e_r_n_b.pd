@@ -1,0 +1,22 @@
+#N canvas 269 101 714 552 12;
+#X obj 106 22 netreceive 3337;
+#X msg 106 233 set \$1;
+#X obj 181 119 select e r n b;
+#X obj 181 168 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 207 170 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 234 169 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 261 170 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 106 73 unpack s s;
+#X msg 106 277;
+#X connect 0 0 7 0;
+#X connect 1 0 8 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 2 2 5 0;
+#X connect 2 3 6 0;
+#X connect 7 0 1 0;
+#X connect 7 1 2 0;

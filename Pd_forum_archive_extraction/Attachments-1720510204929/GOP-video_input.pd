@@ -1,0 +1,19 @@
+#N canvas 16 231 450 300 10;
+#X obj 46 231 inlet;
+#X obj 120 229 inlet;
+#X obj 45 273 outlet;
+#X obj 119 273 outlet;
+#X obj 4 5 cnv 15 198 136 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 18 30 vradio 15 1 1 3 empty empty in_type 0 -6 1 8 -262144 -1
+-1 0;
+#X text 37 29 tuner;
+#X text 37 45 composite;
+#X text 37 60 s-video;
+#X obj 138 71 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-262144 -1 -1 0 256;
+#X obj 270 71 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-262144 -1 -1 0 256;
+#X obj 401 71 bng 14 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X coords 0 0 1 1 200 140 1;

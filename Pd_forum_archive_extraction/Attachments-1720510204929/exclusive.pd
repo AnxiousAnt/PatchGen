@@ -1,0 +1,6 @@
+#N canvas 0 0 450 300 10;
+#X obj 186 153 outlet;
+#X obj 186 97 r \$1;
+#X obj 186 126 == \$2;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;

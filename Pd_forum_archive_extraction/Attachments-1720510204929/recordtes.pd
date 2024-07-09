@@ -1,0 +1,47 @@
+#N canvas 572 122 450 300 10;
+#X obj 31 -165 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1
+-1;
+#X obj 50 -140 #in;
+#X obj 50 -223 tgl 15 0 empty empty empty 0 -6 0 8 -24198 -1 -1 0 1
+;
+#X obj 50 -199 metro 33.3667;
+#X msg 66 -166 open iceland1.mov;
+#X obj 113 -129 #out window;
+#X obj 113 -110 fps detailed;
+#X obj 113 -91 print;
+#X obj 101 -62 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1
+-1;
+#X obj 131 -13 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1
+-1;
+#X obj 116 -38 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1
+-1;
+#X obj 87 17 #record;
+#X text 121 -64 <-- 1 select filename;
+#X text 136 -39 <-- 2 start recording;
+#X text 151 -13 <-- 3 stop recording;
+#X text 150 16 <-- open for more options;
+#X obj 101 -62 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1
+-1;
+#X obj 131 -13 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1
+-1;
+#X obj 116 -38 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1
+-1;
+#X obj 87 17 #record;
+#X text 121 -64 <-- 1 select filename;
+#X text 136 -39 <-- 2 start recording;
+#X text 151 -13 <-- 3 stop recording;
+#X text 150 16 <-- open for more options;
+#X connect 0 0 1 0;
+#X connect 1 0 11 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 11 1;
+#X connect 9 0 11 3;
+#X connect 10 0 11 2;
+#X connect 16 0 19 1;
+#X connect 17 0 19 3;
+#X connect 18 0 19 2;

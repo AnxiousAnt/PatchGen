@@ -1,0 +1,46 @@
+Message-ID: <3630A1B2.B26163C@charlieb.com>
+Date: Fri, 23 Oct 1998 11:33:06 -0400
+From: Charles Baker <baker@charlieb.com>
+X-Mailer: Mozilla 4.05 [en] (X11; I; Linux 2.0.34 i686)
+MIME-Version: 1.0
+To: Guenter Geiger <guenter.geiger@psp-vie.be.philips.com>
+Subject: Re: rpm of pd.23-4
+References: <01BDFE78.AE618840@pc-61-95.at.ds.philips.com>
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+Guenter Geiger wrote:
+
+> >----------
+> From:  Charles Baker[SMTP:baker@charlieb.com]
+> >Sent:  Thursday, October 22, 1998 11:00 PM
+> >To:  Guenter Geiger; pd-list@iem.mhsg.ac.at
+> >Subject:  Re: rpm of pd.23-4
+>
+> >Guenter  (et al) -
+> >I tried all recent pd's for MIDI on my RedHat5.1/OSS system:
+> >23-4 seg faults on MIDI out, only 23-4 BUT
+> >it seems I lost all MIDI function back at pd 23-1 !
+>
+> Does this mean, 0.23-1 works, and 0.23-2 and 0.23-3 don´t, and finally 0.23-4 segfaults (getting worse :)).
+
+No, 22-4 -> all MIDI worked, 23-1->no MIDI worked, 23-4->seg.fault on MIDI out.
+
+
+
+> How does this ineffectiveness show itself ?
+
+
+
+PD connects to MIDI port, all audio is fine, but in any 23 release, I do not have MIDI, and in the lastest
+release, MIID output cause immediate seg fault.
+
+> The step from pd-0.22 to pd-0.23 was rather big, but probably only Miller and Mark can shed some light on what
+> really changed.
+
+I suspect this error is more subtle than just your 23-4 changes,   Guenter, because of the loss of fuctionality at
+23-1.
+Your changes may just have exposed where RedHat OSS fails with new scheme.
+
+CharlieB
+

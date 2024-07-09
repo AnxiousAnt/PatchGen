@@ -1,0 +1,20 @@
+#N canvas 446 39 611 443 10;
+#N canvas 0 22 454 304 unter 0;
+#X text 17 80 create;
+#X msg 76 67 \; pd-dynamic.pd obj 100 100 tgl 15 0 sendsymbol receivesymbol
+label 0 -6 0 8 -262144 -1 -1 0;
+#X msg 90 124 \; pd-dynamic.pd find tgl \, cut;
+#X text 18 130 destroy;
+#X obj 74 27 inlet;
+#X obj 113 24 inlet;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X restore 45 193 pd unter;
+#X obj 45 146 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 95 169 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 67 147 create object;
+#X text 125 171 destroy object;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;

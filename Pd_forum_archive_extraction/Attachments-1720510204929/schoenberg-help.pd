@@ -1,0 +1,38 @@
+#N canvas 353 223 678 457 12;
+#X msg 112 213 0 1 2 3;
+#X obj 27 290 print;
+#X msg 28 84 ori 3;
+#X msg 49 115 ret 3;
+#X msg 89 180 rot 2 -1;
+#X msg 69 147 inv 12;
+#X obj 28 34 t b b b b b;
+#X obj 28 8 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 187 13 cnv 15 450 300 empty empty schoenberg-help 20 12 0 14
+-228992 -66577 0;
+#X obj 27 252 schoenberg;
+#X text 205 46 Schoenberg: An abstraction to perform classic serial
+operations on lists.;
+#X text 204 283 by David A. Powers. Created May 1 \, 2006;
+#X text 206 86 Messages:;
+#X text 204 107 ori [transposition amount]: Output a transposed version
+of the original row.;
+#X text 204 139 ret [transposition amount]: Output a transposed version
+of the retrograde row.;
+#X text 204 173 inv [transposition amount]: Output a transposed version
+of the retrograde row.;
+#X text 204 207 rot [rotation amount] [transposition amount]: Output
+a rotated and transposed version of the original row.;
+#X connect 0 0 9 1;
+#X connect 2 0 9 0;
+#X connect 3 0 9 0;
+#X connect 4 0 9 0;
+#X connect 5 0 9 0;
+#X connect 6 0 2 0;
+#X connect 6 1 3 0;
+#X connect 6 2 5 0;
+#X connect 6 3 4 0;
+#X connect 6 4 0 0;
+#X connect 7 0 6 0;
+#X connect 9 0 1 0;
+

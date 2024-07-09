@@ -1,0 +1,20 @@
+#N canvas 0 0 571 478 10;
+#X text 309 205 and so on...;
+#X floatatom 313 106 5 0 0 0 - - -;
+#X obj 152 110 hradio 15 0 0 8 empty empty empty 0 -6 0 8 -262144 -1
+-1 1;
+#X floatatom 145 208 5 0 0 0 - - -;
+#X floatatom 186 206 5 0 0 0 - - -;
+#X floatatom 223 206 5 0 0 0 - - -;
+#X floatatom 264 204 5 0 0 0 - - -;
+#X obj 151 158 8gate spacerrrrrrrrrrrrrrr;
+#X obj 150 133 + 1;
+#X msg 98 110 0;
+#X connect 1 0 7 1;
+#X connect 2 0 8 0;
+#X connect 7 0 3 0;
+#X connect 7 1 4 0;
+#X connect 7 2 5 0;
+#X connect 7 3 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;

@@ -1,0 +1,13 @@
+#N canvas 0 0 774 308 12;
+#X obj 15 53 opanel;
+#X msg 15 13 bang;
+#X obj 44 91 print;
+#X symbolatom 44 124 80 0 0;
+#X obj 15 198 soundfiler;
+#X obj 15 241 table t;
+#X msg 15 158 read -resize \$1 t;
+#X connect 0 0 3 0;
+#X connect 0 0 6 0;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 6 0 4 0;

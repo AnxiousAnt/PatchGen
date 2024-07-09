@@ -1,0 +1,8 @@
+#N canvas 0 0 450 300 10;
+#N canvas 525 72 450 300 gui 1;
+#X obj 99 124 bng 15 250 50 0 clear empty empty 17 7 0 10 -262144 -1
+-1;
+#X restore 159 83 pd gui;
+#X obj 295 80 r clear;
+#X msg 295 120 \; pd-gui clear;
+#X connect 1 0 2 0;

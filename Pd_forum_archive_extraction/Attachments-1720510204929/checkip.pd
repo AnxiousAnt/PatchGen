@@ -1,0 +1,14 @@
+#N canvas 440 77 450 300 10;
+#X obj 27 107 shell;
+#X msg 27 13 ifconfig rausb0;
+#X obj 27 134 route inet;
+#X obj 27 171 unpack s s s s;
+#X symbolatom 27 216 10 0 0 0 - - -;
+#X msg 27 36 ifconfig wlan0;
+#X msg 27 58 ifconfig eth0;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 1 4 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;

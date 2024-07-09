@@ -1,0 +1,22 @@
+#N canvas 0 0 450 300 10;
+#X obj 75 191 schange foo;
+#X text 57 79 output current value;
+#X symbolatom 75 118 10 0 0 0 - - -;
+#X text 81 97 if different from current value \, output and set;
+#X symbolatom 104 144 10 0 0 0 - - -;
+#X msg 104 167 set \$1;
+#X text 177 140 set the value;
+#X text 154 196 creation argument initializes first value;
+#X symbolatom 75 219 10 0 0 0 - - -;
+#X obj 75 247 print;
+#X obj 28 14 schange;
+#X text 114 16 - ELIMINATE REDUNDANCY IN A SYMBOL STEAM;
+#X msg 14 77 bang;
+#X text 12 42 The schange object outputs its input only when it changes.
+You can "set" the current value \, or bang to force output.;
+#X connect 0 0 8 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 8 0 9 0;
+#X connect 12 0 0 0;

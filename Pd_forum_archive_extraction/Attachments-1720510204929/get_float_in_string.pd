@@ -1,0 +1,21 @@
+#N canvas 663 177 450 300 10;
+#X msg 91 26 <update><source id='1'><position x='1.19286' y='0.992857'/></source></update>
+;
+#X obj 91 101 s2l ';
+#X obj 91 71 l2s;
+#X floatatom 110 247 5 0 0 0 - - -;
+#X floatatom 149 247 5 0 0 0 - - -;
+#X floatatom 188 247 5 0 0 0 - - -;
+#X obj 91 221 unpack s f s f s f s;
+#X obj 91 131 t a a;
+#X obj 118 154 list-drip;
+#X obj 118 177 print;
+#X connect 0 0 2 0;
+#X connect 1 0 7 0;
+#X connect 2 0 1 0;
+#X connect 6 1 3 0;
+#X connect 6 3 4 0;
+#X connect 6 5 5 0;
+#X connect 7 0 6 0;
+#X connect 7 1 8 0;
+#X connect 8 0 9 0;

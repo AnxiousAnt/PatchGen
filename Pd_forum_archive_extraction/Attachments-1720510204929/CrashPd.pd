@@ -1,0 +1,23 @@
+#N canvas 0 308 131 163 10;
+#X obj 19 2 cnv 15 549 136 test rtest empty 20 12 0 14 -233017 -66577
+0;
+#X obj 63 9 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 83 11 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 332 60 f;
+#X floatatom 348 38 5 100 1000 0 - - -;
+#X floatatom 383 60 4 50 500 0 - - -;
+#X obj 332 83 pack 0 0;
+#X text 393 38 width;
+#X text 421 62 height;
+#X msg 308 10 bang;
+#X msg 332 108 \; rtest vis_size \$1 \$2;
+#X connect 3 0 6 0;
+#X connect 4 0 3 1;
+#X connect 4 0 9 0;
+#X connect 5 0 6 1;
+#X connect 5 0 9 0;
+#X connect 6 0 10 0;
+#X connect 9 0 3 0;
+#X coords 0 0 0.00763359 0.00613497 200 140 1;

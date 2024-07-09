@@ -1,0 +1,9 @@
+#N canvas 693 150 450 300 10;
+#X obj 121 153 cnv 15 100 60 \$0-cnv \$0-cnv Test 20 12 0 14 -241291
+-66577 0;
+#X obj 186 102 s \$0-cnv;
+#X msg 262 53 color 15 15;
+#X text 122 18 2nd arg to color message is ignored;
+#X msg 146 53 color 3 13;
+#X connect 2 0 1 0;
+#X connect 4 0 1 0;

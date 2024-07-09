@@ -1,0 +1,12 @@
+#N canvas 394 152 450 300 10;
+#N canvas 427 215 450 300 test 0;
+#X obj 151 64 initbang;
+#X obj 115 169 print;
+#X msg 138 119 test;
+#X obj 253 61 closebang;
+#X msg 243 99 closing;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X restore 167 55 pd test;

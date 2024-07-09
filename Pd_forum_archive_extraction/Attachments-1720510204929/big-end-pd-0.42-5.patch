@@ -1,0 +1,20 @@
+--- pd-0.42-5/src/s_audio_alsa.c	2008-12-11 04:30:53.000000000 +1000
++++ pd-0.42-5-diff/src/s_audio_alsa.c	2010-01-21 04:18:21.000000000 +1000
+@@ -469,7 +469,7 @@
+                 ((char *)(alsa_snd_buf))[3*j+1] = ((s>>8) & 255);
+                 ((char *)(alsa_snd_buf))[3*j+2] = ((s>>16) & 255);
+ #else
+-                fprintf(stderr("big endian 24-bit not supported");
++                fprintf(stderr, "big endian 24-bit not supported");
+ #endif
+             }
+             for (; i < thisdevchans; i++, ch++)
+@@ -581,7 +581,7 @@
+                         * (1./ INT32_MAX);
+             }
+ #else
+-                fprintf(stderr("big endian 24-bit not supported");
++                fprintf(stderr, "big endian 24-bit not supported");
+ #endif
+         }
+         else

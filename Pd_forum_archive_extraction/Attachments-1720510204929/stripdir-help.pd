@@ -1,0 +1,22 @@
+#N canvas 574 218 412 258 10;
+#X symbolatom 22 88 0 0 0 0 - - -;
+#X obj 22 145 print;
+#X text 20 22 strips all leading directories from a path;
+#N canvas 129 173 494 344 META 0;
+#X text 12 125 HELP_PATCH_AUTHORS "pd meta" information added by Jonathan
+Wilkes for Pd version 0.42.;
+#X text 12 25 LICENSE Tcl/Tk;
+#X text 12 105 AUTHOR Guenter Geiger;
+#X text 12 5 KEYWORDS control symbol_op;
+#X text 12 45 DESCRIPTION strip all leading directories from a path
+;
+#X text 12 65 INLET_0 symbol;
+#X text 12 85 OUTLET_0 symbol;
+#X restore 362 236 pd META;
+#X obj 22 118 stripdir;
+#X obj 67 145 print remainder;
+#X msg 22 59 symbol /home/bunnies/foo/bar.txt;
+#X connect 0 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 5 0;
+#X connect 6 0 0 0;

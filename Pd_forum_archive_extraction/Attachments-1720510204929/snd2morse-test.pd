@@ -1,0 +1,140 @@
+#N struct morse float x float y symbol letter float bin-num array content
+morse-content;
+#N struct morse-content float bin;
+#N canvas 532 327 861 386 10;
+#X obj 330 219 snd2morse~;
+#X obj 330 368 print;
+#N canvas 31 102 862 508 morse 0;
+#X obj 274 213 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 296 213 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 319 213 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 87 119 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 106 117 metro 100;
+#X obj 137 454 *~;
+#X obj 62 267 osc~ 440;
+#X obj 65 239 hsl 128 22 10 6000 0 0 empty empty frequency 9 9 1 10
+-262144 -1 -1 1900 1;
+#X obj 183 414 line~;
+#X obj 197 330 delay 50;
+#X obj 197 310 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 286 332 5 0 0 0 - - -, f 5;
+#X floatatom 7 268 5 0 0 0 - - -, f 5;
+#X msg 62 211 906.1;
+#X obj 62 184 loadbang;
+#X obj 382 329 delay 50;
+#X obj 382 309 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 468 330 5 0 0 0 - - -, f 5;
+#X msg 157 370 1 1;
+#X msg 197 370 0 1;
+#X msg 342 369 1 1;
+#X msg 384 369 0 1;
+#X obj 683 155 hsl 128 15 10 1000 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 513 1;
+#X text 714 129 speed;
+#X floatatom 681 185 5 0 0 0 - - -, f 5;
+#X obj 643 276 s dot;
+#X obj 735 276 s dash;
+#X obj 191 91 r dot;
+#X obj 272 304 r dot;
+#X obj 457 302 r dash;
+#X obj 735 224 * 3;
+#X text 230 273 dot;
+#X text 387 277 dash;
+#X text 11 4 convert text to Morse Code;
+#X text 223 36 On UNIX and MacOS X systems \, its case-sensitive \,
+on Windows \, its not.;
+#X obj 248 113 inlet;
+#X obj 137 476 outlet~;
+#X text 53 526 patch from mjilb help file;
+#X obj 680 64 r morse-speed;
+#X obj 274 183 mjlib/morse;
+#X obj 58 67 r morse-metro;
+#X obj 82 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X connect 0 0 10 0;
+#X connect 1 0 16 0;
+#X connect 4 0 3 0;
+#X connect 4 0 39 0;
+#X connect 5 0 36 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 7 0 12 0;
+#X connect 8 0 5 1;
+#X connect 9 0 19 0;
+#X connect 10 0 9 0;
+#X connect 10 0 18 0;
+#X connect 13 0 7 0;
+#X connect 14 0 13 0;
+#X connect 15 0 21 0;
+#X connect 16 0 15 0;
+#X connect 16 0 20 0;
+#X connect 18 0 8 0;
+#X connect 19 0 8 0;
+#X connect 20 0 8 0;
+#X connect 21 0 8 0;
+#X connect 22 0 24 0;
+#X connect 24 0 25 0;
+#X connect 24 0 30 0;
+#X connect 27 0 4 1;
+#X connect 28 0 9 1;
+#X connect 28 0 11 0;
+#X connect 29 0 15 1;
+#X connect 29 0 17 0;
+#X connect 30 0 26 0;
+#X connect 35 0 39 0;
+#X connect 38 0 22 0;
+#X connect 39 0 0 0;
+#X connect 39 1 1 0;
+#X connect 39 2 2 0;
+#X connect 40 0 41 0;
+#X connect 41 0 4 0;
+#X restore 163 142 pd morse;
+#X obj 161 296 dac~;
+#X obj 162 246 *~;
+#X obj 190 221 hsl 128 22 0.01 1 1 0 empty morse-volume volume 9 9
+1 10 -262144 -1 -1 3030 0;
+#X obj 363 347 print space;
+#X obj 11 81 loadbang;
+#X text 9 14 patko2013-2016;
+#X msg 262 56 msg this is a test message;
+#X msg 248 27 msg 1 2 3 4 8;
+#X msg 11 109 \; init 0 \; morse-speed 50 \; pd dsp 1 \; morse-volume
+0.03 \; morse-metro 1 \;;
+#X msg 161 29 msg s o;
+#X obj 164 92 t a b, f 21;
+#X obj 410 268 list fromsymbol;
+#X msg 532 265 32;
+#X obj 400 307 list;
+#X obj 600 271 t l;
+#X obj 479 333 list tosymbol;
+#X obj 482 356 print message;
+#X obj 514 298 list prepend;
+#X connect 0 0 1 0;
+#X connect 0 0 14 0;
+#X connect 0 1 6 0;
+#X connect 0 1 15 0;
+#X connect 0 2 16 0;
+#X connect 2 0 4 0;
+#X connect 2 0 0 0;
+#X connect 4 0 3 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 1;
+#X connect 7 0 11 0;
+#X connect 9 0 13 0;
+#X connect 10 0 13 0;
+#X connect 12 0 13 0;
+#X connect 13 0 2 0;
+#X connect 13 1 17 0;
+#X connect 14 0 20 0;
+#X connect 15 0 20 0;
+#X connect 16 0 18 0;
+#X connect 17 0 20 1;
+#X connect 18 0 19 0;
+#X connect 20 0 17 0;
+#X connect 20 0 16 1;

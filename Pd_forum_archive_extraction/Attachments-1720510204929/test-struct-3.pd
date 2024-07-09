@@ -1,0 +1,143 @@
+#N struct test-item float idx symbol key array value float;
+#N struct float float y;
+#N canvas 592 116 1163 823 12;
+#N canvas 544 45 450 300 test-dataset 0;
+#X scalar test-item 2 entry-2 \; 2 \; 2.1 \; 2.2 \; 2.3 \; 2.4 \; 2.5
+\; 2.6 \; 2.7 \; 2.8 \; 2.9 \; \;;
+#X scalar test-item 4 entry-4 \; 4 \; 4.1 \; 4.2 \; 4.3 \; 4.4 \; 4.5
+\; 4.6 \; 4.7 \; 4.8 \; 4.9 \; \;;
+#X scalar test-item 12 entry-12 \; 12 \; 12.1 \; 12.2 \; 12.3 \; 12.4
+\; 12.5 \; 12.6 \; 12.7 \; 12.8 \; 12.9 \; \;;
+#X scalar test-item 13 entry-13 \; 13 \; 13.1 \; 13.2 \; 13.3 \; 13.4
+\; 13.5 \; 13.6 \; 13.7 \; 13.8 \; 13.9 \; \;;
+#X scalar test-item 14 entry-14 \; 14 \; 14.1 \; 14.2 \; 14.3 \; 14.4
+\; 14.5 \; 14.6 \; 14.7 \; 14.8 \; 14.9 \; \;;
+#X scalar test-item 15 entry-15 \; 15 \; 15.1 \; 15.2 \; 15.3 \; 15.4
+\; 15.5 \; 15.6 \; 15.7 \; 15.8 \; 15.9 \; \;;
+#X scalar test-item 17 entry-17 \; 17 \; 17.1 \; 17.2 \; 17.3 \; 17.4
+\; 17.5 \; 17.6 \; 17.7 \; 17.8 \; 17.9 \; \;;
+#X scalar test-item 21 entry-21 \; 21 \; 21.1 \; 21.2 \; 21.3 \; 21.4
+\; 21.5 \; 21.6 \; 21.7 \; 21.8 \; 21.9 \; \;;
+#X scalar test-item 23 entry-23 \; 23 \; 23.1 \; 23.2 \; 23.3 \; 23.4
+\; 23.5 \; 23.6 \; 23.7 \; 23.8 \; 23.9 \; \;;
+#X scalar test-item 24 entry-24 \; 24 \; 24.1 \; 24.2 \; 24.3 \; 24.4
+\; 24.5 \; 24.6 \; 24.7 \; 24.8 \; 24.9 \; \;;
+#X scalar test-item 26 entry-26 \; 26 \; 26.1 \; 26.2 \; 26.3 \; 26.4
+\; 26.5 \; 26.6 \; 26.7 \; 26.8 \; 26.9 \; \;;
+#X scalar test-item 32 entry-32 \; 32 \; 32.1 \; 32.2 \; 32.3 \; 32.4
+\; 32.5 \; 32.6 \; 32.7 \; 32.8 \; 32.9 \; \;;
+#X scalar test-item 36 entry-36 \; 36 \; 36.1 \; 36.2 \; 36.3 \; 36.4
+\; 36.5 \; 36.6 \; 36.7 \; 36.8 \; 36.9 \; \;;
+#X scalar test-item 38 entry-38 \; 38 \; 38.1 \; 38.2 \; 38.3 \; 38.4
+\; 38.5 \; 38.6 \; 38.7 \; 38.8 \; 38.9 \; \;;
+#X scalar test-item 41 entry-41 \; 41 \; 41.1 \; 41.2 \; 41.3 \; 41.4
+\; 41.5 \; 41.6 \; 41.7 \; 41.8 \; 41.9 \; \;;
+#X scalar test-item 45 entry-45 \; 45 \; 45.1 \; 45.2 \; 45.3 \; 45.4
+\; 45.5 \; 45.6 \; 45.7 \; 45.8 \; 45.9 \; \;;
+#X scalar test-item 47 entry-47 \; 47 \; 47.1 \; 47.2 \; 47.3 \; 47.4
+\; 47.5 \; 47.6 \; 47.7 \; 47.8 \; 47.9 \; \;;
+#X scalar test-item 49 entry-49 \; 49 \; 49.1 \; 49.2 \; 49.3 \; 49.4
+\; 49.5 \; 49.6 \; 49.7 \; 49.8 \; 49.9 \; \;;
+#X scalar test-item 52 entry-52 \; 52 \; 52.1 \; 52.2 \; 52.3 \; 52.4
+\; 52.5 \; 52.6 \; 52.7 \; 52.8 \; 52.9 \; \;;
+#X scalar test-item 54 entry-54 \; 54 \; 54.1 \; 54.2 \; 54.3 \; 54.4
+\; 54.5 \; 54.6 \; 54.7 \; 54.8 \; 54.9 \; \;;
+#X scalar test-item 58 entry-58 \; 58 \; 58.1 \; 58.2 \; 58.3 \; 58.4
+\; 58.5 \; 58.6 \; 58.7 \; 58.8 \; 58.9 \; \;;
+#X scalar test-item 60 entry-60 \; 60 \; 60.1 \; 60.2 \; 60.3 \; 60.4
+\; 60.5 \; 60.6 \; 60.7 \; 60.8 \; 60.9 \; \;;
+#X scalar test-item 62 entry-62 \; 62 \; 62.1 \; 62.2 \; 62.3 \; 62.4
+\; 62.5 \; 62.6 \; 62.7 \; 62.8 \; 62.9 \; \;;
+#X scalar test-item 63 entry-63 \; 63 \; 63.1 \; 63.2 \; 63.3 \; 63.4
+\; 63.5 \; 63.6 \; 63.7 \; 63.8 \; 63.9 \; \;;
+#X scalar test-item 64 entry-64 \; 64 \; 64.1 \; 64.2 \; 64.3 \; 64.4
+\; 64.5 \; 64.6 \; 64.7 \; 64.8 \; 64.9 \; \;;
+#X restore 955 576 pd test-dataset;
+#X msg 739 130 traverse pd-test-dataset \, bang;
+#X obj 740 155 pointer;
+#X msg 94 23 \; pd-test-dataset clear;
+#X obj 321 636 pointer;
+#X msg 351 609 next;
+#X msg 319 582 traverse pd-test-dataset \, next;
+#X symbolatom 264 703 10 0 0 0 - - -;
+#N canvas 48 515 450 300 test-item 0;
+#X obj 39 50 struct test-item float idx symbol key array value float
+;
+#X restore 954 606 pd test-item;
+#X obj 237 362 set -symbol test-item key;
+#X symbolatom 105 281 10 0 0 0 - - -;
+#N canvas 535 225 1107 619 newarray 0;
+#X obj 309 286 until;
+#X msg 377 307 -1;
+#X msg 309 307 1;
+#X obj 309 334 +;
+#X obj 323 586 outlet;
+#X msg 309 267 10;
+#X obj 309 359 t f f;
+#X obj 310 162 inlet;
+#X obj 393 414 expr (($f1 / 10) + $f2);
+#X msg 385 150 4;
+#X obj 500 464 list prepend;
+#X obj 500 490 t l l;
+#X obj 292 509 list;
+#X obj 280 223 t b b f f b, f 51;
+#X connect 0 0 2 0;
+#X connect 1 0 3 1;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 8 0;
+#X connect 6 1 3 1;
+#X connect 7 0 13 0;
+#X connect 8 0 10 0;
+#X connect 9 0 13 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 1;
+#X connect 11 1 10 1;
+#X connect 12 0 4 0;
+#X connect 13 0 12 0;
+#X connect 13 1 5 0;
+#X connect 13 2 1 0;
+#X connect 13 3 8 1;
+#X connect 13 4 10 1;
+#X restore 236 280 pd newarray;
+#X obj 602 240 append test-item idx;
+#X floatatom 195 150 5 0 0 0 - - -;
+#X obj 236 312 array set -s test-item value;
+#X msg 105 260 symbol entry-\$1;
+#X floatatom 358 701 5 0 0 0 - - -;
+#X obj 450 714 print;
+#X obj 265 674 get test-item key idx;
+#X obj 450 688 array get -s test-item value;
+#X obj 325 250 array size -s test-item value;
+#X obj 194 173 t f f b f;
+#X msg 327 229 10;
+#X obj 459 651 t b p;
+#X text 258 29 1 clear the database;
+#X text 741 101 2 set the pointer to the database;
+#X text 234 150 3 write a few points using dummy idx;
+#X text 301 561 4 set the reading head \, and read the first item;
+#X text 396 609 5 and the next one after....;
+#X connect 1 0 2 0;
+#X connect 2 0 12 1;
+#X connect 4 0 18 0;
+#X connect 4 0 23 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 10 0 9 0;
+#X connect 11 0 14 0;
+#X connect 12 0 9 1;
+#X connect 12 0 14 2;
+#X connect 12 0 20 1;
+#X connect 13 0 21 0;
+#X connect 15 0 10 0;
+#X connect 18 0 7 0;
+#X connect 18 1 16 0;
+#X connect 19 0 17 0;
+#X connect 21 0 15 0;
+#X connect 21 1 11 0;
+#X connect 21 2 22 0;
+#X connect 21 3 12 0;
+#X connect 22 0 20 0;
+#X connect 23 0 19 0;
+#X connect 23 1 19 2;

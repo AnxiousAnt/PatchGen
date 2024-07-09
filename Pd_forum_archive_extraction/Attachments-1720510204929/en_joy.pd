@@ -1,0 +1,55 @@
+#N canvas 368 202 552 513 10;
+#X obj 29 134 joystick 5 512 0;
+#X obj 100 187 pack 0 0;
+#X obj 33 22 tgl 15 0 empty j_b_1 empty 20 8 64 8 -262144 -1 -1 0 1
+;
+#X obj 48 22 tgl 15 0 empty j_b_2 empty 20 8 64 8 -262144 -1 -1 0 1
+;
+#X obj 63 22 tgl 15 0 empty j_b_3 empty 20 8 64 8 -262144 -1 -1 0 1
+;
+#X obj 78 22 tgl 15 0 empty j_b_4 empty 20 8 64 8 -262144 -1 -1 0 1
+;
+#X obj 93 22 tgl 15 0 empty j_b_5 empty 20 8 64 8 -262144 -1 -1 0 1
+;
+#X obj 108 22 tgl 15 0 empty j_b_6 empty 20 8 64 8 -262144 -1 -1 0
+1;
+#X obj 123 22 tgl 15 0 empty j_b_7 empty 20 8 64 8 -262144 -1 -1 0
+1;
+#X obj 138 22 tgl 15 0 empty j_b_8 empty 20 8 64 8 -262144 -1 -1 0
+1;
+#X obj 100 434 s j_b_1;
+#X obj 146 409 s j_b_2;
+#X obj 192 385 s j_b_3;
+#X obj 238 363 s j_b_4;
+#X obj 284 334 s j_b_5;
+#X obj 330 302 s j_b_6;
+#X obj 376 273 s j_b_7;
+#X obj 422 246 s j_b_8;
+#X obj 29 291 s j_x;
+#X obj 64 270 s j_y;
+#X obj 108 41 nbx 4 14 -1e+37 1e+37 0 0 3 j_x empty 0 -6 192 10 -262144
+-1 -1 0 256;
+#X obj 44 41 nbx 4 14 -1e+37 1e+37 0 0 empty j_x empty 0 -6 64 10 -262144
+-1 -1 0 256;
+#X text 32 39 X;
+#X text 93 40 Y;
+#X obj 100 215 route 0 1 2 3 4 5 6 7 --------------------------------------
+;
+#X text 30 98 --- cut here and turn this into an abstraction \, remove
+gui;
+#X text 58 109 stuff above for higher efficiency;
+#X text 320 467 (c) burn_those_idle_cycles;
+#X text 322 480 gpl or public domain or ..;
+#X connect 0 0 18 0;
+#X connect 0 1 19 0;
+#X connect 0 2 1 0;
+#X connect 0 3 1 1;
+#X connect 1 0 24 0;
+#X connect 24 0 10 0;
+#X connect 24 1 11 0;
+#X connect 24 2 12 0;
+#X connect 24 3 13 0;
+#X connect 24 4 14 0;
+#X connect 24 5 15 0;
+#X connect 24 6 16 0;
+#X connect 24 7 17 0;

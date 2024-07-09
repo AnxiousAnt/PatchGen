@@ -1,0 +1,43 @@
+#N canvas 436 325 380 213 10;
+#X obj 24 132 bit 0;
+#X obj 24 155 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 66 155 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 108 155 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 150 155 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 192 155 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 234 155 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 276 155 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 318 155 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 66 132 bit 1;
+#X obj 108 132 bit 2;
+#X obj 150 132 bit 3;
+#X obj 192 132 bit 4;
+#X obj 234 132 bit 5;
+#X obj 276 132 bit 6;
+#X obj 318 132 bit 7;
+#X floatatom 86 62 5 0 0 0 - - -;
+#X text 34 24 bit abstraction help;
+#X connect 0 0 1 0;
+#X connect 9 0 2 0;
+#X connect 10 0 3 0;
+#X connect 11 0 4 0;
+#X connect 12 0 5 0;
+#X connect 13 0 6 0;
+#X connect 14 0 7 0;
+#X connect 15 0 8 0;
+#X connect 16 0 0 0;
+#X connect 16 0 9 0;
+#X connect 16 0 10 0;
+#X connect 16 0 11 0;
+#X connect 16 0 12 0;
+#X connect 16 0 13 0;
+#X connect 16 0 14 0;
+#X connect 16 0 15 0;

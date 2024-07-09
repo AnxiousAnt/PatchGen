@@ -1,0 +1,50 @@
+#N canvas -841 -51 820 513 10;
+#X obj 106 282 biquad~;
+#X obj 146 245 ggee/notch 1000 10;
+#X msg 146 213 1000;
+#X obj 40 233 osc~ 1000;
+#X obj 106 371 nbx 10 14 -1e+037 1e+037 0 0 empty empty empty 0 -8
+0 10 -262144 -1 -1 96.3188 256;
+#X msg 40 183 1000;
+#X obj 533 298 biquad~;
+#X obj 573 261 ggee/notch 1000 10;
+#X msg 573 120 1000;
+#X obj 467 259 osc~ 1000;
+#X obj 533 387 nbx 10 14 -1e+037 1e+037 0 0 empty empty empty 0 -8
+0 10 -262144 -1 -1 9.76611 256;
+#X msg 467 171 1000;
+#X obj 573 165 t f b;
+#X obj 600 189 samplerate~;
+#X obj 600 209 / 44100;
+#X obj 573 229 /;
+#X obj 533 344 env~ 8192;
+#X obj 106 328 env~ 8192;
+#X text 16 53 if pd's samplerate is configured at 48000 \, the filter's
+center frequency isn't actually at the frequency sent to [notch] inlet.
+;
+#X text 16 93 below you can see that \, when working at 48000 samples/sec
+\, the real center frequency is measured around 1088.44 Hz (where enveloppe
+is around -90db).;
+#X text 462 67 so frequency parameter for [notch] should be shifted
+accordingly to current samplerate \, which we get through [samplerate~]
+;
+#X msg 80 183 1088.44;
+#X text 166 264 notch filter \, a 1/10th of octave bandwidth;
+#X connect 0 0 17 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 5 0 3 0;
+#X connect 6 0 16 0;
+#X connect 7 0 6 0;
+#X connect 8 0 12 0;
+#X connect 9 0 6 0;
+#X connect 11 0 9 0;
+#X connect 12 0 15 0;
+#X connect 12 1 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 1;
+#X connect 15 0 7 0;
+#X connect 16 0 10 0;
+#X connect 17 0 4 0;
+#X connect 21 0 3 0;

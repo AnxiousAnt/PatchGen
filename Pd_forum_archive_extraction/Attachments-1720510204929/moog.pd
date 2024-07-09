@@ -1,0 +1,28 @@
+#N canvas 136 23 864 483 10;
+#X obj 250 66 moog~;
+#X text 327 87 k = k - 0.5*((f-3800)/4300) \;;
+#X text 346 51 Q = k (0-4) - resonance;
+#X obj 259 239 expr~ $v1 * 0.01 * 0.0140845 - (0.9999999);
+#X obj 259 206 sig~;
+#X text 294 204 p;
+#X text 233 278 pt1;
+#X text 566 149 while (n--) if (*p > 8140.) *p = 8140 \; *k = calc_k(*p
+\, *k) \; \; pt =*p* 0.01*0.0140845 - 0.9999999f \; pt1=(pt+1.0)*0.76923077
+\; in = *in1++ - *k*ys4 \; ys1 = pt1*(in + 0.3*x1) - pt*ys1 \; x1 =
+in \; ys2 = pt1*(ys1 + 0.3*x2) - pt*ys2 \; x2 = ys1 \; ys3 = pt1*(ys2
++ 0.3*x3) - pt*ys3 \; x3 = ys2 \; ys4 = pt1*(ys3 + 0.3*x4) - pt*ys4
+\; x4 = ys3 \; *out++ = ys4 \; p++ \; k++ \;;
+#X obj 259 278 expr~ ($v1 + 1) * (0.76923077);
+#X obj 455 276 *~ -1;
+#X obj 87 304 fexpr~ $x2*(($x * k * $y[-4]) + 0.3*$x[-1]) + $x3 * $y[-1]
++ $x2*($x[-1] + 0.3*$x[-2]) + $x3 * $y[-2] + $x2*($x[-2] + 0.3*$x[-3])
++ $x3 * $y[-3] + $x2*($x[-3] + 0.3*$x[-4]) + $x3 * $y[-4];
+#X text 492 275 pt;
+#X obj 320 113 expr k - 0.5 * ((f-3800)/4300);
+#X obj 320 138 v k;
+#X connect 3 0 8 0;
+#X connect 3 0 9 0;
+#X connect 4 0 3 0;
+#X connect 8 0 10 1;
+#X connect 9 0 10 2;
+#X connect 12 0 13 0;

@@ -1,0 +1,123 @@
+#N struct object-template float x float y float length float width
+float color;
+#N canvas 15 58 885 580 10;
+#N canvas 0 0 450 300 object-template 0;
+#X obj 41 24 template float x float y float length float width float
+color;
+#X obj 45 96 drawpolygon color width 0 0 0 length;
+#X restore 339 260 pd object-template;
+#N canvas 230 6 719 678 works 0;
+#X obj 353 199 pointer;
+#X obj 245 146 random 50;
+#X obj 112 158 random 50;
+#X obj 91 53 t b b b;
+#X msg 353 175 traverse pd-my-display-data \, bang;
+#X msg 355 -21 \; pd-my-display-data clear;
+#X obj 141 27 metro 100;
+#X obj 142 4 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 44 223 append object-template x y color width length;
+#X obj 263 182 random 50;
+#X obj 44 190 random 50;
+#X obj 142 -19 loadbang;
+#X text 412 213 of the data structure correlated to;
+#X text 413 229 the my-display-data window;
+#X text 411 248 and subpatch;
+#X text 356 13 clear data structure correllated to;
+#X text 356 28 the my-display-data window;
+#X text 357 46 if the window \, containing the template;
+#X text 358 61 which is used to store objects in;
+#X text 359 76 my-display-data (in our case the;
+#X text 358 92 "object-template" subpatch) also contains;
+#X text 363 108 a drawing object (like drawpolygon or draw filledpolygon)
+;
+#X text 362 126 all data stored will also get drawn in the;
+#X text 363 142 window. Sending it the clear message not only;
+#X text 364 155 clears the data structure \, but also the screen.;
+#X text 412 196 set pointer to the beginning;
+#X text 40 248 store objects of type "object-template" (defined;
+#X text 40 282 which have to get filled in are given as arguments;
+#X text 42 319 inlet \, which has to be set to a place \, where the
+data;
+#X text 39 263 in the "pd object-template" subpatch). The fields;
+#X text 41 299 to the append message above. The right inlet is a pointer
+;
+#X text 41 336 should get stored (in this case the my-display-data
+;
+#X text 42 353 subpatch). The data is stored as a linked list and can
+;
+#X text 43 372 be retrieved using the "get" object.;
+#X obj 179 66 f;
+#X obj 255 94 sel 0;
+#X obj 212 66 expr ($f1 + 1) % 30;
+#X obj 178 183 random 900;
+#X connect 0 0 8 5;
+#X connect 1 0 8 3;
+#X connect 2 0 8 1;
+#X connect 3 0 10 0;
+#X connect 3 1 2 0;
+#X connect 3 1 1 0;
+#X connect 3 1 4 0;
+#X connect 3 1 9 0;
+#X connect 3 1 37 0;
+#X connect 4 0 0 0;
+#X connect 6 0 3 0;
+#X connect 6 0 34 0;
+#X connect 7 0 6 0;
+#X connect 9 0 8 4;
+#X connect 10 0 8 0;
+#X connect 11 0 7 0;
+#X connect 34 0 35 0;
+#X connect 34 0 36 0;
+#X connect 35 0 5 0;
+#X connect 36 0 34 1;
+#X connect 37 0 8 2;
+#X restore 339 281 pd works;
+#N canvas 0 0 450 300 my-display-data 0;
+#X scalar object-template 0 22 7 30 750 \;;
+#X scalar object-template 15 28 25 32 229 \;;
+#X scalar object-template 17 33 2 41 302 \;;
+#X scalar object-template 4 42 4 24 48 \;;
+#X scalar object-template 47 32 1 37 492 \;;
+#X scalar object-template 18 2 25 14 795 \;;
+#X scalar object-template 10 34 35 24 199 \;;
+#X scalar object-template 29 24 18 2 301 \;;
+#X scalar object-template 42 40 23 23 34 \;;
+#X scalar object-template 23 33 4 39 557 \;;
+#X scalar object-template 38 1 44 41 822 \;;
+#X coords -40 100 100 -10 300 240 1;
+#X restore 339 7 pd my-display-data;
+#N canvas 494 36 262 251 my-subpatch 0;
+#X obj 101 34 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 35 34 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X floatatom 35 193 5 0 0;
+#X floatatom 98 68 5 0 0;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X coords 0 0 1 1 300 240 1;
+#X restore 7 6 pd my-subpatch;
+#X text 6 340 property "draw on parent" enabled.;
+#X text 5 356 in order to access them \, right-click in;
+#X text 4 385 the popup menu. As it is just another;
+#X text 3 454 To set/unset this option \, click in the;
+#X text 3 467 content area of the opened window of the;
+#X text 336 357 the subpatch AND the visible portion of it in;
+#X text 336 372 the parent window you can adjust x and y scaling;
+#X text 337 386 factors and the size of the graph in the parent;
+#X text 338 400 window.;
+#X text 3 428 are drawn in the parent window.;
+#X text 5 398 subpatch \, you can edit and use it as usual;
+#X text 4 413 but only the gui objects (and no patchchords);
+#X text 338 437 a demonstration of the template/pointer/scalar;
+#X text 337 452 feature and their graphic representation.;
+#X text 338 422 The subpatches "object-template" and "works" contain
+;
+#X text 337 313 subpatch. Watch \, what happens if you unset;
+#X text 335 328 this option and close the dialog and the;
+#X text 337 343 subpatch window. In the properties dialog of both \,
+;
+#X text 4 327 left actually are subpatches which have the;
+#X text 4 371 their content area and select "open" from;
+#X text 3 311 The two big rectangles on the above right and;

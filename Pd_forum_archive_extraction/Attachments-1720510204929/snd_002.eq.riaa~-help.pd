@@ -1,0 +1,41 @@
+#N canvas 141 22 463 503 10;
+#X obj 24 203 snd.eq.riaa~;
+#X obj 117 237 _extra/filterview/filterview;
+#X obj 24 423 dac~;
+#X obj 24 83 openpanel;
+#X obj 24 62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 24 161 readsf~ 2;
+#X msg 24 108 open \$1 \, 1;
+#X floatatom 52 340 5 0 0 0 - - -, f 5;
+#X obj 31 376 *~ 1;
+#X msg 41 133 stop;
+#X msg 353 162 \; pd dsp 1 \;;
+#X obj 353 135 loadbang;
+#X obj 120 62 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 7;
+#X text 141 59 <-- 44.1 - playback;
+#X text 141 75 <-- 48 - playback;
+#X text 140 92 <-- 88.2 - playback;
+#X text 140 107 <-- 96 - playback;
+#X text 140 123 <-- 44.1 - production;
+#X text 141 138 <-- 48 - production;
+#X text 141 152 <-- 88.2 - playback;
+#X text 141 167 <-- 96 - playback;
+#X text 21 16 Digital RIAA biquad~ filter for vinyl playback and production
+(mastering);
+#X text 353 457 megrimm 2014;
+#X connect 0 0 8 0;
+#X connect 0 1 8 0;
+#X connect 0 2 1 0;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 5 1 0 1;
+#X connect 6 0 5 0;
+#X connect 7 0 8 1;
+#X connect 8 0 2 0;
+#X connect 8 0 2 1;
+#X connect 9 0 5 0;
+#X connect 11 0 10 0;
+#X connect 12 0 0 2;

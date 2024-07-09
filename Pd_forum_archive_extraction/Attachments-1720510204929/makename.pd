@@ -1,0 +1,26 @@
+#N canvas 7 14 1242 943 10;
+#X obj 134 170 prepend set;
+#X obj 104 141 t b l;
+#X obj 222 259 print;
+#X floatatom 137 62 3 0 0;
+#X floatatom 104 61 3 0 0;
+#X obj 78 62 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X obj 104 92 pack;
+#X obj 134 232 prepend "open;
+#X obj 104 118 makesymbol ../../db/%s/%s";
+#X obj 134 260 prepend set;
+#X msg 134 287;
+#X msg 134 204;
+#X connect 0 0 11 0;
+#X connect 1 0 11 0;
+#X connect 1 1 0 0;
+#X connect 3 0 6 1;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 7 0 2 0;
+#X connect 8 0 1 0;
+#X connect 9 0 10 0;
+#X connect 11 0 7 0;

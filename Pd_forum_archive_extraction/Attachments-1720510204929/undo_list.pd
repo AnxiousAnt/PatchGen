@@ -1,0 +1,45 @@
+#N canvas 0 22 715 662 10;
+#X obj 376 230 list length;
+#X obj 237 437 u_collect;
+#X msg 235 496 dog cat cat;
+#X obj 319 282 list split;
+#X obj 319 201 t a a;
+#X obj 376 252 - 1;
+#X obj 434 295 bng 15 250 50 0 empty empty undo 17 7 0 10 -262144 -1
+-1;
+#X msg 362 485 dog cat cat;
+#X obj 246 247 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+-1 -1;
+#X obj 235 464 t a a;
+#X obj 320 319 u_show;
+#X msg 323 372 dog cat cat;
+#X obj 400 336 t b b b;
+#X obj 363 511 s \$0-undoList;
+#X obj 318 174 r \$0-undoList;
+#X obj 246 267 t b b;
+#X msg 159 330 dog;
+#X msg 194 353 cat;
+#X text 173 497 output ->;
+#X text 55 106 u_collect & u_show can be found in rjlib - https://github.com/rjdj/rjlib
+;
+#X connect 0 0 5 0;
+#X connect 1 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 3 0;
+#X connect 4 1 0 0;
+#X connect 5 0 3 1;
+#X connect 6 0 12 0;
+#X connect 7 0 13 0;
+#X connect 8 0 15 0;
+#X connect 9 0 2 0;
+#X connect 9 1 7 0;
+#X connect 10 0 11 0;
+#X connect 11 0 1 0;
+#X connect 12 0 11 0;
+#X connect 12 1 1 1;
+#X connect 12 2 7 0;
+#X connect 14 0 4 0;
+#X connect 15 0 1 1;
+#X connect 15 1 10 1;
+#X connect 16 0 1 0;
+#X connect 17 0 1 0;

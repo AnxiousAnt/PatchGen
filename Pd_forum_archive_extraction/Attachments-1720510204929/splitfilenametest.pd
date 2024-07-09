@@ -1,0 +1,10 @@
+#N canvas 0 0 450 300 10;
+#X obj 127 186 splitfilename;
+#X symbolatom 127 77 10 0 0 0 - - -;
+#X text 202 78 <- enter a few random strings here;
+#X symbolatom 142 127 10 0 0 0 - - -;
+#X text 221 124 <- or perhaps here;
+#X obj 142 148 makefilename /foo/baz/bar/%s;
+#X connect 1 0 0 0;
+#X connect 3 0 5 0;
+#X connect 5 0 0 0;

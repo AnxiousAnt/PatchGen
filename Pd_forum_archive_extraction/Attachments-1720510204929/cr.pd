@@ -1,0 +1,35 @@
+#N canvas 401 90 590 300 10;
+#X obj 127 78 makefilename %c;
+#X msg 127 56 13;
+#X obj 17 78 makefilename %c;
+#X msg 17 56 32;
+#X obj 17 120 list;
+#X msg 17 142 symbol hello\$1world\$2hello\$1user;
+#X msg 17 164 set \$1;
+#X obj 127 26 loadbang;
+#X obj 17 9 bng 35 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 405 158 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 405 178 15;
+#X obj 405 200 makefilename %c;
+#X obj 405 244 print;
+#X msg 405 222 Pure\$1Data;
+#X obj 25 190 print CR_doesn't_look_right_in_console;
+#X msg 17 216;
+#X text 364 130 Oddity #2 This gives me little notes;
+#X text 265 190 Oddity #1;
+#X connect 0 0 4 1;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 15 0;
+#X connect 6 0 14 0;
+#X connect 7 0 1 0;
+#X connect 8 0 3 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 13 0 12 0;

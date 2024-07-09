@@ -1,0 +1,17 @@
+#N canvas 1 75 432 471 10;
+#N canvas 1 78 457 497 hidden 0;
+#X obj -24 262 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 10204 1;
+#X obj -24 223 snapshot~;
+#X obj 102 98 bang~;
+#X obj 135 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 102 196 spigot;
+#X obj -25 168 osc~ 0.25;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 1;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X coords 0 -1 1 1 85 60 1 100 100;
+#X restore 83 43 pd hidden;

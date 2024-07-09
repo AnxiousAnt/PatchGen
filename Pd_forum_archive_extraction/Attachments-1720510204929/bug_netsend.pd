@@ -1,0 +1,28 @@
+#N canvas 177 43 1064 533 12;
+#X obj 170 286 netsend;
+#X msg 72 35 connect localhost 5000;
+#X obj 170 316 select 1;
+#X msg 47 71 disconnect;
+#X obj 179 103 t b b;
+#X msg 240 129 0;
+#X obj 178 166 until;
+#X obj 174 206 f;
+#X obj 213 205 + 1;
+#X msg 170 243 send bla bla \$1;
+#X obj 624 92 netreceive 5000;
+#X obj 270 45 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 177 138 10000;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 12 0;
+#X connect 4 1 5 0;
+#X connect 5 0 7 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 1;
+#X connect 9 0 0 0;
+#X connect 11 0 4 0;
+#X connect 12 0 6 0;

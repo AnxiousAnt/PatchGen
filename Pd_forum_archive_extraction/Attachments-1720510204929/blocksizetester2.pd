@@ -1,0 +1,40 @@
+#N canvas 304 159 327 377 10;
+#X msg 188 94 \; pd dsp 1;
+#X obj 188 72 loadbang;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 0.251701 0.229025 0.206349 0.183673 0.160998 0.138322 0.115646
+0.0929705 0.0702948 0.047619 0.0249433 0.00226757 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0.251701 0.229025 0.206349 0.183673 0.160998 0.138322
+0.115646 0.0929705 0.0702948 0.047619 0.0249433 0.00226757 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 45 200 graph;
+#N canvas 0 0 450 300 block-64 0;
+#X obj 160 49 bang~;
+#X obj 160 118 vline~;
+#X msg 160 83 1 \, 0 1;
+#X obj 321 147 block~ 64;
+#X obj 159 185 tabwrite~ array1;
+#X obj 263 16 inlet;
+#X obj 262 41 t b f;
+#X obj 236 110 delay 10;
+#X msg 322 105 set \$1 1 1;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 7 0 4 0;
+#X connect 8 0 3 0;
+#X restore 44 150 pd block-64;
+#X msg 44 42 64;
+#X msg 59 71 32;
+#X msg 69 99 16;
+#X text 43 16 graph according to blocksize;
+#X connect 1 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;

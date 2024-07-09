@@ -1,0 +1,16 @@
+#N canvas 0 0 483 412 10;
+#X obj 335 134 loadbang;
+#X obj 335 160 f \$2;
+#X obj 335 191 select 0;
+#X msg 335 211 100;
+#X obj 335 272 s \$1;
+#X obj 59 87 table \$1;
+#X obj 282 190 inlet;
+#X msg 335 243 resize \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 7 0;
+#X connect 3 0 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;

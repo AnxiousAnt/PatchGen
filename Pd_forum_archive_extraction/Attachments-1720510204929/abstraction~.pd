@@ -1,0 +1,4 @@
+#N canvas 545 143 235 108 10;
+#X obj 26 31 osc~ 300;
+#X obj 26 59 throw~ mainpatch;
+#X connect 0 0 1 0;

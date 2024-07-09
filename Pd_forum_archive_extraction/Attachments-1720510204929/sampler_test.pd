@@ -1,0 +1,31 @@
+#N canvas 613 43 644 683 12;
+#X obj 178 15 loadbang;
+#X obj 178 75 soundfiler;
+#N canvas 0 0 454 304 graph9 0;
+#X array array2 200859 float 2;
+#X coords 0 1 200859 -1 200 140 1;
+#X restore -34 14 graph;
+#X obj 36 300 tabplay~ array2;
+#X obj 36 158 key;
+#X msg 178 47 read -resize drumz.wav array2;
+#X obj 301 284 print some;
+#X obj 301 255 loopcut;
+#X obj 4 352 output~;
+#X obj 36 187 select 98;
+#X obj 335 100 vradio 15 1 0 8 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 352 100 vradio 15 1 0 8 empty empty empty 0 -6 0 8 -262144 -1
+-1 2;
+#X text 275 455 use b key to trigger the loop;
+#X connect 0 0 5 0;
+#X connect 1 0 7 1;
+#X connect 3 0 8 0;
+#X connect 3 0 8 1;
+#X connect 4 0 9 0;
+#X connect 5 0 1 0;
+#X connect 7 0 6 0;
+#X connect 7 0 3 0;
+#X connect 9 0 3 0;
+#X connect 9 0 7 0;
+#X connect 10 0 7 2;
+#X connect 11 0 7 3;

@@ -1,0 +1,34 @@
+#N canvas 414 443 369 306 10;
+#N canvas 0 0 450 300 graph1 0;
+#X array test 20 float 1;
+#A 0 0.533333 0.599999 0.599999 0.566666 0.533333 0.533333 0.466666
+0.466666 0.433333 0.4 0.3 0.133333 -0.0666666 -0.2 -0.333333 -0.4 -0.466666
+-0.533333 -0.566666 -0.599999;
+#X coords 0 1 19 -1 100 60 1;
+#X restore 193 73 graph;
+#X obj 36 233 tabread test;
+#X obj 36 121 f 0;
+#X obj 36 146 + 1;
+#X floatatom 36 260 5 0 0 0 - - -;
+#X obj 94 186 sel 19;
+#X obj 36 169 - 1;
+#X obj 94 208 s reset;
+#X obj 52 75 r reset;
+#X msg 52 98 0;
+#X obj 36 49 metro 1000;
+#X obj 36 28 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X text 81 28 <- start;
+#X text 79 126 count;
+#X text 156 185 arraysize = 20;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 2 1;
+#X connect 3 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 1 0;
+#X connect 6 0 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 2 1;
+#X connect 10 0 2 0;
+#X connect 11 0 10 0;

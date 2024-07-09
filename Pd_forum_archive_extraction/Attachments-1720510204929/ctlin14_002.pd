@@ -1,0 +1,28 @@
+#N canvas 603 366 579 334 10;
+#X obj 40 62 f \$1;
+#X msg 37 35 bang;
+#X obj 16 5 ctlin \$1 \$2;
+#X obj 40 85 + 32;
+#X obj 20 133 ctlin \$1 \$2;
+#X obj 19 157 * 128;
+#X obj 68 230 +;
+#X obj 131 174 ctlin \$3 \$2;
+#X msg 73 197 bang;
+#X obj 68 254 outlet;
+#X text 86 36 when the specified MIDI slider is moved it bangs and
+loads the value of the MIDI parameter + 32 in \$3;
+#X text 115 225 add them and you get 14bits MIDI;
+#X text 114 131 here you have the MSB (the first 7 bits of the MIDI
+message);
+#X text 134 193 and here the LSB (the last 7 bits);
+#X obj 39 106 f \$3;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 14 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 9 0;
+#X connect 7 0 6 1;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;

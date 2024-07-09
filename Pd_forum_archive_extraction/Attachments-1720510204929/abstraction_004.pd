@@ -1,0 +1,8 @@
+#N canvas 200 188 378 186 12;
+#X obj 16 17 loadbang;
+#X obj 16 69 \$1;
+#X obj 16 138 outlet;
+#X obj 86 138 print from-inside-abstraction;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;

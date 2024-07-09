@@ -1,0 +1,5 @@
+#N canvas 0 0 450 300 10;
+#X obj 169 169 the-abs;
+#X msg 170 105 loadbang;
+#X obj 170 132 s pd-the-abs.pd;
+#X connect 1 0 2 0;

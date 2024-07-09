@@ -1,0 +1,16 @@
+#N canvas 123 334 512 437 10;
+#X msg 52 64 print;
+#X msg 53 86 scores;
+#X obj 17 131 rob2;
+#X msg 17 43 insert s d d d 2 2 2 2 w score = 1;
+#X msg 54 106 reset;
+#X obj 17 161 prepend set;
+#X msg 17 183;
+#X obj 17 11 loadbang;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 7 0 3 0;

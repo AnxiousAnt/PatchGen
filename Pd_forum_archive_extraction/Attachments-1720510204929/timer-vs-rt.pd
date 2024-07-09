@@ -1,0 +1,31 @@
+#N canvas 313 299 655 441 12;
+#X obj 29 176 realtime;
+#X obj 243 176 timer;
+#X obj 29 30 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 286 30 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 29 234 0 0 0 0 - - -;
+#X floatatom 243 234 0 0 0 0 - - -;
+#X obj 131 176 realtime;
+#X obj 338 176 timer;
+#X floatatom 131 234 0 0 0 0 - - -;
+#X floatatom 338 234 0 0 0 0 - - -;
+#X obj 455 176 until;
+#X obj 286 71 t b b b;
+#X msg 455 139 1e+08;
+#X connect 0 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 0 6 0;
+#X connect 2 0 7 0;
+#X connect 3 0 11 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 11 0 7 1;
+#X connect 11 0 6 1;
+#X connect 11 1 12 0;
+#X connect 11 2 0 1;
+#X connect 11 2 1 1;
+#X connect 12 0 10 0;

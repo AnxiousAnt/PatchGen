@@ -1,0 +1,41 @@
+#N canvas 581 151 523 443 10;
+#X obj 18 181 gemwin;
+#X obj 231 4 gemhead;
+#X obj 18 55 tgl 15 1 empty empty empty 0 -6 0 10 -262144 -1 -1 1 1
+;
+#X msg 18 79 lighting \$1;
+#X obj 231 276 world_light;
+#X obj 231 172 gemhead;
+#X obj 231 233 rotateXYZ;
+#X obj 231 37 rotateXYZ 45 45 45;
+#X obj 304 -8 hsl 100 10 0 360 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2400 1;
+#X obj 268 206 hsl 100 10 0 360 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2000 1;
+#X msg 103 79 create \, 1;
+#X obj 18 -22 loadbang;
+#X obj 18 4 t b b;
+#X msg 268 62 draw line;
+#X msg 268 81 draw fill;
+#X msg 268 100 draw point;
+#X msg 18 29 1;
+#X obj 231 135 cube;
+#X connect 1 0 7 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 17 0;
+#X connect 8 0 7 1;
+#X connect 8 0 7 2;
+#X connect 9 0 6 1;
+#X connect 9 0 6 2;
+#X connect 9 0 6 3;
+#X connect 10 0 0 0;
+#X connect 11 0 12 0;
+#X connect 12 0 16 0;
+#X connect 12 1 10 0;
+#X connect 13 0 17 0;
+#X connect 14 0 17 0;
+#X connect 15 0 17 0;
+#X connect 16 0 2 0;

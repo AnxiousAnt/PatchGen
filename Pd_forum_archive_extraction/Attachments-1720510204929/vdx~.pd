@@ -1,0 +1,88 @@
+#N canvas 231 20 730 622 10;
+#X obj 298 567 +~;
+#X obj 261 541 *~;
+#X obj 341 545 *~;
+#X obj 143 152 select 0 1;
+#X msg 172 184 0;
+#X msg 141 184 1;
+#X obj 104 88 t f b;
+#X obj 64 263 spigot;
+#X obj 128 257 spigot;
+#X obj 187 216 == 0;
+#X obj 454 286 pack f f;
+#X msg 106 289 1;
+#X msg 171 280 0;
+#X obj 144 127 f 0;
+#X obj 580 183 loadbang;
+#X obj 579 210 f \$3;
+#X obj 538 74 inlet;
+#X obj 101 64 inlet;
+#X obj 297 591 outlet~;
+#X obj 253 436 delread~ \$1 \$2;
+#X text 17 9 delreadx~ - crossfading delread~;
+#X text 120 364 the two delays we crossfade between \, the second one
+is faded in at start time \, so we pass it the starting delay argument
+;
+#X text 179 109 this mess just causes the incoming float to alternate
+between coming out of the first and second spigots.;
+#X text 516 282 sending a 1 into the line will fade the first delay
+line up (and the second one down). sending a 0 will fade the first
+delay line down (and the second one up). so \, when we receive the
+float on the first spigot \, we change the first delay line \, and
+then fade it up. the idea being \, we fade up the chosen delay line
+after setting it's index \, so you don't heard the click.;
+#X text 22 31 usage: delreadx~ <delay buffer name> <initial delay time>
+<crossfade period>;
+#X obj 461 494 *~;
+#X obj 357 405 sig~ 1;
+#X obj 376 467 -~;
+#X obj 384 494 *~;
+#X obj 360 517 -~;
+#X obj 440 524 -~;
+#X obj 427 319 line~;
+#X text 22 585 http://pix.test.at/;
+#X text 144 61 delay time;
+#X text 539 55 crossfade period;
+#X text 492 481 this section does something like a crossfade.;
+#X obj 165 437 vd~ \$1;
+#X connect 0 0 18 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 5 0;
+#X connect 3 1 4 0;
+#X connect 4 0 9 0;
+#X connect 4 0 7 1;
+#X connect 4 0 13 1;
+#X connect 5 0 7 1;
+#X connect 5 0 9 0;
+#X connect 5 0 13 1;
+#X connect 6 0 8 0;
+#X connect 6 0 7 0;
+#X connect 6 1 13 0;
+#X connect 7 0 11 0;
+#X connect 7 0 36 0;
+#X connect 8 0 12 0;
+#X connect 8 0 19 0;
+#X connect 9 0 8 1;
+#X connect 10 0 31 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
+#X connect 13 0 3 0;
+#X connect 14 0 15 0;
+#X connect 15 0 10 1;
+#X connect 16 0 10 1;
+#X connect 17 0 6 0;
+#X connect 19 0 2 0;
+#X connect 25 0 30 1;
+#X connect 26 0 27 0;
+#X connect 26 0 29 0;
+#X connect 26 0 30 0;
+#X connect 27 0 28 0;
+#X connect 27 0 28 1;
+#X connect 28 0 29 1;
+#X connect 29 0 1 1;
+#X connect 30 0 2 1;
+#X connect 31 0 25 0;
+#X connect 31 0 25 1;
+#X connect 31 0 27 1;
+#X connect 36 0 1 0;

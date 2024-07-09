@@ -1,0 +1,14 @@
+#N canvas 765 230 486 457 10;
+#X obj 40 39 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 40 64 sel 0 1;
+#X obj 41 244 s pix_film_transloc.pd;
+#X msg 50 213 menuclose;
+#X msg 62 101 \; pd open pix_film_transloc.pd /Users/max/Documents/
+;
+#X msg 39 148 \; pix_film_transloc.pd /Users/max/Documents/ menuclose
+\;;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
+#X connect 3 0 2 0;

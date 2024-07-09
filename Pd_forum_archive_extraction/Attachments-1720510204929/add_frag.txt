@@ -1,0 +1,26 @@
+!!ARBfp1.0
+
+#basic multi-texture shader
+#adds two textures together
+
+#Declarations
+TEMP tmp, tmp1;
+TEMP curr;
+
+
+#grab the texture coords
+ATTRIB tex = fragment.texcoord[0];
+ATTRIB tex1 = fragment.texcoord[0];
+
+#set output
+OUTPUT out = result.color;
+
+#pick which texture unit to get the pixels from
+#texture[x] selects the texunit
+TEX tmp, tex, texture[0], RECT;
+TEX tmp1, tex1, texture[1], RECT;
+
+#simple addition of the pixels
+ADD out, tmp, tmp1;
+
+END

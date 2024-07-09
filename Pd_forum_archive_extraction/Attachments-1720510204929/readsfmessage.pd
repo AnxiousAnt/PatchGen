@@ -1,0 +1,25 @@
+#N canvas 304 42 312 294 12;
+#X obj 37 211 readsf~ 2;
+#X obj 37 17 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 37 37 openpanel;
+#X msg 83 123 set open;
+#X msg 60 95 add2 \$1 \, addcomma \, add2 1;
+#X obj 37 62 t b s b;
+#X obj 36 245 dac~;
+#X floatatom 107 16 5 0 0 0 - - -;
+#X obj 107 37 makefilename test%d.wav;
+#X msg 37 159 open test12.wav \, 1;
+#X connect 0 0 6 0;
+#X connect 0 1 6 1;
+#X connect 0 2 9 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 9 0;
+#X connect 4 0 9 0;
+#X connect 5 0 9 0;
+#X connect 5 1 4 0;
+#X connect 5 2 3 0;
+#X connect 7 0 8 0;
+#X connect 8 0 5 0;
+#X connect 9 0 0 0;

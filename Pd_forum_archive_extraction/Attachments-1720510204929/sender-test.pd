@@ -1,0 +1,18 @@
+#N canvas 127 139 752 363 10;
+#X obj 40 92 s from;
+#X obj 39 156 r to;
+#X floatatom 39 190 5 0 0 0 - - -;
+#X floatatom 40 66 5 0 0 0 - - -;
+#X floatatom 432 190 5 0 0 0 - - -;
+#X floatatom 432 66 5 0 0 0 - - -;
+#X obj 432 92 s from_somewhere_else;
+#X obj 432 156 r to_somewhere_else;
+#X obj 180 153 sender from to;
+#X msg 273 126 to_somewhere_else;
+#X msg 180 87 from_somewhere_else;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X connect 5 0 6 0;
+#X connect 7 0 4 0;
+#X connect 9 0 8 1;
+#X connect 10 0 8 0;

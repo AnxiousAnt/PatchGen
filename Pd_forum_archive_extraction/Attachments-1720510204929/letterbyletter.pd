@@ -1,0 +1,21 @@
+#N canvas 0 22 525 299 10;
+#X obj 255 81 msgfile;
+#X obj 255 109 list2symbol;
+#X obj 255 180 symbol2list;
+#X obj 180 235 print;
+#X obj 180 206 list-dripslow;
+#X obj 180 177 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 318 159 symbol;
+#X msg 255 50 read letterbyletter.txt \, bang;
+#X obj 318 135 loadbang;
+#X text 190 51 first ->;
+#X text 47 175 after \, repeatedly ->;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 1;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 1;
+#X connect 7 0 0 0;
+#X connect 8 0 6 0;

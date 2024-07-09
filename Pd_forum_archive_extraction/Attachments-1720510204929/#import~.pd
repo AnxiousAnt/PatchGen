@@ -1,0 +1,17 @@
+#N canvas 12 35 295 168 10;
+#X obj 153 122 outlet grid;
+#X obj 17 22 inlet~ signal;
+#X obj 17 42 tabsend~ \$0-block;
+#X obj 153 22 inlet;
+#X obj 153 42 t b;
+#X obj 153 82 tabread \$0-block;
+#X obj 17 62 table \$0-block \$1;
+#X obj 153 62 for 0 \$1 1;
+#X obj 153 102 #import ( \$1 );
+#X obj 17 122 block~ \$1 \$2 \$3;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 7 0 5 0;
+#X connect 8 0 0 0;

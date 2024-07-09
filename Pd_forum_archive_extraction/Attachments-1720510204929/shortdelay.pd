@@ -1,0 +1,27 @@
+#N canvas 84 22 571 313 10;
+#X obj 96 196 delwrite~ L 100;
+#X obj 96 221 delread~ L 0.2;
+#X msg 51 36 bang;
+#N canvas 0 22 450 300 graph1 0;
+#X array b 16 float 2;
+#X coords 0 1.1 16 -0.1 100 100 1;
+#X restore 396 51 graph;
+#X obj 45 252 tabwrite~ b;
+#X obj 88 119 / 44100;
+#X obj 94 176 vline~;
+#X msg 88 99 1000;
+#X msg 89 141 1 \, 0 0 \$1;
+#X obj 171 21 loadbang;
+#X msg 172 42 \; b resize 16 \; b bounds 0 1.1 16 -0.1 \; b yticks
+0 0.25 5 \; b ylabel -3 0 0.5 1 \; b xticks 0 1 16;
+#X text 214 196 <- create delwrite~ before delread~;
+#X connect 1 0 4 0;
+#X connect 2 0 7 0;
+#X connect 2 0 4 0;
+#X connect 5 0 8 0;
+#X connect 6 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 9 0 2 0;

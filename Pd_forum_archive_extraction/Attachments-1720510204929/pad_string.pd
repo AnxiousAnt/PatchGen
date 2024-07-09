@@ -1,0 +1,88 @@
+#N canvas 688 480 470 300 10;
+#X msg 206 101 _;
+#X msg 236 101 .;
+#X msg 23 99 foo;
+#X msg 55 99 bonk;
+#X msg 266 101 x;
+#X floatatom 350 104 5 0 0 0 - - -;
+#N canvas 344 148 570 314 pad_string 0;
+#X obj 48 16 inlet;
+#X obj 48 76 any2string 0 -1;
+#X obj 48 131 list split 10;
+#X obj 48 221 outlet;
+#X obj 48 155 string2any 0 -1;
+#X obj 210 12 inlet;
+#X obj 48 105 list append 95;
+#X text 59 37 string;
+#X text 219 33 default;
+#X obj 210 75 t l l;
+#X obj 240 101 list length;
+#X text 123 191 Since we have a default string-list of the desired
+length in the right inlet \, all we have to do is append it to the
+stringified message on the left inlet and discard anything beyond the
+padding limit. On the way out \, we convert the string-list back to
+pd-messagehood with string2any.;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 5 0 9 0;
+#X connect 6 0 2 0;
+#X connect 9 0 6 1;
+#X connect 9 1 10 0;
+#X connect 10 0 2 1;
+#X restore 100 182 pd pad_string;
+#N canvas 76 80 482 372 default_string 0;
+#X obj 40 18 inlet;
+#X obj 222 18 inlet;
+#X obj 222 264 outlet;
+#X msg 222 239 95 95 95 95 95 95 95 95 95 95;
+#X obj 222 149 until;
+#X msg 329 217 set;
+#X obj 222 126 t f b;
+#X obj 40 82 t b f;
+#X msg 222 217 add2 \$1 \, bang;
+#X obj 222 106 f 10;
+#X obj 222 194 f 95;
+#X obj 40 60 any2string 0 -1;
+#X text 83 19 pad_char;
+#X text 265 19 default_length;
+#X text 31 295 Here \, we use "add2" and "set" messages to a msgbox
+to build a default string of the desired length. This could be done
+more efficiently \, but it ought to suffice to illustrate the principle.
+;
+#X connect 0 0 11 0;
+#X connect 1 0 9 0;
+#X connect 3 0 2 0;
+#X connect 4 0 10 0;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X connect 6 1 5 0;
+#X connect 7 0 9 0;
+#X connect 7 1 10 1;
+#X connect 8 0 3 0;
+#X connect 9 0 6 0;
+#X connect 10 0 8 0;
+#X connect 11 0 7 0;
+#X restore 236 138 pd default_string;
+#X text 215 83 padding char;
+#X text 355 87 pad to length;
+#X msg 93 99 grok it;
+#X obj 206 18 loadbang;
+#X obj 100 207 print padded;
+#X msg 297 101 ?;
+#X text 25 81 raw message to pad;
+#X msg 350 55 10;
+#X connect 0 0 7 0;
+#X connect 1 0 7 0;
+#X connect 2 0 6 0;
+#X connect 3 0 6 0;
+#X connect 4 0 7 0;
+#X connect 5 0 7 1;
+#X connect 6 0 12 0;
+#X connect 7 0 6 1;
+#X connect 10 0 6 0;
+#X connect 11 0 0 0;
+#X connect 11 0 15 0;
+#X connect 13 0 7 0;
+#X connect 15 0 5 0;

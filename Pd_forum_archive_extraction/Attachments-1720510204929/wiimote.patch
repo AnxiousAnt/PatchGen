@@ -1,0 +1,11 @@
+--- wiimote.c	2010-05-14 10:54:42.183747001 +0200
++++ wiimote_new.c	2010-05-14 13:35:33.104747001 +0200
+@@ -523,7 +523,7 @@
+ #endif
+ #ifdef CWIID_RPT_CLASSIC
+       case CWIID_EXT_CLASSIC:
+-         post("Classic controller attached. There is no real support for this yet.");
++         post("Classic controller attached.");
+          break;
+ #endif
+ #ifdef CWIID_RPT_BALANCE

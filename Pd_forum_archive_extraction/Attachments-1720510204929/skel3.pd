@@ -1,0 +1,14 @@
+#N canvas 129 303 475 340 10;
+#X obj 83 291 table dfgdfg;
+#X obj 152 30 r ojehdfgdfg;
+#X msg 274 155 \; pd-skel3.pd menuclose \;;
+#X obj 152 51 sel 0;
+#X msg 111 97 bang;
+#X msg 113 74 bang;
+#X obj 152 73 del 2000;
+#X obj 234 74 print;
+#X connect 1 0 3 0;
+#X connect 3 0 6 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;

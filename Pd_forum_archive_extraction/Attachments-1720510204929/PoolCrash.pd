@@ -1,0 +1,9 @@
+#N canvas 632 534 454 304 10;
+#X obj 80 156 pool MYPOOL;
+#X obj 80 92 openpanel;
+#X msg 80 121 lddir \$1;
+#X obj 80 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;

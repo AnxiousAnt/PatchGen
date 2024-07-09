@@ -1,0 +1,174 @@
+Return-Path: <pd-list-bounces@iem.at>
+Received: from idraid03.emt.iis.fhg.de ([unix socket])
+	by idraid03.emt.iis.fhg.de (Cyrus v2.1.16) with LMTP;
+	Fri, 31 Mar 2006 15:24:44 +0200
+X-Sieve: CMU Sieve 2.2
+Received: from ksi.idmt.fraunhofer.de (emt.emt.iis.fhg.de [10.128.1.2])
+	by idraid03.emt.iis.fhg.de (8.12.11/8.12.11) with ESMTP id
+	k2VDOiwq897829
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=FAIL);
+	Fri, 31 Mar 2006 15:24:44 +0200 (CEST)
+Received: from ksi.idmt.fraunhofer.de (localhost [127.0.0.1])
+	by ksi.idmt.fraunhofer.de (8.13.3+/8.13.3) with ESMTP id k2VDOh3p024825;
+	Fri, 31 Mar 2006 15:24:43 +0200 (CEST)
+Received: from kso.idmt.fraunhofer.de (kso.idmt.fraunhofer.de [192.102.160.2])
+	by ksi.idmt.fraunhofer.de (8.13.3+/8.13.3) with ESMTP id
+	k2VDOhsB024822
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=OK);
+	Fri, 31 Mar 2006 15:24:43 +0200 (CEST)
+Received: from mailgw1.fraunhofer.de (mailgw1.fraunhofer.de [153.96.1.62])
+	by kso.idmt.fraunhofer.de (8.13.3+/8.13.3) with ESMTP id k2VDOhIZ005388
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=OK);
+	Fri, 31 Mar 2006 15:24:43 +0200 (CEST)
+Received: from mailgw1.fraunhofer.de (localhost [127.0.0.1])
+	by mailgw1.fraunhofer.de (8.13.4+/8.13.4) with ESMTP id k2VDOfhZ008373; 
+	Fri, 31 Mar 2006 15:24:41 +0200 (CEST)
+Received: from puredata.info (inf182.kug.ac.at [193.170.191.182])
+	by mailgw1.fraunhofer.de (8.13.4+/8.13.4) with ESMTP id k2VDOdrI008342
+	(version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=NO);
+	Fri, 31 Mar 2006 15:24:40 +0200 (CEST)
+X-Authentication-Warning: mailgw1.fraunhofer.de: Host inf182.kug.ac.at
+	[193.170.191.182] claimed to be puredata.info
+Received: from localhost ([127.0.0.1] helo=puredata.info)
+	by puredata.info with esmtp (Exim 4.50)
+	id 1FPJWL-0003lR-4s; Fri, 31 Mar 2006 15:18:36 +0200
+Received: from iem.kug.ac.at ([193.170.191.180] helo=mail.iem.at)
+	by puredata.info with esmtp (Exim 4.50) id 1FPJW4-0003lH-SD
+	for pd-list@puredata.info; Fri, 31 Mar 2006 15:18:21 +0200
+Received: from mailgw10.fraunhofer.de ([153.96.1.65])
+	by mail.iem.at with esmtps (TLS-1.0:DHE_RSA_AES_256_CBC_SHA1:32)
+	(Exim 4.60) (envelope-from <schmidje@idmt.fraunhofer.de>)
+	id 1FPJWn-0002he-0y
+	for pd-list@iem.at; Fri, 31 Mar 2006 15:19:07 +0200
+Received: from mailgw10.fraunhofer.de (localhost [127.0.0.1])
+	by mailgw10.fraunhofer.de (8.13.4+/8.13.4) with ESMTP id k2VDJIG5023638;
+	Fri, 31 Mar 2006 15:19:18 +0200 (CEST)
+Received: from kso.idmt.fraunhofer.de (mail-gw.idmt.fraunhofer.de
+	[192.102.160.2])
+	by mailgw10.fraunhofer.de (8.13.4+/8.13.4) with ESMTP id k2VDJHMC023630
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=OK);
+	Fri, 31 Mar 2006 15:19:18 +0200 (CEST)
+X-Authentication-Warning: mailgw10.fraunhofer.de: Host
+	mail-gw.idmt.fraunhofer.de [192.102.160.2] claimed to be
+	kso.idmt.fraunhofer.de
+Received: from ksi.idmt.fraunhofer.de (ksi.idmt.fraunhofer.de [10.128.1.2])
+	by kso.idmt.fraunhofer.de (8.13.3+/8.13.3) with ESMTP id k2VDJHmR005253
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=OK);
+	Fri, 31 Mar 2006 15:19:17 +0200 (CEST)
+Received: from ksi.idmt.fraunhofer.de (localhost [127.0.0.1])
+	by ksi.idmt.fraunhofer.de (8.13.3+/8.13.3) with ESMTP id k2VDJHe3024629;
+	Fri, 31 Mar 2006 15:19:17 +0200 (CEST)
+Received: from idserv01.emt.iis.fhg.de (idserv01.idmt.fraunhofer.de
+	[10.128.2.1])
+	by ksi.idmt.fraunhofer.de (8.13.3+/8.13.3) with ESMTP id k2VDJHN5024626;
+	Fri, 31 Mar 2006 15:19:17 +0200 (CEST)
+X-Authentication-Warning: ksi.idmt.fraunhofer.de: Host
+	idserv01.idmt.fraunhofer.de [10.128.2.1] claimed to be
+	idserv01.emt.iis.fhg.de
+Received: from [10.128.16.62] by idserv01.emt.iis.fhg.de
+	(8.8.8/1.1.22.3/11Jul00-1113PM)
+	id PAA0000032761; Fri, 31 Mar 2006 15:19:17 +0200 (MET DST)
+Message-ID: <442D2C54.4050301@idmt.fraunhofer.de>
+Date: Fri, 31 Mar 2006 15:19:16 +0200
+From: "J. Schmidt" <schmidje@idmt.fraunhofer.de>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.12) Gecko/20051025
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: IOhannes m zmoelnig <zmoelnig@iem.at>
+Subject: Re: [PD] PD crashes when creating gemwin-object on linux
+References: <E1FPGRE-0000cA-1e@puredata.info>	<20060331102211.GB22519@mccormick.cx>	<442D08C2.8070308@idmt.fraunhofer.de>
+	<442D0D8B.3080707@gmx.at> <442D218C.5050801@idmt.fraunhofer.de>
+	<442D2A0B.8090603@iem.at>
+In-Reply-To: <442D2A0B.8090603@iem.at>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+X-Fraunhofer-Email-Policy: accepted
+X-Fraunhofer-Email-Policy: accepted
+Content-Transfer-Encoding: quoted-printable
+X-MIME-Autoconverted: from 8bit to quoted-printable by mailgw10.fraunhofer.de
+	id k2VDJIG5023638
+X-Spam-Score: -2.5
+X-Spam-Level: 
+X-Spam-Level: --
+X-Spam-Tests: AWL,BAYES_00
+X-Spam-Score: 0.1
+X-Spam-Level: /
+Cc: pd-list@iem.at
+X-BeenThere: pd-list@iem.at
+X-Mailman-Version: 2.1.5
+Precedence: list
+List-Id: the PureData - mailinglist <pd-list.iem.at>
+List-Unsubscribe: <http://lists.puredata.info/listinfo/pd-list>,
+	<mailto:pd-list-request@iem.at?subject=unsubscribe>
+List-Archive: <http://lists.puredata.info/pipermail/pd-list>
+List-Post: <mailto:pd-list@iem.at>
+List-Help: <mailto:pd-list-request@iem.at?subject=help>
+List-Subscribe: <http://lists.puredata.info/listinfo/pd-list>,
+	<mailto:pd-list-request@iem.at?subject=subscribe>
+Sender: pd-list-bounces@iem.at
+Errors-To: pd-list-bounces@iem.at
+X-Spam-Score: 0.1
+X-Spam-Level: /
+X-Spam-Checker-Version: SpamAssassin 3.0.3 (2005-04-27) on 
+	spamd1.fraunhofer.de
+X-Spam-Status: No, score=0.0 required=5.0 tests=BAYES_50,MIME_QP_LONG_LINE 
+	autolearn=disabled version=3.0.3
+X-Spamd-Host: spamd1.fraunhofer.de
+
+IOhannes m zmoelnig wrote:
+
+>J. Schmidt wrote:
+> =20
+>
+>>mmmmh...
+>>
+>>...so the system is a Linux 2.6.11-10mdk kernel with a NV11 GeForce2 MX
+>>graphics card, X-Window version 6.8.2.
+>>The console only says:
+>>
+>>pd-gui: pd process exited
+>>Segmentation fault
+>>
+>>The "glxgears"-example works fine!
+>>
+>>   =20
+>>
+>
+>oh, i have misunderstood your email: pd/Gem is not crashing when you
+>create a gem-window but when you create the object [gemwin].
+>
+>can you do a backtrace with gdb?
+>#> gdb pd
+>% run -lib Gem
+>(now create [gemwin] and watch it crash...)
+>% bt
+>
+>
+>did the compilation process made any problems?
+>
+>mfg.asdr.
+>IOhannes
+> =20
+>
+So here 's what I get from dbg:
+
+Starting program: /home/schmidje/pd-0.39-1/bin/pd -lib Gem
+[Thread debugging using libthread_db enabled]
+[New Thread -1208133248 (LWP 13861)]
+Detaching after fork from child process 13864.
+
+Program received signal SIGSEGV, Segmentation fault.
+[Switching to Thread -1208133248 (LWP 13861)]
+0x423cc150 in glClearColor () from /usr/X11R6/lib/libGL.so.1
+(gdb) Quit
+
+Compilation was fine, exept that I don't have gltt installed but used=20
+ftgl with freetype 2 instead.
+
+j=E9rome
+
+
+
+
+_______________________________________________
+PD-list@iem.at mailing list
+UNSUBSCRIBE and account-management -> http://lists.puredata.info/listinfo/pd-list

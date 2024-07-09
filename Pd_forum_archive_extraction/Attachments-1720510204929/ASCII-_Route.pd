@@ -1,0 +1,18 @@
+#N canvas 463 65 447 335 10;
+#X obj 16 229 print;
+#X obj 18 52 list tosymbol;
+#X obj 17 113 list trim;
+#X obj 16 189 route Eins;
+#X msg 213 143 Eins 0;
+#X msg 145 142 Eins 1;
+#X obj 17 90 list prepend set;
+#X msg 19 23 69 105 110 115 32 48;
+#X msg 17 141 Eins 0;
+#X connect 1 0 6 0;
+#X connect 2 0 8 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 2 0;
+#X connect 7 0 1 0;
+#X connect 8 0 3 0;

@@ -1,0 +1,80 @@
+#N canvas 0 0 700 720 10;
+#X obj 483 103 gemwin;
+#X msg 484 59 create \, 1;
+#X msg 483 81 0 \, destroy;
+#X obj 87 526 square 0.1;
+#X obj 87 69 gemhead;
+#X obj 87 494 translateXYZ;
+#X obj 87 233 t b a;
+#X obj 87 101 bang;
+#X obj 164 312 loadbang;
+#X text 133 102 generate one bang every Gem-frame;
+#X text 241 320 switch rendering off at first \, otherwise you will
+get an additional square.;
+#X msg 164 337 0;
+#X obj 87 140 f 1;
+#X msg 87 185 -2 \, -1 \, \$1 \, 2;
+#X obj 139 132 hsl 128 15 -2 2 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 8400 1;
+#X floatatom 136 151 5 0 0 0 - - -;
+#X text 197 226 For every message \, first change the translation \,
+then bang the lower gemhead to make it render one square with the currently
+active translation.;
+#X obj 87 376 gemhead 45;
+#X obj 87 442 separator;
+#X text 193 442 separate the squares from each other.;
+#X text 198 181 use the bang to fire off many messages \, in this case
+there are four messages: "-2" \, "-1" \, "1" (or rather: \$1) and "2"
+;
+#X text 194 373 Important: priority number (45) should be less than
+incoming gemhead (which defaults to 50).;
+#X text 46 23 Rendering many copies of a single Geo.;
+#X obj 29 617 translateXYZ;
+#X obj 29 669 circle 0.1;
+#X obj 29 640 colorRGB 1 0 0;
+#N canvas 328 446 756 359 gem-duplicator 0;
+#X obj 119 41 t b a;
+#X obj 196 120 loadbang;
+#X msg 196 145 0;
+#X obj 119 184 gemhead 45;
+#X obj 119 250 separator;
+#X obj 149 67 outlet;
+#X obj 119 271 outlet;
+#X obj 119 20 inlet;
+#X text 234 36 Pass on every message to the outlet \, then bang the
+lower gemhead to make it render once.;
+#X text 234 182 Important: priority number (45) should be less than
+incoming gemhead (which defaults to 50).;
+#X text 230 252 separate the gemlists from each other.;
+#X text 269 122 switch rendering off at first \, otherwise you will
+get an additional render-command.;
+#X connect 0 0 3 0;
+#X connect 0 1 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 7 0 0 0;
+#X restore 29 572 pd gem-duplicator;
+#X text 162 570 Use this for copy-and-paste or put it into an abstraction.
+;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 4 0 7 0;
+#X connect 5 0 3 0;
+#X connect 6 0 17 0;
+#X connect 6 1 5 1;
+#X connect 7 0 12 0;
+#X connect 8 0 11 0;
+#X connect 11 0 17 0;
+#X connect 12 0 13 0;
+#X connect 13 0 6 0;
+#X connect 13 0 26 0;
+#X connect 14 0 15 0;
+#X connect 15 0 12 1;
+#X connect 17 0 18 0;
+#X connect 18 0 5 0;
+#X connect 23 0 25 0;
+#X connect 25 0 24 0;
+#X connect 26 0 23 0;
+#X connect 26 1 23 2;

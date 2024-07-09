@@ -1,0 +1,11 @@
+#N canvas 416 150 443 220 10;
+#X obj 9 126 convert;
+#X text 5 109 binary: bin00001010 \, BIN00001010 \, Bin1010 or even
+BiN01010;
+#X text 5 95 decimal: dec010 \, DEC010 \, Dec10 \, or deC10;
+#X text 6 41 convert bytes from hexadecimal \, decimal and binary to
+hexadecimal \, decimal and binary. the format of the input is as follows:
+;
+#X text 5 82 hexadecimal: hex0A \, HEX0A \, HexA or heXA;
+#X text 3 3 convert \, number utility;
+#X text 135 155 <-- type convert in an object box to create this;

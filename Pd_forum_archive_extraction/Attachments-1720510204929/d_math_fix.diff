@@ -1,0 +1,20 @@
+--- d_math.c-orig	2009-03-29 16:41:36.000000000 +0200
++++ d_math.c	2009-03-29 16:41:38.000000000 +0200
+@@ -627,7 +627,7 @@
+     t_sample *out = (t_sample *)(w[2]);
+     int n = (int)(w[3]);
+     while (n--)
+-        *out = exp(*in1);
++        *out++ = exp(*in1++);
+     return (w+4);
+ }
+ 
+@@ -720,7 +720,7 @@
+     while (n--)
+     {
+         float f = *in1++;
+-        *out = (f >= 0 ? f : -f);
++        *out++ = (f >= 0 ? f : -f);
+     }
+     return (w+4);
+ }

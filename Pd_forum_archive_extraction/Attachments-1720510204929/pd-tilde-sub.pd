@@ -1,0 +1,23 @@
+#N canvas 612 533 626 474 10;
+#X msg 270 163 subprocess-loadbang;
+#X obj 160 385 stdout;
+#X obj 87 192 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 87 212 metro 500;
+#X obj 87 234 random 100;
+#X msg 87 256 randNums \$1;
+#X obj 67 212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 284 84 \; pd dsp 1 \;;
+#X obj 160 11 loadbang;
+#X obj 160 33 t b b b;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 8 0 9 0;
+#X connect 9 0 2 0;
+#X connect 9 1 0 0;
+#X connect 9 2 7 0;

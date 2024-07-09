@@ -1,0 +1,19 @@
+#N canvas 0 0 502 211 10;
+#X obj 40 28 inlet;
+#X obj 80 27 inlet;
+#X obj 40 134 |;
+#X obj 40 172 outlet;
+#X obj 40 65 & 1;
+#X obj 80 65 << 1;
+#X obj 80 94 t b f;
+#X text 130 25 a version of bpush that can be used for live modification
+of a bitfield. a change to any bit will propogate and produce an answer.
+this will cause lots of problems if hooked up to the output of a bpop
+chain though.;
+#X connect 0 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 6 1 2 1;

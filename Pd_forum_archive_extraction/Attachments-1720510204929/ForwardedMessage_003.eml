@@ -1,0 +1,121 @@
+Received: from asafirewall.kug.ac.at ([193.170.190.246] helo=mail.iem.at)
+	by mail.puredata.info with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
+	(Exim 4.69)
+	(envelope-from <slvanya7674@att.net>)
+	id 1UMiNh-0004tr-Dz
+	for pd-list@puredata.info; Mon, 01 Apr 2013 19:18:56 +0200
+Received: from nm25-vm0.access.bullet.mail.sp2.yahoo.com ([98.139.44.184]:32871)
+	by mail.iem.at with esmtps (TLS1.0:DHE_RSA_AES_256_CBC_SHA1:32)
+	(Exim 4.72)
+	(envelope-from <slvanya7674@att.net>)
+	id 1UMiNZ-00083o-Qv
+	for pd-list@iem.at; Mon, 01 Apr 2013 19:18:51 +0200
+Received: from [98.139.44.107] by nm25.access.bullet.mail.sp2.yahoo.com with NNFMP; 01 Apr 2013 17:16:38 -0000
+Received: from [67.195.22.113] by tm12.access.bullet.mail.sp2.yahoo.com with NNFMP; 01 Apr 2013 17:16:38 -0000
+Received: from [127.0.0.1] by smtp115.sbc.mail.gq1.yahoo.com with NNFMP; 01 Apr 2013 17:16:38 -0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=att.net; s=s1024; t=1364836598; bh=UyNAiIySR+CQjSKDiNFhMswOtG4v1MAA51PQLSc6c7s=; h=X-Yahoo-Newman-Id:X-Yahoo-Newman-Property:X-YMail-OSG:X-Yahoo-SMTP:X-Rocket-Received:Message-ID:Date:From:User-Agent:MIME-Version:To:Subject:Content-Type:Content-Transfer-Encoding; b=gpp23+2a/1ru/zRuBdGSmVTjQqFVsho6EQGhVc8kpPZEO0IQytJ10S5Oto67b7QPLNVgJr3u1bcPDUjBnv4tNIyabgrzl7nDFgRtkrn3sTITj8oZTKyi0xwAjEWRoYVsEMpE44IHqgGJgSSk5S5DQDrXqJH+L2Bq/EeJ4X+POu4=
+X-Yahoo-Newman-Id: 195045.59122.bm@smtp115.sbc.mail.gq1.yahoo.com
+X-Yahoo-Newman-Property: ymail-3
+X-YMail-OSG: OUb2prMVM1la1h9__2R8zBLMGWGDxC04DEJcqmjIasIgy1e
+ BqIcCBJ6LJNzFyByu8DqJC8KRe58ouFRNwlE03iTSOXGBLgmcxPk1WLzo5D7
+ SMHSPfBidob2wNYempaqnGCyknxt49WbsIHlXMdxOmMNiERt3sIBhr7aBXQj
+ wlTi0j1K_3qcchQMD4KlC2mUpe7v_GNZSrQt8SN3hFp1Qotf_bwvX3XRaNIZ
+ vMljj32X7.9zGWlqEeNz0C8eWgYdZIL_U_I1JYLXfqOxi3aXX_.azrsQj3tI
+ yGqtaBLUCllzCCsXFbUfg7aaWAjE4JQgO8sazb2dA6CKvi9xC3phZ8KBMkLA
+ 1PyS.g05Ne0o4mY43Pl1ZdT62W0E67.I9BMIDY4JEnV_P9wtGzg_g2Agcmir
+ 3TDtJ1UwEKu7nyzAd0klXsxWq122FmrYetEi98MkjUx5hhGrqTEgU9jPLUDy
+ BA8DLxWUpEHA27hgx4ab9_SgZw5eVM4eXBFWTnEwXi9tZ_etTo5rYqnACE6L
+ uRPBJ9ogLr9uEehVst5HBZD4M2517swjlJL9SQN42SpPDRZXcsNbXIjoh6D9
+ X6N_d.J_MQrZRzta9ep6wD80uySeuJw8JPLLDqKhULCSPHmnxNllzdZr2GzQ
+ dUyM1j46mRmWEHdfVS_vBELVfUmhvLuDV1Uv5R2g-
+X-Yahoo-SMTP: zzqdpqSswBAUhTgurt1yc_Ul6qy3TKSrSU8eQFYpyCU-
+X-Rocket-Received: from [192.168.1.1] (slvanya7674@99.190.131.35 with plain)
+        by smtp115.sbc.mail.gq1.yahoo.com with SMTP; 01 Apr 2013 10:16:38 -0700 PDT
+Message-ID: <515908F6.5050703@att.net>
+Date: Mon, 01 Apr 2013 12:11:34 +0800
+From: SV <slvanya7674@att.net>
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:17.0) Gecko/20130107 Thunderbird/17.0.2
+MIME-Version: 1.0
+To: Pd-list -- the PureData - mailinglist <pd-list@iem.at>
+Subject: can't edit the symbol field
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Spam-Score: 1.1
+X-Spam-Level: +
+X-Spam-Tests: DATE_IN_PAST_12_24=0.804,FREEMAIL_ENVFROM_END_DIGIT=0.25,FREEMAIL_FROM=0.001,RCVD_IN_DNSWL_NONE=-0.0001,T_DKIM_INVALID=0.01
+X-Spam-Score: 0.8
+X-Spam-Level: /
+
+I have pd-extended (Pd-0.42.5-extended-ubuntu-lucid-i386.deb) installed 
+am running Puppy Linux and opened the pd script from GISS.tv, but for 
+some reason can't enter text in the mountpoint, server etc. fields.
+
+Anybody know what I'm doing wrong? (and even more so what I can do to 
+enter values in thes fields?)
+
+Thanks, in advance for your help.
+
+-Scott
+
+The Pd output on bootup says:
+
+[import] $Revision: 1.2 $
+     [import] is still in development, the interface could change!
+     compiled against Pd version 0.42.5
+libdir loader $Revision: 1.8 $
+     compiled on Sep 22 2010 at 15:51:19
+     compiled against Pd version 0.42.5.extended
+GEM: Graphics Environment for Multimedia
+GEM: ver: 0.92.3
+GEM: compiled: Sep 22 2010
+GEM: maintained by IOhannes m zmoelnig
+GEM: Authors :    Mark Danks (original version)
+GEM:        Chris Clepper
+GEM:        Cyrille Henry
+GEM:        IOhannes m zmoelnig
+GEM: with help by Guenter Geiger, Daniel Heckenberg, James Tittle, 
+Hans-Christop Steiner, et al.
+GEM: found a bug? miss a feature? please report it:
+GEM:     homepage http://gem.iem.at/
+GEM:     bug-tracker http://sourceforge.net/projects/pd-gem/
+GEM:     mailing-list http://lists.puredata.info/listinfo/gem-dev/
+GEM: compiled for SIMD architecture: MMX
+GEM: using MMX optimization
+libdir_loader: added 'cyclone' to the global objectclass path
+libdir_loader: added 'zexy' to the global objectclass path
+libdir_loader: added 'creb' to the global objectclass path
+libdir_loader: added 'cxc' to the global objectclass path
+libdir_loader: added 'iemlib' to the global objectclass path
+libdir_loader: added 'list-abs' to the global objectclass path
+libdir_loader: added 'mapping' to the global objectclass path
+libdir_loader: added 'markex' to the global objectclass path
+libdir_loader: added 'maxlib' to the global objectclass path
+libdir_loader: added 'memento' to the global objectclass path
+libdir_loader: added 'mjlib' to the global objectclass path
+libdir_loader: added 'motex' to the global objectclass path
+libdir_loader: added 'oscx' to the global objectclass path
+libdir_loader: added 'pddp' to the global objectclass path
+libdir_loader: added 'pdogg' to the global objectclass path
+libdir_loader: added 'pixeltango' to the global objectclass path
+libdir_loader: added 'pmpd' to the global objectclass path
+libdir_loader: added 'rradical' to the global objectclass path
+libdir_loader: added 'sigpack' to the global objectclass path
+libdir_loader: added 'smlib' to the global objectclass path
+libdir_loader: added 'toxy' to the global objectclass path
+libdir_loader: added 'unauthorized' to the global objectclass path
+vbap - v1.0.3 - 12 Aug 2006 - (c) Ville Pulkki 1999-2006 (Pd port by HCS)
+libdir_loader: added 'pan' to the global objectclass path
+libdir_loader: added 'hcs' to the global objectclass path
+libdir_loader: added 'jmmmp' to the global objectclass path
+libdir_loader: added 'ext13' to the global objectclass path
+libdir_loader: added 'ggee' to the global objectclass path
+libdir_loader: added 'flib' to the global objectclass path
+libdir_loader: added 'ekext' to the global objectclass path
+libdir_loader: added 'flatspace' to the global objectclass path
+PDP: pure data packet version 0.12.6
+PiDiP : additional video processing objects for PDP
+     version 0.12.26
+     by Yves Degoyon and Lluis Gomez i Bigorda
+
+
+

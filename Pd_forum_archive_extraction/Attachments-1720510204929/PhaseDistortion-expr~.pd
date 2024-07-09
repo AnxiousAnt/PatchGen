@@ -1,0 +1,67 @@
+#N canvas 206 73 727 617 10;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array phase 441 float 0;
+#X coords 0 1 440 0 150 150 1;
+#X restore 57 425 graph;
+#X obj 83 362 dac~;
+#X obj 127 272 hsl 50 15 0 1 0 1 empty empty empty -2 -8 0 10 -260097
+-1 -1 1800 1;
+#X obj 123 312 line~;
+#X obj 124 291 pack f 50;
+#X obj 88 336 *~;
+#X msg 473 326 \; pd dsp \$1;
+#X obj 473 291 tgl 30 0 empty empty empty 17 7 0 10 -260097 -1 -1 0
+1;
+#X obj 86 45 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-260097 -1 -1 100 256;
+#X obj 86 105 expr~ if($v1<.5 \, $v1*$v2*2 \, $v2+($v1-.5)*(1-$v2)*2)
+;
+#X obj 88 231 cos~;
+#X obj 367 -6 hsl 128 15 0.25 0.75 0 1 empty empty empty -2 -8 0 10
+-260097 -1 -1 1900 1;
+#X obj 388 70 line~;
+#X msg 387 45 \$1 50;
+#X obj 183 226 tabwrite~ phdist;
+#X msg 149 46 0;
+#X obj 87 206 -~ 0.25;
+#X obj 86 71 phasor~ 100;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array phdist 441 float 0;
+#X coords 0 1 440 -1 200 150 1;
+#X restore 268 422 graph;
+#X obj 186 174 tabwrite~ phase;
+#X obj 138 -22 r graph;
+#X obj 186 146 r graph;
+#X obj 185 200 r graph;
+#X obj 265 368 bng 30 250 50 0 graph --- graph -4 -10 0 14 -260097
+-1 -1;
+#X obj 389 14 hsl 128 15 0.25 10 0 0 empty empty empty -2 -8 0 10 -260097
+-1 -1 0 1;
+#X text 526 13 scaled 0.25 - 10;
+#X text 505 -7 scaled 0.25 - 0.75;
+#X msg 86 3 100;
+#X obj 138 0 t b b;
+#X connect 2 0 4 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 0;
+#X connect 5 0 1 0;
+#X connect 5 0 1 1;
+#X connect 7 0 6 0;
+#X connect 8 0 17 0;
+#X connect 9 0 16 0;
+#X connect 9 0 19 0;
+#X connect 10 0 5 0;
+#X connect 10 0 14 0;
+#X connect 11 0 13 0;
+#X connect 12 0 9 1;
+#X connect 13 0 12 0;
+#X connect 15 0 17 1;
+#X connect 16 0 10 0;
+#X connect 17 0 9 0;
+#X connect 20 0 28 0;
+#X connect 21 0 19 0;
+#X connect 22 0 14 0;
+#X connect 24 0 13 0;
+#X connect 27 0 8 0;
+#X connect 28 0 27 0;
+#X connect 28 1 15 0;

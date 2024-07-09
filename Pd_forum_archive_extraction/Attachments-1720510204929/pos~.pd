@@ -1,0 +1,27 @@
+#N canvas 8 40 545 422 10;
+#X text 138 9 simplified point source positioning;
+#X text 165 24 - just models delay between ears;
+#X text 80 383 0.2 m between ears / 344 m/s speed of sound -> 0.6 ms
+delay for now;
+#X obj 61 95 inlet~;
+#X obj 193 96 inlet~;
+#X obj 67 237 vdelay~;
+#X obj 172 233 vdelay~;
+#X obj 79 325 outlet~;
+#X obj 155 326 outlet~;
+#X text 194 78 difference;
+#X obj 245 169 *~ -0.6;
+#X text 165 40 - direct left is -1 \, direct right is 1;
+#X obj 147 168 *~ 0.6;
+#X obj 245 144 clip~ -99 0;
+#X obj 147 143 clip~ 0 99;
+#X connect 3 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 13 0;
+#X connect 4 0 14 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X connect 10 0 6 1;
+#X connect 12 0 5 1;
+#X connect 13 0 10 0;
+#X connect 14 0 12 0;

@@ -1,0 +1,71 @@
+commit 0217e7331d546f7223defb483fa4745114e4f7f5
+Author: Hans-Christoph Steiner <hans@eds.org>
+Date:   Tue Aug 31 16:57:27 2010 -0400
+
+    Tcl-only kludge which allows window manager to position new patches
+
+diff --git a/tcl/pdtk_canvas.tcl b/tcl/pdtk_canvas.tcl
+index 682bb13..790aca7 100644
+--- a/tcl/pdtk_canvas.tcl
++++ b/tcl/pdtk_canvas.tcl
+@@ -33,32 +33,40 @@ namespace eval ::pdtk_canvas:: {
+ # canvas new/saveas
+ 
+ proc pdtk_canvas_new {mytoplevel width height geometry editable} {
+-    set screenwidth [winfo screenwidth .]
+-    set screenheight [winfo screenheight .]
+-
+-    # read back the current geometry +posx+posy into variables
+-    scan $geometry {%[+]%d%[+]%d} - x - y
+-    # fit the geometry onto screen
+-    set x [ expr $x % $screenwidth - $::windowframex]
+-    set y [ expr $y % $screenheight - $::windowframey]
+-    if {$width > $screenwidth} {
+-        set width $screenwidth
+-        set x 0
+-    }
+-    if {$height > $screenheight} {
+-        set height [expr $screenheight - $::menubarsize - 30] ;# 30 for window framing
+-        set y $::menubarsize
++# kludge to allow windows for new patches to be placed by the window
++# manager. Right now the geometry of a new patch window is set in canvas_new()
++# in g_canvas.c whether its a new patch or just loading an existing patch.
++    if { $width == 450 && $height == 300 && $editable == 1 && \
++             ($geometry eq "+0+0" || $geometry eq "+0+22")} {
++        set existingwindow 0
++    } else {
++        set existingwindow 1
++        set screenwidth [winfo screenwidth .]
++        set screenheight [winfo screenheight .]
++        
++        # read back the current geometry +posx+posy into variables
++        scan $geometry {%[+]%d%[+]%d} - x - y
++        # fit the geometry onto screen
++        set x [ expr $x % $screenwidth - $::windowframex]
++        set y [ expr $y % $screenheight - $::windowframey]
++        if {$width > $screenwidth} {
++            set width $screenwidth
++            set x 0
++        }
++        if {$height > $screenheight} {
++            set height [expr $screenheight - $::menubarsize - 30] ;# 30 for window framing
++            set y $::menubarsize
++        }
++        set geometry ${width}x$height+$x+$y
+     }
+-    set geometry ${width}x$height+$x+$y
+-
+     set ::loaded($mytoplevel) 0
+     toplevel $mytoplevel -width $width -height $height -class PatchWindow
+     wm group $mytoplevel .
+     $mytoplevel configure -menu $::patch_menubar
+-
++    
+     event generate $mytoplevel <<Loading>>
+-
+-    wm geometry $mytoplevel $geometry
++    
++    if {$existingwindow} {wm geometry $mytoplevel $geometry}
+     wm minsize $mytoplevel $::canvas_minwidth $::canvas_minheight
+ 
+     set tkcanvas [tkcanvas_name $mytoplevel]

@@ -1,0 +1,12 @@
+#N canvas 327 166 577 320 12;
+#X msg 160 97 clear;
+#X obj 160 127 s pd-crash.pd;
+#N canvas 720 133 450 300 crash2 1;
+#X msg 169 128 clear;
+#X obj 169 158 s pd-crash2;
+#X text 64 71 A subpatch trying to delete itself:;
+#X connect 0 0 1 0;
+#X restore 159 255 pd crash2;
+#X text 71 59 a patch trying to delete itself:;
+#X text 70 189 A subpatch trying to delete itself:;
+#X connect 0 0 1 0;

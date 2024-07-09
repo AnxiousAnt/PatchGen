@@ -1,0 +1,61 @@
+#N canvas 234 135 774 496 12;
+#N canvas 0 0 454 304 selector 0;
+#X obj 156 61 inlet;
+#X obj 165 173 outlet;
+#X obj 162 110 random 2;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 437 163 pd selector;
+#X obj 323 16 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 440 199 5 0 0 0 - - -;
+#X msg 312 259 \; \$1 \$2;
+#X obj 310 231 pack symbol float;
+#X obj 323 49 t b b;
+#X obj 34 21 node shark;
+#X obj 95 64 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 32 60 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 449 84 r master;
+#X symbolatom 437 129 10 0 0 0 - - -;
+#X obj 28 148 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 92 149 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 144 149 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 203 147 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 317 184 symbol;
+#X obj 431 12 loadbang;
+#X msg 436 52 symbol shark;
+#X obj 24 103 node dolphin;
+#X obj 136 105 node whale;
+#X obj 27 189 node octopus;
+#X obj 98 236 node lobster;
+#X obj 157 276 node eel;
+#X obj 225 313 node stingray;
+#X connect 0 0 2 0;
+#X connect 1 0 5 0;
+#X connect 2 0 4 1;
+#X connect 4 0 3 0;
+#X connect 5 0 15 0;
+#X connect 5 1 0 0;
+#X connect 6 0 8 0;
+#X connect 6 1 7 0;
+#X connect 7 0 19 0;
+#X connect 8 0 18 0;
+#X connect 9 0 10 0;
+#X connect 10 0 15 1;
+#X connect 11 0 20 0;
+#X connect 12 0 21 0;
+#X connect 13 0 22 0;
+#X connect 14 0 23 0;
+#X connect 15 0 4 0;
+#X connect 16 0 17 0;
+#X connect 17 0 10 0;
+#X connect 18 0 11 0;
+#X connect 18 1 12 0;
+#X connect 19 0 13 0;
+#X connect 19 1 14 0;

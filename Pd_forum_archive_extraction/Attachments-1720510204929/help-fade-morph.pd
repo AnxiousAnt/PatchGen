@@ -1,0 +1,32 @@
+#N canvas 521 242 461 404 10;
+#X obj 162 65 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 33 149 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 12700 1;
+#X obj 127 149 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 227 154 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 336 150 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 349 116 fade-morph 84 86;
+#X obj 112 120 fade-morph 0 84;
+#X obj 228 118 fade-morph 41 84;
+#X obj 25 96 fade-morph -42 84;
+#X text 160 48 0....127;
+#X obj 84 357 print A;
+#X obj 134 358 print B;
+#X obj 186 358 print C;
+#X obj 236 359 print D;
+#X connect 0 0 5 0;
+#X connect 0 0 6 0;
+#X connect 0 0 7 0;
+#X connect 0 0 8 0;
+#X connect 1 0 10 0;
+#X connect 2 0 11 0;
+#X connect 3 0 12 0;
+#X connect 4 0 13 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 0;
+#X connect 7 0 3 0;
+#X connect 8 0 1 0;

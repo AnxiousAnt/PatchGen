@@ -1,0 +1,195 @@
+>From 9505f38622cbd3e96ecdc0d4c8c5431a72412699 Mon Sep 17 00:00:00 2001
+From: Chris McCormick <chris@mccormick.cx>
+Date: Fri, 10 Oct 2014 10:51:47 +0800
+Subject: [PATCH] list foreach - spit out elements of a list one by one.
+
+---
+ doc/5.reference/list-help.pd |   40 +++++++++++++++++++++++--------------
+ src/x_list.c                 |   45 ++++++++++++++++++++++++++++++++++++++++--
+ 2 files changed, 68 insertions(+), 17 deletions(-)
+
+diff --git a/doc/5.reference/list-help.pd b/doc/5.reference/list-help.pd
+index 56cc95d..d06840f 100644
+--- a/doc/5.reference/list-help.pd
++++ b/doc/5.reference/list-help.pd
+@@ -1,4 +1,4 @@
+-#N canvas 1009 137 597 581 12;
++#N canvas 767 132 597 581 12;
+ #X obj 29 11 list;
+ #X text 76 12 - building and using variable-length messages;
+ #N canvas 88 122 654 658 about-lists 0;
+@@ -47,7 +47,7 @@ It's not clear whether this was a good design choice \, but it's entrenched.
+ #X connect 6 0 4 0;
+ #X connect 12 0 14 0;
+ #X connect 13 0 14 0;
+-#X restore 53 386 pd about-lists;
++#X restore 53 406 pd about-lists;
+ #X obj 22 82 list append;
+ #X obj 22 107 list prepend;
+ #X obj 22 157 list trim;
+@@ -85,7 +85,7 @@ list \, float \, or bang.);
+ #X restore 484 157 pd trim;
+ #X text 483 55 details:;
+ #X text 481 38 click for;
+-#N canvas 100 190 608 420 append 0;
++#N canvas 99 185 608 420 append 0;
+ #X obj 17 324 list append 1 2;
+ #X floatatom 17 154 5 0 0 0 - - -, f 5;
+ #X msg 17 129 1 2 3;
+@@ -121,7 +121,7 @@ list \, float \, or bang.);
+ #X connect 9 0 0 1;
+ #X connect 10 0 0 1;
+ #X restore 484 81 pd append;
+-#N canvas 390 321 667 561 split 0;
++#N canvas 76 141 667 561 split 0;
+ #X msg 103 328 1 2 3;
+ #X msg 79 231 list cis boom bah;
+ #X msg 99 263 bang;
+@@ -201,11 +201,11 @@ the split point.;
+ #X connect 9 0 22 1;
+ #X connect 22 0 5 0;
+ #X restore 484 106 pd prepend;
+-#X text 32 299 In general \, inlets that take lists (two each for append/prepend
++#X text 32 319 In general \, inlets that take lists (two each for append/prepend
+ \, and one each for split and trim) will convert non-list messages
+ (such as "set 5") to lists (such as "list set 5" automatically. Here's
+ more about lists in Pd:;
+-#X text 33 415 And here are some examples showing how to use these
++#X text 33 435 And here are some examples showing how to use these
+ objects to compose and/or use variable length messages:;
+ #N canvas 381 50 719 646 example1 0;
+ #X obj 43 173 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+@@ -273,8 +273,8 @@ the list.;
+ #X connect 15 0 17 0;
+ #X connect 17 0 14 0;
+ #X connect 18 0 11 0;
+-#X restore 224 468 pd example1;
+-#X text 67 467 simple sequencer;
++#X restore 224 488 pd example1;
++#X text 67 487 simple sequencer;
+ #N canvas 126 50 568 569 example2 0;
+ #X obj 66 263 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+ -1;
+@@ -325,9 +325,9 @@ by taking the "pitch" output before the delay object (previously the
+ #X connect 16 0 15 0;
+ #X connect 16 1 11 1;
+ #X connect 16 2 19 0;
+-#X restore 224 494 pd example2;
+-#X text 58 496 another sequencer;
+-#X text 117 523 serializer;
++#X restore 224 514 pd example2;
++#X text 58 516 another sequencer;
++#X text 117 543 serializer;
+ #N canvas 116 50 673 426 example3 0;
+ #X obj 19 287 list split 1;
+ #X obj 19 378 print;
+@@ -357,9 +357,9 @@ append" above.;
+ #X connect 4 1 3 1;
+ #X connect 5 0 2 1;
+ #X connect 6 0 4 0;
+-#X restore 224 521 pd example3;
+-#X obj 30 265 list;
+-#X text 78 266 - short for "list append";
++#X restore 224 541 pd example3;
++#X obj 30 295 list;
++#X text 78 296 - short for "list append";
+ #X text 141 185 - output number of items in list;
+ #N canvas 187 106 576 365 length 0;
+ #X msg 126 183 1 2 3;
+@@ -408,4 +408,14 @@ a filename on a non-ASCII machine) to or from a symbol., f 63;
+ #X connect 4 0 7 0;
+ #X connect 8 0 0 0;
+ #X restore 483 221 pd from/to;
+-#X text 355 526 updated for Pd version 0.46.;
++#X text 355 546 updated for Pd version 0.46.;
++#X obj 22 258 list foreach;
++#X text 138 257 - spit out elements of a list one by one;
++#N canvas 98 180 608 420 foreach 0;
++#X obj 27 102 print append;
++#X text 20 6 Foreach - spit out elements of a list one by one;
++#X obj 27 73 list foreach;
++#X msg 27 41 list cis boom bah 1 3.14 hello;
++#X connect 2 0 0 0;
++#X connect 3 0 2 0;
++#X restore 484 257 pd foreach;
+diff --git a/src/x_list.c b/src/x_list.c
+index e6b72a0..88d46c4 100644
+--- a/src/x_list.c
++++ b/src/x_list.c
+@@ -29,10 +29,10 @@ extern t_pd *newest;
+     list split - first n elements to first outlet, rest to second outlet 
+     list trim - trim off "list" selector
+     list length - output number of items in list
+-    list fromsymbol - "explode" a symbol into a list of character codes
++    list fromsymbol/tosymbol - "explode" a symbol into a list of character codes and back again
++    list foreach - spit out elements of a list one by one
+ 
+ Need to think more about:
+-    list foreach - spit out elements of a list one by one (also in reverse?)
+     list array - get items from a named array as a list
+     list reverse - permute elements of a list back to front
+     list pack - synonym for 'pack'
+@@ -571,6 +571,44 @@ static void list_tosymbol_setup(void)
+     class_sethelpsymbol(list_tosymbol_class, &s_list);
+ }
+ 
++/* ------------- list foreach --------------------- */
++
++t_class *list_foreach_class;
++
++typedef struct _list_foreach
++{
++    t_object x_obj;
++} t_list_foreach;
++
++static void *list_foreach_new( void)
++{
++    t_list_foreach *x = (t_list_foreach *)pd_new(list_foreach_class);
++    outlet_new(&x->x_obj, 0);
++    return (x);
++}
++
++static void list_foreach_list(t_list_append *x, t_symbol *s,
++    int argc, t_atom *argv)
++{
++    int i;
++    t_atom *ap;
++    for (i = argc, ap = argv; i--; ap++)
++    {
++        if (ap->a_type == A_FLOAT)
++            outlet_float(x->x_obj.ob_outlet, ap->a_w.w_float);
++        else if (ap->a_type == A_SYMBOL)
++            outlet_symbol(x->x_obj.ob_outlet, ap->a_w.w_symbol);
++    }
++}
++
++static void list_foreach_setup(void)
++{
++    list_foreach_class = class_new(gensym("list foreach"),
++        (t_newmethod)list_foreach_new, 0, sizeof(t_list_foreach), 0, 0);
++    class_addlist(list_foreach_class, list_foreach_list);
++    class_sethelpsymbol(list_foreach_class, &s_list);
++}
++
+ /* ------------- list ------------------- */
+ 
+ static void *list_new(t_pd *dummy, t_symbol *s, int argc, t_atom *argv)
+@@ -594,6 +632,8 @@ static void *list_new(t_pd *dummy, t_symbol *s, int argc, t_atom *argv)
+             newest = list_fromsymbol_new();
+         else if (s2 == gensym("tosymbol"))
+             newest = list_tosymbol_new();
++        else if (s2 == gensym("foreach"))
++            newest = list_foreach_new();
+         else 
+         {
+             error("list %s: unknown function", s2->s_name);
+@@ -613,5 +653,6 @@ void x_list_setup(void)
+     list_length_setup();
+     list_fromsymbol_setup();
+     list_tosymbol_setup();
++    list_foreach_setup();
+     class_addcreator((t_newmethod)list_new, &s_list, A_GIMME, 0);
+ }
+-- 
+1.7.10.4
+

@@ -1,0 +1,9 @@
+#N canvas 201 98 217 153 12;
+#X obj 99 63 minmax;
+#X obj 28 61 pack;
+#X obj 142 103 outlet;
+#X obj 28 27 inlet;
+#X connect 0 1 2 0;
+#X connect 0 1 1 1;
+#X connect 1 0 0 0;
+#X connect 3 0 1 0;

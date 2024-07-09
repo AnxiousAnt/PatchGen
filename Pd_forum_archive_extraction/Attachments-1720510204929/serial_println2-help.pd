@@ -1,0 +1,53 @@
+#N canvas 93 82 1048 569 10;
+#X obj 76 264 serial_parseInt;
+#X obj 76 396 comport 6 9600;
+#X msg 100 225 7829 87 5672 981;
+#X msg 103 369 close;
+#X msg 103 293 devices;
+#X floatatom 103 323 5 0 0 0 - - -, f 5;
+#X msg 103 342 open \$1;
+#X obj 63 21 cnv 15 400 60 empty empty empty 20 12 0 14 -200075 -66577
+0;
+#X text 626 144 Made by Alexandros Drymonitis;
+#X text 624 55 Arguments: none;
+#X obj 76 418 serial_println2;
+#X floatatom 76 496 5 0 0 0 - - -, f 5;
+#X floatatom 119 496 5 0 0 0 - - -, f 5;
+#X floatatom 163 496 5 0 0 0 - - -, f 5;
+#X floatatom 207 496 5 0 0 0 - - -, f 5;
+#X floatatom 251 496 5 0 0 0 - - -, f 5;
+#X msg 76 202 583 54 909 223 5;
+#X text 74 32 [serial_println2]: absrtaction that works with the Serial.print()
+and Serial.println() functions of Arduino;
+#X text 624 69 Inlet: raw data received from Arduino (through [comport])
+\, using the Serial.print() and Serial.println() functions;
+#X text 624 100 Outlet: strings and numbers received from Arduino;
+#X obj 76 471 route first second third fourth fifth;
+#X text 178 408 receive pairs of strings and numbers from Arduino and
+diffuse the numbers according to their corresponding strings. Works
+like Python's dictionaries;
+#X text 74 156 This help patch is used with the println2.ino Arduino
+sketch;
+#X text 73 90 In order for [serial_println2] to work \, you need to
+send first a string which will be used as a key to diffuse the value
+\, and then the actual value (see println2.ino for details). This abstraction
+uses moocow's [bytes2any];
+#X text 218 201 send any number list to Arduino \, using the Serial.parseInt()
+function (though this seems to be a little bit slow);
+#X text 307 471 receiving values from sensors responds faster than
+the combination of this help patch and its Arduino sketch \, I guess
+because of Serial.parseInt() \, but still I'm not sure;
+#X connect 0 0 1 0;
+#X connect 1 0 10 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X connect 10 0 20 0;
+#X connect 16 0 0 0;
+#X connect 20 0 11 0;
+#X connect 20 1 12 0;
+#X connect 20 2 13 0;
+#X connect 20 3 14 0;
+#X connect 20 4 15 0;

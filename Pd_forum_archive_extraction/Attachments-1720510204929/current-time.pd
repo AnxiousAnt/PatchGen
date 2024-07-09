@@ -1,0 +1,26 @@
+#N canvas 311 216 450 300 10;
+#X obj 12 38 realtime;
+#X obj 12 -3 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 12 61 / 1000;
+#X obj 61 88 mod 60;
+#X floatatom 61 131 5 0 0 0 - - -;
+#X obj 12 88 / 60;
+#X obj 12 109 int;
+#X floatatom 12 131 5 0 0 0 - - -;
+#X symbolatom 12 214 7 0 0 0 - - -;
+#X obj 12 190 makefilename;
+#X obj 63 17 bang~;
+#X msg 12 162 set \$1:%02d;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 9 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 11 0;
+#X connect 9 0 8 0;
+#X connect 10 0 0 1;
+#X connect 11 0 9 0;

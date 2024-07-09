@@ -1,0 +1,58 @@
+#N canvas 40 117 1136 506 10;
+#X msg 414 41 create \, 1;
+#X obj 414 61 gemwin;
+#X obj 599 113 gemhead;
+#X obj 599 136 b;
+#X obj 599 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 599 275 gemhead;
+#X msg 531 244 0;
+#X obj 531 224 loadbang;
+#X obj 599 199 t b a;
+#X obj 662 275 unpack 0 0 0;
+#X obj 599 324 translateXYZ 0 -2 0;
+#X msg 599 164 0 -2 0 \, 0 2 0;
+#X text 709 164 two messages in one;
+#X obj 40 110 gemhead;
+#X obj 40 133 b;
+#X obj 40 90 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 40 262 gemhead;
+#X obj 40 352 square 0.2;
+#X msg 50 235 0;
+#X obj 50 215 loadbang;
+#X text 75 133 gemhead abused as a kind of "metro";
+#X text 657 113 gemhead-"metro";
+#X text 52 287 the "real" gemhead. This will only render \, if it receives
+a bang \, otherwise its invisble because we switched it off with a
+loadbang'd zero.;
+#X text 38 26 The Double [gemhead] Idiom;
+#X obj 599 365 circle 0.2;
+#X text 656 197 Here the lower gemhead actually receives two(!) bangs:
+one during the "0 -2 0" list and the other at the time of the "0 2
+0" list. So it renders twice during one frame.;
+#X text 685 360 The end result is two geos: One translated to 0 -2
+0 (first list) and the other to 0 2 0 (second list).;
+#X text 540 427 You can use this idiom when you need to render many
+copies of the same geo \, but with different transformations applied.
+;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 11 0;
+#X connect 4 0 2 0;
+#X connect 5 0 10 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 8 1 9 0;
+#X connect 9 0 10 1;
+#X connect 9 1 10 2;
+#X connect 9 2 10 3;
+#X connect 10 0 24 0;
+#X connect 11 0 8 0;
+#X connect 13 0 14 0;
+#X connect 14 0 16 0;
+#X connect 15 0 13 0;
+#X connect 16 0 17 0;
+#X connect 18 0 16 0;
+#X connect 19 0 18 0;

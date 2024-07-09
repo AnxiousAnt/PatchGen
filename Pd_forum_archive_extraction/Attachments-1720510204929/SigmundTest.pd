@@ -1,0 +1,9 @@
+#N canvas 499 255 450 300 10;
+#X obj 59 95 sigmund~ -npeak 10;
+#X msg 46 -8 \; pd dsp 0;
+#X msg 46 -46 \; pd dsp 1;
+#X msg 56 53 print;
+#X text 121 -40 <- click first here;
+#X text 129 -1 <- then here;
+#X text 103 53 <- try to print \, or close this patch...;
+#X connect 3 0 0 0;

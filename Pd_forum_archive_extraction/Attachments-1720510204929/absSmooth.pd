@@ -1,0 +1,10 @@
+#N canvas 230 116 232 233 12;
+#X obj 14 159 line~;
+#X obj 14 98 inlet;
+#X obj 15 191 outlet~;
+#X text 13 8 Abstraction absSmooth Smoothes the input With the right
+inlet the default time (10 ms) can be changed.;
+#X obj 14 128 pack 0 \$1;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 4 0 0 0;

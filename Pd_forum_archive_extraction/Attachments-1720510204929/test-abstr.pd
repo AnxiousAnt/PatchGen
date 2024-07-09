@@ -1,0 +1,18 @@
+#N canvas 374 203 450 300 10;
+#X symbolatom 198 220 10 0 0 0 - - -;
+#N canvas 376 258 450 300 test-subpatch 0;
+#X obj 115 78 symbol \$1;
+#X obj 115 37 inlet;
+#X obj 115 159 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X restore 198 136 pd test-subpatch subarg;
+#X obj 119 135 symbol \$1;
+#X msg 173 78 bang;
+#X symbolatom 119 219 10 0 0 0 - - -;
+#X text 163 47 bang here!;
+#X text 285 221 See: No subarg here!!;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 3 0 1 0;

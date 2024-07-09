@@ -1,0 +1,622 @@
+#N canvas 54 25 1158 499 10;
+#X text 38 34 1;
+#X obj 36 54 tgl 15 0 A-1-Output A-1-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X text 19 52 A;
+#X floatatom 36 81 5 0 127 0 - B-1-Input B-1-Output;
+#X obj 37 108 tgl 15 0 C-1-Output C-1-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 37 136 5 0 127 0 - D-1-Input D-1-Output;
+#X obj 38 162 bng 15 250 50 0 empty E-1-Input empty 17 7 0 10 -262144
+-1 -1;
+#X text 19 79 B;
+#X text 19 107 C;
+#X text 19 134 D;
+#X text 19 163 E;
+#X text 80 34 2;
+#X obj 78 54 tgl 15 0 A-2-Output A-2-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 78 81 5 0 127 0 - B-2-Input B-2-Output;
+#X obj 79 108 tgl 15 0 C-2-Output C-2-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 79 136 5 0 127 0 - D-2-Input D-2-Output;
+#X obj 80 162 bng 15 250 50 0 empty E-2-Input empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 19 472 1284 208 midi_note_section 0;
+#X obj 11 145 s E-1-Input;
+#X obj 284 17 notein;
+#X obj 283 44 pack f f f;
+#X obj 282 69 route 36 37 38 39 40 41 42 43;
+#X obj 12 124 unpack;
+#X obj 17 166 s E-1-Output;
+#X obj 102 125 unpack;
+#X obj 101 146 s E-2-Input;
+#X obj 107 167 s E-2-Output;
+#X text 281 -2 MIDI note input from the pads;
+#X obj 194 124 unpack;
+#X obj 193 145 s E-3-Input;
+#X obj 199 166 s E-3-Output;
+#X obj 287 124 unpack;
+#X obj 286 145 s E-4-Input;
+#X obj 292 166 s E-4-Output;
+#X obj 378 124 unpack;
+#X obj 377 145 s E-5-Input;
+#X obj 383 166 s E-5-Output;
+#X obj 473 124 unpack;
+#X obj 472 145 s E-6-Input;
+#X obj 478 166 s E-6-Output;
+#X obj 564 124 unpack;
+#X obj 563 145 s E-7-Input;
+#X obj 569 166 s E-7-Output;
+#X obj 657 124 unpack;
+#X obj 656 145 s E-8-Input;
+#X obj 662 166 s E-8-Output;
+#X text 346 15 <- add a MIDI channel argument here for more selective
+MIDI input;
+#X connect 1 0 2 1;
+#X connect 1 0 2 0;
+#X connect 1 1 2 2;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 3 1 6 0;
+#X connect 3 1 8 0;
+#X connect 3 2 10 0;
+#X connect 3 2 12 0;
+#X connect 3 3 13 0;
+#X connect 3 3 15 0;
+#X connect 3 4 16 0;
+#X connect 3 4 18 0;
+#X connect 3 5 19 0;
+#X connect 3 5 21 0;
+#X connect 3 6 22 0;
+#X connect 3 6 24 0;
+#X connect 3 7 25 0;
+#X connect 3 7 27 0;
+#X connect 4 0 0 0;
+#X connect 6 0 7 0;
+#X connect 10 0 11 0;
+#X connect 13 0 14 0;
+#X connect 16 0 17 0;
+#X connect 19 0 20 0;
+#X connect 22 0 23 0;
+#X connect 25 0 26 0;
+#X restore 10 250 pd midi_note_section;
+#N canvas 16 550 1292 219 cc_in_section 0;
+#X obj 10 192 s A-1-Input;
+#X obj 40 173 s B-1-Input;
+#X obj 69 154 s C-1-Input;
+#X obj 96 135 s D-1-Input;
+#X obj 338 8 ctlin;
+#X obj 337 31 swap;
+#X obj 336 55 pack;
+#X obj 10 114 route 68 12 76 20;
+#X obj 186 115 route 69 13 77 21;
+#X obj 272 136 s D-2-Input;
+#X obj 245 155 s C-2-Input;
+#X obj 216 174 s B-2-Input;
+#X obj 186 193 s A-2-Input;
+#X obj 353 115 route 70 14 78 22;
+#X obj 439 136 s D-3-Input;
+#X obj 412 155 s C-3-Input;
+#X obj 383 174 s B-3-Input;
+#X obj 353 193 s A-3-Input;
+#X obj 526 191 s A-4-Input;
+#X obj 556 172 s B-4-Input;
+#X obj 585 153 s C-4-Input;
+#X obj 612 134 s D-4-Input;
+#X obj 526 113 route 71 15 79 23;
+#X obj 694 112 route 72 16 80 24;
+#X obj 780 133 s D-5-Input;
+#X obj 753 152 s C-5-Input;
+#X obj 724 171 s B-5-Input;
+#X obj 694 190 s A-5-Input;
+#X obj 863 112 route 73 17 81 25;
+#X obj 949 133 s D-6-Input;
+#X obj 922 152 s C-6-Input;
+#X obj 893 171 s B-6-Input;
+#X obj 863 190 s A-6-Input;
+#X obj 1035 111 route 74 18 82 26;
+#X obj 1035 189 s A-7-Input;
+#X obj 1065 170 s B-7-Input;
+#X obj 1094 151 s C-7-Input;
+#X obj 1121 132 s D-7-Input;
+#X obj 1202 111 route 75 19 83 27;
+#X obj 1288 132 s D-8-Input;
+#X obj 1261 151 s C-8-Input;
+#X obj 1232 170 s B-8-Input;
+#X obj 1202 189 s A-8-Input;
+#X obj 1370 111 route 28 84 92;
+#X obj 1370 189 s A-9-Input;
+#X obj 1400 170 s B-9-Input;
+#X obj 1429 151 s C-9-Input;
+#X obj 1512 111 route 29 85 93;
+#X obj 1512 189 s A-10-Input;
+#X obj 1542 170 s B-10-Input;
+#X obj 1571 151 s C-10-Input;
+#X obj 1659 112 route 30 86 94;
+#X obj 1718 152 s C-11-Input;
+#X obj 1689 171 s B-11-Input;
+#X obj 1659 190 s A-11-Input;
+#X obj 1866 152 s C-12-Input;
+#X obj 1837 171 s B-12-Input;
+#X obj 1807 190 s A-12-Input;
+#X obj 1807 112 route 31 87 95;
+#X obj 2013 153 s C-13-Input;
+#X obj 1984 172 s B-13-Input;
+#X obj 1954 191 s A-13-Input;
+#X obj 1954 113 route 32 88 96;
+#X obj 2101 112 route 33 89 97;
+#X obj 2160 152 s C-14-Input;
+#X obj 2131 171 s B-14-Input;
+#X obj 2101 190 s A-14-Input;
+#X text 1804 87 comment;
+#X obj 2250 113 route 34 90 98;
+#X obj 2309 153 s C-15-Input;
+#X obj 2280 172 s B-15-Input;
+#X obj 2250 191 s A-15-Input;
+#X obj 2396 114 route 35 91 99;
+#X obj 2455 154 s C-16-Input;
+#X obj 2426 173 s B-16-Input;
+#X obj 2396 192 s A-16-Input;
+#X obj 1917 18 ==;
+#X text 383 8 <- add a MIDI channel argument here for more selective
+MIDI input;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 5 0 6 0;
+#X connect 5 1 6 1;
+#X connect 6 0 7 0;
+#X connect 6 0 8 0;
+#X connect 6 0 13 0;
+#X connect 6 0 22 0;
+#X connect 6 0 23 0;
+#X connect 6 0 28 0;
+#X connect 6 0 33 0;
+#X connect 6 0 38 0;
+#X connect 6 0 43 0;
+#X connect 6 0 47 0;
+#X connect 6 0 51 0;
+#X connect 6 0 58 0;
+#X connect 6 0 62 0;
+#X connect 6 0 63 0;
+#X connect 6 0 68 0;
+#X connect 6 0 72 0;
+#X connect 7 0 0 0;
+#X connect 7 1 1 0;
+#X connect 7 2 2 0;
+#X connect 7 3 3 0;
+#X connect 8 0 12 0;
+#X connect 8 1 11 0;
+#X connect 8 2 10 0;
+#X connect 8 3 9 0;
+#X connect 13 0 17 0;
+#X connect 13 1 16 0;
+#X connect 13 2 15 0;
+#X connect 13 3 14 0;
+#X connect 22 0 18 0;
+#X connect 22 1 19 0;
+#X connect 22 2 20 0;
+#X connect 22 3 21 0;
+#X connect 23 0 27 0;
+#X connect 23 1 26 0;
+#X connect 23 2 25 0;
+#X connect 23 3 24 0;
+#X connect 28 0 32 0;
+#X connect 28 1 31 0;
+#X connect 28 2 30 0;
+#X connect 28 3 29 0;
+#X connect 33 0 34 0;
+#X connect 33 1 35 0;
+#X connect 33 2 36 0;
+#X connect 33 3 37 0;
+#X connect 38 0 42 0;
+#X connect 38 1 41 0;
+#X connect 38 2 40 0;
+#X connect 38 3 39 0;
+#X connect 43 0 44 0;
+#X connect 43 1 45 0;
+#X connect 43 2 46 0;
+#X connect 47 0 48 0;
+#X connect 47 1 49 0;
+#X connect 47 2 50 0;
+#X connect 51 0 54 0;
+#X connect 51 1 53 0;
+#X connect 51 2 52 0;
+#X connect 58 0 57 0;
+#X connect 58 1 56 0;
+#X connect 58 2 55 0;
+#X connect 62 0 61 0;
+#X connect 62 1 60 0;
+#X connect 62 2 59 0;
+#X connect 63 0 66 0;
+#X connect 63 1 65 0;
+#X connect 63 2 64 0;
+#X connect 68 0 71 0;
+#X connect 68 1 70 0;
+#X connect 68 2 69 0;
+#X connect 72 0 75 0;
+#X connect 72 1 74 0;
+#X connect 72 2 73 0;
+#X restore 145 251 pd cc_in_section;
+#X obj 120 54 tgl 15 0 A-3-Output A-3-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 120 81 5 0 127 0 - B-3-Input B-3-Output;
+#X obj 121 108 tgl 15 0 C-3-Output C-3-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 121 136 5 0 127 0 - D-3-Input D-3-Output;
+#X obj 122 162 bng 15 250 50 0 empty E-3-Input empty 17 7 0 10 -262144
+-1 -1;
+#X text 122 34 3;
+#X obj 11 286 r A-1-Output;
+#X obj 58 307 r B-1-Output;
+#X obj 106 326 r C-1-Output;
+#X obj 154 344 r D-1-Output;
+#X obj 10 403 outlet;
+#X obj 58 403 outlet;
+#X obj 107 403 outlet;
+#X obj 203 403 outlet;
+#X obj 155 403 outlet;
+#X obj 204 374 r E-1-Output;
+#X obj 256 402 outlet;
+#X obj 304 402 outlet;
+#X obj 353 402 outlet;
+#X obj 449 402 outlet;
+#X obj 401 402 outlet;
+#X obj 257 285 r A-2-Output;
+#X obj 304 306 r B-2-Output;
+#X obj 352 325 r C-2-Output;
+#X obj 400 343 r D-2-Output;
+#X obj 450 373 r E-2-Output;
+#X obj 500 402 outlet;
+#X obj 548 402 outlet;
+#X obj 597 402 outlet;
+#X obj 693 402 outlet;
+#X obj 645 402 outlet;
+#X obj 501 285 r A-3-Output;
+#X obj 548 306 r B-3-Output;
+#X obj 596 325 r C-3-Output;
+#X obj 644 343 r D-3-Output;
+#X obj 694 373 r E-3-Output;
+#X obj 162 54 tgl 15 0 A-4-Output A-4-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 162 81 5 0 127 0 - B-4-Input B-4-Output;
+#X obj 163 108 tgl 15 0 C-4-Output C-4-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 163 136 5 0 127 0 - D-4-Input D-4-Output;
+#X obj 164 162 bng 15 250 50 0 empty E-4-Input empty 17 7 0 10 -262144
+-1 -1;
+#X text 164 34 4;
+#X obj 792 402 outlet;
+#X obj 840 402 outlet;
+#X obj 889 402 outlet;
+#X obj 985 402 outlet;
+#X obj 937 402 outlet;
+#X obj 793 285 r A-4-Output;
+#X obj 840 306 r B-4-Output;
+#X obj 888 325 r C-4-Output;
+#X obj 936 343 r D-4-Output;
+#X obj 986 373 r E-4-Output;
+#X obj 204 54 tgl 15 0 A-5-Output A-5-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 204 81 5 0 127 0 - B-5-Input B-5-Output;
+#X obj 205 108 tgl 15 0 C-5-Output C-5-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 205 136 5 0 127 0 - D-5-Input D-5-Output;
+#X obj 206 162 bng 15 250 50 0 empty E-5-Input empty 17 7 0 10 -262144
+-1 -1;
+#X text 206 34 5;
+#X obj 1091 402 outlet;
+#X obj 1139 402 outlet;
+#X obj 1188 402 outlet;
+#X obj 1284 402 outlet;
+#X obj 1236 402 outlet;
+#X obj 1092 285 r A-5-Output;
+#X obj 1139 306 r B-5-Output;
+#X obj 1187 325 r C-5-Output;
+#X obj 1235 343 r D-5-Output;
+#X obj 1285 373 r E-5-Output;
+#X obj 246 54 tgl 15 0 A-6-Output A-6-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 246 81 5 0 127 0 - B-6-Input B-6-Output;
+#X obj 247 108 tgl 15 0 C-6-Output C-6-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 247 136 5 0 127 0 - D-6-Input D-6-Output;
+#X obj 248 162 bng 15 250 50 0 empty E-6-Input empty 17 7 0 10 -262144
+-1 -1;
+#X text 248 34 6;
+#X obj 1383 402 outlet;
+#X obj 1431 402 outlet;
+#X obj 1480 402 outlet;
+#X obj 1576 402 outlet;
+#X obj 1528 402 outlet;
+#X obj 1384 285 r A-6-Output;
+#X obj 1431 306 r B-6-Output;
+#X obj 1479 325 r C-6-Output;
+#X obj 1527 343 r D-6-Output;
+#X obj 1577 373 r E-6-Output;
+#X obj 288 54 tgl 15 0 A-7-Output A-7-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 288 81 5 0 127 0 - B-7-Input B-7-Output;
+#X obj 289 108 tgl 15 0 C-7-Output C-7-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 289 136 5 0 127 0 - D-7-Input D-7-Output;
+#X obj 290 162 bng 15 250 50 0 empty E-7-Input empty 17 7 0 10 -262144
+-1 -1;
+#X text 290 34 7;
+#X obj 1677 402 outlet;
+#X obj 1725 402 outlet;
+#X obj 1774 402 outlet;
+#X obj 1870 402 outlet;
+#X obj 1822 402 outlet;
+#X obj 1678 285 r A-7-Output;
+#X obj 1725 306 r B-7-Output;
+#X obj 1773 325 r C-7-Output;
+#X obj 1821 343 r D-7-Output;
+#X obj 1871 373 r E-7-Output;
+#X obj 330 54 tgl 15 0 A-8-Output A-8-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 330 81 5 0 127 0 - B-8-Input B-8-Output;
+#X obj 331 108 tgl 15 0 C-8-Output C-8-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X floatatom 331 136 5 0 127 0 - D-8-Input D-8-Output;
+#X obj 332 162 bng 15 250 50 0 empty E-8-Input empty 17 7 0 10 -262144
+-1 -1;
+#X text 332 34 8;
+#X obj 1973 402 outlet;
+#X obj 2021 402 outlet;
+#X obj 2070 402 outlet;
+#X obj 2166 402 outlet;
+#X obj 2118 402 outlet;
+#X obj 1974 285 r A-8-Output;
+#X obj 2021 306 r B-8-Output;
+#X obj 2069 325 r C-8-Output;
+#X obj 2117 343 r D-8-Output;
+#X obj 2167 373 r E-8-Output;
+#X obj 412 56 vsl 15 65 0 127 0 0 A-9-Output A-9-Input empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X text 414 34 9;
+#X text 456 34 10;
+#X text 498 34 11;
+#X text 540 34 12;
+#X text 582 34 13;
+#X text 624 34 14;
+#X text 666 34 15;
+#X text 708 34 16;
+#X obj 412 136 tgl 15 0 B-9-Output B-9-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 412 162 tgl 15 0 C-9-Output C-9-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 2268 402 outlet;
+#X obj 2316 402 outlet;
+#X obj 2365 402 outlet;
+#X obj 2269 285 r A-9-Output;
+#X obj 2316 306 r B-9-Output;
+#X obj 2364 325 r C-9-Output;
+#X obj 458 56 vsl 15 65 0 127 0 0 A-10-Output A-10-Input empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 458 136 tgl 15 0 B-10-Output B-10-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 458 162 tgl 15 0 C-10-Output C-10-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 2452 402 outlet;
+#X obj 2500 402 outlet;
+#X obj 2549 402 outlet;
+#X obj 2453 285 r A-10-Output;
+#X obj 2500 306 r B-10-Output;
+#X obj 2548 325 r C-10-Output;
+#X obj 499 56 vsl 15 65 0 127 0 0 A-11-Output A-11-Input empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 499 136 tgl 15 0 B-11-Output B-11-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 499 162 tgl 15 0 C-11-Output C-11-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 2644 402 outlet;
+#X obj 2692 402 outlet;
+#X obj 2741 402 outlet;
+#X obj 2740 325 r C-11-Output;
+#X obj 2692 306 r B-11-Output;
+#X obj 2645 285 r A-11-Output;
+#X obj 541 56 vsl 15 65 0 127 0 0 A-12-Output A-12-Input empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 541 136 tgl 15 0 B-12-Output B-12-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 541 162 tgl 15 0 C-12-Output C-12-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 2836 403 outlet;
+#X obj 2884 403 outlet;
+#X obj 2933 403 outlet;
+#X obj 2932 326 r C-12-Output;
+#X obj 2884 307 r B-12-Output;
+#X obj 2837 286 r A-12-Output;
+#X obj 583 56 vsl 15 65 0 127 0 0 A-13-Output A-13-Input empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 583 136 tgl 15 0 B-13-Output B-13-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 583 162 tgl 15 0 C-13-Output C-13-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 3033 403 outlet;
+#X obj 3081 403 outlet;
+#X obj 3130 403 outlet;
+#X obj 3034 286 r A-13-Output;
+#X obj 3081 307 r B-13-Output;
+#X obj 3129 326 r C-13-Output;
+#X obj 626 56 vsl 15 65 0 127 0 0 A-14-Output A-14-Input empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 626 136 tgl 15 0 B-14-Output B-14-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 626 162 tgl 15 0 C-14-Output C-14-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 3224 404 outlet;
+#X obj 3272 404 outlet;
+#X obj 3321 404 outlet;
+#X obj 3320 327 r C-14-Output;
+#X obj 3272 308 r B-14-Output;
+#X obj 3225 287 r A-14-Output;
+#X obj 667 56 vsl 15 65 0 127 0 0 A-15-Output A-15-Input empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 667 136 tgl 15 0 B-15-Output B-15-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 667 162 tgl 15 0 C-15-Output C-15-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 3420 405 outlet;
+#X obj 3468 405 outlet;
+#X obj 3517 405 outlet;
+#X obj 3421 288 r A-15-Output;
+#X obj 3468 309 r B-15-Output;
+#X obj 3516 328 r C-15-Output;
+#X obj 709 56 vsl 15 65 0 127 0 0 A-16-Output A-16-Input empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 709 136 tgl 15 0 B-16-Output B-16-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 709 162 tgl 15 0 C-16-Output C-16-Input empty 17 7 0 10 -262144
+-1 -1 0 127;
+#X obj 3618 407 outlet;
+#X obj 3666 407 outlet;
+#X obj 3715 407 outlet;
+#X obj 3619 290 r A-16-Output;
+#X obj 3666 311 r B-16-Output;
+#X obj 3714 330 r C-16-Output;
+#X text 61 213 |;
+#X text 13 214 -------;
+#X text 120 213 |;
+#X text 67 214 --------;
+#X text 179 213 |;
+#X text 125 214 --------;
+#X text 238 213 |;
+#X text 184 214 --------;
+#X text 297 213 |;
+#X text 243 214 --------;
+#X text 356 213 |;
+#X text 302 214 --------;
+#X text 415 213 |;
+#X text 361 214 --------;
+#X text 474 213 |;
+#X text 420 214 --------;
+#X text 509 213 |;
+#X text 481 214 ----;
+#X text 544 213 |;
+#X text 516 214 ----;
+#X text 580 213 |;
+#X text 552 214 ----;
+#X text 616 213 |;
+#X text 588 214 ----;
+#X text 651 213 |;
+#X text 623 214 ----;
+#X text 686 213 |;
+#X text 658 214 ----;
+#X text 721 213 |;
+#X text 693 214 ----;
+#X text 727 214 ----;
+#X text 92 205 2;
+#X text 151 205 3;
+#X text 209 205 4;
+#X text 269 205 5;
+#X text 326 205 6;
+#X text 446 205 8;
+#X text 492 205 9;
+#X text 524 205 10;
+#X text 560 205 11;
+#X text 596 205 12;
+#X text 631 205 13;
+#X text 665 205 14;
+#X text 701 205 15;
+#X text 734 205 16;
+#X text 34 205 1;
+#X text 388 205 7;
+#X text 777 8 + The RemoteSL_Interface patch works with the PureData.syx
+template that must be uploaded to your RemoteSL. I made the template
+on a RemoteZeRO_SL so I made no MIDI keyboard provision.;
+#X text 779 -7 HELP:;
+#X text 777 64 + Place the RemoteSL_Module.pd file in Pd's path then
+use it as you would any abstration.;
+#X text 777 96 + The outputs of the RemoteSL_Module.pd abstraction
+are labeled and may be connected to any object.;
+#X text 777 175 + Row E \, the Drum Pads \, are set to MIDI Note Numbers
+36-43;
+#X text 777 130 + Buttons and Sliders are set to various CC #s. For
+example \, the button in column 1 row A is set to receive CC#68. Details
+are inside the [pd cc_in_section] subpatch.;
+#X text 776 197 + The patch current uses [notein] and [ctrlin] objects
+with no channel designation (listens to all MIDI channels). To make
+more selective \, add a MIDI channel argument to the [notein] and [ctlin]
+objects inside the "midi_note_section" and the "cc_in_section" subpatches.
+;
+#X text 439 445 ----- This patch was written by Mitchell Turner ----
+Associate Professor of Music at LaGrange College http://home.lagrange.edu/mturner
+;
+#X obj 415 441 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 415 472 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 759 441 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 759 472 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 25 0 29 0;
+#X connect 26 0 30 0;
+#X connect 27 0 31 0;
+#X connect 28 0 33 0;
+#X connect 34 0 32 0;
+#X connect 40 0 35 0;
+#X connect 41 0 36 0;
+#X connect 42 0 37 0;
+#X connect 43 0 39 0;
+#X connect 44 0 38 0;
+#X connect 50 0 45 0;
+#X connect 51 0 46 0;
+#X connect 52 0 47 0;
+#X connect 53 0 49 0;
+#X connect 54 0 48 0;
+#X connect 66 0 61 0;
+#X connect 67 0 62 0;
+#X connect 68 0 63 0;
+#X connect 69 0 65 0;
+#X connect 70 0 64 0;
+#X connect 82 0 77 0;
+#X connect 83 0 78 0;
+#X connect 84 0 79 0;
+#X connect 85 0 81 0;
+#X connect 86 0 80 0;
+#X connect 98 0 93 0;
+#X connect 99 0 94 0;
+#X connect 100 0 95 0;
+#X connect 101 0 97 0;
+#X connect 102 0 96 0;
+#X connect 114 0 109 0;
+#X connect 115 0 110 0;
+#X connect 116 0 111 0;
+#X connect 117 0 113 0;
+#X connect 118 0 112 0;
+#X connect 130 0 125 0;
+#X connect 131 0 126 0;
+#X connect 132 0 127 0;
+#X connect 133 0 129 0;
+#X connect 134 0 128 0;
+#X connect 149 0 146 0;
+#X connect 150 0 147 0;
+#X connect 151 0 148 0;
+#X connect 158 0 155 0;
+#X connect 159 0 156 0;
+#X connect 160 0 157 0;
+#X connect 167 0 166 0;
+#X connect 168 0 165 0;
+#X connect 169 0 164 0;
+#X connect 176 0 175 0;
+#X connect 177 0 174 0;
+#X connect 178 0 173 0;
+#X connect 185 0 182 0;
+#X connect 186 0 183 0;
+#X connect 187 0 184 0;
+#X connect 194 0 193 0;
+#X connect 195 0 192 0;
+#X connect 196 0 191 0;
+#X connect 203 0 200 0;
+#X connect 204 0 201 0;
+#X connect 205 0 202 0;
+#X connect 212 0 209 0;
+#X connect 213 0 210 0;
+#X connect 214 0 211 0;
+#X connect 270 0 271 0;
+#X connect 272 0 273 0;
+#X coords 0 -1 1 1 750 220 1 10 10;

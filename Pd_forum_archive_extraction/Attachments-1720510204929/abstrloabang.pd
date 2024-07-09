@@ -1,0 +1,7 @@
+#N canvas 0 0 452 302 10;
+#X obj 204 67 loadbang;
+#X floatatom 204 108 5 0 0 0 - - -;
+#X msg 204 87 3;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X coords 0 0 1 1 200 140 1;

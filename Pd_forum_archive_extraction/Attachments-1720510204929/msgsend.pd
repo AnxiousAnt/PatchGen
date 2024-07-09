@@ -1,0 +1,4 @@
+#N canvas 0 0 450 300 10;
+#X obj 141 70 r BANG;
+#X msg 141 111 \; ABC \$1;
+#X connect 0 0 1 0;

@@ -1,0 +1,61 @@
+#N canvas 330 130 542 645 10;
+#X obj 87 294 print-patches;
+#X text 61 24 [print-patches];
+#X text 83 52 Helper application to print Pd patches. Accepts messages
+with 2 or 3 elements:;
+#X text 86 132 1: basename of patch to print;
+#X text 86 153 2: directory where to find this patch;
+#X msg 83 93 patch.pd /dir/of/patch [/dir/for/ps-files];
+#X msg 87 256 02.editing.pd /usr/lib/pd/doc/2.control.examples /tmp
+;
+#X text 87 175 3: (optional): directory where to save the ps-file.
+If omitted \, the directory of the original patch is used.;
+#X obj 87 324 print I_know_what_Pd_did_last_summer;
+#N canvas 0 0 684 531 GOTO10 0;
+#X obj 100 309 list append /usr/lib/pd/doc/2.control.examples /tmp
+;
+#X msg 276 159 01.PART1.hello.pd \, 02.editing.pd \, 03.connections.pd
+\, 04.messages.pd \, 05.counter.pd \, 06.more.counters.pd \, 07.time.pd
+\, 08.depthfirst.pd \, 09.send_receive.pd;
+#X text 275 139 GOTO10:;
+#X obj 276 212 list prepend add;
+#X obj 276 234 list trim;
+#X obj 100 263 textfile;
+#X obj 100 88 inlet;
+#X msg 216 230 rewind;
+#X obj 216 117 t b b;
+#X msg 216 92 GOTO10;
+#X obj 216 67 loadbang;
+#X obj 100 122 b;
+#X obj 100 338 outlet;
+#X obj 158 87 inlet;
+#X connect 0 0 12 0;
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 11 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;
+#X connect 8 1 1 0;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
+#X connect 11 0 5 0;
+#X connect 13 0 8 0;
+#X restore 110 442 pd GOTO10;
+#X obj 110 471 print-patches;
+#X obj 110 498 print I_know_what_Pd_did_last_summer;
+#X msg 86 416 bang;
+#X text 81 358 Hint: You can build a list of patches inside of a textfile.
+Or use one of the externals that can give a directory listing. But
+better only open one file at a time:;
+#X text 84 216 The Postscript file will be called pd-name-of-patch.pd.ps
+;
+#X msg 168 418 reset;
+#X connect 0 0 8 0;
+#X connect 6 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 10 0 12 0;
+#X connect 12 0 9 0;
+#X connect 15 0 9 1;

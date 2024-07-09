@@ -1,0 +1,43 @@
+#N canvas 0 0 546 565 10;
+#X floatatom 102 230 5 0 0 0 - - -;
+#X floatatom 150 230 5 0 0 0 - - -;
+#X msg 102 266 set \$1;
+#X floatatom 112 126 5 0 0 0 - - -;
+#X floatatom 160 126 5 0 0 0 - - -;
+#X text 56 197 good: no loop \, both number boxes can be used;
+#X obj 107 375 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 3400 1;
+#X floatatom 205 383 5 0 0 0 - - -;
+#X msg 107 343 set \$1;
+#X obj 168 343 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 3400 1;
+#X msg 165 415 set \$1;
+#X text 66 90 bad: loops cause "stack overflow;
+#X obj 217 154 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 2300 1;
+#X obj 285 132 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 2300 1;
+#X obj 213 264 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 4200 1;
+#X obj 281 242 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 4200 1;
+#X msg 278 221 set \$1;
+#X text 42 26 How to let two number boxes always show the same value
+using 'set \$1';
+#X text 74 313 Now try to decipher this:;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 0 10 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
+#X connect 12 0 13 0;
+#X connect 13 0 12 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 16 0 15 0;

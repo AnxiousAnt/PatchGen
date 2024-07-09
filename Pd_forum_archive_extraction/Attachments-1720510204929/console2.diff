@@ -1,0 +1,173 @@
+Index: s_main.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/s_main.c,v
+retrieving revision 1.1.1.4.2.8
+diff -u -r1.1.1.4.2.8 s_main.c
+--- s_main.c	18 Nov 2003 10:34:10 -0000	1.1.1.4.2.8
++++ s_main.c	30 Jan 2004 02:53:31 -0000
+@@ -80,6 +80,9 @@
+ int sys_choutlist[MAXAUDIOOUTDEV];
+ /* } IOhannes */
+ 
++/* Matju { */
++int console_scrollback = 0;
++/* } */
+ 
+ typedef struct _fontinfo
+ {
+@@ -251,9 +254,23 @@
+     	pd_version, pd_compiletime, pd_compiledate);
+     if (sys_version)	/* if we were just asked our version, exit here. */
+     	return (0);
++
++    /* Matju { */
++    {
++	char buf[64];
++	sprintf(buf,"%d",console_scrollback);
++	setenv("pd_console_scrollback",buf,1);
++	if (console_scrollback) {
++	    void guiprint(char *fmt, va_list ap);
++	    sys_addprinthook(guiprint);
++	}
++    }
++    /* } */
++
+     if (sys_startgui(sys_guidir->s_name))	/* start the gui */
+     	return(1);
+-    	    /* open audio and MIDI */
++
++	    /* open audio and MIDI */
+     sys_open_midi(sys_nmidiin, sys_midiindevlist,
+     	sys_nmidiout, sys_midioutdevlist);
+     sys_open_audio(sys_nsoundin, sys_soundindevlist, sys_nchin, sys_chinlist,
+@@ -757,7 +774,15 @@
+ 	    goto usage;
+     	    argc -= 2; argv += 2;
+     	}
+-    	else
++	/* Matju { */
++    	else if (!strcmp(*argv,"-console"))
++	{
++		console_scrollback = atoi(argv[1]);
++		fprintf(stderr,"pd_console_scrollback: %s\n",argv[1]);
++		argc-=2; argv+=2;
++	}
++	/* } */
++	else
+     	{
+ 	    unsigned int i;
+     	usage:
+Index: s_print.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/s_print.c,v
+retrieving revision 1.1.1.1.16.2
+diff -u -r1.1.1.1.16.2 s_print.c
+--- s_print.c	15 Oct 2003 07:55:10 -0000	1.1.1.1.16.2
++++ s_print.c	30 Jan 2004 02:53:31 -0000
+@@ -201,3 +201,31 @@
+     if (*errobject) error("%s: %s", errobject, errstring);
+     else error("%s", errstring);
+ }
++
++/* ---------------------------------------------------------------- */
++/* matju's gui console, take II */
++
++extern int console_scrollback;
++static const int console_ln=2048;
++static int console_li=0;
++static char console_line[2048]="";
++
++void guiprint(char *fmt, va_list ap) {
++//    fprintf(stderr,"guiprint:"); vfprintf(stderr,fmt,ap);
++    int console_li_old = console_li;
++    console_li += vsnprintf(console_line+console_li, console_ln-console_li, fmt, ap);
++    console_line[console_ln-1]=0;
++
++    if (!strchr(&console_line[console_li_old],'\n')) return;
++
++    int countbrace=0, i, n = strlen(console_line);
++    for (i=n-1; i>=0; i--) if (console_line[i]=='}') countbrace++;
++    while (n+countbrace>=(int)sizeof(console_line)) n--;
++    for (i=n-1; i>=0; i--) {
++	console_line[i+countbrace]=console_line[i];
++        if (console_line[i]=='}') console_line[i+(--countbrace)]='\\';
++    }
++    sys_vgui("post_to_gui {%s}\n",console_line);
++    console_li=0;
++    console_line[0]=0;
++}
+Index: t_tkcmd.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/t_tkcmd.c,v
+retrieving revision 1.1.1.4
+diff -u -r1.1.1.4 t_tkcmd.c
+--- t_tkcmd.c	9 May 2003 16:03:44 -0000	1.1.1.4
++++ t_tkcmd.c	30 Jan 2004 02:53:31 -0000
+@@ -319,15 +319,17 @@
+     char buf[GUISTRING];
+     sprintf(buf, "set pd_guidir \"%s\"\n", pdgui_path);
+     tcl_mess(buf);
+-    strcpy(buf, pdgui_path);
+-    strcat(buf, "/bin/");
+-    strcat(buf, s);
+-    if (Tcl_EvalFile(interp, buf) != TCL_OK)
++    sprintf(buf, "set script {%s/bin/%s}\n"
++       "if {[catch {source $script} err]} "
++       "{puts stderr \"tcl: ERROR loading $script: $err\"}",pdgui_path,s);
++    /* is there a way to do a Tcl [catch] from C ? */
++    if (Tcl_Eval(interp, buf) != TCL_OK)
+     {
+     	char buf2[1000];
+     	sprintf(buf2, "puts [concat tcl: %s: can't open script]\n",
+     	    buf);
+     	tcl_mess(buf2);
++        tcl_mess("puts stderr {tcl: should not get here}");
+     }
+ }
+ 
+Index: u_main.tk
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/u_main.tk,v
+retrieving revision 1.1.1.4.2.7
+diff -u -r1.1.1.4.2.7 u_main.tk
+--- u_main.tk	24 Nov 2003 16:27:49 -0000	1.1.1.4.2.7
++++ u_main.tk	30 Jan 2004 02:53:32 -0000
+@@ -3306,3 +3306,38 @@
+ 	global $var
+ 	set $var $value
+ }
++
++# Matju {
++#puts "pd_console_scrollback = $env(pd_console_scrollback)"
++set errMsg ""
++catch {
++if {$env(pd_console_scrollback) != 0} {
++	frame .log
++	text .log.1 -width 80 -height 10 -yscrollcommand ".log.2 set"
++	scrollbar .log.2 -command ".log.1 yview"
++	.log.1 insert end "This is the PureData log\n"
++	pack .log.1 -side left -fill both -expand yes
++	pack .log.2 -side left -fill y -expand yes
++	pack .log -fill both -expand yes
++}} errMsg
++if {[string compare "" $errMsg] != 0} {
++	puts stderr "ERROR: $errMsg"
++}
++
++set console_scrollback_count 0
++proc post_to_gui {x} {
++	global env
++	global console_scrollback_count
++	set oldpos [lindex [.log.2 get] 1]
++	.log.1 insert end $x
++	incr console_scrollback_count
++	if {$console_scrollback_count >= $env(pd_console_scrollback)} {
++		.log.1 delete 1.0 2.0
++	}
++	if {$oldpos > 0.9999} {.log.1 see end}
++}
++
++.log.2 set 0.0 1.0
++
++## }
++

@@ -1,0 +1,5 @@
+#N canvas 567 564 450 300 10;
+#X obj 85 156 netreceive 99999 1;
+#X text 229 156 UDP on port 99999;
+#X obj 85 179 print got_this;
+#X connect 0 0 2 0;

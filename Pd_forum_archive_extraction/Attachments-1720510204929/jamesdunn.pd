@@ -1,0 +1,39 @@
+#N canvas 606 125 516 458 10;
+#X obj 100 192 readanysf~ 2;
+#X msg 40 106 open Gunfire.wav;
+#X obj 100 411 dac~;
+#X obj 101 373 *~;
+#X obj 134 374 *~;
+#X msg 104 162 play;
+#X msg 145 162 stop;
+#X obj 199 281 vsl 15 50 0 1 0 0 empty empty empty 0 -9 0 10 -257985
+-1 -1 3200 1;
+#X msg 199 339 \$1 50;
+#X obj 198 358 line~;
+#X obj 396 247 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 169 216 route ready samplerate length cache float bang;
+#X obj 40 23 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 166 103 delay 400;
+#X obj 40 60 metro 700;
+#X obj 252 96 delay 600;
+#X connect 0 0 3 0;
+#X connect 0 1 4 0;
+#X connect 0 2 11 0;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 1;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 1;
+#X connect 9 0 3 1;
+#X connect 11 5 10 0;
+#X connect 12 0 14 0;
+#X connect 13 0 5 0;
+#X connect 14 0 13 0;
+#X connect 14 0 1 0;
+#X connect 14 0 15 0;
+#X connect 15 0 6 0;

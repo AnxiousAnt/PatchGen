@@ -1,0 +1,53 @@
+Setting runtime build-lock...
+dpkg-deb -b /sw/src/fink.build/root-fink-buildlock-openni-1.5.2.23-4 /sw/src/fink.build
+dpkg-deb: baue Paket »fink-buildlock-openni-1.5.2.23-4« in »/sw/src/fink.build/fink-buildlock-openni-1.5.2.23-4_2012.01.22-20.51.48_darwin-i386.deb«.
+Installing build-lock package...
+/sw/bin/dpkg-lockwait -i /sw/src/fink.build/fink-buildlock-openni-1.5.2.23-4_2012.01.22-20.51.48_darwin-i386.deb
+Wähle vormals abgewähltes Paket fink-buildlock-openni-1.5.2.23-4.
+(Lese Datenbank ... 39659 Dateien und Verzeichnisse sind derzeit installiert.)
+Entpacke fink-buildlock-openni-1.5.2.23-4 (aus .../fink-buildlock-openni-1.5.2.23-4_2012.01.22-20.51.48_darwin-i386.deb) ...
+Richte fink-buildlock-openni-1.5.2.23-4 ein (2012.01.22-20.51.48) ...
+
+gzip -dc /sw/src/OpenNI-OpenNI-Stable-1.5.2.23-0-g1516074.tar.gz | /sw/bin/tar -xvf -  --no-same-owner --no-same-permissions 
+OpenNI-OpenNI-1516074/
+OpenNI-OpenNI-1516074/CHANGES
+
+********** many files ********
+
+OpenNI-OpenNI-1516074/Wrappers/OpenNI.net/UserPositionCapability.cs
+OpenNI-OpenNI-1516074/Wrappers/OpenNI.net/Wrappers.cs
+sed -i 's|/opt/local|/sw|' /sw/src/fink.build/openni-1.5.2.23-4/OpenNI-OpenNI-1516074/Platform/Linux/Build/OpenNI/Makefile
+sed: 1: "/sw/src/fink.build/open ...": unterminated substitute in regular expression
+### execution of sed failed, exit code 1
+Removing runtime build-lock...
+Removing build-lock package...
+/sw/bin/dpkg-lockwait -r fink-buildlock-openni-1.5.2.23-4
+(Lese Datenbank ... 39660 Dateien und Verzeichnisse sind derzeit installiert.)
+Entferne fink-buildlock-openni-1.5.2.23-4 ...
+Failed: phase patching: openni-1.5.2.23-4 failed
+
+Before reporting any errors, please run "fink selfupdate" and try again.
+If you continue to have issues, please check to see if the FAQ on Fink's 
+website solves the problem.  If not, ask on one of these mailing lists:
+
+	The Fink Users List <fink-users@lists.sourceforge.net>
+	The Fink Beginners List <fink-beginners@lists.sourceforge.net>,
+
+with a carbon copy to the maintainer:
+
+	Hans-Christoph Steiner <hans@eds.org>
+
+Note that this is preferable to emailing just the maintainer directly,
+since most fink package maintainers do not have access to all possible
+hardware and software configurations.
+
+Please try to include the complete error message in your report.  This
+generally consists of a compiler line starting with e.g. "gcc" or "g++"
+followed by the actual error output from the compiler.
+
+Also include the following system information:
+Package manager version: 0.31.6
+Distribution version: selfupdate-rsync Sun Jan 22 20:50:10 2012, 10.6, i386
+Trees: local/main stable/main stable/crypto unstable/main unstable/crypto
+Xcode: 3.2.3
+

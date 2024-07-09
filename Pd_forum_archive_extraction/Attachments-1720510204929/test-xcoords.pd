@@ -1,0 +1,8 @@
+#N canvas 1 56 553 530 10;
+#X obj 0 0 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1;
+#X msg 122 32 pos 0 0;
+#X text 195 30 1) click on message box to move the toogle into 0 \,
+0;
+#X text 195 50 2) resize the window and reclick the message box;
+#X connect 1 0 0 0;
+#X coords 0 530 1 529 190 70 0;

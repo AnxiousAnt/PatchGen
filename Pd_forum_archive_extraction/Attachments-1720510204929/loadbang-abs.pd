@@ -1,0 +1,13 @@
+#N canvas 0 50 450 300 10;
+#X obj 24 48 loadbang;
+#X obj 26 106 print;
+#X msg 25 80 abstraction loaded!;
+#N canvas 645 129 450 300 sub 0;
+#X obj 23 39 loadbang;
+#X obj 25 109 print;
+#X msg 24 74 subpatch loaded!;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 26 137 pd sub;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

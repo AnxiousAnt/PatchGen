@@ -1,0 +1,53 @@
+#N canvas 0 0 742 645 10;
+#X obj 20 174 hilbert~;
+#N canvas 0 0 450 300 graph2 0;
+#X array array1 131072 float 2;
+#X coords 0 1 131071 -1 500 140 1;
+#X restore 164 21 graph;
+#X obj 20 131 tabplay~ array1;
+#X obj 20 77 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 9 18 \; pd dsp 1;
+#X obj 154 262 hilbert~;
+#X obj 20 325 *~;
+#X obj 58 323 *~;
+#X obj 122 316 *~;
+#X obj 164 315 *~;
+#X obj 20 365 -~;
+#X obj 122 355 +~;
+#X obj 232 185 block~ 131072;
+#N canvas 0 0 450 300 graph3 0;
+#X array array2 131072 float 2;
+#X coords 0 1 131071 -1 500 140 1;
+#X restore 136 379 graph;
+#X obj 7 465 tabwrite~ array2;
+#X obj 28 396 *~ 2;
+#X floatatom 154 194 5 0 0 0 - - -;
+#X obj 156 225 osc~ 0;
+#X msg 313 254 \; array1 const 0;
+#X text 369 168 1 Draw an arbitrary signal;
+#X text 215 218 2 set your frequency shift ( zero doesn't seem to be
+a good choice );
+#X text 199 316 3 Here's the complex signal multiplication \, and we
+throw away the imaginary part (not sure about the multiplication by
+two in this situation..Is it necessary? Wrong? );
+#X text 0 57 4 Turn it on and bang;
+#X connect 0 0 6 0;
+#X connect 0 0 8 0;
+#X connect 0 1 9 0;
+#X connect 0 1 7 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 3 0 14 0;
+#X connect 5 0 6 1;
+#X connect 5 0 9 1;
+#X connect 5 1 8 1;
+#X connect 5 1 7 1;
+#X connect 6 0 10 0;
+#X connect 7 0 10 1;
+#X connect 8 0 11 0;
+#X connect 9 0 11 1;
+#X connect 10 0 15 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;

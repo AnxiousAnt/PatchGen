@@ -1,0 +1,44 @@
+#N canvas 595 75 450 478 10;
+#X obj 140 381 dac~;
+#X obj 147 140 loadbang;
+#X obj 140 175 metro 1000;
+#X obj -23 386 loadbang;
+#X obj 61 173 osc~ 220;
+#X obj 69 273 *~;
+#X msg 88 222 1 \, 0 100;
+#X obj 88 247 line~;
+#X text 235 368 Florian Hollerweger \, 2010;
+#X obj 140 352 *~;
+#X obj 213 316 dbtorms;
+#X obj 213 268 loadbang;
+#X msg 213 292 80;
+#X obj 170 242 delread~ line 350;
+#X obj -5 354 delwrite~ line 580;
+#X text 257 294 Master volume;
+#X obj 169 354 *~;
+#X msg 172 215 500;
+#X msg -23 410 \; pd dsp 1;
+#X text -10 8 -nogui bug: This patch creates a test signal on the left
+channel once a second \, which is delayed through [delwrite~] and [delread~]
+and then repeated on the right channel 500ms later. Under Debian (and
+Pd vanilla 0.41.4 or vanilla 0.42-5) \, when started with -nogui \,
+the delay line is initialized before the samplerate is set \, resulting
+in broken audio output. Under Windows XP (and Pd vanilla 0.42-5 or
+extended 0.41.4) \, the patch works fine with -nogui as well.;
+#X connect 1 0 2 0;
+#X connect 1 0 17 0;
+#X connect 2 0 6 0;
+#X connect 3 0 18 0;
+#X connect 4 0 5 0;
+#X connect 5 0 14 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 1;
+#X connect 9 0 0 0;
+#X connect 10 0 9 1;
+#X connect 10 0 16 1;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 13 0 16 0;
+#X connect 16 0 0 1;
+#X connect 17 0 13 0;

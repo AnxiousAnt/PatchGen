@@ -1,0 +1,26 @@
+#N canvas 416 308 950 375 10;
+#X obj 502 79 inlet;
+#X obj 583 79 inlet;
+#X obj 642 79 inlet;
+#X obj 502 180 \$1;
+#X obj 518 126 loadbang;
+#X obj 583 180 \$2;
+#X obj 642 180 \$3;
+#X obj 502 210 v exp_factor;
+#X obj 77 79 inlet;
+#X obj 77 263 outlet;
+#X obj 583 210 v start;
+#X obj 642 210 v end;
+#X obj 77 175 expr (if(exp_factor == 1 \, $f1 \, (exp($f1 * log(exp_factor))
+- 1) / (exp_factor - 1)) * (end - start)) + start;
+#X connect 0 0 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 3 0;
+#X connect 4 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 10 0;
+#X connect 6 0 11 0;
+#X connect 8 0 12 0;
+#X connect 12 0 9 0;

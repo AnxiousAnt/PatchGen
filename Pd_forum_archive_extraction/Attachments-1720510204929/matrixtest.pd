@@ -1,0 +1,18 @@
+#N canvas 0 0 553 360 10;
+#X msg 88 145 element \$1 \$1;
+#X obj 196 151 mtx_rand;
+#X msg 196 129 4 5;
+#X msg 244 128 bang;
+#X obj 244 203 mtx_print;
+#X text 234 90 load and save matrices;
+#X obj 244 179 matrix test.mtx;
+#X msg 327 57 read /home/gerda/my_matrix.mtx;
+#X msg 298 122 write /home/gerda/my_matrix.mtx;
+#X msg 298 145 read /home/gerda/meine_matrix.mtx;
+#X connect 1 0 6 0;
+#X connect 2 0 1 0;
+#X connect 3 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;

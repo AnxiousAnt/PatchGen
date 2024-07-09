@@ -1,0 +1,30 @@
+Index: bsaylor/partconv~.c
+===================================================================
+--- bsaylor/partconv~.c	(revision 17424)
++++ bsaylor/partconv~.c	(working copy)
+@@ -149,6 +149,13 @@
+ 	float *sumbuf1ptr;
+ 	float *sumbuf2ptr;
+ 
++	// hack to prevent usage of unititialized ir array
++	if (x->ir_prepared == 0) {
++		for (i = 0; i < n; i++)
++			out[i] = 0.f;
++		return (w+5);
++	}
++    
+ 	memcpy(&(x->inbuf[x->inbufpos]), in, n*sizeof(float));  // gather a block of input into input buffer
+ 	x->inbufpos += n;
+ 	if (x->inbufpos >= x->partsize) {
+@@ -261,10 +268,12 @@
+ 	if ( ! (arrayobj = (t_garray *)pd_findbyclass(x->arrayname, garray_class))) {
+ 		if (*x->arrayname->s_name) {
+ 			pd_error(x, "partconv~: %s: no such array", x->arrayname->s_name);
++			x->ir_prepared = 0;
+ 			return;
+ 		}
+ 	} else if ( ! garray_getfloatwords(arrayobj, &arraysize, &array)) {
+ 		pd_error(x, "%s: bad template", x->arrayname->s_name);
++		x->ir_prepared = 0;
+ 		return;
+ 	}

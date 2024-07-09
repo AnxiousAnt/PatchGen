@@ -1,0 +1,38 @@
+#N canvas 0 22 856 634 10;
+#X obj 71 244 moving-average~ 200;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-avg 400 float 2;
+#X coords 0 1 400 -1 400 280 2 0 0;
+#X restore 395 67 graph;
+#X obj 66 216 sig~;
+#X obj 30 20 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 111 87 / 100;
+#X obj 30 251 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 110 111 - 1;
+#X obj 109 51 random 201;
+#X obj 63 286 tabwrite~ \$0-avg;
+#X obj 118 385 loadbang;
+#X obj 118 461 s \$0-avg;
+#X obj 247 165 f;
+#X obj 225 134 t f b;
+#X floatatom 248 221 5 0 0 0 prev - -, f 5;
+#X floatatom 288 221 5 0 0 1 curr - -, f 5;
+#X msg 118 413 ylabel -10 -1 -0.5 0 0.5 1 \, yticks 0 0.1 5 \, xticks
+0 10 10 \, xlabel -1.05 0 100 200 300 400;
+#X connect 0 0 8 0;
+#X connect 2 0 0 0;
+#X connect 3 0 7 0;
+#X connect 3 0 8 0;
+#X connect 4 0 6 0;
+#X connect 5 0 8 0;
+#X connect 6 0 2 0;
+#X connect 6 0 12 0;
+#X connect 6 0 14 0;
+#X connect 7 0 4 0;
+#X connect 9 0 15 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 1;
+#X connect 12 1 11 0;
+#X connect 15 0 10 0;

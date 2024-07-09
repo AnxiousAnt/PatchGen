@@ -1,0 +1,39 @@
+#N struct mycnv float x float y float w float h float color float border-c
+float border-w;
+#N canvas 0 0 772 351 10;
+#N canvas 404 487 450 300 put 0;
+#X scalar mycnv 114 102 100 60 777 0 2 \;;
+#X restore 68 66 pd put;
+#N canvas 409 309 641 527 mycnv 0;
+#X obj 67 44 struct mycnv float x float y float w float h float color
+float border-c float border-w;
+#X text 150 195 - RGB color (0=black \, 999=white \, 900=red \, 90=green
+\, 9=blue \, 555=grey \, etc.);
+#X text 149 236 - line width;
+#X text 149 253 - two or more (x \, y) pairs giving coordinates.;
+#X obj 69 124 filledpolygon color border-c border-w 0 0 w 0 w h 0 h
+;
+#X obj 358 370 pointer;
+#X text 150 168 - interior color;
+#X obj 55 309 t b b;
+#X msg 55 284 bang;
+#X msg 358 349 traverse pd-put \, bang;
+#X msg 70 429 clear;
+#X obj 70 457 s pd-put;
+#X obj 55 396 append mycnv x y w h color border-c border-w;
+#X msg 55 371 100 100 100 60 777 0 2;
+#X connect 5 0 12 7;
+#X connect 7 0 13 0;
+#X connect 7 1 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 11 0;
+#X connect 13 0 12 0;
+#X restore 68 45 pd mycnv;
+#X scalar mycnv 141 46 534 82 777 0 2 \;;
+#X scalar mycnv 136 164 150 121 50 850 20 \;;
+#X text 181 54 This is a comment on a data structure canvas.;
+#X text 180 83 Unfortunately it will hide behind the canvas if you
+resize or move the canvas.;
+#X text 331 188 <== This is another ds-canvas with different colors
+and border width.;

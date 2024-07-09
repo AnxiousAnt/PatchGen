@@ -1,0 +1,34 @@
+Package: ftgl
+Version: 2.1.2
+Revision: 1
+###
+Source: http://opengl.geek.nz/ftgl/ftgl-%v.tar.gz
+Source-MD5: 3eabec9ad37371c4d139408c7ffd2429
+SourceDirectory: FTGL
+###
+DocFiles: README.txt COPYING.txt HISTORY.txt license.txt
+###
+Maintainer: Hans-Christoph Steiner <hans@eds.org>
+HomePage: http://homepages.paradise.net.nz/henryj/code/#FTGL
+License: GPL
+Description: Library for using fonts in OpenGL
+###
+PatchScript: <<
+#perl -pi -e 's,"../mac/Includes,"%p/lib/freetype219/include %p/lib/freetype219/include/freetype2,' mac/FTGL.xcode/project.pbxproj
+perl -pi -e 's,/Users/henry/Development/PROJECTS/FTGL,%b,' mac/FTGL.xcode/project.pbxproj
+perl -pi -e 's,HEADER_SEARCH_PATHS = Includes,HEADER_SEARCH_PATHS = "%p/lib/freetype219/include %p/lib/freetype219/include/freetype2",' mac/FTGL.xcode/project.pbxproj
+<<
+CompileScript: cd mac && xcodebuild
+InstallScript: <<
+install -d %i/include
+install -p %b/include/*.h %i/include
+install -d %i/lib
+install -p %b/mac/build/Default/libftgl.a %i/lib
+install -d %i/share/doc/%n
+install -p %b/docs/FTGL.html %i/share/doc/%n
+install -p %b/docs/FTGL_1_3.gif %i/share/doc/%n
+install -d %i/share/doc/%n/images
+install -p %b/docs/images/ftgldemo.jpg %i/share/doc/%n/images
+install -p %b/docs/images/metrics.png %i/share/doc/%n/images
+cd %i/share/doc/%n && tar xzf %b/docs/html.tar.gz
+<<

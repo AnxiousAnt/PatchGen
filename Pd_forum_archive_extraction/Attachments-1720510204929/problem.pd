@@ -1,0 +1,4 @@
+#N canvas 0 22 450 300 10;
+#X obj 123 128 pdluax txtwrite;
+#X msg 124 105 write;
+#X connect 1 0 0 0;

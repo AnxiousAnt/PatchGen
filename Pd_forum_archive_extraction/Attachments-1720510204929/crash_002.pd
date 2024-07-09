@@ -1,0 +1,12 @@
+#N canvas 0 0 450 300 10;
+#X obj 113 208 h_list;
+#X msg 113 140 get;
+#X msg 152 140 insert 23;
+#X obj 113 93 t b b;
+#X obj 113 55 bng 32 250 50 0 empty empty crash_me 0 -6 0 8 -258699
+-1 -1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 0;
+#X connect 4 0 3 0;

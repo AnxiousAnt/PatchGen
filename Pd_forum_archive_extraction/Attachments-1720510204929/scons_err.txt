@@ -1,0 +1,46 @@
+gcc -pipe -O2 -fPIC -DPD -DUNIX -I/usr/include -I/usr/local/include -I/usr/local/src/externals/ann -I/usr/local/src/pd/src -I/usr/local/src/src -I/usr/local/src/externals/ann/src -I/usr/local/src/externals/ann/shared -c -o /usr/local/src/externals/ann/src/ann_td.os /usr/local/src/externals/ann/src/ann_td.c
+/usr/local/src/externals/ann/src/ann_td.c:11:18: fann.h: No such file or directory
+/usr/local/src/externals/ann/src/ann_td.c: In function `ann_td_createFann':
+/usr/local/src/externals/ann/src/ann_td.c:126: warning: assignment makes pointer from integer without a cast
+/usr/local/src/externals/ann/src/ann_td.c:128: error: `FANN_SIGMOID_SYMMETRIC' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:128: error: (Each undeclared identifier is reported only once
+/usr/local/src/externals/ann/src/ann_td.c:128: error: for each function it appears in.)
+/usr/local/src/externals/ann/src/ann_td.c: In function `ann_td_run_the_net':
+/usr/local/src/externals/ann/src/ann_td.c:283: error: `fann_type' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:283: error: `calc_out' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:305: error: dereferencing pointer to incomplete type
+/usr/local/src/externals/ann/src/ann_td.c: In function `ann_td_train_on_the_fly':
+/usr/local/src/externals/ann/src/ann_td.c:346: error: `fann_type' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:346: error: parse error before "input_merged"
+/usr/local/src/externals/ann/src/ann_td.c:358: error: dereferencing pointer to incomplete type
+/usr/local/src/externals/ann/src/ann_td.c:367: error: `input_merged' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:372: error: `output' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:387: error: dereferencing pointer to incomplete type
+/usr/local/src/externals/ann/src/ann_td.c: In function `ann_td_load_ann_from_file':
+/usr/local/src/externals/ann/src/ann_td.c:435: warning: assignment makes pointer from integer without a cast
+/usr/local/src/externals/ann/src/ann_td.c: In function `ann_td_set_FANN_TRAIN_INCREMENTAL':
+/usr/local/src/externals/ann/src/ann_td.c:467: error: `FANN_TRAIN_INCREMENTAL' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c: In function `ann_td_set_FANN_TRAIN_BATCH':
+/usr/local/src/externals/ann/src/ann_td.c:478: error: `FANN_TRAIN_BATCH' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c: In function `ann_td_set_FANN_TRAIN_RPROP':
+/usr/local/src/externals/ann/src/ann_td.c:489: error: `FANN_TRAIN_RPROP' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c: In function `ann_td_set_FANN_TRAIN_QUICKPROP':
+/usr/local/src/externals/ann/src/ann_td.c:500: error: `FANN_TRAIN_QUICKPROP' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c: In function `ann_td_set_activation_function_output':
+/usr/local/src/externals/ann/src/ann_td.c:519: error: `FANN_THRESHOLD' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:521: error: `FANN_THRESHOLD_SYMMETRIC' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:523: error: `FANN_LINEAR' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:525: error: `FANN_SIGMOID' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:527: error: `FANN_SIGMOID_STEPWISE' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:529: error: `FANN_SIGMOID_SYMMETRIC' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c:531: error: `FANN_SIGMOID_SYMMETRIC_STEPWISE' undeclared (first use in this function)
+/usr/local/src/externals/ann/src/ann_td.c: In function `ann_td_print_ann_details':
+/usr/local/src/externals/ann/src/ann_td.c:549: error: dereferencing pointer to incomplete type
+/usr/local/src/externals/ann/src/ann_td.c:550: error: dereferencing pointer to incomplete type
+/usr/local/src/externals/ann/src/ann_td.c:551: error: dereferencing pointer to incomplete type
+/usr/local/src/externals/ann/src/ann_td.c:552: error: dereferencing pointer to incomplete type
+/usr/local/src/externals/ann/src/ann_td.c:553: error: dereferencing pointer to incomplete type
+/usr/local/src/externals/ann/src/ann_td.c:554: error: dereferencing pointer to incomplete type
+/usr/local/src/externals/ann/src/ann_td.c:555: error: dereferencing pointer to incomplete type
+scons: *** [/usr/local/src/externals/ann/src/ann_td.os] Error 1
+scons: building terminated because of errors.

@@ -1,0 +1,36 @@
+#N canvas 360 291 455 410 10;
+#X obj 34 7 key;
+#X obj 88 7 keyup;
+#X obj 99 260 print;
+#X obj 34 103 moses 1;
+#X msg 73 128 clear;
+#X obj 99 216 change;
+#X obj 108 239 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 34 191 pipe 45;
+#X obj 88 39 sel 32;
+#X msg 88 68 0;
+#X obj 34 39 sel 32;
+#X msg 34 67 1;
+#X text 137 39 test with space key;
+#X floatatom 73 167 5 0 0 0 - - -;
+#X text 26 294 Anti-repeat trick: the 0 message is held back for 45
+ms and when a 1 message is received in the meantime \, the 0 message
+is cleared from the pipe object. Note that this causes 45 ms added
+latency in the keyup message \, but not in the keydown message. Delay
+time may be set shorter \, depending on system settings.;
+#X text 28 374 Katja Vetter March 2019;
+#X connect 0 0 10 0;
+#X connect 1 0 8 0;
+#X connect 3 0 7 0;
+#X connect 3 1 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 7 0;
+#X connect 5 0 2 0;
+#X connect 5 0 6 0;
+#X connect 7 0 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 3 0;
+#X connect 10 0 11 0;
+#X connect 11 0 3 0;
+#X connect 13 0 7 1;

@@ -1,0 +1,31 @@
+#N canvas 644 320 662 530 12;
+#X obj 23 108 snapshot~;
+#X obj 42 72 metro 1000;
+#X obj 23 136 change;
+#X obj 23 162 t b;
+#X obj 23 224 delay 3000;
+#X msg 23 316 \; pd dsp 0 \; pd dsp 1;
+#X obj 38 189 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 23 19 osc~ 0.1;
+#X obj 42 45 loadbang;
+#X text 117 102 the output of the snapshot should change every 1000ms
+unless audio is off.;
+#X text 118 185 bang every 1000ms when audio is on;
+#X text 116 335 restart if audio stuck;
+#X text 122 15 osc~ output value only if audio is on;
+#X text 117 211 test if audio is still on (a bang restart the delay
+to 3000ms \, so the delay output a bang only if it does not receive
+input for 3000 ms \, i.e only if audio stop);
+#X obj 57 284 loadbang;
+#X msg 96 408 \; pd dsp 0 \;;
+#X text 186 417 try this : audio sould restat in 3000ms;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 7 0 0 0;
+#X connect 8 0 1 0;
+#X connect 14 0 5 0;

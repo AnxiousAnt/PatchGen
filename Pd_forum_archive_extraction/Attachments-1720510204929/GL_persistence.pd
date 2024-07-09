@@ -1,0 +1,120 @@
+#N canvas 586 -3 421 657 10;
+#N canvas 0 22 450 300 gemwin 0;
+#X obj 132 136 gemwin;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X obj 67 41 route create;
+#X msg 67 70 set destroy;
+#X msg 142 68 set create;
+#X msg 132 112 create \, 1;
+#X msg 198 112 destroy;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 3 1 5 0;
+#X connect 3 1 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X restore 11 30 pd gemwin;
+#X msg 11 11 create;
+#X obj 123 210 cnv 15 250 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 129 547 GEMglEnd;
+#X floatatom 174 77 5 0 0 0 - - -;
+#X obj 130 120 GEMglRotatef 0 1 1 1;
+#X obj 212 168 GLdefine GL_SMOOTH;
+#X obj 212 146 loadbang;
+#X obj 207 283 loadbang;
+#X obj 200 304 GLdefine GL_POLYGON;
+#X obj 127 326 GEMglBegin;
+#X obj 130 188 GEMglShadeModel;
+#X obj 282 530 loadbang;
+#X obj 129 570 GEMglShadeModel;
+#X msg 266 485 1 0 1;
+#X msg 308 485 1 1 0;
+#X msg 279 144 bang;
+#X obj 260 529 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 280 551 GLdefine GL_FLAT;
+#X obj 214 616 GLdefine GL_MAP2_VERTEX;
+#X obj 266 586 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 210 79 5 0 0 0 - - -;
+#X floatatom 247 80 5 0 0 0 - - -;
+#X floatatom 284 80 5 0 0 0 - - -;
+#X obj 127 379 GEMglVertex4f -3 -3 -3 -3;
+#X obj 211 329 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 199 329 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 224 329 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 238 329 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 123 488 GEMglVertex4f 1 0 0 1;
+#X obj 128 404 GEMglColor4f 0 0 1 1;
+#X obj 128 426 GEMglVertex4f 0 -1 0 1;
+#X obj 129 450 GEMglColor4f 0 1 0 1;
+#X obj 121 508 GEMglColor4fv 1 1 0;
+#X obj 121 528 GEMglVertex4fv 0 1 0 2;
+#X obj 128 245 GEMglClear;
+#X obj 128 221 GEMglDrawBuffer;
+#X obj 226 240 GLdefine GL_FRONT;
+#X obj 192 434 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 180 434 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 205 434 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 219 434 vsl 10 40 -3 3 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 130 56 gemhead 50;
+#X obj 223 219 loadbang;
+#X msg 127 28 set \$1;
+#X floatatom 126 6 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 0 0;
+#X connect 3 0 13 0;
+#X connect 4 0 5 1;
+#X connect 5 0 11 0;
+#X connect 6 0 11 1;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 1;
+#X connect 10 0 24 0;
+#X connect 11 0 36 0;
+#X connect 12 0 18 0;
+#X connect 14 0 33 1;
+#X connect 15 0 33 1;
+#X connect 16 0 6 0;
+#X connect 17 0 18 0;
+#X connect 18 0 13 1;
+#X connect 19 0 13 1;
+#X connect 20 0 19 0;
+#X connect 21 0 5 2;
+#X connect 22 0 5 3;
+#X connect 23 0 5 4;
+#X connect 24 0 30 0;
+#X connect 25 0 24 2;
+#X connect 26 0 24 1;
+#X connect 27 0 24 3;
+#X connect 28 0 24 4;
+#X connect 29 0 33 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
+#X connect 32 0 29 0;
+#X connect 33 0 34 0;
+#X connect 34 0 3 0;
+#X connect 35 0 10 0;
+#X connect 36 0 35 0;
+#X connect 37 0 35 1;
+#X connect 38 0 29 2;
+#X connect 39 0 29 1;
+#X connect 40 0 29 3;
+#X connect 41 0 29 4;
+#X connect 42 0 5 0;
+#X connect 43 0 37 0;
+#X connect 44 0 42 0;
+#X connect 45 0 44 0;

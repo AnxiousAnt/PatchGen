@@ -1,0 +1,25 @@
+#N canvas 192 137 658 492 10;
+#X floatatom 140 124 5 0 0 0 - - -, f 5;
+#X obj 154 156 expr acosh($f1);
+#X floatatom 154 189 0 0 0 0 - - -;
+#X obj 140 60 loadbang;
+#X msg 140 98 10 \, -1;
+#X floatatom 140 322 0 0 0 0 - - -;
+#X obj 140 284 expr if(isnan(acosh($f1)) \, 0 \, acosh($f1)) \; isnan(acosh($f1))
+;
+#X obj 389 320 sel 1;
+#X obj 389 374 print error;
+#X msg 389 347 'nan' - outputting 0 instead;
+#X floatatom 154 248 0 0 0 0 - - -;
+#X obj 154 220 expr isnan($f1);
+#X connect 0 0 1 0;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 11 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 5 0;
+#X connect 6 1 7 0;
+#X connect 7 0 9 0;
+#X connect 9 0 8 0;
+#X connect 11 0 10 0;

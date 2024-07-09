@@ -1,0 +1,30 @@
+#N canvas 860 31 790 511 10;
+#N canvas 1293 212 368 330 testing 0;
+#X obj 136 63 loadbang;
+#X msg 99 85 0;
+#X obj 12 101 random 127;
+#X floatatom 63 136 0 0 0 0 - - -;
+#X msg 12 62 bang;
+#X obj 16 19 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X coords 0 -1 1 1 200 200 2 0 0;
+#X restore 491 178 pd testing;
+#X obj 20 438 s pd-testing;
+#X text 7 40 Start here;
+#X text 17 11 This example will show you how to use the motion msg.
+;
+#X text 50 81 show and select what's in the patch;
+#X msg 20 60 vis 1 \, editmode 1 \, mouse 5 5 0 0 \, mouseup 200 200
+0;
+#X msg 60 159 editmode 1 \, mouse 5 5 0 0 \, mouseup 200 200 0;
+#X msg 76 243 vis 1 \, editmode 1 \, mouse 5 5 0 0 \, mouseup 200 200
+0 \, cut \, vis 0;
+#X text 64 133 2;
+#X text 83 214 3;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;

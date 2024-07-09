@@ -1,0 +1,233 @@
+input channels = 2, output channels = 2
+deken-plugin.tcl (Pd externals search) in C:/Users/Gebruiker/AppData/Roaming/Pd/deken-plugin loaded.
+Platform detected: Windows-i386-32bit
+input channels = 2, output channels = 2
+1 devices in, 1 devices out
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/startup/0.libdir.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/startup/0.libdir.dll and succeeded
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/startup/1.list.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/startup/1.list.dll and succeeded
+tried ./extra.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/extra.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/extra.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/extra.m_i386 and failed
+tried ./extra.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/extra.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/extra.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/extra.dll and failed
+tried ./extra/extra.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/extra/extra.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/extra/extra.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/extra/extra.m_i386 and failed
+tried ./extra/extra.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/extra/extra.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/extra/extra.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/extra/extra.dll and failed
+tried ./extra/extra-meta.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/extra/extra-meta.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/extra/extra-meta.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/extra/extra-meta.pd and failed
+H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/startup/extra: can't load startup library'!
+
+tried ./pdlua.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/pdlua.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/pdlua.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/pdlua.m_i386 and failed
+tried ./pdlua.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/pdlua.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/pdlua.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/pdlua.dll and failed
+tried ./pdlua/pdlua.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/pdlua/pdlua.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/pdlua/pdlua.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/pdlua/pdlua.m_i386 and failed
+tried ./pdlua/pdlua.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/pdlua/pdlua.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/pdlua/pdlua.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/pdlua/pdlua.dll and failed
+tried ./pdlua/pdlua-meta.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/pdlua/pdlua-meta.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/pdlua/pdlua-meta.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/pdlua/pdlua-meta.pd and failed
+H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/startup/pdlua: can't load startup library'!
+
+tried ./tclpd.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/tclpd.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/tclpd.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/tclpd.m_i386 and failed
+tried ./tclpd.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/tclpd.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/tclpd.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/tclpd.dll and failed
+tried ./tclpd/tclpd.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/tclpd/tclpd.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/tclpd/tclpd.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/tclpd/tclpd.m_i386 and failed
+tried ./tclpd/tclpd.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/tclpd/tclpd.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/tclpd/tclpd.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/tclpd/tclpd.dll and failed
+tried ./tclpd/tclpd-meta.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/tclpd/tclpd-meta.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/tclpd/tclpd-meta.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/tclpd/tclpd-meta.pd and failed
+H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/startup/tclpd: can't load startup library'!
+
+tried ./vanilla.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/vanilla.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/vanilla.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/vanilla.m_i386 and failed
+tried ./vanilla.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/vanilla.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/vanilla.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/vanilla.dll and failed
+tried ./vanilla/vanilla.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/vanilla/vanilla.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/vanilla/vanilla.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/vanilla/vanilla.m_i386 and failed
+tried ./vanilla/vanilla.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/vanilla/vanilla.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/vanilla/vanilla.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/vanilla/vanilla.dll and failed
+tried ./vanilla/vanilla-meta.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/vanilla/vanilla-meta.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/vanilla/vanilla-meta.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/vanilla/vanilla-meta.pd and failed
+H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/startup/vanilla: can't load startup library'!
+
+ADDED BY ROLF: OPENING a2l-help FROM THE BROWSER
+
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/a2l.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/a2l.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/a2l.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/a2l.m_i386 and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/a2l.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/a2l.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/a2l.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/a2l.dll and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/a2l/a2l.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/a2l/a2l.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/a2l/a2l.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/a2l/a2l.m_i386 and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/a2l/a2l.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/a2l/a2l.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/a2l/a2l.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/a2l/a2l.dll and failed
+tried ./a2l/a2l-meta.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/a2l/a2l-meta.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/a2l/a2l-meta.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/a2l/a2l-meta.pd and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/a2l.pd and succeeded
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/any2list.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/any2list.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/any2list.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/any2list.m_i386 and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/any2list.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/any2list.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/any2list.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/any2list.dll and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/any2list/any2list.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/any2list/any2list.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/any2list/any2list.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/any2list/any2list.m_i386 and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/any2list/any2list.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/any2list/any2list.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/any2list/any2list.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/any2list/any2list.dll and failed
+tried ./any2list/any2list-meta.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/any2list/any2list-meta.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/any2list/any2list-meta.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/any2list/any2list-meta.pd and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/any2list.pd and succeeded
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/any2list.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/any2list.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/any2list.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/any2list.m_i386 and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/any2list.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/any2list.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/any2list.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/any2list.dll and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/any2list/any2list.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/any2list/any2list.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/any2list/any2list.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/any2list/any2list.m_i386 and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/any2list/any2list.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/any2list/any2list.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/any2list/any2list.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/any2list/any2list.dll and failed
+tried ./any2list/any2list-meta.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/any2list/any2list-meta.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/any2list/any2list-meta.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/any2list/any2list-meta.pd and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/any2list.pd and succeeded
+
+ADDED BY ROLF:OPENING atoi-help FROM BROWSER
+
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi.m_i386 and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi.dll and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi/atoi.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi/atoi.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi/atoi.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi/atoi.m_i386 and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi/atoi.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi/atoi.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi/atoi.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi/atoi.dll and failed
+tried ./atoi/atoi-meta.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi/atoi-meta.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi/atoi-meta.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi/atoi-meta.pd and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi.pd and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi.pat and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi.pat and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi.pat and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi.pat and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi/atoi.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi/atoi.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi/atoi.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi/atoi.pd and failed
+ atoi
+... couldn't create
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi.m_i386 and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi.dll and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi/atoi.m_i386 and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi/atoi.m_i386 and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi/atoi.m_i386 and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi/atoi.m_i386 and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi/atoi.dll and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi/atoi.dll and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi/atoi.dll and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi/atoi.dll and failed
+tried ./atoi/atoi-meta.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi/atoi-meta.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi/atoi-meta.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi/atoi-meta.pd and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi.pd and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi.pat and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi.pat and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi.pat and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi.pat and failed
+tried C:/Users/Gebruiker/AppData/Roaming/Pd/zexy/atoi/atoi.pd and failed
+tried C:/Program Files (x86)/Common Files/Pd/atoi/atoi.pd and failed
+tried C:/Users/Gebruiker/Application Data/Pd/atoi/atoi.pd and failed
+tried H:/PD-main/Pd-map/Pd-0.43.4-extended-windowsxp-i386/Pd-0.43.4-extended/extra/atoi/atoi.pd and failed
+ atoi
+... couldn't create

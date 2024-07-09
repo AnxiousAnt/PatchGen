@@ -1,0 +1,200 @@
+*** pd-extended.2006-11-03/externals/io/hidio/HID Utilities Source/HID_Utilities.h	Thu Nov 30 06:47:56 2006
+--- pd-extended/externals/io/hidio/HID Utilities Source/HID_Utilities.h	Sun Dec  3 20:23:59 2006
+***************
+*** 54,60 ****
+  // 10.1.x
+  #include <IOKit/hid/IOHIDUsageTables.h>
+  
+! #include <IOKit/HID/IOHIDLib.h>
+  
+  // ==================================
+  
+--- 54,60 ----
+  // 10.1.x
+  #include <IOKit/hid/IOHIDUsageTables.h>
+  
+! #include <IOKit/hid/IOHIDLib.h>
+  
+  // ==================================
+  
+*** pd-extended.2006-11-03/Gem/src/Base/GemPixImageLoad.cpp	Sat Oct  7 06:06:25 2006
+--- pd-extended/Gem/src/Base/GemPixImageLoad.cpp	Sun Dec  3 20:40:50 2006
+***************
+*** 22,28 ****
+  #include "m_pd.h"
+  
+  #ifdef __APPLE__
+! # include <Carbon/carbon.h>
+  # include <QuickTime/QuickTime.h>
+  #endif // __APPLE__
+  
+--- 22,28 ----
+  #include "m_pd.h"
+  
+  #ifdef __APPLE__
+! # include <Carbon/Carbon.h>
+  # include <QuickTime/QuickTime.h>
+  #endif // __APPLE__
+  
+*** pd-extended.2006-11-03/Gem/src/Base/GemMan.cpp	Fri Sep 15 06:05:30 2006
+--- pd-extended/Gem/src/Base/GemMan.cpp	Sun Dec  3 20:50:15 2006
+***************
+*** 25,31 ****
+  #elif defined __APPLE__
+  #include <stdlib.h>
+  #include <string.h>
+! #include <Quicktime/Quicktime.h>
+  #include <time.h>
+  #elif defined __WIN32__
+  # include <stdlib.h>
+--- 25,31 ----
+  #elif defined __APPLE__
+  #include <stdlib.h>
+  #include <string.h>
+! #include <QuickTime/QuickTime.h>
+  #include <time.h>
+  #elif defined __WIN32__
+  # include <stdlib.h>
+*** pd-extended.2006-11-03/Gem/src/Pixes/pix_videoDarwin.h	Fri Jun  9 21:05:48 2006
+--- pd-extended/Gem/src/Pixes/pix_videoDarwin.h	Sun Dec  3 20:53:30 2006
+***************
+*** 12,18 ****
+  #define INCLUDE_PIX_VIDEODARWIN_H_
+  
+  #include <Carbon/Carbon.h>
+! #include <QuickTime/Quicktime.h>
+  
+  #include "pix_video.h"
+   
+--- 12,18 ----
+  #define INCLUDE_PIX_VIDEODARWIN_H_
+  
+  #include <Carbon/Carbon.h>
+! #include <QuickTime/QuickTime.h>
+  
+  #include "pix_video.h"
+   
+*** pd-extended.2006-11-03/Gem/src/Pixes/pix_filmDarwin.h	Fri Jun  9 21:04:17 2006
+--- pd-extended/Gem/src/Pixes/pix_filmDarwin.h	Sun Dec  3 20:54:21 2006
+***************
+*** 16,23 ****
+  
+  #include "pix_film.h"
+  
+! #include <Carbon/carbon.h>
+! #include <QuickTime/quicktime.h>
+  
+  /*-----------------------------------------------------------------
+    -------------------------------------------------------------------
+--- 16,23 ----
+  
+  #include "pix_film.h"
+  
+! #include <Carbon/Carbon.h>
+! #include <QuickTime/QuickTime.h>
+  
+  /*-----------------------------------------------------------------
+    -------------------------------------------------------------------
+*** pd-extended.2006-11-03/Gem/src/Pixes/filmQT.h	Wed Jan 18 11:18:58 2006
+--- pd-extended/Gem/src/Pixes/filmQT.h	Sun Dec  3 20:55:16 2006
+***************
+*** 22,29 ****
+  
+  #ifdef HAVE_QUICKTIME
+  # ifdef __APPLE__
+! #  include <Carbon/carbon.h>
+! #  include <QuickTime/quicktime.h>
+  # elif defined __WIN32__
+  #  include <QTML.h>
+  #  include <Movies.h>
+--- 22,29 ----
+  
+  #ifdef HAVE_QUICKTIME
+  # ifdef __APPLE__
+! #  include <Carbon/Carbon.h>
+! #  include <QuickTime/QuickTime.h>
+  # elif defined __WIN32__
+  #  include <QTML.h>
+  #  include <Movies.h>
+*** pd-extended.2006-11-03/Gem/src/Pixes/pix_filmQT.h	Sun Jun 19 20:34:39 2005
+--- pd-extended/Gem/src/Pixes/pix_filmQT.h	Sun Dec  3 20:55:49 2006
+***************
+*** 18,25 ****
+  
+  
+  #ifdef __APPLE__
+! #include <Carbon/carbon.h>
+! #include <QuickTime/quicktime.h>
+  #else 
+  #ifdef __WIN32__
+  #include <QTML.h>
+--- 18,25 ----
+  
+  
+  #ifdef __APPLE__
+! #include <Carbon/Carbon.h>
+! #include <QuickTime/QuickTime.h>
+  #else 
+  #ifdef __WIN32__
+  #include <QTML.h>
+*** pd-extended.2006-11-03/packages/darwin_app/Makefile	Thu Nov 30 07:38:21 2006
+--- pd-extended/packages/darwin_app/Makefile	Sun Dec  3 21:10:14 2006
+***************
+*** 130,135 ****
+--- 130,136 ----
+  	install -d "$(PD_APP_CONTENTS)/Resources/Scripts"
+  	install -m0644 -p Info.plist "$(PD_APP_CONTENTS)"
+  	install -m0644 -p *.icns  "$(PD_APP_CONTENTS)/Resources"
++ 	chmod +w "$(PD_APP_CONTENTS)/MacOS/${PD_APP_NAME}"
+  	mv "$(PD_APP_CONTENTS)/MacOS/${WISH_NAME}" \
+  		"$(PD_APP_CONTENTS)/MacOS/${PD_APP_NAME}"
+  
+***************
+*** 167,173 ****
+  # tigital's Gem window focus black magic
+  rez_install:
+  	install -pv "$(CWD)/mac.r" "$(bindir)"
+! 	cd $(bindir) && /Developer/tools/Rez -t APPL mac.r -o pd
+  
+  
+  darwin_app_embed_libs:
+--- 168,174 ----
+  # tigital's Gem window focus black magic
+  rez_install:
+  	install -pv "$(CWD)/mac.r" "$(bindir)"
+! 	cd $(bindir) && /Developer/Tools/Rez -t APPL mac.r -o pd
+  
+  
+  darwin_app_embed_libs:
+***************
+*** 183,191 ****
+  	$(MAKE) -C $(packages_src) $(DEST_PATHS) PD_CONFIGURE_FLAGS=--enable-jack \
+  		pd_install 
+  	cd "$(PD_APP_CONTENTS)/Resources/Scripts" && \
+  		ln -s ../bin/pd.tk AppMain.tcl
+  # support for Info Panel Plugins mgmt
+! 	cd "$(PD_APP_CONTENTS)" && ln -s Resources/extra Plugins
+  # run script to move help-*.pd files to *-help.pd according to the standard
+  	cd $(pddocdir) && \
+  		$(scripts_src)/convert-help-to-standard.sh
+--- 184,193 ----
+  	$(MAKE) -C $(packages_src) $(DEST_PATHS) PD_CONFIGURE_FLAGS=--enable-jack \
+  		pd_install 
+  	cd "$(PD_APP_CONTENTS)/Resources/Scripts" && \
++ 		rm AppMain.tcl; \
+  		ln -s ../bin/pd.tk AppMain.tcl
+  # support for Info Panel Plugins mgmt
+! 	cd "$(PD_APP_CONTENTS)" && rm Plugins && ln -s Resources/extra Plugins
+  # run script to move help-*.pd files to *-help.pd according to the standard
+  	cd $(pddocdir) && \
+  		$(scripts_src)/convert-help-to-standard.sh
+***************
+*** 195,200 ****
+--- 197,203 ----
+  	cd $(packages_src) && \
+  		$(MAKE) $(DEST_PATHS) PD_CONFIGURE_FLAGS=--enable-jack devel_install 
+  	cd "$(PD_APP_CONTENTS)/Resources/Scripts" && \
++ 		rm AppMain.tcl; \
+  		ln -s ../bin/pd.tk AppMain.tcl
+  # support for Info Panel Plugins mgmt
+  	cd "$(PD_APP_CONTENTS)" && ln -s Resources/extra Plugins

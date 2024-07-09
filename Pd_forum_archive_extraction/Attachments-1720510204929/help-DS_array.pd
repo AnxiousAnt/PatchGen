@@ -1,0 +1,83 @@
+#N struct 1004-array1 float x float y float pointx float pointy array
+1004-array 1004-point;
+#N struct 1004-point float x float y;
+#N canvas 173 171 929 725 12;
+#X msg 104 48 poll \$1;
+#X msg 104 193 reset;
+#X msg 104 99 update;
+#X msg 104 26 size \$1;
+#X obj 48 26 nbx 5 14 0 1e+037 0 0 empty empty empty 0 -6 0 10 -262144
+-1 -1 4000 256;
+#X msg 72 48 500;
+#X msg 40 48 0;
+#X obj 104 528 vline~;
+#X obj 103 607 snapshot~;
+#X obj 153 555 env~ 512;
+#X obj 153 577 b;
+#X obj 103 629 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+10 -262144 -1 -1 0 256;
+#X obj 256 508 vsl 15 128 0 1 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X msg 104 215 vline;
+#X msg 104 237 line;
+#X msg 352 320 0 0 0 1 20 1 2 100 0.5 3 250 0.25 4 300 0.75 5 400 0.25
+6 550 0.0625 7 1000 0;
+#X obj 104 358 DS_array 8 vline 1000;
+#X msg 104 4 points \$1;
+#X obj 48 4 nbx 5 14 0 1e+037 0 0 empty empty empty 0 -6 0 10 -262144
+-1 -1 5 256;
+#X msg 147 479 stop;
+#X text 186 4 <-- total number of points in envelope;
+#X text 186 26 <-- how long the envelope lasts;
+#X obj 104 261 bng 20 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 186 99 <-- stores the envelope points internally and updates
+the graphic display. Points outside boundaries are set to the edges
+;
+#X text 186 191 <-- sets all points to 0 and equally spaced;
+#X text 186 215 <-- output is configured to control the vline~ object
+;
+#X text 186 237 <-- output is configured to control the line~ object
+;
+#X text 186 261 <-- bang outputs envelope messages from the left inlet
+;
+#X text 383 360 Right inlet takes triple number sequences:;
+#X text 383 405 3rd number: value from 0-1;
+#X text 383 390 2nd number: point position in milliseconds;
+#X text 383 375 1st number: point number;
+#X text 386 459 Arguments:;
+#X text 389 476 \$1: number of points;
+#X text 389 493 \$2: either line of vline \, depending on which object
+you want to control;
+#X text 389 525 \$3: length of envelope in milliseconds;
+#X obj 352 298 loadbang;
+#X text 186 49 <-- a number from 1 and up sends an update message internally
+in intervals of given milliseconds. 0 turns polling off;
+#X msg 104 150 getpat;
+#X obj 352 546 print;
+#X text 186 151 <-- sends a list containing all the envelope data in
+the same form as can be sent in the right inlet;
+#X connect 0 0 16 0;
+#X connect 1 0 16 0;
+#X connect 2 0 16 0;
+#X connect 3 0 16 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 11 0;
+#X connect 8 0 12 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 1;
+#X connect 16 0 7 0;
+#X connect 16 1 39 0;
+#X connect 17 0 16 0;
+#X connect 18 0 17 0;
+#X connect 19 0 7 0;
+#X connect 22 0 16 0;
+#X connect 36 0 15 0;
+#X connect 38 0 16 0;

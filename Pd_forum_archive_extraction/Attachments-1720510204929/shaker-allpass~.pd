@@ -1,0 +1,26 @@
+#N canvas 263 262 465 300 10;
+#X obj 25 41 inlet~;
+#X obj 323 48 loadbang;
+#X obj 323 104 * -1;
+#X obj 154 163 +~;
+#X obj 137 247 +~;
+#X obj 137 272 outlet~;
+#X obj 170 132 *~ 0;
+#X obj 154 218 *~ 0;
+#X text 44 9 Allpass filter. arg1 = delay time (msec) \, Arg2 = feedback
+;
+#X obj 137 89 delread~ \$0-del \$1;
+#X obj 222 216 delwrite~ \$0-del \$1;
+#X obj 323 72 float \$2;
+#X connect 0 0 3 0;
+#X connect 1 0 11 0;
+#X connect 2 0 6 1;
+#X connect 3 0 7 0;
+#X connect 3 0 10 0;
+#X connect 4 0 5 0;
+#X connect 6 0 3 1;
+#X connect 7 0 4 1;
+#X connect 9 0 4 0;
+#X connect 9 0 6 0;
+#X connect 11 0 2 0;
+#X connect 11 0 7 1;

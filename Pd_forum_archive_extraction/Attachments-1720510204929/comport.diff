@@ -1,0 +1,86 @@
+Index: comport.c
+===================================================================
+--- comport.c	(revision 17597)
++++ comport.c	(working copy)
+@@ -419,7 +419,7 @@
+     if (fd == INVALID_HANDLE_VALUE) return -1;
+ 
+     status = EscapeCommFunction(fd, dwFunc);
+-    if (status != 0) return nr;
++    if (status != 0) return on;
+     return -1; /* didn't work, GetLastError tells why */
+ }
+ 
+@@ -1083,6 +1083,7 @@
+         /*osReader.Pointer = 0; seems MinGW doesn't knoow about this one */
+         osReader.hEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
+         if(ReadFile(x->comhandle, x->x_inbuf, x->x_inbuf_len, &dwRead, &osReader))
++        //if (ReadFile(x->comhandle, x->x_inbuf, NULL, &dwRead, &osReader))
+         {
+             if(dwRead > 0)
+             {
+@@ -1095,8 +1096,27 @@
+         else
+         {
+             whicherr = GetLastError();
+-            if (whicherr != ERROR_IO_PENDING)
+-              err = -1;
++            if (whicherr == ERROR_IO_PENDING)
++            {
++                //post("iopending\n");
++                if (GetOverlappedResult(x->comhandle, &osReader, &dwRead, FALSE)) // don't wait
++                {
++                    //post("dwRead %ld\n", dwRead);
++                    if (dwRead > 0)
++                    {
++                        for (dwX = 0; dwX < dwRead;dwX++)
++                        {
++                            outlet_float(x->x_data_outlet, (t_float)x->x_inbuf[dwX]);
++                        }
++                    }
++                }
++                else
++                {
++                    whicherr = GetLastError();
++                    if (whicherr != ERROR_IO_PENDING) err = -1;
++                }
++            }
++            else err = -1;
+         }
+         CloseHandle(osReader.hEvent);
+ #else
+@@ -1303,7 +1323,11 @@
+ 
+ /*	 Open the Comport for RD and WR and get a handle */
+ /* this line should use a real serial device */
+-    strncpy(test.serial_device_prefix, serial_device_prefix, strlen(serial_device_prefix)+1);
++#ifdef _MSC_VER
++    strncpy_s(test.serial_device_prefix, strlen(serial_device_prefix) + 1, serial_device_prefix, strlen(serial_device_prefix) + 1);
++#else
++    strncpy(test.serial_device_prefix, serial_device_prefix, strlen(serial_device_prefix) + 1);
++#endif
+     test.baud = fbaud;
+     test.data_bits = 8; /* default 8 data bits */
+     test.parity_bit = 0;/* default no parity bit */
+@@ -1321,7 +1345,11 @@
+     x = (t_comport *)pd_new(comport_class);
+ 
+     x->comport = test.comport;/* com_num */
+-    strncpy(x->serial_device_prefix,serial_device_prefix,strlen(serial_device_prefix)+1);
++#ifdef _MSC_VER
++    strncpy_s(x->serial_device_prefix, strlen(serial_device_prefix) + 1, serial_device_prefix, strlen(serial_device_prefix) + 1);
++#else
++    strncpy(x->serial_device_prefix, serial_device_prefix, strlen(serial_device_prefix) + 1);
++#endif
+     x->serial_device = test.serial_device; /* we need this so 'help' doesn't crash */
+ 
+     x->baud = test.baud;
+@@ -2013,7 +2041,7 @@
+     null_tv.tv_usec = 0;
+ #endif /* NOT _WIN32 */
+     verbose(-1, "comport - PD external for unix/windows\n"
+-        "LGPL 1998-2012,  Winfried Ritsch and others (see LICENSE.txt)\n"
++        "LGPL 1998-2015,  Winfried Ritsch and others (see LICENSE.txt)\n"
+         "Institute for Electronic Music - Graz");
+ }
+ 

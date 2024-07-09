@@ -1,0 +1,17 @@
+#N canvas 229 64 494 513 12;
+#X obj 131 202 tabplay~ dirac;
+#X obj 126 30 table dirac 64;
+#X msg 144 139 \; dirac const 0 \, \$1 1;
+#X floatatom 131 85 5 0 64 0 - - -;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array vu 64 float 0;
+#X coords 0 1 63 -1 200 140 1;
+#X restore 129 305 graph;
+#X obj 131 175 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 107 231 tabwrite~ vu;
+#X connect 0 0 6 0;
+#X connect 3 0 2 0;
+#X connect 3 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 0 6 0;

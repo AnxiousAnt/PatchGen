@@ -1,0 +1,9 @@
+#N canvas 314 159 340 257 10;
+#X obj 59 49 inlet;
+#X obj 164 49 inlet;
+#X obj 164 89 print 2ndInlet;
+#X obj 59 89 print 1stInlet;
+#X obj 62 161 outlet~;
+#X obj 142 161 outlet~;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;

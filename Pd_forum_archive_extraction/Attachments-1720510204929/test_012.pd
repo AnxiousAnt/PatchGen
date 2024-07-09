@@ -1,0 +1,13 @@
+#N canvas 335 161 416 351 10;
+#X obj 76 84 until;
+#X obj 80 232 until;
+#X msg 76 118 \; pd open child.pd /Users/cuinjune/Desktop/test;
+#X msg 76 57 4;
+#X msg 80 205 4;
+#X text 115 56 open child.pd 4 times;
+#X text 115 203 close opened patches <-- crashes;
+#X msg 80 264 \; pd-child.pd menuclose;
+#X connect 0 0 2 0;
+#X connect 1 0 7 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;

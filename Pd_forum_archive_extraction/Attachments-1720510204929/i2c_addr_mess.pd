@@ -1,0 +1,8 @@
+#N canvas 940 412 450 300 12;
+#X obj 181 129 pii2c 0x09;
+#X obj 181 87 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 45 52 pii2c 0x0A;
+#X msg 45 27 write 2 127 7;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;

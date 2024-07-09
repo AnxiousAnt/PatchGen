@@ -1,0 +1,17 @@
+#N canvas 950 538 450 300 12;
+#N canvas 961 878 744 300 something 1;
+#X floatatom 302 68 5 0 0 0 - - -;
+#X floatatom 517 67 5 0 0 0 - - -;
+#X obj 67 35 inlet~;
+#X obj 87 98 fexpr~ if((CR_\$0>HT_\$0) \, CG_\$0 = $f3*CG_\$0 + (1-$f3)*$x1
+\, 0) \; if((CA_\$0>HT_\$0) \, CG_\$0 = $f2*CG_\$0 + (1-$f2)*$x1 \,
+0), f 62;
+#X connect 0 0 3 1;
+#X connect 1 0 3 2;
+#X connect 2 0 3 0;
+#X restore 88 89 pd something;
+#X obj 250 59 v CG_\$0;
+#X obj 83 46 noise~;
+#X obj 252 95 v CA_\$0;
+#X obj 248 131 v CR_\$0;
+#X connect 2 0 0 0;

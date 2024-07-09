@@ -1,0 +1,14 @@
+#N canvas 248 185 243 311 12;
+#X obj 12 25 inlet;
+#X obj 6 133 outlet;
+#X obj 40 267 sphere 0.1;
+#X obj 40 236 translateXYZ \$1 \$2 0;
+#X obj 40 176 r gemhead;
+#X obj 40 206 separator;
+#X obj 26 71 masse M 1;
+#X connect 0 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 1 0;
+#X connect 6 0 3 3;

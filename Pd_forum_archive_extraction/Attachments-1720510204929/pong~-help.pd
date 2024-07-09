@@ -1,0 +1,32 @@
+#N canvas 213 182 537 383 10;
+#X obj 20 -24 cyclone/pong~;
+#X obj 304 184 loadbang;
+#X obj 222 241 snapshot~;
+#X obj 259 216 metro 200;
+#X obj 221 143 pong~;
+#X msg 146 72 mode 0;
+#X msg 146 101 mode 1;
+#X floatatom 221 20 5 0 0 0 - - -;
+#X text 257 18 Input;
+#X text 338 117 Minimum number of range;
+#X text 315 88 Maximum number of range;
+#X text 6 44 Set modes to specify behavior;
+#X text 28 73 Fold over (default);
+#X text 71 102 Wrap around;
+#X floatatom 222 283 5 0 0 0 - - -;
+#X msg 259 185 bang;
+#X text 112 -24 "Fold over" or "wrap around" a signal value;
+#X obj 257 88 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -6 0
+10 -262144 -1 -1 10 256;
+#X obj 279 117 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -6 0
+10 -262144 -1 -1 0 256;
+#X connect 1 0 3 0;
+#X connect 2 0 14 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 15 0 3 0;
+#X connect 17 0 4 1;
+#X connect 18 0 4 2;

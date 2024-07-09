@@ -1,0 +1,70 @@
+pi@RPi400:~/Downloads/pd-else-master $ make install objectsdir=~/else-build
+
+++++ info: using Makefile.pdlibbuilder version 0.6.0
+++++ info: making target install in lib else
+++++ info: installpath is '/home/pi/else-build/else'
+++++ info: making Code_source/Compiled/control/rand.f.o in lib else
+cc -DPD -I "/usr/include/pd" -DUNIX  -fPIC -ICode_source/shared -DHAVE_STRUCT_TIMESPEC -ICode_source/shared/aubio/src -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -o Code_source/Compiled/control/rand.f.o -c Code_source/Compiled/control/rand.f.c
+Code_source/Compiled/control/rand.f.c: In function ‘setup_rand0x2ef’:
+Code_source/Compiled/control/rand.f.c:76:47: warning: cast between incompatible function types from ‘void * (*)(t_symbol *, int,  t_atom *)’ {aka ‘void * (*)(struct _symbol *, int,  struct _atom *)’} to ‘void * (*)(void)’ [-Wcast-function-type]
+   76 |     randf_class = class_new(gensym("rand.f"), (t_newmethod)randf_new, 0,
+      |                                               ^
+++++ info: making Code_source/shared/random.o in lib else
+cc -DPD -I "/usr/include/pd" -DUNIX  -fPIC -ICode_source/shared -DHAVE_STRUCT_TIMESPEC -ICode_source/shared/aubio/src -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -o Code_source/shared/random.o -c Code_source/shared/random.c
+Code_source/shared/random.c: In function ‘random_init’:
+Code_source/shared/random.c:52:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   52 |     if(*s1 <  2)
+      |     ^~
+Code_source/shared/random.c:54:2: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   54 |  *s2 = 3093459404U ^ seedval;
+      |  ^
+Code_source/shared/random.c:55:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   55 |     if(*s2 <  8)
+      |     ^~
+Code_source/shared/random.c:57:2: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   57 |  *s3 = 1821928721U ^ seedval;
+      |  ^
+Code_source/shared/random.c: In function ‘get_seed’:
+Code_source/shared/random.c:62:24: warning: parameter ‘s’ set but not used [-Wunused-but-set-parameter]
+   62 | int get_seed(t_symbol *s, int ac, t_atom *av, int n){
+      |              ~~~~~~~~~~^
+++++ info: linking objects in rand.f.pd_linux for lib else
+cc -rdynamic -shared -fPIC -Wl,-rpath,"\$ORIGIN",--enable-new-dtags    -o rand.f.pd_linux Code_source/Compiled/control/rand.f.o Code_source/shared/random.o  -lc -lm   
+++++ info: making Code_source/Compiled/control/canvas.bounds.o in lib else
+cc -DPD -I "/usr/include/pd" -DUNIX  -fPIC -ICode_source/shared -DHAVE_STRUCT_TIMESPEC -ICode_source/shared/aubio/src -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -o Code_source/Compiled/control/canvas.bounds.o -c Code_source/Compiled/control/canvas.bounds.c
+Code_source/Compiled/control/canvas.bounds.c: In function ‘bounds_proxy_any’:
+Code_source/Compiled/control/canvas.bounds.c:21:66: warning: parameter ‘ac’ set but not used [-Wunused-but-set-parameter]
+   21 | static void bounds_proxy_any(t_bounds_proxy *p, t_symbol *s, int ac, t_atom *av){
+      |                                                              ~~~~^~
+Code_source/Compiled/control/canvas.bounds.c: In function ‘setup_canvas0x2ebounds’:
+Code_source/Compiled/control/canvas.bounds.c:67:55: warning: cast between incompatible function types from ‘void * (*)(t_floatarg)’ {aka ‘void * (*)(float)’} to ‘void * (*)(void)’ [-Wcast-function-type]
+   67 |     bounds_class = class_new(gensym("canvas.bounds"), (t_newmethod)bounds_new,
+      |                                                       ^
+++++ info: linking objects in canvas.bounds.pd_linux for lib else
+cc -rdynamic -shared -fPIC -Wl,-rpath,"\$ORIGIN",--enable-new-dtags    -o canvas.bounds.pd_linux Code_source/Compiled/control/canvas.bounds.o  -lc -lm   
+++++ info: making Code_source/Compiled/signal/rint~.o in lib else
+cc -DPD -I "/usr/include/pd" -DUNIX  -fPIC -ICode_source/shared -DHAVE_STRUCT_TIMESPEC -ICode_source/shared/aubio/src -Wall -Wextra -Wshadow -Winline -Wstrict-aliasing -O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -o Code_source/Compiled/signal/rint~.o -c Code_source/Compiled/signal/rint~.c
+Code_source/Compiled/signal/rint~.c: In function ‘rint_dsp’:
+Code_source/Compiled/signal/rint~.c:23:5: warning: implicit declaration of function ‘signal_setmultiout’ [-Wimplicit-function-declaration]
+   23 |     signal_setmultiout(&sp[1], sp[0]->s_nchans);
+      |     ^~~~~~~~~~~~~~~~~~
+Code_source/Compiled/signal/rint~.c:23:37: error: ‘t_signal’ {aka ‘struct _signal’} has no member named ‘s_nchans’
+   23 |     signal_setmultiout(&sp[1], sp[0]->s_nchans);
+      |                                     ^~
+Code_source/Compiled/signal/rint~.c:24:43: error: ‘t_signal’ {aka ‘struct _signal’} has no member named ‘s_length’
+   24 |     dsp_add(rint_perform, 3, (t_int)(sp[0]->s_length * sp[0]->s_nchans),
+      |                                           ^~
+Code_source/Compiled/signal/rint~.c:24:61: error: ‘t_signal’ {aka ‘struct _signal’} has no member named ‘s_nchans’
+   24 |     dsp_add(rint_perform, 3, (t_int)(sp[0]->s_length * sp[0]->s_nchans),
+      |                                                             ^~
+Code_source/Compiled/signal/rint~.c:21:30: warning: parameter ‘x’ set but not used [-Wunused-but-set-parameter]
+   21 | static void rint_dsp(t_rint *x, t_signal **sp){
+      |                      ~~~~~~~~^
+Code_source/Compiled/signal/rint~.c: In function ‘rint_tilde_setup’:
+Code_source/Compiled/signal/rint~.c:36:53: error: ‘CLASS_MULTICHANNEL’ undeclared (first use in this function)
+   36 |         (t_newmethod) rint_new, 0, sizeof (t_rint), CLASS_MULTICHANNEL, 0);
+      |                                                     ^~~~~~~~~~~~~~~~~~
+Code_source/Compiled/signal/rint~.c:36:53: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [pd-lib-builder//Makefile.pdlibbuilder:949 : Code_source/Compiled/signal/rint~.o] Erreur 1
+
+pi@RPi400:~/Downloads/pd-else-master $ 

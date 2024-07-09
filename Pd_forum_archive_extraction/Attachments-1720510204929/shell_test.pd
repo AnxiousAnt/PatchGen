@@ -1,0 +1,8 @@
+#N canvas 644 319 450 300 10;
+#X obj 95 116 shell;
+#X obj 95 139 route <init>;
+#X obj 164 163 print;
+#X msg 95 93 ls Szenografie3/manufactum/ausgewaehlt/*.jpg;
+#X connect 0 0 1 0;
+#X connect 1 1 2 0;
+#X connect 3 0 0 0;

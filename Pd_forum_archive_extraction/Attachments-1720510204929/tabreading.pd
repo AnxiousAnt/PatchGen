@@ -1,0 +1,91 @@
+#N canvas 216 89 777 726 10;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array snd 19 float 3;
+#A 0 0 0.0526316 0.105263 0.157895 0.210526 0.263158 0.315789 0.368421
+0.421053 0.473684 0.526316 0.578947 0.631579 0.684211 0.736842 0.789474
+0.842105 0.894737 0.947368;
+#X coords 0 1 18 -1 200 140 1;
+#X restore 495 262 graph;
+#X obj 543 194 / 19;
+#X obj 543 155 f 0;
+#X obj 570 155 + 1;
+#X obj 543 132 until;
+#X msg 585 129 0;
+#X msg 542 93 19;
+#X obj 543 112 t a b;
+#X obj 543 215 tabwrite snd;
+#X obj 543 174 t a a;
+#X obj 542 72 loadbang;
+#X obj 58 77 tabread snd;
+#X floatatom 58 99 5 0 0 0 - - -;
+#X obj 58 60 hradio 12 1 0 19 empty empty empty 0 -8 0 10 -262144 -1
+-1 10;
+#X obj 58 120 * 19;
+#X floatatom 58 141 5 0 0 0 - - -;
+#X obj 62 318 snapshot~;
+#X obj 163 275 tgl 15 0 empty empty empty 17 7 0 10 -225271 -1 -1 1
+1;
+#X obj 163 294 metro 100;
+#X floatatom 62 343 5 0 0 0 - - -;
+#X obj 62 364 * 19;
+#X floatatom 62 385 5 0 0 0 - - -;
+#X obj 62 246 hradio 12 1 0 19 empty empty empty 0 -8 0 10 -262144
+-1 -1 4;
+#X obj 62 264 sig~ 0;
+#X msg 641 109 \; pd dsp 1;
+#X obj 63 288 tabread~ snd;
+#X obj 63 563 snapshot~;
+#X obj 164 520 tgl 15 0 empty empty empty 17 7 0 10 -225271 -1 -1 1
+1;
+#X obj 164 539 metro 100;
+#X floatatom 63 588 5 0 0 0 - - -;
+#X obj 63 609 * 19;
+#X floatatom 63 630 5 0 0 0 - - -;
+#X obj 63 491 hradio 12 1 0 19 empty empty empty 0 -8 0 10 -262144
+-1 -1 14;
+#X obj 63 509 sig~ 0;
+#X text 57 458 reading out an array as signal with tabread4~;
+#X obj 64 533 tabread4~ snd;
+#X floatatom 328 495 5 0 0 2 shift_change-me - -;
+#X floatatom 308 250 5 0 0 2 shift_change-me - -;
+#X text 51 31 reading out an array with tabread using floats from 0-18
+;
+#X text 52 210 reading out an array as signal with tabread~ using signals
+from 0-18.;
+#X text 255 535 tabread4~ does interpolation so values 0 and 18 are
+different from what tabread~ gives;
+#X connect 1 0 8 0;
+#X connect 2 0 3 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 0;
+#X connect 5 0 2 1;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 7 1 5 0;
+#X connect 9 0 1 0;
+#X connect 9 1 8 1;
+#X connect 10 0 6 0;
+#X connect 10 0 24 0;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
+#X connect 13 0 11 0;
+#X connect 14 0 15 0;
+#X connect 16 0 19 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 22 0 23 0;
+#X connect 23 0 25 0;
+#X connect 25 0 16 0;
+#X connect 26 0 29 0;
+#X connect 27 0 28 0;
+#X connect 28 0 26 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 0;
+#X connect 32 0 33 0;
+#X connect 33 0 35 0;
+#X connect 35 0 26 0;
+#X connect 36 0 33 0;
+#X connect 37 0 23 0;

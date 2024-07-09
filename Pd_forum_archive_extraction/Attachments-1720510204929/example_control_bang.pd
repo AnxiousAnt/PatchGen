@@ -1,0 +1,38 @@
+#N canvas 375 45 837 568 12;
+#X obj 45 87 bng 15 250 50 0 dosomethingelse-if-send dosomethingelse-if-receive
+do_something_else 17 7 0 10 -262144 -1 -1;
+#X obj 45 59 bng 15 250 50 0 dosomething-if-send dosomething-if-receive
+do_something 17 7 0 10 -262144 -1 -1;
+#X obj 193 86 bng 15 250 50 0 dosomethingelse-if-send dosomethingelse-if-receive
+do_something_else 17 7 0 10 -262144 -1 -1;
+#X obj 193 58 bng 15 250 50 0 dosomething-if-send dosomething-if-receive
+do_something 17 7 0 10 -262144 -1 -1;
+#X msg 38 280 \; dosomething bang;
+#X msg 37 321 \; dosomethingelse bang;
+#X obj 416 53 r dosomething;
+#X obj 416 115 print;
+#X msg 416 85 I'm actually doing something;
+#X obj 415 207 print;
+#X obj 415 145 r dosomethingelse;
+#X text 431 322 And here's an automated piece of patch;
+#X obj 434 351 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 434 373 metro 1000;
+#X obj 434 401 random 2;
+#X obj 434 429 select 1 0;
+#X obj 434 460 s dosomething;
+#X obj 471 488 s dosomethingelse;
+#X text 542 376 The guy who wrote this doesn't want;
+#X text 542 394 to care about my gui weirdnesses;
+#X msg 415 177 Believe me I'm actually doing something else;
+#X obj 37 143 control_bang dosomething;
+#X obj 36 173 control_bang dosomethingelse;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X connect 10 0 20 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 15 1 17 0;
+#X connect 20 0 9 0;

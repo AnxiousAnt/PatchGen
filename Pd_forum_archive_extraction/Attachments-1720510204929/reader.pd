@@ -1,0 +1,22 @@
+#N canvas 552 141 464 521 10;
+#X obj 69 106 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 69 224 msgfile;
+#X obj 69 129 metro 1000;
+#X msg 126 166 read msgfile.txt;
+#X msg 126 191 rewind;
+#X text 243 164 <- 1;
+#X text 179 190 <- 2;
+#X text 94 104 <- 3;
+#X obj 69 254 list-idx 1;
+#X obj 69 285 clip 840 890;
+#X floatatom 69 313 5 0 0 0 - - -;
+#X text 153 284 force to output number between 840 and 890;
+#X text 141 254 select the 2nd element of each line;
+#X connect 0 0 2 0;
+#X connect 1 0 8 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;

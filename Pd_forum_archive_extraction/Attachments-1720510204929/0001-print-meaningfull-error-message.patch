@@ -1,0 +1,25 @@
+>From 9e29d9c9670713438c500af9f8843e8a9c03dc7d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?IOhannes=20m=20zm=C3=B6lnig?= <zmoelnig@iem.at>
+Date: Thu, 25 Oct 2012 16:29:15 +0200
+Subject: [PATCH] print meaningfull error-message
+
+in case Tcl_EvalFile fails
+---
+ src/t_tkcmd.c |    1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/t_tkcmd.c b/src/t_tkcmd.c
+index a66e5ed..c33568e 100644
+--- a/src/t_tkcmd.c
++++ b/src/t_tkcmd.c
+@@ -582,6 +582,7 @@ void pdgui_doevalfile(Tcl_Interp *interp, char *s)
+     if (Tcl_EvalFile(interp, buf) != TCL_OK)
+     {
+         char buf2[1000];
++        printf("ERROR: %s\n", interp->errorLine, Tcl_GetStringResult(interp));
+         sprintf(buf2, "puts [concat tcl: %s: can't open script]\n",
+             buf);
+         tcl_mess(buf2);
+-- 
+1.7.10.4
+

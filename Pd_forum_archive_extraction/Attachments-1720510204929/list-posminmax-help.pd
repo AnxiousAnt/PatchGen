@@ -1,0 +1,15 @@
+#N canvas 9 25 450 300 10;
+#X obj 156 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 156 176 5 0 0 0 - - -;
+#X floatatom 237 201 5 0 0 0 - - -;
+#X text 52 175 pos of the min :;
+#X text 132 200 pos of the max :;
+#X obj 156 114 list-random 100 1000;
+#X obj 156 146 list-posminmax;
+#X text 52 22 [list-posminmax] find the position of the minimum and
+maximum float in a list of floats.;
+#X connect 0 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X connect 6 1 2 0;

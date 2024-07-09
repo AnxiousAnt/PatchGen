@@ -1,0 +1,59 @@
+Message-ID: <41A4B30E.9070807@slimboyfatboyslim.org>
+Date: Wed, 24 Nov 2004 17:13:02 +0100
+From: slimboyfatboyslim <slimboyfatboyslim@slimboyfatboyslim.org>
+User-Agent: Mozilla Thunderbird 0.9 (X11/20041103)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Etienne Desautels <tiit@sympatico.ca>
+Subject: Re: [PD] about [serial] object -OSX PD
+References: <DE9DB174-3E2F-11D9-9D2E-00039366A714@sympatico.ca>
+In-Reply-To: <DE9DB174-3E2F-11D9-9D2E-00039366A714@sympatico.ca>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Etienne Desautels wrote:
+
+> Hi list,
+>
+>> did you plug ur keyspan cable? did you check ur /dev directory? Is
+>> there sth called tty.USA19QW181P1.1?
+>
+>
+> That's not totally true. The name depend in which USB port you plug 
+> the adapter. From the documentation of the Keyspan :
+>
+> "For example, a port named "USA28X9132" is referencing to the second 
+> port on a Keyspan USB
+>  Twin Serial Adapter (part number USA-28X). The numbers before the 
+> last number refer to
+>  location of that adapter on the USB bus. In this case, "913" is 
+> reporting that the adapter is on USB
+>  bus # 9, host hub port # 1
+
+
+yup I suppose he/ she is using the same keyspan as me, so..........
+
+>
+> ------------------------------------------------------------------------
+>
+> and external hub port # 3."
+>
+> For that reason, I don't think it's a good idea to put a hard path in 
+> the binary. I prefer the way that Martin did so you can pass the good 
+> path whatever it is.
+>
+> I actually never use the comport object on os x. I'm using instead 
+> pyext and a python script (with the pySerial module) to do the 
+> communication. This way I was able to do a function to auto-discover 
+> the port of the keyspan adapter whatever it is. It works very well.
+>
+do you think this method will work on parallel port also? I'm working on 
+parapin external but I don't really understand how it works.
+
+>
+> I'm also really curious about the cheaper comports ?
+>
+> Etienne
+>
+
+

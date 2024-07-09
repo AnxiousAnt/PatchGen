@@ -1,0 +1,11 @@
+#N canvas 227 220 645 320 12;
+#X obj 130 72 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 136 109 t a b;
+#X obj 129 179 print a;
+#X obj 197 135 print b;
+#X text 196 179 <-- I consider this a bug \, what do you think?;
+#X text 220 199 It should print BANG \, not 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;

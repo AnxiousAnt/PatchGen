@@ -1,0 +1,37 @@
+I have been using GEM on windows for a while now and had crash problems a while back but i have settled on the follwing process and i havent had any crashes lately.
+1. using GEM 0.87 (no qt!) 
+2. encode video to avi  using virtualdub with cinepack (400x300) (not a great codec, i know) - because i want position control of the video i encode the video with a keyframe every 1 frame.
+3. dimensions of the video should match standard aspect ratio. and be a multiple of 4.
+
+I found that the larger the dimensions the more likely a crash (not sure if its bit rate related or something else) but i am using pix_delay in my patch and found if i took that out vids that did crash - didnt crash after removing the pix-delay. And using video with different codecs seemd to make more crashes so i encoded all my video to one codec (cinepack).
+
+rm.
+- Original Message ------------------------
+
+Message: 2
+Date: Tue, 7 Mar 2006 17:57:37 -0600
+From: "chris clepper" <cgc@humboldtblvd.com>
+Subject: Re: [PD] stability of Gem for video playing
+To: PD-list@iem.at
+Message-ID:
+	<a8e0bc960603071557u1d1e0280nfe2b42a4c18179e3@mail.gmail.com>
+Content-Type: text/plain; charset="iso-8859-1"
+
+On 3/7/06, David Powers <cyborgk@nocturnalnoize.com> wrote:
+>
+> Yes, just to be clear, I think on MacOSX and Linux performance may be
+> much more stable. From what I know the PC version has some problems,
+> particularly with video playing.
+
+
+
+Yes, the Windows version 0.90 does crash when loading Quicktime clips.  I
+have done some work to fix this and hopefully the results will be available
+soon.
+
+The other recommendations for Photo-Jpeg on OSX are good ones.
+
+cgc
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: http://lists.puredata.info/pipermail/pd-list/attachments/20060307/4aca2d2d/attachment-0001.htm

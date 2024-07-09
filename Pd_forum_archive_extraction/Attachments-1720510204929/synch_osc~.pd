@@ -1,0 +1,73 @@
+#N canvas 842 183 888 767 12;
+#X obj 62 41 inlet~;
+#X obj 274 39 inlet;
+#X text 270 16 threshold;
+#X text 69 165 rising edge detection;
+#X obj 63 188 fexpr~ ($x1[-1]<$f2)&($x1[0]>$f2);
+#X obj 411 40 inlet;
+#X obj 547 41 inlet;
+#X obj 276 125 f \$1;
+#X obj 411 126 f \$2;
+#X obj 547 127 f \$3;
+#X obj 688 127 f \$4;
+#X text 407 21 initial frequency;
+#X text 548 19 phase update (0-1);
+#X obj 687 41 inlet;
+#X text 688 19 freq update (0-1);
+#X obj 722 73 loadbang;
+#X text 505 274 what is being tracked inside fexpr:;
+#X text 506 296 a phasor (0-1) in $y1;
+#X text 510 322 frequency in $y2;
+#X text 506 350 phase update amount in $y3;
+#X text 513 375 freq update amount in $y4;
+#X obj 480 229 samplerate~;
+#X obj 464 323 /;
+#X msg 450 292 1;
+#X obj 450 265 t b f;
+#X text 512 395 accumulated phase in $y5;
+#X text 599 224 1/samplerate in $f5;
+#X obj 22 545 outlet~;
+#X obj 82 545 outlet~;
+#X obj 142 545 outlet~;
+#X obj 202 545 outlet~;
+#X obj 262 545 outlet~;
+#X text 515 420 previous frequency in $y6;
+#X text 469 471 Inputs to the frequency parameter trigger an update
+;
+#X text 475 493 to the frequency immediately;
+#X obj 340 540 outlet~;
+#X obj 23 380 fexpr~ modf($y1+$f5*$y2+$f3*$x1*$y3) \; if($y6!=$y6[-2]
+\, $y6 \, $y2+$f4*$x1*$y4) \; if($y5<0.5 \, 0 \, if($y5<2 \, 1-$y5
+\, 0)) \; if($y5<0.5 \, $y2 \, if($y5<2 \, (1-$y5)/$y5*$y2 \, -1.414*$y2/sqrt($y5)))
+\; if($x1[-1]==1 \, $y1+$f5*$y2 \, $y5+$f5*$y2) \; if($y6!=$f2 \, $f2
+\, $y6);
+#X obj 23 263 fexpr~ if($y2>1 \, 0 \, $x1) \; if($y1==1 \, 0 \, $y1+1/20)
+;
+#X text 46 241 20 samples de-bounce;
+#X connect 0 0 4 0;
+#X connect 1 0 7 0;
+#X connect 4 0 37 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 7 0 4 1;
+#X connect 8 0 36 1;
+#X connect 9 0 36 2;
+#X connect 10 0 36 3;
+#X connect 13 0 10 0;
+#X connect 15 0 9 0;
+#X connect 15 0 10 0;
+#X connect 15 0 8 0;
+#X connect 15 0 7 0;
+#X connect 15 0 21 0;
+#X connect 21 0 24 0;
+#X connect 22 0 36 4;
+#X connect 23 0 22 0;
+#X connect 24 0 23 0;
+#X connect 24 1 22 1;
+#X connect 36 0 27 0;
+#X connect 36 1 28 0;
+#X connect 36 2 29 0;
+#X connect 36 3 30 0;
+#X connect 36 4 31 0;
+#X connect 37 0 36 0;
+#X connect 37 0 35 0;

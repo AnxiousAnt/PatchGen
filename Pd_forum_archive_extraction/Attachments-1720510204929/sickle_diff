@@ -1,0 +1,12 @@
+diff -u /home/ico/Desktop/cyclone/cyclone-0.1-alpha57/sickle/curve.c miXed/cyclone/sickle/curve.c
+--- /home/ico/Desktop/cyclone/cyclone-0.1-alpha57/sickle/curve.c	2005-11-21 17:16:37.000000000 -0500
++++ miXed/cyclone/sickle/curve.c	2015-10-18 18:31:47.684291484 -0400
+@@ -296,7 +296,7 @@
+ 	    segp->s_delta = av[1].a_w.w_float;
+ 	else
+ 	    segp->s_delta = 0;
+-	curve_cc(x, segp, 0.);
++	curve_cc(x, segp, x->x_ccinput);
+     }
+     x->x_deltaset = 0;
+     x->x_target = x->x_segs->s_target;

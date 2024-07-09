@@ -1,0 +1,27 @@
+#N canvas 505 319 507 274 10;
+#N canvas 96 368 331 239 sub 1;
+#X restore 43 42 pd sub;
+#X msg 301 92 \; pd-sub clear;
+#X msg 120 42 \; pd-sub loadbang;
+#X floatatom 43 97 5 0 0 0 - - -;
+#X obj 75 154 * 20;
+#X obj 43 114 t f f f;
+#X obj 43 134 makefilename pd-%d-subsub;
+#X obj 43 174 pack s f f;
+#X msg 43 194 \; pd-sub obj 10 \$2 pd \$3-subsub \; \$1 obj 10 10 foo
+\$3;
+#X obj 299 173 makefilename pd-%d-subsub;
+#X text 302 72 clear all;
+#X msg 299 195 \; \$1 clear;
+#X floatatom 299 154 5 0 0 0 - - -;
+#X text 42 15 dynamic patching;
+#X text 296 136 clear some;
+#X connect 3 0 5 0;
+#X connect 4 0 7 1;
+#X connect 5 0 6 0;
+#X connect 5 1 4 0;
+#X connect 5 2 7 2;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 11 0;
+#X connect 12 0 9 0;

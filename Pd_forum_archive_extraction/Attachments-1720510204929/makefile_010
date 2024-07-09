@@ -1,0 +1,24 @@
+
+prefix=$(DESTDIR)/usr
+
+EXTERNALS = $(shell ls )
+
+all: xnetreceive.pd_linux
+
+.SUFFIXES: .pd_linux
+
+LINUXCFLAGS = -DPD -DUNIX -O2 -funroll-loops -fomit-frame-pointer \
+    -Wall -W -Wshadow -Wstrict-prototypes  \
+    -Wno-unused -Wno-parentheses -Wno-switch
+
+LINUXINCLUDE = -I. -I /home/martin/pd-0.37-0/src/
+
+xnetreceive.pd_linux: xnetreceive.c
+	$(CC) $(LINUXCFLAGS) $(LINUXINCLUDE) -o xnetreceive.o -c xnetreceive.c
+	ld -export_dynamic  -shared -o xnetreceive.pd_linux xnetreceive.o -lc -lm \
+	`test -f $*.libs && cat $*.libs`
+	chmod a+x "$*.pd_linux"
+	strip --strip-unneeded $*.pd_linux
+	rm -f "$*.o"
+
+

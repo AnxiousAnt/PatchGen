@@ -1,0 +1,23 @@
+*** s_linux.c	Sat Dec  1 00:07:58 2001
+--- s_linux.c.new	Sat Dec  1 00:12:25 2001
+***************
+*** 38,45 ****
+  #define ALSA
+  #endif
+  
+! #ifdef ALSA
+! #include <sys/asoundlib.h>   /* The include file path is the same for both */
+  #endif
+  
+  #include "m_imp.h"
+--- 38,47 ----
+  #define ALSA
+  #endif
+  
+! #ifdef ALSA99
+! #include <sys/asoundlib.h>   
+! #else ifdef ALSA01
+! #include <alsa/asoundlib.h>
+  #endif
+  
+  #include "m_imp.h"

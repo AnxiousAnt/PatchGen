@@ -1,0 +1,70 @@
+#N canvas 328 73 564 509 10;
+#X obj 153 54 inlet;
+#X obj 153 417 outlet;
+#X obj 153 395 list;
+#X obj 176 161 r SSSAD;
+#X obj 218 112 list prepend \$1;
+#X obj 176 189 list trim;
+#X obj 218 54 inlet;
+#X obj 56 356 b;
+#X obj 56 334 route set;
+#X obj 153 81 b;
+#X obj 176 252 route \$1;
+#X obj 191 282 s \$0-sssad-data;
+#X obj 241 335 _sssad/singleton \$1.SSAD sssad-persistence \$1 \$0
+;
+#X obj 241 362 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#N canvas 399 20 480 629 add-send-receive 0;
+#X obj 26 71 list prepend \$2;
+#X obj 26 101 sel 0;
+#X obj 26 36 loadbang;
+#N canvas 151 204 450 300 \$0local-send-receive 0;
+#X restore 58 349 pd \$0local-send-receive;
+#X obj 52 125 t b a;
+#X obj 52 151 \$0;
+#X obj 52 206 makefilename pd-%d;
+#X obj 52 177 t a a;
+#X obj 51 233 pack s \$0 0;
+#X obj 28 379 \$0;
+#X obj 28 434 makefilename pd-%d;
+#X obj 28 405 t a a;
+#X obj 27 461 pack s \$0;
+#X msg 51 271 \; \$1local-send-receive clear \, obj 100 100 r \$3-SSSAD_ADMIN
+\, obj 100 150 s \$2-SSSAD_ADMIN \, obj 250 100 r \$2-SSSAD \, obj
+250 150 s \$3-SSSAD \, connect 0 0 1 0 \, connect 2 0 3 0 \;;
+#X msg 27 496 \; \$1local-send-receive clear \, obj 100 100 r SSSAD_ADMIN
+\, obj 100 150 s \$2-SSSAD_ADMIN \, obj 250 100 r \$2-SSSAD \, obj
+250 150 s SSSAD \, connect 0 0 1 0 \, connect 2 0 3 0 \;;
+#X connect 0 0 1 0;
+#X connect 1 0 9 0;
+#X connect 1 1 4 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 4 1 8 2;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 7 1 8 1;
+#X connect 8 0 13 0;
+#X connect 9 0 11 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 11 1 12 1;
+#X connect 12 0 14 0;
+#X restore 394 149 pd add-send-receive;
+#X obj 279 134 s \$0-SSSAD;
+#X obj 37 283 r \$0-SSSAD_ADMIN;
+#X connect 0 0 9 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 4 0 15 0;
+#X connect 5 0 10 0;
+#X connect 6 0 4 0;
+#X connect 7 0 2 0;
+#X connect 8 0 7 0;
+#X connect 9 0 2 0;
+#X connect 10 0 2 1;
+#X connect 10 0 11 0;
+#X connect 12 0 13 0;
+#X connect 16 0 8 0;

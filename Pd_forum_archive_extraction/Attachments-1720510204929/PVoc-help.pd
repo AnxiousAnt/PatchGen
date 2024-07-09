@@ -1,0 +1,36 @@
+#N canvas 193 393 1283 692 10;
+#X obj 51 119 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 273 525 dac~ 1 2;
+#X msg 84 150 ./vinheta.wav;
+#X text 35 49 Left inlet:;
+#X text 36 67 Bang para openpanel ou nome do arquivo e diretório em
+"./";
+#X text 48 88 Bang for openpanel or file name and directory in "./"
+;
+#X text 191 524 Left Channel;
+#X text 337 526 Right Channel;
+#X text 407 614 more info & manual inside abstraction;
+#X text 378 588 maiores informações e manual dentro da abstração;
+#X text 486 31 PVoc:;
+#X text 484 81 Does Phase Vocoder in Sound Files;
+#X text 483 57 Faz Phase Vocoder em arquivos de Som;
+#X text 186 149 Stereo File;
+#X msg 645 174 ServeSatan.wav;
+#X text 747 174 Mono File;
+#X obj 51 242 PVoc 3 1;
+#X obj 629 517 dac~ 1 2;
+#X obj 645 223 PVoc 1 1;
+#X text 327 218 pause/continue;
+#X text 252 218 play;
+#X text 147 219 rewind;
+#X text 167 200 |----------- BANGS: ---------|;
+#X text 451 220 Motion;
+#X text 527 221 Transp;
+#X connect 0 0 16 0;
+#X connect 2 0 16 0;
+#X connect 14 0 18 0;
+#X connect 16 0 1 0;
+#X connect 16 1 1 1;
+#X connect 18 0 17 0;
+#X connect 18 0 17 1;

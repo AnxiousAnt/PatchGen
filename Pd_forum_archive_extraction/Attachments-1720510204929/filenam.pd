@@ -1,0 +1,8 @@
+#N canvas 297 91 600 496 10;
+#X obj 115 163 makefilename ttt%d;
+#X msg 115 201 open \$1;
+#X floatatom 115 123;
+#X obj 115 247 print;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;

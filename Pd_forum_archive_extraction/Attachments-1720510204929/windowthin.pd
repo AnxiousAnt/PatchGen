@@ -1,0 +1,13 @@
+#N canvas 0 22 450 300 10;
+#X obj 134 201 sys_gui;
+#X msg 138 27 toplevel .new -bg black;
+#X msg 155 77 wm attributes .new -fullscreen 1;
+#X obj 195 149 delay 5000;
+#X msg 164 172 wm attributes .new -fullscreen 0;
+#X msg 171 107 raise .new;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X connect 5 0 0 0;

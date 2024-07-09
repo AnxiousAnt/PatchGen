@@ -1,0 +1,20 @@
+--- m_class.c~	Mon Oct 22 17:09:09 2001
++++ m_class.c	Mon Oct 22 17:08:41 2001
+@@ -616,6 +616,17 @@
+     int narg = 0;
+     t_pd *bonzo;
+     
++    if (c && c->c_name &&
++	c->c_name != gensym("messresponder") &&
++	c->c_name != gensym("classmaker") &&
++	c->c_name != gensym("objectmaker") &&
++	c->c_name != gensym("canvas") &&
++	c->c_name != gensym("guiconnect"))
++    {
++	startpost("%s <- %s", c->c_name->s_name, s ? s->s_name : "nul");
++	postatom(argc, argv);
++	endpost();
++    }
+     	/* check for messages that are handled by fixed slots in the class
+     	structure.  We don't catch "pointer" though so that sending "pointer"
+ 	to pd_objectmaker doesn't require that we supply a pointer value. */

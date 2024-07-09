@@ -1,0 +1,19 @@
+#N canvas 456 185 354 245 10;
+#X obj 50 42 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 50 181 hsl 128 15 -360 360 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X floatatom 47 63 5 0 0 0 - - -;
+#X floatatom 47 202 5 0 0 0 - - -;
+#X obj 47 132 / 127;
+#X obj 47 155 - 360;
+#X obj 47 109 + 1;
+#X obj 47 86 * 720;
+#X text 45 15 conversion from 0_127 to -360_360;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;

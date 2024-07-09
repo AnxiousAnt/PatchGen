@@ -1,0 +1,28 @@
+#N canvas 648 485 394 257 10;
+#X obj 147 110 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 6200 1;
+#X obj 25 14 ctlin 7 1;
+#X obj 25 206 ctlout 7 1;
+#X msg 25 61 set \$1;
+#X obj 25 84 spigot;
+#X obj 25 138 t f b;
+#X obj 156 33 del 200;
+#X msg 156 56 1;
+#X msg 127 56 0;
+#X obj 146 79 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 97 32 loadbang;
+#X text 203 33 <-depends on your midi-'pingtime';
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X connect 5 1 8 0;
+#X connect 5 1 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 1;
+#X connect 7 0 9 0;
+#X connect 8 0 4 1;
+#X connect 8 0 9 0;
+#X connect 10 0 7 0;

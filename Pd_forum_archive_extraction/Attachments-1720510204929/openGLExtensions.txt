@@ -1,0 +1,459 @@
+Renderer: ATI Mobility Radeon HD 4500/5100 Series
+Vendor: ATI Technologies Inc.
+Memory: 512 MB
+Version: 3.3.11672 Core Profile Forward-Compatible Context
+Shading language version: 3.30
+
+
+Max texture size: 8192 x 8192
+Max texture coordinates: 0
+Max vertex texture image units: 16
+Max texture image units: 16
+Max geometry texture units: 16
+Max anisotropic filtering value: 16
+Max viewport size: 8192 x 8192
+Max uniform vertex components: 16384
+Max uniform fragment components: 16384
+Max geometry uniform components: 16384
+Max varying floats: 128
+Max samples: 4
+Max draw buffers: 8
+
+
+Extensions: 219
+
+GL_AMD_conservative_depth
+GL_AMD_debug_output
+GL_AMD_depth_clamp_separate
+GL_AMD_draw_buffers_blend
+GL_AMD_name_gen_delete
+GL_AMD_performance_monitor
+GL_AMD_pinned_memory
+GL_AMD_sample_positions
+GL_AMD_seamless_cubemap_per_texture
+GL_AMD_shader_stencil_export
+GL_AMD_texture_cube_map_array
+GL_AMD_texture_texture4
+GL_AMD_vertex_shader_tessellator
+GL_AMDX_debug_output
+GL_AMDX_vertex_shader_tessellator
+GL_ARB_base_instance
+GL_ARB_blend_func_extended
+GL_ARB_color_buffer_float
+GL_ARB_compatibility
+GL_ARB_compressed_texture_pixel_storage
+GL_ARB_conservative_depth
+GL_ARB_copy_buffer
+GL_ARB_depth_buffer_float
+GL_ARB_depth_clamp
+GL_ARB_depth_texture
+GL_ARB_draw_buffers
+GL_ARB_draw_buffers_blend
+GL_ARB_draw_elements_base_vertex
+GL_ARB_draw_instanced
+GL_ARB_ES2_compatibility
+GL_ARB_explicit_attrib_location
+GL_ARB_fragment_coord_conventions
+GL_ARB_fragment_program
+GL_ARB_fragment_program_shadow
+GL_ARB_fragment_shader
+GL_ARB_framebuffer_object
+GL_ARB_framebuffer_sRGB
+GL_ARB_geometry_shader4
+GL_ARB_get_program_binary
+GL_ARB_half_float_pixel
+GL_ARB_half_float_vertex
+GL_ARB_imaging
+GL_ARB_instanced_arrays
+GL_ARB_internalformat_query
+GL_ARB_map_buffer_alignment
+GL_ARB_map_buffer_range
+GL_ARB_multisample
+GL_ARB_multitexture
+GL_ARB_occlusion_query
+GL_ARB_occlusion_query2
+GL_ARB_pixel_buffer_object
+GL_ARB_point_parameters
+GL_ARB_point_sprite
+GL_ARB_provoking_vertex
+GL_ARB_sample_shading
+GL_ARB_sampler_objects
+GL_ARB_seamless_cube_map
+GL_ARB_separate_shader_objects
+GL_ARB_shader_bit_encoding
+GL_ARB_shader_objects
+GL_ARB_shader_precision
+GL_ARB_shader_stencil_export
+GL_ARB_shader_texture_lod
+GL_ARB_shading_language_100
+GL_ARB_shading_language_420pack
+GL_ARB_shading_language_packing
+GL_ARB_shadow
+GL_ARB_shadow_ambient
+GL_ARB_sync
+GL_ARB_texture_border_clamp
+GL_ARB_texture_buffer_object
+GL_ARB_texture_buffer_object_rgb32
+GL_ARB_texture_compression
+GL_ARB_texture_compression_rgtc
+GL_ARB_texture_cube_map
+GL_ARB_texture_cube_map_array
+GL_ARB_texture_env_add
+GL_ARB_texture_env_combine
+GL_ARB_texture_env_crossbar
+GL_ARB_texture_env_dot3
+GL_ARB_texture_float
+GL_ARB_texture_gather
+GL_ARB_texture_mirrored_repeat
+GL_ARB_texture_multisample
+GL_ARB_texture_non_power_of_two
+GL_ARB_texture_query_lod
+GL_ARB_texture_rectangle
+GL_ARB_texture_rg
+GL_ARB_texture_rgb10_a2ui
+GL_ARB_texture_snorm
+GL_ARB_texture_storage
+GL_ARB_timer_query
+GL_ARB_transform_feedback2
+GL_ARB_transform_feedback3
+GL_ARB_transform_feedback_instanced
+GL_ARB_transpose_matrix
+GL_ARB_uniform_buffer_object
+GL_ARB_vertex_array_bgra
+GL_ARB_vertex_array_object
+GL_ARB_vertex_buffer_object
+GL_ARB_vertex_program
+GL_ARB_vertex_shader
+GL_ARB_vertex_type_2_10_10_10_rev
+GL_ARB_viewport_array
+GL_ARB_window_pos
+GL_ATI_draw_buffers
+GL_ATI_envmap_bumpmap
+GL_ATI_fragment_shader
+GL_ATI_meminfo
+GL_ATI_separate_stencil
+GL_ATI_texture_compression_3dc
+GL_ATI_texture_env_combine3
+GL_ATI_texture_float
+GL_ATI_texture_mirror_once
+GL_EXT_abgr
+GL_EXT_bgra
+GL_EXT_bindable_uniform
+GL_EXT_blend_color
+GL_EXT_blend_equation_separate
+GL_EXT_blend_func_separate
+GL_EXT_blend_minmax
+GL_EXT_blend_subtract
+GL_EXT_compiled_vertex_array
+GL_EXT_copy_buffer
+GL_EXT_copy_texture
+GL_EXT_direct_state_access
+GL_EXT_draw_buffers2
+GL_EXT_draw_instanced
+GL_EXT_draw_range_elements
+GL_EXT_fog_coord
+GL_EXT_framebuffer_blit
+GL_EXT_framebuffer_multisample
+GL_EXT_framebuffer_object
+GL_EXT_framebuffer_sRGB
+GL_EXT_geometry_shader4
+GL_EXT_gpu_program_parameters
+GL_EXT_gpu_shader4
+GL_EXT_histogram
+GL_EXT_multi_draw_arrays
+GL_EXT_packed_depth_stencil
+GL_EXT_packed_float
+GL_EXT_packed_pixels
+GL_EXT_pixel_buffer_object
+GL_EXT_point_parameters
+GL_EXT_provoking_vertex
+GL_EXT_rescale_normal
+GL_EXT_secondary_color
+GL_EXT_separate_specular_color
+GL_EXT_shadow_funcs
+GL_EXT_stencil_wrap
+GL_EXT_subtexture
+GL_EXT_texgen_reflection
+GL_EXT_texture3D
+GL_EXT_texture_array
+GL_EXT_texture_buffer_object
+GL_EXT_texture_compression_latc
+GL_EXT_texture_compression_rgtc
+GL_EXT_texture_compression_s3tc
+GL_EXT_texture_cube_map
+GL_EXT_texture_edge_clamp
+GL_EXT_texture_env_add
+GL_EXT_texture_env_combine
+GL_EXT_texture_env_dot3
+GL_EXT_texture_filter_anisotropic
+GL_EXT_texture_integer
+GL_EXT_texture_lod
+GL_EXT_texture_lod_bias
+GL_EXT_texture_mirror_clamp
+GL_EXT_texture_object
+GL_EXT_texture_rectangle
+GL_EXT_texture_shared_exponent
+GL_EXT_texture_snorm
+GL_EXT_texture_sRGB
+GL_EXT_texture_sRGB_decode
+GL_EXT_texture_storage
+GL_EXT_texture_swizzle
+GL_EXT_timer_query
+GL_EXT_transform_feedback
+GL_EXT_vertex_array
+GL_EXT_vertex_array_bgra
+GL_IBM_texture_mirrored_repeat
+GL_KTX_buffer_region
+GL_NV_blend_square
+GL_NV_conditional_render
+GL_NV_copy_depth_to_color
+GL_NV_copy_image
+GL_NV_explicit_multisample
+GL_NV_float_buffer
+GL_NV_half_float
+GL_NV_primitive_restart
+GL_NV_texgen_reflection
+GL_NV_texture_barrier
+GL_SGIS_generate_mipmap
+GL_SGIS_texture_edge_clamp
+GL_SGIS_texture_lod
+GL_SUN_multi_draw_arrays
+GL_WIN_swap_hint
+WGL_AMD_gpu_association
+WGL_AMDX_gpu_association
+WGL_ARB_buffer_region
+WGL_ARB_create_context
+WGL_ARB_create_context_profile
+WGL_ARB_extensions_string
+WGL_ARB_make_current_read
+WGL_ARB_multisample
+WGL_ARB_pbuffer
+WGL_ARB_pixel_format
+WGL_ARB_pixel_format_float
+WGL_ARB_render_texture
+WGL_ATI_pixel_format_float
+WGL_ATI_render_texture_rectangle
+WGL_EXT_extensions_string
+WGL_EXT_framebuffer_sRGB
+WGL_EXT_pixel_format_packed_float
+WGL_EXT_swap_control
+WGL_EXT_swap_control_tear
+WGL_I3D_genlock
+WGL_NV_float_buffer
+WGL_NV_swap_group
+
+Core features
+v1.1 (100 % - 7/7)
+v1.2 (100 % - 8/8)
+v1.3 (100 % - 9/9)
+v1.4 (100 % - 15/15)
+v1.5 (100 % - 3/3)
+v2.0 (100 % - 10/10)
+v2.1 (100 % - 3/3)
+v3.0 (100 % - 23/23)
+v3.1 (100 % - 8/8)
+v3.2 (100 % - 9/9)
+v3.3 (100 % - 9/9)
+v4.0 (53 % - 7/13)
+v4.1 (71 % - 5/7)
+
+OpenGL driver version check (Current: 3.3.11672 Core Profile Forward-Compatible Context, Latest known: 0.00.000):
+Latest version of display drivers found
+According the database, you are running the latest display drivers for your video card.
+
+No ICD registry entry
+The current OpenGL driver doesn't expose the SOFTWARE/Microsoft/Windows (NT)/CurrentVersion/OpenGLDrivers registry entry. Unable to detect the driver version, driver revision name and filename.
+
+Compiled vertex array support
+This feature improves OpenGL performance by using video memory to cache transformed vertices.
+
+Multitexture support
+This feature accelerates complex rendering such as lightmaps or environment mapping.
+
+Secondary color support
+This feature provides an alternate method of coloring specular highlights on polygons.
+
+S3TC compression support
+This feature improves texture mapping performance in some applications by using lossy compression.
+
+Texture edge clamp support
+This feature improves texturing quality by adding clamping control to edge texel filtering.
+
+Vertex program support
+This feature enables a wide variety of effects via flexible vertex programming (equivalent to DX8 Vertex Shader.)
+
+Fragment program support
+This feature enables a wide variety of effects via per pixel programming (equivalent to DX9 Pixel Shader.)
+
+Texture anisotropic filtering support
+This feature improves the quality of texture mapping on oblique surfaces.
+
+Occlusion test support
+This feature provides hardware accelerated culling for objects.
+
+Point sprite support
+This feature improves performance in some particle systems.
+
+OpenGL Shading Language support
+This feature enables high level shading language for shaders.
+
+Frame buffer object support
+This feature enables render to texture functionality.
+
+Few texture units found
+This may slow down some applications using fragment programs or extensive texture mapping.
+
+Extension verification: 
+GL_APPLE_texture_range was not found, but has the entry point glGetTexParameterPointervAPPLE 
+GL_APPLE_texture_range was not found, but has the entry point glTextureRangeAPPLE 
+GL_ARB_debug_output was not found, but has the entry point glDebugMessageControlARB 
+GL_ARB_debug_output was not found, but has the entry point glDebugMessageInsertARB 
+GL_ARB_debug_output was not found, but has the entry point glDebugMessageCallbackARB 
+GL_ARB_debug_output was not found, but has the entry point glGetDebugMessageLogARB 
+GL_ARB_draw_indirect was not found, but has the entry point glDrawArraysIndirect 
+GL_ARB_draw_indirect was not found, but has the entry point glDrawElementsIndirect 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glGetUniformdv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniform1dEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniform1dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniform2dEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniform2dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniform3dEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniform3dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniform4dEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniform4dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniformMatrix2dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniformMatrix2x3dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniformMatrix2x4dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniformMatrix3dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniformMatrix3x2dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniformMatrix3x4dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniformMatrix4dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniformMatrix4x2dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glProgramUniformMatrix4x3dvEXT 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniform1d 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniform1dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniform2d 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniform2dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniform3d 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniform3dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniform4d 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniform4dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniformMatrix2dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniformMatrix2x3dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniformMatrix2x4dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniformMatrix3dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniformMatrix3x2dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniformMatrix3x4dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniformMatrix4dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniformMatrix4x2dv 
+GL_ARB_gpu_shader_fp64 was not found, but has the entry point glUniformMatrix4x3dv 
+GL_ARB_shader_precision has the entry point  missing!
+GL_ARB_shader_subroutine was not found, but has the entry point glGetActiveSubroutineName 
+GL_ARB_shader_subroutine was not found, but has the entry point glGetActiveSubroutineUniformName 
+GL_ARB_shader_subroutine was not found, but has the entry point glGetActiveSubroutineUniformiv 
+GL_ARB_shader_subroutine was not found, but has the entry point glGetProgramStageiv 
+GL_ARB_shader_subroutine was not found, but has the entry point glGetSubroutineIndex 
+GL_ARB_shader_subroutine was not found, but has the entry point glGetSubroutineUniformLocation 
+GL_ARB_shader_subroutine was not found, but has the entry point glGetUniformSubroutineuiv 
+GL_ARB_shader_subroutine was not found, but has the entry point glUniformSubroutinesuiv 
+GL_ARB_tessellation_shader was not found, but has the entry point glPatchParameterfv 
+GL_ARB_tessellation_shader was not found, but has the entry point glPatchParameteri 
+GL_ARB_uber_mem_image was not found, but has the entry point glBindFramebufferARB 
+GL_ARB_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL1d 
+GL_ARB_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL2d 
+GL_ARB_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL3d 
+GL_ARB_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL4d 
+GL_ARB_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL1dv 
+GL_ARB_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL2dv 
+GL_ARB_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL3dv 
+GL_ARB_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL4dv 
+GL_ARB_vertex_attrib_64bit was not found, but has the entry point glVertexAttribLPointer 
+GL_ARB_vertex_attrib_64bit was not found, but has the entry point glGetVertexAttribLdv 
+GL_ARB_vertex_attrib_64bit was not found, but has the entry point glVertexArrayVertexAttribLOffsetEXT 
+GL_ARB_viewport_array has the entry point glGetIntegerIndexedivEXT missing!
+GL_EXT_depth_bounds_test was not found, but has the entry point glDepthBoundsEXT 
+GL_EXT_direct_state_access has the entry point glDisableClientStateiEXT missing!
+GL_EXT_direct_state_access has the entry point glEnableClientStateiEXT missing!
+GL_EXT_direct_state_access has the entry point glGetDoublei_vEXT missing!
+GL_EXT_direct_state_access has the entry point glGetFloati_vEXT missing!
+GL_EXT_direct_state_access has the entry point glGetNamedProgramLocalParameterIivEXT missing!
+GL_EXT_direct_state_access has the entry point glGetNamedProgramLocalParameterIuivEXT missing!
+GL_EXT_direct_state_access has the entry point glGetPointeri_vEXT missing!
+GL_EXT_direct_state_access has the entry point glNamedProgramLocalParameterI4iEXT missing!
+GL_EXT_direct_state_access has the entry point glNamedProgramLocalParameterI4ivEXT missing!
+GL_EXT_direct_state_access has the entry point glNamedProgramLocalParameterI4uiEXT missing!
+GL_EXT_direct_state_access has the entry point glNamedProgramLocalParameterI4uivEXT missing!
+GL_EXT_direct_state_access has the entry point glNamedProgramLocalParametersI4ivEXT missing!
+GL_EXT_direct_state_access has the entry point glNamedProgramLocalParametersI4uivEXT missing!
+GL_EXT_direct_state_access has the entry point glNamedRenderbufferStorageMultisampleCoverageEXT missing!
+GL_EXT_shader_image_load_store was not found, but has the entry point glBindImageTextureEXT 
+GL_EXT_shader_image_load_store was not found, but has the entry point glMemoryBarrierEXT 
+GL_EXT_vertex_attrib_64bit was not found, but has the entry point glGetVertexAttribLdvEXT 
+GL_EXT_vertex_attrib_64bit was not found, but has the entry point glVertexArrayVertexAttribLOffsetEXT 
+GL_EXT_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL1dEXT 
+GL_EXT_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL1dvEXT 
+GL_EXT_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL2dEXT 
+GL_EXT_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL2dvEXT 
+GL_EXT_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL3dEXT 
+GL_EXT_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL3dvEXT 
+GL_EXT_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL4dEXT 
+GL_EXT_vertex_attrib_64bit was not found, but has the entry point glVertexAttribL4dvEXT 
+GL_EXT_vertex_attrib_64bit was not found, but has the entry point glVertexAttribLPointerEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glBeginVertexShaderEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glBindLightParameterEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glBindMaterialParameterEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glBindParameterEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glBindTexGenParameterEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glBindTextureUnitParameterEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glBindVertexShaderEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glDeleteVertexShaderEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glDisableVariantClientStateEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glEnableVariantClientStateEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glEndVertexShaderEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glExtractComponentEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGenSymbolsEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGenVertexShadersEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGetInvariantBooleanvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGetInvariantFloatvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGetInvariantIntegervEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGetLocalConstantBooleanvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGetLocalConstantFloatvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGetLocalConstantIntegervEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGetVariantBooleanvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGetVariantFloatvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGetVariantIntegervEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glGetVariantPointervEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glInsertComponentEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glIsVariantEnabledEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glSetInvariantEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glSetLocalConstantEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glShaderOp1EXT 
+GL_EXT_vertex_shader was not found, but has the entry point glShaderOp2EXT 
+GL_EXT_vertex_shader was not found, but has the entry point glShaderOp3EXT 
+GL_EXT_vertex_shader was not found, but has the entry point glSwizzleEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glVariantPointerEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glVariantbvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glVariantdvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glVariantfvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glVariantivEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glVariantsvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glVariantubvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glVariantuivEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glVariantusvEXT 
+GL_EXT_vertex_shader was not found, but has the entry point glWriteMaskEXT 
+GL_NV_half_float has the entry point glVertexAttrib1hNV missing!
+GL_NV_half_float has the entry point glVertexAttrib1hvNV missing!
+GL_NV_half_float has the entry point glVertexAttrib2hNV missing!
+GL_NV_half_float has the entry point glVertexAttrib2hvNV missing!
+GL_NV_half_float has the entry point glVertexAttrib3hNV missing!
+GL_NV_half_float has the entry point glVertexAttrib3hvNV missing!
+GL_NV_half_float has the entry point glVertexAttrib4hNV missing!
+GL_NV_half_float has the entry point glVertexAttrib4hvNV missing!
+GL_NV_half_float has the entry point glVertexAttribs1hvNV missing!
+GL_NV_half_float has the entry point glVertexAttribs2hvNV missing!
+GL_NV_half_float has the entry point glVertexAttribs3hvNV missing!
+GL_NV_half_float has the entry point glVertexAttribs4hvNV missing!
+GL_NV_half_float has the entry point glVertexWeighthNV missing!
+GL_NV_half_float has the entry point glVertexWeighthvNV missing!
+GL_NV_transform_feedback was not found, but has the entry point glGetIntegerIndexedvEXT 
+GL_NV_transform_feedback was not found, but has the entry point glGetBooleanIndexedvEXT 

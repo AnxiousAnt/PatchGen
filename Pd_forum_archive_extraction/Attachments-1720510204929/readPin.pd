@@ -1,0 +1,10 @@
+#N canvas 1 49 450 300 10;
+#X obj 194 95 loadbang;
+#X msg 194 121 open 1;
+#X obj 162 187 outlet;
+#X obj 162 154 gpio \$1;
+#X obj 162 65 r pollPin;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;

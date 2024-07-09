@@ -1,0 +1,10 @@
+#N canvas 9 30 445 139 10;
+#X obj 7 53 makefilename %s%d;
+#X msg 7 5 $ 0;
+#X obj 7 28 pack s f;
+#N canvas 0 0 450 300 result 1;
+#X restore 360 4 pd result;
+#X msg 7 76 \; pd-result obj 10 10 test \$1;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;

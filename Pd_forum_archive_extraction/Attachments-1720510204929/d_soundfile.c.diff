@@ -1,0 +1,31 @@
+--- d_soundfile.c~	Thu Aug 23 18:23:37 2001
++++ d_soundfile.c	Tue Jan  8 23:21:42 2002
+@@ -254,20 +254,25 @@
+ 	    	bytespersamp = 2;
+ 	    else if (format == 24)
+ 	    	bytespersamp = 3;
++	    else if (format == 32)
++	    	bytespersamp = 4;
+ 	    else goto badheader;
+ 	    headersize = sizeof(t_wave);
+ 	    while (strncmp(((t_wave *)buf)->w_datachunkid, "data", 4))
+ 	    {
+ 	    	/* extra chunk at beginning: try to skip it and pray */
+-		long skip = swap4(((t_wave *)buf)->w_datachunksize, swap) + 4;
++		long skip = swap4(((t_wave *)buf)->w_datachunksize, swap);
++#ifdef DEBUG
++		post("skipping unknown chunk (0x%08lX bytes)", skip);
++#endif
+ 		if ((skip < 4) || (lseek(fd, skip, SEEK_CUR) < 0))
+ 		{
+ 		    perror("lseek");
+ 		    post("confused by extra chunks in wave header?");
+ 		    goto badheader;
+ 		}
+-		headersize += skip;
+-		if (read(fd, buf, sizeof(t_wave)) < (int)sizeof(t_wave))
++		headersize += skip + 8;
++		if (read(fd, ((t_wave *)buf)->w_datachunkid, 8) < 8)
+ 		{
+ 		    perror("read");
+ 		    post("couldn't read past extra chunks in wave header?");

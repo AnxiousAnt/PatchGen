@@ -1,0 +1,36 @@
+GAVLPREFIX=/usr/local
+PD_INCLUDES=/usr/local/include
+GMERLIN_LIBS= -lgmerlin_avdec -lgavl.dll -lpng -lz -lintl -liconv -lws2_32 -lflac -lwsock32 -lregex -ldl \
+				-logg -lvorbis -lvorbisenc -la52 -ldca -lspeex -ltiff -ltheora -lfaad
+
+# SHOULDN'T REALLY NEED TO EDIT BELOW HERE
+
+VERSION=0.43
+
+PDSUF = .dll
+PD_PATH = $(shell cd "$(PROGRAMFILES)"/pd && pwd)
+GAVLPATH=$(GAVLPREFIX)/include
+
+STRIP=strip --strip-unneeded  -R .note -R .comment
+
+LDFLAGS =  -shared
+LDFLAGS +=  -L$(GAVLPREFIX)/lib -L"$(PD_PATH)/src" -L"$(PD_PATH)/bin" -L"$(PD_PATH)/obj"
+LDFLAGS += -lpd -lpthreadGC2 $(GMERLIN_LIBS)
+
+CFLAGS =  -I./  -I$(GAVLPATH) -I$(GAVLPATH)/gavl -I$(GAVLPATH)/gmerlin -I$(PD_INCLUDES) \
+	-Wall -Wno-unused -Wunused-variable -Wno-trigraphs -g -I.
+
+OBJS = src/readanysf~.o src/FifoVideoFrames.o src/FifoAudioFrames.o src/ReadMedia.o
+
+%.o: %.cpp
+	$(CXX) -xc++ $(CFLAGS) -DMSW -DPD_INTERNAL -c $< -o $@
+
+PDLIB = readanysf~$(PDSUF)
+	
+all:: $(PDLIB) 
+
+$(PDLIB): $(OBJS)
+	$(CXX) $(CFLAGS) -o $@ $(OBJS) $(LDFLAGS)
+
+clean::
+	rm -f $(OBJS) readanysf~$(PDSUF)

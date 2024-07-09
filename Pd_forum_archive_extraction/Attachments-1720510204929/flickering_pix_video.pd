@@ -1,0 +1,25 @@
+#N canvas 662 75 565 519 10;
+#X obj 286 41 gemwin;
+#X obj 62 70 gemhead;
+#X obj 62 310 rectangle 5.33 4;
+#X obj 62 290 pix_texture;
+#X obj 62 210 pix_movement;
+#X obj 62 110 pix_rgba;
+#X obj 62 90 pix_video;
+#X obj 142 160 loadbang;
+#X obj 62 260 alpha;
+#X obj 142 190 0.001;
+#X msg 340 62 dimen 400 300 \, create \, 1;
+#X text 194 248 getting flicker (black frames every few seconds \,
+sometimes several times a second) with this patch.;
+#X text 194 288 OSX 10.5 \, MBP \, ATY \, RadeonX1600 \, built-in i-sight
+\, Gem 0.92 (Dec 11 2008);
+#X connect 1 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 9 0;
+#X connect 8 0 3 0;
+#X connect 9 0 4 1;
+#X connect 10 0 0 0;

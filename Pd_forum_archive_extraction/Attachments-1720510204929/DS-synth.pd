@@ -1,0 +1,54 @@
+#N canvas 0 0 450 300 10;
+#X obj 339 138 *~;
+#X floatatom 339 53 0 0 0 0 - - -;
+#X floatatom 249 88 0 0 0 0 - - -;
+#X obj 249 158 +~;
+#X floatatom 361 108 0 0 0 0 - - -;
+#X obj 248 202 osc~;
+#X obj 339 78 osc~;
+#X obj 247 225 *~;
+#X obj 246 251 dac~;
+#N canvas 102 102 450 300 synth-data 0;
+#X restore 10 16 pd synth-data;
+#N canvas 118 125 450 300 synth-template 0;
+#X obj 85 46 struct synth float id symbol name array vco vco-array
+array vcf vcg-array array vca vca-array;
+#X restore 9 42 pd synth-template;
+#N canvas 259 122 450 300 vco-template 0;
+#X obj 131 94 drawsymbol name 500 0 0 0;
+#X obj 131 114 drawnumber carrier 500 0 0 0;
+#X obj 131 134 drawnumber modulation 500 0 0 0;
+#X obj 62 29 struct vco-array float id symbol name float carrier float
+modulation array adsr adsr-array;
+#X restore 8 87 pd vco-template;
+#N canvas 259 122 450 300 vcf-template 0;
+#X obj 131 94 drawsymbol name 500 0 0 0;
+#X obj 131 114 drawnumber frequency 500 0 0 0;
+#X obj 131 134 drawnumber resonance 500 0 0 0;
+#X obj 62 29 struct vcf-array float id symbol name float frequency
+float resonance array adsr adsr-array;
+#X restore 8 117 pd vcf-template;
+#N canvas 259 122 450 300 vca-template 0;
+#X obj 131 94 drawsymbol name 500 0 0 0;
+#X obj 131 114 drawnumber frequency 500 0 0 0;
+#X obj 131 134 drawnumber resonance 500 0 0 0;
+#X obj 62 29 struct vca-array float id symbol name float frequency
+float resonance array adsr adsr-array;
+#X restore 8 147 pd vca-template;
+#N canvas 63 196 450 300 adsr-template 0;
+#X obj 127 58 struct adsr-array symbol name float attack float decay
+float sustain float release;
+#X obj 139 114 drawnumber attack 500 0 0 0;
+#X obj 139 134 drawnumber decay 500 0 0 0;
+#X obj 139 154 drawnumber sustain 500 0 0 0;
+#X obj 139 174 drawnumber release 500 0 0 0;
+#X restore 8 189 pd adsr-template;
+#X connect 0 0 3 1;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 1;
+#X connect 5 0 7 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 7 0 8 1;

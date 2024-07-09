@@ -1,0 +1,14 @@
+#N canvas 0 0 452 302 10;
+#X obj 206 44 key;
+#X floatatom 206 71 5 0 0 0 - - -;
+#X text 67 70 type on the keyboard \, the number which appears here
+is the key number;
+#X obj 271 158 select 122;
+#X obj 271 218 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 27 141 select boxes using the key numbers allow bangs to be
+sent to different objects (e.g to play sound);
+#X text 342 160 select z key;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;

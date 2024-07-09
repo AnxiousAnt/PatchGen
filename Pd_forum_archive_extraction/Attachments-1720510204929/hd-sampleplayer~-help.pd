@@ -1,0 +1,29 @@
+#N canvas 474 317 577 463 10;
+#X obj 188 174 hd-sampleplayer~;
+#X obj 295 147 openpanel;
+#X obj 175 324 dac~;
+#X obj 188 293 *~ 0;
+#X obj 232 294 dbtorms;
+#X obj 236 277 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 9800 1;
+#X msg 295 125 bang;
+#X msg 188 109 bang;
+#X obj 120 218 metro 10;
+#X obj 120 199 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 90 240 timer;
+#X floatatom 90 286 5 0 0 0 - - -;
+#X obj 90 263 / 1000;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 3 0 2 1;
+#X connect 3 0 2 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 0;
+#X connect 6 0 1 0;
+#X connect 7 0 0 0;
+#X connect 7 0 10 0;
+#X connect 8 0 10 1;
+#X connect 9 0 8 0;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;

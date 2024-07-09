@@ -1,0 +1,7 @@
+#define PORT 22222 line 18 - was 33333
+#define IP "127.0.0.1"line 19 - was "192.168.2.15"(check on install too)
+  char 				filename[35]; line 58 was [32]
+  sprintf(filename, "/dev/i2c-0"); line 88 was i2c-1
+     for ( i = 0; i < 35; ++i) inbuf[i] = 0; line 106 was < 19
+      if (read (file, inbuf, 35) != 35) line 123 was 19 (35)i
+ j = sprintf (netbuf, "d6t44l"); line 136 was "d6t8l");

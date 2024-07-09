@@ -1,0 +1,6 @@
+#N canvas 0 0 452 302 12;
+#X msg 71 161 send /ch1/parameter parameter_as_string;
+#X obj 71 45 symbol \$1/parameter;
+#X msg 71 88 symbol parameter_as_string;
+#X text 34 128 should become;
+#X text 35 64 and;

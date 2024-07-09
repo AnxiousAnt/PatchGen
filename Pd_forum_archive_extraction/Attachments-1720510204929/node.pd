@@ -1,0 +1,13 @@
+#N canvas 729 186 458 456 12;
+#X obj 66 176 select 0 1;
+#X obj 66 296 outlet;
+#X obj 133 295 outlet;
+#X obj 66 129 r \$1;
+#X obj 233 125 inlet;
+#X obj 233 225 s master;
+#X obj 233 174 symbol \$1;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;

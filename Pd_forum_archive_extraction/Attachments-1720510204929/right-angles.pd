@@ -1,0 +1,43 @@
+#N canvas 265 22 920 602 10;
+#X msg 263 28 1;
+#N canvas 0 22 450 300 sub 0;
+#X obj 149 68 inlet;
+#X obj 150 186 outlet;
+#X connect 0 0 1 0;
+#X coords 0 -1 1 1 7 7 2 100 100;
+#X restore 263 147 pd sub;
+#X obj 390 154 + 1;
+#N canvas 0 22 450 300 sub 0;
+#X obj 149 68 inlet;
+#X obj 150 186 outlet;
+#X connect 0 0 1 0;
+#X coords 0 -1 1 1 15 15 2 100 100;
+#X restore 392 274 pd sub;
+#X floatatom 523 290 5 0 0 0 - - -;
+#X text -115 128 this is a 7x7 'graph on parent' subpatch \, with 'hide
+object name and arguments' box checked -------------------------->
+;
+#X text 8 258 this is a 15x15 'graph on parent' subpatch \, with 'hide
+object name and arguments' box checked -------------------->;
+#X msg 327 408 1;
+#N canvas 0 22 450 300 sub 0;
+#X obj 149 68 inlet;
+#X obj 150 186 outlet;
+#X connect 0 0 1 0;
+#X coords 0 -1 1 1 1 1 2 100 100;
+#X restore 327 496 pd sub;
+#X obj 453 498 + 1;
+#X floatatom 453 536 5 0 0 0 - - -;
+#X text -51 477 this is a 1x1 'graph on parent' subpatch \, with 'hide
+object name and arguments' box checked -------------------------->
+;
+#X text -14 518 (it's very hard to edit \, because it's so small!)
+;
+#X text 19 305 right click on this to open and see inside;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;

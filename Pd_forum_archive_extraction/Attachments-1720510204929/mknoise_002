@@ -1,0 +1,29 @@
+#! /bin/bash
+# mknoise v0.1
+# starts jackd and qjackctl (if not already running) and programs from a
+# text file, each program in new line including options
+
+# takes text file as argument: $ ./mknoise text_file
+
+# jackd
+if pgrep jackd 
+	then true 
+	else /usr/bin/jackd -R -dalsa -r44100& > /dev/null 2>&1&
+fi
+
+# QJackCTL
+if pgrep qjackctl 
+	then true 
+	else /usr/bin/qjackctl > /dev/null 2>&1&
+fi
+
+while [ "$1" ]; do
+	# generate musicapplist, cut options 
+	sed s"/ [-,a-z,A-Z,0-9,\., ]*$//g" $1 | cat >> .musicapplist
+	# loop for programs in text file
+	cat $1|while read; do
+		X="$REPLY"
+		$X > /dev/null 2>&1&
+	done
+	shift
+done

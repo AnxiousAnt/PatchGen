@@ -1,0 +1,48 @@
+#N canvas 97 92 997 792 12;
+#N canvas 0 0 450 300 t1 0;
+#X array 1-t 100 float 0;
+#X coords 0 1 99 -1 100 100 1;
+#X restore 50 50 graph;
+#N canvas 0 0 450 300 t2 0;
+#X array 2-t 100 float 0;
+#X coords 0 1 99 -1 500 300 1;
+#X restore 350 50 graph;
+#X obj 57 501 t b b;
+#X obj 466 500 t b b;
+#X msg 57 620 \; pd-array-magic.pd editmode 1 \, mouse \$4 \$5 0 0
+\, motion \$6 \$7 0 \, mouseup \$6 \$7 0 \, editmode 0 \; \$2 coords
+0 1 \$3 -1 \$8 \$9 1 \; \$1-t resize \$3 \; pd-array-magic.pd editmode
+1 \, editmode 0;
+#X msg 466 543 1 pd-t1 100 100 100 400 100 500 300;
+#X msg 96 579 1 pd-t1 100 400 100 100 100 100 100;
+#X msg 57 540 2 pd-t2 100 100 250 400 100 500 300;
+#X msg 505 579 2 pd-t2 100 400 100 100 250 100 100;
+#X obj 236 444 metro 500;
+#X obj 236 477 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 57 464 spigot;
+#X obj 466 466 spigot;
+#X obj 467 430 t b 0;
+#X obj 57 429 t 0 b;
+#X obj 236 410 loadbang;
+#X obj 195 409 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X connect 2 0 7 0;
+#X connect 2 1 6 0;
+#X connect 3 0 5 0;
+#X connect 3 1 8 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 10 0;
+#X connect 10 0 13 0;
+#X connect 10 0 14 0;
+#X connect 11 0 2 0;
+#X connect 12 0 3 0;
+#X connect 13 0 12 0;
+#X connect 13 1 12 1;
+#X connect 14 0 11 1;
+#X connect 14 1 11 0;
+#X connect 15 0 9 0;
+#X connect 16 0 9 0;

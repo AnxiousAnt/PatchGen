@@ -1,0 +1,19 @@
+*** prepend.c-old	2001-11-02 12:40:31.000000000 +0100
+--- prepend.c	2003-06-02 21:44:59.000000000 +0200
+***************
+*** 49,55 ****
+  	  argv++;
+       }
+  
+!      outlet_list(x->x_obj.ob_outlet,x->x_s,c_out,(t_atom*)&a_out);
+       post("done");
+  }
+  
+--- 49,55 ----
+  	  argv++;
+       }
+  
+!      outlet_anything(x->x_obj.ob_outlet,x->x_s,c_out,(t_atom*)&a_out);
+       post("done");
+  }
+  

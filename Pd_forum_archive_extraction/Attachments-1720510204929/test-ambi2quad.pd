@@ -1,0 +1,71 @@
+#N canvas 236 22 760 621 10;
+#X obj 8 402 dac~ 1 2 3 4;
+#X obj 263 336 nmg-meters4~;
+#X obj 1 256 nmg-bf-encode~;
+#X obj 1 368 nmg-bf2quad~;
+#X obj 1 118 noise~;
+#X obj 54 114 metro 100;
+#X obj 54 96 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 53 134 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 1 137 *~;
+#X obj 1 230 *~;
+#X obj 16 208 / 127;
+#X obj 19 185 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 8200 1;
+#X text 83 92 chopped noise;
+#X text 154 186 level;
+#X obj 525 262 nbx 3 24 0 200 0 0 empty empty empty 0 -6 1 18 -4033
+-1 -1 7 256;
+#X obj 538 83 tgl 15 0 empty empty on/off 0 -6 0 8 -262081 -1 -1 1
+1;
+#X obj 537 48 init 1;
+#X obj 539 160 cputime;
+#X obj 539 104 metro 1000;
+#X obj 539 132 t b b;
+#X obj 539 220 * 0.1;
+#X obj 539 189 int;
+#X text 537 243 CPU load in percent;
+#X obj 373 44 tgl 20 0 empty empty DSP 22 10 0 10 -258112 -1 -1 1 1
+;
+#X msg 373 76 \; pd dsp \$1;
+#X obj 1 438 nmg-meters4~;
+#X floatatom 217 225 5 0 0 0 - - -;
+#X text 260 222 angle here;
+#X text 241 571 turn on meters with dsp switch;
+#X text 283 50 turn on dsp;
+#X connect 2 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 1;
+#X connect 2 1 1 1;
+#X connect 2 2 3 2;
+#X connect 2 2 1 2;
+#X connect 2 3 3 3;
+#X connect 2 3 1 3;
+#X connect 3 0 0 0;
+#X connect 3 0 25 0;
+#X connect 3 1 0 1;
+#X connect 3 1 25 1;
+#X connect 3 2 0 2;
+#X connect 3 2 25 2;
+#X connect 3 3 0 3;
+#X connect 3 3 25 3;
+#X connect 4 0 8 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 1;
+#X connect 8 0 9 0;
+#X connect 9 0 2 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 21 0;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;
+#X connect 19 1 17 1;
+#X connect 20 0 14 0;
+#X connect 21 0 20 0;
+#X connect 23 0 24 0;
+#X connect 26 0 2 1;

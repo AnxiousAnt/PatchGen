@@ -1,0 +1,26 @@
+#N canvas 500 171 558 415 10;
+#X msg 14 162 bang \, get massesPos mamasse;
+#X obj 230 258 print;
+#X msg 264 169 mass mamasse 1 100 0 1;
+#X msg 247 191 mass mamasse 1 100 2 3;
+#X msg 230 213 mass mamasse 1 100 4 5;
+#X obj 230 237 msd2D;
+#X msg 281 148 reset;
+#X obj 230 124 t b b b b;
+#X obj 230 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 250 104 <- 1;
+#X text 190 162 <- 2;
+#X text 79 342 Alternate between 1 and 2 \, the output is never in
+the same order;
+#X connect 0 0 5 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 7 1 3 0;
+#X connect 7 2 2 0;
+#X connect 7 3 6 0;
+#X connect 8 0 7 0;

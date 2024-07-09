@@ -1,0 +1,60 @@
+# See sources.list(5) for more information, especialy
+# Remember that you can only use http, ftp or file URIs
+# CDROMs are managed through the apt-cdrom tool.
+
+#------------------------------------------------------------------------------
+# CANONICAL SOURCES
+#------------------------------------------------------------------------------
+
+# RCN.NET mirror
+deb http://mirrors.rcn.net/debian/ testing main
+deb-src http://mirrors.rcn.net/debian/ testing main
+deb http://mirrors.rcn.net/debian/ unstable main
+deb-src http://mirrors.rcn.net/debian/ unstable main
+deb http://mirrors.rcn.net/debian/ experimental main
+deb-src http://mirrors.rcn.net/debian/ experimental main
+
+# KERNEL.ORG mirror
+#deb http://mirrors.kernel.org/debian/ testing main
+#deb-src http://mirrors.kernel.org/debian/ testing main
+#deb http://mirrors.kernel.org/debian/ unstable main
+#deb-src http://mirrors.kernel.org/debian/ unstable main
+
+# DEBIAN US mirror
+#deb http://http.us.debian.org/debian/ testing main non-free contrib
+#deb-src http://http.us.debian.org/debian/ testing main non-free contrib
+
+##
+## non-US mirrors
+##
+#deb http://tux.u-strasbg.fr/debian-non-US stable/non-US main contrib non-free
+#deb-src http://tux.u-strasbg.fr/debian-non-US stable/non-US main contrib non-free
+#
+deb http://non-us.debian.org/debian-non-US testing/non-US main contrib non-free
+deb-src http://non-us.debian.org/debian-non-US testing/non-US main contrib non-free
+deb http://non-us.debian.org/debian-non-US unstable/non-US main contrib non-free
+deb-src http://non-us.debian.org/debian-non-US unstable/non-US main contrib non-free
+
+#deb http://security.debian.org/ stable/updates main contrib non-free
+
+
+#------------------------------------------------------------------------------
+# DEV SOURCES
+#------------------------------------------------------------------------------
+
+# GNOME/XIMIAN Sources
+#deb http://red-carpet.ximian.com/debian/ stable main
+
+# SoulSeek
+#deb http://www.arrakis.es/~frigola/pyslsk woody/
+
+# DeMuDi
+#deb ftp://ftp.unix-ag.org/pub/mirrors/demudi testing demudi
+#deb ftp://ftp.agnula.org/demudi/ testing demudi 
+#deb http://http.demudi.org testing demudi
+#deb http://public.planetmirror.com/pub/demudi testing demudi
+
+# image/video format libs
+deb http://marillat.free.fr/ testing main
+
+

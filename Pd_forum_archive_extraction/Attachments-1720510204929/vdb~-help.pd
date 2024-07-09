@@ -1,0 +1,21 @@
+#N canvas 211 325 221 297 10;
+#X obj 39 148 vdb~;
+#X obj 40 42 adc~;
+#X obj 39 228 dac~;
+#X obj 40 67 *~ 0.1;
+#X floatatom 109 137 5 0 0 0 - - -;
+#X obj 155 -22 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 12400 1;
+#X floatatom 155 136 5 0 0 0 - - -;
+#X text 152 -41 Feedback;
+#X text 27 -42 Delay time (ms);
+#X obj 110 -21 vsl 15 128 0 1270 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X connect 0 0 2 0;
+#X connect 0 0 2 1;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 5 0 6 0;
+#X connect 5 0 0 3;
+#X connect 9 0 4 0;
+#X connect 9 0 0 2;

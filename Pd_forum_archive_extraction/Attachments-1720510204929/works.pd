@@ -1,0 +1,45 @@
+#N canvas 192 118 731 652 10;
+#X obj 71 -13 dac~;
+#N canvas 474 293 450 300 smaple_loop 0;
+#X msg 29 93 1;
+#X msg 145 111 0;
+#X msg 146 133 print;
+#X obj 136 158 readsf~ 4 1e+06;
+#X obj 186 212 *~ 0.1;
+#X obj 127 213 *~ 0.1;
+#X text 200 88 1 starts playback;
+#X text 203 111 0 stops it;
+#X obj 226 265 outlet~;
+#X obj 130 261 outlet~;
+#X obj 16 23 inlet;
+#X obj 71 27 inlet;
+#X msg 132 39 open /home/bamsen/pd/patches/stimme_001.wav;
+#X connect 0 0 3 0;
+#X connect 0 0 12 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 1 4 0;
+#X connect 3 2 4 0;
+#X connect 3 3 5 0;
+#X connect 3 4 0 0;
+#X connect 3 4 12 0;
+#X connect 4 0 8 0;
+#X connect 5 0 9 0;
+#X connect 10 0 0 0;
+#X connect 11 0 1 0;
+#X connect 12 0 3 0;
+#X connect 12 0 0 0;
+#X restore 24 -114 pd smaple_loop;
+#X obj 1 -211 bng 15 250 50 0 empty empty empty 0 -6 0 10 -4034 -1
+-1;
+#X obj 76 -214 bng 15 250 50 0 empty empty empty 0 -6 0 10 -258113
+-1 -1;
+#X obj 60 -67 *~;
+#X obj 136 -86 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 10 -262144
+-1 -1 0 1;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
+#X connect 4 0 0 0;
+#X connect 5 0 4 1;

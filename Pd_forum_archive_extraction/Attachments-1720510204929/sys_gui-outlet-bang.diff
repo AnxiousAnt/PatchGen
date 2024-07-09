@@ -1,0 +1,42 @@
+--- hcs/sys_gui.c.old	2010-01-16 17:40:03 +0000
++++ hcs/sys_gui.c	2010-01-16 17:40:20 +0000
+@@ -10,12 +10,14 @@
+ typedef struct _sys_gui
+ {
+     t_object x_obj;
++	t_outlet  *x_outlet;
+     char *send_buffer;
+ } t_sys_gui;
+ 
+ static void sys_gui_bang(t_sys_gui *x)
+ {
+     sys_gui(x->send_buffer);
++    outlet_bang(x->x_outlet); 
+ }
+ 
+ static void sys_gui_anything(t_sys_gui *x, t_symbol *s, int argc, t_atom *argv)
+@@ -33,6 +35,7 @@
+     }
+     strncat(x->send_buffer, " ;\n", 3);
+     sys_gui(x->send_buffer);
++    outlet_bang(x->x_outlet);  
+ }
+ 
+ static void sys_gui_list(t_sys_gui *x, t_symbol *s, int argc, t_atom *argv)
+@@ -49,6 +52,7 @@
+     }
+     strncat(x->send_buffer, " ;\n", 3);
+     sys_gui(x->send_buffer);
++    outlet_bang(x->x_outlet); 
+ }
+ 
+ static void sys_gui_free(t_sys_gui *x)
+@@ -60,7 +64,7 @@
+ {
+     t_sys_gui *x = (t_sys_gui *)pd_new(sys_gui_class);
+ 
+-	outlet_new(&x->x_obj, &s_anything);
++	x->x_outlet = outlet_new(&x->x_obj, &s_anything);
+     x->send_buffer = (char *)getbytes(MAXPDSTRING);
+ 
+     return(x);

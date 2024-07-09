@@ -1,0 +1,40 @@
+#N canvas 1067 617 544 348 12;
+#X obj 93 39 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 93 116 vline~;
+#X obj 32 255 dac~;
+#X obj 93 64 metro 1500;
+#X text 155 116 excitation;
+#X obj 32 224 *~ 0.1;
+#N canvas 2299 650 475 354 resonator 0;
+#X obj 32 24 inlet~;
+#X obj 211 209 outlet~;
+#X obj 343 25 block~ 1 1;
+#X obj 31 209 delwrite~ buf 100;
+#X obj 211 98 delread4~ buf;
+#X floatatom 211 33 5 0 0 0 - - -;
+#X obj 211 68 sig~ 0.25;
+#X obj 210 142 *~ -0.999;
+#X connect 0 0 3 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 3 0;
+#X connect 7 0 1 0;
+#X restore 32 192 pd resonator;
+#X msg 93 91 1 \, 0 2;
+#X obj 31 117 noise~;
+#X obj 32 158 *~;
+#X text 252 47 This patch changes timbre depending on the samplerate.
+With odd samplrates it sounds drastically different than with even
+samplerates., f 36;
+#X connect 0 0 3 0;
+#X connect 1 0 9 1;
+#X connect 3 0 7 0;
+#X connect 5 0 2 0;
+#X connect 5 0 2 1;
+#X connect 6 0 5 0;
+#X connect 7 0 1 0;
+#X connect 8 0 9 0;
+#X connect 9 0 6 0;
+

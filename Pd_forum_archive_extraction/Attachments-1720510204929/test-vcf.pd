@@ -1,0 +1,39 @@
+#N canvas 0 50 450 366 10;
+#X obj 63 52 noise~;
+#X obj 62 186 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-262144 -1 -1 95.2018 256;
+#X obj 147 99 vcf~;
+#X obj 158 51 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-262144 -1 -1 12800 256;
+#X obj 216 52 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-262144 -1 -1 0 256;
+#X obj 145 186 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-262144 -1 -1 95.2034 256;
+#X obj 213 104 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-262144 -1 -1 1 256;
+#X obj 105 248 -;
+#X obj 105 221 t b f;
+#X obj 105 272 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
+-262144 -1 -1 -0.00154877 256;
+#X obj 146 144 env~ 32767;
+#X obj 62 144 env~ 32767;
+#X obj 147 121 *~ 1;
+#X text 159 34 cutoff;
+#X text 218 35 Q;
+#X text 214 89 f (level factor);
+#X text 82 286 difference between filtered and nonfiltered signal;
+#X text 13 335 (use the 10-pixel font for this patch);
+#X connect 0 0 2 0;
+#X connect 0 0 11 0;
+#X connect 1 0 7 0;
+#X connect 2 0 12 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 2;
+#X connect 5 0 8 0;
+#X connect 6 0 12 1;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 8 1 7 1;
+#X connect 10 0 5 0;
+#X connect 11 0 1 0;
+#X connect 12 0 10 0;

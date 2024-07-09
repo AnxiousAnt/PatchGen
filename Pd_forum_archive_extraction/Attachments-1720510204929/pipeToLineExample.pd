@@ -1,0 +1,19 @@
+#N canvas 507 201 450 300 12;
+#X obj 42 142 pipe f f 0;
+#X obj 42 177 line, f 6;
+#X obj 45 221 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 21 244 5 0 0 0 - - - 0;
+#X msg 42 105 clear \, 0 0 0 \, 1 1000 0 \, 0.3 300 1000 \, 0 2000
+2000;
+#X text 144 151 a bit more verbose \, but does the job to get similar
+to vline for messages, f 36;
+#X text 43 8 'clear' erases any scheduled message in pipe \, so if
+you plan to reset the line and restart in the middle (before it ends
+sending all messages) \, it is wise to also clear pipe before sending
+the new messages, f 46;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 4 0 0 0;

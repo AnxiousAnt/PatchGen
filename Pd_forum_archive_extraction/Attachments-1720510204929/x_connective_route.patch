@@ -1,0 +1,70 @@
+--- pd-0.38-4.org/src/x_connective.c	2004-10-21 01:36:04.000000000 +0200
++++ pd-0.38-4/src/x_connective.c	2005-06-03 12:33:59.833254880 +0200
+@@ -505,7 +505,11 @@
+     if (x->x_type == A_FLOAT)
+     {
+         float f;
+-        if (!argc) return;
++        if (!argc) {
++	  /* no args: treat as "bang" and thus reject */
++	  outlet_bang(x->x_rejectout);
++	  return;
++	}
+         f = atom_getfloat(argv);
+         for (nelement = x->x_nelement, e = x->x_vec; nelement--; e++)
+             if (e->e_w.w_float == f)
+@@ -590,13 +594,53 @@
+     }
+     x->x_type = argv[0].a_type;
+     x->x_nelement = argc;
++
++    /* type checking: arguments must bei either floats xor symbols */
++    if (x->x_type == A_FLOAT)
++      {
++	for(n=0; n<argc; n++)
++	  {
++	    if (argv[n].a_type!=A_FLOAT)
++	      {
++		pd_error(x, "route: cannot route floats and symbols at the same time");
++		return 0;
++	      }
++	  }
++      }
++    else
++      {
++	for(n=0; n<argc; n++)
++	  {
++	    if(argv[n].a_type==A_FLOAT)
++	      {
++		pd_error(x, "route: cannot route symbols and floats at the same time");
++		return 0;
++	      }
++	  }
++      }
++
+     x->x_vec = (t_routeelement *)getbytes(argc * sizeof(*x->x_vec));
+     for (n = 0, e = x->x_vec; n < argc; n++, e++)
+     {
+         e->e_outlet = outlet_new(&x->x_obj, &s_list);
+         if (x->x_type == A_FLOAT)
++	  {
+             e->e_w.w_float = atom_getfloatarg(n, argc, argv);
+-        else e->e_w.w_symbol = atom_getsymbolarg(n, argc, argv);
++	    if(argv[n].a_type!=A_FLOAT)
++	      {
++		error("route: cannot route floats and symbols at the same time");
++		pd_error(x, "route: will reject symbols");
++	      }
++	  }
++        else
++	  {
++	    e->e_w.w_symbol = atom_getsymbolarg(n, argc, argv);
++	    if(argv[n].a_type==A_FLOAT)
++	      {
++		error("route: cannot route floats and symbols at the same time");
++		pd_error(x, "route: will reject floats");
++	      }
++	  }
+     }
+     x->x_rejectout = outlet_new(&x->x_obj, &s_list);
+     return (x);

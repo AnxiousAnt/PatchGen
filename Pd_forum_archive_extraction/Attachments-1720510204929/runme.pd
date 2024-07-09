@@ -1,0 +1,8 @@
+#N canvas 545 133 447 263 10;
+#X msg 187 31 obj 0 0 banger;
+#X obj 187 56 s pd-runme.pd;
+#X text 55 119 Notice that the loadbang within the banger abstraction
+doesn't send out a bang.;
+#X text 296 32 <-- Click me.;
+#X text 95 204 David McCallum \, d@mentalfloss.ca;
+#X connect 0 0 1 0;

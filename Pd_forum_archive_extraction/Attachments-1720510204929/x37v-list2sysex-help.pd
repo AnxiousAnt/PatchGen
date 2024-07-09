@@ -1,0 +1,12 @@
+#N canvas 198 164 722 273 10;
+#X obj 21 80 x37v-list2sysex;
+#X msg 21 48 1 2 3 4 5;
+#X obj 21 111 print;
+#X text 68 113 <- replace with midi out if you want to send the sysex
+values;
+#X text 80 17 by Alex Norman (http://x37v.info);
+#X text 142 47 <- convert a list of numbers into a stream of bytes
+\, to be sent to a midi out as a sysex message \, inserts the sysex
+start and sysex stop bytes in the appropriate place in the stream;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;

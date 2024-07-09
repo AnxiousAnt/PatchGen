@@ -1,0 +1,1096 @@
+--- coll.c.orig	2010-09-24 11:16:17.000000000 -0400
++++ coll.c	2010-09-26 16:21:40.000000000 -0400
+@@ -9,6 +9,8 @@
+ #include "common/loud.h"
+ #include "hammer/file.h"
+ 
++#include <pthread.h>
++
+ /* LATER profile for the bottlenecks of insertion and sorting */
+ /* LATER make sure that ``reentrancy protection hack'' is really working... */
+ 
+@@ -60,11 +62,34 @@
+     t_outlet      *x_filebangout;
+     t_outlet      *x_dumpbangout;
+     struct _coll  *x_next;
++
++	//for thread-unsafe file i/o operations
++	//added by Ivica Ico Bukvic <ico@vt.edu> 9-24-2010
++	//http://disis.music.vt.edu http://l2ork.music.vt.edu
++	t_clock *x_clock;
++
++	pthread_t unsafe_t;
++	pthread_mutex_t unsafe_mutex;
++	pthread_cond_t unsafe_cond;
++
++	t_symbol *x_s;
++	t_int unsafe;
+ } t_coll;
+ 
++typedef struct _threadedFunctionParams
++{
++	t_coll *x;
++} t_threadedFunctionParams;
++
+ static t_class *coll_class;
+ static t_class *collcommon_class;
+ 
++void coll_tick(t_coll *x)
++{
++	//x->busy = 0;
++    outlet_bang(x->x_filebangout);
++}
++
+ static t_collelem *collelem_new(int ac, t_atom *av, int *np, t_symbol *s)
+ {
+     t_collelem *ep = (t_collelem *)getbytes(sizeof(*ep));
+@@ -201,6 +226,8 @@
+     }
+ }
+ 
++
++
+ /* atomic collcommon modifiers:  clearall, remove, replace,
+    putbefore, putafter, swaplinks, swapkeys, changesymkey, renumber, sort */
+ 
+@@ -621,7 +648,7 @@
+ 	    t_coll *x;
+ 	    /* LATER consider making this more robust */
+ 	    for (x = cc->c_refs; x; x = x->x_next)
+-		outlet_bang(x->x_filebangout);
++		//outlet_bang(x->x_filebangout);
+ 	    cc->c_lastcanvas = cv;
+ 	    cc->c_filename = fn;
+ 	    post("coll: finished reading %d lines from text file '%s'",
+@@ -952,234 +979,264 @@
+ 
+ static void coll_float(t_coll *x, t_float f)
+ {
+-    t_collcommon *cc = x->x_common;
+-    t_collelem *ep;
+-    int numkey;
+-    if (loud_checkint((t_pd *)x, f, &numkey, &s_float) &&
+-	(ep = collcommon_numkey(cc, numkey)))
+-    {
+-	coll_keyoutput(x, ep);
+-	if (!cc->c_selfmodified || (ep = collcommon_numkey(cc, numkey)))
+-	    coll_dooutput(x, ep->e_size, ep->e_data);
+-    }
++	//if (!x->busy) {
++		t_collcommon *cc = x->x_common;
++		t_collelem *ep;
++		int numkey;
++		if (loud_checkint((t_pd *)x, f, &numkey, &s_float) &&
++		(ep = collcommon_numkey(cc, numkey)))
++		{
++		coll_keyoutput(x, ep);
++		if (!cc->c_selfmodified || (ep = collcommon_numkey(cc, numkey)))
++			coll_dooutput(x, ep->e_size, ep->e_data);
++		}
++	//}
+ }
+ 
+ static void coll_symbol(t_coll *x, t_symbol *s)
+ {
+-    t_collcommon *cc = x->x_common;
+-    t_collelem *ep;
+-    if (ep = collcommon_symkey(cc, s))
+-    {
+-	coll_keyoutput(x, ep);
+-	if (!cc->c_selfmodified || (ep = collcommon_symkey(cc, s)))
+-	    coll_dooutput(x, ep->e_size, ep->e_data);
+-    }
++	//if (!x->busy) {
++		t_collcommon *cc = x->x_common;
++		t_collelem *ep;
++		if (ep = collcommon_symkey(cc, s))
++		{
++		coll_keyoutput(x, ep);
++		if (!cc->c_selfmodified || (ep = collcommon_symkey(cc, s)))
++			coll_dooutput(x, ep->e_size, ep->e_data);
++		}
++	//}
+ }
+ 
+ static void coll_list(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    if (ac >= 2 && av->a_type == A_FLOAT)
+-	coll_tokey(x, av, ac-1, av+1, 1, &s_list);
+-    else
+-	loud_messarg((t_pd *)x, &s_list);
++	//if (!x->busy) {
++		if (ac >= 2 && av->a_type == A_FLOAT)
++		coll_tokey(x, av, ac-1, av+1, 1, &s_list);
++		else
++		loud_messarg((t_pd *)x, &s_list);
++	//}
+ }
+ 
+ static void coll_anything(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    coll_symbol(x, s);
++	//if (!x->busy)
++    	coll_symbol(x, s);
+ }
+ 
+ static void coll_store(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    if (ac >= 2)
+-	coll_tokey(x, av, ac-1, av+1, 1, s);
+-    else
+-	loud_messarg((t_pd *)x, s);
++	//if (!x->busy) {
++		if (ac >= 2)
++		coll_tokey(x, av, ac-1, av+1, 1, s);
++		else
++		loud_messarg((t_pd *)x, s);
++	//}
+ }
+ 
+ static void coll_nstore(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    if (ac >= 3)
+-    {
+-	t_collcommon *cc = x->x_common;
+-	t_collelem *ep;
+-	int numkey;
+-	if (av->a_type == A_FLOAT && av[1].a_type == A_SYMBOL)
+-	{
+-	    if (loud_checkint((t_pd *)x, av->a_w.w_float, &numkey, s))
+-	    {
+-		if (ep = collcommon_symkey(cc, av[1].a_w.w_symbol))
+-		    collcommon_remove(cc, ep);
+-		ep = collcommon_tonumkey(cc, numkey, ac-2, av+2, 1);
+-		ep->e_symkey = av[1].a_w.w_symbol;
+-	    }
+-	}
+-	else if (av->a_type == A_SYMBOL && av[1].a_type == A_FLOAT)
+-	{
+-	    if (loud_checkint((t_pd *)x, av[1].a_w.w_float, &numkey, s))
+-	    {
+-		if (ep = collcommon_numkey(cc, numkey))
+-		    collcommon_remove(cc, ep);
+-		ep = collcommon_tosymkey(cc, av->a_w.w_symbol, ac-2, av+2, 1);
+-		ep->e_hasnumkey = 1;
+-		ep->e_numkey = numkey;
+-	    }
+-	}
+-	else loud_messarg((t_pd *)x, s);
+-    }
+-    else loud_messarg((t_pd *)x, s);
++	//if (!x->busy) {
++		if (ac >= 3)
++		{
++		t_collcommon *cc = x->x_common;
++		t_collelem *ep;
++		int numkey;
++		if (av->a_type == A_FLOAT && av[1].a_type == A_SYMBOL)
++		{
++			if (loud_checkint((t_pd *)x, av->a_w.w_float, &numkey, s))
++			{
++			if (ep = collcommon_symkey(cc, av[1].a_w.w_symbol))
++				collcommon_remove(cc, ep);
++			ep = collcommon_tonumkey(cc, numkey, ac-2, av+2, 1);
++			ep->e_symkey = av[1].a_w.w_symbol;
++			}
++		}
++		else if (av->a_type == A_SYMBOL && av[1].a_type == A_FLOAT)
++		{
++			if (loud_checkint((t_pd *)x, av[1].a_w.w_float, &numkey, s))
++			{
++			if (ep = collcommon_numkey(cc, numkey))
++				collcommon_remove(cc, ep);
++			ep = collcommon_tosymkey(cc, av->a_w.w_symbol, ac-2, av+2, 1);
++			ep->e_hasnumkey = 1;
++			ep->e_numkey = numkey;
++			}
++		}
++		else loud_messarg((t_pd *)x, s);
++		}
++		else loud_messarg((t_pd *)x, s);
++	//}
+ }
+ 
+ static void coll_insert(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    if (ac >= 2 && av->a_type == A_FLOAT)
+-	coll_tokey(x, av, ac-1, av+1, 0, s);
+-    else
+-	loud_messarg((t_pd *)x, s);
++	//if (!x->busy) {
++		if (ac >= 2 && av->a_type == A_FLOAT)
++		coll_tokey(x, av, ac-1, av+1, 0, s);
++		else
++		loud_messarg((t_pd *)x, s);
++	//}
+ }
+ 
+ static void coll_remove(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    if (ac)
+-    {
+-	t_collelem *ep;
+-	if (ep = coll_findkey(x, av, s))
+-	    collcommon_remove(x->x_common, ep);
+-    }
+-    else loud_messarg((t_pd *)x, s);
++	//if (!x->busy) {
++		if (ac)
++		{
++		t_collelem *ep;
++		if (ep = coll_findkey(x, av, s))
++			collcommon_remove(x->x_common, ep);
++		}
++		else loud_messarg((t_pd *)x, s);
++	//}
+ }
+ 
+ static void coll_delete(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    if (ac)
+-    {
+-	t_collelem *ep;
+-	if (ep = coll_findkey(x, av, s))
+-	{
+-	    if (av->a_type == A_FLOAT)
+-	    {
+-		int numkey = ep->e_numkey;
+-		t_collelem *next;
+-		for (next = ep->e_next; next; next = next->e_next)
+-		    if (next->e_hasnumkey && next->e_numkey > numkey)
+-			next->e_numkey--;
+-	    }
+-	    collcommon_remove(x->x_common, ep);
+-	}
+-    }
+-    else loud_messarg((t_pd *)x, s);
++	//if (!x->busy) {
++		if (ac)
++		{
++			t_collelem *ep;
++			if (ep = coll_findkey(x, av, s))
++			{
++				if (av->a_type == A_FLOAT)
++				{
++				int numkey = ep->e_numkey;
++				t_collelem *next;
++				for (next = ep->e_next; next; next = next->e_next)
++					if (next->e_hasnumkey && next->e_numkey > numkey)
++					next->e_numkey--;
++				}
++				collcommon_remove(x->x_common, ep);
++			}
++		}
++		else loud_messarg((t_pd *)x, s);
++	//}
+ }
+ 
+ static void coll_assoc(t_coll *x, t_symbol *s, t_floatarg f)
+ {
+-    int numkey;
+-    if (loud_checkint((t_pd *)x, f, &numkey, gensym("assoc")))
+-    {
+-	t_collcommon *cc = x->x_common;
+-	t_collelem *ep1, *ep2;
+-	if ((ep1 = collcommon_numkey(cc, numkey)) &&
+-	    ep1->e_symkey != s)  /* LATER rethink */
+-	{
+-	    if (ep2 = collcommon_symkey(cc, s))
+-		collcommon_remove(cc, ep2);
+-	    collcommon_changesymkey(cc, ep1, s);
+-	}
+-    }
++	//if (!x->busy) {
++		int numkey;
++		if (loud_checkint((t_pd *)x, f, &numkey, gensym("assoc")))
++		{
++			t_collcommon *cc = x->x_common;
++			t_collelem *ep1, *ep2;
++			if ((ep1 = collcommon_numkey(cc, numkey)) &&
++				ep1->e_symkey != s)  /* LATER rethink */
++			{
++				if (ep2 = collcommon_symkey(cc, s))
++				collcommon_remove(cc, ep2);
++				collcommon_changesymkey(cc, ep1, s);
++			}
++		}
++	//}
+ }
+ 		
+ static void coll_deassoc(t_coll *x, t_symbol *s, t_floatarg f)
+ {
+-    int numkey;
+-    if (loud_checkint((t_pd *)x, f, &numkey, gensym("deassoc")))
+-    {
+-	t_collcommon *cc = x->x_common;
+-	t_collelem *ep;
+-	if (ep = collcommon_numkey(cc, numkey))
+-	    collcommon_changesymkey(cc, ep, 0);
+-    }
++	//if (!x->busy) {
++		int numkey;
++		if (loud_checkint((t_pd *)x, f, &numkey, gensym("deassoc")))
++		{
++			t_collcommon *cc = x->x_common;
++			t_collelem *ep;
++			if (ep = collcommon_numkey(cc, numkey))
++				collcommon_changesymkey(cc, ep, 0);
++		}
++	//}
+ }
+ 
+ static void coll_subsym(t_coll *x, t_symbol *s1, t_symbol *s2)
+ {
+-    t_collelem *ep;
+-    if (s1 != s2 && (ep = collcommon_symkey(x->x_common, s2)))
+-	collcommon_changesymkey(x->x_common, ep, s1);
++	//if (!x->busy) {
++		t_collelem *ep;
++		if (s1 != s2 && (ep = collcommon_symkey(x->x_common, s2)))
++		collcommon_changesymkey(x->x_common, ep, s1);
++	//}
+ }
+ 
+ static void coll_renumber(t_coll *x, t_floatarg f)
+ {
+-    int startkey;
+-    if (loud_checkint((t_pd *)x, f, &startkey, gensym("renumber")))
+-	collcommon_renumber(x->x_common, startkey);
++	//if (!x->busy) {
++		int startkey;
++		if (loud_checkint((t_pd *)x, f, &startkey, gensym("renumber")))
++		collcommon_renumber(x->x_common, startkey);
++	//}
+ }
+ 
+ static void coll_merge(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    if (ac >= 2)
+-    {
+-	t_collcommon *cc = x->x_common;
+-	t_collelem *ep;
+-	if (av->a_type == A_FLOAT)
+-	{
+-	    int numkey;
+-	    if (loud_checkint((t_pd *)x, av->a_w.w_float, &numkey, s))
+-	    {
+-		if (ep = collcommon_numkey(cc, numkey))
+-		    collcommon_adddata(cc, ep, ac-1, av+1);
+-		else  /* LATER consider defining collcommon_toclosest() */
+-		    collcommon_tonumkey(cc, numkey, ac-1, av+1, 1);
+-	    }
+-	}
+-	else if (av->a_type == A_SYMBOL)
+-	{
+-	    if (ep = collcommon_symkey(cc, av->a_w.w_symbol))
+-		collcommon_adddata(cc, ep, ac-1, av+1);
+-	    else
+-	    {
+-		ep = collelem_new(ac-1, av+1, 0, av->a_w.w_symbol);
+-		collcommon_putafter(cc, ep, cc->c_last);
+-	    }
+-	}
+-	else loud_messarg((t_pd *)x, s);
+-    }
+-    else loud_messarg((t_pd *)x, s);
++	//if (!x->busy) {
++		if (ac >= 2)
++		{
++			t_collcommon *cc = x->x_common;
++			t_collelem *ep;
++			if (av->a_type == A_FLOAT)
++			{
++				int numkey;
++				if (loud_checkint((t_pd *)x, av->a_w.w_float, &numkey, s))
++				{
++				if (ep = collcommon_numkey(cc, numkey))
++					collcommon_adddata(cc, ep, ac-1, av+1);
++				else  /* LATER consider defining collcommon_toclosest() */
++					collcommon_tonumkey(cc, numkey, ac-1, av+1, 1);
++				}
++			}
++			else if (av->a_type == A_SYMBOL)
++			{
++				if (ep = collcommon_symkey(cc, av->a_w.w_symbol))
++				collcommon_adddata(cc, ep, ac-1, av+1);
++				else
++				{
++					ep = collelem_new(ac-1, av+1, 0, av->a_w.w_symbol);
++					collcommon_putafter(cc, ep, cc->c_last);
++				}
++			}
++			else loud_messarg((t_pd *)x, s);
++		}
++		else loud_messarg((t_pd *)x, s);
++	//}
+ }
+ 
+ static void coll_sub(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    if (ac)
+-    {
+-	t_collelem *ep;
+-	if (ep = coll_findkey(x, av, s))
+-	{
+-	    t_collcommon *cc = x->x_common;
+-	    t_atom *key = av++;
+-	    ac--;
+-	    while (ac >= 2)
+-	    {
+-		if (av->a_type == A_FLOAT)
++	//if (!x->busy) {
++		if (ac)
+ 		{
+-		    int ndx;
+-		    if (loud_checkint((t_pd *)x, av->a_w.w_float, &ndx, 0)
+-			&& ndx >= 1 && ndx <= ep->e_size)
+-			ep->e_data[ndx-1] = av[1];
++			t_collelem *ep;
++			if (ep = coll_findkey(x, av, s))
++			{
++				t_collcommon *cc = x->x_common;
++				t_atom *key = av++;
++				ac--;
++				while (ac >= 2)
++				{
++					if (av->a_type == A_FLOAT)
++					{
++						int ndx;
++						if (loud_checkint((t_pd *)x, av->a_w.w_float, &ndx, 0)
++						&& ndx >= 1 && ndx <= ep->e_size)
++						ep->e_data[ndx-1] = av[1];
++					}
++					ac -= 2;
++					av += 2;
++				}
++				if (s == gensym("sub"))
++				{
++				coll_keyoutput(x, ep);
++				if (!cc->c_selfmodified || (ep = coll_findkey(x, key, 0)))
++					coll_dooutput(x, ep->e_size, ep->e_data);
++				}
++			}
+ 		}
+-		ac -= 2;
+-		av += 2;
+-	    }
+-	    if (s == gensym("sub"))
+-	    {
+-		coll_keyoutput(x, ep);
+-		if (!cc->c_selfmodified || (ep = coll_findkey(x, key, 0)))
+-		    coll_dooutput(x, ep->e_size, ep->e_data);
+-	    }
+-	}
+-    }
+-    else loud_messarg((t_pd *)x, s);
++		else loud_messarg((t_pd *)x, s);
++	//}
+ }
+ 
+ static void coll_sort(t_coll *x, t_floatarg f1, t_floatarg f2)
+ {
++
+     int dir, ndx;
+     if (loud_checkint((t_pd *)x, f1, &dir, gensym("sort")) &&
+ 	loud_checkint((t_pd *)x, f2, &ndx, gensym("sort")))
+@@ -1197,14 +1254,16 @@
+    needed in case of their implementation... */
+ static void coll_swap(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    if (ac == 2)
+-    {
+-	t_collelem *ep1, *ep2;
+-	if ((ep1 = coll_findkey(x, av, s)) &&
+-	    (ep2 = coll_findkey(x, av + 1, s)))
+-	    collcommon_swapkeys(x->x_common, ep1, ep2);
+-    }
+-    else loud_messarg((t_pd *)x, s);
++	//if (!x->busy) {
++		if (ac == 2)
++		{
++		t_collelem *ep1, *ep2;
++		if ((ep1 = coll_findkey(x, av, s)) &&
++			(ep2 = coll_findkey(x, av + 1, s)))
++			collcommon_swapkeys(x->x_common, ep1, ep2);
++		}
++		else loud_messarg((t_pd *)x, s);
++	//}
+ }
+ 
+ /* CHECKED traversal direction change is consistent with the general rule:
+@@ -1216,212 +1275,266 @@
+ 
+ static void coll_next(t_coll *x)
+ {
+-    t_collcommon *cc = x->x_common;
+-    if (cc->c_headstate != COLL_HEADRESET &&
+-	cc->c_headstate != COLL_HEADDELETED)  /* asymmetric, LATER rethink */
+-    {
+-	if (cc->c_head)
+-	    cc->c_head = cc->c_head->e_next;
+-	if (!cc->c_head && !(cc->c_head = cc->c_first))  /* CHECKED wrapping */
+-	    return;
+-    }
+-    else if (!cc->c_head && !(cc->c_head = cc->c_first))
+-	return;
+-    cc->c_headstate = COLL_HEADNEXT;
+-    coll_keyoutput(x, cc->c_head);
+-    if (cc->c_head)
+-	coll_dooutput(x, cc->c_head->e_size, cc->c_head->e_data);
+-    else if (!cc->c_selfmodified)
+-	loudbug_bug("coll_next");  /* LATER rethink */
++	//if (!x->busy) {
++		t_collcommon *cc = x->x_common;
++		if (cc->c_headstate != COLL_HEADRESET &&
++		cc->c_headstate != COLL_HEADDELETED)  /* asymmetric, LATER rethink */
++		{
++		if (cc->c_head)
++			cc->c_head = cc->c_head->e_next;
++		if (!cc->c_head && !(cc->c_head = cc->c_first))  /* CHECKED wrapping */
++			return;
++		}
++		else if (!cc->c_head && !(cc->c_head = cc->c_first))
++		return;
++		cc->c_headstate = COLL_HEADNEXT;
++		coll_keyoutput(x, cc->c_head);
++		if (cc->c_head)
++		coll_dooutput(x, cc->c_head->e_size, cc->c_head->e_data);
++		else if (!cc->c_selfmodified)
++		loudbug_bug("coll_next");  /* LATER rethink */
++	//}
+ }
+ 
+ static void coll_prev(t_coll *x)
+ {
+-    t_collcommon *cc = x->x_common;
+-    if (cc->c_headstate != COLL_HEADRESET)
+-    {
+-	if (cc->c_head)
+-	    cc->c_head = cc->c_head->e_prev;
+-	if (!cc->c_head && !(cc->c_head = cc->c_last))  /* CHECKED wrapping */
+-	    return;
+-    }
+-    else if (!cc->c_head && !(cc->c_head = cc->c_first))
+-	return;
+-    cc->c_headstate = COLL_HEADPREV;
+-    coll_keyoutput(x, cc->c_head);
+-    if (cc->c_head)
+-	coll_dooutput(x, cc->c_head->e_size, cc->c_head->e_data);
+-    else if (!cc->c_selfmodified)
+-	loudbug_bug("coll_prev");  /* LATER rethink */
++	//if (!x->busy) {
++		t_collcommon *cc = x->x_common;
++		if (cc->c_headstate != COLL_HEADRESET)
++		{
++			if (cc->c_head)
++				cc->c_head = cc->c_head->e_prev;
++			if (!cc->c_head && !(cc->c_head = cc->c_last))  /* CHECKED wrapping */
++				return;
++		}
++		else if (!cc->c_head && !(cc->c_head = cc->c_first))
++		return;
++		cc->c_headstate = COLL_HEADPREV;
++		coll_keyoutput(x, cc->c_head);
++		if (cc->c_head)
++		coll_dooutput(x, cc->c_head->e_size, cc->c_head->e_data);
++		else if (!cc->c_selfmodified)
++		loudbug_bug("coll_prev");  /* LATER rethink */
++	//}
+ }
+ 
+ static void coll_end(t_coll *x)
+ {
+-    t_collcommon *cc = x->x_common;
+-    cc->c_head = cc->c_last;
+-    cc->c_headstate = COLL_HEADRESET;
++	//if (!x->busy) {
++		t_collcommon *cc = x->x_common;
++		cc->c_head = cc->c_last;
++		cc->c_headstate = COLL_HEADRESET;
++	//}
+ }
+ 
+ static void coll_goto(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    if (ac)
+-    {
+-	t_collelem *ep = coll_findkey(x, av, s);
+-	if (ep)
+-	{
+-	    t_collcommon *cc = x->x_common;
+-	    cc->c_head = ep;
+-	    cc->c_headstate = COLL_HEADRESET;
+-	}
+-    }
+-    else loud_messarg((t_pd *)x, s);
++	//if (!x->busy) {
++		if (ac)
++		{
++			t_collelem *ep = coll_findkey(x, av, s);
++			if (ep)
++			{
++				t_collcommon *cc = x->x_common;
++				cc->c_head = ep;
++				cc->c_headstate = COLL_HEADRESET;
++			}
++		}
++		else loud_messarg((t_pd *)x, s);
++	//}
+ }
+ 
+ static void coll_nth(t_coll *x, t_symbol *s, int ac, t_atom *av)
+ {
+-    if (ac >= 2 && av[1].a_type == A_FLOAT)
+-    {
+-	int ndx;
+-	t_collelem *ep;
+-	if (loud_checkint((t_pd *)x, av[1].a_w.w_float, &ndx, s) &&
+-	    (ep = coll_findkey(x, av, s)) &&
+-	    ep->e_size >= ndx)
+-	{
+-	    t_atom *ap = ep->e_data + --ndx;
+-	    if (ap->a_type == A_FLOAT)
+-		outlet_float(((t_object *)x)->ob_outlet, ap->a_w.w_float);
+-	    else if (ap->a_type == A_SYMBOL)
+-		outlet_symbol(((t_object *)x)->ob_outlet, ap->a_w.w_symbol);
+-	}
+-    }
+-    else loud_messarg((t_pd *)x, s);
++	//if (!x->busy) {
++		if (ac >= 2 && av[1].a_type == A_FLOAT)
++		{
++			int ndx;
++			t_collelem *ep;
++			if (loud_checkint((t_pd *)x, av[1].a_w.w_float, &ndx, s) &&
++				(ep = coll_findkey(x, av, s)) &&
++				ep->e_size >= ndx)
++			{
++				t_atom *ap = ep->e_data + --ndx;
++				if (ap->a_type == A_FLOAT)
++				outlet_float(((t_object *)x)->ob_outlet, ap->a_w.w_float);
++				else if (ap->a_type == A_SYMBOL)
++				outlet_symbol(((t_object *)x)->ob_outlet, ap->a_w.w_symbol);
++			}
++		}
++		else loud_messarg((t_pd *)x, s);
++	//}
+ }
+ 
+ static void coll_length(t_coll *x)
+ {
+-    t_collcommon *cc = x->x_common;
+-    t_collelem *ep = cc->c_first;
+-    int result = 0;
+-    while (ep) result++, ep = ep->e_next;
+-    outlet_float(((t_object *)x)->ob_outlet, result);
++	//if (!x->busy) {
++		t_collcommon *cc = x->x_common;
++		t_collelem *ep = cc->c_first;
++		int result = 0;
++		while (ep) result++, ep = ep->e_next;
++		outlet_float(((t_object *)x)->ob_outlet, result);
++	//}
+ }
+ 
+ static void coll_min(t_coll *x, t_floatarg f)
+ {
+-    int ndx;
+-    if (loud_checkint((t_pd *)x, f, &ndx, gensym("min")))
+-    {
+-	t_collelem *found;
+-	if (ndx > 0)
+-	    ndx--;
+-	/* LATER consider complaining: */
+-	else if (ndx < 0)
+-	    return;  /* CHECKED silently rejected */
+-	/* else CHECKED silently defaults to 1 */
+-	if (found = coll_firsttyped(x, ndx, A_FLOAT))
+-	{
+-	    t_float result = found->e_data[ndx].a_w.w_float;
+-	    t_collelem *ep;
+-	    for (ep = found->e_next; ep; ep = ep->e_next)
+-	    {
+-		if (ep->e_size > ndx &&
+-		    ep->e_data[ndx].a_type == A_FLOAT &&
+-		    ep->e_data[ndx].a_w.w_float < result)
++	//if (!x->busy) {
++		int ndx;
++		if (loud_checkint((t_pd *)x, f, &ndx, gensym("min")))
+ 		{
+-		    found = ep;
+-		    result = ep->e_data[ndx].a_w.w_float;
++			t_collelem *found;
++			if (ndx > 0)
++				ndx--;
++			/* LATER consider complaining: */
++			else if (ndx < 0)
++				return;  /* CHECKED silently rejected */
++			/* else CHECKED silently defaults to 1 */
++			if (found = coll_firsttyped(x, ndx, A_FLOAT))
++			{
++				t_float result = found->e_data[ndx].a_w.w_float;
++				t_collelem *ep;
++				for (ep = found->e_next; ep; ep = ep->e_next)
++				{
++				if (ep->e_size > ndx &&
++					ep->e_data[ndx].a_type == A_FLOAT &&
++					ep->e_data[ndx].a_w.w_float < result)
++				{
++					found = ep;
++					result = ep->e_data[ndx].a_w.w_float;
++				}
++				}
++				coll_keyoutput(x, found);
++				outlet_float(((t_object *)x)->ob_outlet, result);
++			}
+ 		}
+-	    }
+-	    coll_keyoutput(x, found);
+-	    outlet_float(((t_object *)x)->ob_outlet, result);
+-	}
+-    }
++	//}
+ }
+ 
+ static void coll_max(t_coll *x, t_floatarg f)
+ {
+-    int ndx;
+-    if (loud_checkint((t_pd *)x, f, &ndx, gensym("max")))
+-    {
+-	t_collelem *found;
+-	if (ndx > 0)
+-	    ndx--;
+-	/* LATER consider complaining: */
+-	else if (ndx < 0)
+-	    return;  /* CHECKED silently rejected */
+-	/* else CHECKED silently defaults to 1 */
+-	if (found = coll_firsttyped(x, ndx, A_FLOAT))
+-	{
+-	    t_float result = found->e_data[ndx].a_w.w_float;
+-	    t_collelem *ep;
+-	    for (ep = found->e_next; ep; ep = ep->e_next)
+-	    {
+-		if (ep->e_size > ndx &&
+-		    ep->e_data[ndx].a_type == A_FLOAT &&
+-		    ep->e_data[ndx].a_w.w_float > result)
++	//if (!x->busy) {
++		int ndx;
++		if (loud_checkint((t_pd *)x, f, &ndx, gensym("max")))
+ 		{
+-		    found = ep;
+-		    result = ep->e_data[ndx].a_w.w_float;
++			t_collelem *found;
++			if (ndx > 0)
++				ndx--;
++			/* LATER consider complaining: */
++			else if (ndx < 0)
++				return;  /* CHECKED silently rejected */
++			/* else CHECKED silently defaults to 1 */
++			if (found = coll_firsttyped(x, ndx, A_FLOAT))
++			{
++				t_float result = found->e_data[ndx].a_w.w_float;
++				t_collelem *ep;
++				for (ep = found->e_next; ep; ep = ep->e_next)
++				{
++				if (ep->e_size > ndx &&
++					ep->e_data[ndx].a_type == A_FLOAT &&
++					ep->e_data[ndx].a_w.w_float > result)
++				{
++					found = ep;
++					result = ep->e_data[ndx].a_w.w_float;
++				}
++				}
++				coll_keyoutput(x, found);
++				outlet_float(((t_object *)x)->ob_outlet, result);
++			}
+ 		}
+-	    }
+-	    coll_keyoutput(x, found);
+-	    outlet_float(((t_object *)x)->ob_outlet, result);
+-	}
+-    }
++	//}
+ }
+ 
+ static void coll_refer(t_coll *x, t_symbol *s)
+ {
+-    if (!coll_rebind(x, s))
+-    {
+-	/* LATER consider complaining */
+-    }
++	//if (!x->busy) {
++		if (!coll_rebind(x, s))
++		{
++		/* LATER consider complaining */
++		}
++	//}
+ }
+ 
+ static void coll_flags(t_coll *x, t_float f1, t_float f2)
+ {
+-    int i1;
+-    if (loud_checkint((t_pd *)x, f1, &i1, gensym("flags")))
+-    {
+-	t_collcommon *cc = x->x_common;
+-	cc->c_embedflag = (i1 != 0);
+-    }
++	//if (!x->busy) {
++		int i1;
++		if (loud_checkint((t_pd *)x, f1, &i1, gensym("flags")))
++		{
++			t_collcommon *cc = x->x_common;
++			cc->c_embedflag = (i1 != 0);
++		}
++	//}
+ }
+ 
+ static void coll_read(t_coll *x, t_symbol *s)
+ {
+-    t_collcommon *cc = x->x_common;
+-    if (s && s != &s_)
+-	collcommon_doread(cc, s, x->x_canvas);
+-    else
+-	hammerpanel_open(cc->c_filehandle, 0);
++	if (!x->unsafe) {
++		t_collcommon *cc = x->x_common;
++		if (s && s != &s_) {
++			x->x_s = s;
++			x->unsafe = 1;
++
++			pthread_mutex_lock(&x->unsafe_mutex);
++			pthread_cond_signal(&x->unsafe_cond);
++			pthread_mutex_unlock(&x->unsafe_mutex);
++			//collcommon_doread(cc, s, x->x_canvas);
++		}
++		else
++		hammerpanel_open(cc->c_filehandle, 0);
++	}
+ }
+ 
+ static void coll_write(t_coll *x, t_symbol *s)
+ {
+-    t_collcommon *cc = x->x_common;
+-    if (s && s != &s_)
+-	collcommon_dowrite(cc, s, x->x_canvas);
+-    else
+-	hammerpanel_save(cc->c_filehandle, 0, 0);  /* CHECKED no default name */
++	if (!x->unsafe) {
++		t_collcommon *cc = x->x_common;
++		if (s && s != &s_) {
++			x->x_s = s;
++			x->unsafe = 10;
++
++			pthread_mutex_lock(&x->unsafe_mutex);
++			pthread_cond_signal(&x->unsafe_cond);
++			pthread_mutex_unlock(&x->unsafe_mutex);
++			//collcommon_dowrite(cc, s, x->x_canvas);
++		}
++		else
++		hammerpanel_save(cc->c_filehandle, 0, 0);  /* CHECKED no default name */
++	}
+ }
+ 
+ static void coll_readagain(t_coll *x)
+ {
+-    t_collcommon *cc = x->x_common;
+-    if (cc->c_filename)
+-	collcommon_doread(cc, 0, 0);
+-    else
+-	hammerpanel_open(cc->c_filehandle, 0);
++	//if (!x->busy) {
++		t_collcommon *cc = x->x_common;
++		if (cc->c_filename) {
++			x->unsafe = 2;
++
++			pthread_mutex_lock(&x->unsafe_mutex);
++			pthread_cond_signal(&x->unsafe_cond);
++			pthread_mutex_unlock(&x->unsafe_mutex);
++			//collcommon_doread(cc, 0, 0);
++		}
++		else
++		hammerpanel_open(cc->c_filehandle, 0);
++	//}
+ }
+ 
+ static void coll_writeagain(t_coll *x)
+ {
+-    t_collcommon *cc = x->x_common;
+-    if (cc->c_filename)
+-	collcommon_dowrite(cc, 0, 0);
+-    else
+-	hammerpanel_save(cc->c_filehandle, 0, 0);  /* CHECKED no default name */
++	//if (!x->busy) {
++		t_collcommon *cc = x->x_common;
++		if (cc->c_filename) {
++			x->unsafe = 11;
++
++			pthread_mutex_lock(&x->unsafe_mutex);
++			pthread_cond_signal(&x->unsafe_cond);
++			pthread_mutex_unlock(&x->unsafe_mutex);
++			//collcommon_dowrite(cc, 0, 0);
++		}
++		else
++		hammerpanel_save(cc->c_filehandle, 0, 0);  /* CHECKED no default name */
++	//}
+ }
+ 
+ static void coll_filetype(t_coll *x, t_symbol *s)
+@@ -1431,17 +1544,19 @@
+ 
+ static void coll_dump(t_coll *x)
+ {
+-    t_collcommon *cc = x->x_common;
+-    t_collelem *ep;
+-    for (ep = cc->c_first; ep; ep = ep->e_next)
+-    {
+-	coll_keyoutput(x, ep);
+-	if (cc->c_selfmodified)
+-	    break;
+-	coll_dooutput(x, ep->e_size, ep->e_data);
+-	/* FIXME dooutput() may invalidate ep as well as keyoutput()... */
+-    }
+-    outlet_bang(x->x_dumpbangout);
++	//if (!x->busy) {
++		t_collcommon *cc = x->x_common;
++		t_collelem *ep;
++		for (ep = cc->c_first; ep; ep = ep->e_next)
++		{
++		coll_keyoutput(x, ep);
++		if (cc->c_selfmodified)
++			break;
++		coll_dooutput(x, ep->e_size, ep->e_data);
++		/* FIXME dooutput() may invalidate ep as well as keyoutput()... */
++		}
++		outlet_bang(x->x_dumpbangout);
++	//}
+ }
+ 
+ static void coll_open(t_coll *x)
+@@ -1492,15 +1607,17 @@
+ #ifdef COLL_DEBUG
+ static void collelem_post(t_collelem *ep)
+ {
+-    if (ep->e_hasnumkey && ep->e_symkey)
+-	loudbug_startpost("%d %s:", ep->e_numkey, ep->e_symkey->s_name);
+-    else if (ep->e_hasnumkey)
+-	loudbug_startpost("%d:", ep->e_numkey);
+-    else if (ep->e_symkey)
+-	loudbug_startpost("%s:", ep->e_symkey->s_name);
+-    else loudbug_bug("collcommon_post");
+-    loudbug_postatom(ep->e_size, ep->e_data);
+-    loudbug_endpost();
++	//if (!x->busy) {
++		if (ep->e_hasnumkey && ep->e_symkey)
++		loudbug_startpost("%d %s:", ep->e_numkey, ep->e_symkey->s_name);
++		else if (ep->e_hasnumkey)
++		loudbug_startpost("%d:", ep->e_numkey);
++		else if (ep->e_symkey)
++		loudbug_startpost("%s:", ep->e_symkey->s_name);
++		else loudbug_bug("collcommon_post");
++		loudbug_postatom(ep->e_size, ep->e_data);
++		loudbug_endpost();
++	//}
+ }
+ 
+ static void collcommon_post(t_collcommon *cc)
+@@ -1511,25 +1628,68 @@
+ 
+ static void coll_debug(t_coll *x, t_floatarg f)
+ {
+-    t_collcommon *cc = coll_checkcommon(x);
+-    if (cc)
+-    {
+-	t_coll *x1 = cc->c_refs;
+-	t_collelem *ep, *last;
+-	int i = 0;
+-	while (x1) i++, x1 = x1->x_next;
+-	loudbug_post("refcount %d", i);
+-	for (ep = cc->c_first, last = 0; ep; ep = ep->e_next) last = ep;
+-	if (last != cc->c_last) loudbug_bug("coll_debug: last element");
+-	collcommon_post(cc);
+-    }
++	//if (!x->busy) {
++		t_collcommon *cc = coll_checkcommon(x);
++		if (cc)
++		{
++			t_coll *x1 = cc->c_refs;
++			t_collelem *ep, *last;
++			int i = 0;
++			while (x1) i++, x1 = x1->x_next;
++			loudbug_post("refcount %d", i);
++			for (ep = cc->c_first, last = 0; ep; ep = ep->e_next) last = ep;
++			if (last != cc->c_last) loudbug_bug("coll_debug: last element");
++			collcommon_post(cc);
++		}
++	//}
+ }
+ #endif
+ 
++static void *coll_threaded_fileio(void *ptr)
++{
++	t_threadedFunctionParams *rPars = (t_threadedFunctionParams*)ptr;
++	t_coll *x = rPars->x;
++
++	while(x->unsafe > -1) {
++		pthread_mutex_lock(&x->unsafe_mutex);
++		if (x->unsafe == 0)
++			pthread_cond_wait(&x->unsafe_cond, &x->unsafe_mutex);
++		pthread_mutex_unlock(&x->unsafe_mutex);
++
++		if (x->unsafe == 1) { //read
++			collcommon_doread(x->x_common, x->x_s, x->x_canvas);
++			clock_delay(x->x_clock, 0);
++		}
++		else if (x->unsafe == 2) { //read
++			collcommon_doread(x->x_common, 0, 0);
++			clock_delay(x->x_clock, 0);
++		}
++		else if (x->unsafe == 10) { //write
++			collcommon_dowrite(x->x_common, x->x_s, x->x_canvas);
++		}
++		else if (x->unsafe == 11) { //write
++			collcommon_dowrite(x->x_common, 0, 0);
++		}
++
++		if (x->unsafe != -1) x->unsafe = 0;
++	}
++	pthread_exit(0);
++}
++
+ static void coll_free(t_coll *x)
+ {
+     hammerfile_free(x->x_filehandle);
+     coll_unbind(x);
++
++	x->unsafe = -1;
++
++	pthread_mutex_lock(&x->unsafe_mutex);
++	pthread_cond_signal(&x->unsafe_cond);
++	pthread_mutex_unlock(&x->unsafe_mutex);
++
++	pthread_join(x->unsafe_t, NULL);
++
++	clock_free(x->x_clock);
+ }
+ 
+ static void *coll_new(t_symbol *s)
+@@ -1541,7 +1701,19 @@
+     x->x_filebangout = outlet_new((t_object *)x, &s_bang);
+     x->x_dumpbangout = outlet_new((t_object *)x, &s_bang);
+     x->x_filehandle = hammerfile_new((t_pd *)x, coll_embedhook, 0, 0, 0);
++
++	//prep threading stuff
++	x->unsafe = 0;
++	x->x_clock = clock_new(x, (t_method)coll_tick);
++	t_threadedFunctionParams rPars;
++	rPars.x = x;
++	pthread_mutex_init(&x->unsafe_mutex, NULL);
++	pthread_cond_init(&x->unsafe_cond, NULL);
++	pthread_create( &x->unsafe_t, NULL, (void *) &coll_threaded_fileio, (void *) &rPars);
++
++	//x->busy = 0;
+     coll_bind(x, s);
++
+     return (x);
+ }
+ 

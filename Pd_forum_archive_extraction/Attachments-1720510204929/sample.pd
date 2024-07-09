@@ -1,0 +1,44 @@
+#N canvas 633 91 583 506 12;
+#N canvas 0 0 450 300 graph1 0;
+#X array array1 200 float 0;
+#X coords 0 200 199 0 200 140 1;
+#X restore 100 20 graph;
+#X obj 112 291 line;
+#X obj 112 320 int;
+#X obj 113 350 t f f;
+#X obj 116 240 hsl 100 15 0 200 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 6300 1;
+#N canvas 0 0 454 304 reset 0;
+#X obj 200 25 inlet;
+#X obj 176 265 tabwrite array1;
+#X msg 177 235 0;
+#X obj 198 121 int;
+#X obj 199 145 + 1;
+#X obj 198 172 sel 200;
+#X msg 198 95 -1;
+#X obj 205 63 t b;
+#X obj 229 203 t f b f;
+#X connect 0 0 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 1 8 0;
+#X connect 6 0 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 3 0;
+#X connect 8 1 2 0;
+#X connect 8 2 1 1;
+#X restore 390 79 pd reset;
+#X obj 382 55 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 112 263 \$1 100;
+#X obj 113 399 tabwrite array1;
+#X text 78 188 should work but doesn't because its at the control rate
+;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 8 0;
+#X connect 3 1 8 1;
+#X connect 4 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 0;

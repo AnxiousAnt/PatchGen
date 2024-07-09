@@ -1,0 +1,53 @@
+#N canvas 571 25 664 762 10;
+#X obj 18 94 tabsend~ \$0-elements;
+#X obj 18 58 inlet~;
+#X obj 291 350 tabread \$0-elements;
+#X obj 290 199 until;
+#X obj 370 153 s \$0-elements;
+#X msg 370 120 resize \$1;
+#X obj 290 83 a_blocksize~;
+#X obj 419 59 table \$0-elements;
+#X obj 290 261 f;
+#X obj 321 261 + 1;
+#X msg 231 197 0;
+#X obj 200 516 list;
+#X obj 257 576 outlet;
+#X obj 290 168 f;
+#X obj 197 54 bang~;
+#X obj 290 298 % 64;
+#X text 191 17 Convert a signal to a list;
+#X obj 197 83 t b b b b;
+#X text 289 527 FIX: this is a hack to prevent bangs coming through
+when initially started. Need to find out why we get bangs.;
+#X obj 200 538 route bang;
+#X obj 290 118 t a a a a;
+#X text 25 615 Bugs:;
+#X obj 291 399 list-lastx;
+#X obj 291 452 list-rev;
+#X text 43 635 - Due to a limitation in a_blocksize~ this abstraction
+doesn't work properly for blocksizes < 64 What you get in that case
+is a zero-padded list of 64 elements with the first N elements containing
+the 'packed' list items.;
+#X connect 1 0 0 0;
+#X connect 2 0 22 0;
+#X connect 3 0 8 0;
+#X connect 5 0 4 0;
+#X connect 6 0 20 0;
+#X connect 8 0 9 0;
+#X connect 8 0 15 0;
+#X connect 9 0 8 1;
+#X connect 10 0 8 1;
+#X connect 11 0 19 0;
+#X connect 13 0 3 0;
+#X connect 14 0 17 0;
+#X connect 15 0 2 0;
+#X connect 17 0 11 0;
+#X connect 17 1 13 0;
+#X connect 17 2 10 0;
+#X connect 19 1 12 0;
+#X connect 20 0 13 1;
+#X connect 20 1 22 1;
+#X connect 20 2 15 1;
+#X connect 20 3 5 0;
+#X connect 22 0 23 0;
+#X connect 23 0 11 1;

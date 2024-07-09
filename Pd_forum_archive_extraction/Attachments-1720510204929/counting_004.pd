@@ -1,0 +1,154 @@
+#N struct 1003-goto10 float x float y;
+#N canvas 248 25 581 856 10;
+#X obj 59 21 cnv 15 300 30 empty empty Counters_in_Pd 20 12 0 14 -233017
+-66577 0;
+#X obj 174 132 + 1;
+#X obj 172 276 + 1;
+#X obj 130 276 f 0;
+#X obj 272 132 + 1;
+#X obj 236 132 f 0;
+#X obj 114 132 float 0;
+#X text 207 133 ==;
+#X text 311 135 ~=;
+#X obj 380 132 + 1;
+#X obj 344 132 f;
+#X text 66 168 Every bang sent to the float will first output the current
+value of the float to its outlet and to the [+ 1] \, which then adds
+1 to the internally stored value of the float *without* outputting
+it immediatly.;
+#X text 64 226 The new value will be emitted on the next bang.;
+#X floatatom 130 307 5 0 0 0 current_output - -;
+#X msg 130 254 bang;
+#X floatatom 172 308 5 0 0 1 next_output - -;
+#X obj 192 497 + 1;
+#X obj 150 497 f 0;
+#X floatatom 150 528 5 0 0 0 current_output - -;
+#X msg 150 432 bang;
+#X floatatom 192 528 5 0 0 1 next_output - -;
+#X msg 166 460 0;
+#X obj 70 340 cnv 15 300 20 empty empty Resetting_Counters 20 10 0
+12 -233017 -66577 0;
+#X obj 67 588 cnv 15 300 20 empty empty From-To-Counters_(Modulo-n)
+20 10 0 12 -233017 -66577 0;
+#X obj 195 757 + 1;
+#X obj 155 757 f 0;
+#X floatatom 155 817 5 0 0 0 current_output - -;
+#X msg 155 699 bang;
+#X msg 171 726 0;
+#X obj 230 758 mod 4;
+#X text 65 75 Counting in Pd doesn't require externals \, you can also
+count with the builtin objects. The basic idiom to remember is [f 0]
+x [+ 1]:;
+#X text 280 755 <= count from 0 to 3 (where 3 == 4 - 1);
+#X text 87 376 To start over \, send the new starting value to the
+right outlet of the float:;
+#X text 193 459 <= RESET using right inlet of float;
+#X text 92 634 If you want to count from 0 to a max-value and then
+start over \, use a "Modulo N" counter. Note \, that the [mod] is inserted
+*between* the [+ 1] and the float. To count until N use a [mod N-1]
+object:;
+#X floatatom 230 817 5 0 0 1 next_output - -;
+#N canvas 258 28 576 798 accum 0;
+#X obj 59 21 cnv 15 300 30 empty empty Accumulator/Summing 20 12 0
+14 -233017 -66577 0;
+#X text 62 78 With a little change to the counter idiom you get another
+operation: an accumulator to sum incoming numbers.;
+#X text 63 125 Remember the counter:;
+#X obj 94 156 f 0;
+#X obj 138 214 f 0;
+#X obj 141 157 +;
+#X obj 90 214 +;
+#X obj 134 301 f 0;
+#X obj 86 301 +;
+#X text 63 238 and send numbers into it:;
+#X floatatom 86 331 5 0 0 0 - - -;
+#X obj 86 359 print;
+#X obj 129 480 f 0;
+#X obj 81 480 +;
+#X msg 81 429 1 \, 2 \, 3 \, 4 \, 5;
+#X floatatom 81 510 5 0 0 0 - - -;
+#X obj 81 538 print;
+#X msg 86 272 1 \, 2 \, 3 \, 4 \, 5;
+#X msg 97 451 0;
+#X text 57 401 Resetting works like this:;
+#X text 81 581 And if you only want the final result \, you can store
+the intermediate sums in a float object:;
+#X obj 152 703 f 0;
+#X obj 104 703 +;
+#X msg 104 652 1 \, 2 \, 3 \, 4 \, 5;
+#X floatatom 74 749 5 0 0 0 - - -;
+#X msg 152 675 0;
+#X text 189 675 <== Reset;
+#X obj 74 725 f;
+#X obj 74 624 t b b;
+#X obj 74 768 print;
+#X msg 31 601 bang;
+#X text 146 333 == 1+2+3+4+5 = 15;
+#X text 60 189 Now just turn the objects around like this:;
+#X text 166 452 <== Reset;
+#X obj 374 483 f 0;
+#X obj 326 483 +;
+#X msg 326 432 1 \, 2 \, 3 \, 4 \, 5;
+#X floatatom 326 513 5 0 0 0 - - -;
+#X obj 326 541 print;
+#X msg 374 454 0;
+#X text 411 455 <== Reset;
+#X text 321 406 Or this:;
+#X connect 3 0 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 3 1;
+#X connect 6 0 4 0;
+#X connect 7 0 8 1;
+#X connect 8 0 7 0;
+#X connect 8 0 10 0;
+#X connect 10 0 11 0;
+#X connect 12 0 13 1;
+#X connect 13 0 15 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 17 0 8 0;
+#X connect 18 0 13 1;
+#X connect 21 0 22 1;
+#X connect 22 0 21 0;
+#X connect 22 0 27 1;
+#X connect 23 0 22 0;
+#X connect 24 0 29 0;
+#X connect 25 0 21 0;
+#X connect 27 0 24 0;
+#X connect 28 0 27 0;
+#X connect 28 1 23 0;
+#X connect 30 0 28 0;
+#X connect 34 0 35 1;
+#X connect 35 0 37 0;
+#X connect 35 0 34 0;
+#X connect 36 0 35 0;
+#X connect 37 0 38 0;
+#X connect 39 0 34 0;
+#X restore 428 815 pd accum;
+#X text 424 789 See also:;
+#X obj 397 17 goto10;
+#X connect 1 0 6 1;
+#X connect 2 0 3 1;
+#X connect 2 0 15 0;
+#X connect 3 0 2 0;
+#X connect 3 0 13 0;
+#X connect 4 0 5 1;
+#X connect 5 0 4 0;
+#X connect 6 0 1 0;
+#X connect 9 0 10 1;
+#X connect 10 0 9 0;
+#X connect 14 0 3 0;
+#X connect 16 0 17 1;
+#X connect 16 0 20 0;
+#X connect 17 0 16 0;
+#X connect 17 0 18 0;
+#X connect 19 0 17 0;
+#X connect 21 0 17 1;
+#X connect 24 0 29 0;
+#X connect 25 0 24 0;
+#X connect 25 0 26 0;
+#X connect 27 0 25 0;
+#X connect 28 0 25 1;
+#X connect 29 0 25 1;
+#X connect 29 0 35 0;

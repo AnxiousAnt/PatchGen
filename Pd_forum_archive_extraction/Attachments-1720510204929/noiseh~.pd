@@ -1,0 +1,33 @@
+#N canvas 16 70 400 201 10;
+#X obj 75 130 samphold~;
+#X obj 75 108 noise~;
+#X obj 75 152 outlet~;
+#X obj 133 40 inlet~;
+#X obj 134 108 phasor~;
+#N canvas 97 351 453 148 \$0-readme 0;
+#X text 13 9 noiseh~ is a sample-and-hold noise \, which should perform
+similarly to csound's randh and supercollider's LFNoise0.;
+#X text 12 61 creation argument - a float for initial frequency of
+random value update;
+#X text 12 91 inlet - frequency of random value update \; can be float
+or signal;
+#X restore 244 41 pd \$0-readme;
+#X obj 133 85 max~ 0;
+#X text 188 86 <- limit to >0;
+#X text 191 121 <- sample and hold;
+#X obj 20 15 loadbang;
+#X msg 20 108 set \$1;
+#X obj 20 37 random 65536;
+#X obj 20 60 - 32768;
+#X obj 20 83 / 32768;
+#X text 91 16 <- initialize with a 16-bit value;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 6 0;
+#X connect 4 0 0 1;
+#X connect 6 0 4 0;
+#X connect 9 0 11 0;
+#X connect 10 0 0 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 10 0;

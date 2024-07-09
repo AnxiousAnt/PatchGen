@@ -1,0 +1,25 @@
+#N canvas 256 360 659 351 10;
+#X obj 87 266 noteout;
+#X msg 51 33 read melody.q;
+#X obj 191 60 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 87 160 r midi;
+#X msg 191 87 rewind;
+#X obj 87 211 makenote 100 700;
+#X text 193 42 2 start stepping;
+#X text 45 8 1 Read the contets of a file;
+#X text 143 153 The messages in the .q file are tagged 'midi';
+#X text 144 166 We receive them here.;
+#X text 18 295 ./MiS;
+#X obj 42 194 print;
+#X obj 88 104 qlist;
+#X text 216 209 Make MIDI notes with a specific duration.;
+#X text 216 225 So we don't have to keep track of note-ons and note-offs.
+;
+#X connect 1 0 12 0;
+#X connect 2 0 12 0;
+#X connect 3 0 11 0;
+#X connect 3 0 5 0;
+#X connect 4 0 12 0;
+#X connect 5 0 0 0;
+#X connect 5 1 0 1;

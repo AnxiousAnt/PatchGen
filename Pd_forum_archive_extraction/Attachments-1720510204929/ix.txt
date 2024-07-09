@@ -1,0 +1,36 @@
+LINUX INSTALL:
+
+~: cd /usr/local/lib/pd && cvs -d :pserver:anonymous@cvs.sf.net:/cvsroot/pure-data co extensions/gui/ix
+
+~: echo -path /usr/local/lib/pd/extensions/gui/ix >> ~/.pdrc
+
+
+dependences install:
+
+tcl >=8.5
+
+~: cvs -d :pserver:anonymous@cvs.sf.net:/cvsroot/tcl co tcl <font size=-1>&& cd tcl/unix&& ./configure && make install & cd ../..
+
+~: cvs -d :pserver:anonymous@cvs.sf.net:/cvsroot/tktoolkit co tk <font size=-1>&& cd tk/unix&& ./configure --enable-xft && make install & cd ../..
+
+---------------------------------------------------
+
+widgets are currently hosted by the [widget] external
+
+~: cvs -d :pserver:anonymous@cvs.sf.net:/cvsroot/pure-data co externals/miXed && cd externals/miXed && make && cp bin/* /usr/local/lib/pd/extra or checkout all of externals and 
+
+~: cd externals/build && scons install
+
+a cornucopia of Tk libraries are utilised, for ext in blt snack tkdnd tkimg tkpath tktable tktreectrl ; do
+
+cvs -d:pserver:anonymous@tktoolkit.cvs.sourceforge.net:/cvsroot/tktoolkit login
+cvs -z3 -d:pserver:anonymous@tktoolkit.cvs.sourceforge.net:/cvsroot/tktoolkit co tk
+
+cd tk/unix && ./configure && make && make install 
+
+if you've got this message:
+"WARNING: Can't find Tcl configuration definitions"
+
+ ./configure --with-tclconfig=/path/to/your/tclConfig.sh --with-tkconfig=/path/to/your/tkConfig.sh && make && make install
+
+last i checked tkpath was actually a module in tclbitprint

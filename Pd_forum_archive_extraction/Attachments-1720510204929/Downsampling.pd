@@ -1,0 +1,27 @@
+#N canvas 141 23 555 294 10;
+#X obj 120 106 output~;
+#X text 233 91 Downsampling producing artifacts/distortion;
+#N canvas 646 217 566 473 Downsampling 0;
+#X obj 94 267 outlet~;
+#X obj 218 250 samplerate~;
+#X obj 218 285 nbx 6 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
+-241261 -1 -1 5512.5 256;
+#X obj 218 215 trigger bang float;
+#X msg 218 179 0.25;
+#X msg 193 156 0.125;
+#X obj 323 305 block~;
+#X obj 94 197 osc~ 440;
+#X msg 323 269 set 64 1 \$1;
+#X text 182 132 Downsampling;
+#X text 255 180 1/4;
+#X text 235 157 1/8;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 3 1 8 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 7 0 0 0;
+#X connect 8 0 6 0;
+#X restore 120 74 pd Downsampling;
+#X connect 2 0 0 0;
+#X connect 2 0 0 1;

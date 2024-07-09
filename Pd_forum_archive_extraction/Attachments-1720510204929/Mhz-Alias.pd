@@ -1,0 +1,15 @@
+#N canvas 0 22 450 300 10;
+#X obj 128 80 * 1000;
+#X floatatom 128 55 0 0 0 0 KHz - -;
+#X msg 128 29 3200;
+#X floatatom 128 106 0 0 0 0 MHz - -;
+#X floatatom 127 159 0 0 0 0 Aliased_rate - -;
+#X obj 127 134 / 625;
+#X text 165 134 <--- 625 lines on the PAL TV standard;
+#X obj 304 162 pddplink wikipedia_link http://en.wikipedia.org/wiki/PAL
+;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;

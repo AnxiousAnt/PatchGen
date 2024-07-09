@@ -1,0 +1,37 @@
+#N canvas 0 0 768 608 10;
+#X msg 48 153 1;
+#X msg 119 157 0;
+#X text 219 148 1 starts playback;
+#X text 222 171 0 stops it;
+#X obj 199 296 *~;
+#X obj 163 299 *~;
+#X obj 70 380 send~ output_sample_loop_left;
+#X obj 280 397 send~ output_sample_loop_right;
+#X obj 157 219 readsf~ 2 1e+06;
+#X obj 94 1 bng 15 250 50 0 empty empty empty 0 -6 0 10 -184257 -1
+-1;
+#X obj 110 1 bng 15 250 50 0 empty empty empty 0 -6 0 10 -258139 -1
+-1;
+#X obj 129 1 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 10 -162280
+-66577 -33289 0 1;
+#X obj 260 1 bng 15 250 50 0 empty empty empty 0 -6 0 10 -4032 -1 -1
+;
+#X msg 297 80 open $i;
+#X obj 270 20 openpanel;
+#X connect 0 0 8 0;
+#X connect 0 0 13 0;
+#X connect 1 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 8 0 5 0;
+#X connect 8 1 4 0;
+#X connect 8 2 0 0;
+#X connect 8 2 13 0;
+#X connect 9 0 0 0;
+#X connect 10 0 1 0;
+#X connect 11 0 4 1;
+#X connect 11 0 5 1;
+#X connect 12 0 14 0;
+#X connect 13 0 0 0;
+#X connect 13 0 8 0;
+#X connect 14 0 13 0;

@@ -1,0 +1,20 @@
+#N canvas 713 279 450 300 10;
+#X msg 49 25 read -c your_file \, bang;
+#X obj 49 46 text;
+#X obj 49 67 t b p;
+#X obj 49 109 array size your_array;
+#X obj 246 54 array define your_array;
+#X obj 57 185 loadbang;
+#X obj 57 223 array size your_array;
+#X obj 57 244 print;
+#X obj 65 204 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 49 88 text size -s text t;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 9 0;
+#X connect 2 1 9 1;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 6 0;
+#X connect 9 0 3 0;

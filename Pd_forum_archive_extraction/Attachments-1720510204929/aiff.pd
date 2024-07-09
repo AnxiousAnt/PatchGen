@@ -1,0 +1,25 @@
+#N canvas 0 0 609 313 10;
+#X obj 42 137 #in;
+#X obj 42 157 #to_f;
+#X floatatom 42 177 8 0 0 0 - - -;
+#X obj 157 195 #in;
+#X obj 157 235 #to_l;
+#X obj 157 215 #inner (24 16 8 0) \, op <<;
+#X msg 52 25 symbol /home/matju/lib/pd-extended/doc/sound/bell.aiff
+;
+#X floatatom 157 255 8 0 0 0 - - -;
+#X text 167 143 other versions of GridFlow;
+#X text 48 84 GridFlow 9.14 \, 3 nov 2011 and later;
+#X msg 157 162 open grid \$1 \, headerless 4 \, type b \, seek_byte
+22 \, bang \, close;
+#X msg 42 104 open grid \$1 \, headerless \, type i \, endian big \,
+seek_byte 22 \, bang \, close;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 7 0;
+#X connect 5 0 4 0;
+#X connect 6 0 10 0;
+#X connect 6 0 11 0;
+#X connect 10 0 3 0;
+#X connect 11 0 0 0;

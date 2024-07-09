@@ -1,0 +1,23 @@
+#N canvas 337 336 630 559 10;
+#X obj 100 100 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+1;
+#X obj 40 32 inlet;
+#X obj 40 56 route get;
+#X obj 100 156 outlet;
+#X obj 40 76 b;
+#X obj 100 124 f;
+#X msg 200 95 nonzero \$1;
+#X obj 147 15 loadbang;
+#X obj 147 41 f \$1;
+#X obj 147 67 select 0;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 1 6 0;
+#X coords 0 -1 1 1 15 15 2 100 100;

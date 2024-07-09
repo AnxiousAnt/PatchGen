@@ -1,0 +1,11 @@
+#N canvas 0 22 450 300 10;
+#X declare -lib iemmatrix;
+#X obj 34 15 hexloader;
+#X obj 34 41 import iemmatrix;
+#X obj 34 126 mtx_*;
+#X obj 75 127 mtx_+;
+#X obj 148 131 mtx_*~;
+#X obj 38 155 mtx_./;
+#X text 103 15 first create those two objects to use iemmatrix!;
+#X text 130 108 then all iemmatrix objects should work;
+#X obj 59 228 mtx_spherical_harmonics 3;

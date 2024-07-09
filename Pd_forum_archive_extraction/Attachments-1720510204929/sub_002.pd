@@ -1,0 +1,20 @@
+#N canvas 1493 149 639 630 10;
+#X obj 24 53 gemhead;
+#X obj 24 119 pix_film;
+#X obj 24 152 outlet;
+#X obj 83 53 inlet;
+#X obj 128 -22 loadbang;
+#X obj 128 10 symbol \$1;
+#X msg 128 53 open \$1;
+#X text 201 4 The OBJECT [symbol] will be instanciated with parameter
+\$1;
+#X text 201 48 The $x in MESSAGES will be replaced by the parameter
+that;
+#X text 201 16 that is given to the parent abstraction (sub).;
+#X text 201 61 is given to its inlet.;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;

@@ -1,0 +1,34 @@
+
+mkdir tutorials-from-cvs-1
+cd tutorials-from-cvs-1
+# rm -rf "\*checkout\*" "\*docroot\*" pure-data
+wget -erobots=off -o wget.log -nH -r -l 4 -A .pd,.png,.txt,.tex,.c,.mid,.aiff,.aif,.info,Makefile,TODO http://pure-data.cvs.sourceforge.net/pure-data/doc/tutorials/
+
+cd ..
+mkdir tutorials-from-cvs-2
+cd tutorials-from-cvs-2
+# rm -rf "\*checkout\*" "\*docroot\*" pure-data
+wget -erobots=off -o wget1.log -nH -r -l 3 -A .pd,.png,.txt,.tex,.c,.mid,.aiff,.aif,.info,Makefile,TODO http://pure-data.cvs.sourceforge.net/pure-data/doc/pddp/about/
+wget -erobots=off -o wget2.log -nH -r -l 3 -A .pd,.png,.txt,.tex,.c,.mid,.aiff,.aif,.info,Makefile,TODO http://pure-data.cvs.sourceforge.net/pure-data/doc/pddp/templates/
+wget -erobots=off -o wget3.log -nH -r -l 3 -A .pd,.png,.txt,.tex,.c,.mid,.aiff,.aif,.info,Makefile,TODO http://pure-data.cvs.sourceforge.net/pure-data/doc/media/
+wget -erobots=off -o wget4.log -nH -r -l 3 -A .pd,.png,.txt,.tex,.c,.mid,.aiff,.aif,.info,Makefile,TODO http://pure-data.cvs.sourceforge.net/pure-data/doc/additional/messageoddness/
+wget -erobots=off -o wget5.log -nH -r -l 3 -A .pd,.png,.txt,.tex,.c,.mid,.aiff,.aif,.info,Makefile,TODO http://pure-data.cvs.sourceforge.net/pure-data/doc/additional/pd-msg/
+
+echo
+echo Now paste in the browser the following links, click on "(download)" in the
+echo Revision n.m line to open and save the following 2 files:
+echo
+echo http://pure-data.cvs.sourceforge.net/pure-data/doc/tutorials/footils/pddrums/default.css and
+echo http://pure-data.cvs.sourceforge.net/pure-data/doc/tutorials/footils/pddrums/pddrums.html
+echo http://pure-data.cvs.sourceforge.net/pure-data/doc/additional/pd-fileformat.html
+echo
+echo Once the file is open, use the browser \"Save as\" to save a copy in the
+echo corresponding local folder "(under *checkout*)".
+echo
+echo Once the above is complete, you can copy or move the 4 folders and files
+echo under \"tutorials-from-cvs-?/\*checkout\*/pure-data/doc/\" to folders
+echo under /usr/local/lib/pd/doc to make the folders and .pd files accessible
+echo from the PD Help -> Browser.
+echo
+echo It also makes sense to separate the .pd files from files of other types so
+echo that the display in the PD Help -> Browser menu includes only .pd files.

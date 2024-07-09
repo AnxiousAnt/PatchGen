@@ -1,0 +1,33 @@
+#N canvas 0 22 763 524 10;
+#X obj 216 208 *~;
+#X obj 216 51 inlet~;
+#X obj 307 93 rzero_rev~ 0;
+#X obj 307 208 /~;
+#X obj 292 379 *~;
+#X text 344 211 <- 0 if prev. sample was 0 \, 1 otherwise;
+#X obj 216 258 max~ 0;
+#X obj 216 288 /~;
+#X obj 216 316 *~ -1;
+#X obj 216 340 +~ 1;
+#X text 97 336 logical not ->;
+#X text 23 286 0 if leq 0 \, 1 otherwise ->;
+#X text 25 358 1 if leq 0 \, 0 otherwise ->;
+#X text 29 206 leq 0 if zero crossing ->;
+#X text 342 380 <- this filters out zero values that are a result of
+the previous sample being zero. That is \, in case an incoming sample
+is 0 \, we want to detect the zero-crossing when it reaches 0 rather
+than when it leaves zero.;
+#X obj 292 450 outlet~;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 1;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 1;
+#X connect 4 0 15 0;
+#X connect 6 0 7 0;
+#X connect 6 0 7 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 0;

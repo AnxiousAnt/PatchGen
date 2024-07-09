@@ -1,0 +1,35 @@
+#N canvas 50 28 530 426 10;
+#X obj 57 197 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 83 300 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 71 259 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 71 279 metro 1;
+#X msg 18 12 enable 1;
+#X msg 28 39 open 1;
+#X obj 8 371 gpio 17;
+#X text 84 13 equivalent to: echo "17" > /sys/class/gpio/export;
+#X msg 39 133 output 1;
+#X text 99 75 calls function open(buf \, 0_RDWR);
+#X text 108 134 equivalent to: echo out > /sys/class/gpio/direction
+;
+#X text 115 150 args: 1 for out \, and 0 for in;
+#X floatatom 65 218 5 0 0 0 - - -;
+#X text 134 270 poll input;
+#X text 77 199 write output;
+#X text 90 58 sprintf(buf \, "/sys/class/gpio/gpio%d/value" \, x->x_pin)
+\;;
+#X text 82 39 not sure what this does \, but seems to set initial value?
+;
+#X text 73 372 argument is pin number (pin0) see:;
+#X text 82 388 http://elinux.org/RPi_Low-level_peripherals#GPIO_hardware_hacking
+;
+#X connect 0 0 6 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 8 0 6 0;
+#X connect 12 0 6 0;

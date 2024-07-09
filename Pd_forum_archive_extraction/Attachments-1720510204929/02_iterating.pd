@@ -1,0 +1,19 @@
+#N canvas 595 90 328 317 10;
+#X obj 19 85 gemhead;
+#X obj 19 212 rotateXYZ 0 0 12;
+#X obj 19 135 scaleXYZ 0.97 0.9 1;
+#X obj 20 57 gemwin;
+#X msg 20 34 create \, 1;
+#X obj 19 110 repeat 40;
+#X obj 19 162 translateXYZ 0.5 0 0;
+#X obj 19 237 circle 0.2;
+#X floatatom 110 188 5 0 0 0 - - -;
+#X text 19 267 Iterative processing zexy's "repeat" object;
+#X connect 0 0 5 0;
+#X connect 1 0 7 0;
+#X connect 2 0 6 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 6 0 1 0;
+#X connect 8 0 1 3;
+

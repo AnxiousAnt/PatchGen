@@ -1,0 +1,11 @@
+#N canvas 687 316 768 484 10;
+#X obj 236 123 delwrite~ d1 10000;
+#X obj 238 174 delread~ d1 9000;
+#X obj 238 196 *~ 0.1;
+#X obj 238 218 dac~;
+#X obj 237 94 osc~ 440;
+#X msg 187 92 clear;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;

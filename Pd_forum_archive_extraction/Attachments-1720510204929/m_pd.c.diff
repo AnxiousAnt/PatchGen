@@ -1,0 +1,203 @@
+--- m_pd-orig.c	Fri Dec 21 11:04:52 2001
++++ m_pd.c	Thu Dec 27 12:57:57 2001
+@@ -46,83 +46,121 @@
+ {
+     t_pd *e_who;
+     struct _bindelem *e_next;
++    int e_locked:1;
++    int e_freed:1;
+ } t_bindelem;
+ 
+ typedef struct _bindlist
+ {
+     t_pd b_pd;
+     t_bindelem *b_list;
++    t_symbol *b_symbol;
+ } t_bindlist;
+ 
++#define bindelem_lock(x)  ((x)->e_locked = 1)
++
++/* Return 1 if a not visited object is being left after bindlist annihilation,
++   otherwise return 0.  First argument upon return holds a pointer to next
++   element in a possibly modified bindlist (or null).
++*/
++static int bindelem_unlock(t_bindelem **x, t_symbol *s)
++{
++            /* symbol has no bindings, iff we were unbound as the last object */
++    if (s->s_thing
++            /* bindlist is gone, iff we hold the last remaining object */
++	&& *s->s_thing == bindlist_class)
++    {
++	    /* there is at least one other object bound */
++	t_bindelem *x1 = (*x)->e_next;
++	(*x)->e_locked = 0;
++	if ((*x)->e_freed)
++	{
++	    pd_unbind((*x)->e_who, s);
++	    if (*s->s_thing == bindlist_class) *x = x1;
++	    else if (x1)
++	    {
++		*x = 0;
++		return (1);  /* the only remaining object was not visited yet */
++	    }
++	}
++	else *x = x1;
++    }
++    else *x = 0;
++    return (0);
++}
++
+ static void bindlist_bang(t_bindlist *x)
+ {
+     t_bindelem *e = x->b_list;
+-#if CRASHY /* the loop we have now */
+-    for (e = x->b_list; e; e = e->e_next)
+-    	pd_bang(e->e_who);
+-#else /* safer loop */
++    t_symbol *t = x->b_symbol;
+     while (e)
+     {
+-	t_pd *who = e->e_who;
+-	e = e->e_next;
+-    	pd_bang(who);
++	bindelem_lock(e);
++    	pd_bang(e->e_who);
++	if (bindelem_unlock(&e, t)) pd_bang(t->s_thing);
+     }
+-#endif
+ }
+ 
+ static void bindlist_float(t_bindlist *x, t_float f)
+ {
+     t_bindelem *e = x->b_list;
+-#if 1 /* the loop we have now */
+-    for (e = x->b_list; e; e = e->e_next)
+-    	pd_float(e->e_who, f);
+-#else /* safer loop */
++    t_symbol *t = x->b_symbol;
+     while (e)
+     {
+-	t_pd *who = e->e_who;
+-	e = e->e_next;
+-    	pd_float(who, f);
++	bindelem_lock(e);
++    	pd_float(e->e_who, f);
++	if (bindelem_unlock(&e, t)) pd_float(t->s_thing, f);
+     }
+-#endif
+ }
+ 
+ static void bindlist_symbol(t_bindlist *x, t_symbol *s)
+ {
+-    t_bindelem *e;
+-    for (e = x->b_list; e; e = e->e_next)
++    t_bindelem *e = x->b_list;
++    t_symbol *t = x->b_symbol;
++    while (e)
++    {
++	bindelem_lock(e);
+     	pd_symbol(e->e_who, s);
++	if (bindelem_unlock(&e, t)) pd_symbol(t->s_thing, s);
++    }
+ }
+ 
+ static void bindlist_pointer(t_bindlist *x, t_gpointer *gp)
+ {
+-    t_bindelem *e;
+-    for (e = x->b_list; e; e = e->e_next)
++    t_bindelem *e = x->b_list;
++    t_symbol *t = x->b_symbol;
++    while (e)
++    {
++	bindelem_lock(e);
+     	pd_pointer(e->e_who, gp);
++	if (bindelem_unlock(&e, t)) pd_pointer(t->s_thing, gp);
++    }
+ }
+ 
+ static void bindlist_list(t_bindlist *x, t_symbol *s,
+     int argc, t_atom *argv)
+ {
+-    t_bindelem *e;
+-    for (e = x->b_list; e; e = e->e_next)
++    t_bindelem *e = x->b_list;
++    t_symbol *t = x->b_symbol;
++    while (e)
++    {
++	bindelem_lock(e);
+     	pd_list(e->e_who, s, argc, argv);
++	if (bindelem_unlock(&e, t)) pd_list(t->s_thing, s, argc, argv);
++    }
+ }
+ 
+ static void bindlist_anything(t_bindlist *x, t_symbol *s,
+     int argc, t_atom *argv)
+ {
+     t_bindelem *e = x->b_list;
+-#if CRASHY /* the loop we have now */
+-    for (e = x->b_list; e; e = e->e_next)
+-    	pd_typedmess(e->e_who, s, argc, argv);
+-#else /* safer loop */
++    t_symbol *t = x->b_symbol;
+     while (e)
+     {
+-	t_pd *who = e->e_who;
+-	e = e->e_next;
+-    	pd_typedmess(who, s, argc, argv);
++	bindelem_lock(e);
++    	pd_typedmess(e->e_who, s, argc, argv);
++	if (bindelem_unlock(&e, t)) pd_typedmess(t->s_thing, s, argc, argv);
+     }
+-#endif
+ }
+ 
+ void m_pd_setup(void)
+@@ -147,6 +185,7 @@
+     	    t_bindelem *e = (t_bindelem *)getbytes(sizeof(t_bindelem));
+     	    e->e_next = b->b_list;
+     	    e->e_who = x;
++	    e->e_locked = e->e_freed = 0;
+     	    b->b_list = e;
+     	}
+     	else
+@@ -155,10 +194,13 @@
+     	    t_bindelem *e1 = (t_bindelem *)getbytes(sizeof(t_bindelem));
+     	    t_bindelem *e2 = (t_bindelem *)getbytes(sizeof(t_bindelem));
+     	    b->b_list = e1;
++	    b->b_symbol = s;
+     	    e1->e_who = x;
+     	    e1->e_next = e2;
++	    e1->e_locked = e1->e_freed = 0;
+     	    e2->e_who = s->s_thing;
+     	    e2->e_next = 0;
++	    e2->e_locked = e2->e_freed = 0;
+     	    s->s_thing = &b->b_pd;
+     	}
+     }
+@@ -178,14 +220,22 @@
+     	t_bindelem *e, *e2;
+     	if ((e = b->b_list)->e_who == x)
+     	{
+-    	    b->b_list = e->e_next;
+-    	    freebytes(e, sizeof(t_bindelem));
++	    if (e->e_locked) e->e_freed = 1;
++	    else
++	    {
++		b->b_list = e->e_next;
++		freebytes(e, sizeof(t_bindelem));
++	    }
+     	}
+     	else for (e = b->b_list; e2 = e->e_next; e = e2)
+     	    if (e2->e_who == x)
+     	{
+-    	    e->e_next = e2->e_next;
+-    	    freebytes(e2, sizeof(t_bindelem));
++	    if (e2->e_locked) e2->e_freed = 1;
++	    else
++	    {
++		e->e_next = e2->e_next;
++		freebytes(e2, sizeof(t_bindelem));
++	    }
+     	    break;
+     	}
+     	if (!b->b_list->e_next)

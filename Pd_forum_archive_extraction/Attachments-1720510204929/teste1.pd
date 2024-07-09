@@ -1,0 +1,29 @@
+#N canvas 761 178 447 379 10;
+#X obj 84 49 iem_event 100 60 0 0 100 100;
+#X obj 84 49 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X msg 221 39 size 100 60;
+#X obj 102 69 cnv 15 60 20 empty empty Cm 20 12 0 14 -258113 -66577
+0;
+#X obj 84 139 unpack;
+#X floatatom 84 160 5 0 0 0 - - -;
+#X floatatom 121 160 5 0 0 0 - - -;
+#X obj 166 151 unpack;
+#X floatatom 166 174 5 0 0 0 - - -;
+#X floatatom 203 176 5 0 0 0 - - -;
+#X obj 84 119 route move_x_y dragg_x_y;
+#X floatatom 27 269 5 0 0 0 - - -;
+#X obj 80 226 expr $f1 \; if ($f1 > 20 \, $f1 * 3 \, 0) \; if ($f1
+< 20 \, $f1 * 1 \, 0);
+#X floatatom 115 278 5 0 0 0 - - -;
+#X connect 0 0 10 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 4 1 6 0;
+#X connect 5 0 12 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 10 0 4 0;
+#X connect 10 1 7 0;
+#X connect 12 0 11 0;
+#X connect 12 1 13 0;

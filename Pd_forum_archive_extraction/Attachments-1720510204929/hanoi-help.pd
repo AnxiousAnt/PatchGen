@@ -1,0 +1,80 @@
+#N canvas 586 22 546 736 10;
+#X obj 18 9 cnv 15 500 40 empty empty hanoi 10 20 0 24 -260793 -66577
+0;
+#X text 15 283 Inlets;
+#X text 22 60 Description;
+#X text 68 296 Left inlet. [bang( to get next move out.;
+#X text 19 364 Outlets;
+#X text 15 461 Examples;
+#X msg 105 488 bang;
+#X obj 150 560 print done;
+#X msg 213 487 reset;
+#X msg 105 596 \$1 from \$2 to \$3;
+#X obj 106 628 pack f s f s f;
+#X obj 105 658 print Move;
+#X msg 173 487 2;
+#X msg 214 511 bang;
+#X obj 105 525 hanoi 3;
+#X msg 397 487 stop;
+#X msg 331 488 bang;
+#X obj 331 570 hanoi 5;
+#X obj 331 608 print hanoi;
+#X text 18 227 Arguments;
+#X obj 332 527 metro 100;
+#X msg 425 539 reset;
+#X text 235 30 - A Tower of Hanoi implementation in Pd;
+#X text 66 437 Right outlet outputs a bang if the game is over.;
+#X text 14 693 Version 0.1 \, Feburary 2007;
+#X text 14 706 By steffen <stffn@dibidut.dk> \, http://dibidut.dk/pd/
+;
+#X text 71 78 The Tower of Hanoi problem is described well elsewhere.
+But in short: The problem is to solve the game (normally \, and it
+is here) in as few moves as possible. The game is to move a pile of
+disks ordered in size with the smallest on top \, one by one \, to
+another place using only one temporary storage place such that the
+size order is always kept.;
+#X text 70 166 This implementation of a solution to the Tower of Hanoi
+problem is an iterative version that uses a binary representation of
+each move. The recursive algorithm seam hard to implement in Pd.;
+#X text 69 245 The creation argument is the number of disks used in
+the game.;
+#X text 69 317 Right inlet. [reset( or [bang( to restart the game.
+Send it an integer n to set the number of disks used in the game to
+n - this naturally also resets.;
+#X text 69 382 Left outlet outputs a list representing each move: disk
+number \, from \, to. From and to are either 1 \, 2 or 3 where 1 is
+the start position of the game. The disk are numbered from 1 to n \,
+where 1 is the smallest disk.;
+#N canvas 81 157 454 304 musical-example 0;
+#X text 19 15 Here is no musical example \, yet. But instead a few
+notes on the matter. While the output from the hanoi object is only
+a triple for each move - the disk being moved \, from where it is being
+moved and to where it is being moved - there is more info in the binary
+representation. But instead of supplying that extra information \,
+it's kept as simple as it is for two reasons. One is that the current
+supplied information is what normally is given in a solution to the
+game \, properly since it's (more then) enough to provide instructions
+to solve the game. The other reason is \, that the extra information
+can be collected by the user outside the object \, since this minimal
+output along with the sequence of the output can give that extra information.
+Hence it's not limiting as such to keep the information of the output
+as limited as it is. It is up to the user. The extra information is
+for example the step number \, the number of times a given disk have
+been moved. Information that could be useful in a musical context \,
+why i bring it up here. Happy scoring.;
+#X restore 329 656 pd musical-example;
+#X connect 6 0 14 0;
+#X connect 8 0 14 1;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 12 0 14 1;
+#X connect 13 0 14 1;
+#X connect 14 0 9 0;
+#X connect 14 1 7 0;
+#X connect 15 0 20 0;
+#X connect 16 0 20 0;
+#X connect 17 0 18 0;
+#X connect 17 1 15 0;
+#X connect 17 1 18 0;
+#X connect 20 0 17 0;
+#X connect 21 0 17 1;

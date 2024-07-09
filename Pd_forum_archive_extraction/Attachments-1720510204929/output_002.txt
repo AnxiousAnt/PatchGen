@@ -1,0 +1,41 @@
+make -C /home/bastien/pure-data/packages/linux_make/../../externals/pdp
+make[3]: Entering directory `/home/bastien/pure-data/externals/pdp'
+make -C system
+make[4]: Entering directory `/home/bastien/pure-data/externals/pdp/system'
+make -C net
+make[5]: Entering directory `/home/bastien/pure-data/externals/pdp/system/net'
+cc -DPD -Wall -W -Wstrict-prototypes -Wno-unused -Wno-parentheses -Wno-switch -O2 -funroll-loops -fomit-frame-pointer -ffast-math   -DPDP_VERSION=\"0.12.4\" -I. -I/usr/X11R6/include  -I../include -I../../include  -I/sw/include  -o pdp_net.o -c pdp_net.c
+pdp_net.c: In function ‘pdp_udp_receiver_receive’:
+pdp_net.c:259: warning: pointer targets in passing argument 6 of ‘recvfrom’ differ in signedness
+make[5]: Leaving directory `/home/bastien/pure-data/externals/pdp/system/net'
+make -C X11
+make[5]: Entering directory `/home/bastien/pure-data/externals/pdp/system/X11'
+cc -DPD -Wall -W -Wstrict-prototypes -Wno-unused -Wno-parentheses -Wno-switch -O2 -funroll-loops -fomit-frame-pointer -ffast-math   -DPDP_VERSION=\"0.12.4\" -I. -I/usr/X11R6/include  -I../include -I../../include  -I/sw/include  -o pdp_xwindow.o -c pdp_xwindow.c
+cc -DPD -Wall -W -Wstrict-prototypes -Wno-unused -Wno-parentheses -Wno-switch -O2 -funroll-loops -fomit-frame-pointer -ffast-math   -DPDP_VERSION=\"0.12.4\" -I. -I/usr/X11R6/include  -I../include -I../../include  -I/sw/include  -o pdp_xvideo.o -c pdp_xvideo.c
+make[5]: Leaving directory `/home/bastien/pure-data/externals/pdp/system/X11'
+make -C png
+make[5]: Entering directory `/home/bastien/pure-data/externals/pdp/system/png'
+cc -DPD -Wall -W -Wstrict-prototypes -Wno-unused -Wno-parentheses -Wno-switch -O2 -funroll-loops -fomit-frame-pointer -ffast-math   -DPDP_VERSION=\"0.12.4\" -I. -I/usr/X11R6/include  -I../include -I../../include  -I/sw/include  -o pdp_png.o -c pdp_png.c
+pdp_png.c: In function ‘_open_read’:
+pdp_png.c:100: warning: pointer targets in passing argument 1 of ‘png_sig_cmp’ differ in signedness
+pdp_png.c: In function ‘_getimagedata’:
+pdp_png.c:265: warning: pointer targets in assignment differ in signedness
+pdp_png.c: In function ‘_saveimagedata’:
+pdp_png.c:306: warning: pointer targets in assignment differ in signedness
+make[5]: Leaving directory `/home/bastien/pure-data/externals/pdp/system/png'
+make -C type
+make[5]: Entering directory `/home/bastien/pure-data/externals/pdp/system/type'
+cc -DPD -Wall -W -Wstrict-prototypes -Wno-unused -Wno-parentheses -Wno-switch -O2 -funroll-loops -fomit-frame-pointer -ffast-math   -DPDP_VERSION=\"0.12.4\" -I. -I/usr/X11R6/include  -I../include -I../../include  -I/sw/include  -o pdp_bitmap.o -c pdp_bitmap.c
+pdp_bitmap.c: In function ‘_pdp_packet_bitmap_convert_mchp_to_rgb8’:
+pdp_bitmap.c:478: error: invalid storage class for function ‘_map’
+make[5]: *** [pdp_bitmap.o] Error 1
+make[5]: Leaving directory `/home/bastien/pure-data/externals/pdp/system/type'
+make[4]: *** [common] Error 2
+make[4]: Leaving directory `/home/bastien/pure-data/externals/pdp/system'
+make[3]: *** [pdp_all] Error 2
+make[3]: Leaving directory `/home/bastien/pure-data/externals/pdp'
+make[2]: *** [/home/bastien/pure-data/packages/linux_make/../../externals/pdp/pdp.pd_linux] Error 2
+make[2]: Leaving directory `/home/bastien/pure-data/externals'
+make[1]: *** [externals_install] Error 2
+make[1]: Leaving directory `/home/bastien/pure-data/packages'
+make: *** [install] Error 2

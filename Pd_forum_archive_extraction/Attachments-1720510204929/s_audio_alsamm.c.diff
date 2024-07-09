@@ -1,0 +1,16 @@
+Index: s_audio_alsamm.c
+===================================================================
+RCS file: /cvsroot/pure-data/pd/src/s_audio_alsamm.c,v
+retrieving revision 1.3
+diff -u -r1.3 s_audio_alsamm.c
+--- s_audio_alsamm.c	18 May 2005 04:28:51 -0000	1.3
++++ s_audio_alsamm.c	24 Mar 2006 16:35:14 -0000
+@@ -510,7 +510,7 @@
+     if(sys_verbose)
+       post("Getting channels:min=%d, max= %d for request=%d",minchs,maxchs,channels);
+ #endif
+-
++    if(0>=channels)channels = maxchs; /* default to max. available channels */
+     if(channels > maxchs)channels = maxchs;
+     if(channels < minchs)channels = minchs;
+ 

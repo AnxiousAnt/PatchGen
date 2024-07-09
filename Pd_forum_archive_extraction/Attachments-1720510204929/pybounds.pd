@@ -1,0 +1,9 @@
+#N canvas 173 281 450 300 10;
+#X msg 99 77 pcToPy-1 \, pcToPy-2 \, pcToPy0 \, pcToPy+1 \, pcToPy+2
+;
+#X obj 99 105 symbol;
+#X obj 99 55 loadbang;
+#X msg 99 133 \; \$1 bounds 0 440 11 0;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;

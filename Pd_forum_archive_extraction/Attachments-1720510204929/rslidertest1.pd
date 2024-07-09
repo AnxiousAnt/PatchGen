@@ -1,0 +1,51 @@
+#N struct rangetp float x float y float l float r;
+#N canvas 618 521 450 300 10;
+#N canvas 111 213 797 539 rslider 1;
+#X scalar rangetp 28 25 5 153 \;;
+#N canvas 323 673 449 300 rangetp 1;
+#X obj 8 3 struct rangetp float x float y float l float r;
+#X obj 11 34 filledpolygon 111 444 1 l 0 r 0 r 20 l 20 l 0;
+#X restore 89 393 pd rangetp;
+#X obj 217 337 pointer;
+#X obj 87 366 append rangetp x y l r;
+#X msg 218 311 traverse pd-rslider \, bang;
+#X obj 97 314 unpack f f f f;
+#X msg 97 290 20 20 20 256;
+#X obj 451 311 metro 20;
+#X obj 451 368 pointer;
+#X msg 451 346 traverse pd-rslider \, next;
+#X floatatom 496 452 5 0 0 0 - - -;
+#X floatatom 552 445 5 0 0 0 - - -;
+#X obj 452 291 loadbang;
+#X obj 168 256 t b b;
+#X obj 168 234 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 498 423 change;
+#X obj 550 422 change;
+#X obj 451 393 get rangetp x y l r;
+#X text 185 18 <- why are (sometimes?) only the top corners dragable!?
+;
+#X text 449 262 get the values \, maybe there is a more elegant way
+using some kind of click-event whatever...;
+#X text 164 205 create the range slider (needed only once \, or after
+deleting the slider);
+#X connect 2 0 3 4;
+#X connect 4 0 2 0;
+#X connect 5 0 3 0;
+#X connect 5 1 3 1;
+#X connect 5 2 3 2;
+#X connect 5 3 3 3;
+#X connect 6 0 5 0;
+#X connect 7 0 9 0;
+#X connect 8 0 17 0;
+#X connect 9 0 8 0;
+#X connect 12 0 7 0;
+#X connect 13 0 6 0;
+#X connect 13 1 4 0;
+#X connect 14 0 13 0;
+#X connect 15 0 10 0;
+#X connect 16 0 11 0;
+#X connect 17 2 15 0;
+#X connect 17 3 16 0;
+#X restore 48 52 pd rslider;
+#X text 37 31 horizontal rangeslider using datastructures inside;

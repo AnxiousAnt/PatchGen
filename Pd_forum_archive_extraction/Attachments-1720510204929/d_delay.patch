@@ -1,0 +1,28 @@
+--- src/d_delay.c-orig	2016-11-24 10:26:25.040469748 +0100
++++ src/d_delay.c	2016-11-24 10:25:19.878068543 +0100
+@@ -51,6 +51,16 @@ static void sigdelwrite_updatesr(t_sigde
+     }
+ }
+ 
++static void sigdelwrite_clear (t_sigdelwrite *x) /* added by Orm Finnendahl */
++{
++  t_int i;
++  t_sample* p1=x->x_cspace.c_vec;
++  if (x->x_cspace.c_n > 0) {
++    for (i=0;i < (x->x_cspace.c_n + XTRASAMPS);i++)
++      *p1++ = (t_sample) 0;
++  }
++}
++
+     /* routine to check that all delwrites/delreads/vds have same vecsize */
+ static void sigdelwrite_checkvecsize(t_sigdelwrite *x, int vecsize)
+ {
+@@ -136,6 +146,8 @@ static void sigdelwrite_setup(void)
+     CLASS_MAINSIGNALIN(sigdelwrite_class, t_sigdelwrite, x_f);
+     class_addmethod(sigdelwrite_class, (t_method)sigdelwrite_dsp,
+         gensym("dsp"), A_CANT, 0);
++    class_addmethod(sigdelwrite_class, (t_method)sigdelwrite_clear,
++                    gensym("clear"), 0);
+ }
+ 
+ /* ----------------------------- delread~ ----------------------------- */

@@ -1,0 +1,75 @@
+#N canvas 1 375 1016 619 10;
+#X obj 236 441 block~ 512;
+#X text 30 11 xcov~ computes the cross covariance of the current block
+plus the previous block by using a sliding centered window of the signal
+in its second inlet;
+#X text 29 55 if the output of xcov~ is summed across consecutive blocks
+the cross covariance of longer periods can be calculated;
+#X obj 117 441 xcov~ 512 768 -256;
+#X obj 32 180 delwrite~ delay_left 100;
+#X obj 188 177 delwrite~ delay_right 100;
+#X obj 379 200 samplerate~;
+#X obj 380 178 loadbang;
+#X obj 379 224 f;
+#X obj 378 253 expr $f1/1000;
+#X obj 378 279 s samples_per_ms;
+#X obj 34 392 delread~ delay_left 0;
+#X obj 33 208 vsl 15 128 0 256 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 76 353 r samples_per_ms;
+#X obj 191 210 vsl 15 128 0 256 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 240 355 r samples_per_ms;
+#X obj 192 394 delread~ delay_right 0;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array array1 512 float 0;
+#X coords 0 200 511 -200 600 250 1 0 0;
+#X restore 363 328 graph;
+#X obj 192 355 / 44.1;
+#X obj 34 353 / 44.1;
+#X obj 114 547 tabwrite~ array1;
+#X obj 54 511 metro 16;
+#X obj 52 487 loadbang;
+#X obj 32 513 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 29 84 the output values of xcov~ are centered on the block
+with the array midpoint N/2 having 0 delay between the signals the
+indexes of xcov~ vary from -N/2 and N/2 - 1;
+#X text 557 14 xcov~ can be re-written to compute only forward or backward
+cross-covariance by changing the rectangular window array and left-right
+shift values;
+#X text 563 113 64 96 -32;
+#X text 562 130 128 192 -64;
+#X text 562 179 1024 1536 -512;
+#X text 562 163 512 768 -256;
+#X text 562 147 256 384 -128;
+#X text 561 197 2048 3072 -1024;
+#X text 563 215 4096 6144 -2048;
+#X text 562 233 8192 12288 -4096;
+#X text 562 54 xcov~ takes its first arguement the blocksize to initialize
+because it requires changing its blocksize internally arguments 2 and
+3 are required unless xcov~ is rewritten for lrshift~ for now \, the
+blocksize and shifting can be set properly from one of these sets of
+arguments;
+#X text 563 252 16384 24576 -8192;
+#X text 563 272 32768 49152 -16384;
+#X text 116 149 period of 344.531 Hz is 128 samples;
+#X obj 28 145 noise~;
+#X connect 3 0 20 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 11 0 3 0;
+#X connect 12 0 19 0;
+#X connect 13 0 19 1;
+#X connect 14 0 18 0;
+#X connect 15 0 18 1;
+#X connect 16 0 3 1;
+#X connect 18 0 16 0;
+#X connect 19 0 11 0;
+#X connect 21 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
+#X connect 38 0 4 0;
+#X connect 38 0 5 0;

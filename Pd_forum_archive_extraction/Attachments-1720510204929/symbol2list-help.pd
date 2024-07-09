@@ -1,0 +1,20 @@
+#N canvas 355 663 688 358 10;
+#X obj 114 237 print;
+#X msg 189 159 o;
+#X msg 329 159 2;
+#X msg 269 159 symbol;
+#X msg 229 159 l;
+#X text 115 50 [symbol2ist] : convert a symbol into a list;
+#X text 365 159 it is possible to use float;
+#X msg 114 123 symbol he0ll2o;
+#X text 112 280 ATTENTION : if the argument is equal to '0' then it
+is interpreted as if there is no argument.;
+#X msg 329 183 0;
+#X obj 114 195 symbol2list 0;
+#X connect 1 0 10 1;
+#X connect 2 0 10 1;
+#X connect 3 0 10 1;
+#X connect 4 0 10 1;
+#X connect 7 0 10 0;
+#X connect 9 0 10 1;
+#X connect 10 0 0 0;

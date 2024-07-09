@@ -1,0 +1,78 @@
+#N canvas 397 225 736 482 10;
+#N canvas 0 0 450 300 bm 0;
+#X restore 144 424 pd bm;
+#X obj 57 393 s pd-bm;
+#X msg 177 331 clear;
+#X obj 57 281 until;
+#X obj 57 212 t b b;
+#X floatatom 130 118 5 0 0 2 howmany - -;
+#X obj 57 256 f;
+#X obj 213 123 bng 32 250 50 0 empty empty test-datasort 0 -6 0 8 -258699
+-1 -1;
+#X obj 25 117 bng 32 250 50 0 empty empty test-quicksort 0 -6 0 8 -24198
+-1 -1;
+#X obj 57 306 f 10;
+#X obj 90 305 + 20;
+#X msg 101 281 10;
+#X obj 236 378 s pd-bm;
+#X msg 356 316 clear;
+#X obj 236 266 until;
+#X obj 236 241 f;
+#X obj 236 291 f 10;
+#X obj 269 290 + 20;
+#X msg 280 266 10;
+#X obj 435 150 bng 24 250 50 0 empty empty run_test 0 -6 0 8 -225271
+-1 -1;
+#X text 24 22 first make test list \, then select \, how many objects
+to create \, then create them in [pd bm] by pressing the colorful bngs.
+After that \, send the test list and watch the time it takes for the
+bang \, too get black again.;
+#X floatatom 435 297 8 0 0 1 milliseconds - -;
+#X obj 435 182 t b b b;
+#X obj 435 243 t b b;
+#X obj 435 274 cputime;
+#X msg 485 225 bang;
+#X obj 485 250 s DOIT;
+#X msg 236 315 obj 10 \$1 ds;
+#X msg 57 330 obj 10 \$1 qs;
+#X msg 166 289 loadbang;
+#X obj 213 169 t b b b;
+#X obj 25 159 t b b;
+#X connect 2 0 1 0;
+#X connect 3 0 9 0;
+#X connect 4 0 6 0;
+#X connect 4 1 2 0;
+#X connect 4 1 11 0;
+#X connect 5 0 6 1;
+#X connect 5 0 15 1;
+#X connect 6 0 3 0;
+#X connect 7 0 30 0;
+#X connect 8 0 31 0;
+#X connect 9 0 10 0;
+#X connect 9 0 28 0;
+#X connect 10 0 9 1;
+#X connect 11 0 9 1;
+#X connect 13 0 12 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
+#X connect 16 0 27 0;
+#X connect 17 0 16 1;
+#X connect 18 0 16 1;
+#X connect 19 0 22 0;
+#X connect 22 0 23 0;
+#X connect 22 1 25 0;
+#X connect 22 2 23 0;
+#X connect 23 0 24 0;
+#X connect 23 1 24 1;
+#X connect 24 0 21 0;
+#X connect 25 0 26 0;
+#X connect 27 0 12 0;
+#X connect 28 0 1 0;
+#X connect 29 0 12 0;
+#X connect 30 0 29 0;
+#X connect 30 1 15 0;
+#X connect 30 2 18 0;
+#X connect 30 2 13 0;
+#X connect 31 0 29 0;
+#X connect 31 1 4 0;

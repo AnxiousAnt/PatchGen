@@ -1,0 +1,52 @@
+#N canvas 449 179 779 384 10;
+#X declare -lib mrpeach;
+#X declare -lib iemnet;
+#X obj 28 -126 import mrpeach;
+#X obj 33 212 udpsend;
+#X msg 310 185 send \$1;
+#X msg 251 70 disconnect;
+#X obj 26 -100 import iemnet;
+#X msg 35 118 connect \$1.\$2.\$3.\$4 \$5;
+#X obj 61 23 pack f f f f f;
+#X msg 48 93 127 0 0 1 8000;
+#X obj 206 -10 t b a;
+#X obj 170 -10 t b a;
+#X obj 134 -10 t b a;
+#X obj 96 -10 t b a;
+#X msg 61 69 set \$1 \$2 \$3 \$4 \$5;
+#X obj 61 43 t a b;
+#X floatatom 60 -59 5 0 0 2 ip_one - -;
+#X floatatom 100 -59 5 0 0 2 ip_two - -;
+#X floatatom 140 -59 5 0 0 2 ip_three - -;
+#X floatatom 190 -59 5 0 0 2 ip_four - -;
+#X floatatom 243 -60 5 0 0 2 port - -;
+#X obj 310 147 receive DATA_FROM_EVT_to_control;
+#X text 334 -82 specify to which IP udpsend sends its data and on which
+port \; for sending data to three different computers \, you have to
+use this part three times \, because of the different ip every computer
+has in the network.;
+#X obj 559 -23 udpreceive \$1;
+#X text 337 -22 on the receiver side you have to use where \$1 is the
+respective port you specified on the sender side.;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 13 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 1 6 4;
+#X connect 9 0 6 0;
+#X connect 9 1 6 3;
+#X connect 10 0 6 0;
+#X connect 10 1 6 2;
+#X connect 11 0 6 0;
+#X connect 11 1 6 1;
+#X connect 12 0 7 0;
+#X connect 13 0 12 0;
+#X connect 13 1 3 0;
+#X connect 14 0 6 0;
+#X connect 15 0 11 0;
+#X connect 16 0 10 0;
+#X connect 17 0 9 0;
+#X connect 18 0 8 0;
+#X connect 19 0 2 0;

@@ -1,0 +1,15 @@
+#N canvas 0 22 712 361 10;
+#X obj 72 84 list;
+#X msg 72 132 osascript -e 'tell application "safari" to \$1' &;
+#X obj 71 195 system;
+#X msg 71 38 open location "http://www.myrtilles.org/myrtilles/textes/performances/myrtilles_performances_lucille_calmel_lucillec_sexe_feminin.htm"
+;
+#X obj 72 18 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 148 6 small patch to open a webpage;
+#X obj 72 106 l2s;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 6 0 1 0;

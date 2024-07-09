@@ -1,0 +1,14 @@
+#N canvas 109 86 264 181 10;
+#X obj 60 140 outlet;
+#X obj 105 95 \$1;
+#X obj 60 72 inlet;
+#X obj 105 72 loadbang;
+#X obj 60 95 >>;
+#X obj 60 118 % 2;
+#X text 30 20 value of a specific bit \;;
+#X text 31 36 argument: bit position;
+#X connect 1 0 4 1;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;

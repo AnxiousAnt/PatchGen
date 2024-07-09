@@ -1,0 +1,30 @@
+#N canvas 724 329 450 297 10;
+#X obj 107 95 notein;
+#X obj 54 191 noteout;
+#X msg 54 166 60 \$1;
+#X obj 107 182 timer;
+#X obj 107 136 t f b;
+#X obj 54 139 t f b;
+#X obj 54 81 tgl 15 0 empty empty empty 17 7 0 10 -4032 -258113 -1
+0 1;
+#X obj 54 110 * 127;
+#X obj 54 55 metro 1000;
+#X obj 54 33 tgl 15 0 empty empty start 17 7 0 10 -4034 -1 -1 1 1;
+#X obj 107 218 nbx 5 14 -1e+037 1e+037 0 0 empty empty latency_in_milliseconds
+0 -8 0 10 -4032 -258113 -1 111.565 256;
+#X floatatom 107 161 5 0 0 0 - - -;
+#X floatatom 123 117 5 0 0 0 - - -;
+#X text 51 -1 Connect MIDI OUT to MIDI IN with a MIDI cable \, then
+start the metro...;
+#X connect 0 0 4 0;
+#X connect 0 1 12 0;
+#X connect 2 0 1 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 4 1 3 1;
+#X connect 5 0 2 0;
+#X connect 5 1 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 0;

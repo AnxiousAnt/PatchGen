@@ -1,0 +1,281 @@
+hans@dellxps:~$ export LANG=C
+hans@dellxps:~$ MAINREPO=https://deb.debian.org/debian/pool/main/
+hans@dellxps:~$ PDVER=0.50.2-1
+
+hans@dellxps:~$ sudo apt-get install devscripts
+[sudo] password for hans: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libllvm5.0 snap-confine snapd-login-service
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  at dctrl-tools dput libdistro-info-perl python3-magic wdiff
+Suggested packages:
+  default-mta | mail-transport-agent debtags bsd-mailx | mailx
+  cvs-buildpackage diffoscope devscripts-el dose-extra gnuplot
+  libterm-size-perl libyaml-syck-perl mozilla-devscripts mutt svn-buildpackage
+  w3m debian-keyring equivs libsoap-lite-perl mini-dinstall python-bzrlib
+The following NEW packages will be installed:
+  at dctrl-tools devscripts dput libdistro-info-perl python3-magic wdiff
+0 upgraded, 7 newly installed, 0 to remove and 7 not upgraded.
+Need to get 1,016 kB of archives.
+After this operation, 2,930 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 at amd64 3.1.18-2ubuntu1 [37.8 kB]
+Get:2 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 dctrl-tools amd64 2.24-2 [59.1 kB]
+Get:3 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 devscripts amd64 2.16.2ubuntu3 [848 kB]
+Get:4 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 dput all 0.9.6.4ubuntu3 [33.1 kB]
+Get:5 http://be.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdistro-info-perl all 0.14ubuntu0.1 [4,690 B]
+Get:6 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 wdiff amd64 1.2.2-1build1 [28.8 kB]
+Get:7 http://be.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3-magic all 1:5.25-2ubuntu1.3 [5,436 B]
+Fetched 1,016 kB in 0s (1,993 kB/s)      
+Selecting previously unselected package at.
+(Reading database ... 303189 files and directories currently installed.)
+Preparing to unpack .../at_3.1.18-2ubuntu1_amd64.deb ...
+Unpacking at (3.1.18-2ubuntu1) ...
+Selecting previously unselected package dctrl-tools.
+Preparing to unpack .../dctrl-tools_2.24-2_amd64.deb ...
+Unpacking dctrl-tools (2.24-2) ...
+Selecting previously unselected package devscripts.
+Preparing to unpack .../devscripts_2.16.2ubuntu3_amd64.deb ...
+Unpacking devscripts (2.16.2ubuntu3) ...
+Selecting previously unselected package dput.
+Preparing to unpack .../dput_0.9.6.4ubuntu3_all.deb ...
+Unpacking dput (0.9.6.4ubuntu3) ...
+Selecting previously unselected package libdistro-info-perl.
+Preparing to unpack .../libdistro-info-perl_0.14ubuntu0.1_all.deb ...
+Unpacking libdistro-info-perl (0.14ubuntu0.1) ...
+Selecting previously unselected package wdiff.
+Preparing to unpack .../wdiff_1.2.2-1build1_amd64.deb ...
+Unpacking wdiff (1.2.2-1build1) ...
+Selecting previously unselected package python3-magic.
+Preparing to unpack .../python3-magic_1%3a5.25-2ubuntu1.3_all.deb ...
+Unpacking python3-magic (1:5.25-2ubuntu1.3) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for systemd (229-4ubuntu21.23) ...
+Processing triggers for ureadahead (0.100.0-19.1) ...
+ureadahead will be reprofiled on next reboot
+Processing triggers for install-info (6.1.0.dfsg.1-5) ...
+Setting up at (3.1.18-2ubuntu1) ...
+Setting up dctrl-tools (2.24-2) ...
+Setting up devscripts (2.16.2ubuntu3) ...
+Setting up dput (0.9.6.4ubuntu3) ...
+Setting up libdistro-info-perl (0.14ubuntu0.1) ...
+Setting up wdiff (1.2.2-1build1) ...
+Setting up python3-magic (1:5.25-2ubuntu1.3) ...
+Processing triggers for systemd (229-4ubuntu21.23) ...
+Processing triggers for ureadahead (0.100.0-19.1) ...
+
+hans@dellxps:~$ mkdir -p build
+
+hans@dellxps:~$ cd build
+
+hans@dellxps:~/build$ dget -u ${MAINREPO}/p/puredata/puredata_${PDVER}.dsc
+dget: retrieving https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2-1.dsc
+--2020-01-14 09:18:52--  https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2-1.dsc
+Resolving deb.debian.org (deb.debian.org)... 151.101.38.133, 2a04:4e42:9::645
+Connecting to deb.debian.org (deb.debian.org)|151.101.38.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2660 (2.6K)
+Saving to: 'puredata_0.50.2-1.dsc'
+
+puredata_0.50.2-1.d 100%[===================>]   2.60K  --.-KB/s    in 0.001s  
+
+2020-01-14 09:18:52 (4.69 MB/s) - 'puredata_0.50.2-1.dsc' saved [2660/2660]
+
+dget: retrieving https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2.orig.tar.gz
+--2020-01-14 09:18:52--  https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2.orig.tar.gz
+Resolving deb.debian.org (deb.debian.org)... 151.101.38.133, 2a04:4e42:9::645
+Connecting to deb.debian.org (deb.debian.org)|151.101.38.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 9303966 (8.9M) [application/x-gzip]
+Saving to: 'puredata_0.50.2.orig.tar.gz'
+
+puredata_0.50.2.ori 100%[===================>]   8.87M  5.14MB/s    in 1.7s    
+
+2020-01-14 09:18:54 (5.14 MB/s) - 'puredata_0.50.2.orig.tar.gz' saved [9303966/9303966]
+
+dget: retrieving https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2-1.debian.tar.xz
+--2020-01-14 09:18:54--  https://deb.debian.org/debian/pool/main//p/puredata/puredata_0.50.2-1.debian.tar.xz
+Resolving deb.debian.org (deb.debian.org)... 151.101.38.133, 2a04:4e42:9::645
+Connecting to deb.debian.org (deb.debian.org)|151.101.38.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 29096 (28K) [application/x-xz]
+Saving to: 'puredata_0.50.2-1.debian.tar.xz'
+
+puredata_0.50.2-1.d 100%[===================>]  28.41K  --.-KB/s    in 0.02s   
+
+2020-01-14 09:18:54 (1.36 MB/s) - 'puredata_0.50.2-1.debian.tar.xz' saved [29096/29096]
+
+dpkg-source: info: extracting puredata in puredata-0.50.2
+dpkg-source: info: unpacking puredata_0.50.2.orig.tar.gz
+dpkg-source: info: unpacking puredata_0.50.2-1.debian.tar.xz
+dpkg-source: info: applying debian_pd2puredata.patch
+dpkg-source: info: applying debian_usrlibpd_path.patch
+dpkg-source: info: applying debian_fixmanpage.patch
+dpkg-source: info: applying debian_helpbrowser_puredata-doc.patch
+dpkg-source: info: applying debian_remove_timestamp-macros.patch
+dpkg-source: info: applying debian_etc-gui-plugins.patch
+
+hans@dellxps:~/build$ cd puredata-${PDVER%-*}
+
+hans@dellxps:~/build/puredata-0.50.2$ mk-build-deps -ir
+mk-build-deps: You must have equivs installed to use this program.
+
+hans@dellxps:~/build/puredata-0.50.2$ sudo apt-get install equivs 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libllvm5.0 snap-confine snapd-login-service
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  autotools-dev debhelper dh-strip-nondeterminism
+  libfile-stripnondeterminism-perl libmail-sendmail-perl
+  libsys-hostname-long-perl po-debconf
+Suggested packages:
+  dh-make libmail-box-perl
+The following NEW packages will be installed:
+  autotools-dev debhelper dh-strip-nondeterminism equivs
+  libfile-stripnondeterminism-perl libmail-sendmail-perl
+  libsys-hostname-long-perl po-debconf
+0 upgraded, 8 newly installed, 0 to remove and 7 not upgraded.
+Need to get 1,084 kB of archives.
+After this operation, 2,204 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 autotools-dev all 20150820.1 [39.8 kB]
+Get:2 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 po-debconf all 1.0.19 [234 kB]
+Get:3 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 libfile-stripnondeterminism-perl all 0.015-1 [10.3 kB]
+Get:4 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 dh-strip-nondeterminism all 0.015-1 [4,864 B]
+Get:5 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 debhelper all 9.20160115ubuntu3 [739 kB]
+Get:6 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 libsys-hostname-long-perl all 1.5-1 [11.7 kB]
+Get:7 http://be.archive.ubuntu.com/ubuntu xenial/main amd64 libmail-sendmail-perl all 0.79.16-1 [26.5 kB]
+Get:8 http://be.archive.ubuntu.com/ubuntu xenial/universe amd64 equivs all 2.0.9+nmu1 [17.7 kB]
+Fetched 1,084 kB in 0s (1,875 kB/s)
+Selecting previously unselected package autotools-dev.
+(Reading database ... 303652 files and directories currently installed.)
+Preparing to unpack .../autotools-dev_20150820.1_all.deb ...
+Unpacking autotools-dev (20150820.1) ...
+Selecting previously unselected package po-debconf.
+Preparing to unpack .../po-debconf_1.0.19_all.deb ...
+Unpacking po-debconf (1.0.19) ...
+Selecting previously unselected package libfile-stripnondeterminism-perl.
+Preparing to unpack .../libfile-stripnondeterminism-perl_0.015-1_all.deb ...
+Unpacking libfile-stripnondeterminism-perl (0.015-1) ...
+Selecting previously unselected package dh-strip-nondeterminism.
+Preparing to unpack .../dh-strip-nondeterminism_0.015-1_all.deb ...
+Unpacking dh-strip-nondeterminism (0.015-1) ...
+Selecting previously unselected package debhelper.
+Preparing to unpack .../debhelper_9.20160115ubuntu3_all.deb ...
+Unpacking debhelper (9.20160115ubuntu3) ...
+Selecting previously unselected package libsys-hostname-long-perl.
+Preparing to unpack .../libsys-hostname-long-perl_1.5-1_all.deb ...
+Unpacking libsys-hostname-long-perl (1.5-1) ...
+Selecting previously unselected package libmail-sendmail-perl.
+Preparing to unpack .../libmail-sendmail-perl_0.79.16-1_all.deb ...
+Unpacking libmail-sendmail-perl (0.79.16-1) ...
+Selecting previously unselected package equivs.
+Preparing to unpack .../equivs_2.0.9+nmu1_all.deb ...
+Unpacking equivs (2.0.9+nmu1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for doc-base (0.10.7) ...
+Processing 1 added doc-base file...
+Registering documents with scrollkeeper...
+Setting up autotools-dev (20150820.1) ...
+Setting up po-debconf (1.0.19) ...
+Setting up libfile-stripnondeterminism-perl (0.015-1) ...
+Setting up libsys-hostname-long-perl (1.5-1) ...
+Setting up libmail-sendmail-perl (0.79.16-1) ...
+Setting up debhelper (9.20160115ubuntu3) ...
+Setting up equivs (2.0.9+nmu1) ...
+Setting up dh-strip-nondeterminism (0.015-1) ...
+
+hans@dellxps:~/build/puredata-0.50.2$ mk-build-deps -ir
+dh_testdir
+dh_testroot
+dh_prep
+dh_testdir
+dh_testroot
+dh_install
+dh_installdocs
+dh_installchangelogs
+dh_compress
+dh_fixperms
+dh_installdeb
+dh_gencontrol
+dh_md5sums
+dh_builddeb
+dpkg-deb: building package 'puredata-build-deps' in '../puredata-build-deps_0.50.2-1_amd64.deb'.
+
+The package has been created.
+Attention, the package has been created in the current directory,
+not in ".." as indicated by the message above!
+dpkg: error: requested operation requires superuser privilege
+mk-build-deps: dpkg --unpack failed
+
+hans@dellxps:~/build/puredata-0.50.2$ sudo mk-build-deps -ir
+dh_testdir
+dh_testroot
+dh_prep
+dh_testdir
+dh_testroot
+dh_install
+dh_installdocs
+dh_installchangelogs
+dh_compress
+dh_fixperms
+dh_installdeb
+dh_gencontrol
+dh_md5sums
+dh_builddeb
+dpkg-deb: building package 'puredata-build-deps' in '../puredata-build-deps_0.50.2-1_amd64.deb'.
+
+The package has been created.
+Attention, the package has been created in the current directory,
+not in ".." as indicated by the message above!
+Selecting previously unselected package puredata-build-deps.
+(Reading database ... 304203 files and directories currently installed.)
+Preparing to unpack puredata-build-deps_0.50.2-1_amd64.deb ...
+Unpacking puredata-build-deps (0.50.2-1) ...
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Correcting dependencies...Starting pkgProblemResolver with broken count: 1
+Starting 2 pkgProblemResolver with broken count: 1
+Investigating (0) puredata-build-deps [ amd64 ] < 0.50.2-1 > ( devel )
+Broken puredata-build-deps:amd64 Depends on debhelper-compat [ amd64 ] < none ->  > ( none ) (= 12)
+  Removing puredata-build-deps:amd64 because I can't find debhelper-compat:amd64
+Done
+ Done
+Starting pkgProblemResolver with broken count: 0
+Starting 2 pkgProblemResolver with broken count: 0
+Done
+The following packages were automatically installed and are no longer required:
+  libllvm5.0 snap-confine snapd-login-service
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  puredata-build-deps
+0 upgraded, 0 newly installed, 1 to remove and 7 not upgraded.
+1 not fully installed or removed.
+After this operation, 9,216 B disk space will be freed.
+Do you want to continue? [Y/n] Y
+(Reading database ... 304206 files and directories currently installed.)
+Removing puredata-build-deps (0.50.2-1) ...
+mk-build-deps: Unable to install puredata-build-deps at /usr/bin/mk-build-deps line 402.
+mk-build-deps: Unable to install all build-dep packages
+
+hans@dellxps:~/build/puredata-0.50.2$ dpkg-buildpackage -rfakeroot
+dpkg-buildpackage: source package puredata
+dpkg-buildpackage: source version 0.50.2-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>
+dpkg-buildpackage: host architecture amd64
+ dpkg-source --before-build puredata-0.50.2
+dpkg-source: warning: unknown information field 'Rules-Requires-Root' in input data in general section of control info file
+dpkg-checkbuilddeps: error: Unmet build dependencies: debhelper-compat (= 12) help2man libasound2-dev portaudio19-dev
+dpkg-buildpackage: warning: build dependencies/conflicts unsatisfied; aborting
+dpkg-buildpackage: warning: (Use -d flag to override.)
+
+hans@dellxps:~/build/puredata-0.50.2$ 

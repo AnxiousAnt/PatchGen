@@ -1,0 +1,32 @@
+#N canvas 57 87 564 403 10;
+#X obj 171 213 gemmouse;
+#X floatatom 192 232 2 0 0 1 left-Button - -;
+#X msg 192 256 0 \, destroy;
+#X obj 36 288 gemwin;
+#X msg 171 183 border 0 \, dimen 1920 1080 \, create \, 1;
+#X obj 36 63 metro 1;
+#X obj 36 85 tripleRand 1;
+#X msg 36 107 color \$1 \$2 \$3;
+#X obj 36 39 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 36 13 loadbang;
+#X obj 171 73 bng 30 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X text 214 66 click to go full screen on primary monitor;
+#X text 214 36 first attach an external monitor (change dimensions
+if needed);
+#X text 214 86 left-click to destroy the window or wait 10 seconds
+;
+#X obj 181 118 del 10000;
+#X connect 0 2 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 0;
+#X connect 8 0 5 0;
+#X connect 9 0 8 0;
+#X connect 10 0 4 0;
+#X connect 10 0 14 0;
+#X connect 14 0 2 0;

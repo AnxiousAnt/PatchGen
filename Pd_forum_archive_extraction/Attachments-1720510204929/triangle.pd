@@ -1,0 +1,39 @@
+#N canvas 233 52 823 501 10;
+#X obj 385 316 phasor~ 200;
+#X obj 125 92 *~ -1;
+#X obj 125 114 +~ 1;
+#X obj 104 159 min~;
+#X obj 385 337 expr~ (min($v1 \, 1 - $v1) * 4) - 1;
+#X obj 145 333 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 130 352 *~;
+#X obj 114 59 phasor~ 220;
+#X obj 104 264 *~ 4;
+#X obj 104 301 -~ 1;
+#X obj 130 373 dac~;
+#X text 163 102 Inverts to Ramp Down generator (1 - 0);
+#X text 202 59 Ramp Generator (0 - 1);
+#X text 139 159 compares ramp up and ramp down and passes the smaller
+value.;
+#X text 123 205 This creates a Triangle wave with DC offset and gain
+from (0 - 0.5). Now we need to adjust the gaind and DC ofsset;
+#X text 379 290 Expr Version;
+#X text 136 264 Normalize values to (0 -2);
+#X text 141 303 corrects DC Offset;
+#X obj 409 383 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 394 402 *~;
+#X obj 394 423 dac~;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 1;
+#X connect 3 0 8 0;
+#X connect 4 0 19 0;
+#X connect 5 0 6 1;
+#X connect 6 0 10 0;
+#X connect 7 0 1 0;
+#X connect 7 0 3 0;
+#X connect 8 0 9 0;
+#X connect 9 0 6 0;
+#X connect 18 0 19 1;
+#X connect 19 0 20 0;

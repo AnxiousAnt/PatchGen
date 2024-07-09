@@ -1,0 +1,581 @@
+./makeauxlibs: test: =: unary operator expected
+Building Auxilliary Libraries
+=============================
+
+BUILDING LIBORB
+cc -O  -c orb.c
+cc -O  -c orbserial.c
+ar rv liborb.a orb.o orbserial.o
+a - orb.o
+a - orbserial.o
+touch liborb.a
+cc -O  main.c -c
+cc -O  main.o -o testorb -L. -lorb
+BUILDING PARTICLE
+c++ -O3   -I. -I.. -fPIC -c action_api.cpp
+c++ -O3   -I. -I.. -fPIC -c actions.cpp
+c++ -O3   -I. -I.. -fPIC -c opengl.cpp
+c++ -O3   -I. -I.. -fPIC -c system.cpp
+rm -f libparticle.a
+ar clq libparticle.a action_api.o actions.o opengl.o system.o
+BUILDING GLM
+cc -Dlinux -D__i386__ -D_POSIX_C_SOURCE=199309L -D_POSIX_SOURCE -D_XOPEN_SOURCE -D_BSD_SOURCE -D_SVID_SOURCE -DFUNCPROTO=15 -DNARROWPROTO -I. -c -o glm.o glm.c
+ar clq libglm.a glm.o
+
+Finished building Auxilliary Libraries
+======================================
+
+
+
+
+
+./configure: : command not found
+./configure: : command not found
+creating cache ./config.cache
+Sources for ../Manips
+Sources for ../Particles
+Sources for ../Base
+Sources for ../MarkEx
+Sources for ../Pixes
+Sources for ../Controls
+Sources for ../Nongeos
+Sources for ../Geos
+Sources for ../tv
+checking host system type... i686-pc-linux-gnu
+Configuring for Gem.pd_linux
+checking for gnu make... yes
+checking for c++... c++
+checking whether the C++ compiler (c++  ) works... yes
+checking whether the C++ compiler (c++  ) is a cross-compiler... no
+checking whether we are using GNU C++... yes
+checking whether c++ accepts -g... yes
+checking for gcc... gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking for a BSD compatible install... /usr/bin/install -c
+checking whether make sets ${MAKE}... yes
+checking for sh... sh
+checking how to run the C preprocessor... gcc -E
+checking for X... libraries /usr/X11R6/lib, headers /usr/X11R6/include
+checking for dnet_ntoa in -ldnet... no
+checking for dnet_ntoa in -ldnet_stub... no
+checking for gethostbyname... yes
+checking for connect... yes
+checking for remove... yes
+checking for shmat... yes
+checking for IceConnectionNumber in -lICE... yes
+checking for main in -lX11... yes
+checking for main in -lXext... yes
+checking for XF86VidModeGetAllModeLines in -lXxf86vm... yes
+checking for sin in -lm... yes
+checking for glInitNames in -lGL... yes
+checking for gluLookAt in -lGLU... yes
+checking for glutSolidTeapot in -lglut... yes
+checking for quicktime_open in -lquicktime... no
+checking for png_set_compression_level in -lpng... yes
+checking for main in -lglib... yes
+checking for OpenMPEG in -lmpeg... yes
+checking for mpeg3_open in -lmpeg3... no
+checking for main in -lglm... no
+checking alternate -lglm in ../../../ ... ../../../GemLibs/glm
+configure: warning: Trying to use glm library in ../../../GemLibs/glm
+checking for main in -ltiff... yes
+checking for main in -ljpeg... yes
+checking for main in -lttf... yes
+checking for main in -lgltt... yes
+checking for main in -lorb... no
+checking alternate -lorb in ../../../ ... ../../../GemLibs/liborb
+configure: warning: Trying to use orb library in ../../../GemLibs/liborb
+checking for main in -lparticle... no
+checking alternate -lparticle in ../../../ ... ../../../GemLibs/particle
+configure: warning: Trying to use particle library in ../../../GemLibs/particle
+checking for main in -lvl... no
+checking for main in -lz... yes
+checking for m_pd.h path... ../Base
+checking for glm.h path... ../../../GemLibs/glm
+checking for orb.h path... ../../../GemLibs/liborb
+checking for papi.h path... ../../../GemLibs/particle
+checking for GLTTFont.h path... /usr/include/gltt
+checking for mpeg.h... no
+checking for quicktime/quicktime.h... no
+checking for libmpeg3.h... no
+checking for ANSI C header files... no
+checking for working const... yes
+checking for size_t... yes
+checking for vprintf... yes
+checking for strdup... yes
+checking for strstr... yes
+updating cache ./config.cache
+creating ./config.status
+creating Makefile
+creating ./../Manips/Makefile
+creating ./../Particles/Makefile
+creating ./../Base/Makefile
+creating ./../MarkEx/Makefile
+creating ./../Pixes/Makefile
+creating ./../Controls/Makefile
+creating ./../Nongeos/Makefile
+creating ./../Geos/Makefile
+creating ./../tv/Makefile
+creating ../Base/config.h
+../Base/config.h is unchanged
+
+
+for d in ../Manips  ../Particles ../Base ../MarkEx ../Pixes ../Controls ../Nongeos  ../Geos ../tv; do \
+    echo ""\
+    echo "----------$d----------"; \
+    cd $d && make || exit -1; \
+done
+ echo ----------../Manips----------
+make[1]: Entering directory `/usr/lib/pd/gem/gem-0.87/src/Manips'
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   accumrotate.cpp -o accumrotate.o
+In file included from accumrotate.h:18,
+                 from accumrotate.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   alpha.cpp -o alpha.o
+In file included from alpha.h:18,
+                 from alpha.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   ambient.cpp -o ambient.o
+In file included from ambient.h:21,
+                 from ambient.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   ambientRGB.cpp -o ambientRGB.o
+In file included from ambientRGB.h:20,
+                 from ambientRGB.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   color.cpp -o color.o
+In file included from color.h:18,
+                 from color.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   colorRGB.cpp -o colorRGB.o
+In file included from colorRGB.h:18,
+                 from colorRGB.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   depth.cpp -o depth.o
+In file included from depth.h:18,
+                 from depth.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   diffuse.cpp -o diffuse.o
+In file included from diffuse.h:18,
+                 from diffuse.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   diffuseRGB.cpp -o diffuseRGB.o
+In file included from diffuseRGB.h:18,
+                 from diffuseRGB.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   emission.cpp -o emission.o
+In file included from emission.h:18,
+                 from emission.cpp:19:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   emissionRGB.cpp -o emissionRGB.o
+In file included from emissionRGB.h:18,
+                 from emissionRGB.cpp:19:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   linear_path.cpp -o linear_path.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   ortho.cpp -o ortho.o
+In file included from ortho.h:18,
+                 from ortho.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   rotate.cpp -o rotate.o
+In file included from rotate.h:18,
+                 from rotate.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   rotateXYZ.cpp -o rotateXYZ.o
+In file included from rotateXYZ.h:18,
+                 from rotateXYZ.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   scale.cpp -o scale.o
+In file included from scale.h:18,
+                 from scale.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   scaleXYZ.cpp -o scaleXYZ.o
+In file included from scaleXYZ.h:18,
+                 from scaleXYZ.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   separator.cpp -o separator.o
+In file included from separator.h:18,
+                 from separator.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   shininess.cpp -o shininess.o
+In file included from shininess.h:18,
+                 from shininess.cpp:19:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   specular.cpp -o specular.o
+In file included from specular.h:21,
+                 from specular.cpp:19:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   specularRGB.cpp -o specularRGB.o
+In file included from specularRGB.h:20,
+                 from specularRGB.cpp:19:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   spline_path.cpp -o spline_path.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   translate.cpp -o translate.o
+In file included from translate.h:18,
+                 from translate.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   translateXYZ.cpp -o translateXYZ.o
+In file included from translateXYZ.h:18,
+                 from translateXYZ.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+make[1]: Leaving directory `/usr/lib/pd/gem/gem-0.87/src/Manips'
+ echo ----------../Particles----------
+make[1]: Entering directory `/usr/lib/pd/gem/gem-0.87/src/Particles'
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_color.cpp -o part_color.o
+In file included from part_color.h:18,
+                 from part_color.cpp:15:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_damp.cpp -o part_damp.o
+In file included from part_damp.h:20,
+                 from part_damp.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_draw.cpp -o part_draw.o
+In file included from part_draw.h:18,
+                 from part_draw.cpp:15:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_follow.cpp -o part_follow.o
+In file included from part_follow.h:18,
+                 from part_follow.cpp:15:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_gravity.cpp -o part_gravity.o
+In file included from part_gravity.h:20,
+                 from part_gravity.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_head.cpp -o part_head.o
+In file included from part_head.h:18,
+                 from part_head.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_killold.cpp -o part_killold.o
+In file included from part_killold.h:18,
+                 from part_killold.cpp:15:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_killslow.cpp -o part_killslow.o
+In file included from part_killslow.h:18,
+                 from part_killslow.cpp:15:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_orbitpoint.cpp -o part_orbitpoint.o
+In file included from part_orbitpoint.h:16,
+                 from part_orbitpoint.cpp:15:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_size.cpp -o part_size.o
+In file included from part_size.h:16,
+                 from part_size.cpp:15:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_source.cpp -o part_source.o
+In file included from part_source.h:18,
+                 from part_source.cpp:15:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_targetcolor.cpp -o part_targetcolor.o
+In file included from part_targetcolor.h:18,
+                 from part_targetcolor.cpp:15:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_targetsize.cpp -o part_targetsize.o
+In file included from part_targetsize.h:18,
+                 from part_targetsize.cpp:15:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_velcone.cpp -o part_velcone.o
+In file included from part_velcone.h:20,
+                 from part_velcone.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   part_velsphere.cpp -o part_velsphere.o
+In file included from part_velsphere.h:20,
+                 from part_velsphere.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+make[1]: Leaving directory `/usr/lib/pd/gem/gem-0.87/src/Particles'
+ echo ----------../Base----------
+make[1]: Entering directory `/usr/lib/pd/gem/gem-0.87/src/Base'
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   CPPExtern.cpp -o CPPExtern.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemBase.cpp -o GemBase.o
+In file included from GemBase.cpp:18:
+GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemCache.cpp -o GemCache.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemDag.cpp -o GemDag.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemEvent.cpp -o GemEvent.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemFuncUtil.cpp -o GemFuncUtil.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemGluObj.cpp -o GemGluObj.o
+In file included from ../Base/GemShape.h:18,
+                 from GemGluObj.h:19,
+                 from GemGluObj.cpp:18:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemGlutObj.cpp -o GemGlutObj.o
+In file included from ../Base/GemShape.h:18,
+                 from GemGlutObj.h:20,
+                 from GemGlutObj.cpp:18:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemLoadObj.cpp -o GemLoadObj.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemMan.cpp -o GemMan.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemModelData.cpp -o GemModelData.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemPathBase.cpp -o GemPathBase.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemPixDualObj.cpp -o GemPixDualObj.o
+In file included from ../Base/GemPixObj.h:18,
+                 from GemPixDualObj.h:18,
+                 from GemPixDualObj.cpp:18:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemPixImageLoad.cpp -o GemPixImageLoad.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemPixImageSave.cpp -o GemPixImageSave.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemPixObj.cpp -o GemPixObj.o
+In file included from GemPixObj.h:18,
+                 from GemPixObj.cpp:18:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemPixUtil.cpp -o GemPixUtil.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemSetup.cpp -o GemSetup.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemShape.cpp -o GemShape.o
+In file included from GemShape.h:18,
+                 from GemShape.cpp:18:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemState.cpp -o GemState.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemWinCreateNT.cpp -o GemWinCreateNT.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   GemWinCreateXWin.cpp -o GemWinCreateXWin.o
+GemWinCreateXWin.cpp: In function `int cursorGemWindow (WindowInfo &,
+int)':
+GemWinCreateXWin.cpp:198: warning: no return statement in function
+returning non-void
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   Matrix.cpp -o Matrix.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   TextBase.cpp -o TextBase.o
+In file included from TextBase.h:18,
+                 from TextBase.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   sgiimage.cpp -o sgiimage.o
+make[1]: Leaving directory `/usr/lib/pd/gem/gem-0.87/src/Base'
+ echo ----------../MarkEx----------
+make[1]: Entering directory `/usr/lib/pd/gem/gem-0.87/src/MarkEx'
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   MarkExSetup.cpp -o MarkExSetup.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   abs.cpp -o abs.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   average.cpp -o average.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   counter.cpp -o counter.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   hsvrgb.cpp -o hsvrgb.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   m_control.cpp -o m_control.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   multiselect.cpp -o multiselect.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   randomF.cpp -o randomF.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   reson.cpp -o reson.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   strcat.cpp -o strcat.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   tripleLine.cpp -o tripleLine.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   vector.cpp -o vector.o
+make[1]: Leaving directory `/usr/lib/pd/gem/gem-0.87/src/MarkEx'
+ echo ----------../Pixes----------
+make[1]: Entering directory `/usr/lib/pd/gem/gem-0.87/src/Pixes'
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_2grey.cpp -o pix_2grey.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_2grey.h:18,
+                 from pix_2grey.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_a_2grey.cpp -o pix_a_2grey.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_a_2grey.h:29,
+                 from pix_a_2grey.cpp:27:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_add.cpp -o pix_add.o
+In file included from ../Base/GemPixObj.h:18,
+                 from ../Base/GemPixDualObj.h:18,
+                 from pix_add.h:18,
+                 from pix_add.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_aging.cpp -o pix_aging.o
+In file included from ../Base/GemPixObj.h:18,
+                 from ../Pixes/pix_fx.h:16,
+                 from pix_aging.h:21,
+                 from pix_aging.cpp:20:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+pix_aging.cpp: In function `void pix_aging::scratchMessCallback (void
+*, float)':
+pix_aging.cpp:245: warning: passing `t_floatarg' for argument 1 of
+`pix_aging::scratchMess (int)'
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_alpha.cpp -o pix_alpha.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_alpha.h:18,
+                 from pix_alpha.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_bitmask.cpp -o pix_bitmask.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_bitmask.h:18,
+                 from pix_bitmask.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_blob.cpp -o pix_blob.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_blob.h:26,
+                 from pix_blob.cpp:27:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+pix_blob.cpp: In function `void pix_blob::channelMessCallback (void *,
+float)':
+pix_blob.cpp:199: warning: passing `t_floatarg' for argument 1 of
+`pix_blob::ChannelMess (int)'
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_buf.cpp -o pix_buf.o
+In file included from pix_buf.h:18,
+                 from pix_buf.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_clearblock.cpp -o pix_clearblock.o
+In file included from pix_clearblock.h:18,
+                 from pix_clearblock.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_color.cpp -o pix_color.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_color.h:18,
+                 from pix_color.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_coloralpha.cpp -o pix_coloralpha.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_coloralpha.h:18,
+                 from pix_coloralpha.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_colormatrix.cpp -o pix_colormatrix.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_colormatrix.h:18,
+                 from pix_colormatrix.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_composite.cpp -o pix_composite.o
+In file included from ../Base/GemPixObj.h:18,
+                 from ../Base/GemPixDualObj.h:18,
+                 from pix_composite.h:18,
+                 from pix_composite.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_convolve.cpp -o pix_convolve.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_convolve.h:18,
+                 from pix_convolve.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_coordinate.cpp -o pix_coordinate.o
+In file included from pix_coordinate.h:18,
+                 from pix_coordinate.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_curve.cpp -o pix_curve.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_curve.h:28,
+                 from pix_curve.cpp:28:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_data.cpp -o pix_data.o
+In file included from ../Base/GemPixObj.h:18,
+                 from ../Base/GemPixDualObj.h:18,
+                 from pix_data.h:18,
+                 from pix_data.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_diff.cpp -o pix_diff.o
+In file included from ../Base/GemPixObj.h:18,
+                 from ../Base/GemPixDualObj.h:18,
+                 from pix_diff.h:18,
+                 from pix_diff.cpp:16:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_dot.cpp -o pix_dot.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_draw.cpp -o pix_draw.o
+In file included from pix_draw.h:18,
+                 from pix_draw.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_dump.cpp -o pix_dump.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_dump.h:26,
+                 from pix_dump.cpp:28:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_dv.cpp -o pix_dv.o
+In file included from pix_dv.h:19,
+                 from pix_dv.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_dvLinux.cpp -o pix_dvLinux.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_film.cpp -o pix_film.o
+In file included from pix_film.h:27,
+                 from pix_film.cpp:18:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_filmLinux.cpp -o pix_filmLinux.o
+In file included from ../Pixes/pix_film.h:27,
+                 from ../Pixes/pix_filmLinux.h:19,
+                 from pix_filmLinux.cpp:18:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_filmNT.cpp -o pix_filmNT.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_flip.cpp -o pix_flip.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_flip.h:18,
+                 from pix_flip.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_fx.cpp -o pix_fx.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_fx.h:16,
+                 from pix_fx.cpp:16:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+pix_fx.cpp: In function `void pix_fx::stateMessCallback (void *,
+float)':
+pix_fx.cpp:105: warning: passing `t_floatarg' for argument 1 of
+`pix_fx::activate (int)'
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_gain.cpp -o pix_gain.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_gain.h:18,
+                 from pix_gain.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_histo.cpp -o pix_histo.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_histo.h:28,
+                 from pix_histo.cpp:29:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_hsv2rgb.cpp -o pix_hsv2rgb.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_hsv2rgb.h:18,
+                 from pix_hsv2rgb.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_image.cpp -o pix_image.o
+In file included from pix_image.h:20,
+                 from pix_image.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_imageInPlace.cpp -o pix_imageInPlace.o
+In file included from ../Pixes/pix_multiimage.h:20,
+                 from pix_imageInPlace.h:18,
+                 from pix_imageInPlace.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_indycam.cpp -o pix_indycam.o
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_invert.cpp -o pix_invert.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_invert.h:18,
+                 from pix_invert.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_mask.cpp -o pix_mask.o
+In file included from ../Base/GemPixObj.h:18,
+                 from ../Base/GemPixDualObj.h:18,
+                 from pix_mask.h:18,
+                 from pix_mask.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_movie.cpp -o pix_movie.o
+In file included from ../Pixes/pix_film.h:27,
+                 from ../Pixes/pix_filmLinux.h:19,
+                 from pix_movie.h:21,
+                 from pix_movie.cpp:18:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_multiimage.cpp -o pix_multiimage.o
+In file included from pix_multiimage.h:20,
+                 from pix_multiimage.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_multiply.cpp -o pix_multiply.o
+In file included from ../Base/GemPixObj.h:18,
+                 from ../Base/GemPixDualObj.h:18,
+                 from pix_multiply.h:18,
+                 from pix_multiply.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_normalize.cpp -o pix_normalize.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_normalize.h:19,
+                 from pix_normalize.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_offset.cpp -o pix_offset.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_offset.h:18,
+                 from pix_offset.cpp:17:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_pix2sig.cpp -o pix_pix2sig.o
+In file included from ../Base/GemPixObj.h:18,
+                 from pix_pix2sig.h:19,
+                 from pix_pix2sig.cpp:16:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+c++ -c -g  -fPIC  -I../ -I/usr/include/glib-1.2 -I/usr/lib/glib/include -I/usr/include/gltt -I../../../GemLibs/particle -I../../../GemLibs/liborb -I../../../GemLibs/glm -I../Base -I..   pix_puzzle.cpp -o pix_puzzle.o
+In file included from ../Base/GemPixObj.h:18,
+                 from ../Pixes/pix_fx.h:16,
+                 from pix_puzzle.h:17,
+                 from pix_puzzle.cpp:16:
+../Base/GemBase.h:27:8: warning: extra tokens at end of #endif directive
+pix_puzzle.cpp: In method `void pix_puzzle::processFX (imageStruct &)':
+pix_puzzle.cpp:241: `memcpy' undeclared (first use this function)
+pix_puzzle.cpp:241: (Each undeclared identifier is reported only once
+for each function it appears in.)
+pix_puzzle.cpp: In function `void pix_puzzle::stateMessCallback (void
+*, float)':
+pix_puzzle.cpp:274: warning: passing `t_floatarg' for argument 1 of
+`pix_fx::activate (int)'
+make[1]: *** [pix_puzzle.o] Error 1
+make[1]: Leaving directory `/usr/lib/pd/gem/gem-0.87/src/Pixes'
+make: *** [subdirs] Error 255

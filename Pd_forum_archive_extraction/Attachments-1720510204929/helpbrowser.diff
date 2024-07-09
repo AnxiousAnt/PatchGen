@@ -1,0 +1,17 @@
+--- u_main.tk	2008-04-14 17:47:32.000000000 +0200
++++ ../bin/pd.tk	2008-04-15 12:28:31.107591424 +0200
+@@ -461,8 +461,13 @@
+                 toplevel .help_browser -menu .mbar
+                 wm title .help_browser "Pd Documentation Browser"
+                 frame .help_browser.frame
++                frame .help_browser.frame.doc
++                frame .help_browser.frame.extra
+                 pack .help_browser.frame -side top -fill both
+-                doc_make_listbox .help_browser.frame $dir 0
++                pack .help_browser.frame.doc -side top -fill both
++                pack .help_browser.frame.extra -side top -fill both 
++                doc_make_listbox .help_browser.frame.doc $dir  0
++                doc_make_listbox .help_browser.frame.extra $dir/../extra  0
+          }
+     }
+ 

@@ -1,0 +1,19 @@
+#N canvas 0 0 375 242 10;
+#X obj 32 154 gemwin;
+#X msg 22 17 create;
+#X msg 23 37 destroy;
+#X obj 163 23 loadbang;
+#X msg 194 67 border 0;
+#X obj 62 88 tgl 20 0 empty render empty 0 -6 64 8 -24198 -1 -1 0 1
+;
+#X msg 193 90 dimen 640 480;
+#X msg 194 115 offset 1024 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 3 0 7 0;
+#X connect 3 0 6 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;

@@ -1,0 +1,189 @@
+#N canvas 366 53 1261 698 10;
+#X obj 476 193 noise~;
+#X floatatom 606 303 0 0 0 0 - - -;
+#X obj 491 303 vline~;
+#X obj 644 246 expr 1000 / $f1;
+#X text 583 301 ms;
+#X msg 491 280 1 \, 0 0 \$1;
+#X obj 476 335 *~;
+#X obj 476 555 *~;
+#X obj 491 529 *~;
+#X obj 606 334 vd~ \$0-Kp;
+#X obj 556 608 delwrite~ \$0-Kp 1000;
+#X obj 476 221 expr~ if($v1 > 0 \, 1 \, -1);
+#X obj 491 493 line~;
+#X floatatom 491 448 5 0 0 0 - - -, f 5;
+#X obj 494 427 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262130
+-1 -1 0 1;
+#X msg 491 470 \$1 10;
+#X text 526 426 feedback;
+#X text 57 25 Vejamos agora uma implementação bem próxima ao algoritmo
+original descrito por Karplus-Strong. Primeiramente \, nossa entrada
+de ruído é formado apenas por valores de amplitude de 1 ou -1 \, isso
+gera igualmente um ruído branco \, mas com amplitude de RMS maior.
+Esse detalhe faz parte do algoritmo original porque ser mais econômico
+gerar números aleatorios com apenas 1 bit!;
+#X text 59 136 A seguir \, temos a inclusão de um filtro passa baixa.
+No caso \, o filtro usado era um simples filtro de média de duas amostras.
+Fazemos isso com o [fexpr~] \, mas poderíamos usar também o objeto
+[z~]. Mesmo com um feedback igual a 1 \, somente esse filtro média
+realiza um decay \, mesmo que muito longo.;
+#X text 62 348 Se o valor de belnd é igual a 0 \, invertemos o valor
+de feedback (valor negativo) \, e um valor negaivo de feedback significa
+que a polaridade do sinal e invertida a cada período. Dessa forma \,
+o sinal se repete \, na verdade \, apenas a cada dois períodos \, e
+isso faz com que a altura do sinal caia em uma oitava! A sonoridade
+também é diferente \, com apenas harmônicos ímpares \, e que \, segundo
+os autores da técnica \, remete a uma qualidade de harpa para frequências
+mais graves \, e sons de garrafas percutidas para frequências mais
+agudas.;
+#X text 61 493 Já valores diferentes de 0 e 1 introduzem um ruído.
+Pois o valor de "blend" indica a probabilidade do valor de feedback
+ser positivo ou negativo. Portanto \, no caso de um blend de 0.5 \,
+temos uma probabilidade igual do valor ser positivo ou negativo \,
+que implica um ruído branco.;
+#X text 64 578 Nesse caso \, tanto faz a entrada do sinal \, a qualidade
+sonora final fica a de um ruído branco \, e isso foi apontado pelos
+autores como uma forma de sintetizar sons de caixa \, que costumam
+mesmo ser obtidas com ruído branco. Valores de frequência não influenciam
+muito nesse caso \, mas um valor grave dá uma qualidade de "tom tom
+sendo raspado com uma vassoura".;
+#X text 61 238 Por fim \, temos um parâmetro novo \, o "blend" \, que
+altera o sinal do valor de feedback. Se o valor desse parâmetro é igual
+a 1 \, temos o valor original do parâmetro de feedback (valor positivo).
+Ou seja \, temos o mesmo que no exemplo anterior \, que é o algoritmo
+que define a sonoridade de "pluck" (corda pinçada com um plectro/palhta)
+do Karplus Strong.;
+#X text 460 28 Além desses 3 valores principais de blend \, podemos
+ter valores intermediários. Um valor próximo a 1 detém muito da qualidade
+original do algoritmo para sons de "pluck" mas introduz um pouco de
+ruído branco no resultado.;
+#X floatatom 644 221 5 0 0 0 - - -, f 5;
+#X text 681 218 Freq;
+#X obj 644 196 mtof;
+#X obj 644 130 tgl 15 0 empty empty empty 17 7 0 10 -261682 -1 -1 1
+1;
+#X obj 644 106 loadbang;
+#X obj 698 482 line~;
+#X floatatom 698 437 0 0 0 0 - - -;
+#X obj 701 410 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -261234
+-1 -1 0 1;
+#X msg 698 459 \$1 10;
+#X text 743 409 blend;
+#X obj 545 458 noise~;
+#X obj 545 482 expr~ $v1 * 0.5 + 0.5;
+#X obj 545 506 expr~ if($v1 < $v2 \, 1 \, -1);
+#X text 501 336 envelope;
+#X text 527 194 entrada de ruído;
+#X text 672 335 feedback delay;
+#X text 685 608 feedback delay;
+#X text 864 30 A estrutura de um Karplus-Strong pode ser interpretada
+de algumas maneiras diferentes e pode ser flexibilizada com diversas
+variações. Uma delas é a partir de um filtro pente \, que veremos no
+próximo exemplo.;
+#X text 866 334 "Pluck" é o termo em inglês para tocar com um plectro
+\, e tem sido usado como nome de módulos de Karplus Strong \, como
+no Csound e Supercollider. Mas \, como vimos aqui na implementação
+do algoritmo original do Karplus-Strong \, o "pluck" diz respeito apenas
+ao caso do valor de blend ser igual a 1!;
+#X text 862 169 O fato é que Síntese por Modelagem Física costuma se
+tratar de algoritmos e modelos matemáticos bem mais complexos \, onde
+a ideia é recriar com precisão o comportamento de um instrumento acústico
+real.;
+#X text 862 93 Costuma-se dizer que o Karplus Strong se trata de uma
+técnica simplificada de modelagem física. Mais especificamente do caso
+mais simples de Waveguide Synthesis \, que é um tipo de Síntese por
+Modelagem Física (Physical Modeling Synthesis).;
+#X obj 463 619 output~;
+#X text 672 373 filtro média;
+#X obj 618 150 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X floatatom 718 142 5 0 0 0 - - -, f 5;
+#X obj 644 150 metro 2000;
+#X obj 476 375 fexpr~ ($x1[0] + $x1[-1]) * 0.5;
+#X text 863 233 Não obstante \, a técnica de Karplus-Strong \, apesar
+de extremamente simples e de baixíssimo custo computacional \, pode
+ser usada para simular relativamente bem o som de uma corda percutida
+ou tocada por um plectro (palheta). Um exemplo seria o som de um cravo
+\, com um ataque ruidoso que logo adquire uma qualidade tonal com menos
+energia nos agudos.;
+#X text 865 427 Pois bem \, encarando o Karplus-Strong como um Waveguide
+Synthesis \, ele é compreendido como um algoritmo de modificação de
+"wavetable" (princípio por detrás da Waveguide Synthesis). No caso
+\, a modificação se trata apenas do filtro de média \, que filtra e
+modifica a forma de onda a cada período.;
+#N canvas 560 92 645 528 blend 0;
+#X obj 422 155 line~;
+#X floatatom 422 110 0 0 0 0 - - -;
+#X obj 425 83 hsl 128 15 0.0001 0.5 1 1 empty empty empty -2 -8 0 10
+-261234 -1 -1 12700 1;
+#X msg 423 133 \$1 10;
+#X text 467 82 blend;
+#X obj 125 267 output~;
+#X obj 183 43 noise~;
+#X obj 183 127 expr~ $v1 * 0.5 + 0.5;
+#X text 201 83 Valores aleatórios entre 1 e -1;
+#X text 199 162 valores entre 0 e 1;
+#X text 227 258 condicional: se valores alatoreos forem maior que o
+parâmetro de blend \, então é igual a 1 \, ou -1 no caso contrário.
+;
+#X obj 183 201 expr~ if($v1 < $v2 \, 1 \, -1);
+#X text 146 346 O parâmetro de blend é só uma distribuição de probavilidade
+entre valores de 1 ou -1 \, se ele é igual a 1 \, ha 100% de probabilidade
+do resultado ser também igual a 1 \, já se o blend for 0 \, o resultado
+é -1!;
+#X text 145 410 Com o blend a 0.5 \, temos uma probabilidade igual
+\, de 50% \, do valor ser 1 ou -1 \, e isso gera um ruído branco.;
+#X text 146 449 Escute o resultado sonoro deste patch \, com os valores
+de blend variando entre 0.5 e quase zero.;
+#X connect 0 0 11 1;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 11 0;
+#X connect 11 0 5 0;
+#X connect 11 0 5 1;
+#X restore 1015 654 pd blend;
+#X text 869 585 ============================================================
+;
+#X obj 644 173 expr random(30 \, 51);
+#X text 883 619 Entenda melhor o parâmetro "blend" no subpatch abaixo.
+;
+#X text 869 520 O ideal seria adaptar o patch em um subpatch com bloco
+de tamanho igual a 1 \, pois desse modo é possível o atraso de até
+uma amostra \, permitindo assim frequências mais agudas. Faremos isso
+nos próximos exemplos.;
+#X connect 0 0 11 0;
+#X connect 1 0 9 0;
+#X connect 2 0 6 1;
+#X connect 3 0 1 0;
+#X connect 3 0 5 0;
+#X connect 5 0 2 0;
+#X connect 6 0 50 0;
+#X connect 7 0 10 0;
+#X connect 7 0 45 0;
+#X connect 7 0 45 1;
+#X connect 8 0 7 1;
+#X connect 9 0 50 0;
+#X connect 11 0 6 0;
+#X connect 12 0 8 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 15 0 12 0;
+#X connect 24 0 3 0;
+#X connect 26 0 24 0;
+#X connect 27 0 49 0;
+#X connect 28 0 27 0;
+#X connect 29 0 36 1;
+#X connect 30 0 32 0;
+#X connect 31 0 30 0;
+#X connect 32 0 29 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 8 1;
+#X connect 47 0 55 0;
+#X connect 48 0 49 1;
+#X connect 49 0 55 0;
+#X connect 50 0 7 0;
+#X connect 55 0 26 0;

@@ -1,0 +1,96 @@
+>From 02fa9186a5e84fb7c1cf2a4ebdc29fcafb27e9b2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?IOhannes=20m=20zm=C3=B6lnig?= <zmoelnig@iem.at>
+Date: Mon, 22 Jul 2013 13:03:25 +0200
+Subject: [PATCH 1/2] adding --with-pd flag
+
+to allow specifiying where the Pd-headers *really* are
+(without having to guess)
+---
+ configure.ac | 61 +++++++++++++++++++++++++++++++++++++++++-------------------
+ 1 file changed, 42 insertions(+), 19 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 8434aff..02492ec 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -48,6 +48,11 @@ AC_ARG_ENABLE(png,
+ AC_ARG_ENABLE(debug,    
+ 	[  --enable-debug          enable debugging support (no)], , enable_debug=no)
+ 
++AC_ARG_WITH([pd],
++  [  --with-pd=</path/to/pd> where to look for pd-headers and and -libs])
++
++
++
+ 
+ # long double? -Wno-long-double
+ PDP_CFLAGS="-DPD -Wall -W -Wstrict-prototypes -Wno-unused -Wno-parentheses -Wno-switch -fPIC"
+@@ -84,28 +89,46 @@ dnl try to locate the pd header in case the setup is nonstandard
+ dnl check in  $prefix/pd/src then ../pd/src 
+ dnl if this fails we trust it is in the standard include path
+ PWD=`pwd`
+-if test -f $prefix/pd/src/m_pd.h;
+-then
+-	PD_CPPFLAGS="-I$prefix/pd/src"
+ 
+-elif test -f $prefix/src/pd/src/m_pd.h;
+-then
+-	PD_CPPFLAGS="-I$prefix/src/pd/src"
+-elif test -f $PWD/../pd/src/m_pd.h;
+-then
+-	PD_CPPFLAGS="-I$PWD/../pd/src"
+-elif test -f $PWD/../src/m_pd.h;
+-then
+-	PD_CPPFLAGS="-I$PWD/../src"
+-elif test -f /usr/local/include/pd/m_pd.h;
+-then
+-	PD_CPPFLAGS="-I/usr/local/include/pd"
+-elif test -f /usr/include/pd/m_pd.h;
+-then
+-	PD_CPPFLAGS="-I/usr/include/pd"
++if test "x$with_pd" != "x"; then
++ if test -d "${with_pd}"; then
++   PDPATH=${with_pd}
++ fi
++ if test -d "${PDPATH}/src"; then
++  AC_MSG_RESULT([adding ${PDPATH}/src to INCLUDES])
++  PD_CPPFLAGS="-I${PDPATH}/src"
++
++  AC_MSG_RESULT([adding ${PDPATH}/src to LDFLAGS])
++  LDFLAGS="-L${PDPATH}/src ${LDFLAGS}"
++ else
++  if test -d "${PDPATH}"; then
++   AC_MSG_RESULT([adding ${PDPATH} to INCLUDES])
++   PD_CPPFLAGS="-I${PDPATH}"
++  fi
++ fi
++else
++dnl try some defaults
++ if test -f $prefix/pd/src/m_pd.h;
++ then
++  PD_CPPFLAGS="-I$prefix/pd/src"
++ elif test -f $prefix/src/pd/src/m_pd.h;
++ then
++  PD_CPPFLAGS="-I$prefix/src/pd/src"
++ elif test -f $PWD/../pd/src/m_pd.h;
++ then
++  PD_CPPFLAGS="-I$PWD/../pd/src"
++ elif test -f $PWD/../src/m_pd.h;
++ then
++  PD_CPPFLAGS="-I$PWD/../src"
++ elif test -f /usr/local/include/pd/m_pd.h;
++ then
++  PD_CPPFLAGS="-I/usr/local/include/pd"
++ elif test -f /usr/include/pd/m_pd.h;
++ then
++  PD_CPPFLAGS="-I/usr/include/pd"
++ fi
+ fi
+ 
+-
+ CPPFLAGS="$CPPFLAGS $PD_CPPFLAGS"
+ AC_CHECK_HEADER(m_pd.h,,
+ 	echo "WARNING: m_pd.h not found. Is PD installed?"
+-- 
+1.8.3.2
+

@@ -1,0 +1,379 @@
+Index: masse2D.c
+===================================================================
+RCS file: /cvsroot/pure-data/externals/pmpd/src/masse2D.c,v
+retrieving revision 1.2
+diff -r1.2 masse2D.c
+5a6,9
+> static t_symbol *sym_pos2D,*sym_vel2D,*sym_force2D;
+> 
+> #define ATOM_GETFLOAT(ix,argc,argv) (argv[ix].a_type == A_FLOAT?argv[ix].a_w.w_float:0)
+> 
+10c14
+<   t_float masse2D, seuil, damp;
+---
+>   t_float invmasse2D, seuil, damp;
+28,41c32,34
+<     int nval;
+<     int range = 2000000;
+< 	float rnd;
+< 	unsigned int randval = x->x_state;
+< 	x->x_state = randval = randval * 472940017 + 832416023;
+<     nval = ((double)range) * ((double)randval)
+<     	* (1./4294967296.);
+<     if (nval >= range) nval = range-1;
+< 
+< 	rnd=nval;
+< 
+< 	rnd-=1000000;
+< 	rnd=rnd/1000000.;	//pour mettre entre -1 et 1;
+<     return (rnd);
+---
+>     unsigned int nstate = x->x_state*472940017 + 832416023;
+>     x->x_state = nstate;
+>     return (float)nstate*(1./4294967296.f/2)-1.f;
+81,82c74,75
+<   x->forceX = x->forceX+f1;
+<   x->forceY = x->forceY+f2;
+---
+>   x->forceX += f1;
+>   x->forceY += f2;
+142c135
+<   if (x->masse2D != 0)
+---
+>   if (x->invmasse2D != 0)
+144,145c137,138
+< 	  posX_new = x->forceX/x->masse2D + 2*x->posX_old_1 - x->posX_old_2;
+<   	  posY_new = x->forceY/x->masse2D + 2*x->posY_old_1 - x->posY_old_2;
+---
+> 	  posX_new = x->forceX*x->invmasse2D + 2*x->posX_old_1 - x->posX_old_2;
+>   	  posY_new = x->forceY*x->invmasse2D + 2*x->posY_old_1 - x->posY_old_2;
+182c175,176
+< 
+---
+> 
+>   // TG: should we ok to add the same noise to both components, no?
+197,199c191,193
+<   outlet_anything(x->vitesse_out, gensym("velocity2D"), 3, x->vitesse);
+<   outlet_anything(x->force_out, gensym("force2D"), 3, x->force);
+<   outlet_anything(x->position2D_new, gensym("position2D"), 2, x->pos_new);
+---
+>   outlet_anything(x->vitesse_out, sym_vel2D, 3, x->vitesse);
+>   outlet_anything(x->force_out, sym_force2D, 3, x->force);
+>   outlet_anything(x->position2D_new, sym_pos2D, 2, x->pos_new);
+234,236c228,230
+<   outlet_anything(x->vitesse_out, gensym("velocity2D"), 3, x->vitesse);
+<   outlet_anything(x->force_out, gensym("force2D"), 3, x->force); 
+<   outlet_anything(x->position2D_new, gensym("position2D"), 2, x->pos_new);
+---
+>   outlet_anything(x->vitesse_out, sym_vel2D, 3, x->vitesse);
+>   outlet_anything(x->force_out, sym_force2D, 3, x->force); 
+>   outlet_anything(x->position2D_new, sym_pos2D, 2, x->pos_new);
+261c255
+<   outlet_anything(x->position2D_new, gensym("position2D"), 2, x->pos_new);
+---
+>   outlet_anything(x->position2D_new, sym_pos2D, 2, x->pos_new);
+272c266
+<   outlet_anything(x->position2D_new, gensym("position2D"), 2, x->pos_new);
+---
+>   outlet_anything(x->position2D_new, sym_pos2D, 2, x->pos_new);
+283c277
+<   outlet_anything(x->position2D_new, gensym("position2D"), 2, x->pos_new);
+---
+>   outlet_anything(x->position2D_new, sym_pos2D, 2, x->pos_new);
+288c282
+<   outlet_anything(x->position2D_new, gensym("position2D"), 2, x->pos_new);
+---
+>   outlet_anything(x->position2D_new, sym_pos2D, 2, x->pos_new);
+294c288
+<   x->masse2D=mass;
+---
+>   x->invmasse2D=mass?1.f/mass:0;
+313c307
+< 		if (x->posX_old_1 > atom_getfloatarg(6, argc, argv))
+---
+> 		if (x->posX_old_1 > ATOM_GETFLOAT(6, argc, argv))
+315c309
+< 			if (x->posX_old_1 < atom_getfloatarg(7, argc, argv))
+---
+> 			if (x->posX_old_1 < ATOM_GETFLOAT(7, argc, argv))
+317c311
+< 				if (x->posY_old_1 > atom_getfloatarg(8, argc, argv))
+---
+> 				if (x->posY_old_1 > ATOM_GETFLOAT(8, argc, argv))
+319c313
+< 					if (x->posY_old_1 < atom_getfloatarg(9, argc, argv))
+---
+> 					if (x->posY_old_1 < ATOM_GETFLOAT(9, argc, argv))
+321,322c315,316
+< 						x->forceX += atom_getfloatarg(0, argc, argv);
+< 						x->forceY += atom_getfloatarg(1, argc, argv); // constant
+---
+> 						x->forceX += ATOM_GETFLOAT(0, argc, argv);
+> 						x->forceY += ATOM_GETFLOAT(1, argc, argv); // constant
+324,328c318,323
+< 						x->forceX += random_bang2D(x)*atom_getfloatarg(2, argc, argv);
+< 						x->forceY += random_bang2D(x)*atom_getfloatarg(3, argc, argv); // random
+< 	
+< 						x->forceX += atom_getfloatarg(4, argc, argv) * ((x->posX_old_2)-(x->posX_old_1));
+< 						x->forceY += atom_getfloatarg(4, argc, argv) * ((x->posY_old_2)-(x->posY_old_1)); // damping
+---
+> 						x->forceX += random_bang2D(x)*ATOM_GETFLOAT(2, argc, argv);
+> 						x->forceY += random_bang2D(x)*ATOM_GETFLOAT(3, argc, argv); // random
+> 	
+> 						float d2 = ATOM_GETFLOAT(4, argc, argv);
+> 						x->forceX += d2* ((x->posX_old_2)-(x->posX_old_1));
+> 						x->forceY += d2 * ((x->posY_old_2)-(x->posY_old_1)); // damping
+330,331c325,326
+< 						x->dX += atom_getfloatarg(10, argc, argv);
+< 						x->dY += atom_getfloatarg(11, argc, argv); // constant
+---
+> 						x->dX += ATOM_GETFLOAT(10, argc, argv);
+> 						x->dY += ATOM_GETFLOAT(11, argc, argv); // constant
+364,367c359,362
+< 		posx1 = atom_getfloatarg(0, argc, argv);
+< 		posy1 = atom_getfloatarg(1, argc, argv);
+< 		posx2 = atom_getfloatarg(2, argc, argv);
+< 		posy2 = atom_getfloatarg(3, argc, argv);
+---
+> 		posx1 = ATOM_GETFLOAT(0, argc, argv);
+> 		posy1 = ATOM_GETFLOAT(1, argc, argv);
+> 		posx2 = ATOM_GETFLOAT(2, argc, argv);
+> 		posy2 = ATOM_GETFLOAT(3, argc, argv);
+377,379c372,375
+< 		{
+< 			a1 = a1/tmp;
+< 			b1 = b1/tmp;
+---
+> 		{
+> 			const float invtmp = 1.f/tmp;
+> 			a1 *= invtmp;
+> 			b1 *= invtmp;
+391c387
+< 		if ( ( profondeur  < 0) & (profondeur > - atom_getfloatarg(4, argc, argv)) )
+---
+> 		if ( ( profondeur  < 0) & (profondeur > - ATOM_GETFLOAT(4, argc, argv)) )
+403c399
+< 						 tmp = atom_getfloatarg(5, argc, argv); // force ct normal
+---
+> 						 tmp = ATOM_GETFLOAT(5, argc, argv); // force ct normal
+407c403
+< 						 tmp = atom_getfloatarg(6, argc, argv); // force ct normal
+---
+> 						 tmp = ATOM_GETFLOAT(6, argc, argv); // force ct normal
+411c407
+< 						 tmp = atom_getfloatarg(7, argc, argv); // force K normal
+---
+> 						 tmp = ATOM_GETFLOAT(7, argc, argv); // force K normal
+416c412
+< 						 tmp = atom_getfloatarg(8, argc, argv); // damping2 normal
+---
+> 						 tmp = ATOM_GETFLOAT(8, argc, argv); // damping2 normal
+421c417
+< 						 tmp = atom_getfloatarg(9, argc, argv); // damping2 tangentiel
+---
+> 						 tmp = ATOM_GETFLOAT(9, argc, argv); // damping2 tangentiel
+426c422
+< 						 tmp = atom_getfloatarg(10, argc, argv); // displacement normal
+---
+> 						 tmp = ATOM_GETFLOAT(10, argc, argv); // displacement normal
+430c426
+< 						 tmp = atom_getfloatarg(11, argc, argv); // displacement tengentiel
+---
+> 						 tmp = ATOM_GETFLOAT(11, argc, argv); // displacement tengentiel
+464,467c460,463
+< 		posx1 = atom_getfloatarg(0, argc, argv);
+< 		posy1 = atom_getfloatarg(1, argc, argv);
+< 		posx2 = atom_getfloatarg(2, argc, argv);
+< 		posy2 = atom_getfloatarg(3, argc, argv);
+---
+> 		posx1 = ATOM_GETFLOAT(0, argc, argv);
+> 		posy1 = ATOM_GETFLOAT(1, argc, argv);
+> 		posx2 = ATOM_GETFLOAT(2, argc, argv);
+> 		posy2 = ATOM_GETFLOAT(3, argc, argv);
+475,476c471,472
+< 		a1 = a1/tmp;							// composante X de la normal
+< 		b1 = b1/tmp;							// composante Y de la normal
+---
+> 		a1 /= tmp;							// composante X de la normal
+> 		b1 /= tmp;							// composante Y de la normal
+480c476
+< 		if ( ( profondeur  < 0) & (profondeur >  - atom_getfloatarg(4, argc, argv)) )
+---
+> 		if ( ( profondeur  < 0) & (profondeur >  - ATOM_GETFLOAT(4, argc, argv)) )
+482c478
+< 				 tmp = atom_getfloatarg(5, argc, argv); // force ct normal
+---
+> 				 tmp = ATOM_GETFLOAT(5, argc, argv); // force ct normal
+486c482
+< 				 tmp = atom_getfloatarg(6, argc, argv); // force ct tengentiel
+---
+> 				 tmp = ATOM_GETFLOAT(6, argc, argv); // force ct tengentiel
+490c486
+< 				 tmp = atom_getfloatarg(7, argc, argv); // force K normal
+---
+> 				 tmp = ATOM_GETFLOAT(7, argc, argv); // force K normal
+495c491
+< 				 tmp = atom_getfloatarg(8, argc, argv); // damping2 normal
+---
+> 				 tmp = ATOM_GETFLOAT(8, argc, argv); // damping2 normal
+500c496
+< 				 tmp = atom_getfloatarg(9, argc, argv); // damping2 tangentiel
+---
+> 				 tmp = ATOM_GETFLOAT(9, argc, argv); // damping2 tangentiel
+505c501
+< 				 tmp = atom_getfloatarg(10, argc, argv); // d normal
+---
+> 				 tmp = ATOM_GETFLOAT(10, argc, argv); // d normal
+509c505
+< 				 tmp = atom_getfloatarg(11, argc, argv); // d tangentiel
+---
+> 				 tmp = ATOM_GETFLOAT(11, argc, argv); // d tangentiel
+551,552c547,548
+< 		posx1 = atom_getfloatarg(0, argc, argv);
+< 		posy1 = atom_getfloatarg(1, argc, argv);
+---
+> 		posx1 = ATOM_GETFLOAT(0, argc, argv);
+> 		posy1 = ATOM_GETFLOAT(1, argc, argv);
+558,562c554,559
+< 		Dmax= atom_getfloatarg(3, argc, argv);		// distance max de l'interaction
+< 		if ( (distance > atom_getfloatarg(2, argc, argv)) & (distance < Dmax) )
+< 		{
+< 			Nx = Nx/distance;							// composante X de la normal (normalisé)
+< 			Ny = Ny/distance;							// composante Y de la normal.
+---
+> 		Dmax= ATOM_GETFLOAT(3, argc, argv);		// distance max de l'interaction
+> 		if ( (distance > ATOM_GETFLOAT(2, argc, argv)) & (distance < Dmax) )
+> 		{
+> 			const float invdist = 1.f/distance;
+> 			Nx *= invdist;							// composante X de la normal (normalisé)
+> 			Ny *= invdist;							// composante Y de la normal.
+564c561
+< 			tmp = atom_getfloatarg(4, argc, argv); // force constante normal
+---
+> 			tmp = ATOM_GETFLOAT(4, argc, argv); // force constante normal
+570c567
+< 			tmp = atom_getfloatarg(5, argc, argv); // force constante tengentiel
+---
+> 			tmp = ATOM_GETFLOAT(5, argc, argv); // force constante tengentiel
+576c573
+< 			tmp = atom_getfloatarg(6, argc, argv); // force variable (K) normal
+---
+> 			tmp = ATOM_GETFLOAT(6, argc, argv); // force variable (K) normal
+583c580
+< 			tmp = atom_getfloatarg(7, argc, argv); // force variable (K) tengentiel
+---
+> 			tmp = ATOM_GETFLOAT(7, argc, argv); // force variable (K) tengentiel
+590c587
+< 		    tmp = atom_getfloatarg(8, argc, argv); // force normal proportionel a 1/r
+---
+> 		    tmp = ATOM_GETFLOAT(8, argc, argv); // force normal proportionel a 1/r
+593c590
+< 				tmp /= distance;
+---
+> 				tmp *= invdist;
+600c597
+< 		    tmp = atom_getfloatarg(9, argc, argv); // force tengentiel proportionel a 1/r
+---
+> 		    tmp = ATOM_GETFLOAT(9, argc, argv); // force tengentiel proportionel a 1/r
+603c600
+< 				tmp /= distance;
+---
+> 				tmp *= invdist;
+610c607
+< 			tmp = atom_getfloatarg(10, argc, argv); // damping2 normal
+---
+> 			tmp = ATOM_GETFLOAT(10, argc, argv); // damping2 normal
+617c614
+< 			tmp = atom_getfloatarg(11, argc, argv); // damping2 tangentiel
+---
+> 			tmp = ATOM_GETFLOAT(11, argc, argv); // damping2 tangentiel
+624c621
+< 			tmp = atom_getfloatarg(12, argc, argv); // d normal
+---
+> 			tmp = ATOM_GETFLOAT(12, argc, argv); // d normal
+627c624
+< 			tmp /= distance;
+---
+> 			tmp *= invdist;
+632c629
+< 			tmp = atom_getfloatarg(13, argc, argv); // d tangentiel
+---
+> 			tmp = ATOM_GETFLOAT(13, argc, argv); // d tangentiel
+635c632
+< 			tmp /= distance;
+---
+> 			tmp *= invdist;
+641c638
+< 			tmp = atom_getfloatarg(16, argc, argv); // damping de liaison
+---
+> 			tmp = ATOM_GETFLOAT(16, argc, argv); // damping de liaison
+644,645c641,642
+< 				deltaX_old = atom_getfloatarg(14, argc, argv) - x->posX_old_2;
+< 				deltaY_old = atom_getfloatarg(15, argc, argv) - x->posY_old_2;
+---
+> 				deltaX_old = ATOM_GETFLOAT(14, argc, argv) - x->posX_old_2;
+> 				deltaY_old = ATOM_GETFLOAT(15, argc, argv) - x->posY_old_2;
+656c653
+< 			tmp = atom_getfloatarg(17, argc, argv); // force normal proportionel a 1/r2
+---
+> 			tmp = ATOM_GETFLOAT(17, argc, argv); // force normal proportionel a 1/r2
+659c656
+< 			tmp /= (distance*distance);
+---
+> 			tmp *= (invdist*invdist);
+666c663
+< 			tmp = atom_getfloatarg(18, argc, argv); // deplacement constante normal
+---
+> 			tmp = ATOM_GETFLOAT(18, argc, argv); // deplacement constante normal
+670c667
+< 			tmp = atom_getfloatarg(19, argc, argv); // deplacement constante tengentiel
+---
+> 			tmp = ATOM_GETFLOAT(19, argc, argv); // deplacement constante tengentiel
+701,702c698,701
+<   if (argc >= 2)
+<     x->masse2D = atom_getfloatarg(1, argc, argv) ;
+---
+>   if (argc >= 2) {
+>     float m = ATOM_GETFLOAT(1, argc, argv) ;
+>     x->invmasse2D = m?1.f/m:0;
+>   }
+704c703
+<     x->masse2D = 1;
+---
+>     x->invmasse2D = 1;
+715c714
+< 		x->Xinit = atom_getfloatarg(2, argc, argv);
+---
+> 		x->Xinit = ATOM_GETFLOAT(2, argc, argv);
+724c723
+< 		x->Yinit = atom_getfloatarg(3, argc, argv);
+---
+> 		x->Yinit = ATOM_GETFLOAT(3, argc, argv);
+733c732
+< 		x->minX = atom_getfloatarg(4, argc, argv) ;
+---
+> 		x->minX = ATOM_GETFLOAT(4, argc, argv) ;
+738c737
+< 		x->maxX = atom_getfloatarg(5, argc, argv) ;
+---
+> 		x->maxX = ATOM_GETFLOAT(5, argc, argv) ;
+743c742
+< 		x->minY = atom_getfloatarg(6, argc, argv) ;
+---
+> 		x->minY = ATOM_GETFLOAT(6, argc, argv) ;
+748c747
+< 		x->maxY = atom_getfloatarg(7, argc, argv) ;
+---
+> 		x->maxY = ATOM_GETFLOAT(7, argc, argv) ;
+753c752
+< 		x->seuil = atom_getfloatarg(8, argc, argv) ;
+---
+> 		x->seuil = ATOM_GETFLOAT(8, argc, argv) ;
+758c757
+< 		x->damp = atom_getfloatarg(9, argc, argv) ;
+---
+> 		x->damp = ATOM_GETFLOAT(9, argc, argv) ;
+771a771,773
+>   sym_pos2D = gensym("position2D");
+>   sym_vel2D = gensym("velocity2D");
+>   sym_force2D = gensym("force2D");

@@ -1,0 +1,22 @@
+#N canvas 410 205 531 462 10;
+#X floatatom 101 94 5 0 0 0 - - -;
+#X floatatom 117 117 5 0 0 0 - - -;
+#X floatatom 101 190 5 0 0 0 - - -;
+#X text 76 66 greatest common divisor (gcd) using Euclid's algorithm
+;
+#X text 70 244 lowest common multiple (lcm) using the [gcd];
+#X text 74 272 lcm(a \, b) = a*b/gcd(a \, b);
+#X floatatom 123 317 5 0 0 0 - - -;
+#X floatatom 139 336 5 0 0 0 - - -;
+#X floatatom 123 380 5 0 0 0 - - -;
+#X text 140 150 both inlets are hot!;
+#X obj 101 151 gcd;
+#X text 165 360 both inlets are hot!;
+#X text 73 21 Euclid's algorithm;
+#X obj 123 358 lcm;
+#X connect 0 0 10 0;
+#X connect 1 0 10 1;
+#X connect 6 0 13 0;
+#X connect 7 0 13 1;
+#X connect 10 0 2 0;
+#X connect 13 0 8 0;

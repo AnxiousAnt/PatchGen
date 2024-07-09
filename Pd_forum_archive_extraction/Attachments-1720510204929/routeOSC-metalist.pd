@@ -1,0 +1,30 @@
+#N canvas 593 276 567 344 10;
+#X obj 75 130 routeOSC /test /west;
+#X msg 75 102 /test a b c;
+#X obj 306 176 route a;
+#X obj 306 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 352 222 print LIST?;
+#X msg 306 142 a b c;
+#X msg 359 140 list a b c;
+#X obj 361 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 75 172 route a;
+#X obj 75 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 121 218 print LIST?;
+#X obj 130 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 311 112 Check:;
+#X text 48 56 [routeOSC] outputs meta-messages.;
+#X text 122 243 lists go here;
+#X connect 0 0 8 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 2 1 7 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 8 1 11 0;

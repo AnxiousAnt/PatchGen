@@ -1,0 +1,13 @@
+#N canvas 194 148 450 300 10;
+#X floatatom 48 29 50 0 0 0 - #0-rt -, f 50;
+#N canvas 382 165 450 300 guts 0;
+#X obj 90 110 realtime;
+#X obj 134 83 loadbang;
+#X obj 91 144 s \$0-rt;
+#X obj 85 50 r \$0-trig;
+#X connect 0 0 2 0;
+#X connect 1 0 0 1;
+#X connect 3 0 0 1;
+#X restore 51 67 pd guts;
+#X obj 11 22 bng 25 250 50 0 \$0-trig empty empty 17 7 0 10 -262144
+-1 -1;

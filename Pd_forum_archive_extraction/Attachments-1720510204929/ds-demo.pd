@@ -1,0 +1,41 @@
+#N struct foo float x float y float x1 float y1 float rightx float
+distance symbol left symbol right;
+#N canvas 191 202 450 300 10;
+#N canvas 102 73 689 509 foo 0;
+#X obj 70 338 filledpolygon 900 0 1 x1(0:1000)(0:1000) y1(0:1000)(0:1000)
+rightx(0:1000)(100:1100) y1(0:1000)(0:1000) rightx(0:1000)(100:1100)
+y1(0:1000)(10:1010) x1(0:1000)(0:1000) y1(0:1000)(10:1010);
+#X obj 70 84 pointer;
+#X obj 146 163 change;
+#X obj 70 62 route change;
+#X obj 70 106 trigger pointer pointer;
+#X obj 146 196 +;
+#X obj 70 161 change;
+#X obj 190 273 set foo rightx;
+#X obj 70 273 set foo distance;
+#X obj 70 136 get foo rightx x1 distance;
+#X obj 70 196 -;
+#X obj 305 159 t p;
+#X obj 70 23 struct foo float x float y float x1 float y1 float rightx
+float distance;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 1 0;
+#X connect 4 0 9 0;
+#X connect 4 1 11 0;
+#X connect 5 0 7 0;
+#X connect 6 0 10 0;
+#X connect 9 0 6 0;
+#X connect 9 1 2 0;
+#X connect 9 1 10 1;
+#X connect 9 2 5 1;
+#X connect 10 0 8 0;
+#X connect 11 0 8 1;
+#X connect 11 0 7 1;
+#X connect 12 0 3 0;
+#X restore 241 119 pd foo;
+#X obj 265 200 s bar;
+#X obj 265 222 namecanvas bar;
+#X msg 265 178 scalar foo 0 0;
+#X scalar foo 0 0 105 54 121 16   \;;
+#X connect 3 0 1 0;

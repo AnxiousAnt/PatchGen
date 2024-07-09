@@ -1,0 +1,17 @@
+#N canvas 0 0 407 275 10;
+#X floatatom 318 61 5 0 0 0 - - -;
+#X floatatom 374 59 5 0 0 0 - - -;
+#X obj 234 64 dirac~;
+#X obj 183 27 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 273 206 tabwrite~ repimp;
+#X obj 60 103 table repimp 4410;
+#X obj 301 160 modale;
+#X text 301 44 frequency;
+#X text 380 43 Q;
+#X connect 0 0 6 1;
+#X connect 1 0 6 2;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 3 0 4 0;
+#X connect 6 0 4 0;

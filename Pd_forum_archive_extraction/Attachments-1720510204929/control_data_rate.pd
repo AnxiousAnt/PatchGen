@@ -1,0 +1,26 @@
+#N canvas 44 249 575 426 10;
+#X obj 116 61 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 116 125 random 1000;
+#X obj 116 153 / 1000;
+#X obj 116 183 sig~;
+#X obj 117 225 writesf~;
+#X msg 239 166 start;
+#X msg 241 192 stop;
+#X msg 243 135 open /home/chnry/Bureau/foo.wav;
+#X obj 116 82 metro 0.001;
+#X obj 233 236 t b b;
+#X obj 233 259 timer;
+#X floatatom 233 281 5 0 0 0 - - -, f 5;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 9 0;
+#X connect 3 0 4 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 1 0;
+#X connect 9 0 10 0;
+#X connect 9 1 10 1;
+#X connect 10 0 11 0;

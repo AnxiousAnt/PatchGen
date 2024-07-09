@@ -1,0 +1,27 @@
+#N canvas 767 150 450 351 10;
+#X obj 86 2 noise~;
+#X obj 135 192 tabwrite~ bbb;
+#X obj 145 159 table bbb;
+#X obj 135 137 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 75 258 dac~;
+#X obj 274 43 noise~;
+#X obj 274 64 *~ 3.14159;
+#X obj 275 98 sin~;
+#X obj 85 115 *~;
+#X text 151 135 write to table;
+#X obj 84 193 *~;
+#X obj 32 30 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -4034 -13381
+-1 2000 1;
+#X text 89 80 random radius on [-1 \, 1];
+#X text 278 79 random angle on [-pi \, +pi];
+#X connect 0 0 8 0;
+#X connect 3 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 1;
+#X connect 8 0 1 0;
+#X connect 8 0 10 0;
+#X connect 10 0 4 0;
+#X connect 10 0 4 1;
+#X connect 11 0 10 1;

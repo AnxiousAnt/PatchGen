@@ -1,0 +1,62 @@
+#N canvas 108 263 602 329 10;
+#X obj 103 112 tgl 14 0 \$0-learn \$0-learn_r empty 17 7 0 10 -262144
+-1 -262144 0 1;
+#X obj 122 103 cnv 15 5 5 empty empty val 0 5 0 7 -262144 -66577 0
+;
+#X obj 156 103 cnv 15 5 5 empty empty cc 0 5 0 7 -262144 -66577 0;
+#X obj 190 103 cnv 15 5 5 empty empty ch 0 5 0 7 -262144 -66577 0;
+#X obj 120 112 nbx 3 14 -1e+37 1e+37 0 0 \$0-val \$0-val_r empty 0
+-8 0 8 -262144 -1 -1 0 256;
+#X obj 154 112 nbx 3 14 -1e+37 1e+37 0 0 \$0-cc \$0-cc_r empty 0 -8
+0 8 -262144 -1 -1 0 256;
+#X obj 188 112 nbx 3 14 -1e+37 1e+37 0 0 \$0-ch \$0-ch_r empty 0 -8
+0 8 -262144 -1 -1 0 256;
+#X obj 285 26 ctlin;
+#X obj 103 45 loadbang;
+#X msg 103 65 0;
+#X obj 237 270 s \$0-val_r;
+#X obj 304 270 s \$0-cc_r;
+#X obj 365 270 s \$0-ch_r;
+#X obj 120 145 outlet;
+#X obj 368 102 spigot;
+#X obj 401 72 r \$0-learn;
+#X obj 368 122 unpack f f f;
+#X obj 270 55 pack f f f;
+#X obj 323 171 == 0;
+#X obj 358 171 == 0;
+#X obj 289 122 unpack f f f;
+#X obj 270 221 spigot;
+#X obj 270 201 spigot;
+#X obj 270 75 t a a a;
+#X obj 270 241 unpack f f f;
+#X obj 420 167 bang;
+#X msg 420 187 0;
+#X obj 420 207 s \$0-learn_r;
+#X text 495 297 patrick boivin;
+#X connect 4 0 13 0;
+#X connect 7 0 17 0;
+#X connect 7 1 17 1;
+#X connect 7 2 17 2;
+#X connect 8 0 9 0;
+#X connect 9 0 0 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 1;
+#X connect 16 0 25 0;
+#X connect 16 1 18 1;
+#X connect 16 2 19 1;
+#X connect 17 0 23 0;
+#X connect 18 0 22 1;
+#X connect 19 0 21 1;
+#X connect 20 1 18 0;
+#X connect 20 2 19 0;
+#X connect 21 0 24 0;
+#X connect 22 0 21 0;
+#X connect 23 0 22 0;
+#X connect 23 1 20 0;
+#X connect 23 2 14 0;
+#X connect 24 0 10 0;
+#X connect 24 1 11 0;
+#X connect 24 2 12 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X coords 0 -1 1 1 122 31 2 100 100;

@@ -1,0 +1,99 @@
+#N canvas 550 387 381 306 10;
+#N canvas 36 74 607 518 rangeslider 0;
+#X obj 439 11 inlet;
+#X obj 48 433 outlet;
+#X obj 81 99 vsl 30 100 8.13715 57.2117 0 1 \$0out \$0slide empty 0
+-9 0 10 -262144 -1 -1 4950 1;
+#X obj 82 81 nbx 2 14 32.6744 99 0 0 \$0top \$0topin empty 0 -8 0 10
+-262144 -1 -1 57.2117 256;
+#X obj 81 204 nbx 2 14 0 32.6744 0 0 \$0base \$0basein empty 0 -8 0
+10 -262144 -1 -1 8.13715 256;
+#X obj 100 99 cnv 10 10 101 empty \$0bkg empty 20 12 0 14 -191407 -66577
+0;
+#X obj 100 140 cnv 2 10 51 empty \$0range empty 20 12 0 14 -4032 -66577
+0;
+#X obj 100 165 cnv 2 10 2 empty \$0mark empty 20 12 0 14 -258113 -66577
+0;
+#X msg 358 353 pos 100 \$1;
+#X obj 371 409 s \$0range;
+#X msg 439 354 vis_size 10 \$1;
+#X msg 113 375 pos 100 \$1;
+#X obj 113 411 s \$0mark;
+#X obj 217 328 s \$0slide;
+#X obj 280 16 r \$0out;
+#X obj 113 334 * -1;
+#X obj 113 354 + 198;
+#X obj 358 189 r \$0top;
+#X obj 467 189 r \$0base;
+#X obj 358 169 s \$0topin;
+#X obj 467 169 s \$0basein;
+#X msg 368 144 range \$1 99;
+#X msg 477 144 range 0 \$1;
+#X obj 358 312 * -1;
+#X obj 358 332 + 198;
+#X obj 439 309 -;
+#X obj 467 209 t b f;
+#X obj 217 262 pack 0 0 0;
+#X msg 217 305 range \$2 \$1 \, \$3;
+#X obj 439 35 f 10;
+#X obj 358 100 +;
+#X obj 467 99 +;
+#X obj 467 70 * -1;
+#X text 374 128 constrain!;
+#X text 473 35 set zoom range;
+#X text 221 287 constrain & update;
+#X text 111 430 the red tick;
+#X text 370 427 the blue range mark;
+#X text 216 346 the v-slider;
+#X text 370 370 top;
+#X text 450 370 base;
+#X text 248 473 Simon Wise 2013;
+#X obj 439 329 + 2;
+#X connect 0 0 29 0;
+#X connect 8 0 9 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 14 0 15 0;
+#X connect 14 0 1 0;
+#X connect 14 0 21 0;
+#X connect 14 0 22 0;
+#X connect 14 0 27 2;
+#X connect 14 0 30 1;
+#X connect 14 0 31 1;
+#X connect 15 0 16 0;
+#X connect 16 0 11 0;
+#X connect 17 0 23 0;
+#X connect 17 0 25 0;
+#X connect 17 0 27 0;
+#X connect 18 0 26 0;
+#X connect 21 0 19 0;
+#X connect 22 0 20 0;
+#X connect 23 0 24 0;
+#X connect 24 0 8 0;
+#X connect 25 0 42 0;
+#X connect 26 0 19 0;
+#X connect 26 1 25 1;
+#X connect 26 1 27 1;
+#X connect 27 0 28 0;
+#X connect 28 0 13 0;
+#X connect 29 0 32 0;
+#X connect 29 0 30 0;
+#X connect 30 0 19 0;
+#X connect 31 0 20 0;
+#X connect 32 0 31 0;
+#X connect 42 0 10 0;
+#X coords 0 -1 1 1 34 141 2 79 79;
+#X restore 118 67 pd rangeslider;
+#X text 158 68 <= adjust top limit;
+#X text 161 191 <= adjust base limit;
+#X obj 36 21 vsl 10 60 1 100 1 1 empty empty Zoom 20 30 0 20 -4032
+-1 -4160 4100 1;
+#X obj 33 132 bng 15 250 50 0 empty empty C 3 7 0 15 -4032 -45076 -258113
+;
+#X text 52 128 centre =>;
+#X obj 118 226 nbx 5 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 20
+-262144 -1 -1 32.6744 256;
+#X text 55 17 <= also click to centre range on slider;
+#X connect 0 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;

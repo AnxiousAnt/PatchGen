@@ -1,0 +1,62 @@
+BEGIN:VCALENDAR
+PRODID:-//Mozilla.org/NONSGML Mozilla Calendar V1.1//EN
+VERSION:2.0
+METHOD:REQUEST
+BEGIN:VTIMEZONE
+TZID:Europe/Brussels
+X-LIC-LOCATION:Europe/Brussels
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=3
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=10
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+CREATED:20090110T013122Z
+LAST-MODIFIED:20090110T013210Z
+DTSTAMP:20090110T013210Z
+UID:1666bd29-a07d-4b37-8355-46cc29f90876
+SUMMARY:[PD] [PD-announce] Fwd : Pd Patching Circle Brussels #1 - 
+ 25/1/2009
+ORGANIZER;RSVP=FALSE;CN=mik;PARTSTAT=ACCEPTED;ROLE=REQ-PARTICIPANT:mailto:
+ mprims@skynet.be
+ATTENDEE;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;ROLE=REQ-PARTICIPANT:mailto:
+ pd-list@iem.at
+DTSTART;TZID=Europe/Brussels:20090125T140000
+DTEND;TZID=Europe/Brussels:20090125T180000
+DESCRIPTION:\n*[...] extract from newsletter :\n\nEN:\n25/1 Launch Pure 
+ Data Patching Circle Brussels at OKNO\n*\n*\n*\nOKNO kicks of the 
+ Brussels Pure Data Patching Circle which will take\nplace every last 
+ sunday of the month. We invited Guillaume Rabusseau for\nguidance in an 
+ exploring of Pure Data a la carte. Everybody can drop in\,\nregardless of 
+ their skill. \nWe start at 14h\, bring your laptop!\n\nInfo on http:
+ //okno.be  <http://okno.be/> http://puredata.info/\n<http:
+ //puredata.info/>\n\nNL:\n*\n*25/1 Launch Pure Data Patching Circle 
+ Brussels in OKNO\n*\n*\n*\nOKNO lanceert de Pure Data Patching Circle 
+ Brussels. Elke laatste zondag\nvan de maand begeleiden Guillaume 
+ Rabusseau en het OKNO-team de\npatch-sessies. Iedereen kan deelnemen\, 
+ ongeacht het niveau. De topics\nzijn afgestemd op de interesses van de 
+ deelnemers.\nhttp://okno.be  <http://okno.be/> http:
+ //puredata.info/\n*\nFR:\n**25/1 Lancement des \"Pure Data Patching 
+ Circles Bruxelles\" à OKNO\n*\nOKNO démarre des \"Pure Data Patching 
+ Circles\" qui auront lieu tout les\nderniers dimanche du mois.\nNous 
+ avons invité Guillaume Rabusseau pour nous guider dans une\nexploration 
+ de Pure-Data à la carte.\nTout le monde est bienvenu\, quelque soit les 
+ compétences. \nOn commence à 14h\, emmenez votre Laptop !\nInfos sur 
+ http://okno.be <http://okno.be/>. - http:
+ //puredata.info/*\n\n_______________________________________________\nPd-l
+ ist@iem.at mailing list\nUNSUBSCRIBE and account-management -> http:
+ //lists.puredata.info/listinfo/pd-list\n\n
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR
+

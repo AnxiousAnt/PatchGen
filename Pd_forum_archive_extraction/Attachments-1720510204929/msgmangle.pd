@@ -1,0 +1,50 @@
+#N canvas 414 295 704 568 10;
+#X obj 15 13 zexy;
+#X obj 219 527 print;
+#X msg 246 391 print;
+#X msg 347 340 rewind;
+#X obj 266 458 msgfile;
+#X obj 189 494 t b a;
+#X obj 310 488 print done;
+#X obj 434 340 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 232 261 print;
+#X msg 242 132 print;
+#X msg 328 75 rewind;
+#X obj 202 228 t b a;
+#X obj 330 222 print done;
+#X obj 407 76 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 279 192 textfile;
+#X msg 135 338 clear \, read test4.txt;
+#X msg 110 76 clear \, read test4.txt;
+#X msg 150 360 clear \, read josquin.seq;
+#X msg 130 101 clear \, read josquin.seq;
+#X text 99 22 [textfile] succeeds with the file test4.txt \, but blows
+the stack on josquin.seq;
+#X text 103 290 [msgfile] blows the stack on both and just outputs
+the first record over and over.;
+#X text 113 57 1.);
+#X text 328 54 2.);
+#X text 405 52 3.);
+#X text 136 322 1.);
+#X text 351 319 2.);
+#X text 428 317 3.);
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 1 6 0;
+#X connect 5 0 4 0;
+#X connect 5 1 1 0;
+#X connect 7 0 4 0;
+#X connect 9 0 14 0;
+#X connect 10 0 14 0;
+#X connect 11 0 14 0;
+#X connect 11 1 8 0;
+#X connect 13 0 14 0;
+#X connect 14 0 11 0;
+#X connect 14 1 12 0;
+#X connect 15 0 4 0;
+#X connect 16 0 14 0;
+#X connect 17 0 4 0;
+#X connect 18 0 14 0;

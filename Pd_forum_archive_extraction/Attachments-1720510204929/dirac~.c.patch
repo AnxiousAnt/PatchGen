@@ -1,0 +1,95 @@
+--- dirac~.c.~1.2.~	2005-06-24 19:05:33.000000000 +0000
++++ dirac~.c	2005-09-12 00:42:00.950436672 +0000
+@@ -40,8 +40,8 @@
+ typedef struct _dirac
+ {
+     t_object x_obj;
+-	t_float position;
+-	t_float do_it;
++	t_int position;
++	t_int do_it;
+ } t_dirac;
+ 
+ static void dirac_bang(t_dirac *x)
+@@ -51,7 +51,7 @@
+ 
+ static void dirac_float(t_dirac *x, t_float where)
+ {
+-	x->do_it = x->position = where;
++	x->do_it = x->position = (t_int)where;
+ }
+ 
+ static t_int *dirac_perform(t_int *w)
+@@ -59,21 +59,50 @@
+ 	t_dirac *x = (t_dirac *)(w[1]);
+ 	t_float *out = (t_float *)(w[2]);
+ 	int n = (int)(w[3]);
++	
++	t_int do_it = x->do_it;
+ 
+-	int do_it = x->do_it;
++	zero_perform(w+1);
+ 
+-	while (n--)
+-		{
+-		*out++ = (!do_it--);
+-		}
+-	x->do_it = do_it;
++	if (do_it >= n)
++		x->do_it -= n;
++	else if(do_it >= 0)
++	{
++		out[do_it] = 1.f;
++		x->do_it = -1;
++	}
++
++	return (w+4);
++}
++
++
++static t_int *dirac_perf8(t_int *w)
++{
++	t_dirac *x = (t_dirac *)(w[1]);
++	t_float *out = (t_float *)(w[2]);
++	int n = (int)(w[3]);
++	
++	t_int do_it = x->do_it;
++
++	zero_perf8(w+1);
++
++	if (do_it >= n)
++		x->do_it -= n;
++	else if(do_it >= 0)
++	{
++		out[do_it] = 1.f;
++		x->do_it = -1;
++	}
+ 
+ 	return (w+4);
+ }
+ 
+ static void dirac_dsp(t_dirac *x, t_signal **sp)
+ {
+-	dsp_add(dirac_perform, 3, x, sp[0]->s_vec, sp[0]->s_n);
++	if (sp[0]->s_n & 7)
++		dsp_add(dirac_perform, 3, x, sp[0]->s_vec, sp[0]->s_n);
++	else
++		dsp_add(dirac_perf8, 3, x, sp[0]->s_vec, sp[0]->s_n);
+ }
+ 
+ static void dirac_helper(void)
+@@ -94,8 +123,12 @@
+ 
+ 	outlet_new(&x->x_obj, gensym("signal"));
+ 
+-	x->do_it = 0;
+-	x->position = where;
++	x->do_it = where;
++
++	if (where > 0)
++		x->position = where;
++	else
++		x->position = -where;
+ 	return (x);
+ }
+  

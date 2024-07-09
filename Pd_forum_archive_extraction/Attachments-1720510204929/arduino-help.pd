@@ -1,0 +1,358 @@
+#N canvas 202 94 654 546 10;
+#X msg 156 146 open \$1;
+#N canvas 162 133 534 384 serin 0;
+#X obj 120 61 cnv 15 15 15 empty \$0-number-canvas 3 4 8 0 14 -233017
+-1 0;
+#X obj 200 225 s \$0-number-canvas;
+#X obj 60 61 hradio 15 1 0 4 empty empty empty 0 -6 0 8 -225271 -1
+-1 0;
+#X obj 59 147 outlet;
+#X obj 60 13 inlet;
+#X msg 200 202 label \$1;
+#X obj 200 180 makefilename %d;
+#X obj 59 108 int;
+#X connect 2 0 7 0;
+#X connect 4 0 2 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 3 0;
+#X connect 7 0 6 0;
+#X coords 0 -1 1 1 76 17 1 60 60;
+#X restore 156 123 pd serin;
+#X text 153 105 serial port #;
+#X text 424 509 released under the GNU GPL;
+#X text 7 507 (C) Copyright 2006 Hans-Christoph Steiner <hans@at.or.at>
+;
+#X msg 216 146 close;
+#X obj 63 478 print --------------------;
+#X obj 408 289 tgl 15 0 empty empty changes 0 -6 0 8 -262144 -1 -1
+0 1;
+#X obj 278 29 hradio 15 1 0 14 empty empty empty 0 -6 0 8 -262131 -1
+-1 0;
+#X obj 255 30 tgl 15 0 empty empty empty 0 -6 0 8 -262131 -1 -1 0 1
+;
+#X obj 355 292 tgl 15 0 empty empty all 0 -6 0 8 -262144 -1 -1 0 1
+;
+#N canvas 100 289 626 345 decode 0;
+#X obj 241 26 inlet;
+#X obj 46 189 & 1;
+#X obj 72 189 & 2;
+#X obj 98 189 & 4;
+#X obj 46 213 tgl 15 0 empty empty 0 4 25 1 12 -262144 -1 -1 0 1;
+#X obj 72 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 2
+;
+#X obj 98 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 4
+;
+#X obj 124 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+8;
+#X obj 150 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+16;
+#X obj 182 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+32;
+#X obj 215 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+64;
+#X obj 248 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+128;
+#X obj 287 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+256;
+#X obj 326 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+512;
+#X obj 365 213 tgl 15 0 empty empty 10 -1 25 1 12 -262144 -1 -1 0 1024
+;
+#X obj 409 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+2048;
+#X obj 453 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+4096;
+#X obj 499 213 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+4;
+#X obj 124 189 & 8;
+#X obj 150 189 & 16;
+#X obj 182 189 & 32;
+#X obj 215 189 & 64;
+#X obj 248 189 & 128;
+#X obj 287 189 & 256;
+#X obj 326 189 & 512;
+#X obj 365 189 & 1024;
+#X obj 409 189 & 2048;
+#X obj 453 189 & 4096;
+#X obj 499 189 & 8192;
+#X obj 261 273 outlet;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 0 0 18 0;
+#X connect 0 0 19 0;
+#X connect 0 0 20 0;
+#X connect 0 0 21 0;
+#X connect 0 0 22 0;
+#X connect 0 0 23 0;
+#X connect 0 0 24 0;
+#X connect 0 0 25 0;
+#X connect 0 0 26 0;
+#X connect 0 0 27 0;
+#X connect 0 0 28 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 18 0 7 0;
+#X connect 19 0 8 0;
+#X connect 20 0 9 0;
+#X connect 21 0 10 0;
+#X connect 22 0 11 0;
+#X connect 23 0 12 0;
+#X connect 24 0 13 0;
+#X connect 25 0 14 0;
+#X connect 26 0 15 0;
+#X connect 27 0 16 0;
+#X connect 28 0 17 0;
+#X restore 473 488 pd decode buttons;
+#X obj 57 23 hsl 128 15 0 1 0 0 empty empty PWM_control_(0-1) -2 -6
+1 10 -225271 -1 -1 0 0;
+#X msg 64 453 bang;
+#X obj 255 274 arduino 3;
+#X text 387 15 7;
+#X text 282 15 0;
+#X text 428 15 10;
+#X msg 54 107 \$2 \$1;
+#X obj 54 85 pack float symbol;
+#X msg 165 44 PWM2;
+#X msg 129 44 PWM1;
+#X msg 94 44 PWM0;
+#X obj 67 215 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 16383
+;
+#X obj 67 178 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 21 336 spigot 0;
+#X obj 64 307 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 21 358 route analog0 analog1 analog2 analog3 analog4 analog5
+;
+#X obj 414 408 route digital;
+#X obj 487 428 print GARBAGE;
+#X floatatom 430 488 6 0 0 0 - - -;
+#X text 393 56 how many analogIns to enable:;
+#X obj 405 117 tgl 15 1 empty empty empty 0 -6 0 8 -257472 -1 -1 1
+1;
+#X text 428 116 enable/disable digitalIns;
+#X msg 405 135 digitalIns \$1;
+#X msg 394 90 analogIns \$1;
+#N canvas 162 133 546 396 serin 0;
+#X obj 165 61 cnv 15 15 15 empty \$0-analog-number-canvas 6 4 8 0 14
+-233017 -1 0;
+#X obj 60 61 hradio 15 1 1 7 empty empty empty 0 -6 0 8 -225280 -1
+-1 6;
+#X obj 59 147 outlet;
+#X obj 60 13 inlet;
+#X msg 200 202 label \$1;
+#X obj 200 180 makefilename %d;
+#X obj 59 108 int;
+#X obj 200 225 send \$0-analog-number-canvas;
+#X connect 1 0 6 0;
+#X connect 3 0 1 0;
+#X connect 4 0 7 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 0;
+#X connect 6 0 5 0;
+#X coords 0 -1 1 1 121 17 1 60 60;
+#X restore 394 70 pd serin;
+#X text 473 15 13;
+#X text 230 1 turn on output mode for each pin (off = input);
+#X obj 367 462 spigot;
+#X obj 400 444 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 367 483 print;
+#X msg 381 225 231 \, 20 \, 226 \, 213;
+#X text 5 229 this will flash any pin set to output;
+#N canvas 0 22 261 248 speed 0;
+#X obj 21 41 inlet;
+#X obj 21 62 maxlib/speedlim 100;
+#X obj 21 84 outlet;
+#X obj 82 125 inlet;
+#X obj 82 146 maxlib/speedlim 100;
+#X obj 82 168 outlet;
+#X obj 92 135 inlet;
+#X obj 92 156 maxlib/speedlim 100;
+#X obj 92 178 outlet;
+#X obj 102 145 inlet;
+#X obj 102 166 maxlib/speedlim 100;
+#X obj 102 188 outlet;
+#X obj 112 155 inlet;
+#X obj 112 176 maxlib/speedlim 100;
+#X obj 112 198 outlet;
+#X obj 122 165 inlet;
+#X obj 122 186 maxlib/speedlim 100;
+#X obj 122 208 outlet;
+#X obj 132 175 inlet;
+#X obj 132 196 maxlib/speedlim 100;
+#X obj 132 218 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X restore 21 380 pd speed limiting for displaying values with pegging
+the CPU;
+#N canvas 77 268 454 304 debugging 0;
+#X obj 136 31 inlet;
+#X obj 324 29 inlet;
+#X obj 27 31 inlet;
+#X obj 162 81 spigot;
+#X obj 159 106 select 255;
+#X obj 184 246 print;
+#X obj 184 227 list;
+#X obj 96 80 spigot;
+#X obj 210 201 bang;
+#X obj 96 101 print;
+#X obj 181 138 mapping/tolist;
+#X obj 208 181 change;
+#X obj 208 159 list-abs/list-len;
+#X connect 0 0 7 1;
+#X connect 1 0 3 1;
+#X connect 2 0 7 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 10 1;
+#X connect 4 1 10 0;
+#X connect 6 0 5 0;
+#X connect 7 0 9 0;
+#X connect 8 0 6 0;
+#X connect 10 0 6 1;
+#X connect 10 0 12 0;
+#X connect 11 0 8 0;
+#X connect 12 0 11 0;
+#X restore 304 311 pd debugging stuff;
+#X text 334 209 use raw data to save settings more compactly;
+#X floatatom 21 405 5 0 0 0 - - -;
+#X floatatom 80 405 5 0 0 0 - - -;
+#X floatatom 139 405 5 0 0 0 - - -;
+#X floatatom 198 405 5 0 0 0 - - -;
+#X floatatom 257 405 5 0 0 0 - - -;
+#X floatatom 316 405 5 0 0 0 - - -;
+#X obj 151 66 symbol;
+#X obj 66 196 metro 100;
+#X obj 255 50 pack 0 0;
+#X text 342 15 4;
+#X text 311 15 2;
+#X text 356 15 5;
+#X text 371 15 6;
+#X text 327 15 3;
+#X msg 255 71 outputMode \$2 \$1;
+#N canvas 485 91 546 327 sending 0;
+#X obj 142 285 outlet;
+#X obj 129 84 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 146 84 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 163 84 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 180 84 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 197 84 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 214 84 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 231 84 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 168 125 bytemask;
+#X text 60 11 The 8th bit is not used in the bitmask \, there are 7
+bits of digital output values per byte.;
+#X obj 300 85 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 317 85 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 334 85 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 351 85 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 368 85 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 385 85 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 402 85 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 339 126 bytemask;
+#X obj 142 205 pack float float;
+#X msg 142 231 255 \, \$1 \, \$2;
+#X text 143 65 pins 0-6;
+#X text 330 66 pins 7-13;
+#X obj 212 164 trigger bang float;
+#X connect 1 0 8 0;
+#X connect 2 0 8 1;
+#X connect 3 0 8 2;
+#X connect 4 0 8 3;
+#X connect 5 0 8 4;
+#X connect 6 0 8 5;
+#X connect 7 0 8 6;
+#X connect 8 0 18 0;
+#X connect 10 0 17 0;
+#X connect 11 0 17 1;
+#X connect 12 0 17 2;
+#X connect 13 0 17 3;
+#X connect 14 0 17 4;
+#X connect 15 0 17 5;
+#X connect 16 0 17 6;
+#X connect 17 0 22 0;
+#X connect 18 0 19 0;
+#X connect 19 0 0 0;
+#X connect 22 0 18 0;
+#X connect 22 1 18 1;
+#X restore 10 258 pd sending digital outs;
+#X connect 0 0 14 0;
+#X connect 1 0 0 0;
+#X connect 5 0 14 0;
+#X connect 7 0 45 2;
+#X connect 8 0 55 1;
+#X connect 9 0 55 0;
+#X connect 10 0 45 1;
+#X connect 12 0 19 0;
+#X connect 13 0 6 0;
+#X connect 14 0 25 0;
+#X connect 14 1 45 0;
+#X connect 18 0 14 0;
+#X connect 19 0 18 0;
+#X connect 20 0 53 0;
+#X connect 21 0 53 0;
+#X connect 22 0 53 0;
+#X connect 23 0 14 0;
+#X connect 24 0 54 0;
+#X connect 25 0 27 0;
+#X connect 26 0 25 1;
+#X connect 27 0 44 0;
+#X connect 27 1 44 1;
+#X connect 27 2 44 2;
+#X connect 27 3 44 3;
+#X connect 27 4 44 4;
+#X connect 27 5 44 5;
+#X connect 27 6 44 6;
+#X connect 28 0 11 0;
+#X connect 28 0 30 0;
+#X connect 28 0 39 0;
+#X connect 28 1 29 0;
+#X connect 32 0 34 0;
+#X connect 34 0 14 0;
+#X connect 35 0 14 0;
+#X connect 36 0 35 0;
+#X connect 39 0 41 0;
+#X connect 40 0 39 1;
+#X connect 42 0 14 1;
+#X connect 44 0 47 0;
+#X connect 44 1 48 0;
+#X connect 44 2 49 0;
+#X connect 44 3 50 0;
+#X connect 44 4 51 0;
+#X connect 44 5 52 0;
+#X connect 44 6 28 0;
+#X connect 53 0 19 1;
+#X connect 54 0 23 0;
+#X connect 55 0 61 0;
+#X connect 61 0 14 0;
+#X connect 62 0 14 0;

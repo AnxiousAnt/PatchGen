@@ -1,0 +1,2 @@
+cputime~.pd_linux: cputime~.c
+	gcc -Wall -Wextra -shared -fPIC -O3 -o cputime~.pd_linux cputime~.c

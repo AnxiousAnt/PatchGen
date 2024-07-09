@@ -1,0 +1,15 @@
+--- pd-0.38-4.org/src/x_connective.c	2004-10-21 01:36:04.000000000 +0200
++++ pd-0.38-4/src/x_connective.c	2005-06-03 12:33:59.833254880 +0200
+@@ -505,7 +505,11 @@
+     if (x->x_type == A_FLOAT)
+     {
+         float f;
+-        if (!argc) return;
++        if (!argc) {
++	  /* no args: treat as "bang" and thus reject */
++	  outlet_bang(x->x_rejectout);
++	  return;
++	}
+         f = atom_getfloat(argv);
+         for (nelement = x->x_nelement, e = x->x_vec; nelement--; e++)
+             if (e->e_w.w_float == f)

@@ -1,0 +1,60 @@
+s_midi_pm.c:22:22: error: portmidi.h: No such file or directory
+s_midi_pm.c:23:22: error: porttime.h: No such file or directory
+s_midi_pm.c:24:24: error: pminternal.h: No such file or directory
+s_midi_pm.c:26: error: parse error before '*' token
+s_midi_pm.c:26: warning: type defaults to 'int' in declaration of 'mac_midiindevlist'
+s_midi_pm.c:26: warning: data definition has no type or storage class
+s_midi_pm.c:27: error: parse error before '*' token
+s_midi_pm.c:27: warning: type defaults to 'int' in declaration of 'mac_midioutdevlist'
+s_midi_pm.c:27: warning: data definition has no type or storage class
+s_midi_pm.c: In function 'sys_do_open_midi':
+s_midi_pm.c:36: error: 'PmError' undeclared (first use in this function)
+s_midi_pm.c:36: error: (Each undeclared identifier is reported only once
+s_midi_pm.c:36: error: for each function it appears in.)
+s_midi_pm.c:36: error: parse error before 'err'
+s_midi_pm.c:38: warning: implicit declaration of function 'Pt_Start'
+s_midi_pm.c:43: warning: implicit declaration of function 'Pm_CountDevices'
+s_midi_pm.c:45: error: nested functions are disabled, use -fnested-functions to re-enable
+s_midi_pm.c:45: error: syntax error before '*' token
+s_midi_pm.c:46: error: 'info' undeclared (first use in this function)
+s_midi_pm.c:50: error: 'err' undeclared (first use in this function)
+s_midi_pm.c:50: warning: implicit declaration of function 'Pm_OpenInput'
+s_midi_pm.c:54: warning: implicit declaration of function 'Pm_GetErrorText'
+s_midi_pm.c:74: error: nested functions are disabled, use -fnested-functions to re-enable
+s_midi_pm.c:74: error: syntax error before '*' token
+s_midi_pm.c:79: warning: implicit declaration of function 'Pm_OpenOutput'
+s_midi_pm.c: In function 'sys_close_midi':
+s_midi_pm.c:103: warning: implicit declaration of function 'Pm_Close'
+s_midi_pm.c: In function 'sys_putmidimess':
+s_midi_pm.c:112: error: 'PmEvent' undeclared (first use in this function)
+s_midi_pm.c:112: error: parse error before 'buffer'
+s_midi_pm.c:116: error: 'buffer' undeclared (first use in this function)
+s_midi_pm.c:116: warning: implicit declaration of function 'Pm_Message'
+s_midi_pm.c:119: warning: implicit declaration of function 'Pm_Write'
+s_midi_pm.c: At top level:
+s_midi_pm.c:123: error: parse error before '*' token
+s_midi_pm.c:124: warning: function declaration isn't a prototype
+s_midi_pm.c: In function 'writemidi4':
+s_midi_pm.c:125: error: 'PmEvent' undeclared (first use in this function)
+s_midi_pm.c:125: error: parse error before 'buffer'
+s_midi_pm.c:126: error: 'buffer' undeclared (first use in this function)
+s_midi_pm.c:127: error: 'a' undeclared (first use in this function)
+s_midi_pm.c:127: error: 'b' undeclared (first use in this function)
+s_midi_pm.c:128: error: 'c' undeclared (first use in this function)
+s_midi_pm.c:128: error: 'd' undeclared (first use in this function)
+s_midi_pm.c:129: error: 'stream' undeclared (first use in this function)
+s_midi_pm.c: In function 'sys_poll_midi':
+s_midi_pm.c:215: error: 'PmEvent' undeclared (first use in this function)
+s_midi_pm.c:215: error: parse error before 'buffer'
+s_midi_pm.c:218: warning: implicit declaration of function 'Pm_Read'
+s_midi_pm.c:218: error: 'buffer' undeclared (first use in this function)
+s_midi_pm.c:221: warning: implicit declaration of function 'Pm_MessageStatus'
+s_midi_pm.c:222: warning: implicit declaration of function 'Pm_MessageData1'
+s_midi_pm.c:223: warning: implicit declaration of function 'Pm_MessageData2'
+s_midi_pm.c: In function 'midi_getdevs':
+s_midi_pm.c:255: error: nested functions are disabled, use -fnested-functions to re-enable
+s_midi_pm.c:255: error: syntax error before '*' token
+s_midi_pm.c:258: error: 'info' undeclared (first use in this function)
+make[2]: *** [s_midi_pm.o] Error 1
+make[1]: *** [pd_install] Error 2
+make: *** [darwin_app_core] Error 2

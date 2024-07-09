@@ -1,0 +1,17 @@
+#N canvas 603 366 563 272 10;
+#X obj 20 53 ctlin \$1 \$2;
+#X obj 19 77 * 128;
+#X obj 68 150 +;
+#X obj 131 94 ctlin \$3 \$2;
+#X msg 73 117 bang;
+#X obj 68 174 outlet;
+#X text 115 145 add them and you get 14bits MIDI;
+#X text 114 51 here you have the MSB (the first 7 bits of the MIDI
+message);
+#X text 134 113 and here the LSB (the last 7 bits);
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 1;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;

@@ -1,0 +1,23 @@
+#N canvas 938 42 505 471 10;
+#X obj 181 188 triangle~;
+#X obj 102 41 train~ 1000 0.3;
+#X obj 102 69 *~ 50;
+#X obj 102 93 +~ 50;
+#X msg 321 119 lo 0;
+#X obj 321 99 loadbang;
+#X obj 159 227 output~;
+#X obj 102 130 phasor~ 100;
+#X obj 232 110 phasor~ 1;
+#X obj 232 159 triangle~ 0.5;
+#X text 63 316 SuperCollider Code \; VarSaw.ar(LFPulse.kr(1 \, 0 \,
+0.3 \, 50 \, 50) \, 0 \, LFTri.ar(1 \, 0 \, 0.5 \, 0.5))!2.play;
+#X connect 0 0 6 0;
+#X connect 0 0 6 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 7 0;
+#X connect 4 0 9 0;
+#X connect 5 0 4 0;
+#X connect 7 0 0 0;
+#X connect 8 0 9 0;
+#X connect 9 0 0 1;

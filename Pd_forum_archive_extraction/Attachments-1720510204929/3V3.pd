@@ -1,0 +1,671 @@
+#N canvas 0 26 1001 639 10;
+#X obj 2 35 cnv 15 1000 21 empty empty empty 20 12 0 14 -261121 -66577
+0;
+#X obj 341 300 cnv 15 319 20 empty empty MIXER 20 12 1 14 -128992 -261121
+0;
+#X obj 449 302 hsl 128 15 0 1 0 0 mix empty empty -2 -6 0 8 -261121
+-1 -1 0 1;
+#X obj 2 3 cnv 15 1000 31 empty empty 3V3_v0.3 447 15 1 24 -33289 -261121
+0;
+#N canvas 0 26 1001 639 main 0;
+#X obj 133 199 hsl 128 15 0 1 0 0 empty mix empty -2 -6 0 8 -258699
+-1 -1 0 1;
+#X text 158 200 >> mixer;
+#N canvas 99 75 606 469 modemanager 0;
+#X obj 62 316 pdp_mix;
+#X msg 470 286 chanmask \$1;
+#X floatatom 470 264 5 0 0 0 - - -;
+#X obj 470 316 pdp_add;
+#X obj 173 316 pdp_mul;
+#X obj 77 124 hradio 15 1 0 8 empty mode empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 229 316 pdp_or;
+#X obj 387 316 pdp_randmix;
+#X obj 118 316 pdp_and;
+#X obj 277 316 pdp_xor;
+#X obj 332 316 pdp_sub;
+#X obj 62 92 inlet;
+#X obj 511 99 inlet;
+#X obj 62 148 pdp_route 8 -------;
+#X obj 401 132 hradio 15 1 0 8 empty mode empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 386 100 inlet;
+#X obj 386 156 pdp_route 8 -------;
+#X obj 277 429 outlet;
+#X obj 62 53 cnv 15 150 20 empty empty MODE_MANAGER 20 12 1 14 -233017
+-66577 0;
+#X connect 0 0 17 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 17 0;
+#X connect 4 0 17 0;
+#X connect 5 0 13 1;
+#X connect 6 0 17 0;
+#X connect 7 0 17 0;
+#X connect 8 0 17 0;
+#X connect 9 0 17 0;
+#X connect 10 0 17 0;
+#X connect 11 0 13 0;
+#X connect 12 0 0 2;
+#X connect 12 0 7 2;
+#X connect 12 0 2 0;
+#X connect 13 0 0 0;
+#X connect 13 1 8 0;
+#X connect 13 2 4 0;
+#X connect 13 3 6 0;
+#X connect 13 4 9 0;
+#X connect 13 5 10 0;
+#X connect 13 6 7 0;
+#X connect 13 7 3 0;
+#X connect 14 0 16 1;
+#X connect 15 0 16 0;
+#X connect 16 0 0 1;
+#X connect 16 1 8 1;
+#X connect 16 2 4 1;
+#X connect 16 3 6 1;
+#X connect 16 4 9 1;
+#X connect 16 5 10 1;
+#X connect 16 6 7 1;
+#X connect 16 7 3 1;
+#X restore 37 298 pd modemanager;
+#N canvas 214 84 517 557 efectmanager 0;
+#X obj 34 3 cnv 15 180 20 empty empty EFFECT_MANAGER 20 12 1 14 -233017
+-66577 0;
+#X obj 428 14 vsl 15 128 0 1 0 0 empty gradem empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 78 430 outlet;
+#X obj 127 69 hradio 15 1 0 8 empty effectchm empty 0 -6 0 8 -262144
+-1 -1 0;
+#X obj 73 49 inlet;
+#X obj 108 278 pdp_invert;
+#X obj 333 277 pdp_blur;
+#X obj 396 277 pdp_grey;
+#X obj 185 278 pdp_aging;
+#X obj 268 277 pdp_edge;
+#X obj 459 277 pdp_lens;
+#X obj 519 277 pdp_radioactiv;
+#X obj 622 277 pdp_nervous;
+#X obj 78 101 pdp_route 9 ------;
+#X obj 540 208 hradio 15 1 0 4 empty radioacm empty 0 -6 0 8 -262144
+-1 -1 0;
+#X floatatom 657 222 5 0 0 0 - nervousm -;
+#X floatatom 479 178 5 0 0 0 - - -;
+#X floatatom 489 204 5 0 0 0 - - -;
+#X connect 1 0 6 1;
+#X connect 1 0 8 1;
+#X connect 1 0 10 4;
+#X connect 3 0 13 1;
+#X connect 4 0 13 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 2 0;
+#X connect 9 0 2 0;
+#X connect 10 0 2 0;
+#X connect 11 0 2 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;
+#X connect 13 1 5 0;
+#X connect 13 2 8 0;
+#X connect 13 3 9 0;
+#X connect 13 4 6 0;
+#X connect 13 5 7 0;
+#X connect 13 6 10 0;
+#X connect 13 7 11 0;
+#X connect 13 8 12 0;
+#X connect 14 0 11 1;
+#X connect 15 0 12 1;
+#X connect 16 0 10 2;
+#X connect 17 0 10 3;
+#X restore 37 323 pd efectmanager;
+#X obj 37 571 pdp_glx;
+#X floatatom 130 351 5 0 0 0 - satm -;
+#X floatatom 88 350 5 0 0 0 - gainm -;
+#X obj 37 396 pdp_saturation;
+#X obj 37 375 pdp_gain;
+#N canvas 332 241 497 379 channel_1 0;
+#X obj 34 28 cnv 15 350 340 empty empty empty 20 12 0 14 -166441 -66577
+0;
+#X obj 240 218 pdp_qt;
+#X obj 240 32 r video1;
+#X msg 240 66 open \$1;
+#X msg 251 154 loop \$1;
+#X obj 251 111 loadbang;
+#X obj 251 135 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X floatatom 277 173 5 0 0 0 - - -;
+#X obj 34 7 cnv 15 175 20 empty empty empty 20 12 0 14 -260929 -66577
+0;
+#X text 39 10 subpatch canal 1;
+#X obj 95 39 vsl 15 128 0 100 0 0 empty pitch1 empty 0 -8 0 8 -262144
+-1 -1 3175 1;
+#X obj 137 145 /;
+#X msg 129 99 1000;
+#X floatatom 137 168 5 0 0 0 - - -;
+#X floatatom 182 101 5 0 0 0 - - -;
+#X msg 41 57 bang;
+#X obj 41 79 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 41 203 bng 15 250 50 0 tiempo_chi_2 empty empty 0 -6 0 8 -262144
+-1 -1;
+#X obj 41 184 metro 40;
+#X obj 41 36 r INIT;
+#X floatatom 182 126 5 0 0 0 - - fps1;
+#X floatatom 333 268 5 0 0 0 - sat1 -;
+#X floatatom 333 250 5 0 0 0 - gain1 -;
+#X obj 240 268 pdp_gain;
+#X obj 261 301 pdp_saturation;
+#X obj 240 340 outlet;
+#X connect 1 0 23 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 1 1;
+#X connect 10 0 12 0;
+#X connect 10 0 14 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 1;
+#X connect 14 0 11 1;
+#X connect 14 0 20 0;
+#X connect 15 0 16 0;
+#X connect 16 0 18 0;
+#X connect 17 0 1 0;
+#X connect 18 0 17 0;
+#X connect 19 0 15 0;
+#X connect 21 0 24 1;
+#X connect 22 0 23 1;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X restore 37 134 pd channel_1;
+#N canvas 0 0 1001 670 channel_2 0;
+#X obj 224 20 cnv 15 340 340 empty empty empty 20 12 0 14 -166441 -66577
+0;
+#X obj 224 -1 cnv 15 165 20 empty empty empty 20 12 0 14 -260929 -66577
+0;
+#X obj 267 210 pdp_qt;
+#X msg 267 64 open \$1;
+#X msg 278 145 loop \$1;
+#X obj 278 102 loadbang;
+#X obj 278 126 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X floatatom 304 164 5 0 0 0 - - -;
+#X obj 267 37 r video2;
+#X text 231 1 subpatch canal 2;
+#X obj 423 32 vsl 15 128 0 100 0 0 empty pitch2 empty 0 -8 0 8 -262144
+-1 -1 3175 1;
+#X obj 472 135 /;
+#X msg 464 89 1000;
+#X floatatom 472 158 5 0 0 0 - - -;
+#X floatatom 500 90 5 0 0 0 - - -;
+#X msg 355 63 bang;
+#X obj 355 85 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 355 195 bng 15 250 50 0 tiempo_chi_2 empty empty 0 -6 0 8 -262144
+-1 -1;
+#X obj 355 175 metro 40;
+#X obj 355 42 r INIT;
+#X floatatom 500 115 5 0 0 0 - - fps2;
+#X obj 295 299 pdp_saturation;
+#X floatatom 360 259 5 0 0 0 - sat2 -;
+#X floatatom 318 235 5 0 0 0 - gain2 -;
+#X obj 267 270 pdp_gain;
+#X obj 267 326 outlet;
+#X connect 2 0 24 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 2 1;
+#X connect 8 0 3 0;
+#X connect 10 0 12 0;
+#X connect 10 0 14 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 1;
+#X connect 14 0 11 1;
+#X connect 14 0 20 0;
+#X connect 15 0 16 0;
+#X connect 16 0 18 0;
+#X connect 17 0 2 0;
+#X connect 18 0 17 0;
+#X connect 19 0 15 0;
+#X connect 21 0 25 0;
+#X connect 22 0 21 1;
+#X connect 23 0 24 1;
+#X connect 24 0 21 0;
+#X restore 83 167 pd channel_2;
+#N canvas 18 47 769 557 efectmanager1 0;
+#X obj 428 14 vsl 15 128 0 1 0 0 empty grade1 empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 78 430 outlet;
+#X obj 34 3 cnv 15 180 20 empty empty EFFECT_MANAGER 20 12 1 14 -233017
+-66577 0;
+#X obj 127 69 hradio 15 1 0 8 empty effectch1 empty 0 -6 0 8 -262144
+-1 -1 0;
+#X obj 73 49 inlet;
+#X obj 108 278 pdp_invert;
+#X obj 333 277 pdp_blur;
+#X obj 396 277 pdp_grey;
+#X obj 185 278 pdp_aging;
+#X obj 268 277 pdp_edge;
+#X obj 459 277 pdp_lens;
+#X obj 519 277 pdp_radioactiv;
+#X obj 622 277 pdp_nervous;
+#X obj 78 101 pdp_route 9 ------;
+#X obj 540 208 hradio 15 1 0 4 empty radioac1 empty 0 -6 0 8 -262144
+-1 -1 0;
+#X floatatom 657 222 5 0 0 0 - nervous1 -;
+#X floatatom 479 178 5 0 0 0 - - -;
+#X floatatom 489 204 5 0 0 0 - - -;
+#X connect 0 0 6 1;
+#X connect 0 0 8 1;
+#X connect 0 0 10 4;
+#X connect 3 0 13 1;
+#X connect 4 0 13 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;
+#X connect 8 0 1 0;
+#X connect 9 0 1 0;
+#X connect 10 0 1 0;
+#X connect 11 0 1 0;
+#X connect 12 0 1 0;
+#X connect 13 0 1 0;
+#X connect 13 1 5 0;
+#X connect 13 2 8 0;
+#X connect 13 3 9 0;
+#X connect 13 4 6 0;
+#X connect 13 5 7 0;
+#X connect 13 6 10 0;
+#X connect 13 7 11 0;
+#X connect 13 8 12 0;
+#X connect 14 0 11 1;
+#X connect 15 0 12 1;
+#X connect 16 0 10 2;
+#X connect 17 0 10 3;
+#X restore 37 228 pd efectmanager1;
+#N canvas 222 87 517 557 efectmanager2 0;
+#X obj 34 3 cnv 15 180 20 empty empty EFFECT_MANAGER 20 12 1 14 -233017
+-66577 0;
+#X obj 428 14 vsl 15 128 0 1 0 0 empty grade2 empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 78 430 outlet;
+#X obj 127 69 hradio 15 1 0 8 empty effectch2 empty 0 -6 0 8 -262144
+-1 -1 0;
+#X obj 73 49 inlet;
+#X obj 108 278 pdp_invert;
+#X obj 333 277 pdp_blur;
+#X obj 396 277 pdp_grey;
+#X obj 185 278 pdp_aging;
+#X obj 268 277 pdp_edge;
+#X obj 459 277 pdp_lens;
+#X obj 519 277 pdp_radioactiv;
+#X obj 622 277 pdp_nervous;
+#X obj 78 101 pdp_route 9 ------;
+#X obj 540 208 hradio 15 1 0 4 empty radioac2 empty 0 -6 0 8 -262144
+-1 -1 0;
+#X floatatom 657 222 5 0 0 0 - nervous2 -;
+#X floatatom 479 178 5 0 0 0 - - -;
+#X floatatom 489 204 5 0 0 0 - - -;
+#X connect 1 0 6 1;
+#X connect 1 0 8 1;
+#X connect 1 0 10 4;
+#X connect 3 0 13 1;
+#X connect 4 0 13 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 2 0;
+#X connect 9 0 2 0;
+#X connect 10 0 2 0;
+#X connect 11 0 2 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;
+#X connect 13 1 5 0;
+#X connect 13 2 8 0;
+#X connect 13 3 9 0;
+#X connect 13 4 6 0;
+#X connect 13 5 7 0;
+#X connect 13 6 10 0;
+#X connect 13 7 11 0;
+#X connect 13 8 12 0;
+#X connect 14 0 11 1;
+#X connect 15 0 12 1;
+#X connect 16 0 10 2;
+#X connect 17 0 10 3;
+#X restore 83 248 pd efectmanager2;
+#X obj 101 571 pdp_xv;
+#N canvas 342 0 651 583 windowmanager 0;
+#X obj 303 42 cnv 15 157 100 empty empty empty 20 12 0 14 -166441 -66577
+0;
+#X obj 303 42 cnv 15 157 20 empty empty empty 20 12 0 14 -260929 -66577
+0;
+#X obj 316 65 bng 15 250 50 0 empty OFF empty 0 -6 0 8 -262144 -1 -1
+;
+#X text 335 64 << recibe OFF;
+#X msg 316 90 bang;
+#X obj 121 42 cnv 15 180 100 empty empty empty 20 12 0 14 -166441 -66577
+0;
+#X obj 136 113 s video1;
+#X obj 199 113 s video2;
+#X msg 263 113 bang;
+#X obj 263 65 bng 15 250 50 0 empty INIT empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 136 89 symbol /home/negre.mov;
+#X text 161 64 recibe INIT >>;
+#X obj 121 42 cnv 15 180 20 empty empty empty 20 12 0 14 -260929 -66577
+0;
+#X obj 192 264 cnv 15 390 220 empty empty empty 20 12 0 14 -166441
+-66577 0;
+#X obj 263 408 delay 10;
+#X msg 331 280 posdim 1386 115 320 240;
+#X text 499 279 2 monitores;
+#X msg 332 326 posdim 986 115 320 240;
+#X text 499 327 2 monitores;
+#X msg 378 465 posdim 362 117 320 240;
+#X obj 407 243 cnv 15 175 20 empty empty empty 20 12 0 14 -260929 -66577
+0;
+#X text 413 246 posicion ventanas video;
+#X msg 209 282 create;
+#X text 412 432 > pos ventana1;
+#X text 537 467 > pos ventana2;
+#X msg 316 359 destroy;
+#X text 301 43 OFF;
+#X text 131 43 INIT;
+#X obj 210 534 outlet;
+#X obj 272 534 outlet;
+#X obj 328 534 outlet;
+#X obj 385 534 outlet;
+#X obj 476 65 bng 15 250 50 0 empty ventana2 empty 0 -6 0 8 -262144
+-1 -1;
+#X text 500 65 2 ventana;
+#X msg 477 89 bang;
+#X msg 432 386 create;
+#X obj 511 404 delay 10;
+#X obj 440 534 outlet;
+#X text 211 550 CREA 1;
+#X text 332 550 POS 1;
+#X text 388 551 POS 2;
+#X text 272 551 CREA 2;
+#X text 435 552 MATA 1Y2;
+#X msg 263 437 posdim 342 111 320 240;
+#X connect 2 0 4 0;
+#X connect 4 0 25 0;
+#X connect 8 0 14 0;
+#X connect 8 0 22 0;
+#X connect 9 0 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 10 0 7 0;
+#X connect 14 0 43 0;
+#X connect 19 0 31 0;
+#X connect 22 0 28 0;
+#X connect 25 0 37 0;
+#X connect 32 0 34 0;
+#X connect 34 0 35 0;
+#X connect 34 0 36 0;
+#X connect 35 0 29 0;
+#X connect 36 0 19 0;
+#X connect 43 0 30 0;
+#X restore 75 471 pd windowmanager;
+#X text 270 198 > mezclador;
+#X text 270 226 > gestor de efectos de canal 1;
+#X text 270 248 > gestor de efectos de canal 2;
+#X text 270 297 > gestor de modos de mezcla;
+#X text 270 323 > gestor de efectos de mezcla;
+#X text 270 134 > carga de videos \, pitch y GAIN/SAT en canal 1;
+#X text 270 165 > carga de videos \, pitch y GAIN/SAT en canal 2;
+#X text 270 349 > control de ganancia y saturacion de mezcla;
+#X text 270 472 > gestor de ventanas de reproduccion;
+#X text 37 17 3.V.3. Ellite Veejay Engine v0.4;
+#X text 36 68 Autor: Rez (DELACREW.NET BruteVeejing and MotionGraphics)
+;
+#X text 270 574 > salidas de video;
+#X text 37 37 Patch para veejing desarrollado a partir de PidipVj de
+Lluis Gomez i Bigorda y BitchVj de Tatiana.;
+#X connect 0 0 2 2;
+#X connect 2 0 3 0;
+#X connect 3 0 8 0;
+#X connect 5 0 7 1;
+#X connect 6 0 8 1;
+#X connect 7 0 4 0;
+#X connect 7 0 13 0;
+#X connect 8 0 7 0;
+#X connect 9 0 11 0;
+#X connect 10 0 12 0;
+#X connect 11 0 2 0;
+#X connect 12 0 2 1;
+#X connect 14 0 4 0;
+#X connect 14 1 13 0;
+#X connect 14 2 4 0;
+#X connect 14 3 13 0;
+#X connect 14 4 4 0;
+#X connect 14 4 13 0;
+#X restore 475 37 pd main;
+#X text 84 37 OFF;
+#X obj 12 37 bng 15 250 50 0 INIT empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 67 37 bng 15 250 50 0 OFF empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 341 321 cnv 15 319 174 empty empty MODES 20 12 1 10 -33289 -262144
+0;
+#X obj 360 346 vradio 15 1 0 8 mode empty empty 0 -6 0 8 -261121 -1
+-1 0;
+#X obj 341 497 cnv 15 319 71 empty empty empty 2 12 1 10 -33289 -1
+0;
+#X obj 3 587 cnv 15 336 76 empty empty MIDI.CONTROL 5 10 1 10 -33289
+-262144 0;
+#X obj 341 570 cnv 15 319 93 empty empty NET.STREAMING 5 10 1 10 -33289
+-262144 0;
+#X obj 347 611 bng 15 250 50 0 net_connect empty empty 0 -6 0 8 -233017
+-1 -1;
+#X obj 347 628 bng 15 250 50 0 net_disconnect empty empty 0 -6 0 8
+-233017 -1 -1;
+#X text 28 37 INIT;
+#X obj 372 501 colorgrid colorgrid1 256 0 256 50 0 50 0 1 1 10 10 408
+515;
+#X floatatom 372 551 5 0 0 0 - - R;
+#X floatatom 482 551 5 0 0 0 - - G;
+#X floatatom 591 551 5 0 0 0 - - B;
+#X obj 3 97 cnv 15 336 488 empty empty empty 5 10 1 10 -33289 -262144
+0;
+#X obj 11 124 playlist mov 170 400 {Helvetica 10 bold} grey #fcc000
+black white;
+#X symbolatom 5 544 10 0 0 1 send.video1 - video1;
+#X obj 190 126 vsl 15 128 0 100 0 1 pitch1 empty empty 0 -8 0 8 -261121
+-1 -1 3175 1;
+#X obj 227 131 grid grid2 100 0 3 100 0 2 1 0.1 0.1 10 10 277 183;
+#X floatatom 227 257 5 0 0 0 - - gain1;
+#X floatatom 290 257 5 0 0 0 - - sat1;
+#X msg 227 279 1.5;
+#X obj 241 235 bng 15 250 50 0 empty INIT empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 290 279 1;
+#X obj 190 318 vradio 15 1 0 9 effectch1 empty empty 0 -6 0 8 -261121
+-1 -1 0;
+#X obj 193 457 hsl 60 15 0 1 0 0 grade1 empty empty -2 -6 0 8 -261121
+-1 -1 0 1;
+#X obj 115 38 bng 15 250 50 0 ventana2 b_v2 empty 0 -6 0 8 -262144
+-1 -1;
+#X text 137 38 2 VENTANA;
+#X obj 377 346 cnv 15 45 15 empty empty ALF 2 8 1 10 -33289 -262144
+0;
+#X obj 377 361 cnv 15 45 15 empty empty AND 2 8 1 10 -33289 -262144
+0;
+#X obj 377 377 cnv 15 45 15 empty empty MUL 2 8 1 10 -33289 -262144
+0;
+#X text 381 391 comment;
+#X obj 377 392 cnv 15 45 15 empty empty OR 2 8 1 10 -33289 -262144
+0;
+#X text 381 406 comment;
+#X obj 377 406 cnv 15 45 15 empty empty XOR 2 8 1 10 -33289 -262144
+0;
+#X obj 377 421 cnv 15 45 15 empty empty SUB 2 8 1 10 -33289 -262144
+0;
+#X obj 377 436 cnv 15 45 15 empty empty RAN 2 8 1 10 -33289 -262144
+0;
+#X obj 377 451 cnv 15 45 15 empty empty ADD 2 8 1 10 -33289 -262144
+0;
+#X obj 3 80 cnv 15 336 16 empty empty empty 2 8 1 10 -128992 -262144
+0;
+#X msg 11 101 location /media/;
+#X floatatom 190 265 5 0 0 0 - fps1 -;
+#X obj 206 318 cnv 15 45 15 empty empty NOFX 2 8 1 10 -33289 -262144
+0;
+#X obj 206 333 cnv 15 45 15 empty empty INVR 2 8 1 10 -33289 -262144
+0;
+#X obj 206 349 cnv 15 45 15 empty empty AGED 2 8 1 10 -33289 -262144
+0;
+#X obj 206 379 cnv 15 45 15 empty empty BLUR 2 8 1 10 -33289 -262144
+0;
+#X obj 206 393 cnv 15 45 15 empty empty GREY 2 8 1 10 -33289 -262144
+0;
+#X obj 206 408 cnv 15 45 15 empty empty LENS 2 8 1 10 -33289 -262144
+0;
+#X obj 206 423 cnv 15 45 15 empty empty RDKT 2 8 1 10 -33289 -262144
+0;
+#X obj 206 438 cnv 15 45 15 empty empty NERV 2 8 1 10 -33289 -262144
+0;
+#X obj 206 364 cnv 15 45 15 empty empty EDGE 2 8 1 10 -33289 -262144
+0;
+#X obj 341 590 cnv 15 319 14 empty empty empty 2 8 1 10 -128992 -262144
+0;
+#N canvas 0 0 478 392 netsetup 0;
+#X msg 194 203 disconnect;
+#X obj 95 263 netsend;
+#X floatatom 95 329 5 0 0 0 - - net_chivato;
+#X obj 68 126 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 33 179 send \$1;
+#X floatatom 33 151 5 0 0 0 - - -;
+#X obj 33 100 metro 500;
+#X obj 33 56 bng 15 250 50 0 empty net_connect empty 0 -6 0 8 -262144
+-1 -1;
+#X msg 63 76 stop;
+#X text 285 181 >> conecta a IP / puerto;
+#X text 285 205 >> desconecta;
+#X text 286 261 >> envia a la red;
+#X obj 63 57 bng 15 250 50 0 empty net_disconnect empty 0 -6 0 8 -262144
+-1 -1;
+#X msg 95 179 connect 192.168.2.1 3001;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 12 0 8 0;
+#X connect 13 0 1 0;
+#X restore 344 589 pd netsetup;
+#X obj 364 611 cnv 15 150 15 empty empty CONNECT 2 8 1 10 -33289 -262144
+0;
+#X obj 364 628 cnv 15 150 15 empty empty DISCONNECT 2 8 1 10 -33289
+-262144 0;
+#X msg 190 101 25;
+#X obj 2 58 cnv 15 338 20 empty empty CHANNEL_ONE 110 10 1 14 -33289
+-261121 0;
+#X obj 661 58 cnv 15 340 20 empty empty CHANNEL_TWO 110 10 1 14 -33289
+-261121 0;
+#X obj 662 586 cnv 15 340 77 empty empty REMOTE.CONTROL 5 10 1 10 -33289
+-262144 0;
+#X obj 662 97 cnv 15 340 487 empty empty empty 5 10 1 10 -33289 -262144
+0;
+#X obj 797 132 vsl 15 128 0 100 0 1 pitch2 empty empty 0 -8 0 8 -261121
+-1 -1 3175 1;
+#X obj 672 132 grid grid2 100 0 3 100 0 2 1 0.1 0.1 10 10 722 183;
+#X floatatom 672 255 5 0 0 0 - - gain2;
+#X floatatom 735 256 5 0 0 0 - - sat2;
+#X msg 672 273 1.5;
+#X obj 684 236 bng 15 250 50 0 empty INIT empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 821 130 playlist mov 170 400 {Helvetica 10 bold} grey #fcc000
+black white;
+#X symbolatom 821 546 10 0 0 1 send.video1 - video2;
+#X obj 751 463 hsl 60 15 0 1 0 0 grade2 empty empty -2 -6 0 8 -261121
+-1 -1 0 1;
+#X floatatom 775 268 5 0 0 0 - fps2 -;
+#X obj 662 80 cnv 15 340 16 empty empty empty 2 8 1 10 -128992 -262144
+0;
+#X msg 822 100 location /media/;
+#X msg 797 99 25;
+#X obj 422 346 vradio 15 1 0 9 effectchm empty empty 0 -6 0 8 -261121
+-1 -1 0;
+#X floatatom 683 489 5 0 0 0 - - gainm;
+#X floatatom 672 493 5 -100 100 1 - - satm;
+#X obj 493 325 grid grid1 160 0 2 160 0 1 1 0.1 0.1 8 8 571 405;
+#X obj 440 358 cnv 15 45 15 empty empty NOFX 2 8 1 10 -33289 -262144
+0;
+#X obj 440 360 cnv 15 45 15 empty empty INVR 2 8 1 10 -33289 -262144
+0;
+#X obj 440 376 cnv 15 45 15 empty empty AGED 2 8 1 10 -33289 -262144
+0;
+#X obj 440 406 cnv 15 45 15 empty empty BLUR 2 8 1 10 -33289 -262144
+0;
+#X obj 440 420 cnv 15 45 15 empty empty GREY 2 8 1 10 -33289 -262144
+0;
+#X obj 440 435 cnv 15 45 15 empty empty LENS 2 8 1 10 -33289 -262144
+0;
+#X obj 440 450 cnv 15 45 15 empty empty RDKT 2 8 1 10 -33289 -262144
+0;
+#X obj 440 465 cnv 15 45 15 empty empty NERV 2 8 1 10 -33289 -262144
+0;
+#X obj 440 391 cnv 15 45 15 empty empty EDGE 2 8 1 10 -33289 -262144
+0;
+#X obj 764 323 cnv 15 45 15 empty empty NOFX 2 8 1 10 -33289 -262144
+0;
+#X obj 764 338 cnv 15 45 15 empty empty INVR 2 8 1 10 -33289 -262144
+0;
+#X obj 764 354 cnv 15 45 15 empty empty AGED 2 8 1 10 -33289 -262144
+0;
+#X obj 764 384 cnv 15 45 15 empty empty BLUR 2 8 1 10 -33289 -262144
+0;
+#X obj 764 398 cnv 15 45 15 empty empty GREY 2 8 1 10 -33289 -262144
+0;
+#X obj 764 413 cnv 15 45 15 empty empty LENS 2 8 1 10 -33289 -262144
+0;
+#X obj 764 428 cnv 15 45 15 empty empty RDKT 2 8 1 10 -33289 -262144
+0;
+#X obj 764 443 cnv 15 45 15 empty empty NERV 2 8 1 10 -33289 -262144
+0;
+#X obj 764 369 cnv 15 45 15 empty empty EDGE 2 8 1 10 -33289 -262144
+0;
+#X msg 735 275 1;
+#X obj 341 58 cnv 15 319 240 empty empty empty 2 12 1 10 -33289 -1
+0;
+#X obj 440 345 cnv 15 45 15 empty empty NOFX 2 8 1 10 -33289 -262144
+0;
+#X obj 798 323 vradio 15 1 0 9 effectch2 empty empty 0 -6 0 8 -261121
+-1 -1 0;
+#X obj 701 237 cnv 15 75 15 empty empty RESET_G/S 2 8 1 10 -33289 -262144
+0;
+#X obj 259 235 cnv 15 75 15 empty empty RESET_G/S 2 8 1 10 -33289 -262144
+0;
+#X connect 16 0 17 0;
+#X connect 16 1 18 0;
+#X connect 16 2 19 0;
+#X connect 21 0 22 0;
+#X connect 24 0 25 0;
+#X connect 24 1 26 0;
+#X connect 27 0 25 0;
+#X connect 28 0 27 0;
+#X connect 28 0 29 0;
+#X connect 29 0 26 0;
+#X connect 45 0 21 0;
+#X connect 60 0 23 0;
+#X connect 66 0 67 0;
+#X connect 66 1 68 0;
+#X connect 69 0 67 0;
+#X connect 70 0 69 0;
+#X connect 70 0 100 0;
+#X connect 71 0 72 0;
+#X connect 76 0 71 0;
+#X connect 77 0 65 0;
+#X connect 81 0 79 0;
+#X connect 81 1 80 0;
+#X connect 100 0 68 0;
+#X coords 0 0 1 1 200 140 1;

@@ -1,0 +1,14 @@
+#N canvas 282 324 720 672 10;
+#X obj 93 257 prepent set;
+#X msg 93 291 78 89 21 87 94 76 21 66 71 68;
+#X obj 29 247 r DOIT;
+#X obj 93 170 loadbang;
+#X obj 93 396 list-quicksort;
+#X msg 165 170 bang;
+#X obj 93 205 list-random 100 100;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 6 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;

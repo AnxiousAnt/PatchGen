@@ -1,0 +1,18 @@
+#N canvas 454 268 450 385 10;
+#X obj 203 131 makefilename %c;
+#X obj 203 161 print;
+#X msg 203 101 44;
+#X obj 111 203 list2symbol;
+#X msg 111 167 1 2 3;
+#X obj 111 227 print;
+#X text 241 99 Ascii for comma;
+#X obj 111 68 t b b;
+#X msg 111 44 yeah!;
+#X connect 0 0 1 0;
+#X connect 0 0 3 1;
+#X connect 2 0 0 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 7 0 4 0;
+#X connect 7 1 2 0;
+#X connect 8 0 7 0;

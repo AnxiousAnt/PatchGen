@@ -1,0 +1,23 @@
+#N canvas 280 407 526 424 12;
+#X obj 128 156 tot;
+#X obj 78 225 unpack s s s s s s;
+#X obj 190 189 print;
+#X msg 35 117 query file join [tk_chooseDirectory] [glob *.txt];
+#X text 34 38 Note: a bug in tk_chooseDirectory means you can't press
+"OK" but have to double-click on the directory you want! This only
+lists .txt files! (just change *.txt to any extension);
+#X symbolatom 75 266 30 0 0 0 - - -;
+#X symbolatom 98 291 30 0 0 0 - - -;
+#X symbolatom 122 315 15 0 0 0 - - -;
+#X symbolatom 145 344 15 0 0 0 - - -;
+#X symbolatom 169 368 15 0 0 0 - - -;
+#X symbolatom 191 394 15 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 1 0 5 0;
+#X connect 1 1 6 0;
+#X connect 1 2 7 0;
+#X connect 1 3 8 0;
+#X connect 1 4 9 0;
+#X connect 1 5 10 0;
+#X connect 3 0 0 0;

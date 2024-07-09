@@ -1,0 +1,28 @@
+#N canvas 0 95 787 293 10;
+#X obj 81 7 inlet;
+#X obj 308 6 inlet;
+#X obj 241 220 midiout \$1;
+#X msg 241 69 248;
+#X text 207 69 0xf8;
+#X msg 81 134 250;
+#X text 46 134 0xfa;
+#X msg 134 106 251;
+#X text 102 106 0xfb;
+#X msg 188 87 252;
+#X text 155 87 0xfc;
+#X obj 81 45 route start continue stop clock;
+#X text 356 5 send midi start \, continue \, stop and clock messages
+for syncing external devices and software via midi;
+#X text 332 222 Works with pd-0.41-4 \, does not work with pd-0.40-2
+;
+#X connect 0 0 11 0;
+#X connect 1 0 2 1;
+#X connect 3 0 2 0;
+#X connect 5 0 2 0;
+#X connect 7 0 2 0;
+#X connect 9 0 2 0;
+#X connect 11 0 5 0;
+#X connect 11 1 7 0;
+#X connect 11 2 9 0;
+#X connect 11 3 3 0;
+#X connect 11 4 3 0;

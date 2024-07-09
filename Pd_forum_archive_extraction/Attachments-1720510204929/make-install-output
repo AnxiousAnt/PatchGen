@@ -1,0 +1,901 @@
+Making install in src
+make[1]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src'
+Making install in Gem
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Gem'
+UNUSED SOURCES: 
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Gem'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/include/Gem/Gem'
+ /usr/bin/install -c -m 644 ExportDef.h Version.h RTE.h State.h Cache.h Rectangle.h Exception.h Dylib.h Files.h ContextData.h Properties.h Settings.h Loaders.h Manager.h PBuffer.h Event.h GemGL.h glew.h glxew.h wglew.h GLStack.h Image.h ImageIO.h PixConvert.h '/usr/local/include/Gem/Gem'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Gem'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Gem'
+Making install in RTE
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/RTE'
+UNUSED SOURCES: 
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/RTE'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/include/Gem/RTE'
+ /usr/bin/install -c -m 644 RTE.h Array.h MessageCallbacks.h '/usr/local/include/Gem/RTE'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/RTE'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/RTE'
+Making install in Utils
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Utils'
+UNUSED SOURCES: nop.h
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Utils'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/include/Gem/Utils'
+ /usr/bin/install -c -m 644 any.h Functions.h GLUtil.h GemMath.h Matrix.h nop.h PixPete.h SIMD.h GemString.h Vector.h Thread.h ThreadMutex.h ThreadSemaphore.h WorkerThread.h SynchedWorkerThread.h '/usr/local/include/Gem/Utils'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Utils'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Utils'
+Making install in Base
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Base'
+UNUSED SOURCES: 
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Base'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/include/Gem/Base'
+ /usr/bin/install -c -m 644 CPPExtern.h GemBase.h GemGLBase.h GemGluObj.h GemPathBase.h GemPixObj.h GemPixDualObj.h GemShape.h TextBase.h GemWindow.h GemContext.h '/usr/local/include/Gem/Base'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Base'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Base'
+Making install in plugins
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/plugins'
+UNUSED SOURCES: 
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/plugins'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/include/Gem/plugins'
+ /usr/bin/install -c -m 644 PluginFactory.h PluginFactoryTimple.h film.h imageloader.h imagesaver.h record.h video.h '/usr/local/include/Gem/plugins'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/plugins'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/plugins'
+Making install in Controls
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Controls'
+UNUSED SOURCES: 
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Controls'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Controls'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Controls'
+Making install in Geos
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Geos'
+UNUSED SOURCES: 
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Geos'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Geos'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Geos'
+Making install in Manips
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Manips'
+UNUSED SOURCES: 
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Manips'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Manips'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Manips'
+Making install in Nongeos
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Nongeos'
+UNUSED SOURCES: 
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Nongeos'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Nongeos'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Nongeos'
+Making install in openGL
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/openGL'
+UNUSED SOURCES: 
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/openGL'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/openGL'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/openGL'
+Making install in Particles
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Particles'
+UNUSED SOURCES: 
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Particles'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Particles'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Particles'
+Making install in Pixes
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Pixes'
+UNUSED SOURCES: 
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Pixes'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Pixes'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Pixes'
+Making install in deprecated
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/deprecated'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/deprecated'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/include/Gem'
+ /bin/mkdir -p '/usr/local/include/Gem/Gem'
+ /usr/bin/install -c -m 644  Gem/SynchedWorkerThread.h Gem/ThreadMutex.h Gem/ThreadSemaphore.h Gem/WorkerThread.h '/usr/local/include/Gem/Gem'
+ /bin/mkdir -p '/usr/local/include/Gem/Base'
+ /usr/bin/install -c -m 644  Base/GemCache.h Base/GemContextData.h Base/GemEvent.h Base/GemExportDef.h Base/GemFuncUtil.h Base/GemGL.h Base/GemGLUtil.h Base/GemLoaders.h Base/GemMan.h Base/GemMath.h Base/GemPBuffer.h Base/GemPixConvert.h Base/GemPixImageLoad.h Base/GemPixImageSave.h Base/GemPixPete.h Base/GemPixUtil.h Base/GemSIMD.h Base/GemState.h Base/GemVector.h Base/GemVersion.h Base/Matrix.h '/usr/local/include/Gem/Base'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/deprecated'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/deprecated'
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src'
+/bin/bash ./pkgversion.sh version.h.in > version_current.h
+/bin/bash ../libtool  --tag=CXX --preserve-dup-deps  --mode=compile g++ -DHAVE_CONFIG_H -I.    -DHAVE_VERSION_H -DGEM_INTERNAL  -DGLEW_BUILD -DGLEW_MX -DPD -I/usr/include/pd  -I/usr/include/libdrm -I/usr/include/libdrm   -g -O2 -freg-struct-return -O3 -falign-loops -falign-functions -falign-jumps -funroll-loops -ffast-math -mmmx -MT Gem_la-Version.lo -MD -MP -MF .deps/Gem_la-Version.Tpo -c -o Gem_la-Version.lo `test -f 'Version.cpp' || echo './'`Version.cpp
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -DHAVE_VERSION_H -DGEM_INTERNAL -DGLEW_BUILD -DGLEW_MX -DPD -I/usr/include/pd -I/usr/include/libdrm -I/usr/include/libdrm -g -O2 -freg-struct-return -O3 -falign-loops -falign-functions -falign-jumps -funroll-loops -ffast-math -mmmx -MT Gem_la-Version.lo -MD -MP -MF .deps/Gem_la-Version.Tpo -c Version.cpp  -fPIC -DPIC -o .libs/Gem_la-Version.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -DHAVE_VERSION_H -DGEM_INTERNAL -DGLEW_BUILD -DGLEW_MX -DPD -I/usr/include/pd -I/usr/include/libdrm -I/usr/include/libdrm -g -O2 -freg-struct-return -O3 -falign-loops -falign-functions -falign-jumps -funroll-loops -ffast-math -mmmx -MT Gem_la-Version.lo -MD -MP -MF .deps/Gem_la-Version.Tpo -c Version.cpp -o Gem_la-Version.o >/dev/null 2>&1
+mv -f .deps/Gem_la-Version.Tpo .deps/Gem_la-Version.Plo
+/bin/bash ../libtool  --tag=CXX --preserve-dup-deps  --mode=link g++ -DHAVE_VERSION_H -DGEM_INTERNAL  -DGLEW_BUILD -DGLEW_MX -DPD -I/usr/include/pd  -I/usr/include/libdrm -I/usr/include/libdrm   -g -O2 -freg-struct-return -O3 -falign-loops -falign-functions -falign-jumps -funroll-loops -ffast-math -mmmx -module -avoid-version -shared -shrext .pd_linux    -o Gem.la -rpath /usr/local/lib/pd/extra/Gem Gem_la-Version.lo Gem/libGem.la RTE/libRTE.la Utils/libUtils.la Base/libBase.la plugins/libplugins.la Controls/libControls.la Geos/libGeos.la Manips/libManips.la Nongeos/libNongeos.la openGL/libopenGL.la Particles/libParticles.la Pixes/libPixes.la  -L/usr/include/pd -lGL -lGLU -lGL   -lXrender -lXxf86vm -ldl -lz -lm 
+libtool: link: rm -fr  .libs/Gem.la .libs/Gem.lai .libs/Gem.pd_linux
+libtool: link: g++  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o  .libs/Gem_la-Version.o  -Wl,--whole-archive Gem/.libs/libGem.a RTE/.libs/libRTE.a Utils/.libs/libUtils.a Base/.libs/libBase.a plugins/.libs/libplugins.a Controls/.libs/libControls.a Geos/.libs/libGeos.a Manips/.libs/libManips.a Nongeos/.libs/libNongeos.a openGL/.libs/libopenGL.a Particles/.libs/libParticles.a Pixes/.libs/libPixes.a -Wl,--no-whole-archive  -lstdc++ -L/usr/include/pd -lSM -lICE -lftgl -lGL -lGLU -lGL -lXrender -lXxf86vm -ldl -lz -lm -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. -lstdc++ -lm -lgcc_s -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o  -g -O2 -O3 -mmmx   -pthread -Wl,-soname -Wl,Gem.pd_linux -o .libs/Gem.pd_linux
+libtool: link: ( cd ".libs" && rm -f "Gem.la" && ln -s "../Gem.la" "Gem.la" )
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src'
+/bin/bash ./pkgversion.sh version.h.in > version_current.h
+/bin/bash ../libtool  --tag=CXX --preserve-dup-deps  --mode=compile g++ -DHAVE_CONFIG_H -I.    -DHAVE_VERSION_H -DGEM_INTERNAL  -DGLEW_BUILD -DGLEW_MX -DPD -I/usr/include/pd  -I/usr/include/libdrm -I/usr/include/libdrm   -g -O2 -freg-struct-return -O3 -falign-loops -falign-functions -falign-jumps -funroll-loops -ffast-math -mmmx -MT Gem_la-Version.lo -MD -MP -MF .deps/Gem_la-Version.Tpo -c -o Gem_la-Version.lo `test -f 'Version.cpp' || echo './'`Version.cpp
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -DHAVE_VERSION_H -DGEM_INTERNAL -DGLEW_BUILD -DGLEW_MX -DPD -I/usr/include/pd -I/usr/include/libdrm -I/usr/include/libdrm -g -O2 -freg-struct-return -O3 -falign-loops -falign-functions -falign-jumps -funroll-loops -ffast-math -mmmx -MT Gem_la-Version.lo -MD -MP -MF .deps/Gem_la-Version.Tpo -c Version.cpp  -fPIC -DPIC -o .libs/Gem_la-Version.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -DHAVE_VERSION_H -DGEM_INTERNAL -DGLEW_BUILD -DGLEW_MX -DPD -I/usr/include/pd -I/usr/include/libdrm -I/usr/include/libdrm -g -O2 -freg-struct-return -O3 -falign-loops -falign-functions -falign-jumps -funroll-loops -ffast-math -mmmx -MT Gem_la-Version.lo -MD -MP -MF .deps/Gem_la-Version.Tpo -c Version.cpp -o Gem_la-Version.o >/dev/null 2>&1
+mv -f .deps/Gem_la-Version.Tpo .deps/Gem_la-Version.Plo
+/bin/bash ../libtool  --tag=CXX --preserve-dup-deps  --mode=link g++ -DHAVE_VERSION_H -DGEM_INTERNAL  -DGLEW_BUILD -DGLEW_MX -DPD -I/usr/include/pd  -I/usr/include/libdrm -I/usr/include/libdrm   -g -O2 -freg-struct-return -O3 -falign-loops -falign-functions -falign-jumps -funroll-loops -ffast-math -mmmx -module -avoid-version -shared -shrext .pd_linux    -o Gem.la -rpath /usr/local/lib/pd/extra/Gem Gem_la-Version.lo Gem/libGem.la RTE/libRTE.la Utils/libUtils.la Base/libBase.la plugins/libplugins.la Controls/libControls.la Geos/libGeos.la Manips/libManips.la Nongeos/libNongeos.la openGL/libopenGL.la Particles/libParticles.la Pixes/libPixes.la  -L/usr/include/pd -lGL -lGLU -lGL   -lXrender -lXxf86vm -ldl -lz -lm 
+libtool: link: rm -fr  .libs/Gem.la .libs/Gem.lai .libs/Gem.pd_linux
+libtool: link: g++  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o  .libs/Gem_la-Version.o  -Wl,--whole-archive Gem/.libs/libGem.a RTE/.libs/libRTE.a Utils/.libs/libUtils.a Base/.libs/libBase.a plugins/.libs/libplugins.a Controls/.libs/libControls.a Geos/.libs/libGeos.a Manips/.libs/libManips.a Nongeos/.libs/libNongeos.a openGL/.libs/libopenGL.a Particles/.libs/libParticles.a Pixes/.libs/libPixes.a -Wl,--no-whole-archive  -lstdc++ -L/usr/include/pd -lSM -lICE -lftgl -lGL -lGLU -lGL -lXrender -lXxf86vm -ldl -lz -lm -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. -lstdc++ -lm -lgcc_s -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o  -g -O2 -O3 -mmmx   -pthread -Wl,-soname -Wl,Gem.pd_linux -o .libs/Gem.pd_linux
+libtool: link: ( cd ".libs" && rm -f "Gem.la" && ln -s "../Gem.la" "Gem.la" )
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ../libtool --preserve-dup-deps  --mode=install /usr/bin/install -c   Gem.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/Gem.pd_linux /usr/local/lib/pd/extra/Gem/Gem.pd_linux
+libtool: install: /usr/bin/install -c .libs/Gem.lai /usr/local/lib/pd/extra/Gem/Gem.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src'
+make[1]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src'
+Making install in abstractions
+make[1]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/abstractions'
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/abstractions'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 gemhead.pd gemkeyboard.pd gemkeyname.pd gemmouse.pd gemorb.pd gemtablet.pd gemwin.pd hsv2rgb-help.pd hsv2rgb.pd pix_blobtracker-help.pd pix_blobtracker.pd pix_buffer_filmopen-help.pd pix_buffer_filmopen.pd pix_write.pd rgb2hsv-help.pd rgb2hsv.pd rgb2yuv-help.pd rgb2yuv.pd yuv2rgb-help.pd yuv2rgb.pd '/usr/local/lib/pd/extra/Gem'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 gemdefaultwindow.pd '/usr/local/lib/pd/extra/Gem'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/abstractions'
+make[1]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/abstractions'
+Making install in help
+make[1]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/help'
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/help'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 accumrotate-help.pd alpha-help.pd ambient-help.pd ambientRGB-help.pd camera-help.pd circle-help.pd color-help.pd colorRGB-help.pd colorSquare-help.pd cone-help.pd cube-help.pd cuboid-help.pd curve3d-help.pd curve-help.pd cylinder-help.pd depth-help.pd diffuse-help.pd diffuseRGB-help.pd disk-help.pd emission-help.pd emissionRGB-help.pd fragment_program-help.pd gemframebuffer-help.pd gemcubeframebuffer-help.pd cubemaptosphere.vert cubemaptosphere.frag GEMglBegin-help.pd gemhead-help.pd gemkeyboard-help.pd gemkeyname-help.pd gemlist-help.pd gemlist_info-help.pd gemlist_matrix-help.pd gemmouse-help.pd gemorb-help.pd gemreceive-help.pd gemtablet-help.pd gemvertexbuffer-help.pd gemwin-help.pd GLdefine-help.pd '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 glsl_fragment-help.pd glsl_geometry-help.pd glsl_program-help.pd glsl_vertex-help.pd imageVert-help.pd light-help.pd linear_path-help.pd mesh_line-help.pd mesh_square-help.pd model-help.pd multimodel-help.pd newWave-help.pd ortho-help.pd part_color-help.pd part_damp-help.pd part_draw-help.pd part_follow-help.pd part_gravity-help.pd part_head-help.pd part_info-help.pd part_killold-help.pd part_killslow-help.pd part_orbitpoint-help.pd part_render-help.pd part_sink-help.pd part_size-help.pd part_source-help.pd part_targetcolor-help.pd part_targetsize-help.pd part_velcone-help.pd part_velocity-help.pd part_velsphere-help.pd part_vertex-help.pd pix_2grey-help.pd pix_a_2grey-help.pd pix_add-help.pd pix_aging-help.pd pix_alpha-help.pd pix_background-help.pd pix_backlight-help.pd '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 pix_biquad-help.pd pix_bitmask-help.pd pix_blob-help.pd pix_blur-help.pd pix_buffer-help.pd pix_buffer_read-help.pd pix_buffer_write-help.pd pix_buf-help.pd pix_chroma_key-help.pd pix_clearblock-help.pd pix_coloralpha-help.pd pix_color-help.pd pix_colorclassify-help.pd pix_colormatrix-help.pd pix_colorreduce-help.pd pix_compare-help.pd pix_composite-help.pd pix_contrast-help.pd pix_convert-help.pd pix_convolve-help.pd pix_coordinate-help.pd pix_crop-help.pd pix_curve-help.pd pix_data-help.pd pix_deinterlace-help.pd pix_delay-help.pd pix_diff-help.pd pix_dot-help.pd pix_draw-help.pd pix_dump-help.pd pix_duotone-help.pd pix_equal-help.pd pix_film-help.pd pix_flip-help.pd pix_freeframe-help.pd pix_frei0r-help.pd pix_gain-help.pd pix_grey-help.pd pix_halftone-help.pd pix_histo-help.pd '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 pix_hsv2rgb-help.pd pix_image-help.pd pix_imageInPlace-help.pd pix_indycam-help.pd pix_info-help.pd pix_invert-help.pd pix_kaleidoscope-help.pd pix_levels-help.pd pix_lumaoffset-help.pd pix_mask-help.pd pix_mean_color-help.pd pix_metaimage-help.pd pix_mix-help.pd pix_motionblur-help.pd pix_movement2-help.pd pix_movement-help.pd pix_movie-help.pd pix_multiblob-help.pd pix_multiimage-help.pd pix_multitexture-help.pd pix_multiply-help.pd pix_noise-help.pd pix_normalize-help.pd pix_offset-help.pd pix_pix2sig~-help.pd pix_posterize-help.pd pix_puzzle-help.pd pix_rds-help.pd pix_record-help.pd pix_rectangle-help.pd pix_refraction-help.pd pix_resize-help.pd pix_rgb2hsv-help.pd pix_rgba-help.pd pix_roi-help.pd pix_roll-help.pd pix_rtx-help.pd pix_scanline-help.pd pix_set-help.pd pix_share_read-help.pd '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 pix_share_write-help.pd pix_sig2pix~-help.pd pix_snap2tex-help.pd pix_snap-help.pd pix_subtract-help.pd pix_takealpha-help.pd pix_texture-help.pd pix_threshold_bernsen-help.pd pix_threshold-help.pd pix_tIIR-help.pd pix_videoDS-help.pd pix_video-help.pd pix_write-help.pd pix_writer-help.pd pix_yuv-help.pd pix_zoom-help.pd polygon-help.pd polygon_smooth-help.pd pqtorusknots-help.pd primTri-help.pd rectangle-help.pd render_trigger-help.pd ripple-help.pd rotate-help.pd rotateXYZ-help.pd rubber-help.pd scale-help.pd scaleXYZ-help.pd scopeXYZ~-help.pd separator-help.pd shearXY-help.pd shearXZ-help.pd shearYX-help.pd shearYZ-help.pd shearZX-help.pd shearZY-help.pd shininess-help.pd slideSquares-help.pd specular-help.pd specularRGB-help.pd '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 sphere3d-help.pd sphere-help.pd spline_path-help.pd spot_light-help.pd square-help.pd surface3d-help.pd teapot-help.pd text2d-help.pd text3d-help.pd textextruded-help.pd textoutline-help.pd torus-help.pd translate-help.pd translateXYZ-help.pd trapezoid-help.pd triangle-help.pd tube-help.pd vertex_program-help.pd world_light-help.pd '/usr/local/lib/pd/extra/Gem'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/help'
+make[1]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/help'
+Making install in doc
+make[1]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/doc'
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/manual'
+ /usr/bin/install -c -m 644  manual/add.jpg manual/addResult.jpg manual/Advanced.html manual/basicCube.jpg manual/BasicObj.html manual/counter.jpg manual/GemFaq.html manual/gemwin.jpg manual/GemWPd.html manual/Gloss.html manual/Images.html manual/index.html manual/Input.html manual/Intro.html manual/invertFrac.jpg manual/invert.jpg manual/Lighting.html manual/light.jpg manual/ListObjects.html manual/mask.jpg manual/maskResult.jpg manual/normalFrac.jpg manual/Particles.html manual/Pixes.html manual/pixImage.jpg manual/redSquare.jpg manual/sphere15.jpg manual/sphere5.jpg manual/Texture.html manual/texture.jpg manual/transXYZ.jpg manual/tribar.gif manual/tripleLine.jpg manual/tripleRand.jpg manual/Utility.html manual/world_light.jpg manual/WriteCode.html '/usr/local/lib/pd/extra/Gem/manual'
+ /usr/bin/install -c -m 644  cMatrix.html gem.known_bugs.txt GemPrimer.pdf gem.release_notes.txt gem.todo.txt '/usr/local/lib/pd/extra/Gem/.'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/doc'
+make[1]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/doc'
+Making install in examples
+make[1]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/examples'
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/examples'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/10.glsl'
+ /usr/bin/install -c -m 644  10.glsl/01.simple_texture.pd 10.glsl/02.primitive_distortion.pd 10.glsl/03.texture_distortion.pd 10.glsl/04.game_of_life.pd 10.glsl/05.multitexture.pd 10.glsl/05.multitexture_bis.pd 10.glsl/06.rectangle_multitexture.pd 10.glsl/07.framebuffer_and_shader.pd 10.glsl/08.multi_pass_rendering.pd 10.glsl/09.vertex_texture_fetching.pd 10.glsl/10.GPGPU_Physical_model.pd 10.glsl/11.geometry.pd 10.glsl/12.tri2fan.pd 10.glsl/13.panoramique.pd 10.glsl/14.blur.pd 10.glsl/15.bicubic_image_interpolation.pd 10.glsl/16.vertexbuffer_attributes.pd 10.glsl/bicubic_interpolation.frag 10.glsl/bicubic_interpolation.vert 10.glsl/blur.frag 10.glsl/blur.vert 10.glsl/cam1.jpg 10.glsl/cam2.jpg 10.glsl/cam3.jpg 10.glsl/cam4.jpg 10.glsl/fetching2.frag 10.glsl/fetching2.vert 10.glsl/fetching.frag 10.glsl/fetching.vert 10.glsl/game.frag 10.glsl/game.vert 10.glsl/geo.frag 10.glsl/geo.geom 10.glsl/geo.vert 10.glsl/_glsl.pd 10.glsl/GLSL_mix.frag 10.glsl/GLSL_mix.vert 10.glsl/img1.jpg 10.glsl/img2.jpg 10.glsl/img3.jpg '/usr/local/lib/pd/extra/Gem/examples/10.glsl'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/12.multi_screen_projection'
+ /usr/bin/install -c -m 644  12.multi_screen_projection/01.flat_projection-help.pd 12.multi_screen_projection/02.nfp-help.pd 12.multi_screen_projection/config.txt 12.multi_screen_projection/flat_projection.pd 12.multi_screen_projection/grid.jpg 12.multi_screen_projection/load_save.pd 12.multi_screen_projection/nfp_22.frag 12.multi_screen_projection/nfp_22.vert 12.multi_screen_projection/nfp_33.frag 12.multi_screen_projection/nfp_33.vert 12.multi_screen_projection/nfp_curved_wall.pd 12.multi_screen_projection/nfp_flat_wall.pd 12.multi_screen_projection/saved.pd 12.multi_screen_projection/save_system-help.pd 12.multi_screen_projection/soft_edge.frag '/usr/local/lib/pd/extra/Gem/examples/12.multi_screen_projection'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/11.obj-exporter'
+ /usr/bin/install -c -m 644  11.obj-exporter/obj_cube.pd 11.obj-exporter/obj_exporter-help.pd 11.obj-exporter/obj_exporter.pd 11.obj-exporter/obj_primTri.pd 11.obj-exporter/obj_rectangle.pd 11.obj-exporter/obj_square.pd '/usr/local/lib/pd/extra/Gem/examples/11.obj-exporter'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/07.texture'
+ /usr/bin/install -c -m 644  07.texture/01.texture.pd 07.texture/02.TexCoord.pd 07.texture/04.moveImages.pd 07.texture/05.newWave.pd 07.texture/06.ripple.pd 07.texture/07.feedback.pd 07.texture/08.MotionBlur.pd 07.texture/09.sharedTextures.pd 07.texture/10.framebuffer.pd 07.texture/11.multiples_gemhead_in_a_framebuffer.pd '/usr/local/lib/pd/extra/Gem/examples/07.texture'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/04.pix'
+ /usr/bin/install -c -m 644  04.pix/01.image.pd 04.pix/02.multiimage.pd 04.pix/04.ImageInPlace.pd 04.pix/05.film.pd 04.pix/05.movie.pd 04.pix/06.PixRect.pd 04.pix/07.PixSet.pd 04.pix/08.PixDump.pd 04.pix/09.Histogram.pd 04.pix/10.PixDataSimple.pd 04.pix/11.PixDataComplex.pd 04.pix/12.add.pd 04.pix/12.blending.pd 04.pix/12.composite.pd 04.pix/12.pix_multiply.pd 04.pix/13.maskDancer.pd 04.pix/14.takeAlpha.pd 04.pix/15.pix_alpha.pd 04.pix/16.alphaGrey.pd 04.pix/16.pix_2grey.pd 04.pix/17.pix_gain.pd 04.pix/18.Curves.pd 04.pix/19.colorMatrix.pd 04.pix/20.convolve.pd 04.pix/22.biquad.pd 04.pix/23.gravity.pd 04.pix/24.time-filtering.pd 04.pix/25.buffer.pd 04.pix/26.framebuffer_readback.pd 04.pix/27.bitmap_font.pd '/usr/local/lib/pd/extra/Gem/examples/04.pix'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/14.multiple_windows'
+ /usr/bin/install -c -m 644  14.multiple_windows/01.basic_example.pd 14.multiple_windows/02.switch_context.pd 14.multiple_windows/03.texture_sharing.pd '/usr/local/lib/pd/extra/Gem/examples/14.multiple_windows'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/09.openGL'
+ /usr/bin/install -c -m 644  09.openGL/01.primQuad.pd 09.openGL/02.displayList.pd 09.openGL/03.stencilBuffer.pd 09.openGL/04.clearZ.pd 09.openGL/05.load_identity_matrix.pd '/usr/local/lib/pd/extra/Gem/examples/09.openGL'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/05.text'
+ /usr/bin/install -c -m 644  05.text/01.TextNoLoadBang.pd 05.text/01.Text.pd 05.text/03.ChangeTextNoLoadBang.pd 05.text/03.ChangeText.pd '/usr/local/lib/pd/extra/Gem/examples/05.text'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/06.particle'
+ /usr/bin/install -c -m 644  06.particle/01.simple.pd 06.particle/02.fountain.pd 06.particle/03.orbit.pd 06.particle/04.combo.pd 06.particle/05.twoSrc.pd 06.particle/06.target.pd 06.particle/07.render.pd 06.particle/08.info.pd 06.particle/09.sink.pd '/usr/local/lib/pd/extra/Gem/examples/06.particle'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/02.advanced'
+ /usr/bin/install -c -m 644  02.advanced/00.gemwin-subpatch.pd 02.advanced/01.Separator.pd 02.advanced/02.Ortho.pd 02.advanced/03.View_OSD.pd 02.advanced/03.View.pd 02.advanced/04.Fog.pd 02.advanced/05.Stereo.pd 02.advanced/06.StereoParticle.pd 02.advanced/07.Snapshot1.pd 02.advanced/08.Snapshot2.pd 02.advanced/09.SnapshotSave.pd 02.advanced/09.SnapshotSaveHD.pd 02.advanced/10.LinearPath.pd 02.advanced/11.SplinePath.pd 02.advanced/12.Hsv.pd 02.advanced/13.ModelRescale.pd 02.advanced/14.RenderOrder.pd 02.advanced/15.GemWin.pd 02.advanced/16.vertex_program.pd 02.advanced/17.fragment_program.pd 02.advanced/18.gl_shading_language.pd 02.advanced/19.pointer.pd 02.advanced/20.double-gemhead_vs_repeat.pd 02.advanced/21.basic_LSystem.pd 02.advanced/22.double-iterative.pd 02.advanced/23.SplitScreen.pd 02.advanced/snapshotHD.pd '/usr/local/lib/pd/extra/Gem/examples/02.advanced'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/99.games'
+ /usr/bin/install -c -m 644  99.games/puzzle.pd '/usr/local/lib/pd/extra/Gem/examples/99.games'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/03.lighting'
+ /usr/bin/install -c -m 644  03.lighting/01.world_light.pd 03.lighting/02.light.pd 03.lighting/03.controlLights.pd 03.lighting/04.moveSpheres.pd 03.lighting/05.materials.pd '/usr/local/lib/pd/extra/Gem/examples/03.lighting'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/10.glsl'
+ /usr/bin/install -c -m 644  10.glsl/interpol.frag 10.glsl/link.frag 10.glsl/link.vert 10.glsl/mass.frag 10.glsl/mass.vert 10.glsl/multitexture.frag 10.glsl/multitexture_rect.frag 10.glsl/multitexture_rect.vert 10.glsl/multitexture.vert 10.glsl/normal.frag 10.glsl/normal.vert 10.glsl/panoramique.frag 10.glsl/panoramique.vert 10.glsl/P_distord.frag 10.glsl/P_distord.vert 10.glsl/single_blur.pd 10.glsl/T_distord.frag 10.glsl/T_distord.vert 10.glsl/texture.frag 10.glsl/texture_rect.frag 10.glsl/texture.vert 10.glsl/tri2fan.frag 10.glsl/tri2fan.geom 10.glsl/tri2fan.vert 10.glsl/vague.frag 10.glsl/wave.frag '/usr/local/lib/pd/extra/Gem/examples/10.glsl'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/13.recursion'
+ /usr/bin/install -c -m 644  13.recursion/01.repetition_is_futile.pd 13.recursion/02.iteration_is_insufficient.pd 13.recursion/03.recursive_spiral.pd 13.recursion/04.binary_tree.pd 13.recursion/05.n-ary_tree.pd 13.recursion/06.breaking_symmetry.pd 13.recursion/nnrepeat-help.pd 13.recursion/nnrepeat.pd 13.recursion/nnrepeat-test.pd 13.recursion/nrepeat-help.pd 13.recursion/nrepeat.pd 13.recursion/nrepeat-test.pd 13.recursion/README 13.recursion/stack-help.pd 13.recursion/stack.pd 13.recursion/xform-gui.pd '/usr/local/lib/pd/extra/Gem/examples/13.recursion'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/04.video'
+ /usr/bin/install -c -m 644  04.video/00.SimpleVideo.pd 04.video/01.VideoPaint.pd 04.video/02.VideoSphere.pd 04.video/03.movement_detection.pd 04.video/04.videoRTX.pd 04.video/05.buffer_rtx.pd 04.video/06.frame_diff_tracking.pd 04.video/07.bg_subtract_tracking.pd 04.video/08.color_classification.pd '/usr/local/lib/pd/extra/Gem/examples/04.video'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/01.basic'
+ /usr/bin/install -c -m 644  01.basic/01.redSquare.pd 01.basic/02.blueRectangle.pd 01.basic/03.disk.pd 01.basic/04.PrimTri.pd 01.basic/05.cube.pd 01.basic/06.sphere.pd 01.basic/07.cylinder.pd 01.basic/08.model.pd 01.basic/09.yelloTeapot.pd '/usr/local/lib/pd/extra/Gem/examples/01.basic'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/data'
+ /usr/bin/install -c -m 644  data/64shade.tif data/alea.mpg data/anim-1.mov data/bitmap_font_6x8.bmp data/brick.frag data/brick.vert data/blob0.tif data/blob1.tif data/blob2.tif data/COPYING.txt data/dancer.JPG data/ducks.png data/fractalAlpha.TIF data/fractal.JPG data/homer.avi data/random.fp data/temp0.JPG data/temp1.JPG data/temp2.JPG data/Toon.frag data/Toon.vert data/toon.vp data/valcolor.tab data/valmotion.tab data/venus.mtl data/venus.obj data/vera.ttf '/usr/local/lib/pd/extra/Gem/examples/data'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem/examples/08.io'
+ /usr/bin/install -c -m 644  08.io/01.Mouse.pd 08.io/02.Tablet.pd 08.io/03.Orb.pd 08.io/04.UseOrb.pd '/usr/local/lib/pd/extra/Gem/examples/08.io'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/examples'
+make[1]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/examples'
+Making install in build
+make[1]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/build'
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/build'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/build'
+make[1]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/build'
+Making install in plugins
+make[1]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins'
+Making install in imageMAGICK
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageMAGICK'
+gem_imageMAGICK.so: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/plugins/imageMAGICK/.libs to ../..
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageMAGICK'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   gem_imageMAGICK.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/gem_imageMAGICK.so /usr/local/lib/pd/extra/Gem/gem_imageMAGICK.so
+libtool: install: /usr/bin/install -c .libs/gem_imageMAGICK.lai /usr/local/lib/pd/extra/Gem/gem_imageMAGICK.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageMAGICK'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageMAGICK'
+Making install in imageTIFF
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageTIFF'
+gem_imageTIFF.so: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/plugins/imageTIFF/.libs to ../..
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageTIFF'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   gem_imageTIFF.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/gem_imageTIFF.so /usr/local/lib/pd/extra/Gem/gem_imageTIFF.so
+libtool: install: /usr/bin/install -c .libs/gem_imageTIFF.lai /usr/local/lib/pd/extra/Gem/gem_imageTIFF.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageTIFF'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageTIFF'
+Making install in imageJPEG
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageJPEG'
+gem_imageJPEG.so: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/plugins/imageJPEG/.libs to ../..
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageJPEG'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   gem_imageJPEG.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/gem_imageJPEG.so /usr/local/lib/pd/extra/Gem/gem_imageJPEG.so
+libtool: install: /usr/bin/install -c .libs/gem_imageJPEG.lai /usr/local/lib/pd/extra/Gem/gem_imageJPEG.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageJPEG'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageJPEG'
+Making install in imageSGI
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageSGI'
+gem_imageSGI.so: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/plugins/imageSGI/.libs to ../..
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageSGI'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   gem_imageSGI.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/gem_imageSGI.so /usr/local/lib/pd/extra/Gem/gem_imageSGI.so
+libtool: install: /usr/bin/install -c .libs/gem_imageSGI.lai /usr/local/lib/pd/extra/Gem/gem_imageSGI.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageSGI'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageSGI'
+Making install in imageQT
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageQT'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageQT'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageQT'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/imageQT'
+Making install in filmAVF
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVF'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVF'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVF'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVF'
+Making install in filmAVI
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVI'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVI'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVI'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVI'
+Making install in filmAVIPLAY
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVIPLAY'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVIPLAY'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVIPLAY'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmAVIPLAY'
+Making install in filmDS
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmDS'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmDS'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmDS'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmDS'
+Making install in filmDarwin
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmDarwin'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmDarwin'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmDarwin'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmDarwin'
+Making install in filmGMERLIN
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmGMERLIN'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmGMERLIN'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmGMERLIN'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmGMERLIN'
+Making install in filmMPEG1
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmMPEG1'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmMPEG1'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmMPEG1'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmMPEG1'
+Making install in filmMPEG3
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmMPEG3'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmMPEG3'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmMPEG3'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmMPEG3'
+Making install in filmQT
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmQT'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmQT'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmQT'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmQT'
+Making install in filmQT4L
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmQT4L'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmQT4L'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmQT4L'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/filmQT4L'
+Making install in recordQT
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordQT'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordQT'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordQT'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordQT'
+Making install in recordQT4L
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordQT4L'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordQT4L'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordQT4L'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordQT4L'
+Making install in recordV4L
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordV4L'
+gem_recordV4L.so: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/plugins/recordV4L/.libs to ../..
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordV4L'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   gem_recordV4L.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/gem_recordV4L.so /usr/local/lib/pd/extra/Gem/gem_recordV4L.so
+libtool: install: /usr/bin/install -c .libs/gem_recordV4L.lai /usr/local/lib/pd/extra/Gem/gem_recordV4L.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordV4L'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordV4L'
+Making install in recordV4L2
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordV4L2'
+gem_recordV4L2.so: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/plugins/recordV4L2/.libs to ../..
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordV4L2'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   gem_recordV4L2.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/gem_recordV4L2.so /usr/local/lib/pd/extra/Gem/gem_recordV4L2.so
+libtool: install: /usr/bin/install -c .libs/gem_recordV4L2.lai /usr/local/lib/pd/extra/Gem/gem_recordV4L2.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordV4L2'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/recordV4L2'
+Making install in videoDC1394
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDC1394'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDC1394'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDC1394'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDC1394'
+Making install in videoDS
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDS'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDS'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDS'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDS'
+Making install in videoDV4L
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDV4L'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDV4L'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDV4L'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDV4L'
+Making install in videoDarwin
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDarwin'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDarwin'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDarwin'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDarwin'
+Making install in videoSGI
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoSGI'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoSGI'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoSGI'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoSGI'
+Making install in videoUNICAP
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoUNICAP'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoUNICAP'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoUNICAP'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoUNICAP'
+Making install in videoV4L
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoV4L'
+gem_videoV4L.so: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/plugins/videoV4L/.libs to ../..
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoV4L'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   gem_videoV4L.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/gem_videoV4L.so /usr/local/lib/pd/extra/Gem/gem_videoV4L.so
+libtool: install: /usr/bin/install -c .libs/gem_videoV4L.lai /usr/local/lib/pd/extra/Gem/gem_videoV4L.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 v4l-videoplugin.pd '/usr/local/lib/pd/extra/Gem'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoV4L'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoV4L'
+Making install in videoV4L2
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoV4L2'
+gem_videoV4L2.so: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/plugins/videoV4L2/.libs to ../..
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoV4L2'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   gem_videoV4L2.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/gem_videoV4L2.so /usr/local/lib/pd/extra/Gem/gem_videoV4L2.so
+libtool: install: /usr/bin/install -c .libs/gem_videoV4L2.lai /usr/local/lib/pd/extra/Gem/gem_videoV4L2.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 v4l2-videoplugin.pd '/usr/local/lib/pd/extra/Gem'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoV4L2'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoV4L2'
+Making install in videoVFW
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVFW'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVFW'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVFW'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVFW'
+Making install in videoVLC
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVLC'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVLC'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVLC'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVLC'
+Making install in videoVNC
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVNC'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVNC'
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVNC'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoVNC'
+Making install in videoAVT
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoAVT'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoAVT'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoAVT'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoAVT'
+Making install in videoHALCON
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoHALCON'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoHALCON'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoHALCON'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoHALCON'
+Making install in videoPYLON
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoPYLON'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoPYLON'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoPYLON'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoPYLON'
+Making install in videoDECKLINK
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDECKLINK'
+gem_videoDECKLINK.so: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDECKLINK/.libs to .
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDECKLINK'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 decklink-videoplugin.pd '/usr/local/lib/pd/extra/Gem'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   gem_videoDECKLINK.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/gem_videoDECKLINK.so /usr/local/lib/pd/extra/Gem/gem_videoDECKLINK.so
+libtool: install: /usr/bin/install -c .libs/gem_videoDECKLINK.lai /usr/local/lib/pd/extra/Gem/gem_videoDECKLINK.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDECKLINK'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/videoDECKLINK'
+Making install in modelOBJ
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelOBJ'
+gem_modelOBJ.so: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/plugins/modelOBJ/.libs to ../..
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelOBJ'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   gem_modelOBJ.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/gem_modelOBJ.so /usr/local/lib/pd/extra/Gem/gem_modelOBJ.so
+libtool: install: /usr/bin/install -c .libs/gem_modelOBJ.lai /usr/local/lib/pd/extra/Gem/gem_modelOBJ.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelOBJ'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelOBJ'
+Making install in modelASSIMP2
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelASSIMP2'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelASSIMP2'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelASSIMP2'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelASSIMP2'
+Making install in modelASSIMP3
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelASSIMP3'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelASSIMP3'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelASSIMP3'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins/modelASSIMP3'
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins'
+make[1]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/plugins'
+Making install in src/Output
+make[1]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Output'
+UNUSED SOURCES: 
+gemglutwindow.pd_linux: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/src/Output/.libs to ../..
+gemglxwindow.pd_linux: creating convenience link from /home/thalia/Documents/Pd/externals/Gem-master/src/Output/.libs to ../..
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Output'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   gemglutwindow.la gemglxwindow.la '/usr/local/lib/pd/extra/Gem'
+libtool: install: /usr/bin/install -c .libs/gemglutwindow.pd_linux /usr/local/lib/pd/extra/Gem/gemglutwindow.pd_linux
+libtool: install: /usr/bin/install -c .libs/gemglutwindow.lai /usr/local/lib/pd/extra/Gem/gemglutwindow.la
+libtool: install: /usr/bin/install -c .libs/gemglxwindow.pd_linux /usr/local/lib/pd/extra/Gem/gemglxwindow.pd_linux
+libtool: install: /usr/bin/install -c .libs/gemglxwindow.lai /usr/local/lib/pd/extra/Gem/gemglxwindow.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/Gem
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/Gem
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Output'
+make[1]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/src/Output'
+Making install in extra
+make[1]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra'
+Making install in pix_mano
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_mano'
+rm -f pix_mano.pd_linux
+test -f .libs/pix_mano.pd_linux && ln -s .libs/pix_mano.pd_linux pix_mano.pd_linux || true
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_mano'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/lib/pd/extra/pix_mano'
+ /usr/bin/install -c -m 644 LICENSE.txt pix_mano-help.pd '/usr/local/lib/pd/extra/pix_mano'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/pix_mano'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   pix_mano.la '/usr/local/lib/pd/extra/pix_mano'
+libtool: install: /usr/bin/install -c .libs/pix_mano.pd_linux /usr/local/lib/pd/extra/pix_mano/pix_mano.pd_linux
+libtool: install: /usr/bin/install -c .libs/pix_mano.lai /usr/local/lib/pd/extra/pix_mano/pix_mano.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/pix_mano
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/pix_mano
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_mano'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_mano'
+Making install in pix_drum
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_drum'
+rm -f pix_drum.pd_linux
+test -f .libs/pix_drum.pd_linux && ln -s .libs/pix_drum.pd_linux pix_drum.pd_linux || true
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_drum'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/lib/pd/extra/pix_drum'
+ /usr/bin/install -c -m 644 LICENSE.txt pix_drum-help.pd '/usr/local/lib/pd/extra/pix_drum'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/pix_drum'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   pix_drum.la '/usr/local/lib/pd/extra/pix_drum'
+libtool: install: /usr/bin/install -c .libs/pix_drum.pd_linux /usr/local/lib/pd/extra/pix_drum/pix_drum.pd_linux
+libtool: install: /usr/bin/install -c .libs/pix_drum.lai /usr/local/lib/pd/extra/pix_drum/pix_drum.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/pix_drum
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/pix_drum
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_drum'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_drum'
+Making install in pix_artoolkit
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_artoolkit'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_artoolkit'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_artoolkit'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_artoolkit'
+Making install in pix_fiducialtrack
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_fiducialtrack'
+rm -f pix_fiducialtrack.pd_linux
+test -f .libs/pix_fiducialtrack.pd_linux && ln -s .libs/pix_fiducialtrack.pd_linux pix_fiducialtrack.pd_linux || true
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_fiducialtrack'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/lib/pd/extra/pix_fiducialtrack'
+ /usr/bin/install -c -m 644 pix_fiducialtrack-help.pd all.trees '/usr/local/lib/pd/extra/pix_fiducialtrack'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/pix_fiducialtrack'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   pix_fiducialtrack.la '/usr/local/lib/pd/extra/pix_fiducialtrack'
+libtool: install: /usr/bin/install -c .libs/pix_fiducialtrack.pd_linux /usr/local/lib/pd/extra/pix_fiducialtrack/pix_fiducialtrack.pd_linux
+libtool: install: /usr/bin/install -c .libs/pix_fiducialtrack.lai /usr/local/lib/pd/extra/pix_fiducialtrack/pix_fiducialtrack.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/pix_fiducialtrack
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/pix_fiducialtrack
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_fiducialtrack'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_fiducialtrack'
+Making install in pix_hit
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_hit'
+rm -f pix_hit.pd_linux
+test -f .libs/pix_hit.pd_linux && ln -s .libs/pix_hit.pd_linux pix_hit.pd_linux || true
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_hit'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/lib/pd/extra/pix_hit'
+ /usr/bin/install -c -m 644 LICENSE.txt pix_hit-help.pd '/usr/local/lib/pd/extra/pix_hit'
+ /bin/mkdir -p '/usr/local/lib/pd/extra/pix_hit'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   pix_hit.la '/usr/local/lib/pd/extra/pix_hit'
+libtool: install: /usr/bin/install -c .libs/pix_hit.pd_linux /usr/local/lib/pd/extra/pix_hit/pix_hit.pd_linux
+libtool: install: /usr/bin/install -c .libs/pix_hit.lai /usr/local/lib/pd/extra/pix_hit/pix_hit.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/local/lib/pd/extra/pix_hit
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/pd/extra/pix_hit
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_hit'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra/pix_hit'
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra'
+make[3]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master/extra'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra'
+make[1]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master/extra'
+make[1]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master'
+make[2]: Entering directory '/home/thalia/Documents/Pd/externals/Gem-master'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/lib/pd/extra/Gem'
+ /usr/bin/install -c -m 644 Gem-meta.pd ChangeLog COPYING.txt GnuGPL.LICENSE.txt README.txt examples/data/vera.ttf '/usr/local/lib/pd/extra/Gem'
+ /bin/mkdir -p '/usr/local/lib/pkgconfig'
+ /usr/bin/install -c -m 644 Gem.pc '/usr/local/lib/pkgconfig'
+make[2]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master'
+make[1]: Leaving directory '/home/thalia/Documents/Pd/externals/Gem-master'
+

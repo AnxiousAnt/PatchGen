@@ -1,0 +1,35 @@
+#N canvas 1306 -1075 590 601 10;
+#X msg 33 29 clear;
+#X text 55 264 click to open and edit text:;
+#X obj 42 116 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 32 335 t b p;
+#X obj 32 384 text get -s text t;
+#X msg 33 359 0;
+#X obj 32 434 print;
+#X obj 32 409 list trim;
+#X msg 31 55 read test-test.txt;
+#X msg 81 110 write test-test.txt;
+#X obj 234 146 text insert test-test.txt;
+#X obj 37 293 text define -k test-test.txt;
+#A set 73 61 73 65 71 77 65 71 77 61 73 66 7a 78 7a 78 \; 73 61 73
+65 71 77 65 71 77 61 73 66 7a 78 7a 78 \; 55 \; 55 61 73 65 71 77 65
+71 77 61 73 66 7a 78 7a 78 \; 44 61 73 65 71 77 65 71 77 61 73 66 7a
+78 7a 78 \;;
+#X msg 307 109 1e+09;
+#X obj 234 57 t b l b;
+#X msg 234 14 44 61 73 65 71 77 65 71 77 61 73 66 7a 78 7a 78;
+#X connect 0 0 11 0;
+#X connect 2 0 11 0;
+#X connect 3 0 5 0;
+#X connect 3 1 4 3;
+#X connect 4 0 7 0;
+#X connect 5 0 4 0;
+#X connect 7 0 6 0;
+#X connect 8 0 11 0;
+#X connect 9 0 11 0;
+#X connect 12 0 10 1;
+#X connect 13 0 9 0;
+#X connect 13 1 10 0;
+#X connect 13 2 12 0;
+#X connect 14 0 13 0;

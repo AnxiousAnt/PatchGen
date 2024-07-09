@@ -1,0 +1,15 @@
+#N canvas 346 270 502 352 10;
+#N canvas 0 22 486 336 sub_gop 0;
+#X text -2 -1 This is just an "empty" gop object;
+#X coords 0 -1 1 1 100 30 1 0 15;
+#X restore 22 133 pd sub_gop;
+#X text 21 -37 This patch illustrates how Pd in a less nice manner
+will shutdown. It happens when a patch that holds an GOP enabled subpatch
+or ditto abstraction gets closed while the GOP bit is open.;
+#X text 19 21 It happens both in Pd 0.39.2 and Pd 0.40.2. The platform
+is Intel Mac OSX 10.4.8;
+#X text 22 55 Do this:;
+#X text 31 68 1) Rightclick one of the GOP object below;
+#X text 31 81 2) Choose 'Open';
+#X text 31 94 3) Close this window;
+#X obj 138 133 t_abs_gop;

@@ -1,0 +1,18 @@
+#N canvas 0 0 456 306 12;
+#X obj 99 217 dac~;
+#X obj 98 96 osc~ 440;
+#X floatatom 98 73 5 0 0 0 - - -;
+#X obj 99 129 delwrite~ delay_line 1000;
+#X obj 99 173 delread~ delay_line 1000;
+#X obj 98 20 loadbang;
+#X msg 98 46 440;
+#X text 156 71 <-- fiddle with this;
+#X obj 346 218 loadbang;
+#X msg 346 247 \; pd dsp 1;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 4 0 0 1;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 8 0 9 0;

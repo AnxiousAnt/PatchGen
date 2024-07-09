@@ -1,0 +1,6 @@
+#N canvas 0 0 450 300 10;
+#X msg 130 76 list home chuckk Pd;
+#X obj 130 130 print;
+#X obj 130 103 list2symbol /;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

@@ -1,0 +1,78 @@
+#N canvas 771 172 632 556 10;
+#X obj -171 320 leapmotion-rightlefthand;
+#X obj -171 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -171 42 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj -171 80 metro 50;
+#X msg -115 80 info;
+#X obj -171 165 leapmotion;
+#N canvas 407 57 450 300 hands 0;
+#X obj 169 75 unpack 0 0 0 0 0 0;
+#X floatatom 163 119 5 0 0 0 hands - -, f 5;
+#X obj 169 49 inlet;
+#X connect 0 2 1 0;
+#X connect 2 0 0 0;
+#X coords 0 -1 1 1 120 40 1 100 100;
+#X restore -171 405 pd hands;
+#X text 69 119 The abstraction has two modes:;
+#X text 89 142 1 one hand present: will check if the hand appeared
+on the right or the left side and assume that it is the right hand
+if it appeared on the right side., f 56;
+#X text 89 212 2 two hands present: will check which of the two hands
+is rightmost and defines that as the right one., f 56;
+#X obj -109 250 t a a;
+#N canvas 770 672 450 300 checkhands 0;
+#X obj 139 -80 inlet;
+#X obj 139 -58 route hand;
+#X obj 139 -34 route 0 1;
+#X obj 139 8 route palm_position;
+#X obj 271 8 route palm_position;
+#X obj 139 37 unpack f f f;
+#X obj 271 36 unpack f f f;
+#X floatatom 126 120 5 0 0 0 h_0 - -, f 5;
+#X floatatom 185 121 5 0 0 0 h_1 - -, f 5;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X coords 0 -1 1 1 120 40 1 100 100;
+#X restore -2 369 pd checkhands;
+#N canvas 770 672 450 300 checkhands 0;
+#X obj 139 -80 inlet;
+#X obj 139 -58 route hand;
+#X obj 139 -34 route 0 1;
+#X obj 139 8 route palm_position;
+#X obj 271 8 route palm_position;
+#X obj 139 37 unpack f f f;
+#X obj 271 36 unpack f f f;
+#X floatatom 126 120 5 0 0 0 h_0 - -, f 5;
+#X floatatom 185 121 5 0 0 0 h_1 - -, f 5;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X coords 0 -1 1 1 120 40 1 100 100;
+#X restore 0 286 pd checkhands;
+#X text 67 71 Currently leapmotion.pd does not let you know if the
+hand is a right or left one. This abstraction tries to work around
+this limitation \, but does not fully eradicate it.;
+#X connect 0 0 6 0;
+#X connect 0 1 11 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 1 10 0;
+#X connect 5 2 0 2;
+#X connect 10 0 0 1;
+#X connect 10 1 12 0;

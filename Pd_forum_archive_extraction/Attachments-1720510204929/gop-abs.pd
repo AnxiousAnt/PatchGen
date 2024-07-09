@@ -1,0 +1,14 @@
+#N canvas 0 0 718 572 10;
+#X obj 149 478 namecanvas \$0-bla;
+#X obj 148 456 s \$0-bla;
+#X obj 103 123 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 103 66 inlet;
+#X obj 103 188 outlet;
+#X obj 148 411 inlet;
+#X msg 148 434 donecanvasdialog \$1 -1 1 0 -1 1 1 50 50 100 100;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X coords 0 -1 1 1 50 50 1 100 100;

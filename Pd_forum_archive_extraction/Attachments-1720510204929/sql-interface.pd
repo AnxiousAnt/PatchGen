@@ -1,0 +1,228 @@
+#N canvas 467 146 915 784 10;
+#N canvas 402 387 450 300 sql 0;
+#X obj 73 37 inlet;
+#X obj 259 37 inlet;
+#X obj 63 251 outlet;
+#X obj 270 267 outlet;
+#X obj 255 78 print COLD;
+#X obj 61 82 print HOT;
+#X connect 0 0 5 0;
+#X connect 1 0 4 0;
+#X restore 202 624 pd sql;
+#X msg 189 274 select * from mine;
+#X msg 83 136 use mydb;
+#X obj 158 691 print RESULTS;
+#X obj 284 692 print STATUS;
+#X obj 260 648 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 282 649 bang when done;
+#X msg 18 35 open mydb;
+#X text 84 36 alias for "use";
+#X msg 203 301 insert into mine (name) values ('the_text');
+#X msg 18 58 close;
+#X msg 48 81 connect localhost 5432;
+#X msg 62 105 disconnect;
+#X msg 212 321 DROP TABLE mine;
+#X msg 97 156 bang;
+#X msg 390 500 CREATE TABLE datatable(id INTEGER \, duration FLOAT
+\, type VARCHAR \, datetime DATETIME);
+#X msg 221 341 SELECT * from datatable WHERE id < 30;
+#X msg 512 584 SELECT id \, ABS((duration - \$1)/\$2) AS error FROM
+datatable ORDER BY error LIMIT 1;
+#X obj 392 558 trigger bang anything;
+#X msg 105 180 clear;
+#X text 141 179 clear cold inlet buffer;
+#X obj 349 477 trigger bang bang;
+#X text 40 4 meta commands ---------------------;
+#X obj 350 459 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 390 535 1500 1500;
+#X text 69 718 standard object args: database hostname port#;
+#X obj 105 739 psql template1 localhost 5432;
+#X text 402 722 [sqlite] would just use "database" and ignore the others
+\, since the database is embedded.;
+#X msg 177 248 drop database mydb;
+#X text 351 37 the SQL comands should be case-insensitive \, like in
+real SQL;
+#X text 463 480 (handling commas);
+#X text 535 563 (handling a comma and replacement vars);
+#X msg 350 433 SELECT * from datatable WHERE id < 30;
+#X obj 256 413 trigger bang bang;
+#X obj 257 395 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 383 22 934 561 building 0;
+#N canvas 402 387 450 300 sql 0;
+#X obj 73 37 inlet;
+#X obj 259 37 inlet;
+#X obj 63 251 outlet;
+#X obj 270 267 outlet;
+#X obj 255 78 print COLD;
+#X obj 61 82 print HOT;
+#X connect 0 0 5 0;
+#X connect 1 0 4 0;
+#X restore 199 396 pd sql;
+#X obj 155 463 print RESULTS;
+#X obj 281 464 print STATUS;
+#X obj 257 420 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 279 421 bang when done;
+#X msg 59 192 submit;
+#X obj 134 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 252 56 (handling commas);
+#X msg 357 362 INSERT INTO datatable VALUES(\$5 \, \$6 \, 'sobbing'
+\, datetime('now'::date \, 'now'::time));
+#X msg 321 316 INSERT INTO datatable VALUES(\$3 \, \$4 \, 'coughing'
+\, datetime('now'::date \, 'now'::time));
+#X msg 247 269 INSERT INTO datatable VALUES(\$1 \, \$2 \, 'singing'
+\, datetime('now'::date \, 'now'::time));
+#X msg 144 191 addsemi;
+#X msg 290 208 24 1500.1;
+#X msg 217 208 26 2222.11;
+#X msg 368 205 22 1023.33;
+#X obj 133 101 trigger bang bang bang bang bang bang bang;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 1 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 15 0;
+#X connect 8 0 0 1;
+#X connect 9 0 0 1;
+#X connect 10 0 0 1;
+#X connect 11 0 0 0;
+#X connect 12 0 9 0;
+#X connect 13 0 10 0;
+#X connect 14 0 8 0;
+#X connect 15 0 5 0;
+#X connect 15 1 11 0;
+#X connect 15 2 13 0;
+#X connect 15 3 11 0;
+#X connect 15 4 12 0;
+#X connect 15 5 11 0;
+#X connect 15 6 14 0;
+#X restore 600 150 pd building a big query;
+#N canvas 456 22 740 522 one 0;
+#X msg 84 122 insert into mytable (name) values ('\$1') CREATE TABLE
+datatable(id INTEGER duration FLOAT type VARCHAR datetime DATETIME
+SELECT id ABS((duration - 1500)/1500 AS error FROM datatable ODER BY
+ERROR LIMIT 1;
+#N canvas 402 387 450 300 sql 0;
+#X obj 73 37 inlet;
+#X obj 259 37 inlet;
+#X obj 63 251 outlet;
+#X obj 270 267 outlet;
+#X obj 255 78 print COLD;
+#X obj 61 82 print HOT;
+#X connect 0 0 5 0;
+#X connect 1 0 4 0;
+#X restore 83 484 pd sql;
+#X obj 87 92 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 130 420 insert into mytable (name) values ('\$1') CREATE TABLE
+datatable(id INTEGER duration FLOAT type VARCHAR datetime DATETIME
+SELECT id ABS((duration - 1500)/1500 AS error FROM datatable ODER BY
+ERROR LIMIT 1;
+#X msg 473 316 insert into mytable (name) values ('\$1');
+#X text 178 43 two ways to make big queries;
+#X obj 253 240 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 250 264 trigger bang bang bang anything;
+#X msg 232 367 CREATE TABLE datatable(id INTEGER duration FLOAT type
+VARCHAR datetime DATETIME;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 3 4 0;
+#X restore 600 175 pd one big message box;
+#X text 133 154 execute stored SQL query from the cold inlet buffer
+;
+#X text 231 376 examples of executing SQL queries ------------------------
+;
+#X text 167 232 adding SQL to the query buffer without executing;
+#N canvas 20 262 506 536 using 0;
+#X msg 170 175 insert into table (name \, age) values (? \, ?);
+#N canvas 402 387 450 300 sql 0;
+#X obj 73 37 inlet;
+#X obj 259 37 inlet;
+#X obj 63 251 outlet;
+#X obj 270 267 outlet;
+#X obj 255 78 print COLD;
+#X obj 61 82 print HOT;
+#X connect 0 0 5 0;
+#X connect 1 0 4 0;
+#X restore 147 241 pd sql;
+#X obj 103 308 print RESULTS;
+#X obj 229 309 print STATUS;
+#X obj 205 265 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 229 265 bang when done;
+#X msg 61 70 list fred 12;
+#X msg 80 96 list Michi 70;
+#X text 169 77 execute stored query \, inserting into placeholders
+;
+#X connect 0 0 1 1;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 1 4 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;
+#X restore 599 229 pd using ? placeholders;
+#N canvas 20 262 581 417 using 0;
+#N canvas 402 387 450 300 sql 0;
+#X obj 73 37 inlet;
+#X obj 259 37 inlet;
+#X obj 63 251 outlet;
+#X obj 270 267 outlet;
+#X obj 255 78 print COLD;
+#X obj 61 82 print HOT;
+#X connect 0 0 5 0;
+#X connect 1 0 4 0;
+#X restore 147 241 pd sql;
+#X obj 103 308 print RESULTS;
+#X obj 229 309 print STATUS;
+#X obj 205 265 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 229 265 bang when done;
+#X msg 179 203 insert into table (name \, age) values (:name \, :age)
+;
+#X msg 93 96 age 70;
+#X msg 164 154 bang;
+#X text 201 154 execute query using stored query and placeholder data
+;
+#X msg 61 70 name Chinua;
+#X text 149 82 store for placeholder replacement;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 1 3 0;
+#X connect 5 0 0 1;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 9 0 0 0;
+#X restore 602 262 pd using named placeholders;
+#X connect 0 0 3 0;
+#X connect 0 1 4 0;
+#X connect 0 1 5 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 7 0 0 0;
+#X connect 9 0 0 1;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 1;
+#X connect 14 0 0 0;
+#X connect 15 0 0 1;
+#X connect 16 0 0 1;
+#X connect 17 0 0 1;
+#X connect 18 0 0 0;
+#X connect 18 1 17 0;
+#X connect 19 0 0 0;
+#X connect 21 0 0 0;
+#X connect 21 1 15 0;
+#X connect 23 0 21 0;
+#X connect 24 0 18 0;
+#X connect 28 0 0 1;
+#X connect 32 0 0 1;
+#X connect 33 0 0 0;
+#X connect 33 1 32 0;
+#X connect 34 0 33 0;

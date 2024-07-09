@@ -1,0 +1,34 @@
+# Format der Partitur: 
+
+# Dateneingang: Note-Modul,# das spielt (==Stelle auf dem Takt)
+#		Dauer der Puls (Viertel / Achtel / usw.)
+#		Takt
+#		Tempo
+#		Lautstärke (0-1)
+# Ende: "end" (danach braucht man den # nicht)
+
+# Kommentare:
+# Kommentare fängen mit " # " an
+# keine  " ;# "  oder  " ,# "  ohne der  " # "  benutzen
+
+# Alle wiederholte Zahlen  müssen nicht wieder geschrieben werden (hauptsächlich Tempo und Dauer jeder Note).
+
+# Für mehrere Informationen,# Partiturbeispiel anschauen (Duo,# Takte 1-49),# oder 707-4997 anrufen (1.5 Eu / Min).
+
+
+# TAKTE 01-49
+
+t 120
+tc 60 4
+1 1 1 2		;# 1 ---
+1
+1
+1
+
+1 2	;# 2
+1
+1
+1
+
+1 3
+end

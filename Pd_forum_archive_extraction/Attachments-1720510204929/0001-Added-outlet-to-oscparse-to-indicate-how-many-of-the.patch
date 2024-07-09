@@ -1,0 +1,122 @@
+>From 4bdcdea33c079f8b9ad5f15f4c665493c18f4b22 Mon Sep 17 00:00:00 2001
+From: Chris McCormick <chris@mccormick.cx>
+Date: Fri, 22 Aug 2014 17:49:24 +0200
+Subject: [PATCH] Added outlet to oscparse to indicate how many of the symbols
+ belong to the address component of the incoming message.
+
+---
+ doc/5.reference/oscparse-help.pd |   32 +++++++++++++++++---------------
+ src/x_misc.c                     |   11 ++++++++---
+ 2 files changed, 25 insertions(+), 18 deletions(-)
+
+diff --git a/doc/5.reference/oscparse-help.pd b/doc/5.reference/oscparse-help.pd
+index 42a4d3d..8b96aea 100644
+--- a/doc/5.reference/oscparse-help.pd
++++ b/doc/5.reference/oscparse-help.pd
+@@ -1,10 +1,10 @@
+-#N canvas 5 71 705 636 12;
++#N canvas 4 66 705 636 12;
+ #X obj 170 492 oscparse;
+ #X text 51 579 see also:;
+ #X obj 139 579 oscformat;
+ #X obj 223 579 netreceive;
+ #X text 434 582 updated for Pd version 0.46;
+-#X obj 170 515 print parse-output;
++#X obj 170 539 print parse-output;
+ #X obj 313 579 list;
+ #X obj 418 437 netreceive -u -b;
+ #X msg 418 382 listen 5000;
+@@ -20,25 +20,27 @@
+ #X text 415 358 packets from network;
+ #X text 520 382 slisten on port 5000;
+ #X text 557 437 UDP packets \, binary output, f 13;
+-#X text 45 41 oscparse take incoming lists of numbers \, interpreting
+-them as the bytes in an OSC message. The output is a list containing
+-\, first \, the symbols making up the address of the OSC packet \,
+-and following that \, numbers and symbols as present in the OSC message.
+-OSC messages may contain 'float' \, 'int' \, 'string' \, or 'blob'
+-elements. Blobs are arrays of bytes (numbers between 0 and 255) and
+-are copied to the output preceded by the blob's byte count.;
+ #X text 80 11 oscparse - parse Open Sound Control (OSC) packets into
+ Pd messages, f 67;
+-#X text 44 187 OSC is a complicated networking protocol (FUDI \, as
++#X obj 223 515 print address-count;
++#X text 44 207 OSC is a complicated networking protocol (FUDI \, as
+ used in netsend/netreceive is simpler and better but less widely used).
+ oscparse and oscformat make no attempt to deal with timetags or aggregates
+ of packets \, nor with streaming OSC. Also \, no attempt is made here
+-to clearly distinguish between the OSC address (symbols) and the following
+-data \, nor between blobs and lists of numbers - it is assumed that
+-you know what types the message should contain. You can alternatively
+-use the OSC objects from mrpeach which have more features than these.
+-;
++to between blobs and lists of numbers - it is assumed that you know
++what types the message should contain. You can alternatively use the
++OSC objects from mrpeach which have more features than these.;
++#X text 45 41 oscparse take incoming lists of numbers \, interpreting
++them as the bytes in an OSC message. The left outlet yeilds a list
++containing \, first \, the symbols making up the address of the OSC
++packet \, and following that \, numbers and symbols as present in the
++OSC message. The right outlet yeilds the number of elements comprising
++the address portion of the incoming message. OSC messages may contain
++'float' \, 'int' \, 'string' \, or 'blob' elements. Blobs are arrays
++of bytes (numbers between 0 and 255) and are copied to the output preceded
++by the blob's byte count.;
+ #X connect 0 0 5 0;
++#X connect 0 1 22 0;
+ #X connect 7 0 0 0;
+ #X connect 8 0 7 0;
+ #X connect 9 0 7 0;
+diff --git a/src/x_misc.c b/src/x_misc.c
+index 6fb48aa..ba805cc 100644
+--- a/src/x_misc.c
++++ b/src/x_misc.c
+@@ -328,6 +328,8 @@ static t_class *oscparse_class;
+ typedef struct _oscparse
+ {
+     t_object x_obj;
++    t_outlet *x_out1;
++    t_outlet *x_out2;
+ } t_oscparse;
+ 
+ #define ROUNDUPTO4(x) (((x) + 3) & (~3))
+@@ -361,7 +363,7 @@ static t_symbol *grabstring(int argc, t_atom *argv, int *ip, int slash)
+ 
+ static void oscparse_list(t_oscparse *x, t_symbol *s, int argc, t_atom *argv)
+ {
+-    int i, j, j2, k, outc = 1, blob = 0, typeonset, dataonset, nfield;
++    int i, j, j2, k, outc = 1, blob = 0, typeonset, dataonset, nfield, addresscount;
+     t_atom *outv;
+     if (!argc)
+         return;
+@@ -379,6 +381,7 @@ static void oscparse_list(t_oscparse *x, t_symbol *s, int argc, t_atom *argv)
+     for (i = 1; i < argc && argv[i].a_w.w_float != 0; i++)
+         if (argv[i].a_w.w_float == '/')
+             outc++;
++    addresscount = outc;
+     i = ROUNDUPTO4(i+1);
+     if (argv[i].a_w.w_float != ',' || (i+1) >= argc)
+     {
+@@ -472,7 +475,8 @@ static void oscparse_list(t_oscparse *x, t_symbol *s, int argc, t_atom *argv)
+                 (int)(argv[i].a_w.w_float), (int)(argv[i].a_w.w_float));
+         } 
+     }
+-    outlet_list(x->x_obj.ob_outlet, 0, j, outv);
++    outlet_float(x->x_out2, (t_float)addresscount);
++    outlet_list(x->x_out1, 0, j, outv);
+     return;
+ tooshort:
+     pd_error(x, "oscparse: OSC message ended prematurely");
+@@ -481,7 +485,8 @@ tooshort:
+ static t_oscparse *oscparse_new(t_symbol *s, int argc, t_atom *argv)
+ {
+     t_oscparse *x = (t_oscparse *)pd_new(oscparse_class);
+-    outlet_new(&x->x_obj, gensym("list"));
++    x->x_out1 = outlet_new(&x->x_obj, &s_list);
++    x->x_out2 = outlet_new(&x->x_obj, &s_float);
+     return (x);
+ }
+ 
+-- 
+1.7.10.4
+

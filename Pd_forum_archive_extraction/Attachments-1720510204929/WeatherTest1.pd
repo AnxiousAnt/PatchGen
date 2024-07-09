@@ -1,0 +1,23 @@
+#N canvas 0 4 1370 320 12;
+#X obj 229 168 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+10 -262144 -1 -1 0 256;
+#X obj 122 199 route float list;
+#X obj 102 228 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+10 -262144 -1 -1 0 256;
+#X obj 131 266 print list;
+#X obj 241 244 print anything;
+#X msg 218 102 disconnect;
+#X msg 162 20 connect xoap.weather.com 80;
+#X obj 160 131 netclient;
+#X obj 431 147 print;
+#X msg 179 44 send GET http://xoap.weather.com/search/local/NOXX0029?cc=*prod=xoap&par=151y032476&key=876717583u446bae
+;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
+#X connect 7 1 0 0;
+#X connect 9 0 7 0;
+#X connect 9 0 8 0;

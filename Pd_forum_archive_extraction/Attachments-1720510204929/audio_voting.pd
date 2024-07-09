@@ -1,0 +1,210 @@
+#N canvas 0 0 1028 689 12;
+#X obj 161 25 adc~;
+#X floatatom 87 127 5 0 0 0 - - -;
+#X obj 15 58 env~;
+#X obj 18 133 vu 15 120 empty empty -1 -8 0 8 -66577 -1 1 0;
+#X obj 12 96 - 100;
+#N canvas 426 294 474 324 peakfreq 0;
+#X obj 62 45 inlet~;
+#X obj 66 231 outlet;
+#X obj 65 138 route 0;
+#X obj 67 182 unpack 0 0 0 0;
+#X obj 68 83 sigmund~ -hop 4096 -minpower 60 -npeak 3 peaks;
+#X connect 0 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 2 0;
+#X restore 78 89 pd peakfreq;
+#X text 32 265 Amplitude;
+#X floatatom 446 287 0 0 0 0 - - -;
+#X text 88 152 Max Frequency;
+#X floatatom 323 278 0 0 0 0 - - -;
+#X msg 384 128 20;
+#X msg 482 133 20;
+#X msg 231 278 0;
+#X obj 230 58 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 84 329 716 314 voting 0;
+#X obj 42 41 inlet~;
+#X obj 183 39 inlet;
+#X obj 255 44 inlet;
+#X obj 331 45 inlet;
+#X obj 403 50 inlet;
+#N canvas 479 155 502 352 ampfilter 0;
+#X obj 35 28 inlet~;
+#X obj 96 96 bp~ 0 0;
+#X obj 119 27 inlet;
+#X obj 203 26 inlet;
+#X obj 105 158 env~;
+#X obj 111 211 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 2;
+#X connect 4 0 5 0;
+#X restore 59 186 pd ampfilter;
+#X floatatom 174 105 0 0 0 3 - - -;
+#X floatatom 223 110 0 0 0 0 - - -;
+#N canvas 479 155 470 320 ampfilter 0;
+#X obj 35 28 inlet~;
+#X obj 96 96 bp~ 0 0;
+#X obj 119 27 inlet;
+#X obj 203 26 inlet;
+#X obj 105 158 env~;
+#X obj 111 211 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 2;
+#X connect 4 0 5 0;
+#X restore 228 199 pd ampfilter;
+#X floatatom 276 120 0 0 0 0 - - -;
+#X floatatom 325 124 0 0 0 0 - - -;
+#X obj 118 242 outlet;
+#X obj 224 245 outlet;
+#X connect 0 0 5 0;
+#X connect 0 0 8 0;
+#X connect 1 0 6 0;
+#X connect 2 0 7 0;
+#X connect 3 0 9 0;
+#X connect 4 0 10 0;
+#X connect 5 0 11 0;
+#X connect 6 0 5 1;
+#X connect 7 0 5 2;
+#X connect 8 0 12 0;
+#X connect 9 0 8 1;
+#X connect 10 0 8 2;
+#X restore 343 206 pd voting;
+#X floatatom 334 163 0 0 0 3 - - -;
+#X floatatom 383 169 0 0 0 0 - - -;
+#X floatatom 430 174 0 0 0 0 - - -;
+#X floatatom 479 174 0 0 0 0 - - -;
+#N canvas 171 189 704 316 timer 0;
+#X obj 197 38 inlet;
+#X obj 301 37 inlet;
+#X obj 23 194 spigot;
+#X obj 114 200 spigot;
+#X obj 23 34 inlet;
+#X obj 49 102 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 104 65 del 6000;
+#X obj 26 247 outlet;
+#X obj 115 250 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 7 0;
+#X connect 3 0 8 0;
+#X connect 4 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 1;
+#X connect 5 0 3 1;
+#X connect 6 0 5 0;
+#X restore 342 245 pd timer;
+#N canvas 443 56 470 330 math 0;
+#X obj 93 51 inlet;
+#X obj 78 105 / 100;
+#X obj 75 172 +;
+#X floatatom 65 217 5 0 0 0 - - -;
+#X obj 59 261 outlet;
+#X obj 185 51 inlet;
+#X msg 186 104 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 2 1;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X restore 242 343 pd math;
+#X floatatom 241 388 5 0 0 0 - - -;
+#N canvas 443 62 462 312 math 0;
+#X obj 93 51 inlet;
+#X obj 78 105 / 100;
+#X obj 75 172 +;
+#X floatatom 65 217 5 0 0 0 - - -;
+#X obj 59 261 outlet;
+#X obj 185 51 inlet;
+#X msg 184 104 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 2 1;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X restore 379 356 pd math;
+#X floatatom 368 388 5 0 0 0 - - -;
+#X floatatom 348 502 5 0 0 0 - - -;
+#X floatatom 412 501 5 0 0 0 - - -;
+#X obj 262 424 expr $f1 \; if ($f1 < $f2 \, 1 \, 0) \; if ($f1 > $f2
+\, 1 \, 0) \;;
+#X msg 436 130 938;
+#X msg 334 128 1265;
+#X text 253 57 <-- VOTE BUTTON;
+#X text 323 297 High Amplitude;
+#X text 446 307 Low Amplitude;
+#X text 282 387 High Total;
+#X text 418 386 Low Total;
+#X text 460 500 <- High is winning;
+#X text 227 504 Low is winning ->;
+#X text 626 9 EXPLANATION When the "VOTE BUTTON" is banged \, [pd voting]
+filters the audio input to two frequencies (currently about 1265 and
+about 938) for a set amount of time \, controlled by [pd timer]. The
+amplitudes are then cumulatively added for the durration of the voting
+session \, currently about five seconds \, and outputted from [pd math].
+Note that to keep the totals within easy-to-handle bounds \, [pd math]
+divides the total by 100 The final expr outputs the winning vote as
+labled \, low on the left and high on the right.;
+#X text 624 499 NOTES 1 The current filtering performed by [pd voting]
+is not fantastically effective. Any suggestions on improving it would
+be appreciated. 2 The final implimentation will include a few microphones
+strategically placed around the room to improve voting pickup. That
+said \, I am aware the final result will be a *very* gross approximation
+of accurate. I'm fine with that \, as long as it sort of works.;
+#X text 328 88 INITIALIZE BELOW by clicking the 4 numbers below;
+#X text 381 6 CHOOSE YOUR OWN ADVENTURE Audio Voting;
+#X text 626 199 WHAT I WOULD LIKE TO DO Ideally \, the voting results
+will be displayed in a pretty \, human-readable format on a projection
+screen. To do that \, I'd like to output the final results (could be
+the final cumulative amplitude totals \, could just be the final 0
+or 1 for who won) to another program. That is \, have PD send the result
+out in a format which another program (either written myself or something
+like PowerPoint) could read. Is there any easy way to do that? Send
+a UDP connection or the like? I know PD can perform visual output through
+Gem \, but the project I'm using this for is going to have branching
+voting paths \, in the style of a Choose Your Own Adventure story.
+That is \, if the first vote is 1 \, the second vote will need to display
+different information (a different choice/path in the story \, specifically)
+than if the first vote was 0 I couldn't figure out an easy way to do
+this using Gem \, but if one exists I'm not opposed to running the
+display that way.;
+#X connect 0 0 2 0;
+#X connect 0 0 5 0;
+#X connect 0 1 14 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 5 0 1 0;
+#X connect 7 0 22 0;
+#X connect 9 0 20 0;
+#X connect 10 0 16 0;
+#X connect 11 0 18 0;
+#X connect 12 0 20 1;
+#X connect 12 0 22 1;
+#X connect 13 0 12 0;
+#X connect 13 0 19 0;
+#X connect 14 0 19 1;
+#X connect 14 1 19 2;
+#X connect 15 0 14 1;
+#X connect 16 0 14 2;
+#X connect 17 0 14 3;
+#X connect 18 0 14 4;
+#X connect 19 0 9 0;
+#X connect 19 1 7 0;
+#X connect 20 0 21 0;
+#X connect 21 0 26 0;
+#X connect 22 0 23 0;
+#X connect 23 0 26 1;
+#X connect 26 1 24 0;
+#X connect 26 2 25 0;
+#X connect 27 0 17 0;
+#X connect 28 0 15 0;

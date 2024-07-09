@@ -1,0 +1,14 @@
+#N canvas 0 0 1010 735 10;
+#X obj 73 131 sig~ 1;
+#X obj 73 192 /~;
+#X obj 120 177 osc~;
+#X obj 73 228 expr~ tanh($v1);
+#X obj 119 91 inlet~;
+#X obj 73 299 outlet~;
+#X obj 141 107 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 3 0 5 0;
+#X connect 4 0 2 0;
+#X connect 6 0 2 1;

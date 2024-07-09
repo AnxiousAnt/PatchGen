@@ -1,0 +1,19 @@
+#N canvas 0 22 187 166 10;
+#X obj 27 60 env~;
+#X obj 27 83 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X msg 71 62 0;
+#X obj 26 38 osc~;
+#X obj 71 39 t b;
+#X obj 71 16 inlet;
+#X obj 27 103 > 0;
+#X obj 27 125 outlet;
+#X text 27 144 bang inlet \, then outlet shows 'compue audio' status
+;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;

@@ -1,0 +1,10 @@
+#N canvas 0 0 450 300 10;
+#X obj 103 199 l2s;
+#X obj 143 171 symbol;
+#X obj 147 133 loadbang;
+#X msg 84 77 a list without spaces;
+#X symbolatom 102 233 20 0 0 0 - - -;
+#X connect 0 0 4 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;

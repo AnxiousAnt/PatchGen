@@ -1,0 +1,604 @@
+#N canvas 26 19 456 631 10;
+#X obj 230 297 hradio 16 1 0 10 \$0-color1 empty empty 0 -6 0 8 -262144
+-1 -1 0;
+#X obj 230 315 hradio 16 1 0 10 \$0-color2 empty empty 0 -6 0 8 -262144
+-1 -1 0;
+#X obj 230 333 hradio 16 1 0 10 \$0-color3 empty empty 0 -6 0 8 -262144
+-1 -1 0;
+#X obj 231 298 cnv 14 14 14 empty empty empty -25 14 0 14 -262144 -33289
+0;
+#X obj 247 298 cnv 14 14 14 empty empty empty -25 14 0 14 -166441 -33289
+0;
+#X obj 263 298 cnv 14 14 14 empty empty empty -25 14 0 14 -66577 -33289
+0;
+#X obj 279 298 cnv 14 14 14 empty empty empty -25 14 0 14 -261689 -33289
+0;
+#X obj 295 298 cnv 14 14 14 empty empty empty -25 14 0 14 -261681 -33289
+0;
+#X obj 311 298 cnv 14 14 14 empty empty empty -25 14 0 14 -262131 -33289
+0;
+#X obj 327 298 cnv 14 14 14 empty empty empty -25 14 0 14 -225271 -33289
+0;
+#X obj 343 298 cnv 14 14 14 empty empty empty -25 14 0 14 -225280 -33289
+0;
+#X obj 359 298 cnv 14 14 14 empty empty empty -25 14 0 14 -228992 -33289
+0;
+#X obj 375 298 cnv 14 14 14 empty empty empty -25 14 0 14 -257472 -33289
+0;
+#X obj 231 316 cnv 14 14 14 empty empty empty -25 14 0 14 -233017 -33289
+0;
+#X obj 247 316 cnv 14 14 14 empty empty empty -25 14 0 14 -128992 -33289
+0;
+#X obj 263 316 cnv 14 14 14 empty empty empty -25 14 0 14 -33289 -33289
+0;
+#X obj 279 316 cnv 14 14 14 empty empty empty -25 14 0 14 -258699 -33289
+0;
+#X obj 295 316 cnv 14 14 14 empty empty empty -25 14 0 14 -260818 -33289
+0;
+#X obj 311 316 cnv 14 14 14 empty empty empty -25 14 0 14 -241291 -33289
+0;
+#X obj 327 316 cnv 14 14 14 empty empty empty -25 14 0 14 -24198 -33289
+0;
+#X obj 343 316 cnv 14 14 14 empty empty empty -25 14 0 14 -44926 -33289
+0;
+#X obj 359 316 cnv 14 14 14 empty empty empty -25 14 0 14 -62784 -33289
+0;
+#X obj 375 316 cnv 14 14 14 empty empty empty -25 14 0 14 -250685 -33289
+0;
+#X obj 231 334 cnv 14 14 14 empty empty empty -25 14 0 14 -195568 -33289
+0;
+#X obj 247 334 cnv 14 14 14 empty empty empty -25 14 0 14 -99865 -33289
+0;
+#X obj 263 334 cnv 14 14 14 empty empty empty -25 14 0 14 -1 -33289
+0;
+#X obj 279 334 cnv 14 14 14 empty empty empty -25 14 0 14 -143491 -33289
+0;
+#X obj 295 334 cnv 14 14 14 empty empty empty -25 14 0 14 -90881 -33289
+0;
+#X obj 311 334 cnv 14 14 14 empty empty empty -25 14 0 14 -123526 -33289
+0;
+#X obj 327 334 cnv 14 14 14 empty empty empty -25 14 0 14 -42246 -33289
+0;
+#X obj 343 334 cnv 14 14 14 empty empty empty -25 14 0 14 -1109 -33289
+0;
+#X obj 359 334 cnv 14 14 14 empty empty empty -25 14 0 14 -355 -33289
+0;
+#X obj 375 334 cnv 14 14 14 empty empty empty -25 14 0 14 -90133 -33289
+0;
+#X obj 97 198 nbx 4 16 1 1e+037 0 0 \$0-width \$0-width-i Width -45
+9 0 10 -233017 -1 -1 1 256;
+#X obj 97 218 nbx 4 16 1 1e+037 0 0 \$0-height \$0-height-i Depth -45
+9 0 10 -233017 -1 -1 1 256;
+#X obj 125 297 nbx 9 16 -1e+037 1e+037 0 0 \$0-backg \$0-backg-i Background
+-85 9 0 10 -233017 -1 -1 0 256;
+#X obj 125 317 nbx 9 16 -1e+037 1e+037 0 0 \$0-labelc \$0-labelc-i
+Label -44 9 0 10 -233017 -1 -1 0 256;
+#X obj 97 148 nbx 4 16 1 1e+037 0 0 \$0-size \$0-size-i Sel-size -69
+9 0 10 -233017 -1 -1 1 256;
+#X obj 267 218 nbx 4 16 -1e+037 1e+037 0 0 \$0-x_off \$0-x_off-i x_off
+-45 9 0 10 -233017 -1 -1 0 256;
+#X obj 267 238 nbx 4 16 -1e+037 1e+037 0 0 \$0-y_off \$0-y_off-i y_off
+-45 9 0 10 -233017 -1 -1 0 256;
+#X obj 357 238 nbx 4 16 1 300 0 0 \$0-fontsize \$0-fontsize-i Size
+-37 9 0 10 -233017 -1 -1 1 256;
+#X obj 357 218 hradio 16 1 0 3 \$0-font \$0-font-i Font -36 9 0 10
+-233017 -1 -1 0;
+#X obj 80 461 hsl 160 10 0 127 0 0 \$0-x_delta empty Hor -30 5 0 10
+-233017 -1 -1 0 0;
+#X obj 80 481 hsl 160 10 127 0 0 0 \$0-y_delta empty Vert -40 5 0 10
+-233017 -1 -1 0 0;
+#N canvas 205 57 1112 793 inside 0;
+#X msg 93 129 vis_size \$1 \$2;
+#X obj 111 89 t b f;
+#X obj 651 89 t b f;
+#X msg 633 129 color \$1 \$2;
+#N canvas 633 235 354 457 color 0;
+#X obj 30 183 r \$0-color1;
+#X obj 40 203 r \$0-color2;
+#X obj 40 223 + 10;
+#X obj 70 223 r \$0-color3;
+#X obj 70 243 + 20;
+#X obj 15 373 route 0 1;
+#X obj 15 333 pack f f f;
+#X msg 15 313 -1;
+#X obj 15 353 route -1;
+#X obj 30 285 t b f;
+#X obj 15 393 s \$0-backg-i;
+#X obj 42 313 r \$0-back-lab;
+#X obj 39 413 s \$0-labelc-i;
+#X obj 146 18 r \$0-red-s;
+#X msg 146 38 set \$1;
+#X obj 146 58 s \$0-red-n-i;
+#X msg 242 38 set \$1;
+#X obj 242 18 r \$0-red-n;
+#X obj 242 58 s \$0-red-s-i;
+#X msg 146 108 set \$1;
+#X msg 242 108 set \$1;
+#X msg 146 178 set \$1;
+#X msg 242 178 set \$1;
+#X obj 146 88 r \$0-green-s;
+#X obj 146 128 s \$0-green-n-i;
+#X obj 242 88 r \$0-green-n;
+#X obj 242 128 s \$0-green-s-i;
+#X obj 146 158 r \$0-blue-s;
+#X obj 146 198 s \$0-blue-n-i;
+#X obj 242 158 r \$0-blue-n;
+#X obj 242 198 s \$0-blue-s-i;
+#N canvas 15 207 260 292 RGB 0;
+#X obj 47 42 inlet;
+#X obj 124 44 inlet;
+#X obj 190 45 inlet;
+#X obj 124 245 outlet;
+#X text 52 17 red;
+#X text 122 19 green;
+#X text 194 19 blue;
+#X obj 190 91 t b f;
+#X obj 124 149 +;
+#X obj 124 174 t b f;
+#X obj 124 205 +;
+#X obj 47 68 * -65536;
+#X obj 124 69 * -256;
+#X obj 190 69 * -1;
+#X obj 124 225 - 1;
+#X connect 0 0 11 0;
+#X connect 1 0 12 0;
+#X connect 2 0 13 0;
+#X connect 7 0 8 0;
+#X connect 7 1 8 1;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 9 1 10 1;
+#X connect 10 0 14 0;
+#X connect 11 0 10 0;
+#X connect 12 0 8 0;
+#X connect 13 0 7 0;
+#X connect 14 0 3 0;
+#X restore 148 263 pd RGB;
+#X connect 0 0 9 0;
+#X connect 1 0 2 0;
+#X connect 2 0 9 0;
+#X connect 3 0 4 0;
+#X connect 4 0 9 0;
+#X connect 5 0 10 0;
+#X connect 5 1 12 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 9 0 7 0;
+#X connect 9 1 6 2;
+#X connect 11 0 6 1;
+#X connect 13 0 14 0;
+#X connect 13 0 31 0;
+#X connect 14 0 15 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 17 0 31 0;
+#X connect 19 0 24 0;
+#X connect 20 0 26 0;
+#X connect 21 0 28 0;
+#X connect 22 0 30 0;
+#X connect 23 0 19 0;
+#X connect 23 0 31 1;
+#X connect 25 0 20 0;
+#X connect 25 0 31 1;
+#X connect 27 0 21 0;
+#X connect 27 0 31 2;
+#X connect 29 0 22 0;
+#X connect 29 0 31 2;
+#X connect 31 0 9 0;
+#X restore 633 29 pd color;
+#N canvas 0 0 494 344 label 0;
+#X obj 97 158 pack s s;
+#X msg 97 138 label;
+#X obj 97 180 route list;
+#X obj 115 98 symbol;
+#X obj 115 118 t b s;
+#X obj 115 71 inlet;
+#X obj 97 207 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 0 1;
+#X connect 5 0 3 0;
+#X restore 343 129 pd label;
+#X obj 93 109 pack f f;
+#X obj 539 89 t b f;
+#X obj 521 109 pack f f;
+#X msg 521 129 label_font \$1 \$2;
+#X obj 433 89 t b f;
+#X obj 415 109 pack f f;
+#X msg 415 129 label_pos \$1 \$2;
+#X msg 15 129 size \$1;
+#N canvas 0 0 490 340 send 0;
+#X obj 97 158 pack s s;
+#X obj 97 180 route list;
+#X obj 115 98 symbol;
+#X obj 115 118 t b s;
+#X obj 115 71 inlet;
+#X obj 97 207 outlet;
+#X msg 97 138 send;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 3 1 0 1;
+#X connect 4 0 2 0;
+#X connect 6 0 0 0;
+#X restore 193 129 pd send;
+#N canvas 0 0 482 332 receive 0;
+#X obj 97 158 pack s s;
+#X obj 97 180 route list;
+#X obj 115 98 symbol;
+#X obj 115 118 t b s;
+#X obj 115 71 inlet;
+#X obj 97 207 outlet;
+#X msg 97 138 receive;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 3 1 0 1;
+#X connect 4 0 2 0;
+#X connect 6 0 0 0;
+#X restore 259 129 pd receive;
+#X obj 385 303 t b f;
+#X obj 378 328 pack f f;
+#X msg 378 349 delta \$1 \$2;
+#X obj 633 49 r \$0-backg;
+#X obj 633 109 pack f f;
+#X obj 93 49 r \$0-width;
+#X obj 111 69 r \$0-height;
+#X obj 651 69 r \$0-labelc;
+#X obj 415 49 r \$0-x_off;
+#X obj 433 69 r \$0-y_off;
+#X obj 521 49 r \$0-font;
+#X obj 539 69 r \$0-fontsize;
+#X obj 220 202 f;
+#X obj 234 246 f;
+#X obj 230 222 t f b;
+#X obj 394 202 f;
+#X obj 408 246 f;
+#X obj 404 222 t f b;
+#X obj 220 270 expr if ($f1 > $f2 \, 1 \, -1) \; 0;
+#X obj 394 270 expr if ($f1 > $f2 \, 1 \, -1) \; 0;
+#X obj 220 182 r \$0-x_delta;
+#X obj 394 182 r \$0-y_delta;
+#X obj 586 309 t b f;
+#X obj 568 329 pack f f;
+#X msg 568 349 pos \$1 \$2;
+#X obj 568 269 r \$0-x_pos;
+#X obj 586 289 r \$0-y_pos;
+#X obj 129 314 r \$0-get_pos;
+#X msg 129 334 get_pos;
+#X obj 259 432 unpack f f;
+#X msg 259 452 set \$1;
+#X msg 314 452 set \$1;
+#X obj 259 472 s \$0-x_pos-i;
+#X obj 314 492 s \$0-y_pos-i;
+#X obj 712 299 textfile;
+#X obj 712 259 openpanel;
+#X msg 712 279 read \$1 cr \, rewind \, bang;
+#X obj 712 319 unpack s s f f s f f f s s s f f f f f f f;
+#X obj 741 369 spigot;
+#X obj 741 389 s \$0-x_pos-i;
+#X obj 772 349 r \$0-s1;
+#X obj 845 29 loadbang;
+#X obj 755 429 spigot;
+#X obj 786 409 r \$0-s2;
+#X obj 755 449 s \$0-y_pos-i;
+#X obj 784 489 spigot;
+#X obj 815 469 r \$0-s3;
+#X obj 784 509 s \$0-size-i;
+#X obj 15 109 r \$0-size;
+#X obj 801 549 spigot;
+#X obj 832 529 r \$0-s4;
+#X obj 801 569 s \$0-width-i;
+#X obj 813 609 spigot;
+#X obj 844 589 r \$0-s5;
+#X obj 813 629 s \$0-height-i;
+#X obj 828 369 spigot;
+#X obj 842 429 spigot;
+#X obj 857 489 spigot;
+#X obj 859 349 r \$0-s6;
+#X obj 873 409 r \$0-s7;
+#X obj 888 469 r \$0-s8;
+#X obj 855 49 s \$0-s-all-i;
+#X obj 887 549 spigot;
+#X obj 899 609 spigot;
+#X obj 918 529 r \$0-s9;
+#X obj 930 589 r \$0-s10;
+#X obj 899 629 s \$0-y_off-i;
+#X obj 887 569 s \$0-x_off-i;
+#X obj 937 369 spigot;
+#X obj 949 429 spigot;
+#X obj 937 389 s \$0-font-i;
+#X obj 949 449 s \$0-fontsize-i;
+#X obj 987 499 spigot;
+#X obj 999 559 spigot;
+#X obj 968 349 r \$0-s11;
+#X obj 980 409 r \$0-s12;
+#X obj 1018 479 r \$0-s13;
+#X obj 1030 539 r \$0-s14;
+#X obj 987 519 s \$0-backg-i;
+#X obj 999 579 s \$0-labelc-i;
+#X obj 193 109 r \$0-send;
+#X obj 259 109 r \$0-receive;
+#X obj 343 109 r \$0-label;
+#X obj 712 239 r \$0-paramopen;
+#X obj 8 511 t s b;
+#X obj 8 491 r \$0-receive-def;
+#X msg 33 531 vis 1 \, editmode 1 \, mouse 20 40 0 0 \, cut \, mouse
+20 80 0 0 \, cut \, editmode 0 \, vis 0;
+#X obj 828 389 s \$0-send-i;
+#X obj 842 449 s \$0-receive-i;
+#X obj 857 509 s \$0-label-i;
+#N canvas 124 25 542 392 dyn-s 0;
+#X obj 20 20 inlet;
+#X obj 20 40 send asdf;
+#X connect 0 0 1 0;
+#X restore 259 382 pd dyn-s;
+#N canvas 124 25 542 392 dyn-r 0;
+#X obj 20 100 outlet;
+#X obj 20 80 receive qwer;
+#X connect 1 0 0 0;
+#X restore 259 412 pd dyn-r;
+#X obj 8 591 s pd-dyn-s;
+#X obj 8 631 t s b;
+#X msg 33 651 vis 1 \, editmode 1 \, mouse 20 40 0 0 \, cut \, mouse
+20 80 0 0 \, cut \, editmode 0 \, vis 0;
+#X obj 8 611 r \$0-send-def;
+#X obj 8 711 s pd-dyn-r;
+#X msg 8 571 obj 20 40 send \$1 \, connect 0 0 1 0;
+#X msg 8 691 obj 20 80 receive \$1 \, connect 1 0 0 0;
+#X obj 845 89 symbol \$1;
+#X obj 845 129 symbol \$2;
+#X obj 845 109 s \$0-receive-def-i;
+#X obj 845 149 s \$0-send-def-i;
+#X obj 845 69 del 10;
+#X connect 0 0 106 0;
+#X connect 1 0 6 0;
+#X connect 1 1 6 1;
+#X connect 2 0 20 0;
+#X connect 2 1 20 1;
+#X connect 3 0 106 0;
+#X connect 5 0 106 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 7 1 8 1;
+#X connect 8 0 9 0;
+#X connect 9 0 106 0;
+#X connect 10 0 11 0;
+#X connect 10 1 11 1;
+#X connect 11 0 12 0;
+#X connect 12 0 106 0;
+#X connect 13 0 106 0;
+#X connect 14 0 106 0;
+#X connect 15 0 106 0;
+#X connect 16 0 17 0;
+#X connect 16 1 17 1;
+#X connect 17 0 18 0;
+#X connect 18 0 106 0;
+#X connect 19 0 20 0;
+#X connect 20 0 3 0;
+#X connect 21 0 6 0;
+#X connect 22 0 1 0;
+#X connect 23 0 2 0;
+#X connect 24 0 11 0;
+#X connect 25 0 10 0;
+#X connect 26 0 8 0;
+#X connect 27 0 7 0;
+#X connect 28 0 30 0;
+#X connect 28 0 34 0;
+#X connect 29 0 34 1;
+#X connect 30 0 29 1;
+#X connect 30 1 29 0;
+#X connect 31 0 33 0;
+#X connect 31 0 35 0;
+#X connect 32 0 35 1;
+#X connect 33 0 32 1;
+#X connect 33 1 32 0;
+#X connect 34 0 17 0;
+#X connect 34 1 16 0;
+#X connect 35 0 16 0;
+#X connect 35 1 17 0;
+#X connect 36 0 28 0;
+#X connect 37 0 31 0;
+#X connect 38 0 39 0;
+#X connect 38 1 39 1;
+#X connect 39 0 40 0;
+#X connect 40 0 106 0;
+#X connect 41 0 39 0;
+#X connect 42 0 38 0;
+#X connect 43 0 44 0;
+#X connect 44 0 106 0;
+#X connect 45 0 46 0;
+#X connect 45 1 47 0;
+#X connect 46 0 48 0;
+#X connect 47 0 49 0;
+#X connect 50 0 53 0;
+#X connect 51 0 52 0;
+#X connect 52 0 50 0;
+#X connect 53 2 54 0;
+#X connect 53 3 58 0;
+#X connect 53 5 61 0;
+#X connect 53 6 65 0;
+#X connect 53 7 68 0;
+#X connect 53 8 71 0;
+#X connect 53 9 72 0;
+#X connect 53 10 73 0;
+#X connect 53 11 78 0;
+#X connect 53 12 79 0;
+#X connect 53 13 84 0;
+#X connect 53 14 85 0;
+#X connect 53 15 88 0;
+#X connect 53 16 89 0;
+#X connect 54 0 55 0;
+#X connect 56 0 54 1;
+#X connect 57 0 77 0;
+#X connect 57 0 119 0;
+#X connect 58 0 60 0;
+#X connect 59 0 58 1;
+#X connect 61 0 63 0;
+#X connect 62 0 61 1;
+#X connect 64 0 13 0;
+#X connect 65 0 67 0;
+#X connect 66 0 65 1;
+#X connect 68 0 70 0;
+#X connect 69 0 68 1;
+#X connect 71 0 103 0;
+#X connect 72 0 104 0;
+#X connect 73 0 105 0;
+#X connect 74 0 71 1;
+#X connect 75 0 72 1;
+#X connect 76 0 73 1;
+#X connect 78 0 83 0;
+#X connect 79 0 82 0;
+#X connect 80 0 78 1;
+#X connect 81 0 79 1;
+#X connect 84 0 86 0;
+#X connect 85 0 87 0;
+#X connect 88 0 94 0;
+#X connect 89 0 95 0;
+#X connect 90 0 84 1;
+#X connect 91 0 85 1;
+#X connect 92 0 88 1;
+#X connect 93 0 89 1;
+#X connect 96 0 14 0;
+#X connect 97 0 15 0;
+#X connect 98 0 5 0;
+#X connect 99 0 51 0;
+#X connect 100 0 113 0;
+#X connect 100 1 102 0;
+#X connect 101 0 100 0;
+#X connect 102 0 108 0;
+#X connect 107 0 45 0;
+#X connect 109 0 114 0;
+#X connect 109 1 110 0;
+#X connect 110 0 112 0;
+#X connect 111 0 109 0;
+#X connect 113 0 108 0;
+#X connect 114 0 112 0;
+#X connect 115 0 117 0;
+#X connect 116 0 118 0;
+#X connect 119 0 115 0;
+#X connect 119 0 116 0;
+#X restore 63 585 pd inside;
+#X text 216 586 released under the GNU GPL;
+#X text 59 566 (C) Copyright 2005 Joao Miguel Pais <jmmmp@arcor.de>
+;
+#X obj 287 457 nbx 4 16 -1e+037 1e+037 0 0 \$0-x_pos \$0-x_pos-i Hor
+-30 9 0 10 -233017 -1 -1 0 256;
+#X obj 287 477 nbx 4 16 -1e+037 1e+037 0 0 \$0-y_pos \$0-y_pos-i Vert
+-37 9 0 10 -233017 -1 -1 0 256;
+#X obj 287 496 bng 16 150 50 0 \$0-get_pos empty Get_current 20 9 0
+10 -233017 -1 -1;
+#X obj 61 359 hsl 256 10 0 255 0 0 \$0-red-s \$0-red-s-i empty 0 6
+0 10 -258049 -1 -1 0 0;
+#X obj 61 379 hsl 256 10 0 255 0 0 \$0-green-s \$0-green-s-i empty
+0 6 0 10 -4033 -1 -1 0 0;
+#X obj 61 399 hsl 256 10 0 255 0 0 \$0-blue-s \$0-blue-s-i empty 0
+6 0 10 -64 -1 -1 0 0;
+#X obj 329 356 nbx 4 16 0 255 0 0 \$0-red-n \$0-red-n-i empty -53 9
+0 10 -233017 -1 -1 0 256;
+#X obj 329 376 nbx 4 16 0 255 0 0 \$0-green-n \$0-green-n-i empty -53
+9 0 10 -233017 -1 -1 0 256;
+#X obj 329 396 nbx 4 16 0 255 0 0 \$0-blue-n \$0-blue-n-i empty -53
+9 0 10 -233017 -1 -1 0 256;
+#X obj 137 15 cnv 15 155 25 empty empty Canvas-edit 6 12 0 16 -233017
+-1 0;
+#N canvas 521 20 404 652 p-import 0;
+#X obj 43 313 tgl 16 0 \$0-s1 \$0-s-all x_pos 21 9 0 10 -233017 -1
+-1 1 1;
+#X obj 43 333 tgl 16 0 \$0-s2 \$0-s-all y_pos 21 9 0 10 -233017 -1
+-1 1 1;
+#X obj 43 113 tgl 16 0 \$0-s3 \$0-s-all Size 21 9 0 10 -233017 -1 -1
+1 1;
+#X obj 43 133 tgl 16 0 \$0-s4 \$0-s-all Width 21 9 0 10 -233017 -1
+-1 1 1;
+#X obj 183 73 tgl 16 0 \$0-s-all \$0-s-all-i All/None 21 9 0 10 -195568
+-1 -1 1 1;
+#X obj 43 153 tgl 16 0 \$0-s5 \$0-s-all Height 21 9 0 10 -233017 -1
+-1 1 1;
+#X obj 133 113 tgl 16 0 \$0-s6 \$0-s-all Send-s 21 9 0 10 -233017 -1
+-1 1 1;
+#X obj 133 133 tgl 16 0 \$0-s7 \$0-s-all Receive-s 21 9 0 10 -233017
+-1 -1 1 1;
+#X obj 43 193 tgl 16 0 \$0-s8 \$0-s-all Name 21 9 0 10 -233017 -1 -1
+1 1;
+#X obj 133 193 tgl 16 0 \$0-s9 \$0-s-all Font-Hor 21 9 0 10 -233017
+-1 -1 1 1;
+#X obj 133 213 tgl 16 0 \$0-s10 \$0-s-all Font-Vert 21 9 0 10 -233017
+-1 -1 1 1;
+#X obj 233 213 tgl 16 0 \$0-s12 \$0-s-all Fontsize 21 9 0 10 -233017
+-1 -1 1 1;
+#X obj 43 253 tgl 16 0 \$0-s13 \$0-s-all Backg-Color 21 9 0 10 -233017
+-1 -1 1 1;
+#X obj 43 273 tgl 16 0 \$0-s14 \$0-s-all Label-Color 21 9 0 10 -233017
+-1 -1 1 1;
+#X obj 233 193 tgl 16 0 \$0-s11 \$0-s-all Font 21 9 0 10 -233017 -1
+-1 1 1;
+#X obj 43 73 bng 16 250 50 0 \$0-paramopen empty Open-file 21 9 0 10
+-195568 -1 -1;
+#X obj 68 15 cnv 15 222 27 empty empty Parameter-import 6 12 0 16 -233017
+-1 0;
+#X text 18 595 #X obj 27 40 cnv 15 100 60 empty empty empty 20 12 0
+14 -233017 -66577 0 \;;
+#X text 18 545 #X obj [x_pos] [x_pos] cnv [size] [width] [height] [send]
+[receive] [label] [x_off] [y_off] [font] [font_sizy] [bg_color] [label_color]
+[?] \;;
+#X text 19 403 Save *only* the list from your PD patch - without changing
+the original format! - in a text file.;
+#X text 109 373 Load of a list of parameters;
+#X text 19 463 Load the text file in the Open-file bang \, the parameters
+will be imported.;
+#X text 18 515 Here is an example of the format of the Canvas (cnv)
+object:;
+#X text 19 443 Choose here which parameters you want to import.;
+#X restore 127 526 pd p-import;
+#X obj 80 182 cnv 15 15 14 empty empty Size 2 5 0 10 -262144 -1 0;
+#X obj 230 277 hradio 16 1 0 2 \$0-back-lab empty Backgd/Label 36 9
+0 8 -233017 -1 -1 0;
+#X obj 171 151 cnv 15 5 4 empty empty Send-Symbol 2 5 0 10 -262144
+-1 0;
+#X obj 147 171 cnv 15 5 4 empty empty Receive-Symbol 2 5 0 10 -262144
+-1 0;
+#X obj 226 201 cnv 15 5 4 empty empty Name 2 5 0 10 -262144 -1 0;
+#X obj 122 281 cnv 15 5 4 empty empty Colors 2 5 0 10 -262144 -1 0
+;
+#X obj 285 441 cnv 15 5 4 empty empty x-y_Position 2 5 0 10 -262144
+-1 0;
+#X obj 106 441 cnv 15 5 4 empty empty Displacement 2 5 0 10 -262144
+-1 0;
+#N canvas 480 580 432 339 instructions 0;
+#X text 171 13 CANVAS-EDIT;
+#X text 38 103 Edit directly on the patch the parameters you want to
+change.;
+#X text 38 253 NOTE: the patch allows you to assign symbols (send \,
+receive) that consist of only names. They will be created \, but it
+won't be possible to work with them later (for example \, use a float
+as a paramter for a send object).;
+#X text 37 43 Connect this patch and your GUI object through typing
+the receive and send symbols of the object you want to edit. They can
+also be given as the creation parameters of this abstraction (in the
+same order).;
+#X text 38 143 With use the patch may become "dirty" (* on the name).
+You don't have to save it \, you can just quit it when done (but it
+should also be fine if you save it).;
+#X text 38 193 Since it isn't possible to query the current state of
+a GUI obejct \, the parameters can't be actualised to the chosen object.
+This behaviour might be a bit strange in the beggining.;
+#X restore 207 526 pd instructions;
+#X symbolatom 267 148 20 0 0 0 - #0-send-i #0-send;
+#X symbolatom 267 168 20 0 0 0 - #0-receive-i #0-receive;
+#X symbolatom 267 198 20 0 0 0 - #0-label-i #0-label;
+#X obj 100 55 cnv 15 239 66 empty empty Symbols.of.the.target.object
+8 12 0 10 -233017 -1 0;
+#X obj 148 102 cnv 15 5 4 empty empty Send 2 5 0 10 -233017 -1 0;
+#X obj 124 82 cnv 15 5 4 empty empty Receive 2 5 0 10 -233017 -1 0
+;
+#X symbolatom 187 98 20 0 0 0 - #0-send-def-i #0-send-def;
+#X symbolatom 187 78 20 0 0 0 - #0-receive-def-i #0-receive-def;
+#X obj 60 582 cnv 15 61 22 empty asdf empty 20 12 0 14 -262144 -262144
+0;

@@ -1,0 +1,46 @@
+#N canvas 386 22 600 572 10;
+#N canvas 17 28 355 263 sub 0;
+#X restore 43 42 pd sub;
+#X msg 43 452 \; pd-sub clear;
+#X msg 42 282 \; pd-sub loadbang;
+#X floatatom 43 117 5 0 0 0 - - -;
+#X obj 75 174 * 20;
+#X obj 43 134 t f f f;
+#X obj 43 154 makefilename pd-%d-subsub;
+#X obj 43 194 pack s f f;
+#X msg 43 214 \; pd-sub obj 10 \$2 pd \$3-subsub \; \$1 obj 10 10 foo
+\$3;
+#X obj 43 385 makefilename pd-%d-subsub;
+#X msg 43 407 \; \$1 clear;
+#X floatatom 43 366 5 0 0 0 - - -;
+#X text 43 15 add and remove abstractions;
+#X msg 40 91 1;
+#X msg 80 91 2;
+#X msg 116 91 3;
+#X text 168 91 a) create some subsubpatches and abstractions;
+#X text 166 286 b) if your abstractions use loadbang you have to do
+that manually;
+#X msg 40 341 1;
+#X msg 80 341 2;
+#X msg 116 341 3;
+#X text 161 458 (clear pd-sub before saving this patch);
+#X text 161 340 c) clear subsubpatch where your abstractions are;
+#X text 47 514 d) if your abstraction have a gui inside that you want
+to vis sepparately you use either namecanvas or put the gui in an subpatch
+[pd \$1-something] and use an arguemnt as id to refenrence the subpatch
+;
+#X connect 3 0 5 0;
+#X connect 4 0 7 1;
+#X connect 5 0 6 0;
+#X connect 5 1 4 0;
+#X connect 5 2 7 2;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 11 0 9 0;
+#X connect 13 0 3 0;
+#X connect 14 0 3 0;
+#X connect 15 0 3 0;
+#X connect 18 0 11 0;
+#X connect 19 0 11 0;
+#X connect 20 0 11 0;

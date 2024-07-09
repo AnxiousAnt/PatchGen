@@ -1,0 +1,34 @@
+hid_new
+[hid] 0.6, written by Hans-Christoph Steiner <hans@eds.org>
+hid_open
+[hid] opened device 2 (/dev/input/event2): Microsoft Microsoft Wheel Mouse Optical®
+
+Device 0: 'AT Translated Set 2 keyboard' on '/dev/input/event0'
+Device 1: 'SynPS/2 Synaptics TouchPad' on '/dev/input/event1'
+Device 2: 'Microsoft Microsoft Wheel Mouse Optical®' on '/dev/input/event2'
+
+
+Supported events:
+
+  TYPE  CODE    EVENT NAME
+-----------------------------------------------------------
+  syn   syn_report      Synchronization
+  syn   syn_config      Synchronization
+  syn   ?       Synchronization
+
+  TYPE  CODE    EVENT NAME
+-----------------------------------------------------------
+  key   btn_0   btn_left
+  key   btn_1   btn_right
+  key   btn_2   btn_middle
+
+  TYPE  CODE    EVENT NAME
+-----------------------------------------------------------
+  rel   rel_x   Relative Axis
+  rel   rel_y   Relative Axis
+  rel   rel_wheel       Relative Axis
+
+Detected:
+  3 Sync types
+  3 Key/Button types
+  3 Relative Axis types

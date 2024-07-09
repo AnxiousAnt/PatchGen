@@ -1,0 +1,61 @@
+#N canvas 256 388 909 327 10;
+#X obj 35 171 OSCroute /spin /test;
+#X obj 170 196 OSCroute /file /vol;
+#X obj 39 97 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X msg 39 116 /spin \$1;
+#X msg 109 117 /test \$1;
+#X obj 109 96 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 178 95 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 248 95 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X msg 178 115 /file \$1;
+#X msg 248 114 /vol \$1;
+#X obj 35 234 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 102 233 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 170 235 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 234 236 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 531 186 OSCroute /spin /test;
+#X obj 531 217 OSCroute /file /freq;
+#X floatatom 598 248 5 0 0 1 frequency - -;
+#X symbolatom 530 283 45 0 0 0 - - -;
+#X msg 531 135 /spin/file \$1;
+#X msg 637 135 /spin/freq \$1;
+#X obj 531 81 openpanel;
+#X symbolatom 548 114 10 0 0 2 filename - -;
+#X obj 531 59 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 531 262 symbol;
+#X obj 640 107 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 8000 1;
+#X text 522 19 Using hierarchical selectors;
+#X text 47 25 How to overcome any limit in OSCroute:;
+#X connect 0 0 10 0;
+#X connect 0 1 11 0;
+#X connect 0 2 1 0;
+#X connect 1 0 12 0;
+#X connect 1 1 13 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 14 0 15 0;
+#X connect 15 0 23 0;
+#X connect 15 1 16 0;
+#X connect 18 0 14 0;
+#X connect 19 0 14 0;
+#X connect 20 0 18 0;
+#X connect 21 0 18 0;
+#X connect 22 0 20 0;
+#X connect 23 0 17 0;
+#X connect 24 0 19 0;

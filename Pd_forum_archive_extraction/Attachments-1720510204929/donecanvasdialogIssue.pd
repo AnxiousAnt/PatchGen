@@ -1,0 +1,24 @@
+#N canvas 0 0 433 251 10;
+#N canvas 669 24 638 548 subPatch 0;
+#X obj 213 91 int;
+#X obj 213 24 r sidepanel;
+#X msg 213 207 \; pd-subPatch donecanvasdialog 1 1 1 0 -1 1 1 100 60
+100 \$1 \, dirty 0;
+#X obj 213 113 + 30;
+#X obj 213 69 * 70;
+#X obj 100 240 cnv 15 100 60 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X obj 100 170 cnv 15 100 60 empty empty empty 20 12 0 14 -4160 -66577
+0;
+#X obj 100 100 cnv 15 100 60 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj 100 30 cnv 15 100 60 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X coords 0 -1 1 1 100 60 1 100 240;
+#X restore 106 88 pd subPatch;
+#X obj 252 87 vradio 15 1 0 4 sidepanel empty empty 0 -8 0 10 -262144
+-1 -1 3;

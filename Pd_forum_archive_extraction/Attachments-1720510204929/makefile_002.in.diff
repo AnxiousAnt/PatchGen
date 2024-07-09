@@ -1,0 +1,11 @@
+--- makefile.in~	Fri Aug  3 23:44:14 2001
++++ makefile.in	Fri Aug 17 18:52:42 2001
+@@ -76,7 +76,7 @@
+ 
+ SYSSRC = s_linux.c s_linux_midiparse.c s_linux_midi_io.c 
+ 
+-SRC = g_canvas.c g_graph.c g_text.c g_rtext.c g_array.c g_template.c g_io.c \
++SRC = g_canvas.c g_graph.c g_text.c g_rtext.c g_array.c g_template.c g_io_gui.c \
+     g_scalar.c g_traversal.c g_guiconnect.c \
+     g_7_guis.c g_bng.c g_hslider.c g_radiobut.c g_toggle.c g_uni_canvas.c \
+     g_vslider.c g_vu.c \

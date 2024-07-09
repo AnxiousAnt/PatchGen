@@ -1,0 +1,43 @@
+#N canvas 84 44 868 532 12;
+#X obj 9 477 netsend;
+#X msg 15 263 connect localhost 3000;
+#X floatatom 202 300 0 0 0 0 - - -;
+#X msg 15 344 disconnect;
+#X floatatom 9 504 0 0 0 0 - - -;
+#X text 66 242 TCP;
+#X text 197 9 Netsend -- send Pd messages over a network;
+#X text 475 261 Connect to "localhost" port 3000/3001;
+#X text 48 476 Outlet is nonzero if connection is open \, zero otherwise.
+;
+#X text 87 38 The Netsend object connects to another machine over the
+network for sending TCP ("stream") or UDP ("datagram") messages. An
+outlet reports whether the connection is open or not. A connection
+request should specify the name or IP address of the other host and
+the port number. There should be a "Netreceive" on the remote host
+with a matching port number.;
+#X obj 409 497 netreceive;
+#X text 318 497 see also:;
+#X text 607 498 updated for Pd version 0.33;
+#X text 87 150 Opt@web.fm has made compatible objects for Max so that
+Pd and Max can intercommunicate: see ftp://fals.ch/pub/pdnets/.;
+#X text 87 186 The Linux version of Pd comes with "pdsend" and "pdreceive"
+standalone programs. These haven't been tested in Windows yet (but
+the source is included in the Pd distribution.);
+#X msg 15 290 connect molloy 3000;
+#X msg 15 317 connect bug 3000;
+#X msg 85 428 send \$1 \$2 \$3 \$4 \$5;
+#X msg 146 363 symbol cat;
+#X obj 71 400 pack 1 s 3 4 5;
+#X obj 253 361 + 10;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 18 0;
+#X connect 2 0 19 0;
+#X connect 2 0 20 0;
+#X connect 3 0 0 0;
+#X connect 15 0 0 0;
+#X connect 16 0 0 0;
+#X connect 17 0 0 0;
+#X connect 18 0 19 1;
+#X connect 19 0 17 0;
+#X connect 20 0 19 4;

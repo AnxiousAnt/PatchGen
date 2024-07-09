@@ -1,0 +1,17 @@
+#N canvas 698 172 616 292 10;
+#X obj 93 172 cyclone/comb~ 100 10 1 0 0.99;
+#X obj 264 119 sig~ 0;
+#X obj 83 216 dac~;
+#X obj 93 139 cyclone/click~;
+#X obj 93 115 metro 1000;
+#X obj 93 88 loadbang;
+#X msg 25 129 \; pd dsp 1;
+#X text 277 143 <= disconnecting reactivates argument value (0.99)
+;
+#X connect 0 0 2 0;
+#X connect 0 0 2 1;
+#X connect 1 0 0 4;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 5 0 6 0;

@@ -1,0 +1,14 @@
+#N canvas 305 245 328 259 10;
+#X obj 67 131 r 1-bla;
+#X obj 139 130 r 2-bla;
+#X msg 69 60 1;
+#X msg 139 62 2;
+#X msg 69 93 \; \$1-bla bang;
+#X obj 139 160 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 67 162 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X connect 0 0 6 0;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;

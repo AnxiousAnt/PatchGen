@@ -1,0 +1,74 @@
+#N canvas 1126 340 662 489 10;
+#X declare -lib gridflow;
+#X obj 560 14 import gridflow;
+#X obj 53 351 #store;
+#X obj 53 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 187 125 #many tgl 6 8;
+#X obj 191 229 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 191 250 + 1;
+#X obj 191 103 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 97 351 #store;
+#X obj 97 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 104 102 r grid-input;
+#X obj 231 410 s grid-input;
+#X obj 141 351 #store;
+#X obj 141 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 185 351 #store;
+#X obj 185 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 229 351 #store;
+#X obj 229 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 273 351 #store;
+#X obj 273 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 317 351 #store;
+#X obj 317 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 361 351 #store;
+#X obj 361 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 149 294 sel 0 1 2 3 4 5 6 7;
+#X obj 191 272 gate 8;
+#X connect 1 0 10 0;
+#X connect 2 0 1 0;
+#X connect 3 0 24 1;
+#X connect 4 0 5 0;
+#X connect 4 0 23 0;
+#X connect 5 0 24 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 9 0 3 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 10 0;
+#X connect 14 0 13 0;
+#X connect 15 0 10 0;
+#X connect 16 0 15 0;
+#X connect 17 0 10 0;
+#X connect 18 0 17 0;
+#X connect 19 0 10 0;
+#X connect 20 0 19 0;
+#X connect 21 0 10 0;
+#X connect 22 0 21 0;
+#X connect 23 0 2 0;
+#X connect 23 1 8 0;
+#X connect 23 2 12 0;
+#X connect 23 3 14 0;
+#X connect 23 4 16 0;
+#X connect 23 5 18 0;
+#X connect 23 6 20 0;
+#X connect 23 7 22 0;
+#X connect 24 0 1 1;
+#X connect 24 1 7 1;
+#X connect 24 2 11 1;
+#X connect 24 3 13 1;
+#X connect 24 4 15 1;
+#X connect 24 5 17 1;
+#X connect 24 6 19 1;
+#X connect 24 7 21 1;

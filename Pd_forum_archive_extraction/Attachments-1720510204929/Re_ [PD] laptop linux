@@ -1,0 +1,58 @@
+Message-ID: <437B9D9D.8040506@free.fr>
+Date: Wed, 16 Nov 2005 21:59:09 +0100
+From: Yves Degoyon <ydegoyon@free.fr>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.12) Gecko/20050920
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Ed Kelly <morph_2016@yahoo.co.uk>
+Subject: Re: [PD] laptop linux
+References: <20051116203451.777.qmail@web26315.mail.ukl.yahoo.com>
+In-Reply-To: <20051116203451.777.qmail@web26315.mail.ukl.yahoo.com>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Ed Kelly wrote:
+
+> Hi Tim, Hi Frank, Hi list,
+>  
+> Well, I know graphics acceleration is done outside of the CPU. That's 
+> what I meant. I bought an Acer Aspire 1691 WLMi about 2 1/2 weeks ago, 
+> my first laptop (and considering my paycheck, my last for a long, 
+> long while). I tried for 2 weeks to get Linux working with the 
+> 1280x800 display to no avail, and to get pidip working. Then I 
+> discovered a few things.
+>  
+> All you guys are probably using better distros than me. I'm giving up 
+> on Fedora as of now, but I saw success stories on some of the Linux 
+> Laptop sites, so I decided to give it a go. But, alas, my graphics 
+> chips is not the Radeon x700 promised on the website, not even the 
+> x600 I saw in some postings. It is an Intel i915 shared-memory chip 
+> with no accelleration. Intel's driver did not work at all, so I was 
+> stuck with VESA at 1024x768. Pidip never worked even though it 
+> compiled (with ffmpeg cvs from the 7th of July 2004 by the way - I 
+> tried 6 dates...), but from searching the list it looks like it would 
+> never work anyway - xvinfo reports no display adaptors found.
+>  
+
+yo, coool down...
+
+you need xvideo if you use the pdp_xv object,
+anyway that's strange,
+even on crappy boards ( like mine ),
+you usually have one xvideo port,
+do you have this lines in your XF86Config-4
+( alternatively xorg.conf ) :
+
+        Load  "extmod"
+        Load  "fbdevhw"
+        Load  "glx"
+
+if not, you can try to send the video output to a pdp_glx..
+
+and, if this doesn't work either, use it a support
+to read good books )
+or you can put music partitions in it )
+
+cheers,
+sevy
+

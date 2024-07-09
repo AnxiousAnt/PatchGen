@@ -1,0 +1,24 @@
+#N canvas 523 305 429 464 10;
+#X msg 46 279 loadbang;
+#X obj 25 308 s pd-loadbang_bug_test.pd;
+#X text 20 6 This is a patch for testing the loadbang bug in abstractions.
+;
+#X text 21 54 loadbang in an abstraction works only \, if the abstraction
+was created manually.;
+#X text 21 90 create the abstraction [test-abs] and then have a look
+at the terminal:;
+#X text 21 41 BUG-DESCRIPTION:;
+#X text 20 149 the msg 'this should be printed when created' should
+be printed \, like expected.;
+#X text 22 203 if you create the same abstraction by msg to canvas
+\, the loadbang seems not to work because nothing is printed out.;
+#X text 151 246 << press this first for creating the abs;
+#X msg 25 248 obj 25 350 test-abs;
+#X text 105 278 << then this to trigger the loadbang in [test-abs]
+;
+#X msg 27 391 loadbang;
+#X obj 27 414 s pd-test-abs.pd;
+#X text 90 388 << this is also possible;
+#X connect 0 0 1 0;
+#X connect 9 0 1 0;
+#X connect 11 0 12 0;

@@ -1,0 +1,26 @@
+#N canvas 266 123 614 383 12;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array multi 10 float 3;
+#A 0 0.357143 0.428571 0.478571 0.514286 0.55 0.592857 0.628571 0.671429
+0.728571 0.778571;
+#X coords 0 1 10 0 200 140 1 0 0;
+#X restore 367 53 graph;
+#X obj 153 299 array get multi 0 -1;
+#X obj 169 345 print;
+#X obj 148 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 150 250 metro 10;
+#X obj 186 100 key;
+#X obj 256 99 keyup;
+#X obj 187 130 == 109;
+#X obj 257 130 sel 109;
+#X msg 255 158 0;
+#X text 162 48 press M key to update;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 9 0;
+#X connect 9 0 3 0;

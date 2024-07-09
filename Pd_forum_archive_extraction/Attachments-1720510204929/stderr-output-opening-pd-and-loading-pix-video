@@ -1,0 +1,56 @@
+priority 6 scheduling failed; running at normal priority
+priority 8 scheduling failed.
+GEM: Graphics Environment for Multimedia
+verbose(2): GEM: ver: 0.93. 
+verbose(2): GEM: compiled  on Aug  6 2018
+verbose(2): GEM: maintained by IOhannes m zmoelnig
+verbose(2): GEM: Authors :	Mark Danks (original version)
+verbose(2): GEM:		Chris Clepper
+verbose(2): GEM:		Cyrille Henry
+verbose(2): GEM:		IOhannes m zmoelnig
+verbose(2): GEM: with help by Guenter Geiger, Daniel Heckenberg, James Tittle, Hans-Christoph Steiner, et al.
+verbose(2): GEM: found a bug? miss a feature? please report it:
+verbose(2): GEM: 	homepage https://gem.iem.at/
+verbose(2): GEM: 	bug-tracker https://bugs.gem.iem.at/
+verbose(2): GEM: 	mailing-list https://lists.puredata.info/listinfo/gem-dev/
+open: /etc/pd/gem.conf: No such file or directory
+open: /home/thalia/.config/pure-data/gem.conf: No such file or directory
+open: ./gem.conf: No such file or directory
+verbose(2): GEM: compiled for MMX/SSE2 architecture
+verbose(2): GEM: using SSE2 optimization
+verbose(2): GEM: detected 12 CPUs
+load plugins 'film' in '/usr/local/lib/pd/extra/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/gem_film*.so
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/gem_image*.so
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_imageJPEG.so'!
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_imageMAGICK.so'!
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_imageSGI.so'!
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_imageTIFF.so'!
+GEM: image loading support: magick SGI jpeg tiff
+not reloading 'image' plugins (already 4 loaded)
+load plugins 'image' in '/usr/local/lib/pd/extra/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/gem_image*.so
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_imageJPEG.so'!
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_imageMAGICK.so'!
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_imageSGI.so'!
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_imageTIFF.so'!
+GEM: image saving support: SGI jpeg magick tiff
+load plugins 'model' in '/usr/local/lib/pd/extra/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/gem_model*.so
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_modelOBJ.so'!
+load plugins 'record' in '/usr/local/lib/pd/extra/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/gem_record*.so
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_recordV4L.so'!
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_recordV4L2.so'!
+load plugins 'video' in '/usr/local/lib/pd/extra/Gem/'
+pattern : /usr/local/lib/pd/extra/Gem/gem_video*.so
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_videoDECKLINK.so'!
+library loading returned: 
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_videoV4L.so'!
+dylib loading file '/usr/local/lib/pd/extra/Gem/gem_videoV4L2.so'!
+not reloading 'video' plugins (already 2 loaded)
+[pix_video]: backend #0='v4l2'	: v4l2 analog 
+[pix_video]: backend #1='v4l'	: v4l analog 
+
+

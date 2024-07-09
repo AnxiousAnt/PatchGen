@@ -1,0 +1,6 @@
+#N canvas 0 0 450 300 10;
+#X obj 172 110 r~ \$1-sig;
+#X obj 172 180 print~ \$1-receive;
+#X obj 191 140 r PRINT;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;

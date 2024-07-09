@@ -1,0 +1,262 @@
+#N canvas 8 56 1342 681 10;
+#X text 80 8 freq (hz);
+#X obj 219 26 inlet;
+#X obj 356 25 inlet;
+#X obj 14 37 inlet~;
+#X text 23 10 audio;
+#X obj 508 18 inlet;
+#X obj 508 56 switch~;
+#X obj -4 634 outlet~;
+#X obj 222 118 samplerate~;
+#X text 91 646 biquad \, a1 \, 2 \, 3 b1 \, 2 = x2[0] \, x3[0] \, x4[0]
+\, x5[0] \, x6[0];
+#X text 106 41 cutoff (hz);
+#X text 1189 54 a2= 2*a1 \, a3=a1;
+#X text 1188 -14 cookbook-like 4 pole lp;
+#X text 1189 18 c= 1/tan(pi*cutf/samplerate);
+#X text 1191 36 a1= 1/(1+res*c+c*c);
+#X text 1190 72 b1= 2*(1-c*c)*a1;
+#X text 1190 88 b2= (1-res*c+c*c)*a1;
+#X obj 81 25 inlet~;
+#X obj 222 99 loadbang;
+#X obj 109 162 /~ 48000;
+#X obj 289 71 clip 0.1 0.9999;
+#X text 356 -4 comment;
+#X obj 109 81 *~ 6.28319;
+#X msg 1122 109 void riffWave::loPass(double frequency \, double Q)
+DWORD n \, n1 \, n2 \; n1=0 \; n2=0 \; short *y \; double a0 \, a1
+\, a2 \, b0 \, b1 \, b2 \; double omega \, sn \, cs \, alpha \; y=new
+short[dwNumSamples] \; omega = 2*PI*frequency/dwSampleRate \; sn =
+sin(omega) \; cs = cos(omega) \; alpha = sn/(2*Q) \; b0 = (1 - cs)/2
+\; b1 = 1 - cs \; b2 = (1 - cs)/2 \; a0 = 1 + alpha \; a1 = -2*cs \;
+a2 = 1 - alpha \; n1=0 \; n2=0 \; y[0]=0 \; y[1]=0 \; y[2]=0 \; for(n=2
+\; n<dwNumSamples \; n++) y[n] = (b0/a0)*wWave[n] + (b1/a0)*wWave[n-1]
++ (b2/a0)*wWave[n-2] - (a1/a0)*y[n-1] - (a2/a0)*y[n-2] \; for(n=0 \;
+n<dwNumSamples \; n++) wWave[n]=y[n] \; delete y \;;
+#X msg 1008 525 hipass DWORD n \, n1 \, n2 \; n1=0 \; n2=0 \; short
+*y \; double a0 \, a1 \, a2 \, b0 \, b1 \, b2 \; double omega \, sn
+\, cs \, alpha \; y=new short[dwNumSamples] \; omega = 2*PI*frequency/dwSampleRate
+\; sn = sin(omega) \; cs = cos(omega) \; alpha = sn/(2*Q) \; b0 = (1
++ cs)/2 \; b1 = -(1 + cs) \; b2 = (1 + cs)/2 \; a0 = 1 + alpha \; a1
+= -2*cs \; a2 = 1 - alpha \; n1=0 \; n2=0 \; y[0]=0 \; y[1]=0 \; y[2]=0
+\; for(n=2 \; n<dwNumSamples \; n++) y[n] = (b0/a0)*wWave[n] + (b1/a0)*wWave[n-1]
++ (b2/a0)*wWave[n-2] - (a1/a0)*y[n-1] - (a2/a0)*y[n-2] \; for(n=0 \;
+n<dwNumSamples \; n++) wWave[n]=y[n] \; delete y \;;
+#X msg 1345 547 void riffWave::Filter(double frequency \, double Q)
+DWORD n \, n1 \, n2 \; n1=0 \; n2=0 \; short *y \; double a0 \, a1
+\, a2 \, b0 \, b1 \, b2 \; double omega \, sn \, cs \, alpha \; y=new
+short[dwNumSamples] \; omega = 2*PI*frequency/dwSampleRate \; sn =
+sin(omega) \; cs = cos(omega) \; alpha = sn/(2*Q) \; b0 = alpha \;
+b1 = 0 \; b2 = -alpha \; a0 = 1 + alpha \; a1 = -2*cs \; a2 = 1 - alpha
+\; n1=0 \; n2=0 \; y[0]=0 \; y[1]=0 \; y[2]=0 \; for(n=2 \; n<dwNumSamples
+\; n++) y[n] = (b0/a0)*wWave[n] + (b1/a0)*wWave[n-1] + (b2/a0)*wWave[n-2]
+- (a1/a0)*y[n-1] - (a2/a0)*y[n-2] \; for(n=0 \; n<dwNumSamples \; n++)
+wWave[n]=y[n] \; delete y \;;
+#X msg 167 162 omega;
+#X obj 246 239 expr~ sin($v1);
+#X obj 90 239 expr~ cos($v1);
+#X obj 388 194 * 2;
+#X obj 398 276 /~;
+#X msg 336 239 sn;
+#X msg 180 238 cs;
+#X msg 422 276 alpha;
+#X msg 466 276 b0;
+#X msg 461 334 b1;
+#X msg 451 308 b2;
+#X msg 220 459 a2;
+#X msg 157 376 a1;
+#X msg 78 499 a0;
+#X obj 417 334 sig~ 0;
+#X obj 412 308 *~ -1;
+#X obj 51 467 sig~ 1;
+#X obj 54 499 +~;
+#X obj 93 344 sig~ -2;
+#X obj 131 376 *~;
+#X obj 178 459 sig~ 1;
+#X text 223 -2 Q 0..1;
+#X text 353 11 comment;
+#X text 64 544 comment;
+#X obj 208 527 -~;
+#X obj 42 589 fexpr~ ($x5/$x2)*$x1[0] + ($x6/$x2)*$x1[-1] + ($x7/$x2)*$x1[-2]
+- ($x3/$x2)*$y1[-1] - ($x4/$x2)*$y1[-2];
+#X msg 527 713 $x1 = signal $x2 = a0 $x3 = a1 $x4 = a2 $x5 = b0 $x6
+= b1 $x7 = b2 (b0/a0)*wWave[n] + (b1/a0)*wWave[n-1] + (b2/a0)*wWave[n-2]
+- (a1/a0)*y[n-1] - (a2/a0)*y[n-2] \; ($x5/$x2)*$x1[0] + ($x6/$x2)*$x1[-1]
++ ($x7/$x2)*$x1[-2] - ($x3/$x2)*$y1[-1] - ($x4/$x2)*$y1[-2];
+#X obj 425 17 inlet;
+#X obj 591 313 sig~ 1;
+#X obj 593 337 -~;
+#X obj 594 357 /~ 2;
+#X msg 628 356 b0;
+#X msg 663 356 b2;
+#X msg 653 332 b1;
+#X obj 466 577 bypass~;
+#X obj 516 576 bypass~;
+#X msg 498 554 1;
+#X msg 525 553 0;
+#X obj 545 501 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 552 556 1;
+#X msg 470 553 0;
+#X obj 564 500 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 510 640 s~ \$0-fltb0;
+#X obj 245 554 r~ \$0-fltb0;
+#X obj 820 206 select 0 1 2;
+#X obj 626 572 bypass~;
+#X obj 676 571 bypass~;
+#X msg 654 547 1;
+#X msg 679 548 0;
+#X obj 696 462 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 708 547 1;
+#X msg 626 547 0;
+#X obj 719 460 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 700 616 s~ \$0-fltb1;
+#X obj 803 576 bypass~;
+#X obj 862 577 bypass~;
+#X msg 836 547 1;
+#X msg 864 549 0;
+#X obj 878 464 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 894 550 1;
+#X msg 809 547 0;
+#X obj 896 464 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 892 622 s~ \$0-fltb2;
+#X obj 322 535 r~ \$0-fltb1;
+#X obj 377 562 r~ \$0-fltb2;
+#X obj 907 297 sig~ 1;
+#X obj 916 340 /~ 2;
+#X msg 950 339 b0;
+#X msg 985 339 b2;
+#X msg 929 391 b1;
+#X obj 915 319 +~;
+#X obj 888 392 *~ -1;
+#X obj 727 569 bypass~;
+#X msg 739 548 0;
+#X msg 766 547 1;
+#X obj 743 460 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 919 573 bypass~;
+#X msg 927 548 0;
+#X msg 958 548 1;
+#X obj 917 465 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 569 600 bypass~;
+#X msg 571 576 0;
+#X msg 598 579 1;
+#X obj 587 503 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 108 59 clip~ 1 24000;
+#X obj 222 141 / 2;
+#X msg 814 146 0 bandpass \, 1 lopass \, 2 hipass;
+#X connect 1 0 29 0;
+#X connect 3 0 51 0;
+#X connect 5 0 6 0;
+#X connect 8 0 19 1;
+#X connect 8 0 111 0;
+#X connect 17 0 110 0;
+#X connect 18 0 8 0;
+#X connect 19 0 27 0;
+#X connect 19 0 28 0;
+#X connect 22 0 19 0;
+#X connect 27 0 30 0;
+#X connect 28 0 45 1;
+#X connect 28 0 55 1;
+#X connect 28 0 96 1;
+#X connect 29 0 30 1;
+#X connect 30 0 41 0;
+#X connect 30 0 43 1;
+#X connect 30 0 50 1;
+#X connect 30 0 60 0;
+#X connect 40 0 71 0;
+#X connect 41 0 80 0;
+#X connect 42 0 43 0;
+#X connect 43 0 51 1;
+#X connect 44 0 45 0;
+#X connect 45 0 51 2;
+#X connect 46 0 50 0;
+#X connect 50 0 51 3;
+#X connect 51 0 7 0;
+#X connect 53 0 70 0;
+#X connect 54 0 55 0;
+#X connect 55 0 56 0;
+#X connect 55 0 72 0;
+#X connect 56 0 61 0;
+#X connect 56 0 81 0;
+#X connect 60 1 68 0;
+#X connect 61 1 68 0;
+#X connect 62 0 60 1;
+#X connect 63 0 61 1;
+#X connect 64 0 63 0;
+#X connect 64 0 62 0;
+#X connect 64 0 107 0;
+#X connect 65 0 61 1;
+#X connect 66 0 60 1;
+#X connect 67 0 66 0;
+#X connect 67 0 65 0;
+#X connect 67 0 107 0;
+#X connect 69 0 51 4;
+#X connect 70 0 64 0;
+#X connect 70 0 75 0;
+#X connect 70 0 84 0;
+#X connect 70 1 67 0;
+#X connect 70 1 78 0;
+#X connect 70 1 87 0;
+#X connect 70 2 101 0;
+#X connect 70 2 105 0;
+#X connect 70 2 109 0;
+#X connect 71 1 79 0;
+#X connect 72 1 79 0;
+#X connect 73 0 71 1;
+#X connect 74 0 72 1;
+#X connect 75 0 74 0;
+#X connect 75 0 73 0;
+#X connect 75 0 99 0;
+#X connect 76 0 72 1;
+#X connect 77 0 71 1;
+#X connect 78 0 77 0;
+#X connect 78 0 76 0;
+#X connect 78 0 99 0;
+#X connect 80 1 88 0;
+#X connect 81 1 88 0;
+#X connect 82 0 80 1;
+#X connect 83 0 81 1;
+#X connect 84 0 83 0;
+#X connect 84 0 82 0;
+#X connect 84 0 103 0;
+#X connect 85 0 81 1;
+#X connect 86 0 80 1;
+#X connect 87 0 86 0;
+#X connect 87 0 85 0;
+#X connect 87 0 103 0;
+#X connect 89 0 51 5;
+#X connect 90 0 51 6;
+#X connect 91 0 96 0;
+#X connect 92 0 102 0;
+#X connect 92 0 106 0;
+#X connect 96 0 92 0;
+#X connect 96 0 97 0;
+#X connect 97 0 98 0;
+#X connect 98 1 79 0;
+#X connect 99 0 98 1;
+#X connect 100 0 98 1;
+#X connect 101 0 100 0;
+#X connect 101 0 74 0;
+#X connect 101 0 77 0;
+#X connect 102 1 88 0;
+#X connect 103 0 102 1;
+#X connect 104 0 102 1;
+#X connect 105 0 104 0;
+#X connect 105 0 83 0;
+#X connect 105 0 86 0;
+#X connect 106 1 68 0;
+#X connect 107 0 106 1;
+#X connect 108 0 106 1;
+#X connect 109 0 108 0;
+#X connect 109 0 63 0;
+#X connect 109 0 66 0;
+#X connect 110 0 22 0;
+#X connect 111 0 110 2;

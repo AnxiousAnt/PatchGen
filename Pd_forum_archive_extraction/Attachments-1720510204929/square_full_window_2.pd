@@ -1,0 +1,13 @@
+#N canvas 62 736 546 219 10;
+#X obj 230 55 gemhead;
+#X obj 230 127 GEMglFrustum -1 1 -1 1 1 20;
+#X obj 230 77 GEMglMatrixMode GL_PROJECTION;
+#X obj 230 103 GEMglLoadIdentity;
+#X obj 230 150 square 3.5;
+#X obj 80 125 gemwin;
+#X msg 87 95 reset \, create \, 1;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 6 0 5 0;

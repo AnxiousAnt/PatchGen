@@ -1,0 +1,11 @@
+#N canvas 238 180 450 300 10;
+#X obj 89 134 nbx 5 14 -1e+37 1e+37 0 0 \$0samereceive \$0samereceive
+empty 0 -8 0 10 -262144 -1 -1 35 256;
+#X obj 183 135 hsl 128 15 0 127 0 0 \$0samereceive \$0samereceive empty
+-2 -8 0 10 -262144 -1 -1 3500 1;
+#X floatatom 134 65 5 0 0 0 - - -;
+#X obj 134 84 s \$0samereceive;
+#X obj 115 197 r \$0samereceive;
+#X floatatom 115 219 5 0 0 0 - - -;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;

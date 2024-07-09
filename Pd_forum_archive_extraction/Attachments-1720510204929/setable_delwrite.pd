@@ -1,0 +1,24 @@
+#N canvas 0 22 552 304 10;
+#X msg 37 58 set varname2;
+#X obj 37 109 receive~ varname;
+#X msg 43 77 set varname;
+#X obj 39 204 dac~;
+#X obj 406 174 osc~ 220;
+#X obj 406 120 osc~ 880;
+#X obj 406 147 send~ varname;
+#X obj 406 198 send~ varname2;
+#X obj 409 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 409 75 \; pd dsp \$1;
+#X obj 37 138 delwrite~ fixedname 200;
+#X obj 39 176 delread~ fixedname;
+#X text 380 103 Source setup;
+#X text 378 35 DSP On/Off;
+#X text 21 33 Click the [set('s to chnage between source.;
+#X connect 0 0 1 0;
+#X connect 1 0 10 0;
+#X connect 2 0 1 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 8 0 9 0;
+#X connect 11 0 3 0;

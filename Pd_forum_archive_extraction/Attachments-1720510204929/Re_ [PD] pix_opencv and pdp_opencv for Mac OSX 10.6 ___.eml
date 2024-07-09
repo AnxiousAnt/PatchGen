@@ -1,0 +1,39 @@
+X-Mozilla-Keys: 
+Message-ID: <4C16DD53.3030608@gmail.com>
+Date: Tue, 15 Jun 2010 03:54:27 +0200
+From: "ydegoyon@gmail.com" <ydegoyon@gmail.com>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.22) Gecko/20090605 SeaMonkey/1.1.17 (Ubuntu-1.1.17+nobinonly-0ubuntu1)
+MIME-Version: 1.0
+To: chris clepper <cgclepper@gmail.com>
+Subject: Re: [PD] pix_opencv and pdp_opencv for Mac OSX 10.6 ???
+References: <mailman.5.1276423201.23486.pd-list@iem.at>	<D3450D79-0BF2-44C1-B6EC-788098EE0510@gmail.com>	<4C16AE86.6000808@gmail.com> <AANLkTintwRu4fkRNL-mNWRMT8_eSHZYlILHc_4duZjy8@mail.gmail.com>
+In-Reply-To: <AANLkTintwRu4fkRNL-mNWRMT8_eSHZYlILHc_4duZjy8@mail.gmail.com>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+chris clepper wrote:
+> On Mon, Jun 14, 2010 at 6:34 PM, ydegoyon@gmail.com 
+> <mailto:ydegoyon@gmail.com> <ydegoyon@gmail.com 
+> <mailto:ydegoyon@gmail.com>> wrote:
+>
+>
+>
+>     but i had the problem of the architecture
+>     that i fixed by adding -arch i386 in the CPPFLAGS and LDFLAGS
+>     in Makefile,in...
+>
+>
+> This is important to note since 10.6 defaults to 64 bit when compiling.
+yes allright but isn't that system 64 bits anyway?
+where's the confusion exactly?
+
+i guess on ubuntu if your system _is_ 32 bits,
+all configure thing will put options for 32 bits, ain't it?
+
+although i can live with it,
+i'd like to understand it
+
+salaam,
+sevy
+
+

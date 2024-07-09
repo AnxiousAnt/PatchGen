@@ -1,0 +1,36 @@
+--- jack_transport~-orig.c	2009-05-27 12:29:43.000000000 -0700
++++ jack_transport~.c	2009-05-27 15:55:19.000000000 -0700
+@@ -49,7 +49,7 @@
+ static void jack_transport_connect(jack_transport_tilde_t * x)
+ {
+ 	x->x_jack_client = jack_client_open("pure_data_jack_transport",
+-					    JackNullOption, NULL);
++					    JackNoStartServer, NULL);
+ 	if (!x->x_jack_client) {
+ 		post("jack_transport~: can't connect to jack server");
+ 		return;
+@@ -103,6 +103,14 @@
+ 	jack_transport_stop(x->x_jack_client);
+ }
+ 
++static void jack_transport_locater(jack_transport_tilde_t * x, t_floatarg f)
++{
++	if (!x->x_jack_client)
++		return;
++
++	jack_transport_locate(x->x_jack_client, (jack_nframes_t)f);
++}
++
+ t_int *jack_transport_tilde_perform(t_int *w)
+ {
+ 	jack_transport_tilde_t *x = (jack_transport_tilde_t *)(w[1]);
+@@ -195,6 +203,9 @@
+ 	                (t_method)jack_transport_stopper,
+ 	                gensym("stop"), 0, 0);
+ 	class_addmethod(jack_transport_tilde_class,
++	                (t_method)jack_transport_locater,
++	                gensym("locate"), A_DEFFLOAT, 0);
++	class_addmethod(jack_transport_tilde_class,
+ 	                (t_method)jack_transport_tilde_dsp,
+ 	                gensym("dsp"), 0, 0);
+ 	class_addbang(jack_transport_tilde_class,

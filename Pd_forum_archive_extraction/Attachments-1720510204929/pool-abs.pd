@@ -1,0 +1,36 @@
+#N canvas 300 202 324 156 10;
+#X obj 2 22 cnv 15 300 40 empty empty Not_yet_angriff_here 20 12 0
+14 -261681 -66577 0;
+#X obj 23 96 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 12700 1;
+#N canvas 676 224 450 300 poolstuff 0;
+#X obj 126 97 pool \$1;
+#X obj 126 23 inlet;
+#X obj 126 162 outlet;
+#X obj 207 23 inlet;
+#X text 62 21 Setter;
+#X text 262 23 Getter;
+#X obj 126 44 pack 0 \$2;
+#X obj 207 46 f \$2;
+#X msg 207 68 get \$1;
+#X msg 126 67 set \$2 \$1;
+#X connect 0 0 2 0;
+#X connect 1 0 6 0;
+#X connect 3 0 7 0;
+#X connect 6 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X restore 158 92 pd poolstuff;
+#X obj 249 86 bng 15 250 50 0 empty empty read-out 0 -6 0 8 -262144
+-1 -1;
+#X obj 158 122 outlet;
+#X msg 97 122 set \$1;
+#X obj 214 55 inlet;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 1;
+#X connect 5 0 1 0;
+#X connect 6 0 3 0;
+#X coords 0 0 1 1 304 140 1;

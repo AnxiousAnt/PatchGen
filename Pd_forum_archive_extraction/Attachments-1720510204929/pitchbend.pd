@@ -1,0 +1,30 @@
+#N canvas 603 483 616 434 10;
+#X obj 48 94 mtof;
+#X floatatom 121 145 5 0 0 0 - - -;
+#X obj 143 -56 - 8192;
+#X obj 143 -27 / 8192;
+#X obj 48 39 f;
+#X obj 143 -3 t b f;
+#X obj 48 66 -;
+#X floatatom 163 84 5 0 0 0 - - -;
+#X floatatom 48 -116 5 0 0 0 - - -;
+#X obj 143 -207 vsl 15 128 0 16383 0 1 empty empty empty 0 -9 0 10
+-262144 -1 -1 4200 1;
+#X text 241 -89 pitchbend in: 0 - 16383;
+#X floatatom 213 -58 5 0 0 0 - - -;
+#X text 226 -30 Pitchbend +/- 1 semitone (scale differently if desired)
+;
+#X text 204 149 frequency result;
+#X text 2 -169 MIDI note;
+#X text 217 88 MIDI note result;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 5 1 6 1;
+#X connect 6 0 0 0;
+#X connect 6 0 7 0;
+#X connect 8 0 4 0;
+#X connect 9 0 2 0;
+#X connect 9 0 11 0;

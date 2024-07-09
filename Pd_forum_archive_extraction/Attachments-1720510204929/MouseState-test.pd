@@ -1,0 +1,16 @@
+#N canvas 208 185 444 308 12;
+#X msg 27 25 bang;
+#X msg 94 25 stop;
+#X obj 27 67 metro 50;
+#X obj 27 109 MouseState;
+#X floatatom 48 238 5 0 0;
+#X floatatom 69 207 5 0 0;
+#X floatatom 90 175 5 0 0;
+#X floatatom 112 144 5 0 0;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 1 4 0;
+#X connect 3 2 5 0;
+#X connect 3 3 6 0;
+#X connect 3 4 7 0;

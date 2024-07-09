@@ -1,0 +1,25 @@
+#N canvas 415 261 450 300 10;
+#X msg 177 177 destroy;
+#X msg 177 155 posdim 334 20 280 220;
+#X obj 79 200 pdp_xv;
+#X msg 177 133 posdim 1020 -4 1280 1024;
+#X obj 177 104 loadbang;
+#X msg 79 88 open \$1;
+#X obj 79 133 pdp_qt;
+#X msg 103 108 play;
+#X obj 77 65 openpanel;
+#X obj 76 41 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 121 29 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 2 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;

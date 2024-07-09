@@ -1,0 +1,55 @@
+11c11,12
+< #define DEFAULTCOLOR "black"
+---
+> #define DEFAULTCOLOR "grey"
+> #define DEFAULTBANGCOLOR "black"
+21a23
+>      t_symbol* x_bang_color;
+36c38,39
+< 			x->x_obj.te_ypos + x->x_height -1,x->x_color->s_name,x);
+---
+> 			x->x_obj.te_ypos + x->x_height -1,
+>             x->x_bang_color->s_name,x);
+59c62
+< %d %d %d %d -tags %xP\n",glist_getcanvas(glist),
+---
+> %d %d %d %d -fill %s -tags %xP\n",glist_getcanvas(glist),
+62,63c65,66
+< 		   x->x_obj.te_ypos + x->x_height -1,x);
+< 	  
+---
+> 		   x->x_obj.te_ypos + x->x_height -1,
+> 		   x->x_color->s_name,x);
+209c212
+<     binbuf_addv(b, "ssiissii", gensym("#X"),gensym("obj"),
+---
+>     binbuf_addv(b, "ssiisssii", gensym("#X"),gensym("obj"),
+211c214,215
+< 		gensym("toddle"),x->x_color,x->x_width,x->x_height);
+---
+> 		gensym("toddle"),x->x_color,x->x_bang_color,
+>         x->x_width,x->x_height);
+277c281
+< void toddle_color(t_toddle* x,t_symbol* col)
+---
+> void toddle_color(t_toddle* x,t_symbol* col,t_symbol* bcol)
+279a284,285
+>      x->x_bang_color = bcol;
+>      toddle_drawme(x, x->x_glist, 1);
+288c294
+< static void *toddle_new(t_symbol* col,t_floatarg h,t_floatarg o)
+---
+> static void *toddle_new(t_symbol* col,t_symbol* bcol,t_floatarg h,t_floatarg o)
+304a311,314
+>     if (bcol != &s_)
+> 	 x->x_bang_color = bcol;
+>     else
+> 	 x->x_bang_color = gensym(DEFAULTBANGCOLOR);
+314c324
+< 				sizeof(t_toddle),0, A_DEFSYM,A_DEFFLOAT,A_DEFFLOAT,0);
+---
+> 				sizeof(t_toddle),0, A_DEFSYM,A_DEFSYM,A_DEFFLOAT,A_DEFFLOAT,0);
+325c335
+<     	A_SYMBOL, 0);
+---
+>     	A_SYMBOL, A_SYMBOL, 0);

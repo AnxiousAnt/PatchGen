@@ -1,0 +1,7 @@
+#N canvas 521 45 316 117 10;
+#X msg 215 25 push;
+#N canvas 24 44 450 300 output 1;
+#X restore 208 66 pd output;
+#X obj 21 26 tot output rectresize.tot;
+#X connect 0 0 2 0;
+#X connect 2 3 0 0;

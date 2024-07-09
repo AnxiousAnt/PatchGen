@@ -1,0 +1,94 @@
+#N canvas 675 -4 417 447 10;
+#X obj 173 177 f;
+#X obj 202 177 + 1;
+#X floatatom 242 196 5 0 0 0 - - -;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array vu 64 float 1;
+#A 0 0.046875 0.03125 0.015625 0 0.984375 0.96875 0.953125 0.9375 0.921875
+0.90625 0.890625 0.875 0.859375 0.84375 0.828125 0.8125 0.796875 0.78125
+0.765625 0.75 0.734375 0.71875 0.703125 0.6875 0.671875 0.65625 0.640625
+0.625 0.609375 0.59375 0.578125 0.5625 0.546875 0.53125 0.515625 0.5
+0.484375 0.46875 0.453125 0.4375 0.421875 0.40625 0.390625 0.375 0.359375
+0.34375 0.328125 0.3125 0.296875 0.28125 0.265625 0.25 0.234375 0.21875
+0.203125 0.1875 0.171875 0.15625 0.140625 0.125 0.109375 0.09375 0.078125
+0.0625;
+#X coords 0 1 63 0 64 64 1;
+#X restore 50 106 graph;
+#X obj 173 142 until;
+#X floatatom 203 114 5 0 0 0 - - -;
+#X obj 173 116 1;
+#N canvas 460 279 458 308 scroll 0;
+#X obj 208 201 list prepend 0;
+#X obj 208 231 list trim;
+#X obj 208 108 inlet;
+#X obj 256 173 list split 64;
+#X obj 208 260 s vu;
+#X obj 208 146 list;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 1;
+#X connect 3 2 5 1;
+#X connect 5 0 3 0;
+#X connect 5 0 0 0;
+#X restore 172 258 pd scroll vu 64;
+#N canvas 0 0 638 540 frame-count 0;
+#X obj 266 256 bang~;
+#X obj 120 73 inlet;
+#X obj 266 425 outlet;
+#X obj 266 286 f;
+#X obj 294 288 + 1;
+#X obj 120 412 switch~;
+#X obj 120 253 1;
+#X obj 266 314 mod;
+#X obj 266 368 select 0;
+#X obj 120 128 t b f;
+#X obj 155 158 select 0;
+#X obj 155 189 0;
+#X obj 215 216 1;
+#X obj 214 189 t b f b;
+#X obj 265 219 0;
+#X obj 40 40 loadbang;
+#X obj 40 40;
+#X msg 40 62 \; pd dsp 1 \;;
+#X connect 0 0 3 0;
+#X connect 1 0 9 0;
+#X connect 3 0 7 0;
+#X connect 4 0 3 1;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 0;
+#X connect 9 0 6 0;
+#X connect 9 1 10 0;
+#X connect 10 0 11 0;
+#X connect 10 1 13 0;
+#X connect 11 0 6 1;
+#X connect 12 0 6 1;
+#X connect 13 0 12 0;
+#X connect 13 1 7 1;
+#X connect 13 2 14 0;
+#X connect 14 0 3 1;
+#X connect 15 0 17 0;
+#X restore 173 82 pd frame-count;
+#X floatatom 173 61 5 0 0 0 - - -;
+#X obj 173 39 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 172 200 mod 64;
+#X obj 172 226 / 64;
+#X obj 200 36 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 0 0 11 0;
+#X connect 1 0 0 1;
+#X connect 2 0 11 1;
+#X connect 2 0 12 1;
+#X connect 4 0 0 0;
+#X connect 5 0 6 1;
+#X connect 6 0 4 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
+#X connect 11 0 1 0;
+#X connect 11 0 12 0;
+#X connect 12 0 7 0;
+#X connect 13 0 9 0;

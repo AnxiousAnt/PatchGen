@@ -1,0 +1,21 @@
+#N canvas 355 77 605 496 10;
+#N canvas 148 244 555 461 sub 0;
+#X obj 288 47 button DIO;
+#X obj 364 38 ticker ;
+#X obj 364 62 ticker ;
+#X obj 27 46 nbx 3 20 -1e+37 1e+37 0 0 empty empty IN 13 -12 1 14 -262144
+-1 -1 0 256;
+#X obj 84 46 nbx 3 20 -1e+37 1e+37 0 0 empty empty OUT 8 -12 1 14 -262144
+-1 -1 0 256;
+#X obj 20 74 button CLIP;
+#X obj 80 74 button CLIP;
+#X obj 397 44 cnv 15 20 20 empty empty compute 0 7 0 13 -262144 -1
+0;
+#X obj 455 44 cnv 15 20 20 empty empty audio 0 7 0 13 -262144 -1 0
+;
+#X obj 397 69 cnv 15 20 20 empty empty peak 0 7 0 13 -262144 -1 0;
+#X obj 435 69 cnv 15 20 20 empty empty meters 0 7 0 13 -262144 -1 0
+;
+#X obj 19 118 entry 480 280 white black;
+#X coords 0 -1 1 1 500 400 1 10 10;
+#X restore 25 47 pd sub;

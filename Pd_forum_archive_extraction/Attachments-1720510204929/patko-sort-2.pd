@@ -1,0 +1,17 @@
+#N canvas 536 202 450 300 10;
+#X obj 39 144 #store;
+#X obj 39 163 display;
+#X msg 39 30 4 5 # 1 2 3 4 5 6 7 8 9 0 0 1 2 3 4 4 5 6 7 8;
+#X obj 39 49 t a a;
+#X obj 39 106 #grade;
+#X obj 39 125 #outer ignore (0);
+#X obj 39 87 #fold put;
+#X obj 39 68 #reverse -1;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 7 0;
+#X connect 3 1 0 1;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;

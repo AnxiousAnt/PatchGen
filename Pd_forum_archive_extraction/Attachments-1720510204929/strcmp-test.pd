@@ -1,0 +1,11 @@
+#N canvas 128 394 435 310 10;
+#X obj 108 159 strcmp;
+#X msg 114 89 list bla bla sdf;
+#X floatatom 109 222 5 0 0 0 - - -;
+#X obj 109 116 t l l;
+#X text 155 220 <- sometimes 0 \, sometimes not ?;
+#X text 43 252 (normal muessts ja immer 0 sein wenns gleich is?);
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;

@@ -1,0 +1,9 @@
+#N canvas 0 0 470 320 10;
+#X obj 107 155 popup 124 #ffffff popup option;
+#X text 126 136 this is a popup;
+#X msg 109 112 name test;
+#X text 55 187 clicking the message box and re-opening the patch after
+saving will not only change the popup name \, but also the word 'popup'.
+;
+#X text 62 85 how is this happening?;
+#X connect 2 0 0 0;

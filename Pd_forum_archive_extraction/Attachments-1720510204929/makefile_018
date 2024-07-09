@@ -1,0 +1,77 @@
+export MACOSX_DEPLOYMENT_TARGET = 10.4
+
+pd_darwin: sqlite3db.pd_darwin
+
+.SUFFIXES: .pd_darwin
+
+MYINSTALL = ..
+MYHELP = ../../help/
+
+DARWINCFLAGS = -DMACOSX -DUNIX -DPD -O2 -funroll-loops -fomit-frame-pointer -Wall -W -Wshadow -Wstrict-prototypes -Wno-unused -Wno-parentheses -Wno-switch
+
+DARWINCINCLUDE = -I/Applications/Pd-0.42-4.app/Contents/Resources/src/
+
+sqlite3.o:	sqlite3.c
+	cc $(DARINWCFLAGS) $(DARWINCINCLUDE) -o sqlite3.o -c sqlite3.c
+
+sqlite3db.pd_darwin: sqlite3db.c sqlite3.o
+	cc $(DARWINCFLAGS) $(DARWINCINCLUDE) -o $*.o -c $*.c
+	cc -bundle -undefined dynamic_lookup -isysroot /Developer/SDKs/MacOSX10.4u.sdk \
+		-o $*.pd_darwin $*.o sqlite3.o
+
+clean:
+	rm -f *.o *.pd_darwin *.pd_linux
+
+minstall:
+	mv -f *.pd_darwin $(MYINSTALL)
+
+
+# ----------------------- LINUX i386 -----------------------
+
+
+pd_linux: sqlite3db.pd_linux
+
+.SUFFIXES: .pd_linux
+
+TARGDIR= ./
+
+#-----------------------------------------------
+EXSRCDIR= .
+
+LINUXCFLAGS = -DPD -O2 -funroll-loops -fomit-frame-pointer \
+    -Wall -W -Wshadow -Wstrict-prototypes \
+    -Wno-unused -Wno-parentheses -Wno-switch
+
+.c.pd_linux:
+	cc $(LINUXCFLAGS) $(LINUXINCLUDE) -o $(EXSRCDIR)$*.o -c $*.c 
+	ld -export_dynamic  -shared -o $(TARGDIR)$*.pd_linux $(EXSRCDIR)$*.o -lc -lm -lsqlite3 $(LDFLAGS)
+	strip --strip-unneeded $(TARGDIR)$*.pd_linux
+	rm $(EXSRCDIR)$*.o 
+#	cp $(TARGDIR)$*.pd_linux $(EXTERNALDIR)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

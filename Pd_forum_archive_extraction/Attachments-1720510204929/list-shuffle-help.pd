@@ -1,0 +1,11 @@
+#N canvas 0 22 450 300 10;
+#X obj 80 185 list-shuffle;
+#X obj 80 216 print;
+#X msg 113 157 seed \$1;
+#X floatatom 113 131 5 0 0 0 - - -;
+#X text 47 30 list-shuffle: Randomly shuffle the elements list;
+#X msg 80 96 1 hoedown 1 1 33 45 dog 99028 robot 0.1112;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 5 0 0 0;

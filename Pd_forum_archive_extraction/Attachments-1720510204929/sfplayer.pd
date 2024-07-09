@@ -1,0 +1,72 @@
+#N canvas 558 204 751 574 10;
+#X obj 102 350 readsf~;
+#X obj 102 176 openpanel;
+#X obj 102 103 bng 10 250 50 0 empty empty Open/File 12 5 0 8 -262144
+-1 -1;
+#X msg 251 162 start;
+#X msg 270 207 stop;
+#X obj 159 103 tgl 10 0 empty empty Start/Stop 12 5 0 8 -262144 -1
+-1 0 1;
+#X obj 251 129 sel 1 0;
+#X obj 102 197 prepend open;
+#X obj 102 218 prepend set;
+#X msg 102 238 open /Developer/Extras/Java/Sound/JavaSoundDemo/audio/22-new.aif
+;
+#X obj 251 183 t a b;
+#X msg 505 221 0;
+#X obj 245 397 gate 2;
+#X obj 378 332 delay 20;
+#X obj 333 306 gate;
+#X msg 378 354 start;
+#X msg 256 333 1;
+#X msg 288 333 2;
+#X obj 256 307 sel 0 1;
+#X obj 222 103 tgl 10 1 empty empty LOOP 12 5 0 8 -262144 -1 -1 0 1
+;
+#X obj 102 447 outlet~;
+#X text 170 285 ________________Loop on or off__________________;
+#X text 172 416 ________________Loop on or off__________________;
+#X obj 461 289 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 463 421 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 155 289 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 157 421 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 150 446 s~ \$0-archivodeaudio;
+#X msg 407 167 set;
+#X obj 407 133 loadbang;
+#X connect 0 0 20 0;
+#X connect 0 0 27 0;
+#X connect 0 1 12 1;
+#X connect 1 0 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 10 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 6 1 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 10 1 9 0;
+#X connect 11 0 5 0;
+#X connect 12 0 11 0;
+#X connect 12 1 14 1;
+#X connect 13 0 15 0;
+#X connect 13 0 3 0;
+#X connect 14 0 13 0;
+#X connect 14 0 9 0;
+#X connect 16 0 12 0;
+#X connect 17 0 12 0;
+#X connect 18 0 16 0;
+#X connect 18 1 17 0;
+#X connect 19 0 14 0;
+#X connect 19 0 18 0;
+#X connect 23 0 24 0;
+#X connect 25 0 26 0;
+#X connect 28 0 9 0;
+#X connect 29 0 28 0;
+#X coords 0 -1 1 1 155 15 2 100 100;

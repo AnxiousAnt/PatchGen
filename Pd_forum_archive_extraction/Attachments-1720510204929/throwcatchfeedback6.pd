@@ -1,0 +1,67 @@
+#N canvas 520 153 565 496 12;
+#X obj 35 24 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 0 450 300 graph1 0;
+#X array banana 200 float 1;
+#A 0 0 0.193845 0.415825 0.641889 0.868545 0.866552 0.672418 0.450396
+0.224325 0.0325599 0.00472592 0.000685946 9.95621e-005 1.4451e-005
+2.0975e-006 3.04443e-007 4.41885e-008 6.41377e-009 9.3093e-010 1.3512e-010
+1.96121e-011 2.84662e-012 4.13174e-013 5.99703e-014 8.70443e-015 1.26341e-015
+1.83378e-016 2.66166e-017 3.86328e-018 5.60738e-019 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 199 -1 200 140 1;
+#X restore 266 28 graph;
+#X obj 42 443 tabwrite~ banana;
+#X obj 363 226 loadbang;
+#X msg 362 268 \; banana xticks 64 410 4 \; banana xlabel -1.1 64 \;
+pd dsp 1;
+#X floatatom 65 65 5 0.2 6 0 - - -;
+#N canvas 0 0 458 308 throwmod 0;
+#X obj 46 49 inlet~;
+#X obj 47 199 throw~ A-test;
+#X obj 352 75 block~ 1;
+#X connect 0 0 1 0;
+#X restore 82 294 pd throwmod;
+#N canvas 0 0 462 312 catchmod 0;
+#X obj 46 49 inlet~;
+#X obj 125 140 outlet~;
+#X obj 125 49 catch~ A-test;
+#X obj 284 267 block~ 1;
+#X connect 2 0 1 0;
+#X restore 80 248 pd catchmod;
+#N canvas 0 0 462 312 excitation 0;
+#X obj 62 462 outlet~;
+#X msg 43 297 0 \, 1 \$1;
+#X obj 118 267 pipe 20;
+#X obj 24 34 inlet;
+#X obj 59 375 vline~;
+#X floatatom 41 65 5 0 0 0 - - -;
+#X obj 68 421 lop~ 6000;
+#X obj 25 214 * 0.5;
+#X msg 134 296 0 \$1;
+#X text 68 35 <- excitation width (ms);
+#X obj 38 140 f 0.5;
+#X connect 1 0 4 0;
+#X connect 2 0 8 0;
+#X connect 3 0 5 0;
+#X connect 3 0 10 0;
+#X connect 4 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 1 0;
+#X connect 7 0 2 1;
+#X connect 7 0 2 0;
+#X connect 8 0 4 0;
+#X connect 10 0 7 0;
+#X restore 53 155 pd excitation;
+#X text 112 66 width;
+#X connect 0 0 2 0;
+#X connect 0 0 8 0;
+#X connect 3 0 4 0;
+#X connect 5 0 8 0;
+#X connect 7 0 2 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;

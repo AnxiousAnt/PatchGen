@@ -1,0 +1,27 @@
+#N canvas 645 162 450 300 10;
+#X obj 71 231 line 0 1000;
+#X obj 71 55 random 128;
+#X obj 105 105 -;
+#X msg 105 158 5000 \$1;
+#X obj 105 180 /;
+#X obj 71 29 metro 5000;
+#X msg 71 206 \$1 5000;
+#X obj 71 4 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 105 127 abs;
+#X obj 71 77 t a a a a;
+#X obj 132 103 print next_target;
+#X floatatom 71 253 5 0 0 0 - - -, f 5;
+#X connect 0 0 11 0;
+#X connect 1 0 9 0;
+#X connect 2 0 8 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 2;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 3 0;
+#X connect 9 0 6 0;
+#X connect 9 1 2 1;
+#X connect 9 2 2 0;
+#X connect 9 3 10 0;

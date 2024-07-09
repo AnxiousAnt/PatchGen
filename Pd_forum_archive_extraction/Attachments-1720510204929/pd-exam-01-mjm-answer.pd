@@ -1,0 +1,40 @@
+#N canvas 350 279 626 380 10;
+#X floatatom 142 286 5 0 0 0 - - -;
+#X floatatom 75 286 5 0 0 0 - - -;
+#X msg 75 122 1 2;
+#X obj 75 235 unpack 0 0;
+#X msg 116 151 3;
+#X text 166 151 but this should set the number boxes to "3" and "100".
+;
+#X text 112 121 this should set the number boxes to "1" and "2".;
+#X text 42 29 Assignment 1:;
+#X text 67 58 Print the second element from a list. If there is no
+second element in the list because the list is too short \, send 100
+instead.;
+#X obj 142 314 print Second_Element;
+#X text 176 193 <== fill in this part.;
+#N canvas 0 22 450 300 mjm_answer 0;
+#X obj 89 47 inlet;
+#X obj 88 240 outlet;
+#X msg 116 147 100;
+#X text 178 52 Fill in this part.;
+#X obj 89 67 t a a;
+#X obj 116 87 list length;
+#X obj 116 107 < 2;
+#X obj 116 127 route 1;
+#X obj 88 191 list;
+#X connect 0 0 4 0;
+#X connect 2 0 8 1;
+#X connect 4 0 8 0;
+#X connect 4 1 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X connect 8 0 1 0;
+#X restore 75 193 pd mjm_answer;
+#X connect 0 0 9 0;
+#X connect 2 0 11 0;
+#X connect 3 0 1 0;
+#X connect 3 1 0 0;
+#X connect 4 0 11 0;
+#X connect 11 0 3 0;

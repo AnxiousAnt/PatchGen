@@ -1,0 +1,6 @@
+#N canvas 617 163 679 604 10;
+#X obj 37 142 pix_image;
+#X msg 52 111 open polyphony.jpeg;
+#X obj 51 79 loadbang;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;

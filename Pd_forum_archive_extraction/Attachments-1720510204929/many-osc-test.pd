@@ -1,0 +1,24 @@
+#N canvas 547 295 540 430 10;
+#X obj 74 267 catch~ sound-out;
+#X obj 84 326 *~;
+#X obj 70 380 dac~;
+#X obj 105 302 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 5200 1;
+#X floatatom 114 326 5 0 0 0 - - -;
+#X obj 74 62 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 3400 1;
+#X obj 70 101 send freq;
+#X floatatom 78 82 5 0 0 0 - - -;
+#X text 69 119 starting around note # 70 \, you can hear anti-aliasing
+effects as you go higher.;
+#X text 69 195 Set the number to as high as your computer can handle.
+A PowerMac G5 2.3 GHz could handle 900 cleanly.;
+#X obj 70 168 nqpoly4 100 many-osc;
+#X text 172 320 overall amplitude;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 3 0 1 1;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 5 0 7 0;

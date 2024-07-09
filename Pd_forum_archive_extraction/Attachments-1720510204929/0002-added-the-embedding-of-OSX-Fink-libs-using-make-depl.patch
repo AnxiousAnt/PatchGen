@@ -1,0 +1,125 @@
+From 6413f6b7495e9aa033b4b5efc25f8f775ccc783d Mon Sep 17 00:00:00 2001
+From: Hans-Christoph Steiner <hans@eds.org>
+Date: Wed, 26 Oct 2011 22:20:11 -0400
+Subject: [PATCH 2/2] added the embedding of OSX Fink libs using 'make deploy'
+
+---
+ Makefile                     |    8 ++--
+ embed-MacOSX-dependencies.sh |   83 ++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 87 insertions(+), 4 deletions(-)
+ create mode 100755 embed-MacOSX-dependencies.sh
+
+diff --git a/Makefile b/Makefile
+index 8b4a718..be56c5f 100644
+--- a/Makefile
++++ b/Makefile
+@@ -28,13 +28,13 @@ endif
+ 
+ SOURCES = fux_kinect
+ 
+-all:
++$(SOURCES).$(EXTENSION):
+ 	g++ $(LDFLAGS) $(INCLUDES) $(CPPFLAGS) -o $(SOURCES).o -c $(SOURCES).cpp
+ 	g++ -o $(SOURCES).$(EXTENSION) -undefined dynamic_lookup -arch i386 -dynamiclib -mmacosx-version-min=10.3 -undefined dynamic_lookup -framework QuickTime -framework Carbon -framework AGL -framework OpenGL -arch i386 ./*.o -L/sw/lib -lstdc++ -ldl -lz -lm -lpthread -lfreenect -L$(PD_DIR)/bin -L$(PD_DIR)
+ 	rm -fr ./*.o
+-deploy:
+-	rm -fr $(PD_APP_DIR)/extra/$(SOURCES).$(EXTENSION)
+-	mv *.$(EXTENSION) $(PD_APP_DIR)/extra/
++deploy: fux_kinect.pd_darwin
++	./embed-MacOSX-dependencies.sh .
++
+ clean:
+ 	rm -f $(SOURCES)*.o
+ 	rm -f $(SOURCES)*.$(EXTENSION)
+diff --git a/embed-MacOSX-dependencies.sh b/embed-MacOSX-dependencies.sh
+new file mode 100755
+index 0000000..ac49914
+--- /dev/null
++++ b/embed-MacOSX-dependencies.sh
+@@ -0,0 +1,83 @@
++#!/bin/sh
++#
++# This script finds all of the dependecies from Fink and included them into
++# current folder so that it becomes a libdir to be installed into /Library/Pd.
++# <hans@at.or.at>
++
++PD_APP_LIB=$1
++
++echo " "
++
++for pd_darwin in `find . -name '*.pd_darwin'`; do
++    LIBS=`otool -L $pd_darwin | sed -n 's|.*/sw/lib/\(.*\.dylib\).*|\1|p'`
++    if [ "x$LIBS" != "x" ]; then
++	echo "`echo $pd_darwin | sed 's|.*/\(.*\.pd_darwin$\)|\1|'` is using:"
++	for lib in $LIBS; do
++	    echo "    $lib"
++	    install -vp /sw/lib/$lib $PD_APP_LIB
++	    new_lib=`echo $lib | sed 's|.*/\(.*\.dylib\)|\1|'`
++	    install_name_tool -id @loader_path/$new_lib $PD_APP_LIB/$new_lib
++	    install_name_tool -change /sw/lib/$lib @loader_path/$new_lib $pd_darwin
++	done
++	echo " "
++    fi
++done
++
++for dylib in $PD_APP_LIB/*.dylib; do
++    LIBS=`otool -L $dylib | sed -n 's|.*/sw/lib/\(.*\.dylib\).*|\1|p'`
++    if [ "x$LIBS" != "x" ]; then
++	echo "`echo $dylib | sed 's|.*/\(.*\.dylib\)|\1|'` is using:"
++	for lib in $LIBS; do
++	    echo "    $lib"
++	    new_lib=`echo $lib | sed 's|.*/\(.*\.dylib\)|\1|'`
++	    if [ -e  $PD_APP_LIB/$new_lib ]; then
++		echo "$PD_APP_LIB/$new_lib already exists, skipping copy."
++	    else
++		install -vp /sw/lib/$lib $PD_APP_LIB
++	    fi
++	    install_name_tool -id @loader_path/$new_lib $PD_APP_LIB/$new_lib
++	    install_name_tool -change /sw/lib/$lib @loader_path/$new_lib $dylib
++	done
++	echo " "
++    fi
++done
++
++# run it one more time to catch dylibs that depend on dylibs
++for dylib in $PD_APP_LIB/*.dylib; do
++    LIBS=`otool -L $dylib | sed -n 's|.*/sw/lib/\(.*\.dylib\).*|\1|p'`
++    if [ "x$LIBS" != "x" ]; then
++	echo "`echo $dylib | sed 's|.*/\(.*\.dylib\)|\1|'` is using:"
++	for lib in $LIBS; do
++	    echo "    $lib"
++	    new_lib=`echo $lib | sed 's|.*/\(.*\.dylib\)|\1|'`
++	    if [ -e  $PD_APP_LIB/$new_lib ]; then
++		echo "$PD_APP_LIB/$new_lib already exists, skipping copy."
++	    else
++		install -vp /sw/lib/$lib $PD_APP_LIB
++	    fi
++	    install_name_tool -id @loader_path/$new_lib $PD_APP_LIB/$new_lib
++	    install_name_tool -change /sw/lib/$lib @loader_path/$new_lib $dylib
++	done
++	echo " "
++    fi
++done
++
++# seems like we need it one last time! phew...
++for dylib in $PD_APP_LIB/*.dylib; do
++    LIBS=`otool -L $dylib | sed -n 's|.*/sw/lib/\(.*\.dylib\).*|\1|p'`
++    if [ "x$LIBS" != "x" ]; then
++	echo "`echo $dylib | sed 's|.*/\(.*\.dylib\)|\1|'` is using:"
++	for lib in $LIBS; do
++	    echo "    $lib"
++	    new_lib=`echo $lib | sed 's|.*/\(.*\.dylib\)|\1|'`
++	    if [ -e  $PD_APP_LIB/$new_lib ]; then
++		echo "$PD_APP_LIB/$new_lib already exists, skipping copy."
++	    else
++		install -vp /sw/lib/$lib $PD_APP_LIB
++	    fi
++	    install_name_tool -id @loader_path/$new_lib $PD_APP_LIB/$new_lib
++	    install_name_tool -change /sw/lib/$lib @loader_path/$new_lib $dylib
++	done
++	echo " "
++    fi
++done
+-- 
+1.7.6.4
+

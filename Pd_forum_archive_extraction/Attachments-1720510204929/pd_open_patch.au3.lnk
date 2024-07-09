@@ -1,0 +1,36 @@
+AutoItSetOption( "WinTitleMatchMode", 3 )
+AutoItSetOption( "SendKeyDelay", 30 )
+
+;CHECK IF PD IS RUNNING
+;IF NOT: START IT WITH A BATCH FILE
+
+If ProcessExists("pd.exe") = 0 Then
+   Run ("D:\pd_0.46\pd-vanilla.bat") ; you want to put your own batch file here
+   ProcessWait ("pd.exe")
+EndIf
+
+;CHECK IF A FILE WAS DROPPED
+
+If $CmdLine[0] = 0 Then
+   Exit
+EndIf
+
+;COPY THE DROPPED FILE TO CLIPBOARD
+
+Local $vDROPFILE = StringTrimLeft ($CmdLine[1], 3)  ; truncate 3 elements from the dropped filename ("D:\" in my case)
+												   ; otherwise the open process below will not work
+ClipPut($vDROPFILE)
+
+WinWait ( "[TITLE:Pd; CLASS:TkTopLevel]" )
+WinActivate ( "[TITLE:Pd; CLASS:TkTopLevel]" )
+
+Send ("^o") 				; STRG + O for open dialog
+WinWait ( "[TITLE:Open]" )  ; wait until open dialog is there
+Send ("!i")					; Alt + i  to go to adress bar
+Send ("{DOWN}{HOME}d")		; select DESKTOP
+Send ("d")					; select drive letter D (my data drive)
+Send ("!n")					; select name field
+Send ("^v")					; copy dropped file as text (first 3 letters truncated !!!)
+Send ("{ENTER}")
+
+Exit

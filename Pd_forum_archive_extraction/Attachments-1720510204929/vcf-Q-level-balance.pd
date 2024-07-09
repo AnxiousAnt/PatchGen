@@ -1,0 +1,55 @@
+#N canvas 0 19 669 704 12;
+#X obj 95 220 dac~ 1;
+#X obj 95 192 *~ 0;
+#X obj 26 26 vsl 15 256 0.0025 0.25 1 0 empty empty empty 0 -8 0 8
+-262144 -1 -1 13500 0;
+#X obj 94 67 noise~;
+#X msg 147 168 0;
+#X obj 93 114 vcf~;
+#X obj 171 70 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+10 -262144 -1 -1 1000 256;
+#X obj 229 70 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+10 -262144 -1 -1 0 256;
+#N canvas 0 0 309 305 vcf-compensate 0;
+#X obj 119 80 sqrt;
+#X obj 43 63 sel 0;
+#X msg 43 89 1;
+#X obj 64 120 pack 1 5;
+#X obj 64 144 line~;
+#X obj 43 28 inlet;
+#X text 56 8 Q;
+#X text 46 201 level factor;
+#X obj 64 181 outlet~;
+#X obj 181 177 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+10 -262144 -1 -1 1 256;
+#X obj 174 208 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 1 1 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 9 0;
+#X connect 4 0 8 0;
+#X connect 5 0 1 0;
+#X connect 9 0 10 0;
+#X restore 229 98 pd vcf-compensate;
+#X obj 240 140 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -6 0
+10 -262144 -1 -1 1 256;
+#X obj 92 149 *~;
+#X text 43 21 <--level;
+#X text 169 53 cutoff;
+#X text 248 51 Q;
+#X text 295 137 <--level factor;
+#X text 34 326 WARNING : the source sound is white noise \, therefore
+turn your speakers low;
+#X connect 1 0 0 0;
+#X connect 2 0 1 1;
+#X connect 3 0 5 0;
+#X connect 4 0 1 1;
+#X connect 5 0 10 0;
+#X connect 6 0 5 1;
+#X connect 7 0 5 2;
+#X connect 7 0 8 0;
+#X connect 8 0 10 1;
+#X connect 8 1 9 0;
+#X connect 10 0 1 0;

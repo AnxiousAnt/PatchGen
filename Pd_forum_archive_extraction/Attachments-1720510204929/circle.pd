@@ -1,0 +1,43 @@
+#N canvas 14 5 531 364 10;
+#N canvas 475 213 716 521 mass 0;
+#X msg 163 395 traverse \$1 \, bang;
+#X obj 63 350 inlet;
+#X obj 163 416 pointer;
+#X obj 166 229 filledcurve 900 0 1 w(0:100)(0:38) w(0:100)(0:92) w(0:100)(0:92)
+w(0:100)(0:38) w(0:100)(0:92) w(0:100)(0:-38) w(0:100)(0:38) w(0:100)(0:-92)
+w(0:100)(0:-38) w(0:100)(0:-92) w(0:100)(0:-92) w(0:100)(0:-38) w(0:100)(0:-92)
+w(0:100)(0:38) w(0:100)(0:-38) w(0:100)(0:92);
+#X obj 63 371 list split 3;
+#X obj 169 142 drawpolygon 9 2 w(0:100)(0:38) w(0:100)(0:92) w(0:100)(0:92)
+w(0:100)(0:38) w(0:100)(0:92) w(0:100)(0:-38) w(0:100)(0:38) w(0:100)(0:-92)
+w(0:100)(0:-38) w(0:100)(0:-92) w(0:100)(0:-92) w(0:100)(0:-38) w(0:100)(0:-92)
+w(0:100)(0:38) w(0:100)(0:-38) w(0:100)(0:92);
+#X obj 169 108 inlet;
+#X text 533 159 Outline;
+#X text 540 262 Circle;
+#X obj 60 49 struct circle float x float y float w;
+#X obj 63 445 append circle x y w;
+#X obj 63 465 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 10 3;
+#X connect 4 0 10 0;
+#X connect 4 1 0 0;
+#X connect 6 0 5 0;
+#X connect 10 0 11 0;
+#X restore 220 158 pd mass;
+#N canvas 239 186 402 394 show 1;
+#X restore 381 139 pd show;
+#X msg 379 170 clear;
+#X obj 379 196 s pd-show;
+#X obj 264 137 tgl 15 0 empty empty show_outline 0 -6 0 8 -262144 -1
+-1 0 1;
+#X msg 220 105 200 200 20 pd-show;
+#X obj 141 226 set circle w;
+#X floatatom 141 203 5 0 0 0 radius_(0-100) - -;
+#X text 219 84 Click me;
+#X connect 0 0 6 1;
+#X connect 2 0 3 0;
+#X connect 4 0 0 1;
+#X connect 5 0 0 0;
+#X connect 7 0 6 0;

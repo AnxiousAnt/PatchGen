@@ -1,0 +1,17 @@
+#N canvas 383 354 450 300 10;
+#X obj 131 83 tgl 32 0 empty empty HELP 1 16 1 8 -260818 -1 -1 0 1
+;
+#X obj 131 127 pack 0 symbol;
+#X obj 216 85 f \$0;
+#N canvas 0 0 306 176 1003-help 0;
+#X text 53 80 This is the helpfile: Help;
+#X restore 309 51 pd \$0-help;
+#X obj 217 105 makefilename pd-%d-help;
+#X msg 131 147 \; \$2 vis \$1;
+#X obj 216 64 loadbang;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 4 0 1 1;
+#X connect 6 0 2 0;
+#X coords 0 0 1 1 200 140 1;

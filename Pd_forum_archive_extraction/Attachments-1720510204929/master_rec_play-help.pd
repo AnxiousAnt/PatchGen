@@ -1,0 +1,69 @@
+#N canvas 360 267 900 477 10;
+#X obj 16 122 master_rec_play;
+#X obj 476 326 dac~;
+#X obj 461 367 send~ master_rec_play_L;
+#X obj 470 346 send~ master_rec_play_R;
+#X text 37 99 rec;
+#X text 140 102 play;
+#X obj 16 102 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 118 102 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 25 12 create \, 1;
+#X msg 40 35 destroy;
+#X obj 25 62 gemwin;
+#X obj 184 228 translateXYZ;
+#X obj 211 36 vsl 15 128 -4 4 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3800 1;
+#X obj 211 180 rec_play_any posX;
+#X obj 238 35 vsl 15 128 -4 4 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 184 5 gemhead;
+#X obj 184 285 square;
+#X obj 410 40 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 460 200 mtof;
+#X obj 410 201 / 127;
+#X obj 184 256 colorRGB;
+#X obj 460 246 line~;
+#X msg 460 223 \$1 11;
+#X obj 461 270 osc~;
+#X obj 462 295 *~ 0.1;
+#X text 17 432 -rec_play_any does record (and latter play back) any
+kind of date (exept bang).;
+#X text 455 23 1) click on the rec toggle;
+#X text 456 39 2) move faders;
+#X text 456 54 3) click to stop the recording;
+#X text 456 70 4) close and open this patch again (only to reset init
+value);
+#X text 456 97 5) click on the play toggle;
+#X text 457 128 -> you should have images and sound to make a movie
+;
+#X text 18 408 -all rec_play_any should have a diferent identifient
+;
+#X obj 238 200 rec_play_any posY;
+#X obj 410 174 rec_play_any color;
+#X text 457 113 6) wait;
+#X connect 6 0 0 0;
+#X connect 7 0 0 1;
+#X connect 8 0 10 0;
+#X connect 9 0 10 0;
+#X connect 11 0 20 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 1;
+#X connect 14 0 33 0;
+#X connect 15 0 11 0;
+#X connect 17 0 34 0;
+#X connect 18 0 22 0;
+#X connect 19 0 20 1;
+#X connect 20 0 16 0;
+#X connect 21 0 23 0;
+#X connect 22 0 21 0;
+#X connect 23 0 24 0;
+#X connect 24 0 1 0;
+#X connect 24 0 2 0;
+#X connect 24 0 1 1;
+#X connect 24 0 3 0;
+#X connect 33 0 11 2;
+#X connect 34 0 19 0;
+#X connect 34 0 18 0;

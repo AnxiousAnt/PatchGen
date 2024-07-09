@@ -1,0 +1,16 @@
+#N canvas 398 342 450 300 10;
+#X obj 109 72 route;
+#X obj 109 38 r GLOBAL;
+#X floatatom 109 124 5 0 0 0 - - -;
+#X obj 108 141 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 187 142 id;
+#X text 146 124 val;
+#X obj 34 68 loadbang;
+#X obj 34 95 f \$1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 1;
+#X connect 6 0 7 0;
+#X connect 7 0 3 0;
+#X coords 0 -1 1 1 120 60 1 100 100;

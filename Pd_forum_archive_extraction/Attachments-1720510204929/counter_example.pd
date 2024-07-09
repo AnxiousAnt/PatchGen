@@ -1,0 +1,15 @@
+#N canvas 580 147 246 254 10;
+#X obj 42 156 counter;
+#X obj 42 56 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 42 187 5 0 0 0 - - -;
+#X obj 42 89 metro 500;
+#X text -51 12 I prefer using a more general approach using [counter]
+object;
+#X msg -23 106 min 1;
+#X msg -29 139 max 2;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;

@@ -1,0 +1,24 @@
+#N canvas 379 74 715 687 10;
+#X obj 15 27 pddp/dsp;
+#X obj 60 65 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 89 127 + 1;
+#X obj 61 127 f 1;
+#X msg 116 206 1;
+#X obj 60 148 sel 1 2 3 4;
+#X obj 60 94 metro 500;
+#X obj 236 17 easysampler_gop;
+#X obj 236 114 easysampler_gop;
+#X obj 236 211 easysampler_gop;
+#X obj 236 308 easysampler_gop;
+#X connect 1 0 6 0;
+#X connect 2 0 3 1;
+#X connect 3 0 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 1;
+#X connect 5 0 7 0;
+#X connect 5 1 8 0;
+#X connect 5 2 9 0;
+#X connect 5 3 4 0;
+#X connect 5 3 10 0;
+#X connect 6 0 3 0;

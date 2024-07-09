@@ -1,0 +1,13 @@
+#N canvas 0 22 760 362 10;
+#X obj 81 25 cap_key A;
+#X obj 81 146 print cap_key-outlet-1;
+#X obj 101 126 print cap_key-outlet-2;
+#X obj 121 106 print cap_key-outlet-3;
+#X obj 141 86 print cap_key-outlet-4;
+#X text 320 98 outlet 3 & 4 are for "Caps_Lock" + "Shift_L" output
+;
+#X text 318 77 outlet 1 & 2 are for "Caps_Lock" output;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 2 3 0;
+#X connect 0 3 4 0;

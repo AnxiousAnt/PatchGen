@@ -1,0 +1,55 @@
+#N canvas 769 330 696 457 10;
+#X obj 145 204 text set \$0-text;
+#X obj 33 262 text get \$0-text;
+#X msg 31 237 0;
+#X obj 33 295 print;
+#X obj 90 85 bng 15 250 50 0 empty \$0-1 1 17 7 0 10 -262144 -1 -1
+;
+#X obj 89 109 bng 15 250 50 0 empty \$0-2 2 17 7 0 10 -262144 -1 -1
+;
+#X obj 89 133 bng 15 250 50 0 empty \$0-3 3 17 7 0 10 -262144 -1 -1
+;
+#X obj 89 156 bng 15 250 50 0 empty \$0-4 4 17 7 0 10 -262144 -1 -1
+;
+#X obj 89 179 bng 15 250 50 0 empty \$0-5 5 17 7 0 10 -262144 -1 -1
+;
+#X obj 89 202 bng 15 250 50 0 empty \$0-6 6 17 7 0 10 -262144 -1 -1
+;
+#X obj 381 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 133 99 1 2 3;
+#X obj 221 143 r \$0-set;
+#X obj 381 159 random 2;
+#X obj 382 267 s \$0-set;
+#X obj 380 188 sel 0 1;
+#X msg 380 210 1 2 3;
+#X text 87 28 click these buttons in the given order and watch the
+output of [print]! the bug will only show up in case you did NOT specify
+a line number for text set;
+#X obj 181 262 text define \$0-text;
+#X obj 381 131 metro 10;
+#X msg 147 165 symbol foo;
+#X msg 398 234 symbol foo;
+#X text 128 340 Is it 'symbol foo' or is it '1'?, f 51;
+#X text 128 362 Does turning on the metro crash Pd after some time?
+;
+#X text 129 316 What do you see in the console after pressing 4?,
+f 51;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 4 0 11 0;
+#X connect 5 0 2 0;
+#X connect 6 0 20 0;
+#X connect 7 0 2 0;
+#X connect 8 0 20 0;
+#X connect 9 0 2 0;
+#X connect 10 0 19 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 15 0;
+#X connect 15 0 16 0;
+#X connect 15 1 21 0;
+#X connect 16 0 14 0;
+#X connect 19 0 13 0;
+#X connect 20 0 0 0;
+#X connect 21 0 14 0;

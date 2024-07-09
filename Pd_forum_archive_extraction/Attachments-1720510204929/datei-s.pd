@@ -1,0 +1,27 @@
+#N canvas 82 36 356 218 10;
+#X text 13 6 Datei speichern;
+#X msg 31 151 open \$1;
+#X obj 31 171 outlet;
+#X obj 31 71 hradio 15 1 0 4 empty empty empty 0 6 0 8 -262144 -1 -1
+0;
+#X obj 31 91 bang;
+#X obj 31 71 cnv 15 60 15 empty aa Datei_S 6 7 0 8 -233017 -66577 0
+;
+#X text 13 26 Erzeugt die Nachricht "open ../../";
+#X text 12 46 (C) Joao Miguel Pais 2006 \, jmmmpais@googlemail.com
+;
+#X obj 61 91 inlet;
+#X obj 61 111 route bang;
+#X text 157 67 - darauf clicken;
+#X text 157 87 - Inlet: bang oder DateinName;
+#X obj 31 131 savepanel;
+#X obj 116 131 symbol;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 12 0;
+#X connect 8 0 9 0;
+#X connect 9 0 12 0;
+#X connect 9 1 13 0;
+#X connect 12 0 1 0;
+#X connect 13 0 1 0;
+#X coords 0 -1 1 1 62 17 1 30 70;

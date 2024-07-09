@@ -1,0 +1,52 @@
+#N canvas 221 31 893 806 10;
+#X obj 283 301 bng 15 250 50 0 empty empty ONE 17 7 0 10 -262144 -1
+-1;
+#X obj 290 330 bng 15 250 50 0 empty empty TWO 17 7 0 10 -262144 -1
+-1;
+#X obj 287 358 bng 15 250 50 0 empty empty THREE 17 7 0 10 -262144
+-1 -1;
+#X obj 290 386 bng 15 250 50 0 empty empty FOUR 17 7 0 10 -262144 -1
+-1;
+#X obj 144 179 bng 15 250 50 0 empty empty ONE 17 7 0 10 -262144 -1
+-1;
+#X obj 140 199 bng 15 250 50 0 empty empty TWO 17 7 0 10 -262144 -1
+-1;
+#X obj 148 220 bng 15 250 50 0 empty empty THREE 17 7 0 10 -262144
+-1 -1;
+#X obj 140 240 bng 15 250 50 0 empty empty FOUR 17 7 0 10 -262144 -1
+-1;
+#X obj 479 456 bng 15 250 50 0 empty empty ONE 17 7 0 10 -262144 -1
+-1;
+#X obj 486 486 bng 15 250 50 0 empty empty TWO 17 7 0 10 -262144 -1
+-1;
+#X obj 483 516 bng 15 250 50 0 empty empty THREE 17 7 0 10 -262144
+-1 -1;
+#X obj 486 546 bng 15 250 50 0 empty empty FOUR 17 7 0 10 -262144 -1
+-1;
+#X obj 41 48 bng 15 250 50 0 empty empty ONE 17 7 0 10 -262144 -1 -1
+;
+#X obj 37 69 bng 15 250 50 0 empty empty TWO 17 7 0 10 -262144 -1 -1
+;
+#X obj 45 91 bng 15 250 50 0 empty empty THREE 17 7 0 10 -262144 -1
+-1;
+#X obj 37 112 bng 15 250 50 0 empty empty FOUR 17 7 0 10 -262144 -1
+-1;
+#X obj 338 674 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 403 663 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 281 664 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 214 680 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 153 665 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 84 672 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 51 9 1;
+#X text 154 140 2;
+#X text 287 267 3;
+#X text 490 424 4;
+#X text 38 663 5;
+#X obj 684 680 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;

@@ -1,0 +1,14 @@
+#N canvas 337 107 450 300 10;
+#X declare -lib moocow -lib mrpeach;
+#X obj 132 106 bytes2any;
+#X obj 195 247 print;
+#X floatatom 172 176 10 0 0 0 - - -;
+#X obj 132 143 * 30;
+#X obj 301 12 import moocow mrpeach;
+#X obj 132 57 udpreceive 23867;
+#X obj 129 199 change;
+#X connect 0 0 3 0;
+#X connect 3 0 2 0;
+#X connect 3 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 1 0;

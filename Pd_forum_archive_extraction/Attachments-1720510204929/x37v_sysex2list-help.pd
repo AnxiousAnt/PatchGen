@@ -1,0 +1,20 @@
+#N canvas 326 110 498 213 10;
+#X obj 20 151 x37v_sysex2list;
+#X text 83 -8 by Alex Norman (http://x37v.info);
+#X obj 20 178 print sysex2list;
+#X obj 45 120 print sysex_byte;
+#X obj 45 96 spigot 0;
+#X obj 98 76 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X text 117 76 <- click here to also see the raw sysex input bytes
+;
+#X obj 20 -13 sysexin;
+#X text 82 10 x37v_sysex2list parses messages on the input and outputs
+lists of the non-realtime messages between a sysex start and sysex
+end message. You can use midiin instead of sysex in as sysex2list filters
+out the realtime messages.;
+#X connect 0 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 1;
+#X connect 7 0 0 0;
+#X connect 7 0 4 0;

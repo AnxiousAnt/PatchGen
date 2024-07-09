@@ -1,0 +1,13 @@
+#N canvas 314 172 450 300 10;
+#X obj 88 57 inlet~;
+#X obj 91 250 outlet~;
+#X obj 214 61 table \$0-zeropad 64;
+#X obj 90 228 tabreceive~ \$0-zeropad;
+#N canvas -12 185 450 300 zeropadder 0;
+#X obj 147 143 tabsend~ \$0-zeropad;
+#X obj 234 86 block~ 128 1 2;
+#X obj 146 49 inlet~ zeropadding;
+#X connect 2 0 0 0;
+#X restore 87 122 pd zeropadder;
+#X connect 0 0 4 0;
+#X connect 3 0 1 0;

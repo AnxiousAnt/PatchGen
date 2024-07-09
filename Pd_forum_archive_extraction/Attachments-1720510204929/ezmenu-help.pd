@@ -1,0 +1,30 @@
+#N canvas 446 250 534 501 10;
+#X floatatom 64 313 5 0 0 1 index - -;
+#X symbolatom 215 316 20 0 0 1 Symbol - -;
+#X floatatom 64 219 5 0 0 0 - - -;
+#X text 27 17 ezmenu;
+#X text 60 92 Arguments:;
+#X text 86 116 1) name of textfile to load (required);
+#X text 60 339 Outlets;
+#X text 77 358 0) integer index;
+#X text 77 378 1) line of textfile;
+#X text 60 405 GUI:;
+#X symbolatom 80 424 10 0 0 0 - - -;
+#X obj 80 442 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 188 442 load a different textfile;
+#X text 85 159 0) integer number to make selection (zero-based);
+#X text 59 134 Inlets:;
+#X text 85 178 1) symbol of filename to load into textfile;
+#X obj 215 228 openpanel;
+#X msg 215 208 bang;
+#X text 58 39 GUI for easy selection of lines in a textfile. The textfile
+is assumed to just have <cr> line endings i.e. no semicolons required.
+;
+#X text 189 422 displays the selected symbol;
+#X obj 64 260 ezmenu ezmenu.txt;
+#X connect 2 0 20 0;
+#X connect 16 0 20 1;
+#X connect 17 0 16 0;
+#X connect 20 0 0 0;
+#X connect 20 1 1 0;

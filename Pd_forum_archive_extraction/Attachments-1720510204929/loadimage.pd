@@ -1,0 +1,18 @@
+#N canvas 690 189 450 300 10;
+#X msg 273 43 create \, 1;
+#X obj 273 65 gemwin;
+#X obj 105 36 gemhead;
+#X obj 105 80 pix_texture;
+#X obj 105 102 rectangle 4 3;
+#X obj 105 58 pix_image;
+#X obj 192 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 192 35 openpanel;
+#X msg 192 57 open \$1;
+#X connect 0 0 1 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 5 0;

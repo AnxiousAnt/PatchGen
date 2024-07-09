@@ -1,0 +1,56 @@
+#N canvas 392 0 852 675 10;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-scope 96000 float 0;
+#X coords 0 1 95999 -1 200 140 1;
+#X restore 84 402 graph;
+#X obj 602 141 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 100 1;
+#X obj 602 76 loadbang;
+#X obj 516 478 loadbang;
+#X obj 451 598 tabwrite~ \$0-scope;
+#X obj 172 66 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 511 507 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 514 540 metro 2500;
+#X obj 624 177 1;
+#X obj 176 183 vline~;
+#X obj 140 296 expr~ $v1 \; if ($v1 < ($f2) \, 1-pow(1-($v1/$f2) \,
+6) \, pow(1-($v1-$f2)/(1-$f2) \, 6));
+#X obj 445 270 expr~ $v1 \; if ($v1 < ($f2) \, 1-pow(1-($v1/$f2) \,
+6) \, pow(1-($v1-$f2)/(1-$f2) \, 6));
+#X obj 628 201 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 12700 1;
+#X floatatom 285 271 5 0 0 0 - - -;
+#X floatatom 211 269 5 0 0 0 - - -;
+#X obj 385 210 expr~ 2 - $v1;
+#X obj 152 215 min~ 1;
+#X obj 285 202 max~ 1;
+#X obj 596 112 0.01;
+#X obj 171 108 metro 1000;
+#X obj 192 237 unsig~ 50;
+#X obj 313 242 unsig~ 50;
+#X msg 182 155 1 150 \, 2 850 150 \, 0 0 1000;
+#X connect 1 0 10 1;
+#X connect 2 0 8 0;
+#X connect 2 0 18 0;
+#X connect 3 0 6 0;
+#X connect 5 0 19 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 12 0;
+#X connect 9 0 16 0;
+#X connect 9 0 17 0;
+#X connect 10 1 4 0;
+#X connect 11 1 4 0;
+#X connect 12 0 11 1;
+#X connect 15 0 11 0;
+#X connect 15 0 21 0;
+#X connect 16 0 10 0;
+#X connect 16 0 20 0;
+#X connect 17 0 15 0;
+#X connect 18 0 1 0;
+#X connect 19 0 22 0;
+#X connect 20 0 14 0;
+#X connect 21 0 13 0;
+#X connect 22 0 9 0;

@@ -1,0 +1,17 @@
+#N canvas 193 356 450 300 10;
+#X floatatom 63 220 5 0 0 0 - - -;
+#X floatatom 117 220 5 0 0 0 - - -;
+#X msg 128 93 symbol me;
+#X floatatom 63 118 5 0 0 0 - - -;
+#X floatatom 162 220 5 0 0 0 - - -;
+#X obj 63 194 r send;
+#X obj 117 194 r to;
+#X obj 162 194 r me;
+#X msg 128 67 symbol to;
+#X obj 63 141 ssend send;
+#X connect 2 0 9 1;
+#X connect 3 0 9 0;
+#X connect 5 0 0 0;
+#X connect 6 0 1 0;
+#X connect 7 0 4 0;
+#X connect 8 0 9 1;

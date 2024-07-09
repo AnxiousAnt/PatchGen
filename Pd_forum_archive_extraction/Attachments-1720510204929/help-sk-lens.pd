@@ -1,0 +1,17 @@
+#N struct 1006-graph float x float y array 1006-2dtemplate 1006-2d
+;
+#N struct 1006-2d float x float y;
+#N struct 1006-samplewindow float x float y array 1006-windowtemplate
+1006-window;
+#N struct 1006-window float x float y;
+#N canvas 129 27 676 497 10;
+#X obj 54 84 sk-lens;
+#X obj 66 405 dac~;
+#X obj 325 74 loadbang;
+#X msg 325 95 \; pd dsp 1;
+#X text 260 148 click the load button to open a soundfile;
+#X text 258 175 then hit the 1/0 toggle to turn the abstraction on
+;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 2 0 3 0;

@@ -1,0 +1,696 @@
+Return-Path: <pd-list-admin@iem.at>
+Delivered-To: balticom-error@balticom.lv
+Received: (qmail 22535 invoked from network); 10 May 2004 15:11:47 -0000
+Received: from unknown (HELO mail.iem.at) (193.170.191.180) by
+	mail.balticom.lv with SMTP; 10 May 2004 15:11:47 -0000
+Received: from localhost (web.iemnet) [127.0.0.1]  by mail.iem.at with
+	esmtp (Exim 3.35 #1 (Debian)) id 1BNCI7-00072I-00; Mon, 10 May 2004
+	17:02:03 +0200
+Date: Mon, 10 May 2004 17:01:02 +0200
+Message-ID: <20040510150102.26952.80705.Mailman@web.iemnet>
+From: pd-list-request@iem.at
+Subject: PD-list digest, Vol 1 #1173 - 15 msgs
+Reply-to: pd-list@iem.at
+X-Mailer: Mailman v2.0.11
+MIME-version: 1.0
+Content-type: text/plain
+To: pd-list@iem.at
+Sender: pd-list-admin@iem.at
+Errors-To: pd-list-admin@iem.at
+X-BeenThere: pd-list@iem.at
+X-Mailman-Version: 2.0.11
+Precedence: bulk
+List-Help: <mailto:pd-list-request@iem.at?subject=help>
+List-Post: <mailto:pd-list@iem.at>
+List-Subscribe: <http://iem.at/cgi-bin/mailman/listinfo/pd-list>,
+	<mailto:pd-list-request@iem.at?subject=subscribe>
+List-Id: the PureData - mailinglist <pd-list.iem.at>
+List-Unsubscribe: <http://iem.at/cgi-bin/mailman/listinfo/pd-list>,
+	<mailto:pd-list-request@iem.at?subject=unsubscribe>
+List-Archive: <http://iem.at/mailinglists/pd-list/>
+X-Scanner: exiscan *1BNCI7-00072I-00*K0cq06iXNpM* (IEM - Institute of
+	Electronic Music and Acoustics, Graz, Austria)
+Content-Transfer-Encoding: 7bit
+
+Send PD-list mailing list submissions to
+	pd-list@iem.at
+
+To subscribe or unsubscribe via the World Wide Web, visit
+	http://iem.at/cgi-bin/mailman/listinfo/pd-list
+or, via email, send a message with subject or body 'help' to
+	pd-list-request@iem.at
+
+You can reach the person managing the list at
+	pd-list-admin@iem.at
+
+When replying, please edit your Subject line so it is more specific
+than "Re: Contents of PD-list digest..."
+
+
+Today's Topics:
+
+   1. Re: ICC compile [or: PD + P4 + Linux = massive headache!] (Tim Blechmann)
+   2. Re: (no subject) (Bryan Jurish)
+   3. Re: ICC compile [or: PD + P4 + Linux = massive headache!] (derek holzer)
+   4. Re: pd -rt and linux 2.6 [hdsp direct alsa support] (Tim Blechmann)
+   5. Re: ICC compile [or: PD + P4 + Linux = massive headache!] (Tim Blechmann)
+   6. Re: pd -rt and linux 2.6 [hdsp direct alsa support] (guenter geiger)
+   7. Re: xeq - problem (Krzysztof Czaja)
+   8. Re: ICC compile [or: PD + P4 + Linux = massive headache!] (derek holzer)
+   9. is there also a [symbol2list]? (Roman Haefeli)
+  10. Re: is there also a [symbol2list]? (IOhannes m zmoelnig)
+  11. GEM OS X : Window not draggable ... (gl03)
+  12. Re: GEM OS X : Window not draggable ... (CK)
+  13. heavy crash (martin pichlmair)
+  14. msgfile read & write path (nexyufuli evo)
+  15. RE: xnetreceive (Jorge Cardoso)
+
+--__--__--
+
+Message: 1
+Date: Mon, 10 May 2004 01:00:47 +0200
+From: Tim Blechmann <TimBlechmann@gmx.net>
+To: pd-list@iem.at
+Subject: Re: [PD] ICC compile [or: PD + P4 + Linux = massive headache!]
+
+> After almost constant fighting with nastiness like denormal numbers
+> and unexplained CPU spikes with PD under Linux on a P4 processor, I
+> have decided to look into recompiling it using ICC. I reached this
+> conclusion on that grounds that PD never ran so terribly before when I
+> used windoze, and it runs quite nice with an Athlon processor under
+> Linux, so I figure it must be a compiler issue.
+i'm not completely shure how icc for ia32 can handle denormals ... their
+64bit compiler has a flag to flush denormals to zero, but not the ia32
+compiler...
+
+well, there is pd's PD_BADFLOAT macro that _should_ to that, too, but
+this has only effect if the nubers are already denormal, so maybe it's
+a good idea to reset the value to flush every number a 24 / 32 bit dac
+would consider to be zero to zero...
+
+> Can anyone give me a set of recommended flags, or any other helpful 
+> tips, for doing this? I'm still stuck trying to figure out how to get 
+> ICC working [+ waiting for stupid fscking 'registration key' to arrive
+if you are using the current devel branch from cvs, just configure with
+--enable-icc --enable-optimize=pentium4 ... i didn't wanted to edit my
+makefiles every time...
+
+cheers...
+
+ Tim                          mailto:TimBlechmann@gmx.de
+                              ICQ: 96771783
+--
+The only people for me are the mad ones, the ones who are mad to live,
+mad to talk, mad to be saved, desirous of everything at the same time,
+the ones who never yawn or say a commonplace thing, but burn, burn,
+burn, like fabulous yellow roman candles exploding like spiders across
+the stars and in the middle you see the blue centerlight pop and
+everybody goes "Awww!"
+                                                          Jack Kerouac
+
+
+
+--__--__--
+
+Message: 2
+Date: Mon, 10 May 2004 10:13:28 +0200
+To: Ian Smith-Heisters <heisters@0x09.com>
+Cc: pd-list@iem.at
+Subject: Re: [PD] (no subject)
+From: "Bryan Jurish" <moocow@ling.uni-potsdam.de>
+Reply-To: moocow@ling.uni-potsdam.de
+
+
+morning Ian,
+
+you can use [glue] from zexy to paste together lists, or if you're
+using a [send]/[receive] pair, you can use [sprinkler] (together
+with [glue] or something like [cxc.prepend]) to distribute
+variable-length messages ... all of the above should be available
+in CVS.
+
+marmosets,
+	Bryan
+
+On 9 May 2004 at 17:34:19, Ian Smith-Heisters appears to have written:
+ > 
+ > I'm using monorhythm and want to be able to send it messages of random lengths, ex. [1 2 0 0 1( or [1 1 0(
+ > determined randomly. I tried doing [1 1 1(--[set $1 $2 $3 $4 $5 $6(--[ ( but that just zeroes out the last
+ > three variables and spits an error message. I need something like Java's vectors. Any suggestions? 
+ > 
+ > Thanks,
+ > Ian Smith-Heisters
+ > 
+ > _______________________________________________
+ > PD-list mailing list
+ > PD-list@iem.at
+ > to manage your subscription (including un-subscription) see
+ > http://iem.at/cgi-bin/mailman/listinfo/pd-list
+ > 
+
+
+--__--__--
+
+Message: 3
+Date: Fri, 07 May 2004 11:51:01 +0200
+From: derek holzer <derek@x-i.net>
+To: Tim Blechmann <TimBlechmann@gmx.net>
+CC: pd-list@iem.at
+Subject: Re: [PD] ICC compile [or: PD + P4 + Linux = massive headache!]
+
+Hi Tim,
+
+Tim Blechmann wrote:
+
+> i'm not completely shure how icc for ia32 can handle denormals ... their
+> 64bit compiler has a flag to flush denormals to zero, but not the ia32
+> compiler...
+
+What are the maintainers of the windoze packages of PD using to compile? 
+Whatever it is, it seems to clear up any denormal or CPU spike problems.
+
+> well, there is pd's PD_BADFLOAT macro that _should_ to that, too, but
+> this has only effect if the nubers are already denormal, so maybe it's
+> a good idea to reset the value to flush every number a 24 / 32 bit dac
+> would consider to be zero to zero...
+
+Can you tell me a bit more about this? How and where should I start with 
+that?
+
+I have found that certain objects have *stong* denormal tendencies, 
+including hip~, lp~, np~, throw~, catch~ and probably more that I 
+haven't weeded out yet.
+
+The bottom line is that patches which are completely fine to run on 
+windoze and on most AMD processors with Linux completely screw up my P4 
+laptop. We are talking grinding halts of DSP, sudden [+ lasting!] leaps 
+of CPU usage over 100% and even completely freezing the machine if I 
+happen to be in realtime mode. Not pretty.
+
+This has made me very careful about my patches these days, and while it 
+has improved my patching technique immensely ;-), it is still a real 
+problem when I am the only one getting errors with my own patches, and 
+everyone else who tests them in a different environment has none at all.
+
+I've written this list about it several times now, but I am not a C 
+programmer, so there are only limited things which I can do [besides 
+buying a new laptop or switching back to winschnoz]. Trying to recompile 
+with a different compiler is one of them.
+
+> if you are using the current devel branch from cvs, just configure with
+> --enable-icc --enable-optimize=pentium4 ... i didn't wanted to edit my
+> makefiles every time...
+
+Using "./configure --enable-icc --enable-optimize=pentium4 
+--enable-jack --enable-fftw" still uses GCC. Using "CC=icc CXX=icc" 
+tells it to use ICC, but I get an error that the C compiler cannot 
+create executables. I have a hunch that this is because I still haven't 
+gotten this ridiculous key ["It should arrive within one business day", 
+sez Intel...]
+
+I [heart] computers.
+d.
+
+-- 
+derek holzer ::: http://www.umatic.nl
+---Oblique Strategy # 6:
+"Abandon normal instruments"
+
+
+--__--__--
+
+Message: 4
+Date: Mon, 10 May 2004 11:02:02 +0200
+From: Tim Blechmann <TimBlechmann@gmx.net>
+To: pd-list@iem.at
+Subject: Re: [PD] pd -rt and linux 2.6 [hdsp direct alsa support]
+
+> And for the record, I get the same exact stream of PD watchdog
+> messages, which I have posted to this list already, as Tim does with
+> both 2.4 and 2.6 kernels.
+guenter merged the changes from 0.37-1 to the cvs a few days ago, which
+included the realtime scheduling patch with jack ... so it should be
+
+cheers...
+
+ Tim                          mailto:TimBlechmann@gmx.de
+                              ICQ: 96771783
+--
+The only people for me are the mad ones, the ones who are mad to live,
+mad to talk, mad to be saved, desirous of everything at the same time,
+the ones who never yawn or say a commonplace thing, but burn, burn,
+burn, like fabulous yellow roman candles exploding like spiders across
+the stars and in the middle you see the blue centerlight pop and
+everybody goes "Awww!"
+                                                          Jack Kerouac
+
+
+
+--__--__--
+
+Message: 5
+Date: Mon, 10 May 2004 12:43:25 +0200
+From: Tim Blechmann <TimBlechmann@gmx.net>
+To: derek holzer <derek@x-i.net>, pd-list@iem.at
+Subject: Re: [PD] ICC compile [or: PD + P4 + Linux = massive headache!]
+
+hi derek...
+
+> What are the maintainers of the windoze packages of PD using to
+> compile? Whatever it is, it seems to clear up any denormal or CPU
+> spike problems.
+just a guess, but maybe the linux system libraries create more denormals
+than the windows ones ...
+
+> > well, there is pd's PD_BADFLOAT macro that _should_ to that, too,
+> > but this has only effect if the nubers are already denormal, so
+> > maybe it's a good idea to reset the value to flush every number a 24
+> > / 32 bit dac would consider to be zero to zero...
+> 
+> Can you tell me a bit more about this? How and where should I start
+> with that?
+the PD_BADFLOAT macro is currently just checking for actual denormals...
+denormals occur at about 1e-34 ... a 32 bit dac should have a resolution
+of about 5e-10 ... so i suppose we could implement a macro that flushes
+everything below 1e-12 to zero... the best would be to find a fancy
+mask, to detect these numbers ... well, you'll have to mess around with
+mantissa ... if you could have a look at this it would be great...
+
+> I have found that certain objects have *stong* denormal tendencies, 
+> including hip~, lp~, np~, throw~, catch~ and probably more that I 
+> haven't weeded out yet.
+well, digital filters and other delay lines are dangerous about
+denormals, but i'm a bit confused about the throw~ / catch~ objects ...
+i haven't had a look at the code, but to me it seems they just copy
+sample arrays ...
+
+> The bottom line is that patches which are completely fine to run on 
+> windoze and on most AMD processors with Linux completely screw up my
+> P4 laptop. We are talking grinding halts of DSP, sudden [+ lasting!]
+> leaps of CPU usage over 100% and even completely freezing the machine
+> if I happen to be in realtime mode. Not pretty.
+i know the problem, tooo :-(
+
+> Using "./configure --enable-icc --enable-optimize=pentium4 
+> --enable-jack --enable-fftw" still uses GCC. Using "CC=icc CXX=icc" 
+> tells it to use ICC, but I get an error that the C compiler cannot 
+> create executables. I have a hunch that this is because I still
+> haven't gotten this ridiculous key ["It should arrive within one
+> business day", sez Intel...]
+you shouldn't have to set the CC or CXX variables ... i'll have a look
+at it ... about the configure message ... is you icc executable in the
+/usr/bin path? if not, you'll probably have to create a symlink to it...
+
+cheers...
+
+ Tim                          mailto:TimBlechmann@gmx.de
+                              ICQ: 96771783
+--
+The only people for me are the mad ones, the ones who are mad to live,
+mad to talk, mad to be saved, desirous of everything at the same time,
+the ones who never yawn or say a commonplace thing, but burn, burn,
+burn, like fabulous yellow roman candles exploding like spiders across
+the stars and in the middle you see the blue centerlight pop and
+everybody goes "Awww!"
+                                                          Jack Kerouac
+
+
+
+--__--__--
+
+Message: 6
+Date: Mon, 10 May 2004 12:20:12 +0200 (CEST)
+From: guenter geiger <geiger@xdv.org>
+To: derek holzer <derek@x-i.net>
+cc: <pd-list@iem.at>
+Subject: Re: [PD] pd -rt and linux 2.6 [hdsp direct alsa support]
+
+
+On Fri, 7 May 2004, derek holzer wrote:
+>
+> I would like to suggest that you disregard Thomas' advice. ALSA is now
+> standard for 2.6 kernels, and throwing away the choice of using it
+> straight seems like only limiting options rather than giving advantages.
+
+Hmm, ok, point taken, although I do not agree fully with all of your
+reasoning. I still have to find the time to reintroduce the working
+version s_alsa.c in a recent pd version. If someone wants to give it
+a try, just take s_alsa from the devel_0_36 branch and adapt it
+to pd 0.37 changed audio structure.
+As long as I don't have a HDSP card I might not find the motivation
+to do so. I am sorry, I am terribly lazy :(
+
+Guenter
+
+
+>
+> Two examples:
+>
+> 1) Basic: new users just trying out PD and/or Linux might not have
+> everything configured for properly using Jack. In fact, when doing
+> workshop with all the kinds of cheap hardware and crappy motherboard
+> soundcards you usually get at workshops, there have been plenty of times
+> when Jack simply would not run at all! Forcing these people to rely on
+> the emulation of a depreciated sound system doesn't really sound like
+> such a good idea.
+>
+> 2) Advanced: what if I wanted to use PD + HDSP for an installation, for
+> example, which autostarts if the computer for some reason gets rebooted?
+> Instead of a simple prompt to open PD, I would have to make a whole
+> shell script to start the jack daemon, then start PD, then connect all
+> the ports in Jack *before* starting the DSP in PD. Not much advantage
+> there...
+>
+> And for the record, I get the same exact stream of PD watchdog messages,
+> which I have posted to this list already, as Tim does with both 2.4 and
+> 2.6 kernels.
+>
+> ok... I think I have run out of technical problems to complain about to
+> this list tonight ;-) Think I'll go to bed, and get back to making noise
+> tomorrow.
+>
+> Best,
+> d.
+>
+> --
+> derek holzer ::: http://www.umatic.nl
+> ---Oblique Strategy # 45:
+> "Disciplined self-indulgence"
+>
+
+
+
+--__--__--
+
+Message: 7
+Date: Mon, 10 May 2004 12:35:28 +0200
+From: Krzysztof Czaja <czaja@chopin.edu.pl>
+To: Georg Holzmann <grhPD@gmx.at>
+Cc: pd-list@iem.at
+Subject: Re: [PD] xeq - problem
+
+hi Georg,
+
+before an event stream starts, send a message 'retrack' to
+xeq_record -- a recording track has to get a valid name first.
+Valid name is <tracknumber>-<basename>, so it might be 'record,
+retrack 1-track', or 'retrack 777-test, record', etc.  For some
+odd reason the default name is not valid.
+
+Track naming rules are inflexible, undocumented, and unwise...
+
+Krzysztof
+
+Georg Holzmann wrote:
+...
+> Everytime I try to write the file I get this error message:
+> "request to write empty midifile ignored"
+
+
+
+--__--__--
+
+Message: 8
+Date: Fri, 07 May 2004 13:51:50 +0200
+From: derek holzer <derek@x-i.net>
+To: Tim Blechmann <TimBlechmann@gmx.net>
+CC: pd-list@iem.at
+Subject: Re: [PD] ICC compile [or: PD + P4 + Linux = massive headache!]
+
+Tim,
+
+Tim Blechmann wrote:
+
+> you shouldn't have to set the CC or CXX variables ... i'll have a look
+> at it ... about the configure message ... is you icc executable in the
+> /usr/bin path? if not, you'll probably have to create a symlink to it...
+
+My ICC is from Gentoo, which puts it in /opt. I symlinked
+
+/usr/bin/icc -> /opt/intel/compiler80/bin/icc
+
+but it still starts with GCC. Also tried various other combinations of 
+directories etc, but still the same. The only way to get it to use ICC 
+is with CC or CXX flags.
+
+d.
+
+-- 
+derek holzer ::: http://www.umatic.nl
+---Oblique Strategy # 60:
+"Don't be afraid of things because they're easy to do"
+
+
+--__--__--
+
+Message: 9
+From: "Roman Haefeli" <reduzierer@yahoo.de>
+To: "post pd msg" <pd-list@iem.kug.ac.at>
+Date: Mon, 10 May 2004 14:01:53 +0200
+Subject: [PD] is there also a [symbol2list]?
+
+hi
+
+there is the [list2symbol]-object from zexy. with this object it is possible
+to create symbols with SPACES (very special!!!)
+I'm looking for a possibility to reseparate such a symbol with space, so
+that i get 2 symbols again. Maybe a [symbol2list] would do that. Or is there
+another way to split a symbol in 2 parts?
+
+my problem (maybe another solution would be more realistic):
+i'd like to send pairs of symbols with [netclient] to other [netclient]s
+over a [netserver]. Important is, that the receiver gets these two symbol as
+a pair. the solution i use now, is: every second message completes a pair,
+but now it could happen, when two [netclient]s send at the same time, that
+the receiver (another [netclient])  gets two wrong pairs ( a1 b1 / a2 b2
+instead of  a1 a2 / b1 b2 )
+
+or in general:
+how to send lists of various length over [netclient]/[netserver]?
+
+
+
+
+--__--__--
+
+Message: 10
+Date: Mon, 10 May 2004 14:20:31 +0200
+From: IOhannes m zmoelnig <zmoelnig@iem.at>
+To: Roman Haefeli <reduzierer@yahoo.de>
+CC: post pd msg <pd-list@iem.kug.ac.at>
+Subject: Re: [PD] is there also a [symbol2list]?
+
+Roman Haefeli wrote:
+> hi
+> 
+> there is the [list2symbol]-object from zexy. with this object it is possible
+> to create symbols with SPACES (very special!!!)
+> I'm looking for a possibility to reseparate such a symbol with space, so
+
+well, i'd suggest using [symbol2list] from zexy. it has a settable 
+delimiter (which defaults to SPACE)
+
+> 
+
+> or in general:
+> how to send lists of various length over [netclient]/[netserver]?
+
+well, it should be very simple.
+just prepend "send" to your list of variable length (there are thousands 
+of libraries/externals offering this functionality, e.g: [glue] from 
+zexy, or [prepend] from iemlib)
+
+e.g: [send 1 2 3( (on the client-side) will send a list "1 2 3" to the 
+server, while [send list of a lot of symbols" will send "list of a lot 
+of symbols"
+
+
+mfg.asd.r
+IOhannes
+
+
+
+--__--__--
+
+Message: 11
+To: pd-list@iem.at
+From: gl03 <glow@trust.at>
+Date: Mon, 10 May 2004 15:34:28 +0200
+Subject: [PD] GEM OS X : Window not draggable ...
+
+Hi all,
+
+I'm using the OS X port of GEM (0.888-pre1) on an iBook. When I create 
+a window I get the output:
+
+MAC: BuildGLonWindow: fDraggable= false
+MAC: BuildGLonWindow: not draggable on single device
+MAC: BuildGLonWindow (!pcontextInfo->fDraggable && (numDevices == 1))
+
+the created window is - as the output suggests - not draggable, not 
+focusable and - what's worse - mouse events are not passed to it, 
+effictively making the use of gemmouse impossible.
+
+what is the reason for this and is there a workaround to use gemmouse 
+after all? What devices is BuildGLonWindow talking about - gfxcards, 
+monitors,...?
+
+thanks,
+
+gl03.-
+
+
+
+--__--__--
+
+Message: 12
+From: CK <x@meta.lo-res.org>
+Subject: Re: [PD] GEM OS X : Window not draggable ...
+To: glow@trust.at (gl03)
+Date: Mon, 10 May 2004 15:48:28 +0200 (CEST)
+Cc: pd-list@iem.at
+
+hi,
+
+I read:
+> what is the reason for this and is there a workaround to use gemmouse 
+
+you could try [MouseState] from cyclone, this is ugly but it works without
+needing focus. I think cyclone is in the installer.
+
+cyclone: http://suita.chopin.edu.pl/~czaja/miXed/externs/cyclone.html
+docs:    http://test.pilot.fm/pd/patches/help/
+
+sorry no idea about gem/osx 
+
+take care,
+
+x 
+
+-- 
+chris@lo-res.org	Postmodernism is german romanticism with better
+http://pilot.fm/	special effects. (Jeff Keuss / via ctheory.com)
+
+
+--__--__--
+
+Message: 13
+To: pd-list <pd-list@iem.at>
+From: martin pichlmair <pi@attacksyour.net>
+Date: Mon, 10 May 2004 16:10:49 +0200
+Subject: [PD] heavy crash
+
+
+wow,
+
+i just had a full crash on my otherwise ok-running gentoo station when 
+running pd0.37+pdp+pmpd+pidip. (the oscar goes to the journalling file 
+system).
+
+there was nothing in the logs, yet what i used was
+
+- parts of the example 02 of pmpd
+- standard pdp stuff that usually does not crash on this machine
+- [pdp_capture] from pidip - never used before
+
+the incident happened right when i was dragging some objects in the 
+patcher.
+
+i would really like to know, what object is to blame ... all of the 
+libs are fairly new.
+
+
+anyone ever experienced a hard crash with one of the above? i mean one 
+with locked keyboard and null happening afterwards.
+
+lg
+martin
+
+
+
+attacksyour.net/pi
+
+
+
+--__--__--
+
+Message: 14
+Date: Mon, 10 May 2004 16:34:26 +0200
+From: nexyufuli evo <noskule@gmx.net>
+To:  pd-list@iem.at
+Subject: [PD] msgfile read & write path
+
+hi list
+I  try to save a file to a relative location with msgfile. ..
+the [write filename] message saves the file to the startlocation of my 
+batfile
+the [read filenmae] message reads the file to the location of my open pd 
+file
+
+is there a solution to  specifiy the path  relative . ? i did try 
+several ways but dident succsessed
+
+thanx nos
+
+
+
+--__--__--
+
+Message: 15
+Subject: RE: [PD] xnetreceive
+Date: Mon, 10 May 2004 16:02:20 +0100
+From: "Jorge Cardoso" <jccardoso@porto.ucp.pt>
+To: <pd-list@iem.at>
+
+>-----Original Message-----
+>From: Hans-Christoph Steiner [mailto:hans@eds.org]=20
+>Sent: s=E1bado, 8 de Maio de 2004 14:51
+>To: Jorge Cardoso
+>Cc: pd-list@iem.at
+>Subject: Re: [PD] xnetreceive
+>
+>
+>Instead of having yet another object, what about adding UDP support to =
+[netserver]?=20
+>I am currently working on adding mDNS-SD/Rendezvous/Zeroconf support to =
+[netserver] as=20
+>well as syslog support.=20
+>It would be great to have all of these features available in one object =
+for maximum flexibility.=20
+
+I agree.=20
+
+I actually started out by making changes to [netserver] but then decided =
+to put the code
+on a new object, since I would have to implement more functionalities =
+into netserver to
+mantain its philosofy (mantaining a client list, sending messages to a =
+specific client, etc).=20
+
+Anyway I think it would be good to have UDP support in [netserver]. =
+Maybe I can try to
+play a bit more with the code...
+
+jc
+
+---
+Jorge Cardoso <-> jorgecardoso@ieee.org
+
+"Whether you believe you can, or whether you believe you can't, you're =
+absolutely right." - Henry Ford =20
+
+
+
+--__--__--
+
+_______________________________________________
+PD-list mailing list
+PD-list@iem.at
+to manage your subscription (including un-subscription) see
+http://iem.at/cgi-bin/mailman/listinfo/pd-list
+
+
+End of PD-list Digest
+
+
+

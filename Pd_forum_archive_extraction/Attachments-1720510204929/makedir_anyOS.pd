@@ -1,0 +1,41 @@
+#N canvas 545 22 805 503 10;
+#X symbolatom 38 105 10 0 0 0 - - -;
+#X obj 38 155 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 97 155 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 156 156 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 38 73 operating_system;
+#X obj 38 129 select windows macos linux;
+#X obj 148 303 popen;
+#X obj 150 340 print;
+#X obj 127 258 mux 1 2;
+#X obj 104 223 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 40 182 0;
+#X msg 110 186 1;
+#X obj 200 -18 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 235 -9 create dir at home folder;
+#X msg 194 18 md "%HOMEDIR%/My Documents/mydir";
+#X msg 262 43 mkdir ~/mydir;
+#X obj 35 11 loadbang;
+#X connect 0 0 5 0;
+#X connect 1 0 10 0;
+#X connect 2 0 11 0;
+#X connect 3 0 11 0;
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
+#X connect 5 1 2 0;
+#X connect 5 2 3 0;
+#X connect 6 0 7 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 2;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 12 0 14 0;
+#X connect 12 0 15 0;
+#X connect 14 0 8 0;
+#X connect 15 0 8 1;
+#X connect 16 0 4 0;

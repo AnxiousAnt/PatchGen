@@ -1,0 +1,285 @@
+==3113== Memcheck, a memory error detector for x86-linux.
+==3113== Copyright (C) 2002-2005, and GNU GPL'd, by Julian Seward et al.
+==3113== Using valgrind-2.4.0, a program supervision framework for x86-linux.
+==3113== Copyright (C) 2000-2005, and GNU GPL'd, by Julian Seward et al.
+==3113== 
+==3113== My PID = 3113, parent PID = 1438.  Prog and args are:
+==3113==    pd
+==3113==    -lib
+==3113==    xsample
+==3113==    -rcfile
+==3113== For more details, rerun with: -v
+==3113== 
+==3113== Conditional jump or move depends on uninitialised value(s)
+==3113==    at 0x1B8ECB13: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E631C: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8F2BDD: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E7675: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E47C6: (within /lib/ld-2.3.5.so)
+==3113== 
+==3113== Conditional jump or move depends on uninitialised value(s)
+==3113==    at 0x1B8EC7D3: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E631C: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8F2BDD: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E7675: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E47C6: (within /lib/ld-2.3.5.so)
+==3113== 
+==3113== Conditional jump or move depends on uninitialised value(s)
+==3113==    at 0x1B8EC6B6: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E6376: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8F2BDD: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E7675: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E47C6: (within /lib/ld-2.3.5.so)
+==3113== 
+==3113== Conditional jump or move depends on uninitialised value(s)
+==3113==    at 0x1B8EC6C2: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E6376: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8F2BDD: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E7675: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E47C6: (within /lib/ld-2.3.5.so)
+==3113== 
+==3113== Conditional jump or move depends on uninitialised value(s)
+==3113==    at 0x1B8EC7D3: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E6376: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8F2BDD: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E7675: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B8E47C6: (within /lib/ld-2.3.5.so)
+==3113== 
+==3113== Syscall param open(filename) points to unaddressable byte(s)
+==3113==    at 0x1BD950D8: open (in /lib/libc-2.3.5.so)
+==3113==    by 0x1BD4670D: _IO_file_fopen (in /lib/libc-2.3.5.so)
+==3113==    by 0x1BD3DF06: (within /lib/libc-2.3.5.so)
+==3113==    by 0x1BD3DF5E: fopen (in /lib/libc-2.3.5.so)
+==3113==    by 0x808D07F: sys_parsercfile (s_path.c:385)
+==3113==    by 0x8089E9E: sys_argparse (s_main.c:835)
+==3113==    by 0x80889AC: sys_main (s_main.c:304)
+==3113==    by 0x8059325: main (s_entry.c:27)
+==3113==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==3113== 
+==3113== Conditional jump or move depends on uninitialised value(s)
+==3113==    at 0x1B8EC6B6: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1BDD2DF5: (within /lib/libc-2.3.5.so)
+==3113==    by 0x1B8EF026: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1BDD3414: _dl_open (in /lib/libc-2.3.5.so)
+==3113==    by 0x1B918D2E: (within /lib/libdl-2.3.5.so)
+==3113==    by 0x1B8EF026: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B9192FF: (within /lib/libdl-2.3.5.so)
+==3113==    by 0x1B918D9C: dlopen (in /lib/libdl-2.3.5.so)
+==3113==    by 0x808837C: sys_load_lib (s_loader.c:110)
+==3113==    by 0x808874C: glob_initfromgui (s_main.c:246)
+==3113==    by 0x807DBDE: pd_typedmess (m_class.c:768)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113== 
+==3113== Conditional jump or move depends on uninitialised value(s)
+==3113==    at 0x1B8EC955: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1BDD2DF5: (within /lib/libc-2.3.5.so)
+==3113==    by 0x1B8EF026: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1BDD3414: _dl_open (in /lib/libc-2.3.5.so)
+==3113==    by 0x1B918D2E: (within /lib/libdl-2.3.5.so)
+==3113==    by 0x1B8EF026: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B9192FF: (within /lib/libdl-2.3.5.so)
+==3113==    by 0x1B918D9C: dlopen (in /lib/libdl-2.3.5.so)
+==3113==    by 0x808837C: sys_load_lib (s_loader.c:110)
+==3113==    by 0x808874C: glob_initfromgui (s_main.c:246)
+==3113==    by 0x807DBDE: pd_typedmess (m_class.c:768)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113== 
+==3113== Conditional jump or move depends on uninitialised value(s)
+==3113==    at 0x1B8ECAE6: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1BDD2DF5: (within /lib/libc-2.3.5.so)
+==3113==    by 0x1B8EF026: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1BDD3414: _dl_open (in /lib/libc-2.3.5.so)
+==3113==    by 0x1B918D2E: (within /lib/libdl-2.3.5.so)
+==3113==    by 0x1B8EF026: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B9192FF: (within /lib/libdl-2.3.5.so)
+==3113==    by 0x1B918D9C: dlopen (in /lib/libdl-2.3.5.so)
+==3113==    by 0x808837C: sys_load_lib (s_loader.c:110)
+==3113==    by 0x808874C: glob_initfromgui (s_main.c:246)
+==3113==    by 0x807DBDE: pd_typedmess (m_class.c:768)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113== 
+==3113== Conditional jump or move depends on uninitialised value(s)
+==3113==    at 0x1B8ECB13: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1BDD2DF5: (within /lib/libc-2.3.5.so)
+==3113==    by 0x1B8EF026: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1BDD3414: _dl_open (in /lib/libc-2.3.5.so)
+==3113==    by 0x1B918D2E: (within /lib/libdl-2.3.5.so)
+==3113==    by 0x1B8EF026: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B9192FF: (within /lib/libdl-2.3.5.so)
+==3113==    by 0x1B918D9C: dlopen (in /lib/libdl-2.3.5.so)
+==3113==    by 0x808837C: sys_load_lib (s_loader.c:110)
+==3113==    by 0x808874C: glob_initfromgui (s_main.c:246)
+==3113==    by 0x807DBDE: pd_typedmess (m_class.c:768)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113== 
+==3113== Conditional jump or move depends on uninitialised value(s)
+==3113==    at 0x1B8EC7D3: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1BDD2DF5: (within /lib/libc-2.3.5.so)
+==3113==    by 0x1B8EF026: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1BDD3414: _dl_open (in /lib/libc-2.3.5.so)
+==3113==    by 0x1B918D2E: (within /lib/libdl-2.3.5.so)
+==3113==    by 0x1B8EF026: (within /lib/ld-2.3.5.so)
+==3113==    by 0x1B9192FF: (within /lib/libdl-2.3.5.so)
+==3113==    by 0x1B918D9C: dlopen (in /lib/libdl-2.3.5.so)
+==3113==    by 0x808837C: sys_load_lib (s_loader.c:110)
+==3113==    by 0x808874C: glob_initfromgui (s_main.c:246)
+==3113==    by 0x807DBDE: pd_typedmess (m_class.c:768)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113== 
+==3113== Use of uninitialised value of size 4
+==3113==    at 0x807DE6C: pd_typedmess (m_class.c:835)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113==    by 0x8086F4C: socketreceiver_read (s_inter.c:572)
+==3113==    by 0x808657E: sys_pollsockets (s_inter.c:177)
+==3113==    by 0x808763A: sys_pollgui (s_inter.c:855)
+==3113==    by 0x8081D3D: m_scheduler (m_sched.c:555)
+==3113==    by 0x8088A6F: sys_main (s_main.c:358)
+==3113==    by 0x8059325: main (s_entry.c:27)
+==3113== 
+==3113== Use of uninitialised value of size 4
+==3113==    at 0x807DE6C: pd_typedmess (m_class.c:835)
+==3113==    by 0x80CBEB6: guiconnect_anything (g_guiconnect.c:70)
+==3113==    by 0x807E0D7: pd_typedmess (m_class.c:852)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113==    by 0x8086F4C: socketreceiver_read (s_inter.c:572)
+==3113==    by 0x808657E: sys_pollsockets (s_inter.c:177)
+==3113==    by 0x808763A: sys_pollgui (s_inter.c:855)
+==3113==    by 0x8081D3D: m_scheduler (m_sched.c:555)
+==3113==    by 0x8088A6F: sys_main (s_main.c:358)
+==3113==    by 0x8059325: main (s_entry.c:27)
+==3113== 
+==3113== Conditional jump or move depends on uninitialised value(s)
+==3113==    at 0x1C1E87FC: flext_base_single_d::Exit() (flext.cpp:117)
+==3113==    by 0x1C1EA8C0: flext_obj_single_d::obj_free(flext_hdr*) (fllib.cpp:524)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C8A4C: glist_delete (g_graph.c:120)
+==3113==    by 0x80BF96D: canvas_free (g_canvas.c:888)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C6120: canvas_menuclose (g_editor.c:1742)
+==3113==    by 0x807DDF5: pd_typedmess (m_class.c:831)
+==3113==    by 0x80CBEB6: guiconnect_anything (g_guiconnect.c:70)
+==3113==    by 0x807E0D7: pd_typedmess (m_class.c:852)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113==    by 0x8086F4C: socketreceiver_read (s_inter.c:572)
+==3113== 
+==3113== Use of uninitialised value of size 4
+==3113==    at 0x808070A: pd_free (m_pd.c:28)
+==3113==    by 0x1C1E8818: flext_base_single_d::Exit() (flext.cpp:120)
+==3113==    by 0x1C1EA8C0: flext_obj_single_d::obj_free(flext_hdr*) (fllib.cpp:524)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C8A4C: glist_delete (g_graph.c:120)
+==3113==    by 0x80BF96D: canvas_free (g_canvas.c:888)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C6120: canvas_menuclose (g_editor.c:1742)
+==3113==    by 0x807DDF5: pd_typedmess (m_class.c:831)
+==3113==    by 0x80CBEB6: guiconnect_anything (g_guiconnect.c:70)
+==3113==    by 0x807E0D7: pd_typedmess (m_class.c:852)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113== 
+==3113== Invalid read of size 4
+==3113==    at 0x8080712: pd_free (m_pd.c:29)
+==3113==    by 0x1C1E8818: flext_base_single_d::Exit() (flext.cpp:120)
+==3113==    by 0x1C1EA8C0: flext_obj_single_d::obj_free(flext_hdr*) (fllib.cpp:524)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C8A4C: glist_delete (g_graph.c:120)
+==3113==    by 0x80BF96D: canvas_free (g_canvas.c:888)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C6120: canvas_menuclose (g_editor.c:1742)
+==3113==    by 0x807DDF5: pd_typedmess (m_class.c:831)
+==3113==    by 0x80CBEB6: guiconnect_anything (g_guiconnect.c:70)
+==3113==    by 0x807E0D7: pd_typedmess (m_class.c:852)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113==  Address 0x1BEE50F8 is not stack'd, malloc'd or (recently) free'd
+==3113== 
+==3113== Invalid read of size 1
+==3113==    at 0x808072C: pd_free (m_pd.c:30)
+==3113==    by 0x1C1E8818: flext_base_single_d::Exit() (flext.cpp:120)
+==3113==    by 0x1C1EA8C0: flext_obj_single_d::obj_free(flext_hdr*) (fllib.cpp:524)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C8A4C: glist_delete (g_graph.c:120)
+==3113==    by 0x80BF96D: canvas_free (g_canvas.c:888)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C6120: canvas_menuclose (g_editor.c:1742)
+==3113==    by 0x807DDF5: pd_typedmess (m_class.c:831)
+==3113==    by 0x80CBEB6: guiconnect_anything (g_guiconnect.c:70)
+==3113==    by 0x807E0D7: pd_typedmess (m_class.c:852)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113==  Address 0x1BEE5129 is 5 bytes after a block of size 12 alloc'd
+==3113==    at 0x1B904F75: calloc (vg_replace_malloc.c:175)
+==3113==    by 0x807EE95: getbytes (m_memory.c:25)
+==3113==    by 0x807D639: dogensym (m_class.c:582)
+==3113==    by 0x807D6A5: gensym (m_class.c:598)
+==3113==    by 0x806AE39: sigwrap_setup (d_math.c:274)
+==3113==    by 0x806B9CF: d_math_setup (d_math.c:574)
+==3113==    by 0x807E4CF: conf_init (m_conf.c:44)
+==3113==    by 0x8080EB8: pd_init (m_pd.c:306)
+==3113==    by 0x80888D5: sys_main (s_main.c:280)
+==3113==    by 0x8059325: main (s_entry.c:27)
+==3113== 
+==3113== Invalid read of size 4
+==3113==    at 0x8080783: pd_free (m_pd.c:39)
+==3113==    by 0x1C1E8818: flext_base_single_d::Exit() (flext.cpp:120)
+==3113==    by 0x1C1EA8C0: flext_obj_single_d::obj_free(flext_hdr*) (fllib.cpp:524)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C8A4C: glist_delete (g_graph.c:120)
+==3113==    by 0x80BF96D: canvas_free (g_canvas.c:888)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C6120: canvas_menuclose (g_editor.c:1742)
+==3113==    by 0x807DDF5: pd_typedmess (m_class.c:831)
+==3113==    by 0x80CBEB6: guiconnect_anything (g_guiconnect.c:70)
+==3113==    by 0x807E0D7: pd_typedmess (m_class.c:852)
+==3113==    by 0x807911A: binbuf_eval (m_binbuf.c:603)
+==3113==  Address 0x1BEE50EC is 4 bytes after a block of size 8 alloc'd
+==3113==    at 0x1B904F75: calloc (vg_replace_malloc.c:175)
+==3113==    by 0x807EE95: getbytes (m_memory.c:25)
+==3113==    by 0x807D64A: dogensym (m_class.c:583)
+==3113==    by 0x807D6A5: gensym (m_class.c:598)
+==3113==    by 0x80C0CCC: g_canvas_setup (g_canvas.c:1489)
+==3113==    by 0x807E44D: conf_init (m_conf.c:37)
+==3113==    by 0x8080EB8: pd_init (m_pd.c:306)
+==3113==    by 0x80888D5: sys_main (s_main.c:280)
+==3113==    by 0x8059325: main (s_entry.c:27)
+==3113== 
+==3113== Invalid read of size 4
+==3113==    at 0x808070A: pd_free (m_pd.c:28)
+==3113==    by 0x1C1E8818: flext_base_single_d::Exit() (flext.cpp:120)
+==3113==    by 0x1C1EA8C0: flext_obj_single_d::obj_free(flext_hdr*) (fllib.cpp:524)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C8A4C: glist_delete (g_graph.c:120)
+==3113==    by 0x80CB6DA: graph_delete (g_graph.c:989)
+==3113==    by 0x80C155C: gobj_delete (g_editor.c:62)
+==3113==    by 0x80C8999: glist_delete (g_graph.c:108)
+==3113==    by 0x80C6E0F: canvas_doclear (g_editor.c:2082)
+==3113==    by 0x80C59AB: canvas_key (g_editor.c:1595)
+==3113==    by 0x807DBDE: pd_typedmess (m_class.c:768)
+==3113==    by 0x80CBEB6: guiconnect_anything (g_guiconnect.c:70)
+==3113==  Address 0xA is not stack'd, malloc'd or (recently) free'd
+==3113== 
+==3113== Process terminating with default action of signal 11 (SIGSEGV)
+==3113==  Access not within mapped region at address 0xA
+==3113==    at 0x808070A: pd_free (m_pd.c:28)
+==3113==    by 0x1C1E8818: flext_base_single_d::Exit() (flext.cpp:120)
+==3113==    by 0x1C1EA8C0: flext_obj_single_d::obj_free(flext_hdr*) (fllib.cpp:524)
+==3113==    by 0x8080728: pd_free (m_pd.c:29)
+==3113==    by 0x80C8A4C: glist_delete (g_graph.c:120)
+==3113==    by 0x80CB6DA: graph_delete (g_graph.c:989)
+==3113==    by 0x80C155C: gobj_delete (g_editor.c:62)
+==3113==    by 0x80C8999: glist_delete (g_graph.c:108)
+==3113==    by 0x80C6E0F: canvas_doclear (g_editor.c:2082)
+==3113==    by 0x80C59AB: canvas_key (g_editor.c:1595)
+==3113==    by 0x807DBDE: pd_typedmess (m_class.c:768)
+==3113==    by 0x80CBEB6: guiconnect_anything (g_guiconnect.c:70)
+==3113== 
+==3113== ERROR SUMMARY: 62 errors from 19 contexts (suppressed: 0 from 0)
+==3113== malloc/free: in use at exit: 107410 bytes in 2217 blocks.
+==3113== malloc/free: 3378 allocs, 1161 frees, 1473596 bytes allocated.
+==3113== For counts of detected errors, rerun with: -v
+==3113== searching for pointers to 2217 not-freed blocks.
+==3113== checked 2182688 bytes.
+==3113== 
+==3113== LEAK SUMMARY:
+==3113==    definitely lost: 386 bytes in 10 blocks.
+==3113==      possibly lost: 10200 bytes in 243 blocks.
+==3113==    still reachable: 96824 bytes in 1964 blocks.
+==3113==         suppressed: 0 bytes in 0 blocks.
+==3113== Use --leak-check=full to see details of leaked memory.
