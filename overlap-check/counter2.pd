@@ -1,0 +1,11 @@
+#N canvas 840 306 618 528 24;
+#X obj 0 0 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 0 47 print;
+#X obj 47 0 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 93 47 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X msg 0 117 test message;
+#X msg 140 117 do i t overla?;
+#X connect 0 0 1 0;

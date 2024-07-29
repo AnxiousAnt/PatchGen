@@ -1,0 +1,19 @@
+#N canvas 840 270 453 304 10;
+#X obj 60 40 print;
+#X floatatom 100 80 5 0 0 0 - - -, f 5;
+#X obj 130 140 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 250 60 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 230 170 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256 0;
+#X obj 350 60 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 50 200 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 130 210 hradio 15 1 0 8 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X obj 300 130 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X msg 180 70 test adfkjalff agka;
+#X obj 70 30 print dagagd;

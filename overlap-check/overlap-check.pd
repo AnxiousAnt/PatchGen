@@ -1,0 +1,11 @@
+#N canvas 740 245 454 308 10;
+#X obj 0 0 printa 12;
+#X obj 20 0 printe;
+#X obj 90 170 test;
+#X obj 420 120 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 422 159 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 170 40 dac~;
+#X msg 180 50 dfat;
+#X connect 3 0 4 0;
