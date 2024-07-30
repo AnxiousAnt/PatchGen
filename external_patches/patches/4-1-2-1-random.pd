@@ -1,0 +1,23 @@
+#N canvas 733 429 328 380 12;
+#X obj 42 231 osc~;
+#X obj 42 183 mtof;
+#X floatatom 42 209 5 0 0 0 - - -;
+#X obj 42 256 *~ 0.7;
+#X obj 43 294 dac~;
+#X obj 42 100 metro 100;
+#X obj 42 76 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 42 158 + 60;
+#X obj 42 128 random 40;
+#X text 37 15 4.1.2.1. Random;
+#X text 142 337 www.pd-tutorial.com;
+#X text 157 304 Johannes Kreidler;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 0;
+#X connect 8 0 7 0;

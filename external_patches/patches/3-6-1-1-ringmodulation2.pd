@@ -1,0 +1,25 @@
+#N canvas 1066 153 612 491 12;
+#N canvas 0 0 450 300 graph4 0;
+#X array array4 100000 float 2;
+#X coords 0 1 100000 -1 200 140 1;
+#X restore 329 98 graph;
+#X obj 100 307 tabwrite~ array4;
+#X obj 170 246 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 512 247 100000;
+#X obj 58 228 *~;
+#X obj 76 203 osc~ 1;
+#X obj 57 254 *~ 0.8;
+#X obj 57 163 osc~ 440;
+#X obj 57 357 dac~;
+#X text 164 222 graph;
+#X text 55 14 3.6.1.1. Ring modulation 2;
+#X text 293 371 www.pd-tutorial.com;
+#X text 297 342 Johannes Kreidler;
+#X connect 2 0 1 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 6 0 1 0;
+#X connect 6 0 8 0;
+#X connect 6 0 8 1;
+#X connect 7 0 4 0;

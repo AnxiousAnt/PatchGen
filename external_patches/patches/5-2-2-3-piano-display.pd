@@ -1,0 +1,264 @@
+#N canvas 283 151 366 231 12;
+#X text 66 15 5.2.2.3. piano display;
+#N canvas 144 249 1246 620 pno 0;
+#X obj 90 216 r c;
+#X msg 79 349 \; cx1 color \$1;
+#X msg 101 320 2;
+#X msg 147 319 10;
+#X obj 141 277 del 100;
+#X obj 195 142 del 100;
+#X msg 133 214 \; cisx1 color \$1;
+#X obj 144 81 r cis;
+#X msg 201 184 12;
+#X msg 155 185 10;
+#X msg 272 326 2;
+#X msg 318 325 10;
+#X obj 312 283 del 100;
+#X obj 360 144 del 100;
+#X msg 366 186 12;
+#X msg 320 187 10;
+#X msg 51 291 1;
+#X msg 105 156 2;
+#X msg 222 297 3;
+#X msg 270 158 4;
+#X obj 261 222 r d;
+#X msg 250 355 \; dx1 color \$1;
+#X obj 309 83 r dis;
+#X msg 298 216 \; disx1 color \$1;
+#X msg 441 327 2;
+#X msg 487 326 10;
+#X obj 481 284 del 100;
+#X obj 430 223 r e;
+#X msg 419 356 \; ex1 color \$1;
+#X msg 599 317 2;
+#X msg 645 316 10;
+#X obj 639 274 del 100;
+#X obj 689 128 del 100;
+#X msg 695 170 12;
+#X msg 649 171 10;
+#X msg 770 318 2;
+#X msg 816 317 10;
+#X obj 810 275 del 100;
+#X obj 863 127 del 100;
+#X msg 869 169 12;
+#X msg 823 170 10;
+#X msg 952 322 2;
+#X msg 998 321 10;
+#X obj 992 279 del 100;
+#X obj 588 213 r f;
+#X msg 577 346 \; fx1 color \$1;
+#X obj 638 67 r fis;
+#X msg 627 200 \; fisx1 color \$1;
+#X msg 748 347 \; gx1 color \$1;
+#X obj 759 214 r g;
+#X obj 812 66 r gis;
+#X msg 801 199 \; gisx1 color \$1;
+#X msg 930 351 \; ax1 color \$1;
+#X obj 941 218 r a;
+#X obj 1044 123 del 100;
+#X msg 1050 165 12;
+#X msg 1004 166 10;
+#X msg 1133 318 2;
+#X msg 1179 317 10;
+#X obj 1173 275 del 100;
+#X obj 993 62 r ais;
+#X msg 982 195 \; aisx1 color \$1;
+#X msg 1111 348 \; hx1 color \$1;
+#X obj 1122 214 r h;
+#X msg 391 298 5;
+#X msg 549 289 6;
+#X msg 599 142 7;
+#X msg 720 289 8;
+#X msg 773 141 9;
+#X msg 902 293 10;
+#X msg 954 137 11;
+#X msg 1083 289 12;
+#X obj 788 556 + 0;
+#X floatatom 788 588 5 0 0 0 - - -;
+#X obj 672 544 bng 15 250 50 0 cis empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 672 559 bng 15 250 50 0 cis empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 689 544 bng 15 250 50 0 dis empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 689 559 bng 15 250 50 0 dis empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 664 575 bng 15 250 50 0 c empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 664 590 bng 15 250 50 0 c empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 681 575 bng 15 250 50 0 d empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 681 590 bng 15 250 50 0 d empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 698 575 bng 15 250 50 0 e empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 698 590 bng 15 250 50 0 e empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 715 575 bng 15 250 50 0 f empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 715 590 bng 15 250 50 0 f empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 723 544 bng 15 250 50 0 fis empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 723 559 bng 15 250 50 0 fis empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 740 544 bng 15 250 50 0 gis empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 740 559 bng 15 250 50 0 gis empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 732 575 bng 15 250 50 0 g empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 732 590 bng 15 250 50 0 g empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 757 544 bng 15 250 50 0 ais empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 757 559 bng 15 250 50 0 ais empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 749 575 bng 15 250 50 0 a empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 749 590 bng 15 250 50 0 a empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 766 575 bng 15 250 50 0 h empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 766 590 bng 15 250 50 0 h empty empty 0 -6 0 8 -262144 -1 -1
+;
+#X obj 664 590 tgl 15 0 c1 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 664 574 tgl 15 0 c2 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 681 590 tgl 15 0 d1 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 681 574 tgl 15 0 d2 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 698 590 tgl 15 0 e1 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 698 574 tgl 15 0 e2 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 715 590 tgl 15 0 f1 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 715 574 tgl 15 0 f2 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 732 590 tgl 15 0 g1 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 732 574 tgl 15 0 g2 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 749 590 tgl 15 0 a1 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 749 574 tgl 15 0 a2 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 766 590 tgl 15 0 h1 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 766 574 tgl 15 0 h2 empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 664 574 cnv 15 15 31 empty cx1 empty 20 12 0 14 -233017 -262144
+0;
+#X obj 681 574 cnv 15 15 31 empty dx1 empty 20 12 0 14 -233017 -262144
+0;
+#X obj 698 574 cnv 15 15 31 empty ex1 empty 20 12 0 14 -233017 -262144
+0;
+#X obj 715 574 cnv 15 15 31 empty fx1 empty 20 12 0 14 -233017 -262144
+0;
+#X obj 732 574 cnv 15 15 31 empty gx1 empty 20 12 0 14 -233017 -262144
+0;
+#X obj 749 574 cnv 15 15 31 empty ax1 empty 20 12 0 14 -233017 -262144
+0;
+#X obj 766 574 cnv 15 15 31 empty hx1 empty 20 12 0 14 -233017 -262144
+0;
+#X obj 723 559 tgl 15 0 fis1 empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 723 543 tgl 15 0 fis2 empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 740 559 tgl 15 0 gis1 empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 740 543 tgl 15 0 gis2 empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 757 559 tgl 15 0 ais1 empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 757 543 tgl 15 0 ais2 empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 672 544 cnv 15 15 30 empty cisx1 empty 20 12 0 14 -33289 -262144
+0;
+#X obj 689 544 cnv 15 15 30 empty disx1 empty 20 12 0 14 -33289 -262144
+0;
+#X obj 723 544 cnv 15 15 30 empty fisx1 empty 20 12 0 14 -33289 -262144
+0;
+#X obj 740 543 cnv 15 15 30 empty gisx1 empty 20 12 0 14 -33289 -262144
+0;
+#X obj 757 543 cnv 15 15 30 empty aisx1 empty 20 12 0 14 -33289 -262144
+0;
+#X connect 0 0 2 0;
+#X connect 0 0 4 0;
+#X connect 0 0 16 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 8 0;
+#X connect 7 0 9 0;
+#X connect 7 0 5 0;
+#X connect 7 0 17 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 21 0;
+#X connect 11 0 21 0;
+#X connect 12 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 23 0;
+#X connect 15 0 23 0;
+#X connect 16 0 72 0;
+#X connect 17 0 72 0;
+#X connect 18 0 72 0;
+#X connect 19 0 72 0;
+#X connect 20 0 10 0;
+#X connect 20 0 12 0;
+#X connect 20 0 18 0;
+#X connect 22 0 15 0;
+#X connect 22 0 13 0;
+#X connect 22 0 19 0;
+#X connect 24 0 28 0;
+#X connect 25 0 28 0;
+#X connect 26 0 25 0;
+#X connect 27 0 24 0;
+#X connect 27 0 26 0;
+#X connect 27 0 64 0;
+#X connect 29 0 45 0;
+#X connect 30 0 45 0;
+#X connect 31 0 30 0;
+#X connect 32 0 33 0;
+#X connect 33 0 47 0;
+#X connect 34 0 47 0;
+#X connect 35 0 48 0;
+#X connect 36 0 48 0;
+#X connect 37 0 36 0;
+#X connect 38 0 39 0;
+#X connect 39 0 51 0;
+#X connect 40 0 51 0;
+#X connect 41 0 52 0;
+#X connect 42 0 52 0;
+#X connect 43 0 42 0;
+#X connect 44 0 29 0;
+#X connect 44 0 31 0;
+#X connect 44 0 65 0;
+#X connect 46 0 34 0;
+#X connect 46 0 32 0;
+#X connect 46 0 66 0;
+#X connect 49 0 35 0;
+#X connect 49 0 37 0;
+#X connect 49 0 67 0;
+#X connect 50 0 40 0;
+#X connect 50 0 38 0;
+#X connect 50 0 68 0;
+#X connect 53 0 41 0;
+#X connect 53 0 43 0;
+#X connect 53 0 69 0;
+#X connect 54 0 55 0;
+#X connect 55 0 61 0;
+#X connect 56 0 61 0;
+#X connect 57 0 62 0;
+#X connect 58 0 62 0;
+#X connect 59 0 58 0;
+#X connect 60 0 56 0;
+#X connect 60 0 54 0;
+#X connect 60 0 70 0;
+#X connect 63 0 57 0;
+#X connect 63 0 59 0;
+#X connect 63 0 71 0;
+#X connect 64 0 72 0;
+#X connect 65 0 72 0;
+#X connect 66 0 72 0;
+#X connect 67 0 72 0;
+#X connect 68 0 72 0;
+#X connect 69 0 72 0;
+#X connect 70 0 72 0;
+#X connect 71 0 72 0;
+#X connect 72 0 73 0;
+#X coords 0 -1 1 1 180 90 1 655 520;
+#X restore 68 58 pd pno;
+#X text 192 196 www.pd-tutorial.com;
+#X text 205 174 Johannes Kreidler;

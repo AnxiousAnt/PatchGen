@@ -1,0 +1,72 @@
+#N canvas 69 295 1043 717 12;
+#X obj 44 140 osc~ 300;
+#X obj 44 292 *~;
+#X obj 131 254 line~;
+#X msg 131 227 \$1 20;
+#X obj 131 92 vsl 15 128 0 1 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 200 290 *~;
+#X obj 287 252 line~;
+#X msg 287 225 \$1 20;
+#X obj 287 90 vsl 15 128 0 1 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 363 292 *~;
+#X obj 450 254 line~;
+#X msg 450 227 \$1 20;
+#X obj 450 92 vsl 15 128 0 1 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 519 290 *~;
+#X obj 606 252 line~;
+#X msg 606 225 \$1 20;
+#X obj 606 90 vsl 15 128 0 1 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 684 288 *~;
+#X obj 771 250 line~;
+#X msg 771 223 \$1 20;
+#X obj 771 88 vsl 15 128 0 1 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 200 138 osc~ 500;
+#X obj 363 140 osc~ 1100;
+#X obj 519 138 osc~ 1300;
+#X obj 684 136 osc~ 3000;
+#X obj 335 453 *~;
+#X obj 507 427 line~;
+#X msg 507 400 \$1 20;
+#X obj 510 374 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 336 488 dac~;
+#X text 128 67 (always set from 0 to 1);
+#X text 602 353 the entire patch can be adjusted here also;
+#X text 645 581 www.pd-tutorial.com;
+#X text 53 10 3.1.2.2.1. chord;
+#X text 660 555 Johannes Kreidler;
+#X connect 0 0 1 0;
+#X connect 1 0 25 0;
+#X connect 2 0 1 1;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 25 0;
+#X connect 6 0 5 1;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 25 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 25 0;
+#X connect 14 0 13 1;
+#X connect 15 0 14 0;
+#X connect 16 0 15 0;
+#X connect 17 0 25 0;
+#X connect 18 0 17 1;
+#X connect 19 0 18 0;
+#X connect 20 0 19 0;
+#X connect 21 0 5 0;
+#X connect 22 0 9 0;
+#X connect 23 0 13 0;
+#X connect 24 0 17 0;
+#X connect 25 0 29 0;
+#X connect 25 0 29 1;
+#X connect 26 0 25 1;
+#X connect 27 0 26 0;
+#X connect 28 0 27 0;

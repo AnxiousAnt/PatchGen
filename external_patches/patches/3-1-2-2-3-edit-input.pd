@@ -1,0 +1,28 @@
+#N canvas 412 226 676 534 12;
+#X obj 69 122 adc~;
+#X obj 198 188 env~ 128;
+#X obj 198 214 - 100;
+#X obj 199 244 vu 15 120 empty empty -1 -8 0 8 -66577 -1 1 0;
+#X obj 69 404 *~;
+#X obj 119 373 line~;
+#X msg 119 348 \$1 20;
+#X obj 119 212 vsl 15 128 0 1 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 69 438 dac~;
+#X text 115 174 (von 0;
+#X text 123 190 bis 1);
+#X text 65 38 3.1.2.2.3. edit input;
+#X text 272 276 for visualizing a VU;
+#X text 365 385 www.pd-tutorial.com;
+#X text 379 356 Johannes Kreidler;
+#X connect 0 0 4 0;
+#X connect 0 0 1 0;
+#X connect 0 1 4 0;
+#X connect 0 1 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 8 0;
+#X connect 4 0 8 1;
+#X connect 5 0 4 1;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;

@@ -1,0 +1,16 @@
+#N canvas 1054 151 647 623 12;
+#N canvas 0 0 450 300 graph1 0;
+#X array array1 67 float 0;
+#X coords 0 1 66 -1 200 140 1;
+#X restore 34 119 graph;
+#X msg 30 58 \; array1 sinesum 64 1 0 0.2 0 0.1 0 0.08 0 0.05 0 0.03
+;
+#N canvas 0 0 450 300 graph1 0;
+#X array array2 67 float 0;
+#X coords 0 1 66 -1 200 140 1;
+#X restore 34 341 graph;
+#X msg 30 280 \; array2 sinesum 64 1 0.2 0.1 0.08 0.05 0.03 0.02 0.01
+;
+#X text 76 12 3.5.1.1. Wave form Fourier;
+#X text 378 501 www.pd-tutorial.com;
+#X text 386 475 Johannes Kreidler;

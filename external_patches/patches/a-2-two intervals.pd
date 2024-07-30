@@ -1,0 +1,28 @@
+#N canvas 237 598 378 348 12;
+#X msg 40 127 400;
+#X msg 158 130 600;
+#X obj 40 176 osc~;
+#X obj 158 175 osc~;
+#X msg 80 126 300;
+#X msg 199 131 700;
+#X obj 79 229 *~ 0.5;
+#X obj 79 271 dac~;
+#X obj 71 71 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 154 72 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 25 4 2.2.1.2.8. two intervals;
+#X text 194 291 www.pd-tutorial.com;
+#X text 208 263 Johannes Kreidler;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 6 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 6 0 7 1;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 5 0;

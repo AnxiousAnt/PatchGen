@@ -1,0 +1,54 @@
+#N canvas 432 660 341 365 12;
+#X obj 19 217 bng 8 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 29 217 bng 8 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 150 134 f;
+#X obj 150 160 + 1;
+#X msg 169 109 -1;
+#X obj 19 97 t b b;
+#X obj 19 77 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 169 83 loadbang;
+#X obj 19 51 inlet;
+#X obj 19 242 outlet;
+#X obj 73 242 outlet;
+#X obj 39 217 bng 8 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 126 242 outlet;
+#X obj 49 217 bng 8 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 179 242 outlet;
+#X obj 213 179 sel 4;
+#X obj 19 190 demultiplex 0 1 2 3 4;
+#X obj 59 217 bng 8 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 232 242 outlet;
+#X obj 157 51 inlet;
+#X text 156 31 reset;
+#X text 63 9 bang distributer;
+#X text 146 314 www.pd-tutorial.com;
+#X text 165 289 Johannes Kreidler;
+#X connect 0 0 9 0;
+#X connect 1 0 10 0;
+#X connect 2 0 3 0;
+#X connect 3 0 2 1;
+#X connect 3 0 15 0;
+#X connect 3 0 16 1;
+#X connect 4 0 2 1;
+#X connect 5 0 16 0;
+#X connect 5 1 2 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 6 0;
+#X connect 11 0 12 0;
+#X connect 13 0 14 0;
+#X connect 15 0 4 0;
+#X connect 16 0 0 0;
+#X connect 16 1 1 0;
+#X connect 16 2 11 0;
+#X connect 16 3 13 0;
+#X connect 16 4 17 0;
+#X connect 17 0 18 0;
+#X connect 19 0 4 0;
+#X coords 0 -1 1 1 53 27 1 16 201;

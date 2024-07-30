@@ -1,0 +1,38 @@
+#N canvas 928 217 744 650 12;
+#X obj 159 96 phasor~ 440;
+#X obj 195 214 tabwrite~ array1;
+#X obj 287 172 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 0 450 300 graph1 0;
+#X array array1 100 float 0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 443 335 graph;
+#X obj 158 126 *~ 2;
+#X obj 158 156 -~ 1;
+#X obj 157 276 *~;
+#X obj 186 255 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 60 96 phasor~ 440;
+#X obj 59 273 *~;
+#X obj 88 252 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 76 318 *~ 0.7;
+#X obj 75 362 dac~;
+#X text 76 12 3.5.1.1. strong Phasor;
+#X text 98 206 for;
+#X text 97 226 comparison;
+#X text 312 171 graph;
+#X text 431 565 www.pd-tutorial.com;
+#X text 440 543 Johannes Kreidler;
+#X connect 0 0 4 0;
+#X connect 2 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 11 0;
+#X connect 7 0 6 1;
+#X connect 8 0 9 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 1;
+#X connect 11 0 12 0;
+#X connect 11 0 12 1;

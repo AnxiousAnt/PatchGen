@@ -1,0 +1,23 @@
+#N canvas 928 217 727 351 12;
+#X obj 98 60 osc~ 440;
+#X obj 98 121 tabwrite~ array1;
+#X obj 100 192 phasor~ 440;
+#X obj 190 79 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 101 264 tabwrite~ array1;
+#X obj 193 222 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 0 450 300 graph1 0;
+#X array array1 100 float 0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 422 107 graph;
+#X text 76 12 3.5.1.1. Waveforms display;
+#X text 215 78 graph;
+#X text 218 221 graph;
+#X text 431 259 Array has 100 Points;
+#X text 430 311 www.pd-tutorial.com;
+#X text 428 292 Johannes Kreidler;
+#X connect 0 0 1 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 5 0 4 0;

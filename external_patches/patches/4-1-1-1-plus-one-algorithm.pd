@@ -1,0 +1,15 @@
+#N canvas 1025 485 463 271 12;
+#X floatatom 65 64 5 0 0 0 - - -;
+#X floatatom 65 123 5 0 0 0 - - -;
+#X text 49 19 4.1.1.1. plus-one - algorithm;
+#N canvas 0 0 454 304 plusone 0;
+#X obj 103 83 inlet;
+#X obj 103 110 + 1;
+#X obj 103 137 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 65 91 pd plusone;
+#X text 236 196 www.pd-tutorial.com;
+#X text 251 173 Johannes Kreidler;
+#X connect 0 0 3 0;
+#X connect 3 0 1 0;

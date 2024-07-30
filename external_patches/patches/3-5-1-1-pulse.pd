@@ -1,0 +1,37 @@
+#N canvas 1054 151 681 618 12;
+#X obj 135 255 tabwrite~ array1;
+#X obj 230 228 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 0 450 300 graph1 0;
+#X array array1 100 float 0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 402 68 graph;
+#X text 381 196 -1;
+#X text 387 57 1;
+#X floatatom 95 84 5 0 0 0 - - -;
+#X obj 95 108 phasor~;
+#X obj 95 325 *~ 0.7;
+#X obj 94 373 *~;
+#X obj 144 358 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 93 407 dac~;
+#X obj 94 139 -~ 0.99;
+#X obj 95 168 clip~ 0 1;
+#X obj 95 202 *~ 100;
+#X text 76 12 3.5.1.1. Pulse;
+#X text 94 60 any fundamental;
+#X text 254 227 graph;
+#X text 169 353 listen;
+#X text 383 508 www.pd-tutorial.com;
+#X text 386 483 Johannes Kreidler;
+#X connect 1 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 11 0;
+#X connect 7 0 8 0;
+#X connect 8 0 10 0;
+#X connect 8 0 10 1;
+#X connect 9 0 8 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 0 0;
+#X connect 13 0 7 0;

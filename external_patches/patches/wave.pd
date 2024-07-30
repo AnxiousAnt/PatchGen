@@ -1,0 +1,32 @@
+#N canvas 410 383 946 326 12;
+#N canvas 0 0 450 300 graph1 0;
+#X array \$0-s 3000 float 0;
+#X coords 0 1 2999 -1 200 100 1;
+#X restore 345 51 graph;
+#X obj 205 56 inlet~;
+#X obj 205 138 tabwrite~ \$0-s;
+#X obj 215 112 metro 50;
+#X obj 215 85 ii 1;
+#X floatatom 352 236 5 0 0 0 speed - -;
+#X floatatom 746 233 5 0 0 0 size - -;
+#X obj 700 39 ii 100;
+#X obj 643 273 s \$0-s;
+#X msg 643 248 resize \$1;
+#X obj 738 12 ii 3000;
+#X obj 547 30 vsl 10 118 50 3000 0 0 empty empty size 0 -8 1 8 -262144
+-1 -1 11700 0;
+#X obj 560 38 vsl 10 110 50 250 0 0 empty empty speed 0 -8 1 8 -262144
+-1 -1 2725 1;
+#X text 744 287 www.pd-tutorial.com;
+#X text 768 265 Johannes Kreidler;
+#X connect 1 0 2 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 9 0;
+#X connect 7 0 12 0;
+#X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 6 0;
+#X connect 12 0 5 0;
+#X coords 0 -1 1 1 254 135 1 342 17;

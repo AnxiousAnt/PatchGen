@@ -1,0 +1,37 @@
+#N canvas 0 0 478 328 12;
+#X obj 129 88 f;
+#X obj 129 124 +;
+#X msg 127 46 0;
+#X msg 85 48 1;
+#X floatatom 87 168 5 0 0 0 - - -;
+#X obj 226 143 f;
+#X obj 181 30 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 181 54 t b b b b;
+#X obj 205 218 f;
+#X obj 186 243 f;
+#X obj 119 26 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 70 22 init;
+#X text 22 -7 4.1.2.3. Fibonacci;
+#X text 205 26 series numbers;
+#X text 27 168 series;
+#X text 160 264 recursion;
+#X text 304 270 www.pd-tutorial.com;
+#X text 310 241 Johannes Kreidler;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 1;
+#X connect 4 0 8 1;
+#X connect 5 0 1 1;
+#X connect 6 0 7 0;
+#X connect 7 0 9 0;
+#X connect 7 1 0 0;
+#X connect 7 2 5 0;
+#X connect 7 3 8 0;
+#X connect 8 0 9 1;
+#X connect 9 0 0 1;
+#X connect 10 0 3 0;
+#X connect 10 0 2 0;

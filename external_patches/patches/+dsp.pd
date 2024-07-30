@@ -1,0 +1,10 @@
+#N canvas 871 618 454 304 12;
+#X obj 104 184 s pd;
+#X msg 104 160 dsp \$1;
+#X obj 104 124 tgl 33 0 empty empty empty 0 -6 0 8 -258699 -1 -1 0
+1;
+#X text 256 228 www.pd-tutorial.com;
+#X text 263 206 Johannes Kreidler;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X coords 0 -1 1 1 40 60 1 100 100;
