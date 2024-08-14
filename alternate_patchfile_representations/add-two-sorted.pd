@@ -1,0 +1,16 @@
+#N canvas 960 288 454 302 10;
+#X obj 150 20 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X text 220 60 comment;
+#X obj 150 70 t b b;
+#X msg 150 110 1;
+#X msg 180 110 2;
+#X obj 150 160 +;
+#X floatatom 150 190 5 0 0 0 - - -, f 5;
+#X obj 150 230 print;
+#X connect 5 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 1;
+#X connect 0 0 2 0;
+#X connect 6 0 7 0;

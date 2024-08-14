@@ -1,0 +1,43 @@
+#N canvas 876 248 612 497 10;
+#X obj 350 330 sphere 1 23;
+#X msg 100 90 create;
+#X floatatom 390 210 5 0 0 0 - - -, f 5;
+#X msg 160 90 destroy;
+#X obj 90 240 gemwin;
+#X obj 50 90 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 310 210 gemhead;
+#X obj 390 170 counter;
+#X obj 390 100 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 390 130 metro 30;
+#X obj 350 250 rotateXYZ;
+#X msg 270 260 draw line;
+#X obj 150 150 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X msg 150 190 lighting \$1;
+#X obj 79 390 world_light;
+#X obj 80 330 gemhead;
+#X msg 270 290 draw fill;
+#X msg 160 320 1 0 0;
+#X text 220 10 Create a Pd patch that displays an animated 3D sphere
+with the option to use either draw line or draw point methods in a
+Gem window. The sphere should have lighting and should rotate about
+the y and z axes.;
+#X connect 1 0 4 0;
+#X connect 2 0 10 2;
+#X connect 2 0 10 3;
+#X connect 3 0 4 0;
+#X connect 11 0 0 0;
+#X connect 12 0 13 0;
+#X connect 13 0 4 0;
+#X connect 5 0 4 0;
+#X connect 6 0 10 0;
+#X connect 7 0 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 10 0 0 0;
+
+#X connect 15 0 14 0;
+#X connect 16 0 0 0;
+#X connect 17 0 14 0;
