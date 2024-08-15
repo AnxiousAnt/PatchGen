@@ -12,8 +12,6 @@ The algorithm in `\final-sort-algo.py` does the following:
 - Updates connection records to reflect the new positions of objects.
 - Reconstructs the sorted patch text.
 
-This sorted representation should provide a more consistent structure for the language model to learn from. Objects will appear in a predictable order based on their visual layout in the patch, which could help the model better understand the relationships between objects.
-
 example patchfile before reordering of records:
 ```
 #N canvas 962 288 452 302 10;
@@ -53,6 +51,7 @@ after reordering of records:
 #X connect 5 0 6 0;
 ```
 
+This sorted representation should provide a more consistent structure for the language model to learn from. Objects will appear in a predictable order based on their visual layout in the patch, which could help the model better understand the relationships between objects.
 
 ## other way to represent patchfiles visually:
 ### 
