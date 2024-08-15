@@ -1,6 +1,6 @@
 # alternate patchfile representations
 
-In Pd, the records in the text patchfiles are stored in the order of creation of objects and connections and not in a topologically sorted manner.
+In Pd, the records in the text patchfiles are stored in the order of creation of objects, connections and not in a topologically sorted manner.
 This non-sequential nature of the textual representation could make it harder for the model to learn patterns effectively.
 
 we could maybe try sorting the records based on their spatial coordinates to create a more consistent and potentially learnable structure.
