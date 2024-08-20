@@ -15,6 +15,6 @@ Purr-Data (Pd), a visual programming language for multimedia applications, offer
 
 
 ## links
-- ### fine-tuned models and datasets: [hugging_face_link](https://huggingface.co/ParZiVal04) (work-in-progress)
+- ### fine-tuned models and datasets: [hugging_face_link1](https://huggingface.co/ParZiVal04) & [hugging_face_link2](https://huggingface.co/parzi-parzi) (work-in-progress)
 
 - ### [purrrepo](https://purrrepo.github.io/)
