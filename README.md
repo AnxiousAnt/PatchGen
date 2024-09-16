@@ -1,4 +1,4 @@
-# PatchGen: Purr Data (Pd) Patch Generation Using an LLM
+# PatchGen: Purr Data Patch Generation Using an LLM
 
 ## Project Overview
 
@@ -77,7 +77,7 @@ For more information or if you have any suggestions, feel free to create an issu
 
 - submodule `\PurrRepo.github.io` contains code for a pd repository hosted on github pages. 
 
-- sub-directory `\alternate_patchfile_representations` contain code for sorting the records based on their spatial coordinates and generating mermaid diagrams of patches.
+- sub-directory `\alternate_patchfile_representations` contains code for sorting the records based on their spatial coordinates and generating mermaid diagrams of patches.
 
 
 ## links
