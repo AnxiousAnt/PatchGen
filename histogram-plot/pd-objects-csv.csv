@@ -1,0 +1,273 @@
+Object Name,Description
+bang,output a bang message
+change,remove repeated numbers from a stream
+float,store and recall a number
+int,store and recall an integer
+list,manipulate lists
+list append,manipulate lists
+list fromsymbol,manipulate lists
+list length,manipulate lists
+list prepend,manipulate lists
+list split,manipulate lists
+list store,manipulate lists
+list tosymbol,manipulate lists
+list trim,manipulate lists
+makefilename,format a symbol with a variable field
+moses,part a numeric stream
+pack,make compound messages
+print,print messages to terminal window
+receive,Receive messages without patch cords.
+route,route messages according to first element
+select,test for matching numbers or symbols
+send,Send messages without patch cords.
+spigot,pass or block messages
+swap,swap two numbers
+symbol,store and recall a symbol
+trace,message tracing for debugging
+trigger,sequence messages in right-to-left order.
+t, sequence messages in right-to-left order.
+unpack,get elements of compound messages
+until,looping mechanism
+value,shared numeric value
+cputime,measure CPU time
+delay,send a message after a time delay
+line,send a series of linearly stepped numbers
+metro,send a message periodically
+pipe,dynamically growable delay line for numbers
+realtime,measure real time
+timer,measure time intervals
+!=,relational tests
+*,multiply two numbers
+/,divide two numbers
+&,bit twiddling
+&&,bit twiddling
+%,higher math
++,add two numbers
+<,relational tests
+<<,bit twiddling
+<=,relational tests
+==,relational tests
+>,relational tests
+>=,relational tests
+>>,bit twiddling
+|,bit twiddling
+||,bit twiddling
+abs,math functions
+atan,trigonometric functions
+atan2,trigonometric functions
+clip,force a number into a range
+cos,trigonometric functions
+dbtopow,convert acoustical units
+dbtorms,convert acoustical units
+div,higher math
+exp,math functions
+expr,evaluation of control data expressions
+ftom,convert acoustical units
+log,math functions
+max,maximum of 2 numbers
+min,minimum of two numbers
+mod,higher math
+mtof,convert acoustical units
+pow,math functions
+powtodb,convert acoustical units
+random,pseudo random integers
+rmstodb,convert acoustical units
+sin,trigonometric functions
+sqrt,math functions
+tan,trigonometric functions
+wrap,"wrap a number to range [[0,1)"
+bendin,MIDI input
+bendout,MIDI output
+ctlin,MIDI input
+ctlout,MIDI output
+fudiformat,FUDI messages to and from Pd lists
+fudiparse,FUDI messages to and from Pd lists
+makenote,schedule delayed 'note off' message for a note-on
+midiin,MIDI input
+midiout,MIDI output
+midirealtimein,MIDI input
+notein,MIDI input
+noteout,MIDI output
+oscformat,OSC messages to and from Pd lists
+oscparse,OSC messages to and from Pd lists
+pgmin,MIDI input
+pgmout,MIDI output
+poly,MIDI-style polyphonic voice allocator.
+polytouchin,MIDI input
+polytouchout,MIDI output
+stripnote,strip 'note off' messages
+sysexin,MIDI input
+touchin,MIDI input
+touchout,MIDI output
+array,general array creation and manipulation
+array define,create an array.
+array get,get contents as a list.
+array max,output maximum value of an array.
+array min,output minimum value of an array.
+array quantile,outputs the specified quantile.
+array random,array as probabilities.
+array set,set contents from a list.
+array size,output or set array size.
+array sum,sum all or a range of elements.
+garray,graphical array (messages received via array name).
+soundfiler,read and write tables to soundfiles
+table,subpatch with array.
+tabread,read a number from a table
+tabwrite,write a number to a table
+bag,collection of numbers
+declare,set environment for loading patch
+file,low-level file operations
+file copy,copy a file around.
+file define,share file handles.
+file delete,remove files and directories.
+file glob,find pathnames matching a pattern
+file handle,operate on file handles.
+file isdirectory,check if path is an existing directory
+file isfile,check if path is an existing regular file.
+file join,'join' a list of components using '/' as the separator.
+file mkdir,create directories
+file move,move a file to a new destination.
+file size,get size of a file
+file split,'split' path into components
+file splitext,separates directory+file and extension.
+file splitname,separates directory an file components.
+file stat,get metainformation about a file/directory
+file which,locate a file
+key,grab keyboard input
+keyname,grab keyboard input
+keyup,grab keyboard input
+loadbang,bang on load
+netreceive,listen for incoming messages from network
+netsend,send Pd messages over a network
+openpanel,query for files or directories.
+pdcontrol,communicate with pd and/or this patch
+qlist,text-based sequencer
+savepanel,query you for the name of a file to create.
+savestate,save and restore run-time state from within an abstraction
+text,manage a list of messages
+text define,"create, store, and/or edit texts"
+text delete,delete a line or clear.
+text fromlist,convert from list.
+text get,read and output a line.
+text insert,insert a line.
+text search,search for a line.
+text sequence,sequencer/message-sender.
+text set,replace or add a line
+text size,get number of lines or elements.
+text tolist,convert text to a list.
+textfile,read and write text files
+-~,binary operators on audio signals
+*~,binary operators on audio signals
+/~,binary operators on audio signals
++~,binary operators on audio signals
+abs~,absolute value for signals
+clip~,restrict a signal between two limits
+dbtopow~,acoustic conversions for audio signals
+dbtorms~,acoustic conversions for audio signals
+exp~,exponential function
+expr~,evaluation of audio signal expressions on a vector by vector basis
+fexpr~,evaluation of audio signal expressions on a sample by sample basis
+fft~,forward complex FFT
+framp~,estimate frequency and amplitude of FFT.
+ftom~,acoustic conversions for audio signals
+ifft~,inverse complex FFT
+log~,logarithms for signals.
+max~,binary operators on audio signals
+min~,binary operators on audio signals
+mtof~,acoustic conversions for audio signals
+pow~,power function for signals
+powtodb~,acoustic conversions for audio signals
+q8_rsqrt~,signal reciprocal square root
+q8_sqrt~,signal square root
+rfft~,forward real FFT
+rifft~,inverse real FFT
+rmstodb~,acoustic conversions for audio signals
+rsqrt~,signal reciprocal square root
+sqrt~,signal square root
+wrap~,remainder modulo 1 for signals
+adc~,audio input from sound card
+bang~,output bang after each DSP cycle
+catch~,catch signal from one or more throw~ objects.
+dac~,audio output to sound card
+line~,audio ramp generator
+print~,print out raw values of a signal
+readsf~,read a soundfile
+receive~,receive signal from a send~ object.
+samplerate~,get sample rate
+send~,send signal to one or more receive~ objects.
+sig~,convert numbers to signals
+snapshot~,convert a signal to a number on demand
+threshold~,trigger from audio signal. generator
+throw~,throw signal to a matching catch~ object.
+vline~,high-precision audio ramp generator
+vsnapshot~,deluxe snapshot~
+writesf~,write audio signals to a soundfile
+cos~,cosine waveshaper
+noise~,uniformly distributed white noise
+osc~,cosine wave oscillator
+phasor~,phase ramp generator.
+tabosc4~,4-point interpolating oscillator
+tabplay~,play a table as a sample (non-transposing).
+tabread~,non-interpolating table lookup for signals.
+tabread4,4-point-interpolating table lookup for signals. lookup for signals.
+tabreceive~,read a block of a signal from an array continuously
+tabsend~,write a block of a signal to an array continuously
+tabwrite~,write a signal in an array.
+biquad~,2nd order (2-pole / 2-zero) filter
+bp~,2-pole bandpass filter
+cpole~,complex one-pole filter
+czero_rev~,complex one-zero "reverse" filter
+czero~,complex one-zero filter
+env~,envelope follower
+hip~,one-pole high pass filter.
+lop~,one-pole low pass filter.
+rpole~,real one-pole filter.
+rzero_rev~,real one-zero "reverse" filter.
+rzero~,real one-zero filter
+samphold~,sample and hold unit
+slop~,slew-limiting low-pass filter
+vcf~,voltage-controlled band/low-pass filter
+delread~,read from a delay line.
+delread4~,read from a delay line with 4-point interpolation (for variable delay times)
+delwrite~,write in a delay line.
+block~,set block size for DSP
+clone,make multiple copies of an abstraction.
+inlet,control inlet
+inlet~,audio inlet
+namecanvas,attach the canvas window to a name
+outlet,control outlet
+outlet~,audio outlet
+pd,define a subwindow (subpatch)
+switch~,set block size and on/off control for DSP
+drawcurve,draw shapes for data structures
+drawnumber,"draw numbers, symbols or texts for Data Structures."
+drawpolygon,draw shapes for data structures
+drawsymbol,"draw numbers, symbols or texts for Data Structures."
+drawtext,"draw numbers, symbols or texts for Data Structures."
+filledcurve,draw shapes for data structures
+filledpolygon,draw shapes for data structures
+plot,draw array elements of scalars
+struct,declare the fields in a data structure.
+append,add an item to a Data Structure list.
+element,get pointer to an element of an array
+get,get values from a scalar
+getsize,get size of a Data Structures array
+scalar,create a scalar datum (default [scalar define]).
+scalar define,defines and maintains a scalar.
+set,set values in a scalar
+bob~,Runge-Kutte numerical simulation of the Moog analog resonant filter
+bonk~,attack detection and spectral envelope measurement
+choice,search for a best match to an incoming list
+complex-mod~,complex amplitude modulator
+hilbert~,Hilbert transform
+loop~,phase generator for looping samplers
+lrshift~,shift signal vector elements left or right
+output~,simple stereo output GUI abstraction.
+pd~,run a pd sub-process
+rev1~,"simple 1-in, 1-out reverberator"
+rev2~,"simple 1-in, 4-out reverberator"
+rev3~,"hard-core, 2-in, 4-out reverberator"
+sigmund~,sinusoidal analysis and pitch tracking
+stdout,write messages to standard output
+fiddle~,pitch estimator and sinusoidal peak finder
+pique,find peaks in an FFT spectrum
