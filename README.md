@@ -80,7 +80,7 @@ For more information or if you have any suggestions, feel free to create an issu
 ### Some Insights from the collected patchs:
  Here's a frequency plot of the 20 most used objects in Pd (data collected from ~35k patches):
 
-![plot](histogram-plot\object_histogram_all.png)
+![plot](histogram-plot/object_histogram_all.png)
 
 - see [`histogram-plot\object_counts_all.txt`](https://github.com/AnxiousAnt/PatchGen/blob/main/histogram-plot/object_counts_all.txt) for more.
 
