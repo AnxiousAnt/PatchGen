@@ -1,4 +1,4 @@
-# PatchGen: Purr Data Patch Generation Using an LLM
+# <img src="images/purr.png" width="50" height="50"> PatchGen: Purr Data Patch Generation Using an LLM
 
 ## Project Overview
 
