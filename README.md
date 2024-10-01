@@ -1,5 +1,7 @@
 # <img src="images/purr.png" width="50" height="50"> PatchGen: Purr Data Patch Generation Using an LLM
 
+check out the detailed documentation site [here!](https://anxiousant.github.io/PatchGen-Docs/#/)
+
 ## Project Overview
 
 This project focuses on training and fine-tuning a language model to generate Pd patches based on natural language descriptions. Purr Data (Pd) is a visual programming language commonly used for creating interactive computer music and multimedia. Training an LLM to generate Pd patches poses a unique challenge, as the model must learn to understand and produce patches from textual input.
